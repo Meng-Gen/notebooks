@@ -8,6 +8,8 @@
 
 \textbf{\Large Chapter 4: The Structure of $U(\mathbb{Z}/n\mathbb{Z})$} \\\\
 
+
+
 \textbf{Lemma (Generators of a cyclic group).} \emph{Let $G = \left \langle g \right \rangle$
 be a finite cyclic group of order $n$. Then $G = \left \langle h \right \rangle$ iff
 $h \in \{ g^a \mid (a, n) = 1 \}$.} \\
@@ -62,6 +64,8 @@ $\Box$ \\
 \textbf{Corollary.} \emph{$U(\mathbb{Z}/p\mathbb{Z})$ has exactly $\phi(p - 1)$ generators.} \\
 
 http://ramanujan.math.trinity.edu/rdaileda/teach/s18/m3341/ZnZ.pdf
+
+
 
 \textbf{Exercise 4.1.} \emph{Show that $2$ is a primitive root module $29$.}\\
 
@@ -130,10 +134,27 @@ So $S \equiv 0 \: (p)$ by comparing the coefficient of $x^{p - 2}$ on the both s
 
 $\Box$ \\
 
+
+
 \textbf{Exercise 4.12.} \emph{Use the existence of a primitive root to give another proof
 of Wilson's theorem $(p - 1)! \equiv -1 \: (p)$.} \\
 
-\textbf{Supplement.}
+\emph{Proof.}
+Say $p > 2$. ($p = 2$ is trivial.)
+Let $g$ be a primitive root of $U(\mathbb{Z}/p\mathbb{Z})$.
+So $(p - 1)! \equiv g \cdot g^2 \cdots g^{p - 1} \equiv g^{\frac{p(p - 1)}{2}} \: (p)$. \\
+
+The equation $x^2 \equiv 1 \: (p)$ has exactly 2 solutions $x \equiv 1, -1 \: (p)$
+by Proposition 4.1.2.
+Notice that $x \equiv g^{\frac{p - 1}{2}} \: (p)$ is a solution of the equation
+$x^2 \equiv 1 \: (p)$ and $g^{\frac{p - 1}{2}} \not\equiv 1 \: (p)$
+since $g$ is a primitive root of $U(\mathbb{Z}/p\mathbb{Z})$.
+Therefore, $$g^{\frac{p - 1}{2}} \equiv -1 \: (p).$$
+So $(p - 1)! \equiv g^{\frac{p(p - 1)}{2}} \equiv (-1)^p \equiv -1 \: (p)$
+since $p$ is an odd prime.
+$\Box$ \\
+
+\textbf{Supplement 1.}
 There are many proofs of Wilson's theorem.
 \begin{enumerate}
 \item[(1)]
@@ -184,8 +205,39 @@ $\Box$ \\
 
 The original proof in this \href{http://campus.lakeforest.edu/trevino/WilsonCapsule.pdf}{Link}
 is not so beautiful. We don't need to use the inclusion-exclusion expression of $p!$
-and then cancel out $p$ on the both sides. Use $(p - 1)!$ directly.
+and then cancel out $p$ on the both sides. Please use $(p - 1)!$ directly.
+\item[(5)]
+One combinatorial proof
+(\href{https://www.youtube.com/watch?v=4qbh7mC6YCY}{Video link}). \\
+\emph{Proof.}
+Consider a circumference with $p$ points that correspond to the vertices of a regular $p$-gon.
+There are $\frac{(p - 1)!}{2}$ (non-regular or regular) polygons
+that we form by joining these vertices. \\
+
+Now among $\frac{(p - 1)!}{2}$ of them, we have $\frac{p - 1}{2}$ unaltered
+when rotated by $\frac{2 \pi}{p}$ radian.
+That is, there are $\frac{p - 1}{2}$ regular polygons due to the rotational symmetry. \\
+
+Therefore, there are $\frac{(p - 1)!}{2} - \frac{p - 1}{2}$ non-regular polygons.
+Notices that the number of non-regular polygons is divided by $p$ since $p$ is a prime. \\
+
+So $\frac{(p - 1)!}{2} - \frac{p - 1}{2} \equiv 0 \: (p)$.
+Hence, $(p - 1)! \equiv p - 1 \equiv -1 \: (p)$ if $p > 2$. ($p = 2$ is trivial.)
+$\Box$ \\
+
 \end{enumerate}
 
+\textbf{Supplement 2.} Related problems.
+\begin{enumerate}
+\item[(1)] ProjectEuler 381
+(\href{https://projecteuler.net/problem=381}{Link}).
+\emph{Let $S(p) = \sum_{1 \leq k \leq 5}(p-k)! \: (p)$ for a prime $p$.
+Find $\sum_{1 \leq p \leq {10}^8} S(p)$} (by using computer programs).
+\item[(2)]
+\emph{Let $g$ be a primitive root modulo the odd prime $p$.
+Prove that $g^{\frac{p - 1}{2}} \equiv -1 \: (p)$.
+Deduce that if $g, h$ are primitive roots modulo the odd prime $p$
+then $g \cdot h$ cannot be a primitive root.}
+\end{enumerate}
 
 \end{document}
