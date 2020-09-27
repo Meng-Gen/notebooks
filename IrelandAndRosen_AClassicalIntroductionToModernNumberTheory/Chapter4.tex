@@ -10,26 +10,6 @@
 
 
 
-\textbf{Lemma (Generators of a cyclic group).} \emph{Let $G = \left \langle g \right \rangle$
-be a finite cyclic group of order $n$. Then $G = \left \langle h \right \rangle$ iff
-$h \in \{ g^a \mid (a, n) = 1 \}$.} \\
-
-\emph{Proof.}
-Suppose that $h = g^a$ with $(a, n) = 1$. Then clearly $\left \langle h \right \rangle \subseteq
-\left \langle g \right \rangle$ as a subset. For the reverse containment ($\supseteq$),
-write $ra + sn = 1$ where $r, s \in \mathbb{Z}$. Then
-$h^r = g^{ar} = g^{1 - sn} = g \cdot (g^n)^{-s} = g \cdot 1 = g$. Then again
-$\left \langle g \right \rangle \subseteq \left \langle h \right \rangle$ as a subset. \\
-
-Now suppose that $\left \langle g \right \rangle = \left \langle h \right \rangle$.
-Then $h = g^a$ for some $a \in \mathbb{Z}$. Also, $g = h^r$ for some $r \in \mathbb{Z}$.
-So $g = h^r = g^{ar}$ or $g^{ar - 1} = 1$. So $n | (ar - 1)$, or
-$ar + ns = 1$ for some $s \in \mathbb{Z}$, that is, $(a, n) = 1$.
-$\Box$ \\
-
-\textbf{Corollary.} \emph{Let $G$ be a finite cyclic group of order $n$.
-Then $G$ has exactly $\phi(n)$ generators.} \\
-
 \textbf{Theorem 1.} \emph{$U(\mathbb{Z}/p\mathbb{Z})$ is a cyclic group.} \\
 
 \emph{Proof.}
@@ -60,10 +40,6 @@ Pick $g = g_1 g_2 \cdots g_t \in \mathbb{Z}/p\mathbb{Z}$ generating a subgroup o
 $U(\mathbb{Z}/p\mathbb{Z})$ of order $q_1^{e_1} q_2^{e_2} \cdots q_t^{e^t} = p - 1$.
 That is, $\left \langle g \right \rangle = U(\mathbb{Z}/p\mathbb{Z})$.
 $\Box$ \\
-
-\textbf{Corollary.} \emph{$U(\mathbb{Z}/p\mathbb{Z})$ has exactly $\phi(p - 1)$ generators.} \\
-
-http://ramanujan.math.trinity.edu/rdaileda/teach/s18/m3341/ZnZ.pdf
 
 
 
@@ -111,8 +87,7 @@ $S = 1^k + 2^k + \cdots + (p-1)^k \equiv g^k + (g^k)^2 + \cdots + (g^k)^{p - 1} 
 If $p - 1 \mid k$, $g^k \equiv 1 \: (p)$. Thus
 $S \equiv 1 + 1 + \cdots + 1 = p - 1 \equiv -1 \: (p)$. \\
 
-If $p - 1 \nmid k$, $g^k$ is also a generator of $U(\mathbb{Z}/p\mathbb{Z})$
-by Lemma (Generators of a cyclic group).
+If $p - 1 \nmid k$, $g^k$ is also a generator of $U(\mathbb{Z}/p\mathbb{Z})$ by Exercise 13.
 There are three proofs of this case.
 \begin{enumerate}
 \item[(1)]
@@ -165,7 +140,8 @@ Corollary of Proposition 4.1.1. $x^{p - 1} - 1 \equiv (x - 1)(x - 2) \cdots (x -
 Exercise 4.12. Use the existence of a primitive root.
 \item[(4)]
 Inclusion-exclusion principle
-(\href{http://campus.lakeforest.edu/trevino/WilsonCapsule.pdf}{Link}). \\
+(\href{http://campus.lakeforest.edu/trevino/WilsonCapsule.pdf}
+{Enrique Treviño, An Inclusion-Exclusion Proof of Wilson's Theorem}). \\
 \textbf{Lemma.}
 $$n! = \sum_{k = 0}^{n}(-1)^k {n \choose k} (n - k)^{n}.$$
 
@@ -203,12 +179,13 @@ By Fermat’s Little Theorem, $k^{p - 1} \equiv 1 \: (p)$.
 Therefore, the right-hand sum consists of $(p - 1)$ ones and the proof is completed.
 $\Box$ \\
 
-The original proof in this \href{http://campus.lakeforest.edu/trevino/WilsonCapsule.pdf}{Link}
-is not so beautiful. We don't need to use the inclusion-exclusion expression of $p!$
+The original proof in the paper is not very beautiful.
+We don't need to use the inclusion-exclusion expression of $p!$
 and then cancel out $p$ on the both sides. Please use $(p - 1)!$ directly.
 \item[(5)]
 One combinatorial proof
-(\href{https://www.youtube.com/watch?v=4qbh7mC6YCY}{Video link}). \\
+(\href{https://www.youtube.com/watch?v=4qbh7mC6YCY}
+{Cheenta, Wilson's Theorem and It's Geometric proof}). \\
 \emph{Proof.}
 Consider a circumference with $p$ points that correspond to the vertices of a regular $p$-gon.
 There are $\frac{(p - 1)!}{2}$ (non-regular or regular) polygons
@@ -229,15 +206,49 @@ $\Box$ \\
 
 \textbf{Supplement 2.} Related problems.
 \begin{enumerate}
-\item[(1)] ProjectEuler 381
-(\href{https://projecteuler.net/problem=381}{Link}).
+\item[(1)]
+(\href{https://projecteuler.net/problem=381}
+{ProjectEuler 381: (prime-k) factorial}).
 \emph{Let $S(p) = \sum_{1 \leq k \leq 5}(p-k)! \: (p)$ for a prime $p$.
 Find $\sum_{1 \leq p \leq {10}^8} S(p)$} (by using computer programs).
 \item[(2)]
 \emph{Let $g$ be a primitive root modulo the odd prime $p$.
 Prove that $g^{\frac{p - 1}{2}} \equiv -1 \: (p)$.
 Deduce that if $g, h$ are primitive roots modulo the odd prime $p$
-then $g \cdot h$ cannot be a primitive root.}
+then $g \cdot h$ cannot be a primitive root.} \\
 \end{enumerate}
+
+
+
+\textbf{Exercise 4.13 (Generators of a cyclic group).}
+\emph{Let $G$ be a finite cyclic group and $g \in G$ is a generator.
+Show that all the other generators are of the form $g^k$,
+where $(k, n) = 1$, $n$ being the order of $G$.} \\
+
+\emph{Proof.}
+Suppose that $h = g^k$ with $(k, n) = 1$.
+Then clearly $\left \langle h \right \rangle \subseteq \left \langle g \right \rangle$
+as a subset. For the reverse containment ($\supseteq$),
+write $rk + sn = 1$ where $r, s \in \mathbb{Z}$. Then
+$h^r = g^{kr} = g^{1 - sn} = g \cdot (g^n)^{-s} = g \cdot 1 = g$. Then again
+$\left \langle g \right \rangle \subseteq \left \langle h \right \rangle$ as a subset. \\
+
+Now suppose that $\left \langle g \right \rangle = \left \langle h \right \rangle$.
+Then $h = g^k$ for some $k \in \mathbb{Z}$. Also, $g = h^r$ for some $r \in \mathbb{Z}$.
+So $g = h^r = g^{kr}$ or $g^{kr - 1} = 1$. So $n | (kr - 1)$, or
+$ar + ns = 1$ for some $s \in \mathbb{Z}$, that is, $(a, n) = 1$.
+$\Box$ \\
+
+Reference:
+\href{http://ramanujan.math.trinity.edu/rdaileda/teach/s18/m3341/ZnZ.pdf}
+{R. C. Daileda, The Structure of $U(\mathbb{Z}/n\mathbb{Z})$.} \\
+
+\textbf{Corollary.}
+\emph{Let $G$ be a finite cyclic group of order $n$.
+Then $G$ has exactly $\phi(n)$ generators.} \\
+
+\textbf{Corollary.}
+\emph{$U(\mathbb{Z}/p\mathbb{Z})$ has exactly $\phi(p - 1)$ generators.
+$U(\mathbb{Z}/p^l\mathbb{Z})$ has exactly $\phi(p^{l-1}(p - 1))$ generators if $p$ is odd.} \\
 
 \end{document}
