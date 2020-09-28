@@ -38,16 +38,23 @@ $$|z_1 + z_2 + \cdots + z_n| \leq |z_1| + |z_2| + \cdots + |z_n|.$$}
 
 \emph{Proof.}
 Use mathematical induction on $n$. $n = 2$ is established by Theorem 1.33 (e).
-Suppose $n = k$ the inequality holds, then $n = k + 1$ we again apply Theorem 1.33 (e)
+Suppose the inequality holds on $n = k$, then $n = k + 1$ we again apply Theorem 1.33 (e)
 to get the result, say
 \begin{align*}
 |z_1 + z_2 + \cdots + z_k + z_{k+1}|
 &\leq |z_1 + z_2 + \cdots + z_k| + |z_{k+1}| \\
 &\leq |z_1| + |z_2| + \cdots + |z_k| + |z_{k+1}|
 \end{align*}
-Surely, we can embed $\mathbb{C}$ into $\mathbb{R}^2$ and then apply Theorem 1.37 (e)
-to get the exactly the same conclusion.
 $\Box$ \\
+
+\textbf{Corollary.}
+\emph{If $\mathbf{x}_1, ..., \mathbf{x_n} \in \mathbb{R}^k$, then
+$$|\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}|
+\leq |\mathbf{x_1}| + |\mathbf{x_2}| + \cdots + |\mathbf{x_n}|.$$}
+
+Here we might use Theorem 1.37 (e) to prove it.
+Since the norm $|\cdot|$ on $\mathbb{C}$ is the same as the norm on $\mathbb{R}^2$,
+we might prove this corollary first and set $k = 2$ on $\mathbb{R}^k = \mathbb{R}^2$.
 
 
 
