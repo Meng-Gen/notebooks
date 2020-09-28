@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\parindent=0pt
+
+\begin{document}
+
+\textbf{\Large Chapter 1: The Real and Complex Number Systems} \\\\
+
+
+
+Unless the contrary is explicitly stated, all numbers that are mentioned in these exercise
+are understood to be real. \\\\
+
+
+
+\textbf{Exercise 1.1.}
+\emph{If $r$ is a rational ($r \neq 0$) and $x$ is irrational,
+prove that $r + x$ and $rx$ are irrational.} \\
+
+\emph{Proof.}
+Assume $r + x \in \mathbb{Q}$.
+$\mathbb{Q}$ is a field, then $-r \in \mathbb{Q}$ for any $r \in \mathbb{Q}$.
+So $(-r) + (r + x) = (-r + r) + x = 0 + x = x \in \mathbb{Q}$, a contradiction. \\
+
+Similarly, assume $rx \in \mathbb{Q}$. $r \in \mathbb{Q}$ with $r \neq 0$ implies that
+there exists an element $1/r \in \mathbb{Q}$ such that $r \cdot (1/r) = 1$.
+So $(1/r) \cdot (rx) = ((1/r) \cdot r) \cdot x = 1 \cdot x = x \in \mathbb{Q}$, a contradiction.
+$\Box$ \\
+
+
+
+\textbf{Exercise 1.12.}
+\emph{If $z_1, ..., z_n$ are complex, prove that
+$$|z_1 + z_2 + \cdots + z_n| \leq |z_1| + |z_2| + \cdots + |z_n|.$$}
+
+\emph{Proof.}
+Use mathematical induction on $n$. $n = 2$ is established by Theorem 1.33 (e).
+Suppose $n = k$ the inequality holds, then $n = k + 1$ we again apply Theorem 1.33 (e)
+to get the result, say
+\begin{align*}
+|z_1 + z_2 + \cdots + z_k + z_{k+1}|
+&\leq |z_1 + z_2 + \cdots + z_k| + |z_{k+1}| \\
+&\leq |z_1| + |z_2| + \cdots + |z_k| + |z_{k+1}|
+\end{align*}
+Surely, we can embed $\mathbb{C}$ into $\mathbb{R}^2$ and then apply Theorem 1.37 (e)
+to get the exactly the same conclusion.
+$\Box$ \\
+
+
+
+\end{document}
