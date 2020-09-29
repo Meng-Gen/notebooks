@@ -1,19 +1,99 @@
 \documentclass{article}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{hyperref}
 \parindent=0pt
 
 \begin{document}
 
 \textbf{\Large Chapter 2: Applications of Unique Factorization} \\\\
 
-\textbf{Exercise.} If $\frac{a}{b} \in \mathbb{Z}_{p}$ is not a unit, prove that
-$\frac{a}{b} + 1$ is a unit. \\
 
-\emph{Proof:}
 
+\textbf{Exercise.}
+\emph{If $\frac{a}{b} \in \mathbb{Z}_{p}$ is not a unit, prove that
+$\frac{a}{b} + 1$ is a unit.} \\
+
+\emph{Proof.}
 $\frac{a}{b} \in \mathbb{Z}_{p}$ is not a unit iff $p \mid a$ and $p \nmid b$.
 Thus $p \nmid (a +b)$. That is, $\frac{a}{b} + 1 = \frac{a + b}{b} \in \mathbb{Z}_{p}$ is a unit.
-$\Box$
+$\Box$ \\
+
+
+
+\textbf{Exercise 4.6. ($p$-adic valuation.)}
+\emph{For a rational number $r$ let $[r]$ be the largest integer less than or equal to $r$,
+e.g., $[\frac{1}{2}] = 0$, $[2] = 2$, $[3 \frac{1}{3}] = 3$. Prove
+$$\text{ord}_p n!
+= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots.$$
+}
+
+\emph{Proof.}
+$\Box$ \\
+
+\textbf{Supplement.} Related problems.
+\begin{enumerate}
+\item[(1)]
+\emph{Prove that
+$$\frac{(m + n)!}{m!n!}$$
+is an integer for all non-negative integers $m$ and $n$.} \\
+
+\emph{Proof.}
+It is sufficient to show that
+$$\text{ord}_p (m + n)! \geq \text{ord}_p m! + \text{ord}_p n!$$
+for any prime $p$, or show that
+$$\left[\frac{m + n}{p^k}\right]
+\geq \left[\frac{m}{p^k}\right] + \left[\frac{n}{p^k}\right]$$
+for any prime $p$ and $k \in \mathbb{Z}^+$ by Exercise 4.6, or show that
+$$[x + y] \geq [x] + [y]$$
+for any rational (or real) numbers $x$ and $y$.
+It is trivial by considering that the sum of two fractional parts $\{x\} = x - [x]$
+might be greater than or equal to $1$, so $[x + y] = [x] + [y]$ or $[x] + [y] + 1$.
+$\Box$ \\
+
+\emph{Note.}
+$\frac{(m + n)!}{m!n!}$ is a binomial coefficient.
+Similarly, a multinomial coefficient is
+$$\frac{(n_1 + n_2 + \cdots + n_k)!}{n_1!n_2! \cdots n_k!}.$$
+We can show that the multinomial coefficient is an integer
+by using the above argument. \\
+
+\item[(2)]
+\emph{Prove that
+$$\frac{(2m)!(2n)!}{m!n!(m + n)!}$$
+is an integer for all non-negative integers $m$ and $n$.} \\
+
+\emph{Proof.}
+Similar to (1), it is sufficient to show that
+$$[2x] + [2y] \geq [x] + [y] + [x + y]$$
+for any rational (or real) numbers $x$ and $y$.
+Notice that $[2x] = [x] + [x + \frac{1}{2}]$, and thus we might show that
+$[x + \frac{1}{2}] + [y + \frac{1}{2}] \geq [x + y]$.
+Again it is trivial and we omit the tedious calculation.
+$\Box$ \\
+
+\item[(3)]
+\emph{Hermite's identity:
+$[nx] = \sum_{k=0}^{n-1} [x + \frac{k}{n}]$ for $n \in \mathbb{Z}^+$.} \\
+
+Let $n = 2$ and we can get $[2x] = [x] + [x + \frac{1}{2}]$ too. \\
+
+\emph{Proof.}
+Consider the function $f(x) = \sum_{k=0}^{n-1} [x + \frac{k}{n}] - [nx]$.
+Notice that $f(x + \frac{1}{n}) = f(x)$. $f$ has period $\frac{1}{n}$.
+It then suffices to prove that $f(x) = 0$ on $[0, \frac{1}{n})$.
+But in this case, the integral part of each summand in $f$ is equal to $0$.
+Therefore $f = 0$ on $\mathbb{R}$.
+$\Box$ \\
+
+\item[(4)]
+\emph{Show
+$$\frac{(5m)!(5n)!}{m! n! (3m + n)! (3n + m)!}$$
+is an integer for all non-negative integers $m$ and $n$.} \\
+
+Try to deduce the inequality $[5x] + [5y] \geq [x] + [y] + [3x + y] + [3y + x]$.
+
+\end{enumerate}
 
 \end{document}
