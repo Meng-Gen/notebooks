@@ -24,7 +24,7 @@ where $c$ is a constant. \\
 
 (b) implies (a). We prove (b) directly. \\
 
-\emph{Proof.}
+\emph{Proof of (b).}
 Since $f(x)$ is not zero, there exists $x_0 \in \mathbb{R}$ such that $f(x_0) \neq 0$.
 So $f(0)f(x_0) = f(x_0)$, or $f(0) = 1$ by cancelling $f(x_0) \neq 0$. \\
 
@@ -61,13 +61,35 @@ $\Box$ \\
 
 
 
+\textbf{Supplement.} Proof of (a).
+
+\emph{Proof of (a).}
+Since $f(x)$ is not zero, there exists $x_0 \in \mathbb{R}$ such that $f(x_0) \neq 0$.
+So $f(0)f(x_0) = f(x_0)$, or $f(0) = 1$ by cancelling $f(x_0) \neq 0$. \\
+
+Since $f$ is differentiable, for any $x \in \mathbb{R}$,
+\begin{align*}
+f'(x)
+=& \lim_{h \rightarrow 0} \frac{f(x + h) - f(x)}{h} \\
+=& \lim_{h \rightarrow 0} \frac{f(x)f(h) - f(x)}{h} \\
+=& f(x) \lim_{h \rightarrow 0} \frac{f(h) - 1}{h} \\
+=& f(x) \lim_{h \rightarrow 0} \frac{f(h) - f(0)}{h} \\
+=& f(x) f'(0).
+\end{align*}
+Let $c = f'(0)$ be a constant. Then $f'(x) = c f(x)$. So $f(x) = e^{cx}$ for $x \in \mathbb{R}$.
+(To see this, let $g(x) = \frac{f(x)}{e^{cx}}$ be well-defined on $\mathbb{R}$. $g(0) = 1$.
+$g'(x) = 0$ since $f'(x) = c f(x)$. So $g(x)$ is a constant, or $g(x) = 1$ since $g(0) = 1$.
+Therefore, $f(x) = e^{cx}$ on $\mathbb{R}$.)
+$\Box$ \\
+
+
+
 \textbf{Supplement.} Cauchy's functional equation.
 \begin{enumerate}
 \item[(1)]
 \emph{(Cauchy's functional equation.) Suppose $f(x) + f(y) = f(x + y)$ for all real $x$ and $y$.
 Assuming that $f$ is continuous, prove that $f(x) = cx$ where $c$ is a constant}. \\
 
-Easy to prove.
 Notice that we cannot let $g(x) = \log f(x)$
 and apply Cauchy's functional equation on $g(x)$
 to prove Exercise 8.6 since $f(x)$ is not necessary positive and thus
@@ -78,22 +100,22 @@ and $f(x)$ should be equal to $e^{cx}$ where $c = g(1) = \log f(1)$.
 
 \item[(2)]
 \emph{Suppose $f(xy) = f(x) + f(y)$ for all positive real $x$ and $y$.
-Assuming that $f$ is continuous, prove that $f(x) = c \log x$ where $c$ is a constant}. \\
+Assuming that $f$ is continuous, prove that $f(x) = c \log x$ where $c$ is a constant}.
 
 \item[(3)]
 \emph{Suppose $f(xy) = f(x)f(y)$ for all positive real $x$ and $y$.
 Assuming that $f$ is continuous and positive,
-prove that $f(x) = x^c$ where $c$ is a constant}. \\
+prove that $f(x) = x^c$ where $c$ is a constant}.
 
 \item[(4)]
 \emph{Suppose $f(x + y) = f(x) + f(y) + xy$ for all real $x$ and $y$.
 Assuming that $f$ is continuous,
-prove that $f(x) = \frac{1}{2}x^2 + cx$ where $c$ is a constant}. \\
+prove that $f(x) = \frac{1}{2}x^2 + cx$ where $c$ is a constant}.
 
 \item[(5)]
 \emph{(USA 2002.) Suppose $f(x^2 - y^2) = x f(x) - y f(y)$ for all real $x$ and $y$.
 Assuming that $f$ is continuous,
-prove that $f(x) = cx$ where $c$ is a constant}. \\
+prove that $f(x) = cx$ where $c$ is a constant}.
 \end{enumerate}
 
 
