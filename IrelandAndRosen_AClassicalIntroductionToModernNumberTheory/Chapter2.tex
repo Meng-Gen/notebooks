@@ -29,7 +29,21 @@ $$\text{ord}_p n!
 = \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots.$$
 }
 
+Notice that $[\frac{n}{p}] + [\frac{n}{p^2}] + [\frac{n}{p^3}] + \cdots$ is a finite sum. \\
+
 \emph{Proof.}
+For any $k = 1, 2, ..., n$, we can express $k$ as $k = p^s t$
+where $s = \text{ord}_p k$ is a non-negative integer and $(t, p) = 1$.
+There are $[\frac{n}{p^a}]$ numbers such that $p^a \mid k$ for $a = 1, 2, ...$.
+Therefore, there are $$\left[\frac{n}{p^a}\right] - \left[\frac{n}{p^{a+1}}\right]$$
+numbers such that $\text{ord}_p k = a$ for $a = 1, 2, ...$. Hence,
+\begin{align*}
+\text{ord}_p n!
+&= \left( \left[\frac{n}{p}\right] - \left[\frac{n}{p^2}\right] \right)
+ + 2 \left( \left[\frac{n}{p^2}\right] - \left[\frac{n}{p^3}\right] \right)
+ + 3 \left( \left[\frac{n}{p^3}\right] - \left[\frac{n}{p^4}\right] \right) + \cdots \\
+&= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots.
+\end{align*}
 $\Box$ \\
 
 \textbf{Supplement.} Related problems.
