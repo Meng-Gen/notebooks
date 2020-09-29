@@ -11,6 +11,10 @@
 
 
 
+% http://math.ucsd.edu/~lni/math140/HW140B_7_solutions.pdf
+
+
+
 \textbf{Exercise 8.6.}
 \emph{Suppose $f(x)f(y) = f(x + y)$ for all real $x$ and $y$. \\
 (a) Assuming that $f$ is differentiable and not zero, prove that
@@ -18,11 +22,80 @@ $$f(x) = e^{cx}$$
 where $c$ is a constant. \\
 (b) Prove the same thing, assuming only that $f$ is continuous.} \\
 
+(b) implies (a). We prove (b) directly. \\
+
 \emph{Proof.}
+Since $f(x)$ is not zero, there exists $x_0 \in \mathbb{R}$ such that $f(x_0) \neq 0$.
+So $f(0)f(x_0) = f(x_0)$, or $f(0) = 1$ by cancelling $f(x_0) \neq 0$. \\
+
+Next, $f(\frac{n}{m}) = f(\frac{1}{m})^n$ for $m \in \mathbb{Z}$, $n \in \mathbb{Z}^{+}$.
+Since $f$ is continuous at $x = 0$, $f$ is positive in the neighborhood of $x = 0$.
+That is, there exists $N \in \mathbb{Z}^{+}$ such that $f(\frac{1}{m}) > 0$
+whenever $m \geq N$ or $m \leq N$.
+So, $f(\frac{n}{m}) = f(\frac{1}{m})^n > 0$.
+(Since $f(\frac{n}{m}) = f(\frac{kn}{km})$ for any $k \in \mathbb{Z}^{+}$,
+we can rescale $m$ to $km$ such that $km \geq N$ or $km \leq N$.)
+That is, $f$ is positive on $\mathbb{Q}$.
+Since $\mathbb{Q}$ is dense in $\mathbb{R}$ and $f$ is continuous on $\mathbb{R}$,
+$f$ is positive on $\mathbb{R}$. \\
+
+Now let $c = \log f(1)$ (which is well-defined since $f > 0$).
+We write $f(1)$ in the two ways.
+Firstly, $f(1) = f(\frac{n}{n}) = f(\frac{1}{n})^n$ where $n \in \mathbb{Z}^{+}$.
+Secondly, $f(1) = e^c = (e^{\frac{c}{n}})^n$.
+Since the positive $n$-th root is unique,
+$f(\frac{1}{n}) = e^{\frac{c}{n}}$ for $n \in \mathbb{Z}^{+}$.
+By $f(x)f(-x) = f(0) = 1$ or $f(-x) = \frac{1}{f(x)}$,
+$f(-\frac{1}{n}) = \frac{1}{e^{\frac{c}{n}}} = e^{-\frac{c}{n}}$ for $n \in \mathbb{Z}^{+}$.
+Therefore,
+$$f\left( \frac{1}{m} \right) = e^{\frac{c}{m}} \text{ where } m \in \mathbb{Z}.$$
+
+By using
+$f(\frac{n}{m}) = f(\frac{1}{m})^n$ for $m \in \mathbb{Z}$, $n \in \mathbb{Z}^{+}$ again,
+$f(\frac{n}{m}) = e^{c \frac{n}{m}}$ where $m \in \mathbb{Z}, n \in \mathbb{Z}^{+}$, or
+$$f(x) = e^{cx} \text{ where } x \in \mathbb{Q}.$$
+Since $g(x) = f(x) - e^{cx}$ vanishes on a dense set of $\mathbb{Q}$
+and $g$ is continuous on $\mathbb{R}$, $g$ vanishes on $\mathbb{R}$.
+Therefore, $f(x) = e^{cx}$ for $x \in \mathbb{R}$.
 $\Box$ \\
 
 
-% https://imomath.com/index.php?options=341&lmm=0
-% http://math.ucsd.edu/~lni/math140/HW140B_7_solutions.pdf
+
+\textbf{Supplement.} Cauchy's functional equation.
+\begin{enumerate}
+\item[(1)]
+\emph{(Cauchy's functional equation.) Suppose $f(x) + f(y) = f(x + y)$ for all real $x$ and $y$.
+Assuming that $f$ is continuous, prove that $f(x) = cx$ where $c$ is a constant}. \\
+
+Easy to prove.
+Notice that we cannot let $g(x) = \log f(x)$
+and apply Cauchy's functional equation on $g(x)$
+to prove Exercise 8.6 since $f(x)$ is not necessary positive and thus
+$g(x) = \log f(x)$ might be meaningless.
+However, this wrong approach gives you some useful ideas such as
+you need to prove that $f(x)$ is positive first,
+and $f(x)$ should be equal to $e^{cx}$ where $c = g(1) = \log f(1)$.
+
+\item[(2)]
+\emph{Suppose $f(xy) = f(x) + f(y)$ for all positive real $x$ and $y$.
+Assuming that $f$ is continuous, prove that $f(x) = c \log x$ where $c$ is a constant}. \\
+
+\item[(3)]
+\emph{Suppose $f(xy) = f(x)f(y)$ for all positive real $x$ and $y$.
+Assuming that $f$ is continuous and positive,
+prove that $f(x) = x^c$ where $c$ is a constant}. \\
+
+\item[(4)]
+\emph{Suppose $f(x + y) = f(x) + f(y) + xy$ for all real $x$ and $y$.
+Assuming that $f$ is continuous,
+prove that $f(x) = \frac{1}{2}x^2 + cx$ where $c$ is a constant}. \\
+
+\item[(5)]
+\emph{(USA 2002.) Suppose $f(x^2 - y^2) = x f(x) - y f(y)$ for all real $x$ and $y$.
+Assuming that $f$ is continuous,
+prove that $f(x) = cx$ where $c$ is a constant}. \\
+\end{enumerate}
+
+
 
 \end{document}
