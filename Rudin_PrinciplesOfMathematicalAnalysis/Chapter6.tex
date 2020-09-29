@@ -25,9 +25,14 @@
 $\alpha$ is continuous at $x_0$, $f(x_0) = 1$, and $f(x) = 0$ if $x \neq x_0$.
 Prove that $f \in \mathscr{R}(\alpha)$ and that $\int f d \alpha = 0$.} \\
 
-For any partition $P = \{a = p_0, p_1, ..., p_{n-1}, p_n = b \}$,
-where $a = p_0 \leq p_1 \leq \cdots \leq p_{n-1} \leq p_n = b$, we have to compute
-$L(P, f, \alpha)$ and $U(P, f, \alpha)$. \\
+Given any partition $P = \{a = p_0, p_1, ..., p_{n-1}, p_n = b \}$,
+where $a = p_0 \leq p_1 \leq \cdots \leq p_{n-1} \leq p_n = b$.
+We might compute $L(P, f, \alpha)$ and $U(P, f, \alpha)$ by using $\epsilon$-$\delta$ argument
+since we are hinted by the condition that $\alpha$ is continuous.
+A function which is continuous at $x_0$ has a nice property near $x_0$
+and this property would help us estimate $U(P, f, \alpha)$ near $x_0$.
+On the contrary, if both $f$ and $\alpha$ are discontinuous at $x_0$,
+it might be $f \not\in \mathscr{R}(\alpha)$.\\
 
 \textbf{Claim 1.}
 \emph{$L(P, f, \alpha) = 0$.} \\
@@ -46,13 +51,17 @@ $M_i = \sup_{p_{i - 1} \leq x \leq p_i} f(x) = 0$ if $i \neq i_0$, and $M_{i_0} 
 So
 $$U(P, f, \alpha) = \sum M_i \Delta \alpha_i = \Delta \alpha_{i_0}.$$
 It is not true for any arbitrary $\alpha$. (For example, $\alpha$ has a jump on $x = x_0$.)
+In fact, Exercise 6.3 shows this.
 Luckily, $\alpha$ is continuous at $x_0$. So for $\epsilon > 0$,
 there exists $\delta > 0$ such that $|\alpha(x) - \alpha(x_0)| < \frac{\epsilon}{2}$
 whenever $|x - x_0| < \delta$ (and $x \in [a, b]$).
 Now we pick a nice partition
 $$P = \{ a, x_0 - \delta_1, x_0 + \delta_2, b \},$$
 where $\delta_1 = \min(\delta, x_0 - a) \geq 0$
-and $\delta_2 = \min(\delta, b - x_0) \geq 0$. $x_0 \in [x_0 - \delta_1, x_0 + \delta_2]$
+and $\delta_2 = \min(\delta, b - x_0) \geq 0$.
+(It is a trick about resizing ``$\delta$''
+to avoid considering the edge cases $x_0 = a$ or $x_0 = b$ or $a = b$.)
+Then $x_0 \in [x_0 - \delta_1, x_0 + \delta_2]$
 and $\Delta \alpha$ on $[x_0 - \delta_1, x_0 + \delta_2]$ is
 \begin{align*}
 \alpha(x_0 + \delta_2) - \alpha(x_0 - \delta_1)
@@ -77,6 +86,12 @@ By Claim 1 and 2,
 $$0 \leq U(P, f, \alpha) - L(P, f, \alpha) < \epsilon.$$
 Hence $f \in \mathscr{R}(\alpha)$ by Theorem 6.5.
 Furthermore,
+$$\int f d \alpha = \lowint_a^b f d\alpha = \sup L(P, f, \alpha) = 0.$$
+$\Box$ \\
+
+\emph{Proof (Theorem 6.10).}
+$f \in \mathscr{R}(\alpha)$ by Theorem 6.10.
+Thus, by Claim 1
 $$\int f d \alpha = \lowint_a^b f d\alpha = \sup L(P, f, \alpha) = 0.$$
 $\Box$ \\
 
