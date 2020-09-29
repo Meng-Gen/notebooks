@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 6: The Riemann-Stieltjes Integral} \\\\
+
+
+
+\textbf{Exercise 6.1.}
+\emph{Suppose $\alpha$ increases on $[a, b]$, $a \leq ≤ x_0 \leq b$,
+$\alpha$ is continuous at $x_0$, $f(x_0) = 1$, and $f(x) = 0$ if $x \neq x_0$.
+Prove that $f \in \mathscr{R}(\alpha)$ and that $\int f d \alpha = 0$.} \\
+
+Given $\epsilon > 0$. For any partition $P = \{a = p_0, p_1, ..., p_{n-1}, p_n = b \}$,
+where $a = p_0 \leq p_1 \leq \cdots \leq p_{n-1} \leq p_n = b$, we have to compute
+$L(P, f, \alpha)$ and $U(P, f, \alpha)$. \\
+
+\textbf{Claim 1.}
+\emph{$L(P, f, \alpha) = 0$.} \\
+\emph{Proof of Claim 1.}
+$m_i = 0$ since $\inf f(x) = 0$ on any subinterval of $[a, b]$.
+So $L(P, f, \alpha) = \sum m_i \Delta \alpha_i = 0$.
+Here we don't need the condition that $\alpha$ is continuous at $x_0$.
+$\Box$ \\
+
+\textbf{Claim 2.}
+\emph{For any $\epsilon > 0$,
+there exists a partition $P$ such that $U(P, f, \alpha) < \epsilon$.} \\
+\emph{Proof of Claim 2.}
+Let $x_0 \in [p_{i_0 - 1}, p_{i_0}]$ for some $i_0$. Then
+$M_i = \sup_{p_{i - 1} \leq x \leq p_i} f(x) = 0$ if $i \neq i_0$, and $M_{i_0} = 1$.
+So
+$$U(P, f, \alpha) = \sum M_i \Delta \alpha_i = \Delta \alpha_{i_0}.$$
+It is not true for any arbitrary $\alpha$. (For example, $\alpha$ has a jump on $x = x_0$.)
+Luckily, $\alpha$ is continuous at $x_0$. So for $\epsilon > 0$,
+there exists $\delta > 0$ such that $|\alpha(x) - \alpha(x_0)| < \frac{\epsilon}{2}$
+whenever $|x - x_0| < \delta$ (and $x \in [a, b]$).
+Now we pick a nice partition
+$$P = \{ a, x_0 - \delta_1, x_0 + \delta_2, b \},$$
+where $\delta_1 = \min(\delta, x_0 - a) \geq 0$
+and $\delta_2 = \min(\delta, b - x_0) \geq 0$. $x_0 \in [x_0 - \delta_1, x_0 + \delta_2]$
+and $\Delta \alpha$ on $[x_0 - \delta_1, x_0 + \delta_2]$ is
+\begin{align*}
+\alpha(x_0 + \delta_2) - \alpha(x_0 - \delta_1)
+&= (\alpha(x_0 + \delta_2) - \alpha(x_0)) + (\alpha(x_0) - \alpha(x_0 - \delta_1)) \\
+&< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+\end{align*}
+Therefore, $U(P, f, \alpha) < \epsilon$.
+$\Box$ \\
+
+\emph{Proof (Definition 6.2).}
+By Claim 1 and 2 and notice that $U(P, f, \alpha) \geq 0$ for any partition $P$,
+\begin{align*}
+\upint_a^b f d\alpha &= \inf U(P, f, \alpha) = 0, \\
+\lowint_a^b f d\alpha &= \sup L(P, f, \alpha) = 0,
+\end{align*}
+the inf and sup again being taken over all partitions.
+Hence $f \in \mathscr{R}(\alpha)$ and that $\int f d \alpha = 0$ by Definition 6.2.
+$\Box$ \\
+
+\emph{Proof (Theorem 6.5).}
+By Claim 1 and 2,
+$$0 \leq U(P, f, \alpha) - L(P, f, \alpha) < \epsilon.$$
+Hence $f \in \mathscr{R}(\alpha)$ by Theorem 6.5.
+Furthermore,
+$$\int f d \alpha = \lowint_a^b f d\alpha = \sup L(P, f, \alpha) = 0.$$
+$\Box$ \\
+
+\end{document}
