@@ -15,6 +15,79 @@
 
 
 
+\textbf{Exercise 8.1.}
+\emph{Define
+\begin{equation*}
+  f(x) =
+    \begin{cases}
+      e^{-\frac{1}{x^2}} & (x \neq 0), \\
+      0                  & (x = 0).
+    \end{cases}
+\end{equation*}
+Prove that $f$ has derivatives of all orders at $x = 0$,
+and that $f^{(n)}(0) = 0$ for $n = 1, 2, 3, ...$} \\
+
+\textbf{Claim 1.}
+\emph{$$\lim_{x \rightarrow 0} g(x) e^{-\frac{1}{x^2}} = 0$$
+for any rational function $g(x) \in \mathbb{R}(x)$.} \\
+
+\emph{Proof.}
+Write $g(x) = \frac{p(x)}{q(x)}$ for some $p(x), q(x) \in \mathbb{R}[x].$
+Write $q(x) = b_m x^m + b_{m - 1} x^{m - 1} + \cdots + b_0$.
+$q(x)$ is not identically zero, that is, there exists the unique coefficient
+of the least power of $x$ in $q(x)$ which is non-zero, say $b_M \neq 0$.
+Now write $g(x)$ as $g(x) = \frac{p(x)/x^M}{q(x)/x^M}$.
+The denominator of $g(x)$ tends to $b_M \neq 0$ as $x \rightarrow 0$.
+By the similar argument of Theorem 8.6(f)
+($\lim_{x \rightarrow \infty} x^n e^{-x} = 0$ for any $n \in \mathbb{Z}$),
+$$\frac{p(x)}{x^M} e^{-\frac{1}{x^2}} \rightarrow 0 \text{ as } x \rightarrow 0.$$
+Hence, $\lim_{x \rightarrow 0} g(x) e^{-\frac{1}{x^2}} = 0$
+for any $g(x) \in \mathbb{R}(x)$.
+$\Box$ \\
+
+\textbf{Claim 2.}
+\emph{Given any real $x \neq 0$
+$$f^{(n)}(x) = g_n(x) e^{-\frac{1}{x^2}}$$
+for some rational function $g(x) \in \mathbb{R}(x)$.} \\
+
+\emph{Proof.}
+Say $g_0(x) = 1 \in \mathbb{R}(x)$.
+Notice that $\mathbb{R}(x)$ is a field and
+$g'(x) \in \mathbb{R}(x)$ for any $g(x) \in \mathbb{R}(x)$.
+(Write $g(x) = \frac{p(x)}{q(x)}$ for some $p(x), q(x) \in \mathbb{R}[x]$.
+Notice that $p'(x) \in \mathbb{R}[x]$ for any $p(x) \in \mathbb{R}[x]$.)
+Now we prove by mathematical induction.
+For $n = 1$, we have
+\begin{align*}
+f'(x)
+&= g_0'(x) e^{-\frac{1}{x^2}}
++ g_0(x) \cdot \left( -\frac{1}{x^2} \right)' e^{-\frac{1}{x^2}} \\
+&= \left( g_0'(x) + g_0(x) \cdot \left( -\frac{1}{x^2} \right)' \right) \\
+&= g_1(x) e^{-\frac{1}{x^2}}
+\end{align*}
+where $g_1(x) = g_0'(x) + g_0(x) \cdot (-\frac{1}{x^2})' \in \mathbb{R}(x)$.
+Now assume $n = k$ holds.
+For $n = k + 1$, similar to $n = 1$,
+$$f^{(k + 1)}(x) = g_{k + 1}(x) e^{-\frac{1}{x^2}}$$
+where $g_{k + 1}(x) = g_k'(x) + g_k(x) \cdot (-\frac{1}{x^2})' \in \mathbb{R}(x)$.
+$\Box$ \\
+
+\emph{Proof of Exercise 8.1.}
+Prove by mathematical induction.
+For $n = 1$,
+$$f'(0) = \lim_{t \rightarrow 0} \frac{e^{- \frac{1}{t^2}} - 0}{t} = 0.$$
+(Use Claim 1.)
+Now assume $n = k$ holds.
+For $n = k + 1$,
+$$f^{(k + 1)}(0)
+= \lim_{t \rightarrow 0} \frac{f^{(k)}(t) - f^{(k)}(0)}{t}
+= \lim_{t \rightarrow 0} \frac{g_k(t) e^{- \frac{1}{t^2}} - 0}{t} = 0.$$
+(Use Claim 1 and 2.)
+Thus, $f^{(n)}(0) = 0$ for $n \in \mathbb{Z}^+$.
+$\Box$ \\
+
+
+
 \textbf{Exercise 8.6.}
 \emph{Suppose $f(x)f(y) = f(x + y)$ for all real $x$ and $y$. \\
 (a) Assuming that $f$ is differentiable and not zero, prove that
