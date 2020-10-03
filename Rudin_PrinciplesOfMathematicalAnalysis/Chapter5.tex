@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 5: Differentiation} \\\\
+
+
+
+\textbf{Exercise 5.1.}
+\emph{Let $f$ be defined for all real $x$, and suppose that
+$$|f(x) - f(y)| \leq (x - y)^2$$
+for all real $x$ and $y$. Prove that $f$ is a constant.} \\
+
+\emph{Proof.}
+$$\left| \frac{f(x) - f(y)}{x - y} \right| \leq |x - y|$$
+for $x \neq y$.
+Given any $y \in \mathbb{R}$,
+$|\frac{f(x) - f(y)}{x - y}| \rightarrow 0$ as $x \rightarrow y$,
+or $|f'(y)| = 0$.
+(Or using $\epsilon$-$\delta$ argument. Fix $y \in \mathbb{R}$.
+Given any $\epsilon > 0$, there exists $\delta = \epsilon > 0$ such that
+$$\left| \frac{f(x) - f(y)}{x - y} - 0 \right| \leq |x - y| < \delta = \epsilon$$
+whenever $|x - y| < \delta$. That is, $|f'(y)| = 0$.)
+So $f'(y) = 0$ for any $y \in \mathbb{R}$.
+By Theorem 5.11 (b), $f$ is a contstant.
+$\Box$ \\
+
+
+
+\textbf{Exercise 5.4.}
+\emph{If
+$$C_0 + \frac{C_1}{2} + \cdots + \frac{C_{n- 1}}{n} + \frac{C_n}{n + 1} = 0,$$
+where $C_0, ..., C_n$ are real contstants, prove that the equation
+$$C_0 + C_1 x + \cdots + C_{n - 1} x^{n - 1} + C_n x^n = 0$$
+has at least one real root between $0$ and $1$.} \\
+
+\emph{Proof.}
+Let
+$$g(x) = C_0 x + \frac{C_1}{2} x^2 + \cdots + \frac{C_{n- 1}}{n} x^n + \frac{C_n}{n + 1} x^{n + 1}
+\in \mathbb{R}[x].$$
+Then $g(0) = g(1) = 0$, and
+$g'(x) = C_0 + C_1 x + \cdots + C_{n - 1} x^{n - 1} + C_n x^n$.
+By the mean value theorem (Theorem 5.10), there exists a point $\xi \in (0, 1)$ at which
+$$g(1) - g(0) = g'(\xi)(1 - 0),$$
+or $g'(\xi) = 0.$ That is, there exists a real root $x = \xi$ between $0$ and $1$
+at which $C_0 + C_1 x + \cdots + C_{n - 1} x^{n - 1} + C_n x^n = 0$.
+$\Box$ \\
+
+\end{document}
