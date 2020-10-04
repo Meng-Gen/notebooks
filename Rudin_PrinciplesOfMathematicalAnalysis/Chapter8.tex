@@ -11,7 +11,12 @@
 
 
 
-% http://math.ucsd.edu/~lni/math140/HW140B_7_solutions.pdf
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\
+
+
+% References:
+% 1. http://math.ucsd.edu/~lni/math140/HW140B_7_solutions.pdf
 
 
 
@@ -195,8 +200,120 @@ prove that $f(x) = \frac{1}{2}x^2 + cx$ where $c$ is a constant}.
 \item[(5)]
 \emph{(USA 2002.) Suppose $f(x^2 - y^2) = x f(x) - y f(y)$ for all real $x$ and $y$.
 Assuming that $f$ is continuous,
-prove that $f(x) = cx$ where $c$ is a constant}.
+prove that $f(x) = cx$ where $c$ is a constant}. \\
 \end{enumerate}
+
+
+
+\textbf{Exercise 8.10.}
+\emph{Prove that $\sum \frac{1}{p}$ diverges; the sum extends over all primes.} \\
+
+There are many proofs of this result. We provide some of them. \\
+
+\emph{Proof (Due to hint).}
+Given $N$. \\
+\textbf{Claim 1.}
+\emph{Show that $\sum_{n \leq N} \frac{1}{n}
+\leq \prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}$.} \\
+\emph{Proof of Claim 1.}
+By the unique factorization theorem on $n \leq N$,
+$$\sum_{n \leq N} \frac{1}{n}
+\leq \prod_{p \leq N} \left( 1 + \frac{1}{p} + \frac{1}{p^2} + \cdots \right)
+= \prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}.$$
+$\Box$ \\
+
+By Claim 1 and the fact that $\sum \frac{1}{n}$ diverges,
+there are infinitely many primes. \\
+
+\textbf{Claim 2.}
+\emph{Show that
+$\prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}
+\leq \exp \left( \sum_{p \leq N} \frac{2}{p} \right).$} \\
+\emph{Proof of Claim 2.}
+By applying the inequality $(1 - x)^{-1} < e^{2x}$ where $x \in (0, \frac{1}{2}]$
+on any prime $p$,
+$$\left( 1 - \frac{1}{p} \right)^{-1} < \exp \left( \frac{2}{p} \right).$$
+Now multiplying the inequality over all primes $p \leq N$ and noticing that
+$\exp(x) \cdot \exp(y) = \exp(x + y)$, we have
+$$\prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}
+\leq \exp \left( \sum_{p \leq N} \frac{2}{p} \right).$$
+$\Box$ \\
+
+By Claim 1 and Claim 2,
+$$\sum_{n \leq N} \frac{1}{n}
+\leq \exp \left( \sum_{p \leq N} \frac{2}{p} \right).$$
+Since $\sum_{n \leq N} \frac{1}{n}$ diverges, the result holds.
+$\Box$ \\
+
+
+
+\emph{Proof (Due to Kenneth Ireland and Michael Rosen).}
+The proof in Kenneth Ireland and Michael Rosen,
+A Classical Introduction to Modern Number Theory, Second Edition (Theorem 3 in Chapter 2)
+does not use the inequality $(1 - x)^{-1} < e^{2x}$ ($x \in (0, \frac{1}{2}]$) directly.
+Instead, the authors take the logarithm on $(1 - p^{-1})^{-1}$ and estimate it.
+(So the length of proof is longer than the proof due to hint.)
+That is,
+\begin{align*}
+- \log(1 - p^{-1})
+&= \sum_{n = 1}^{\infty} \frac{p^{-n}}{n} \\
+&= \frac{1}{p} + \sum_{n = 2}^{\infty} \frac{p^{-n}}{n} \\
+&< \frac{1}{p} + \sum_{n = 2}^{\infty} p^{-n} \\
+&= \frac{1}{p} + \frac{p^{-2}}{1 - p^{-1}} \\
+&< \frac{1}{p} + 2 \cdot \frac{1}{p^2}.
+\end{align*}
+Now we sum over all primes $p \leq N$,
+$$\log \left( \prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1} \right)
+< \sum_{p \leq N} \frac{1}{p} + 2 \sum_{p \leq N} \frac{1}{p^2}.$$
+So
+$$\log \sum_{n \leq N} \frac{1}{n}
+< \sum_{p \leq N} \frac{1}{p} + 2 \sum_{p \leq N} \frac{1}{p^2}.$$
+Notice that $\sum \frac{1}{n}$ diverges and $\sum \frac{1}{p^2}$ converges
+(since $\sum \frac{1}{n^2}$ converges).
+Therefore, $\sum \frac{1}{p}$ diverges.
+$\Box$ \\
+
+
+
+\emph{Proof (Due to I. Niven).}
+It is an exercise in Kenneth Ireland and Michael Rosen,
+A Classical Introduction to Modern Number Theory, Second Edition. See Exercise 27 in Chapter 2. \\
+
+\textbf{Claim 1.}
+\emph{Show that ${\sum}' \frac{1}{n}$, the sum being over square free integers, diverges.} \\
+\emph{Proof of Claim 1.}
+For any positive integers $n$, we can write $n = a^2 b$ where $a \in \mathbb{Z}^+$ and
+$b$ is a square free integer.
+Given $N$,
+$$\sum_{n \leq N} \frac{1}{n}
+\leq \left(\sum_{a = 1}^{\infty} \frac{1}{a^2} \right)
+\left( {\sum_{b \leq N}}' \frac{1}{b} \right).$$
+Notices that $\sum_{a = 1}^{\infty} \frac{1}{a^2}$ converges.
+Since $\sum_{n \leq N} \frac{1}{n} \rightarrow \infty$ as $N \rightarrow \infty$,
+$\sum'_{b \leq N}\frac{1}{b} \rightarrow \infty$ as $N \rightarrow \infty$.
+$\Box$ \\
+
+\textbf{Claim 2.}
+\emph{Show that
+$\prod_{p \leq N} ( 1 + \frac{1}{p} ) \rightarrow \infty$ as $N \rightarrow \infty$.} \\
+\emph{Proof of Claim 2.}
+By the unique factorization theorem on $n \leq N$,
+$$\prod_{p \leq N} \left( 1 + \frac{1}{p} \right)
+\geq {\sum_{n \leq N}}' \frac{1}{n}.$$
+Since ${\sum_{n \leq N}}' \frac{1}{n} \rightarrow \infty$ as $N \rightarrow \infty$ (Claim 1),
+the conclusion is established.
+$\Box$ \\
+
+By applying the inequality $e^x > 1 + x$ on any prime $p$,
+$$\exp\left(\frac{1}{p}\right) > 1 + \frac{1}{p}.$$
+Now multiplying the inequality over all primes $p \leq N$ and noticing that
+$\exp(x) \cdot \exp(y) = \exp(x + y)$, we have
+$$\exp\left(\sum_{p \leq N} \frac{1}{p} \right)
+> \prod_{p \leq N} \left( 1 + \frac{1}{p} \right).$$
+By Claim 2,
+$\exp\left(\sum_{p \leq N} \frac{1}{p} \right) \rightarrow \infty$ as $N \rightarrow \infty$, or
+$\sum_{p \leq N} \frac{1}{p} \rightarrow \infty$ as $N \rightarrow \infty$.
+$\Box$ \\
 
 
 
