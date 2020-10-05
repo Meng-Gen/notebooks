@@ -19,6 +19,71 @@
 % References:
 % 1. http://math.ucsd.edu/~lni/math140/HW140B_7_solutions.pdf
 % 2. http://www.math.ucsd.edu/~ibejenar/teaching/2019/140B/HW1S.pdf
+% 3. https://minds.wisconsin.edu/bitstream/handle/1793/67009/rudin%20ch%208.pdf?sequence=4
+% 4. https://math.mit.edu/~gs/cse/websections/cse41.pdf
+
+
+
+\textbf{Supplement.} Fourier coefficients in Definition 8.9.
+\begin{enumerate}
+\item[(1)]
+Write $$f(x) = a_0 + \sum_{n = 1}^{N}(a_n \cos(nx) + b_n \sin(nx)),
+x \in \mathbb{R}$$
+(as the textbook Rudin, Principles of Mathematical Analysis, Third Edition).
+Then
+\begin{align*}
+a_0 &= \frac{1}{2 \pi} \int_{-\pi}^\pi f(x) dx. \\
+a_n &= \frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos(nx) dx, n \in \mathbb{Z}^+. \\
+b_n &= \frac{1}{\pi} \int_{-\pi}^\pi f(x) \sin(nx) dx, n \in \mathbb{Z}^+.
+\end{align*}
+
+\item[(2)]
+One might write in one different form,
+$$f(x) = \frac{a_0}{2} + \sum_{n = 1}^{N}(a_n \cos(nx) + b_n \sin(nx)),
+x \in \mathbb{R}.$$
+The only difference between the new one and the old one is $a_0$,
+so $a_0$ should be
+$$a_0 = \frac{1}{\pi} \int_{-\pi}^\pi f(x) dx.$$
+
+\item[(3)]
+Again, one might write in one different form,
+$$f(x) = \frac{a_0}{\sqrt{2}} + \sum_{n = 1}^{N}(a_n \cos(nx) + b_n \sin(nx)),
+x \in \mathbb{R}.$$ Similarly, $a_0$ should be
+$$a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \frac{f(x)}{\sqrt{2}} dx.$$
+
+\item[(4)]
+Recall $f(x) = \sum_{-N}^{N} c_n e^{inx}$ ($x \in \mathbb{R}$) where
+$$c_n = \frac{1}{2 \pi} \int_{-\pi}^\pi f(x) e^{-inx} dx.$$
+The relations among $a_n$, $b_n$ of this textbook and $c_n$ are
+\begin{align*}
+c_0 &= a_0 \\
+c_n &= \frac{1}{2} \left( a_n + i b_n \right), n \in \mathbb{Z}^+. \\
+\end{align*}
+\end{enumerate}
+
+
+
+\textbf{Supplement.} Parseval's theorem 8.16.
+\begin{enumerate}
+\item[(1)]
+Given $$f(x) = a_0 + \sum_{n = 1}^{\infty}(a_n \cos(nx) + b_n \sin(nx)),
+x \in \mathbb{R}.$$
+Then
+$$\frac{1}{\pi} \int_{-\pi}^\pi |f(x)|^2 dx
+= 2 a_0^2 + \sum_{n = 1}^{\infty}(a_n^2 + b_n^2).$$
+\item[(2)]
+Given $$f(x) = \frac{a_0}{2} + \sum_{n = 1}^{\infty}(a_n \cos(nx) + b_n \sin(nx)),
+x \in \mathbb{R}.$$
+Then
+$$\frac{1}{\pi} \int_{-\pi}^\pi |f(x)|^2 dx
+= \frac{a_0^2}{2} + \sum_{n = 1}^{\infty}(a_n^2 + b_n^2).$$
+\item[(3)]
+Given $$f(x) = \frac{a_0}{\sqrt{2}} + \sum_{n = 1}^{\infty}(a_n \cos(nx) + b_n \sin(nx)),
+x \in \mathbb{R}.$$
+Then
+$$\frac{1}{\pi} \int_{-\pi}^\pi |f(x)|^2 dx
+= a_0^2 + \sum_{n = 1}^{\infty}(a_n^2 + b_n^2).$$ \\
+\end{enumerate}
 
 
 
@@ -318,5 +383,148 @@ $\sum_{p \leq N} \frac{1}{p} \rightarrow \infty$ as $N \rightarrow \infty$.
 $\Box$ \\\\
 
 
+
+\textbf{Exercise 8.12.}
+\emph{Suppose $0 < \delta < \pi$,
+\begin{equation*}
+  f(x) =
+    \begin{cases}
+      1 & \text{ if } |x| \leq \delta, \\
+      0 & \text{ if } \delta < |x| \leq \pi,
+    \end{cases}
+\end{equation*}
+and $f(x + 2\pi) = f(x)$ for all $x$.}
+
+\emph{(a) Compute the Fourier coefficients of $f$.}
+
+\emph{(b) Compute that
+$$\sum_{n = 1}^{\infty} \frac{\sin(n\delta)}{n} = \frac{\pi - \delta}{2}
+\:\:\:\:\:\:\:\:
+(0 < \delta < \pi).$$}
+
+\emph{(c) Deduce from Parseval's theorem that
+$$\sum_{n = 1}^{\infty} \frac{(\sin(n\delta))^2}{n^2 \delta} = \frac{\pi - \delta}{2}.$$}
+
+\emph{(d) Let $\delta \rightarrow 0$ and prove that
+$$\int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
+= \frac{\pi}{2}.$$}
+
+\emph{(e) Put $\delta = \frac{\pi}{2}$ in (c). What do you get?} \\
+
+It is a centered pulse with shift $\delta$.
+The square pulse becomes centered around $x = 0$.
+Besides, $f(x)$ is an even function. \\
+
+\emph{Proof of (a).}
+\begin{align*}
+c_0
+&= \frac{1}{2 \pi} \int_{-\pi}^\pi f(x) dx \\
+&= \frac{1}{2 \pi} \int_{-\delta}^\delta dx \\
+&= \frac{\delta}{\pi}.
+\end{align*}
+For $0 \neq n \in \mathbb{Z}$,
+\begin{align*}
+c_n
+&= \frac{1}{2 \pi} \int_{-\pi}^\pi f(x) e^{-inx} dx \\
+&= \frac{1}{2 \pi} \int_{-\delta}^\delta e^{-inx} dx \\
+&= \frac{1}{2 \pi} \cdot \frac{2 \sin(n \delta)}{n} \\
+&= \frac{\sin(n \delta)}{n \pi}.
+\end{align*}
+$\Box$ \\
+
+\textbf{Supplement.} Find $a_n$ and $b_n$ of this textbook. \\
+By (a), $a_0 = \frac{\delta}{\pi}$,
+$a_n = \frac{2 \sin(n \delta)}{n \pi}$, $b_n = 0$ for $n \in \mathbb{Z}^+$.
+Surely, we can compute $a_n$ and $b_n$ ($n > 0$) directly.
+Since $f(x)$ is an even function, $b_n = 0$.
+And
+\begin{align*}
+a_n
+&= \frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos(nx) dx \\
+&= \frac{2}{\pi} \int_{0}^\delta \cos(nx) dx \\
+&= \frac{2 \sin(n \delta)}{n \pi}.
+\end{align*}
+
+\emph{Proof of (b).}
+Given $x = 0$, there are constants $\delta' = \delta > 0$ and $M = 1 < \infty$ such that
+$$|f(0 + t) - f(0)| \leq M|t|$$ for all $t \in (-\delta', \delta')$.
+By Theorem 8.14,
+$$\sum_{-\infty}^{\infty} c_n = f(0).$$
+Notice that $c_{-n} = c_n$ for $n \in \mathbb{Z}^+$, so
+\begin{align*}
+\frac{\delta}{\pi} + 2 \sum_{n = 1}^{\infty} \frac{\sin(n \delta)}{n \pi}
+&= 1 \\
+\sum_{n = 1}^{\infty} \frac{\sin(n \delta)}{n}
+&= \frac{\pi - \delta}{2}.
+\end{align*}
+$\Box$ \\
+
+We can also use the expression $a_n$ and $b_n$ to prove the same thing. \\
+
+\emph{Proof of (c).}
+Since $f(x)$ is a Riemann-integrable function with period $2 \pi$,
+by Parseval's theorem
+$$\frac{1}{2 \pi} \int_{-\pi}^\pi |f(x)|^2 dx = \sum_{-\infty}^{\infty} |c_n|^2.$$
+So
+$$\frac{\delta}{\pi}
+= \frac{\delta^2}{\pi^2} + 2 \sum_{n = 1}^{\infty} \frac{(\sin(n\delta))^2}{n^2 \pi^2}, $$
+or
+$$\sum_{n = 1}^{\infty} \frac{(\sin(n\delta))^2}{n^2 \delta}
+= \frac{\pi - \delta}{2}.$$
+$\Box$ \\
+
+\emph{Proof of (d).}
+TODO.
+$\Box$ \\
+
+\emph{Proof of (e).}
+$$\sum_{n = 1}^{\infty} \frac{1}{(2n - 1)^2} = \frac{\pi^2}{8}.$$
+Write
+\begin{align*}
+\sum_{n = 1}^{\infty} \frac{1}{n^2}
+&= \sum_{n = 1}^{\infty} \frac{1}{(2n - 1)^2} + \sum_{n = 1}^{\infty} \frac{1}{(2n)^2} \\
+&= \sum_{n = 1}^{\infty} \frac{1}{(2n - 1)^2} + \frac{1}{4} \sum_{n = 1}^{\infty} \frac{1}{n^2},
+\end{align*}
+so
+$$\sum_{n = 1}^{\infty} \frac{1}{n^2}
+= \frac{4}{3} \sum_{n = 1}^{\infty} \frac{1}{(2n - 1)^2}
+= \frac{\pi^2}{6}.$$
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 8.13.}
+\emph{Put $f(x) = x$ if $0 \leq x < 2 \pi$, and apply Parseval's theorem to conclude that
+$$\sum_{n = 1}^{\infty} \frac{1}{n^2} = \frac{\pi}{6}.$$}
+\emph{Proof.}
+\begin{align*}
+c_0
+&= \frac{1}{2 \pi} \int_{0}^{2 \pi} x dx \\
+&= \pi,
+\end{align*}
+For $n \neq 0$,
+\begin{align*}
+c_n
+&= \frac{1}{2 \pi} \int_{0}^{2 \pi} x e^{-inx} dx \\
+&= \frac{1}{2 \pi} \left(
+\left[ - \frac{1}{i n} x e^{-inx} \right]_{x = 0}^{x = 2 \pi}
+- \int_{0}^{2 \pi} - \frac{1}{i n} e^{-inx} dx \right) \\
+&= \frac{i}{n}.
+\end{align*}
+Since $f(x)$ is a Riemann-integrable function with period $2 \pi$,
+by Parseval's theorem
+$$\frac{1}{2 \pi} \int_{-\pi}^\pi |f(x)|^2 dx = \sum_{-\infty}^{\infty} |c_n|^2.$$
+So
+$$\frac{1}{2 \pi} \cdot \frac{(2 \pi)^3}{3}
+= \pi^2 + 2 \sum_{n = 1}^{\infty} \frac{1}{n^2}, $$
+or
+$$\sum_{n = 1}^{\infty} \frac{1}{n^2}
+= \frac{\pi^2}{6}.$$
+$\Box$ \\\\
+
+\textbf{Supplement.} \emph{
+Put $f(x) = x^k$ if $k \in \mathbb{Z}^+$ and $0 \leq x < 2 \pi$.
+Might show that
+$$\sum_{n = 1}^{\infty} \frac{1}{n^{2k}} = r_k \pi^{2k}, r_k \in \mathbb{Q}.$$}
 
 \end{document}
