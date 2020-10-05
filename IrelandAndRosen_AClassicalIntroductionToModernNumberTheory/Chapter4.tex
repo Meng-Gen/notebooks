@@ -272,4 +272,28 @@ Then $G$ has exactly $\phi(n)$ generators.} \\
 $U(\mathbb{Z}/p^l\mathbb{Z})$ has exactly $\phi(p^{l-1}(p - 1))$ generators if $p$ is odd.} \\\\
 
 
+
+\textbf{Exercise 4.22.}
+\emph{If $a$ has order $3$ modulo $p$, show that $1 + a$ has order $6$.} \\
+
+\emph{Proof.}
+Since $a$ has order $3$, $0 \equiv a^3 - 1 \equiv (a - 1)(a^2 + a + 1) \: (p)$.
+Since $p$ is a prime, $a - 1 \equiv 0 \: (p)$ or $a^2 + a + 1 \equiv 0 \: (p)$.
+$a$ cannot be $1$ since $a$ has order $3 \neq 1$.
+Therefore,
+$$a^2 + a + 1 \equiv 0 \: (p),$$
+or
+$1 + a \equiv -a^2 \equiv -a^{-1} \: (p)$.
+So
+\begin{align*}
+(1 + a)^6 &\equiv (-a^{-1})^6 \equiv 1 \: (p), \\
+1 + a     &\not\equiv 1 \: (p), \\
+(1 + a)^2 &\equiv a \not\equiv 1 \: (p), \\
+(1 + a)^3 &\equiv -1 \not\equiv 1 \: (p).
+\end{align*}
+Hence $1 + a$ has order $6$.
+$\Box$ \\\\
+
+
+
 \end{document}
