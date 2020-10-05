@@ -411,8 +411,7 @@ $$\int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
 
 \emph{(e) Put $\delta = \frac{\pi}{2}$ in (c). What do you get?} \\
 
-It is a centered pulse with shift $\delta$.
-The square pulse becomes centered around $x = 0$.
+It is a centered square pulse around $x = 0$ with shift $\delta$.
 Besides, $f(x)$ is an even function. \\
 
 \emph{Proof of (a).}
@@ -459,7 +458,9 @@ Notice that $c_{-n} = c_n$ for $n \in \mathbb{Z}^+$, so
 \end{align*}
 $\Box$ \\
 
-We can also use the expression $a_n$ and $b_n$ to prove the same thing. \\
+We can also use the expression $a_n$ and $b_n$ to prove the same thing.
+Besides, taking $\delta = 1$ yields
+$$\sum_{n = 1}^{\infty} \frac{\sin n}{n} = \frac{\pi - 1}{2}.$$ \\
 
 \emph{Proof of (c).}
 Since $f(x)$ is a Riemann-integrable function with period $2 \pi$,
@@ -472,6 +473,10 @@ or
 $$\sum_{n = 1}^{\infty} \frac{(\sin(n\delta))^2}{n^2 \delta}
 = \frac{\pi - \delta}{2}.$$
 $\Box$ \\
+
+Notices that
+$$\sum_{n = 1}^{\infty} \frac{(\sin n)^2}{n^2} = \frac{\pi - 1}{2}$$
+as $\delta = 1$. \\
 
 \emph{Proof of (d).}
 TODO.
