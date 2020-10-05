@@ -120,8 +120,103 @@ $\Box$ \\
 $$\frac{(5m)!(5n)!}{m! n! (3m + n)! (3n + m)!}$$
 is an integer for all non-negative integers $m$ and $n$.} \\
 
-Try to deduce the inequality $[5x] + [5y] \geq [x] + [y] + [3x + y] + [3y + x]$.
-
+Try to deduce the inequality $[5x] + [5y] \geq [x] + [y] + [3x + y] + [3y + x]$. \\\\
 \end{enumerate}
+
+
+
+\textbf{Exercise 2.7.}
+\emph{Deduce from Exercise 6 that $\text{ord}_p n! \leq \frac{n}{p - 1}$ and that
+$n!^{\frac{1}{n}} \leq \prod_{p|n!}p^{\frac{1}{p - 1}}$.} \\
+
+\emph{Proof.}
+\begin{align*}
+\text{ord}_p n!
+&= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots \\
+&\leq \frac{n}{p} + \frac{n}{p^2} + \frac{n}{p^3} + \cdots \\
+&= \frac{\frac{n}{p}}{1 - \frac{1}{p}} \\
+&= \frac{n}{p - 1}.
+\end{align*}
+Thus,
+$$n!
+= \prod_{p|n!} p^{\text{ord}_p n!}
+\leq \prod_{p|n!} p^{\frac{n}{p - 1}}
+= \left( \prod_{p|n!} p^{\frac{1}{p - 1}} \right)^n, $$
+or
+$$n!^{\frac{1}{n}} \leq \prod_{p|n!}p^{\frac{1}{p - 1}}.$$
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 2.8.}
+\emph{Use Exercise 7 to show that there are infinitely many primes.
+[Hint: $(n!)^2 \geq n^n$.]
+(This proof is due to Eckford Cohen.)} \\
+
+\textbf{Claim.}
+\emph{$(n!)^2 \geq n^n$.} \\
+\emph{Proof of Claim.}
+Write
+$(n!)^2 = \prod_{k=1}^n k \prod_{k=1}^n (n + 1 - k) = \prod_{k=1}^n k(n + 1 - k)$,
+and $n^n = \prod_{k=1}^n n$.
+It suffices to show that $k(n + 1 - k) \geq n$ for each $1 \leq k \leq n$.
+Notice that $k(n + 1 - k) - n = (n - k)(k - 1) \geq 0$ for $1 \leq k \leq n$.
+The inequality holds.
+$\Box$ \\
+
+The inequality can be written as $(n!)^{\frac{1}{n}} \geq \sqrt{n}$. \\
+
+\emph{Proof.}
+By Exercise 7 and Claim,
+$$\prod_{p|n!} p^{\frac{1}{p - 1}} \geq (n!)^{\frac{1}{n}} \geq \sqrt{n}.$$
+Assume that there are finitely many primes,
+the value $\prod_{p|n!} p^{\frac{1}{p - 1}}$ is a finite number
+whenever the value of $n$.
+However, $\sqrt{n} \rightarrow \infty$ as $n \rightarrow \infty$,
+which leads to a contradiction.
+Hence there are infinitely many primes.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 2.27.}
+\emph{Show that ${\sum}' \frac{1}{n}$, the sum being over square free integers, diverges.
+Conclude that $\prod_{p \leq N} ( 1 + \frac{1}{p} ) \rightarrow \infty$ as $N \rightarrow \infty$.
+Since $e^x > 1 + x$, conclude that $\sum_{p \leq N} \frac{1}{p} \rightarrow \infty$.
+(This proof is due to I. Niven.)} \\
+
+There are many proofs of $\sum_{p} \frac{1}{p}$ diverges. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+For any positive integers $n$, we can write $n = a^2 b$ where $a \in \mathbb{Z}^+$ and
+$b$ is a square free integer.
+Given $N$,
+$$\sum_{n \leq N} \frac{1}{n}
+\leq \left(\sum_{a = 1}^{\infty} \frac{1}{a^2} \right)
+\left( {\sum_{b \leq N}}' \frac{1}{b} \right).$$
+Notices that $\sum_{a = 1}^{\infty} \frac{1}{a^2}$ converges.
+Since $\sum_{n \leq N} \frac{1}{n} \rightarrow \infty$ as $N \rightarrow \infty$,
+$\sum'_{b \leq N}\frac{1}{b} \rightarrow \infty$ as $N \rightarrow \infty$.
+\item[(2)]
+By the unique factorization theorem on $n \leq N$,
+$$\prod_{p \leq N} \left( 1 + \frac{1}{p} \right)
+\geq {\sum_{n \leq N}}' \frac{1}{n}.$$
+Since ${\sum_{n \leq N}}' \frac{1}{n} \rightarrow \infty$ as $N \rightarrow \infty$,
+$\prod_{p \leq N} ( 1 + \frac{1}{p} ) \rightarrow \infty$ as $N \rightarrow \infty$.
+\item[(3)]
+By applying the inequality $e^x > 1 + x$ on any prime $p$,
+$$\exp\left(\frac{1}{p}\right) > 1 + \frac{1}{p}.$$
+Now multiplying the inequality over all primes $p \leq N$ and noticing that
+$\exp(x) \cdot \exp(y) = \exp(x + y)$, we have
+$$\exp\left(\sum_{p \leq N} \frac{1}{p} \right)
+> \prod_{p \leq N} \left( 1 + \frac{1}{p} \right).$$
+So
+$\exp\left(\sum_{p \leq N} \frac{1}{p} \right) \rightarrow \infty$ as $N \rightarrow \infty$, or
+$\sum_{p \leq N} \frac{1}{p} \rightarrow \infty$ as $N \rightarrow \infty$.
+$\Box$ \\\\
+\end{enumerate}
+
 
 \end{document}
