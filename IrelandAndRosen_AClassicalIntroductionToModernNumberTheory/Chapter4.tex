@@ -1,12 +1,30 @@
 \documentclass{article}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{mathrsfs}
 \parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 \begin{document}
 
 \textbf{\Large Chapter 4: The Structure of $U(\mathbb{Z}/n\mathbb{Z})$} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+% https://yutsumura.com/order-of-the-product-of-two-elements-in-an-abelian-group/
+% https://yutsumura.com/the-existence-of-an-element-in-an-abelian-group-of-order-the-least-common-multiple-of-two-elements/
 
 
 
@@ -39,7 +57,7 @@ $U(\mathbb{Z}/p\mathbb{Z})$ of order $q_i^{e_i}$ for all $i = 1, ..., t$.
 Pick $g = g_1 g_2 \cdots g_t \in \mathbb{Z}/p\mathbb{Z}$ generating a subgroup of
 $U(\mathbb{Z}/p\mathbb{Z})$ of order $q_1^{e_1} q_2^{e_2} \cdots q_t^{e^t} = p - 1$.
 That is, $\left \langle g \right \rangle = U(\mathbb{Z}/p\mathbb{Z})$.
-$\Box$ \\
+$\Box$ \\\\
 
 
 
@@ -75,7 +93,9 @@ $2^{26} \equiv 22 \: (29)$,
 $2^{27} \equiv 15 \: (29)$,
 $2^{28} \equiv 1 (29)$. Thus
 $U(\mathbb{Z}/29\mathbb{Z}) = \left \langle 2 \right \rangle$.
-$\Box$ \\
+$\Box$ \\\\
+
+
 
 \textbf{Exercise 4.11.} \emph{Prove that $1^k + 2^k + \cdots + (p-1)^k \equiv 0 \: (p)$
 if $p - 1 \nmid k$ and $-1 (p)$ if $p - 1 \mid k$.} \\
@@ -107,7 +127,7 @@ So $S \equiv 0 \: (p)$ by comparing the coefficient of $x^{p - 2}$ on the both s
 (Again $p = 2$ is impossible in this case.)
 \end{enumerate}
 
-$\Box$ \\
+$\Box$ \\\\
 
 
 
@@ -215,7 +235,7 @@ Find $\sum_{1 \leq p \leq {10}^8} S(p)$} (by using computer programs).
 \emph{Let $g$ be a primitive root modulo the odd prime $p$.
 Prove that $g^{\frac{p - 1}{2}} \equiv -1 \: (p)$.
 Deduce that if $g, h$ are primitive roots modulo the odd prime $p$
-then $g \cdot h$ cannot be a primitive root.} \\
+then $g \cdot h$ cannot be a primitive root.} \\\\
 \end{enumerate}
 
 
@@ -249,10 +269,7 @@ Then $G$ has exactly $\phi(n)$ generators.} \\
 
 \textbf{Corollary.}
 \emph{$U(\mathbb{Z}/p\mathbb{Z})$ has exactly $\phi(p - 1)$ generators.
-$U(\mathbb{Z}/p^l\mathbb{Z})$ has exactly $\phi(p^{l-1}(p - 1))$ generators if $p$ is odd.} \\
+$U(\mathbb{Z}/p^l\mathbb{Z})$ has exactly $\phi(p^{l-1}(p - 1))$ generators if $p$ is odd.} \\\\
 
-% https://yutsumura.com/order-of-the-product-of-two-elements-in-an-abelian-group/
-
-% https://yutsumura.com/the-existence-of-an-element-in-an-abelian-group-of-order-the-least-common-multiple-of-two-elements/
 
 \end{document}

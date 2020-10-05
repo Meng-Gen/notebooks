@@ -3,7 +3,16 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{mathrsfs}
 \parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 \begin{document}
 
@@ -18,7 +27,7 @@ $\frac{a}{b} + 1$ is a unit.} \\
 \emph{Proof.}
 $\frac{a}{b} \in \mathbb{Z}_{p}$ is not a unit iff $p \mid a$ and $p \nmid b$.
 Thus $p \nmid (a +b)$. That is, $\frac{a}{b} + 1 = \frac{a + b}{b} \in \mathbb{Z}_{p}$ is a unit.
-$\Box$ \\
+$\Box$ \\\\
 
 
 

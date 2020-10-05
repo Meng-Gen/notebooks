@@ -3,11 +3,25 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{mathrsfs}
 \parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 \begin{document}
 
 \textbf{\Large Chapter 1: The Real and Complex Number Systems} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
 
 
 
@@ -28,7 +42,7 @@ So $(-r) + (r + x) = (-r + r) + x = 0 + x = x \in \mathbb{Q}$, a contradiction. 
 Similarly, assume $rx \in \mathbb{Q}$. $r \in \mathbb{Q}$ with $r \neq 0$ implies that
 there exists an element $1/r \in \mathbb{Q}$ such that $r \cdot (1/r) = 1$.
 So $(1/r) \cdot (rx) = ((1/r) \cdot r) \cdot x = 1 \cdot x = x \in \mathbb{Q}$, a contradiction.
-$\Box$ \\
+$\Box$ \\\\
 
 
 
