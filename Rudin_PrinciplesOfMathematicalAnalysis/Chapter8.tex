@@ -66,8 +66,20 @@ $$c_n = \frac{1}{2 \pi} \int_{-\pi}^\pi f(x) e^{-inx} dx.$$
 The relations among $a_n$, $b_n$ of this textbook and $c_n$ are
 \begin{align*}
 c_0 &= a_0 \\
-c_n &= \frac{1}{2} \left( a_n + i b_n \right), n \in \mathbb{Z}^+. \\
+c_n &= \frac{1}{2} \left( a_n + i b_n \right), n \in \mathbb{Z}^+.
 \end{align*}
+
+\item[(5)]
+In some textbooks (Henryk Iwaniec, Topics in Classical Automorphic Forms),
+it is convenient to consider periodic functions $f$ of period $1$.
+Define $$e(n) = e^{2 \pi i x} = \cos(2 \pi x) + i \sin(2 \pi x).$$
+Any periodic and piecewise continuous function $f$ has the Fourier series representation
+$$f(x) = \sum_{-\infty}^{\infty} a_n e(nx)$$
+with coefficients given by
+$$a_n = \int_{0}^{1} f(x) e(-nx) dx.$$
+Here is one exercise for this representation.
+\emph{Show that the fractional part of $x$, $\{x\} = x - [x]$, is given by
+$$\{x\} = \frac{1}{2} - \sum_{n = 1}^{\infty} \frac{\sin(2 \pi nx)}{\pi n}.$$}
 \end{enumerate}
 
 
@@ -488,8 +500,66 @@ $$\sum_{n = 1}^{\infty} \frac{(\sin n)^2}{n^2} = \frac{\pi - 1}{2}$$
 as $\delta = 1$. \\
 
 \emph{Proof of (d).}
-TODO.
+Given $\epsilon > 0$.
+By Exercise 6.8,
+$$\int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx$$ exists.
+So there exists $b > 0$ such that
+$$\left| \int_{0}^{b} \left( \frac{\sin x}{x} \right)^2 dx
+- \int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
+\right| < \frac{\epsilon}{4}$$
+
+By Supplement in Chapter 6, there exists
+$\delta > 0$ such that for any partition
+$P_m = \{ 0, \frac{b}{m}, \frac{2b}{m}, ..., \frac{(m - 1)b}{m}, b\}$ of $[0, b]$
+with $\Vert P \Vert = \frac{b}{m} < \delta$, or $m > \frac{b}{\delta}$,
+we have
+\begin{align*}
+\left|
+\sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{(n \frac{b}{m})^2} \cdot \frac{b}{m}
+- \int_{0}^{b} \left( \frac{\sin x}{x} \right)^2 dx
+\right|
+&< \frac{\epsilon}{4}, \\
+\left|
+\sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
+- \int_{0}^{b} \left( \frac{\sin x}{x} \right)^2 dx
+\right| &< \frac{\epsilon}{4}.
+\end{align*}
+For simplicity we resize $\delta$ to $\delta < \pi$ to make $0 < \frac{b}{m} < \delta < \pi$.
+Besides, since $\sum_{n = 1}^{\infty} \frac{1}{n^2}$ converges,
+there exists $N > 0$ such that
+$$\left|
+\sum_{n = 1}^{\infty} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
+- \sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
+\right|
+< \frac{\epsilon}{4}$$
+whenever $m \geq N$.
+By (c),
+$$\left|
+\frac{\pi - \frac{b}{m}}{2}
+- \sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
+\right|
+< \frac{\epsilon}{4}$$
+whenever $m \geq N$.
+Last, it is easy to get
+$$\left|
+\frac{\pi}{2}
+- \frac{\pi - \frac{b}{m}}{2}
+\right|
+< \frac{\epsilon}{4}$$
+whenever $m > \frac{2b}{\epsilon}$.
+Now we have
+$$\left|
+\frac{\pi}{2}
+- \int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
+\right|
+< \epsilon
+$$
+whenever $m > \max(\frac{b}{\delta}, N, \frac{2b}{\epsilon})$.
+Since $\epsilon$ is arbitrary,
+$\int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
+= \frac{\pi}{2}$.
 $\Box$ \\
+
 
 \emph{Proof of (e).}
 $$\sum_{n = 1}^{\infty} \frac{1}{(2n - 1)^2} = \frac{\pi^2}{8}.$$

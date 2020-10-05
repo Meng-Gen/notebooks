@@ -37,18 +37,18 @@ if there exists $A \in \mathbb{R}$ having the property that
 for any $\epsilon > 0$, there exists $\delta > 0$ such that
 for any partition $P$ of $[a, b]$ with norm $\Vert P \Vert < \delta$
 and for any choice of $t_i \in [x_{i-1}, x_i]$,
-we have $|\sum_{i = 1}^{n} f(t_i) \Delta \alpha_i| < \epsilon$.} \\
+we have $|\sum_{i = 1}^{n} f(t_i) \Delta \alpha_i - A| < \epsilon$.} \\
 
 \textbf{Cliam.}
 \emph{$f \in \mathscr{R}$ in the sense of Definition 6.2
 implies that
 $f \in \mathscr{R}$ in the sense of this another definition.} \\
 \emph{Proof of Claim.}
-Let $I = \int f dx$, $M > 0$ be one upper bound of $|f|$ on $[a, b]$.
+Let $A = \int f dx$, $M > 0$ be one upper bound of $|f|$ on $[a, b]$.
 Given $\epsilon > 0$, there exists a partition
 $P_0 = \{a = x_0, x_1, ..., x_{N-1}, x_N = b \}$
 such that
-$U(P_0, f) \leq I + \frac{\epsilon}{2}$.
+$U(P_0, f) \leq A + \frac{\epsilon}{2}$.
 Let $\delta = \frac{\epsilon}{2MN} > 0$.
 Then for any partition $P$ with norm $\Vert P \Vert < \delta$, write
 $$U(P, f) = \sum_{i = 1}^{n} M_i \Delta x_i = S_1 + S_2,$$
@@ -57,12 +57,12 @@ $S_1$ is the sum of terms arising from those subintervals of $P$ containing no p
 $S_2$ is the sum of the remaining terms.
 Then
 \begin{align*}
-S_1 &\leq U(P_0, f) < I + \frac{\epsilon}{2}, \\
+S_1 &\leq U(P_0, f) < A + \frac{\epsilon}{2}, \\
 S_2 &\leq NM \Vert P \Vert < NM \delta < \frac{\epsilon}{2}.
 \end{align*}
-Therefore, $U(P, f) < I + \epsilon$.
-Similarly, $L(P, f) > I - \epsilon$ whenever $\Vert P \Vert < \delta'$.
-Hence, $|\sum_{i = 1}^{n} f(t_i) \Delta x_i - I| < \epsilon$
+Therefore, $U(P, f) < A + \epsilon$.
+Similarly, $L(P, f) > A - \epsilon$ whenever $\Vert P \Vert < \delta'$.
+Hence, $|\sum_{i = 1}^{n} f(t_i) \Delta x_i - A| < \epsilon$
 whenever $\Vert P \Vert < \min(\delta, \delta')$.
 (Copy Apostol's hint and ensure $M > 0$. $M$ in Apostol's hint might be zero if $f = 0$.)
 $\Box$ \\
