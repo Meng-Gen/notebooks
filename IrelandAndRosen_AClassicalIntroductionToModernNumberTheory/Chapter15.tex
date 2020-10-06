@@ -113,10 +113,32 @@ Note that $T_k \in \mathbb{Z}$ for all $k$ by Exercise 3.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\emph{$$\cot x = \sum_{k = 0}^{\infty} \frac{(-1)^k 2^{2k} B_{2k}}{(2k)!}x^{2k - 1}.$$}
+By the equation (6) on page 232,
+$$x \cot x = 1 + \sum_{k=2}^{\infty} B_k \frac{(2ix)^k}{k!}.$$
+Since $B_k = 0$ for $k > 1$ and odd,
+$$x \cot x
+= 1 + \sum_{k=1}^{\infty} B_{2k} \frac{(2ix)^{2k}}{(2k)!}
+= 1 + \sum_{k=1}^{\infty} \frac{(-1)^k 2^{2k}B_{2k}}{(2k)!} x^{2k},$$
+or
+$$\cot x
+= \frac{1}{x} + \sum_{k=1}^{\infty} \frac{(-1)^k 2^{2k}B_{2k}}{(2k)!} x^{2k-1}.$$
+Combine the first term $\frac{1}{x}$ into the summation,
+$$\cot x = \sum_{k=0}^{\infty} \frac{(-1)^k 2^{2k}B_{2k}}{(2k)!} x^{2k-1}.$$
 \item[(2)]
 Note that $\tan x = \cot x - 2 \cot(2x)$.
+By (1),
+\begin{align*}
+\tan x
+&= \sum_{k=0}^{\infty} \frac{(-1)^k 2^{2k}B_{2k}}{(2k)!} x^{2k-1}
+- 2 \sum_{k=0}^{\infty} \frac{(-1)^k 2^{2k}B_{2k}}{(2k)!} (2x)^{2k-1} \\
+&= \sum_{k=0}^{\infty} \frac{(-1)^k (1 - 2^{2k}) 2^{2k} B_{2k}}{(2k)!} x^{2k-1} \\
+&= \sum_{k=1}^{\infty} \frac{(-1)^k (1 - 2^{2k}) 2^{2k} B_{2k}}{(2k)!} x^{2k-1}.
+\end{align*}
+Write $T_k = (-1)^{k-1} (2^{2k} - 1) 2^{2k} \frac{B_{2k}}{2k}$.
+Therefore, $\tan x = \sum_{k=1}^{\infty} T_k \frac{x^{2k - 1}}{(2k - 1)!}$.
 \end{enumerate}
+By Exercise 3, $(2^{2k} - 1) 2^{2k} \frac{B_{2k}}{2k} \in \mathbb{Z}$,
+or $T_k \in \mathbb{Z}$ for all $k$.
 $\Box$ \\\\
 
 
