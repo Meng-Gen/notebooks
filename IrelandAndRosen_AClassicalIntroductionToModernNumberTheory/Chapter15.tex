@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 15: Bernoulli Numbers} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{Supplement.}
+\emph{Prove that $$x \cot x = 1 - 2 \sum_{n=1}^{\infty} \frac{x^2}{n^2 \pi^2 - x^2}.$$} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $$\cot x
+= \frac{1}{2^n} \sum_{k=0}^{2^{n} - 1} \cot \frac{x + k\pi}{2^n}$$
+for all integers $n \geq 1$.}
+Notice that
+\begin{align*}
+\cot(x + \pi) &= \cot x, \\
+\cot\left( x + \frac{\pi}{2} \right) &= -\tan x, \\
+\cot x &= \frac{1}{2} \left( \cot\frac{x}{2} - \tan\frac{x}{2} \right).
+\end{align*}
+Use mathematical induction.
+The case $n = 1$ is the same as the note.
+Assume the case $n = m$ holds.
+For $n = m+1$,
+\begin{align*}
+\sum_{k=0}^{2^{m+1} - 1} \cot \frac{x + k\pi}{2^{m+1}}
+&= \sum_{k=0}^{2^{m} - 1} \cot \frac{x + k\pi}{2^{m+1}}
++ \sum_{k=2^{m}}^{2^{m+1} - 1} \cot \frac{x + k\pi}{2^{m+1}} \\
+&= \sum_{k=0}^{2^{m} - 1} \cot \frac{x + k\pi}{2^{m+1}}
++ \sum_{k=0}^{2^{m} - 1} \cot \frac{x + (2^{m} + k)\pi}{2^{m+1}} \\
+&= \sum_{k=0}^{2^{m} - 1} \cot \frac{x + k\pi}{2^{m+1}}
++ \sum_{k=0}^{2^{m} - 1} \cot \left( \frac{x + k\pi}{2^{m+1}} + \frac{\pi}{2} \right) \\
+&= \sum_{k=0}^{2^{m} - 1}
+\left( \cot \frac{x + k\pi}{2^{m+1}} - \tan \frac{x + k\pi}{2^{m+1}} \right) \\
+&= \sum_{k=0}^{2^{m} - 1}
+\left( \cot \frac{x + k\pi}{2^{m+1}} - \tan \frac{x + k\pi}{2^{m+1}} \right) \\
+&= 2 \sum_{k=0}^{2^{m} - 1} \cot \frac{x + k\pi}{2^{m}}.
+\end{align*}
+Therefore,
+\begin{align*}
+\frac{1}{2^{m+1}} \sum_{k=0}^{2^{m+1} - 1} \cot \frac{x + k\pi}{2^{m+1}}
+&= \frac{1}{2^{m+1}} \cdot 2 \sum_{k=0}^{2^{m} - 1} \cot \frac{x + k\pi}{2^{m}} \\
+&= \frac{1}{2^{m}} \sum_{k=0}^{2^{m} - 1} \cot \frac{x + k\pi}{2^{m}} \\
+&= \cot x.
+\end{align*}
+\item[(2)]
+By rearranging the index of summation of the identity in (1), we have
+$$x \cot x
+= \frac{x}{2^n} \cot \frac{x}{2^n} - \frac{x}{2^n} \tan \frac{x}{2^n}
++ \sum_{k=1}^{2^{n-1} - 1} \frac{x}{2^n}
+\left( \cot \frac{x + k\pi}{2^n} + \cot \frac{x - k\pi}{2^n} \right)$$
+for all integers $n \geq 1$.
+\item[(3)]
+Notice that $\lim_{x \rightarrow 0} x \cot x = 1$.
+Let $n \rightarrow \infty$, the result is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\end{document}
