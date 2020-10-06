@@ -25,10 +25,17 @@
 
 
 
-\textbf{Supplement.}
+% https://dms.umontreal.ca/~mlalin/bernoulli.pdf
+
+
+
+\textbf{Supplement.} Exercise 6.73 in the book
+Graham, Knuth and Patashnik, Concrete Mathematics, Second Edition. \\
+
 \emph{Prove that $$x \cot x = 1 - 2 \sum_{n=1}^{\infty} \frac{x^2}{n^2 \pi^2 - x^2}.$$} \\
 
 \emph{Proof.}
+
 \begin{enumerate}
 \item[(1)]
 \emph{Show that $$\cot x
@@ -93,6 +100,23 @@ $$\frac{|B_{2m+2}|}{|B_{2m}|}
 = \frac{13230}{\pi^8}
 > 1,$$
 or $|B_{2m+2}| > |B_{2m}|$.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 15.8.}
+\emph{Consider the power series expansion of $\tan x$ about the origin;
+$$\sum_{k=1}^{\infty} T_k \frac{x^{2k - 1}}{(2k - 1)!}.$$
+Show $$T_k = (-1)^{k-1} \frac{B_{2k}}{2k} (2^{2k} - 1) 2^{2k}.$$
+Note that $T_k \in \mathbb{Z}$ for all $k$ by Exercise 3.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$$\cot x = \sum_{k = 0}^{\infty} \frac{(-1)^k 2^{2k} B_{2k}}{(2k)!}x^{2k - 1}.$$}
+\item[(2)]
+Note that $\tan x = \cot x - 2 \cot(2x)$.
+\end{enumerate}
 $\Box$ \\\\
 
 
