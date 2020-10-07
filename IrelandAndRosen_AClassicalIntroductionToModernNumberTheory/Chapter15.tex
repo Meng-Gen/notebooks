@@ -26,15 +26,15 @@
 
 
 % https://dms.umontreal.ca/~mlalin/bernoulli.pdf
+% http://cds.iisc.ac.in/faculty/amohanty/SE288/bn.pdf
 
 
 
-\textbf{Supplement.} Exercise 6.73 in the book
-Graham, Knuth and Patashnik, Concrete Mathematics, Second Edition. \\
-
+\textbf{Supplement.} Equation (4) on page 231.
 \emph{Prove that $$x \cot x = 1 - 2 \sum_{n=1}^{\infty} \frac{x^2}{n^2 \pi^2 - x^2}.$$} \\
 
-\emph{Proof.}
+\emph{Proof (Exercise 6.73 in the book Graham, Knuth and Patashnik,
+Concrete Mathematics, Second Edition).}
 
 \begin{enumerate}
 \item[(1)]
@@ -82,6 +82,101 @@ for all integers $n \geq 1$.
 \item[(3)]
 Notice that $\lim_{x \rightarrow 0} x \cot x = 1$.
 Let $n \rightarrow \infty$, the result is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 15.1.}
+\emph{Using the definition of the Bernoulli number show
+$B_{10} = \frac{5}{66}$ and $B_{12} = -\frac{691}{2730}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+It is known that
+$B_1 = -\frac{1}{2}$,
+$B_2 = \frac{1}{6}$,
+$B_4 = -\frac{1}{30}$,
+$B_6 = \frac{1}{42}$,
+and $B_m = 0$ for $m > 1$ and odd.
+\item[(2)]
+Recall the implicit recurrence relation,
+$$\sum_{k = 0}^{m} {m+1 \choose k} B_k = [m = 0],$$
+where $[m = 0]$ is the Iverson brackets which is equal to
+the Kronecker delta $\delta_{m0}$.
+\item[(3)]
+So
+\begin{align*}
+0 &= 1 + 9 B_1 + 36 B_2 + 84 B_3 + 126 B_4 + 126 B_5 + 84 B_6 + 36 B_7 + 9 B_8, \\
+0 &= 1 + 9 B_1 + 36 B_2 + 126 B_4 + 84 B_6 + 9 B_8, \\
+0 &= 1 + 9 \left( -\frac{1}{2} \right)
++ 36 \left( \frac{1}{6} \right)
++ 126 \left( -\frac{1}{30} \right)
++ 84 \left( \frac{1}{42} \right)
++ 9 B_8, \\
+0 &= \frac{3}{10} + 9B_8,
+\end{align*}
+Thus $B_8 = -\frac{1}{30}$. \\
+\item[(4)]
+Again,
+\begin{align*}
+0 =& 1 + 11 B_1 + 55 B_2 + 165 B_3 + 330 B_4 + 462 B_5 + 462 B_6 + \\
+   & 330 B_7 + 165 B_8 + 55 B_9 + 11 B_{10}, \\
+0 =& 1 + 11 B_1 + 55 B_2 + 330 B_4 + 462 B_6 + 165 B_8 + 11 B_{10}, \\
+0 =& 1 + 11 \left( -\frac{1}{2} \right) +
+     55 \left( \frac{1}{6} \right) +
+     330 \left( -\frac{1}{30} \right) +
+     462 \left( \frac{1}{42} \right) + \\
+   & 165 \left( -\frac{1}{30} \right) +
+     11 B_{10}, \\
+0 =& -\frac{5}{6} + 11 B_{10},
+\end{align*}
+Thus $B_{10} = \frac{5}{66}$. \\
+\item[(4)]
+Finally,
+\begin{align*}
+0 =& 1 + 13 B_1 + 78 B_2 + 286 B_3 + 715 B_4 + 1287 B_5 + 1716 B_6 + \\
+   & 1716 B_7 + 1287 B_8 + 715 B_9 + 286 B_{10} + 78 B_{11} + 13 B_{12}, \\
+0 =& 1 + 13 B_1 + 78 B_2 + 715 B_4 + 1716 B_6 + 1287 B_8 + 286 B_{10} + 13 B_{12}, \\
+0 =& 1 + 13 \left( -\frac{1}{2} \right) +
+     78 \left( \frac{1}{6} \right) +
+     715 \left( -\frac{1}{30} \right) +
+     1716 \left( \frac{1}{42} \right) + \\
+   & 1287 \left( -\frac{1}{30} \right) +
+     286 \left( \frac{5}{66} \right) +
+     13 B_{12}, \\
+0 =& \frac{691}{210} + 13 B_{12},
+\end{align*}
+Thus $B_{12} = -\frac{691}{2730}$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+\textbf{Exercise 15.2.}
+\emph{If $a \in \mathbb{Z}$,
+show $a(a^m - 1)B_m \in \mathbb{Z}$ for all $m > 0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)] \emph{Trivial cases.}
+If $m = 1$, $a(a - 1) B_1 = -\frac{1}{2} a(a - 1) \in \mathbb{Z}$ for any $a \in \mathbb{Z}$.
+For $m > 1$ and odd, $B_m = 0$ or $a(a^m - 1)B_m = 0 \in \mathbb{Z}$ (Proposition 15.1.1). \\
+\item[(2)] \emph{Consider that $m > 1$ and even.}
+By Theorem 3,
+$$B_{2m} + \sum_{p-1 \mid 2m} \frac{1}{p} \in \mathbb{Z}$$
+where the sum is over all primes $p$ such that $p-1 \mid 2m$.
+So it suffices to show
+$$a(a^{2m} - 1) \sum_{p-1 \mid 2m} \frac{1}{p} \in \mathbb{Z}, $$
+or
+$$a(a^{2m} - 1) \frac{1}{p} \in \mathbb{Z}$$
+for any $a \in \mathbb{Z}$ and any prime $p$ such that $p-1 \mid 2m$.
+\item[(3)] \emph{Consider all possible $a$.}
+If $p \mid a$, it is trivial.
+If $p \nmid a$, $a^{p - 1} \equiv 1 \: (p)$ by Fermat's Little Theorem,
+or $a^{2m} \equiv 1 \: (p)$ by $p-1 \mid 2m$.
+In any cases, $a(a^{2m} - 1)\frac{1}{p} \in \mathbb{Z}$.
 \end{enumerate}
 $\Box$ \\\\
 
