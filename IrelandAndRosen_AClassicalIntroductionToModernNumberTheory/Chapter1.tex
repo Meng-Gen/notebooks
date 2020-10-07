@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 1: Unique Factorization} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+
+\textbf{Exercise 1.31.}
+\emph{Show that $2$ is divided by $(1+i)^2 \in \mathbb{Z}[i]$.} \\
+
+The ring morphism $\mathbb{Z} \rightarrow \mathbb{Z}[i]$
+corresponds to a map of schemes
+$f: \text{Spec}(\mathbb{Z}[i]) \rightarrow \text{Spec}(\mathbb{Z})$.
+Suppose $(p)$ is a prime ideal of $\mathbb{Z}$.
+Might find the points of $f^{-1}(p) \in \text{Spec}(\mathbb{Z}[i])$. \\
+
+\emph{Proof.}
+$(1+i)^2 = 2i \in \mathbb{Z}[i]$. Thus $2 \mid (1+i)^2 \in \mathbb{Z}[i]$.
+$\Box$ \\\\
+
+
+
+\end{document}
