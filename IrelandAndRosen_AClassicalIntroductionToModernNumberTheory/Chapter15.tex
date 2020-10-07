@@ -238,4 +238,83 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 15.13.}
+\emph{Show $B_m(x+1) - B_m(x) = mx^{m-1}$.} \\
+
+\emph{Proof.}
+Let $f(t, x) = \frac{te^{tx}}{e^t - 1}$.
+\begin{enumerate}
+\item[(1)]
+$$f(t, x+1) - f(t, x)
+= \frac{te^{t(x+1)}}{e^t - 1} - \frac{te^{tx}}{e^t - 1}
+= te^{tx}.$$
+Expand $te^{tx}$ in a power series about the origin as follows
+\begin{align*}
+te^{tx}
+&= t \sum_{m=0}^{\infty} x^m \frac{t^m}{m!} \\
+&= \sum_{m=0}^{\infty} x^m \frac{t^{m+1}}{m!} \\
+&= \sum_{m=1}^{\infty} x^{m-1} \frac{t^m}{(m-1)!} \\
+&= \sum_{m=1}^{\infty} mx^{m-1} \frac{t^m}{m!} \\
+&= \sum_{m=0}^{\infty} mx^{m-1} \frac{t^m}{m!}.
+\end{align*}
+So,
+$$f(t, x+1) - f(t, x) = \sum_{m=0}^{\infty} mx^{m-1} \frac{t^m}{m!}.$$
+\item[(2)]
+By Exercise 15.12,
+\begin{align*}
+f(t, x+1) - f(t, x)
+&= \sum_{m=0}^{\infty} B_m(x+1) \frac{t^m}{m!}
+- \sum_{m=0}^{\infty} B_m(x) \frac{t^m}{m!} \\
+&= \sum_{m=0}^{\infty} (B_m(x+1) - B_m(x)) \frac{t^m}{m!}.
+\end{align*}
+\end{enumerate}
+By (1)(2), comparing coefficients of $t^m$ yields
+$$mx^{m-1} = B_m(x+1) - B_m(x).$$
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 15.14.}
+\emph{Use Exercise 13 to give a new proof of Theorem 1:
+$$S_m(n) = \frac{1}{m+1}(B_{m+1}(n) - B_{m+1}).$$}
+
+\emph{Proof.}
+By Exercise 13,
+$$B_{m+1}(k) - B_{m+1}(k-1) = (m+1)(k-1)^m$$
+for any $k$.
+So,
+\begin{align*}
+\sum_{k=1}^{n} (B_{m+1}(k) - B_{m+1}(k-1))
+&= \sum_{k=1}^{n} (m+1)(k-1)^m, \\
+B_{m+1}(n) - B_{m+1}(0)
+&= (m+1)S_m(n).
+\end{align*}
+Note that $B_{m+1}(0) = B_{m+1}$ for any $m$.
+So Theorem 1 is established by a new proof.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 15.16.}
+\emph{For $n \geq 1$, show $\frac{d}{dx}B_n(x) = nB_{n-1}(x)$.} \\
+
+\emph{Proof.}
+For $n \geq 1$,
+$$\frac{d}{dx}B_n(x)
+= \sum_{k=0}^{n}(n - k) {n \choose k} B_k x^{n - k - 1}
+= \sum_{k=0}^{n-1}(n - k) {n \choose k} B_k x^{n - k - 1}.$$
+Note that
+$$(n-k) {n \choose k} = n {n-1 \choose k}.$$
+So
+\begin{align*}
+\frac{d}{dx}B_n(x)
+&= \sum_{k=0}^{n-1} n {n-1 \choose k} B_k x^{n - k - 1} \\
+&= n \sum_{k=0}^{n-1} {n-1 \choose k} B_k x^{n - k - 1} \\
+&= n B_{n-1}(x).
+\end{align*}
+
+$\Box$ \\\\
+
+
+
 \end{document}
