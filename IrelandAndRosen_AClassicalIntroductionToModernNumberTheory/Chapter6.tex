@@ -74,16 +74,18 @@ So we need to do a trick to absort $b_0$ into $\alpha$,
 and that is why we come out multipling $\alpha$ by an non-zero integer
 $b_0 = d \cdot a_0$. \\
 
-Let $n = b_0 = d \cdot a_0 \neq 0$ and multiply $n^{m-1}$ on the both sides.
+Multiply $b_0^{m-1}$ on the both sides.
 \begin{align*}
-n^m \alpha^m + n^{m-1} b_1 \alpha^{m-1} + n^{m-1} b_2 \alpha^{m-2} + \cdots + n^{m-1} b_m &= 0. \\
-(n\alpha)^m + b_1 (n\alpha)^{m-1} + n b_2 (n\alpha)^{m-1} + \cdots + n^{m-1} b_m &= 0.
+b_0^m \alpha^m + b_0^{m-1} b_1 \alpha^{m-1} + b_0^{m-1} b_2 \alpha^{m-2}
++ \cdots + b_0^{m-1} b_m &= 0. \\
+(b_0\alpha)^m + b_1 (b_0\alpha)^{m-1} + b_0 b_2 (n\alpha)^{m-1}
++ \cdots + b_0^{m-1} b_m &= 0.
 \end{align*}
 That is, the monic polynomial
 $g(x) = x^m + c_1 x^{m-1} + c_2 x^{m-2} + \cdots + c_m \in \mathbb{Z}[x]$
-(with $c_i = n^{i - 1} b_i$ for $i = 1, 2, ..., m$)
-has a root $x = n\alpha$, i.e.,
-$n\alpha$ is an algebraic integer for some integer $n$.
+(with $c_i = b_0^{i - 1} b_i$ for $i = 1, 2, ..., m$)
+has a root $x = b_0\alpha$, i.e.,
+$b_0\alpha$ is an algebraic integer for some integer $b_0$.
 $\Box$ \\\\
 
 
