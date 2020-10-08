@@ -232,8 +232,39 @@ By (1),
 Write $T_k = (-1)^{k-1} (2^{2k} - 1) 2^{2k} \frac{B_{2k}}{2k}$.
 Therefore, $\tan x = \sum_{k=1}^{\infty} T_k \frac{x^{2k - 1}}{(2k - 1)!}$.
 \end{enumerate}
-By Exercise 3, $(2^{2k} - 1) 2^{2k} \frac{B_{2k}}{2k} \in \mathbb{Z}$,
+By Exercise 15.3, $(2^{2k} - 1) 2^{2k} \frac{B_{2k}}{2k} \in \mathbb{Z}$,
 or $T_k \in \mathbb{Z}$ for all $k$.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 15.12.}
+\emph{Recall the definition of the Bernoulli polynomials;
+$$B_m(x) = \sum_{k=0}^{m} {m \choose k} B_k x^{m-k}.$$
+Show that
+$$\frac{te^{tx}}{e^t - 1} = \sum_{m=0}^{\infty} B_m(x) \frac{t^m}{m!}.$$} \\
+
+\emph{Proof.}
+By Lemma 1,
+$$\frac{t}{e^t - 1} = \sum_{m=0}^{\infty} B_m \frac{t^m}{m!}.$$
+So
+$$
+\frac{te^{tx}}{e^t - 1}
+=
+\left( \sum_{m=0}^{\infty} B_m \frac{t^m}{m!} \right)
+\left( \sum_{m=0}^{\infty} x^m \frac{t^m}{m!} \right).$$
+Write $\frac{te^{tx}}{e^t - 1} = \sum_{m=0}^{\infty} b_m(x) \frac{t^m}{m!}$
+and we want to check if $b_m(x) = B_m(x)$ or not.
+The result is established if $b_m(x) = B_m(x)$ holds.
+Equating coefficients of $t^m$ gives
+\begin{align*}
+\frac{b_m(x)}{m!}
+&= \sum_{k=0}^{m} \frac{B_k x^{m-k}}{k!(m-k)!}, \\
+b_m(x)
+&= \sum_{k=0}^{m} \frac{m!}{k!(m-k)!} B_k x^{m-k} \\
+&= \sum_{k=0}^{m} {m \choose k} B_k x^{m-k} \\
+&= B_m(x).
+\end{align*}
 $\Box$ \\\\
 
 
