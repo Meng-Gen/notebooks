@@ -312,7 +312,50 @@ So
 &= n \sum_{k=0}^{n-1} {n-1 \choose k} B_k x^{n - k - 1} \\
 &= n B_{n-1}(x).
 \end{align*}
+$\Box$ \\\\
 
+
+
+\textbf{Exercise 15.21.}
+\emph{Show $2^{n-1} B_n(\frac{1}{2}) = (1 - 2^{n-1})B_n$.} \\
+
+The original identity $B_n(\frac{1}{2}) = (1 - 2^{n-1})B_n$ is wrong.
+For $n = 2$, $B_2(x) = x^2 - x + \frac{1}{6}$ and thus
+$-\frac{1}{12} = B_2(\frac{1}{2}) \neq (1 - 2^{2-1})B_2 = -\frac{1}{6}$. \\
+
+\emph{Proof.}
+Taking $F = 2$ in Exercise 19,
+\begin{align*}
+B_n(2x)
+&= 2^{n-1} \sum_{a = 0}^{1} B_n\left( x + \frac{a}{2} \right) \\
+&= 2^{n-1} B_n(x) + 2^{n-1} B_n\left( x + \frac{1}{2} \right).
+\end{align*}
+Let $x = 0$,
+$$B_n(0) = 2^{n-1} B_n(0) + 2^{n-1} B_n\left( \frac{1}{2} \right), $$
+So
+$$2^{n-1} B_n\left( \frac{1}{2} \right)
+= (1 - 2^{n-1}) B_n(0)
+= (1 - 2^{n-1}) B_n.$$
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 15.22.}
+\emph{More generally, show that
+$(1 - F^{n-1})B_n = F^{n-1} \sum_{a=1}^{F-1} B_n(\frac{a}{F})$.} \\
+
+The original identity $(1 - F^{n-1})B_n = \sum_{a=1}^{F-1} B_n(\frac{a}{F})$
+is wrong again. \\
+
+\emph{Proof.}
+Let $x = 0$ in Exercise 19,
+$$B_n(0)
+= F^{n-1} \sum_{a=0}^{F-1} B_n\left( \frac{a}{F} \right)
+= F^{n-1} B_n(0) + F^{n-1} \sum_{a=1}^{F-1} B_n\left( \frac{a}{F} \right), $$
+So
+$$F^{n-1} \sum_{a=1}^{F-1} B_n\left( \frac{a}{F} \right)
+= (1 - F^{n-1}) B_n(0)
+= (1 - F^{n-1}) B_n.$$
 $\Box$ \\\\
 
 
