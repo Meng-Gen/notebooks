@@ -325,6 +325,29 @@ So Theorem 1 is established by a new proof.
 $\Box$ \\\\
 
 
+\textbf{Exercise 15.15.}
+\emph{Suppose $f(x) = \sum_{k=0}^{n} a_k x^k$
+be a polynomial with complex coefficients.
+Use Exercise 13 to find a polynomial $F(x)$ such that
+$F(x+1) - F(x) = f(x)$.} \\
+
+\emph{Proof.}
+By Exercise 15.13,
+$$x^k = \frac{1}{k+1}(B_{k+1}(x+1) - B_{k+1}(x))$$
+for $k \geq 0$.
+Thus,
+\begin{align*}
+f(x)
+&= \sum_{k=0}^{n} a_k x^k \\
+&= \sum_{k=0}^{n} a_k \cdot \frac{1}{k+1} (B_{k+1}(x+1) - B_{k+1}(x)) \\
+&= \sum_{k=0}^{n} \frac{a_k}{k+1} B_{k+1}(x+1) - \sum_{k=0}^{n} \frac{a_k}{k+1} B_{k+1}(x).
+\end{align*}
+Let
+$$F(x) = \sum_{k=0}^{n} \frac{a_k}{k+1} B_{k+1}(x),$$
+and we get $f(x) = F(x+1) - F(x)$.
+$\Box$ \\\\
+
+
 
 \textbf{Exercise 15.16.}
 \emph{For $n \geq 1$, show $\frac{d}{dx}B_n(x) = nB_{n-1}(x)$.} \\
@@ -395,6 +418,44 @@ f(-t, x)
 \end{enumerate}
 By (1)(2), for $m$ odd and $m > 1$, $B_m(0) = 0$ or $B_m = 0$.
 $\Box$ \\\\
+
+
+
+\textbf{Exercise 15.19 (Multiplication Theorem).}
+\emph{Suppose $n$ and $F$ are integers and $n, F > 0$. Show that
+$$B_n(Fx) = F^{n-1} \sum_{a=0}^{F-1} B_n \left(x + \frac{a}{F} \right).$$
+(Hint: Use Exercise 12.)} \\
+
+\emph{Proof.}
+By $x^n - y^n = (x - y)(x^{n-1} + x^{n-2}y + \cdots + y^{n-1}$ (Exercise 1.24),
+$$e^{Ft} - 1
+= (e^t - 1)(1 + e^t + e^{2t} + \cdots + e^{(F-1)t})
+= (e^t - 1) \sum_{a=0}^{F-1} e^{at}.$$
+So,
+\begin{align*}
+\frac{1}{e^t - 1}
+&= \frac{1}{e^{Ft} - 1} \sum_{a=0}^{F-1} e^{at}, \\
+\frac{te^{tFx}}{e^t - 1}
+&= \frac{te^{tFx}}{e^{Ft} - 1} \sum_{a=0}^{F-1} e^{at} \\
+&= \sum_{a=0}^{F-1} \frac{te^{(Fx+a)t}}{e^{Ft} - 1} \\
+&= \sum_{a=0}^{F-1} \frac{te^{(Fx+a)t}}{e^{Ft} - 1} \\
+&= \sum_{a=0}^{F-1} F^{-1} \frac{(Ft) e^{(x + \frac{a}{F})(Ft)}}{e^{Ft} - 1}. \\
+\end{align*}
+By Exercise 15.12,
+\begin{align*}
+\sum_{n=0}^{\infty} B_n(Fx) \frac{t^n}{n!}
+&= \sum_{a=0}^{F-1} F^{-1}
+\sum_{n=0}^{\infty} B_n \left( x + \frac{a}{F} \right) \frac{(Ft)^n}{n!} \\
+&= \sum_{n=0}^{\infty} \sum_{a=0}^{F-1} F^{-1}
+B_n \left( x + \frac{a}{F} \right) \frac{(Ft)^n}{n!} \\
+&= \sum_{n=0}^{\infty} \sum_{a=0}^{F-1} F^{n-1}
+B_n \left( x + \frac{a}{F} \right) \frac{t^n}{n!}.
+\end{align*}
+Comparing coefficients of $t^n$ on the both sides of the above equation
+and yields
+$B_n(Fx) = F^{n-1} \sum_{a=0}^{F-1} B_n \left(x + \frac{a}{F} \right)$.
+$\Box$ \\\\
+
 
 
 
