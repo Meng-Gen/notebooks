@@ -132,7 +132,8 @@ Consequently, $f$ is not analytic at $x = 0$. \\
 for any rational function $g(x) \in \mathbb{R}(x)$.} \\
 
 \emph{Proof.}
-Write $g(x) = \frac{p(x)}{q(x)}$ for some $p(x), q(x) \in \mathbb{R}[x].$
+Write $g(x) = \frac{p(x)}{q(x)}$ for some $p(x), q(x) \in \mathbb{R}[x]$,
+$g(x) \neq 0$.
 Write $q(x) = b_m x^m + b_{m - 1} x^{m - 1} + \cdots + b_0$.
 $q(x)$ is not identically zero, that is, there exists the unique coefficient
 of the least power of $x$ in $q(x)$ which is non-zero, say $b_M \neq 0$.
@@ -154,8 +155,11 @@ for some rational function $g(x) \in \mathbb{R}(x)$.} \\
 Say $g_0(x) = 1 \in \mathbb{R}(x)$.
 Notice that $\mathbb{R}(x)$ is a field and
 $g'(x) \in \mathbb{R}(x)$ for any $g(x) \in \mathbb{R}(x)$.
-(Write $g(x) = \frac{p(x)}{q(x)}$ for some $p(x), q(x) \in \mathbb{R}[x]$.
-Notice that $p'(x) \in \mathbb{R}[x]$ for any $p(x) \in \mathbb{R}[x]$.)
+(Write $g(x) = \frac{p(x)}{q(x)}$ for some $p(x), q(x) \in \mathbb{R}[x]$, $q(x) \neq 0$.
+$g'(x) = \frac{p'(x)q(x) - p(x)q'(x)}{q(x)^2}$.
+Notice that $a'(x) \in \mathbb{R}[x]$ for any $a(x) \in \mathbb{R}[x]$,
+and $q(x)^2 \neq 0$ since $\mathbb{R}[x]$ is an integral domain.
+$g'(x) \in \mathbb{R}(x)$.)
 Now we prove by mathematical induction.
 For $n = 1$, we have
 \begin{align*}
