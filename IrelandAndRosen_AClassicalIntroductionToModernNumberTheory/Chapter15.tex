@@ -421,13 +421,13 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 15.19 (Multiplication Theorem).}
+\textbf{Exercise 15.19 (Multiplication theorem for Bernoulli polynomial).}
 \emph{Suppose $n$ and $F$ are integers and $n, F > 0$. Show that
 $$B_n(Fx) = F^{n-1} \sum_{a=0}^{F-1} B_n \left(x + \frac{a}{F} \right).$$
 (Hint: Use Exercise 12.)} \\
 
 \emph{Proof.}
-By $x^n - y^n = (x - y)(x^{n-1} + x^{n-2}y + \cdots + y^{n-1}$ (Exercise 1.24),
+By $x^n - y^n = (x - y)(x^{n-1} + x^{n-2}y + \cdots + y^{n-1})$ (Exercise 1.24),
 $$e^{Ft} - 1
 = (e^t - 1)(1 + e^t + e^{2t} + \cdots + e^{(F-1)t})
 = (e^t - 1) \sum_{a=0}^{F-1} e^{at}.$$
@@ -454,8 +454,45 @@ B_n \left( x + \frac{a}{F} \right) \frac{t^n}{n!}.
 Comparing coefficients of $t^n$ on the both sides of the above equation
 and yields
 $B_n(Fx) = F^{n-1} \sum_{a=0}^{F-1} B_n \left(x + \frac{a}{F} \right)$.
-$\Box$ \\\\
+$\Box$ \\
 
+\textbf{Supplement 15.12.1 (Multiplication Theorem for $\frac{1}{\exp(z) - 1}$).}
+\emph{$$\frac{1}{\exp(nz) - 1}
+= \frac{1}{n} \sum_{k=0}^{n-1} \frac{1}{\exp(z + \frac{2 k \pi i}{n}) - 1}.$$} \\
+\emph{Proof.}
+Let $\zeta$ be one $n$-th root of unity.
+Write $f(x) = x^n - 1 = \prod_{k=0}^{n-1}(x - \zeta^k)$.
+By Lagrange interpolation,
+\begin{align*}
+\frac{1}{f(x)}
+&=
+\sum_{k=0}^{n-1} \frac{1}{f'(\zeta^k)} \cdot \frac{1}{x - \zeta^k} \\
+\frac{1}{x^n - 1}
+&= \sum_{k=0}^{n-1} \frac{1}{n \zeta^{-k}} \cdot \frac{1}{x - \zeta^k} \\
+&= \frac{1}{n} \sum_{k=0}^{n-1} \frac{\zeta^k}{x - \zeta^k}.
+\end{align*}
+Let $x = \exp(z)$. $\zeta = \exp(-\frac{2 \pi i}{n})$.
+$\Box$ \\
+
+\textbf{Supplement 15.12.2 (Multiplication theorem for $\cot z$.)}
+\emph{$$\cot z = \frac{1}{n} \sum_{k=0}^{n-1} \cot\frac{z + k\pi}{n}.$$} \\
+
+This equation yields
+$x \cot x = 1 - 2 \sum_{n=1}^{\infty} \frac{x^2}{n^2 \pi^2 - x^2}$ again. \\
+
+\emph{Proof.}
+By Supplement 15.12.1,
+\begin{align*}
+\frac{1}{\exp(z) - 1}
+&=
+\frac{1}{n} \sum_{k=0}^{n-1} \frac{1}{\exp(\frac{z + 2 k \pi i}{n}) - 1}. \\
+\frac{1}{\exp(2iz) - 1}
+&=
+\frac{1}{n} \sum_{k=0}^{n-1} \frac{1}{\exp(\frac{2i (z + k \pi)}{n}) - 1}.
+\end{align*}
+Notice that $\cot z = i + \frac{2i}{e^{2ix} - 1}$,
+$\cot z = \frac{1}{n} \sum_{k=0}^{n-1} \cot\frac{z + k\pi}{n}$.
+$\Box$ \\\\
 
 
 
