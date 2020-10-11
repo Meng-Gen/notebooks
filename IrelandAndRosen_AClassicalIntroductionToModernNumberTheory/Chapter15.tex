@@ -27,6 +27,7 @@
 
 % https://dms.umontreal.ca/~mlalin/bernoulli.pdf
 % http://cds.iisc.ac.in/faculty/amohanty/SE288/bn.pdf
+% http://people.math.sfu.ca/~cbm/aands/abramowitz_and_stegun.pdf
 
 
 
@@ -505,6 +506,70 @@ $$\Gamma(z)
 \Gamma\left( z+\frac{k-1}{k} \right)
 = (2\pi)^{\frac{k-1}{2}} k^{\frac{1-2kz}{2}}
 \Gamma\left( kz \right).$$} \\\\
+
+
+
+\textbf{Exercise 15.20.}
+\emph{Suppose $H(x)$ is a polynomial of degree $n$ with complex coefficients.
+Suppose that for all integers $n$, $F > 0$ we have
+$H(Fx) = F^{n-1}\sum_{a=0}^{F-1}H(x+\frac{a}{F})$.
+Show that $H(x) = CB_n(x)$ for some constant $C$.
+(Hint: Use Exercise 16 and induction on $n$.)} \\
+
+Use induction on $n$ to show that $H(x) = CB_n(x)$
+where $C$ is the leading coefficient of $H(x)$
+(since the leading coefficient of every Bernoulli polynomial is $1$).
+
+\begin{enumerate}
+\item[(1)]
+As $n = 1$, write $H(x) = C_1 x + C_0 \in \mathbb{C}$.
+Then
+\begin{align*}
+H(Fx)
+&= \sum_{a=0}^{F-1} H(x+\frac{a}{F}), \\
+C_1 F x + C_0
+&= \sum_{a=0}^{F-1} \left( C_1\left(x+\frac{a}{F}\right) + C_0\right) \\
+&= C_1Fx + C_1 \cdot \frac{F-1}{2} + C_0F, \\
+C_0 &= \frac{-1}{2} C_1
+\end{align*}
+if $F > 1$. That is, $H(x) = C_1 B_1(x)$ where $C = C_1$ is a constant.
+In fact, $C$ is the leading coefficient of $H(x)$.
+\item[(2)]
+Assume that the conclusion holds for $n = k$.
+As $n = k+1$, it suffices to show $f(x) = H(x) - CB_{k+1}(x) = 0$,
+where $C$ is the leading coefficient of $H(x)$.
+\item[(3)]
+Differentiate $f(x) = H(x) - CB_{k+1}(x)$ and use Exercise 15.16,
+$$f'(x) = H'(x) - C \cdot (k+1) \cdot B_k(x).$$
+Might show $f'(x) = 0$ and then get that $H(x) - CB_{k+1}(x)$ is a constant.
+\item[(4)]
+Notice that the leading coefficient of $H'(x)$ is $C \cdot (k+1)$.
+Besides, by differentiating $H(Fx) = F^{k}\sum_{a=0}^{F-1}H(x+\frac{a}{F})$,
+\begin{align*}
+H'(Fx) \cdot F
+&= F^{k} \sum_{a=0}^{F-1} H'(x+\frac{a}{F}), \\
+H'(Fx)
+&= F^{k-1} \sum_{a=0}^{F-1} H'(x+\frac{a}{F}).
+\end{align*}
+By the induction hypothesis,
+$H'(x) = (C \cdot (k+1)) B_k(x)$ since $H'(x)$ has degree $(k+1)-1 = k$.
+Therefore, $f'(x) = 0$ or $f(x) = H(x) - CB_{k+1}(x) = A$ is a constant.
+\item[(5)]
+By $f(Fx) = H(Fx) - CB_{k+1}(Fx) = A$,
+\begin{align*}
+A
+&= F^{k} \sum_{a=0}^{F-1} H \left( x+\frac{a}{F} \right)
+- C F^{k} \sum_{a=0}^{F-1} B_{k+1} \left( x+\frac{a}{F} \right) \\
+&= F^{k} \sum_{a=0}^{F-1} \left( H \left( x+\frac{a}{F} \right)
+- C B_{k+1} \left( x+\frac{a}{F} \right) \right) \\
+&= F^{k} \sum_{a=0}^{F-1} A \\
+&= F^{k+1} A,
+\end{align*}
+or $(F^{k+1} - 1) A = 0$. For $F > 1$, $A = 0$.
+That is, $H(x) = CB_{k+1}(x)$.
+\end{enumerate}
+By mathematical induction the result is established.
+$\Box$ \\\\
 
 
 
