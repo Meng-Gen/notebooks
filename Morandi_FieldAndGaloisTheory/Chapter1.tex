@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 1: Galois Theory} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{\large Section 1.1: Field Extensions} \\\\
+
+
+
+\textbf{Exercise 1.1.1.}
+\emph{Let $K$ be a field extension of $F$.
+By defining scalar multiplication for $\alpha \in F$ and $a \in K$
+by $\alpha \cdot a = \alpha a$, the multiplication in $K$,
+show that $K$ is an $F$-vector space.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$K$ is an additive group.
+\item[(2)]
+\emph{Show that $(\alpha \beta) \cdot a = \alpha \cdot (\beta \cdot a)$
+for $\alpha, \beta \in F$ and $a \in K$.}
+In fact,
+\begin{align*}
+(\alpha \beta) \cdot a
+&= \alpha \beta a \in K, \\
+\alpha \cdot (\beta \cdot a)
+&= \alpha \beta a \in K.
+\end{align*}
+\item[(3)]
+\emph{Show that $(\alpha + \beta) \cdot a = \alpha \cdot a + \beta \cdot a$
+for $\alpha, \beta \in F$ and $a \in K$.}
+\begin{align*}
+(\alpha + \beta) \cdot a
+&= (\alpha + \beta) a \\
+&= \alpha a + \beta a \in K, \\
+\alpha \cdot a + \beta \cdot a
+&= \alpha a + \beta a \in K.
+\end{align*}
+\item[(4)]
+\emph{Show that $\alpha \cdot (a + b) = \alpha \cdot a + \alpha \cdot b$
+for $\alpha \in F$ and $a, b \in K$.}
+\begin{align*}
+\alpha \cdot (a + b)
+&= \alpha (a + b) \\
+&= \alpha a + \alpha b \in K, \\
+\alpha \cdot a + \alpha \cdot b
+&= \alpha a + \alpha b \in K.
+\end{align*}
+\item[(5)]
+\emph{Show that $1 \cdot a = a$
+for $a \in K$.}
+$1 \cdot a = 1 a = a \in K$.
+\end{enumerate}
+By (1) to (5), $K$ is an $F$-vector space.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.1.2.}
+\emph{If $K$ is a field extension of $F$, prove that $[K:F] = 1$
+if and only if $K = F$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$[K:F] = 1 \Longleftarrow K = F$.}
+Take a basis $\{1\}$ for $K$ as an $F$-vector space.
+\item[(2)]
+\emph{$[K:F] = 1 \Longrightarrow K = F$.}
+Take a basis $\{a\}$ for $K$ as an $F$-vector space where $a \in K$.
+Since $1 \in K$, there exists $\alpha \in F$ such that $1 = \alpha a$.
+$a = \alpha^{-1} \in F$, or $K \subseteq F$, or $K = F$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.1.5.}
+\emph{Show that 
+$\mathbb{Q}(\sqrt{5}, \sqrt{7}) = \mathbb{Q}(\sqrt{5} + \sqrt{7})$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$\mathbb{Q}(\sqrt{5}, \sqrt{7}) \supseteq \mathbb{Q}(\sqrt{5} + \sqrt{7})$
+since $\sqrt{5} + \sqrt{7} \in \mathbb{Q}(\sqrt{5}, \sqrt{7})$.
+\item[(2)]
+\begin{align*}
+(\sqrt{7} + \sqrt{5})^{-1}
+&= \frac{1}{\sqrt{7} + \sqrt{5}} \\
+&= \frac{\sqrt{7} - \sqrt{5}}{(\sqrt{7} + \sqrt{5})(\sqrt{7} - \sqrt{5})} \\
+&= \frac{\sqrt{7} - \sqrt{5}}{2} \in \mathbb{Q}(\sqrt{5} + \sqrt{7}),
+\end{align*}
+Or $\sqrt{7} - \sqrt{5} \in \mathbb{Q}(\sqrt{5} + \sqrt{7})$. Thus
+\begin{align*}
+\sqrt{7}
+&= \frac{1}{2} \cdot ((\sqrt{7} + \sqrt{5}) + (\sqrt{7} - \sqrt{5}))
+\in \mathbb{Q}(\sqrt{5} + \sqrt{7}), \\
+\sqrt{5}
+&= \frac{1}{2} \cdot ((\sqrt{7} + \sqrt{5}) - (\sqrt{7} - \sqrt{5}))
+\in \mathbb{Q}(\sqrt{5} + \sqrt{7}).
+\end{align*}
+Thus, $\mathbb{Q}(\sqrt{5}, \sqrt{7}) \subseteq \mathbb{Q}(\sqrt{5} + \sqrt{7})$.
+\end{enumerate}
+By (1)(2), $\mathbb{Q}(\sqrt{5}, \sqrt{7}) = \mathbb{Q}(\sqrt{5} + \sqrt{7})$.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.1.9.}
+\emph{If $K$ is an extension of $F$ such that $[K:F]$ is prime,
+show that there are no intermediate fields between $K$ and $F$.} \\
+
+\emph{Proof.}
+Let $L$ be any field such that $F \subseteq L \subseteq K$.
+By Proposition 1.20,
+$$[K:F] = [K:L][L:F].$$
+Since $[K:F]$ is prime, $[K:L] = 1$ or $[L:F] = 1$.
+By Exercise 1.1.2, $L=K$ or $L=F$,
+or there are no intermediate fields between $K$ and $F$.
+$\Box$ \\\\
+
+
+
+\end{document}
