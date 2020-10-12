@@ -25,6 +25,11 @@
 
 
 
+% https://spaces.ac.cn/usr/uploads/2017/07/4208763092.pdf
+% https://www.math.arizona.edu/~cais/371Page/homework/371s1.pdf
+
+
+
 \textbf{Exercise 1.1}
 \emph{Let $x$ be a nilpotent element of $A$.
 Show that $1+x$ is a unit of $A$.
@@ -43,6 +48,219 @@ $u + x= u \cdot (1 + u^{-1}x)$ is a product of two units
 (using that $u^{-1}x$ is nilpotent and applying (1))
 and hence a unit again.
 \end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Proposition 1.9).}
+\begin{enumerate}
+\item[(1)]
+\emph{The nilradical is a subset of the Jacobson radical.}
+\begin{enumerate}
+\item[(a)]
+The nilradical $\mathfrak{N}$ of $A$ is the intersection of all the prime ideals of $A$
+by Proposition 1.8.
+\item[(b)]
+The Jacobson radical $\mathfrak{R}$ of $A$ is the intersection of all the maximal ideals of $A$
+by definition.
+\end{enumerate}
+\item[(2)]
+By Proposition 1.9,
+$x \in \mathfrak{R}$ if and only if
+$1-xy$ is a unit in $A$ for all $y \in A$.
+So $1+x = 1 - (-x) \cdot 1$ is a unit in $A$
+since $x$ is a nilpotent and $\mathfrak{R}$ is an ideal.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.2}
+\emph{Let $A$ be a ring and
+let $A[x]$ be the ring of polynomials in an indeterminate $x$,
+with coefficients in $A$.
+Let $f = a_0 + a_1 x + \cdots + a_n x^n \in A[x]$.
+Prove that}
+\begin{enumerate}
+\item[(i)]
+\emph{$f$ is a unit in $A[x]$ if and only if
+$a_0$ is a unit in $A$ and
+$a_1, ..., a_n$ are nilpotent.
+(Hint: If $b_0 + b_1 x + \cdots + b_m x^m$ is the inverse of $f$,
+prove by induction on $r$ that $a_n^{r+1} b_{m-r} = 0$.
+Hence show that $a_n$ is nilpotent, and then use Exercise 1.1.)}
+\item[(ii)]
+\emph{$f$ is nilpotent if and only if
+$a_0, a_1, ..., a_n$ are nilpotent.}
+\item[(iii)]
+\emph{$f$ is a zero-divisor if and only if
+there exists $a \neq 0$ such that $af = 0$.
+(Hint: Choose a polynomial $g = b_0 + b_1 x + \cdots + b_m x^m$
+of least degree $m$ such that $fg = 0$.
+Then $a_n b_m = 0$, hence $a_n g = 0$
+(because $a_n g$ annihilates $f$ and has degree $< m$).
+Now show by induction that $a_{n-r}g = 0$ $(0 \leq r \leq n)$.)}
+\item[(iv)]
+\emph{$f$ is said to be primitive if $(a_0, a_1, ..., a_n) = (1)$.
+Prove that if $f, g \in A[x]$, then $fg$ is primitive if and only if
+$f$ and $g$ are primitive.} \\
+\end{enumerate}
+
+\emph{Proof of (i).}
+\begin{enumerate}
+\item[(1)]
+$(\Longleftarrow)$ holds by Exercise 1.1.
+\item[(2)]
+$(\Longrightarrow)$
+There exists the inverse $g$ of $f$, say $g = b_0 + b_1 x + \cdots + b_m x^m$
+satisfying
+$1 = fg$.
+Clearly, $1 = a_0 b_0$, or $a_0$ is a unit in $A$.
+Also,
+\begin{align*}
+0
+&= a_n b_m, \\
+0
+&= a_n b_{m-1} + a_{n-1} b_m, \\
+0
+&= a_n b_{m-2} + a_{n-1} b_{m-1} + a_{n-2} b_m, \\
+& \cdots
+\end{align*}
+A direct computing shows that
+\begin{align*}
+0
+&= a_n^{1} b_m, \\
+0
+&= a_n (a_n b_{m-1} + a_{n-1} b_m) \\
+&= a_n^{2} b_{m-1} + a_{n-1} a_n b_m \\
+&= a_n^{2} b_{m-1}, \\
+0
+&= a_n^{2} (a_n b_{m-2} + a_{n-1} b_{m-1} + a_{n-2} b_m) \\
+&= a_n^{3} b_{m-2} + a_{n-1} a_n^{2} b_{m-1} + a_{n-2} a_n^{2} b_m \\
+&= a_n^{3} b_{m-2}, \\
+& \cdots
+\end{align*}
+So we might have $a_n^{r+1} b_{m-r} = 0$ for $r = 0, 1, 2, ..., m$.
+\item[(3)]
+\emph{Show that $a_n^{r+1} b_{m-r} = 0$ for $r = 0, 1, 2, ..., m$
+by induction on $r$.}
+\begin{enumerate}
+\item[(a)]
+As $r = 0$, $a_n b_m = 0$ by comparing the coefficient of $fg = 1$ at $x^{n+m}$.
+\item[(b)]
+For any $r > 0$, comparing the coefficient of $fg = 1$ at $x^{n+m-r}$,
+$$0 = a_n b_{m-r} + a_{n-1} b_{m-r+1} + \cdots + a_{n-r} b_m.$$
+Multiplying by $a_n^r$ on the both sides,
+\begin{align*}
+0
+&= a_n^{r+1} b_{m-r} + a_{n-1} a_n^{r} b_{m-r+1} + \cdots + a_{n-r} a_n^{r} b_m \\
+&= a_n^{r+1} b_{m-r}.
+\end{align*}
+by the induction hypothesis.
+\end{enumerate}
+\item[(4)]
+\emph{$a_n$ is a nilpotent.}
+Putting $r = m$ in $a_n^{r+1} b_{m-r} = 0$ and get $a_n^{m+1} b_0 = 0$.
+Notice that $b_0$ is a unit, $a_n^{m+1} = 0$, or $a_n$ is a nilpotent.
+\item[(5)]
+Consider $f - a_n x^n = a_0 + a_1 x + \cdots + a_{n-1} x^{n-1}$,
+a polynomial $\in A[x]$ of degree $n-1$.
+Note that $f$ is a unit and $a_n x^n$ is a nilpotent.
+By Exercise 1.1, $f - a_n x^n$ is a unit too.
+Applying the (2)(3)(4) again, $a_{n-1}$ is a nilpotent as $n-1 > 0$,
+that is, applying descending induction on $n$ then yields the desired property.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (ii).}
+\begin{enumerate}
+\item[(1)]
+$(\Longleftarrow)$ holds since the nilradical of any ring is an ideal.
+\item[(2)]
+$(\Longrightarrow)$ $f^N = 0$ for some $N > 0$.
+So $0 = f^N = a_n^N x^{nN} + \cdots + a_0^N$.
+Comparing the coefficient in the leading term $x^{nN}$ leads to $a_n^N = 0$,
+or $a_n$ is a nilpotent.
+\item[(3)]
+Consider $f - a_n x^n = a_0 + a_1 x + \cdots + a_{n-1} x^{n-1}$,
+a polynomial $\in A[x]$ of degree $n-1$.
+Note that $f$ and $a_n x^n$ are nilpotents.
+$f - a_n x^n$ is a nilpotent too.
+Similar to step (5) in the proof of (i),
+applying descending induction on $n$ then yields the desired property.
+\end{enumerate}
+
+\emph{Proof of (iii).}
+\begin{enumerate}
+\item[(1)]
+$(\Longleftarrow)$ holds trivially.
+\item[(2)]
+$(\Longrightarrow)$
+Pick a polynomial $g = b_0 + b_1 x + \cdots + b_m x^m$
+of least degree $m$ such that $fg = 0$.
+Especially, $a_n b_m = 0$.
+\item[(3)]
+Consider
+\begin{align*}
+a_n g
+&= a_n b_0 + \cdots + a_n b_{m-1} x^{m-1} + a_n b_m x^m \\
+&= a_n b_0 + \cdots + a_n b_{m-1} x^{m-1}
+\end{align*}
+(since $a_n b_m = 0$).
+$a_n g$ is a polynomial over $A$ of having degree strictly less than $m$.
+Notice that $f \cdot (a_n g) = a_n \cdot (fg)= 0$.
+By minimality of $m$, $a_n g = 0$.
+\item[(4)]
+Induction on the degree $n$ of $f$.
+\begin{enumerate}
+\item[(a)]
+As $n = 0$, $f = a_0$. There exists $b_m \neq 0$ such that $b_m f = b_m a_0 = 0$ by (2).
+\item[(b)]
+For any zero-divisor $f$ of degree $n$,
+there is a polynomial $g = b_0 + b_1 x + \cdots + b_m x^m$
+of least degree $m$ such that $fg = 0$. By (2)(3),
+\begin{align*}
+(f - a_n x^n) \cdot g
+&= fg - a_n x^n g \\
+&= 0 - 0 \\
+&= 0.
+\end{align*}
+That is, $f - a_n x^n$ is a zero-divisor of degree $n-1$.
+By the induction hypothesis,
+there exists $b_m \neq 0$ such that $b_{m}(f - a_n x^n) = 0$.
+So $b_m f = b_{m}(f - a_n x^n) + b_m a_n x^n = 0 + 0 = 0$.
+\item[(c)]
+By (a)(b), $(\Longrightarrow)$ holds by mathematical induction.
+\end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (iv).}
+Note that
+\begin{enumerate}
+\item[(1)]
+$f \notin \mathfrak{m}[x]$ for any maximal ideal $\mathfrak{m}$ of $A$
+if and only if $f$ is primitive.
+\item[(2)]
+For any maximal ideal $\mathfrak{m}$ of $A$,
+$A/\mathfrak{m}$ is a field (or an integral domain).
+\item[(3)]
+$A[x]$ is an integral domain if $A$ is an integral domain.
+\item[(4)]
+$A[x]/\mathfrak{m}[x] \cong (A/\mathfrak{m})[x]$ as a ring isomorphism.
+\end{enumerate}
+Hence,
+\begin{align*}
+f, g:\text{ primitive}
+&\Longleftrightarrow
+f, g \notin \mathfrak{m}[x] \text{ for any maximal ideal } \mathfrak{m} \\
+&\Longleftrightarrow
+f, g \neq 0 \text{ in } (A/\mathfrak{m})[x] \text{ for any maximal ideal } \mathfrak{m} \\
+&\Longleftrightarrow
+fg \neq 0 \text{ in } (A/\mathfrak{m})[x] \text{ for any maximal ideal } \mathfrak{m} \\
+&\Longleftrightarrow
+fg \notin \mathfrak{m}[x] \text{ for any maximal ideal } \mathfrak{m} \\
+&\Longleftrightarrow
+fg:\text{ primitive}.
+\end{align*}
 $\Box$ \\\\
 
 
