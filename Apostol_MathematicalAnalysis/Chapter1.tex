@@ -25,6 +25,10 @@
 
 
 
+\textbf{\large Integers} \\\\
+
+
+
 \textbf{Exercise 1.1}
 \emph{Prove that there is no largest prime. (A proof was known to Euclid.)} \\
 
@@ -40,9 +44,9 @@ and there were a prime number $p$ dividing $n$.
 $p$ can not be any of $p_i (1 \leq i \leq t)$,
 otherwise $p$ would divide the difference $n - p_1 p_2 \cdots p_t = 1$.
 \item[(2)]
-This prime $p$ is another prime $\neq p_i$ for $1 \leq i \leq t$.
+This prime $p$ is another prime $\neq p_i$ for $1 \leq i \leq t$,
+which is absurd.
 \end{enumerate}
-By (2), there exists a prime $p$ other than all primes, which is absurd.
 $\Box$ \\
 
 \emph{Proof (Unique factorization theorem).}
@@ -138,6 +142,111 @@ By the formula for $\phi$,
 \end{align*}
 which is a contradiction (since $3$ is a prime).
 Hence there are infinitely many primes.
+$\Box$ \\\\
+
+
+\textbf{Exercise 1.2}
+\emph{If $n$ is a positive integer, prove the algebraic identity
+$$a^n - b^n = (a - b) \sum_{k=0}^{n-1} a^k b^{n-1-k}.$$} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+(a - b) \sum_{k=0}^{n-1} a^k b^{n-1-k}
+&= a \sum_{k=0}^{n-1} a^k b^{n-1-k} - b \sum_{k=0}^{n-1} a^k b^{n-1-k} \\
+&= \sum_{k=0}^{n-1} a^{k+1} b^{n-1-k} - \sum_{k=0}^{n-1} a^k b^{n-k}.
+\end{align*}
+\item[(2)] Arrange index in summation symbols.
+\begin{align*}
+\sum_{k=0}^{n-1} a^{k+1} b^{n-1-k}
+&= \sum_{k=1}^{n} a^{k} b^{n-k}
+= a^n + \sum_{k=1}^{n-1} a^{k} b^{n-k}, \\
+\sum_{k=0}^{n-1} a^k b^{n-k}
+&= b^n + \sum_{k=1}^{n-1} a^{k} b^{n-k}.
+\end{align*}
+\item[(3)]
+By (1)(2),
+\begin{align*}
+(a - b) \sum_{k=0}^{n-1} a^k b^{n-1-k}
+&= \left( a^n + \sum_{k=1}^{n-1} a^{k} b^{n-k} \right)
+- \left( b^n + \sum_{k=1}^{n-1} a^{k} b^{n-k} \right) \\
+&= a^n - b^n.
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.3}
+\emph{If $2^n - 1$ is a prime, prove that $n$ is prime.
+A prime of the form $2^p - 1$, where $p$ is prime, is called a Mersenne prime.} \\
+
+It suffices to prove that:
+\emph{If $a^n - 1$ is a prime, show that $a = 2$ and that $n$ is a prime.}
+Primes of the form $2^p - 1$ are called Mersenne primes.
+For example, $2^3 - 1 = 7$ and $2^5 - 1 = 31$.
+It is not known if there are infinitely many Mersenne primes. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$n$ is a prime.}
+Assume $n$ were not prime, say $n = rs$ for some $r, s > 1$.
+By Exercise 1.2,
+$a^{rs} - 1 = (a^s - 1)(\sum_{k=0}^{r-1} a^{sk})$.
+$a^s - 1 = 1$ since $a^s - 1 < a^{rs} - 1$ and $a^{rs} - 1$ is a prime.
+Hence $s=1$ and ($a=2$), which is absurd.
+\item[(2)]
+\emph{$a = 2$.}
+If $a$ is odd, then $a^p - 1 > 2$ is even, which is not a prime.
+If $a > 2$ is even,
+$a^p - 1 = (a - 1)(\sum_{k=0}^{p-1} a^k)$.
+Both $a - 1 > 1$ and $\sum_{k=0}^{p-1} a^k > 1$, which is absurd.
+\end{enumerate}
+By (1)(2), $a = 2$ and that $n$ is a prime if $a^n - 1$ is a prime.
+$\Box$ \\\\
+
+
+
+\textbf{\large Rational and irrational numbers} \\\\
+
+
+
+\textbf{Exercise 1.11}
+\emph{Given any real $x > 0$,
+prove that there is an irrational number between $0$ and $x$.} \\
+
+\emph{Proof.}
+There are only two possible cases: $x$ is rational, or $x$ is irrational.
+\begin{enumerate}
+\item[(1)]
+\emph{$x$ is rational.}
+Pick $y = \frac{x}{\sqrt{89}} \in (0, x) \subseteq \mathbb{R}$. $y$ is irrational.
+\item[(2)]
+\emph{$x$ is irrational.}
+Pick $y = \frac{x}{\sqrt{64}} \in (0, x) \subseteq \mathbb{R}$. $y$ is irrational.
+\end{enumerate}
 $\Box$ \\
+
+\emph{Proof (Exercise 4.12).}
+Pick
+$$y
+= \lim_{m \rightarrow \infty}[\lim_{n \rightarrow \infty} \cos^{2n}(m!\pi x)]
+\cdot \frac{x}{\sqrt{89}}
++
+(1 - \lim_{m \rightarrow \infty}[\lim_{n \rightarrow \infty} \cos^{2n}(m!\pi x)])
+\cdot \frac{x}{\sqrt{64}}.$$
+\begin{enumerate}
+\item[(1)]
+\emph{$x$ is rational.}
+$y = \frac{x}{\sqrt{89}} \in (0, x) \subseteq \mathbb{R}$ is irrational.
+\item[(2)]
+\emph{$x$ is irrational.}
+$y = \frac{x}{\sqrt{64}} \in (0, x) \subseteq \mathbb{R}$ is irrational.
+\end{enumerate}
+$\Box$ \\\\
+
+
 
 \end{document}
