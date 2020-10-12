@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 1: The Real And Complex Number Systems} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{Exercise 1.1}
+\emph{Prove that there is no largest prime. (A proof was known to Euclid.)} \\
+
+There are many proofs of this result. We provide some of them. \\
+
+\emph{Proof (Due to Euclid).}
+If
+$p_1, p_2, ..., p_t$ were all primes, then
+write $$n = p_1 p_2 \cdots p_t + 1$$
+and there were a prime number $p$ dividing $n$.
+\begin{enumerate}
+\item[(1)]
+$p$ can not be any of $p_i (1 \leq i \leq t)$,
+otherwise $p$ would divide the difference $n - p_1 p_2 \cdots p_t = 1$.
+\item[(2)]
+This prime $p$ is another prime $\neq p_i$ for $1 \leq i \leq t$.
+\end{enumerate}
+By (2), there exists a prime $p$ other than all primes, which is absurd.
+$\Box$ \\
+
+\emph{Proof (Unique factorization theorem).}
+Given $N$.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\sum_{n \leq N} \frac{1}{n}
+\leq \prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}$.} \\
+By the unique factorization theorem on $n \leq N$,
+$$\sum_{n \leq N} \frac{1}{n}
+\leq \prod_{p \leq N} \left( 1 + \frac{1}{p} + \frac{1}{p^2} + \cdots \right)
+= \prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}.$$
+\item[(2)]
+By (1) and the fact that $\sum \frac{1}{n}$ diverges,
+there are infinitely many primes.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Due to Eckford Cohen).}
+\begin{enumerate}
+\item[(1)]
+\emph{$\text{ord}_p n!
+= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots$.}
+For any $k = 1, 2, ..., n$, we can express $k$ as $k = p^s t$
+where $s = \text{ord}_p k$ is a non-negative integer and $(t, p) = 1$.
+There are $[\frac{n}{p^a}]$ numbers such that $p^a \mid k$ for $a = 1, 2, ...$.
+Therefore, there are $$\left[\frac{n}{p^a}\right] - \left[\frac{n}{p^{a+1}}\right]$$
+numbers such that $\text{ord}_p k = a$ for $a = 1, 2, ...$. Hence,
+\begin{align*}
+\text{ord}_p n!
+&= \left( \left[\frac{n}{p}\right] - \left[\frac{n}{p^2}\right] \right)
+ + 2 \left( \left[\frac{n}{p^2}\right] - \left[\frac{n}{p^3}\right] \right)
+ + 3 \left( \left[\frac{n}{p^3}\right] - \left[\frac{n}{p^4}\right] \right) + \cdots \\
+&= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots.
+\end{align*}
+\item[(2)]
+\emph{$\text{ord}_p n! \leq \frac{n}{p - 1}$ and that
+$n!^{\frac{1}{n}} \leq \prod_{p|n!}p^{\frac{1}{p - 1}}$.}
+\begin{align*}
+\text{ord}_p n!
+&= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots \\
+&\leq \frac{n}{p} + \frac{n}{p^2} + \frac{n}{p^3} + \cdots \\
+&= \frac{\frac{n}{p}}{1 - \frac{1}{p}} \\
+&= \frac{n}{p - 1}.
+\end{align*}
+Thus,
+$$n!
+= \prod_{p|n!} p^{\text{ord}_p n!}
+\leq \prod_{p|n!} p^{\frac{n}{p - 1}}
+= \left( \prod_{p|n!} p^{\frac{1}{p - 1}} \right)^n, $$
+or
+$$n!^{\frac{1}{n}} \leq \prod_{p|n!}p^{\frac{1}{p - 1}}.$$
+\item[(3)]
+\emph{$(n!)^2 \geq n^n$.}
+Write
+$(n!)^2 = \prod_{k=1}^n k \prod_{k=1}^n (n + 1 - k) = \prod_{k=1}^n k(n + 1 - k)$,
+and $n^n = \prod_{k=1}^n n$.
+It suffices to show that $k(n + 1 - k) \geq n$ for each $1 \leq k \leq n$.
+Notice that $k(n + 1 - k) - n = (n - k)(k - 1) \geq 0$ for $1 \leq k \leq n$.
+The inequality holds.
+\item[(4)]
+By (3)(4), $\prod_{p|n!}p^{\frac{1}{p - 1}} \geq \sqrt{n}$.
+Assume that there are finitely many primes,
+the value $\prod_{p|n!} p^{\frac{1}{p - 1}}$ is a finite number
+whenever the value of $n$.
+However, $\sqrt{n} \rightarrow \infty$ as $n \rightarrow \infty$,
+which leads to a contradiction.
+Hence there are infinitely many primes.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Formula for $\phi(n)$).}
+If
+$p_1, p_2, ..., p_t$ were all primes, then let
+$n = p_1 p_2 \cdots p_t$ and all numbers between $2$ and $n$ are
+NOT relatively prime to $n$.
+Thus, $\phi(n) = 1$ by the definition of $\phi$.
+By the formula for $\phi$,
+\begin{align*}
+\phi(n)
+&= n
+\left( 1 - \frac{1}{p_1} \right)
+\left( 1 - \frac{1}{p_2} \right)
+\cdots
+\left( 1 - \frac{1}{p_t} \right) \\
+1
+&= (p_1 p_2 \cdots p_t)
+\left( 1 - \frac{1}{p_1} \right)
+\left( 1 - \frac{1}{p_2} \right)
+\cdots
+\left( 1 - \frac{1}{p_t} \right) \\
+&= (p_1 - 1)(p_2 - 1) \cdots (p_t - 1) > 1,
+\end{align*}
+which is a contradiction (since $3$ is a prime).
+Hence there are infinitely many primes.
+$\Box$ \\
+
+\end{document}
