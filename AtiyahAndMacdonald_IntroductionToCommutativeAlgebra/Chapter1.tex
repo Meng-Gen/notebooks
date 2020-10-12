@@ -182,7 +182,7 @@ or $a_n$ is a nilpotent.
 \item[(3)]
 Consider $f - a_n x^n = a_0 + a_1 x + \cdots + a_{n-1} x^{n-1}$,
 a polynomial $\in A[x]$ of degree $n-1$.
-Note that $f$ and $a_n x^n$ are nilpotents.
+Note that $f$ and $a_n x^n$ are nilpotent.
 $f - a_n x^n$ is a nilpotent too.
 Similar to step (5) in the proof of (i),
 applying descending induction on $n$ then yields the desired property.
@@ -262,6 +262,27 @@ fg \notin \mathfrak{m}[x] \text{ for any maximal ideal } \mathfrak{m} \\
 &\Longleftrightarrow
 fg:\text{ primitive}.
 \end{align*}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.4}
+\emph{In the ring $A[x]$, the Jacobson radical is equal to the nilradical.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+The nilradical $\mathfrak{N}$ is a subset of the Jacobson radical $\mathfrak{R}$.
+It suffices to show that $\mathfrak{R} \subseteq \mathfrak{N}$.
+\item[(2)]
+Given any $f \in \mathfrak{R}$. By Proposition 1.9,
+$f \in \mathfrak{R}$ if and only if
+$1 - fy$ is a unit in $A[x]$ for all $y \in A[x]$.
+Especially, pick $y = x \in A[x]$ and then $1 - xf$ is a unit in $A[x]$.
+\item[(3)]
+By Exercise 1.2 (i), all coefficients of $f$ are nilpotent.
+By Exercise 1.2 (ii), $f$ is nilpotent, or $f \in \mathfrak{N}$.
+\end{enumerate}
 $\Box$ \\\\
 
 
