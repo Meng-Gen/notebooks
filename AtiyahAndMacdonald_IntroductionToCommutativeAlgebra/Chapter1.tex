@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 1: Rings and Ideals} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{Exercise 1.1}
+\emph{Let $x$ be a nilpotent element of $A$.
+Show that $1+x$ is a unit of $A$.
+Deduce that the sum of a nilpotent element and a unit is a unit.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Suppose $x^m = 0$ for some odd integer $m \geq 0$.
+Then
+$$1 = 1+x^m = (1+x)(1-x+x^2-\cdots+(-1)^{m-1}x^{m-1}),$$
+or $1+x$ is a unit.
+\item[(2)]
+If $u$ is any unit and $x$ is any nilpotent,
+$u + x= u \cdot (1 + u^{-1}x)$ is a product of two units
+(using that $u^{-1}x$ is nilpotent and applying (1))
+and hence a unit again.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\end{document}
