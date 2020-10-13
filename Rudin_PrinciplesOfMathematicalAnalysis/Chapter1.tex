@@ -46,6 +46,45 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 1.2.}
+\emph{Prove that there is no rational number whose square is $12$.} \\
+
+Apply the argument in Example 1.1.
+Again we can examine this situation a little more closely.
+Let $A$ be the set of all positive rational $p$ such that $p^2 < 12$ and
+let $B$ be the set of all positive rational $p$ such that $p^2 > 12$.
+We might show that
+\emph{$A$ contains no largest number and
+$B$ contains no largest number} again. \\
+
+In fact, we can associate with each rational $p > 0$ the number
+$$q = p - \frac{p^2 - 12}{p + 12} = \frac{12p + 12}{p + 12}.$$
+Then
+$$q^2 - 12 = \frac{132(p^2 - 12)}{(p + 12)^2}.$$
+If $p \in A$ then $p^2 - 12 < 0$, $q > p$ and $q^2 < 12$. Thus $q \in A$.
+If $p \in B$ then $p^2 - 12 > 0$, $0 < q < p$ and $q^2 > 12$. Thus $q \in B$. \\
+
+\emph{Proof (Example 1.1).}
+We now show that the equation
+$$p^2 = 12$$
+is not satisfied by any rational $p$.
+If there were such a $p \in \mathbb{Q}$,
+we could write $p = \frac{m}{n}$ where $m, n \in \mathbb{Z}$ are \emph{relatively prime}.
+Let us assume this is done. Then $p^2 = 12$ implies
+$$m^2 = 12 n^2.$$
+This shows that $3 \mid m^2$. Hence $3 \mid m$ (since $3$ is a prime in $\mathbb{Z}$),
+and so $m^2$ is divisible by $9$.
+It follows that $12n^2$ is divisible by $9$,
+so that $4n^2$ is divisible by $3$,
+so that $n^2$ is divisible by $3$,
+which implies that $3 \mid n$.
+That is, both $m$ and $n$ have a common factor $3 > 1$,
+contrary to our choice of $m$ and $n$.
+Hence $p^2 = 12$ is impossible for rational $p$.
+$\Box$ \\\\
+
+
+
 \textbf{Exercise 1.12.}
 \emph{If $z_1, ..., z_n$ are complex, prove that
 $$|z_1 + z_2 + \cdots + z_n| \leq |z_1| + |z_2| + \cdots + |z_n|.$$}
