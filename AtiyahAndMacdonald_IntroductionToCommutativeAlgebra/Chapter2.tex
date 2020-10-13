@@ -165,7 +165,12 @@ Thus
   &= \psi(z + d\mathbb{Z}).
 \end{align*}
 \item[(b)]
-\emph{$\psi$ is $\mathbb{Z}$-linear.} For any $\lambda \in \mathbb{Z}$,
+\emph{$\psi$ is $\mathbb{Z}$-linear.}
+\begin{enumerate}
+\item[(i)]
+\emph{For any $\lambda \in \mathbb{Z}$,
+$\psi(\lambda z) = \lambda \psi(z)$.}
+In fact,
 \begin{align*}
   \psi(\lambda(z + d\mathbb{Z}))
   &= \psi(\lambda z + d\mathbb{Z})
@@ -174,8 +179,18 @@ Thus
   &= \lambda((z + m\mathbb{Z}) \otimes (1 + n\mathbb{Z}))
   = (\lambda z + m\mathbb{Z}) \otimes (1 + n\mathbb{Z}).
 \end{align*}
+\item[(ii)]
+\emph{$\psi(z_1 + z_2) = \psi(z_1) + \psi(z_2)$.}
+\begin{align*}
+  \psi((z_1 + z_2) + d\mathbb{Z})
+  &= (z_1 + z_2 + m\mathbb{Z}) \otimes (1 + n\mathbb{Z}), \\
+  \psi(z_1 + d\mathbb{Z}) + \psi(z_2 + d\mathbb{Z})
+  &= (z_1 + m\mathbb{Z}) \otimes (1 + n\mathbb{Z})
+  + (z_2 + m\mathbb{Z}) \otimes (1 + n\mathbb{Z}) \\
+  &= (z_1 + z_2 + m\mathbb{Z}) \otimes (1 + n\mathbb{Z}).
+\end{align*}
 \end{enumerate}
-Thus, $\psi(\lambda z) = \lambda \psi(z)$.
+\end{enumerate}
 $\Box$ \\
 
 \emph{Proof of (4).}
