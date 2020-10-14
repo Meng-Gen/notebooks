@@ -72,9 +72,9 @@ By definition, we write the set of algebraic numbers as
 $$S = \bigcup_{f(x) \in \mathbb{Z}[x]} \{ z \in \mathbb{C} : f(z) = 0 \}.$$
 Since each polynomial of degree $n$ has at most $n$ roots,
 $\{ z \in \mathbb{C} : f(z) = 0 \}$ is finite for each given $f(x) \in \mathbb{Z}[x]$.
-So $S$ is a countable union (by assumption) of finite sets, and hence countable.
-($S$ is infinite since
-every integer $\alpha$ is a root of $f(z) = z - \alpha$.)
+So $S$ is a countable union (by assumption) of finite sets, and hence at most countable.
+$S$ is infinite since every integer $\alpha$ is a root of $f(z) = z - \alpha$.
+So $S$ is countable.
 $\Box$ \\
 
 Thus, it suffices to show that
@@ -94,15 +94,16 @@ Each $P_N$ is finite for given $N$
 (since the equation $n + |a_0| + |a_1| + \cdots + |a_n| = N$
 has finitely many solutions
 $(n, a_0, a_1, ..., a_n) \in \mathbb{Z}^{n+2}$).
-So $P$ is a countable union of finite sets, and hence countable.
-($P$ is infinite since
-$\mathbb{Z}$ is a subring of $\mathbb{Z}[x]$.)
+So $P$ is a countable union of finite sets, and hence at most countable.
+$P$ is infinite since $\mathbb{Z}$ is a subring of $\mathbb{Z}[x]$.
+So $P$ is countable.
 $\Box$ \\
 
 \emph{Proof (Theorem 2.13).}
 \begin{enumerate}
 \item[(1)]
 \emph{$\mathbb{Z}^N$ is countable for any integer $N > 0$.}
+Theorem 2.13.
 \item[(2)]
 \emph{The set of all polynomials over $\mathbb{Z}$ is countable.}
 Let
@@ -111,10 +112,11 @@ and
 $$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
 
 \emph{Claim: $P_n$ is countable.}
-Define a 1-1 correspondence $\varphi_n: P_n \rightarrow \mathbb{Z}^{n+1}$ by
+Define a 1-1 map $\varphi_n: P_n \rightarrow \mathbb{Z}^{n+1}$ by
 $$\varphi_n(a_0 z^n + a_1 z^{n-1} + \cdots + a_n)
 = (a_0, a_1, ..., a_{n-1}, a_n).$$
-By (1), $P_n$ is countable.
+By (1) and Theorem 2.8, $P_n$ is countable.
+($P_n$ is infinite since $a_n \in \mathbb{Z}$.)
 Now $P$ is a countable union of countable sets,
 and hence countable by Theorem 2.12.
 \end{enumerate}
@@ -141,8 +143,8 @@ $$\varphi_n(a_0 z^n + a_1 z^{n-1} + \cdots + a_n)
 = p_1^{\psi(a_0)} p_2^{\psi(a_1)} \cdots p_{n+1}^{\psi(a_n)},$$
 where $\psi$ is a 1-1 correspondence from $\mathbb{Z}$ to $\mathbb{Z}^+$ (Example 2.5).
 By the unique factorization theorem, $\varphi_n$ is 1-1.
-(In fact, $\varphi_n$ is a 1-1 correspondence from $\mathbb{Z}^{n+1}$ to $\mathbb{Z}^+$.)
-So $P_n$ is countable.
+So $P_n$ is countable by Theorem 2.8.
+($P_n$ is infinite since $a_n \in \mathbb{Z}$.)
 Now $P$ is a countable union of countable sets,
 and hence countable by Theorem 2.12.
 \end{enumerate}

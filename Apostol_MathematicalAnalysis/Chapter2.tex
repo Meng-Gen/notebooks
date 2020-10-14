@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 2: Some Basic Notions of Set Theory} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{Exercise 2.15.}
+\emph{A real number is called algebraic
+if it is a root of an algebraic equation $f(x) = 0$,
+where $a_0 + a_1 x + \cdots + a_n x^n = 0$ is a polynomial with integer coefficients.
+Prove that the set of all polynomials with integer coefficients is countable
+and deduce that the set of algebraic numbers is also countable.} \\
+
+Might assume $a_n \neq 0$. \\
+
+For example, all rational numbers are algebraic
+since $p = \frac{\alpha}{\beta}$ (where $\alpha, \beta \in \mathbb{Z}$)
+is a root of $\beta x - \alpha = 0$. \\
+
+Besides, $x = \sqrt{2} + \sqrt{3}$ is algebraic since $x^4 - 10x^2 + 1 = 0$.
+In fact, $x = \pm\sqrt{2} + \pm\sqrt{3}$ are also algebraic since
+$x^4 - 10x^2 + 1 =
+(x - \sqrt{2} - \sqrt{3})(x + \sqrt{2} - \sqrt{3})
+(x - \sqrt{2} + \sqrt{3})(x + \sqrt{2} + \sqrt{3})$. \\
+
+\textbf{Note.} Tom M. Apostol's definition of \emph{countable} set is different from
+Walter Rudin's one. \\
+
+\textbf{Lemma.}
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable implies that
+the set of algebraic numbers is countable.} \\
+
+\emph{Proof of Lemma.}
+By definition, we write the set of algebraic numbers as
+$$S = \bigcup_{f(x) \in \mathbb{Z}[x]} \{ \alpha \in \mathbb{R} : f(\alpha) = 0 \}.$$
+Since each polynomial of degree $n$ has at most $n$ roots,
+$\{ \alpha \in \mathbb{R} : f(\alpha) = 0 \}$ is finite (or countable)
+for each given $f(x) \in \mathbb{Z}[x]$.
+So $S$ is a countable union (by assumption) of countable sets, and hence countable
+by Theorem 2.27.
+$\Box$ \\
+
+Now we show that
+\emph{the set of all polynomials over $\mathbb{Z}$ is countable.} \\
+
+\emph{Proof (Walter Rudin).}
+For every positive integer $N$ there are only finitely many equations with
+$n + |a_0| + |a_1| + \cdots + |a_n| = N.$
+Write
+$$P_N = \{ f(x) \in \mathbb{Z}[x] : n + |a_0| + |a_1| + \cdots + |a_n| = N \}$$
+where $f(x) = a_0 + a_1 x + \cdots + a_n x^n$ with $a_n \neq 0$,
+and
+$$P = \bigcup_{N = 1}^{\infty} P_N.$$
+$P$ is the set of all polynomials over $\mathbb{Z}$. \\
+
+Each $P_N$ is finite (or countable) for given $N$
+(since the equation $n + |a_0| + |a_1| + \cdots + |a_n| = N$
+has finitely many solutions
+$(n, a_0, a_1, ..., a_n) \in \mathbb{Z}^{n+2}$).
+So $P$ is a countable union of countable sets, and hence countable
+by Theorem 2.27.
+$\Box$ \\
+
+\emph{Proof (Theorem 2.18).}
+\begin{enumerate}
+\item[(1)]
+\emph{$\mathbb{Z}^N$ is countable for any integer $N > 0$.}
+Induction on $N$ and apply the same argument of Theorem 2.18.
+\item[(2)]
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable.}
+Let
+$$P_n = \{ f \in \mathbb{Z}[x] : \deg f = n \},$$
+and
+$$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
+
+\emph{Claim: $P_n$ is countable.}
+Define a one-to-one map $\varphi_n: P_n \rightarrow \mathbb{Z}^{n+1}$ by
+$$\varphi_n(a_0 + a_1 x + \cdots + a_n x^n)
+= (a_0, a_1, ..., a_n).$$
+By (1) and Theorem 2.16, $P_n$ is countable.
+Now $P$ is a countable union of countable sets,
+and hence countable by Theorem 2.27.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Unique factorization theorem).}
+\begin{enumerate}
+\item[(1)]
+\emph{The set of prime numbers is countable.}
+Write all primes in the ascending order as $p_1, p_2, ..., p_n, ...$
+where $p_1 = 2, p_2 = 3, ..., p_{10001} = 104743, ...$
+(See \href{https://projecteuler.net/problem=7}{ProjectEuler 7: 10001st prime}.
+Use sieve of Eratosthenes to get $p_{10001}$.)
+\item[(2)]
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable.}
+Let
+$$P_n = \{ f \in \mathbb{Z}[x] : \deg f = n \},$$
+and
+$$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
+
+\emph{Claim: $P_n$ is countable.}
+Define a map $\varphi_n: P_n \rightarrow \mathbb{Z}^+$ by
+$$\varphi_n(a_0 + a_1 x + \cdots + a_n x^n)
+= p_1^{\psi(a_0)} p_2^{\psi(a_1)} \cdots p_{n+1}^{\psi(a_n)},$$
+where $\psi$ is a one-to-one correspondence from $\mathbb{Z}$ to $\mathbb{Z}^+$.
+By the unique factorization theorem, $\varphi_n$ is one-to-one.
+So $P_n$ is countable by Theorem 2.16.
+Now $P$ is a countable union of countable sets,
+and hence countable by Theorem 2.27.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\end{document}
