@@ -43,6 +43,109 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 2.2.}
+\emph{A complex number $z$ is said to be algebraic if there are integers
+$a_0, ..., a_n$, not all zero, such that
+$$a_0 z^n + a_1 z^{n-1} + \cdots + a_{n-1} z + a_n = 0.$$
+Prove that the set of all algebraic numbers is countable.
+(Hint: For every positive integer $N$ there are only finitely many equations with
+$$n + |a_0| + |a_1| + \cdots + |a_n| = N.$$}
+
+Might assume $a_0 \neq 0$. \\
+
+For example, $z = \sqrt{2} + \sqrt{3}$ is algebraic since $z^4 - 10z^2 + 1 = 0$.
+In fact, $z = \pm\sqrt{2} + \pm\sqrt{3}$ are also algebraic since
+$z^4 - 10z^2 + 1 =
+(z - \sqrt{2} - \sqrt{3})(z + \sqrt{2} - \sqrt{3})
+(z - \sqrt{2} + \sqrt{3})(z + \sqrt{2} + \sqrt{3})$. \\
+
+\textbf{Lemma.}
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable implies that
+the set of algebraic numbers is countable.} \\
+
+\emph{Proof of Lemma.}
+By definition, we write the set of algebraic numbers as
+$$S = \bigcup_{f(x) \in \mathbb{Z}[x]} \{ z \in \mathbb{C} : f(z) = 0 \}.$$
+Since each polynomial of degree $n$ has at most $n$ roots,
+$\{ z \in \mathbb{C} : f(z) = 0 \}$ is finite for each given $f(x) \in \mathbb{Z}[x]$.
+So $S$ is a countable union (by assumption) of finite sets, and hence countable.
+($S$ is infinite since
+every integer $\alpha$ is a root of $f(z) = z - \alpha$.)
+$\Box$ \\
+
+Thus, it suffices to show that
+\emph{the set of all polynomials over $\mathbb{Z}$ is countable.} \\
+
+\emph{Proof (Hint).}
+For every positive integer $N$ there are only finitely many equations with
+$n + |a_0| + |a_1| + \cdots + |a_n| = N.$
+Write
+$$P_N = \{ f(x) \in \mathbb{Z}[x] : n + |a_0| + |a_1| + \cdots + |a_n| = N \}$$
+where $f(x) = a_0 z^n + a_1 z^{n-1} + \cdots + a_{n-1} z + a_n$ with $a_0 \neq 0$,
+and
+$$P = \bigcup_{N = 1}^{\infty} P_N.$$
+$P$ is the set of all polynomials over $\mathbb{Z}$. \\
+
+Each $P_N$ is finite for given $N$
+(since the equation $n + |a_0| + |a_1| + \cdots + |a_n| = N$
+has finitely many solutions
+$(n, a_0, a_1, ..., a_n) \in \mathbb{Z}^{n+2}$).
+So $P$ is a countable union of finite sets, and hence countable.
+($P$ is infinite since
+$\mathbb{Z}$ is a subring of $\mathbb{Z}[x]$.)
+$\Box$ \\
+
+\emph{Proof (Theorem 2.13).}
+\begin{enumerate}
+\item[(1)]
+\emph{$\mathbb{Z}^N$ is countable for any integer $N > 0$.}
+\item[(2)]
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable.}
+Let
+$$P_n = \{ f \in \mathbb{Z}[x] : \deg f = n \},$$
+and
+$$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
+
+\emph{Claim: $P_n$ is countable.}
+Define a 1-1 correspondence $\varphi_n: P_n \rightarrow \mathbb{Z}^{n+1}$ by
+$$\varphi_n(a_0 z^n + a_1 z^{n-1} + \cdots + a_n)
+= (a_0, a_1, ..., a_{n-1}, a_n).$$
+By (1), $P_n$ is countable.
+Now $P$ is a countable union of countable sets,
+and hence countable by Theorem 2.12.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Unique factorization theorem).}
+\begin{enumerate}
+\item[(1)]
+\emph{The set of prime numbers is countable.}
+Write all primes in the ascending order as $p_1, p_2, ..., p_n, ...$
+where $p_1 = 2, p_2 = 3, ..., p_{10001} = 104743, ...$
+(See \href{https://projecteuler.net/problem=7}{ProjectEuler 7: 10001st prime}.
+Use sieve of Eratosthenes to get $p_{10001}$.)
+\item[(2)]
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable.}
+Let
+$$P_n = \{ f \in \mathbb{Z}[x] : \deg f = n \},$$
+and
+$$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
+
+\emph{Claim: $P_n$ is countable.}
+Define a map $\varphi_n: P_n \rightarrow \mathbb{Z}^+$ by
+$$\varphi_n(a_0 z^n + a_1 z^{n-1} + \cdots + a_n)
+= p_1^{\psi(a_0)} p_2^{\psi(a_1)} \cdots p_{n+1}^{\psi(a_n)},$$
+where $\psi$ is a 1-1 correspondence from $\mathbb{Z}$ to $\mathbb{Z}^+$ (Example 2.5).
+By the unique factorization theorem, $\varphi_n$ is 1-1.
+(In fact, $\varphi_n$ is a 1-1 correspondence from $\mathbb{Z}^{n+1}$ to $\mathbb{Z}^+$.)
+So $P_n$ is countable.
+Now $P$ is a countable union of countable sets,
+and hence countable by Theorem 2.12.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 \textbf{Exercise 2.10.}
 \emph{Let $X$ be an infinite set. For $p \in X$ and $q \in X$, define
 \begin{equation*}
