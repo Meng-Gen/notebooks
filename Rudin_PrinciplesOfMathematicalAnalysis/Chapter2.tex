@@ -235,12 +235,6 @@ $$\left| \xi - \frac{h_j}{k_j} \right|
 $$
 where $A_j = \frac{10}{9} \cdot 10^{-j!}$.
 \item[(b)]
-$k_j \equiv 0 \: (10)$ and $h_j \equiv 1 \: (10)$.
-Thus,
-$10 \nmid \alpha k_j + \beta h_j$ for any integers $\alpha$ and $\beta \neq 0$.
-Especially,
-$|\alpha k_j + \beta h_j| \geq 1$ for any integers $\alpha$ and $\beta \neq 0$.
-\item[(c)]
 If $\xi$ were a real algebraic number of degree $d > 1$,
 then by Lemma and (a),
 $$\frac{A}{k_j^{d}}
@@ -252,7 +246,7 @@ or $0 < A < A_j$.
 Since $j$ is arbitrary,
 $A_j \rightarrow 0$ as $j \rightarrow \infty$,
 contrary to $A > 0$.
-\item[(d)]
+\item[(c)]
 If $\xi$ were a real algebraic number of degree $d = 1$,
 $\xi = \frac{h}{k}$ is a rational number.
 So
@@ -261,14 +255,16 @@ $$\left| \xi - \frac{h_j}{k_j} \right|
 = \left| \frac{h k_j - k h_j}{k k_j} \right|
 \geq \left| \frac{1}{k k_j} \right|
 = \frac{|k|^{-1}}{k_j}$$
-by (b).
+for all $j$.
+(It is impossible that $h k_j - k h_j = 0$ or $\frac{h}{k} = \frac{h_i}{k_j}$
+since $| \frac{h}{k} - \frac{h_j}{k_j} | = \sum_{n=j+1}^{\infty} 10^{-n!} > 0$ for all $j$.)
 Again by (a),
 $$\frac{|k|^{-1}}{k_j}
 \leq \left| \xi - \frac{h_j}{k_j} \right|
 < \frac{A_j}{k_j^{j}}
 < \frac{A_j}{k_j},$$
 or $0 < |k|^{-1} < A_j$.
-(Similar to (c).)
+(Similar to (b).)
 Since $j$ is arbitrary,
 $A_j \rightarrow 0$ as $j \rightarrow \infty$,
 contrary to $|k|^{-1} > 0$.
