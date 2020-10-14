@@ -152,6 +152,132 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 2.3.}
+\emph{Prove that there exist real numbers which are not algebraic.} \\
+
+\emph{Proof (Exercise 2.2).}
+If all real numbers were algebraic, then $\mathbb{R}$ is countable by Exercise 2.2,
+contrary to the fact that
+$\mathbb{R}$ is uncountable (Corollary to Theorem 2.43).
+$\Box$ \\
+
+\emph{Proof (Liouville, 1844).}
+\begin{enumerate}
+\item[(1)]
+\textbf{Lemma.}
+\emph{If $\xi$ is a real algebraic number of degree $n > 1$,
+then there is a constant $A > 0$ (depending on $\xi$) such that
+$$\left| \xi - \frac{h}{k} \right| \geq \frac{A}{k^n}$$
+for all rational numbers $\frac{h}{k}$.}
+\begin{enumerate}
+\item[(a)]
+If $\left| \xi - \frac{h}{k} \right| \geq 1$, pick $A = 1 > 0$.
+\item[(b)]
+If $\left| \xi - \frac{h}{k} \right| < 1$,
+let $f(x) = a_0 + a_1 x + \cdots + a_n x^n$
+be an irreducible polynomial of degree $n > 1$ over $\mathbb{Z}$ such that
+$f(\xi) = 0$.
+By the mean value theorem,
+$$f(\xi) - f\left( \frac{h}{k} \right)
+= \left( \xi - \frac{h}{k} \right) f'(c)$$
+for some
+$c
+\in \left( \xi - \frac{h}{k}, \xi + \frac{h}{k} \right)
+\subseteq (\xi - 1, \xi + 1)$.
+Notice that
+\begin{enumerate}
+\item[(i)]
+$f(\xi) = 0$ by definition.
+\item[(ii)]
+$f\left( \frac{h}{k} \right) \neq 0$ since $\frac{h}{k}$ cannot be a root of $f(x)$.
+Otherwise $f$ is of degree $1$, contrary to the assumption of $f$.
+\item[(iii)]
+$\left| f\left( \frac{h}{k} \right) \right| \geq \frac{1}{k^n}$
+since
+\begin{align*}
+  f\left( \frac{h}{k} \right)
+  &= a_0 + a_1 \left( \frac{h}{k} \right) + \cdots + a_n \left( \frac{h}{k} \right)^n
+  \neq 0, \\
+  k^n f\left( \frac{h}{k} \right)
+  &= a_0 k^n + h k^{n-1} a_1 + \cdots + h^n a_n
+  \neq 0, \\
+  k^n \left| f\left( \frac{h}{k} \right) \right|
+  &\geq 1.
+\end{align*}
+\item[(iv)]
+$|f'(c)| \leq \sup_{x \in [\xi - 1, \xi + 1]}|f'(x)|$ since
+$c \in [\xi - 1, \xi + 1]$
+and $f'(x)$ is continuous or bounded on a compact set $[\xi - 1, \xi + 1]$.
+\end{enumerate}
+By (i)-(iv),
+\begin{align*}
+  \left| f(\xi) - f\left( \frac{h}{k} \right) \right|
+  &= \left| \left( \xi - \frac{h}{k} \right) f'(c) \right|, \\
+  \frac{1}{k^n} \leq \left| f\left( \frac{h}{k} \right) \right|
+  &= \left| \xi - \frac{h}{k} \right| |f'(c)|
+  \leq \left| \xi - \frac{h}{k} \right| \cdot \sup_{x \in [\xi - 1, \xi + 1]}|f'(x)|.
+\end{align*}
+Pick $A = (1 + \sup_{x \in [\xi - 1, \xi + 1]}|f'(x)|)^{-1} > 0$.
+\end{enumerate}
+By (a)(b), we arrange
+$A = \min(1, (1 + \sup_{x \in [\xi - 1, \xi + 1]}|f'(x)|)^{-1}) > 0$
+to fit the inequality.
+\item[(2)]
+\emph{$\xi = \sum_{n=0}^{\infty} 10^{-n!}$ is transcendental.}
+\begin{enumerate}
+\item[(a)]
+Let $k_j = 10^{j!}$, $h_j = 10^{j!} \sum_{n=0}^{j} 10^{-n!}$.
+Then
+$$\left| \xi - \frac{h_j}{k_j} \right|
+= \sum_{n=j+1}^{\infty} 10^{-n!}
+< \sum_{n=(j+1)!}^{\infty} 10^{-n}
+= \frac{A_j}{k_j^{j}}
+$$
+where $A_j = \frac{10}{9} \cdot 10^{-j!}$.
+\item[(b)]
+$k_j \equiv 0 \: (10)$ and $h_j \equiv 1 \: (10)$.
+Thus,
+$10 \nmid \alpha k_j + \beta h_j$ for any integers $\alpha$ and $\beta \neq 0$.
+Especially,
+$|\alpha k_j + \beta h_j| \geq 1$ for any integers $\alpha$ and $\beta \neq 0$.
+\item[(c)]
+If $\xi$ were a real algebraic number of degree $d > 1$,
+then by Lemma and (a),
+$$\frac{A}{k_j^{d}}
+< \left| \xi - \frac{h_j}{k_j} \right|
+< \frac{A_j}{k_j^{j}}
+< \frac{A_j}{k_j^{d}}$$
+for some $A > 0$ and $j \geq d$,
+or $0 < A < A_j$.
+Since $j$ is arbitrary,
+$A_j \rightarrow 0$ as $j \rightarrow \infty$,
+contrary to $A > 0$.
+\item[(d)]
+If $\xi$ were a real algebraic number of degree $d = 1$,
+$\xi = \frac{h}{k}$ is a rational number.
+So
+$$\left| \xi - \frac{h_j}{k_j} \right|
+= \left| \frac{h}{k} - \frac{h_j}{k_j} \right|
+= \left| \frac{h k_j - k h_j}{k k_j} \right|
+\geq \left| \frac{1}{k k_j} \right|
+= \frac{|k|^{-1}}{k_j}$$
+by (b).
+Again by (a),
+$$\frac{|k|^{-1}}{k_j}
+\leq \left| \xi - \frac{h_j}{k_j} \right|
+< \frac{A_j}{k_j^{j}}
+< \frac{A_j}{k_j},$$
+or $0 < |k|^{-1} < A_j$.
+(Similar to (c).)
+Since $j$ is arbitrary,
+$A_j \rightarrow 0$ as $j \rightarrow \infty$,
+contrary to $|k|^{-1} > 0$.
+\end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 \textbf{Exercise 2.10.}
 \emph{Let $X$ be an infinite set. For $p \in X$ and $q \in X$, define
 \begin{equation*}
