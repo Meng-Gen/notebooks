@@ -1,0 +1,228 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 3: Lebesgue Measure} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{\large Section 3.1: Introduction} \\\\
+
+
+
+\textbf{Problem 3.1.}
+\emph{If $A$ and $B$ are two sets in $\mathfrak{M}$ with
+$A \subseteq B$, then $mA \leq mB$.
+This property is called monotonicity.} \\
+
+\emph{Proof.}
+Write
+$$B
+= B \cap X
+= B \cap (A \cup \widetilde{A})
+= (B \cap A) \cup (B \cap \widetilde{A})
+= A \cup (B - A).$$
+Here $B \cap A = A$ comes from $A \subseteq B$ (Problem 1.9).
+Notice that $A$ and $B - A$ are disjoint.
+Since $m$ is a countably additive measure ($m$ is nonnegative)
+on a $\sigma$-algebra $\mathfrak{M}$,
+$$mB = mA + m(B-A) \geq mA.$$
+$\Box$ \\\\
+
+
+
+\textbf{Problem 3.2.}
+\emph{Let $\langle E_n \rangle$ be any sequence of sets in $\mathfrak{M}$.
+Then $m(\bigcup E_n) \leq \sum mE_n$. (Hint: Use Proposition 1.2)
+This property of a measure is called countable subadditivity.} \\
+
+As the argument in Problem 3.1. \\
+
+\emph{Proof.}
+Since $\langle E_n \rangle$ is a sequence of sets in $\sigma$-algebra $\mathfrak{M}$,
+by Proposition 1.2 and its proof,
+there is a sequence $\langle F_n \rangle$ of sets in $\sigma$-algebra $\mathfrak{M}$
+such that all $F_n$ are pairwise disjoint, $F_n \subseteq E_n$, and
+$$\bigcup E_n = \bigcup F_n.$$
+Since $m$ is a countably additive measure
+on a $\sigma$-algebra $\mathfrak{M}$,
+$$m\left( \bigcup E_n \right)
+= m\left( \bigcup F_n \right)
+= \sum mF_n
+\geq \sum mE_n.$$
+The last inequality holds by applying Exercise 3.1 on $F_n \subseteq E_n$ for any $n$.
+$\Box$ \\\\
+
+
+
+\textbf{Problem 3.3.}
+\emph{If there is a set $A$ in $\mathfrak{M}$ such that $mA < \infty$,
+then $m\varnothing = 0$.} \\
+
+\emph{Proof.}
+For such $A$, write $A = A \cup \varnothing$.
+$A$ and $\varnothing$ are disjoint.
+Since $m$ is a countably additive measure
+on a $\sigma$-algebra $\mathfrak{M}$,
+$$mA = mA + m\varnothing.$$
+Since $mA < \infty$,
+we can cancel out $mA$ on the both sides to get
+$m\varnothing = 0$.
+$\Box$ \\\\
+
+
+
+\textbf{\large Section 3.2: Outer Measure} \\\\
+
+
+
+\textbf{Problem 3.5.}
+\emph{Let $A$ be the set of rational numbers between $0$ and $1$, and
+let $\{ I_n\}$ be a finite collection of open intervals covering $A$.
+Then $\sum l(I_n) \geq 1$.} \\
+
+\emph{Proof.}
+Look at the closure of $A$.
+\begin{align*}
+1
+&= m^{*}[0, 1]
+  &\text{(Proposition 3.1)} \\
+&= m^{*}\overline{A}
+  &\text{($A$ is dense in $[0, 1]$)} \\
+&\leq m^{*}\left( \overline{\bigcup I_n} \right)
+  &\text{(Proposition 2.10)} \\
+&= m^{*}\left( \bigcup \overline{I_n} \right)
+  &\text{(Proposition 2.10)} \\
+&\leq \sum m^{*}(\overline{I_n})
+  &\text{(Proposition 3.2)} \\
+&= \sum l(\overline{I_n})
+  &\text{(Proposition 3.1)} \\
+&= \sum l(I_n)
+  &\text{(definition of length)}
+\end{align*}
+$\Box$ \\\\
+
+
+
+\textbf{Problem 3.6.}
+\emph{Prove Proposition 5:
+Given any set $A$ and any $\epsilon > 0$,
+there is an open set $O$ such that $A \subseteq O$
+and $m^{*}O \leq m^{*}A + \epsilon$.
+There is a $G \in G_{\delta}$ such that $m^{*}G = m^{*}A$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Use the definition of the outer measure.}
+By the definition of $m^{*}$,
+for such $\epsilon > 0$ there exists a countable collection
+$\{ I_n \}$ of open intervals that covers $A$ and
+$$m^{*} A + \epsilon \geq \sum l(I_n).$$
+\item[(2)]
+\emph{Construct an open set $O$.}
+Let $O = \bigcup I_n \supseteq A$
+which is the union of any collection of open sets $I_n$.
+By Proposition 2.7, $O$ is open.
+\item[(3)]
+\emph{Show that $m^{*}O \leq m^{*}A + \epsilon$.}
+By Proposition 3.2 and 3.1,
+$$m^{*}O
+= m^{*} \left( \bigcup I_n \right)
+\leq \sum m^{*} I_n
+= \sum l(I_n)
+\leq m^{*} A + \epsilon.$$
+\end{enumerate}
+Therefore, given any set $A$ and any $\epsilon > 0$,
+there is an open set $O$ such that $A \subseteq O$
+and $m^{*}O \leq m^{*}A + \epsilon$.
+
+\begin{enumerate}
+\item[(4)]
+\emph{Construct $G \in G_{\delta}$ in a natural way.}
+Given any $n \in \mathbb{N}$, there exists an open set $O_n$
+such that $O_n \supseteq A$ and $m^{*}O_n \leq m^{*}A + \frac{1}{n}$.
+Let
+$$G = \bigcap_{n=1}^{\infty} O_n \in G_{\delta}.$$
+\item[(5)]
+\emph{Show that $m^{*}G = m^{*}A$.}
+  \begin{enumerate}
+  \item[(a)]
+  Since $A \subseteq O_n$ for any $n \in \mathbb{N}$,
+  $A \subseteq \bigcap_{n=1}^{\infty} O_n = G$.
+  Thus $m^{*}A \leq m^{*}G$.
+  \item[(b)]
+  Since $O_n \supseteq \bigcap_{n=1}^{\infty} O_n = G$ for any $n \in \mathbb{N}$,
+  $$m^{*}A + \frac{1}{n} \geq m^{*}O_n \geq m^{*}G$$
+  for any $n \in \mathbb{N}$.
+  Since $n \in \mathbb{N}$ is arbitrary, $m^{*}A \geq m^{*}G$.
+  \end{enumerate}
+By (a)(b), $m^{*}A = m^{*}G$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Problem 3.7.}
+\emph{Prove that $m^{*}$ is translation invariant.} \\
+
+\emph{Proof.}
+Given $E \in \mathfrak{M}$ and $y \in \mathbb{R}$.
+\begin{enumerate}
+\item[(1)]
+$m^{*}(E + y) \leq m^{*}E$.
+Let $\{ I_n \}$ of open intervals that cover $E$.
+Then $\{ I_n+y \}$ of open intervals that cover $E+y$.
+Notice that the definition of $m^{*}$ and $l(I_n+y) = l(I_n)$, then
+$$m^{*}(E + y) \leq \sum l(I_n+y) = \sum l(I_n).$$
+Take the infimum of all such sum $\sum l(I_n)$,
+$m^{*}(E + y) \leq m^{*}E$.
+\item[(2)]
+$m^{*}(E) \leq m^{*}(E + y)$.
+Similar to (1).
+\end{enumerate}
+By (1)(2), $m^{*}(E + y) = m^{*}E$, that is, $m^{*}$ is translation invariant.
+$\Box$ \\\\
+
+
+
+\textbf{Problem 3.8.}
+\emph{Prove that if $m^{*}A = 0$, then $m^{*}(A \cup B) = m^{*}B$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$m^{*}(A \cup B) \geq m^{*}B$ since $A \cup B \supseteq B$
+and the definition of $m^{*}$.
+(Any covering of $A \cup B$ by open intervals is also a covering of $B$
+so that the latter infimum is taken over a larger collection than the former.)
+\item[(2)]
+$m^{*}(A \cup B) \leq m^{*}B$.
+By Proposition 3.2,
+$$m^{*}(A \cup B) \leq m^{*}A + m^{*}B = 0 + m^{*}B = m^{*}B.$$
+\end{enumerate}
+By (1)(2), $m^{*}(A \cup B) = m^{*}B$.
+$\Box$ \\\\
+
+
+
+\end{document}
