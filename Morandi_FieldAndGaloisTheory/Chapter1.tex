@@ -146,4 +146,88 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 1.1.23.}
+\emph{Recall that the characteristic of a ring $R$ with identity
+is the smallest positive integer $n$ for which $n \cdot 1 = 0$,
+if such an $n$ exists, or else the characteristic is $0$.
+Let $R$ be a ring with identity.
+Define $\varphi: \mathbb{Z} \rightarrow R$ by $\varphi(n) = n \cdot 1$,
+where $1$ is the identity of $R$.
+Show that $\varphi$ is a ring homomorphism
+and that $\ker(\varphi) = m\mathbb{Z}$ for a unique nonnegative integer $m$,
+and show that $m$ is the characteristic of $R$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{$\varphi$ is a ring homomorphism.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{$\varphi(a+b) = \varphi(a) + \varphi(b)$.}
+    $\varphi(a+b)
+    = (a+b) \cdot 1
+    = a \cdot 1 + b \cdot 1
+    = \varphi(a) + \varphi(b)$.
+  \item[(b)]
+    \emph{$\varphi(ab) = \varphi(a) \varphi(b)$.}
+    $\varphi(ab)
+    = (ab) \cdot 1
+    = (a \cdot 1)(b \cdot 1)
+    = \varphi(a) \varphi(b)$
+    since $1 \times 1 = 1$. (Here $\times$ is the multiplication operator of $R$.)
+  \end{enumerate}
+\item[(2)]
+  \emph{$\ker(\varphi) = m\mathbb{Z}$ for a unique nonnegative integer $m$.}
+  Since $\ker(\varphi)$ is an ideal of a PID $\mathbb{Z}$,
+  there is a unique nonnegative integer $m$
+  such that $\ker(\varphi) = m\mathbb{Z}$.
+\item[(3)]
+  \emph{$m$ is the characteristic of $R$.}
+  There are only two possible cases,
+  $\text{char}(R) = 0$ or else $\text{char}(R) > 0$.
+  \begin{enumerate}
+  \item[(a)]
+    \emph{$\text{char}(R) = 0$.}
+    $\ker(\varphi) = 0$. Thus $m = 0 = \text{char}(R)$.
+  \item[(b)]
+    \emph{$\text{char}(R) = n > 0$.} $n \in \ker(\varphi)$,
+    so $m > 0$ and $m \mid n$.
+    By the minimality of $n$, $m = n = \text{char}(R)$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.1.24.}
+\emph{For any positive integer $n$,
+give an example of a ring of characteristic $n$.} \\
+
+\emph{Proof.}
+The ring $\mathbb{Z}/n\mathbb{Z}$.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.1.25.}
+\emph{If $R$ is an integral domain, show that either
+$\text{char}(R) = 0$ or $\text{char}(R)$ is prime.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $1$ has infinite order. $\text{char}(R) = 0$. (Nothing to do.)
+\item[(2)]
+  $1$ has finite order $n$.
+  Want to show $n$ is prime.
+  If $n = ab$ where $a, b \in \mathbb{Z}^+$,
+  then $$0 = n \cdot 1 = (a \cdot 1)(b \cdot 1).$$
+  Since $R$ is an integral domain, $a \cdot 1 = $ or $b \cdot 1 = 0$.
+  By the minimality of $n$, $a \geq n$ or $b \geq n$.
+  $a = n$ or $b = n$. That is, $n$ is prime.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 \end{document}
