@@ -100,8 +100,22 @@ $\Box$ \\\\
 let $\{ I_n\}$ be a finite collection of open intervals covering $A$.
 Then $\sum l(I_n) \geq 1$.} \\
 
+\emph{Idea.}
+If $\{ I_n\}$ is a covering of $[0, 1]$ then we are done
+since the length of $[0, 1]$ is $1$.
+However, $\{ I_n\}$ only covers $A$ and not necessarily covers $[0, 1]$.
+(For example,
+$\{ I_n\}
+= \left\{
+\left( -89, \frac{1}{\sqrt{2}} \right),
+\left( \frac{1}{\sqrt{2}}, 64 \right)
+\right\}$ covers $A$ but not $\frac{1}{\sqrt{2}}$.)
+Hence, it is natural to consider the closure of $A$ and
+the closure of $I_n$.
+Now $\{ \overline{I_n} \}$ is a (closed) covering of
+$\overline{A} = [0, 1]$. \\
+
 \emph{Proof.}
-Look at the closure of $A$.
 \begin{align*}
 1
 &= m^{*}[0, 1]
