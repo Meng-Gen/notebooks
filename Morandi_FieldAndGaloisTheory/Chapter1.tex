@@ -29,7 +29,7 @@
 
 
 
-\textbf{Exercise 1.1.1.}
+\textbf{Problem 1.1.1.}
 \emph{Let $K$ be a field extension of $F$.
 By defining scalar multiplication for $\alpha \in F$ and $a \in K$
 by $\alpha \cdot a = \alpha a$, the multiplication in $K$,
@@ -79,7 +79,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.1.2.}
+\textbf{Problem 1.1.2.}
 \emph{If $K$ is a field extension of $F$, prove that $[K:F] = 1$
 if and only if $K = F$.} \\
 
@@ -99,7 +99,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.1.5.}
+\textbf{Problem 1.1.5.}
 \emph{Show that 
 $\mathbb{Q}(\sqrt{5}, \sqrt{7}) = \mathbb{Q}(\sqrt{5} + \sqrt{7})$.} \\
 
@@ -131,7 +131,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.1.9.}
+\textbf{Problem 1.1.9.}
 \emph{If $K$ is an extension of $F$ such that $[K:F]$ is prime,
 show that there are no intermediate fields between $K$ and $F$.} \\
 
@@ -140,13 +140,13 @@ Let $L$ be any field such that $F \subseteq L \subseteq K$.
 By Proposition 1.20,
 $$[K:F] = [K:L][L:F].$$
 Since $[K:F]$ is prime, $[K:L] = 1$ or $[L:F] = 1$.
-By Exercise 1.1.2, $L=K$ or $L=F$,
+By Problem 1.1.2, $L=K$ or $L=F$,
 or there are no intermediate fields between $K$ and $F$.
 $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.1.23.}
+\textbf{Problem 1.1.23.}
 \emph{Recall that the characteristic of a ring $R$ with identity
 is the smallest positive integer $n$ for which $n \cdot 1 = 0$,
 if such an $n$ exists, or else the characteristic is $0$.
@@ -199,7 +199,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.1.24.}
+\textbf{Problem 1.1.24.}
 \emph{For any positive integer $n$,
 give an example of a ring of characteristic $n$.} \\
 
@@ -209,7 +209,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.1.25.}
+\textbf{Problem 1.1.25.}
 \emph{If $R$ is an integral domain, show that either
 $\text{char}(R) = 0$ or $\text{char}(R)$ is prime.} \\
 
@@ -226,6 +226,51 @@ $\text{char}(R) = 0$ or $\text{char}(R)$ is prime.} \\
   By the minimality of $n$, $a \geq n$ or $b \geq n$.
   $a = n$ or $b = n$. That is, $n$ is prime.
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{\large Section 1.2: Automorphisms} \\\\
+
+
+
+\textbf{Problem 1.2.1.}
+\emph{Show that the only automorphism of $\mathbb{Q}$ is the identity.} \\
+
+\emph{Proof.}
+Given any $\tau \in \text{Aut}(\mathbb{Q})$.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\tau(1) = 1$.}
+Since $1^2 = 1$, $\tau(1)\tau(1) = \tau(1)$. $\tau(1) = 0$ or $1$.
+There are only two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  Assume that $\tau(1) = 0$. So
+  $$\tau(a) = \tau(a \cdot 1) = \tau(a)\cdot \tau(1) = \tau(a) \cdot 0 = 0$$
+  for any $a \in \mathbb{Q}$.
+  That is, $\tau = 0 \in \text{Aut}(\mathbb{Q})$, which is absurd.
+  \item[(b)]
+  Therefore, $\tau(1) = 1$.
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $\tau(n) = n$ for all $n \in \mathbb{Z}^+$.}
+Write $n = 1 + 1 + \cdots + 1$ ($n$ times $1$).
+Applying the additivity of $\tau$, we have
+$$\tau(n) = \tau(1) + \tau(1) + \cdots + \tau(1) = 1 + 1 + \cdots + 1 = n.$$
+(Might use induction on $n$ to eliminate $\cdots$ symbols.)
+\item[(3)]
+\emph{Show that $\tau(n) = n$ for all $n \in \mathbb{Z}$.}
+By the additivity of $\tau$, $\tau(-n) = -\tau(n) = -n$ for $n \geq 0$.
+The result is established.
+\end{enumerate}
+Now for any $a = \frac{n}{m} \in \mathbb{Q}$ ($m, n \in \mathbb{Z}$, $n \neq 0$),
+$am = n$.
+Apply the multiplication of $\tau$,
+$\tau(a) \tau(m) = \tau(n)$, or $\tau(a)m = n$
+Thus,
+$$\tau(a) = \frac{m}{n} = a$$
+for any $a \in \mathbb{Q}$, or $\tau$ is the identity.
 $\Box$ \\\\
 
 
