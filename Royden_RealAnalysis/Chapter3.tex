@@ -69,7 +69,7 @@ $$m\left( \bigcup E_n \right)
 = m\left( \bigcup F_n \right)
 = \sum mF_n
 \geq \sum mE_n.$$
-The last inequality holds by applying Exercise 3.1 on $F_n \subseteq E_n$ for any $n$.
+The last inequality holds by applying Problem 3.1 on $F_n \subseteq E_n$ for any $n$.
 $\Box$ \\\\
 
 
@@ -238,5 +238,111 @@ By (1)(2), $m^{*}(A \cup B) = m^{*}B$.
 $\Box$ \\\\
 
 
+
+\textbf{\large Section 3.3: Measurable Sets and Lebesgue Measure} \\\\
+
+
+
+\textbf{Problem 3.9.}
+\emph{Show that if $E$ is a measurable set, then each translate $E+y$ of $E$
+is also measurable.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$E$ is measurable if and only if
+for each set $A$, each $y \in \mathbb{R}$,
+$$m^{*}(A+y)
+= m^{*}((A+y) \cap E) + m^{*}((A+y) \cap \widetilde{E}).$$}
+  \begin{enumerate}
+  \item[(a)]
+  $(\Longrightarrow)$
+  $E$ is measurable and
+  $A+y$ is a set (for any set $A$ and $y \in \mathbb{R}$).
+  \item[(b)]
+  $(\Longleftarrow)$
+  $A = (A-y) + y$ for any set $A$ and $y \in \mathbb{R}$.
+  \end{enumerate}
+\item[(2)]
+For any set $E$ and $y \in \mathbb{R}$,
+$\widetilde{E+y} = \widetilde{E}+y$ by the definition of translation.
+\item[(3)]
+For any sets $E_1$, $E_2$ and $y \in \mathbb{R}$,
+$(E_1 \cap E_2)+y = (E_1+y) + (E_2+y)$ by the definition of translation.
+\item[(4)]
+For each set $A$ and $y \in \mathbb{R}$,
+\begin{align*}
+ & m^{*}((A+y) \cap (E+y)) + m^{*}((A+y) \cap (\widetilde{E+y}))
+  & \\
+=& m^{*}((A+y) \cap (E+y)) + m^{*}((A+y) \cap (\widetilde{E}+y))
+  &\text{((2))} \\
+=& m^{*}((A \cap E)+y) + m^{*}((A \cap \widetilde{E})+y)
+  &\text{((3))} \\
+=& m^{*}(A \cap E) + m^{*}(A \cap \widetilde{E})
+  &\text{(Problem 3.7)} \\
+=& m^{*}A
+  &\text{(Measurability of $E$)} \\
+=& m^{*}(A+y).
+  &\text{(Problem 3.7)}
+\end{align*}
+By (1), $E+y$ is measurable.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Problem 3.10.}
+\emph{Show that if $E_1$ and $E_2$ are measurable, then
+$$m(E_1 \cup E_2) + m(E_1 \cap E_2) = mE_1 + mE_2.$$}
+
+\emph{Proof.}
+Since the collection $\mathfrak{M}$ of measurable sets is a $\sigma$-algebra
+(Theorem 3.10) and $m$ is countable additive (Proposition 3.13),
+\begin{align*}
+m(E_1 \cup E_2) + m(E_1 \cap E_2)
+& = \left( m(E_1) + m(E_2 \cap \widetilde{E_1}) \right) + m(E_2 \cap E_1) \\
+& = m(E_1) + \left( m(E_2 \cap \widetilde{E_1}) + m(E_2 \cap E_1) \right) \\
+& = m(E_1) + m(E_2).
+\end{align*}
+($E_1$ and $E_2 \cap \widetilde{E_1}$ are disjoint.
+$E_2 \cap \widetilde{E_1}$ and $E_2 \cap E_1$ are disjoint too.)
+$\Box$ \\\\
+
+
+
+\textbf{Problem 3.11.}
+\emph{Show that the condition $mE_1 < \infty$ is necessary in Proposition 3.14 by
+giving a decreasing sequence $\langle E_n \rangle$ of measurable sets with
+$\varnothing = \bigcap E_n$ and $mE_n = \infty$ for each $n$.} \\
+
+\emph{Proof.}
+Set $$E_n = (n, \infty)$$ for each $n \in \mathbb{N}$.
+\begin{enumerate}
+\item[(1)]
+\emph{$\langle E_n \rangle$ is a decreasing sequence of measurable sets.}
+$E_n \supseteq E_{n+1}$ by definition.
+Besides, each $E_n$ is measurable by Lemma 3.11.
+\item[(2)]
+\emph{$\bigcap E_n = \varnothing$.}
+For each $x \in \mathbb{R}$, $x \notin E_1$ if $x \leq 1$;
+$x \notin E_{[x]}$ if $x \geq 1$ where $x \mapsto [x]$ is the floor function.
+\item[(3)]
+\emph{$mE_n = \infty$ for each $n$.}
+The length of each $E_n$ is $\infty$ (Proposition 3.1).
+\end{enumerate}
+
+$\Box$ \\\\
+
+
+
+\textbf{\large Section 3.4: A Nonmeasurable Set} \\\\
+
+
+
+\textbf{\large Section 3.5: Measurable Functions} \\\\
+
+
+
+\textbf{\large Section 3.6: Littlewood's Three Principles} \\\\
 
 \end{document}
