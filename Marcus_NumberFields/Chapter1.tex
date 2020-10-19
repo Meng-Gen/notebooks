@@ -1,0 +1,313 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 1: A Special Case of Fermat's Conjecture} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+% https://www.math.uci.edu/~ndonalds/math180b/6gaussian.pdf
+
+
+
+\emph{Exercise 1.1-1.9: Define $N: \mathbb{Z}[i] \rightarrow \mathbb{Z}$ by
+$N(a+bi) = a^2 + b^2$.} \\\\
+
+
+
+\textbf{Exercise 1.1}
+\emph{Verify that for all $\alpha, \beta \in \mathbb{Z}[i]$,
+$N(\alpha\beta) = N(\alpha)N(\beta)$,
+either by direct computation or using the fact that
+$N(a+bi) = (a+bi)(a-bi)$.
+Conclude that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Direct computation.}
+Write $\alpha = a+bi, \beta=c+di$ where $a, b, c, d \in \mathbb{Z}$.
+Thus,
+\begin{align*}
+N(\alpha\beta)
+&= N((a+bi)(c+di)) \\
+&= N((ac-bd) + (ad+bc)i) \\
+&= (ac-bd)^2 + (ad+bc)^2 \\
+&= (a^2 c^2 - 2abcd + b^2 d^2) + (a^2 d^2 + 2abcd + b^2 c^2) \\
+&= a^2 c^2 + b^2 d^2 + a^2 d^2 + b^2 c^2, \\
+N(\alpha)N(\beta)
+&= N(a+bi) N(c+di) \\
+&= (a^2 + b^2)(c^2 + d^2) \\
+&= a^2 c^2 + b^2 d^2 + a^2 d^2 + b^2 c^2.
+\end{align*}
+Therefore, $N(\alpha\beta) = N(\alpha)N(\beta)$.
+(Note that we also get the identity
+$(a^2 + b^2)(c^2 + d^2) = (ac-bd)^2 + (ad+bc)^2$.)
+\item[(2)]
+\emph{Using the fact that $N(a+bi) = (a+bi)(a-bi)$,}
+or $N(\alpha) = \alpha \overline{\alpha}$
+for any $\alpha \in \mathbb{Z}[i]$.
+Thus,
+\begin{align*}
+N(\alpha\beta)
+&= \alpha\beta\overline{\alpha\beta} \\
+&= \alpha\beta\overline{\alpha}\overline{\beta} \\
+&= \alpha\overline{\alpha}\beta\overline{\beta} \\
+&= N(\alpha)N(\beta).
+\end{align*}
+\item[(3)]
+\emph{Show that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
+Write $\gamma = \alpha \beta$ for some $\beta \in \mathbb{Z}[i]$.
+So $N(\gamma) = N(\alpha) N(\beta) \in \mathbb{Z}$,
+or $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.2}
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that $\alpha$ is a unit iff $N(\alpha) = 1$.
+Conclude that the only unit are $\pm 1$ and $\pm i$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$(\Longrightarrow)$}
+Since $\alpha$ is a unit, there is $\beta \in \mathbb{Z}[i]$ such that
+$\alpha \beta = 1$.
+By Exercise 1.1, $N(\alpha \beta) = N(1)$, or $N(\alpha) N(\beta) = 1$.
+Since the image of $N$ is nonnegative integers, $N(\alpha) = 1$.
+\item[(2)]
+\emph{$(\Longleftarrow)$}
+By Exercise 1.1, $N(\alpha) = \alpha \overline{\alpha}$,
+or $1 = \alpha \overline{\alpha}$ since $N(\alpha) = 1$.
+That is, $\overline{\alpha} \in \mathbb{Z}[i]$ is
+the inverse of $\alpha \in \mathbb{Z}[i]$.
+(Or by (1), we solve the equation $N(\alpha) = a^2 + b^2 = 1$,
+and show that all four solutions ($\pm 1$ and $\pm i$) are unit.)
+\end{enumerate}
+Conclusion: a unit $\alpha = a+bi$ of $\mathbb{Z}[i]$
+is satisfying the equation $N(\alpha) = a^2 + b^2 = 1$ by (1)(2).
+That is, the only unit of $\mathbb{Z}[i]$ are $\pm 1$ and $\pm i$.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.3}
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that if $N(\alpha)$ is a prime in $\mathbb{Z}$ then
+$\alpha$ is irreducible in $\mathbb{Z}[i]$.
+Show that the same conclusion holds
+if $N(\alpha) = p^2$, where $p$ is a prime in $\mathbb{Z}$,
+$p \equiv 3 \pmod{4}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that if $N(\alpha)$ is a prime in $\mathbb{Z}$ then
+$\alpha$ is irreducible in $\mathbb{Z}[i]$.}
+Write $\alpha = \beta\gamma$.
+Then $N(\alpha) = N(\beta)N(\gamma)$ is a prime in $\mathbb{Z}$.
+Since each integer prime is irreducible, $N(\beta) = 1$ or $N(\gamma) = 1$.
+So that $\beta$ is unit or $\gamma$ is unit by Exercise 1.2.
+Hence, $\alpha$ is irreducible.
+\item[(2)]
+\emph{Show that $\alpha$ is irreducible in $\mathbb{Z}[i]$
+if $N(\alpha) = p^2$, where $p$ is a prime in $\mathbb{Z}$,
+$p \equiv 3 \pmod{4}$.}
+Assume $\alpha = \beta\gamma$ were not irreducible.
+Similar to (1), $N(\alpha) = N(\beta)N(\gamma) = p^2$.
+Since $\beta$ and $\gamma$ are proper factors of $\alpha$,
+$$N(\beta) = N(\gamma) = p.$$
+Since any square $a^2 \equiv 0, 1 \pmod{4}$,
+any $N(a+bi) = a^2+b^2 \equiv 0, 1, 2 \pmod{4}$.
+Especially, $N(\beta) \equiv 0, 1, 2 \pmod{4}$,
+contrary to $N(\beta) = p \equiv 3 \pmod{4}$
+by the assumption.
+Therefore, $\alpha$ is irreducible in $\mathbb{Z}[i]$.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+\begin{enumerate}
+\item[(1)]
+The prime $2$ is reducible in $\mathbb{Z}[i]$ (Exercise 1.4).
+\item[(2)]
+Every prime $p \equiv 1 \pmod{4}$ is reducible in $\mathbb{Z}[i]$ (Exercise 1.8). \\\\
+\end{enumerate}
+
+
+
+\textbf{Exercise 1.4}
+\emph{Show that $1-i$ is irreducible in $\mathbb{Z}$
+and that $2 = u(1-i)^2$ for some unit $u$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$1-i$ is irreducible.}
+Since $N(1-i) = 2$ is a prime in $\mathbb{Z}$,
+$1-i$ is irreducible by Problem 1.3.
+\item[(2)]
+$2 = i(1-i)^2$ where $i$ is unit in $\mathbb{Z}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.5}
+\emph{Notice that
+$(2+i)(2-i) = 5 = (1+2i)(1-2i)$.
+How is this consistent with unique factorization?} \\
+
+\emph{Proof.}
+Since $2+i = i(1-2i)$ and $2-i = (-i)(1+2i)$,
+the factorization is unique up to order and multiplication of primes by units.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.6}
+\emph{Show that every nonzero, non-unit Gaussian integer $\alpha$
+is a product of irreducible elements, by induction on $N(\alpha)$.} \\
+
+\emph{Proof.}
+Induction on $N(\alpha)$.
+\begin{enumerate}
+\item[(1)]
+\emph{$n = 2$}.
+Given $\alpha \in \mathbb{Z}[i]$ with $N(\alpha) = 2$.
+Since $N(\alpha) = 2$ is a prime in $\mathbb{Z}$,
+$\alpha$ is irreducible (Exercise 1.3).
+\item[(2)]
+\emph{Suppose the result holds for $n \leq k$.}
+Given $\alpha \in \mathbb{Z}[i]$ with $N(\alpha) = k+1$.
+There are only two possible cases.
+\begin{enumerate}
+\item[(a)]
+\emph{$\alpha$ is irreducible.}
+Nothing to do.
+\item[(b)]
+\emph{$\alpha$ is reducible.}
+Write $\alpha = \beta\gamma$ where neither factor is unit.
+Since $N(\alpha) = N(\beta)N(\gamma)$ and neither factor is unit,
+$$2 \leq N(\beta), N(\gamma) \leq k.$$
+By the induction hypothesis, each factor of $\alpha$ ($\beta$ and $\gamma$)
+is a product of irreducible elements.
+So that $\alpha$ again is a product of irreducible elements.
+\end{enumerate}
+In any cases,
+$\alpha$ is a product of irreducible elements.
+\end{enumerate}
+By induction, the result is established.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.7}
+\emph{Show that $\mathbb{Z}[i]$ is a principal ideal domain (PID); i.e.,
+every ideal $I$ is principal.
+(As shown in Appendix 1, this implies that $\mathbb{Z}[i]$ is a UFD.)} \\
+
+\emph{Suggestion: Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized,
+and consider the multiplies $\gamma\alpha$, $\gamma \in \mathbb{Z}[i]$;
+show that these are the vertices of an infinite family of squares which
+fill up the complex plane.
+(For example,
+one of the squares has vertices $0$, $\alpha$, $i\alpha$, and $(1+i)\alpha$;
+all others are translates of this one.)
+Obviously $I$ contains all $\gamma\alpha$;
+show by a geometric argument that if $I$ contains anything else then
+minimality of $N(\alpha)$ would be contradicted.} \\
+
+\emph{Proof (without geometric intuition).}
+Define $N$ on $\mathbb{Q}[i]$ by $N(a+bi) = a^2+b^2$ where
+$a+bi \in \mathbb{Q}[i]$ as usual.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathbb{Z}[i]$ is a Euclidean domain.}
+Given $\alpha = a+bi \in \mathbb{Z}[i]$ and
+$\gamma = c+di \in \mathbb{Z}[i]$ with $\gamma \neq 0$.
+It suffices to show there exist $\delta$ and $\rho$ such that the identity
+$\alpha = \gamma\delta + \rho$ holds and
+either $\rho = 0$ or $N(\rho) < N(\gamma)$.
+\begin{enumerate}
+\item[(a)]
+\emph{Pick $\delta \in \mathbb{Z}[i].$
+(Intuition: Pick the `integer part' of $\frac{\alpha}{\gamma}$
+as we did in integer numbers.)}
+Write $\frac{\alpha}{\gamma} = r+si \in \mathbb{Q}[i]$.
+Then we pick $\delta = m+ni \in \mathbb{Z}[i]$ such that
+$|r-m| \leq \frac{1}{2}$ and $|s-n| \leq \frac{1}{2}$.
+Therefore,
+\begin{align*}
+N\left( \frac{\alpha}{\gamma} - \delta \right)
+&= (r-m)^2 + (s-n)^2 \\
+&\leq \frac{1}{4} + \frac{1}{4} \\
+&= \frac{1}{2}.
+\end{align*}
+\item[(b)]
+\emph{Pick $\rho \in \mathbb{Z}[i]$.}
+Clearly we can pick $\rho = \alpha - \gamma\delta \in \mathbb{Z}[i]$.
+Therefore, $\rho = 0$ or
+\begin{align*}
+N(\rho)
+&= N(\alpha - \gamma\delta) \\
+&= N\left( \gamma\left( \frac{\alpha}{\gamma} - \delta \right) \right) \\
+&= N(\gamma) N\left( \frac{\alpha}{\gamma} - \delta \right) \\
+&\leq \frac{1}{2} N(\gamma) \\
+&< N(\gamma).
+\end{align*}
+\end{enumerate}
+\item[(2)]
+\emph{Show that every Euclidean domain $R$ is a PID.}
+Given any ideal $I$ of $R$.
+Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized.
+\begin{enumerate}
+  \item[(a)]
+  $R\alpha \subseteq I$ clearly.
+  \item[(b)]
+  Conversely, for any $\beta \in I$, there are $\delta, \rho \in R$
+  such that $\beta = \alpha \delta + \rho$, where either $\rho = 0$
+  or $N(\rho) < N(\alpha)$.
+  Since $\rho = \beta - \alpha \delta \in I$,
+  we cannot have $N(\rho) < N(\alpha)$ by the minimality of $N(\alpha)$.
+  Therefore, $\rho = 0$ and $\beta = \alpha \delta \in R\alpha$,
+  or $R\alpha \supseteq I$.
+\end{enumerate}
+\end{enumerate}
+By (1)(2),
+$\mathbb{Z}[i]$ is a PID.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 1.9}
+\emph{Describe all irreducible elements in $\mathbb{Z}[i]$.} \\
+
+
+
+\end{document}
