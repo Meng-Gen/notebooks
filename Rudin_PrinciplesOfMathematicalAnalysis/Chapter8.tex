@@ -292,8 +292,49 @@ prove that $f(x) = \frac{1}{2}x^2 + cx$ where $c$ is a constant}.
 \item[(5)]
 \emph{(USA 2002.) Suppose $f(x^2 - y^2) = x f(x) - y f(y)$ for all real $x$ and $y$.
 Assuming that $f$ is continuous,
-prove that $f(x) = cx$ where $c$ is a constant}. \\\\
+prove that $f(x) = cx$ where $c$ is a constant}. \\
 \end{enumerate}
+
+
+
+\textbf{Supplement.}
+\emph{Show that the only automorphism of $\mathbb{Q}$ is the identity.} \\
+
+\emph{Proof.}
+Given any $\sigma \in \text{Aut}(\mathbb{Q})$.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\sigma(1) = 1$.}
+Since $1^2 = 1$, $\sigma(1)\sigma(1) = \sigma(1)$. $\sigma(1) = 0$ or $1$.
+There are only two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  Assume that $\sigma(1) = 0$. So
+  $$\sigma(a) = \sigma(a \cdot 1) = \sigma(a)\cdot \sigma(1) = \sigma(a) \cdot 0 = 0$$
+  for any $a \in \mathbb{Q}$.
+  That is, $\sigma = 0 \in \text{Aut}(\mathbb{Q})$, which is absurd.
+  \item[(b)]
+  Therefore, $\sigma(1) = 1$.
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $\sigma(n) = n$ for all $n \in \mathbb{Z}^+$.}
+Write $n = 1 + 1 + \cdots + 1$ ($n$ times $1$).
+Applying the additivity of $\sigma$, we have
+$$\sigma(n) = \sigma(1) + \sigma(1) + \cdots + \sigma(1) = 1 + 1 + \cdots + 1 = n.$$
+(Might use induction on $n$ to eliminate $\cdots$ symbols.)
+\item[(3)]
+\emph{Show that $\sigma(n) = n$ for all $n \in \mathbb{Z}$.}
+By the additivity of $\sigma$, $\sigma(-n) = -\sigma(n) = -n$ for $n \geq 0$.
+The result is established.
+\end{enumerate}
+For any $a = \frac{n}{m} \in \mathbb{Q}$ ($m, n \in \mathbb{Z}$, $n \neq 0$),
+applying the multiplication of $\sigma$ on $am = n$,
+that is,
+$\sigma(a) \sigma(m) = \sigma(n)$. By (3), we have $\sigma(a)m = n$,
+or $$\sigma(a) = \frac{m}{n} = a$$
+provided $n \neq 0$,
+or $\sigma$ is the identity.
+$\Box$ \\\\
 
 
 
