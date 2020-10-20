@@ -32,7 +32,7 @@
 
 
 
-\textbf{Exercise 1.1}
+\textbf{Exercise 1.1.}
 \emph{Let $x$ be a nilpotent element of $A$.
 Show that $1+x$ is a unit of $A$.
 Deduce that the sum of a nilpotent element and a unit is a unit.} \\
@@ -61,21 +61,21 @@ $\Box$ \\
 The nilradical $\mathfrak{N}$ of $A$ is the intersection of all the prime ideals of $A$
 by Proposition 1.8.
 \item[(b)]
-The Jacobson radical $\mathfrak{R}$ of $A$ is the intersection of all the maximal ideals of $A$
+The Jacobson radical $\mathfrak{J}$ of $A$ is the intersection of all the maximal ideals of $A$
 by definition.
 \end{enumerate}
 \item[(2)]
 By Proposition 1.9,
-$x \in \mathfrak{R}$ if and only if
+$x \in \mathfrak{J}$ if and only if
 $1-xy$ is a unit in $A$ for all $y \in A$.
 So $1+x = 1 - (-x) \cdot 1$ is a unit in $A$
-since $x$ is a nilpotent and $\mathfrak{R}$ is an ideal.
+since $x$ is a nilpotent and $\mathfrak{J}$ is an ideal.
 \end{enumerate}
 $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.2}
+\textbf{Exercise 1.2.}
 \emph{Let $A$ be a ring and
 let $A[x]$ be the ring of polynomials in an indeterminate $x$,
 with coefficients in $A$.
@@ -268,17 +268,17 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.4}
+\textbf{Exercise 1.4.}
 \emph{In the ring $A[x]$, the Jacobson radical is equal to the nilradical.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-The nilradical $\mathfrak{N}$ is a subset of the Jacobson radical $\mathfrak{R}$.
-It suffices to show that $\mathfrak{R} \subseteq \mathfrak{N}$.
+The nilradical $\mathfrak{N}$ is a subset of the Jacobson radical $\mathfrak{J}$.
+It suffices to show that $\mathfrak{J} \subseteq \mathfrak{N}$.
 \item[(2)]
-Given any $f \in \mathfrak{R}$. By Proposition 1.9,
-$f \in \mathfrak{R}$ if and only if
+Given any $f \in \mathfrak{J}$. By Proposition 1.9,
+$f \in \mathfrak{J}$ if and only if
 $1 - fy$ is a unit in $A[x]$ for all $y \in A[x]$.
 Especially, pick $y = x \in A[x]$ and then $1 - xf$ is a unit in $A[x]$.
 \item[(3)]
@@ -291,7 +291,7 @@ $\Box$ \\\\
 
 \textbf{\large The prime spectrum of a ring} \\\\
 
-\textbf{Exercise 1.15}
+\textbf{Exercise 1.15.}
 \emph{Let $A$ be a ring and let $X$ be the set of all prime ideals of $A$.
 For each subset $E$ of $A$,
 let $V(E)$ denote the set of all prime ideals of $A$ which contain $E$.
@@ -441,5 +441,87 @@ $\Box$ \\
 $\Box$ \\\\
 
 
+
+\textbf{Exercise 1.17.}
+\emph{For each $f \in A$,
+let $X_f$ denote the complement of $V(f)$ in $X = \text{Spec}(A)$.
+The sets $X_f$ are open.
+Show that they form a basis of open sets for the Zariski topology, and that}
+\begin{enumerate}
+\item[(i)]
+\emph{$X_f \cap X_g = X_{fg}$.}
+\item[(ii)]
+\emph{$X_f = \varnothing \Longleftrightarrow f$ is nilpotent.}
+\item[(iii)]
+\emph{$X_f = X \Longleftrightarrow f$ is a unit.}
+\item[(iv)]
+\emph{$X_f = X_g \Longleftrightarrow r((f)) = r((g))$.}
+\item[(v)]
+\emph{$X$ is quasi-compact (compact), that is,
+every open covering of $X$ has a finite subcovering.}
+\item[(vi)]
+\emph{More generally, each $X_f$ is quasi-compact.}
+\item[(vii)]
+\emph{An open subset of $X$ is quasi-compact if and only if
+it is a finite union of sets $X_f$.}
+\end{enumerate}
+
+\emph{The sets $X_f$ are called basic open sets of
+$X = \text{Spec}(A)$.} \\
+
+\emph{(Hint: To prove (v), remark that it is enough to consider a covering of $X$
+by basic open sets $X_{f_i} (i \in I)$.
+Show that the $f_i$ generate the unit ideal and hence that
+there is an equation of the form
+$$1 = \sum_{i \in J} g_i f_i \:\:\:\: (g_i \in A)$$
+where $J$ is some finite subset of $I$.
+Then the $X_{f_i} (i \in J)$ cover $X$.)} \\
+
+\emph{Proof of basis.}
+It is equivalent to Exercise 1.15 (iii).
+Given any open set $O$ in $X$.
+Write $O = X - V(\mathfrak{a})$ for some ideal $\mathfrak{a}$ of $A$.
+Since
+$$V(\mathfrak{a})
+= V \left( \bigcup_{f \in \mathfrak{a}} (f) \right)
+= \bigcap_{f \in \mathfrak{a}} V(f),$$
+we have
+$$O
+= X - V(\mathfrak{a})
+= X - \bigcap_{f \in \mathfrak{a}} V(f)
+= \bigcup_{f \in \mathfrak{a}} (X - V(f))
+= \bigcup_{f \in \mathfrak{a}} X_f,$$
+or any open set is a union of basic open sets.
+$\Box$ \\
+
+\emph{Proof of (i).}
+$X_f \cap X_g = X_{fg} \Longleftrightarrow V(f) \cup V(g) = V(fg)$ holds by Exercise 1.15 (iv).
+$\Box$ \\
+
+\emph{Proof of (ii).}
+\begin{align*}
+X_f = \varnothing
+&\Longleftrightarrow V(f) = X \\
+&\Longleftrightarrow f \in \mathfrak{p}
+\text{ for all prime ideal $\mathfrak{p}$ of $A$} \\
+&\Longleftrightarrow f \in \mathfrak{N},
+\text{the nilradical of $A$ (Proposition 1.8)} \\
+&\Longleftrightarrow f \text{ is nilpotent (Proposition 1.7)}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (iii).}
+\begin{align*}
+X_f = X
+&\Longleftrightarrow V(f) = \varnothing \\
+&\Longleftrightarrow f \not\in \mathfrak{p}
+\text{ for all prime ideal $\mathfrak{p}$ of $A$} \\
+&\Longleftrightarrow f \text{ is unit (Corollary 1.5)}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (v).}
+By (iii), it is a special case of (vi) as $X_f = X_1 = X$.
+$\Box$ \\
 
 \end{document}
