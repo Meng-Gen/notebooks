@@ -29,7 +29,7 @@
 
 
 
-\textbf{Exercise 1.1}
+\textbf{Exercise 1.1.}
 \emph{Prove that there is no largest prime. (A proof was known to Euclid.)} \\
 
 There are many proofs of this result. We provide some of them. \\
@@ -157,7 +157,7 @@ Hence there are infinitely many primes.
 $\Box$ \\\\
 
 
-\textbf{Exercise 1.2}
+\textbf{Exercise 1.2.}
 \emph{If $n$ is a positive integer, prove the algebraic identity
 $$a^n - b^n = (a - b) \sum_{k=0}^{n-1} a^k b^{n-1-k}.$$} \\
 
@@ -226,7 +226,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.3}
+\textbf{Exercise 1.3.}
 \emph{If $2^n - 1$ is a prime, prove that $n$ is prime.
 A prime of the form $2^p - 1$, where $p$ is prime, is called a Mersenne prime.} \\
 
@@ -257,11 +257,85 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 1.6.}
+\emph{Prove that every nonempty set of positive integers contains a smallest member.
+This is called the well-ordering principle.} \\
+
+\emph{Proof.}
+Use mathematical induction to establish
+that the well-ordering principle.
+
+\begin{enumerate}
+\item[(1)]
+Given a set $S$ of positive integers,
+let $P(n)$ be the proposition
+`If $m \in S$ for some $m \leq n$, then $S$ has a least element'.
+Want to show $P(n)$ is true for all $n \in \mathbb{N}$.
+\begin{enumerate}
+\item[(a)]
+$P(1)$ is true.
+For $m \in S$ with $m \leq n = 1$,
+or $m = 1$ by the minimality of $1 \in \mathbb{N}$,
+$S$ has a least element $1$ ($m$ itself) in $\mathbb{N}$.
+\item[(b)]
+Suppose $P(n)$ is true.
+If $n+1 \in S$, then there are only two possible cases.
+  \begin{enumerate}
+  \item[(i)]
+  There is a positive integer $m \in S$ less than $n+1$.
+  So $n \geq m \in S$.
+  Since $P(n)$ is true, $S$ has a least element.
+  \item[(ii)]
+  There is no positive integer $m \in S$ less than $n+1$.
+  In this case $n+1$ is the least element in $S$.
+  \end{enumerate}
+  In any cases (i)(ii), $S$ has a least element, or $P(n+1)$ is true.
+\end{enumerate}
+By mathematical induction, $P(n)$ is true for all $n \in \mathbb{N}$.
+\item[(2)]
+\emph{Show that the well-ordering principle holds.}
+Let $T$ be a nonempty subset of $\mathbb{N}$,
+so there exists a positive integer $k \in T$.
+Notice that $P(k)$ is true by (1),
+thus $T$ has a least element since $k \leq k$.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+\emph{Show that the well-ordering principle implies
+the principle of mathematical induction.} \\
+
+\emph{Proof.}
+Suppose that
+\begin{enumerate}
+\item[(1)]
+$P(n)$ be a proposition defined for each $n \in \mathbb{N}$,
+\item[(2)]
+$P(1)$ is true,
+\item[(3)]
+$[P(n) \Rightarrow P(n+1)]$ is true.
+\end{enumerate}
+
+Consider the set
+$$S = \{ n \in \mathbb{N} : P(n) \text{ false} \} \subseteq \mathbb{N}.$$
+Want to show
+\emph{$S$ is empty, or the principle of mathematical induction holds.}
+If $S$ were nonempty,
+by the well-ordering principle $S$ has a smallest element $m$.
+$m$ cannot be $1$ by (2).
+Say $m > 1$.
+Therefore, $m - 1 \in \mathbb{N}$
+and $P(m-1)$ is true by the minimality of $m$.
+By (3), $P((m-1)+1) = P(m)$ is true, which is absurd.
+$\Box$ \\\\
+
+
+
 \textbf{\large Rational and irrational numbers} \\\\
 
 
 
-\textbf{Exercise 1.11}
+\textbf{Exercise 1.11.}
 \emph{Given any real $x > 0$,
 prove that there is an irrational number between $0$ and $x$.} \\
 
