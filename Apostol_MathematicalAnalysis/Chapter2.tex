@@ -25,6 +25,62 @@
 
 
 
+\textbf{Exercise 2.6.}
+\emph{Let $f: S \rightarrow T$ be a function.
+If $A$ and $B$ are arbitrary subsets of $S$, prove that
+$$f(A \cup B) = f(A) \cap f(B) \text{ and }
+f(A \cap B) \subseteq f(A) \cup f(B).$$
+Generalize to arbitrary unions and intersections.} \\
+
+\textbf{Generalization.}
+Let $f: S \rightarrow T$ be a function.
+If $\mathscr{F}$ is an arbitrary collection of sets, then
+$$f\left( \bigcup_{A \in \mathscr{F}} A \right)
+= \bigcap_{A \in \mathscr{F}} f(A) \text{ and }
+f\left( \bigcap_{A \in \mathscr{F}} A \right)
+\subseteq \bigcup_{A \in \mathscr{F}} f(A).$$ \\
+
+\emph{Note.}
+$f(A \cap B)$ might not be equal to $f(A) \cup f(B)$.
+For example, let $f: \mathbb{R} \rightarrow \mathbb{R}$ defined by $f(x) = 0$.
+Then for any nonempty disjoint subsets $A$ and $B$,
+we have $\varnothing = f(A \cap B) \not\supseteq f(A) \cup f(B) = \{0\}$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+  \forall \: y \in f\left( \bigcup_{A \in \mathscr{F}} A \right)
+  &\Longleftrightarrow
+  \exists \: x \in \bigcup_{A \in \mathscr{F}} A \text{ such that } f(x) = y \\
+  &\Longleftrightarrow
+  \exists \: x \in A \text{ for some } A \in \mathscr{F} \text{ such that } f(x) = y \\
+  &\Longleftrightarrow
+  \exists \: A \in \mathscr{F} \text{ such that } y \in f(A) \\
+  &\Longleftrightarrow
+  \forall \: y \in \bigcap_{A \in \mathscr{F}} f(A) \\
+\end{align*}
+\item[(2)]
+\begin{align*}
+  \forall \: y \in f\left( \bigcap_{A \in \mathscr{F}} A \right)
+  \Longleftrightarrow&
+  \exists \: x \in \bigcap_{A \in \mathscr{F}} A \text{ such that } f(x) = y \\
+  \Longleftrightarrow&
+  \exists \: x \text{ in all } A \in \mathscr{F} \text{ such that } f(x) = y \\
+  &\text{ ($x$ not depending on $A$) } \\
+  \Longrightarrow&
+  \forall \: A \in \mathscr{F}, \exists \: x \in A \text{ such that } f(x) = y \\
+  &\text{ ($x$ depending on $A$) } \\
+  \Longleftrightarrow&
+  \forall \: A \in \mathscr{F}, y \in f(A) \\
+  \Longleftrightarrow&
+  \forall \: y \in \bigcup_{A \in \mathscr{F}} f(A).
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 \textbf{Exercise 2.15.}
 \emph{A real number is called algebraic
 if it is a root of an algebraic equation $f(x) = 0$,
