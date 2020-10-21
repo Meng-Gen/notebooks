@@ -289,8 +289,36 @@ By Exercise 1.2 (ii), $f$ is nilpotent, or $f \in \mathfrak{N}$.
 $\Box$ \\\\
 
 
+\textbf{Exercise 1.7.}
+\emph{Let $A$ be a ring in which every element satisfies
+$x^n = x$ for some $n > 1$ (depending on $x$).
+Show that every prime ideal in $A$ is maximal.} \\
+
+\emph{Proof.}
+It suffices to show that
+\emph{for any prime ideal $\mathfrak{p}$ in $A$, $A/\mathfrak{p}$ is a field.}
+\begin{enumerate}
+\item[(1)]
+Take any $0 \neq \overline{x} \in A/\mathfrak{p}$,
+which is represented by $x \in A-\mathfrak{p}$.
+By assumption there exists $n \geq 2$ such that $x^n = x$.
+So $\overline{x}^n = \overline{x}$ or $\overline{x}(\overline{x}^{n-1} - 1) = 0$.
+\item[(2)]
+Since $\mathfrak{p}$ is prime, $A/\mathfrak{p}$ is a integral domain.
+That is, $\overline{x} = 0$ (impossible) or $\overline{x}^{n-1} - 1 = 0$.
+Write $\overline{x} \cdot \overline{x}^{n-2} = 1$ in $A/\mathfrak{p}$.
+So $\overline{x}^{n-2}$ is an inverse of $\overline{x} \neq 0$ in $A/\mathfrak{p}$,
+which implies that $A/\mathfrak{p}$ is a field (since $\overline{x}$ is arbitrary).
+\item[(3)]
+$A/\mathfrak{p}$ is a field if and only if $\mathfrak{p}$ is maximal.
+\end{enumerate}
+$\Box$ \\\\
+
+
 
 \textbf{\large The prime spectrum of a ring} \\\\
+
+
 
 \textbf{Exercise 1.15.}
 \emph{Let $A$ be a ring and let $X$ be the set of all prime ideals of $A$.
@@ -511,6 +539,22 @@ X_f = \varnothing
 \end{align*}
 $\Box$ \\
 
+\emph{Proof of (ii) (Using (iv)).}
+\begin{align*}
+X_f = \varnothing
+&\Longleftrightarrow X_f = X_0
+  &\text{(Exercise 15(ii))} \\
+&\Longleftrightarrow r(f) = r(0)
+  &\text{((iv))} \\
+&\Longleftrightarrow f \in r(f) = r(0)
+  & \\
+&\Longleftrightarrow f^m = 0 \text{ for some $m > 0$}
+  & \\
+&\Longleftrightarrow f \text{ is nilpotent}
+  &
+\end{align*}
+$\Box$ \\
+
 \emph{Proof of (iii).}
 \begin{align*}
 X_f = X
@@ -518,6 +562,22 @@ X_f = X
 &\Longleftrightarrow f \not\in \mathfrak{p}
 \text{ for all prime ideal $\mathfrak{p}$ of $A$} \\
 &\Longleftrightarrow f \text{ is unit (Corollary 1.5)}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (iii) (Using (iv)).}
+\begin{align*}
+X_f = X
+&\Longleftrightarrow X_f = X_1
+  &\text{(Exercise 15(ii))} \\
+&\Longleftrightarrow r(f) = r(1)
+  &\text{((iv))} \\
+&\Longleftrightarrow f \in r(f) = r(1)
+  & \\
+&\Longleftrightarrow f^m = 1 \text{ for some $m > 0$}
+  & \\
+&\Longleftrightarrow f \text{ is unit}
+  &
 \end{align*}
 $\Box$ \\
 
