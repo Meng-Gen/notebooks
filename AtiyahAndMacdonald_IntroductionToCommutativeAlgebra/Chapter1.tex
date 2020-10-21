@@ -29,6 +29,7 @@
 % https://spaces.ac.cn/usr/uploads/2017/07/4208763092.pdf
 % https://www.math.arizona.edu/~cais/371Page/homework/371s1.pdf
 % https://math.mit.edu/~jhirsh/notes2_zariski.pdf
+% http://yyao.gsucreate.org/math831/831-2.pdf
 
 
 
@@ -520,8 +521,92 @@ X_f = X
 \end{align*}
 $\Box$ \\
 
+\emph{Proof of (iv).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that
+$X_f \subseteq X_g \Longleftrightarrow r((f)) \subseteq r((g))$.}
+Actually,
+\begin{align*}
+X_f \subseteq X_g
+&\Longrightarrow V(f) \supseteq V(g) \\
+&\Longrightarrow \{ \mathfrak{p} \in \text{Spec}(A) : \mathfrak{p} \supseteq (f) \}
+  \supseteq \{ \mathfrak{p} \in \text{Spec}(A) : \mathfrak{p} \supseteq (g) \} \\
+&\Longrightarrow \bigcap_{(f) \subseteq \mathfrak{p} \in \text{Spec}(A)} \mathfrak{p}
+  \subseteq \bigcap_{(g) \subseteq \mathfrak{p} \in \text{Spec}(A)} \mathfrak{p}  \\
+&\overset{1.14}{\Longrightarrow} r(f) \subseteq r(g) \\
+&\Longrightarrow V(r(f)) \supseteq V(r(g)) \\
+&\Longrightarrow V(f) \supseteq V(g) \\
+&\Longrightarrow X_f \subseteq X_g.
+\end{align*}
+\item[(2)]
+By (1),
+\begin{align*}
+X_f \subseteq X_g &\Longleftrightarrow r((f)) \subseteq r((g)), \\
+X_f \supseteq X_g &\Longleftrightarrow r((f)) \supseteq r((g)).
+\end{align*}
+Hence,
+$$X_f = X_g \Longleftrightarrow r((f)) = r((g)).$$
+\end{enumerate}
+$\Box$ \\
+
 \emph{Proof of (v).}
 By (iii), it is a special case of (vi) as $X_f = X_1 = X$.
 $\Box$ \\
+
+\emph{Proof of (vi).}
+Notice that it is enough to consider a covering of $X_f$
+by basic open sets $X_{f_i} (i \in I)$.
+\begin{enumerate}
+\item[(1)]
+Since $X_f$ is covered by $X_{f_i} (i \in I)$,
+\begin{align*}
+X_f = \bigcup_{i \in I} X_{f_i}
+&\Longrightarrow X - V(f) = \bigcup_{i \in I} X - V(f_i) \\
+&\Longrightarrow V(f) = \bigcap_{i \in I} V(f_i) \\
+&\Longrightarrow V(f) = V\left( \sum_{i \in I} f_i \right) \\
+&\Longrightarrow r(f) = r\left( \sum_{i \in I} f_i \right).
+\end{align*}
+Hence, $f \in r(f) = r\left( \sum_{i \in I} f_i \right)$ can be expressed as
+$$f^m = \sum_{j \in J} g_j f_j$$
+where $J$ is a finite subset of $I$ and $g_j \in A$.
+That is, $f^m \in \sum_{j \in J} f_j$.
+\item[(2)]
+\emph{Show that $V\left( \sum_{j \in J} f_j \right) = V(f)$.}
+\begin{enumerate}
+  \item[(a)]
+  $(\subseteq)$ For any prime ideal $\mathfrak{p} \supseteq \sum_{j \in J} f_j$,
+  $f^m \in \mathfrak{p}$ or $f \in \mathfrak{p}$ (since $\mathfrak{p}$ is prime).
+  So $\mathfrak{p} \supseteq (f)$,
+  or $V\left( \sum_{j \in J} f_j \right) \subseteq V(f)$.
+  \item[(b)]
+  $(\supseteq)$
+  $$\sum_{j \in J} f_j \subseteq \sum_{i \in I} f_i
+  \Longrightarrow
+  V\left( \sum_{j \in J} f_j \right) \supseteq V\left( \sum_{i \in I} f_i \right) = V(f).$$
+\end{enumerate}
+\item[(3)]
+Therefore, $X_f$ is covered by finite subcovering $\{X_{f_j}\} (j \in J)$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (vii).}
+\begin{enumerate}
+\item[(1)]
+($\Longrightarrow$)
+Given an open subset $O$.
+Since $X_f$ form a basis of open sets,
+$$O = \bigcup_{f \in \mathfrak{a}} X_f \text{ for some ideal $\mathfrak{a}$ of $A$}$$
+Especially, $\{X_f\}_{f \in \mathfrak{a}}$ is an open covering of $O$.
+Since $O$ is quasi-compact, there exists a finite subcovering $\{X_f\}_{f \in J}$ of $O$,
+where $J$ is a finite subset of $\mathfrak{a}$ (as a set).
+That is,
+$O = \bigcup_{f \in J} X_f$ is a finite union of sets $X_f$.
+\item[(2)]
+($\Longleftarrow$)
+Since $X_f$ is quasi-compact, any finite union of quasi-compact sets is quasi-compact again.
+\end{enumerate}
+$\Box$ \\\\
+
 
 \end{document}
