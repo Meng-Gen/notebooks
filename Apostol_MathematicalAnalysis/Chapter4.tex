@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+
+
+\textbf{\Large Chapter 4: Limits and Continuity} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{\large Continuity of real-valued functions} \\\\
+
+
+
+\textbf{Exercise 4.19.}
+\emph{Let $f$ be continuous on $[a,b]$ and define $g$ as follows:
+$g(a) = f(a)$ and, for $a < x \leq b$,
+let $g(x)$ be the maximum value of $f$ in the subinterval $[a,x]$.
+Show that $g$ is continuous on $[a,b]$.} \\
+
+Indeed, $g(x) = \max_{a \leq t \leq x} f(t)$ for $x \in [a,b]$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$f$ is continuous on $[a,b]$ at a point $p$ $\Longleftrightarrow$
+Given any $\epsilon' > 0$, there exists $\delta' > 0$ such that
+$|f(x) - f(p)| < \epsilon'$ whenever $|x-p| < \delta'$ (and $x \in [a,b]$).
+We left $\epsilon'$ and $\delta'$ undecided temporarily.
+\item[(2)]
+To estimate $g$ on
+$$[p-\delta', p+\delta'] \cap [a,b],$$
+we need to study the behavior of $f$ on $[a,p+\delta'] \cap [a,b]$
+(by the definition of $g(x)$),
+and then use the continuity of $f$ to establish the desired result.
+\item[(3)]
+Look at where $f$ takes the maximum value over on $[a,p+\delta'] \cap [a,b]$ at.
+There are two possible cases (might overlapped):
+  \begin{enumerate}
+  \item[(a)]
+  \emph{At a point in $[a,p-\delta'] \cap [a,b]$.}
+  In this case $g$ is constant on $[p-\delta', p+\delta'] \cap [a,b]$,
+  or $|g(x) - g(p)| = 0$.
+  \item[(b)]
+  \emph{At a point $q \in (p-\delta',p+\delta'] \cap [a,b]$.}
+  For any $x \in [p-\delta', p+\delta'] \cap [a,b]$,
+    \begin{enumerate}
+    \item[(i)]
+    $f(p) - \epsilon' < g(x)$ by the maximality of $g$ on $[a,x]$.
+    \item[(ii)]
+    $g(x) \leq f(q) < f(p) + \epsilon'$
+    since $g$ is an increasing function and
+    $f$ takes the maximum value over on $[a,p+\delta'] \cap [a,b]$ at
+    $q \in (p-\delta',p+\delta'] \cap [a,b]$.
+    \end{enumerate}
+  By (i)(i),
+  $$f(p) - \epsilon' < g(x) < f(p) + \epsilon'$$
+  for  any $x \in [p-\delta', p+\delta'] \cap [a,b]$ (especially $x = p$).
+  Therefore,
+  $$|g(x) - g(p)| < 2 \epsilon'
+  \text{ whenever } |x-p| < \delta' (\text{and } x \in [a,b]).$$
+
+  \end{enumerate}
+  By (a)(b), we have
+  $|g(x) - g(p)| < 2 \epsilon'
+  \text{ whenever } |x-p| < \delta' (\text{and } x \in [a,b])$ in any cases.
+\item[(4)]
+Retake $\epsilon' = \frac{\epsilon}{2} > 0$ and $\delta = \delta' > 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{\large Continuity in metric spaces} \\
+
+In Exercise 4.29 through 4.33, we assume that $f: S \rightarrow T$ is a function
+from one metric space $(S, d_S)$ to another $(T, d_T)$. \\\\
+
+
+
+\textbf{Exercise 4.29.}
+\emph{Prove that $f$ is continuous on $S$ if and only if
+$$f^{-1}(B^{\circ}) \subseteq (f^{-1}(B))^{\circ}
+\:\:\:\: \text{for every subset $B$ of $T$}.$$}
+
+Denote the interior of any set $S$ by $S^{\circ}$ for convenience sake. \\
+
+\emph{Proof.}
+Only assume $S$ and $T$ are topological spaces.
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Given any $x \in f^{-1}(B^{\circ})$.
+$f(x) \in B^{\circ}$.
+So there is an open neighborhood $V \subseteq B^{\circ} \subseteq B$ containing $f(x)$.
+So $x \in f^{-1}(V) \subseteq f^{-1}(B)$.
+Since $f$ is continuous, the inverse image $f^{-1}(V)$ is open in $S$.
+Hence, $f^{-1}(V)$ is an open neighborhood containing $x$ in $f^{-1}(B)$.
+$x \in (f^{-1}(B))^{\circ}$.
+\item[(2)]
+$(\Longleftarrow)$
+Given any open subset $V$ of $T$. $V = V^{\circ}$ clearly.
+So
+$$f^{-1}(V) = f^{-1}(V^{\circ}) \subseteq (f^{-1}(V))^{\circ} \subseteq f^{-1}(V),$$
+that is, $f^{-1}(V) = (f^{-1}(V))^{\circ}$,
+or the inverse image $f^{-1}(V)$ is open in $S$ for every open subset $V$ of $T$,
+or $f$ is continuous.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\end{document}
