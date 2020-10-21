@@ -30,6 +30,7 @@
 % https://www.math.arizona.edu/~cais/371Page/homework/371s1.pdf
 % https://math.mit.edu/~jhirsh/notes2_zariski.pdf
 % http://yyao.gsucreate.org/math831/831-2.pdf
+% http://www.math.ncku.edu.tw/~fjmliou/alg/base.pdf
 
 
 
@@ -539,7 +540,7 @@ X_f = \varnothing
 \end{align*}
 $\Box$ \\
 
-\emph{Proof of (ii) (Using (iv)).}
+\emph{Proof of (ii)(Using (iv)).}
 \begin{align*}
 X_f = \varnothing
 &\Longleftrightarrow X_f = X_0
@@ -565,7 +566,7 @@ X_f = X
 \end{align*}
 $\Box$ \\
 
-\emph{Proof of (iii) (Using (iv)).}
+\emph{Proof of (iii)(Using (iv)).}
 \begin{align*}
 X_f = X
 &\Longleftrightarrow X_f = X_1
@@ -611,7 +612,30 @@ $$X_f = X_g \Longleftrightarrow r((f)) = r((g)).$$
 $\Box$ \\
 
 \emph{Proof of (v).}
-By (iii), it is a special case of (vi) as $X_f = X_1 = X$.
+Notice that it is enough to consider a covering of $X$
+by basic open sets $X_{f_i} (i \in I)$.
+\begin{enumerate}
+\item[(1)]
+Since $X$ is covered by $X_{f_i} (i \in I)$,
+\begin{align*}
+X = \bigcup_{i \in I} X_{f_i}
+&\Longrightarrow X - V(1) = \bigcup_{i \in I} (X - V(f_i)) \\
+&\Longrightarrow V(1) = \bigcap_{i \in I} V(f_i) \\
+&\Longrightarrow V(1) = V\left( \sum_{i \in I} f_i \right) \\
+&\Longrightarrow r(1) = r\left( \sum_{i \in I} f_i \right).
+\end{align*}
+Hence, $1 \in r(1) = r\left( \sum_{i \in I} f_i \right)$ can be expressed as
+$$1 = 1^m = \sum_{j \in J} g_j f_j$$
+where $J$ is a finite subset of $I$ and $g_j \in A$.
+That is, $(1) = \sum_{j \in J} f_j$.
+\item[(2)]
+Hence, $V(1) = V\left( \sum_{j \in J} f_j \right)$.
+Therefore, $X$ is covered by finite subcovering $\{X_{f_j}\} (j \in J)$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (v)(Using (vi)).}
+Since $X = X_1$, $X$ is quasi-compact by (vi).
 $\Box$ \\
 
 \emph{Proof of (vi).}
@@ -622,7 +646,7 @@ by basic open sets $X_{f_i} (i \in I)$.
 Since $X_f$ is covered by $X_{f_i} (i \in I)$,
 \begin{align*}
 X_f = \bigcup_{i \in I} X_{f_i}
-&\Longrightarrow X - V(f) = \bigcup_{i \in I} X - V(f_i) \\
+&\Longrightarrow X - V(f) = \bigcup_{i \in I} (X - V(f_i)) \\
 &\Longrightarrow V(f) = \bigcap_{i \in I} V(f_i) \\
 &\Longrightarrow V(f) = V\left( \sum_{i \in I} f_i \right) \\
 &\Longrightarrow r(f) = r\left( \sum_{i \in I} f_i \right).
@@ -648,6 +672,11 @@ That is, $f^m \in \sum_{j \in J} f_j$.
 \item[(3)]
 Therefore, $X_f$ is covered by finite subcovering $\{X_{f_j}\} (j \in J)$.
 \end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (vi)(Using (v)).}
+Exercise 3.21 (i) shows that $X_f$ is the spectrum of $A_f$.
+By (v), $X_f$ is quasi-compact.
 $\Box$ \\
 
 \emph{Proof of (vii).}
