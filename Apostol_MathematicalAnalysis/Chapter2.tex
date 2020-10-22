@@ -81,6 +81,110 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 2.7.}
+\emph{Let $f: S \rightarrow T$ be a function.
+If $Y \subseteq T$,
+we denote by $f^{-1}(Y)$ the largest subset of $S$ which $f$ maps into $Y$.
+That is,
+$$f^{-1}(Y) = \{ x : x \in S \text{ and } f(x) \in Y \}.$$
+The set $f^{-1}(Y)$ is called the inverse image of $Y$ under $f$.
+Prove the following for arbitrary subsets $X$ of $S$ and $Y$ of $T$.}
+\begin{enumerate}
+\item[(a)]
+\emph{$X \subseteq f^{-1}[f(X)]$.}
+\item[(b)]
+\emph{$f[f^{-1}(Y)] \subseteq Y$.}
+\item[(c)]
+\emph{$f^{-1}(Y_1 \cup Y_2) = f^{-1}(Y_1) \cup f^{-1}(Y_2)$.}
+\item[(d)]
+\emph{$f^{-1}(Y_1 \cap Y_2) = f^{-1}(Y_1) \cap f^{-1}(Y_2)$.}
+\item[(e)]
+\emph{$f^{-1}(T - Y) = S - f^{-1}(Y)$.}
+\item[(f)]
+\emph{Generalize (c) and (d) to arbitrary unions and intersections.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+  \forall \: x \in X
+  &\Longrightarrow
+  f(x) \in f(X)
+    & \\
+  &\Longleftrightarrow
+  x \in f^{-1}[f(X)].
+    &\text{(Definition of the inverse image)}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+  \forall \: y \in f[f^{-1}(Y)]
+  &\Longleftrightarrow
+  \exists \: x \in f^{-1}(Y) \text{ such that } y = f(x) \\
+  &\Longleftrightarrow
+  \exists \: x, f(x) \in Y \text{ such that } y = f(x) \\
+  &\Longrightarrow
+  \exists \: x, y = f(x) \in Y.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\emph{For an arbitrary collection $\mathscr{F}$ of subsets $Y$ of $T$,
+show that
+$$f^{-1}\left( \bigcup_{Y \in \mathscr{F}} Y \right)
+= \bigcup_{Y \in \mathscr{F}} f^{-1}(Y).$$}
+\begin{align*}
+  \forall \: x \in f^{-1}\left( \bigcup_{Y \in \mathscr{F}} Y \right)
+  &\Longleftrightarrow
+  f(x) \in \bigcup_{Y \in \mathscr{F}} Y \\
+  &\Longleftrightarrow
+  f(x) \in Y \text{ for some } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in f^{-1}(Y) \text{ for some } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in \bigcup_{Y \in \mathscr{F}} f^{-1}(Y).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (d).}
+Similar to (c).
+\emph{For an arbitrary collection $\mathscr{F}$ of subsets $Y$ of $T$,
+show that
+$$f^{-1}\left( \bigcap_{Y \in \mathscr{F}} Y \right)
+= \bigcap_{Y \in \mathscr{F}} f^{-1}(Y).$$}
+\begin{align*}
+  \forall \: x \in f^{-1}\left( \bigcap_{Y \in \mathscr{F}} Y \right)
+  &\Longleftrightarrow
+  f(x) \in \bigcap_{Y \in \mathscr{F}} Y \\
+  &\Longleftrightarrow
+  f(x) \in Y \text{ for all } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in f^{-1}(Y) \text{ for all } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in \bigcap_{Y \in \mathscr{F}} f^{-1}(Y).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (e).}
+\begin{align*}
+  \forall \: x \in f^{-1}(T - Y)
+  &\Longleftrightarrow
+  f(x) \in T - Y \\
+  &\Longleftrightarrow
+  f(x) \not\in Y \\
+  &\Longleftrightarrow
+  x \not\in f^{-1}(Y) \\
+  &\Longleftrightarrow
+  x \in S - f^{-1}(Y).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (f).}
+Proved in (c)(d).
+$\Box$ \\\\
+
+
+
 \textbf{Exercise 2.15.}
 \emph{A real number is called algebraic
 if it is a root of an algebraic equation $f(x) = 0$,

@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
 \parindent=0pt
 
@@ -102,28 +103,285 @@ from one metric space $(S, d_S)$ to another $(T, d_T)$. \\\\
 $$f^{-1}(B^{\circ}) \subseteq (f^{-1}(B))^{\circ}
 \:\:\:\: \text{for every subset $B$ of $T$}.$$}
 
-Denote the interior of any set $S$ by $S^{\circ}$ for convenience sake. \\
+Denote the interior of any set $S$ by $S^{\circ}$. \\
 
-\emph{Proof.}
-Only assume $S$ and $T$ are topological spaces.
+\emph{Proof (On topological spaces).}
 \begin{enumerate}
 \item[(1)]
 $(\Longrightarrow)$
-Given any $x \in f^{-1}(B^{\circ})$.
-$f(x) \in B^{\circ}$.
-So there is an open neighborhood $V \subseteq B^{\circ} \subseteq B$ containing $f(x)$.
-So $x \in f^{-1}(V) \subseteq f^{-1}(B)$.
-Since $f$ is continuous, the inverse image $f^{-1}(V)$ is open in $S$.
-Hence, $f^{-1}(V)$ is an open neighborhood containing $x$ in $f^{-1}(B)$.
-$x \in (f^{-1}(B))^{\circ}$.
+\begin{align*}
+\forall x \in f^{-1}(B^{\circ})
+&\Longrightarrow
+f(x) \in B^{\circ} \\
+&\Longrightarrow
+\exists \text{ open neighborhood } V \subseteq B^{\circ} \subseteq B \text{ containing } f(x) \\
+&\Longrightarrow
+x \in f^{-1}(V) \subseteq f^{-1}(B) \\
+&\Longrightarrow
+f^{-1}(V) \text{ is open in $S$ since $f$ is continuous} \\
+&\Longrightarrow
+f^{-1}(V)\text{ is open neighborhood} \subseteq f^{-1}(B) \text{ containing } x \\
+&\Longrightarrow
+x \in (f^{-1}(B))^{\circ}.
+\end{align*}
 \item[(2)]
 $(\Longleftarrow)$
-Given any open subset $V$ of $T$. $V = V^{\circ}$ clearly.
+\emph{Given any open subset $V$ of $T$, need to show
+$U = f^{-1}(V)$ is open in $S$.}
+\begin{align*}
+f^{-1}(V)
+&= f^{-1}(V^{\circ})
+  &\text{($V$ is open)} \\
+&\subseteq (f^{-1}(V))^{\circ}
+  &\text{(Assumption)}
+\end{align*}
+So $U \subseteq U^{\circ}$ or $U = U^{\circ}$ is open.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 4.30.}
+\emph{Prove that $f$ is continuous on $S$ if and only if
+$$f(\overline{A}) \subseteq \overline{f(A)}
+\:\:\:\: \text{for every subset $A$ of $S$}.$$}
+
+Denote the closure of any set $S$ by $\overline{S}$. \\
+
+\emph{Proof (On topological spaces).}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Since $f$ is continuous and $\overline{f(A)}$ is closed,
+$f^{-1}(\overline{f(A)})$ is closed.
+Hence,
+\begin{align*}
+f^{-1}(\overline{f(A)})
+&\supseteq f^{-1}(f(A))
+  & \text{(Monotonicity of $f^{-1}$)} \\
+&\supseteq A,
+  & \text{(Exercise 2.7(a))} \\
+\overline{A}
+&\subseteq f^{-1}(\overline{f(A)}),
+  & \text{(Monotonicity of closure)} \\
+f(\overline{A})
+&\subseteq f(f^{-1}(\overline{f(A)}))
+  & \text{(Monotonicity of $f$)} \\
+&\subseteq \overline{f(A)}.
+  & \text{(Exercise 2.7(b))}
+\end{align*}
+\item[(2)]
+$(\Longleftarrow)$
+\emph{Given any closed subset $D$ of $T$, need to show
+$C = f^{-1}(D)$ is closed in $S$.}
+\begin{align*}
+f(\overline{C})
+&\subseteq \overline{f(C)}
+  &\text{(Assumption)} \\
+&= \overline{f(f^{-1}(D))}
+  &(C = f^{-1}(D))\\
+&\subseteq \overline{D}
+  &\text{(Exercise 2.7(b))} \\
+&= D,
+  &\text{($D$ is closed)} \\
+f^{-1}(f(\overline{C}))
+&\subseteq f^{-1}(D),
+  &\text{(Monotonicity of $f^{-1}$)} \\
+\overline{C} \subseteq f^{-1}(f(\overline{C}))
+&\subseteq f^{-1}(D) = C.
+  &\text{(Exercise 2.7(a))}
+\end{align*}
+So $C \supseteq \overline{C}$ or $C = \overline{C}$ is closed.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+\emph{Let $f$ be a map from a topological space on $X$
+to a topological space on $Y$.
+Then, the following statements are equivalent:}
+\begin{enumerate}
+\item[(1)]
+\emph{$f$ is continuous:
+For each $x \in X$ and every neighborhood $V$ of $f(x)$,
+there is a neighborhood $U$ of $x$ such that $f(U) \subseteq V$.}
+\item[(2)]
+\emph{For every open set $O$ in $Y$, the inverse image $f^{-1}(O)$
+is open in $X$.}
+\item[(3)]
+\emph{For every closed set $C$ in $Y$, the inverse image $f^{-1}(C)$
+is closed in $X$.}
+\item[(4)]
+\emph{$f(A)^{\circ} \subseteq f(A^{\circ})$ for every subset $A$ of $X$.}
+\item[(5)]
+\emph{$f^{-1}(B^{\circ}) \subseteq (f^{-1}(B))^{\circ}$ for every subset $B$ of $Y$.}
+\item[(6)]
+\emph{$f(\overline{A}) \subseteq \overline{f(A)}$ for every subset $A$ of $X$.}
+\item[(7)]
+\emph{$\overline{f^{-1}(B)} \subseteq f^{-1}(\overline{B})$ for every subset $B$ of $Y$.} \\\\
+\end{enumerate}
+
+
+
+\textbf{Exercise 4.33.}
+\emph{Give an example of a continuous $f$ and a Cauchy sequence $\{x_n\}$
+in some metric space $S$ for which $\{f(x_n)\}$ is not a Cauchy sequence in $T$.} \\
+
+Compare with Exercise 4.54 to get some hints. \\
+
+\emph{Proof.}
+Let
+$$S
+= \left\{ 1, \frac{1}{2}, \frac{1}{3}, ... \right\}
+= \left\{ \frac{1}{n} : n \in \mathbb{Z}^+ \right\}.$$
+Define $f: S \rightarrow \mathbb{R}$ by $f\left(\frac{1}{n}\right) = (-1)^n$.
+Then $f$ is continuous (but not uniformly continuous).
+The sequence $\{x_n\} = \left\{ \frac{1}{n} \right\}$ in $S$ is a Cauchy sequence,
+but the sequence $\{f(x_n)\} = \{(-1)^n\}$ is not a Cauchy sequence in $\mathbb{R}$.
+$\Box$ \\\\
+
+
+
+\textbf{\large Uniform continuity} \\\\
+
+
+
+\textbf{Exercise 4.50.}
+\emph{Prove that a function which is uniformly continuous on $S$
+is also continuous on $S$.} \\
+
+\emph{Proof.}
+The proof is straightforward.
+\begin{enumerate}
+\item[(1)]
+Suppose $f: S \rightarrow T$ is uniformly continuous on $S$.
+Given any $\epsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
+\item[(2)]
+\emph{Show that $f$ is continuous at any point $p$ in $S$.}
+Set $y = p$ in (1).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 4.51.}
+\emph{If $f(x) = x^2$ for $x \in \mathbb{R}$,
+prove that $f$ is not uniformly continuous on $\mathbb{R}$}. \\
+
+\emph{Proof.}
+Prove by contradiction.
+\begin{enumerate}
+\item[(1)]
+If $f$ were uniformly continuous on $\mathbb{R}$,
+then for any $\epsilon > 0$, there is $\delta > 0$ such that
+$|f(x) - f(y)| < \epsilon$ whenever $|x - y| < \delta$.
+Here we pick $\epsilon = 1 > 0$.
+\item[(2)]
 So
-$$f^{-1}(V) = f^{-1}(V^{\circ}) \subseteq (f^{-1}(V))^{\circ} \subseteq f^{-1}(V),$$
-that is, $f^{-1}(V) = (f^{-1}(V))^{\circ}$,
-or the inverse image $f^{-1}(V)$ is open in $S$ for every open subset $V$ of $T$,
-or $f$ is continuous.
+$$|f(x) - f(y)| = |x^2 - y^2| = |x+y||x-y| < 1$$
+for any $|x-y| < \delta$.
+In particular, we pick $x = \frac{1}{\delta}$
+and $y = \frac{1}{\delta} + \frac{\delta}{2}$.
+Now $|x-y| = \frac{\delta}{2} < \delta$, and thus $|f(x) - f(y)| = |x+y||x-y| < 1$
+would be true.
+However,
+$$|f(x) - f(y)| = |x+y||x-y|
+= \left(\frac{2}{\delta}+ \frac{\delta}{2}\right)
+\left(\frac{\delta}{2}\right)
+> \frac{2}{\delta} \cdot \frac{\delta}{2} = 1,$$
+contrary to $|f(x) - f(y)| = |x+y||x-y| < 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 4.52.}
+\emph{Assume that $f$ is uniformly continuous on a bounded set $S$ in $\mathbb{R}^n$.
+Prove that $f$ must be bounded on $S$.} \\
+
+The conclusion is false if boundedness of $S$ is omitted from the hypothesis.
+For example, $f(x) = x$ on $\mathbb{R}$ is uniformly continuous on $\mathbb{R}$
+but $f(\mathbb{R}) = \mathbb{R}$ is unbounded. \\
+
+\emph{Proof.}
+Heine-Borel theorem provides the finiteness property to construct
+the boundedness property of $f$.
+\begin{enumerate}
+\item[(1)]
+\emph{Let $S$ be a bounded subset of a metric space $X$.
+Show that the closure of $S$ in $X$ is also bounded in $X$.}
+$S$ is bounded if $S \subseteq B_X(a;r)$ for some $r > 0$ and some $a \in X$.
+(The ball $B_X(a;r)$ is defined to the set of all $x \in X$ such that
+$d_X(x, a) < r$.)
+Take the closure on the both sides,
+$$\overline{S}
+\subseteq \overline{B_X(a;r)}
+= \{ x \in X : d_X(x, a) \leq r \}
+\subseteq B_X(a;2r),$$
+or $\overline{S}$ is bounded.
+\item[(2)]
+Since $f: S \rightarrow T$ is uniformly continuous,
+given any $\epsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
+In particular, pick $\epsilon = 1$.
+\item[(3)]
+For such $\delta > 0$, we construct an open covering of $\overline{S} \subseteq \mathbb{R}^n$.
+Pick a collection $\mathscr{F}$ of open balls
+$B(a;\delta) \subseteq \mathbb{R}^n$
+where $a$ runs over all elements of $S$.
+$\mathscr{F}$ covers $\overline{S}$ (by the definition of accumulation points).
+Since $\overline{S} $ is closed and bounded (by applying (1) on the boundedness of $S$),
+$\overline{S}$ is compact
+(Heine-Borel theorem on $\mathbb{R}^n$).
+That is, there is a finite subcollection $\mathscr{F}'$ of $\mathscr{F}$
+also covers $\overline{S}$, say
+$$\mathscr{F}'
+= \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.$$
+\item[(4)]
+Given any $x \in S \subseteq \overline{S}$,
+there is some $a_i \in S$ $(1 \leq i \leq m)$ such that $x \in B(a_i;\delta)$.
+In such ball, $d_S(x, a_i) < \delta$.
+By (2), $\Vert f(x) - f(a_i) \Vert < 1$,
+or $\Vert f(x) \Vert < 1 + \Vert f(a_i) \Vert$.
+Almost done.
+Notice that $a_i$ depends on $x$,
+and thus we might use finiteness of $\{ a_1, a_2, ..., a_m \}$
+to remove dependence of $a_i$.
+\item[(5)]
+Take the maximum value over all $a_i$ $(1 \leq i \leq m)$ and then assign
+$$M = 1 + \max_{1 \leq i \leq m}{\Vert f(a_i) \Vert}.$$
+So given any $x \in S$, $\Vert f(x) \Vert < M$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 4.54.}
+\emph{Assume $f: S \rightarrow T$ is uniformly continuous on $S$,
+where $S$ and $T$ are metric spaces.
+If $\{x_n\}$ is any Cauchy sequence in $S$,
+prove that $\{f(x_n)\}$ is a Cauchy sequence in $T$.
+(Compare with Exercise 4.33.)} \\
+
+Therefore, we need to find a continuous but not uniformly continuous function
+to solve Exercise 4.33:
+\emph{Give an example of a continuous $f$ and a Cauchy sequence $\{x_n\}$
+in some metric space $S$ for which $\{f(x_n)\}$ is not a Cauchy sequence in $T$.} \\
+
+\emph{Proof.}
+The proof is straightforward.
+\begin{enumerate}
+\item[(1)]
+Since $f: S \rightarrow T$ is uniformly continuous on $S$,
+given any $\epsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
+\item[(2)]
+Since $\{x_n\}$ is any Cauchy sequence in $S$,
+especially for such $\delta > 0$ in (1), there is an integer $N$ such that
+$d_S(x_m, x_n) < \delta$ whenever $m \geq N$ and $n \geq N$.
+So as $m \geq N$ and $n \geq N$, we have
+$d_T(f(x_m), f(x_n)) < \epsilon$ by (1),
+or $\{f(x_n)\}$ itself is a Cauchy sequence in $T$.
 \end{enumerate}
 $\Box$ \\\\
 
