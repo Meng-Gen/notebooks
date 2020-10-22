@@ -130,10 +130,46 @@ $\overline{A} = [0, 1]$. \\
   &\text{(Proposition 3.2)} \\
 &= \sum l(\overline{I_n})
   &\text{(Proposition 3.1)} \\
-&= \sum l(I_n)
+&= \sum l(I_n).
   &\text{(definition of length)}
 \end{align*}
-$\Box$ \\\\
+$\Box$ \\
+
+\textbf{Supplement.}
+Exercise about considering the closure.
+(Exercise 4.52 in T. M. Apostol, Mathematical Analysis, 2nd Edition.)
+\emph{Assume that $f$ is uniformly continuous on a bounded set $S$ in $\mathbb{R}^n$.
+Prove that $f$ must be bounded on $S$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Since $f: S \rightarrow T$ is uniformly continuous,
+given any $\epsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
+Choose $\epsilon = 1 > 0$.
+\item[(2)]
+For such $\delta > 0$, construct an open covering of $\overline{S} \subseteq \mathbb{R}^n$.
+Pick a collection $\mathscr{F}$ of open balls
+$B(a;\delta) \subseteq \mathbb{R}^n$
+where $a$ runs over all elements of $S$.
+$\mathscr{F}$ covers $\overline{S}$ (by the definition of accumulation points).
+Since $\overline{S} $ is closed and bounded (since $S$ is bounded),
+$\overline{S}$ is compact
+So there is a finite subcollection $\mathscr{F}'$ of $\mathscr{F}$
+also covers $\overline{S}$, say
+$$\mathscr{F}'
+= \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.$$
+\item[(3)]
+Given any $x \in S \subseteq \overline{S}$,
+there is some $a_i \in S$ $(1 \leq i \leq m)$ such that $x \in B(a_i;\delta)$.
+In such ball, $d_S(x, a_i) < \delta$.
+By (1), $\Vert f(x) - f(a_i) \Vert < 1$,
+or $\Vert f(x) \Vert < 1 + \Vert f(a_i) \Vert$.
+Therefore, for any $x \in S$,
+$$\Vert f(x) \Vert < 1 + \max_{1 \leq i \leq m}{\Vert f(a_i) \Vert}.$$
+\end{enumerate}
+$\Box$ \\
 
 
 

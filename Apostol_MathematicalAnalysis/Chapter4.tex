@@ -352,6 +352,26 @@ Take the maximum value over all $a_i$ $(1 \leq i \leq m)$ and then assign
 $$M = 1 + \max_{1 \leq i \leq m}{\Vert f(a_i) \Vert}.$$
 So given any $x \in S$, $\Vert f(x) \Vert < M$.
 \end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+Exercise about considering the closure.
+(Problem 3.5 in H. L. Royden, Real Analysis, 3rd Edition.)
+\emph{Let $A = \mathbb{Q} \cap [0,1]$,
+and let $\{ I_n\}$ be a finite collection of open intervals covering $A$.
+Then $\sum l(I_n) \geq 1$.} \\
+
+\emph{Proof.}
+\begin{align*}
+1
+= m^{*}[0, 1]
+= m^{*}\overline{A}
+&\leq m^{*}\left( \overline{\bigcup I_n} \right)
+= m^{*}\left( \bigcup \overline{I_n} \right) \\
+&\leq \sum m^{*}(\overline{I_n})
+= \sum l(\overline{I_n})
+= \sum l(I_n).
+\end{align*}
 $\Box$ \\\\
 
 
