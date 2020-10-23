@@ -27,19 +27,25 @@
 
 
 % http://my.fit.edu/~awelters/Teaching/2017/Fall/HW4SolnsFall2017MTH4101&5101.pdf
+% https://www.math.purdue.edu/~dgarofal/hmw9(MA504).pdf
+% https://carma.newcastle.edu.au/resources/jon/Preprints/Books/CUP/CUPold/np-convex.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \textbf{Exercise 4.1.}
 \emph{Suppose $f$ is a real function define on $\mathbb{R}^1$ which satisfies
-$$\lim_{h \rightarrow 0}[f(x+h)-f(x-h)] = 0$$
+$$\lim_{h \to 0}[f(x+h)-f(x-h)] = 0$$
 for every $x \in \mathbb{R}^1$.
 Does this imply that $f$ is continuous?} \\
 
 \emph{Proof.}
-$\lim_{h \rightarrow 0}[f(x+h)-f(x-h)] = 0$ holds if $f$ is continuous.
+$\lim_{h \to 0}[f(x+h)-f(x-h)] = 0$ holds if $f$ is continuous.
 But the converse of this statement and is not true.
-For example, define $f: \mathbb{R}^1 \rightarrow \mathbb{R}^1$ by
+For example, define $f: \mathbb{R}^1 \to \mathbb{R}^1$ by
 \begin{equation*}
   f(x) =
     \begin{cases}
@@ -48,11 +54,14 @@ For example, define $f: \mathbb{R}^1 \rightarrow \mathbb{R}^1$ by
     \end{cases}
 \end{equation*}
 $f$ is not continuous at $x = 0$ but
-$$\lim_{h \rightarrow 0}[f(x+h)-f(x-h)] = 0$$
-for any $x \in \mathbb{R}^1$.
+$$\lim_{h \to 0}[f(x+h)-f(x-h)] = 0$$ for any $x \in \mathbb{R}^1$.
 (The identity holds for $x \neq 0$ since $f$ is continuous on $\mathbb{R}^1 - \{0\}$.
-Besides, $\lim_{h \rightarrow 0}[f(0+h)-f(0-h)] = \lim_{h \rightarrow 0}[0 - 0] = 0$.)
+Besides, $\lim_{h \to 0}[f(0+h)-f(0-h)] = \lim_{h \to 0}[0 - 0] = 0$.)
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -86,7 +95,7 @@ f(\overline{E})
   & \text{(Note in Theorem 4.14)}
 \end{align*}
 \item[(2)]
-Let $f: (0, \infty) \rightarrow \mathbb{R}$ be a continuous function
+Let $f: (0, \infty) \to \mathbb{R}$ be a continuous function
 defined by $$f(x) = \frac{1}{x}.$$
 Consider $E = \mathbb{Z}^+ \subseteq (0, \infty)$.
 Then $f(E) = \left\{ \frac{1}{n} : n \in \mathbb{Z}^+ \right\}$,
@@ -159,6 +168,10 @@ is closed in $X$.}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 4.3.}
 \emph{Let $f$ be a continuous real function on a metric space $X$.
 Let $Z(f)$ (the zero set of $f$) be the set of all $p \in X$ at which $f(p) = 0$.
@@ -168,6 +181,8 @@ Prove that $Z(f)$ is closed.} \\
 Since $f$ is continuous, $f^{-1}(\{0\}) = Z(f)$ is closed in $X$
 for a closed subset $\{0\}$ in $\mathbb{R}^1$.
 $\Box$ \\
+
+Denote the complement of any set $E$ by $\widetilde{E}$. \\
 
 \emph{Proof (Theorem 4.8).}
 Consider the complement of $Z(f)$ in $X$,
@@ -205,6 +220,303 @@ For such $x$ with $d_X(x, p) < \delta$ we have
 $$\frac{1}{2}f(p) < f(x) < \frac{3}{2}f(p).$$
 That is, $N = \{ x : d_X(x, p) < \delta \}$ is a neighborhood $p$ such that
 $N \subseteq \{f > 0\}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.4.}
+\emph{Let $f$ and $g$ be continuous mappings of a metric space $X$ into a metric space $Y$,
+and let $E$ be a dense subset of $X$.
+Prove that $f(E)$ is dense in $f(X)$.
+If $g(p) = f(p)$ for all $p \in E$, prove that $g(p) = f(p)$ for all $p \in X$.
+(In other words, a continuous mapping is determined by
+its values on a dense subset of its domain.)} \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.5.}
+\emph{If $f$ is a real continuous function defined on a closed set $E \subset \mathbb{R}^1$,
+prove that there exist continuous real function $g$ on $\mathbb{R}^1$ such that
+$g(x) = f(x)$ for all $x \in E$.
+(Such functions $g$ are called \textbf{continuous extensions} of $f$ from $E$ to $\mathbb{R}^1$.)
+Show that the result becomes false if the word ``closed'' is omitted.
+Extend the result to vector valued functions.
+(Hint: Let the graph of $g$ be a straight line on each of the segments
+which constitute the complement of $E$
+(compare Exercise 2.29).
+The result remains true if $\mathbb{R}^1$ is replaced by any metric space,
+but the proof is not so simple.) } \\
+
+\textbf{Supplement (Tietze's Extension Theorem).}
+\emph{If $X$ is a normal topological space and
+$f: A \to \mathbb{R}$ is a continuous map
+from a closed subset $A$ of $X$ into the real numbers carrying the standard topology,
+then there exists a continuous map
+$g: X \to \mathbb{R}$ with $g(a) = f(a)$ for all $a \in A$.} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.23.}
+\emph{A real-valued function $f$ defined in $(a,b)$
+is said to be \textbf{convex} if
+$$f(\lambda x + (1 - \lambda) y) \leq \lambda f(x) + (1 - \lambda) f(y)$$
+whenever $a < x < b$, $a < y < b$, $0 < \lambda < 1$.
+Prove that every convex function is continuous.
+Prove that every increasing convex function of a convex function is convex.
+(For example, if $f$ is convex, so is $e^f$.)} \\
+
+\emph{If $f$ is convex in $(a,b)$ and if $a < s < t < u < b$,
+show that
+$$\frac{f(t)-f(s)}{t-s}
+\leq \frac{f(u)-f(s)}{u-s}
+\leq \frac{f(u)-f(t)}{u-t}.$$} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that
+$\frac{f(t)-f(s)}{t-s}
+\leq \frac{f(u)-f(s)}{u-s}
+\leq \frac{f(u)-f(t)}{u-t}$.}
+Since
+\begin{align*}
+  t
+  &= \frac{t-s}{u-s} u + \left( 1-\frac{t-s}{u-s} \right) s \\
+  &= \left( 1-\frac{u-t}{u-s} \right) u + \frac{u-t}{u-s} s
+\end{align*}
+and $0 < \frac{t-s}{u-s}, \frac{u-t}{u-s} < 1$,
+by the convexity of $f$ we have
+\begin{align*}
+  f(t)
+  &\leq \frac{t-s}{u-s} f(u) + \left( 1-\frac{t-s}{u-s} \right) f(s), \\
+  f(t)
+  &\leq \left( 1-\frac{u-t}{u-s} \right) f(u) + \frac{u-t}{u-s} f(s).
+\end{align*}
+It is equivalent to
+$$\frac{f(t)-f(s)}{t-s}
+\leq \frac{f(u)-f(s)}{u-s}
+\leq \frac{f(u)-f(t)}{u-t}.$$
+$\Box$\\
+\item[(2)]
+\emph{If $x, y, x', y'$ are points of $(a,b)$
+with $x \leq x' < y'$ and $x < y \leq y'$,
+then the chord over $(x',y')$ has larger slope than the chord over $(x,y)$; that is,
+$$\frac{f(y)-f(x)}{y-x} \leq \frac{f(y')-f(x')}{y'-x'}.$$}
+It is a corollary to (1).
+\item[(3)]
+\emph{Show that $f$ is continuous.}
+Let $[c,d] \subseteq (a,b)$.
+Then by (2),
+$$\frac{f(c)-f(a)}{c-a}
+\leq \frac{f(y) - f(x)}{y - x}
+\leq \frac{f(b)-f(d)}{b-d}$$
+for $x, y$ in $[c,d]$.
+Thus $|f(y) - f(x)| \leq M|y - x|$ in $[c,d]$
+(where $M = \max\left( |\frac{f(c)-f(a)}{c-a}|, |\frac{f(b)-f(d)}{b-d}| \right)$),
+and so $f$ is absolutely continuous
+on each closed subinterval of $(a,b)$.
+Especially, $f$ is continuous.
+\item[(4)]
+\emph{Let $f$ be a convex function,
+$g$ be an increasing convex function,
+and $h = g \circ f$.
+Show that $h$ is convex.}
+\begin{align*}
+f(\lambda x + (1-\lambda) y)
+&\leq \lambda f(x) + (1-\lambda) f(y),
+  &\text{(Convexity of $f$)} \\
+g(f(\lambda x + (1-\lambda) y))
+&\leq g(\lambda f(x) + (1-\lambda) f(y))
+  &\text{(Increasing of $g$)} \\
+&\leq \lambda g(f(x)) + (1-\lambda) g(f(y)),
+  &\text{(Convexity of $g$)} \\
+h(\lambda x + (1-\lambda) y)
+&\leq \lambda h(x) + (1-\lambda) h(y).
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.24.}
+\emph{Assume that $f$ is a continuous real function defined in $(a,b)$
+such that
+$$f\left( \frac{x+y}{2} \right)
+\leq \frac{f(x)+f(y)}{2}$$
+for all $x, y \in (a,b)$.
+Prove that $f$ is convex.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that
+$$f\left( \frac{x_1 + \cdots + x_n}{n} \right)
+\leq \frac{f(x_1) + \cdots + f(x_n)}{n}$$
+whenever $a < x_i < b$ $(1 \leq i \leq n)$.}
+Apply Cauchy induction and use the same argument in proving the AM-GM inequality.
+As $n = 1, 2$, the inequality holds by assumption.
+Suppose $n = 2^k$ $(k \geq 1)$ the inequality holds.
+As $n = 2^{k+1}$,
+\begin{align*}
+&f\left( \frac{x_1 + \cdots + x_{2^{k+1}}}{2^{k+1}} \right) \\
+=& f\left( \frac{1}{2} \left(\frac{x_1 + \cdots + x_{2^k}}{2^k}
+  + \frac{x_{2^k+1} + \cdots + x_{2^{k+1}}}{2^k}\right) \right) \\
+\leq& \frac{1}{2}
+  \left(
+    f\left(\frac{x_1 + \cdots + x_{2^k}}{2^k} \right)
+    + f\left(\frac{x_{2^k+1} + \cdots + x_{2^{k+1}}}{2^k} \right)
+  \right) \\
+\leq& \frac{1}{2}
+  \left(
+    \frac{f(x_1) + \cdots + f(x_{2^k})}{2^k}
+    + \frac{f(x_{2^k+1}) + \cdots + f(x_{2^{k+1}})}{2^k}
+  \right) \\
+=& \frac{f(x_1) + \cdots + f(x_{2^k}) + f(x_{2^k+1}) + \cdots + f(x_{2^{k+1}})}{2^{k+1}} \\
+=& \frac{f(x_1) + \cdots + f(x_{2^{k+1}})}{2^{k+1}}.
+\end{align*}
+As $n$ is not a power of $2$,
+then it is certainly less than some natural power of $2$, say $n < 2^m$ for some $m$.
+Let
+$$x_{n+1} = \cdots = x_{2^m} = \frac{x_1 + \cdots + x_n}{n} = \alpha.$$
+Then by the induction hypothesis,
+\begin{align*}
+  f(\alpha)
+  &= f\left( \frac{x_1 + \cdots + x_n + \alpha + \cdots + \alpha}{2^m} \right) \\
+  &\leq \frac{f(x_1) + \cdots + f(x_n) + f(\alpha) + \cdots + f(\alpha)}{2^m} \\
+  &\leq \frac{f(x_1) + \cdots + f(x_n) + (2^m - n)f(\alpha)}{2^m}, \\
+  2^m f(\alpha)
+  &\leq f(x_1) + \cdots + f(x_n) + (2^m - n)f(\alpha), \\
+  n f(\alpha)
+  &\leq f(x_1) + \cdots + f(x_n),
+\end{align*}
+or $f\left( \frac{1}{n} (x_1 + \cdots + x_n) \right)
+\leq \frac{1}{n}(f(x_1) + \cdots f(x_n))$.
+\item[(2)]
+Hence,
+$$f(\lambda x + (1 - \lambda) y) \leq \lambda f(x) + (1 - \lambda) f(y)$$
+for any rational $\lambda$ in $(0,1)$.
+(Given any positive integers $p < q$,
+put $n = q$,
+$x_1 = \cdots = x_p = x$
+and $x_{p+1} = \cdots = x_n = y$ in (1).)
+\item[(3)]
+Given any real $\lambda \in (0,1)$,
+there is a sequence of rational numbers $\{r_n\} \subseteq (0, 1)$
+such that $r_n \to \lambda$.
+By (2),
+$$f(r_n x + (1 - r_n) y) \leq r_n f(x) + (1 - r_n) f(y)$$
+for any rational $r_n$ in $(0,1)$.
+Taking limit on the both sides and using the continuity of $f$,
+we have
+$$f(\lambda x + (1 - \lambda) y) \leq \lambda f(x) + (1 - \lambda) f(y).$$
+\end{enumerate}
 $\Box$ \\
+
+\emph{Proof (Reductio ad absurdum).}
+If $f$ were not convex,
+then there is a subinterval $[c,d] \subseteq (a,b)$
+such that
+$$\frac{f(d)-f(c)}{d-c} < \frac{f(x_0)-f(c)}{x_0-c}$$
+for some $x_0 \in [c, d]$.
+Let
+$$g(x) = f(x)-f(c) - \frac{f(d)-f(c)}{d-c}(x - c)$$
+for $x \in [c,d]$.
+Therefore,
+\begin{enumerate}
+\item[(1)]
+$g(x)$ is continuous and midpoint convex.
+\item[(2)]
+$g(c) = g(d) = 0$.
+\item[(3)]
+Let $M = \sup\{g(x) : x \in [c,d]\}$.
+$\infty > M > 0$ due to the continuity of $g$ and the existence of $x_0$.
+And let $\xi = \inf \{ x \in [c,d] : g(x) = M \}$.
+By the continuity of $g$, $g(\xi) = M$.
+$\xi \in (c,d)$ by (2).
+\item[(4)]
+Since $(c,d)$ is open, there is $h > 0$ such that $(\xi-h,\xi+h) \subseteq (c,d)$.
+By the minimality of $\xi$ and $M$, $g(\xi-h) < g(\xi)$ and $g(\xi+h) \leq g(\xi)$.
+\end{enumerate}
+Therefore,
+\begin{align*}
+g(\xi-h) + g(\xi+h)
+&< 2 g(\xi), \\
+\frac{g(\xi-h) + g(\xi+h)}{2}
+&< g(h) \\
+&= g\left( \frac{(\xi-h) + (\xi+h)}{2} \right),
+\end{align*}
+contrary to the midpoint convexity of $g$.
+$\Box$ \\
+
+The result becomes false if ``continuity of $f$'' is omitted. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.25.}
+\emph{If $A \subset \mathbb{R}^k$ and $B \subset \mathbb{R}^k$,
+define $A+B$ to be the set of all sums $\mathbf{x}+\mathbf{y}$ with
+$\mathbf{x} \in A$, $\mathbf{y} \in B$.}
+
+\begin{enumerate}
+\item[(a)]
+\emph{If $K$ is compact and $C$ is closed in $\mathbb{R}^k$,
+prove that $K+C$ is closed.
+(Hint: Take $\mathbf{z} \notin K+C$,
+put $F = \mathbf{z}-C$,
+the set of all $\mathbf{z}-\mathbf{y}$ with $\mathbf{y} \in C$.
+Then $K$ and $F$ are disjoint.
+Choose $\delta$ as in Exercise 4.21.
+Show that the open ball with center $\mathbf{z}$ and radius $\delta$ does not intersect $K+C$.)}
+\item[(b)]
+\emph{Let $\alpha$ be an irrational real number.
+Let $C_1$ be the set of all integers,
+let $C_2$ be the set of all $n \alpha$ with $n \in C_1$.
+Show that $C_1$ and $C_2$ are closed subsets of $\mathbb{R}^1$
+whose sum $C_1 + C_2$ is not closed,
+by showing that $C_1 + C_2$ is a countable dense subset of $\mathbb{R}^1$.} \\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.26.}
+\emph{Suppose $X$, $Y$, $Z$ are metric spaces, and $Y$ is compact.
+Let $f$ map $X$ into $Y$,
+let $g$ be a continuous one-to-one mapping of $Y$ into $Z$,
+and put $h(x) = g(f(x))$ for $x \in X$.} \\
+
+\emph{Prove that $f$ is uniformly continuous if $h$ is uniformly continuous.
+(Hint: $g^{-1}$ has compact domain $g(Y)$, and $f(x) = g^{-1}(h(x))$.)} \\
+
+\emph{Prove also that $f$ is continuous if $h$ is continuous. } \\
+
+\emph{Show (by modifying Example 4.21, or by finding a different example) that
+the compactness of $Y$ cannot be omitted from the hypotheses,
+even when $X$ and $Z$ are compact.} \\
+
+
 
 \end{document}
