@@ -2,6 +2,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{commath}
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
@@ -236,6 +237,28 @@ If $g(p) = f(p)$ for all $p \in E$, prove that $g(p) = f(p)$ for all $p \in X$.
 (In other words, a continuous mapping is determined by
 its values on a dense subset of its domain.)} \\
 
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f(E)$ is dense in $f(X)$.}
+It suffices to show that every point $y \in f(X)-f(E)$ is a limit point of $f(E)$.
+Since $y \in f(X)-f(E)$, there exist a point $x \in X-E$ such that $y = f(x)$.
+Since $E$ is dense in $X$, there is a sequence $\{x_n\}$ in $E$ such that
+$x_n \to x$ as $n \to \infty$.
+Let $y_n = f(x_n) \in f(E)$.
+Take limit and use the continuity of $f$,
+$y_n \to y$ as $n \to \infty$, or $y$ is a limit point of $f(E)$.
+\item[(2)]
+\emph{Show that $g(p) = f(p)$ for all $p \in X$ if $g(p) = f(p)$ for all $p \in E$.}
+It suffices to show $g(p) = f(p)$ for all $p \in X-E$.
+Given any $p \in X-E$, there is a sequence $\{p_n\}$ in $E$ such that
+$p_n \to p$ as $n \to \infty$.
+Notice that $g(p_n) = f(p_n)$ by the assumption.
+Take limit and use the continuity of $f$ and $g$,
+$g(p) = f(p)$ for $p \in X-E$.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,7 +266,7 @@ its values on a dense subset of its domain.)} \\
 
 
 \textbf{Exercise 4.5.}
-\emph{If $f$ is a real continuous function defined on a closed set $E \subset \mathbb{R}^1$,
+\emph{If $f$ is a real continuous function defined on a closed set $E \subseteq \mathbb{R}^1$,
 prove that there exist continuous real function $g$ on $\mathbb{R}^1$ such that
 $g(x) = f(x)$ for all $x \in E$.
 (Such functions $g$ are called \textbf{continuous extensions} of $f$ from $E$ to $\mathbb{R}^1$.)
@@ -255,12 +278,218 @@ which constitute the complement of $E$
 The result remains true if $\mathbb{R}^1$ is replaced by any metric space,
 but the proof is not so simple.) } \\
 
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Every open set in $\mathbb{R}^1$ is the union of an at most countable collection
+of disjoint segments (Exercise 2.29).
+\item[(2)]
+We need to construct a continuous real function on the complement of $E$.
+By (1), write $\widetilde{E} = \bigcup_{i \in \mathscr{C}} (a_i, b_i)$
+where $\mathscr{C}$ is at most countable and
+$a_i < b_i$. ($a_i, b_i$ could be $\pm \infty$.)
+Define $g(x)$ by
+\begin{equation*}
+  g(x) =
+    \begin{cases}
+      f(x)
+        & (x \in E), \\
+      f(a_i) + \frac{f(b_i)-f(a_i)}{b_i-a_i}(x - a_i)
+        & (x \in (a_i, b_i):\text{finite interval}), \\
+      f(a_i)
+        & (x \in (a_i, b_i): a_i:\text{finite}, b_i = +\infty), \\
+      f(b_i)
+        & (x \in (a_i, b_i): a_i = -\infty, b_i:\text{finite}), \\
+      0
+        & (x \in (a_i, b_i): a_i = -\infty, b_i = +\infty).
+    \end{cases}
+\end{equation*}
+\emph{Show that $g$ is continuous in $\mathbb{R}^1$,}
+or show that $g(x)$ is continuous at $x = p$ for any point $p \in \mathbb{R}^1$.
+\begin{enumerate}
+  \item[(a)]
+  Given a point $p \in \widetilde{E}$. There is an open interval $I = (a_i, b_i)$
+  such that $p \in I$.
+  Since the graph of $g$ in an open interval $I$ is a straight line,
+  $g$ is continuous at $x = p$.
+  \item[(b)]
+  Given an isolated point $p \in E$.
+  There are two open intervals $I = (a_i, b_i)$ and $J = (a_j, b_j)$
+  such that $b_i = p = a_j$.
+  So $\lim_{x \to p^{-}} g(x) = \lim_{x \to p^{+}} g(x) = f(p)$
+  by the construction of $g$, which says $g$ is continuous at $x = p$.
+  \item[(c)]
+  Given a limit point $p \in E$. So that $g(p) = f(p)$.
+  Given $\epsilon > 0$.
+  Consider $\lim_{x \to p^{+}} g(x)$ first.
+  (The case $\lim_{x \to p^{-}} g(x)$ is similar.)
+    \begin{enumerate}
+    \item[(i)]
+    For such $\epsilon > 0$, there is a $\delta' > 0$ such that
+    $$f(p)-\epsilon < f(x) < f(p)+\epsilon$$
+    whenever
+    $$x \in E \text{ and } p < x < \delta'.$$
+    Since $p$ is a limit point of $E$,
+    there is a point $q \neq p$ such that $|q - p| < \delta'$.
+    Might assume that $q > p$, and then retake $\delta = \min\{\delta', q-p\} > 0$.
+    (If no such $q$, $\lim_{x \to p^{+}} g(x) = f(p)$ trivially.)
+    \item[(ii)]
+    For any $x$ such that $p < x < q$,
+    consider $x \in E$ or else $x \in \widetilde{E}$.
+    As $x \in E$, nothing to do by (i).
+    \item[(iii)]
+    As $x \in \widetilde{E}$, there exists an open interval $I = (a_i, b_i)$
+    such that $x \in I \subseteq (p,q)$.
+    Therefore,
+    $$f(a_i) \leq g(x) \leq f(b_i) \text{ or }
+    f(a_i) \geq g(x) \geq f(b_i).$$
+    By (i),
+    \begin{align*}
+      f(p) - \epsilon &< f(a_i) < f(p) + \epsilon \text{ and } \\
+      f(p) - \epsilon &< f(b_i) < f(p) + \epsilon, \\
+      f(p) - \epsilon < f(a_i) &\leq g(x) \leq f(b_i) < f(p) + \epsilon \text{ or } \\
+      f(p) - \epsilon < f(b_i) &\leq g(x) \leq f(a_i) < f(p) + \epsilon.
+    \end{align*}
+    \end{enumerate}
+  Hence, given $\epsilon > 0$
+  there is a $\delta > 0$ such that
+  $|g(x) - g(p)| < \epsilon$ whenever $p < x < \delta$ (and $x \in \mathbb{R}^1$),
+  or $\lim_{x \to p^{+}} g(x) = g(p)$.
+  \end{enumerate}
+\item[(3)]
+Consider $f(x) = \log(x)$ in $(0, \infty)$.
+Since $\lim_{x \to 0} f(x) = -\infty$,
+we cannot find any real continuous function $g$ defined on $x = 0$.
+\item[(4)]
+For a vector-valued function
+$\mathbf{f} = (f_1, ..., f_k)$,
+with each $f_i$ is continuous on a closed set $E \subseteq \mathbb{R}^1$,
+extend $f_i$ to a continuous function $g_i$ on $\mathbb{R}^1$ as (2).
+Put $\mathbf{g} = (g_1, ..., g_k)$.
+Clearly $\mathbf{g}$ is an extension of $\mathbf{f}$.
+Besides, $\mathbf{g}$ is continuous in $\mathbb{R}^1$ by Theorem 4.10.
+\end{enumerate}
+$\Box$ \\
+
+
+
 \textbf{Supplement (Tietze's Extension Theorem).}
 \emph{If $X$ is a normal topological space and
 $f: A \to \mathbb{R}$ is a continuous map
 from a closed subset $A$ of $X$ into the real numbers carrying the standard topology,
 then there exists a continuous map
 $g: X \to \mathbb{R}$ with $g(a) = f(a)$ for all $a \in A$.} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.6.}
+\emph{If $f$ is defined on $E$, the graph of $f$ is the set of points $(x,f(x))$,
+for $x \in E$.
+In particular, if $E$ is a set of real numbers, and $f$ is real-valued,
+the graph of $f$ is a subset of the plain.
+Suppose $E$ is compact, and prove that that $f$ is continuous on $E$
+if and only if its graph is compact.} \\
+
+\emph{Proof.}
+Let $G = \{ (x,f(x)) : x \in E\}$ be the graph of $f$.
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Let $\mathbf{f}: E \to G$ defined by
+$$\mathbf{f}(x) = (x,f(x)).$$
+$\mathbf{f}(E) = G$ exactly.
+Since $f$ and $x$ are continuous in $E$, $\mathbf{f}$ is continuous (Theorem 4.10).
+As $E$ is compact, $\mathbf{f}(E)$ is compact (Theorem 4.14).
+\item[(2)]
+$(\Longleftarrow)$
+Let $\pi: G \to E$ be a projection map defined by
+$$\pi(x, f(x)) = x.$$
+Notice that $\pi \circ \mathbf{f} = \text{id}_E$ and
+$\mathbf{f} \circ \pi = \text{id}_G$.
+Besides,
+$\pi$ is a continuous one-to-one mapping of a compact set $G$ onto $E$.
+Then the inverse mapping $\pi^{-1} = \mathbf{f}$
+is a continuous mapping of $E$ onto $G$ (Theorem 4.17).
+So $f$ is continuous (Theorem 4.10).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.14.}
+\emph{Let $I=[0,1]$ be the closed unit interval.
+Suppose $f$ is continuous mapping of $I$ into $I$.
+Prove that $f(x) = x$ for at least one $x \in I$.} \\
+
+\emph{Proof (Theorem 4.23).}
+Let $g(x) = f(x) - x$ in $I$.
+
+\begin{enumerate}
+\item[(1)]
+$g(0) = 0$. Take $x = 0$.
+\item[(2)]
+$g(1) = 0$. Take $x = 1$.
+\item[(3)]
+Suppose $g(0) \neq 0$ ($f(0) \neq 0$) and $g(1) \neq 0$ ($f(1) \neq 1$).
+Since $f: I \to I$, $f(0) > 0$ and $f(1) < 1$. That is, $g(0) > 0$ and $g(1) < 0$.
+Applying the intermediate value theorem (Theorem 4.23),
+there is a point in $\xi \in (0, 1)$ such that $g(\xi) = 0$.
+That is, $f(\xi) = \xi$ for some $\xi \in (0,1)$.
+\end{enumerate}
+In any cases, the conclusion holds.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.16.}
+\emph{Let $[x]$ denote the largest integer contained in $x$, this is,
+$[x]$ is a integer such that $x-1 < [x] \leq x$;
+and let $(x) = x - [x]$ denote the fractional part of $x$.
+What discontinuities do the function $[x]$ and $(x)$ have?} \\
+
+\emph{Proof.}
+
+\begin{enumerate}
+\item[(1)]
+\emph{The function $[x]$ only has discontinuities at $x \in \mathbb{Z}$.}
+  \begin{enumerate}
+  \item[(a)]
+  For any $p \not\in \mathbb{Z}$,
+  there is an integer $n$ such that $n < p < n+1$.
+  Given any $\epsilon > 0$, there is a $\delta = \min\{p-n, (n+1)-p\} > 0$
+  such that $\abs{[x] - [p]} < \epsilon$
+  whenever $\abs{x - p} < \delta$.
+  In fact, $\abs{x - p} < \delta$ is equivalent to $n < x < n+1$
+  and therefore $\abs{[x] - [p]} = \abs{n - n} = 0 < \epsilon$.
+  \item[(b)]
+  For any $p \in \mathbb{Z}$,
+  $\lim_{x \to p^{+}}[x] = p$ and $\lim_{x \to p^{-}}[x] = p-1$.
+  \end{enumerate}
+\item[(2)]
+\emph{The function $(x)$ only has discontinuities at $x \in \mathbb{Z}$.}
+  \begin{enumerate}
+  \item[(a)]
+  Since $[x]$ is continuous on $\mathbb{R} - \mathbb{Z}$ and
+  $x$ is continuous on $\mathbb{R}$, especially on $\mathbb{R} - \mathbb{Z}$,
+  $(x) = x - [x]$ is continuous on $\mathbb{R} - \mathbb{Z}$.
+  \item[(b)]
+  For any $p \in \mathbb{Z}$,
+  $\lim_{x \to p^{+}}(x) = 0$ and $\lim_{x \to p^{-}}(x) = 1$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -496,6 +725,9 @@ whose sum $C_1 + C_2$ is not closed,
 by showing that $C_1 + C_2$ is a countable dense subset of $\mathbb{R}^1$.} \\
 \end{enumerate}
 
+\emph{Proof.}
+TODO. \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -516,6 +748,9 @@ and put $h(x) = g(f(x))$ for $x \in X$.} \\
 \emph{Show (by modifying Example 4.21, or by finding a different example) that
 the compactness of $Y$ cannot be omitted from the hypotheses,
 even when $X$ and $Z$ are compact.} \\
+
+\emph{Proof.}
+TODO. \\\\
 
 
 
