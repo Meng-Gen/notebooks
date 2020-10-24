@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 1: Vector Spaces} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{\large Section 1.6: Bases and Dimension} \\\\
+
+\textbf{Exercise 1.6.19.}
+\emph{Let $\mathsf{V}$ be a vector space having dimension $n$,
+and let $S$ be a subset of $\mathsf{V}$ that generates $\mathsf{V}$.
+\begin{enumerate}
+\item[(a)]
+Prove that there is a subset of $S$ that is a basis for $\mathsf{V}$.
+(Be careful not to assume that $S$ is finite.)
+\item[(b)]
+Prove that $S$ contains at least $n$ elements.
+\end{enumerate}}
+
+\emph{Proof of (a).}
+Similar to the argument in Theorem 1.9.
+\begin{enumerate}
+\item[(1)]
+If $S = \varnothing$ or $S = \{0\}$, then $\mathsf{V} = \{0\}$
+and $\varnothing$ is a subset of $S$ that is a basis for $\mathsf{V}$.
+\item[(2)]
+Otherwise $S$ contains a nonzero element $u_1$.
+$\{u_1\}$ is a linearly independent set.
+Continue, if possible, choosing elements $u_2, ..., u_k$ in $S$ such that
+$\{u_1, u_2, ..., u_k\}$ is linearly independent.
+By the Replacement Theorem (Theorem 1.10),
+we must eventually reach a stage at which
+$\beta = \{u_1, u_2, ..., u_k\}$ is a linearly independent subset of $S$
+with $k \leq n$.
+\item[(3)]
+$\beta$ generates $S$ by the construction of $\beta$,
+and $S$ generates $\mathsf{V}$.
+Therefore, $\beta$ generates $\mathsf{V}$
+(and thus $k = n$ by the definition of dimension).
+\end{enumerate}
+Therefore,
+there is a subset of $S$ that is a basis for $\mathsf{V}$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+By (a), there is a subset $\beta \subseteq S$ of size $n$
+that is a basis for $\mathsf{V}$.
+So $S$ contains at least $n$ elements of $\beta$.
+$\Box$ \\\\
+
+
+
+\end{document}
