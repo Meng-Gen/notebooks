@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 6: Inner Product Spaces} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{\large Section 6.1: Inner Products and Norms} \\\\
+
+
+
+\textbf{Exercise 6.1.6.}
+\emph{Complete the proof of Theorem 6.1.} \\
+
+\textbf{Theorem 6.1}
+\emph{Let $\mathsf{V}$ be an inner product space.
+Then for $x, y, z, \in \mathsf{V}$ and $c \in F$
+\begin{enumerate}
+\item[(a)]
+$\langle x, y+z \rangle = \langle x, y \rangle + \langle x, z \rangle$,
+\item[(b)]
+$\langle x, cy \rangle = \overline{c} \langle x, y \rangle$,
+\item[(c)]
+$\langle x, x \rangle = 0$ if and only if $x = 0$,
+\item[(d)]
+if $\langle x, y \rangle = \langle x, z \rangle$ for all $x \in \mathsf{V}$,
+then $y = z$.
+\end{enumerate}}
+
+\emph{Proof of (a).}
+\begin{align*}
+\langle x, y+z \rangle
+&= \overline{\langle y+z, x \rangle} \\
+&= \overline{\langle y, x \rangle + \langle z, x \rangle} \\
+&= \overline{\langle y, x \rangle} + \overline{\langle z, x \rangle} \\
+&= \langle x, y \rangle + \langle x, z \rangle.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+\langle x, cy \rangle
+&= \overline{\langle cy, x \rangle} \\
+&= \overline{c \langle y, x \rangle} \\
+&= \overline{c} \overline{\langle y, x \rangle} \\
+&= \overline{c} \langle x, y \rangle.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+If $x$ were nonzero, by the definition of the inner product,
+$\langle x, x \rangle > 0$, contrary to the assumption.
+Hence $x = 0$.
+\item[(2)]
+$(\Longleftarrow)$
+Since $0 = 0+0$,
+$\langle 0,0 \rangle = \langle 0+0,0 \rangle = \langle 0,0 \rangle + \langle 0,0 \rangle.$
+Thus $\langle 0,0 \rangle = 0$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{align*}
+  \langle x,y \rangle = \langle x,z \rangle \:\: \forall x \in \mathsf{V}
+  &\Longleftrightarrow
+  0 = \langle x,y \rangle - \langle x,z \rangle \:\: \forall x \in \mathsf{V} \\
+  &\Longleftrightarrow
+  0 = \langle x,y-z \rangle \:\: \forall x \in \mathsf{V}
+    &\text{((a))} \\
+  &\Longrightarrow
+  0 = \langle y-z,y-z \rangle
+    &\text{(Take $x=y-z \in \mathsf{V}$)} \\
+  &\Longleftrightarrow
+  y-z = 0
+    &\text{((c))} \\
+  &\Longleftrightarrow
+  y = z.
+\end{align*}
+$\Box$ \\\\
+
+
+
+\end{document}
