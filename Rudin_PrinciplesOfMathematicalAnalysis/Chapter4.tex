@@ -6,6 +6,7 @@
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -416,6 +417,137 @@ Then the inverse mapping $\pi^{-1} = \mathbf{f}$
 is a continuous mapping of $E$ onto $G$ (Theorem 4.17).
 So $f$ is continuous (Theorem 4.10).
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.8.}
+\emph{Let $f$ be a real uniformly continuous function
+on the bounded set $E$ in $\mathbb{R}$.
+Prove that $f$ is bounded on $E$.
+Show that the conclusion is false
+if boundedness of $E$ is omitted from the hypothesis.} \\
+
+The conclusion is false if boundedness of $E$ is omitted from the hypothesis.
+For example, $f(x) = x$ on $\mathbb{R}$ is uniformly continuous on $\mathbb{R}$
+but $f(\mathbb{R}) = \mathbb{R}$ is unbounded. \\
+
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+Since $f: E \to \mathbb{R}$ is uniformly continuous,
+given any $\epsilon > 0$, there is $\delta > 0$ such that
+$\abs{f(x) - f(y)} < \epsilon$ whenever $\abs{x - y} < \delta$.
+In particular, pick $\epsilon = 1$.
+\item[(2)]
+By the boundedness of $E$, there is $M > 0$ such that $\abs{x} < M$ for all $x \in E$.
+\item[(3)]
+For such $\delta > 0$, we construct a covering of $E \subseteq \mathbb{R}$.
+Construct a special collection $\mathscr{C}$ of intervals
+$$I_{a} =
+  \left[ \frac{\delta}{2}a, \frac{\delta}{2}(a+1) \right]
+$$
+where $a \in \mathbb{Z}$ satisfying
+$$\abs{a} < \frac{2M}{\delta} + 1.$$
+By construction, $\mathscr{C}$ is a finite covering of $E$.
+\item[(4)]
+For every interval $I_a$ of the collection $\mathscr{C}$,
+pick a point $x_a \in E \bigcap I_a$ if possible.
+This process will terminate eventually since $\mathscr{C}$ is a finite.
+Collect these representative points as $\mathscr{D} = \{ x_a \}$.
+Notice that $\mathscr{D}$ is finite again.
+\item[(5)]
+Now for any point $x \in E$, $x$ lies in some $I_a$
+containing $x_a$.
+Both $x$ and $x_a$ are in the same interval and their distance satisfies
+$$\abs{x - x_a}
+\leq \frac{\delta}{2}
+< \delta$$
+and thus by (1)
+$$\abs{f(x) - f(x_a)} < 1,
+\text{ or }
+\abs{f(x)} <  1 + \abs{f(x_a)}.$$
+\item[(6)]
+Let
+$$M = 1 + \max_{x_\mathbf{a} \in \mathscr{D}} \abs{f(x_a)}.$$
+So given any $x \in E$, $\abs{f(x)} < M$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Heine-Borel Theorem).}
+Heine-Borel theorem provides the finiteness property to construct
+the boundedness property of $f$.
+\begin{enumerate}
+\item[(1)]
+\emph{Let $E$ be a bounded subset of a metric space $X$.
+Show that the closure of $E$ in $X$ is also bounded in $X$.}
+$E$ is bounded if $E \subseteq B_X(a;r)$ for some $r > 0$ and some $a \in X$.
+(The ball $B_X(a;r)$ is defined to the set of all $x \in X$ such that
+$d_X(x, a) < r$.)
+Take the closure on the both sides,
+$$\overline{E}
+\subseteq \overline{B_X(a;r)}
+= \{ x \in X : d_X(x, a) \leq r \}
+\subseteq B_X(a;2r),$$
+or $\overline{E}$ is bounded.
+\item[(2)]
+Since $f: E \to \mathbb{R}$ is uniformly continuous,
+given any $\epsilon > 0$, there is $\delta > 0$ such that
+$\abs{f(x) - f(y)} < \epsilon$ whenever $\abs{x - y} < \delta$.
+In particular, pick $\epsilon = 1$.
+\item[(3)]
+For such $\delta > 0$, we construct an open covering of $\overline{E} \subseteq \mathbb{R}$.
+Pick a collection $\mathscr{C}$ of open balls
+$B(a;\delta) \subseteq \mathbb{R}$
+where $a$ runs over all elements of $E$.
+$\mathscr{C}$ covers $\overline{E}$ (by the definition of accumulation points).
+Since $\overline{E} $ is closed and bounded
+(by applying (1) on the boundedness of $E$),
+$\overline{E}$ is compact
+(Heine-Borel theorem).
+That is, there is a finite subcollection $\mathscr{C}'$ of $\mathscr{C}$
+also covers $\overline{E}$, say
+$$\mathscr{C}'
+= \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.$$
+\item[(4)]
+Given any $x \in E \subseteq \overline{E}$,
+there is some $a_i \in E$ $(1 \leq i \leq m)$ such that $x \in B(a_i;\delta)$.
+In such ball, $\abs{x - a_i} < \delta$.
+By (2), $\abs{f(x) - f(a_i)} < 1$,
+or $\abs{f(x)} < 1 + \abs{f(a_i)}$.
+Almost done.
+Notice that $a_i$ depends on $x$,
+and thus we might use finiteness of $\{ a_1, a_2, ..., a_m \}$
+to remove dependence of $a_i$.
+\item[(5)]
+Let
+$$M = 1 + \max_{1 \leq i \leq m}{\abs{f(a_i)}}.$$
+So given any $x \in E$, $\abs{f(x)} < M$.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+Exercise about considering the closure.
+(Problem 3.5 in H. L. Royden, Real Analysis, 3rd Edition.)
+\emph{Let $A = \mathbb{Q} \cap [0,1]$,
+and let $\{ I_n\}$ be a finite collection of open intervals covering $A$.
+Then $\sum l(I_n) \geq 1$.} \\
+
+\emph{Proof.}
+\begin{align*}
+1
+= m^{*}[0, 1]
+= m^{*}\overline{A}
+&\leq m^{*}\left( \overline{\bigcup I_n} \right)
+= m^{*}\left( \bigcup \overline{I_n} \right) \\
+&\leq \sum m^{*}(\overline{I_n})
+= \sum l(\overline{I_n})
+= \sum l(I_n).
+\end{align*}
 $\Box$ \\\\
 
 

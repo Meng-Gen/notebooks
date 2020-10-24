@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -305,7 +306,58 @@ The conclusion is false if boundedness of $S$ is omitted from the hypothesis.
 For example, $f(x) = x$ on $\mathbb{R}$ is uniformly continuous on $\mathbb{R}$
 but $f(\mathbb{R}) = \mathbb{R}$ is unbounded. \\
 
-\emph{Proof.}
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+Since $f: S \rightarrow T$ is uniformly continuous,
+given any $\epsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
+In particular, pick $\epsilon = 1$.
+\item[(2)]
+By the boundedness of $S$, there is $M > 0$ such that $\norm{x} < M$ for all $x \in S$.
+In particular, each coordinate of $x \in \mathbb{R}^n$ is less than $M$.
+\item[(3)]
+For such $\delta > 0$, we construct a covering of $S \subseteq \mathbb{R}^n$.
+Construct a special collection $\mathscr{C}$ of $n$-cells
+$$I_{\mathbf{a}} =
+  \left[ \frac{\delta}{2\sqrt{n}}a_1, \frac{\delta}{2\sqrt{n}}(a_1+1) \right]
+  \times
+  \cdots
+  \times
+  \left[ \frac{\delta}{2\sqrt{n}}a_n, \frac{\delta}{2\sqrt{n}}(a_n+1) \right]
+$$
+where $\mathbf{a} = (a_1, ..., a_n) \in \mathbb{Z}^n$ satisfying
+$$\abs{a_i} < \frac{2\sqrt{n}M}{\delta} + 1 \:\: (1 \leq i \leq n).$$
+By construction, $\mathscr{C}$ is a finite covering of $S$.
+\item[(4)]
+For every $n$-cell $I_{\mathbf{a}}$ of the collection $\mathscr{C}$,
+pick a point $x_{\mathbf{a}} \in S \bigcap I_{\mathbf{a}}$ if possible.
+This process will terminate eventually since $\mathscr{C}$ is a finite.
+Collect these representative points as $\mathscr{D} = \{ x_{\mathbf{a}} \}$.
+Notice that $\mathscr{D}$ is finite again.
+\item[(5)]
+Now for any point $x \in S$, $x$ lies in some $I_{\mathbf{a}}$
+containing $x_\mathbf{a}$.
+Both $x$ and $x_\mathbf{a}$ are in the same cell and their distance satisfies
+$$\norm{x - x_\mathbf{a}}
+\leq \sqrt{
+\left(\frac{\delta}{2\sqrt{n}}\right)^2 +
+\cdots +
+\left(\frac{\delta}{2\sqrt{n}}\right)^2}
+= \frac{\delta}{2}
+< \delta$$
+and thus by (1)
+$$\norm{f(x) - f(x_\mathbf{a})} < 1,
+\text{ or }
+\norm{f(x)} <  1 + \norm{f(x_\mathbf{a})}.$$
+\item[(6)]
+Let
+$$M = 1 + \max_{x_\mathbf{a} \in \mathscr{D}} \norm{f(x_\mathbf{a})}.$$
+So given any $x \in S$, $\norm{f(x)} < M$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Heine-Borel Theorem).}
 Heine-Borel theorem provides the finiteness property to construct
 the boundedness property of $f$.
 \begin{enumerate}
@@ -328,31 +380,31 @@ $d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
 In particular, pick $\epsilon = 1$.
 \item[(3)]
 For such $\delta > 0$, we construct an open covering of $\overline{S} \subseteq \mathbb{R}^n$.
-Pick a collection $\mathscr{F}$ of open balls
+Pick a collection $\mathscr{C}$ of open balls
 $B(a;\delta) \subseteq \mathbb{R}^n$
 where $a$ runs over all elements of $S$.
-$\mathscr{F}$ covers $\overline{S}$ (by the definition of accumulation points).
+$\mathscr{C}$ covers $\overline{S}$ (by the definition of accumulation points).
 Since $\overline{S} $ is closed and bounded (by applying (1) on the boundedness of $S$),
 $\overline{S}$ is compact
 (Heine-Borel theorem on $\mathbb{R}^n$).
-That is, there is a finite subcollection $\mathscr{F}'$ of $\mathscr{F}$
+That is, there is a finite subcollection $\mathscr{C}'$ of $\mathscr{C}$
 also covers $\overline{S}$, say
-$$\mathscr{F}'
+$$\mathscr{C}'
 = \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.$$
 \item[(4)]
 Given any $x \in S \subseteq \overline{S}$,
 there is some $a_i \in S$ $(1 \leq i \leq m)$ such that $x \in B(a_i;\delta)$.
 In such ball, $d_S(x, a_i) < \delta$.
-By (2), $\Vert f(x) - f(a_i) \Vert < 1$,
-or $\Vert f(x) \Vert < 1 + \Vert f(a_i) \Vert$.
+By (2), $\norm{f(x) - f(a_i)} < 1$,
+or $\norm{f(x)} < 1 + \norm{f(a_i)}$.
 Almost done.
 Notice that $a_i$ depends on $x$,
 and thus we might use finiteness of $\{ a_1, a_2, ..., a_m \}$
 to remove dependence of $a_i$.
 \item[(5)]
-Take the maximum value over all $a_i$ $(1 \leq i \leq m)$ and then assign
-$$M = 1 + \max_{1 \leq i \leq m}{\Vert f(a_i) \Vert}.$$
-So given any $x \in S$, $\Vert f(x) \Vert < M$.
+Let
+$$M = 1 + \max_{1 \leq i \leq m}{\norm{f(a_i)}}.$$
+So given any $x \in S$, $\norm{f(x)} < M$.
 \end{enumerate}
 $\Box$ \\
 
