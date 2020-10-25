@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 4: Determinants} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{\large Section 4.3: Properties of Determinants} \\\\
+
+
+
+\textbf{Exercise 4.3.11.}
+\emph{A matrix $Q \in \mathsf{M}_{n \times n}(\mathbb{R})$
+is called orthogonal if $QQ^t = I$.
+Prove that if $Q$ is orthogonal, then $\det(Q) = \pm 1$.} \\
+
+\emph{Proof.}
+By the orthogonality of $Q$, $QQ^t = I$. So
+\begin{align*}
+QQ^t = I
+&\Longrightarrow
+\det(QQ^t) = \det(I) \\
+&\Longleftrightarrow
+\det(Q)\det(Q^t) = \det(I)
+  &\text{(Theorem 4.7)} \\
+&\Longleftrightarrow
+\det(Q)\det(Q) = \det(I)
+  &\text{(Theorem 4.8)} \\
+&\Longleftrightarrow
+\det(Q)^2 = 1
+  &\text{(Example 4.2.4)} \\
+&\Longleftrightarrow
+\det(Q) = \pm 1.
+\end{align*}
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 4.3.14.}
+\emph{Prove that if $A, B \in \mathsf{M}_{n \times n}(F)$
+are similar, then $\det(A) = \det(B)$.} \\
+
+\emph{Proof.}
+Since $A, B$ are similar, there exists an invertible matrix $Q$
+such that $B = Q^{-1}AQ$.
+So
+\begin{align*}
+\det(B)
+&= \det(Q^{-1}AQ) \\
+&= \det(Q^{-1})\det(A)\det(Q)
+  &\text{(Theorem 4.7)} \\
+&= \det(Q)\det(Q^{-1})\det(A)
+  &\text{($F$ is field)} \\
+&= \det(Q Q^{-1})\det(A)
+  &\text{(Theorem 4.7)} \\
+&= \det(I)\det(A) \\
+&= 1 \cdot \det(A)
+  &\text{(Example 4.2.4)} \\
+&= \det(A).
+\end{align*}
+$\Box$ \\\\
+
+
+
+\end{document}
