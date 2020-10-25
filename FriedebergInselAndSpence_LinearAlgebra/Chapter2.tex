@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 2: Linear Transformations and Matrices} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+% https://math.stackexchange.com/questions/3852/if-ab-i-then-ba-i
+
+
+
+\textbf{\large Section 2.4: Invertibility and Isomorphisms} \\\\
+
+
+
+\textbf{Exercise 2.4.8.}
+\emph{Let $A$ and $B$ be $n \times n$ matrices such that $AB = I_n$.
+Prove
+\begin{enumerate}
+\item[(a)]
+$A$ and $B$ are invertible.
+\item[(b)]
+$A = B^{-1}$ (and hence $B = A^{-1}$).
+(We are in effect saying that for square matrices,
+a ``one-sided'' inverse is a ``two-sided'' inverse.)
+\item[(c)]
+State and prove analogous results for linear transformations
+defined on finite-dimensional vector spaces. \\
+\end{enumerate}}
+
+\emph{Proof of (a).}
+Regard $\mathsf{V} = \mathsf{M}_{n \times n}(F)$ as a finite-dimensional vector space over $F$.
+Given $X \in \mathsf{M}_{n \times n}(F)$,
+consider the subset $\mathsf{V}_X$ of $\mathsf{V}$ defined by
+$$\mathsf{V}_X = \{ XY : Y \in \mathsf{M}_{n \times n}(F) \}.$$
+\begin{enumerate}
+\item[(1)]
+$\mathsf{V}_0 = 0$.
+\item[(2)]
+$\mathsf{V}_{I_n} = \mathsf{V}$.
+In general,
+$\mathsf{V}_X = \mathsf{V}$ for any invertible matrix $X \in \mathsf{M}_{n \times n}(F)$.
+\item[(3)]
+$\mathsf{V}_X$ is a subspace of $\mathsf{V}$ for any $X \in \mathsf{M}_{n \times n}(F)$.
+\item[(4)]
+There is a descending sequence of subspaces
+$$\mathsf{V}
+  \supseteq \mathsf{V}_X
+  \supseteq \cdots
+  \supseteq \mathsf{V}_{X^k}
+  \supseteq \cdots
+$$
+This sequence must be stationary since $\mathsf{V}$ is finite-dimensional,
+that is,
+$$\mathsf{V}_{X^k} = \mathsf{V}_{X^{k+1}} = \cdots$$ for some $k$.
+(Descending chain condition.)
+In particular, $B^k = B^{k+1}C$ for some $C \in \mathsf{V}$.
+Multiply with $A^k$ on the left to get $I_n = BC$.
+($A^k B^k = A^{k-1}(AB)B^{k-1} = A^{k-1}B^{k-1} = \cdots = I_n$.)
+\item[(4)]
+Since $AB = I_n$ and $BC  = I_n$,
+$A = AI_n = A(BC) = (AB)C = I_nC = C$,
+or $AB = BA = I_n$.
+By definition of invertibility, $A$ and $B$ are invertible.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+By (a), $A = B^{-1}$ and $B = A^{-1}$.
+$\Box$ \\
+
+\emph{Proof of (c).}
+\emph{Let $\mathsf{V}$ be a finite-dimensional vector space,
+and let $\mathsf{S}, \mathsf{T}: \mathsf{V} \to \mathsf{V}$ be linear
+such that $\mathsf{S}\mathsf{T}$ is invertible.
+Show that $\mathsf{S}$ and $\mathsf{T}$ are invertible.}
+Let
+$$\beta = \{ \beta_1, ..., \beta_n \}$$
+be an ordered basis for $\mathsf{V}$ where $n = \dim(\mathsf{V})$.
+Let $A = [\mathsf{S}]_\beta$ and $B = [\mathsf{T}]_\beta$.
+So
+$$AB
+= [\mathsf{S}]_\beta [\mathsf{T}]_\beta
+= [\mathsf{S} \mathsf{T}]_\beta
+= [\mathsf{I}_{\mathsf{V}} ]_\beta = I_n$$ (Theorem 2.11).
+By (a), $A = [\mathsf{S}]_\beta$ and $B = [\mathsf{T}]_\beta$ are invertible,
+or $\mathsf{S}$ and $\mathsf{T}$ are invertible (Theorem 2.18).
+$\Box$ \\\\
+
+
+
+\end{document}
