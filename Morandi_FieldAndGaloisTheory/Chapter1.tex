@@ -230,7 +230,15 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 1.2: Automorphisms} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -273,6 +281,46 @@ provided $n \neq 0$,
 or $\sigma$ is the identity.
 $\Box$ \\\\
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.2.2.}
+\emph{Show that the only automorphism of $\mathbb{R}$ is the identity.
+(Hint: If $\sigma$ is an automorphism, show that $\sigma|_{\mathbb{Q}} = \text{id}$,
+and if $a > 0$, then $\sigma(a) > 0$.
+It is an interesting fact that there are infinitely many automorphisms of $\mathbb{C}$,
+even thought $[\mathbb{C}:\mathbb{R}] = 2$.
+Why is this fact not a contradiction to this problem?)} \\
+
+\emph{Proof (Hint).}
+Given any $\sigma \in \text{Aut}(\mathbb{R})$.
+\begin{enumerate}
+\item[(1)]
+Apply the same argument in Problem 1.2.1, we have $\sigma|_{\mathbb{Q}} = \text{id}$.
+Notice that $\sigma(a) \neq 0$ for any $a \neq 0$.
+\item[(2)]
+\emph{Show that $\sigma(a) > 0$ if $a > 0$.}
+Given any $a > 0$.
+Write $a = \sqrt{a}\sqrt{a}$ (well-defined) and then apply
+$\sigma$ on the both sides,
+$$\sigma(a) = \sigma(\sqrt{a})\sigma(\sqrt{a}) = \sigma(\sqrt{a})^2 > 0$$
+(since $\sqrt{a} \neq 0$ and thus $\sigma(\sqrt{a})$ cannot be zero).
+\item[(3)]
+\emph{Show that $\sigma(a) > \sigma(b)$ if $a > b$.}
+It is a corollary to (2) by applying $\sigma$ on $a - b > 0$.
+($\sigma(a - b) > 0$, or $\sigma(a) - \sigma(b) > 0$, or $\sigma(a) > \sigma(b)$.)
+\item[(4)]
+For any real number $x \in \mathbb{R}$,
+choose two sequences $\{p_n\}, \{q_n\}$ of rational numbers
+such that $p_n < x < q_n$ and $p_n, q_n \to x$ as $n \to \infty$.
+Take $\sigma$ on the inequality, $\sigma(p_n) < \sigma(x) < \sigma(q_n)$.
+So $p_n < \sigma(x) < q_n$ since $\sigma|_{\mathbb{Q}} = \text{id}$.
+Let $n \to \infty$, we get $x \leq \sigma(x) \leq x$, or $\sigma(x) = x$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 \end{document}
