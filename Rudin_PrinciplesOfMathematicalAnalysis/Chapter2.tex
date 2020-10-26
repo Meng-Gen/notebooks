@@ -43,6 +43,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.2.}
 \emph{A complex number $z$ is said to be algebraic if there are integers
 $a_0, ..., a_n$, not all zero, such that
@@ -149,6 +153,10 @@ Now $P$ is a countable union of countable sets,
 and hence countable by Theorem 2.12.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -274,6 +282,186 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.4.}
+\emph{Is the set of all irrational real numbers countable?} \\
+
+\emph{Proof (Reductio ad absurdum).}
+If $\mathbb{R}-\mathbb{Q}$ were countable,
+then $\mathbb{R} = \mathbb{Q} \bigcup (\mathbb{R}-\mathbb{Q})$ is countable
+(Theorem 2.12),
+contrary to the fact that
+$\mathbb{R}$ is uncountable (Corollary to Theorem 2.43).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.5.}
+\emph{Construct a bounded set of real numbers with exactly three limit points.} \\
+
+\emph{Proof (Exercise 2.12).}
+Let
+$$K_{p} =
+\{ p \}
+\bigcup
+\left\{ p + \frac{1}{n} : n \in \mathbb{Z}^+ \right\} \subseteq \mathbb{R}^1$$
+be a compact set of $\mathbb{R}^1$ with exactly one limit point $p \in \mathbb{R}^1$
+(Exercise 2.12).
+Then
+$$K_{1989} \cup K_{6} \cup K_{4}$$
+is a compact set of $\mathbb{R}^1$ with exactly three limit points
+$1989, 6, 4 \in \mathbb{R}^1$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.6.}
+\emph{Let $E'$ be the set of all limit points of a set $E$.
+Prove that $E'$ is closed.
+Prove that $E$ and $\overline{E}$ have the same limit points.
+(Recall that $\overline{E} = E \cup E'$.)
+Do $E$ and $E'$ always have the same limit points?} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $E'$ is closed.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Use Definition 2.18 (d).}
+    \begin{enumerate}
+    \item[(i)]
+    It suffices to show every limit point of $E'$ is a limit point of $E$.
+    Given a limit point $p$ of $E'$, so that every open neighborhood $U$ of $p$
+    contains a point $q_0 \neq p$ such that $q_0 \in E'$.
+    \item[(ii)]
+    Since $q_0$ is a limit point of $E$,
+    there is an open neighborhood $V$ of $q_0$ contains a point $q \neq q_0$
+    such that $q \in E$, where
+    $$V = U \cap B\left( q_0; \frac{1}{2}d_E(p,q_0) \right) \subseteq U$$
+    ($B(x;r)$ is the open ball with center at $x$ and radius $r$).
+    \item[(iii)]
+    By the construction of $V$,
+    for such open neighborhood $U$ of $p$,
+    there is $q \neq p$ and $q \in V \subseteq U$ and $q \in E$.
+    That is, $p$ is a limit point of $E$.
+    \end{enumerate}
+  \item[(b)]
+  \emph{Use Definition 2.18 (e).}
+    \begin{enumerate}
+    \item[(i)]
+    To show $E'$ is closed or $X-E'$ is open,
+    it suffices to show every point of $X-E'$ is an interior point of $X-E'$.
+    \item[(ii)]
+    Given a point $p \in X-E'$, or $p$ is not a limit point of $E$.
+    There is an open neighborhood $U$ of $p$ contains no point $q \neq p$ such that $q \in E$.
+    \item[(iii)]
+    To show $U$ is an open neighborhood of $p$ such that $U \subseteq X-E'$,
+    it suffices to no point $q \neq p$ such that $q \in E'$.
+    If there were a limit point $q$ of $E$ such that $q \neq p$ and $q \in U$,
+    then
+    $$V = U \cap B\left( q; \frac{1}{2}d_E(p,q) \right) \subseteq U$$
+    is an open neighborhood of $q$ contains no point of $E$,
+    contrary to the assumption $q \in E'$.
+    So $U \subseteq X-E'$ is an open neighborhood of $p \in X-E'$.
+    \end{enumerate}
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $E' = \overline{E}'$.}
+It suffices to show $E' \supseteq \overline{E}'$.
+($E' \subseteq \overline{E}'$ holds trivially since $E \subseteq \overline{E}$).
+Given a limit point $p$ of $\overline{E} = E \cup E'$.
+  \begin{enumerate}
+  \item[(a)]
+  $p$ is a limit point of $E$. Nothing to do.
+  \item[(b)]
+  $p$ is a limit point of $E'$.
+  Since $p$ is a limit point of $E'$ and $E'$ is a closed set,
+  $p \in E'$, or $p$ is a limit point of $E$.
+  \end{enumerate}
+In any case, $E' \supseteq \overline{E}'$.
+\item[(3)]
+\emph{$E$ and $E'$ might not have the same limit points.}
+Let
+$$E = \left\{ \frac{1}{n} : n \in \mathbb{Z}^+ \right\} \subseteq \mathbb{R}^1.$$
+Then $E' = \{0\}$ and thus $(E')' = \varnothing$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.7.}
+\emph{Let $A_1, A_2, A_3, ...$ be subsets of a metric space.}
+\begin{enumerate}
+\item[(a)]
+\emph{If $B_n = \bigcup^{n}_{i=1} A_i$, prove that
+$\overline{B_n} = \bigcup^{n}_{i=1}{\overline{A_i}}$, for $n = 1, 2, 3, ...$}
+\item[(b)]
+\emph{If $B = \bigcup^{\infty}_{i=1} A_i$,
+prove that $\overline{B} \supseteq \bigcup^{\infty}_{i=1} \overline{A_i}$.}
+\end{enumerate}
+\emph{Show, by an example, that this inclusion can be proper. } \\
+
+\emph{Proof of (a).}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $\overline{B_n} \subseteq \bigcup^{n}_{i=1}{\overline{A_i}}$.}
+  Since $A_i \subseteq \overline{A_i}$ for any $i$, we have
+  $$B_n = \bigcup^{n}_{i=1} A_i \subseteq \bigcup^{n}_{i=1} \overline{A_i}.$$
+  Since $\bigcup^{n}_{i=1} \overline{A_i}$ is a union of finitely many
+  closed set $\overline{A_i}$, $\bigcup^{n}_{i=1} \overline{A_i}$ is closed
+  (Theorem 2.24(d)).
+  By Theorem 2.27(c), $\overline{B_n} \subseteq \bigcup^{n}_{i=1} \overline{A_i}$.
+  \item[(2)]
+  \emph{Show that $\overline{B_n} \supseteq \bigcup^{n}_{i=1}{\overline{A_i}}$.}
+  Same argument in the proof of (b).
+\end{enumerate}
+$\Box$\\
+
+\emph{Proof of (b).}
+Since $\bigcup^{\infty}_{j=1} A_j \supseteq A_i$ for any $i$,
+by the monotonicity of closure, we have
+$\overline{\bigcup^{\infty}_{j=1} A_j} \supseteq \overline{A_i}$ for any $i$,
+or $\overline{B} \supseteq \bigcup^{\infty}_{i=1} \overline{A_i}$.
+$\Box$\\
+
+\emph{Proof of proper inclusion in (b).}
+Let
+$$A_{n} = \left( \frac{1}{n}, \infty \right) \subseteq \mathbb{R}^1$$
+for any $n \in \mathbb{Z}^+$.
+Then
+\begin{align*}
+\bigcup^{\infty}_{n=1} A_n = (0, \infty)
+&\Longrightarrow
+\overline{\bigcup^{\infty}_{n=1} A_n} = \overline{(0, \infty)} = [0, \infty), \\
+\overline{A_n} = \left[ \frac{1}{n}, \infty \right)
+&\Longrightarrow
+\bigcup^{\infty}_{n=1} \overline{A_n}
+= \bigcup^{\infty}_{n=1} \left[ \frac{1}{n}, \infty \right)
+= (0, \infty).
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \textbf{Exercise 2.10.}
 \emph{Let $X$ be an infinite set. For $p \in X$ and $q \in X$, define
 \begin{equation*}
@@ -302,21 +490,21 @@ Conversely, if $X$ has the discrete topology, $X$ is always metrizable by the di
 \item[(c)] \emph{$d(p, q) \leq d(p, r) + d(r, q)$ for any $r \in X$.}
 If $p = q$, nothing to do. If $p \neq q$, $r \neq p$ or $r \neq q$ for any $r \in X$.
 (Assume not true, $r = p$ and $r = q$ implies that $p = q$ which is a contradiction.)
-In any cases $d(p, r) + d(r, q) \geq 1 = d(p, q)$.
+In any case $d(p, r) + d(r, q) \geq 1 = d(p, q)$.
 \end{enumerate}
 \item[(2)] \emph{Every subset is open.}
 Let $E$ be any subset of $X$.
 Then every point $p \in E$ is an interior point of $E$.
-In fact, we can pick one neighborhood $N_{\frac{1}{2}}(p)$ of $p$
-containing only one point $p \in E$ or $N_{\frac{1}{2}}(p) = \{ p \}$,
-and such neighborhood $N_{\frac{1}{2}}(p)$ is a subset of $E$.
+In fact, we can pick one open neighborhood $U = B\left(p;\frac{1}{2}\right)$ of $p$
+containing only one point $p \in E$ or $U = \{ p \}$,
+and such open neighborhood $U$ is a subset of $E$.
 So every subset of $X$ is open.
 \item[(3)] \emph{Every subset is closed.}
 Since every subset is open, every subset is closed by Theorem 2.23. \\
 
 \textbf{Supplement.}
 Might use Definition 2.18 (d) to prove directly since there are no limit points in $X$
-if we consider one neighborhood $N_{\frac{1}{2}}(p)$ of $p$.
+if we consider one open neighborhood $U = B\left(p;\frac{1}{2}\right)$ of $p$.
 Therefore, every subset is closed.
 Again we apply Theorem 2.23 to get that every subset is open
 without using Definition 2.18 (f).
@@ -368,8 +556,8 @@ Prove that $K$ is compact directly from the definition
 \emph{Proof.}
 Let $\{ G_{\alpha} \}$ be an open covering of $K$.
 There is an open set $G_0 \in \{ G_{\alpha} \}$ containing $0$.
-So there exists a neighborhood $N_r(0)$ of $0$ such that $N_r(0) \subseteq G_0$.
-So $N_r(0)$ contains all points $q = \frac{1}{n}$ of $K$ whenever $n > \frac{1}{r}$.
+So there exists an open neighborhood $U = B(0;r)$ of $0$ such that $U \subseteq G_0$.
+So $U$ contains all points $q = \frac{1}{n}$ of $K$ whenever $n > \frac{1}{r}$.
 To construct a finite subcovering of $\{ G_{\alpha} \}$,
 we need to pick finitely many open sets from $\{ G_{\alpha} \}$
 to cover the remaining points $q = \frac{1}{n}$ where $n = 1, 2, ..., \left[\frac{1}{r}\right]$,
@@ -390,17 +578,17 @@ $K$ is closed. In fact, the only limit point of $K$ is $0$, which is in $K$.
 \emph{$p = 0$ is a limit point.}
 Given $r > 0$.
 There always exists $n \in \mathbb{Z}^{+}$ such that $r > \frac{1}{n}$.
-So any neighborhood $N_r(0)$ of $p = 0$
+So any open neighborhood $B(0;r)$ of $p = 0$
 contains at least one point $q = \frac{1}{n} \neq 0$ in $K$.
 \item[(b)]
 \emph{$p < 0$ is not a limit point.}
-Pick a neighborhood $N_{r}(p)$ of $p$ where $r = |p| > 0$.
-Then $N_{r}(p) \cap K = \varnothing$.
+Pick an open neighborhood $B(p;r)$ of $p$ where $r = |p| > 0$.
+Then $B(p;r) \cap K = \varnothing$.
 \item[(c)]
 \emph{$p > 0$ is not a limit point.}
 There always exists $m \in \mathbb{Z}^+$ such that $p > \frac{1}{n}$ whenever $n \geq m$.
-Pick a neighborhood $N_{r}(p)$ of $p$ where $r = p - \frac{1}{m} > 0$.
-Then $N_{r}(p)$ does not have all points $q = \frac{1}{n} \in K$ whenever $n \geq m$.
+Pick an open neighborhood $B(p;r)$ of $p$ where $r = p - \frac{1}{m} > 0$.
+Then $B(p;r)$ does not have all points $q = \frac{1}{n} \in K$ whenever $n \geq m$.
 By Theorem 2.20, $p$ cannot be a limit point of $K$.
 \end{enumerate}
 \item[(2)]
