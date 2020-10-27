@@ -1,0 +1,245 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 3: Numerical Sequences and Series} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+\textbf{Exercise 3.1.}
+\emph{Prove that the convergence of $\{s_n\}$ implies
+convergence of $\{\abs{s_n}\}$.  Is the converse true?} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Since $\{s_n\}$ is convergent, there is $s \in \mathbb{R}^1$
+with the following property:
+given any $\epsilon > 0$, there is $N$ such that
+$\abs{s_n - s} < \epsilon$ whenever $n \geq N$.
+So
+$$\abs{\abs{s_n}-\abs{s}} \leq \abs{s_n - s}  < \epsilon$$
+(Exercise 1.13). That is,
+$\{\abs{s_n}\}$ converges to $\abs{s}$.
+\item[(2)]
+The converse is not true by considering $s_n = (-1)^{n+1}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.2}
+\emph{Calculate $\lim_{n \to \infty}(\sqrt{n^2 + n} - n)$.} \\
+
+\emph{Proof.}
+$$\sqrt{n^2 + n} - n
+= \frac{n}{\sqrt{n^2+n} + n}
+= \frac{1}{\sqrt{1+\frac{1}{n}} + 1} \to \frac{1}{1+1} = \frac{1}{2}$$
+as $n \to \infty$.
+$\Box$ \\
+
+\emph{Proof ($\epsilon-N$ argument).}
+Let $s_n = \sqrt{n^2 + n} - n$.
+\emph{Show that the sequence $\{s_n\}$ converges to $s = \frac{1}{2}$.}
+Given any $\epsilon > 0$, there is $N > \frac{1}{\epsilon}$ such that
+\begin{align*}
+\abs{s_n - s}
+&= \abs{(\sqrt{n^2 + n} - n) - \frac{1}{2}}
+= \abs{\frac{1}{\sqrt{1+\frac{1}{n}} + 1} - \frac{1}{2}} \\
+&= \abs{
+\frac{2-\left(\sqrt{1+\frac{1}{n}} + 1\right)}
+{2\left(\sqrt{1+\frac{1}{n}} + 1\right)}
+}
+= \abs{
+\frac{1-\sqrt{1+\frac{1}{n}}}
+{2\left(\sqrt{1+\frac{1}{n}} + 1\right)}
+} \\
+&= \abs{
+\frac{1 - \left(1- \frac{1}{n}\right)}
+{2\left(\sqrt{1+\frac{1}{n}} + 1\right)^2}}
+= \abs{
+\frac{- \frac{1}{n}}
+{2\left(\sqrt{1+\frac{1}{n}} + 1\right)^2}}
+< \frac{1}{n}
+\leq \frac{1}{N}
+< \epsilon
+\end{align*}
+wheneven $n \geq N$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.3}
+\emph{If $s_1 = \sqrt{2}$ and
+$$s_{n+1} = \sqrt{2+\sqrt{s_n}} \:\: (n=1,2,3,...),$$
+prove that $\{s_n\}$ converges, and that $s_n < 2$ for $n=1,2,3,...$.} \\
+
+The convergence of $\{s_n\}$
+implies there is $s \in \mathbb{R}$ such that $s_n \to s$
+where $s = \sqrt{2+\sqrt{s}}$ and $\sqrt{2} < s \leq 2$.
+WolframAlpha shows that
+$$s = \frac{1}{3}
+\left(
+-1 + \sqrt[3]{\frac{1}{2}(79 - 3 \sqrt{249})}
+   + \sqrt[3]{\frac{1}{2}(79 + 3 \sqrt{249})}
+\right).$$ \\
+
+\emph{Proof (Theorem 3.14).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\{s_n\}$ is increasing (by mathematical induction).}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $s_2 > s_1$.}
+  In fact,
+  $$s_2 = \sqrt{2+\sqrt{s_1}} = \sqrt{2+\sqrt{\sqrt{2}}} < \sqrt{2} = s_1.$$
+  \item[(a)]
+  \emph{Show that $s_{n+1} > s_{n}$ if $s_{n} > s_{n-1}$.}
+  $$s_{n+1} = \sqrt{2+\sqrt{s_{n}}} > \sqrt{2+\sqrt{s_{n-1}}} = s_n.$$
+  \end{enumerate}
+By mathematical induction, $\{s_n\}$ is (strictly) increasing.
+\item[(2)]
+\emph{Show that $\{s_n\}$ is bounded (by mathematical induction).}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $s_1 \leq 2$.}
+  $\sqrt{2} \leq 2$.
+  \item[(a)]
+  \emph{Show that $s_{n+1} \leq 2$ if $s_{n} \leq 2$.}
+  $$s_{n+1} = \sqrt{2+\sqrt{s_{n}}} \leq \sqrt{2+\sqrt{2}} < 2.$$
+  \end{enumerate}
+By mathematical induction, $\{s_n\}$ is bounded by $2$.
+\end{enumerate}
+Hence, $\{s_n\}$ converges since $\{s_n\}$ is increasing and bounded (Theorem 3.14).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.4}
+\emph{Find the upper and lower limits of the sequences $\{s_n\}$ defined by
+$$s_1 = 0; s_{2m} = \frac{s_{2m-1}}{2}; s_{2m+1} = \frac{1}{2} + s_{2m}.$$ } \\
+
+Write out the first few terms of $\{s_n\}$:
+$$0, 0, \frac{1}{2}, \frac{1}{4}, \frac{3}{4},
+\frac{3}{8}, \frac{7}{8}, \frac{7}{16}, \frac{15}{16}, ...$$
+
+It suggests us
+\begin{align*}
+s_{2m+1} &= 1 - \frac{1}{2^m} \:\: (m = 0, 1, 2, ...), \\
+s_{2m} &= \frac{1}{2} - \frac{1}{2^m} \:\: (m = 1, 2, 3, ...). \\
+\end{align*}
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that
+\begin{align*}
+s_{2m+1} &= 1 - \frac{1}{2^m} \:\: (m = 0, 1, 2, ...), \\
+s_{2m} &= \frac{1}{2} - \frac{1}{2^m}. \:\: (m = 1, 2, 3, ...)
+\end{align*}}
+Apply mathematical induction.
+\item[(2)]
+The upper limit is $1$.
+\item[(3)]
+The lower limit is $\frac{1}{2}$.
+\end{enumerate}
+
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.7}
+\emph{Prove that the convergence of $\sum a_n$ implies the convergence of
+$$\sum \frac{\sqrt{a_n}}{n},$$
+if $a_n \geq 0$.} \\
+
+\emph{Proof (Cauchy's inequatity).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\sum\frac{\sqrt{a_n}}{n}$ is bounded.}
+For any $k \in \mathbb{Z}^{+}$,
+\begin{align*}
+\left( \sum_{n=1}^{k} \frac{\sqrt{a_n}}{n} \right)^2
+\leq&
+\left( \sum_{n=1}^{k}{a_n} \right)
+\left( \sum_{n=1}^{k}{\frac{1}{n^2}} \right)
+  &(\text{Cauchy's inequatity}) \\
+\leq& \left( \sum^{\infty}_{n=1}{a_n} \right)
+\left( \sum^{\infty}_{n=1}{\frac{1}{n^2}} \right).
+  &\left(\text{$\sum{a_n}, \sum{\frac{1}{n^2}}$: convergent}\right)
+\end{align*}
+Thus,
+$\left( \sum_{n=1}^{k}\frac{\sqrt{a_n}}{n} \right)^2$ is bounded,
+or $\sum_{n=1}^{k}\frac{\sqrt{a_n}}{n}$ is bounded.
+\item[(2)]
+\emph{Show that $\sum_{n=1}^{k} \frac{\sqrt{a_n}}{n}$ is increasing.}
+It is clear due to $\frac{\sqrt{a_n}}{n} \geq 0$.
+\end{enumerate}
+By Theorem 3.14, $\sum_{n=1}^{\infty} \frac{\sqrt{a_n}}{n}$ converges.
+$\Box$ \\
+
+\emph{Proof (AM-GM inequality).}
+\emph{Show that $\sum\frac{\sqrt{a_n}}{n}$ is bounded.}
+\begin{align*}
+\frac{\sqrt{a_n}}{n}
+\leq&
+\frac{1}{2}
+\left( a_n + \frac{1}{n^2} \right)
+  &(\text{AM-GM inequality}) \\
+\sum_{n=1}^{k} \frac{\sqrt{a_n}}{n}
+\leq&
+\frac{1}{2}
+\left( \sum_{n=1}^{k} a_n + \sum_{n=1}^{k} \frac{1}{n^2} \right) \\
+\leq&
+\frac{1}{2}
+\left( \sum_{n=1}^{\infty} a_n + \sum_{n=1}^{\infty} \frac{1}{n^2} \right).
+  &\left(\text{$\sum{a_n}, \sum{\frac{1}{n^2}}$: convergent}\right)
+\end{align*}
+Thus, $\sum_{n=1}^{k}\frac{\sqrt{a_n}}{n}$ is bounded.
+The rest proof is the same as previous.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
