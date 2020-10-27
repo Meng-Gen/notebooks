@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -28,6 +30,11 @@
 
 
 % http://www.math.ualberta.ca/~xinweiyu/348.A1.17f/L07_Curves_I_20170926.pdf
+% https://mast.queensu.ca/~offind/math280/solutions05.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -40,6 +47,11 @@ Global differential geometry: the study of the influence of the local properties
 on the behavior of the entire curve and surface. \\
 
 \emph{No exercises.} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -96,7 +108,7 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 1-2.4.}
-\emph{Let $\alpha: I \rightarrow \mathbb{R}^3$ be a parametrized curve and
+\emph{Let $\alpha: I \to \mathbb{R}^3$ be a parametrized curve and
 let $v \in \mathbb{R}^3$ be a fixed vector.
 Assume that $\alpha'(t)$ is orthogonal to $v$ for all $t \in I$
 and that $\alpha(0)$ is orthogonal to $v$.
@@ -106,7 +118,7 @@ Need to assume that $\alpha(t) \neq 0$ for all $t \in I$. \\
 
 \emph{Proof.}
 Given any $t \neq 0 \in I$. (Nothing to do at $t = 0$.)
-Define $f: I \rightarrow \mathbb{R}$ by $f(t) = \alpha(t) \cdot v$.
+Define $f: I \to \mathbb{R}$ by $f(t) = \alpha(t) \cdot v$.
 By the mean value theorem, there exists a point $\xi$ between $0$ and $t$
 such that
 $$f(t) - f(0) = f'(\xi)(t - 0),$$
@@ -122,7 +134,7 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 1-2.5.}
-\emph{Let $\alpha: I \rightarrow \mathbb{R}^3$ be a parametrized curve,
+\emph{Let $\alpha: I \to \mathbb{R}^3$ be a parametrized curve,
 with $\alpha'(t) \neq 0$ for all $t \in I$.
 Show that $|\alpha(t)|$ is a nonzero constant
 if and only if
@@ -152,27 +164,154 @@ $\Box$ \\\\
 
 
 
+% No exercises left.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 1-3: Regular Curves; Arc Length} \\
+
+
+
+\textbf{Exercise 1-3.2.}
+\emph{A circular disk of radius $1$ in the plane $xy$ rolls without slipping
+along the $x$ axis.
+The figure described by a point of the circumference of of the disk is
+called a \textbf{cycloid}
+(Figure 1-7 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces).}
+\begin{enumerate}
+  \item[(a)]
+  \emph{Obtain a parametrized curve $\alpha: \mathbb{R} \to \mathbb{R}^2$
+  the trace of which is the cycloid and determine its singular points.}
+  \item[(b)]
+  \emph{Compute the arc length of the cycloid
+  corresponding to a complete rotation of the disk.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Since
+\begin{equation*}
+  \begin{cases}
+     x = t - \sin t \\
+     y = 1 - \cos t,
+  \end{cases}
+\end{equation*}
+we define $\alpha(t) = (t - \sin t, 1 - \cos t)$.
+\item[(2)]
+$\alpha'(t) = (1 - \cos t, \sin t)$.
+$\alpha'(t) = 0$ if and only if $t = 2n\pi$ where $n \in \mathbb{Z}$.
+That is, all singular points are $\alpha(2n\pi) = (2n\pi, 0)$ where $n \in \mathbb{Z}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+The arc length of the cycloid corresponding to a complete rotation of the disk is
+\begin{align*}
+\int_{0}^{2\pi} |\alpha'(t)| dt
+&= \int_{0}^{2\pi} \sqrt{(1-\cos t)^2 + (\sin t)^2} dt \\
+&= \int_{0}^{2\pi} \sqrt{2} \sqrt{1 - \cos t} dt \\
+&= \int_{0}^{2\pi} 2 \sin \frac{t}{2} dt \\
+&= \left[ -4 \cos\frac{t}{2} \right]_{t=0}^{t=2\pi} \\
+&= 8.
+\end{align*}
+$\Box$ \\
+
+\textbf{Supplement.}
+The cycloid is not an algebraic curve. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1-3.4.}
+\emph{Let $\alpha: (0, \pi) \to \mathbb{R}^2$ be given by
+$$\alpha(t) = (\sin t, \cos t + \log\tan\frac{t}{2}),$$
+where $t$ is the angle that the $y$ axis makes with the vector $\alpha(t)$.
+The trace of $\alpha$ is called the \textbf{tractrix}.
+(Figure 1-9 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces).
+Show that}
+\begin{enumerate}
+  \item[(a)]
+  \emph{$\alpha$ is a differentiable parametrized curve,
+  regular except at $t = \frac{\pi}{2}$.}
+  \item[(b)]
+  \emph{The length of the segment of the tangent of the tractrix between
+  the point of tangency and the $y$ axis is constantly equal to $1$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+\alpha'(t)
+&= \left(
+\cos t,
+-\sin t + \frac{1}{\tan\frac{t}{2}} \frac{1}{\cos^{2}\frac{t}{2}} \frac{1}{2}
+\right) \\
+&= \left(
+\cos t,
+-\sin t + \frac{1}{2 \sin\frac{t}{2} \cos\frac{t}{2}}
+\right) \\
+&= \left(
+\cos t,
+\frac{\cos^2 t}{\sin t}
+\right)
+\end{align*}
+exists.
+And $\alpha'(t) = 0$ if and only if $t = \frac{\pi}{2}$.
+That is, there is an unique singular point at $t = \frac{\pi}{2}$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+The the tangent line of the tractrix through the regular point $t$
+is parametrized by $\beta: \mathbb{R} \to \mathbb{R}^2$ which is defined by
+\begin{align*}
+\beta(u)
+&= u\alpha'(t) + \alpha(t) \\
+&= \left( u \cos t + \sin t, u \frac{\cos^2 t}{\sin t} + \cos t + \log\tan\frac{t}{2} \right).
+\end{align*}
+By construction, this tangent line $\beta(u)$ meets the tractrix at $u = 0$,
+and meets the $y$-axis when $u \cos t + \sin t = 0$ or $u = -\tan t$.
+So the length of the segment is
+\begin{align*}
+|\beta(0) - \beta(-\tan t)|
+&= \sqrt{(-\tan t \cos t)^2+ \left( -\tan t \frac{\cos^2 t}{\sin t} \right)^2} \\
+&= \sqrt{(\sin t)^2+ (\cos t)^2} \\
+&= 1.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \textbf{Exercise 1-3.10.}
 \emph{(Straight Lines as Shortest.)
-Let $\alpha: I \rightarrow \mathbb{R}^3$ be a parametrized curve.
-Let $[a,b] \subseteq I$ and set $\alpha(a) = p$, $\alpha(b) = q$.
+Let $\alpha: I \to \mathbb{R}^3$ be a parametrized curve.
+Let $[a,b] \subseteq I$ and set $\alpha(a) = p$, $\alpha(b) = q$.}
 \begin{enumerate}
   \item[(a)]
-  Show that, for any constant vector $v$, $|v| = 1$,
+  \emph{Show that, for any constant vector $v$, $|v| = 1$,
   $$(q-p) \cdot v
   = \int_{a}^{b} \alpha'(t) \cdot v dt
-  \leq \int_{a}^{b} |\alpha'(t)| dt.$$
+  \leq \int_{a}^{b} |\alpha'(t)| dt.$$}
   \item[(b)]
-  Set
+  \emph{Set
   $$v = \frac{q-p}{|q-p|}$$
   and show that
   $$|\alpha(b) - \alpha(a)| \leq \int_{a}^{b} |\alpha'(t)| dt;$$
   that is, the curve of shortest length from
   $\alpha(a)$ to $\alpha(b)$ is the straight line
-  joining these points. \\
-\end{enumerate}}
+  joining these points.} \\
+\end{enumerate}
 
 Assume $p \neq q$ (otherwise $v = \frac{q-p}{|q-p|}$ is meaningless). \\
 
@@ -205,6 +344,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 1-4: The Vector Product in $\mathbb{R}^{3}$} \\
 
 \textbf{Exercise 1-4.13.}
@@ -227,6 +370,10 @@ Since
 \end{align*}
 $u(t) \wedge v(t)$ is a constant vector.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -277,11 +424,23 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 1-6: The Local Canonical Form} \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 1-7: Global Properties of Plane Curves} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
