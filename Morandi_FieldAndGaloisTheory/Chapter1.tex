@@ -328,4 +328,103 @@ Automorphisms of the Complex Numbers. by Paul B. Yale (Pomona College)
 {Link}]. \\\\
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.2.4.}
+\emph{Let $B$ be an integral domain with quotient field $F$.
+If $\sigma: B \to B$ is a ring automorphism, show that $\sigma$ induces
+a ring automorphism $\sigma': F \to F$ defined by
+$\sigma'(a/b) = \sigma(a)/\sigma(b)$ if $a, b \in B$ with $b \neq 0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\sigma'$ is well-defined.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$\sigma': F \to F$ is defined.}
+  $\sigma(a), \sigma(b) \in B$ since $\sigma$ is a homomorphism.
+  $\sigma(b) \neq 0$ since $b \neq 0$ and $\sigma$ is a one-on-one homomorphism.
+  \item[(b)]
+  \emph{$\sigma'$ is independent of the representation of $a/b \in F$.}
+  Suppose $a/b = c/d$ where $a, b, c, d \in B$ and $b, d \neq 0$.
+  Hence,
+  \begin{align*}
+  a/b = c/d
+  \Longleftrightarrow&
+  ad = bc \\
+  \Longleftrightarrow&
+  \sigma(ad) = \sigma(bc) \\
+  \Longleftrightarrow&
+  \sigma(a)\sigma(d) = \sigma(b)\sigma(c)
+    &\text{($\sigma$: homomorphism)} \\
+  \Longleftrightarrow&
+  \sigma(a)/\sigma(d) = \sigma(c)/\sigma(d)
+    &(\sigma(b), \sigma(d) \neq 0) \\
+  \Longleftrightarrow&
+  \sigma'(a/b) = \sigma'(c/d).
+  \end{align*}
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $\sigma'$ is a ring homomorphism.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\sigma'(a/b + c/d) = \sigma'(a/b) + \sigma'(c/d)$.}
+  \begin{align*}
+  \sigma'(a/b + c/d)
+  &= \sigma'((ad+bc)/(bd)) \\
+  &= \sigma(ad+bc) / \sigma(bd) \\
+  &= (\sigma(a)\sigma(d)+\sigma(b)\sigma(c)) / (\sigma(b)\sigma(d))
+    &\text{($\sigma$: homomorphism)} \\
+  &= \sigma(a)/\sigma(b) + \sigma(c)/\sigma(d) \\
+  &= \sigma'(a/b) + \sigma'(c/d).
+  \end{align*}
+  \item[(b)]
+  \emph{Show that $\sigma'(a/b \cdot c/d) = \sigma'(a/b) \cdot \sigma'(c/d)$.}
+  \begin{align*}
+  \sigma'(a/b \cdot c/d)
+  &= \sigma'((ac)/(bd)) \\
+  &= \sigma(ac) / \sigma(bd) \\
+  &= (\sigma(a)\sigma(c)) / (\sigma(b)\sigma(d))
+    &\text{($\sigma$: homomorphism)} \\
+  &= \sigma(a)/\sigma(b) \cdot \sigma(c)/\sigma(d) \\
+  &= \sigma'(a/b) \cdot \sigma'(c/d).
+  \end{align*}
+  \end{enumerate}
+\item[(3)]
+\emph{Show that $\sigma'$ is injective.}
+  \begin{align*}
+  \sigma'(a/b) = 0
+  \Longleftrightarrow&
+  \sigma(a)/\sigma(b) = 0 \\
+  \Longleftrightarrow&
+  \sigma(a) = 0 \\
+  \Longleftrightarrow&
+   a = 0
+    &\text{($\sigma$: injective)} \\
+  \Longleftrightarrow&
+  a/b = 0/b = 0 \in F
+  \end{align*}
+\item[(4)]
+\emph{Show that $\sigma'$ is a surjective.}
+Given any $c/d \in F$, want to show there is $a/b \in F$ such that $\sigma'(a/b) = c/d$.
+  \begin{align*}
+  c/d \in F
+  \Longrightarrow&
+  c, d \in B \\
+  \Longrightarrow&
+  \exists \: a, b \in B \text{ such that } \sigma(a)=c, \sigma(b)=d
+    &\text{($\sigma$: surjective)} \\
+  \Longrightarrow&
+  \exists \: a, b \in B \text{ such that } \sigma(a) / \sigma(b) = c / d \\
+  \Longrightarrow&
+  \exists \: a, b \in B \text{ such that } \sigma'(a/b) = c/d.
+  \end{align*}
+\end{enumerate}
+
+
+
 \end{document}
