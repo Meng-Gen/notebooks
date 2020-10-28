@@ -16,12 +16,18 @@
 
 \begin{document}
 
+
+
 \textbf{\Large Chapter 3: Lebesgue Measure} \\\\
 
 
 
 \emph{Author: Meng-Gen Tsai} \\
 \emph{Email: plover@gmail.com} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -88,6 +94,11 @@ Since $mA < \infty$,
 we can cancel out $mA$ on the both sides to get
 $m\varnothing = 0$.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -275,6 +286,13 @@ $\Box$ \\\\
 
 
 
+% No exercises left.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 3.3: Measurable Sets and Lebesgue Measure} \\\\
 
 
@@ -366,8 +384,56 @@ $x \notin E_{[x]}$ if $x \geq 1$ where $x \mapsto [x]$ is the floor function.
 \emph{$mE_n = \infty$ for each $n$.}
 The length of each $E_n$ is $\infty$ (Proposition 3.1).
 \end{enumerate}
-
 $\Box$ \\\\
+
+
+
+\textbf{Problem 3.12.}
+\emph{Let $\langle E_n \rangle$ be a sequence of disjoint measurable sets and $A$ any set.
+Then
+$m^{*}\left( A \cap \bigcup_{i=1}^{\infty}E_i \right)
+= \sum_{i=1}^{\infty} m^{*}(A \cap E_i)$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$A \cap \bigcup_{i=1}^{\infty}E_i
+= \bigcup_{i=1}^{\infty}(A \cap E_i)$ (Problem 1.14).
+\item[(2)]
+$m^{*}\left( \bigcup_{i=1}^{\infty}(A \cap E_i) \right)
+\leq \sum_{i=1}^{\infty} m^{*}(A \cap E_i)$
+by the subadditivity of $m^{*}$ (Proposition 3.2).
+\item[(3)]
+By Lemma 3.9,
+$$m^{*}\left( \bigcup_{i=1}^{n}(A \cap E_i) \right)
+= \sum_{i=1}^{n} m^{*}(A \cap E_i)$$
+for any $n \in \mathbb{N}$.
+Since
+$\bigcup_{i=1}^{\infty}(A \cap E_i) \supseteq \bigcup_{i=1}^{n}(A \cap E_i)$,
+$m^{*}\left( \bigcup_{i=1}^{\infty}(A \cap E_i) \right)
+\geq m^{*}\left( \bigcup_{i=1}^{n}(A \cap E_i) \right)$ by the monotonicity of $m^{*}$.
+Thus,
+$$
+m^{*}\left( \bigcup_{i=1}^{\infty}(A \cap E_i) \right)
+\geq
+\sum_{i=1}^{n} m^{*}(A \cap E_i)$$
+for any $n \in \mathbb{N}$.
+Since $\sum_{i=1}^{n} m^{*}(A \cap E_i)$ is bounded and increasing
+(by the non-negativity of $m^{*}$),
+$$
+m^{*}\left( \bigcup_{i=1}^{\infty}(A \cap E_i) \right)
+\geq
+\sum_{i=1}^{\infty} m^{*}(A \cap E_i).$$
+\end{enumerate}
+By (2)(3),
+$m^{*}\left( A \cap \bigcup_{i=1}^{\infty}E_i \right)
+= \sum_{i=1}^{\infty} m^{*}(A \cap E_i)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -375,10 +441,26 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 3.5: Measurable Functions} \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 3.6: Littlewood's Three Principles} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \end{document}
