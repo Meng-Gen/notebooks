@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -332,6 +333,11 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Rational and irrational numbers} \\\\
 
 
@@ -369,6 +375,135 @@ $y = \frac{x}{\sqrt{89}} \in (0, x) \subseteq \mathbb{R}$ is irrational.
 $y = \frac{x}{\sqrt{64}} \in (0, x) \subseteq \mathbb{R}$ is irrational.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{\large Upper bounds} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{\large Inequalities} \\\\
+
+
+
+\textbf{Exercise 1.23.}
+\emph{Prove Lagrange's identity for real numbers:
+$$\left( \sum_{k=1}^{n} a_k b_k \right)^2
+= \left( \sum_{k=1}^{n} a_k \right)^2 \left( \sum_{k=1}^{n} b_k \right)^2
+- \sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)^2.$$}
+
+Note that this identity implies the Cauchy-Schwarz inequality. \\
+
+\emph{Proof.}
+Put $(a_k, b_k, A_k, B_k) \mapsto (a_k, b_k, a_k, b_k)$
+in the following generalization (Binet-Cauchy identity).
+$\Box$ \\
+
+\textbf{Generalization (Binet-Cauchy identity).}
+\begin{align*}
+&\sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
+\end{align*}
+
+\emph{Proof.}
+\begin{align*}
+&\sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
+= &\sum_{1 \leq k < j \leq n}
+(a_k b_j A_k B_j + a_j b_k A_j B_k)
+- \sum_{1 \leq k < j \leq n}
+(a_k b_j A_j B_k - a_j b_k A_k B_j) \\
+= &\sum_{1 \leq k < j \leq n}
+(a_k A_k b_j B_j + a_j A_j b_k B_k)
+- \sum_{1 \leq k < j \leq n}
+(a_k B_k b_j A_j + a_j B_j b_k A_k) \\
+= &\sum_{1 \leq k \neq j \leq n} a_k A_k b_j B_j
+ - \sum_{1 \leq k \neq j \leq n} a_k B_k b_j A_j \\
+= &\sum_{1 \leq k, j \leq n} a_k A_k b_j B_j
+ - \sum_{1 \leq k, j \leq n} a_k B_k b_j A_j \\
+  & \text{(since $a_k A_k b_j B_j - a_k B_k b_j A_j = 0$ as $k = j$)} \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{j=1}^{n} b_j B_j \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{j=1}^{n} b_j A_j \right) \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
+\end{align*}
+$\Box$ \\
+
+\textbf{Supplement ($\mathbb{Z}[i]$).}
+As $n = 2$,
+$(a_1^2 + a_2^2)(b_1^2 + b_2^2)
+= (a_1 b_1 + a_2 b_2)^2 + (a_1 b_2 - a_2 b_1)^2$. \\
+
+Define $N: \mathbb{Z}[i] \rightarrow \mathbb{Z}$ by
+$N(a+bi) = a^2 + b^2$.
+
+\begin{enumerate}
+\item[(1)]
+\emph{Verify that for all $\alpha, \beta \in \mathbb{Z}[i]$,
+$N(\alpha\beta) = N(\alpha)N(\beta)$,
+either by direct computation or using the fact that
+$N(a+bi) = (a+bi)(a-bi)$.
+Conclude that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
+\item[(2)]
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that $\alpha$ is a unit iff $N(\alpha) = 1$.
+Conclude that the only unit are $\pm 1$ and $\pm i$.}
+\item[(3)]
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that if $N(\alpha)$ is a prime in $\mathbb{Z}$ then
+$\alpha$ is irreducible in $\mathbb{Z}[i]$.
+Show that the same conclusion holds
+if $N(\alpha) = p^2$, where $p$ is a prime in $\mathbb{Z}$,
+$p \equiv 3 \pmod{4}$.}
+\item[(4)]
+\emph{Show that $1-i$ is irreducible in $\mathbb{Z}$
+and that $2 = u(1-i)^2$ for some unit $u$.}
+\item[(5)]
+\emph{Show that every nonzero, non-unit Gaussian integer $\alpha$
+is a product of irreducible elements, by induction on $N(\alpha)$.}
+\item[(6)]
+\emph{Use the unique factorization in $\mathbb{Z}[i]$ to prove that
+every prime $p \equiv 1 \pmod{4}$ is a sum of two squares.}
+\item[(7)]
+\emph{Describe all irreducible elements in $\mathbb{Z}[i]$.}
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{\large Complex numbers} \\\\
+
+
+
+\textbf{Exercise 1.48.}
+\emph{Prove Lagrange's identity for complex numbers:
+$$\abs{ \sum_{k=1}^{n} a_k b_k }^2
+= \sum_{k=1}^{n} \abs{a_k}^2 \sum_{k=1}^{n} \abs{b_k}^2
+- \sum_{1 \leq k < j \leq n}
+\abs{ a_k \overline{b_j} - a_j \overline{b_k} }^2.$$}
+
+\emph{Proof.}
+Put $(a_k, b_k, A_k, B_k) \mapsto (a_k, \overline{b_k}, \overline{a_k}, b_k)$
+in the generalization to Exercise 1.23 (Binet-Cauchy identity) and use
+the identity $|z| = z \overline{z}$.
 
 
 
