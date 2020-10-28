@@ -33,7 +33,7 @@
 
 
 
-\textbf{Exercise 2.1}
+\textbf{Exercise 2.1.}
 \emph{Show that
 $(\mathbb{Z}/m\mathbb{Z}) \otimes_{\mathbb{Z}} (\mathbb{Z}/n\mathbb{Z}) = 0$
 if $m$, $n$ are coprime.} \\
@@ -212,6 +212,72 @@ For any $z + d\mathbb{Z} \in \mathbb{Z}/d\mathbb{Z}$,
   &= z + d\mathbb{Z}.
 \end{align*}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.3.}
+\emph{Let $A$ be a local ring, $M$ and $N$ finitely generated $A$-modules.
+Prove that if $M \otimes_{A} N = 0$, then $M = 0$ or $N = 0$.
+(Hint: Let $\mathfrak{m}$ be the maximal ideal,
+$k = A/\mathfrak{m}$ the residue field.
+Let $M_k = k \otimes_{A} M \cong M/\mathfrak{m}M$ by Exercise 2.2.
+By Nakayama's lemma, $M_k = 0 \Longrightarrow M = 0$.
+But
+$M \otimes_{A} N = 0
+\Longrightarrow
+(M \otimes_{A} N)_k = 0
+\Longrightarrow
+M_k \otimes_k N_k = 0
+\Longrightarrow
+M_k = 0 \text{ or } N_k = 0$
+since $M_k$, $N_k$ are vector spaces over a field.)} \\
+
+\emph{Proof (Hint).}
+Let $\mathfrak{m}$ be the maximal ideal,
+$k = A/\mathfrak{m}$ the residue field.
+Let $M_k = k \otimes_{A} M$.
+\begin{enumerate}
+\item[(1)]
+\emph{(Base extension) Show that
+$(M \otimes_{A} N)_k = M_k \otimes_{k} N_k$.}
+In fact, by Proposition 2.14
+\begin{align*}
+(M \otimes_{A} N)_k
+&= k \otimes_{A} (M \otimes_{A} N) \\
+&= (k \otimes_{A} M) \otimes_{A} N \\
+&= M_k \otimes_{A} N \\
+&= (M_k \otimes_{k} k) \otimes_{A} N \\
+&= M_k \otimes_{k} (k \otimes_{A} N) \\
+&= M_k \otimes_{k} N_k.
+\end{align*}
+\item[(2)]
+\begin{align*}
+M \otimes_{A} N = 0
+&\Longrightarrow
+(M \otimes_{A} N)_k = 0 \\
+&\Longrightarrow
+M_k \otimes_k N_k = 0
+  &\text{((1))} \\
+&\Longrightarrow
+M_k = 0 \text{ or } N_k = 0
+  &\text{($M_k, N_k$: vector spaces)} \\
+&\Longrightarrow
+M/\mathfrak{m}M = 0 \text{ or } M/\mathfrak{m}M = 0
+  &\text{(Exercise 2.2)} \\
+&\Longrightarrow
+M = 0 \text{ or } N = 0.
+  &\text{(Nakayama's lemma)} \\
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
