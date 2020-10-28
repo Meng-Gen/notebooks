@@ -49,4 +49,29 @@ $\Box$ \\\\
 
 
 
+\textbf{Problem 3.7.}
+\emph{Let $\hat{D} = d/dx$.
+Verify that $(\hat{D}+x)(\hat{D}-x) = \hat{D}^2-x^2-1$. } \\
+
+\emph{Proof.}
+\begin{align*}
+((\hat{D}+x)(\hat{D}-x))f
+&= (\hat{D}+x)((\hat{D}-x)f) \\
+&= (\hat{D}+x)(f'-xf) \\
+&= (f'-xf)' + x(f'-xf) \\
+&= (f''-f-xf') + (xf'-x^2f) \\
+&= f''-f-x^2f \\
+&= (\hat{D}^2-x^2-1)f
+\end{align*}
+holds for any function $f$.
+By definition,
+$(\hat{D}+x)(\hat{D}-x) = \hat{D}^2-x^2-1$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \end{document}
