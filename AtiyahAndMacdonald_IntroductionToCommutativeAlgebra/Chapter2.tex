@@ -64,14 +64,14 @@ Define $\widetilde{\varphi}$ by
 $\widetilde{\varphi}$ is well-defined and $\mathbb{Z}$-bilinear.
 \item[(2)]
 By the universal property,
-$\widetilde{\varphi}$ factors through a $\mathbb{Z}$-linear map
+$\widetilde{\varphi}$ factors through a $\mathbb{Z}$-bilinear map
 $$\varphi: (\mathbb{Z}/m\mathbb{Z}) \otimes_{\mathbb{Z}} (\mathbb{Z}/n\mathbb{Z})
-\rightarrow \mathbb{Z}/d\mathbb{Z}$$
+\to \mathbb{Z}/d\mathbb{Z}$$
 (such that $\varphi(x \otimes y) = \widetilde{\varphi}(x, y)$).
 \item[(3)]
 To show that $\varphi$ is isomorphic, might find the inverse map
 $\psi: \mathbb{Z}/d\mathbb{Z}
-\rightarrow
+\to
 (\mathbb{Z}/m\mathbb{Z}) \otimes_{\mathbb{Z}} (\mathbb{Z}/n\mathbb{Z})$
 of $\varphi$.
 Define $\psi$ by
@@ -219,6 +219,101 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 2.2.}
+\emph{Let $A$ be a ring, $\mathfrak{a}$ an ideal, $M$ an $A$-module.
+Show that $(A/\mathfrak{a}) \otimes_A M$ is isomorphic to $M/\mathfrak{a}M$.
+(Hint: Tensor the exact sequence
+$0
+\rightarrow \mathfrak{a}
+\rightarrow A
+\rightarrow A/\mathfrak{a}
+\rightarrow 0$ with $M$.} \\
+
+\emph{Proof (Hint).}
+There is a natural exact sequence $E$:
+$$E: 0
+\rightarrow \mathfrak{a}
+\xrightarrow{i} A
+\xrightarrow{\pi} A/\mathfrak{a}
+\rightarrow 0$$
+where $i$ is the inclusion map (and $\pi$ is the projection map).
+Tensor $E$ with $M$:
+$$E':
+\mathfrak{a} \otimes_{A} M
+\xrightarrow{i \otimes 1} A \otimes_{A} M
+\xrightarrow{\pi \otimes 1} (A/\mathfrak{a}) \otimes_{A} M
+\rightarrow 0$$
+is exact, or
+$$(A/\mathfrak{a}) \otimes_{A} M \cong A \otimes_{A} M/\text{im}(i \otimes 1).$$
+By Proposition 2.14,
+There is an unique isomorphism $A \otimes_{A} M \to M$ defined by
+$a \otimes x \mapsto ax$.
+This isomorphism sends $\text{im}(i \otimes 1)$ to $\mathfrak{a}M$.
+Therefore,
+$$
+(A/\mathfrak{a}) \otimes_{A} M \cong M/\mathfrak{a}M.$$
+$\Box$ \\
+
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+Define $\widetilde{\varphi}$ by
+\begin{center}
+\begin{tikzpicture}[node distance=1mm]
+  \node (functionName) at (0, 0) {$\widetilde{\varphi}:$};
+  \node[right = of functionName] (domain)
+    {$A/\mathfrak{a} \times M$};
+  \node[below = 2mm of domain] (element) {$(a + \mathfrak{a}, x)$};
+  \path (element)--(domain)node[midway,sloped] {$\in$};
+  \node[right = 1cm of domain] (codomain) {$M/\mathfrak{a}M$};
+  \node at (element-|codomain) (image) {$ax + \mathfrak{a}M.$};
+  \path (image)--(codomain)node[midway,sloped] {$\in$};
+  \draw[->] (domain) -- (codomain);
+  \draw[|->] (element) -- (image);
+\end{tikzpicture}
+\end{center}
+$\widetilde{\varphi}$ is well-defined and $A$-bilinear.
+\item[(2)]
+By the universal property,
+$\widetilde{\varphi}$ factors through a $A$-bilinear map
+$$\varphi: A/\mathfrak{a} \otimes_{A} M
+\to M/\mathfrak{a}M$$
+(such that $\varphi(a \otimes x) = \widetilde{\varphi}(a, x)$).
+\item[(3)]
+To show that $\varphi$ is isomorphic, might find the inverse map
+$\psi: M/\mathfrak{a}M
+\to
+A/\mathfrak{a} \otimes_{A} M$
+of $\varphi$.
+Define $\psi$ by
+\begin{center}
+\begin{tikzpicture}[node distance=1mm]
+  \node (functionName) at (0, 0) {$\psi:$};
+  \node[right = of functionName] (domain) {$M/\mathfrak{a}M$};
+  \node[below = 2mm of domain] (element) {$x + \mathfrak{a}M$};
+  \path (element)--(domain)node[midway,sloped] {$\in$};
+  \node[right = 1cm of domain] (codomain)
+    {$A/\mathfrak{a} \otimes_{A} M$};
+  \node at (element-|codomain) (image) {$(1 + \mathfrak{a}) \otimes x.$};
+  \path (image)--(codomain)node[midway,sloped] {$\in$};
+  \draw[->] (domain) -- (codomain);
+  \draw[|->] (element) -- (image);
+\end{tikzpicture}
+\end{center}
+$\psi$ is well-defined and $A$-linear.
+\item[(4)]
+$\psi \circ \varphi = \text{id}$.
+\item[(5)]
+$\varphi \circ \psi = \text{id}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.3.}
 \emph{Let $A$ be a local ring, $M$ and $N$ finitely generated $A$-modules.
 Prove that if $M \otimes_{A} N = 0$, then $M = 0$ or $N = 0$.
@@ -235,6 +330,8 @@ M_k \otimes_k N_k = 0
 \Longrightarrow
 M_k = 0 \text{ or } N_k = 0$
 since $M_k$, $N_k$ are vector spaces over a field.)} \\
+
+The conclusion might be false if $A$ is not local. For example, Exercise 2.1. \\
 
 \emph{Proof (Hint).}
 Let $\mathfrak{m}$ be the maximal ideal,
