@@ -34,10 +34,6 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 \textbf{Exercise 4.1.1.}
 \emph{Label the following statements as being true or false.}
 \begin{enumerate}
@@ -724,11 +720,87 @@ $\Box$ \\\\
 
 
 
+% No exercises left.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{\large Section 4.2: Determinants of Order $n$} \\\\
+
+
+
+\textbf{Exercise 4.2.2.}
+\emph{Find the value of $k$ that satisfies the following equation.
+$$\det
+  \begin{pmatrix}
+    3a_1 & 3a_2 & 3a_3 \\
+    3b_1 & 3b_2 & 3b_3 \\
+    3c_1 & 3c_2 & 3c_3
+  \end{pmatrix}
+= k\det
+  \begin{pmatrix}
+    a_1 & a_2 & a_3 \\
+    b_1 & b_2 & b_3 \\
+    c_1 & c_2 & c_3
+  \end{pmatrix}$$} \\
+
+\emph{Proof (Exercise 4.2.25).}
+By Exercise 4.2.25,
+$\det(3A) = 3^3 \det(A)$ for any $A \in \mathsf{M}_{3 \times 3}(F)$,
+or $k = 3^3 = 27$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.2.26.}
+\emph{Let $A \in \mathsf{M}_{n \times n}(F)$.
+Under what conditions is $\det(-A) = \det(A)$?} \\
+
+\emph{Proof (Exercise 4.2.25).}
+By Exercise 4.2.25,
+$\det(-A) = (-1)^n \det(A)$ for any $A \in \mathsf{M}_{n \times n}(F)$.
+That is, $n$ is even if and only if $\det(-A) = \det(A)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \textbf{\large Section 4.3: Properties of Determinants} \\\\
+
+
+
+\textbf{Exercise 4.3.9.}
+\emph{A matrix $M \in \mathsf{M}_{n \times n}(\mathbb{C})$
+is called nilpotent if,
+for some positive integer $k$, $M^k = O$, where $O$ is the $n \times n$ zero matrix.
+Prove that if $M$ is nilpotent, then $\det(M) = 0$.} \\
+
+\emph{Proof.}
+Given any nilpotent matrix $M \in \mathsf{M}_{n \times n}(\mathbb{C})$
+such that $M^k = O$ for some $k \in \mathbb{Z}^+$.
+\begin{align*}
+M^k = O
+&\Longrightarrow
+\det(M^k) = \det(O) \\
+&\Longleftrightarrow
+\det(M)^k = 0
+  &\text{(Theorem 4.7)} \\
+&\Longleftrightarrow
+\det(M) = 0.
+\end{align*}
+$\Box$ \\\\
 
 
 
