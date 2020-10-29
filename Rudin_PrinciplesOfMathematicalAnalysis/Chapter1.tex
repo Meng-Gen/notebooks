@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -16,6 +18,8 @@
 
 \begin{document}
 
+
+
 \textbf{\Large Chapter 1: The Real and Complex Number Systems} \\\\
 
 
@@ -27,6 +31,10 @@
 
 Unless the contrary is explicitly stated, all numbers that are mentioned in these exercise
 are understood to be real. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -43,6 +51,10 @@ Similarly, assume $rx \in \mathbb{Q}$. $r \in \mathbb{Q}$ with $r \neq 0$ implie
 there exists an element $1/r \in \mathbb{Q}$ such that $r \cdot (1/r) = 1$.
 So $(1/r) \cdot (rx) = ((1/r) \cdot r) \cdot x = 1 \cdot x = x \in \mathbb{Q}$, a contradiction.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -85,8 +97,318 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.3.}
+\emph{Prove Proposition 1.15.} \\
+
+\textbf{Proposition 1.15.}
+\emph{The axioms for multiplication imply the following statements.}
+\begin{enumerate}
+\item[(a)]
+\emph{If $x \neq 0$ and $xy=xz$ then $y = z$.}
+\item[(b)]
+\emph{If $x \neq 0$ and $xy=x$ then $y = 1$.}
+\item[(c)]
+\emph{If $x \neq 0$ and $xy=1$ then $y = 1/x$.}
+\item[(d)]
+\emph{If $x \neq 0$ then $1(1/x) = x$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+By the axioms for multiplication,
+\begin{align*}
+xy = xz, x \neq 0
+&\Longrightarrow
+\exists 1/x \in F, (1/x) \cdot (xy) = (1/x) \cdot (xz)
+  &\text{(M5)} \\
+&\Longrightarrow
+((1/x)x)y = ((1/x)x)z
+  &\text{(M3)} \\
+&\Longrightarrow
+(x(1/x))y = (x(1/x))z
+  &\text{(M2)} \\
+&\Longrightarrow
+1y = 1z \\
+&\Longrightarrow
+y = z.
+  &\text{(M4)}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+Let $z = 1$ in (a) and note that $x1 = 1x = x$ ((M2)(M4)).
+$\Box$ \\
+
+\emph{Proof of (c).}
+Let $z = 1/x$ in (a) and note that $x(1/x) = 1$ ((M5)).
+$\Box$ \\
+
+\emph{Proof of (d).}
+Since $x(1/x) = (1/x)x = 1$ ((M2)), by (c), $x = 1/(1/x)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.4.}
+\emph{Let $E$ be a nonempty subset of an ordered set;
+suppose $\alpha$ is a lower bound of $E$ and
+$\beta$ is an upper bound of $E$.
+Prove that $\alpha \leq \beta$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Since $E \neq \varnothing$, there is $y \in E$.
+\item[(2)]
+By the definition of the upper bound,
+$x \leq \beta$ for every $x \in E$.
+In particular, $y \leq \beta$.
+\item[(3)]
+Similarly, $y \geq \alpha$.
+\item[(4)]
+By (2)(3), $\alpha \leq y \leq \beta$ for some $y \in E$.
+In particular, $\alpha \leq \beta$ (Definition 1.5(ii)).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.5.}
+\emph{Let $A$ be a nonempty set of real numbers which is bounded below.
+Let $-A$ be the set of all numbers $-x$, where $x \in A$.
+Prove that $$\inf A = -\sup(-A).$$}
+
+\emph{Proof.}
+Let $\alpha = \inf A$ and $\beta = \sup(-A)$.
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+x \geq \alpha \:\: \forall x \in A
+&\Longrightarrow
+-x \leq -\alpha \:\: \forall -x \in -A \\
+&\Longrightarrow
+-\alpha \text{ is an upper bound of $-A$} \\
+&\Longrightarrow
+\beta \leq -\alpha \\
+&\Longrightarrow
+\alpha \leq -\beta
+\end{align*}
+\item[(2)]
+\begin{align*}
+-x \leq \beta \:\: \forall -x \in -A
+&\Longrightarrow
+x \geq -\beta \:\: \forall x \in A \\
+&\Longrightarrow
+-\beta \text{ is a lower bound of $A$} \\
+&\Longrightarrow
+\alpha \geq -\beta
+\end{align*}
+\end{enumerate}
+By (1)(2), $\alpha = -\beta$, or $\inf A = -\sup(-A)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.6.}
+\emph{Fix $b > 1$.}
+\begin{enumerate}
+\item[(a)]
+\emph{If $m,n,p,q$ are integers, $n>0$, $q>0$, and $r=m/n=p/q$, prove that
+$$(b^m)^{1/n} = (b^p)^{1/q}.$$
+Hence it makes sense to define $b^r = (b^m)^{1/n}$.}
+\item[(b)]
+\emph{Prove that $b^{r+s} = b^r b^s$ if $r$ and $s$ are rational.}
+\item[(c)]
+\emph{If $x$ is real, define $B(x)$ to be the set of all numbers $b^t$,
+where $t$ is rational and $t \leq x$.
+Prove that
+$$b^r = \sup B(r)$$
+where $r$ is rational.
+Hence it makes sense to define
+$$b^x = \sup B(x)$$
+for every real $x$.}
+\item[(d)]
+\emph{Prove that $b^{x+y} = b^x b^y$ for all real $x$ and $y$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Define $k = mq = np \in \mathbb{Z}$ (since $r = m/n = p/q$).
+Notice that $nq > 0$ (since $n>0$ and $q>0$).
+So there is one and only one $y \in \mathbb{R}$ such that $$y^{nq} = b^k$$
+where $b^k$ is defined in $\mathbb{R}$ (Theorem 1.21).
+\item[(2)]
+\emph{Show that $y = (b^m)^{1/n}$ and $y = (b^p)^{1/q}$
+are solutions of $y^{nq} = b^k$.}
+In fact,
+\begin{align*}
+((b^m)^{1/n})^{nq} &= (b^m)^q = b^{mq} = b^k, \\
+((b^p)^{1/q})^{nq} &= (b^p)^n = b^{pn} = b^k.
+\end{align*}
+\item[(3)]
+By (1)(2), the uniqueness of $y$ shows that $(b^m)^{1/n} = (b^p)^{1/q}$,
+or the map $r \mapsto b^r$ is well-defined for $r \in \mathbb{Q}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+Write $r=m/n$ and $s=p/q$ where $m,n,p,q$ are integers with $n>0$, $q>0$.
+\begin{align*}
+b^{r+s}
+&= b^{\frac{mq+np}{nq}} \\
+&= (b^{mq} \cdot b^{np})^{\frac{1}{nq}}
+  &\text{($mq+np \in \mathbb{Z}$)} \\
+&= (b^{mq})^{\frac{1}{nq}} \cdot (b^{np})^{\frac{1}{nq}}
+  &\text{(Corollary to Theorem 1.21)} \\
+&= b^{\frac{mq}{nq}} \cdot b^{\frac{np}{nq}} \\
+&= b^{\frac{m}{n}} \cdot b^{\frac{n}{n}}
+  &\text{((a))} \\
+&= b^r \cdot b^s.
+\end{align*}
+$\Box$ \\\\
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+Given any $r \in \mathbb{Q}^+$, $b^r > 1$ since $b > 1$ is given.
+\item[(2)]
+Given any $r, s \in \mathbb{Q}$, $b^r > b^s$ whenever $r > s$.
+In fact,
+\begin{align*}
+b^r
+&= b^{r-s} b^s
+  &\text{((b))} \\
+&> 1 \cdot b^s
+  &\text{((1))} \\
+&= b^s.
+\end{align*}
+\item[(3)]
+Given any $r \in \mathbb{Q}$, $b^t \leq b^r$ for any $t \in \mathbb{Q}$
+whenever $t \leq r$.
+So $\sup B(r) \leq b^r$.
+Conversely, since $r \in B(r)$, $b^r \leq \sup B(r)$.
+So $b^r = \sup B(r)$.
+\item[(4)]
+Given any $x \in \mathbb{R}$.
+We can always find $r, s \in \mathbb{Q}$ such that $r < x < s$.
+Therefore, $r \in B(x)$ and $B(s)$ is an upper bound of $B(x)$.
+So there is a least upper bound $\sup B(x)$ for $B(x)$, i.e.,
+$b^r = \sup B(r)$ is well-defined.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Lemma.}
+\emph{If $x$ is real, define $B'(x)$ to be the set of all numbers $b^t$,
+where $t$ is rational and $t < x$.
+Prove that $\sup B'(x) = \sup B(x)$ for all $x \in \mathbb{R}$.} \\
+
+\emph{Proof of Lemma (Reductio ad absurdum).}
+It suffices to show that $\sup B'(r) = \sup B(r) = b^r$ for all $r \in \mathbb{Q}$.
+(The case $x \in \mathbb{R}-\mathbb{Q}$ is nothing to do.)
+Clearly, $\sup B'(r) \leq b^r$.
+If $\alpha = \sup B'(r) < b^r$, then for $\frac{b^r}{\alpha} > 1$ there is
+$n > (b-1)/\left(\frac{b^r}{\alpha} - 1\right)$ such that
+$$b^{\frac{1}{n}} < \frac{b^r}{\alpha}$$
+(Exercise 1.7(c)).
+So
+$\alpha < b^{r - \frac{1}{n}}$.
+Therefore, $b^{r - \frac{1}{n}} \in B'(r)$ since $r - \frac{1}{n} \in \mathbb{Q}$,
+or we find an element in $B'(r)$ such that is greater than $\alpha$,
+contrary to the maximality of $\alpha$.
+$\Box$ \\
+
+\emph{Proof of (d).}
+Apply Lemma to use $B(x)$ or $B'(x)$ interchangeably.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $$\sup B'(x+y) \leq \sup B'(x)\sup B'(y).$$ } \\
+Given any $b^t \in B'(x+y)$ such that $t < x+y$.
+There are rational numbers $r, s$ such that $r < x$, $s < y$ and $t=r+s$.
+(Rewrite $t < x+y$ as $t-y < x$. So there is a rational number $r$ such that $t-y < r < x$.
+Let $s = t-r < y$.)
+(Here we use $B'(x+y)$ instead of $B(x+y)$ to ensure the existence of $r$ and $s$.
+That is, if $0 = -\sqrt{2} + \sqrt{2}$, we cannot find rational numbers
+$r \leq -\sqrt{2}$ and $s \leq \sqrt{2}$ such that $r + s = 0$.)
+Therefore,
+$$b^t = b^{r+s} = b^r b^s \leq \sup B'(x) \sup B'(y)$$
+(by (b)). Take supremum, $\sup B'(x+y) \leq \sup B'(x) \sup B'(y)$.
+\item[(2)]
+\emph{Show that $$\sup B'(x+y) \geq \sup B'(x)\sup B'(y).$$ } \\
+Given any $b^r \in B'(x)$, $b^s \in B'(y)$. $r < x$ and $s < y$.
+So $b^r b^s = b^{r+s} \in B'(x+y)$ (by (b)).
+So $b^r b^s \leq \sup B'(x+y)$.
+So
+$$b^r \leq \frac{\sup B'(x+y)}{b^s}$$
+since $b^s > 0$ for any $s \in \mathbb{Q}$.
+Here $\frac{\sup B'(x+y)}{b^s}$ is an upper bound for $B'(x)$.
+So
+$$\sup B'(x) \leq \frac{\sup B'(x+y)}{b^s},$$
+or $b^s \leq \frac{\sup B'(x+y)}{B'(x)}$.
+Use the same argument again,
+$$\sup B'(y) \leq \frac{\sup B'(x+y)}{\sup B'(x)}$$
+or $\sup B'(x) \sup B'(y) \leq \sup B'(x+y)$.
+\end{enumerate}
+By (1)(2), $\sup B'(x) \sup B'(y) = \sup B'(x+y)$ or $b^x b^y = b^{x+y}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.8.}
+\emph{Prove that no order can be defined in the complex field that turns it
+into an ordered field.
+(Hint: $-1$ is a square.)} \\
+
+\emph{Proof (Reductio ad absurdum).}
+If $\mathbb{C}$ were an ordered field, consider the complex number $i = \sqrt{-1}$.
+
+\begin{enumerate}
+\item[(1)]
+$i \neq 0$.
+If $i$ were $0$, then $i \cdot i = 0 \cdot i$ or $-1 = 0$,
+or $1 = 0$, contrary to $1 > 0$ (Proposition 1.18).
+\item[(2)]
+Since $i \neq 0$, we have $i^2 > 0$ (Proposition 1.18).
+So $-1 > 0$, or $1 < 0$, contrary to the fact $1 > 0$ (Proposition 1.18).
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement ($x^2 > 0$ if $x \neq 0$).}
+\emph{Show that the only automorphism of $\mathbb{R}$ is the identity.
+(Hint: If $\sigma$ is an automorphism, show that $\sigma|_{\mathbb{Q}} = \text{id}$,
+and if $a > 0$, then $\sigma(a) > 0$).} \\
+
+It is an interesting fact that there are infinitely many automorphisms of $\mathbb{C}$,
+even thought $[\mathbb{C}:\mathbb{R}] = 2$.
+Why is this fact not a contradiction to this problem? \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.12.}
-\emph{If $z_1, ..., z_n$ are complex, prove that
+\emph{If $z_1, \ldots, z_n$ are complex, prove that
 $$|z_1 + z_2 + \cdots + z_n| \leq |z_1| + |z_2| + \cdots + |z_n|.$$}
 
 \emph{Proof.}
@@ -101,14 +423,219 @@ to get the result, say
 $\Box$ \\
 
 \textbf{Supplement.}
-\emph{If $\mathbf{x}_1, ..., \mathbf{x_n} \in \mathbb{R}^k$, then
+\emph{If $\mathbf{x}_1, \ldots, \mathbf{x_n} \in \mathbb{R}^k$, then
 $$|\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}|
 \leq |\mathbf{x_1}| + |\mathbf{x_2}| + \cdots + |\mathbf{x_n}|.$$}
 
 Here we might use Theorem 1.37 (e) to prove it.
 Since the norm $|\cdot|$ on $\mathbb{C}$ is the same as the norm on $\mathbb{R}^2$,
 we might prove this supplement first
-and then set $k = 2$ on $\mathbb{R}^k = \mathbb{R}^2$ to give another proof of Exercise 1.12.
+and then set $k = 2$ on $\mathbb{R}^k = \mathbb{R}^2$
+to give another proof of Exercise 1.12. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.13.}
+\emph{If $x, y$ are complex, prove that
+$$\abs{ \abs{x} - \abs{y} } \leq \abs{x-y}.$$}
+
+We can show $f(x) = |x|$ is uniformly continuous in $\mathbb{R}$ by using this inequality. \\
+
+\emph{Proof (Exercise 1.12).}
+Since
+\begin{align*}
+|y| &\leq |x| + |y-x| = |x| + |x-y| \\
+|x| &\leq |y| + |x-y|,
+\end{align*}
+we have
+$$-|x-y| \leq |x| - |y| \leq |x-y|,$$
+or
+$$\abs{|x| - |y|} \leq |x-y|.$$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.14.}
+\emph{If $z$ is a complex number such that $|z|=1$, that is, such that $z\overline{z}=1$,
+compute
+$$|1+z|^2+|1-z|^2.$$}
+
+\emph{Proof ($|z|^2 = z\overline{z}$).}
+\begin{align*}
+|1+z|^2 &= (1+z)\overline{(1+z)} = (1+z)(1+\overline{z}) = 1+z+\overline{z}+z\overline{z} \\
+|1-z|^2 &= (1-z)\overline{(1-z)} = (1+z)(1-\overline{z}) = 1-z-\overline{z}+z\overline{z} \\
+|1+z|^2+|1-z|^2 &= 2+2z\overline{z} = 2+2 = 4.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof (Exercise 1.17).}
+Regard $\mathbb{C}$ as $\mathbb{R}^2$.
+Then put $\mathbf{x} = 1, \mathbf{y} = z$ in the parallelogram law (Exercise 1.17)
+to get $$|1+z|^2+|1-z|^2 = 2|1|^2 + 2|z|^2 = 4.$$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.15.}
+\emph{Under what conditions does equality hold in the Schwarz inequality?} \\
+
+\textbf{Theorem 1.35 (Schwarz inequality).}
+\emph{If $a_1, \ldots, a_n$ and $b_1, \ldots, b_n$ are complex numbers, then
+$$\abs{\sum_{j=1}^n a_j \overline{b_j}}^2
+\leq \sum_{j=1}^n |a_j|^2 \sum_{j=1}^n|b_j|^2.$$}
+
+In fact, the Lagrange's identity for complex numbers shows
+$$\abs{ \sum_{k=1}^{n} a_k \overline{b_k} }^2
+= \sum_{k=1}^{n} \abs{a_k}^2 \sum_{k=1}^{n} \abs{b_k}^2
+- \sum_{1 \leq k < j \leq n}
+\abs{ a_k b_j - a_j b_k }^2.$$ \\
+
+In general, the Binet-Cauchy identity shows
+\begin{align*}
+&\sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
+\end{align*} \\
+
+\emph{Proof of Binet-Cauchy identity.}
+\begin{align*}
+&\sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
+= &\sum_{1 \leq k < j \leq n}
+(a_k b_j A_k B_j + a_j b_k A_j B_k)
+- \sum_{1 \leq k < j \leq n}
+(a_k b_j A_j B_k - a_j b_k A_k B_j) \\
+= &\sum_{1 \leq k < j \leq n}
+(a_k A_k b_j B_j + a_j A_j b_k B_k)
+- \sum_{1 \leq k < j \leq n}
+(a_k B_k b_j A_j + a_j B_j b_k A_k) \\
+= &\sum_{1 \leq k \neq j \leq n} a_k A_k b_j B_j
+ - \sum_{1 \leq k \neq j \leq n} a_k B_k b_j A_j \\
+= &\sum_{1 \leq k, j \leq n} a_k A_k b_j B_j
+ - \sum_{1 \leq k, j \leq n} a_k B_k b_j A_j \\
+  & \text{(since $a_k A_k b_j B_j - a_k B_k b_j A_j = 0$ as $k = j$)} \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{j=1}^{n} b_j B_j \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{j=1}^{n} b_j A_j \right) \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of Lagrange's identity.}
+Put $(a_k, b_k, A_k, B_k) \mapsto (a_k, b_k, \overline{a_k}, \overline{b_k})$
+in the Binet-Cauchy identity.
+$\Box$ \\
+
+\emph{Proof of Schwarz inequality (Lagrange's identity).}
+Notice the term $$\sum_{1 \leq k < j \leq n} \abs{ a_k b_j - a_j b_k }^2 \geq 0.$$
+$\Box$ \\
+
+Write $\mathbf{a} = (a_1, \ldots, a_n)$ and $\mathbf{b} = (b_1, \ldots, b_n)$
+as two vectors in the vector space $\mathbb{C}^n$ over $\mathbb{C}$.
+Back to the exercise now. \\
+
+\emph{Proof (Lagrange's identity).}
+$\sum_{1 \leq k < j \leq n} \abs{ a_k b_j - a_j b_k }^2 = 0$
+$\Longleftrightarrow$
+$a_k b_j = a_j b_k$ for any $1 \leq k < j \leq n$.
+The equality holds in the Schwarz inequality
+$\Longleftrightarrow$
+$\mathbf{a}$ and $\mathbf{b}$ are linearly dependent.
+$\Box$ \\
+
+\emph{Proof (Theorem 1.35).}
+The equality holds in the Schwarz inequality.
+$\Longleftrightarrow$
+$B = 0$ or
+the term $\sum |B a_j - C b_j|^2$ in the proof of Theorem 1.35 is $0$.
+$\Longleftrightarrow$
+$\mathbf{b} = \mathbf{0}$ or $\mathbf{a} = c\mathbf{b}$ for some $c \in \mathbb{C}$.
+$\Longleftrightarrow$
+$\mathbf{a}$ and $\mathbf{b}$ are linearly dependent.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.17.}
+\emph{Prove that
+$$|\mathbf{x}+\mathbf{y}|^2 + |\mathbf{x}-\mathbf{y}|^2
+= 2|\mathbf{x}|^2 + 2|\mathbf{y}|^2$$
+if $\mathbf{x} \in \mathbb{R}^k$ and $\mathbf{y} \in \mathbb{R}^k$.
+Interpret this geometrically,
+as a statement about parallelograms.} \\
+
+\emph{Proof.}
+\begin{align*}
+&|\mathbf{x}+\mathbf{y}|^2 + |\mathbf{x}-\mathbf{y}|^2 \\
+=& (\mathbf{x}+\mathbf{y})\cdot(\mathbf{x}+\mathbf{y})
+  + (\mathbf{x}-\mathbf{y})\cdot(\mathbf{x}-\mathbf{y}) \\
+=& (\mathbf{x}\cdot\mathbf{x} + 2\mathbf{x}\cdot\mathbf{y} + \mathbf{y}\cdot\mathbf{y})
+  + (\mathbf{x}\cdot\mathbf{x} - 2\mathbf{x}\cdot\mathbf{y} + \mathbf{y}\cdot\mathbf{y}) \\
+=& 2\mathbf{x}\cdot\mathbf{x} + 2\mathbf{y}\cdot\mathbf{y} \\
+=& 2|\mathbf{x}|^2 + 2|\mathbf{y}|^2.
+\end{align*}
+
+Interpret this geometrically,
+the sum of the squares of the lengths of the four sides of a parallelogram
+equals the sum of the squares of the lengths of the two diagonals. \\
+
+If the parallelogram is a rectangle, the two diagonals are of equal lengths,
+so that the statement reduces to the Pythagorean theorem.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.18.}
+\emph{If $k \geq 2$ and $\mathbf{x} \in \mathbb{R}^k$,
+prove that there exists $\mathbf{y} \in \mathbb{R}^k$ such that
+$\mathbf{y} \neq 0$ but $\mathbf{x} \cdot \mathbf{y} = 0$.
+Is this also true if $k = 1$?} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+There are only two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$\exists \: i$ such that $x_i = 0$.}
+  Let $\mathbf{y} = (0, \ldots, 0, 1, 0, \ldots, 0) \neq 0$
+  whose entries are all $0$ except for a $1$ in the $i$-th position.
+  So $\mathbf{x} \cdot \mathbf{y} = 0 + \ldots + 0 = 0$.
+  \item[(b)]
+  \emph{$\forall \: i, x_i \neq 0$.}
+  Since $k \geq 2$, we can define
+  $\mathbf{y} = (x_2, -x_1, 0, \ldots, 0) \neq 0.$
+  So $\mathbf{x} \cdot \mathbf{y} = x_1 x_2 + x_2 (-x_1) + 0 + \ldots + 0 = 0$.
+  \end{enumerate}
+\item[(2)]
+It is not true for $k = 1$ since $\mathbb{R}^1 = \mathbb{R}$ is a field. \\
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
