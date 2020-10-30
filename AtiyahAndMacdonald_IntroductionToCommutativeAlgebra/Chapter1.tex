@@ -34,6 +34,10 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.1.}
 \emph{Let $x$ be a nilpotent element of $A$.
 Show that $1+x$ is a unit of $A$.
@@ -74,6 +78,10 @@ So $1+x = 1 - (-x) \cdot 1$ is a unit in $A$
 since $x$ is a nilpotent and $\mathfrak{J}$ is an ideal.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -270,6 +278,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.4.}
 \emph{In the ring $A[x]$, the Jacobson radical is equal to the nilradical.} \\
 
@@ -288,6 +300,11 @@ By Exercise 1.2 (i), all coefficients of $f$ are nilpotent.
 By Exercise 1.2 (ii), $f$ is nilpotent, or $f \in \mathfrak{N}$.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \textbf{Exercise 1.7.}
@@ -314,6 +331,10 @@ which implies that $A/\mathfrak{p}$ is a field (since $\overline{x}$ is arbitrar
 $A/\mathfrak{p}$ is a field if and only if $\mathfrak{p}$ is maximal.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -469,6 +490,10 @@ $\Box$ \\
   \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -696,6 +721,93 @@ $O = \bigcup_{f \in J} X_f$ is a finite union of sets $X_f$.
 Since $X_f$ is quasi-compact, any finite union of quasi-compact sets is quasi-compact again.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.19.}
+\emph{A topological space $X$ is said to be irreducible if
+$X \neq \varnothing$ and if every pair of non-empty open sets in $X$ intersect, or
+equivalently if every non-empty open set is dense in $X$.
+Show that $\text{Spec}(A)$ is irreducible if and only if
+the nilradical of $A$ is a prime ideal.} \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.20.}
+\emph{Let $X$ be a topological space.}
+\begin{enumerate}
+\item[(i)]
+\emph{If $Y$ is an irreducible subspace of $X$, then the closure $\overline{Y}$
+of $Y$ in $X$ is irreducible.}
+\end{enumerate}
+
+\emph{Proof of (i).}
+\begin{enumerate}
+\item[(1)]
+\emph{$Y$ is irreducible if and only if
+$Y$ cannot be represented as the union of two proper closed subspaces.}
+  \begin{align*}
+  &\forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+  U_1 \cap U_2 \neq \varnothing \\
+  \Longleftrightarrow&
+  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+  X - (U_1 \cap U_2) \neq X \\
+  \Longleftrightarrow&
+  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+  (X - U_1) \cup (X - U_2) \neq X \\
+  \Longleftrightarrow&
+  \forall \text{ proper closed sets } Y_1 \text{ and } Y_2,
+  Y_1 \cup Y_2 \neq X \\
+  \Longleftrightarrow&
+  \nexists \text{ proper closed sets } Y_1 \text{ and } Y_2,
+  Y_1 \cup Y_2 = X.
+  \end{align*}
+\item[(2)]
+If $\overline{Y}$ were reducible, there are two closed set $Y_1$ and $Y_2$
+such that
+$$\overline{Y} \subseteq Y_1 \cup Y_2,
+\overline{Y} \not\subseteq Y_i (i = 1, 2).$$
+  \begin{enumerate}
+  \item[(a)]
+  $Y \subseteq \overline{Y} \subseteq Y_1 \cup Y_2$.
+  \item[(b)]
+  $Y\not\subseteq Y_i (i = 1, 2)$. If not, $Y \subseteq Y_i$ for some $i$.
+  Take closure to get $\overline{Y} \subseteq \overline{Y_i} = Y_i$ (since $Y_i$ is closed),
+  contrary to the assumption.
+  \end{enumerate}
+  By (a)(b), $Y$ is reducible, which is absurd.
+\end{enumerate}
+
+$\Box$ \\
+
+
+\textbf{Supplement.}
+\emph{(Exercise I.1.6 in Robin Hartshorne, Algebraic Geometry.)
+Any nonempty open subset of an irreducible topological space is dense and irreducible.
+If $Y$ is a subset of a topological space $X$, which is irreducible in its induced topology,
+then the closure $\overline{Y}$ is also irreducible.} \\
+
+Here we use the definition of irreducibility given by Hartshorne. \\
+
+\emph{Definition.}
+A nonempty subset $Y$ of a topological space $X$ is irreducible
+if it cannot be expressed as the union $Y = Y_1 \cup Y_2$ of two proper subsets,
+each one of which is closed in $Y$. The empty set is not considered to be irreducible. \\
+
+The proof is the same as Exercise 1.20(i). \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \end{document}
