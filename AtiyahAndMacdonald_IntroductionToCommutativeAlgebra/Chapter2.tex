@@ -378,6 +378,74 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 2.4.}
+\emph{Let $M_i$ $(i \in I)$ be any family of $A$-modules,
+and let $M$ be their direct sum.
+Prove that $M$ is flat $\Leftrightarrow$ each $M_i$ is flat.} \\
+
+\emph{Proof.}
+Given any $A$-module homomorphism $f: N' \to N$.
+\begin{enumerate}
+\item[(1)]
+Similar to Proposition 2.14(iii), we have
+two isomorphisms
+  \begin{enumerate}
+  \item[(a)]
+  $$\varphi:
+  \bigoplus_{i \in I} (N' \otimes M_i)
+  \cong
+  N' \otimes_A \bigoplus_{i \in I} M_i$$
+  defined by
+  $$\varphi((x \otimes m_i)_{i \in I}) = x \otimes (m_i)_{i \in I}$$
+  where $x \in N'$, $m_i \in M_i$ $(i \in I)$.
+  \item[(b)]
+  $$\psi:
+  N \otimes_A \bigoplus_{i \in I} M_i
+  \cong
+  \bigoplus_{i \in I} (N \otimes M_i)$$
+  defined by
+  $$\psi(y \otimes (m_i)_{i \in I}) = (y \otimes m_i)_{i \in I}$$
+  where $y \in N$, $m_i \in M_i$ $(i \in I)$.
+  \end{enumerate}
+\item[(2)]
+$f: N' \to N$ induces an $A$-module homomorphism
+$$f \otimes \text{id}_{M}: N' \otimes_A M \to N \otimes_A M.$$
+\item[(3)]
+$\psi \circ f \otimes \text{id}_{M} \circ \varphi$ defines an $A$-module homomorphism
+$$\psi \circ f \otimes \text{id}_{M} \circ \varphi:
+\bigoplus_{i \in I} (N' \otimes M_i) \to \bigoplus_{i \in I} (N \otimes M_i)$$
+which sends $(x \otimes m_i)_{i \in I}$ to $(f(x) \otimes m_i)_{i \in I}$.
+That is,
+$$\psi \circ f \otimes \text{id}_{M} \circ \varphi
+= \bigoplus_{i \in I} f \otimes \text{id}_{M_i}$$.
+\item[(4)]
+\emph{Show that $M$ is flat if and only if each $M_i$ is flat.}
+Suppose $f$ is injective.
+\begin{align*}
+&\text{$M_i$ is flat $\forall \: i \in I$} \\
+\Longleftrightarrow&
+\text{$f \otimes \text{id}_{M_i}$ is injective $\forall \: i \in I$} \\
+\Longleftrightarrow&
+\text{$\bigoplus_{i \in I} f \otimes \text{id}_{M_i}$ is injective}
+  &\text{(Injectivity)} \\
+\Longleftrightarrow&
+\text{$\psi \circ f \otimes \text{id}_{M} \circ \varphi$ is injective}
+  &\text{((3))} \\
+\Longleftrightarrow&
+\text{$f \otimes \text{id}_{M}$ is injective}
+  &\text{($\varphi$, $\psi$ are isomorphic)} \\
+\Longleftrightarrow&
+\text{$M$ is flat.}
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.5.}
 \emph{Let $A[x]$ be the ring of polynomials in one indeterminate over a ring $A$.
 Prove that $A[x]$ is a flat $A$-algebra. (Hint: Use Exercise 2.4.)} \\
