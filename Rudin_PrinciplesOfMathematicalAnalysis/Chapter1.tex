@@ -374,18 +374,84 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 1.7.}
-
+\emph{Fix $b > 1$, $y > 0$, and prove that there is a unique real $x$
+such that $b^x = y$, by completing the following outline.
+(This $x$ is called the logarithm of $y$ to the base $b$).}
+\begin{enumerate}
+\item[(a)]
+\emph{For any positive integer $n$, $b^n - 1 \geq n(b-1)$.}
+\item[(b)]
+\emph{Hence $b - 1 \geq n (b^{\frac{1}{n}} - 1)$.}
+\item[(c)]
+\emph{If $t > 1$ and $n > \frac{b-1}{t-1}$, then $b^{\frac{1}{n}} < t$.}
+\item[(d)]
+\emph{If $w$ is such that $b^w < y$, then $b^{w + \frac{1}{n}} < y$ for sufficiently large $n$;
+to see this, apply part (c) with $t = y \cdot b^{-w}$.}
+\item[(e)]
+\emph{If $b^w > y$, then $b^{w - \frac{1}{n}} > y$ for sufficiently large $n$.}
+\item[(f)]
+\emph{Let $A$ be the set of all $w$ such that $b^w < y$, and show that $x = \sup A$
+satisfies $b^x = y$.}
+\item[(g)]
+\emph{Prove that this $x$ is unique.} \\
+\end{enumerate}
 
 \emph{Proof of (a).}
 \begin{align*}
 b^n - 1
 &= (b - 1)(b^{n-1} + b^{n-2} + \cdots + 1) \\
-&> (b - 1)(1^{n-1} + 1^{n-2} + \cdots + 1) \\
+&\geq (b - 1)(1^{n-1} + 1^{n-2} + \cdots + 1) \\
 &= (b - 1)n.
 \end{align*}
-(Or proved by mathematical induction.)
+The equality holds if and only if $n = 1$.
+(Or proved by the induction.)
 $\Box$ \\
 
+\emph{Proof of (b).}
+Put $b \mapsto b^{\frac{1}{n}}$ in (a).
+$\Box$ \\
+
+\emph{Proof of (c).}
+Since $n > \frac{b-1}{t-1}$ and (b), $n(t-1) > b-1 \geq n (b^{\frac{1}{n}} - 1)$.
+Cancel $n$ on the both sides, $t-1 > b^{\frac{1}{n}} - 1$ or $b^{\frac{1}{n}} < t$.
+$\Box$ \\
+
+\emph{Proof of (d).}
+Let $t = y \cdot b^{-w} > 1$.
+By (c), $b^{\frac{1}{n}} < y \cdot b^{-w}$ for $n > \frac{b-1}{y \cdot b^{-w}-1}$,
+or $b^{w + \frac{1}{n}} < y$ for $n > \frac{b-1}{y \cdot b^{-w}-1}$.
+$\Box$ \\
+
+\emph{Proof of (e).}
+Similar to (d).
+Let $t = y^{-1} \cdot b^{w} > 1$.
+By (c), $b^{\frac{1}{n}} < y^{-1} \cdot b^{w}$ for $n > \frac{b-1}{y^{-1}\cdot b^{w}-1}$,
+or $b^{w + \frac{1}{n}} > y$ for $n > \frac{b-1}{y^{-1}\cdot b^{w}-1}$.
+$\Box$ \\
+
+\emph{Proof of (f).}
+$x = \sup A < \infty$ by (a).
+(As $n > \frac{y-1}{b-1}$, $b^n > y$.)
+So there are only three possible cases.
+\begin{enumerate}
+\item[(1)]
+$b^x < y$. By (d), $b^{x + \frac{1}{n}} < y$ for sufficiently large $n$,
+contrary to the maximality of $x$.
+\item[(2)]
+$b^x > y$. By (e), $b^{x - \frac{1}{n}} > y$ for sufficiently large $n$,
+contrary to the maximality of $x$.
+\item[(3)]
+By (1)(2), $b^x = y$ holds.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (g)(Reductio ad absurdum).}
+If there were another real $x' \neq x$ such that $b^{x'} = y$,
+then $x' > x$ or $x' < x$.
+For the case $x' > x$, $y = b^{x'} = b^{x}b^{x'-x} > b^{x} = y$,
+which is absurd.
+For the case $x' < x$, $y = b^{x} = b^{x'}b^{x-x'} > b^{x'} = y$,
+which is absurd too.
 $\Box$ \\\\
 
 
@@ -421,6 +487,121 @@ and if $a > 0$, then $\sigma(a) > 0$).} \\
 It is an interesting fact that there are infinitely many automorphisms of $\mathbb{C}$,
 even thought $[\mathbb{C}:\mathbb{R}] = 2$.
 Why is this fact not a contradiction to this problem? \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.9.}
+\emph{Suppose $z = a+bi$, $w = c+di$.
+Define $z < w$ if $a < c$, and also if $a = c$ but $b < d$.
+Prove that this turns the set of all complex numbers into an ordered set.
+(This type of order relation is called a dictionary order,
+or lexicographic order, for obvious reasons.)
+Does this ordered set have the least-upper-bound property?} \\
+
+\emph{Proof.}
+
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathbb{C}$ is an ordered set.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that if $x = a+bi, y = c+di \in \mathbb{C}$
+  then one and only one of the statements
+  $x < y, x = y, y < x$ is true.}
+  Since $\mathbb{R}$ is an ordered set,
+  then one and only one of the statements
+  $a < c, a = c, c < a$ is true.
+    \begin{enumerate}
+    \item[(i)]
+    $a < c$. Hence $x < y$ (in the sense of the dictionary order).
+    \item[(ii)]
+    $a = c$. Again since $\mathbb{R}$ is an ordered set,
+    then one and only one of the statements
+    $b < d, b = d, d < b$ is true.
+    That is, one and only one of the statements
+    $x < y, x = y, y < x$ is true (in the sense of the dictionary order).
+    \item[(iii)]
+    $c < a$. Hence $y < x$ (in the sense of the dictionary order).
+    \end{enumerate}
+    By (i)(ii)(iii), the result is established.
+  \item[(b)]
+  \emph{Show that if $x=a+bi, y=c+di, z=e+fi \in \mathbb{C}$,
+  if $x < y$ and $y < z$, then $x < z$.}
+  Observe that if $x < y$ (resp. $y < z$) then $a \leq c$ (resp. $c \leq e$).
+  Therefore, $a \leq c \leq e$. Thus, there are only two possible cases.
+    \begin{enumerate}
+    \item[(i)]
+    Not every equality holds. $a < e$ or $x < z$ (in the sense of the dictionary order).
+    \item[(ii)]
+    Every equality holds. $a = c = e$.
+    Since $x < y$ (resp. $y < z$), $b < d$ (resp. $d < f$).
+    So $b < d < f$, or $x < z$ (in the sense of the dictionary order).
+    \end{enumerate}
+    In any case, $x < z$ if $x < y$ and $y < z$.
+  \end{enumerate}
+  By (a)(b), $\mathbb{C}$ is an ordered set (Definition 1.5).
+\item[(2)]
+\emph{Show that has no least-upper-bound property.}
+Assume $\mathbb{C}$ has the least-upper-bound property.
+Consider $$E = \{ 0 \} \subseteq \mathbb{C}.$$
+  \begin{enumerate}
+  \item[(a)]
+  $E$ is bounded by $0 \in \mathbb{C}$.
+  Thus $E$ has the least upper bound $\alpha = a+bi \in \mathbb{C}$
+  where $a, b \in \mathbb{R}$. Here $a \geq 0$. (In fact $a = 0$.)
+  \item[(b)]
+  Set $\gamma = a+(b-1)i < a+bi = \alpha$. Note that $a \geq 0$ and thus
+  $\gamma$ is an upper bound of $E$, contrary to minimality of $\alpha$.
+  \end{enumerate}
+Thus $\mathbb{C}$ has no least-upper-bound property
+although $E$ has the least upper bound ($=0$) in $\mathbb{R}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.10.}
+\emph{Suppose $z=a+bi, w=u+vi$, and
+$$a = \left( \frac{|w|+u}{2} \right)^{\frac{1}{2}},
+b = \left( \frac{|w|-u}{2} \right)^{\frac{1}{2}}.$$
+Prove that $z^2 = w$ if $v \geq 0$ and that $(\overline{z})^2=w$ if $v \leq 0$.
+Conclude that every complex number (with one exception!)
+has two complex square roots.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+z^2
+&= (a^2 - b^2) + 2abi \\
+&= \left( \frac{|w|+u}{2} - \frac{|w|-u}{2} \right)
+  + 2 \left( \frac{|w|+u}{2} \cdot \frac{|w|-u}{2} \right)^{\frac{1}{2}} i \\
+&= u + ( |w|^2 - u^2 )^{\frac{1}{2}} i \\
+&= u + ( v^2 )^{\frac{1}{2}} i \\
+&= u + |v| i.
+\end{align*}
+Therefore, $z^2 = w$ if $v \geq 0$.
+$z^2 = \overline{w}$ if $v \leq 0$, or $(\overline{z})^2 = w$ if $v \leq 0$.
+\item[(2)]
+Every complex number $w$
+has two has two complex square roots $z$ and $-z$.
+  \begin{enumerate}
+  \item[(a)]
+  When $w \neq 0$, two square roots are distinct.
+  \item[(b)]
+  When $w = 0$, two square roots are identical,
+  or there is only one square root for $w = 0$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
