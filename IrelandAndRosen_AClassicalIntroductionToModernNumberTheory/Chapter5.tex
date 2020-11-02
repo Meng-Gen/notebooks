@@ -88,4 +88,118 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 5.5.}
+\emph{Prove that $\sum_{x=0}^{p-1} \left( \frac{ax+b}{p} \right) = 0$
+provided that $p \nmid a$.} \\
+
+\emph{Proof.}
+Since $x$ $(x = 1, \ldots, p-1)$ is a reduced residue system modulo $p$,
+$ax$ $(x = 1, \ldots, p-1)$ is again a reduced residue system modulo $p$ if $p \nmid a$
+(Exercise 3.6).
+Hence
+$$\sum_{x=1}^{p-1} \left( \frac{ax}{p} \right) = 0.$$
+Note that $\left( \frac{0}{p} \right) = 0$,
+and thus
+$0
+= \sum_{x=0}^{p-1} \left( \frac{ax}{p} \right)
+= \sum_{x=0}^{p-1} \left( \frac{a(x+a^{-1}b)}{p} \right)
+= \sum_{x=0}^{p-1} \left( \frac{ax+b}{p} \right)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.6.}
+\emph{Show that the number of solutions to $x^2 - y^2 \equiv a \: (p)$
+is given by
+$$\sum_{y=0}^{p-1} \left( 1 + \left( \frac{y^2 + a}{p} \right) \right).$$ }
+
+\emph{Proof.}
+Write $x^2 \equiv y^2 + a \: (p)$.
+For every fixed $y = 0, \ldots, p-1$,
+the number of solutions $x$ to $x^2 \equiv y^2 + a \: (p)$
+is given by $1 + \left( \frac{y^2 + a}{p} \right)$ (Exercise 5.2).
+Hence, the number of solutions $(x, y)$ to $x^2 - y^2 \equiv a \: (p)$
+is
+$$\sum_{y=0}^{p-1} \left( 1 + \left( \frac{y^2 + a}{p} \right) \right).$$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.7.}
+\emph{By calculating directly show that
+the number of solutions to $x^2 - y^2 \equiv a \: (p)$
+is $p-1$ if $p \nmid a$ and $2p-1$ if $p \mid a$.
+(Hint: Use the change of variables $u=x+y, v=x-y$.) } \\
+
+\emph{Proof (Hint).}
+Write $(x+y)(x-y) \equiv a \: (p)$ or $uv \equiv a \: (p)$ where $u=x+y, v=x-y$.
+For any $a$, either $a \equiv 0 \: (p)$ or $a \not\equiv 0 \: (p)$.
+\begin{enumerate}
+\item[(1)]
+$a \equiv 0 \: (p)$. Then $u = 0$ or $v = 0$.
+Consider three possible cases (may be overlapped).
+  \begin{enumerate}
+  \item[(a)]
+  $u = 0$, or $x+y = 0$. In this case, the number of solutions is $p$.
+  ($x = k, y = -k$ for $k = 0, \ldots, p-1$.)
+  \item[(b)]
+  $v = 0$. Similar to (a), the number of solutions is $p$.
+  ($x = k, y = k$ for $k = 0, \ldots, p-1$.)
+  \item[(c)]
+  $u = v = 0$. $x = y = 0$.
+  \end{enumerate}
+  By (a)(b)(c), there are $2p-1$ solutions to $x^2 - y^2 \equiv 0 \: (p)$.
+\item[(2)]
+$a \not\equiv 0 \: (p)$. $u \neq 0$ and $v \neq 0$.
+For each $u = k$ for $k = 1, \ldots, p-1$, there is one unique $v = a k^{-1}$
+such that $uv \equiv a \: (p)$. Solve $u$ and $v$ to get
+$(x, y) = (2^{-1} (k + a k^{-1}), 2^{-1} (k - a k^{-1})) \in \mathbb{Z}/p\mathbb{Z}$
+for $k = 1, \ldots, p-1$.
+So there are $p-1$ solutions to $x^2 - y^2 \equiv a \: (p)$ where $a \not\equiv 0 \: (p)$.
+\end{enumerate}
+By (1)(2), the result holds.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.8.}
+\emph{Combining the results of Exercise 5.6 and 5.7 show that
+\begin{equation*}
+  \sum_{y=0}^{p-1} \left( \frac{y^2 + a}{p} \right) =
+    \begin{cases}
+      -1,  & \text{ if $p \nmid a$}, \\
+      p-1, & \text{ if $p \mid a$}.
+    \end{cases}
+\end{equation*}} \\
+
+\emph{Proof.}
+By Exercise 5.6 and 5.7,
+\begin{equation*}
+  \sum_{y=0}^{p-1} \left( 1 + \left( \frac{y^2 + a}{p} \right) \right) =
+    \begin{cases}
+      p-1,  & \text{ if $p \nmid a$}, \\
+      2p-1, & \text{ if $p \mid a$}.
+    \end{cases}
+\end{equation*}
+Hence the result holds.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \end{document}
