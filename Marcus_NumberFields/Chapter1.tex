@@ -28,6 +28,7 @@
 
 % https://www.math.uci.edu/~ndonalds/math180b/6gaussian.pdf
 % https://www.maths.nottingham.ac.uk/plp/pmzcw/download/fnt_chap5.pdf
+% https://www.math.nagoya-u.ac.jp/~larsh/teaching/F2013_PM/lecture4.pdf
 
 
 
@@ -463,6 +464,172 @@ $\Box$ \\\\
 \textbf{Exercise 1.30.}
 \emph{Show that two ideals in $R$ are isomorphic as $R$-modules
 iff they are in the same ideal class.} \\
+
+\emph{Proof.}
+Given any two ideals $A, B$ in an commutative integral domain $R$.
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Let $\varphi: A \to B$ be an $R$-module isomorphism.
+Given any nonzero $\alpha \in A$, we have
+\begin{align*}
+\varphi(\alpha)A
+&= \{ \varphi(\alpha)a : a \in A \} \\
+&= \{ \varphi(\alpha a) : a \in A \}
+  &\text{($\varphi$ is a homomorphism)} \\
+&= \{ \alpha\varphi(a) : a \in A \}
+  &\text{($\varphi$ is a homomorphism)} \\
+&= \{ \alpha b : b \in B \}
+  &\text{($\varphi$ is an isomorphism)} \\
+&= \alpha B.
+\end{align*}
+Notice that $\varphi(\alpha) \neq 0$ since $\alpha \neq 0$ and $\varphi$ is injective.
+Therefore, $A \sim B$.
+\item[(2)]
+$(\Longleftarrow)$
+Given $A \sim B$, there are nonzero $\alpha, \beta \in R$ such that $\alpha A = \beta B$.
+Define a map $\varphi: A \to B$ by $\varphi(a) = b$ if $\alpha a = \beta b$.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$\varphi$ is well-defined.}
+    \begin{enumerate}
+    \item[(i)]
+    \emph{Existence of $b$.}
+    Since $\alpha a \in \alpha A = \beta B$, there is $b \in B$ such that $\alpha a = \beta b$.
+    \item[(ii)]
+    \emph{Uniqueness of $b$.}
+    If $\alpha a = \beta b_1 = \beta b_2$, $\beta(b_1-b_2) = 0$.
+    Since $R$ is an integral domain and $\beta \neq 0$, $b_1-b_2 = 0$ or $b_1 = b_2$.
+    \end{enumerate}
+  \item[(b)]
+  \emph{$\varphi$ is an $R$-module homomorphism.}
+    \begin{enumerate}
+    \item[(i)]
+    \emph{Show that $\varphi(a_1+a_2) = \varphi(a_1) + \varphi(a_2)$.}
+    Write $\varphi(a_1) = b_1$ and $\varphi(a_2) = b_2$.
+    \begin{align*}
+    &\varphi(a_1) = b_1 \text{ and } \varphi(a_2) = b_2 \\
+    \Longrightarrow&
+    \alpha a_1 = \beta b_1 \text{ and } \alpha a_2 = \beta b_2
+      &\text{(Definition of $\varphi$)} \\
+    \Longrightarrow&
+    \alpha a_1 + \alpha a_2 = \beta b_1 + \beta b_2
+      &\text{(Add together)} \\
+    \Longrightarrow&
+    \alpha (a_1 + a_2) = \beta (b_1 + b_2) \\
+    \Longrightarrow&
+    \varphi(a_1+a_2) = b_1+b_2 = \varphi(a_1) + \varphi(a_2).
+      &\text{(Definition of $\varphi$)}
+    \end{align*}
+    \item[(ii)]
+    \emph{Show that $\varphi(ra) = r\varphi(a)$.}
+    Write $\varphi(a) = b$.
+    \begin{align*}
+    \varphi(a) = b
+    \Longrightarrow&
+    \alpha a = \beta b
+      &\text{(Definition of $\varphi$)} \\
+    \Longrightarrow&
+    r \alpha a = r \beta b
+      &\text{(Multiply $r$)} \\
+    \Longrightarrow&
+    \alpha(ra) = \beta (rb)
+      &\text{($R$ is commutative)} \\
+    \Longrightarrow&
+    \varphi(ra) = rb = r \varphi(a).
+      &\text{(Definition of $\varphi$)}
+    \end{align*}
+    \end{enumerate}
+  \item[(c)]
+  \emph{$\varphi$ is injective.}
+  Given $\varphi(a) = 0$. Then $\alpha a = \beta b = \beta 0 = 0$.
+  Since $R$ is an integral domain and $\alpha \neq 0$, $a = 0$.
+  \item[(d)]
+  \emph{$\varphi$ is surjective.}
+  Given any $b \in B$. $\beta b \in \beta B = \alpha A$.
+  There is $a \in A$ such that $\beta b = \alpha a$.
+  Such $a$ satisfies $\varphi(a) = b$.
+  \end{enumerate}
+  Therefore, $\varphi: A \to B$ is an $R$-module isomorphism.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.31.}
+\emph{Show that if $A$ is an ideal in $R$ and if $\alpha A$ is principal
+for some nonzero $\alpha \in R$, then $A$ is principal.
+Conclude that the principal ideals form an ideal class.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write $\alpha A = (b)$ for some $b \in \alpha A$.
+That is, there is $a \in A$ such that
+$$b = \alpha a.$$
+\item[(2)]
+\emph{Show that $A = (a)$ is principal.}
+$(a) \subseteq A$ holds trivially since $a \in A$ and $A$ is an ideal.
+Given any $x \in A$. $\alpha x \in \alpha A = (b)$, and thus
+there is $y \in R$ such that $\alpha x = b y$.
+Replace $b$ by $b = \alpha a$ to get $\alpha x = \alpha a y$ or
+$$\alpha (x - ay) = 0.$$
+Since $\alpha \neq 0$ and $R$ is an integral domain,
+$x - ay = 0$ or $x = ay \in (a)$ or $A \subseteq (a)$.
+Hence $A = (a)$ is principal.
+\item[(3)]
+\emph{Show that the principal ideals form an ideal class.}
+Given any $A = (a) \neq 0$ and $B = (b) \neq 0$,
+we have $bA = aB = (ab)$ for $a, b \in R$ or $A \sim B$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.31.}
+\emph{Show that the ideal classes in $R$ form a group iff for every ideal $A$
+there is an ideal $B$ such that $AB$ is principal. } \\
+
+\emph{Proof.}
+Let $[A]$ be the ideal class representing by a nonzero ideal $A$ of $R$.
+Let
+$$\text{Pic}(R) = \{ [A] : A \text{ is an ideal of } R \}$$
+be the set of all ideal classes.
+Define the operation $\cdot : \text{Pic}(R) \times \text{Pic}(R) \to \text{Pic}(R)$
+by $[A] \cdot [B] \mapsto [AB]$.
+
+\begin{enumerate}
+\item[(1)]
+\emph{(Closure) Show that the operation $[A] \cdot [B] \mapsto [AB]$ is well-defined. }
+Trivial due to the definition of the ideal class.
+Note that $[A] \cdot [B] = [B] \cdot [A]$ by the commutativity of $R$.
+\item[(2)]
+\emph{(Associativity) Show that $([A] \cdot [B]) \cdot [C] = [A] \cdot ([B] \cdot [C])$. }
+Trivial due to the definition of the ideal class.
+\item[(3)]
+\emph{(Identity element) Show that the non-zero principal ideals form the ideal class $[1]$. }
+Exercise 1.30 and note that $(1)$ is principal too.
+\item[(4)]
+\emph{Show that the set $\text{Pic}(R)$ forms an (abelian) group with $[1]$
+as the identity element if and only if every $[A]$ has an inverse in $\text{Pic}(R)$.}
+By (1)(2)(3), the set $\text{Pic}(R)$ forms an (abelian) group iff
+every element has an inverse element. The conclusion is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \end{document}
