@@ -780,7 +780,7 @@ How is this a contradiction? } \\
 
 \emph{Proof.}
 Write $$z = u {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$$ where
-$u$ is unit and $\pi_k$ $(1 \leq k \leq m)$ are prime in $\mathbb{Z}[\omega]$ and
+$u$ is unit and $\pi_k$ $(1 \leq k \leq m)$ are distinct primes in $\mathbb{Z}[\omega]$ and
 $e_k \in \mathbb{Z}^+$ $(1 \leq k \leq m)$.
 Since $\mathbb{Z}[\omega]$ is a UFD by assumption,
 the factorization of $z$ is unique up to order and units.
@@ -817,6 +817,38 @@ Therefore, on $\mathbb{Z}$ we have $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$
 $zm + ypn = 1$ is also true in $\mathbb{Z}[\omega]$.
 Therefore, by (1)(2) we have $\pi \mid (zm + ypn)$ or $p \mid 1$,
 or $\pi$ is unit, contrary to the primality of $\pi$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.18.}
+\emph{Use Exercise 1.17 to show that if $\mathbb{Z}[\omega]$ is a UFD then
+$x+y\omega = u\alpha^p$, $\alpha \in \mathbb{Z}[\omega]$,
+$u$ a unit in $\mathbb{Z}[\omega]$. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write $z = u {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$ as Exercise 1.17.
+So
+$$z^p = u^p {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+\item[(2)]
+Factorize $x + y\omega = v q_1^{f_1} \cdots q_n^{f_n}$,
+where $v$ is unit and all $q_h$ $(1 \leq h \leq n)$ are distinct primes in $\mathbb{Z}[\omega]$
+and $f_h \in \mathbb{Z}^+$.
+Since $\mathbb{Z}[\omega]$ is a UFD,
+for every $q_h \mid x + y\omega$, there is some $k(h)$ such that $q_h = \pi_{k(h)}$
+and also $q_h^{f_h} = \pi_{k(h)}^{pe_{k(h)}}$ or $f_h = pe_{k(h)}$.
+\item[(3)]
+Hence,
+$$x + y\omega = v \left( \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}} \right)^p,$$
+where $\alpha = \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}} \in \mathbb{Z}[\omega]$
+and $v$ is unit.
 \end{enumerate}
 $\Box$ \\\\
 
