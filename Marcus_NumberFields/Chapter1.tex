@@ -32,6 +32,10 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \emph{Exercise 1.1-1.9: Define $N: \mathbb{Z}[i] \rightarrow \mathbb{Z}$ by
 $N(a+bi) = a^2 + b^2$.} \\\\
 
@@ -89,6 +93,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.2.}
 \emph{Let $\alpha \in \mathbb{Z}[i]$.
 Show that $\alpha$ is a unit iff $N(\alpha) = 1$.
@@ -115,6 +123,10 @@ Conclusion: a unit $\alpha = a+bi$ of $\mathbb{Z}[i]$
 is satisfying the equation $N(\alpha) = a^2 + b^2 = 1$ by (1)(2).
 That is, the only unit of $\mathbb{Z}[i]$ are $\pm 1$ and $\pm i$.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -163,6 +175,10 @@ Every prime $p \equiv 1 \pmod{4}$ is reducible in $\mathbb{Z}[i]$ (Exercise 1.8)
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.4.}
 \emph{Show that $1-i$ is irreducible in $\mathbb{Z}$
 and that $2 = u(1-i)^2$ for some unit $u$.} \\
@@ -180,6 +196,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.5.}
 \emph{Notice that
 $(2+i)(2-i) = 5 = (1+2i)(1-2i)$.
@@ -189,6 +209,10 @@ How is this consistent with unique factorization?} \\
 Since $2+i = i(1-2i)$ and $2-i = (-i)(1+2i)$,
 the factorization is unique up to order and multiplication of primes by units.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -226,6 +250,10 @@ $\alpha$ is a product of irreducible elements.
 \end{enumerate}
 By induction, the result is established.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -307,6 +335,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.8.}
 \emph{We will use the unique factorization in $\mathbb{Z}[i]$ to prove that
 every prime $p \equiv 1 \pmod{4}$ is a sum of two squares.
@@ -365,6 +397,10 @@ $N(a+bi) = p$,
 or $a^2+b^2 = p$,
 or $p$ is a sum of two squares.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -428,6 +464,282 @@ $\Box$ \\\\
 
 
 
+\emph{Exercise 1.10 - 1.14: Let
+$\omega
+= e^{\frac{2\pi i}{3}}
+= -\frac{1}{2}+\frac{\sqrt{3}}{2}i$.
+Define $N: \mathbb{Z}[\omega] \to \mathbb{Z}$ by
+$N(a+b\omega) = a^2-ab+b^2$. } \\\\
+
+
+
+\textbf{Exercise 1.10.}
+\emph{Show that if $a+b\omega$ is written in the form $u+vi$
+where $u$ and $v$ are real, then $N(a+b\omega)=u^2+v^2$.}
+
+\emph{Proof.}
+By $\omega = -\frac{1}{2}+\frac{\sqrt{3}}{2}i$,
+write
+$$a+b\omega
+= \left( a - \frac{1}{2}b \right) + \left( \frac{\sqrt{3}}{2}b \right) i.$$
+Here $u = a - \frac{1}{2}b \in \mathbb{R}$ and
+$v = \frac{\sqrt{3}}{2}b \in \mathbb{R}$.
+Hence $u^2+v^2 = (a - \frac{1}{2}b)^2 + (\frac{\sqrt{3}}{2}b)^2 = a^2 - ab + b^2
+= N(a+b\omega)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.11.}
+\emph{Show that for all $\alpha, \beta \in \mathbb{Z}[\omega]$,
+$N(\alpha\beta) = N(\alpha)N(\beta)$,
+either by direct computation or by using Exercise 1.10.
+Conclude that if $\alpha \mid \gamma$ in $\mathbb{Z}[\omega]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Direct computation.}
+Note that $1+\omega+\omega^2 = 0$ or $\omega^2 = -1-\omega$.
+Write $\alpha = a+b\omega, \beta=c+d\omega$ where $a, b, c, d \in \mathbb{Z}$.
+Thus,
+\begin{align*}
+N(\alpha\beta)
+&= N((a+b\omega)(c+d\omega)) \\
+&= N(ac + (ad+bc)\omega + bd\omega^2) \\
+&= N(ac + (ad+bc)\omega + bd(-1-\omega)) \\
+&= N((ac-bd) + (ad+bc-bd)\omega) \\
+&= (ac-bd)^2 - (ac-bd)(ad+bc-bd) + (ad+bc-bd)^2 \\
+&= (a^2 - ab + b^2)(c^2 - cd + d^2), \\
+N(\alpha)N(\beta)
+&= N(a+b\omega) N(c+d\omega) \\
+&= (a^2 - ab + b^2)(c^2 - cd + d^2).
+\end{align*}
+\item[(2)]
+\emph{Exercise 1.10.}
+The result is established by Exercise 1.10 and Exercise 1.1.
+\item[(3)]
+\emph{Using the fact that $N(a+b\omega) = (a+b\omega)\overline{(a+b\omega)}$.}
+Similar to the argument of Exercise 1.1.
+\item[(4)]
+\emph{Show that if $\alpha \mid \gamma$ in $\mathbb{Z}[\omega]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
+Similar to the argument of Exercise 1.1.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.12.}
+\emph{Let $\alpha \in \mathbb{Z}[\omega]$.
+Show that $\alpha$ is a unit iff $N(\alpha) = 1$,
+and find all units in $\mathbb{Z}[\omega]$.
+(There are six of them.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$(\Longrightarrow)$}
+Since $\alpha$ is a unit, there is $\beta \in \mathbb{Z}[\omega]$ such that
+$\alpha \beta = 1$.
+By Exercise 1.11, $N(\alpha \beta) = N(1)$, or $N(\alpha) N(\beta) = 1$.
+Since the image of $N$ is nonnegative integers, $N(\alpha) = 1$.
+\item[(2)]
+\emph{$(\Longleftarrow)$}
+By Exercise 1.10, $N(\alpha) = \alpha \overline{\alpha}$,
+or $1 = \alpha \overline{\alpha}$ since $N(\alpha) = 1$.
+That is, $\overline{\alpha} \in \mathbb{Z}[\omega]$ is
+the inverse of $\alpha \in \mathbb{Z}[\omega]$.
+\item[(3)]
+By (1), we solve the equation $N(\alpha) = a^2 - ab + b^2 = 1$,
+or $4 = (2a-b)^2 + 3b^2$.
+There are 2 possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  $2a-b = \pm 1$, $b = \pm 1$.
+  \item[(b)]
+  $2a-b = \pm 2$, $b = \pm 0$.
+  \end{enumerate}
+  Solve these 6 pairs of equations yields the result
+  $\pm 1, \pm \omega, \pm \omega^2$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.13.}
+\emph{Show that $1-\omega$ is irreducible in $\mathbb{Z}[\omega]$,
+and that $3 = u(1-\omega)^2$ for some unit $u$. } \\
+
+$3$ is not irreducible in $\mathbb{Z}[\omega]$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$N(1-\omega) = 3$ is an integer prime.
+Similar to the argument in Exercise 1.3,
+$1-\omega$ is irreducible in $\mathbb{Z}[\omega]$.
+\item[(2)]
+Note that $1+\omega+\omega^2=0$.
+So
+$(1-\omega)^2 = 1-2\omega+\omega^2 = 3(-\omega)$, or
+$(-\omega^2)(1-\omega)^2 = 3$.
+By Exercise 1.12, $-\omega^2$ is unit.
+Hence $3 = u(1-\omega)^2$ for some unit $u = -\omega^2$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.14.}
+\emph{Modify Exercise 1.7 to show that $\mathbb{Z}[\omega]$ is a PID, hence a UFD.
+Here the squares are replaced by parallelograms;
+one of them has vertices $0, \alpha, \omega\alpha, (\omega+1)\alpha$,
+and all others are translates of this one.
+Use Exercise 1.10 for the geometric argument at the end. } \\
+
+Similar to Exercise 1.7. \\
+
+\emph{Proof (without geometric intuition).}
+Define $N$ on $\mathbb{Q}[\omega]$ by $N(a+b\omega) = a^2-ab+b^2$ where
+$a+b\omega \in \mathbb{Q}[\omega]$ as usual.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathbb{Z}[\omega]$ is a Euclidean domain.}
+Given $\alpha = a+b\omega \in \mathbb{Z}[\omega]$ and
+$\gamma = c+d\omega \in \mathbb{Z}[\omega]$ with $\gamma \neq 0$.
+It suffices to show there exist $\delta$ and $\rho$ such that the identity
+$\alpha = \gamma\delta + \rho$ holds and
+either $\rho = 0$ or $N(\rho) < N(\gamma)$.
+\begin{enumerate}
+\item[(a)]
+\emph{Pick $\delta \in \mathbb{Z}[\omega].$
+(Intuition: Pick the `integer part' of $\frac{\alpha}{\gamma}$
+as we did in integer numbers.)}
+Write $\frac{\alpha}{\gamma} = r+s\omega \in \mathbb{Q}[\omega]$.
+Then we pick $\delta = m+n\omega \in \mathbb{Z}[\omega]$ such that
+$|r-m| \leq \frac{1}{2}$ and $|s-n| \leq \frac{1}{2}$.
+Therefore,
+\begin{align*}
+N\left( \frac{\alpha}{\gamma} - \delta \right)
+&\leq |r-m|^2 + |r-m||s-n| + |s-n|^2 \\
+&\leq \frac{1}{4} + \frac{1}{4} + \frac{1}{4} \\
+&= \frac{3}{4}.
+\end{align*}
+\item[(b)]
+\emph{Pick $\rho \in \mathbb{Z}[\omega]$.}
+Clearly we can pick $\rho = \alpha - \gamma\delta \in \mathbb{Z}[\omega]$.
+Therefore, $\rho = 0$ or
+\begin{align*}
+N(\rho)
+&= N(\alpha - \gamma\delta) \\
+&= N\left( \gamma\left( \frac{\alpha}{\gamma} - \delta \right) \right) \\
+&= N(\gamma) N\left( \frac{\alpha}{\gamma} - \delta \right) \\
+&\leq \frac{3}{4} N(\gamma) \\
+&< N(\gamma).
+\end{align*}
+\end{enumerate}
+\item[(2)]
+\emph{Show that every Euclidean domain $R$ is a PID.}
+Given any ideal $I$ of $R$.
+Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized.
+\begin{enumerate}
+  \item[(a)]
+  $R\alpha \subseteq I$ clearly.
+  \item[(b)]
+  Conversely, for any $\beta \in I$, there are $\delta, \rho \in R$
+  such that $\beta = \alpha \delta + \rho$, where either $\rho = 0$
+  or $N(\rho) < N(\alpha)$.
+  Since $\rho = \beta - \alpha \delta \in I$,
+  we cannot have $N(\rho) < N(\alpha)$ by the minimality of $N(\alpha)$.
+  Therefore, $\rho = 0$ and $\beta = \alpha \delta \in R\alpha$,
+  or $R\alpha \supseteq I$.
+\end{enumerate}
+\end{enumerate}
+By (1)(2),
+$\mathbb{Z}[i]$ is a PID.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.15.}
+\emph{Here is a proof of Fermat's conjecture for $n = 4$:
+If $x^4 + y^4 = z^4$ has a solution in positive integers,
+then so does $x^4 + y^4 = w^2$.
+Let $x,y,w$ be a solution with smallest possible $w$.
+Then $x^2, y^2, w$ is a primitive Pythagorean triple.
+Assuming (without loss of generality) that $x$ is odd,
+we can write
+$$x^2 = m^2-n^2, y^2 = 2mn, w = m^2+n^2$$
+with $m$ and $n$ are relatively prime positive integers, not both odd. }
+\begin{enumerate}
+\item[(a)]
+\emph{Show that
+$$x=r^2-s^2, n=2rs, m=r^2+s^2$$
+with $r$ and $s$ are relatively prime positive integers, not both odd. }
+\item[(b)]
+\emph{Show that $r,s$ and $m$ are pairwise relatively prime.
+Using $y^2 = 4rsm$, conclude that $r$, $s$ and $m$ are all squares, say
+$a^2$, $b^2$ and $c^2$. }
+\item[(c)]
+\emph{Show that $a^4+b^4=c^2$, and that this contradicts minimality of $w$. } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Write $x^2+n^2=m^2$ by moving $n^2$ of $x^2 = m^2-n^2$ to the left side.
+Notice that $x$ is odd, and thus
+$x=r^2-s^2, n=2rs, m=r^2+s^2$
+with $r$ and $s$ are relatively prime positive integers, not both odd.
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+It suffices to show that $(r,m) = 1$.
+By assumption, $(r,s)=1$.
+So
+$(r,s) = 1 \Rightarrow (r,s^2) = 1 \Rightarrow (r,r^2+s^2) = 1$
+and note that $m=r^2+s^2$ to get the result.
+\item[(2)]
+$y^2 = 2mn = 2m(2rs) = 4rsm$ by (a).
+Since $r,s$ and $m$ are pairwise relatively prime,
+$r,s$ and $m$ are all squares.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+By (b), $r=a^2$, $s=b^2$, $m=c^2$.
+By (a), $m=r^2+s^2$, or $c^2 = (a^2)^2 + (b^2)^2 = a^4 + b^4$.
+However, $w = m^2+n^2 > m^2 > m = c^2 > c$, contrary to the minimality of $w$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \emph{Exercise 1.16-1.28: Let $p$ be an odd prime,
 $\omega = e^{\frac{2\pi i}{p}}$.} \\\\
 
@@ -436,10 +748,8 @@ $\omega = e^{\frac{2\pi i}{p}}$.} \\\\
 \textbf{Exercise 1.16.}
 \emph{Show that
 $$(1-\omega)(1-\omega^2) \cdots (1-\omega^{p-1}) = p$$
-by considering equation (2).} \\
-
-\textbf{Equation (2).}
-$t^p - 1 = (t-1)(t-\omega)(t-\omega^2) \cdots (t-\omega^{p-1})$. \\
+by considering equation
+$t^p - 1 = (t-1)(t-\omega)(t-\omega^2) \cdots (t-\omega^{p-1})$.} \\
 
 \emph{Proof.}
 Note that
@@ -448,6 +758,95 @@ Cancel out $t-1$ of Equation (2),
 $$t^{p-1} + t^{p-2} + \cdots + t + 1 = (t-\omega)(t-\omega^2) \cdots (t-\omega^{p-1}).$$
 Put $t = 1$ to get
 $p = (1-\omega)(1-\omega^2) \cdots (1-\omega^{p-1})$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.17.}
+\emph{Let $x^p + y^p = z^p$.
+Suppose that $\mathbb{Z}[\omega]$ is a UFD and $\pi \mid x + y\omega$,
+and $\pi$ is a prime in $\mathbb{Z}[\omega]$.
+Show that $\pi$ does not divide any of the other factors on the left side of
+$$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = z^p$$
+by showing that if it did, then $\pi$ would divide both $z$ and $yp$
+(Hint: Use Exercise 1.16);
+but $z$ and $yp$ are relatively prime (assuming $p$ divides none of $x, y, z$),
+hence $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$.
+How is this a contradiction? } \\
+
+\emph{Proof.}
+Write $$z = u {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$$ where
+$u$ is unit and $\pi_k$ $(1 \leq k \leq m)$ are prime in $\mathbb{Z}[\omega]$ and
+$e_k \in \mathbb{Z}^+$ $(1 \leq k \leq m)$.
+Since $\mathbb{Z}[\omega]$ is a UFD by assumption,
+the factorization of $z$ is unique up to order and units.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\pi \mid z$.}
+Since $\pi \mid x + y\omega$, $\pi \mid z^p$.
+The factorization of $z^p$ is
+$$z^p = u^p {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+$u^p$ is unit, and $\pi | z^p$ implies that $\pi = \pi_k$ for some $k$,
+that is, $\pi \mid z$.
+\item[(2)]
+\emph{Show that $\pi \mid yp$ if $\pi$ were divide any of
+the other factors on the left side of
+$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = z^p$.}
+Say $\pi \mid x+y\omega^k$ for some $k \neq 1$.
+So that $\pi \mid ((x+y\omega) - (x+y\omega^k))$,
+or $\pi \mid y(\omega - \omega^k)$.
+  \begin{enumerate}
+  \item[(a)]
+  $k > 1$. $\pi \mid y\omega(1 - \omega^{k-1})$.
+  By Exercise 1.16, $\pi \mid y\omega p$, or $\pi \mid yp$ since $\omega$ is unit.
+  ($\omega^{p-1}$ is the inverse of $\omega$ since $\omega \cdot \omega^{p-1} = 1$.)
+  \item[(b)]
+  $k = 0$. $\pi \mid y(\omega - 1)$, or $\pi \mid y(1 - \omega)$.
+  By Exercise 1.16, $\pi \mid yp$.
+  \end{enumerate}
+In any case, $\pi \mid yp$.
+\item[(3)]
+Note that $z$ and $yp$ are integers, and they are relatively prime by the assumption
+that $p$ divides none of $x, y, z$.
+Therefore, on $\mathbb{Z}$ we have $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$.
+\item[(4)]
+$zm + ypn = 1$ is also true in $\mathbb{Z}[\omega]$.
+Therefore, by (1)(2) we have $\pi \mid (zm + ypn)$ or $p \mid 1$,
+or $\pi$ is unit, contrary to the primality of $\pi$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.29.}
+\emph{Let $\omega = \exp(\frac{2\pi i}{23})$.
+Verify that the product
+$$(1+\omega^2+\omega^4+\omega^5+\omega^6+\omega^{10}+\omega^{11})
+(1+\omega+\omega^5+\omega^6+\omega^7+\omega^9+\omega^{11})$$
+is divisible by $2$ in $\mathbb{Z}[\omega]$,
+although neither factor is.
+It can be shown (Exercise 3.17) that $2$ is an irreducible element in $\mathbb{Z}[\omega]$;
+it follows that $\mathbb{Z}[\omega]$ cannot be a UFD. } \\
+
+\emph{Proof.}
+Note that $\sum_{k=0}^{22} \omega^k = 0$.
+So
+\begin{align*}
+&(1+\omega^2+\omega^4+\omega^5+\omega^6+\omega^{10}+\omega^{11})
+(1+\omega+\omega^5+\omega^6+\omega^7+\omega^9+\omega^{11}) \\
+=& 2(\omega^5+\omega^6+\omega^7+\omega^9+\omega^{10}+3\omega^{11}
++\omega^{12}+\omega^{13}+\omega^{15}+\omega^{16}+\omega^{17})
+\end{align*}
+is divisible by $2$ in $\mathbb{Z}[\omega]$,
+although neither factor is.
 $\Box$ \\\\
 
 
@@ -594,9 +993,12 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 1.31.}
+\textbf{Exercise 1.32.}
 \emph{Show that the ideal classes in $R$ form a group iff for every ideal $A$
 there is an ideal $B$ such that $AB$ is principal. } \\
+
+\emph{Note.}
+The Picard group of the spectrum of a Dedekind domain is its ideal class group. \\
 
 \emph{Proof.}
 Let $[A]$ be the ideal class representing by a nonzero ideal $A$ of $R$.
