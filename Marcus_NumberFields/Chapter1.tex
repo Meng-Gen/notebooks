@@ -858,6 +858,140 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 1.23.}
+\emph{Show that if $\beta \equiv \gamma \pmod{p}$,
+then $\overline{\beta} \equiv \overline{\gamma} \pmod{p}$
+where the bar denotes complex conjugation. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\overline{\delta} \in \mathbb{Z}[\omega]$ for any
+$\delta \in \mathbb{Z}[\omega]$. }
+Write $$\delta = a_0 + a_1 \omega + \cdots + a_{p-1} \omega^{p-1}$$
+where $a_0, \ldots, a_{p-1} \in \mathbb{Z}$.
+Take the complex conjugation to get
+\begin{align*}
+\overline{\delta}
+&= \overline{a_0} + \overline{a_1} \cdot \overline{\omega} + \cdots
+  + \overline{a_{p-1}} \cdot \overline{\omega}^{p-1} \\
+&= a_0 + a_1 \overline{\omega} + \cdots + a_{p-1} \overline{\omega}^{p-1}
+  &\text{(Every $a_k \in \mathbb{Z}$)} \\
+&= a_0 + a_1 \omega^{p-1} + \cdots + a_{p-1} \omega \in \mathbb{Z}[\omega].
+  &\text{($\omega^p = 1$)}
+\end{align*}
+\item[(2)]
+\begin{align*}
+&\beta \equiv \gamma \pmod{p} \\
+\Longleftrightarrow&
+\beta - \gamma = \delta p \text{ for some } \delta \in \mathbb{Z}[\omega] \\
+\Longleftrightarrow&
+\overline{\beta} - \overline{\gamma}
+= \overline{\delta} p \text{ for some } \delta \in \mathbb{Z}[\omega]
+  &\text{(Complex conjugation)} \\
+\Longleftrightarrow&
+\overline{\beta} - \overline{\gamma}
+= \delta' p \text{ for some } \delta' \in \mathbb{Z}[\omega]
+  &\text{((1))} \\
+\Longleftrightarrow&
+\overline{\beta} \equiv \overline{\gamma} \pmod{p}
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.24.}
+\emph{Show that
+$(\beta+\gamma)^p \equiv \beta^p + \gamma^p \pmod{p}$
+and generalize this to sums of arbitrarily many terms by induction. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Binomial theorem gives us
+$$
+(\beta+\gamma)^p
+= \sum_{k=0}^{p}{p \choose k}\beta^k\gamma^{p-k}
+= \beta^p+\gamma^p + \sum_{k=1}^{p-1}{p \choose k}\beta^k\gamma^{p-k}.$$
+\item[(2)]
+Note that every binomial coefficient ${p \choose k}$ is divided by $p$ in $\mathbb{Z}$
+for $1 \leq k \leq p-1$.
+Also, every term $\beta^k\gamma^{p-k}$ is in $\mathbb{Z}[\omega]$.
+So $(\beta+\gamma)^p - \beta^p - \gamma^p = \delta p$
+for some $\delta \in \mathbb{Z}[\omega]$.
+Hence the result holds.
+\item[(3)]
+\emph{In general,}
+$$\left( \sum_{k=1}^{n} \alpha_k \right)^p
+\equiv \sum_{k=1}^{n} \alpha_k^p \pmod{p}.$$
+Induction by
+$(\alpha_1+\alpha_2)^p \equiv \alpha_1^p + \alpha_2^p \pmod{p}$
+and
+$\left( \sum_{k=1}^{n+1} \alpha_k \right)^p
+\equiv \left( \sum_{k=1}^{n} \alpha_k \right)^p + \alpha_{n+1}^p
+\equiv \left( \sum_{k=1}^{n} \alpha_k^p \right) + \alpha_{n+1}^p
+\equiv \sum_{k=1}^{n+1} \alpha_k^p \pmod{p}.$
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.25.}
+\emph{Show that for all $\alpha \in \mathbb{Z}[\omega]$,
+$\alpha^p$ is congruent $\pmod{p}$ to some $a \in \mathbb{Z}$.
+(Hint: Write $\alpha$ in terms of $\omega$ and use Exercise 1.24.) } \\
+
+\emph{Proof (Hint).}
+Write $$\alpha = a_0 + a_1 \omega + \cdots + a_{p-1} \omega^{p-1}$$
+where $a_0, \ldots, a_{p-1} \in \mathbb{Z}$.
+By Exercise 1.24,
+\begin{align*}
+\alpha^p
+&\equiv a_0^p + (a_1 \omega)^p + \cdots + (a_{p-1} \omega^{p-1})^p \\
+&\equiv a_0^p + a_1^p \omega^p + \cdots + a_{p-1}^p (\omega^{p-1})^p \\
+&\equiv a_0^p + a_1^p \omega^p + \cdots + a_{p-1}^p (\omega^p)^{p-1} \\
+&\equiv a_0^p + a_1^p + \cdots + a_{p-1}^p.
+  &\text{($\omega^p = 1$)}
+\end{align*}
+Here $a_0^p + a_1^p + \cdots + a_{p-1}^p \in \mathbb{Z}$,
+and thus $\alpha^p$ is congruent $\pmod{p}$ to some integer.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{Exercise 1.26-1.28: Now assume $p \geq 5$.
+We will show that if $x+y\omega = u\alpha^p \pmod{p}$,
+$\alpha \in \mathbb{Z}[\omega]$,
+$u$ a unit in $\mathbb{Z}[\omega]$,
+$x$ and $y$ integers not divisible by $p$,
+then $x \equiv y \pmod{p}$.
+For this we will need the following result, proved by Kummer,
+on the units of $\mathbb{Z}[\omega]$:} \\
+
+\emph{Lemma: If $u$ is a unit in $\mathbb{Z}[\omega]$ and
+$\overline{u}$ is its complex conjugate, then $u/\overline{u}$
+is a power of $\omega$.
+(For the proof, see Exercise 2.12.)} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.29.}
 \emph{Let $\omega = \exp(\frac{2\pi i}{23})$.
 Verify that the product
