@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
 \parindent=0pt
 
@@ -16,7 +17,9 @@
 
 \begin{document}
 
-\textbf{\Large Chapter 1: Galois Theory} \\\\
+
+
+\textbf{\Large Chapter I: Galois Theory} \\\\
 
 
 
@@ -25,11 +28,20 @@
 
 
 
-\textbf{\large Section 1.1: Field Extensions} \\\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-\textbf{Problem 1.1.1.}
+($\star$: Important problems.) \\\\
+
+
+
+\textbf{\large Section 1: Field Extensions} \\\\
+
+
+
+($\star$)
+\textbf{Problem 1.1.}
 \emph{Let $K$ be a field extension of $F$.
 By defining scalar multiplication for $\alpha \in F$ and $a \in K$
 by $\alpha \cdot a = \alpha a$, the multiplication in $K$,
@@ -79,7 +91,12 @@ $\Box$ \\\\
 
 
 
-\textbf{Problem 1.1.2.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+($\star$)
+\textbf{Problem 1.2.}
 \emph{If $K$ is a field extension of $F$, prove that $[K:F] = 1$
 if and only if $K = F$.} \\
 
@@ -99,7 +116,93 @@ $\Box$ \\\\
 
 
 
-\textbf{Problem 1.1.5.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.3.}
+\emph{Let $K$ be a field extension of $F$, and let $a \in K$.
+Show that the evaluation map $\text{ev}_a: F[x] \to K$ given by
+$\text{ev}_a(f(x)) = f(a)$ is a ring and and $F$-vector space homomorphism.
+(Such a map is called an $F$-algebra homomorphism.) } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$\text{ev}_a$ is a ring homomorphism.}
+  \begin{enumerate}
+  \item[(a)]
+  $\text{ev}_a(f(x)+g(x)) = f(a) + g(a) = \text{ev}_a(f(x)) + \text{ev}_a(g(x))$.
+  \item[(b)]
+  $\text{ev}_a(f(x)g(x)) = g(a)g(b) = \text{ev}_a(f(x)) \text{ev}_a(g(x))$.
+  \item[(c)]
+  $\text{ev}_a(1) = 1$.
+  \end{enumerate}
+\item[(2)]
+\emph{$\text{ev}_a$ is an $F$-vector space homomorphism.}
+  \begin{enumerate}
+  \item[(a)]
+  $\text{ev}_a(f(x)+g(x)) = f(a) + g(a) = \text{ev}_a(f(x)) + \text{ev}_a(g(x))$.
+  \item[(b)]
+  Given $c \in F$, $\text{ev}_a(cf(x)) = cf(a) = c\text{ev}_a(f(x))$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.4.}
+\emph{Prove Proposition 1.9:
+Let $K$ be a field extension of $F$ and let $a_1, \ldots, a_n \in K$.
+Then
+$$F[a_1, \ldots, a_n] = \{ f(a_1, \ldots, a_n) : f \in F[x_1, \ldots, x_n] \}$$
+and
+$$F(a_1, \ldots, a_n) = \left\{
+\frac{f(a_1, \ldots, a_n)}{g(a_1, \ldots, a_n)} : f, g \in F[x_1, \ldots, x_n],
+g(a_1, \ldots, a_n) \neq 0
+\right\},$$
+so $F(a_1, \ldots, a_n)$ is the quotient field of $F[x_1, \ldots, x_n]$.
+} \\
+
+\emph{Proof (Proposition 1.8).}
+\begin{enumerate}
+\item[(1)]
+The evaluation map
+$\text{ev}_{(a_1, \ldots, a_n)}: F[x_1, \ldots, x_n] \to K$ has image
+$$\{ f(a_1, \ldots, a_n) : f \in F[x_1, \ldots, x_n] \},$$
+so this set is a subring of $K$.
+\item[(2)]
+If $R$ is a subring of $K$ that contains $F$ and $a_1, \ldots, a_n$,
+then $$f(a_1, \ldots, a_n) \in R$$ for any $f(x_1, \ldots, x_n) \in F[x_1, \ldots, x_n]$
+by closure of addition and multiplication.
+\item[(3)]
+So
+$\{ f(a_1, \ldots, a_n) : f \in F[x_1, \ldots, x_n] \}$ is contained in all subrings
+of $K$ that contains $F$ and $a_1, \ldots, a_n$.
+Hence
+$$F[a_1, \ldots, a_n] = \{ f(a_1, \ldots, a_n) : f \in F[x_1, \ldots, x_n] \}.$$
+\item[(4)]
+The quotient field of $F[a_1, \ldots, a_n]$ is then the set
+$$\left\{
+\frac{f(a_1, \ldots, a_n)}{g(a_1, \ldots, a_n)} : f, g \in F[x_1, \ldots, x_n],
+g(a_1, \ldots, a_n) \neq 0
+\right\}.$$
+It is clearly is contained in any subfield of $K$ that contains $F[a_1, \ldots, a_n]$;
+hence, it is equal to $F(a_1, \ldots, a_n)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+($\star$)
+\textbf{Problem 1.5.}
 \emph{Show that 
 $\mathbb{Q}(\sqrt{5}, \sqrt{7}) = \mathbb{Q}(\sqrt{5} + \sqrt{7})$.} \\
 
@@ -131,7 +234,12 @@ $\Box$ \\\\
 
 
 
-\textbf{Problem 1.1.9.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+($\star$)
+\textbf{Problem 1.9.}
 \emph{If $K$ is an extension of $F$ such that $[K:F]$ is prime,
 show that there are no intermediate fields between $K$ and $F$.} \\
 
@@ -140,13 +248,108 @@ Let $L$ be any field such that $F \subseteq L \subseteq K$.
 By Proposition 1.20,
 $$[K:F] = [K:L][L:F].$$
 Since $[K:F]$ is prime, $[K:L] = 1$ or $[L:F] = 1$.
-By Problem 1.1.2, $L=K$ or $L=F$,
+By Problem 1.2, $L=K$ or $L=F$,
 or there are no intermediate fields between $K$ and $F$.
 $\Box$ \\\\
 
 
 
-\textbf{Problem 1.1.23.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.12.}
+\emph{Show that $\mathbb{Q}(\sqrt{2})$ and $\mathbb{Q}(\sqrt{3})$
+are not isomorphic as fields but are isomorphic as vector spaces over $\mathbb{Q}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathbb{Q}(\sqrt{2})$ and $\mathbb{Q}(\sqrt{3})$
+are not isomorphic as fields.}
+(Reductio ad absurdum)
+If $\varphi: \mathbb{Q}(\sqrt{2}) \to \mathbb{Q}(\sqrt{3})$ were an isomorphism
+as fields, then $\varphi$ is an identity map on $\mathbb{Q}$, and
+\begin{align*}
+&\varphi(\sqrt{2}) = a + b\sqrt{3} \text{ for some } a, b \in \mathbb{Q} \\
+\Longrightarrow&
+\varphi(\sqrt{2})\varphi(\sqrt{2}) = (a + b\sqrt{3})^2 \\
+\Longrightarrow&
+\varphi(\sqrt{2} \sqrt{2}) = (a + b\sqrt{3})^2 \\
+\Longrightarrow&
+\varphi(2) = a^2 + 3b^2 + 2ab\sqrt{3} \\
+\Longrightarrow&
+2 = a^2 + 3b^2 + 2ab\sqrt{3}.
+\end{align*}
+If $2ab \neq 0$, then $\sqrt{3} = \frac{2-a^2-3b^2}{2ab} \in \mathbb{Q}$,
+which is absurd.
+Hence $2ab = 0$.
+  \begin{enumerate}
+  \item[(a)]
+  $a = 0$.
+  Write $b = \frac{m}{n} \in \mathbb{Q}$ where $m, n \in \mathbb{Z}$ and $(m, n) = 1$.
+  Hence
+  $$2n^2 = 3m^2.$$
+  So $2 \mid 3m^2$, $2 \mid m^2$, $2 \mid m$. So $4 \mid 2n^2$, $2 \mid n^2$, $2 \mid n$.
+  Hence $2 \mid (m,n)$, contrary to the assumption that $(m,n) = 1$.
+  \item[(b)]
+  $b = 0$.
+  $2 = a^2$.
+  Write $a = \frac{m}{n} \in \mathbb{Q}$ where $m, n \in \mathbb{Z}$ and $(m, n) = 1$.
+  Similar to the argument in (a), we will reach a contradiction.
+  \end{enumerate}
+By (a)(b), no such isomorphism $\varphi$, that is,
+$\mathbb{Q}(\sqrt{2})$ and $\mathbb{Q}(\sqrt{3})$
+are not isomorphic as fields.
+\item[(2)]
+\emph{Show that $\mathbb{Q}(\sqrt{2})$ and $\mathbb{Q}(\sqrt{3})$
+are isomorphic as $\mathbb{Q}$-vector spaces.}
+$[\mathbb{Q}(\sqrt{2}):\mathbb{Q}] = [\mathbb{Q}(\sqrt{3}):\mathbb{Q}] = 2$.
+There is a natural map $\varphi: \mathbb{Q}(\sqrt{2}) \to \mathbb{Q}(\sqrt{3})$
+defined by $\varphi(a + b\sqrt{2}) = a + b\sqrt{3}$.
+Clearly $\varphi$ is well-defined, linear, injective and surjective.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.16.}
+\emph{Let $\mathbb{A}$ be the algebraic closure of $\mathbb{Q}$ in $\mathbb{C}$.
+Prove that $[\mathbb{A}:\mathbb{Q}] = \infty$. } \\
+
+\emph{Proof (Example 1.16).}
+By Example 1.16, $[\mathbb{Q}(\sqrt[n]{2}):\mathbb{Q}] = n.$
+Therefore,
+$$[\mathbb{A}:\mathbb{Q}]
+= [\mathbb{A}:\mathbb{Q}(\sqrt[n]{2})][\mathbb{Q}(\sqrt[n]{2}):\mathbb{Q}]
+= [\mathbb{A}:\mathbb{Q}(\sqrt[n]{2})]n$$
+for arbitrary $n \in \mathbb{Z}^+$.
+Hence $[\mathbb{A}:\mathbb{Q}] = \infty$.
+$\Box$ \\
+
+\emph{Proof (Example 1.16).}
+Given a prime number $p$.
+By Example 1.16, $[\mathbb{Q}(\rho):\mathbb{Q}] = p-1$
+where $\rho = \exp(2\pi i/p)$.
+Therefore,
+$$[\mathbb{A}:\mathbb{Q}]
+= [\mathbb{A}:\mathbb{Q}(\rho)][\mathbb{Q}(\rho):\mathbb{Q}]
+= [\mathbb{A}:\mathbb{Q}(\rho)](p-1)$$
+for arbitrary prime $p$.
+Hence $[\mathbb{A}:\mathbb{Q}] = \infty$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.23.}
 \emph{Recall that the characteristic of a ring $R$ with identity
 is the smallest positive integer $n$ for which $n \cdot 1 = 0$,
 if such an $n$ exists, or else the characteristic is $0$.
@@ -199,7 +402,11 @@ $\Box$ \\\\
 
 
 
-\textbf{Problem 1.1.24.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.24.}
 \emph{For any positive integer $n$,
 give an example of a ring of characteristic $n$.} \\
 
@@ -209,7 +416,11 @@ $\Box$ \\\\
 
 
 
-\textbf{Problem 1.1.25.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.25.}
 \emph{If $R$ is an integral domain, show that either
 $\text{char}(R) = 0$ or $\text{char}(R)$ is prime.} \\
 
@@ -231,18 +442,15 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\textbf{\large Section 1.2: Automorphisms} \\\\
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-\textbf{Problem 1.2.1.}
+\textbf{\large Section 2: Automorphisms} \\\\
+
+
+
+\textbf{Problem 2.1.}
 \emph{Show that the only automorphism of $\mathbb{Q}$ is the identity.} \\
 
 \emph{Proof.}
@@ -287,7 +495,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Problem 1.2.2.}
+\textbf{Problem 2.2.}
 \emph{Show that the only automorphism of $\mathbb{R}$ is the identity.
 (Hint: If $\sigma$ is an automorphism, show that $\sigma|_{\mathbb{Q}} = \text{id}$,
 and if $a > 0$, then $\sigma(a) > 0$.
@@ -299,7 +507,7 @@ Why is this fact not a contradiction to this problem?)} \\
 Given any $\sigma \in \text{Aut}(\mathbb{R})$.
 \begin{enumerate}
 \item[(1)]
-Apply the same argument in Problem 1.2.1, we have $\sigma|_{\mathbb{Q}} = \text{id}$.
+Apply the same argument in Problem 2.1, we have $\sigma|_{\mathbb{Q}} = \text{id}$.
 Notice that $\sigma(a) \neq 0$ for any $a \neq 0$.
 \item[(2)]
 \emph{Show that $\sigma(a) > 0$ if $a > 0$.}
@@ -333,7 +541,7 @@ Automorphisms of the Complex Numbers. by Paul B. Yale (Pomona College)
 
 
 
-\textbf{Problem 1.2.4.}
+\textbf{Problem 2.4.}
 \emph{Let $B$ be an integral domain with quotient field $F$.
 If $\sigma: B \to B$ is a ring automorphism, show that $\sigma$ induces
 a ring automorphism $\sigma': F \to F$ defined by
@@ -424,6 +632,10 @@ Given any $c/d \in F$, want to show there is $a/b \in F$ such that $\sigma'(a/b)
   \exists \: a, b \in B \text{ such that } \sigma'(a/b) = c/d.
   \end{align*}
 \end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
