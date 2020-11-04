@@ -799,6 +799,7 @@ $(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = z^p$.}
 Say $\pi \mid x+y\omega^k$ for some $k \neq 1$.
 So that $\pi \mid ((x+y\omega) - (x+y\omega^k))$,
 or $\pi \mid y(\omega - \omega^k)$.
+Since $k \neq 1$, there are two possible cases.
   \begin{enumerate}
   \item[(a)]
   $k > 1$. $\pi \mid y\omega(1 - \omega^{k-1})$.
@@ -815,7 +816,7 @@ that $p$ divides none of $x, y, z$.
 Therefore, on $\mathbb{Z}$ we have $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$.
 \item[(4)]
 $zm + ypn = 1$ is also true in $\mathbb{Z}[\omega]$.
-Therefore, by (1)(2) we have $\pi \mid (zm + ypn)$ or $p \mid 1$,
+Therefore, by (1)(2) we have $\pi \mid (zm + ypn)$ or $\pi \mid 1$,
 or $\pi$ is unit, contrary to the primality of $\pi$.
 \end{enumerate}
 $\Box$ \\\\
@@ -855,6 +856,191 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.19.}
+\emph{Dropping the assumption that $\mathbb{Z}[\omega]$ is a UFD but
+using the fact that ideals factor uniquely (up to order) into prime ideals,
+show that the principal ideal $(x+y\omega)$ has no prime ideal factor in common with
+any of the other principal ideals on the left side of the equation
+$$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = (z)^p$$
+in which all factors are interpreted as principal ideals.
+(Hint: Modify the proof of Exercise 1.17 appropriately,
+using the fact that if $A$ is an ideal dividing another ideal $B$,
+then $A \supseteq B$.)} \\
+
+\emph{Proof.}
+Write $$(z) = {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$$ where
+$\pi_k$ $(1 \leq k \leq m)$ are distinct prime ideals of $\mathbb{Z}[\omega]$ and
+$e_k \in \mathbb{Z}^+$ $(1 \leq k \leq m)$.
+By assumption, the factorization of $z$ is unique up to order.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\pi \mid (z)$.}
+Since $\pi \mid (x + y\omega)$, $\pi \mid (z)^p$.
+The factorization of $(z)^p$ is
+$$(z)^p = {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+$\pi | (z)^p$ implies that $\pi = \pi_k$ for some $k$,
+that is, $\pi \mid (z)$.
+\item[(2)]
+\emph{Show that $\pi \mid (yp)$ if $\pi$ were divide any of
+the other factors on the left side of
+$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = (z)^p$.}
+Say $\pi \mid (x+y\omega^k)$ for some $k \neq 1$.
+So that $x+y\omega \in \pi$ and $x+y\omega^k \in \pi$,
+or $y(\omega - \omega^k) \in \pi$.
+Since $k \neq 1$, there are two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  $k > 1$. $y\omega(1 - \omega^{k-1}) \in \pi$.
+  By Exercise 1.16, $y\omega p \in \pi$, or $yp \in \pi$ since $\omega$ is unit.
+  ($\omega^{p-1}$ is the inverse of $\omega$ since $\omega \cdot \omega^{p-1} = 1$.)
+  \item[(b)]
+  $k = 0$. $y(\omega - 1) \in \pi$, or $y(1 - \omega) \in \pi$.
+  By Exercise 1.16, $yp \in \pi$.
+  \end{enumerate}
+In any case, $yp \in \pi$, or $\pi \mid (yp)$.
+\item[(3)]
+Note that $z$ and $yp$ are integers, and they are relatively prime by the assumption
+that $p$ divides none of $x, y, z$.
+Therefore, on $\mathbb{Z}$ we have $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$.
+\item[(4)]
+$zm + ypn = 1$ is also true in $\mathbb{Z}[\omega]$.
+Therefore, by (1)(2) we have $z \in \pi$ and $yp \in \pi$.
+So $zm + ypn \in \pi$ since $\pi$ is an ideal.
+So $1 \in \pi$ or $\pi = (1)$, contrary to the primality of $\pi$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.20.}
+\emph{Use Exercise 1.19 to show that
+$(x+y\omega) = I^p$ for some ideal $I$. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write $(z) = {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$ as Exercise 1.17.
+So
+$$(z)^p = {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+\item[(2)]
+Factorize $(x + y\omega) = q_1^{f_1} \cdots q_n^{f_n}$,
+where every $q_h$ $(1 \leq h \leq n)$ are distinct prime ideals of $\mathbb{Z}[\omega]$
+and $f_h \in \mathbb{Z}^+$.
+By assumption that $\mathbb{Z}[\omega]$ is a Dedekind domain,
+for every $q_h \mid (x + y\omega)$, there is some $k(h)$ such that $q_h = \pi_{k(h)}$
+and also $q_h^{f_h} = \pi_{k(h)}^{pe_{k(h)}}$ or $f_h = pe_{k(h)}$.
+\item[(3)]
+Hence,
+$$(x + y\omega) = \left( \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}} \right)^p,$$
+where $I = \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}}$
+is an ideal of $\mathbb{Z}[\omega]$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.21.}
+\emph{Show that every number of $\mathbb{Q}[\omega]$ is uniquely representable in the form
+$$a_0 + a_1\omega + a_2\omega^2 + \cdots + a_{p-2}\omega^{p-2},
+a_i \in \mathbb{Q} \:\: \forall \: i$$
+by show that $\omega$ is a root of the polynomial
+$$f(t) = t^{p-1} + t^{p-2} + \cdots + t + 1$$
+and that $f(t)$ is irreducible over $\mathbb{Q}$.
+(Hint: It is enough to show that $f(t+1)$ is irreducible,
+which can be established by Eisenstein's criterion.
+It helps to notice that $f(t+1) = \frac{(t+1)^p-1}{t}$.) } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Given any number $\alpha \in \mathbb{Q}[\omega]$.
+Show that}
+$$\alpha = a_0 + a_1\omega + a_2\omega^2 + \cdots + a_{p-2}\omega^{p-2},
+a_i \in \mathbb{Q} \:\: \forall \: i.$$
+Since $\omega^p = 1$, we can write
+$$\alpha = a_0' + a_1'\omega + a_2'\omega^2 + \cdots + a_{p-2}'\omega^{p-2} + a_{p-1}'\omega^{p-1},
+a_i \in \mathbb{Q} \:\: \forall \: i.$$
+Note that $\omega^{p-1} + \omega^{p-2} + \cdots + \omega + 1 = 0$,
+and thus we can replace $\omega^{p-1}$
+by $- \omega^{p-2} - \cdots - \omega - 1$.
+\item[(2)]
+\emph{Show that $\omega$ is a root of the polynomial
+$f(t) = t^{p-1} + t^{p-2} + \cdots + t + 1$.}
+$f(\omega) = \omega^{p-1} + \omega^{p-2} + \cdots + \omega + 1 = 0$.
+\item[(3)]
+\emph{Show that $f(t)$ is irreducible over $\mathbb{Q}$.}
+It suffices to show that $f(t+1)$ is irreducible over $\mathbb{Q}$.
+Write $(t-1)f(t) = t^p - 1$. So
+\begin{align*}
+tf(t+1)
+&= (t+1)^p - 1
+  &\text{(Put $t \mapsto t+1$)} \\
+&= \left( \sum_{k=0}^{p}{p \choose k}t^k \right) - 1
+  &\text{(Binomial theorem)} \\
+&= \sum_{k=1}^{p}{p \choose k}t^k, \\
+f(t+1)
+&= \sum_{k=1}^{p}{p \choose k}t^{k-1} \\
+&= t^{p-1} + p t^{p-2} + \cdots + \frac{p(p-1)}{2} t + p.
+\end{align*}
+By Eisenstein's criterion, $f(t+1)$ is irreducible over $\mathbb{Q}$.
+\item[(4)]
+To show the uniqueness, it suffices to show that the relation
+$$0 = a_0 + a_1\omega + a_2\omega^2 + \cdots + a_{p-2}\omega^{p-2}$$
+implies all $a_i = 0$.
+Say $g(t) = a_0 + a_1 t + a_2 t^2 + \cdots + a_{p-2} t^{p-2} \in \mathbb{Q}[t]$.
+Clearly $g(\omega) = 0$. By the minimality of $f(t)$, $g(t)$ is identical zero,
+or all $a_i = 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.22.}
+\emph{Use Exercise 1.21 to show that if
+$\alpha \in \mathbb{Z}[\omega]$ and $p \mid \alpha$,
+then (writing $\alpha = a_0 + a_1 \omega + \cdots + a_{p-2} \omega^{p-2}$,
+$a_i \in \mathbb{Z}$) all $a_i$ are divisible by $p$. } \\
+
+\emph{Proof.}
+Since $p \mid \alpha$, there is $\beta \in \mathbb{Z}[\omega]$
+such that $\alpha = p\beta$.
+Write
+\begin{align*}
+\alpha &= a_0 + a_1 \omega + \cdots + a_{p-2} \omega^{p-2}, \\
+\beta &= b_0 + b_1 \omega + \cdots + b_{p-2} \omega^{p-2},
+\end{align*}
+where $a_i, b_j \in \mathbb{Z}$.
+By $\alpha = p\beta$ and Exercise 1.21, $a_i = pb_i$ for every $1 \leq i \leq p-2$.
+So all $a_i$ are divisible by $p$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{Define congruence mod $p$ for $\beta, \gamma \in \mathbb{Z}[\omega]$
+as follows:
+$$\beta \equiv \gamma \pmod{p}
+\text{ iff }
+\beta - \gamma = \delta p \text{ for some } \delta \in \mathbb{Z}[\omega].$$
+(Equivalently, this is congruence mod the principal ideal $p\mathbb{Z}[\omega]$.} \\\\
 
 
 
@@ -985,6 +1171,82 @@ on the units of $\mathbb{Z}[\omega]$:} \\
 $\overline{u}$ is its complex conjugate, then $u/\overline{u}$
 is a power of $\omega$.
 (For the proof, see Exercise 2.12.)} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.26.}
+\emph{Show that $x + y\omega \equiv u \alpha^p \pmod{p}$ implies
+$$x + y\omega \equiv (x + y\omega^{-1}) \omega^k \pmod{p}$$
+for some $k \in \mathbb{Z}$.
+(Use the Lemma on units and Exercise 1.23 and 1.25.
+Note that $\overline{\omega} = \omega^{-1}$.) } \\
+
+\emph{Proof (Hint).}
+\begin{align*}
+&x + y\omega \equiv u \alpha^p \pmod{p} \\
+\Longrightarrow&
+x + y\omega \equiv ua \pmod{p} \text{ for some } a \in \mathbb{Z}
+  &\text{(Exercise 1.25)} \\
+\Longrightarrow&
+\overline{x + y\omega} \equiv \overline{u a} \pmod{p}
+  &\text{(Exercise 1.23)} \\
+\Longrightarrow&
+x + y\overline{\omega} \equiv \overline{u} a \pmod{p} \\
+\Longrightarrow&
+x + y \omega^{-1} \equiv \overline{u} a \pmod{p}
+  &\text{($\overline{\omega} = \omega^{-1}$)} \\
+\Longrightarrow&
+x + y \omega^{-1} \equiv u \omega^{-k} a \pmod{p} \text{ for some } k \in \mathbb{Z}
+  &\text{(Lemma)} \\
+\Longrightarrow&
+ua \equiv (x + y \omega^{-1})\omega^{k} \pmod{p} \\
+\Longrightarrow&
+x + y\omega \equiv (x + y \omega^{-1})\omega^{k} \pmod{p}.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.27.}
+\emph{Use Exercise 1.22 to show that a contradiction results unless $k \equiv 1 \pmod{p}$.
+(Recall that $p \nmid xy$, $p \geq 5$, and
+$\omega^{p-1} + \omega^{p-2} + \cdots + \omega + 1 = 0$.) } \\
+
+\emph{Proof.}
+Exercise 1.26 shows
+$$x + y\omega \equiv (x + y\omega^{-1}) \omega^k \pmod{p}.$$
+Multiply $\omega$ on the both sides to get
+$x\omega + y\omega^2 \equiv y\omega^{k} + x\omega^{k+1} \pmod{p}$, or
+$$p \mid (x\omega + y\omega^2 - y\omega^{k} - x\omega^{k+1}).$$
+If $k$ were satisfying $k \not\equiv 1 \pmod{p}$, then by Exercise 1.22 and $p \geq 5$
+we have $p \mid x$ or $p \mid y$, contrary to the assumption that
+$x$ and $y$ are integers not divisible by $p$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.28.}
+\emph{Finally, show $x \equiv y \pmod{p}$.} \\
+
+\emph{Proof.}
+In the argument of Exercise 1.27 we have
+$$p \mid ((x-y)\omega + (y-x)\omega^2)$$
+by replacing $k = 1$.
+By Exercise 1.22 and $p \geq 5$, $x - y$ is divisible by $p$,
+or $x \equiv y \pmod{p}$ as integers.
+$\Box$ \\\\
 
 
 
@@ -1194,6 +1456,8 @@ every element has an inverse element. The conclusion is established.
 $\Box$ \\\\
 
 
+
+% No exercises left.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
