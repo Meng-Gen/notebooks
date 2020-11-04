@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -29,24 +31,28 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Section 2.4: Invertibility and Isomorphisms} \\\\
 
 
 
 \textbf{Exercise 2.4.8.}
 \emph{Let $A$ and $B$ be $n \times n$ matrices such that $AB = I_n$.
-Prove
+Prove}
 \begin{enumerate}
 \item[(a)]
-$A$ and $B$ are invertible.
+\emph{$A$ and $B$ are invertible.}
 \item[(b)]
-$A = B^{-1}$ (and hence $B = A^{-1}$).
+\emph{$A = B^{-1}$ (and hence $B = A^{-1}$).
 (We are in effect saying that for square matrices,
-a ``one-sided'' inverse is a ``two-sided'' inverse.)
+a ``one-sided'' inverse is a ``two-sided'' inverse.)}
 \item[(c)]
-State and prove analogous results for linear transformations
-defined on finite-dimensional vector spaces. \\
-\end{enumerate}}
+\emph{State and prove analogous results for linear transformations
+defined on finite-dimensional vector spaces.} \\
+\end{enumerate}
 
 \emph{Proof of (a).}
 Regard $\mathsf{V} = \mathsf{M}_{n \times n}(F)$ as a finite-dimensional vector space over $F$.
@@ -106,6 +112,133 @@ $$AB
 By (a), $A = [\mathsf{S}]_\beta$ and $B = [\mathsf{T}]_\beta$ are invertible,
 or $\mathsf{S}$ and $\mathsf{T}$ are invertible (Theorem 2.18).
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{\large Section 2.7: Homogeneous Linear Differential Equations
+with Constant Coefficients} \\\\
+
+
+
+\textbf{Exercise 2.7.3.}
+\emph{Find a basis for the solution space of each of the following differential
+equations}
+\begin{enumerate}
+\item[(a)]
+$y''+2y'+y = 0$
+\item[(b)]
+$y'''=y'$
+\item[(c)]
+$y^{(4)} - 2y^{(2)} + y = 0$
+\item[(d)]
+$y''+2y'+y = 0$
+\item[(e)]
+$y^{(3)} - y^{(2)} + 3y^{(1)} + 5y = 0$. \\
+\end{enumerate}
+
+Use Theorem 2.35. \\
+
+\emph{Proof of (a).}
+The auxiliary polynomial is $t^2+ty+1 = (t+1)^2$.
+$\{ e^{-t}, te^{-t} \}$ is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (b).}
+The auxiliary polynomial is $t^3-t = t(t-1)(t+1)$.
+$\{ 1, e^{t}, e^{-t} \}$ is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (c).}
+The auxiliary polynomial is $t^4-2t^2+1 = (t-1)^2(t+1)^2$.
+$\{ e^{t}, te^{t}, e^{-t}, te^{-t} \}$ is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (d).}
+Same as (a).
+$\Box$ \\
+
+\emph{Proof of (e).}
+The auxiliary polynomial is $$t^3-t^2+3t+5 = (t+1)(t-1-2i)(t-1+2i).$$
+$\{ e^{-t}, e^{(1+2i)t}, e^{(1-2i)t} \}$,
+or $\{ e^{-t}, e^{t}\cos(2t), e^{t}\sin(2t) \}$
+is a basis for the solution space.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.7.4.}
+\emph{Find a basis for each of the following subspaces of $\mathsf{C}^{\infty}$.}
+\begin{enumerate}
+\item[(a)]
+$\mathsf{N}(\mathsf{D}^2-\mathsf{D}-\mathsf{I})$
+\item[(b)]
+$\mathsf{N}(\mathsf{D}^3-3\mathsf{D}^2+3\mathsf{D}-\mathsf{I})$
+\item[(c)]
+$\mathsf{N}(\mathsf{D}^3-6\mathsf{D}^2-8\mathsf{D})$ \\
+\end{enumerate}
+
+Use Theorem 2.35. \\
+
+\emph{Proof of (a).}
+The auxiliary polynomial is
+$$t^2-t-1 = \left(t-\frac{1+\sqrt{5}}{2}\right)\left(t-\frac{1-\sqrt{5}}{2}\right).$$
+$\left\{ e^{\frac{1+\sqrt{5}}{2}t}, e^{\frac{1-\sqrt{5}}{2}t} \right\}$
+is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (b).}
+The auxiliary polynomial is
+$t^3-3t^2+3t-1 = (t-1)^3.$
+$\{ e^{t}, te^{t}, t^2e^{t} \}$
+is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (c).}
+The auxiliary polynomial is
+$t^3+6t^2+8t = t(t+2)(t+4).$
+$\{ 1, e^{-2t}, e^{-4t} \}$
+is a basis for the solution space.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.7.5.}
+\emph{Show that $\mathsf{C}^{\infty}$ is a subspace of
+$\mathcal{F}(\mathbb{R}, \mathbb{C})$. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$0 \in \mathcal{F}(\mathbb{R}, \mathbb{C})$ clearly.
+\item[(2)]
+Given any $f, g \in \mathsf{C}^{\infty}$.
+For any nonnegative $k$,
+$\mathsf{D}^k(f+g) = \mathsf{D}^k(f) + \mathsf{D}^k(g)$ holds.
+Thus $f+g \in \mathsf{C}^{\infty}$.
+\item[(3)]
+Given any $f \in \mathcal{F}(\mathbb{R}, \mathbb{C})$, $r \in \mathbb{C}$.
+For any nonnegative $k$,
+$\mathsf{D}^k(cf) = c\mathsf{D}^k(f)$ holds.
+Thus $cf \in \mathsf{C}^{\infty}$.
+\end{enumerate}
+By Theorem 1.3, $\mathsf{C}^{\infty}$ is a subspace.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
