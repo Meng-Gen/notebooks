@@ -74,4 +74,46 @@ $\Box$ \\\\
 
 
 
+\textbf{Problem 3.27.}
+\emph{Evaluate the commutators}
+\begin{enumerate}
+\item[(a)]
+$[\hat{x}, \hat{p}_x]$;
+\item[(b)]
+$[\hat{x}, \hat{p}_x^2]$;
+\item[(c)]
+$[\hat{x}, \hat{p}_y]$;
+\item[(d)]
+$[\hat{x}, \hat{V}(x,y,z)]$;
+\item[(e)]
+\emph{$[\hat{x}, \hat{H}]$, where the Hamiltonian operator is
+$$\hat{H} = -\frac{\hbar}{2m}\left(
+\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+\right) + V(x,y,z);$$}
+\item[(f)]
+$[\hat{x}\hat{y}\hat{z}, \hat{p}_x^2]$. \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+[\hat{x}, \hat{p}_x]f
+&= (\hat{x}\hat{p}_x - \hat{p}_x \hat{x})f \\
+&= (\hat{x}\hat{p}_x)f - (\hat{p}_x \hat{x})f \\
+&= (\hat{x})\left( \frac{\hbar}{i}\frac{\partial f}{\partial x} \right)
+  - (\hat{p}_x)(xf) \\
+&= x \frac{\hbar}{i}\frac{\partial f}{\partial x}
+  - \frac{\hbar}{i}\left( f + x \frac{\partial f}{\partial x} \right) \\
+&= - \frac{\hbar}{i} f
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{p}_x] = - \frac{\hbar}{i}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \end{document}
