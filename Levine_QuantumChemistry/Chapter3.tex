@@ -108,7 +108,60 @@ $[\hat{x}\hat{y}\hat{z}, \hat{p}_x^2]$. \\
 holds for any function $f$.
 By definition,
 $[\hat{x}, \hat{p}_x] = - \frac{\hbar}{i}$.
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+[\hat{x}, \hat{p}_x^2]f
+&= (\hat{x}\hat{p}_x^2 - \hat{p}_x^2 \hat{x})f \\
+&= (\hat{x}\hat{p}_x^2)f - (\hat{p}_x^2 \hat{x})f \\
+&= (\hat{x} \hat{p}_x)\left( \frac{\hbar}{i}\frac{\partial f}{\partial x} \right)
+  - (\hat{p}_x^2)(xf) \\
+&= (\hat{x})\left( \frac{\hbar}{i}\frac{\hbar}{i} \frac{\partial^2 f}{\partial x^2} \right)
+  - (\hat{p}_x) \frac{\hbar}{i} \left( f + x \frac{\partial f}{\partial x} \right) \\
+&= x \left( \frac{\hbar}{i}\frac{\hbar}{i} \frac{\partial^2 f}{\partial x^2} \right)
+  - \frac{\hbar}{i} \frac{\hbar}{i} \left(
+    \frac{\partial f}{\partial x} + \frac{\partial f}{\partial x}
+  + x \frac{\partial^2 f}{\partial x^2} \right) \\
+&= - \frac{\hbar}{i} \frac{\hbar}{i} \cdot 2 \frac{\partial f}{\partial x} \\
+&= \left( 2 \hbar \frac{\partial}{\partial x} \right) f
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{p}_x^2] = 2 \hbar \frac{\partial}{\partial x}$.
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{align*}
+[\hat{x}, \hat{p}_y]f
+&= (\hat{x}\hat{p}_y - \hat{p}_y \hat{x})f \\
+&= (\hat{x}\hat{p}_y)f - (\hat{p}_y \hat{x})f \\
+&= (\hat{x})\left( \frac{\hbar}{i}\frac{\partial f}{\partial y} \right)
+  - (\hat{p}_y)(xf) \\
+&= x \frac{\hbar}{i}\frac{\partial f}{\partial x}
+  - \frac{\hbar}{i} \cdot x \frac{\partial f}{\partial y} \\
+&= 0
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{p}_y] = 0$.
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{align*}
+[\hat{x}, \hat{V}(x,y,z)]f
+&= (\hat{x}\hat{V}(x,y,z) - \hat{V}(x,y,z) \hat{x})f \\
+&= (\hat{x}\hat{V}(x,y,z))f - (\hat{V}(x,y,z) \hat{x})f \\
+&= \hat{x}(V(x,y,z)f) - \hat{V}(x,y,z)(xf) \\
+&= x V(x,y,z)f - V(x,y,z) xf \\
+&= 0
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{V}(x,y,z)] = 0$.
+$\Box$ \\
+
+
 
 
 
