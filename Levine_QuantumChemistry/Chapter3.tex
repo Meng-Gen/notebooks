@@ -161,7 +161,56 @@ By definition,
 $[\hat{x}, \hat{V}(x,y,z)] = 0$.
 $\Box$ \\
 
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+Given any function $f$,
+\begin{align*}
+\frac{\partial^2}{\partial x^2}(fx)
+&= \frac{\partial}{\partial x}\left( x\frac{\partial f}{\partial x} + f \right) \\
+&= \frac{\partial f}{\partial x} + x\frac{\partial^2 f}{\partial x^2}
+  + \frac{\partial f}{\partial x} \\
+&= 2\frac{\partial f}{\partial x} + x\frac{\partial^2 f}{\partial x^2}, \\
+\frac{\partial^2}{\partial y^2}(fx)
+&= x \frac{\partial^2 f}{\partial y^2}, \\
+\frac{\partial^2}{\partial z^2}(fx)
+&= x \frac{\partial^2 f}{\partial z^2}.
+\end{align*}
+\item[(2)]
+\begin{align*}
+(\hat{H}\hat{x})f
+&= (\hat{H})(xf) \\
+&= -\frac{\hbar}{2m}
+    \left(
+      \frac{\partial^2}{\partial x^2}(xf)
+      + \frac{\partial^2}{\partial y^2}(xf)
+      + \frac{\partial^2}{\partial z^2}(xf)
+    \right) + V(x,y,z)xf \\
+&= -\frac{\hbar}{2m}
+    \left(
+      2 \frac{\partial f}{\partial x} + x\frac{\partial^2 f}{\partial x^2}
+      + x \frac{\partial^2 f}{\partial y^2}
+      + x \frac{\partial^2 f}{\partial z^2}
+    \right) + V(x,y,z)xf \\
+&= -\frac{\hbar}{m} \frac{\partial f}{\partial x} + (\hat{x}\hat{H})f
+\end{align*}
+\item[(3)]
+\begin{align*}
+[\hat{x}, \hat{H}]f
+&= (\hat{x}\hat{H} - \hat{H} \hat{x})f \\
+&= (\hat{x}\hat{H})f - (\hat{H}\hat{x})f \\
+&= \frac{\hbar}{m} \frac{\partial f}{\partial x}
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{H}] = \frac{\hbar}{m} \frac{\partial}{\partial x}$.
+\end{enumerate}
+$\Box$ \\
 
+\emph{Proof of (f).}
+Similar to (b),
+$[\hat{x}\hat{y}\hat{z}, \hat{p}_x^2] = 2 \hbar yz \frac{\partial}{\partial x}$.
+$\Box$ \\\\
 
 
 
