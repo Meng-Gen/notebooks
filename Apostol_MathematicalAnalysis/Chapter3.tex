@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 3: Elements of Point Set Topology} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{\large Compact subsets of a metric space} \\\\
+
+\emph{Prove each of the following statements concerning an arbitrary metric space
+$(M,d)$ and subsets $S$, $T$ of $M$.} \\\\
+
+\textbf{Exercise 3.39.}
+\emph{If $S$ is closed and $T$ is compact, then $S \cap T$ is compact.} \\
+
+\emph{Proof (On topological spaces).}
+Let $\mathscr{F}$ be an open covering of $S \cap T$, say
+$S \cap T \subseteq \bigcup_{A \in \mathscr{F}}A$.
+We will show that a finite number of the sets $A$ cover $S \cap T$.
+Since $S$ is closed its complement $\widetilde{S}$ in $M$ is open,
+so $\mathscr{F} \cup \{ \widetilde{S} \}$ is an open covering of $T$.
+Since $T$ is compact, so this covering contains a finite subcovering
+which we can assume includes $\widetilde{S}$.
+Therefore,
+$$T \subseteq A_1 \cup \cdots \cup A_p \cup \widetilde{S}.$$
+This subcovering also covers $S \cap T$ and, since $\widetilde{S}$ contains no points of $S$,
+we can delete the set $\widetilde{S}$ for the subcovering and still covers $S \cap T$.
+Thus
+$$S \cap T \subseteq A_1 \cup \cdots \cup A_p$$
+so $S \cap T$ is compact.
+$\Box$ \\
+
+\emph{Proof (Theorem 3.39).}
+\begin{align*}
+&\text{$T$ is compact in $(M,d)$} \\
+\Longrightarrow&
+\text{$T$ is compact in $(T,d)$}
+  &\text{(Exercise 3.38)} \\
+\Longrightarrow&
+\text{$S \cap T$ is compact in $(T,d)$}
+  &\text{($S \cap T$: closed in $(T,d)$, Theorem 3.38)} \\
+\Longrightarrow&
+\text{$S \cap T$ is compact in $(M,d)$}.
+  &\text{(Exercise 3.38)}
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.41.}
+\emph{The union of a finite number of compact subsets of $M$ is compact.} \\
+
+\emph{Proof (On topological spaces).}
+Let $K_1, \ldots, K_n$ be compact subsets of $M$.
+Let $\mathscr{F}$ be an open covering of $K_1 \cup \cdots \cup K_n$, say
+$$K_1 \cup \cdots \cup K_n \subseteq \bigcup_{A \in \mathscr{F}}A.$$
+We will show that a finite number of the sets $A$ cover $K_1 \cup \cdots \cup K_n$.
+Clearly $\mathscr{F}$ is an open covering of every $K_i$.
+Since $K_i$ is compact, this covering contains a finite subcovering $\mathscr{F}_i$,
+say
+$$K_i \subseteq A_{1(i)} \cup \cdots \cup A_{p(i)}.$$
+Union all finite subcovering $\mathscr{F}_i$ to get a finite subcovering of
+$K_1 \cup \cdots \cup K_n$, say
+$$K_1 \cup \cdots \cup K_n \subseteq
+\bigcup_{A \in \bigcup_{1 \leq i \leq n} \mathscr{F}_i}A.$$
+$\Box$ \\
+
+\textbf{Supplement (Zariski topology).}
+\emph{Let $A$ be a ring and let $X$ be the set of all prime ideals of $A$.
+For each subset $E$ of $A$,
+let $V(E)$ denote the set of all prime ideals of $A$ which contain $E$.
+The sets $V(E)$ satisfy
+the axioms for closed sets in a topological space.
+The resulting topology is called the Zariski topology.
+The topological space $X$ is called the prime spectrum of $A$,
+and is written $\text{Spec}(A)$.} \\
+
+\emph{For each $f \in A$,
+let $X_f$ denote the complement of $V(f)$ in $X = \text{Spec}(A)$.
+The sets $X_f$ are open.
+Show that they form a basis of open sets for the Zariski topology, and that}
+\begin{enumerate}
+\item[(1)]
+\emph{Each $X_f$ is quasi-compact (compact), that is,
+every open covering of $X$ has a finite subcovering.}
+\item[(2)]
+\emph{An open subset of $X$ is quasi-compact if and only if
+it is a finite union of sets $X_f$.} \\
+\end{enumerate}
+
+By Exercise 3.41, we know that $X$ is quasi-compact if
+$X$ is a finite union of quasi-compact sets $X_f$. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
