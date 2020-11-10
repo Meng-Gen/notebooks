@@ -32,6 +32,22 @@
 
 
 
+\textbf{Notations.}
+\begin{enumerate}
+\item[(1)]
+$S^{\circ}$ or $\text{int}(S)$ is the interior of $S$.
+\item[(2)]
+$\overline{S}$ is the closure of $S$.
+\item[(3)]
+$\widetilde{S}$ is the complement of $S$. \\\\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Compact subsets of a metric space} \\\\
 
 \emph{Prove each of the following statements concerning an arbitrary metric space
@@ -306,6 +322,8 @@ $\Box$ \\\\
 \textbf{Exercise 3.43.}
 \emph{$A^{\circ} = M - \overline{M - A}.$} \\
 
+Beautiful writing: $M - A^{\circ} = \overline{M - A}$. \\
+
 \emph{Proof (Brute-force).}
 \begin{align*}
 x \in A^{\circ}
@@ -322,6 +340,16 @@ $\Box$ \\
 
 \emph{Proof (Exercise 3.44).}
 Put $A \mapsto M-A$ in Exercise 3.44.
+$\Box$ \\
+
+\emph{Proof (On topological spaces).}
+\begin{align*}
+M - A^{\circ}
+&= M - \bigcup_{\text{Open } V \subseteq A} V \\
+&= \bigcap_{\text{Open } V \subseteq A} (M - V) \\
+&= \bigcap_{\text{Closed } W \supseteq M-A} W \\
+&= \overline{M - A}.
+\end{align*}
 $\Box$ \\\\
 
 
@@ -349,6 +377,16 @@ $\Box$ \\
 
 \emph{Proof (Exercise 3.43).}
 Put $A \mapsto M-A$ in Exercise 3.43.
+$\Box$ \\
+
+\emph{Proof (On topological spaces).}
+\begin{align*}
+M - \overline{A}
+&= M - \bigcap_{\text{Closed } W \supseteq A} W \\
+&= \bigcup_{\text{Closed } W \supseteq A} (M - W) \\
+&= \bigcup_{\text{Open } V \subseteq M-A} V \\
+&= (M - A)^{\circ}.
+\end{align*}
 $\Box$ \\\\
 
 
@@ -389,6 +427,105 @@ $A^{\circ}$ is open.
 \item[(2)]
 Note to Definition 3.6: A set $S$ is open if and only if $S = S^{\circ}$.
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.46.}
+\begin{enumerate}
+\item[(a)]
+\emph{$\left( \bigcap_{i=1}^{n} A_i \right)^{\circ} = \bigcap_{i=1}^{n} A_i^{\circ}$,
+where each $A_i \subseteq M$. }
+\item[(b)]
+\emph{$\left( \bigcap_{A \in \mathscr{F}} A \right)^{\circ}
+\subseteq \bigcap_{A \in \mathscr{F}} A^{\circ}$,
+if $\mathscr{F}$ is an infinite collection of subsets of $M$. }
+\item[(c)]
+\emph{Give an example where equality does not hold in (b). } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+x \in \bigcap_{i=1}^{n} A_i^{\circ}
+&\Longleftrightarrow
+x \in A_i^{\circ} \: \: \forall 1 \leq i \leq n \\
+&\Longleftrightarrow
+\exists r_i > 0 \text{ such that } B(x;r_i) \subseteq A_i \: \forall 1 \leq i \leq n \\
+&\Longleftrightarrow
+\exists r = \min_{1 \leq i \leq n}\{r_i\} > 0 \text{ such that }
+  B(x;r) \subseteq A_i \: \forall 1 \leq i \leq n \\
+&\Longleftrightarrow
+\exists r > 0 \text{ such that }
+  B(x;r) \subseteq \bigcap_{i=1}^{n} A_i \\
+&\Longleftrightarrow
+x \in \left( \bigcap_{i=1}^{n} A_i \right)^{\circ}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+x \in \left( \bigcap_{A \in \mathscr{F}} A \right)^{\circ}
+&\Longleftrightarrow
+\exists r > 0 \text{ such that }
+  B(x;r) \subseteq \bigcap_{A \in \mathscr{F}} A \\
+&\Longleftrightarrow
+\exists r > 0 \text{ such that } B(x;r) \subseteq A \: \forall A \in \mathscr{F} \\
+&\Longrightarrow
+x \in A^{\circ} \: \forall A \in \mathscr{F} \\
+&\Longleftrightarrow
+x \in \bigcap_{A \in \mathscr{F}} A^{\circ}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+Let
+\begin{enumerate}
+\item[(1)]
+$M = \mathbb{R}$ with the Euclidean metric of $\mathbb{R}$.
+\item[(2)]
+$A_i = \left( -\frac{89}{i}, \frac{64}{i} \right) \subseteq \mathbb{R}$
+for $i \in \mathbb{Z}^+$.
+\end{enumerate}
+Note that $\bigcap_{i \in \mathbb{Z}^+} A_i = \{ 0 \}$ and $A_i^{\circ} = A_i$.
+So $$\left( \bigcap_{i \in \mathbb{Z}^+} A_i \right)^{\circ} = \varnothing
+\text{ and } \bigcap_{i \in \mathbb{Z}^+} A_i^{\circ} = \{ 0 \}.$$
+The equality does not hold in (b).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.47.}
+\begin{enumerate}
+\item[(a)]
+\emph{$\bigcup_{A \in \mathscr{F}} A^{\circ}
+\subseteq
+\left( \bigcup_{A \in \mathscr{F}} A \right)^{\circ}$. }
+\item[(b)]
+\emph{Give an example of a finite collection $\mathscr{F}$
+in which equality does not hold in (a). } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+x \in \bigcup_{A \in \mathscr{F}} A^{\circ}
+&\Longleftrightarrow
+x \in A^{\circ} \text{ for some } A \in \mathscr{F} \\
+&\Longrightarrow
+x \in \left( \bigcup_{A \in \mathscr{F}} A \right)^{\circ}
+\text{ since } A \subseteq \bigcup_{A \in \mathscr{F}} A.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+Exercise 3.50.
 $\Box$ \\\\
 
 
@@ -465,6 +602,44 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.49.}
+\emph{If $A^{\circ} = B^{\circ} = \varnothing$ and if $A$ is closed in $M$,
+then $(A \cup B)^{\circ} = \varnothing$. } \\
+
+\emph{Proof (Reductio ad absurdum).}
+\begin{enumerate}
+\item[(1)]
+If $x \in (A \cup B)^{\circ}$, then there exists an open ball $B(x) \subseteq A \cup B$.
+\item[(2)]
+Since $x$ is not an interior point of $A$ ($A^{\circ} = \varnothing$),
+the open ball $B(x) \not\subseteq A$, or $B(x) \cap \widetilde{A} \neq \varnothing$.
+\item[(3)]
+Notice that $A$ is closed.
+Hence $\widetilde{A}$ is open and so is $B(x) \cap \widetilde{A}$.
+Since $B(x) \cap \widetilde{A}$ is not empty,
+some $y \in B(x) \cap \widetilde{A}$ and thus
+there is another open ball $B(y) \subseteq B(x) \cap \widetilde{A}$.
+\item[(4)]
+\begin{align*}
+B(y)
+&\subseteq B(x) \cap \widetilde{A} \\
+&\subseteq (A \cup B) \cap \widetilde{A} \\
+&= (A \cap \widetilde{A}) \cup (B \cap \widetilde{A}) \\
+&= \varnothing \cup (B \cap \widetilde{A}) \\
+&= B \cap \widetilde{A} \\
+&\subseteq B.
+\end{align*}
+So that $y$ is an interior point of $B$, contrary to $B^{\circ} = \varnothing$.
+\end{enumerate}
+Therefore, the result is established.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.50.}
 \emph{Give an example in which $A^{\circ} = B^{\circ} = \varnothing$ but
 $(A \cup B)^{\circ} = M$. } \\
@@ -491,7 +666,9 @@ $\Box$ \\\\
 \emph{$\partial A = \overline{A} \cap \overline{M-A}$ and
 $\partial A = \partial(M - A)$.} \\
 
-Besides, $\partial A = \overline{A} - A^{\circ}$ (Exercise 3.43). \\
+Also, $\partial A = \overline{A} - A^{\circ}$ (Exercise 3.43)
+and $\widetilde{\partial A} = A^{\circ} \cup \widetilde{A}^{\circ}$
+(Exercise 3.43, 3.44). \\
 
 \emph{Proof.}
 Definition 3.40 and Definition 3.19 show $\partial A = \overline{A} \cap \overline{M-A}$.
@@ -502,6 +679,99 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\textbf{Exercise 3.52.}
+\emph{If $\overline{A} \cap \overline{B} = \varnothing$,
+then $\partial(A \cup B) = \partial A \cup \partial B$.} \\
+
+The proof is all about this relation
+$B(x;r) \cap \widetilde{A} \cap \widetilde{B} \neq \varnothing
+\Longleftrightarrow
+B(x;r) \cap \widetilde{A} \neq \varnothing.$ \\
+
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+$(\subseteq)$
+Given any $x \in \partial(A \cup B)$.
+For any $r > 0$,
+\begin{align*}
+&B(x;r) \cap (A \cup B) \neq \varnothing \text{ and }
+B(x;r) \cap \widetilde{A \cup B} \neq \varnothing \\
+\Longleftrightarrow&
+(B(x;r) \cap A) \cup (B(x;r) \cap B) \neq \varnothing \text{ and }
+B(x;r) \cap \widetilde{A} \cap \widetilde{B} \neq \varnothing \\
+\Longleftrightarrow&
+( B(x;r) \cap A \neq \varnothing
+  \text{ or } B(x;r) \cap B \neq \varnothing )
+\text{ and }
+B(x;r) \cap \widetilde{A} \cap \widetilde{B} \neq \varnothing \\
+\Longrightarrow&
+( B(x;r) \cap A \neq \varnothing
+  \text{ and } B(x;r) \cap \widetilde{A} \neq \varnothing)
+\text{ or } \\
+&( B(x;r) \cap B \neq \varnothing
+  \text{ and } B(x;r) \cap \widetilde{B} \neq \varnothing) \\
+\Longleftrightarrow&
+x \in \partial A \text{ or } x \in \partial B \\
+\Longleftrightarrow&
+x \in \partial A \cup \partial B.
+\end{align*}
+\item[(2)]
+$(\supseteq)$
+Since $\overline{A} \cap \overline{B} = \varnothing$ and Exercise 3.51,
+$\partial A \cap \partial B = \varnothing$
+and $\partial A \cap B^{\circ} = \varnothing$
+and $A^{\circ} \cap \partial B = \varnothing$.
+Given any $x \in \partial A \cup \partial B$.
+There are only two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$x \in \partial A$ and $x \not\in \partial B$.}
+  \begin{align*}
+  x \not\in \partial B
+  \Longleftrightarrow&
+  x \in M - \partial B \\
+  \Longleftrightarrow&
+  x \in M - ( \overline{B} \cap \overline{M-B})
+    &\text{(Exercise 3.51)} \\
+  \Longleftrightarrow&
+  x \in (M - \overline{B}) \cup (M - \overline{M-B}) \\
+  \Longleftrightarrow&
+  x \in (M-B)^{\circ} \cup B^{\circ}
+    &\text{(Exercise 3.43, 3.44)} \\
+  \Longleftrightarrow&
+  x \in (M-B)^{\circ} \text{ or } x \in B^{\circ} \\
+  \Longrightarrow&
+  x \in (M-B)^{\circ}
+    &(\partial A \cap B^{\circ} = \varnothing)
+  \end{align*}
+  $x$ is an interior point of $\widetilde{B}$.
+  Hence there exists $r_0 > 0$ such that $B(x;r_0) \subseteq \widetilde{B}$.
+  Given any $r_0 > r > 0$, we have
+  \begin{align*}
+  x \in \partial A
+  \Longleftrightarrow&
+  B(x;r) \cap A \neq \varnothing
+  \text{ and } B(x;r) \cap \widetilde{A} \neq \varnothing \\
+  \Longrightarrow&
+  B(x;r) \cap (A \cup B) \neq \varnothing \text{ and }\\
+  &B(x;r) \cap \widetilde{A \cup B}
+  = B(x;r) \cap \widetilde{A} \cap \widetilde{B}
+  \neq \varnothing \\
+  \Longleftrightarrow&
+  x \in \partial(A \cup B).
+  \end{align*}
+  \item[(b)]
+  \emph{$x \in \partial B$ and $x \not\in \partial A$.}
+  Similar to (a).
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
