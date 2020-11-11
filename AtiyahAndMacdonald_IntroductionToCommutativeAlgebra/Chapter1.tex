@@ -3,8 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
-
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -329,6 +330,52 @@ So $\overline{x}^{n-2}$ is an inverse of $\overline{x} \neq 0$ in $A/\mathfrak{p
 which implies that $A/\mathfrak{p}$ is a field (since $\overline{x}$ is arbitrary).
 \item[(3)]
 $A/\mathfrak{p}$ is a field if and only if $\mathfrak{p}$ is maximal.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.8.}
+\emph{Let $A$ be a ring $\neq 0$.
+Show that the set of prime ideals of $A$ has minimal elements
+with respect to inclusion.} \\
+
+Similar to Theorem 1.3. \\
+
+\emph{Proof (Zorn's Lemma).}
+\begin{enumerate}
+\item[(1)]
+Let $\Sigma$ be the set of all prime ideals of $A$.
+\item[(2)]
+Order $\Sigma$ by $\supseteq$, that is,
+$\mathfrak{p} \leq \mathfrak{q}$ if $\mathfrak{p} \supseteq \mathfrak{q}$.
+\item[(3)]
+$\Sigma$ is not empty, since every ring $A \neq 0$
+has at least one maximal ideal (or prime ideal) (Theorem 1.3).
+\item[(4)]
+To apply Zorn's lemma we must show that every chain in $\Sigma$ has a lower bound in $\Sigma$;
+let then $(\mathfrak{p}_\alpha)$ be a chain of prime ideals in $\Sigma$,
+so that for each pair of indices $\alpha$, $\beta$ we have either
+$\mathfrak{p}_\alpha \subseteq \mathfrak{p}_\beta$ or
+$\mathfrak{p}_\beta \subseteq \mathfrak{p}_\alpha$.
+Let $\mathfrak{p} = \bigcap_{\alpha} \mathfrak{p}_\alpha$.
+\item[(5)]
+\emph{Show that $\mathfrak{p}$ is a prime ideal.}
+Clearly $\mathfrak{p}$ is an ideal.
+Given any $xy \in \mathfrak{p}$ and $x \not\in \mathfrak{p}$.
+So $xy$ is in all prime ideals $\mathfrak{p}_\alpha$.
+By assumption $x \not\in \mathfrak{p}$,
+there is some $\beta$ such that $x \not\in \mathfrak{p}_\beta$,
+or $x \not\in \mathfrak{p}_\alpha$ whenever $\alpha \geq \beta$.
+So $y \in \mathfrak{p}_\alpha$ whenever $\alpha \geq \beta$.
+Since $y \in \mathfrak{p}_\beta$, $y \in \mathfrak{p}_\gamma$ whenever $\beta \geq \gamma$.
+Therefore, $y \in \mathfrak{p}_\alpha$ for all $\alpha$,
+or $y \in \mathfrak{p}$,
+or $\mathfrak{p}$ is prime.
 \end{enumerate}
 $\Box$ \\\\
 
