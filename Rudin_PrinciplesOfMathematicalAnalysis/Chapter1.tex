@@ -805,6 +805,119 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 1.16.}
+\emph{Suppose $k \geq 3$, $\mathbf{x}, \mathbf{y} \in \mathbb{R}^k$,
+$\abs{\mathbf{x} - \mathbf{y}} = d > 0$, and $r > 0$. Prove:}
+\begin{enumerate}
+\item[(a)]
+\emph{If $2r > d$, there are infinitely many $\mathbf{z} \in \mathbb{R}^k$
+such that
+$$\abs{\mathbf{z} - \mathbf{x}} = \abs{\mathbf{z} - \mathbf{y}} = r.$$}
+\item[(b)]
+\emph{If $2r = d$, there is exactly one such $\mathbf{z}$.}
+\item[(c)]
+\emph{If $2r < d$, there is no such $\mathbf{z}$.}
+\end{enumerate}
+\emph{How must these statements be modified if $k$ is $2$ or $1$?} \\
+
+\emph{Proof (Brute-force).}
+By Exercise 1.17, we have
+\begin{align*}
+\abs{\mathbf{z} - \mathbf{x}}^2 + \abs{\mathbf{z} - \mathbf{y}}^2
+&= 2\abs{\mathbf{z} - \frac{\mathbf{x} + \mathbf{y}}{2}}^2
++ 2\abs{\frac{\mathbf{x} - \mathbf{y}}{2}}^2, \\
+r^2 + r^2
+&= 2\abs{\mathbf{z} + \frac{\mathbf{x} - \mathbf{y}}{2}}^2 + \frac{1}{2} d^2, \\
+\abs{\mathbf{z} - \frac{\mathbf{x} + \mathbf{y}}{2}}^2
+&= r^2 - \frac{d^2}{4}
+\end{align*}
+for every $k = 1, 2, 3, \ldots$
+Let $\mathbf{w} = \mathbf{z} - \frac{\mathbf{x} + \mathbf{y}}{2}$.
+So $\abs{\mathbf{w}}^2 = r^2 - \frac{d^2}{4}$.
+\begin{enumerate}
+\item[(a)]
+Suppose $2r > d$.
+\begin{enumerate}
+\item[(i)]
+\emph{Show that $\mathbf{w} \cdot (\mathbf{x}-\mathbf{y}) = 0.$}
+\begin{align*}
+\abs{\mathbf{z} - \mathbf{x}} = \abs{\mathbf{z} - \mathbf{y}}
+&\Longleftrightarrow
+\abs{\mathbf{z} - \mathbf{x}}^2 = \abs{\mathbf{z} - \mathbf{y}}^2 \\
+&\Longleftrightarrow
+\abs{\mathbf{z}}^2 - 2\mathbf{z} \cdot \mathbf{x} + \abs{\mathbf{x}}^2
+= \abs{\mathbf{z}}^2 - 2\mathbf{z}\cdot\mathbf{y} + \abs{\mathbf{y}}^2 \\
+&\Longleftrightarrow
+2\mathbf{z}\cdot (\mathbf{x}-\mathbf{y})
+= \abs{\mathbf{x}}^2 - \abs{\mathbf{y}}^2
+= (\mathbf{x}+\mathbf{y}) \cdot (\mathbf{x}-\mathbf{y}) \\
+&\Longleftrightarrow
+\left( \mathbf{z} - \frac{\mathbf{x} + \mathbf{y}}{2} \right)
+\cdot (\mathbf{x}-\mathbf{y}) = 0 \\
+&\Longleftrightarrow
+\mathbf{w} \cdot (\mathbf{x}-\mathbf{y}) = 0.
+\end{align*}
+\item[(ii)]
+Since $\mathbf{x} \neq \mathbf{y}$, we may suppose that $x_1 \neq y_1$.
+So the solution of $\mathbf{w} \cdot (\mathbf{x}-\mathbf{y}) = 0$ is
+\begin{equation*}
+  \begin{cases}
+    w_1 = -\frac{1}{x_1-y_1}(t_2(x_2-y_2) + \cdots + t_{k}(x_{k}-y_{k})) \\
+    w_2 = t_2 \\
+    \cdots \\
+    w_k = t_k
+  \end{cases}
+\end{equation*}
+where $\mathbf{w} = (w_1, \ldots, w_k)$ and
+$t_2, \ldots, t_k \in \mathbb{R}$.
+\item[(iii)]
+Also
+\begin{align*}
+&\abs{\mathbf{w}}^2 = r^2 - \frac{d^2}{4} \\
+\Longleftrightarrow&
+w_1^2 + \cdots + w_k^2 = r^2 - \frac{d^2}{4} \\
+\Longleftrightarrow&
+\frac{(t_2(x_2-y_2) + \cdots + t_{k}(x_{k}-y_{k}))^2}{(x_1-y_1)^2}
++ \cdots + t_k^2 = r^2 - \frac{d^2}{4}
+\end{align*}
+That is, $t_2$ is uniquely determined by $t_3, \ldots, t_k \in \mathbb{R}$.
+Clearly, such $\mathbf{z} = \mathbf{w} + \frac{\mathbf{x} + \mathbf{y}}{2}$
+satisfies $\abs{\mathbf{z} - \mathbf{x}} = \abs{\mathbf{z} - \mathbf{y}} = r$.
+\item[(iv)]
+As $k \geq 3$, there are infinitely many
+$\mathbf{z} = \mathbf{w} + \frac{\mathbf{x} + \mathbf{y}}{2} \in \mathbb{R}^k$.
+\item[(v)]
+As $k = 2$,
+$$\frac{t_2^2 (x_2-y_2)^2}{(x_1-y_1)^2} + t_2^2 = r^2 - \frac{d^2}{4}
+\Longleftrightarrow
+t_2^2 = \frac{r^2 - \frac{d^2}{4}}{1 + \frac{(x_2-y_2)^2}{(x_1-y_1)^2}} > 0,$$
+that is, $t_2$ has exactly two solutions,
+or $\mathbf{z}$ has two solutions in $\mathbb{R}^2$.
+\item[(vi)]
+As $k = 1$, there is no such $t_2$. So $\mathbf{w} = \mathbf{0}$,
+contrary to the assumption $\abs{\mathbf{w}} > 0$.
+In this case there are no solution $\mathbf{z}$ in $\mathbb{R}^2$.
+\end{enumerate}
+\item[(b)]
+If $2r = d$, $\abs{\mathbf{w}}^2 = 0$.
+$\mathbf{w} = 0$ or $\mathbf{z} = \frac{\mathbf{x}+\mathbf{y}}{2}$.
+Such $\mathbf{z}$ satisfies
+$\abs{\mathbf{z} - \mathbf{x}} = \abs{\mathbf{z} - \mathbf{y}} = \frac{d}{2} = r$
+for every $k = 1, 2, 3, \ldots$
+\item[(c)]
+If $2r < d$, $\abs{\mathbf{w}}^2 < 0$,
+which is impossible.
+Therefore, there is no such $\mathbf{z}$
+for every $k = 1, 2, 3, \ldots$
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.17.}
 \emph{Prove that
 $$|\mathbf{x}+\mathbf{y}|^2 + |\mathbf{x}-\mathbf{y}|^2
@@ -861,12 +974,94 @@ There are only two possible cases.
   So $\mathbf{x} \cdot \mathbf{y} = x_1 x_2 + x_2 (-x_1) + 0 + \ldots + 0 = 0$.
   \end{enumerate}
 \item[(2)]
-It is not true for $k = 1$ since $\mathbb{R}^1 = \mathbb{R}$ is a field. \\
+It is not true for $k = 1$ since $\mathbb{R}^1 = \mathbb{R}$ is a field.
 \end{enumerate}
 $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.19.}
+\emph{Suppose $\mathbf{a} \in \mathbb{R}^k$, $\mathbf{b} \in \mathbb{R}^k$.
+Find $\mathbf{c} \in \mathbb{R}^k$ and $r > 0$ such that
+$$\abs{\mathbf{x} - \mathbf{a}}
+= 2 \abs{\mathbf{x} - \mathbf{b}}$$
+if and only if $\abs{\mathbf{x} - \mathbf{c}} = r$.
+(Solution: $3\mathbf{c} = 4\mathbf{b} - \mathbf{a}$,
+$3r = 2\abs{\mathbf{b} - \mathbf{a}}$.)} \\
+
+Suppose $\mathbf{a} \neq \mathbf{b}$ to guarantee the existence of $r > 0$. \\
+
+It is known as \textbf{circles of Apollonius}.
+In general, for any $\mu > 1$,
+$$\abs{\mathbf{x} - \mathbf{a}}
+= \mu \abs{\mathbf{x} - \mathbf{b}}$$
+if and only if $\abs{\mathbf{x} - \mathbf{c}} = r$
+where
+$\mathbf{c}
+= \frac{\mu^2\mathbf{b}-\mathbf{a}}{\mu^2 - 1}$
+and $r = \frac{\mu}{\mu^2-1}\abs{\mathbf{b} - \mathbf{a}}$. \\
+
+\emph{Proof.}
+\begin{align*}
+&\abs{\mathbf{x} - \mathbf{a}}
+= \mu \abs{\mathbf{x} - \mathbf{b}} \\
+\Longleftrightarrow&
+\abs{\mathbf{x} - \mathbf{a}}^2
+= \mu^2 \abs{\mathbf{x} - \mathbf{b}}^2 \\
+\Longleftrightarrow&
+\abs{\mathbf{x}}^2 -2\mathbf{a}\cdot\mathbf{x} + \abs{\mathbf{a}}^2
+= \mu^2\abs{\mathbf{x}}^2 -2\mu^2\mathbf{b}\cdot\mathbf{x} + \mu^2\abs{\mathbf{b}}^2 \\
+\Longleftrightarrow&
+(\mu^2-1)\abs{\mathbf{x}}^2
+  -2(\mu^2\mathbf{b}-\mathbf{a})\cdot\mathbf{x}
+  +(\mu^2\abs{\mathbf{b}}^2 - \abs{\mathbf{a}}^2)
+= 0 \\
+\Longleftrightarrow&
+\abs{\mathbf{x}}^2
+  - 2\frac{\mu^2\mathbf{b}-\mathbf{a}}{\mu^2-1}\cdot\mathbf{x}
+  + \frac{\mu^2\abs{\mathbf{b}}^2 - \abs{\mathbf{a}}^2}{\mu^2-1}
+= 0.
+\end{align*}
+Write $\mathbf{c}
+= \frac{\mu^2\mathbf{b}-\mathbf{a}}{\mu^2 - 1}$
+and $r = \frac{\mu}{\mu^2-1}\abs{\mathbf{b} - \mathbf{a}} > 0$.
+Note that
+$\abs{\mathbf{c}}^2 - r^2 = \frac{\mu^2\abs{\mathbf{b}}^2-\abs{\mathbf{a}}^2}{\mu^2-1}$.
+Thus
+\begin{align*}
+&\abs{\mathbf{x} - \mathbf{a}}
+= \mu \abs{\mathbf{x} - \mathbf{b}} \\
+\Longleftrightarrow&
+\abs{\mathbf{x}}^2
+  - 2 \mathbf{c}\cdot\mathbf{x}
+  + \abs{\mathbf{c}}^2 - r^2
+= 0. \\
+\Longleftrightarrow&
+\abs{\mathbf{x} - \mathbf{c}}^2 = r^2 \\
+\Longleftrightarrow&
+\abs{\mathbf{x} - \mathbf{c}} = r.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.20.}
+
+\emph{Proof.}
+TODO.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
