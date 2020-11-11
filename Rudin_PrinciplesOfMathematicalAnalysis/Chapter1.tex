@@ -1054,12 +1054,90 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 1.20.}
+\emph{With reference to the Appendix,
+suppose that property (III) were omitted from the definition of a Dedekind cut.
+Keep the same definitions of order and addition.
+Show that the resulting ordered set has the least-upper-bound property,
+that addition satisfies axioms (A1) to (A4) (with a slightly different zero-element!)
+but that (A5) fails. } \\
 
-\emph{Proof.}
-TODO.
+\emph{Proof of the least-upper-bound property.}
+\begin{enumerate}
+\item[(1)]
+Let $A$ be a nonempty subset of $\mathbb{R}$,
+and assume that $\beta \in \mathbb{R}$ is an upper bound of $A$.
+\item[(2)]
+Define $\gamma$ to be the union of all $\alpha \in A$.
+We shall prove that $\gamma \in \mathbb{R}$ and that $\gamma = \sup A$.
+\item[(3)]
+\emph{Show that $\gamma \in \mathbb{R}$.}
+Property (I) is established by property (I) of $\alpha \in A$ and property (I) of $\beta$.
+Property (II) is established by property (I) of $\gamma$ and property (II) of $\alpha \in A$.
+\item[(4)]
+\emph{Show that $\gamma = \sup A$.}
+The result is established by property (II) of $\alpha \in A$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (A1).}
+All the same as the textbook except:
+\emph{show that $\alpha+\beta \in \mathbb{R}$.}
+Both property (I)(II) are established by property (I)(II) of $\alpha$ and of $\beta$.
+$\Box$ \\
+
+\emph{Proof of (A2)(A3).}
+Established by the definition of Dedekind cuts.
+$\Box$ \\
+
+\emph{Proof of (A4).}
+\begin{enumerate}
+\item[(1)]
+In the textbook (page 18),
+we cannot get the opposite inclusion $\alpha + 0^* \supseteq \alpha$
+since no property (III) to guarantee the existence of $r \in \alpha$.
+\item[(2)]
+Therefore, we define $0^{\#} = \{ p \in \mathbb{Q} : p \leq 0 \}$.
+\item[(3)]
+\emph{Show that $\alpha + 0^{\#} = \alpha$.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\alpha + 0^{\#} \subseteq \alpha$.}
+  Given any $r \in \alpha$, $s \in 0^{\#}$.
+    \begin{enumerate}
+    \item[(i)]
+    If $s = 0$, $r+s = r \in \alpha$.
+    \item[(ii)]
+    If $s < 0$, $r+s < r$. So $r+s \in \alpha$ by property (II).
+    \end{enumerate}
+  Hence, $r+s$ is always in $\alpha$.
+  \item[(b)]
+  \emph{Show that $\alpha + 0^{\#} \supseteq \alpha$.}
+  Given any $r \in \alpha$, $r = r + 0 \in \alpha + 0^{\#}$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of failure of (A5)(Reductio ad absurdum).}
+\begin{enumerate}
+\item[(1)]
+Consider $0^{*} = \{ p \in \mathbb{Q} : p < 0 \} \in \mathbb{R}$.
+\item[(2)]
+If (A5) were true,
+then there were an element $\alpha \in \mathbb{R}$ such that $0^{*} + \alpha = 0^{\#}$.
+\item[(3)]
+Note that $0^{\#}$ has the maximal element (namely $0$), and thus
+$0^{*} + \alpha$ has the maximal element $s+r$ where $s \in 0^{*}$ and $r \in \alpha$.
+\item[(4)]
+$s \in 0^{*}$ implies $s < 0$.
+Then there exists $s' \in \mathbb{Q}$ such that $s < s' < 0$.
+So $s' \in 0^{*}$ and $s'+r \in 0^{*} + \alpha$.
+$s'+r > s+r$, contrary to the maximality of $s+r$.
+\end{enumerate}
 $\Box$ \\\\
 
 
+
+% No exercises left.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
