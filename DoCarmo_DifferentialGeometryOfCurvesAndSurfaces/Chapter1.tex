@@ -35,6 +35,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -165,8 +166,6 @@ $\Box$ \\\\
 
 
 % No exercises left.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -371,10 +370,134 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \textbf{\large Section 1-4: The Vector Product in $\mathbb{R}^{3}$} \\
+
+
+
+\textbf{Exercise 1-4.1.}
+\emph{Check whether the following bases are positive:}
+\begin{enumerate}
+  \item[(a)]
+  \emph{The basis $\{(1,3), (4,2)\}$ in $\mathbb{R}^2$.}
+  \item[(b)]
+  \emph{The basis $\{(1,3,5), (2,3,7), (4,8,3)\}$ in $\mathbb{R}^3$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Write $u = (1,3)$ and $v = (4,2)$.
+Then
+$$\det(u,v)
+= \begin{vmatrix}
+  1 & 3 \\
+  4 & 2
+  \end{vmatrix}
+= -10 < 0.$$
+Thus $\{u,v\}$ is negative w.r.t. the natural order basis $\{ e_1 = (1,0), e_2 = (0,1) \}$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+Write $u = (1,3,5)$, $v = (2,3,7)$, $w = (4,8,3)$.
+Then
+$$\det(u,v,w)
+= \begin{vmatrix}
+  1 & 3 & 5 \\
+  2 & 3 & 7 \\
+  4 & 8 & 3
+  \end{vmatrix}
+= 39 > 0.$$
+Thus $\{u,v,w\}$ is positive w.r.t. the natural order basis $\{ e_1, e_2, e_3 \}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1-4.2.}
+\emph{A plane $P$ contained in $\mathbb{R}^3$ is given by the equation
+$ax+by+cz+d=0$.
+Show that the vector $v=(a,b,c)$ is perpendicular to the plane and that
+$|d|/\sqrt{a^2+b^2+c^2}$ measures the distance from the plane to the origin $(0,0,0)$.} \\
+
+Say $v$ is a normal vector of $E$. \\
+
+In general, the distance from the plane $E$ to
+any point $(x_0, y_0, z_0) \in \mathbb{R}^3$ is
+$$\frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2+b^2+c^2}}.$$
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+To show $v=(a,b,c)$ is perpendicular to the plane,
+it suffices to show that $v \cdot u = 0$ for any vector $u$ lying on the plane $E$.
+Write $u = \overrightarrow{PQ}$ where
+$P = (x_1, y_1, z_1) \in E$ and $Q = (x_2, y_2, z_2) \in E$.
+Hence $u = (x_2-x_1, y_2-y_1, z_2-z_1)$.
+\begin{align*}
+v \cdot u
+&=
+(a,b,c) \cdot (x_2-x_1, y_2-y_1, z_2-z_1) \\
+&= a(x_2-x_1) + b(y_2-y_1) + c(z_2-z_1) \\
+&= (ax_2 + by_2 + cz_2) - (ax_1 + by_1 + cz_1) \\
+&= (-d) - (-d) \\
+&= 0.
+\end{align*}
+\item[(2)]
+Pick any point $(x_1,y_1,z_1) \in E$.
+The distance from the plane $E$ to the point $(x_0, y_0, z_0)$ is
+\begin{align*}
+&\abs{(x_1-x_0,y_1-y_0,z_1-z_0) \cdot \frac{v}{|v|}} \\
+=& \abs{(x_1-x_0,y_1-y_0,z_1-z_0) \cdot \frac{(a,b,c)}{\sqrt{a^2+b^2+c^2}}} \\
+=& \frac{\abs{a(x_1-x_0)+b(y_1-y_0)+c(z_1-z_0)}}{\sqrt{a^2+b^2+c^2}} \\
+=& \frac{\abs{(ax_1+by_1+cz_1) - (ax_0+by_0+cz_0)}}{\sqrt{a^2+b^2+c^2}} \\
+=& \frac{\abs{-d - (ax_0+by_0+cz_0)}}{\sqrt{a^2+b^2+c^2}} \\
+=& \frac{\abs{ax_0+by_0+cz_0+d}}{\sqrt{a^2+b^2+c^2}}.
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1-4.3.}
+\emph{Determine the angle of intersection of the two planes
+$5x+3y+2z-4=0$ and $3x+4y-7z=0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+The angle of intersection of the two planes
+is equal to a angle between two normal vectors of planes.
+\item[(2)]
+Let
+  \begin{enumerate}
+  \item[(a)]
+  the angle of intersection of the two planes be $\theta$.
+  \item[(b)]
+  the normal vector of $5x+3y+2z-4=0$ be $n_1 = (5,3,2)$.
+  \item[(c)]
+  the normal vector of $3x+4y-7z=0$ be $n_2 = (3,4,-7)$.
+  \end{enumerate}
+\item[(3)]
+Hence,
+$$\cos\theta = \frac{n_1 \cdot n_2}{|n_1||n_2|} = \frac{13}{2\sqrt{703}}.$$
+$\theta = \cos^{-1}\left( \frac{13}{2\sqrt{703}} \right)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \textbf{Exercise 1-4.13.}
 \emph{Let $u(t) = (u_1(t), u_2(t), u_3(t))$ and $v(t) = (v_1(t), v_2(t), v_3(t))$
@@ -451,6 +574,7 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -459,6 +583,7 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -466,6 +591,7 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
