@@ -62,7 +62,7 @@ since $p = \frac{\alpha}{\beta}$ (where $\alpha, \beta \in \mathbb{Z}$)
 is a root of $\beta z - \alpha = 0$. \\
 
 Besides, $z = \sqrt{2} + \sqrt{3}$ is algebraic since $z^4 - 10z^2 + 1 = 0$.
-In fact, $z = \pm\sqrt{2} + \pm\sqrt{3}$ are also algebraic since
+In fact, $z = \pm\sqrt{2} \pm\sqrt{3}$ are also algebraic since
 $z^4 - 10z^2 + 1 =
 (z - \sqrt{2} - \sqrt{3})(z + \sqrt{2} - \sqrt{3})
 (z - \sqrt{2} + \sqrt{3})(z + \sqrt{2} + \sqrt{3})$. \\
@@ -460,6 +460,201 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.8.}
+\emph{Is every point of every open set $E \subseteq \mathbb{R}^2$ a limit point of $E$?
+Answer the same question for closed sets in $\mathbb{R}^2$. } \\
+
+It is not true for all metric spaces $X$.
+The (discrete) metric in Exercise 2.10 implies no limit point exists in $X$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that for every open set $E \subseteq \mathbb{R}^k$, $E \subseteq E'$.}
+Given any point $\mathbf{p} \in E$, we shall show $\mathbf{p}$ is a limit point of $E$.
+  \begin{enumerate}
+  \item[(a)]
+  Since $E$ is open, there is an open neighborhood $B(\mathbf{p};r_0) \subseteq E$
+  for some $r_0 > 0$.
+  \item[(b)]
+  \emph{In particular, given any $s \in \mathbb{R}$ such that $0 < s < r_0$, we can find
+  $$\mathbf{q} \in B(\mathbf{p};s) \subseteq B(\mathbf{p};r_0) \subseteq E$$
+  such that $\mathbf{q} \neq \mathbf{p}$.}
+  Explicitly, write $$\mathbf{p} = (p_1, \ldots, p_k)$$ and
+  choose
+  $$\mathbf{q} = \left(p_1 + \frac{s}{89}, p_2, \ldots, p_k\right) \neq \mathbf{p}$$
+  (since $s > 0$).
+  Clearly, $\mathbf{q}$ is well-defined in $\mathbb{R}^k$ and
+  $|\mathbf{q} - \mathbf{p}| = \frac{s}{89} < s$ or $\mathbf{q} \in B(\mathbf{p};s)$.
+  \item[(c)]
+  Now given every open neighborhood $B(\mathbf{p}, r)$ of $\mathbf{p}$.
+  We can choose $s \in \mathbb{R}$ such that $0 < s < \min\{r_0,r\} \leq r_0$.
+  (might pick $s = \frac{1}{64}\min\{r_0,r\}$.)
+  By (b), there exists $\mathbf{q} \neq \mathbf{p}$ such that
+  $$\mathbf{q} \in B(\mathbf{p};s) \subseteq B(\mathbf{p};r) \subseteq E.$$
+  \end{enumerate}
+\item[(2)]
+\emph{Give an example of a closed set $E \subseteq \mathbb{R}^k$ such that $E \not\subseteq E'$.}
+Pick $E = \{ \mathbf{0} \}$.
+So $E' = \varnothing$ and thus $E \not\subseteq E'$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.9.}
+\emph{Let $E^\circ$ denote the set of all interior points of a set $E$.
+[See Definition 2.18(e); $E^\circ$ is called the interior of $E$.]}
+\begin{enumerate}
+\item[(a)]
+\emph{Prove that $E^\circ$ is always open.}
+\item[(b)]
+\emph{Prove that $E$ is open if and only if $E^\circ = E$.}
+\item[(c)]
+\emph{If $G$ is contained in $E$ and $G$ is open,
+prove that $G$ is contained in $E^\circ$.}
+\item[(d)]
+\emph{Prove that the complement of $E^\circ$ is the closure of the
+complement of $E$.}
+\item[(e)]
+\emph{Do $E$ and $\overline{E}$ always have the same interiors?}
+\item[(f)]
+\emph{Do $E$ and $E^\circ$ always have the same closures?} \\
+\end{enumerate}
+
+Similar to Theorem 2.27. \\
+
+\emph{Proof of (a).}
+\emph{It is equivalent to show that
+$E^{\circ} \subseteq (E^{\circ})^{\circ}.$}
+\begin{enumerate}
+\item[(1)]
+Given any point $x \in E^{\circ}$, there is $r > 0$ such that $B(x;r) \subseteq E$.
+\item[(2)]
+It suffices to show that $B\left(x;\frac{2}{r}\right) \subseteq E^{\circ}$.
+Given any point $y \in B\left(x;\frac{2}{r}\right)$,
+we will show that there is an open neighborhood $B\left(y;\frac{2}{r}\right)$ of $y$
+such that $B\left(y;\frac{2}{r}\right) \subseteq E$.
+\item[(3)]
+Given any point $z \in B\left(y;\frac{2}{r}\right)$, we have
+$$d(z,x) \leq d(z,y) + d(y,x) < \frac{2}{r} + \frac{2}{r} = r,$$
+or $z \in B(x;r) \subseteq E$.
+Therefore, $B\left(y;\frac{2}{r}\right) \subseteq E$,
+or $y \in E^{\circ}$,
+or $B\left(x;\frac{2}{r}\right) \subseteq E^{\circ}$,
+or $x \in (E^{\circ})^{\circ}$,
+or $E^{\circ} \subseteq (E^{\circ})^{\circ}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+($\Longrightarrow$)(Definition 2.18)
+Since $E$ is open, every point of $E$ is an interior point of $E$.
+Hence $E \subseteq E^{\circ}$.
+Note that $E^{\circ} \subseteq E$ is trivial, and thus $E^\circ = E$.
+\item[(2)]
+($\Longleftarrow$)((a))
+By (a), $E = E^{\circ}$ is always open.
+\item[(3)]
+($\Longleftarrow$)(Definition 2.18)
+Every point of $E$ is an interior point of $E$ since $E = E^\circ$.
+Hence $E$ is open by Definition 2.18(f).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+$G \subseteq E$ implies $G^{\circ} \subseteq E^{\circ}$.
+$G = G^{\circ}$ since $G$ is open ((b)).
+Hence $G = G^{\circ} \subseteq E^{\circ}$, that is,
+$E^{\circ}$ is the largest open set contained in $E$.
+(Similarly, $\overline{E}$ is the smallest closed set containing $E$.)
+$\Box$ \\
+
+\emph{Proof of (d).}
+\emph{Show that
+$X - E^{\circ} = \overline{X - E}$ and
+$(X-E)^{\circ} = X - \overline{E}.$}
+\begin{enumerate}
+\item[(1)]
+(Theorem 2.27 and (c))
+\begin{align*}
+X - E^{\circ}
+&= X - \bigcup_{\text{Open } V \subseteq E} V \\
+&= \bigcap_{\text{Open } V \subseteq E} (X - V) \\
+&= \bigcap_{\text{Closed } W \supseteq X-E} W \\
+&= \overline{X - E}. \\
+X - \overline{E}
+&= X - \bigcap_{\text{Closed } W \supseteq E} W \\
+&= \bigcup_{\text{Closed } W \supseteq E} (X - W) \\
+&= \bigcup_{\text{Open } V \subseteq X-E} V \\
+&= (X - E)^{\circ}.
+\end{align*}
+\item[(2)]
+(Brute-force)
+\begin{align*}
+x \in E^{\circ}
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \subseteq E \\
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \cap (X-E) = \varnothing \\
+\Longleftrightarrow&
+x \not\in \overline{X-E} \\
+\Longleftrightarrow&
+x \in X - \overline{X-E}. \\
+x \in (X-E)^{\circ}
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \subseteq (X-E) \\
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \cap E = \varnothing \\
+\Longleftrightarrow&
+x \not\in \overline{E} \\
+\Longleftrightarrow&
+x \in X - \overline{E}.
+\end{align*}
+\end{enumerate}
+Note that $X - E^{\circ} = \overline{X - E}$ is equivalent to
+$(X-E)^{\circ} = X - \overline{E}$ by mapping $E \mapsto X-E$.
+$\Box$ \\
+
+\emph{Proof of (e).}
+No.
+\begin{enumerate}
+\item[(1)]
+Let $X = \mathbb{R}^1$ equipped with the Euclidean metric, and $E = \mathbb{Q} \subseteq X$.
+\item[(2)]
+$E^\circ = \varnothing$ since $\widetilde{\mathbb{Q}}$ is dense in $\mathbb{R}$.
+\item[(3)]
+$(\overline{E})^{\circ} = (\mathbb{R}^1)^{\circ} = \mathbb{R}^1$
+since $\mathbb{Q}$ is dense in $\mathbb{R}$ and $\mathbb{R}^1$ is open.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (f).}
+No.
+\begin{enumerate}
+\item[(1)]
+Let $X = \mathbb{R}^1$ equipped with the Euclidean metric, and $E = \mathbb{Q} \subseteq X$.
+\item[(2)]
+$\overline{E} = \mathbb{R}^1$ since $\mathbb{Q}$ is dense in $\mathbb{R}$.
+\item[(3)]
+$\overline{E^\circ} = \overline{\varnothing} = \varnothing$
+since $\widetilde{\mathbb{Q}}$ is dense in $\mathbb{R}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \textbf{Exercise 2.10.}
