@@ -1,0 +1,139 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 2: Number Fields and Number Rings} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.28.}
+\emph{Let $f(x) = x^3+ax+b$, $a$ and $b \in \mathbb{Z}$,
+and assume $f$ is irreducible over $\mathbb{Q}$.
+Let $\alpha$ be a root of $f$.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.}
+\item[(b)]
+\emph{Show that $2a\alpha+3b$ is a root of
+$$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b.$$
+Use this to find $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]} (2a\alpha+3b)$.}
+\item[(c)]
+\emph{Show that $\text{disc}(\alpha) = -(4a^3+27b^2)$.}
+\item[(d)]
+\emph{Suppose $\alpha^3=\alpha+1$.
+Prove that $\{1,\alpha,\alpha^2\}$ is an integral basis for $\mathbb{A}\cap\mathbb{Q}[\alpha]$.
+(See Exercise 2.27(e).)
+Do the same if $\alpha^3+\alpha=1$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\alpha \neq 0$.}
+If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+So $f(x) = x^3+ax = x(x^2+a)$ is reducible, contrary to the irreducibility of $f$.
+\item[(2)]
+Since $\alpha$ be a root of $f$,
+$f(\alpha) = 0$,
+or $\alpha^3 + a\alpha + b = 0$,
+or $\alpha^3 = -a\alpha-b$.
+\item[(3)]
+\begin{align*}
+f'(x) = 3x^2 + a
+&\Longrightarrow
+f'(\alpha) = 3\alpha^2 + a \\
+&\Longleftrightarrow
+\alpha f'(\alpha) = 3\alpha^3 + a
+  &(\alpha \neq 0) \\
+&\Longleftrightarrow
+\alpha f'(\alpha) = 3(-a\alpha-b) + a\alpha
+  &(\alpha^3 = -a\alpha-b) \\
+&\Longleftrightarrow
+\alpha f'(\alpha) = -2a\alpha-3b.
+\end{align*}
+So $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Since $\alpha^3 + a\alpha + b = 0$,
+$$\left( \frac{(2a\alpha+3b)-3b}{2a} \right)^3
+  + a\left( \frac{(2a\alpha+3b)-3b}{2a} \right) + b = 0.$$
+That is, $2a\alpha+3b$ is a root of
+$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b.$
+\item[(2)]
+$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)$ is the product of three roots of
+$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
+Hence,
+\begin{align*}
+N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)
+&= (2a)^3\left[ \left(\frac{-3b}{2a}\right)^3 + a \cdot \frac{-3b}{2a} + b \right] \\
+&= 8a^3\left[ \frac{-27b^3}{8a^3} - \frac{b}{2} \right] \\
+&= -27b^3-4a^3b.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{align*}
+\text{disc}(\alpha)
+&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+  &\text{(Theorem 2.8)} \\
+&= - N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{2a\alpha+3b}{\alpha} \right)
+  &\text{($n=3$ and (a))} \\
+&= \frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)}
+  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+&= \frac{-27b^3-4a^3b}{b}
+  &\text{((b))} \\
+&= -4a^3-27b^2.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+$\alpha^3 = \alpha + 1$. $\alpha^3 - \alpha - 1 = 0$.
+So $\text{disc}(\alpha) = -23$ (by (c)).
+Since $\text{disc}(\alpha)$ is squarefree,
+$\{1,\alpha,\alpha^2\}$ forms an integral basis for
+$\mathbb{A}\cap\mathbb{Q}[\alpha]$ (Exercise 2.27(e)).
+\item[(2)]
+$\alpha^3 + \alpha = 1$. $\alpha^3 + \alpha - 1 = 0$.
+So $\text{disc}(\alpha) = -31$ (by (c)).
+The rest is similar to (1).
+\end{enumerate}
+$\Box$ \\\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
