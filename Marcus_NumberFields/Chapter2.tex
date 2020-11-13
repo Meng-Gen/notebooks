@@ -30,6 +30,180 @@
 
 
 
+\textbf{Exercise 2.1.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that every number field of degree $2$ over $\mathbb{Q}$
+is one of the quadratic fields $\mathbb{Q}[\sqrt{m}]$, $m \in \mathbb{Z}$.}
+\item[(b)]
+\emph{Show that the fields $\mathbb{Q}[\sqrt{m}]$, $m$ squarefree,
+are pairwise distinct.
+(Hint: Consider the equation $\sqrt{m} = a+b\sqrt{n}$);
+use this to show that they are in fact pairwise non-isomorphic.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Let $f(x) = ax^2+bx+c$, $a, b, c \in \mathbb{Z}$ ($a \neq 0$)
+and assume $f$ is irreducible over $\mathbb{Q}$.
+Let $\alpha$ be a root of $f(x)$.
+So
+$$\alpha = \frac{-b \pm \sqrt{m}}{2a}$$
+where $m = b^2-4ac \in \mathbb{Z}$.
+Therefore,
+$$\mathbb{Q}[\alpha]
+= \mathbb{Q}\left[ \frac{-b \pm \sqrt{m}}{2a} \right]
+= \mathbb{Q}[\sqrt{m}].$$
+$\Box$ \\
+
+\emph{Proof of (b).}
+\emph{Show that $\mathbb{Q}[\sqrt{m}]$ and $\mathbb{Q}[\sqrt{n}]$
+are not isomorphic as fields if $m$ and $n$ are squarefree and $m \neq n$.}
+Reductio ad absurdum.
+\begin{enumerate}
+\item[(1)]
+If $\varphi: \mathbb{Q}[\sqrt{m}] \to \mathbb{Q}[\sqrt{n}]$ were an isomorphism
+as fields, then $\varphi$ is an identity map on $\mathbb{Q}$, and
+\begin{align*}
+&\varphi(\sqrt{m}) = a + b\sqrt{n} \text{ for some } a, b \in \mathbb{Q} \\
+\Longrightarrow&
+\varphi(\sqrt{m})\varphi(\sqrt{m}) = (a + b\sqrt{n})^2 \\
+\Longrightarrow&
+\varphi(\sqrt{m} \sqrt{m}) = (a + b\sqrt{n})^2 \\
+\Longrightarrow&
+\varphi(m) = a^2 + nb^2 + 2ab\sqrt{n} \\
+\Longrightarrow&
+m = a^2 + nb^2 + 2ab\sqrt{n}.
+\end{align*}
+If $2ab \neq 0$, then $\sqrt{n} = \frac{m-a^2-nb^2}{2ab} \in \mathbb{Q}$,
+contrary to the assumption that $n$ is squarefree.
+Hence $2ab = 0$.
+\item[(2)]
+$a = 0$.
+Write $b = \frac{r}{s} \in \mathbb{Q}$ where $r, s \in \mathbb{Z}$ and $(r, s) = 1$.
+So $$ms^2 = nr^2.$$
+Hence
+\begin{align*}
+b \neq 0
+&\Longrightarrow
+s^2 > 0 \text{ and } r^2 > 0 \\
+&\Longrightarrow
+\text{$m$ and $n$ have the same sign} \\
+&\Longrightarrow
+\text{($\exists$ prime $p \mid m$, $p \nmid n$) or
+($\exists$ prime $q \mid n$, $q \nmid m$) since $m \neq n$}.
+\end{align*}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{There is a prime $p \mid m$ but $p \nmid n$.}
+  \begin{align*}
+  p \mid m
+  &\Longrightarrow
+  \text{Write $m = pm_1$ for some $m_1 \in \mathbb{Z}$} \\
+  &\Longrightarrow
+  (pm_1)s^2 = nr^2
+    &(ms^2 = nr^2) \\
+  &\Longrightarrow
+  p \mid nr^2 \\
+  &\Longrightarrow
+  p \mid r^2
+    &(\text{$p \nmid n$ by assumption}) \\
+  &\Longrightarrow
+  p \mid r
+    &(\text{$p$ is a prime}) \\
+  &\Longrightarrow
+  \text{Write $r = pr_1$ for some $r_1 \in \mathbb{Z}$} \\
+  &\Longrightarrow
+  (pm_1)s^2 = n(pr_1)^2
+    &(ms^2 = nr^2) \\
+  &\Longrightarrow
+  m_1s^2 = npr_1^2 \\
+  &\Longrightarrow
+  p \mid m_1s^2 \\
+  &\Longrightarrow
+  p \mid m_1
+    &(\text{$(r,s)=1$ and $p \mid r$}) \\
+  &\Longrightarrow
+  \text{Write $m_1 = pm_2$ for some $r_2 \in \mathbb{Z}$} \\
+  &\Longrightarrow
+  m = p^2m_2,
+  \end{align*}
+  contrary to the assumption that $m$ is squarefree.
+  \item[(b)]
+  \emph{There is a prime $q \mid n$ but $q \nmid m$.}
+  Similar to (a).
+  \end{enumerate}
+\item[(3)]
+$b = 0$.
+$m = a^2$.
+Write $a = \frac{r}{s} \in \mathbb{Q}$ where $r, s \in \mathbb{Z}$ and $(r, s) = 1$.
+Hence $ms^2 = r^2$.
+Similar to the argument in (2).
+\item[(4)]
+By (2)(3), no such isomorphism $\varphi$, that is,
+$\mathbb{Q}[\sqrt{m}]$ and $\mathbb{Q}[\sqrt{n}]$
+are not isomorphic as fields.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\textbf{Supplement (Isomorphic as vector spaces).}
+\emph{Show that $\mathbb{Q}[\sqrt{m}]$ and $\mathbb{Q}[\sqrt{n}]$
+are isomorphic as $\mathbb{Q}$-vector spaces.} \\
+
+\emph{Proof.}
+$[\mathbb{Q}[\sqrt{m}]:\mathbb{Q}] = [\mathbb{Q}[\sqrt{n}]:\mathbb{Q}] = 2$.
+There is a natural map $\varphi: \mathbb{Q}[\sqrt{m}] \to \mathbb{Q}[\sqrt{n}]$
+defined by $\varphi(a + b\sqrt{m}) = a + b\sqrt{n}$.
+Clearly $\varphi$ is well-defined, linear, injective and surjective.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.6.}
+\emph{Show that if $f$ and $g$ are polynomials over a field $K$ and
+$f^2 \mid g$ in $K[x]$, then $f \mid g'$.
+(Hint: Write $g = f^2 h$ and differentiate.)} \\
+
+\emph{Proof (Hint).}
+Since $f^2 \mid g$ in $K[x]$, there exists $h \in K[x]$ such $g = f^2 h$.
+Differentiate to get $g' = 2f f' h + f^2 h' = f(2f'h + fh')$,
+or $f \mid g'$ in $K[x]$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.15.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that $\mathbb{Z}[\sqrt{-5}]$ contains no element whose norm is $2$ or $3$.}
+\item[(b)]
+...\\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Since $N(a+b\sqrt{-5}) = a^2 - 5b^2 \equiv a^2 \equiv 0,1,4 \pmod{5}$,
+there is no element whose norm is $2$ or $3$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+TODO.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.28.}
 \emph{Let $f(x) = x^3+ax+b$, $a$ and $b \in \mathbb{Z}$,
 and assume $f$ is irreducible over $\mathbb{Q}$.
