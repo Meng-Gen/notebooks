@@ -5,7 +5,6 @@
 - Apostol, Mathematical Analysis, 2nd Ed.
 - H. L. Royden, Real Analysis, 3rd Ed.
 - Friedeberg & Insel & Spence, Linear Algebra, 3rd Ed.
-- Marcus, Number Fields.
 - Ireland & Rosen, A Classical Introduction to Modern Number Theory, 2nd Ed.
 - Eisenbud, Commutative Algebra with a View Toward Algebraic Geometry.
 - Atiyah & Macdonald, Introduction to Commutative Algebra.
