@@ -67,7 +67,7 @@ f'(x) = 3x^2 + a
 &\Longrightarrow
 f'(\alpha) = 3\alpha^2 + a \\
 &\Longleftrightarrow
-\alpha f'(\alpha) = 3\alpha^3 + a
+\alpha f'(\alpha) = 3\alpha^3 + a\alpha
   &(\alpha \neq 0) \\
 &\Longleftrightarrow
 \alpha f'(\alpha) = 3(-a\alpha-b) + a\alpha
@@ -86,7 +86,7 @@ Since $\alpha^3 + a\alpha + b = 0$,
 $$\left( \frac{(2a\alpha+3b)-3b}{2a} \right)^3
   + a\left( \frac{(2a\alpha+3b)-3b}{2a} \right) + b = 0.$$
 That is, $2a\alpha+3b$ is a root of
-$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b.$
+$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
 \item[(2)]
 $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)$ is the product of three roots of
 $\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
@@ -171,7 +171,88 @@ this can be shown by reducing $\pmod{3}$.)}
 \end{enumerate}
 
 \emph{Proof of (a)(Exercise 2.28).}
-...
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f'(\alpha) = -\frac{4a\alpha+5b}{\alpha}$.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\alpha \neq 0$.}
+  If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+  So $f(x) = x^5+ax = x(x^4+a)$ is reducible, contrary to the irreducibility of $f$.
+  \item[(b)]
+  Since $\alpha$ be a root of $f$,
+  $f(\alpha) = 0$,
+  or $\alpha^5 + a\alpha + b = 0$,
+  or $\alpha^5 = -a\alpha-b$.
+  \item[(c)]
+  \begin{align*}
+  f'(x) = 5x^4 + a
+  &\Longrightarrow
+  f'(\alpha) = 5\alpha^4 + a \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = 5\alpha^5 + a\alpha
+    &(\alpha \neq 0) \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = 5(-a\alpha-b) + a\alpha
+    &(\alpha^5 = -a\alpha-b) \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = -4a\alpha-5b.
+  \end{align*}
+  So $f'(\alpha) = -\frac{4a\alpha+5b}{\alpha}$.
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $4a\alpha+5b$ is a root of
+$$\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b.$$
+Use this to show that
+$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b) = -4^4a^5b-5^5b^5$.}
+  \begin{enumerate}
+  \item[(a)]
+  Since $\alpha^5 + a\alpha + b = 0$,
+  $$\left( \frac{(4a\alpha+5b)-5b}{4a} \right)^5
+    + a\left( \frac{(4a\alpha+5b)-5b}{4a} \right) + b = 0.$$
+  That is, $4a\alpha+5b$ is a root of
+  $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
+  \item[(b)]
+  $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)$ is the product of three roots of
+  $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
+  Hence,
+  \begin{align*}
+  N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)
+  &= (4a)^5\left[ \left(\frac{-5b}{4a}\right)^5 + a \cdot \frac{-5b}{4a} + b \right] \\
+  &= 4^5a^5\left[ \frac{-5^5b^5}{4^5a^5} - \frac{b}{4} \right] \\
+  &= -5^5b^5-4^4a^5b.
+  \end{align*}
+  \end{enumerate}
+\item[(3)]
+\emph{Show that $\text{disc}(\alpha) = 4^4 a^5 + 5^4 b^4$.}
+\begin{align*}
+\text{disc}(\alpha)
+&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+  &\text{(Theorem 2.8)} \\
+&= N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{4a\alpha+5b}{\alpha} \right)
+  &\text{($n=5$ and (1))} \\
+&= -\frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)}
+  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+&= - \frac{-4^4a^5b-5^5b^5}{b}
+  &\text{((2))} \\
+&= 4^4 a^5 + 5^4 b^4.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b)(Exercise 2.28).}
+\begin{enumerate}
+\item[(1)]
+$\alpha^5 = \alpha + 1$, or $\alpha^5 - \alpha - 1 = 0$.
+\item[(2)]
+$f(x) = x^5 - x - 1$ is irreducible over $\mathbb{Q}$
+since $f(x)$ is irreducible over $\mathbb{Z}/3\mathbb{Z}$.
+\item[(3)]
+$\text{disc}(\alpha) = 881$ (by (a)).
+\item[(4)]
+Since $\text{disc}(\alpha)$ is squarefree (a prime number),
+the result is established (Exercise 2.27(e)).
+\end{enumerate}
 $\Box$ \\\\
 
 
