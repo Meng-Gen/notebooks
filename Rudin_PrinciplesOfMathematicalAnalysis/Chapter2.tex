@@ -927,6 +927,45 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 2.13.}
+\emph{Construct a compact set of real numbers whose limit points form a countable set.} \\
+
+\emph{Proof (Exercise 2.12).}
+Let $K(p;r) \subseteq \mathbb{R}^1$ be
+$$K(p;r) = \left\{ p + \frac{r}{n} : n = 2, 3, \ldots \right\} \bigcup \{p\}$$
+and
+$$K
+= \left(\bigcup_{i = 0}^{\infty} K(2^{-i};2^{-i})\right) \bigcup \{0\}.$$
+\begin{enumerate}
+\item[(1)]
+\emph{The set of limit points of $K$ is $K' = \{ 2^{-i} : i = 0, 1, 2, \ldots \} \bigcup \{0\}$,
+which is (infinitely) countable.}
+  \begin{enumerate}
+  \item[(a)]
+  The unique limit point of $K(2^{-i};2^{-i})$ is $2^{-i}$ for each $i = 0, 1, 2, \ldots$
+  (Exercise 2.12).
+  \item[(b)]
+  $0$ is a limit point of $K$.
+  \item[(c)]
+  No other limit points of $K$.
+  Similar to the argument of the proof of Exercise 2.12.
+  \end{enumerate}
+\item[(2)]
+$K$ is closed. All limit points are in $K$.
+\item[(3)]
+$K$ is bounded. There is a real number $M = 2$ and a point $q = 0 \in \mathbb{R}^1$
+such that $|p - q| = |p| < 2$ for all $p \in K$.
+\end{enumerate}
+By Heine-Borel theorem, $K$ is compact in $\mathbb{R}^1$,
+and has infinitely countable limit points.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.14.}
 \emph{Give an example of an open cover of the segment $(0, 1)$
 which has no finite subcover.} \\
@@ -949,6 +988,196 @@ $x = \frac{1}{2 n_k}$ for example.
 Then $x \not\in G_{n_1}$, $x \not\in G_{n_1}$, ..., $x \not\in G_{n_k}$,
 which contradicts that $\mathscr{G}'$ is a finite subcovering of $\mathscr{G}$ covering $(0, 1)$.
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.15.}
+\emph{
+Show that Theorem 2.36 and its Corollary become false
+(in $\mathbb{R}^1$, for example) if the word ``compact''
+is replaced by ``closed'' or by ``bounded.''} \\
+
+\emph{Recall:}
+\begin{enumerate}
+\item[(1)]
+Theorem 2.36:
+\emph{If $\{K_\alpha\}$ is a collection of compact subsets of a metric space $X$
+such that the intersection of every finite subcollection of $\{K_\alpha\}$ is nonempty,
+then $\bigcap K_\alpha$ is nonempty.}
+\item[(2)]
+Corollary:
+\emph{If $\{K_n\}$ is a sequence of nonempty compact sets such that $K_n$
+contains $K_{n+1}$ $(n=1,2,3,\ldots)$, then $\bigcap K_n$ is not empty.} \\
+\end{enumerate}
+
+\emph{Proof.}
+Let $X = \mathbb{R}^1$ with the usual Euclidean metric.
+\begin{enumerate}
+\item[(1)]
+For the closeness, let $K_n = [n,\infty) \subseteq X$.
+\item[(2)]
+For the boundedness, let $K_n = \left(0, \frac{1}{n}\right) \subseteq X$.
+\end{enumerate}
+In any case, $K_1 \supseteq K_2 \supseteq \cdots$ and $\bigcap K_n = \varnothing$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.16.}
+\emph{Regard $\mathbb{Q}$, the set of all rational numbers, as a metric space,
+with $d(p,q) = |p-q|$.
+Let $E$ be the set of all $p \in \mathbb{Q}$ such that $2 < p^2 < 3$.
+Show that $E$ is closed and bounded in $Q$,
+but that $E$ is not compact.
+Is $E$ open in $\mathbb{Q}$?} \\
+
+\textbf{Lemma.}
+\emph{Assume $S \subseteq T \subseteq M$.
+Then $S$ is compact in $(M,d)$ if, and only if,
+$S$ is compact in the metric subspace $(T,d)$. } \\
+
+\emph{Proof of Lemma.}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Let $\mathscr{F}$ be an open covering of $S$ in $(T,d)$, say
+$S \subseteq \bigcup_{A \in \mathscr{F}} A$ where $A$ is open in $T$.
+Then $A = B \cap T$ for some open set $B$ in $M$ (Theorem 3.33).
+Let $\mathscr{G}$ be the collection of $B$.
+Then
+$$S \subseteq
+\bigcup_{A \in \mathscr{F}} A
+= \bigcup_{B \in \mathscr{G}} (B \cap T)
+\subseteq \bigcup_{B \in \mathscr{G}} B,$$
+or $\mathscr{G}$ be an open covering of $S$ in $(M,d)$.
+Since $S$ is compact in $(M,d)$,
+$\mathscr{G}$ contains a finite subcovering, say
+$$S \subseteq B_1 \cap \cdots \cap B_p.$$
+So $$S \cap T \subseteq (B_1\cap T) \cap \cdots \cap (B_p \cap T),$$
+or $$S \subseteq A_1 \cap \cdots \cap A_p$$ (since $S \subseteq T$ or $S \cap T = S$).
+So there is a finite subcovering of $\mathscr{F}$ covering $S$,
+or $S$ is compact in $(T,d)$.
+\item[(2)]
+$(\Longleftarrow)$
+Let $\mathscr{G}$ be an open covering of $S$ in $(M,d)$, say
+$S \subseteq \bigcup_{B \in \mathscr{G}} B$ where $B$ is open in $M$.
+Then $A = B \cap T$ is open in $T$.
+Let $\mathscr{F}$ be the collection of $A$.
+Then
+$$S \cap T \subseteq
+\bigcup_{B \in \mathscr{G}} (B \cap T)
+= \bigcup_{A \in \mathscr{F}} A,$$
+or $\mathscr{F}$ be an open covering of $S \cap T = S$ in $(T,d)$.
+Since $S$ is compact in $(T,d)$,
+$\mathscr{F}$ contains a finite subcovering, say
+$$S \subseteq A_1 \cap \cdots \cap A_p.$$
+Clearly, $S \subseteq B_1 \cap \cdots \cap B_p$ since $A = B \cap T \subseteq B$.
+So there is a finite subcovering of $\mathscr{G}$ covering $S$,
+or $S$ is compact in $(M,d)$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof.}
+Write $E_0 = (\sqrt{2},\sqrt{3}) \bigcup (-\sqrt{3},-\sqrt{2})$,
+and $E = E_0 \bigcap \mathbb{Q}$.
+\begin{enumerate}
+\item[(1)]
+$E$ is a subset of $\mathbb{Q}$.
+\item[(2)]
+\emph{Show that $E$ is bounded in $\mathbb{Q}$.}
+Since $\mathbb{Q}$ is dense in $\mathbb{R}$,
+there is $p \in \mathbb{Q}$ such that $\sqrt{2} < p < \sqrt{3}$, or $p \in E$.
+Let $r = p + \sqrt{3} > 0$.
+Therefore, $E \subseteq B(p;r)$ for some $r > 0$ and $p \in E$,
+or $E$ is bounded.
+\item[(3)]
+\emph{Show that $E$ is closed in $\mathbb{Q}$.}
+It suffices to show its complement is open in $\mathbb{Q}$.
+Given any
+$$p \in \widetilde{E}
+= ((-\infty, -\sqrt{3}] \cup [-\sqrt{2},\sqrt{2}] \cup [\sqrt{3}, \infty)) \cap \mathbb{Q}.$$
+$p \leq -\sqrt{3}$ or $-\sqrt{2} \leq p \leq \sqrt{2}$ or $p \geq \sqrt{3}$.
+  \begin{enumerate}
+  \item[(a)]
+  $p \leq -\sqrt{3}$. $p \neq -\sqrt{3}$ since $p \in \mathbb{Q}$ and $-\sqrt{3}$ is irrational.
+  So $p < -\sqrt{3}$ and thus there exists $q \in \mathbb{Q}$ such that $p < q < -\sqrt{3}$
+  since $\mathbb{Q}$ is dense in $\mathbb{R}$.
+  Let $r = \max\{-\sqrt{3} - q, q - p\} > 0$.
+  The ball $B(q;r)$ is contained in $\widetilde{E}$.
+  \item[(b)]
+  $-\sqrt{2} \leq p \leq \sqrt{2}$. Similar to (a).
+  \item[(c)]
+  $p \geq \sqrt{3}$. Similar to (a).
+  \end{enumerate}
+  By (a)(b), $\widetilde{E}$ is open in $\mathbb{Q}$, or $E$ is closed in $\mathbb{Q}$.
+\item[(4)]
+\emph{Show that $E$ is not compact in $\mathbb{Q}$.}
+(Reductio ad absurdum)
+If $E_0$ were compact in the metric space $\mathbb{Q}$,
+$E_0$ is compact in the metric space $\mathbb{R}$ (Lemma),
+which is absurd.
+\item[(5)]
+\emph{Show that $E$ is open.}
+Similar to (3).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.22.}
+\emph{A metric space is called separable if it contains a countable dense subset.
+Show that $\mathbb{R}^k$ is separable.
+(Hint: Consider the set of points which have only rational coordinates.)} \\
+
+\emph{Proof.}
+Let $E$ be the set of points which have only rational coordinates.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $E$ is countable.} $\mathbb{Q}$ is countable
+and thus $E = \mathbb{Q}^k$ is countable (Theorem 2.13).
+\item[(2)]
+\emph{Show that $E$ is dense.}
+Given any $\mathbf{p} = (p_1, \ldots, p_k) \in \mathbb{R}^k$.
+We want to show that $\mathbf{p}$ is a limit point of $E$.
+  \begin{enumerate}
+  \item[(a)]
+  Given any open neighborhood $B(\mathbf{p};r)$ of $\mathbf{p}$, $r > 0$.
+  \item[(b)]
+  Since $\mathbb{Q}$ is dense in $\mathbb{R}$ (Theorem 1.20),
+  every coordinate of $\mathbf{p}$ is a limit point of $\mathbb{Q}$.
+  In particular, for every $i = 1, 2, \ldots, k$,
+  the open neighborhood $B\left(p_i, \frac{r}{\sqrt{k}}\right)$ of $p_i$
+  contains a point $q_i \neq p_i$ and $q_i \in \mathbb{Q}$.
+  \item[(c)]
+  Collect all $q_i$ in (b)
+  and define $\mathbf{q} = (q_1, \ldots, q_k) \in \mathbb{Q}^k = E$.
+  By construction $\mathbf{q} \neq \mathbf{p}$ and
+  \begin{align*}
+    |\mathbf{p} - \mathbf{q}|
+    &= \sqrt{(p_1 - q_1)^2 + \cdots + (p_k - q_k)^2} \\
+    &< \sqrt{\left(\frac{r}{\sqrt{k}}\right)^2 + \cdots
+      + \left(\frac{r}{\sqrt{k}}\right)^2} \\
+    &= \sqrt{k \cdot \frac{r^2}{k}} \\
+    &= r
+  \end{align*}
+  or $\mathbf{q} \in B(\mathbf{p};r)$.
+  \end{enumerate}
+  By (a)(b)(c), $E$ is dense in $\mathbb{R}^k$.
+\end{enumerate}
+By (1)(2), $\mathbb{R}^k$ is separable.
 $\Box$ \\\\
 
 
