@@ -45,9 +45,9 @@ Indeed, $g(x) = \max_{a \leq t \leq x} f(t)$ for $x \in [a,b]$. \\
 \begin{enumerate}
 \item[(1)]
 $f$ is continuous on $[a,b]$ at a point $p$ $\Longleftrightarrow$
-Given any $\epsilon' > 0$, there exists $\delta' > 0$ such that
-$|f(x) - f(p)| < \epsilon'$ whenever $|x-p| < \delta'$ (and $x \in [a,b]$).
-We left $\epsilon'$ and $\delta'$ undecided temporarily.
+Given any $\varepsilon' > 0$, there exists $\delta' > 0$ such that
+$|f(x) - f(p)| < \varepsilon'$ whenever $|x-p| < \delta'$ (and $x \in [a,b]$).
+We left $\varepsilon'$ and $\delta'$ undecided temporarily.
 \item[(2)]
 To estimate $g$ on
 $$[p-\delta', p+\delta'] \cap [a,b],$$
@@ -67,26 +67,26 @@ There are two possible cases (might overlapped):
   For any $x \in [p-\delta', p+\delta'] \cap [a,b]$,
     \begin{enumerate}
     \item[(i)]
-    $f(p) - \epsilon' < g(x)$ by the maximality of $g$ on $[a,x]$.
+    $f(p) - \varepsilon' < g(x)$ by the maximality of $g$ on $[a,x]$.
     \item[(ii)]
-    $g(x) \leq f(q) < f(p) + \epsilon'$
+    $g(x) \leq f(q) < f(p) + \varepsilon'$
     since $g$ is an increasing function and
     $f$ takes the maximum value over on $[a,p+\delta'] \cap [a,b]$ at
     $q \in (p-\delta',p+\delta'] \cap [a,b]$.
     \end{enumerate}
   By (i)(ii),
-  $$f(p) - \epsilon' < g(x) < f(p) + \epsilon'$$
+  $$f(p) - \varepsilon' < g(x) < f(p) + \varepsilon'$$
   for  any $x \in [p-\delta', p+\delta'] \cap [a,b]$ (especially $x = p$).
   Therefore,
-  $$|g(x) - g(p)| < 2 \epsilon'
+  $$|g(x) - g(p)| < 2 \varepsilon'
   \text{ whenever } |x-p| < \delta' (\text{and } x \in [a,b]).$$
 
   \end{enumerate}
   By (a)(b), we have
-  $|g(x) - g(p)| < 2 \epsilon'
+  $|g(x) - g(p)| < 2 \varepsilon'
   \text{ whenever } |x-p| < \delta' (\text{and } x \in [a,b])$ in any cases.
 \item[(4)]
-Retake $\epsilon' = \frac{\epsilon}{2} > 0$ and $\delta = \delta' > 0$.
+Retake $\varepsilon' = \frac{\varepsilon}{2} > 0$ and $\delta = \delta' > 0$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -257,8 +257,8 @@ The proof is straightforward.
 \begin{enumerate}
 \item[(1)]
 Suppose $f: S \rightarrow T$ is uniformly continuous on $S$.
-Given any $\epsilon > 0$, there is $\delta > 0$ such that
-$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
+Given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
 \item[(2)]
 \emph{Show that $f$ is continuous at any point $p$ in $S$.}
 Set $y = p$ in (1).
@@ -276,9 +276,9 @@ Prove by contradiction.
 \begin{enumerate}
 \item[(1)]
 If $f$ were uniformly continuous on $\mathbb{R}$,
-then for any $\epsilon > 0$, there is $\delta > 0$ such that
-$|f(x) - f(y)| < \epsilon$ whenever $|x - y| < \delta$.
-Here we pick $\epsilon = 1 > 0$.
+then for any $\varepsilon > 0$, there is $\delta > 0$ such that
+$|f(x) - f(y)| < \varepsilon$ whenever $|x - y| < \delta$.
+Here we pick $\varepsilon = 1 > 0$.
 \item[(2)]
 So
 $$|f(x) - f(y)| = |x^2 - y^2| = |x+y||x-y| < 1$$
@@ -310,9 +310,9 @@ but $f(\mathbb{R}) = \mathbb{R}$ is unbounded. \\
 \begin{enumerate}
 \item[(1)]
 Since $f: S \rightarrow T$ is uniformly continuous,
-given any $\epsilon > 0$, there is $\delta > 0$ such that
-$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
-In particular, pick $\epsilon = 1$.
+given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
+In particular, pick $\varepsilon = 1$.
 \item[(2)]
 By the boundedness of $S$, there is $M > 0$ such that $\norm{x} < M$ for all $x \in S$.
 In particular, each coordinate of $x \in \mathbb{R}^n$ is less than $M$.
@@ -375,9 +375,9 @@ $$\overline{S}
 or $\overline{S}$ is bounded.
 \item[(2)]
 Since $f: S \rightarrow T$ is uniformly continuous,
-given any $\epsilon > 0$, there is $\delta > 0$ such that
-$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
-In particular, pick $\epsilon = 1$.
+given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
+In particular, pick $\varepsilon = 1$.
 \item[(3)]
 For such $\delta > 0$, we construct an open covering of $\overline{S} \subseteq \mathbb{R}^n$.
 Pick a collection $\mathscr{C}$ of open balls
@@ -447,14 +447,14 @@ The proof is straightforward.
 \begin{enumerate}
 \item[(1)]
 Since $f: S \rightarrow T$ is uniformly continuous on $S$,
-given any $\epsilon > 0$, there is $\delta > 0$ such that
-$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
+given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
 \item[(2)]
 Since $\{x_n\}$ is any Cauchy sequence in $S$,
 especially for such $\delta > 0$ in (1), there is an integer $N$ such that
 $d_S(x_m, x_n) < \delta$ whenever $m \geq N$ and $n \geq N$.
 So as $m \geq N$ and $n \geq N$, we have
-$d_T(f(x_m), f(x_n)) < \epsilon$ by (1),
+$d_T(f(x_m), f(x_n)) < \varepsilon$ by (1),
 or $\{f(x_n)\}$ itself is a Cauchy sequence in $T$.
 \end{enumerate}
 $\Box$ \\\\

@@ -545,13 +545,13 @@ $$\sum_{n = 1}^{\infty} \frac{(\sin n)^2}{n^2} = \frac{\pi - 1}{2}$$
 as $\delta = 1$. \\
 
 \emph{Proof of (d).}
-Given $\epsilon > 0$.
+Given $\varepsilon > 0$.
 By Exercise 6.8,
 $$\int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx$$ exists.
 So there exists $b > 0$ such that
 $$\left| \int_{0}^{b} \left( \frac{\sin x}{x} \right)^2 dx
 - \int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
-\right| < \frac{\epsilon}{4}$$
+\right| < \frac{\varepsilon}{4}$$
 
 By Supplement in Chapter 6, there exists
 $\delta > 0$ such that for any partition
@@ -563,11 +563,11 @@ we have
 \sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{(n \frac{b}{m})^2} \cdot \frac{b}{m}
 - \int_{0}^{b} \left( \frac{\sin x}{x} \right)^2 dx
 \right|
-&< \frac{\epsilon}{4}, \\
+&< \frac{\varepsilon}{4}, \\
 \left|
 \sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
 - \int_{0}^{b} \left( \frac{\sin x}{x} \right)^2 dx
-\right| &< \frac{\epsilon}{4}.
+\right| &< \frac{\varepsilon}{4}.
 \end{align*}
 For simplicity we resize $\delta$ to $\delta < \pi$ to make $0 < \frac{b}{m} < \delta < \pi$.
 Besides, since $\sum_{n = 1}^{\infty} \frac{1}{n^2}$ converges,
@@ -576,31 +576,31 @@ $$\left|
 \sum_{n = 1}^{\infty} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
 - \sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
 \right|
-< \frac{\epsilon}{4}$$
+< \frac{\varepsilon}{4}$$
 whenever $m \geq N$.
 By (c),
 $$\left|
 \frac{\pi - \frac{b}{m}}{2}
 - \sum_{n = 1}^{m} \frac{(\sin(n \frac{b}{m}))^2}{n^2 \frac{b}{m}}
 \right|
-< \frac{\epsilon}{4}$$
+< \frac{\varepsilon}{4}$$
 whenever $m \geq N$.
 Last, it is easy to get
 $$\left|
 \frac{\pi}{2}
 - \frac{\pi - \frac{b}{m}}{2}
 \right|
-< \frac{\epsilon}{4}$$
-whenever $m > \frac{2b}{\epsilon}$.
+< \frac{\varepsilon}{4}$$
+whenever $m > \frac{2b}{\varepsilon}$.
 Now we have
 $$\left|
 \frac{\pi}{2}
 - \int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
 \right|
-< \epsilon
+< \varepsilon
 $$
-whenever $m > \max(\frac{b}{\delta}, N, \frac{2b}{\epsilon})$.
-Since $\epsilon$ is arbitrary,
+whenever $m > \max(\frac{b}{\delta}, N, \frac{2b}{\varepsilon})$.
+Since $\varepsilon$ is arbitrary,
 $\int_{0}^{\infty} \left( \frac{\sin x}{x} \right)^2 dx
 = \frac{\pi}{2}$.
 $\Box$ \\

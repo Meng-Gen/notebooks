@@ -36,10 +36,10 @@ convergence of $\{\abs{s_n}\}$.  Is the converse true?} \\
 \item[(1)]
 Since $\{s_n\}$ is convergent, there is $s \in \mathbb{R}^1$
 with the following property:
-given any $\epsilon > 0$, there is $N$ such that
-$\abs{s_n - s} < \epsilon$ whenever $n \geq N$.
+given any $\varepsilon > 0$, there is $N$ such that
+$\abs{s_n - s} < \varepsilon$ whenever $n \geq N$.
 So
-$$\abs{\abs{s_n}-\abs{s}} \leq \abs{s_n - s}  < \epsilon$$
+$$\abs{\abs{s_n}-\abs{s}} \leq \abs{s_n - s}  < \varepsilon$$
 (Exercise 1.13). That is,
 $\{\abs{s_n}\}$ converges to $\abs{s}$.
 \item[(2)]
@@ -63,10 +63,10 @@ $$\sqrt{n^2 + n} - n
 as $n \to \infty$.
 $\Box$ \\
 
-\emph{Proof ($\epsilon-N$ argument).}
+\emph{Proof ($\varepsilon-N$ argument).}
 Let $s_n = \sqrt{n^2 + n} - n$.
 \emph{Show that the sequence $\{s_n\}$ converges to $s = \frac{1}{2}$.}
-Given any $\epsilon > 0$, there is $N > \frac{1}{\epsilon}$ such that
+Given any $\varepsilon > 0$, there is $N > \frac{1}{\varepsilon}$ such that
 \begin{align*}
 \abs{s_n - s}
 &= \abs{(\sqrt{n^2 + n} - n) - \frac{1}{2}}
@@ -87,7 +87,7 @@ Given any $\epsilon > 0$, there is $N > \frac{1}{\epsilon}$ such that
 {2\left(\sqrt{1+\frac{1}{n}} + 1\right)^2}}
 < \frac{1}{n}
 \leq \frac{1}{N}
-< \epsilon
+< \varepsilon
 \end{align*}
 wheneven $n \geq N$.
 $\Box$ \\\\

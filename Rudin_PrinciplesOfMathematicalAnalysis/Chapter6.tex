@@ -34,10 +34,10 @@ of $P$ and is denoted by $\Vert P \Vert$.} \\
 
 \emph{We say $f \in \mathscr{R}(\alpha)$
 if there exists $A \in \mathbb{R}$ having the property that
-for any $\epsilon > 0$, there exists $\delta > 0$ such that
+for any $\varepsilon > 0$, there exists $\delta > 0$ such that
 for any partition $P$ of $[a, b]$ with norm $\Vert P \Vert < \delta$
 and for any choice of $t_i \in [x_{i-1}, x_i]$,
-we have $|\sum_{i = 1}^{n} f(t_i) \Delta \alpha_i - A| < \epsilon$.} \\
+we have $|\sum_{i = 1}^{n} f(t_i) \Delta \alpha_i - A| < \varepsilon$.} \\
 
 \textbf{Cliam.}
 \emph{$f \in \mathscr{R}$ in the sense of Definition 6.2
@@ -45,11 +45,11 @@ implies that
 $f \in \mathscr{R}$ in the sense of this another definition.} \\
 \emph{Proof of Claim.}
 Let $A = \int f dx$, $M > 0$ be one upper bound of $|f|$ on $[a, b]$.
-Given $\epsilon > 0$, there exists a partition
+Given $\varepsilon > 0$, there exists a partition
 $P_0 = \{a = x_0, x_1, ..., x_{N-1}, x_N = b \}$
 such that
-$U(P_0, f) \leq A + \frac{\epsilon}{2}$.
-Let $\delta = \frac{\epsilon}{2MN} > 0$.
+$U(P_0, f) \leq A + \frac{\varepsilon}{2}$.
+Let $\delta = \frac{\varepsilon}{2MN} > 0$.
 Then for any partition $P$ with norm $\Vert P \Vert < \delta$, write
 $$U(P, f) = \sum_{i = 1}^{n} M_i \Delta x_i = S_1 + S_2,$$
 where
@@ -57,12 +57,12 @@ $S_1$ is the sum of terms arising from those subintervals of $P$ containing no p
 $S_2$ is the sum of the remaining terms.
 Then
 \begin{align*}
-S_1 &\leq U(P_0, f) < A + \frac{\epsilon}{2}, \\
-S_2 &\leq NM \Vert P \Vert < NM \delta < \frac{\epsilon}{2}.
+S_1 &\leq U(P_0, f) < A + \frac{\varepsilon}{2}, \\
+S_2 &\leq NM \Vert P \Vert < NM \delta < \frac{\varepsilon}{2}.
 \end{align*}
-Therefore, $U(P, f) < A + \epsilon$.
-Similarly, $L(P, f) > A - \epsilon$ whenever $\Vert P \Vert < \delta'$.
-Hence, $|\sum_{i = 1}^{n} f(t_i) \Delta x_i - A| < \epsilon$
+Therefore, $U(P, f) < A + \varepsilon$.
+Similarly, $L(P, f) > A - \varepsilon$ whenever $\Vert P \Vert < \delta'$.
+Hence, $|\sum_{i = 1}^{n} f(t_i) \Delta x_i - A| < \varepsilon$
 whenever $\Vert P \Vert < \min(\delta, \delta')$.
 (Copy Apostol's hint and ensure $M > 0$. $M$ in Apostol's hint might be zero if $f = 0$.)
 $\Box$ \\
@@ -80,7 +80,7 @@ Prove that $f \in \mathscr{R}(\alpha)$ and that $\int f d \alpha = 0$.} \\
 
 Given any partition $P = \{a = p_0, p_1, ..., p_{n-1}, p_n = b \}$,
 where $a = p_0 \leq p_1 \leq \cdots \leq p_{n-1} \leq p_n = b$.
-We might compute $L(P, f, \alpha)$ and $U(P, f, \alpha)$ by using $\epsilon$-$\delta$ argument
+We might compute $L(P, f, \alpha)$ and $U(P, f, \alpha)$ by using $\varepsilon$-$\delta$ argument
 since we are hinted by the condition that $\alpha$ is continuous.
 A function which is continuous at $x_0$ has a nice property near $x_0$
 and this property would help us estimate $U(P, f, \alpha)$ near $x_0$.
@@ -99,8 +99,8 @@ Here we don't need the condition that $\alpha$ is continuous at $x_0$.
 $\Box$ \\
 
 \textbf{Claim 2.}
-\emph{For any $\epsilon > 0$,
-there exists a partition $P$ such that $U(P, f, \alpha) < \epsilon$.} \\
+\emph{For any $\varepsilon > 0$,
+there exists a partition $P$ such that $U(P, f, \alpha) < \varepsilon$.} \\
 \emph{Proof of Claim 2.}
 Let $x_0 \in [p_{i_0 - 1}, p_{i_0}]$ for some $i_0$. Then
 $M_i = \sup_{p_{i - 1} \leq x \leq p_i} f(x) = 0$ if $i \neq i_0$, and $M_{i_0} = 1$.
@@ -108,8 +108,8 @@ So
 $$U(P, f, \alpha) = \sum M_i \Delta \alpha_i = \Delta \alpha_{i_0}.$$
 It is not true for any arbitrary $\alpha$. (For example, $\alpha$ has a jump on $x = x_0$.)
 In fact, Exercise 6.3 shows this.
-Luckily, $\alpha$ is continuous at $x_0$. So for $\epsilon > 0$,
-there exists $\delta > 0$ such that $|\alpha(x) - \alpha(x_0)| < \frac{\epsilon}{2}$
+Luckily, $\alpha$ is continuous at $x_0$. So for $\varepsilon > 0$,
+there exists $\delta > 0$ such that $|\alpha(x) - \alpha(x_0)| < \frac{\varepsilon}{2}$
 whenever $|x - x_0| < \delta$ (and $x \in [a, b]$).
 Now we pick a nice partition
 $$P = \{ a, x_0 - \delta_1, x_0 + \delta_2, b \},$$
@@ -122,9 +122,9 @@ and $\Delta \alpha$ on $[x_0 - \delta_1, x_0 + \delta_2]$ is
 \begin{align*}
 \alpha(x_0 + \delta_2) - \alpha(x_0 - \delta_1)
 &= (\alpha(x_0 + \delta_2) - \alpha(x_0)) + (\alpha(x_0) - \alpha(x_0 - \delta_1)) \\
-&< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+&< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 \end{align*}
-Therefore, $U(P, f, \alpha) < \epsilon$.
+Therefore, $U(P, f, \alpha) < \varepsilon$.
 $\Box$ \\
 
 \emph{Proof (Definition 6.2).}
@@ -139,7 +139,7 @@ $\Box$ \\
 
 \emph{Proof (Theorem 6.5).}
 By Claim 1 and 2,
-$$0 \leq U(P, f, \alpha) - L(P, f, \alpha) < \epsilon.$$
+$$0 \leq U(P, f, \alpha) - L(P, f, \alpha) < \varepsilon.$$
 Hence $f \in \mathscr{R}(\alpha)$ by Theorem 6.5.
 Furthermore,
 $$\int f d \alpha = \lowint_a^b f d\alpha = \sup L(P, f, \alpha) = 0.$$

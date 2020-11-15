@@ -156,9 +156,9 @@ Prove that $f$ must be bounded on $S$.} \\
 \begin{enumerate}
 \item[(1)]
 Since $f: S \rightarrow T$ is uniformly continuous,
-given any $\epsilon > 0$, there is $\delta > 0$ such that
-$d_T(f(x), f(y)) < \epsilon$ whenever $d_S(x, y) < \delta$.
-Choose $\epsilon = 1 > 0$.
+given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
+Choose $\varepsilon = 1 > 0$.
 \item[(2)]
 For such $\delta > 0$, construct an open covering of $\overline{S} \subseteq \mathbb{R}^n$.
 Pick a collection $\mathscr{F}$ of open balls
@@ -186,9 +186,9 @@ $\Box$ \\
 
 \textbf{Problem 3.6.}
 \emph{Prove Proposition 5:
-Given any set $A$ and any $\epsilon > 0$,
+Given any set $A$ and any $\varepsilon > 0$,
 there is an open set $O$ such that $A \subseteq O$
-and $m^{*}O \leq m^{*}A + \epsilon$.
+and $m^{*}O \leq m^{*}A + \varepsilon$.
 There is a $G \in G_{\delta}$ such that $m^{*}G = m^{*}A$.} \\
 
 \emph{Proof.}
@@ -196,26 +196,26 @@ There is a $G \in G_{\delta}$ such that $m^{*}G = m^{*}A$.} \\
 \item[(1)]
 \emph{Use the definition of the outer measure.}
 By the definition of $m^{*}$,
-for such $\epsilon > 0$ there exists a countable collection
+for such $\varepsilon > 0$ there exists a countable collection
 $\{ I_n \}$ of open intervals that covers $A$ and
-$$m^{*} A + \epsilon \geq \sum l(I_n).$$
+$$m^{*} A + \varepsilon \geq \sum l(I_n).$$
 \item[(2)]
 \emph{Construct an open set $O$.}
 Let $O = \bigcup I_n \supseteq A$
 which is the union of any collection of open sets $I_n$.
 By Proposition 2.7, $O$ is open.
 \item[(3)]
-\emph{Show that $m^{*}O \leq m^{*}A + \epsilon$.}
+\emph{Show that $m^{*}O \leq m^{*}A + \varepsilon$.}
 By Proposition 3.2 and 3.1,
 $$m^{*}O
 = m^{*} \left( \bigcup I_n \right)
 \leq \sum m^{*} I_n
 = \sum l(I_n)
-\leq m^{*} A + \epsilon.$$
+\leq m^{*} A + \varepsilon.$$
 \end{enumerate}
-Therefore, given any set $A$ and any $\epsilon > 0$,
+Therefore, given any set $A$ and any $\varepsilon > 0$,
 there is an open set $O$ such that $A \subseteq O$
-and $m^{*}O \leq m^{*}A + \epsilon$.
+and $m^{*}O \leq m^{*}A + \varepsilon$.
 
 \begin{enumerate}
 \item[(4)]
