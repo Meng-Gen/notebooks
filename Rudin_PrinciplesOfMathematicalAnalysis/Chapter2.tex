@@ -742,6 +742,134 @@ but only finite subset is compact, i.e.,
 Heine-Borel theorem is not true in the infinite discrete topology. \\\\
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.11.}
+\emph{For $x \in \mathbb{R}^1$ and $y \in \mathbb{R}^1$, define
+\begin{align*}
+  d_1(x,y) &= (x-y)^2, \\
+  d_2(x,y) &= \sqrt{|x-y|}, \\
+  d_3(x,y) &= |x^2 - y^2|, \\
+  d_4(x,y) &= |x - 2y|, \\
+  d_5(x,y) &= \frac{|x-y|}{1+|x-y|}.
+\end{align*}
+Determine, for each of these, whether it is a metric or not.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$d = d_1$ is not a metric.}
+(Reductio ad absurdum) If $d$ were a metric,
+then $$d(0,2) > d(0,1)+d(1,2),$$
+contrary to Definition 2.15(c) that $d(p,q) \leq d(p,r)+d(r,q)$.
+\item[(2)]
+\emph{$d = d_2$ is a metric.}
+\emph{It suffices to show that
+$d'(x,y) = \sqrt{d(x,y)}$ is a metric if $d(x,y)$ is a metric.}
+  For any $p, q, r \in \mathbb{R}^1$,
+  \begin{enumerate}
+  \item[(a)]
+  $d'(p,q) = \sqrt{d(p,q)} > 0$ if $p \neq q$;
+  $d'(p,p) = \sqrt{d(p,p)} = 0$.
+  \item[(b)]
+  $d'(p,q) = \sqrt{d(p,q)} = \sqrt{d(q,p)} = d'(q,p)$.
+  \item[(c)]
+    \begin{align*}
+    &\sqrt{d(p,r)+d(r,q)}
+    \leq \sqrt{d(p,r)}+ \sqrt{d(r,q)} \\
+    \Longleftrightarrow&
+    (\sqrt{d(p,r)+d(r,q)})^2
+    \leq (\sqrt{d(p,r)}+ \sqrt{d(r,q)})^2 \\
+    \Longleftrightarrow&
+    d(p,r)+d(r,q)
+    \leq d(p,r)+d(r,q) + 2\sqrt{d(p,r)}\sqrt{d(r,q)} \\
+    \Longleftrightarrow&
+    0
+    \leq 2\sqrt{d(p,r)}\sqrt{d(r,q)}.
+    \end{align*}
+  \item[(d)]
+    \begin{align*}
+    d'(p,q) &= \sqrt{d(p,q)} \\
+    &\leq \sqrt{d(p,r)+d(r,q)}
+      &\text{(Triangle inequality)} \\
+    &\leq \sqrt{d(p,r)}+ \sqrt{d(r,q)}
+      &\text{((c))} \\
+    &= d'(p,r) + d'(r,q).
+    \end{align*}
+  \end{enumerate}
+  By Definition 2.15, $d'$ is a metric.
+\item[(3)]
+\emph{$d = d_3$ is not a metric.}
+(Reductio ad absurdum) If $d$ were a metric,
+then $$d(1,-1) = 0,$$
+contrary to Definition 2.15(a): $d(p,q) > 0$ if $p \neq q$; $d(p,p) = 0$.
+\item[(4)]
+\emph{$d = d_4$ is not a metric.}
+(Reductio ad absurdum) If $d$ were a metric,
+then $$d(1,1) = 1,$$
+contrary to Definition 2.15(a): $d(p,q) > 0$ if $p \neq q$; $d(p,p) = 0$.
+\item[(5)]
+\emph{$d = d_5$ is a metric.}
+\emph{It suffices to show that
+$d'(x,y) = \frac{d(x,y)}{1+d(x,y)}$ is a metric if $d(x,y)$ is a metric.}
+  For any $p, q, r \in \mathbb{R}^1$,
+  \begin{enumerate}
+  \item[(a)]
+  $d'(p,q) = \frac{d(p,q)}{1+d(p,q)} > 0$ if $p \neq q$;
+  $d'(p,p) = \frac{d(p,p)}{1+d(p,p)} = 0$.
+  \item[(b)]
+  $d'(p,q) = \frac{d(p,q)}{1+d(p,q)}
+  = \frac{d(q,p)}{1+d(q,p)} = d'(q,p)$.
+  \item[(c)]
+  Write $x = d(p,q)$, $y = d(p,r)$ and $z = d(r,q)$.
+  So $x, y, z \geq 0$ and
+    \begin{align*}
+    &x \leq y + z \\
+    \Longleftrightarrow&
+    x + x(y+z) \leq y+z + x(y+z) \\
+    \Longleftrightarrow&
+    x(1+y+z) \leq (1+x)(y+z) \\
+    \Longleftrightarrow&
+    \frac{x}{1+x} \leq \frac{y+z}{1+y+z}.
+    \end{align*}
+  \item[(d)]
+    \begin{align*}
+    d'(p,q) &= \frac{d(p,q)}{1+d(p,q)} \\
+    &\leq \frac{d(p,r)+d(r,q)}{1+d(p,r)+d(r,q)}
+      &\text{((c))} \\
+    &= \frac{d(p,r)}{1+d(p,r)+d(r,q)} + \frac{d(r,q)}{1+d(p,r)+d(r,q)} \\
+    &= \frac{d(p,r)}{1+d(p,r)} + \frac{d(r,q)}{1+d(r,q)} \\
+    &= d'(p,r) + d'(r,q).
+    \end{align*}
+  \item[(e)]
+  Or we can show $d'(p,q) \leq d'(p,r) + d'(r,q)$ by
+    \begin{align*}
+    &\frac{x}{1+x} \leq \frac{y}{1+y} + \frac{z}{1+z} \\
+    \Longleftrightarrow&
+    x(1+y)(1+z) \leq y(1+z)(1+x) + z(1+x)(1+y) \\
+    \Longleftrightarrow&
+    x+xy+xz+xyz \\
+    &\leq (y+xy+yz+xyz) + (z+xz+yz+xyz) \\
+    \Longleftrightarrow&
+    x \leq y+z+2yz+xyz \\
+    \Longleftarrow&
+    x \leq y+z
+      &\text{($d$ is nonnegative)}
+    \end{align*}
+  \end{enumerate}
+  By Definition 2.15, $d'$ is a metric.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.12.}
 \emph{Let $K \subseteq \mathbb{R}^1$
 consist of $0$ and the numbers $\frac{1}{n}$, for $n = 1, 2, 3, ...$.
@@ -795,6 +923,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.14.}
 \emph{Give an example of an open cover of the segment $(0, 1)$
 which has no finite subcover.} \\
@@ -818,6 +950,11 @@ Then $x \not\in G_{n_1}$, $x \not\in G_{n_1}$, ..., $x \not\in G_{n_k}$,
 which contradicts that $\mathscr{G}'$ is a finite subcovering of $\mathscr{G}$ covering $(0, 1)$.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
