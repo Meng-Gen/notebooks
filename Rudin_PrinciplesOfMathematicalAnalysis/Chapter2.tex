@@ -1251,10 +1251,10 @@ the properties of being second-countable and separable are equivalent.
 \emph{Show that every second-countable metric space $X$ is separable.}
   \begin{enumerate}
   \item[(a)]
-  Let $\mathscr{B} = \{ B_i : i \in \mathbb{Z}^+ \}$ be a countable base of $X$.
+  Let $\mathscr{B} = \{ B_n : n \in \mathbb{Z}^+ \}$ be a countable base of $X$.
   \item[(b)]
-  For every $B_i \in \mathscr{B}$, pick any point $p_i$ of $B_i$
-  and collect them as $$E = \{ p_i : p_i \in B_i \text{ for } i \in \mathbb{Z}^+ \}.$$
+  For every $B_n \in \mathscr{B}$, pick any point $p_n$ of $B_n$
+  and collect them as $$E = \{ p_n : p_n \in B_n \text{ for } n \in \mathbb{Z}^+ \}.$$
   \item[(c)]
   $E$ is countable.
   \item[(d)]
@@ -1263,8 +1263,9 @@ the properties of being second-countable and separable are equivalent.
   For any open neighborhood $B(x)$ of $x$,
   $B(x)$ is a union of subcollection of $\mathscr{B}$.
   That is,
-  there is always a point in $E$ by the construction of $E$. \\\\
+  there is always a point in $E$ by the construction of $E$.
   \end{enumerate}
+  $\Box$ \\\\
 \end{enumerate}
 
 
@@ -1361,8 +1362,207 @@ For general topological spaces, however, these three notions of compactness are 
 \item[(3)]
 A metric space $X$ is totally bounded if and only if for every real number $\delta >0$,
 there exists a finite collection of open balls in $X$ of radius $\delta$
-whose union contains $X$.
+whose union contains $X$. \\\\
 \end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.25.}
+\emph{Prove that every compact metric space $K$ has a countable base,
+and that $K$ is therefore separable.
+(Hint: For every positive integer $n$,
+there are finitely many neighborhood of radius $\frac{1}{n}$ whose union
+covers $K$.)} \\
+
+\emph{Proof (Exercise 2.24(a)).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that every compact metric space $K$ is limit point compact.}
+Given any subset $E \subseteq K$.
+It suffices to show that if $E$ has no limit point, then $E$ must be finite.
+  \begin{enumerate}
+  \item[(a)]
+  Since $E$ has no limit point, $E$ is closed.
+  \item[(b)]
+  For any point $p \in E$. Since $p$ is not a limit point,
+  there is an open neighborhood $B(p)$ such that $B(p)$ contains no point other than $p$.
+  \item[(c)]
+  Similar to the proof of Theorem 2.35,
+  let
+  $$\mathscr{F} = \{ B(p) : p \in E \text{ with } B(p) \cap E = \{p\} \}
+  \bigcup \widetilde{E}.$$
+  Hence $\mathscr{F}$ is an open covering of $K$.
+  \item[(d)]
+  Since $K$ is compact by assumption,
+  there is an finitely subcovering $\mathscr{F}'$ of $K$.
+  Since $\widetilde{E}$ does not intersect $E$,
+  each $B(p) \in \mathscr{F}'$
+  contains only one point of $E$ and so $E$ is finite.
+  \end{enumerate}
+\item[(2)]
+Since $K$ is limit point compact, $K$ is separable (Theorem 2.24).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Exercise 2.24(b)).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that every compact metric space $K$ is totally bounded.}
+Given any real number $\delta > 0$,
+define an open covering $\mathscr{F}$ of $K$ by
+$$\mathscr{F} = \{ B(p;\delta) : p \in K \}.$$
+Since $K$ is compact,
+there exists a finite subcovering $\mathscr{F}'$ of $K$.
+$\mathscr{F}'$ is our desired finite collection of open balls in $X$
+of radius $\delta$ whose union contains $X$.
+\item[(2)]
+Since $K$ is totally bounded, $K$ is separable (Theorem 2.24).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+Given any positive integer $n > 0$,
+define an open covering $\mathscr{F}_n$ of $K$ by
+$$\mathscr{F}_n = \left\{ B\left(p;\frac{1}{n}\right) : p \in K \right\}.$$
+Since $K$ is compact,
+there exists a finite subcovering $\mathscr{G}_n$ of $K$.
+\item[(2)]
+\emph{Show that every compact metric space $K$ is second-countable.}
+  \begin{enumerate}
+  \item[(a)]
+  Define $$\mathscr{B} = \bigcup_{n \geq 1} \mathscr{G}_n$$ be a collection.
+  Since $\mathscr{B}$ is a countable union of finite set $\mathscr{G}_n$,
+  $\mathscr{B}$ is countable.
+  Hence it suffices to show that
+  for every $p \in K$ and every open set $G \subseteq K$ such that $p \in G$,
+  there is $B \in \mathscr{B}$ such that $x \in B \subseteq G$.
+  \item[(b)]
+  Since $G$ is open,
+  there is an open neighborhood $B(p;r)$ of $p$ such that $B(p;r) \subseteq G$.
+  \item[(c)]
+  For such $r > 0$, there is $n \in \mathbb{Z}^+$
+  with $0 < \frac{1}{n} < \frac{r}{2}$ (Theorem 1.20(a)).
+  So $p$ is in some $B\left(q;\frac{1}{n}\right) \in \mathscr{G}_n \subseteq \mathscr{B}$
+  since $\mathscr{G}_n$ is a subcovering of $K$.
+  \item[(d)]
+  \emph{Show that $B\left(q;\frac{1}{n}\right) \subseteq B(p;r) \subseteq G$.}
+  For any $z \in B(q;\frac{1}{n})$,
+  $$d_K(z,p) \leq d_K(z,q)+ d_K(q,p) < \frac{1}{n} + \frac{1}{n}
+  < \frac{r}{2} + \frac{r}{2} = r.$$
+  That is, $z \in B(p;r)$, or $B\left(q;\frac{1}{n}\right) \subset B(p;r) \subseteq G$.
+  \end{enumerate}
+  By (a)(b)(c)(d), $K$ is second-countable.
+\item[(3)]
+\emph{Show that every second-countable metric space is separable.}
+Supplement (4) to Exercise 2.23.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.26.}
+\emph{Let $X$ be a metric space in which every infinite subsets has a limit point.
+Prove that $X$ is compact.} \\
+
+\emph{By Exercises 2.23 and 2.24, $X$ has a countable base.
+It follows that every open cover of $X$ has a countable subcovering $\{G_n\}$,
+$n = 1, 2, 3, \ldots$.
+If no finite subcollection of $\{G_n\}$ covers $X$,
+then the complement $F_n$ of $G_1 \cup \cdots \cup G_n$
+is nonempty for each $n$, but $\bigcap F_n$ is empty.
+If $E$ is a set contains a point from each $F_n$,
+consider a limit point of $E$, and obtain a contradiction.} \\
+
+\emph{Note.} In every metric space, we have
+\begin{align*}
+\{ \text{compact} \}
+&\Longleftrightarrow
+\{ \text{limit point compact} \} \\
+&\Longrightarrow
+\{ \text{totally bounded} \} \\
+&\Longrightarrow
+\{ \text{separable} \} \\
+&\Longleftrightarrow
+\{ \text{second-countable} \} \\
+&\Longleftrightarrow
+\{ \text{Lindelof} \}. \\
+\end{align*}
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+Since $X$ is limit point compact, $X$ is separable (Exercise 2.24).
+Since $X$ is separable, $X$ is second-countable (Exercise 2.23).
+\item[(2)]
+\emph{Show that $X$ is Lindelof if $X$ is second-countable.}
+Let $X$ be a second-countable metric space.
+Let $\mathscr{B} = \{ B_n \}$ be a countable base of $X$.
+  Given any open covering $\mathscr{F}$ of $X$.
+  \begin{enumerate}
+  \item[(a)]
+  Iterate each $B_n \in \mathscr{B}$, pick one $G_n \in \mathscr{F}$ containing $B_n$,
+  and collect them as
+  $$\mathscr{G} = \{ G_n : G_n \supseteq B_n \text{ for } n \in \mathbb{Z}^+ \}.$$
+  ($G_n$ might be duplicated.)
+  \item[(b)]
+  $\mathscr{G}$ is a countable subset of $\mathscr{F}$.
+  \item[(c)]
+  $\mathscr{G}$ covers $X$
+  since $\mathscr{B}$ is a countable base of $X$.
+  \end{enumerate}
+\item[(3)]
+Hence,
+given any open covering $\mathscr{F}$ of $X$,
+there is a countable subcovering $\mathscr{G} = \{ G_n \}$ of $X$.
+(Reductio ad absurdum)
+If there were no finite subcovering of $\mathscr{G}$,
+then the complement $F_n$ of $G_1 \cup \cdots \cup G_n$
+is nonempty for each $n$, but $\cap F_n$ is empty.
+\item[(4)]
+Let $E$ bet a set contains a point from each $F_n$.
+$E$ is infinite and thus $E$ has a limit point, say $p$.
+$p \in G_n$ for some $n$ since $\mathscr{G} = \{ G_n \}$ is an open covering of $X$.
+Since $G_n$ is open, there is an open neighborhood $B(p)$ of $p$ such that $B(p) \subseteq G_n$.
+By the construction of $F_n$,
+$$B(p) \cap F_m = \varnothing$$ whenever $m \geq n$,
+contrary to the assumption that $p$ is a limit point of $E$.
+\end{enumerate}
+Hence, $X$ is compact if $X$ is limit point compact.
+$\Box$ \\
+
+
+
+\textbf{Supplement.}
+\begin{enumerate}
+\item[(1)]
+Lindelof space is a topological space in which every open covering has a countable subcovering.
+\item[(2)]
+\emph{Show that $X$ is second-countable if $X$ is Lindelof.}
+Same as the Proof (Hint) of Exercise 2.25 except
+changing the word ``compact'' to ``Lindelof'' and ``finite'' to ``countable.''
+$\Box$
+\item[(3)]In every metric space, we have
+\begin{align*}
+\{ \text{compact} \}
+&\Longleftrightarrow
+\{ \text{limit point compact} \} \\
+&\Longleftrightarrow
+\{ \text{sequentially compact} \} \\
+&\Longrightarrow
+\{ \text{has Lebesgue number} \}. \\
+\end{align*}
+\end{enumerate}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
