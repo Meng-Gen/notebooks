@@ -1199,6 +1199,9 @@ In other words, every open set in $X$ is the union of a subcollection of $\{V_\a
 (Hint: Take all neighborhoods with rational radius and center
 in some countable dense subset of $X$.)} \\
 
+\emph{Note.}
+$\mathbb{R}^k$ has a countable base (Exercise 2.22). \\
+
 \emph{Proof (Hint).}
 Let $X$ be a separable metric space,
 and $E$ be a countable dense subset of $X$.
@@ -1243,7 +1246,25 @@ Every second-countable space is separable.
 \item[(3)]
 The reverse implication of (2) does not hold in general.
 However, for metric spaces
-the properties of being second-countable and separable are equivalent. \\\\
+the properties of being second-countable and separable are equivalent.
+\item[(4)]
+\emph{Show that every second-countable metric space $X$ is separable.}
+  \begin{enumerate}
+  \item[(a)]
+  Let $\mathscr{B} = \{ B_i : i \in \mathbb{Z}^+ \}$ be a countable base of $X$.
+  \item[(b)]
+  For every $B_i \in \mathscr{B}$, pick any point $p_i$ of $B_i$
+  and collect them as $$E = \{ p_i : p_i \in B_i \text{ for } i \in \mathbb{Z}^+ \}.$$
+  \item[(c)]
+  $E$ is countable.
+  \item[(d)]
+  \emph{Show that $E$ is dense.}
+  Given any $x \in X$.
+  For any open neighborhood $B(x)$ of $x$,
+  $B(x)$ is a union of subcollection of $\mathscr{B}$.
+  That is,
+  there is always a point in $E$ by the construction of $E$. \\\\
+  \end{enumerate}
 \end{enumerate}
 
 
@@ -1261,17 +1282,69 @@ Having chosen $x_1, \ldots, x_j \in X$, choose $x_{j+1}$, if possible,
 so that $d(x_i,x_{j+1}) \geq \delta$ for $i=1,\ldots,j$.
 Show that this process must stop after finite number of steps,
 and that $X$ can therefore be covered by finite many neighborhoods of radius $\delta$.
-Take $\delta = \frac{1}{n} (n=1,2,3,\ldots)$
+Take $\delta = \frac{1}{n}$ $(n=1,2,3,\ldots)$
 and consider the centers of the corresponding neighborhoods.) } \\
+
+\emph{Note.}
+The reverse implication does not hold (Exercise 2.10). \\
 
 \emph{Proof (Hint).}
 \begin{enumerate}
 \item[(1)]
+Fix $\delta>0$, and pick $x_1 \in X$.
 \emph{Show that every limit point compact metric space $X$ is totally bounded.}
-
+  \begin{enumerate}
+  \item[(a)]
+  Having chosen $x_1, \ldots, x_j \in X$, choose $x_{j+1}$, if possible,
+  so that $d(x_i,x_{j+1}) \geq \delta$ for $i=1,\ldots,j$.
+  Let $E_\delta$ be the set of these $x_i$.
+  \item[(b)]
+  \emph{Show that this process must stop after finite number of steps,
+  and that $X$ can therefore be covered by finite many neighborhoods of radius $\delta$.}
+  (Reductio ad absurdum)
+    \begin{enumerate}
+    \item[(i)]
+    If not, $E_\delta$ is an infinite subset of $X$.
+    By assumption there is a limit point of $E_\delta$, say $p \in X$.
+    \item[(ii)]
+    In particular, an open neighborhood $B\left(p;\frac{\delta}{64}\right)$ of $p$
+    contains a point $x_n \in E_\delta$ with $p \neq x_n$.
+    \item[(iii)]
+    The neighborhood $B\left(p;\frac{\delta}{64}\right)$ contains no other point
+    $x_m \in E_\delta$ with $m \neq n$.
+    If so,
+    $$d_X(x_n,x_m) \leq d_X(x_n,p)+d_X(p,x_m)
+    < \frac{\delta}{64} + \frac{\delta}{64} < \delta,$$
+	contrary to the construction of $E_\delta$.
+    \item[(iv)]
+    Note that $p \not\in E_\delta$ as a corollary to (iii).
+    \item[(v)]
+    So another open neighborhood $B\left(p;r\right)$ of $p$ with $r = d_X(p,x_n) > 0$
+    contains no points $x_m \in E_\delta$ with $p \neq x_m$,
+    contrary to the assumption that $p$ is a limit point of $E_\delta$.
+    \end{enumerate}
+  \end{enumerate}
 \item[(2)]
 \emph{Show that every totally bounded metric space $X$ is separable.}
-
+Take $\delta = \frac{1}{n}$ $(n=1,2,3,\ldots)$ in (1),
+and union all $E_{\frac{1}{n}}$ as
+$$E = \bigcup_{n=1}^{\infty} E_{\frac{1}{n}} \subseteq X.$$
+\emph{Show that $E$ is a countable dense subset of $X$.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $E$ is countable.}
+  Since $E$ is the countable union of finite set $E_{\frac{1}{n}}$,
+  $E$ is countable (Theorem 2.12).
+  \item[(b)]
+  \emph{Show that $E$ is dense in $X$.}
+  Given any $p \in X$.
+  \emph{It suffices to show that given any open neighborhood $B(p;r)$ of $p \in X-E$,
+  there exists $q \in E$ such that $q \in B(p;r)$.}
+  Pick any $n \in \mathbb{Z}^+$ such that $\frac{1}{n} < r$ (Theorem 1.20(a)).
+  By the construction of $E_{\frac{1}{n}}$,
+  there is $q  \in E_{\frac{1}{n}}$ such that $p \in B\left(q;\frac{1}{n}\right)$,
+  or $d_X(p,q) < \frac{1}{n} < r$, or $q \in  B(p;r)$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\
 
@@ -1286,9 +1359,9 @@ In a metric space, limit point compactness, compactness, and sequential compactn
 all equivalent.
 For general topological spaces, however, these three notions of compactness are not equivalent.
 \item[(3)]
-A metric space $(M,d)$ is totally bounded if and only if for every real number $\varepsilon >0$,
-there exists a finite collection of open balls in $M$ of radius $\varepsilon$
-whose union contains $M$.
+A metric space $X$ is totally bounded if and only if for every real number $\delta >0$,
+there exists a finite collection of open balls in $X$ of radius $\delta$
+whose union contains $X$.
 \end{enumerate}
 
 
