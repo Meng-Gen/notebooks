@@ -1149,6 +1149,62 @@ Is $E$ countable? Is $E$ dense in $[0,1]$? Is $E$ compact? Is $E$ perfect?} \\
 \begin{enumerate}
 \item[(1)]
 \emph{Show that $E$ is uncountable.}
+Same as Theorem 2.14.
+Or show that $E$ is perfect and then apply Theorem 2.43.
+\item[(2)]
+\emph{Show that $E$ is not dense in $[0,1]$.}
+Note that $E \subseteq \left[\frac{4}{9}, \frac{7}{9}\right]$.
+So $$B\left(0;\frac{1}{64}\right) \bigcap E
+\subseteq B\left(0;\frac{1}{64}\right) \bigcap \left[\frac{4}{9}, \frac{7}{9}\right]
+= \varnothing$$ or $0$ is not a limit point of $E$.
+Hence $E$ is not dense in $[0,1]$.
+\item[(3)]
+\emph{Show that $E$ is compact.}
+\emph{It is equivalent to show that $E$ is closed and bounded (Theorem 2.41).}
+  Let a decimal expansion of $x \in (0,1)$ be $0.x_1 x_2 \cdots$.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\widetilde{E}$ is open.}
+  Since $E \subseteq \left[\frac{4}{9}, \frac{7}{9}\right]$,
+  it suffices to show that every point $x \in (0,1) \cap \widetilde{E}$ is
+  an interior point of $\widetilde{E}$.
+  Say a decimal expansion of $x$ containing at least one digit $x_n \neq 4, 7$.
+  Note that
+  $$|x-y| \geq 10^{-n} > 0$$
+  for any $y = 0.y_1y_2 \cdots \in E$.
+  Hence there is an open neighborhood $B(x;10^{-n})$ of $x$ such that
+  $B(x;10^{-n}) \cap E = \varnothing$, or $B(x;10^{-n}) \subseteq \widetilde{E}$,
+  or $x$ is an interior point of $\widetilde{E}$.
+  \item[(b)]
+  \emph{Show that $E$ is closed.}
+  Given any limit point $x \in \mathbb{R}^1$ of $E$, we want to show that $x \in E$.
+  (Reductio ad absurdum) Similar to (a).
+  \item[(c)]
+  \emph{Show that $E$ is bounded.}
+  $E \subseteq B(0;1)$.
+  \end{enumerate}
+\item[(4)]
+\emph{Show that $E$ is perfect.}
+  \begin{enumerate}
+  \item[(a)]
+  $E$ is closed (by (3)).
+  \item[(b)]
+  \emph{Show that every point of $E$ is a limit point of $E$.}
+  Given any $x \in E$.
+  Given any open neighborhood $B(x;r)$ of $x$, there is a positive integer $n$
+  such that $$\frac{3}{10^n} < r.$$
+  For such $n$, pick $y = 0.x_1x_2 \cdots x_{n-1} y_n \cdots x_{n+1} \cdots \in E$
+  where
+  \begin{equation*}
+  y_n =
+    \begin{cases}
+      4 & (x_n = 7), \\
+      7 & (x_n = 4).
+    \end{cases}
+  \end{equation*}
+  $y \neq x$, and $|y-x| = \frac{3}{10^{n}} < r$.
+  So that there is $y \neq x$ such that $y \in B(x;r)$, or $x$ is a limit point of $E$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
