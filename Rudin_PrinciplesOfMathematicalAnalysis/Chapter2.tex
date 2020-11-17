@@ -1838,6 +1838,88 @@ and show that $P = \widetilde{W}$.)} \\
 \begin{enumerate}
 \item[(1)]
 Let $\{V_n\}$ be a countable base of $\mathbb{R}^k$ (Exercise 2.22 and 2.23).
+Let $W$ be the union of those $V_n$ for which $E \cap V_n$ is at most countable.
+\item[(2)]
+\emph{Show that $P = \widetilde{W}$.}
+  \begin{enumerate}
+  \item[(a)]
+  $(P \subseteq \widetilde{W})$
+  Given any $x \in P$.
+  \begin{align*}
+  x \in P
+  \Longrightarrow&
+  \text{$x$ is a condensation points of $E$} \\
+  \Longrightarrow&
+  \text{$\forall \: V_n \ni x, \exists B(x) \subseteq V_n$ such that
+    $E \cap B(x)$ is uncountable} \\
+  \Longrightarrow&
+  \text{$E \cap V_n$ is uncountable} \\
+  \Longrightarrow&
+  x \not\in W.
+  \end{align*}
+  \item[(b)]
+  $(P \supseteq \widetilde{W})$
+  Given any $x \in \widetilde{W}$.
+  Let $P(V_n)$ be the proposition that $E \cap V_n$ is at most countable.
+  \begin{align*}
+  x \in \widetilde{W}
+  \Longrightarrow&
+  x \not\in W = \bigcup_{P(V_n)} V_n \\
+  \Longrightarrow&
+  \text{$x \not\in V_n$ for which $E \cap V_n$ is at most countable} \\
+  \Longrightarrow&
+  \text{$\forall$ $B(x)$ of $x$, $x \in V_m \subseteq B(x)$ for some $V_m$}
+    &\text{($\{V_n\}$: base of $X$)} \\
+  \Longrightarrow&
+  \text{$E \cap V_m$ is uncountable} \\
+  \Longrightarrow&
+  \text{$E \cap B(x) \supseteq E \cap V_m$ is uncountable} \\
+  \Longrightarrow&
+  \text{$x$ is a condensation point of $E$} \\
+  \Longrightarrow&
+  x \in P.
+  \end{align*}
+  \end{enumerate}
+\item[(3)]
+\emph{Show that $P$ is closed.}
+$P$ is the complement of an open subset $W$.
+\item[(4)]
+\emph{Show that $P \subseteq P'$.}
+(Reductio ad absurdum)
+  \begin{enumerate}
+  \item[(a)]
+  If there were an isolated point $x \in P$, then
+  there exists an open neighborhood $B(x)$ of $x$ such that $B(x) \cap P = \{x\}$.
+  \item[(b)]
+  Since $x$ is a condensation point of $E$,
+  there are uncountably many points of $E$ in $B(x)$,
+  and such points $y$ are not a condensation points of $E$ except $y = x$.
+  \item[(c)]
+  Given any point $y \in E \cap B(x)$ with $y \neq x$.
+  Since $y$ is not a condensation point,
+  there exists a neighborhood $B(y)$ of $y$ such that $B(y) \cap E$ is at most countable.
+  Since $\{V_n\}$ is a base,
+  for each $B(y)$ there exists $V_{n(y)}$ such that $y \in V_{n(y)} \subseteq B(y)$.
+  Hence $$V_{n(y)} \cap E \subseteq B(y) \cap E$$
+  is at most countable.
+  \item[(d)]
+  Hence,
+  \begin{align*}
+  E \cap B(x) - \{x\}
+  &\subseteq \bigcup_{y \in E \cap B(x) - \{x\}} V_{n(y)}  \\
+  &= \bigcup_{n(y)} V_{n(y)}
+  \end{align*}
+  is a countable union of at most countable sets,
+  which is countable.
+  Hence $E \cap B(x) - \{x\}$ or $E \cap B(x)$ is countable,
+  contrary to the assumption that $E \cap B(x)$ is uncountable.
+  \end{enumerate}
+\item[(5)]
+\emph{Show that $E \cap \widetilde{P}$ is at most countable.}
+$$E \cap \widetilde{P}
+= E \bigcap \left(\bigcup_{P(V_n)} V_n\right)
+= \bigcup_{P(V_n)}(E \cap V_n)$$
+is at most countable.
 \end{enumerate}
 
 $\Box$ \\\\
