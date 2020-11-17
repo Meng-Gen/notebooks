@@ -18,6 +18,8 @@
 
 \begin{document}
 
+
+
 \textbf{\Large Chapter 2: Basic Topology} \\\\
 
 
@@ -1204,28 +1206,30 @@ $$E^{\circ} = B(89;1) \bigcup B(64;1)$$
 is disconnected.
 \item[(2)]
 \emph{Closures of connected sets are always connected.}
-Let $X$ be a metric space and $E$ be a given connected subset $E \subseteq X$.
-(Reductio ad absurdum)
+\emph{It suffices to show that
+$E$ is disconnected if $\overline{E}$ is disconnected.}
   \begin{enumerate}
   \item[(a)]
-  If $\overline{E}$ were disconnected,
-  write $\overline{E} = A \cup B$ as a union of two nonempty separated sets.
+  Write $\overline{E} = A \cup B$ as a union of two nonempty separated sets.
+  Here $A \neq \varnothing$, $B \neq \varnothing$,
+  $A \cap \overline{B} = \varnothing$ and $\overline{A} \cap B = \varnothing$.
   \item[(b)]
-  By using these two nonempty separated sets,
-  write
-  $$E = (A \cap E) \bigcup (B \cap E).$$
+  Write
+  $$E = (A \cap E) \bigcup (B \cap E)$$
+  and we will show that $E$ is disconnected.
   \item[(c)]
-  Note that
+  \emph{Show that $A \cap E$ and $B \cap E$ are separated.}
+  In fact,
   $$(A \cap E) \cap \overline{B \cap E}
   \subseteq A \cap \overline{B} = \varnothing,$$
   $$\overline{A \cap E} \cap (B \cap E)
   \subseteq \overline{A} \cap B = \varnothing.$$
-  So $A \cap E$ and $B \cap E$ are separated.
-  Since $E$ is connected, $A \cap E = \varnothing$ or $B \cap E = \varnothing$.
   \item[(d)]
+  \emph{Show that $A \cap E$ and $B \cap E$ are nonempty.}
+  (Reductio ad absurdum)
   If $A \cap E = \varnothing$, then
   $$E = (A \cap E) \bigcup (B \cap E) = B \cap E \Longrightarrow E \subseteq B.$$
-  Hence
+  So
   \begin{align*}
   A &= (A \cup B) \bigcap A
     &(A \subseteq A \cup B) \\
@@ -1234,9 +1238,12 @@ Let $X$ be a metric space and $E$ be a given connected subset $E \subseteq X$.
     &(E \subseteq B) \\
   &= \varnothing
   \end{align*}
-  Similarly, if $B \cap E = \varnothing$ then $B = \varnothing$.
-  In any case, it contradicts the connectedness of $E$.
+  which contradicts $A \neq \varnothing$ in (a).
+  Therefore, $A \cap E \neq \varnothing$.
+  Similarly, $B \cap E \neq \varnothing$.
   \end{enumerate}
+Hence, $E$ is disconnected if $\overline{E}$ is disconnected,
+or closures of connected sets are always connected.
 \end{enumerate}
 $\Box$ \\\\
 
