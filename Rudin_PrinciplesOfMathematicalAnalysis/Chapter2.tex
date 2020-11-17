@@ -1184,6 +1184,61 @@ Prove that $A$ and $B$ are separated.}
 is uncountable.  Hint: Use (c).} \\
 \end{enumerate}
 
+\emph{Proof of (a).}
+Since
+\begin{align*}
+A \cap \overline{B}
+&= A \cap B
+  &\text{($B$ is closed)} \\
+&= \varnothing,
+  &\text{($A$ and $B$ are disjoint)} \\
+\overline{A} \cap B
+&= A \cap B
+  &\text{($A$ is closed)} \\
+&= \varnothing.
+  &\text{($A$ and $B$ are disjoint)}
+\end{align*}
+$A$ and $B$ are separated.
+$\Box$ \\
+
+\emph{Proof of (b)(Theorem 2.27(c)).}
+Note that $\widetilde{A}$ is a closed set containing $B$.
+Since $\overline{B}$ is the smallest closed set containing $B$,
+$\widetilde{A} \supseteq \overline{B}$ (Theorem 2.27(c)).
+Hence $$A \cap \overline{B} \subseteq A \cap \widetilde{A} = \varnothing.$$
+Similarly, $\overline{A} \cap B = \varnothing$.
+Hence $A$ and $B$ are separated.
+$\Box$ \\
+
+\emph{Proof of (c).}
+Since both
+$$A = \{ q \in X : d(p,q) < \delta \} \text{ and } B = \{ q \in X : d(p,q) > \delta \}$$
+are open in $X$, they are separated by (b).
+$\Box$ \\
+
+\emph{Proof of (d).}
+Let $X$ be a connected metric space.
+\begin{enumerate}
+\item[(1)]
+Let $p, q \in X$ with $p \neq q$.
+Hence $d_X(p,q) = r > 0$ (Definition 2.15(a)).
+\item[(2)]
+Given any $\delta \in (0, r)$.
+Define
+$$A = \{ x \in X : d(p,x) < \delta \} \text{ and } B = \{ x \in X : d(p,x) > \delta \}.$$
+$p \in A \neq \varnothing$ and $q \in B \neq \varnothing$.
+\item[(3)]
+If there were no $y_{\delta} \in X$ such that $d(p,y_{\delta}) = \delta$,
+we can write $X = A \cup B$ as a union of two nonempty separated sets ((c)),
+contrary to the connectedness of $X$.
+\item[(4)]
+Collect these $y$ as $E$.
+Since $d$ is a function, there is a one-to-one map from $(0,r)$ to $E$
+defined by $\delta \mapsto y_{\delta}$ in (3).
+Since $(0,r)$ is uncountable, $X \supseteq E$ is uncountable.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
