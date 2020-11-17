@@ -29,6 +29,10 @@
 
 
 
+% http://assets.press.princeton.edu/chapters/s8008.pdf
+
+
+
 \textbf{Exercise 2.1.}
 \emph{Prove that the empty set is a subset of every set.} \\
 
@@ -1830,6 +1834,14 @@ In other words, show that $\widetilde{P} \cap E$ is at most countable.} \\
 let $W$ be the union of those $V_n$ for which $E \cap V_n$ is at most countable,
 and show that $P = \widetilde{W}$.)} \\
 
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Let $\{V_n\}$ be a countable base of $\mathbb{R}^k$ (Exercise 2.22 and 2.23).
+\end{enumerate}
+
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1843,6 +1855,9 @@ countable.
 (Corollary: Every countable closed set in $\mathbb{R}^k$ has isolated points.)
 (Hint: Use Exercise 2.27.) } \\
 
+\emph{Proof.}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1853,6 +1868,38 @@ countable.
 \emph{Prove that every open set in $\mathbb{R}^1$ is the union of
 an at most countable collection of disjoint segments.
 (Hint: Use Exercise 2.22.)} \\
+
+\emph{Proof.}
+Let $E$ be an open subset of $\mathbb{R}^1$.
+\begin{enumerate}
+\item[(1)]
+For each $x \in E$, let $I_x$ denote the largest open interval
+containing $x$ and contained in $E$.
+More precisely, since $E$ is open,
+$x$ is contained in some small (non-trivial) interval,
+and therefore if
+$$a_x = \inf\{ a < x : (a,x) \subseteq E \} \text{ and }
+b_x = \sup\{ b > x : (x,b) \subseteq E \}$$
+we must have $a_x < x < b_x$ (with possibly infinite values for $a_x$ and $b_x$).
+\item[(2)]
+Let $I_x = (a_x, b_x)$, then by construction we have $x \in I_x$
+as well as $I_x \subseteq E$.
+Hence
+$$E = \bigcup_{I_x \in \mathscr{F}} I_x,$$
+where $\mathscr{F} = \{I_x\}_{x \in E}$.
+\item[(3)]
+Suppose that two intervals $I_x$ and $I_y$ intersect.
+Then their union (which is also an open interval)
+is contained in $E$ and contains $x$ (and $y$).
+Since $I_x$ is maximal, $I_x \cup I_y \subseteq I_x$,
+and similarly $I_x \cup I_y \subseteq I_y$.
+This can happen only if $I_x = I_y$.
+\item[(4)]
+Therefore, any two distinct intervals in $\mathscr{F}$ must be disjoint.
+Hence $\mathscr{F}$ is countable since each open interval $I_x \in \mathscr{F}$
+contains a rational number.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
