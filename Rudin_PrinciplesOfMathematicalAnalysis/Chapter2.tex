@@ -30,6 +30,30 @@
 
 
 % http://assets.press.princeton.edu/chapters/s8008.pdf
+% http://www.math.pitt.edu/~sparling/091/15391/15391homework4s.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Notation.}
+\begin{enumerate}
+\item[(1)]
+$E^{\circ}$ or $\text{int}(E)$ is the interior of $E$.
+\item[(2)]
+$\overline{E}$ is the closure of $E$.
+\item[(3)]
+$\widetilde{E}$ is the complement of $E$.
+\item[(4)]
+$B(p;r)$ or $B(p)$ is the set of all points $q$ in a metric space $(M,d)$
+such that $d_M(p,q) < r$. \\\\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -1220,6 +1244,168 @@ $\Box$ \\\\
 
 \textbf{Exercise 2.18.}
 \emph{Is there a nonempty perfect set in $\mathbb{R}^1$ which contains no rational number?} \\
+
+Yes. \\
+
+\textbf{Lemma.}
+\emph{$x \in \mathbb{Q}$ if and only if has repeating decimal expansion.} \\
+
+\emph{Proof of Lemma.}
+\begin{enumerate}
+\item[(1)]
+$(\Longleftarrow)$
+Given any repeating decimal
+$$x = x_0.x_1 x_2 \cdots x_n \overline{x_{n+1} \cdots x_{n+m}}$$
+where $x_0 \in \mathbb{Z}$ and $x_1, \ldots, x_{n+m} \in \{ 0,1,2,3,4,5,6,7,8,9 \}$.
+Thus $x = p/q$
+where
+$$p = (10^m-1) \sum_{i=0}^{n}10^{n-i} x_i
++ \sum_{j=1}^{m} 10^{m-j} x_{n+j} \in \mathbb{Z}$$
+and
+$$q = 10^n(10^m-1) \in \mathbb{Z}.$$
+\item[(2)]
+$(\Longrightarrow)$
+(Euler's totient function)
+Given any $x = p/q$ where $p, q \in \mathbb{Z}$, $q > 0$.
+  \begin{enumerate}
+  \item[(a)]
+  Write $q = 2^{a} 5^{b} q_1$ where $a, b$ are nonnegative integers and
+  $(q_1, 10) = 1$ (Unique factorization theorem).
+  \item[(b)]
+  Let $n = \max\{a,b\}$. Then $2^{n-a} 5^{n-b} q = 10^n q_1$.
+  \item[(c)]
+  Since $(q_1, 10) = 1$,
+  $10^m \equiv 1 \pmod{q_1}$ where $m = \varphi(q_1)$ is Euler's totient function of $q_1$.
+  Hence
+  $10^m - 1 = q_1 q_2$ for some $q_2 \in \mathbb{Z}$,
+  or
+  $$2^{n-a} 5^{n-b} q_2 q = 10^n(10^m-1).$$
+  Here $2^{n-a} 5^{n-b} q_2$, $n, m$ are nonnegative integers.
+  \item[(d)]
+  Now write
+  $$x = \frac{p}{q}
+  = \frac{2^{n-a} 5^{n-b} q_2 p}{10^n(10^m-1)}
+  = \frac{(10^m-1) q_3 + r}{10^n(10^m-1)}
+  = \frac{q_3}{10^n} + \frac{r}{10^n(10^m-1)}$$
+  where $q_3, r \in \mathbb{Z}$ with $0 \leq r < 10^m-1$.
+  Might assume $q_3 \geq 0$.
+  (If $q_3 < 0$, apply the same argument to $-q_3$
+  and then add the minus symbol ``$-$'' in the front of a decimal expansion.)
+  Hence
+  $$x = x_0.x_1 x_2 \cdots x_n \overline{x_{n+1} \cdots x_{n+m}}$$
+  where
+  \begin{align*}
+    x_0 &= \left\lfloor \frac{q_3}{10^n} \right\rfloor \\
+    x_i &= \text{last digit of } \left\lfloor \frac{q_3}{10^{n-i}} \right\rfloor
+      &\text{($1 \leq i \leq n$)} \\
+    x_{n+j} &= \text{last digit of } \left\lfloor \frac{r}{10^{m-j}} \right\rfloor
+      &\text{($1 \leq j \leq m$)}
+  \end{align*}
+  \end{enumerate}
+\item[(3)]
+$(\Longrightarrow)$
+(Pigeonhole principle)
+Given any $x = p/q$ where $p, q \in \mathbb{Z}$, $q > 0$.
+  \begin{enumerate}
+  \item[(a)]
+  Might assume $p \geq 0$.
+  (If $p < 0$, apply the same argument to $-p$
+  and then add the minus symbol ``$-$'' in the front of the decimal expansion.)
+  Write $$x = x_0.x_1 x_2 \cdots.$$
+  \item[(b)]
+  Apply Euclidean algorithm to get
+  $$p = x_0 q + r_0 \:\:\:\: \text{with} \:\:\:\: 0 \leq r_0 < q.$$
+  $x_0$ is the integer part of $x = p/q$.
+  Continue Euclidean algorithm to get $x_1$ by
+  $$10 r_0 = x_1 q + r_1 \:\:\:\: \text{with} \:\:\:\: 0 \leq r_1 < q.$$
+  In general, for $n \geq 1$, $x_n$ is given by
+  $$10 r_{i-1} = x_i q + r_i \:\:\:\: \text{with} \:\:\:\: 0 \leq r_i < q.$$
+  \item[(c)]
+  The pigeonhole principle shows that there must be two equal remainders,
+  that is, $$r_n = r_{n+m} \:\:\:\: \text{with} \:\:\:\: m > 0.$$
+  By induction, $r_{n+k} = r_{n+m+k}$ for any $k \geq 0$.
+  Thus $x_{n+k} = x_{n+m+k}$ holds for any $k > 0$, that is,
+  $x$ has a decimal expansion
+  $$x = x_0.x_1 x_2 \cdots x_n \overline{x_{n+1} \cdots x_{n+m}}.$$
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Exercise 2.17).}
+Let $A$ be the set of all $y \in [0,1]$
+whose decimal expansion contains only the digits $4$ and $7$.
+Though $A \cap \mathbb{Q} \neq \varnothing$ since $\frac{4}{9} \in A$,
+we can shift $A$ by a number $\xi = \sum_{n=0}^{\infty} 10^{-n!}$ (Exercise 2.3),
+that is, we construct
+$$E = \{ y + \xi : y \in A \}$$
+and show that $E$ is our desired nonempty perfect set in $\mathbb{R}-\mathbb{Q}$.
+\begin{enumerate}
+\item[(1)]
+Any number $x \in E$ has decimal expansion
+$x = 0.x_1 x_2 \cdots$ with
+$x_n \in \{5,8\}$ if $n$ is a factorial number; otherwise $x_n \in \{4,7\}$.
+\item[(2)]
+$E$ is a perfect set (Exercise 2.17).
+\item[(3)]
+$E \subseteq \mathbb{R}-\mathbb{Q}$.
+It suffices to show that each $x \in E$ has no repeating decimal expansions (Lemma).
+It is clear by the construction of $\xi = \sum_{n=0}^{\infty} 10^{-n!}$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Exercise 2.3).}
+Let $E$ be a subset of Liouville numbers as
+$$E = \left\{ \sum_{n=0}^{\infty} \frac{a_n}{10^{n!}} : a_n \in \{4, 7\} \right\}.$$
+$E$ is perfect. (The same argument of Exercise 2.17.)
+Besides,
+all numbers of $E$ are transcendental.
+(Set $k_j = 10^{j!}$ and $h_j = 10^{j!} \sum_{n=0}^{j} \frac{a_n}{10^{n!}}$
+and apply the same argument of Exercise 2.3.)
+$\Box$ \\
+
+\emph{Note.}
+Or using Lemma to prove all numbers of $E$ are irrational. \\
+
+\emph{Proof (Theorem 3.32).}
+Let
+$$E = \left\{ \sum_{n=1989}^{\infty} \frac{a_n}{n!} : a_n \in \{6, 4\} \right\}.$$
+$E$ is perfect. (The same argument of Exercise 2.17.)
+Besides,
+all numbers of $E$ are irrational (The same argument of Theorem 3.32.)
+$\Box$ \\
+
+\emph{Proof (Non constructive existence proof).}
+By Cantor-Bendixson theorem (Exercise 2.28),
+\emph{it suffices to find a uncountable closed set in $\mathbb{R} - \mathbb{Q}$.}
+\begin{enumerate}
+\item[(1)]
+Write $\mathbb{Q} = \{ r_1, r_2, \ldots \}$ since $\mathbb{Q}$ is countable.
+Let $$I_n = B\left(r_n;\frac{1}{2^{n+1}}\right) \supseteq \{r_n\}$$
+and
+$$A = \bigcup_{n=1}^{\infty} I_n \supseteq \mathbb{Q}.$$
+Hence $A$ is an open subset in $\mathbb{R}$.
+\item[(2)]
+Let $E = \mathbb{R} - A$.
+By construction, $E$ is closed and $E \cap \mathbb{Q} = \varnothing$.
+\item[(3)]
+\emph{Show that $E$ is uncountable.}
+\emph{It suffices to show that $m^{*}(E) > 0$.}
+In fact, the outer measure of $U$ is
+$$m^{*}(A) \leq \sum_{n=1}^{\infty} m^{*}(I_n) = \sum_{n=1}^{\infty} \frac{1}{2^n} = 1.$$
+Thus,
+$$m^{*}(E) \geq m^{*}(\mathbb{R}) - m^{*}(A) = \infty - 1 = \infty.$$
+\end{enumerate}
+Hence, the set of all condensation points of $E$ is our desired
+nonempty perfect set in $\mathbb{R}-\mathbb{Q}$.
+$\Box$ \\
+
+\emph{Note.}
+In fact, we can replace $\mathbb{Q}$
+by the set of all real algebraic numbers (Exercise 2.2). \\\\
 
 
 
