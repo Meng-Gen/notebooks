@@ -1834,6 +1834,9 @@ In other words, show that $\widetilde{P} \cap E$ is at most countable.} \\
 let $W$ be the union of those $V_n$ for which $E \cap V_n$ is at most countable,
 and show that $P = \widetilde{W}$.)} \\
 
+\emph{Note.}
+The statement is also true for separable metric space. \\
+
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
@@ -1937,8 +1940,31 @@ countable.
 (Corollary: Every countable closed set in $\mathbb{R}^k$ has isolated points.)
 (Hint: Use Exercise 2.27.) } \\
 
-\emph{Proof.}
-$\Box$ \\\\
+\emph{Proof (Exercise 2.27).}
+Let $E$ be a closed set in a separable metric space.
+\begin{enumerate}
+\item[(1)]
+$E$ contains all limit points of $E$,
+especially contains all condensation points of $E$.
+So we can write $$E = P \cup (E-P)$$
+where $P$ is the set of all condensation points of $E$.
+\item[(2)]
+By Exercise 2.27, $P$ is perfect and
+$E-P = E \cap \widetilde{P}$ is at most countable.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Cantor-Bendixson theorem.}
+\begin{enumerate}
+\item[(1)]
+Closed sets of a Polish space $X$ have the perfect set property in a particularly strong form:
+any closed subset of $X$ may be written uniquely as
+the disjoint union of a perfect set and a countable set.
+\item[(2)]
+A Polish space is a separable completely metrizable topological space;
+that is, a space homeomorphic to a complete metric space
+that has a countable dense subset. \\\\
+\end{enumerate}
 
 
 
