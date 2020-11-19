@@ -327,6 +327,25 @@ then $\mathbb{R} = \mathbb{Q} \bigcup (\mathbb{R}-\mathbb{Q})$ is countable
 (Theorem 2.12),
 contrary to the fact that
 $\mathbb{R}$ is uncountable (Corollary to Theorem 2.43).
+$\Box$ \\
+
+\emph{Proof (Exercise 2.18).}
+Exercise 2.18 provides
+some examples of uncountable subset $E$ of irrational real numbers.
+\begin{enumerate}
+  \item[(1)]
+  Let $A$ be the set of all $y \in [0,1]$
+  whose decimal expansion contains only the digits $4$ and $7$.
+  Let $\xi = \sum_{n=0}^{\infty} 10^{-n!}$ and $$E = \{ y + \xi : y \in A \}.$$
+  \item[(2)]
+  Let $E$ be a subset of Liouville numbers as
+  $$E = \left\{ \sum_{n=0}^{\infty} \frac{a_n}{10^{n!}} : a_n \in \{4, 7\} \right\}.$$
+  \item[(3)]
+  Let
+  $$E = \left\{ \sum_{n=1989}^{\infty} \frac{a_n}{n!} : a_n \in \{6, 4\} \right\}.$$
+\end{enumerate}
+We can apply the same argument of Theorem 2.14 to prove that each $E$ is uncountable.
+Then use Theorem 2.8 to get all irrational real numbers cannot be countable.
 $\Box$ \\\\
 
 
@@ -381,7 +400,7 @@ Do $E$ and $E'$ always have the same limit points?} \\
     Since $q_0$ is a limit point of $E$,
     there is an open neighborhood $V$ of $q_0$ contains a point $q \neq q_0$
     such that $q \in E$, where
-    $$V = U \cap B\left( q_0; \frac{1}{2}d_E(p,q_0) \right) \subseteq U$$
+    $$V = U \cap B\left( q_0; \frac{1}{2}d(p,q_0) \right) \subseteq U$$
     ($B(x;r)$ is the open ball with center at $x$ and radius $r$).
     \item[(iii)]
     By the construction of $V$,
@@ -403,7 +422,7 @@ Do $E$ and $E'$ always have the same limit points?} \\
     it suffices to no point $q \neq p$ such that $q \in E'$.
     If there were a limit point $q$ of $E$ such that $q \neq p$ and $q \in U$,
     then
-    $$V = U \cap B\left( q; \frac{1}{2}d_E(p,q) \right) \subseteq U$$
+    $$V = U \cap B\left( q; \frac{1}{2}d(p,q) \right) \subseteq U$$
     is an open neighborhood of $q$ contains no point of $E$,
     contrary to the assumption $q \in E'$.
     So $U \subseteq X-E'$ is an open neighborhood of $p \in X-E'$.
@@ -661,12 +680,12 @@ $\Box$ \\
 No.
 \begin{enumerate}
 \item[(1)]
-Let $X = \mathbb{R}^1$ equipped with the Euclidean metric, and $E = \mathbb{Q} \subseteq X$.
+Let $X = \mathbb{R}$ equipped with the Euclidean metric, and $E = \mathbb{Q} \subseteq X$.
 \item[(2)]
 $E^\circ = \varnothing$ since $\widetilde{\mathbb{Q}}$ is dense in $\mathbb{R}$.
 \item[(3)]
-$(\overline{E})^{\circ} = (\mathbb{R}^1)^{\circ} = \mathbb{R}^1$
-since $\mathbb{Q}$ is dense in $\mathbb{R}$ and $\mathbb{R}^1$ is open.
+$(\overline{E})^{\circ} = (\mathbb{R})^{\circ} = \mathbb{R}$
+since $\mathbb{Q}$ is dense in $\mathbb{R}$ and $\mathbb{R}$ is open.
 \end{enumerate}
 $\Box$ \\
 
@@ -674,9 +693,9 @@ $\Box$ \\
 No.
 \begin{enumerate}
 \item[(1)]
-Let $X = \mathbb{R}^1$ equipped with the Euclidean metric, and $E = \mathbb{Q} \subseteq X$.
+Let $X = \mathbb{R}$ equipped with the Euclidean metric, and $E = \mathbb{Q} \subseteq X$.
 \item[(2)]
-$\overline{E} = \mathbb{R}^1$ since $\mathbb{Q}$ is dense in $\mathbb{R}$.
+$\overline{E} = \mathbb{R}$ since $\mathbb{Q}$ is dense in $\mathbb{R}$.
 \item[(3)]
 $\overline{E^\circ} = \overline{\varnothing} = \varnothing$
 since $\widetilde{\mathbb{Q}}$ is dense in $\mathbb{R}$.
