@@ -1572,6 +1572,112 @@ $\mathbf{p}(t_0) \notin A \bigcup B$.}
 \emph{Prove that every convex subset of $\mathbb{R}^k$ is connected.} \\
 \end{enumerate}
 
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Note that
+  \begin{enumerate}
+  \item[(a)]
+  $\mathbf{a} \neq \mathbf{b}$ or $|\mathbf{a} - \mathbf{b}| > 0$
+  since $A \cap B = \varnothing$.
+  \item[(b)]
+  $|\mathbf{p}(t) - \mathbf{p}(s)| = |t-s||\mathbf{a} - \mathbf{b}|$
+  by a direct calculation.
+  \item[(c)]
+  $\mathbf{p}(t) = \mathbf{p}(s)$ if and only if $t = s$ by (a)(b).
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $A_0 \cap \overline{B_0} = \varnothing$.}
+(Reductio ad absurdum)
+If there were $t \in A_0 \cap \overline{B_0}$,
+then $t \in A_0$ and $t$ is a limit point of $B_0$.
+  \begin{enumerate}
+  \item[(a)]
+  $t \in A_0$ implies that $\mathbf{p}(t) \in A$.
+  \item[(b)]
+  \emph{Show that $t$ is a limit point of $B_0$ $\Longrightarrow$
+  $\mathbf{p}(t)$ is a limit point of $B$.}
+  Given any $\varepsilon > 0$,
+  there is $s \in B_0$ such that
+  $$|t-s| < \frac{\varepsilon}{|\mathbf{a} - \mathbf{b}|}
+  \:\:\:\: \text{with} \:\:\:\: s \neq t$$
+  since $t$ is a limit point of $B_0$.
+  So by (1),
+  $$|\mathbf{p}(t) - \mathbf{p}(s)| = |t-s||\mathbf{a} - \mathbf{b}|
+  < \varepsilon.$$
+  Here $\mathbf{p}(s) \in B$ and $\mathbf{p}(s) \neq \mathbf{p}(t)$.
+  So $\mathbf{p}(t)$ is a limit point of $B$.
+  \end{enumerate}
+  By (a)(b), $\mathbf{p}(t) \in A \cap \overline{B} = \varnothing$,
+  contrary to the assumption that $A$ and $B$ are separated.
+\item[(3)]
+\emph{Show that $\overline{A_0} \cap B_0 = \varnothing$.}
+Similar to (2).
+\end{enumerate}
+By (2)(3), $A_0$ and $B_0$ are separated.
+$\Box$ \\
+
+\emph{Proof of (b).}
+(Reductio ad absurdum)
+If $\mathbf{p}(t)$ were in $A \bigcup B$ for all $t \in (0,1)$,
+we will \emph{show that $[0,1]$ is separated by $A_0 \cap [0,1]$ and $B_0 \cap [0,1]$
+to get a contradiction.}
+\begin{enumerate}
+\item[(1)]
+  $\mathbf{p}(t)$ were in $A \bigcup B$ for all $t \in [0,1]$
+  since
+  $\mathbf{p}(0) = \mathbf{a} \in A \bigcup B$
+  and
+  $\mathbf{p}(1) = \mathbf{b} \in A \bigcup B$.
+  Therefore,
+  $$[0,1]
+  \subseteq \mathbf{p}^{-1}(A \cup B)
+  = \mathbf{p}^{-1}(A) \cup \mathbf{p}^{-1}(B)
+  = A_0 \cup B_0.$$
+\item[(2)]
+  Let $A_1 = A_0 \cap [0,1]$ and $B_1 = B_0 \cap [0,1]$.
+  So $[0,1] = A_1 \bigcup B_1$.
+\item[(3)]
+  \emph{Show that $A_1 \neq \varnothing$ and $B_1 \neq \varnothing$.}
+  \begin{align*}
+  \mathbf{p}(0) \in A
+  &\Longleftrightarrow 0 \in \mathbf{p}^{-1}(A) = A_0 \\
+  &\Longleftrightarrow 0 \in A_0 \text{ and } 0 \in [0,1] \\
+  &\Longleftrightarrow 0 \in A_0 \cap [0,1] = A_1.
+  \end{align*}
+  Similarly, $1 \in B_1$. \\
+
+  \emph{Note.} That's why we consider $[0,1]$ instead of $(0,1)$.
+\item[(4)]
+  \emph{Show that $A_1 \cap \overline{B_1} = \varnothing$
+  and $\overline{A_1} \cap B_1 = \varnothing$.}
+  Since $A_1 \subseteq A_0$ and $B_1 \subseteq B_0$,
+  $A_1 \cap \overline{B_1} \subseteq A_0 \cap \overline{B_0} = \varnothing$
+  or $A_1 \cap \overline{B_1} = \varnothing$.
+  Similarly, $\overline{A_1} \cap B_1 = \varnothing$.
+\end{enumerate}
+By (2)(3)(4), $[0,1]$ is separated, contrary to the connectedness of $[0,1]$
+(Theorem 2.47).
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+Let $E$ be a convex subset of $\mathbb{R}^k$.
+Recall
+$$\mathbf{p}(t) = (1-t)\mathbf{a} + t\mathbf{b} \in E$$
+whenever $\mathbf{a}, \mathbf{b} \in E$ and $t \in (0,1)$.
+\item[(2)]
+(Reductio ad absurdum)
+If $E$ were separated by $A$ and $B$, pick $\mathbf{a} \in A \subseteq E$
+and $\mathbf{b} \in B \subseteq E$.
+\item[(3)]
+By (b), there exists $t_0 \in (0,1)$ such that $\mathbf{p}(t_0) \not\in A \cup B = E$,
+contrary to the convexity of $E$.
+\end{enumerate}
+$\Box$ \\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
