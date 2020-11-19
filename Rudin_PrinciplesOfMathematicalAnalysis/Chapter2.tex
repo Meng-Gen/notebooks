@@ -2315,12 +2315,76 @@ where each $F_n$ is a closed subset of $\mathbb{R}^k$,
 then at least one $F_n$ has a nonempty interior.} \\
 
 \emph{Equivalent statement: If $G_n$ is a dense open subset of $\mathbb{R}^k$,
-for $n = 1,2,3,\ldots$, then $\bigcup_{n=1}^{\infty} G_n$ is not empty
+for $n = 1,2,3,\ldots$, then $\bigcap_{n=1}^{\infty} G_n$ is not empty
 (in fact, it is dense in $\mathbb{R}^k$).}
 \end{quote}
 \emph{(This is a special case of Baire's theorem; see Exercise 3.22 for the general case.)} \\
 
+\textbf{Baire category theorem.}
+\emph{
+If $G_n$ is a dense open subset of $\mathbb{R}^k$,
+for $n = 1,2,3,\ldots$, then $$\bigcap_{n=1}^{\infty} G_n$$
+is dense in $\mathbb{R}^k$.} \\
 
+\emph{Proof of Baire category theorem.}
+Given any open set $G_0$ in $\mathbb{R}^k$,
+will show that $$\bigcap_{n=0}^{\infty} G_n \neq \varnothing.$$
+\begin{enumerate}
+\item[(1)]
+Since $G_1$ is dense, $G_0 \cap G_1$ is nonempty.
+Take any one point $\mathbf{x}_1$ in the open set $G_0 \cap G_1$,
+there exists open neighborhood
+$$V_1
+= \{ \mathbf{y} \in \mathbb{R}^k : |\mathbf{y} - \mathbf{x}_1| < r_1 \}$$
+of $\mathbf{x}_1$
+such that
+$$\overline{V_1}
+= \{ \mathbf{y} \in \mathbb{R}^k : |\mathbf{y} - \mathbf{x}_1| \leq r_1 \}
+\subseteq G_0 \cap G_1.$$
+\item[(2)]
+Suppose $V_n$ has been constructed,
+take any one point $\mathbf{x}_{n+1}$ in the open set $V_n \cap G_{n+1}$,
+there exists open neighborhood
+$$V_{n+1}
+= \{ \mathbf{y} \in \mathbb{R}^k : |\mathbf{y} - \mathbf{x}_{n+1}| < r_{n+1} \}$$
+of $\mathbf{x}_1$ with $r_{n+1}$
+such that
+$$\overline{V_{n+1}}
+= \{ \mathbf{y} \in \mathbb{R}^k : |\mathbf{y} - \mathbf{x}_{n+1}| \leq r_{n+1} \}
+\subseteq V_n \cap G_{n+1}.$$
+\item[(3)]
+Note that
+  \begin{enumerate}
+  \item[(a)]
+  each $\overline{V_n}$ is nonempty (containing $\mathbf{x}_n$) and compact.
+  \item[(b)]
+  $\overline{V_1} \supseteq \overline{V_2} \supseteq \cdots$
+  (since
+  $\overline{V_{n+1}} \subseteq V_n \cap G_{n+1} \subseteq V_n \subseteq \overline{V_n}$).
+  \end{enumerate}
+By Corollary to Theorem 2.36,
+$$\bigcap_{n=1}^{\infty} \overline{V_n} \neq \varnothing.$$
+\item[(4)]
+Pick $\mathbf{x} \in \bigcap_{n=1}^{\infty} \overline{V_n}$.
+Hence
+\begin{align*}
+\mathbf{x} \in \bigcap_{n=1}^{\infty} \overline{V_n}
+&\Longleftrightarrow
+\mathbf{x} \in \overline{V_n} \text{ for all } n=1,2,3,\ldots \\
+&\Longrightarrow
+\mathbf{x} \in \overline{V_1} \subseteq G_0 \cap G_1 \text{ and }
+\mathbf{x} \in \overline{V_{n+1}} \subseteq V_n \cap G_{n+1} \subseteq G_{n+1} \\
+&\Longrightarrow
+\mathbf{x} \in G_0 \cap G_1 \cap \cdots = \bigcap_{n=0}^{\infty} G_n \\
+&\Longrightarrow
+\bigcap_{n=0}^{\infty} G_n \neq \varnothing.
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+% No exercise left.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
