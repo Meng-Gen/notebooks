@@ -3,7 +3,7 @@
 
 # Exercises
 - Chapter 1: The Real and Complex Number Systems [Finished]
-- Chapter 2: Basic Topology [WIP]
+- Chapter 2: Basic Topology [Finished]
 - Chapter 3: Numerical Sequences and Series [WIP]
 - Chapter 4: Continuity [WIP]
 - Chapter 5: Differentiation [WIP]
