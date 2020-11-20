@@ -164,6 +164,83 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 2.5.}
+\emph{Show that if $f$ is any polynomials over $\mathbb{Z}/p\mathbb{Z}$ ($p$ a prime)
+then $f(x^p) = (f(x))^p$.
+(Suggestion: Use induction on the number of terms.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Let $${p \choose k} = \frac{p!}{k!(p-k)!}$$
+be a binomial coefficient.
+If $1 \leq k \leq p-1$, show that $p$ divides ${p \choose k}$.}
+  \begin{enumerate}
+  \item[(a)]
+    If $1 \leq k \leq p-1$, then $p \nmid k!$ and $p \nmid (p-k)!$
+    since $p$ is a prime.
+  \item[(b)]
+    Write $a = \frac{p!}{k!(p-k)!} \in \mathbb{Z}$.
+    Hence,
+    \begin{align*}
+    a = \frac{p!}{k!(p-k)!}
+    &\Longleftrightarrow
+    p! = ak!(p-k)! \\
+    &\Longrightarrow
+    p \mid p! \text{ or } p \mid ak!(p-k)! \\
+    &\Longrightarrow
+    p \mid a \:\:\:\: \text{by (a).}
+    \end{align*}
+    Hence $p$ divides ${p \choose k}$ if $1 \leq k \leq p-1$.
+  \end{enumerate}
+\item[(2)]
+Note that $a^p = a \in \mathbb{Z}/p\mathbb{Z}$ for all $a \in \mathbb{Z}/p\mathbb{Z}$.
+\item[(3)]
+Write
+$$f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 \in \mathbb{Z}/p\mathbb{Z}[x].$$
+Induction on $n$.
+  \begin{enumerate}
+  \item[(a)]
+    $n = 0$. Nothing to do.
+  \item[(b)]
+    $n = 1$. By $f(x) = a_1 x + a_0$,
+    \begin{align*}
+    f(x)^p
+    &= (a_1 x + a_0)^p \\
+    &= a_1^p x^p
+      + \sum_{k=1}^{p-1} {p \choose k} (a_1 x)^k a_0^{p-k}
+      + a_0^p
+      &\text{(Binomial theorem)} \\
+    &= a_1^p x^p + a_0^p
+      &\text{((1))} \\
+    &= a_1 x^p + a_0
+      &\text{((2))} \\
+    &= f(x^p).
+    \end{align*}
+  \item[(c)]
+  If the statement holds for $n-1$, then
+    \begin{align*}
+    f(x)^p
+    &= (a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0)^p \\
+    &= [a_n x^n + (a_{n-1} x^{n-1} + \cdots + a_1 x + a_0)]^p \\
+    &= a_n (x^p)^n + (a_{n-1} x^{n-1} + \cdots + a_1 x + a_0)^p
+      &\text{(Same as (b))} \\
+    &= a_n (x^p)^n + a_{n-1} (x^p)^{n-1} + \cdots + a_1 x^p + a_0
+      &\text{(Induction hypothesis)} \\
+    &= f(x^p).
+    \end{align*}
+  The inductive step is established.
+  \end{enumerate}
+  By induction, $f(x)^p = f(x^p)$ holds for any $n \geq 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 2.6.}
 \emph{Show that if $f$ and $g$ are polynomials over a field $K$ and
 $f^2 \mid g$ in $K[x]$, then $f \mid g'$.
