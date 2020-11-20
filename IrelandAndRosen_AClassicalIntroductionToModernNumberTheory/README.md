@@ -4,6 +4,7 @@
 # Exercises
 - Chapter 1: Unique Factorization [WIP]
 - Chapter 2: Applications of Unique Factorization [WIP]
+- Chapter 3: Congruence [WIP]
 - Chapter 4: The Structure of U(Z/nZ) [WIP]
 - Chapter 5: Quadratic Reciprocity [WIP]
 - Chapter 6: Quadratic Gauss Sums [WIP]

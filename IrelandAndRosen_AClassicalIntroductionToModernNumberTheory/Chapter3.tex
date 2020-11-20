@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+
+
+\textbf{\Large Chapter 3: Congruence} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.12.}
+\emph{Let $${p \choose k} = \frac{p!}{k!(p-k)!}$$
+be a binomial coefficient, and suppose that $p$ is a prime.
+If $1 \leq k \leq p-1$, show that $p$ divides ${p \choose k}$.
+Deduce $(a+1)^p \equiv a^p + 1 \pmod{p}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  If $1 \leq k \leq p-1$, then $p \nmid k!$ and $p \nmid (p-k)!$
+  since $p$ is a prime number.
+  \item[(2)]
+  Write $a = \frac{p!}{k!(p-k)!} \in \mathbb{Z}$.
+  \begin{align*}
+  a = \frac{p!}{k!(p-k)!}
+  &\Longleftrightarrow
+  p! = ak!(p-k)! \\
+  &\Longrightarrow
+  p \mid p! \text{ or } p \mid ak!(p-k)! \\
+  &\Longrightarrow
+  p \mid a
+    &((1))
+  \end{align*}
+  Hence $p$ divides ${p \choose k}$ if $1 \leq k \leq p-1$.
+  \item[(3)]
+  \begin{align*}
+  (a+1)^p
+  &\equiv \sum_{k=0}^{p} {p \choose k} a^k \\
+  &\equiv 1 + \left( \sum_{k=1}^{p-1} {p \choose k} a^k \right) + a^p \\
+  &\equiv 1 + a^p \\
+  &\equiv a^p + 1 \pmod{p}.
+  \end{align*}
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
