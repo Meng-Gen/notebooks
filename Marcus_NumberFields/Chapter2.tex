@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -365,6 +366,159 @@ Differentiate to get $g' = 2f f' h + f^2 h' = f(2f'h + fh')$,
 or $f \mid g'$ in $K[x]$.
 $\Box$ \\\\
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.10.}
+\emph{Complete the proof of Corollary 3 to Theorem 2.3,
+by showing if $m$ is even, $m \mid r$, and $\varphi(r) \leq \varphi(m)$, then $r = m$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Since $m$ is even,
+write the unique factorization of $m$ as
+$$m = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_k^{\alpha_k}$$
+where $p_1 = 2$, all $\alpha_i \geq 1$ $(1 \leq i \leq k)$,
+and all $p_i$ $(1 \leq i \leq k)$
+are distinct prime numbers.
+\item[(2)]
+Since $m \mid r$, write $r = mm_1$ for some $m_1 \in \mathbb{Z}$.
+Thus we can write the unique factorization of $r$ as
+$$m = p_1^{\beta_1} p_2^{\beta_2} \cdots p_k^{\beta_k}
+q_1^{\gamma_1} \cdots q_h^{\gamma_h}$$
+where all $\beta_i \geq \alpha_i \geq 1$ $(1 \leq i \leq k)$
+and all $p_i$ $(1 \leq i \leq k)$ and $q_j$ $(1 \leq j \leq h)$
+are distinct prime numbers.
+Here $h$ might be zero if $m_1 = 1$, and all $q_j \mid m_1$ but $q_j \nmid m$.
+\item[(3)]
+Thus,
+\begin{align*}
+\varphi(m)
+&= m
+    \left( 1 - \frac{1}{2} \right)
+    \cdots
+    \left( 1 - \frac{1}{p_k} \right) \\
+\varphi(r)
+&= mm_1
+    \left( 1 - \frac{1}{2} \right)
+    \cdots
+    \left( 1 - \frac{1}{p_k} \right)
+    \left( 1 - \frac{1}{q_1} \right)
+    \cdots
+    \left( 1 - \frac{1}{q_h} \right) \\
+&= \varphi(m) m_1
+    \left( 1 - \frac{1}{q_1} \right)
+    \cdots
+    \left( 1 - \frac{1}{q_h} \right) \\
+&\geq \varphi(m) (q_1 \cdots q_h)
+    \left( 1 - \frac{1}{q_1} \right)
+    \cdots
+    \left( 1 - \frac{1}{q_h} \right) \\
+&\geq \varphi(m)(q_1-1) \cdots (q_h-1).
+\end{align*}
+\item[(4)]
+Since all $q_j \neq 2$ $(1 \leq j \leq h)$,
+$q_j - 1 > 1$.
+Hence by (3) and assumption that $\varphi(r) \leq \varphi(m)$,
+$h = 0$ or $m_1 = 1$ or $r = m$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.11.}
+\begin{enumerate}
+\item[(a)]
+\emph{Suppose all roots of a monic polynomial $f \in \mathbb{Q}[x]$
+has absolute value $1$.
+Show that the coefficient of $x^r$ has absolute value $\leq {n \choose r}$,
+where $n$ is the degree of $f$ and ${n \choose r}$ is the binomial coefficient.}
+\item[(b)]
+\emph{Show that there are only finitely many algebraic integers $\alpha$
+of fixed degree $n$, all of whose conjugates (including $\alpha$) have absolute value $1$.
+(Note: If you don't use Theorem 2.1, your proof is probably wrong.)}
+\item[(c)]
+\emph{Show that $\alpha$ must be a root of $1$.
+(Show that its powers are restricted to a finite set.)} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Write
+$f(x) = (x-\alpha_1) \cdots (x-\alpha_n)$ where $\alpha_i \in \mathbb{C}$, $|\alpha_i| = 1$
+for $i = 1, 2, \ldots, n$.
+\item[(2)]
+So $$f(x) = x^n - s_1 x^{n-1} + s_2 x^{n-2} + \cdots + (-1)s_n$$
+where
+$$s_r = \sum_{1 \leq j_1 < \cdots < j_r \leq n} \alpha_{j_1} \cdots \alpha_{j_r} \in \mathbb{C}.$$
+Let $c_r = (-1)^r s_{n-r}$ be the coefficient of $x^r$.
+\item[(3)]
+\begin{align*}
+|c_r|
+&= |(-1)^r s_{n-r}| \\
+&= \abs{\sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} \alpha_{j_1} \cdots \alpha_{j_{n-r}}} \\
+&\leq \sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} \abs{\alpha_{j_1} \cdots \alpha_{j_{n-r}}} \\
+&= \sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} |\alpha_{j_1}| \cdots |\alpha_{j_{n-r}}| \\
+&= \sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} 1 \\
+&= {n \choose n-r} \\
+&= {n \choose r}.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Let $f$ be an irreducible monic polynomial over $\mathbb{Z}$ of degree $n$
+such that $f(\alpha) = 0$.
+So $f$ is irreducible over $\mathbb{Q}$ (Theorem 2.1),
+and thus all the conjugates of $\alpha$ (including $\alpha$) are roots of $f$.
+\item[(2)]
+By (a), all the coefficient of $x^r$ has absolute value $\leq {n \choose r}$.
+Since all the coefficient of $x^r$ are integers,
+there are finitely many irreducible monic polynomials $f \in \mathbb{Z}[x]$
+such that $f(\alpha) = 0$ with $|\alpha| = 1$.
+\item[(3)]
+For each such $f$, there are only finitely many roots.
+Therefore, there are only finitely many such algebraic integers $\alpha$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+If $\alpha_1, \ldots, \alpha_n$
+are the roots of $f$ of degree $n$ over $\mathbb{Q}$,
+then for every $r \in \mathbb{Z}^+$,
+$\alpha_1^r, \ldots, \alpha_n^r$
+are all the roots of some monic polynomial $f_r$ of degree $n$ over $\mathbb{Q}$
+(Fundamental theorem of symmetric polynomials).
+\item[(2)]
+Now we consider the powers of $\alpha$.
+All the powers of $\alpha$ ($\alpha^r$) are algebraic integers (Theorem 2.2), and of
+degree at most $n$.
+(Let $g \in \mathbb{Z}[x]$ be the minimal polynomial of $\alpha^r$ over $\mathbb{Q}$.
+By (1), $f_r(\alpha^r) = 0$, and thus $g \mid f_r$.
+Hence $\deg(g) \leq \deg(f_r) = n$.)
+\item[(3)]
+By (b), the powers of $\alpha$ are restricted to a finite set,
+say $\alpha^r = \alpha^s$ for some $s > r \geq 1$.
+So $\alpha^{s-r} = 1$ with $s-r \geq 1$.
+That is, $\alpha$ is a root of unity.
+\end{enumerate}
+
+$\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
