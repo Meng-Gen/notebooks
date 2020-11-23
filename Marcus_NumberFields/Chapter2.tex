@@ -205,7 +205,16 @@ and conclude that $(2)$ is not a product of prime ideals.} \\
   $$(1+\sqrt{-3})^2 = -2 + 2\sqrt{-3} = 2(-(2) + (1+\sqrt{-3})) \in 2I.$$
   Hence $I^2 \subseteq 2I$.
   \end{enumerate}
-
+\item[(3)]
+\emph{Show that ideals in $\mathbb{Z}[\sqrt{-3}]$ do not factor uniquely
+into prime ideals.}
+TODO.
+\item[(4)]
+\emph{Show that $I$ is the unique prime ideal containing $(2)$.}
+TODO.
+\item[(5)]
+\emph{Show that $(2)$ is not a product of prime ideals.}
+TODO.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -517,8 +526,79 @@ say $\alpha^r = \alpha^s$ for some $s > r \geq 1$.
 So $\alpha^{s-r} = 1$ with $s-r \geq 1$.
 That is, $\alpha$ is a root of unity.
 \end{enumerate}
-
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 2.12 (Kummer's Lemma).}
+\emph{Now we can prove Kummer's lemma on units in the $p$-th cyclotomic field,
+as stated before Exercise 1.26:
+Let $\omega = e^{\frac{2\pi i}{p}}$, $p$ an odd prime,
+and suppose $u$ is a unit in $\mathbb{Z}[\omega]$.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that $u/\overline{u}$ is a root of $1$.
+(Use Exercise 2.11(c) above and observe that complex conjugation is a member of
+the Galois group of $\mathbb{Z}[\omega]$ over $\mathbb{Q}$.)
+Conclude that $u/\overline{u} = \pm \omega^k$ for some $k$.}
+\item[(b)]
+\emph{Show that the $+$ sign holds: Assuming $u/\overline{u} = -\omega^k$,
+we have $u^p = -\overline{u^p}$;
+show that this implies that $u^p$ is divisible by $p$ in $\mathbb{Z}[\omega]$.
+(Use Exercise 1.23 and 1.25)
+But this is impossible since $u^p$ is a unit.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Write $\alpha = u/\overline{u}$. Then
+\begin{align*}
+|\alpha| = 1
+&\Longrightarrow
+\text{$\alpha$ is a root of unity}
+  &\text{(Exercise 2.11)} \\
+&\Longrightarrow
+\text{$\alpha$ is a $2p$-th root of unity}
+  &\text{(Corollary 3 to Theorem 2.3)} \\
+&\Longrightarrow
+\text{$\alpha = \pm \omega^k$ for some $k \in \mathbb{Z}$}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+(Reductio ad absurdum)
+Assume that $u/\overline{u} = -\omega^k$,
+then
+\begin{align*}
+u/\overline{u} = -\omega^k
+&\Longrightarrow
+(u/\overline{u})^p = (-\omega^k)^p \\
+&\Longrightarrow
+u^p/\overline{u}^p = (-1)^p \omega^{pk} = -1
+  &\text{($p$ is odd)} \\
+&\Longrightarrow
+u^p = -\overline{u}^p = -\overline{u^p}
+\end{align*}
+By Exercise 1.25, $u^p \equiv a \pmod{p}$ for some $a \in \mathbb{Z}$.
+By Exercise 1.23, $\overline{u^p} \equiv \overline{a} \equiv a \pmod{p}$.
+Thus
+\begin{align*}
+u^p = -\overline{u^p}
+&\Longrightarrow
+a \equiv -a \pmod{p} \\
+&\Longrightarrow
+2a \equiv 0 \pmod{p} \\
+&\Longrightarrow
+a \equiv 0 \pmod{p}
+  &\text{($p$ is odd)} \\
+\end{align*}
+or $u^p \equiv 0 \pmod{p}$, contradicts the assumption that $u$ is a unit.
+Hence $u/\overline{u} = \omega^k$ for some $k$.
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
