@@ -291,4 +291,71 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.20}
+\emph{Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$,
+and some subsequence $\{p_{n_i}\}$ converges to a point $p \in X$.
+Prove that the full sequence $\{p_n\}$ converges to $p$. } \\
+
+\emph{Proof.}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+Since $\{p_n\}$ is a Cauchy sequence, there exists a positive integer $N_1$ such that
+$$d(p_n,p_m) < \frac{\varepsilon}{2} \text{ whenever } n, m \geq N_1.$$
+\item[(2)]
+Since the subsequence $\{p_{n_i}\}$ converges to a point $p \in X$,
+there exists a positive integer $N_2$ such that
+$$d(p_{n_i},p) < \frac{\varepsilon}{2} \text{ whenever } n_i \geq N_2.$$
+\item[(3)]
+Let $N = \max\{N_1, N_2\}$ be a positive integer.
+So
+\begin{align*}
+d(p_n,p)
+&\leq d(p_n,p_{n_i}) + d(p_{n_i}, p)
+  &\text{(Definition 2.15(c))} \\
+&< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \text{ whenever } n, n_i \geq N
+  &\text{((1)(2))} \\
+&= \varepsilon \text{ whenever } n \geq N.
+\end{align*}
+Hence the full sequence $\{p_n\}$ converges to $p$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.21}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.22}
+\emph{Suppose $X$ is a complete metric space,
+and $\{G_n\}$ is a sequence of dense open subsets of $X$.
+Prove Baire's theorem, namely, that $\bigcap^\infty_1{G_n}$ is not empty.
+(In fact, it is dense in $X$.)
+(Hint: Find a shrinking sequence of neighborhoods $E_n$ such
+that $\overline{E_n} \subseteq G_n$, and apply Exercise 3.21.) } \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.23}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \end{document}
