@@ -498,6 +498,207 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.24.}
+\emph{Let $X$ be a metric space.}
+\begin{enumerate}
+\item[(a)]
+\emph{Call two Cauchy sequences $\{p_n\}$, $\{q_n\}$ in $X$ equivalent if
+$$\lim_{n \to \infty}{d(p_n,q_n)} = 0.$$
+Prove that this is an equivalence relation.}
+\item[(b)]
+\emph{Let $X^*$ be the set of all equivalence classes so obtained.
+If $P \in X^*$, $Q \in X^*$, $\{p_n\} \in P$, $\{q_n\} \in Q$, define
+$$\Delta(P,Q) = \lim_{n \to \infty} d(p_n,q_n);$$
+by Exercise 3.23, this limit exists.
+Show that the number
+$\Delta(P,Q)$ is unchanged if $\{p_n\}$ and $\{q_n\}$ are replaced by equivalent sequences,
+and hence that $\Delta$ is a distance function in $X^*$.}
+\item[(c)]
+\emph{Prove that the resulting metric space $X^*$ is complete.}
+\item[(d)]
+...\\
+\item[(e)]
+...\\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Given Cauchy sequences $\{p_n\}$, $\{q_n\}$, $\{r_n\}$ in $X$.
+\begin{enumerate}
+\item[(1)]
+\emph{(Reflexivity)}
+$$\lim_{n \to \infty}{d(p_n,q_n)} = \lim_{n \to \infty} 0 = 0$$
+by the reflexivity of the metric function $d$.
+\item[(2)]
+\emph{(Symmetry)}
+$$\lim_{n \to \infty}{d(p_n,q_n)} = \lim_{n \to \infty}{d(q_n,p_n)} = 0$$
+by the symmetry of the metric function $d$.
+\item[(3)]
+\emph{(Transitivity)}
+Suppose that $\lim_{n \to \infty}{d(p_n,q_n)} = \lim_{n \to \infty}{d(q_n,r_n)} = 0$.
+By the triangle inequality of the metric function $d$,
+we have
+$$0 \leq d(p_n,r_n) \leq d(p_n,q_n)+d(q_n,r_n).$$
+Take limit to get
+\begin{align*}
+0
+&\leq \lim_{n \to \infty}d(p_n,r_n) \\
+&\leq \lim_{n \to \infty}(d(p_n,q_n)+d(q_n,r_n)) \\
+&= \lim_{n \to \infty}d(p_n,q_n) + \lim_{n \to \infty}d(q_n,r_n) \\
+&= 0
+\end{align*}
+or $\lim_{n \to \infty}d(p_n,r_n) = 0$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\Delta$ is well-defined.}
+Given any $\{p_n\}, \{p'_n\} \in P$ and $\{q_n\}, \{q'_n\} \in Q$.
+  \begin{enumerate}
+  \item[(a)]
+  $\lim_{n \to \infty}d(p_n,p'_n) = 0$
+  since $\{p_n\}$ and $\{p'_n\}$ are in the same equivalence class.
+  \item[(b)]
+  $\lim_{n \to \infty}d(q_n,q'_n) = 0$ (similar to (a)).
+  \item[(c)]
+  \emph{Show that $\lim_{n \to \infty}d(p_n,q_n) \leq \lim_{n \to \infty}d(p'_n,q'_n)$.}
+  Since $d(p_n,q_n) \leq d(p_n,p'_n)+d(p'_n,q'_n)+d(q'_n,q_n)$,
+  take limit to get
+  \begin{align*}
+    \lim_{n \to \infty} d(p_n,q_n)
+    &\leq \lim_{n \to \infty}(d(p_n,p'_n)+d(p'_n,q'_n)+d(q'_n,q_n)) \\
+    &= \lim_{n \to \infty}d(p_n,p'_n)
+      + \lim_{n \to \infty}d(p'_n,q'_n)
+      + \lim_{n \to \infty}d(q'_n,q_n) \\
+    &= 0 + \lim_{n \to \infty}d(p'_n,q'_n) + 0 \\
+    &= \lim_{n \to \infty}d(p'_n,q'_n)
+  \end{align*}
+  since (a)(b).
+  \item[(d)]
+  \emph{Show that $\lim_{n \to \infty}d(p_n,q_n) \geq \lim_{n \to \infty}d(p'_n,q'_n)$.}
+  Similar to (c).
+  \end{enumerate}
+By (c)(d), $\lim_{n \to \infty}d(p_n,q_n) = \lim_{n \to \infty}d(p'_n,q'_n)$,
+or $\Delta(P,Q)$ is well-defined.
+\item[(2)]
+\emph{Show that $\Delta$ is a metric.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\Delta(P,Q) > 0$ if $P \neq Q$; $\Delta(P,P) = 0$.}
+  It is the definition of $\Delta$.
+  \item[(b)]
+  \emph{Show that $\Delta(P,Q) = \Delta(Q,P)$.}
+  Similar to the argument in (a)(2).
+  \item[(c)]
+  \emph{Show that $\Delta(P,Q) \leq \Delta(P,R) + \Delta(R,Q)$.}
+  Similar to the argument in (a)(3).
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\emph{Show that $\{P_k\}_{k=1}^{\infty}$ converges to $P$ in $(X^*, \Delta)$
+for any given Cauchy sequence $\{P_k\}$.}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+Take a Cauchy sequence $\{ p(k)_n \}_{n=1}^{\infty}$ to represent $P_k$ for each $k$.
+  \begin{quote}
+    \emph{We will construct a Cauchy sequence $\{ p_k \}$ in $(X,d)$ such that
+    $\{P_k\}$ converges to $P$ which is the equivalent class of $\{ p_k \}$.}
+  \end{quote}
+\item[(2)]
+For each $k$,
+there is a positive integer $N(k)$ such that
+$$d(p(k)_m,p(k)_n) < \frac{\varepsilon}{3} \text{ whenever } m,n \geq N(k).$$
+Let $p_k = p(k)_{N(k)}$ and collect all $p_k$ as $\{ p_k \}_{k=1}^{\infty}$.
+\item[(3)]
+Since $\{P_k\}$ is Cauchy, there exists $N$ such that
+$$\Delta(P_m,P_n) < \frac{\varepsilon}{6} \text{ whenever } m,n \geq N.$$
+So
+$$\lim_{k \to \infty} d(p(m)_k,p(n)_k) < \frac{\varepsilon}{6}
+\text{ whenever } m,n \geq N.$$
+So there is a positive integer $N'$ such that
+$$0 \leq d(p(m)_k,p(n)_k) < \frac{\varepsilon}{3}
+\text{ whenever } m,n \geq N \text{ and } k \geq N'.$$
+(Let $L = \lim_{k \to \infty} d(p(m)_k,p(n)_k) < \frac{\varepsilon}{6}$.
+Given $\frac{\varepsilon}{6} > 0$, there is $N'$
+such that
+$$0
+\leq d(p(m)_k,p(n)_k)
+< L + \frac{\varepsilon}{6}
+< \frac{\varepsilon}{6} + \frac{\varepsilon}{6}
+= \frac{\varepsilon}{3}$$
+whenever $k \geq N'$.)
+\item[(4)]
+\emph{Show that $\{ p_k \}_{k=1}^{\infty}$ is a Cauchy sequence in $(X,d)$.}
+Given any $\varepsilon > 0$.
+  \begin{enumerate}
+  \item[(a)] By (3),
+  there are $N$ and one corresponding $N'$ such that
+  $$0 \leq d(p(m)_k,p(n)_k) < \frac{\varepsilon}{3}
+  \text{ whenever } m,n \geq N \text{ and } k \geq N'.$$
+  \item[(b)]
+  For fixed $m$ and $n$,
+  by (2) we can pick $k \geq N'' = \max\{N(m),N(n),N'\}$
+  such that
+  $$d(p(m)_{N(m)},p(m)_k) < \frac{\varepsilon}{3} \text{ whenever } k \geq N(m),$$
+  $$d(p(n)_k,p(n)_{N(n)}) < \frac{\varepsilon}{3} \text{ whenever } k \geq N(n).$$
+  \item[(c)]
+  By (a)(b),
+  \begin{align*}
+    d(p_m,p_n)
+    &= d(p(m)_{N(m)},p(n)_{N(n)}) \\
+    &\leq d(p(m)_{N(m)},p(m)_k)
+      + d(p(m)_k,p(n)_k)
+      + d(p(n)_k,p(n)_{N(n)}) \\
+    &< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
+    &= \varepsilon
+  \end{align*}
+  whenever $m,n \geq N$ (and $k \geq N''$).
+  \end{enumerate}
+\item[(5)]
+Let $P$ be the equivalent class of $\{ p_k \}$.
+\emph{Show that $\{P_k\}$ converges to $P$.}
+Given any $\varepsilon > 0$.
+  \begin{enumerate}
+  \item[(a)] By (3),
+  there are $N$ and one corresponding $N'$ such that
+  $$0 \leq d(p(k)_m,p(n)_m) < \frac{\varepsilon}{3}
+  \text{ whenever } k,n \geq N \text{ and } m \geq N'.$$
+  \item[(b)]
+  Given any $k \geq N$,
+  pick $$n \geq \max\{N,N(k)\} \text{ and then } m \geq \max\{N',N(k),N(n)\}.$$
+  By (2) we have
+  $$d(p(k)_n,p(k)_m) < \frac{\varepsilon}{3} \text{ whenever } n,m \geq N(k),$$
+  $$d(p(n)_{m},p(n)_{N(n)}) < \frac{\varepsilon}{3} \text{ whenever } m \geq N(n).$$
+  \item[(c)]
+  By (a)(b),
+  \begin{align*}
+    d(p(k)_n,p_n)
+    &= d(p(k)_n,p(n)_{N(n)}) \\
+    &\leq d(p(k)_n,p(k)_m)
+      + d(p(k)_m,p(n)_{m})
+      + d(p(n)_{m},p(n)_{N(n)}) \\
+    &< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
+    &= \varepsilon
+  \end{align*}
+  whenever $k \geq N$ and $n \geq \max\{N,N(k)\}$.
+  Take limit with respect to $n$ to get,
+  $$\Delta(P_k,P) = \lim_{n \to \infty} d(p(k)_n,p_n) \leq \varepsilon$$
+  whenever $k \geq N$.
+  \end{enumerate}
+\end{enumerate}
+Therefore, $(X^*, \Delta)$ is complete.
+$\Box$ \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
