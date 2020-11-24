@@ -465,6 +465,35 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 3.23.}
+\emph{Suppose $\{p_n\}$ and $\{q_n\}$ are Cauchy sequences in a metric space $X$.
+Show that the sequence $\{d(p_n,q_n)\}$ converges.
+(Hint: For any $m, n$,
+$$d(p_n,q_n) \leq d(p_n,p_m) + d(p_m,q_m) + d(q_m,q_n);$$
+it follows that
+$$|d(p_n,q_n) - d(p_m,q_m)|$$
+is small if $m$ and $n$ are large.)} \\
+
+\emph{Proof.}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+Since $\{p_n\}$ and $\{q_n\}$ are Cauchy sequences,
+there exists $N$ such that
+$$d(p_n,p_m) < \frac{\varepsilon}{2} \text{ and }
+d(q_m,q_n) < \frac{\varepsilon}{2}$$ whenever $m, n \geq N$.
+\item[(2)]
+Note that
+$$d(p_n,q_n) \leq d(p_n,p_m) + d(p_m,q_m) + d(q_m,q_n).$$
+It follows that
+$$|d(p_n,q_n) - d(p_m,q_m)|
+\leq d(p_n,p_m) + d(q_m,q_n)
+< \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
+= \varepsilon.$$
+Thus $\{d(p_n,q_n)\}$ is a Cauchy sequence in $\mathbb{R}^1$ (not in $X$).
+\item[(3)]
+Since $\mathbb{R}^1$ is a complete metric space, $\{d(p_n,q_n)\}$ converges.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
