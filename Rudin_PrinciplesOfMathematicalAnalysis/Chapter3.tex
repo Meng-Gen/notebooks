@@ -53,7 +53,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.2}
+\textbf{Exercise 3.2.}
 \emph{Calculate $\lim_{n \to \infty}(\sqrt{n^2 + n} - n)$.} \\
 
 \emph{Proof.}
@@ -98,7 +98,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.3}
+\textbf{Exercise 3.3.}
 \emph{If $s_1 = \sqrt{2}$ and
 $$s_{n+1} = \sqrt{2+\sqrt{s_n}} \:\: (n=1,2,3,...),$$
 prove that $\{s_n\}$ converges, and that $s_n < 2$ for $n=1,2,3,...$.} \\
@@ -148,7 +148,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.4}
+\textbf{Exercise 3.4.}
 \emph{Find the upper and lower limits of the sequences $\{s_n\}$ defined by
 $$s_1 = 0; s_{2m} = \frac{s_{2m-1}}{2}; s_{2m+1} = \frac{1}{2} + s_{2m}.$$ } \\
 
@@ -184,7 +184,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.5}
+\textbf{Exercise 3.5.}
 \emph{For any two real sequences $\{a_n\}$, $\{b_n\}$, prove that
 $$\limsup_{n \to \infty} (a_n + b_n)
 \leq \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n$$
@@ -234,7 +234,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.7}
+\textbf{Exercise 3.7.}
 \emph{Prove that the convergence of $\sum a_n$ implies the convergence of
 $$\sum \frac{\sqrt{a_n}}{n},$$
 if $a_n \geq 0$.} \\
@@ -291,7 +291,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.20}
+\textbf{Exercise 3.20.}
 \emph{Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$,
 and some subsequence $\{p_{n_i}\}$ converges to a point $p \in X$.
 Prove that the full sequence $\{p_n\}$ converges to $p$. } \\
@@ -327,7 +327,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.21}
+\textbf{Exercise 3.21.}
 \emph{Prove the following analogue of Theorem 3.10(b):
 If $\{E_n\}$ is a sequence of closed and bounded sets in a complete metric space $X$,
 if $E_n \supseteq E_{n+1}$, and if
@@ -383,7 +383,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 3.22}
+\textbf{Exercise 3.22 (Baire category theorem).}
 \emph{Suppose $X$ is a complete metric space,
 and $\{G_n\}$ is a sequence of dense open subsets of $X$.
 Prove Baire's theorem, namely, that $\bigcap^\infty_1{G_n}$ is not empty.
@@ -391,13 +391,80 @@ Prove Baire's theorem, namely, that $\bigcap^\infty_1{G_n}$ is not empty.
 (Hint: Find a shrinking sequence of neighborhoods $E_n$ such
 that $\overline{E_n} \subseteq G_n$, and apply Exercise 3.21.) } \\
 
+\emph{Proof.}
+Given any open set $G_0$ in $X$,
+will show that $$\bigcap_{n=0}^{\infty} G_n \neq \varnothing.$$
+\begin{enumerate}
+\item[(1)]
+Since $G_1$ is dense, $G_0 \cap G_1$ is nonempty.
+Take any one point $p_1$ in the open set $G_0 \cap G_1$,
+then there exists a closed neighborhood
+$$V_1
+= \{ q \in X : d(q,p_1) < r_1 \}$$
+of $p_1$ with $r_1 < 1$
+such that
+$$V_1 \subseteq G_0 \cap G_1.$$
+Take $U_1 \subseteq E_1 \subseteq V_1$
+such that
+\begin{align*}
+E_1 &= \left\{ q \in X : d(q,p_1) \leq \frac{r_1}{64} \right\} \subseteq V_1, \\
+U_1 &= \left\{ q \in X : d(q,p_1) < \frac{r_1}{89} \right\} \subseteq E_1.
+\end{align*}
+\item[(2)]
+Suppose $V_n, E_n, U_n$ have been constructed,
+take any one point $p_{n+1}$ in the open set $U_n \cap G_{n+1}$,
+there exists an open neighborhood
+$$V_{n+1}
+= \{ q \in X : d(q,p_{n+1}) < r_{n+1} \}$$
+of $p_{n+1}$ with $r_{n+1}$ with $r_{n+1} < \frac{1}{n+1}$
+such that
+$$V_{n+1} \subseteq U_n \cap G_{n+1}.$$
+Take $U_1 \subseteq E_1 \subseteq V_1$
+such that
+\begin{align*}
+E_{n+1} &= \left\{ q \in X : d(q,p_{n+1}) \leq \frac{r_{n+1}}{64} \right\} \subseteq V_{n+1}, \\
+U_{n+1} &= \left\{ q \in X : d(q,p_{n+1}) < \frac{r_{n+1}}{89} \right\} \subseteq E_{n+1}.
+\end{align*}
+\item[(3)]
+Note that
+  \begin{enumerate}
+  \item[(a)]
+  $E_n$ is closed and nonempty (since $p_n \in E_n$).
+  \item[(b)]
+  $\lim_{n \to \infty} \mathrm{diam}(E_n) = 0$
+  (since $\mathrm{diam}(E_n) \leq 2 \cdot \frac{r_n}{64} < r_n < \frac{1}{n}$.)
+  \item[(c)]
+  $E_1 \supseteq E_2 \supseteq \cdots$
+  (since
+  $E_{n+1} \subseteq V_{n+1} \subseteq U_n \cap G_{n+1} \subseteq U_n \subseteq E_n$).
+  \end{enumerate}
+Since $X$ is complete, by Exercise 3.21,
+$$\bigcap_{n=1}^{\infty} E_n = \{p\}$$
+for some $p \in X$.
+\item[(4)]
+Hence
+\begin{align*}
+p \in \bigcap_{n=1}^{\infty} E_n
+&\Longleftrightarrow
+p \in E_n \text{ for all } n=1,2,3,\ldots \\
+&\Longrightarrow
+p \in E_1 \subseteq G_0 \cap G_1 \text{ and }
+p \in E_{n+1} \subseteq U_n \cap G_{n+1} \subseteq G_{n+1} \\
+&\Longrightarrow
+p \in G_0 \cap G_1 \cap \cdots = \bigcap_{n=0}^{\infty} G_n \\
+&\Longrightarrow
+\bigcap_{n=0}^{\infty} G_n \neq \varnothing.
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-\textbf{Exercise 3.23}
+\textbf{Exercise 3.23.}
 
 
 
