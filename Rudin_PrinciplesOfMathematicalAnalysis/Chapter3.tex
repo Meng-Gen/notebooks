@@ -176,7 +176,56 @@ The upper limit is $1$.
 \item[(3)]
 The lower limit is $\frac{1}{2}$.
 \end{enumerate}
+$\Box$ \\\\
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.5}
+\emph{For any two real sequences $\{a_n\}$, $\{b_n\}$, prove that
+$$\limsup_{n \rightarrow \infty} (a_n + b_n)
+\leq \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n$$
+provided the sum of the right is not of the form $\infty - \infty$.} \\
+
+\emph{Proof.}
+Write
+$\alpha = \limsup_{n \rightarrow \infty} a_n$
+and
+$\beta = \limsup_{n \rightarrow \infty} b_n$.
+\begin{enumerate}
+\item[(1)]
+\emph{$\alpha = \infty$ and $\beta = \infty$.}
+Nothing to do.
+\item[(2)]
+\emph{$\alpha = -\infty$ and $\beta = -\infty$.}
+Since $\alpha = -\infty < \infty$,
+there exists $M'$ such that $a_n < M'$ for all $n$.
+For any real $M$, $a_n > M - M'$ for at most a finite number of values of $n$
+(Theorem 3.17(a)).
+Hence $a_n + b_n > M$ for at most a finite number of values of $n$.
+Hence $\limsup_{n \rightarrow \infty} (a_n + b_n) = -\infty$,
+or
+$$\limsup_{n \rightarrow \infty} (a_n + b_n)
+= \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n$$
+in this case.
+\item[(3)]
+\emph{$\alpha$ and $\beta$ are finite.}
+(Similar to the argument in Theorem 3.37.)
+Choose $\alpha' > \alpha$ and $\beta' > \beta$.
+There is an integer $N$ such that
+$$\alpha' \geq a_n \text{ and } \beta' \geq b_n$$
+whenever $n \geq N$.
+Hence $$a_n + b_n \leq \alpha' + \beta'$$
+whenever $n \geq N$. Take $\limsup$ to get
+Hence $$\limsup_{n \rightarrow \infty} (a_n + b_n) \leq \alpha' + \beta'.$$
+Since the inequality is true for every $\alpha' > \alpha$ and $\beta' > \beta$,
+we have
+$$\limsup_{n \rightarrow \infty} (a_n + b_n)
+\leq \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n.$$
+\end{enumerate}
 $\Box$ \\\\
 
 
