@@ -186,15 +186,15 @@ $\Box$ \\\\
 
 \textbf{Exercise 3.5}
 \emph{For any two real sequences $\{a_n\}$, $\{b_n\}$, prove that
-$$\limsup_{n \rightarrow \infty} (a_n + b_n)
-\leq \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n$$
+$$\limsup_{n \to \infty} (a_n + b_n)
+\leq \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n$$
 provided the sum of the right is not of the form $\infty - \infty$.} \\
 
 \emph{Proof.}
 Write
-$\alpha = \limsup_{n \rightarrow \infty} a_n$
+$\alpha = \limsup_{n \to \infty} a_n$
 and
-$\beta = \limsup_{n \rightarrow \infty} b_n$.
+$\beta = \limsup_{n \to \infty} b_n$.
 \begin{enumerate}
 \item[(1)]
 \emph{$\alpha = \infty$ and $\beta = \infty$.}
@@ -206,10 +206,10 @@ there exists $M'$ such that $a_n < M'$ for all $n$.
 For any real $M$, $a_n > M - M'$ for at most a finite number of values of $n$
 (Theorem 3.17(a)).
 Hence $a_n + b_n > M$ for at most a finite number of values of $n$.
-Hence $\limsup_{n \rightarrow \infty} (a_n + b_n) = -\infty$,
+Hence $\limsup_{n \to \infty} (a_n + b_n) = -\infty$,
 or
-$$\limsup_{n \rightarrow \infty} (a_n + b_n)
-= \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n$$
+$$\limsup_{n \to \infty} (a_n + b_n)
+= \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n$$
 in this case.
 \item[(3)]
 \emph{$\alpha$ and $\beta$ are finite.}
@@ -220,11 +220,11 @@ $$\alpha' \geq a_n \text{ and } \beta' \geq b_n$$
 whenever $n \geq N$.
 Hence $$a_n + b_n \leq \alpha' + \beta'$$
 whenever $n \geq N$. Take $\limsup$ to get
-Hence $$\limsup_{n \rightarrow \infty} (a_n + b_n) \leq \alpha' + \beta'.$$
+Hence $$\limsup_{n \to \infty} (a_n + b_n) \leq \alpha' + \beta'.$$
 Since the inequality is true for every $\alpha' > \alpha$ and $\beta' > \beta$,
 we have
-$$\limsup_{n \rightarrow \infty} (a_n + b_n)
-\leq \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n.$$
+$$\limsup_{n \to \infty} (a_n + b_n)
+\leq \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n.$$
 \end{enumerate}
 $\Box$ \\\\
 
@@ -328,6 +328,54 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 3.21}
+\emph{Prove the following analogue of Theorem 3.10(b):
+If $\{E_n\}$ is a sequence of closed and bounded sets in a complete metric space $X$,
+if $E_n \supseteq E_{n+1}$, and if
+$$\lim_{n \to \infty} \mathrm{diam}(E_n) = 0,$$
+then $\bigcap_{n=1}^{\infty} E_n$ consists of exactly one point.} \\
+
+Assume $E_n \neq \varnothing$. It is unnecessary to assume that $E_n$ is bounded
+since we have the condition that $\lim_{n \to \infty} \mathrm{diam}(E_n) = 0$.\\
+
+\emph{Note.}
+Every compact metric space is complete, but complete spaces need not be compact.
+In fact, a metric space is compact if and only if it is complete and totally bounded. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Pick $p_n \in E_n$ for $n = 1, 2, \ldots$.
+\item[(2)]
+\emph{Show that $\{p_n\}$ is a Cauchy sequence.}
+Given any $\varepsilon > 0$.
+There is a positive integer $N$ such that
+$\mathrm{diam}(E_n) < \varepsilon$ whenever $n \geq N$.
+Especially, $$\mathrm{diam}(E_N) < \varepsilon.$$
+As $m, n \geq N$, $p_m \in E_m \subseteq E_N$ and $p_n \in E_n \subseteq E_N$.
+By the definition of the diameter of $E_N$,
+$$d(p_m,p_n) \leq \mathrm{diam}(E_N) < \varepsilon \text{ whenever } m,n \geq N.$$
+\item[(3)]
+Since $X$ is complete, $\{p_n\}$ converges to a point $p \in X$.
+\item[(4)]
+\emph{Show that $p \in \bigcap_{n=1}^{\infty} E_n$.}
+(Reductio ad absurdum)
+If there were some $n$ such that $p \not\in E_{n}$.
+Consider the subsequence
+$$p_{n}, p_{n+1}, p_{n+2}, \ldots.$$
+Note that all $p_{n}, p_{n+1}, \ldots$ are in $E_n$.
+By (3), it converges to $p$. Thus $p$ is a limit point of $E_n$.
+Since $E_n$ is closed, $p \in E_n$, which is absurd.
+\item[(5)]
+\emph{Show that $\bigcap_{n=1}^{\infty} E_n = \{p\}$.}
+(Reductio ad absurdum)
+If there were $q \in \bigcap_{n=1}^{\infty} E_n$ with $q \neq p$,
+then $d(p,q) > 0$ (Definition 2.15(a)).
+It implies that
+$$\mathrm{diam}(E_n)
+\geq d(p,q) > 0 \text{ for all } n,$$
+contrary to $\lim_{n \to \infty} \mathrm{diam}(E_n) = 0$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
