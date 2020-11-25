@@ -603,97 +603,63 @@ $\Box$ \\
 \emph{Proof of (c).}
 \emph{Show that $\{P_k\}_{k=1}^{\infty}$ converges to $P$ in $(X^*, \Delta)$
 for any given Cauchy sequence $\{P_k\}$.}
-Given any $\varepsilon > 0$.
 \begin{enumerate}
 \item[(1)]
-Take a Cauchy sequence $\{ p(k)_n \}_{n=1}^{\infty}$ to represent $P_k$ for each $k$.
-  \begin{quote}
-    \emph{We will construct a Cauchy sequence $\{ p_k \}$ in $(X,d)$ such that
-    $\{P_k\}$ converges to $P$ which is the equivalent class of $\{ p_k \}$.}
-  \end{quote}
+Take a Cauchy sequence $\{ p^{(k)}_n \}_{n=1}^{\infty}$ to represent $P_k$ for each $k$.
+\emph{We will construct a Cauchy sequence $\{ p_k \}$ in $(X,d)$ such that
+$\{P_k\}$ converges to $P$ which is the equivalent class of $\{ p_k \}$.}
 \item[(2)]
 For each $k$,
-there is a positive integer $N(k)$ such that
-$$d(p(k)_m,p(k)_n) < \frac{\varepsilon}{3} \text{ whenever } m,n \geq N(k).$$
-Let $p_k = p(k)_{N(k)}$ and collect all $p_k$ as $\{ p_k \}_{k=1}^{\infty}$.
+there exists $N_k$ such that
+$$d\left(p^{(k)}_m,p^{(k)}_n\right) < \frac{1}{k} \text{ whenever } m,n \geq N_k.$$
+Especially,
+$$d\left(p^{(k)}_m,p^{(k)}_{N_k}\right) < \frac{1}{k} \text{ whenever } m \geq N_k.$$
+Let $p_k = p^{(k)}_{N_k}$ and collect all $p_k$ as $\{ p_k \}_{k=1}^{\infty}$.
 \item[(3)]
-Since $\{P_k\}$ is Cauchy, there exists $N$ such that
-$$\Delta(P_m,P_n) < \frac{\varepsilon}{6} \text{ whenever } m,n \geq N.$$
-So
-$$\lim_{k \to \infty} d(p(m)_k,p(n)_k) < \frac{\varepsilon}{6}
-\text{ whenever } m,n \geq N.$$
-So there is a positive integer $N'$ such that
-$$0 \leq d(p(m)_k,p(n)_k) < \frac{\varepsilon}{3}
-\text{ whenever } m,n \geq N \text{ and } k \geq N'.$$
-(Let $L = \lim_{k \to \infty} d(p(m)_k,p(n)_k) < \frac{\varepsilon}{6}$.
-Given $\frac{\varepsilon}{6} > 0$, there is $N'$
-such that
-$$0
-\leq d(p(m)_k,p(n)_k)
-< L + \frac{\varepsilon}{6}
-< \frac{\varepsilon}{6} + \frac{\varepsilon}{6}
-= \frac{\varepsilon}{3}$$
-whenever $k \geq N'$.)
-\item[(4)]
-\emph{Show that $\{ p_k \}_{k=1}^{\infty}$ is a Cauchy sequence in $(X,d)$.}
-Given any $\varepsilon > 0$.
-  \begin{enumerate}
-  \item[(a)] By (3),
-  there are $N$ and one corresponding $N'$ such that
-  $$0 \leq d(p(m)_k,p(n)_k) < \frac{\varepsilon}{3}
-  \text{ whenever } m,n \geq N \text{ and } k \geq N'.$$
-  \item[(b)]
-  For fixed $m$ and $n$,
-  by (2) we can pick $k \geq N'' = \max\{N(m),N(n),N'\}$
-  such that
-  $$d(p(m)_{N(m)},p(m)_k) < \frac{\varepsilon}{3} \text{ whenever } k \geq N(m),$$
-  $$d(p(n)_k,p(n)_{N(n)}) < \frac{\varepsilon}{3} \text{ whenever } k \geq N(n).$$
-  \item[(c)]
-  By (a)(b),
+\emph{Show that $\{p_k\}$ is a Cauchy sequence in $(X,d)$.}
+Note that for any $k$, we have
   \begin{align*}
     d(p_m,p_n)
-    &= d(p(m)_{N(m)},p(n)_{N(n)}) \\
-    &\leq d(p(m)_{N(m)},p(m)_k)
-      + d(p(m)_k,p(n)_k)
-      + d(p(n)_k,p(n)_{N(n)}) \\
-    &< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
-    &= \varepsilon
+    &= d\left(p^{(m)}_{N_m},p^{(n)}_{N_n}\right) \\
+    &\leq d\left(p^{(m)}_{N_m},p^{(m)}_k\right)
+      + d\left(p^{(m)}_k,p^{(n)}_k\right)
+      + d\left(p^{(n)}_k,p^{(n)}_{N_n}\right).
   \end{align*}
-  whenever $m,n \geq N$ (and $k \geq N''$).
-  \end{enumerate}
-\item[(5)]
-Let $P$ be the equivalent class of $\{ p_k \}$.
-\emph{Show that $\{P_k\}$ converges to $P$.}
-Given any $\varepsilon > 0$.
-  \begin{enumerate}
-  \item[(a)] By (3),
-  there are $N$ and one corresponding $N'$ such that
-  $$0 \leq d(p(k)_m,p(n)_m) < \frac{\varepsilon}{3}
-  \text{ whenever } k,n \geq N \text{ and } m \geq N'.$$
-  \item[(b)]
-  Given any $k \geq N$,
-  pick $$n \geq \max\{N,N(k)\} \text{ and then } m \geq \max\{N',N(k),N(n)\}.$$
-  By (2) we have
-  $$d(p(k)_n,p(k)_m) < \frac{\varepsilon}{3} \text{ whenever } n,m \geq N(k),$$
-  $$d(p(n)_{m},p(n)_{N(n)}) < \frac{\varepsilon}{3} \text{ whenever } m \geq N(n).$$
-  \item[(c)]
-  By (a)(b),
+Let $k \to \infty$, we have
   \begin{align*}
-    d(p(k)_n,p_n)
-    &= d(p(k)_n,p(n)_{N(n)}) \\
-    &\leq d(p(k)_n,p(k)_m)
-      + d(p(k)_m,p(n)_{m})
-      + d(p(n)_{m},p(n)_{N(n)}) \\
-    &< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
-    &= \varepsilon
+    d(p_m,p_n)
+    &\leq \limsup_{k \to \infty}\left[ d\left(p^{(m)}_{N_m},p^{(m)}_k\right)
+      + d\left(p^{(m)}_k,p^{(n)}_k\right)
+      + d\left(p^{(n)}_k,p^{(n)}_{N_n}\right) \right] \\
+    &\leq \frac{1}{m} + \Delta(P_m,P_n) + \frac{1}{n}
   \end{align*}
-  whenever $k \geq N$ and $n \geq \max\{N,N(k)\}$.
-  Take limit with respect to $n$ to get,
-  $$\Delta(P_k,P) = \lim_{n \to \infty} d(p(k)_n,p_n) \leq \varepsilon$$
-  whenever $k \geq N$.
-  \end{enumerate}
+for any $m, n$ (by (2)).
+Let $m, n \to \infty$, we establish the result (since $\{P_k\}$ is Cauchy).
+\item[(4)]
+\emph{Show that $\{P_k\}$ converges to $P \ni \{ p_k \}$.}
+Given any $\varepsilon > 0$.
+Since $\{p_k\}$ is Cauchy (3), there is $N > \frac{2}{\varepsilon}$ such that
+$$d(p_m,p_n) < \frac{\varepsilon}{2} \text{ whenever } m,n \geq N.$$
+Note that
+  \begin{align*}
+    d\left(p^{(k)}_n,p_n\right)
+    &= d\left(p^{(k)}_n,p^{(n)}_{N_n}\right) \\
+    &\leq d\left(p^{(k)}_n,p^{(k)}_{N_k}\right)
+      + d\left(p^{(k)}_{N_k},p^{(n)}_{N_n}\right).
+  \end{align*}
+For any $k \geq N$, let $n \to \infty$ to get
+  \begin{align*}
+    \Delta(P_k,P)
+    &= \lim_{n \to \infty} d\left(p^{(k)}_n,p_n\right) \\
+    &\leq \limsup_{n \to \infty} d\left(p^{(k)}_n,p^{(k)}_{N_k}\right)
+      + \limsup_{n \to \infty} d\left(p^{(k)}_{N_k},p^{(n)}_{N_n}\right) \\
+    &< \frac{1}{k} + \frac{\varepsilon}{2} \\
+    &\leq \frac{1}{N} + \frac{\varepsilon}{2} \\
+    &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+    &< \varepsilon.
+  \end{align*}
 \end{enumerate}
-Therefore, $(X^*, \Delta)$ is complete.
+Hence, $(X^*, \Delta)$ is complete.
 $\Box$ \\
 
 
