@@ -423,6 +423,92 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.14 (Ces\`aro convergence).}
+\emph{If $\{s_n\}$ is a complex sequence, define its arithmetic means $\sigma_n$ by
+$$\sigma_n
+= \frac{s_0 + s_1 + \cdots + s_n}{n+1} \:\: (n=0,1,2,\ldots).$$}
+\begin{enumerate}
+\item[(a)]
+\emph{If $\lim s_n = s$, prove that $\lim \sigma_n = s$.}
+\item[(b)]
+\emph{Construct a sequence $\{s_n\}$ which does not converge, although $\lim \sigma_n = 0$.}
+\item[(c)]
+\emph{Can it happen that $s_n > 0$ for all $n$ and that $\limsup s_n = \infty$,
+although $\lim \sigma_n = 0$?}
+\item[(d)]
+\emph{Put $a_n = s_n - s_{n-1}$, for $n \geq 1$.
+Show that
+$$s_n - \sigma_n = \frac{1}{n+1} \sum_{k=1}^{n} ka_k.$$
+Assume that $\lim (na_n) = 0$ and that $\{\sigma_n\}$ converges.
+Prove that $\{s_n\}$ converges.
+[This gives a converse of (a), but under the additional assumption that $na_n \to 0$.]}
+\item[(e)]
+\emph{Since $\varepsilon$ was arbitrary, $\lim s_n = \sigma$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+For such $\varepsilon > 0$, there is an integer $N' \geq 1$ such that
+$$|s_n-s| < \frac{\varepsilon}{64} \text{ whenever } n \geq N'.$$
+\item[(2)]
+For such $N'$, $\sum_{n=0}^{N'} |s_n-s|$ is finite.
+Let $N''$ be an integer such that $$\sum_{n=0}^{N'} |s_n-s| < \frac{N''\varepsilon}{89}$$
+(by taking $N'' = \left\lfloor \frac{89}{\varepsilon}\sum_{n=0}^{N'} |s_n-s| \right\rfloor + 1$).
+\item[(3)]
+Note that
+  \begin{align*}
+  |\sigma_n - s|
+  &= \abs{ \left(\frac{1}{n+1}\sum_{k=0}^n s_k\right) - s } \\
+  &= \abs{ \frac{1}{n+1}\sum_{k=0}^n (s_k - s) } \\
+  &\leq \frac{1}{n+1}\sum_{k=0}^n |s_k - s|
+  \end{align*}
+holds for each $n=0,1,2,\ldots$.
+In particular, for $n \geq N = \max\{N', N''\} \geq 1$, we have
+  \begin{align*}
+  |\sigma_{n} - s|
+  &\leq \frac{1}{n+1}\sum_{k=0}^{n} |s_k - s| \\
+  &\leq \left( \frac{1}{n+1}\sum_{k=0}^{N'}|s_k - s| \right)
+    + \left( \frac{1}{n+1}\sum_{k=N'+1}^{n}|s_k - s| \right) \\
+  &< \frac{1}{n+1} \cdot \frac{N''\varepsilon}{89}
+    + \frac{1}{n+1} \cdot \frac{(n-N')\varepsilon}{64} \\
+  &< \frac{\varepsilon}{89} + \frac{\varepsilon}{64} \\
+  &< \varepsilon.
+  \end{align*}
+Therefore, $\lim \sigma_n = s$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+Define $\{s_n\}$ by $s_n = (-1)^{n+1}$.
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.20.}
 \emph{Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$,
 and some subsequence $\{p_{n_i}\}$ converges to a point $p \in X$.
