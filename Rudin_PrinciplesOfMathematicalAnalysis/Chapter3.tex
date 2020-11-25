@@ -703,7 +703,7 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
 \emph{Show that $\varphi(X)$ is dense in $X^*$.}
-Given any $P \in X^* \ni \{p_n\}$ and any $\varepsilon > 0$.
+Given any $P \in X^*$, any $\{p_n\} \in P$ and any $\varepsilon > 0$.
 Since $\{p_n\}$ is Cauchy, there is $N$ such that
 $$d(p_m,p_n) < \frac{\varepsilon}{64} \text{ whenever } m,n \geq N.$$
 Note that $p_N \in X$.
@@ -724,6 +724,101 @@ $$\Delta(P,P_p)
 = \lim_{n \to \infty} d(p_n,p)
 = 0,$$
 or $P = P_p$, or $\varphi(X) = X^*$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.25.}
+\emph{Let $X$ be the metric space whose points are rational numbers,
+with the metric $d(x,y) = |x-y|$.
+What is the completion of this space? (Compare Exercise 3.24.)} \\
+
+\emph{Proof.}
+By Exercise 3.24, we can identify one completion $(X^*,\Delta)$ with $(\mathbb{R},|\cdot|)$
+(Theorem 3.11(c) and Theorem 1.20(b)).
+$\Box$ \\
+
+
+
+\textbf{Supplement (Uniqueness of completion).}
+\emph{Show that a completion of a metric space is unique up to isometry.} \\
+
+\emph{Outline.}
+Suppose there are two completions $\{\varphi_i, (X^*_i,d^*_i) \}$ $(i=1,2)$ of $(X,d)$.
+Let $$\psi = \varphi_2 \circ \varphi_1^{-1}: \varphi_1(X) \to \varphi_2(X)$$
+be an isometry from $\varphi_1(X)$ into $\varphi_2(X)$
+The sets $\varphi_i(X)$ $(i=1,2)$ are dense in $X^*_i$.
+So we can extend $\psi$ (continuously) to a map $\psi: X^*_1 \to X^*_2$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  Given any $P \in X^*_1$, there is a Cauchy sequence
+  $\{P_{p_n}\} = \{\varphi_1(p_n)\}$ in $\varphi_1(X)$ converging to $P$.
+  Define $\psi(P)$ by
+  $$\psi(P) = \lim_{n \to \infty} \psi(P_{p_n}).$$
+  \item[(2)]
+  \emph{Show that $\psi$ is well-defined.}
+  Note that
+  \begin{align*}
+  \Delta_2(\psi(P_{p_m}), \psi(P_{p_n}))
+  &= \Delta_2(\psi(\varphi_1(p_m)), \psi(\varphi_1(p_n))) \\
+  &= \Delta_2(\varphi_2(p_m), \varphi_2(p_n)) \\
+  &= d(p_n,p_m)
+    &\text{($\varphi_2$ is isometric)} \\
+  &= \Delta_1(\varphi_1(p_m), \varphi_1(p_n))
+    &\text{($\varphi_1$ is isometric)} \\
+  &= \Delta_1(P_{p_m}, P_{p_n}).
+  \end{align*}
+  So $\{ \psi(P_{p_n}) \}$ is a Cauchy sequence in $\varphi_2(X)$
+  if (and only if) $\{P_{p_n}\}$ is a Cauchy sequence in $\varphi_1(X)$.
+  Since $X^*_2$ is complete, $\{ \psi(P_{p_n}) \}$ converges to $\psi(P)$.
+  The limit $\psi(P)$ is uniquely determined since $\Delta_2$ is a metric function.
+  \item[(3)]
+  Since $\psi$ is an isometry from $\varphi_1(X)$ into $\varphi_2(X)$,
+  $$\psi^{-1} = \varphi_1 \circ \varphi_2^{-1}: \varphi_2(X) \to \varphi_1(X)$$
+  is an isometry from $\varphi_2(X)$ into $\varphi_1(X)$.
+  Besides, $\psi^{-1} \circ \psi = 1_{\varphi_1(X)}$
+  and $\psi \circ \psi^{-1} = 1_{\varphi_2(X)}$.
+  \item[(4)]
+  \emph{Show that $\psi$ is surjective.}
+  Given any $Q \in X^*_2$, there is a Cauchy sequence
+  $\{P_{q_n}\} = \{\varphi_2(q_n)\}$ in $\varphi_2(X)$ converging to $Q$.
+  Define
+  $$P_{p_n} = \psi^{-1}(P_{q_n}) \in \varphi_1(X).$$
+  $\psi(P_{p_n}) = 1_{\varphi_2(X)}(P_{q_n}) = P_{q_n}$.
+  Besides, similar to argument in (2),
+  $\{P_{p_n}\}$ is a Cauchy sequence in $\varphi_1(X)$.
+  Since $X^*_1$ is complete, $\{P_{p_n}\}$ converges to $P \in X^*_1$.
+  It is easy to verify that $\psi(P) = Q$.
+  \item[(5)]
+  \emph{Show that $\psi$ is injective.}
+  Given any $P \in X^*_1$ and $Q \in X^*_1$,
+  there are Cauchy sequences
+  $$\{P_{p_n}\} = \{\varphi_1(p_n)\} \to P \text{ and }
+  \{P_{q_n}\} = \{\varphi_1(q_n)\} \to Q.$$
+  So
+  \begin{align*}
+     \psi(P) = \psi(Q)
+     &\Longrightarrow
+     \lim_{n \to \infty} \psi(P_{p_n}) = \lim_{n \to \infty} \psi(P_{q_n}) \\
+     &\Longrightarrow
+     0 = \lim_{n \to \infty} \Delta_2(\psi(P_{p_n}),\psi(P_{q_n})) \\
+     &\Longrightarrow
+     0 = \lim_{n \to \infty} \Delta_2(\psi(\varphi_1(p_n)),\psi(\varphi_1(q_n))) \\
+     &\Longrightarrow
+     0 = \lim_{n \to \infty} \Delta_2(\varphi_2(p_n),\varphi_2(q_n)) \\
+     &\Longrightarrow
+     0 = \lim_{n \to \infty} d(p_n,q_n).
+       &\text{($\varphi_2$ is isometric)}
+  \end{align*}
+  Thus $\{p_n\} \in P$ and $\{q_n\} \in Q$ in the same equivalence class.
+  Thus $P = Q$.
 \end{enumerate}
 $\Box$ \\\\
 
