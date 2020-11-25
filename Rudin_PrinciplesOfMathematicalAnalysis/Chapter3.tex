@@ -386,6 +386,43 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.13.}
+\emph{Prove that the Cauchy product of two absolutely convergent series
+converges absolutely.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Given two absolutely convergent series $\sum a_n$ and $\sum b_n$.
+The Cauchy product is $\sum c_n$
+where
+$$c_n = \sum_{k=0}^{n} a_k b_{n-k} \:\: (n=0,1,2,\ldots).$$
+Let $\sum |a_n| = A < \infty$ and $\sum |b_n| = B < \infty$.
+\item[(2)]
+Each term $|c_k|$ of $\sum_{k=0}^{n}|c_k|$ is nonnegative.
+\item[(3)]
+Thus,
+\begin{align*}
+  \sum_{k=0}^{n}|c_k|
+  &= \sum_{k=0}^{n} \abs{ \sum_{m=0}^{k} a_m b_{k-m} } \\
+  &\leq \sum_{k=0}^{n} \sum_{m=0}^{k} |a_m| |b_{k-m}| \\
+  &= \sum_{k=0}^{n} |a_k| \sum_{m=0}^{n-k} |b_m| \\
+  &\leq \sum_{k=0}^{n} |a_k| B \\
+  &\leq AB \\
+  &< \infty.
+\end{align*}
+\item[(4)]
+By (2)(3), $\sum_{k=0}^{n}|c_k|$ converges (Theorem 3.24),
+or $\sum_{k=0}^{n} c_k$ converges absolutely.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.20.}
 \emph{Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$,
 and some subsequence $\{p_{n_i}\}$ converges to a point $p \in X$.
