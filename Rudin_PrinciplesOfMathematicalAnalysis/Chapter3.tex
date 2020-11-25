@@ -291,6 +291,101 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.12.}
+\emph{Suppose $a_n > 0$ and $\sum a_n$ converges.
+Put
+$$r_n = \sum_{m=n}^{\infty} a_m.$$}
+\begin{enumerate}
+\item[(a)]
+\emph{Prove that
+$$\frac{a_m}{r_m} + \cdots + \frac{a_n}{r_n} > 1 - \frac{r_n}{r_m}$$
+if $m < n$, and deduce that $\sum \frac{a_n}{r_n}$ diverges.}
+\item[(b)]
+\emph{Prove that
+$$\frac{a_n}{\sqrt{r_n}} < 2(\sqrt{r_n} - \sqrt{r_{n+1}})$$
+and deduce that $\sum \frac{a_n}{\sqrt{r_n}}$ converges.} \\
+\end{enumerate}
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+Each $r_n$ is positive and finite (since $a_n > 0$ and $\sum a_n$ converges).
+\item[(2)]
+$\{r_n\}$ is monotonic decreasing (since $a_n > 0$).
+\item[(3)]
+$\{r_n\}$ converges to $0$ (since $\sum a_n$ converges). \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+  \frac{a_m}{r_m} + \cdots + \frac{a_n}{r_n}
+  &> \frac{a_m}{r_m} + \cdots + \frac{a_n}{r_m}
+    &(\text{$r_m > r_k$ for $k=m+1,\ldots,n$}) \\
+  &= \frac{a_m + \cdots + a_n}{r_m} \\
+  &= \frac{r_m - r_{n+1}}{r_m}
+    &(\text{Definition of $r_k$}) \\
+  &> \frac{r_m - r_{n}}{r_m}
+    &(r_n > r_{n+1}) \\
+  &= 1 - \frac{r_n}{r_m}.
+\end{align*}
+\item[(2)]
+(Reductio ad absurdum)
+If $\sum \frac{a_n}{r_n}$ were converged,
+then given $\varepsilon = \frac{1}{64} > 0$
+there is an integer $N$ such that
+$$\abs{\frac{a_m}{r_m} + \cdots + \frac{a_n}{r_n}} < \frac{1}{64}
+\text{ whenever } n \geq m \geq N$$
+(Theorem 3.22). By (1), let $m = N$ to get
+$$1 - \frac{r_n}{r_N} < \frac{1}{64}
+\text{ whenever } n \geq N,$$
+or $$r_n > \frac{63}{64} r_N,$$
+contrary to the assumption that
+$\{r_n\}$ converges to $0$ (since $\sum a_n$ converges).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Note that each $r_n$ is positive and finite, and thus
+\begin{align*}
+  \frac{a_n}{\sqrt{r_n}} < 2(\sqrt{r_n} - \sqrt{r_{n+1}})
+  &\Longleftrightarrow
+  \frac{r_n - r_{n+1}}{\sqrt{r_n}} < 2(\sqrt{r_n} - \sqrt{r_{n+1}}) \\
+  &\Longleftrightarrow
+  \frac{\sqrt{r_n} + \sqrt{r_{n+1}}}{\sqrt{r_n}} < 2 \\
+  &\Longleftrightarrow
+  \sqrt{r_n} + \sqrt{r_{n+1}} < 2 \sqrt{r_n} \\
+  &\Longleftrightarrow
+  \sqrt{r_{n+1}} < \sqrt{r_n} \\
+  &\Longleftrightarrow
+  r_{n+1} < r_n.
+\end{align*}
+The last statement holds since $\{r_n\}$ is monotonic decreasing.
+\item[(2)]
+  \begin{enumerate}
+  \item[(a)]
+  Each term $\frac{a_n}{\sqrt{r_n}}$ of $\sum \frac{a_n}{\sqrt{r_n}}$ is nonnegative.
+  \item[(b)]
+  The partial sum
+  $$\sum_{k=1}^{n} \frac{a_k}{\sqrt{r_k}}
+  < \sum_{k=1}^{n} 2(\sqrt{r_k} - \sqrt{r_{k+1}})
+  = 2(\sqrt{r_1} - \sqrt{r_{n+1}})
+  < 2\sqrt{r_1}$$
+  is bounded by $2\sqrt{r_1}$.
+  \end{enumerate}
+  By (a)(b), $\sum \frac{a_n}{\sqrt{r_n}}$ converges (Theorem 3.24).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.20.}
 \emph{Suppose $\{p_n\}$ is a Cauchy sequence in a metric space $X$,
 and some subsequence $\{p_{n_i}\}$ converges to a point $p \in X$.
