@@ -519,10 +519,22 @@ and hence that $\Delta$ is a distance function in $X^*$.}
 \item[(c)]
 \emph{Prove that the resulting metric space $X^*$ is complete.}
 \item[(d)]
-...\\
+\emph{For each $p \in X$, there is a Cauchy sequence all of whose terms are $p$;
+let $P_p$ be the element of $X^*$ which contains this sequence.
+Prove that
+$$\Delta(P_p,P_q) = d(p,q)$$
+for all $p,q \in X$.
+In other words, the mapping $\varphi$ defined by $\varphi(p) = P_p$
+is an isometry
+(i.e., a distance-preserving mapping) of $X$ into $X^*$.}
 \item[(e)]
-...\\
+\emph{Prove that $\varphi(X)$ is dense in $X^*$, and that $\varphi(X) = X^*$ if $X$ is complete.
+By (d), we may identify $X$ and $\varphi(X)$
+and thus regard $X$ as embedded in the complete metric space $X^*$.
+We call $X^*$ the \textbf{completion} of $X$.} \\
 \end{enumerate}
+
+
 
 \emph{Proof of (a).}
 Given Cauchy sequences $\{p_n\}$, $\{q_n\}$, $\{r_n\}$ in $X$.
@@ -552,6 +564,8 @@ Take limit to get
 or $\lim_{n \to \infty}d(p_n,r_n) = 0$.
 \end{enumerate}
 $\Box$ \\
+
+
 
 \emph{Proof of (b).}
 \begin{enumerate}
@@ -599,6 +613,8 @@ or $\Delta(P,Q)$ is well-defined.
   \end{enumerate}
 \end{enumerate}
 $\Box$ \\
+
+
 
 \emph{Proof of (c).}
 \emph{Show that $\{P_k\}_{k=1}^{\infty}$ converges to $P$ in $(X^*, \Delta)$
@@ -661,6 +677,55 @@ For any $k \geq N$, let $n \to \infty$ to get
 \end{enumerate}
 Hence, $(X^*, \Delta)$ is complete.
 $\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+Define $\{p_n\}$ by $p_n = p$ $(n = 1,2,\ldots)$ for any $p \in X$.
+\item[(2)]
+\emph{Show that $\{p_n\}$ is a Cauchy sequence.}
+$d(p_m,p_n) = d(p,p) = 0$.
+\item[(3)]
+Take $\{p\} \in P_p$ and $\{q\} \in P_q$.
+Then
+$$\Delta(P_p,P_q)
+= \lim_{n \to \infty} d(p_n,q_n)
+= \lim_{n \to \infty} d(p,q)
+= d(p,q).$$
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\varphi(X)$ is dense in $X^*$.}
+Given any $P \in X^* \ni \{p_n\}$ and any $\varepsilon > 0$.
+Since $\{p_n\}$ is Cauchy, there is $N$ such that
+$$d(p_m,p_n) < \frac{\varepsilon}{64} \text{ whenever } m,n \geq N.$$
+Note that $p_N \in X$.
+Pick $\{p_N\} \in P_{p_N} = \varphi(p_N) \in \varphi(X)$.
+So
+$$\Delta(P,P_{p_N})
+= \lim_{n \to \infty} d(p_n,p_N)
+\leq \frac{\varepsilon}{64}
+< \varepsilon.$$
+Hence $\varphi(X)$ is dense in $X^*$.
+\item[(2)]
+\emph{Show that $\varphi(X) = X^*$ if $X$ is complete.}
+Given any $P \in X^* \ni \{p_n\}$.
+Since $X$ is complete, a Cauchy sequence $\{p_n\}$ converges to $p \in X$.
+Pick $\{p\} \in P_p = \varphi(p) \in \varphi(X)$.
+So
+$$\Delta(P,P_p)
+= \lim_{n \to \infty} d(p_n,p)
+= 0,$$
+or $P = P_p$, or $\varphi(X) = X^*$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
