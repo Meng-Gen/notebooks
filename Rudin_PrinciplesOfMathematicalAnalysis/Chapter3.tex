@@ -27,6 +27,11 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.1.}
 \emph{Prove that the convergence of $\{s_n\}$ implies
 convergence of $\{\abs{s_n}\}$.  Is the converse true?} \\
@@ -225,6 +230,94 @@ Since the inequality is true for every $\alpha' > \alpha$ and $\beta' > \beta$,
 we have
 $$\limsup_{n \to \infty} (a_n + b_n)
 \leq \limsup_{n \to \infty} a_n + \limsup_{n \to \infty} b_n.$$
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 3.6.}
+\emph{Investigate the behavior (convergence or divergence) of $\sum a_n$ if}
+\begin{enumerate}
+\item[(a)]
+\emph{$a_n = \sqrt{n+1} - \sqrt{n}$.}
+\item[(b)]
+\emph{$a_n = \frac{\sqrt{n+1} - \sqrt{n}}{n}$.}
+\item[(c)]
+\emph{$a_n = (\sqrt[n]{n} - 1)^n$.}
+\item[(d)]
+\emph{$a_n = \frac{1}{1+z^n}$ for complex values of $z$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Divergence.
+\item[(2)]
+$\sum_{n=1}^{k}a_n = \sqrt{k+1} - 1 \to \infty$ as $k \to \infty$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Convergence.
+\item[(2)]
+Since
+$$|a_n|
+= \frac{1}{n(\sqrt{n+1}+\sqrt{n})} < \frac{1}{2 n^{\frac{3}{2}}}$$
+holds for all $n$ and $\sum \frac{1}{2 n^{\frac{3}{2}}}$ converges
+(Theorem 3.28 and Theorem 3.3),
+by comparison test (Theorem 3.25), $\sum a_n$ converges.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+Convergence.
+\item[(2)]
+Note that
+$$\alpha
+= \limsup_{n \to \infty} \sqrt[n]{|a_n|}
+= \limsup_{n \to \infty} \sqrt[n]{n} - 1 = 0$$
+(Theorem 3.20(c)).
+Since $\alpha < 1$, $\sum a_n$ converges by root test (Theorem 3.33).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+Convergence if $|z| > 1$; divergence if $|z| \leq 1$.
+\item[(2)]
+Note that
+$|z^n+1| + |-1| \geq |z^n|$
+(Theorem 1.33(e)),
+or
+$$|z^n+1| \geq |z|^n - 1.$$
+\item[(3)]
+If $|z| > 1$, then there is an integer $N$ such that
+$$|z|^n \geq 2 \text{ whenever } n \geq N.$$
+Therefore, for $n \geq N$ we have
+  \begin{align*}
+    |a_n|
+    &= \frac{1}{|z^n+1|} \\
+    &\leq \frac{1}{|z|^n - 1}
+      &((2)) \\
+    &\leq \frac{1}{|z|^n - \frac{1}{2}|z|^n} \\
+    &= \frac{2}{|z|^n}.
+  \end{align*}
+The geometric series $\sum \frac{2}{|z|^n}$ converges,
+by comparison test (Theorem 3.25), $\sum a_n$ converges.
+\item[(4)]
+If $|z| \leq 1$, then $|a_n| \geq \frac{1}{2}$,
+or $\lim a_n \neq 0$.
+By Theorem 3.23 ($\lim a_n = 0$ if $\sum a_n$ converges),
+$\sum a_n$ diverges.
 \end{enumerate}
 $\Box$ \\\\
 
