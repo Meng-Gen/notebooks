@@ -384,6 +384,44 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.8.}
+\emph{If $\sum a_n$ converges, and if $\{b_n\}$ is monotonic and bounded,
+prove that $\sum a_n b_n$ converges.} \\
+
+\emph{Proof (Theorem 3.42).}
+There are only two possible cases (might be overlapped).
+\begin{enumerate}
+\item[(1)]
+\emph{$\{b_n\}$ is decreasing to $b$.}
+Define $\{ \beta_n \}$ by $\beta_n = b_n - b$.
+  \begin{enumerate}
+  \item[(a)]
+  The partial sums of $\sum a_n$ form a bounded sequence since
+  $\sum a_n$ converges.
+  \item[(b)]
+  $\{ \beta_n \}$ is monotonically decreasing.
+  \item[(c)]
+  $\lim \beta_n = 0$.
+  \end{enumerate}
+  By (1)(2)(3), $\sum a_n \beta_n$ converges.
+  Hence $$\sum a_n b_n = \sum a_n \beta_n + \sum a_n b$$ converges
+  (Theorem 3.3(a)(b)).
+\item[(2)]
+\emph{$\{b_n\}$ is increasing to $b$.}
+Similar to (1).
+Define $\{ \beta_n \}$ by $\beta_n = b - b_n$.
+Thus $\sum a_n \beta_n$ converges.
+Hence
+$$\sum a_n b_n = - \sum a_n \beta_n + \sum a_n b$$ converges.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.9.}
 \emph{Find the radius of convergence of each of the following power series:}
 \begin{enumerate}
