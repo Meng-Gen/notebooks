@@ -384,6 +384,80 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.9.}
+\emph{Find the radius of convergence of each of the following power series:}
+\begin{enumerate}
+\item[(a)]
+\emph{$\sum n^3 z^n$,}
+\item[(b)]
+\emph{$\sum \frac{2^n}{n!} z^n$,}
+\item[(c)]
+\emph{$\sum \frac{2^n}{n^2} z^n$,}
+\item[(d)]
+\emph{$\sum \frac{n^3}{3^n} z^n$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Since
+$$\alpha
+= \limsup_{n \to \infty} \sqrt[n]{n^3}
+= \limsup_{n \to \infty} (\sqrt[n]{n})^3
+= 1$$ (Theorem 3.20(c)),
+$R = \frac{1}{\alpha} = 1$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Note that
+$\sqrt[n]{n!} \leq \sqrt[n]{n^n} = n$.
+\emph{Show that $\sqrt[n]{n!} \geq \sqrt{n}$.}
+Note that
+$$(n!)^2 = \prod_{k=1}^{n} k(n+1-k).$$
+For each term $k(n+1-k)$ (where $k=1,\ldots,n$),
+we have $$k(n+1-k) - n = (k-1)(n-k) \geq 0 \text{ or } k(n+1-k) > n.$$
+or $k(n+1-k) > n$.
+Hence,
+$$(n!)^2 = \prod_{k=1}^{n} k(n+1-k) \geq \prod_{k=1}^{n} n = n^n,$$
+or $\sqrt[n]{n!} \geq \sqrt{n}$.
+\item[(2)]
+Since
+$$0 \leq \alpha
+= \limsup_{n \to \infty} \sqrt[n]{\frac{2^n}{n!}}
+= \limsup_{n \to \infty} \frac{2}{\sqrt[n]{n!}}
+\leq \limsup_{n \to \infty} \frac{2}{\sqrt{n}}
+= 0,$$
+$\alpha = 0$ and
+$R = \frac{1}{\alpha} = \infty$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+Similar to (a).
+Since
+$$\alpha
+= \limsup_{n \to \infty} \sqrt[n]{\frac{2^n}{n^2}}
+= \limsup_{n \to \infty} \frac{2}{\sqrt[n]{n}^2}
+= 2$$ (Theorem 3.20(c)),
+$R = \frac{1}{\alpha} = \frac{1}{2}$.
+$\Box$ \\
+
+\emph{Proof of (d).}
+Similar to (a)(c).
+Since
+$$\alpha
+= \limsup_{n \to \infty} \sqrt[n]{\frac{n^3}{3^n}}
+= \limsup_{n \to \infty} \frac{\sqrt[n]{n}^3}{3}
+= \frac{1}{3}$$ (Theorem 3.20(c)),
+$R = \frac{1}{\alpha} = 3$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.10.}
 \emph{Suppose that the coefficients of the power series $\sum a_n z^n$ are integers,
 infinitely many of which are distinct from zero.
