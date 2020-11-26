@@ -271,7 +271,7 @@ $$|a_n|
 = \frac{1}{n(\sqrt{n+1}+\sqrt{n})} < \frac{1}{2 n^{\frac{3}{2}}}$$
 holds for all $n$ and $\sum \frac{1}{2 n^{\frac{3}{2}}}$ converges
 (Theorem 3.28 and Theorem 3.3),
-by comparison test (Theorem 3.25), $\sum a_n$ converges.
+by the comparison test (Theorem 3.25), $\sum a_n$ converges.
 \end{enumerate}
 $\Box$ \\
 
@@ -285,7 +285,7 @@ $$\alpha
 = \limsup_{n \to \infty} \sqrt[n]{|a_n|}
 = \limsup_{n \to \infty} \sqrt[n]{n} - 1 = 0$$
 (Theorem 3.20(c)).
-Since $\alpha < 1$, $\sum a_n$ converges by root test (Theorem 3.33).
+Since $\alpha < 1$, $\sum a_n$ converges by the root test (Theorem 3.33).
 \end{enumerate}
 $\Box$ \\
 
@@ -312,7 +312,7 @@ Therefore, for $n \geq N$ we have
     &= \frac{2}{|z|^n}.
   \end{align*}
 The geometric series $\sum \frac{2}{|z|^n}$ converges,
-by comparison test (Theorem 3.25), $\sum a_n$ converges.
+by the comparison test (Theorem 3.25), $\sum a_n$ converges.
 \item[(4)]
 If $|z| \leq 1$, then $|a_n| \geq \frac{1}{2}$,
 or $\lim a_n \neq 0$.
@@ -513,6 +513,162 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 3.11.}
+\emph{Suppose $a_n > 0$, $s_n = a_1 + \cdots + a_n$, and $\sum a_n$ diverges.}
+\begin{enumerate}
+\item[(a)]
+\emph{Prove that $\sum \frac{a_n}{1+a_n}$ diverges.}
+\item[(b)]
+\emph{Prove that
+$$\frac{a_{N+1}}{s_{N+1}} + \cdots + \frac{a_{N+k}}{s_{N+k}}
+\geq 1 - \frac{s_N}{s_{N+k}}$$
+and deduce that $\sum \frac{a_n}{s_n}$ diverges.}
+\item[(c)]
+\emph{Prove that
+$$\frac{a_n}{s_n^2} \leq \frac{1}{s_{n-1}} - \frac{1}{s_n}$$
+and deduce that $\sum \frac{a_n}{s_n^2}$ converges.}
+\item[(d)]
+\emph{What can be said about
+$$\sum \frac{a_n}{1+na_n} \:\: and \:\: \sum \frac{a_n}{1+n^2 a_n}?$$} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+(Reductio ad absurdum)
+\begin{enumerate}
+  \item[(1)]
+  If $\sum \frac{a_n}{1+a_n}$ were convergent,
+  $\lim \frac{a_n}{1+a_n} = 0$ (Theorem 3.23).
+  Note that $\frac{a_n}{1+a_n} = \frac{1}{1+\frac{1}{a_n}}$ implies
+  $\lim a_n = 0$.
+  \item[(2)]
+  Since $\lim a_n = 0$, there is an integer $N$ such that
+  $$0 < a_n < 1 \text{ whenever } n \geq N.$$
+  Hence
+  $$|a_n| = a_n \leq \frac{2a_n}{1+a_n} \text{ whenever } n \geq N.$$
+  By the comparison test (Theorem 3.25),
+  $\sum a_n$ converges, contrary to the divergence of $\sum a_n$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(1)]
+  Note that each $s_n > 0$ and $\{s_n\}$ is monotonic increasing.
+  For $k \geq 1$,
+  \begin{align*}
+    \frac{a_{N+1}}{s_{N+1}} + \cdots + \frac{a_{N+k}}{s_{N+k}}
+    &\geq \frac{a_{N+1}}{s_{N+k}} + \cdots + \frac{a_{N+k}}{s_{N+k}} \\
+    &= \frac{a_{N+1} + \cdots + a_{N+k}}{s_{N+k}} \\
+    &= \frac{s_{N+k} - s_{N}}{s_{N+k}} \\
+    &= 1 - \frac{s_N}{s_{N+k}}.
+  \end{align*}
+  \item[(2)]
+  (Reductio ad absurdum)
+  If $\sum \frac{a_n}{s_n}$ were convergent,
+  by the Cauchy criterion (Theorem 3.22), for $\varepsilon = \frac{1}{64} > 0$,
+  there is an integer $N$ such that
+  $$\abs{ \sum_{n=N+1}^{N+k} \frac{a_n}{s_n} } < \frac{1}{64}
+  \:\: \text{ whenever } \:\: k \geq 1.$$
+  So,
+  $$\frac{1}{64} > \sum_{n=N+1}^{N+k} \frac{a_n}{s_n} > 1 - \frac{s_N}{s_{N+k}}
+  \:\: \text{ or } \:\:
+  s_{N+k} < \frac{64}{63} s_N,$$
+  contrary to divergence of $\sum a_n = \infty$ (as $k \to \infty$).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+  \item[(1)]
+  For $n \geq 2$,
+  $$\frac{1}{s_{n-1}} - \frac{1}{s_{n}}
+  = \frac{s_n-s_{n-1}}{s_{n-1}s_n}
+  = \frac{a_n}{s_{n-1}s_n}
+  \geq \frac{a_n}{s_n^2}.
+  $$
+  \item[(2)]
+  $\sum \frac{a_n}{s_n^2}$ is a series of nonnegative terms
+  and its partial sums
+  \begin{align*}
+    \sum_{n=1}^{k} \frac{a_n}{s_n^2}
+    &\leq \frac{a_1}{s_1^2}
+      + \sum_{n=2}^{k}\left( \frac{1}{s_{n-1}} - \frac{1}{s_{n}} \right) \\
+    &= \frac{a_1}{s_1^2}
+      + \frac{1}{s_{1}} - \frac{1}{s_{k}} \\
+    &= \frac{2}{a_1} - \frac{1}{s_{k}} \\
+    &< \frac{2}{a_1}
+  \end{align*}
+  is bounded (by $\frac{2}{a_1}$).
+  Therefore, $\sum \frac{a_n}{s_n^2}$ converges (Theorem 3.24).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that there is a divergent series $\sum a_n$ with $a_n > 0$
+  such that $\sum \frac{a_n}{1+na_n}$ converges or diverges.}
+    \begin{enumerate}
+      \item[(a)]
+      Take $$a_n = \frac{1}{n(\log n)^p}$$
+      where $0 \leq p \leq 1$.
+      \item[(b)]
+      Clearly,
+      $$\sum_{n=3}^{\infty} a_n = \sum_{n=3}^{\infty} \frac{1}{n(\log n)^p}$$
+      diverges (Theorem 3.29).
+      \item[(c)]
+      Note that
+      \begin{align*}
+        \sum_{n=3}^{\infty} \frac{a_n}{1+na_n}
+        &= \sum_{n=3}^{\infty} \frac{1}{n(\log n)^p} \cdot \frac{1}{1 + (\log n)^p} \\
+        &= \sum_{n=3}^{\infty} \frac{1}{n(\log n)^p + n(\log n)^{2p}}.
+      \end{align*}
+      Hence,
+      $$ \sum_{n=3}^{\infty} \frac{1}{2n(\log n)^{2p}}
+      \leq \sum_{n=3}^{\infty} \frac{a_n}{1+na_n}
+      < \sum_{n=3}^{\infty} \frac{1}{n(\log n)^{2p}}.$$
+      (Here we use the fact that $n(\log n)^p > 0$ and $(\log n)^p \geq 1$ if $n > e$.)
+      Therefore,
+      \begin{equation*}
+        \sum_{n=3}^{\infty} \frac{a_n}{1+na_n} =
+        \begin{cases}
+          \text{ converges } & \text{if $1 \geq p > \frac{1}{2}$} \\
+          \text{ diverges }  & \text{if $\frac{1}{2} \geq p \geq 0$}
+        \end{cases}
+      \end{equation*}
+      by Theorem 3.29 and the comparison test (Theorem 3.24).
+    \end{enumerate}
+    \emph{Note.} If a series $\sum a_n$ with $a_n > 0$ is convergent,
+    then $\sum \frac{a_n}{1+na_n}$ is always convergent
+    by the comparison test (Theorem 3.24).
+  \item[(2)]
+  \emph{Given any series $\sum a_n$ with $a_n > 0$.
+  Show that $$\sum \frac{a_n}{1+n^2a_n} < \infty$$
+  converges.}
+  Note that
+  $$\abs{ \frac{a_n}{1+n^2a_n} }
+  = \frac{1}{\frac{1}{a_n}+n^2}
+  < \frac{1}{n^2}$$
+  for any $n$ and $\sum_{n=1}^{\infty} \frac{1}{n^2}$ converges (to $\frac{\pi^2}{6}$).
+  By the comparison test (Theorem 3.25),
+  $\sum \frac{a_n}{1+n^2a_n}$ converges.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 3.12.}
 \emph{Suppose $a_n > 0$ and $\sum a_n$ converges.
 Put
@@ -554,7 +710,7 @@ $\{r_n\}$ converges to $0$ (since $\sum a_n$ converges). \\
 \end{align*}
 \item[(2)]
 (Reductio ad absurdum)
-If $\sum \frac{a_n}{r_n}$ were converged,
+If $\sum \frac{a_n}{r_n}$ were convergent,
 then given $\varepsilon = \frac{1}{64} > 0$
 there is an integer $N$ such that
 $$\abs{\frac{a_m}{r_m} + \cdots + \frac{a_n}{r_n}} < \frac{1}{64}
