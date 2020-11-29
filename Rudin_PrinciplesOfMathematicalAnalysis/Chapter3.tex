@@ -1053,7 +1053,287 @@ Show that Theorems 3.22, 3.23, 3.25(a), 3.33, 3.34, 3.42, 3.45, 3.47, and 3.55 a
 in this more general settings.
 (Only slight modifications are required in any of the proofs.)} \\
 
-\emph{Proof.}
+\textbf{Definition 3.21.}
+\emph{Given a sequence $\{ \mathbf{a}_n \} \subseteq \mathbb{R}^k$,
+we use the notation
+$$\sum_{n=p}^{q} \mathbf{a}_n \:\: (p \leq q)$$
+to denote the sum
+$\mathbf{a}_p + \mathbf{a}_{p+1} + \cdots + \mathbf{a}_q$.
+With $\{ \mathbf{a}_n \}$ we associate a sequence $\{ \mathbf{s}_n \}$, where
+$$\mathbf{s}_n = \sum_{k=1}^{n} \mathbf{a}_k.$$
+For $\{ \mathbf{s}_n \}$ we also use the symbolic expression
+$$\mathbf{a}_1 + \mathbf{a}_2 + \mathbf{a}_3 + \cdots$$
+or, more precisely,
+\[
+  \sum_{n=1}^{\infty} \mathbf{a}_n. \tag{4}
+\]} \\
+
+\emph{The symbol (4) we call an \textbf{infinite series}, or just a \textbf{series}.
+The number $\{ \mathbf{s}_n \}$, are called the \textbf{partial sums} of the series.
+If $\{ \mathbf{s}_n \}$ converges to $\mathbf{s}$,
+we say that the series \textbf{converges}, and write
+\[
+  \sum_{n=1}^{\infty} \mathbf{a}_n = \mathbf{s}.
+\]
+The number $\mathbf{s}$ is called the sum of the series;
+but it should be clearly understood that
+\textbf{$\mathbf{s}$ is the limit of a sequence of sums},
+and is not obtained simply by addition.} \\
+
+\emph{If $\{ \mathbf{s}_n \}$ diverges, the series said to be diverge.} \\
+
+\emph{Sometimes, for convenience of notation, we shall consider series of the form
+\[
+  \sum_{n=0}^{\infty} \mathbf{a}_n. \tag{5}
+\]
+And frequently, when there is no possible ambiguity,
+or when the distinction is immaterial, we shall simply write $\sum \mathbf{a}_n$
+in place of (4) or (5).} \\
+
+\emph{It is clear that every theorem about sequences can be stated in terms of
+series
+(putting $\mathbf{a}_1 = \mathbf{s}_1$
+and $\mathbf{a}_n = \mathbf{s}_n - \mathbf{s}_{n-1}$ for $n > 1$),
+and vice versa.
+But it is nevertheless useful to consider both concepts.} \\\\
+
+
+
+\textbf{Theorem 3.22 over $\mathbb{R}^k$.}
+\emph{$\sum \mathbf{a}_n$ converges if and only if for every $\varepsilon > 0$
+there is an integer $N$ such that
+$$\abs{ \sum_{k=n}^m \mathbf{a}_k } \leq \varepsilon$$
+if $m \geq n \geq N$.} \\
+
+\emph{Proof of Theorem 3.22 over $\mathbb{R}^k$.}
+The Cauchy criterion (Theorem 3.11) can be restated in this form.
+$\Box$ \\\\
+
+
+
+\textbf{Theorem 3.23 over $\mathbb{R}^k$.}
+\emph{If $\sum \mathbf{a}_n$ converges,
+then $\lim_{n \to \infty} \mathbf{a}_n = \mathbf{0}$.} \\
+
+\emph{Proof of Theorem 3.23 over $\mathbb{R}^k$.}
+By taking $m=n$ in Theorem 3.22 over $\mathbb{R}^k$,
+$$\abs{ \mathbf{a}_n } \leq \varepsilon \:\: \text{ whenever } n \geq N.$$
+$\Box$ \\\\
+
+
+
+\textbf{Theorem 3.25(a) over $\mathbb{R}^k$ (Comparison Test).}
+\emph{If $|\mathbf{a}_n| \leq c_n$ for $n \geq N_0$, where $N_0$ is some fixed integer,
+and if $\sum c_n$ converges, then $\sum \mathbf{a}_n$ converges.} \\
+
+\emph{Proof of Theorem 3.25(a) over $\mathbb{R}^k$.}
+Given $\varepsilon > 0$, there exists $N \geq N_0$ such that $m \geq n \geq N$ implies
+\[
+  \sum_{k=n}^{m} c_k \leq \varepsilon,
+\]
+by the Cauchy criterion. Hence
+\[
+  \abs{ \sum_{k=n}^{m} \mathbf{a}_k }
+  \leq \sum_{k=n}^{m} |\mathbf{a}_k|
+  \leq \sum_{k=n}^{m} c_k
+  \leq \varepsilon,
+\]
+and (a) follows.
+$\Box$ \\\\
+
+
+
+\textbf{Theorem 3.33 over $\mathbb{R}^k$ (Root Test).}
+\emph{Given $\sum \mathbf{a}_n$,
+put $\alpha = \limsup_{n \to \infty} \sqrt[n]{|\mathbf{a}_n|}$.
+Then}
+\begin{enumerate}
+\item[(a)]
+\emph{if $\alpha < 1$, $\sum \mathbf{a}_n$ converges;}
+\item[(b)]
+\emph{if $\alpha > 1$, $\sum \mathbf{a}_n$ diverges;}
+\item[(c)]
+\emph{if $\alpha = 1$, the test gives no information.} \\
+\end{enumerate}
+
+\emph{Proof of Theorem 3.33(a) over $\mathbb{R}^k$.}
+If $\alpha < 1$, we can choose $\beta$ so that $\alpha < \beta < 1$,
+and an integer $N$ such that
+\[
+  \sqrt[n]{|\mathbf{a}_n|} < \beta
+\]
+for $n \geq N$ [by Theorem 3.17(b)].
+That is, $n \geq N$ implies
+\[
+  |\mathbf{a}_n| < \beta^n.
+\]
+Since $0 < \beta < 1$, $\sum \beta^n$ converges.
+Convergence of $\sum \mathbf{a}_n$ follows now from the comparison test.
+$\Box$ \\
+
+\emph{Proof of Theorem 3.33(b) over $\mathbb{R}^k$.}
+If $\alpha > 1$, again by Theorem 3.17, there is a sequence $\{ n_k \}$ such that
+\[
+  \sqrt[n_k]{|\mathbf{a}_{n_k}|} \to \alpha.
+\]
+Hence $|\mathbf{a}_{n}| > 1$ for infinitely many values of $n$,
+so that the condition $\mathbf{a}_{n} \to \mathbf{0}$,
+necessary for convergence of $\sum \mathbf{a}_n$,
+does not hold (Theorem 3.23 over $\mathbb{R}^k$).
+$\Box$ \\
+
+\emph{Proof of Theorem 3.33(c) over $\mathbb{R}^k$.}
+Same as the original proof.
+$\Box$ \\\\
+
+
+
+\textbf{Theorem 3.34 over $\mathbb{R}^k$ (Ratio Test).}
+\emph{The series $\sum \mathbf{a}_n$}
+\begin{enumerate}
+\item[(a)]
+\emph{converges if
+$\limsup_{n \to \infty} \frac{|\mathbf{a}_{n+1}|}{|\mathbf{a}_n|} < 1$,}
+\item[(b)]
+\emph{diverges if
+$\frac{|\mathbf{a}_{n+1}|}{|\mathbf{a}_n|} \geq 1$ for $n \geq N_0$,
+where $N_0$ is some fixed integer.} \\
+\end{enumerate}
+
+\emph{Proof of Theorem 3.34(a) over $\mathbb{R}^k$.}
+If condition (a) holds, we can find $\beta < 1$, and an integer $N$,
+such that
+\[
+  \frac{|\mathbf{a}_{n+1}|}{|\mathbf{a}_n|} < \beta
+\]
+for $n \geq N$. In particular,
+\begin{align*}
+  |\mathbf{a}_{N+1}| &< \beta|\mathbf{a}_{N}|, \\
+  |\mathbf{a}_{N+2}| &< \beta|\mathbf{a}_{N+1}| < \beta^2 |\mathbf{a}_{N}|, \\
+  &\cdots \\
+  |\mathbf{a}_{N+p}| &< \beta^p |\mathbf{a}_{N}|.
+\end{align*}
+That is,
+\[
+  |\mathbf{a}_{n}| < |\mathbf{a}_{N}|\beta^{-N} \cdot \beta^n
+\]
+for $n \geq N$, and (a) follows from the comparison test,
+since $\sum \beta^n$ converges.
+$\Box$ \\
+
+\emph{Proof of Theorem 3.34(b) over $\mathbb{R}^k$.}
+If $|\mathbf{a}_{n+1}| \geq |\mathbf{a}_n|$ for $n \geq N_0$,
+it is easily seen that the condition $\mathbf{a}_n \to \mathbf{0}$
+does not hold, and (b) follows.
+$\Box$ \\
+
+\emph{Note.}
+The knowledge that $\lim \frac{|\mathbf{a}_{n+1}|}{|\mathbf{a}_n|} = 1$
+implies nothing about the convergence of $\sum \mathbf{a}_n$.
+The series $\sum \frac{1}{n}$ and $\sum \frac{1}{n^2}$ demonstrate this. \\\\
+
+
+
+\textbf{Theorem 3.42 over $\mathbb{R}^k$.}
+\emph{Suppose}
+\begin{enumerate}
+\item[(a)]
+\emph{the partial sums $\mathbf{A}_n$ of $\sum \mathbf{a}_n$ form a bounded sequence;}
+\item[(b)]
+\emph{$b_0 \geq b_1 \geq b_2 \geq \cdots$;}
+\item[(c)]
+\emph{$\lim_{n \to \infty} b_n = 0$.}
+\end{enumerate}
+\emph{Then $\sum \mathbf{a}_n b_n$ converges.} \\
+
+\emph{Proof of Theorem 3.42 over $\mathbb{R}^k$.}
+Choose $M > 0$ such that $|\mathbf{A}_n| \leq M$ for all $n$.
+Given $\varepsilon > 0$, there is an integer $N$ such that $b_N \leq \frac{\varepsilon}{2M}$.
+For $N \leq p \leq q$, we have
+\begin{align*}
+  \abs{ \sum_{n=p}^{q} \mathbf{a}_n b_n }
+  &= \abs{ \sum_{n=p}^{q-1} \mathbf{A}_n(b_n - b_{n+1})
+    + \mathbf{A}_q b_q - \mathbf{A}_{p-1} b_p} \\
+  &\leq M \abs{ \sum_{n=p}^{q-1} (b_n - b_{n+1})
+    + b_q + b_p}
+    &(b_n - b_{n+1} \geq 0) \\
+  &= 2Mb_p \\
+  &\leq 2Mb_N \\
+  &\leq \varepsilon.
+\end{align*}
+Convergence now follows from the Cauchy criterion.
+$\Box$ \\\\
+
+
+
+The series $\sum \mathbf{a}_n$ is said to \textbf{converge absolutely}
+if the series $\sum |\mathbf{a}_n|$ converges. \\
+
+\textbf{Theorem 3.45 over $\mathbb{R}^k$.}
+\emph{If $\sum \mathbf{a}_n$ converges absolutely,
+then $\sum \mathbf{a}_n$ converges.} \\
+
+\emph{Proof of Theorem 3.45 over $\mathbb{R}^k$.}
+The assertion follows from the inequality
+\[
+  \abs{ \sum_{k=n}^{m} \mathbf{a}_k } \leq \sum_{k=n}^{m} |\mathbf{a}_k|
+\]
+plus the Cauchy criterion.
+$\Box$ \\\\
+
+
+
+\textbf{Theorem 3.47 over $\mathbb{R}^k$.}
+\emph{If $\sum \mathbf{a}_n = \mathbf{A}$, and $\sum \mathbf{b}_n = \mathbf{B}$,
+then $\sum (\mathbf{a}_n+\mathbf{b}_n) = \mathbf{A}+\mathbf{B}$,
+and $\sum c\mathbf{a}_n = c\mathbf{A}$ for any fixed $c \in \mathbb{R}$.} \\
+
+\emph{Proof of Theorem 3.47 over $\mathbb{R}^k$.}
+Let
+\[
+  \mathbf{A}_n = \sum_{k=0}^{n} \mathbf{a}_k, \:\:\:\:
+  \mathbf{B}_n = \sum_{k=0}^{n} \mathbf{b}_k.
+\]
+Then
+\[
+  \mathbf{A}_n + \mathbf{B}_n = \sum_{k=0}^{n} (\mathbf{a}_k+\mathbf{b}_k).
+\]
+Since
+$\lim_{n \to \infty} \mathbf{A}_n = \mathbf{A}$ and
+$\lim_{n \to \infty} \mathbf{B}_n = \mathbf{B}$, we see that
+\[
+  \lim_{n \to \infty} (\mathbf{A}_n+\mathbf{B}_n) = \mathbf{A}+\mathbf{B}.
+\]
+The proof of the second assertion is even simpler.
+\[
+  c\mathbf{A}_n = \sum_{k=0}^{n} (c\mathbf{a}_k).
+\]
+Since
+$\lim_{n \to \infty} \mathbf{A}_n = \mathbf{A}$, we see that
+\[
+  \lim_{n \to \infty} (c\mathbf{A}_n) = c\mathbf{A}.
+\]
+$\Box$ \\\\
+
+
+
+\textbf{Theorem 3.55 over $\mathbb{R}^k$.}
+\emph{If $\sum \mathbf{a}_n$ is a series in $\mathbb{R}^k$ which converges absolutely,
+then every rearrangement of $\sum \mathbf{a}_n$ converges,
+and they all converge to the same sum.} \\
+
+\emph{Proof of Theorem 3.55 over $\mathbb{R}^k$.}
+Let $\sum \mathbf{a}_n'$ be a rearrangement, with partial sums $\mathbf{s}_n'$.
+Given $\varepsilon > 0$, there exists an integer $N$ such that $m \geq n \geq N$ implies
+\[
+  \sum_{i=n}^{m} |\mathbf{a}_i| \leq \varepsilon \tag{26}.
+\]
+Now choose $p$ such that the integers $1,2,\ldots,N$ are all contained in the set
+$k_1, k_2, \ldots, k_p$ (we use the notation of Definition 3.52).
+Then if $n > p$, the numbers $\mathbf{a}_1, \ldots, \mathbf{a}_N$
+will cancel in the difference $\mathbf{s}_n - \mathbf{s}_n'$,
+so that $|\mathbf{s}_n - \mathbf{s}_n'| \leq \varepsilon$, by (26).
+Hence $\{ \mathbf{s}_n' \}$ converges to the same sum as $\{ \mathbf{s}_n \}$.
 $\Box$ \\\\
 
 
