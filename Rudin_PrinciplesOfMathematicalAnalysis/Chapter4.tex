@@ -425,6 +425,172 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 4.7.}
+\emph{If $E \subseteq X$ and if $f$ is a function defined on $X$,
+the \textbf{restriction} of $f$ to $E$ is the function $g$ whose domain of definition is $E$,
+such that $g(p) = f(p)$ for $p \in E$.
+Define $f$ and $g$ on $\mathbb{R}^2$ by:}
+\begin{equation*}
+  f(x,y) =
+  \begin{cases}
+    0                    & \text{if $(x,y) = (0,0)$} \\
+    \frac{xy^2}{x^2+y^4} & \text{if $(x,y) \neq (0,0)$},
+  \end{cases}
+\end{equation*}
+\begin{equation*}
+  g(x,y) =
+  \begin{cases}
+    0                    & \text{if $(x,y) = (0,0)$} \\
+    \frac{xy^2}{x^2+y^6} & \text{if $(x,y) \neq (0,0)$},
+  \end{cases}
+\end{equation*}
+\emph{Prove that $f$ is bounded on $\mathbb{R}^2$,
+that $g$ is unbounded in every neighborhood of $(0,0)$,
+and that $f$ is not continuous at $(0,0)$;
+nevertheless, the restrictions of both $f$ and $g$ to every straight line
+in $\mathbb{R}^2$ are continuous!} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f$ is bounded on $\mathbb{R}^2$.}
+\begin{align*}
+  (|x| - |y^2|)^2 \geq 0
+  &\Longleftrightarrow
+  |x|^2 - 2|x||y^2| + |y^2|^2 \geq 0 \\
+  &\Longleftrightarrow
+  |x|^2 + |y^2|^2 \geq 2|x||y^2| \\
+  &\Longleftrightarrow
+  |x^2 + y^4| \geq 2|xy^2| \\
+  &\Longrightarrow
+  \frac{1}{2} \geq \abs{ \frac{xy^2}{x^2+y^2} } \text{ whenever } (x,y) \neq (0,0) \\
+  &\Longrightarrow
+  |f(x,y)| \leq \frac{1}{2} \text{ whenever } (x,y) \neq (0,0).
+\end{align*}
+Note that $f(0,0) = 0 \leq \frac{1}{2}$.
+Hence $f$ is bounded by $\frac{1}{2}$ on $\mathbb{R}^2$.
+
+\item[(2)]
+\emph{Show that $g$ is unbounded in every neighborhood of $\mathbb{R}^2$.}
+Consider
+a sequence $\{\mathbf{p}_n\}_{n \geq 1} \subseteq \mathbb{R}^2$
+\[
+  \mathbf{p}_n
+  = (x_n, y_n)
+  = \left( \frac{1}{n^3}, \frac{1}{n} \right)
+\]
+such that $\mathbf{p}_n \neq \mathbf{0}$ and $\lim \mathbf{p}_n = \mathbf{0}$.
+Thus,
+\[
+  \lim_{n \to \infty} g(\mathbf{p}_n)
+  = \lim_{n \to \infty} \frac{ x_n y_n^2 }{ x_n^2 + y_n^6 }
+  = \lim_{n \to \infty} \frac{ (\frac{1}{n^3}) (\frac{1}{n})^2 }
+    { (\frac{1}{n^3})^2 + (\frac{1}{n})^6 }
+  = \lim_{n \to \infty} \frac{n}{2}
+  = \infty.
+\]
+Hence $g$ is unbounded in every neighborhood of $\mathbb{R}^2$.
+
+\item[(3)]
+\emph{Show that $f$ is not continuous at $(0,0)$.}
+Consider
+a sequence $\{\mathbf{p}_n\}_{n \geq 1} \subseteq \mathbb{R}^2$
+\[
+  \mathbf{p}_n
+  = (x_n, y_n)
+  = \left( \frac{1}{n^2}, \frac{1}{n} \right)
+\]
+such that $\mathbf{p}_n \neq \mathbf{0}$ and $\lim \mathbf{p}_n = \mathbf{0}$.
+Thus,
+\[
+  \lim_{n \to \infty} f(\mathbf{p}_n)
+  = \lim_{n \to \infty} \frac{ x_n y_n^2 }{ x_n^2 + y_n^4 }
+  = \lim_{n \to \infty} \frac{ (\frac{1}{n^2}) (\frac{1}{n})^2 }
+    { (\frac{1}{n^2})^2 + (\frac{1}{n})^4 }
+  = \frac{1}{2}.
+\]
+So, $\lim f(\mathbf{p}_n) = \frac{1}{2} \neq 0$.
+By Theorem 4.6, $f$ is not continuous at $(0,0)$.
+
+\item[(4)]
+\emph{The restrictions of $f$ to every straight line
+in $\mathbb{R}^2$ is continuous.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{The line $L_{\infty} = \{(0,y) : y \in \mathbb{R} \}$.}
+  Hence $f|_{L_{\infty}}(x,y) = 0$ for all $(x,y) \in L_{\infty}$
+  (including $(0,0) \in L_{\infty}$).
+  Therefore $f|_{L_{\infty}}$ is continuous.
+  \item[(b)]
+  \emph{The line $L_{\alpha} = \{(x,\alpha x) : x \in \mathbb{R} \}$
+  for some $\alpha \in \mathbb{R}$.}
+  $f|_{L_{\alpha}}(x,y)$ is continuous on $L_{\alpha} - \{(0,0)\}$.
+  \begin{equation*}
+    f|_{L_{\alpha}}(x,y) =
+    f|_{L_{\alpha}}(x,\alpha x) =
+    \begin{cases}
+      0                                   & \text{if $(x,y) = (0,0)$} \\
+      \frac{\alpha^2 x}{1 + \alpha^4 x^2} & \text{if $(x,y) \neq (0,0)$}.
+    \end{cases}
+  \end{equation*}
+  So
+  \[
+    \lim_{(x,y) \to (0,0)} f|_{L_{\alpha}}(x,y)
+    = \lim_{x \to 0} \frac{\alpha^2 x}{1 + \alpha^4 x^2}
+    = 0
+    = f(0,0),
+  \]
+  or $f|_{L_{\alpha}}(x,y)$ is continuous at $(0,0)$.
+  Therefore, $f|_{L_{\alpha}}(x,y)$ is continuous on $L_{\alpha}$.
+  \item[(c)]
+  \emph{The line $L$ not passing $(0,0)$.}
+  It is clear since $f(x,y)$ is continuous on $\mathbb{R}^2 - \{(0,0)\}$.
+  \end{enumerate}
+
+\item[(5)]
+\emph{The restrictions of $g$ to every straight line
+in $\mathbb{R}^2$ is continuous.}
+Similar to (4).
+  \begin{enumerate}
+  \item[(a)]
+  \emph{The line $L_{\infty} = \{(0,y) : y \in \mathbb{R} \}$.}
+  Hence $g|_{L_{\infty}}(x,y) = 0$ for all $(x,y) \in L_{\infty}$
+  (including $(0,0) \in L_{\infty}$).
+  Therefore $g|_{L_{\infty}}$ is continuous.
+  \item[(b)]
+  \emph{The line $L_{\alpha} = \{(x,\alpha x) : x \in \mathbb{R} \}$
+  for some $\alpha \in \mathbb{R}$.}
+  $g|_{L_{\alpha}}(x,y)$ is continuous on $L_{\alpha} - \{(0,0)\}$.
+  \begin{equation*}
+    g|_{L_{\alpha}}(x,y) =
+    g|_{L_{\alpha}}(x,\alpha x) =
+    \begin{cases}
+      0                                   & \text{if $(x,y) = (0,0)$} \\
+      \frac{\alpha^2 x}{1 + \alpha^6 x^4} & \text{if $(x,y) \neq (0,0)$}.
+    \end{cases}
+  \end{equation*}
+  So
+  \[
+    \lim_{(x,y) \to (0,0)} g|_{L_{\alpha}}(x,y)
+    = \lim_{x \to 0} \frac{\alpha^2 x}{1 + \alpha^6 x^4}
+    = 0
+    = g(0,0),
+  \]
+  or $g|_{L_{\alpha}}(x,y)$ is continuous at $(0,0)$.
+  Therefore, $g|_{L_{\alpha}}(x,y)$ is continuous on $L_{\alpha}$.
+  \item[(c)]
+  \emph{The line $L$ not passing $(0,0)$.}
+  It is clear since $g(x,y)$ is continuous on $\mathbb{R}^2 - \{(0,0)\}$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 4.8.}
 \emph{Let $f$ be a real uniformly continuous function
 on the bounded set $E$ in $\mathbb{R}$.
@@ -576,7 +742,7 @@ Applying the intermediate value theorem (Theorem 4.23),
 there is a point in $\xi \in (0, 1)$ such that $g(\xi) = 0$.
 That is, $f(\xi) = \xi$ for some $\xi \in (0,1)$.
 \end{enumerate}
-In any cases, the conclusion holds.
+In any case, the conclusion holds.
 $\Box$ \\\\
 
 
