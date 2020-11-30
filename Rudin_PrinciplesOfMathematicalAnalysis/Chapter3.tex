@@ -1701,7 +1701,97 @@ in which $\alpha_n$ is $0$ or $2$, the real number
 $$x(a) = \sum_{n=1}^{\infty} \frac{\alpha_n}{3^n}.$$
 Prove that the set of all $x(a)$ is precisely the Cantor set described in Sec. 2.44.} \\
 
+\emph{Cantor set.}
+Let $E_0$ be the interval $[0,1]$.
+Remote the segment $(\frac{1}{3},\frac{2}{3})$,
+and let $E_1$ be the union of the intervals
+\[
+  \left[ 0,\frac{1}{3} \right] \text{ and } \left[ \frac{2}{3},1 \right].
+\]
+Remote the middle thirds of these intervals,
+and let $E_2$ be the union of the intervals
+\[
+  \left[ 0,\frac{1}{9} \right],
+  \left[ \frac{2}{9},\frac{3}{9} \right],
+  \left[ \frac{6}{9},\frac{7}{9} \right] \text{ and }
+  \left[ \frac{8}{9},1 \right].
+\]
+Continuing in this way, we obtain a sequence of compact set $E_n$, such that
+\begin{enumerate}
+\item[(a)]
+$E_1 \supseteq E_2 \supseteq E_3 \supseteq \cdots$;
+\item[(b)]
+$E_n$ is the union of $2^n$ intervals, each of length $3^{-n}$.
+\end{enumerate}
+The set
+\[
+  P = \bigcap_{n=1}^{\infty} E_n
+\]
+is called the Cantor set.
+$P$ is compact, non empty, perfect, uncountable and measure zero. \\
+
+
+
 \emph{Proof.}
+Let
+\[
+  C = \{ x(a) : \text{$a = \{ \alpha_n \}$, in which $\alpha_n$ is $0$ or $2$ } \}.
+\]
+\begin{enumerate}
+\item[(1)]
+$(P \subseteq C)$.
+Given any
+\[
+  x \in P = \bigcap_{n=1}^{\infty} E_n.
+\]
+Hence $x \in E_n$ for all $n \geq 1$.
+Write $x = \sum_{n=1}^{\infty} \frac{\alpha_n}{3^n}$
+where $\alpha_n \in \{0,1,2\}$ for $n \geq 1$.
+(It is possible since $0 \leq x \leq 1$
+and every point in the $[0,1]$ has the ternary notation.)
+  \begin{enumerate}
+  \item[(a)]
+  $x \in E_1$. So
+  \begin{align*}
+    &x \in \left[ 0,\frac{1}{3} \right] \bigcup \left[ \frac{2}{3},1 \right] \\
+    \Longleftrightarrow&
+    x \in \left[ 0,\frac{1}{3} \right], \left[ \frac{2}{3},1 \right] \\
+    \Longleftrightarrow&
+    \alpha_1 \in \{ 0,2 \}.
+  \end{align*}
+  Here we express $\frac{1}{3}$ as $(0.0\overline{2})_{3}$ instead of $(0.1)_{3}$.
+  \item[(b)]
+  $x \in E_2$. So
+  \begin{align*}
+    &x \in
+      \left[ 0,\frac{1}{9} \right] \bigcup
+      \left[ \frac{2}{9},\frac{3}{9} \right] \bigcup
+      \left[ \frac{6}{9},\frac{7}{9} \right] \bigcup
+      \left[ \frac{8}{9},1 \right] \\
+    \Longleftrightarrow&
+    x \in \left[ 0,\frac{1}{9} \right],
+      \left[ \frac{2}{9},\frac{3}{9} \right],
+      \left[ \frac{6}{9},\frac{7}{9} \right],
+      \left[ \frac{8}{9},1 \right] \\
+    \Longleftrightarrow&
+    \alpha_1 \in \{ 0,2 \},
+    \alpha_2 \in \{ 0,2 \}.
+  \end{align*}
+  \item[(c)]
+  Continuing in this way, we obtain a sequence of $\alpha_n$
+  such that $\alpha_n \in \{0,2\}$ for $n \geq 1$.
+  Therefore, $x \in C$.
+  \end{enumerate}
+\item[(2)]
+$(C \subseteq P)$.
+Given any
+\[
+  x = \sum_{n=1}^{\infty} \frac{\alpha_n}{3^n} \in C.
+\]
+Applying the same argument in (1), we have
+$x \in E_n$ for all $n \geq 1$.
+Therefore, $x \in \bigcap E_n = P$.
+\end{enumerate}
 $\Box$ \\\\
 
 
