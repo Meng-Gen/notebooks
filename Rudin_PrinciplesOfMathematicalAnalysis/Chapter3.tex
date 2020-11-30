@@ -1504,7 +1504,63 @@ $$x_{n+1} = \frac{\alpha+x_n}{1+x_n} = x_n + \frac{\alpha-x_n^2}{1+x_n}.$$}
 with the one described in Exercise 3.16.} \\
 \end{enumerate}
 
-\emph{Proof.}
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+  x_{n+1} - \sqrt{\alpha}
+  &= \frac{\alpha+x_n}{1+x_n} - \sqrt{\alpha} \\
+  &= -\frac{(\sqrt{\alpha}-1)(x_n - \sqrt{\alpha})}{x_n+1}
+\end{align*}
+holds for $n \geq 1$.
+\item[(2)]
+\begin{align*}
+  x_{n+2} - x_n
+  &= \frac{\alpha+x_{n+1}}{1+x_{n+1}} - x_n \\
+  &= \frac{\alpha+\frac{\alpha+x_n}{1+x_n}}{1+\frac{\alpha+x_n}{1+x_n}} - x_n \\
+  &= \frac{\alpha x_n + x_n + 2\alpha}{2 x_n + \alpha + 1} - x_n \\
+  &= -\frac{2 (x_n^2 - \alpha)}{2 x_n + \alpha + 1}
+\end{align*}
+holds for $n \geq 1$.
+\item[(3)]
+Since $x_1,x_3,x_5,\ldots > \sqrt{\alpha}$ (by (1)),
+$x_1 > x_3 > x_5 > \cdots$ by (2).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+Since $x_1 > \sqrt{\alpha}$, $x_2 < \sqrt{\alpha}$ by (a)(1).
+Hence $x_2 < x_4 < x_6 < \cdots$ by (a)(2).
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Since $\{x_{2n+1}\}$ is monotonic and bounded by (a),
+  $\{x_{2n+1}\}$ converges to $x_1 \geq \sqrt{\alpha}$ (Theorem 3.14).
+\item[(2)]
+  Since $\{x_{2n}\}$ is monotonic and bounded by (a),
+  $\{x_{2n}\}$ converges to $x_2 \leq \sqrt{\alpha}$ (Theorem 3.14).
+\item[(3)]
+  In any case, $x = x_1$ or $x = x_2$ satisfy
+  \[
+    0 = -\frac{2(x^2 - \alpha)}{2x + \alpha + 1}
+  \]
+  by (a)(2)
+  (since $\lim x_{n+2} = \lim x_n = x$),
+  or $x = \pm \sqrt{\alpha}$.
+  Therefore, $\lim x_{2n+1} = \lim x_{2n} = x = \sqrt{\alpha}$ since $x \geq 0$.
+  Hence $\lim x_n = x = \sqrt{\alpha}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (d).}
+Put $\varepsilon_n = |x_n - \sqrt{\alpha}|$, and by (a)(1) we have
+$$\varepsilon_{n+1}
+\leq \frac{\sqrt{\alpha} - 1}{x_1+1} \varepsilon_n$$
+for $n \geq 1$. (Here $0 < x_n \leq x_1$.)
+Therefore, the convergence is geometric, not quadratically geometric in Exercise 3.16,
+that is, the rate of convergence is slower than one in Exercise 3.16.
 $\Box$ \\\\
 
 
