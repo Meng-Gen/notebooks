@@ -1393,7 +1393,8 @@ $$\varepsilon_5 < 4 \cdot 10^{-16}, \:\:
     &= x_{n+1} - \sqrt{\alpha} \\
     &= \frac{1}{2}\left( x_n + \frac{\alpha}{x_n} \right) - \sqrt{\alpha} \\
     &= \frac{x_n^2 + \alpha - 2\sqrt{\alpha}x_n}{2 x_n} \\
-    &= \frac{(x_n - \sqrt{\alpha})^2}{2 x_n} > 0
+    &= \frac{(x_n - \sqrt{\alpha})^2}{2 x_n} \\
+    &> 0
   \end{align*}
   by (1).
   Therefore, $\varepsilon_n > 0$ or $x_n > \sqrt{\alpha}$.
@@ -1408,8 +1409,8 @@ $$\varepsilon_5 < 4 \cdot 10^{-16}, \:\:
   for $n = 1,2,\ldots$ ((1)(2)).
   Hence $\{x_n\}$ decreases monotonically.
   \item[(4)]
-  Since $\{x_n\}$ is monotonic and bounded by (1)(3),
-  $\{x_n\}$ converges to $x \geq 0$ (Theorem 3.14).
+  Since $\{x_n\}$ is monotonic and bounded by (2)(3),
+  $\{x_n\}$ converges to $x > 0$ (Theorem 3.14).
   $x$ satisfies $$x = \frac{1}{2}\left( x + \frac{\alpha}{x} \right)$$
   (since $\lim x_{n+1} = \lim x_n = x$),
   or $x = \pm \sqrt{\alpha}$.
@@ -1518,7 +1519,118 @@ $$x_{n+1} = \frac{p-1}{p} x_n + \frac{\alpha}{p} x_n^{-p+1}$$
 where $p$ is a fixed positive integer,
 and describe the behavior of the resulting sequences $\{x_n\}$.} \\
 
-\emph{Proof.}
+\emph{Outline.}
+Let $\xi = \alpha^{\frac{1}{p}}$.
+\begin{enumerate}
+\item[(a)]
+\emph{Prove that $\{x_n\}$ decreases monotonically and that
+$\lim x_n = \xi$.}
+\item[(b)]
+\emph{Put $\varepsilon_n = x_n - \xi$, and show that
+\[
+  \varepsilon_{n+1}
+  < \frac{(p-1)^2\varepsilon_n^2}{p x_n} \\
+  < \frac{(p-1)^2\varepsilon_n^2}{p \alpha^{\frac{1}{p}}}
+\]
+so that, setting $\beta = \frac{p \alpha^{\frac{1}{p}}}{(p-1)^2}$,
+$$\varepsilon_{n+1}
+< \beta \left( \frac{\varepsilon_1}{\beta} \right)^{2^n} \:\: (n =1,2,3,\ldots).$$ } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $x_n > 0$ for $n=1,2,\ldots$}
+  It is trivial by induction on $n$.
+  \item[(2)]
+  \emph{Show that $x_n > \xi$ for $n=1,2,\ldots$}.
+  Put $\varepsilon_n = x_n - \xi$ as in (b).
+  \emph{It is equivalent to show that $\varepsilon_n > 0$ for $n=1,2,\ldots$.}
+  Since $x_1 > \xi$,
+  $\varepsilon_1 = x_1 - \xi > 0$. For $n \geq 1$,
+  \begin{align*}
+    \varepsilon_{n+1}
+    &= x_{n+1} - \xi \\
+    &= \frac{p-1}{p} x_n + \frac{\alpha}{p} x_n^{-p+1} - \xi \\
+    &= \frac{p-1}{p} (x_n-\xi)
+      - \frac{1}{p}\left( \xi - \xi^p x_n^{-p+1} \right) \\
+    &= \frac{p-1}{p} (x_n-\xi)
+      - \frac{\xi}{p x_n^{p-1}}( x_n^{p-1} - \xi^{p-1} ) \\
+    &= \frac{p-1}{p} (x_n-\xi)
+      - \frac{\xi}{p x_n^{p-1}}(x_n - \xi)( x_n^{p-2} + \cdots + \xi^{p-2} ) \\
+    &> \frac{p-1}{p} (x_n-\xi)
+      - \frac{\xi}{p x_n^{p-1}}(x_n - \xi)(p-1)x_n^{p-2} \\
+    &= \frac{p-1}{p} (x_n-\xi)\left( 1 - \frac{\xi}{x_n} \right) \\
+    &= \frac{(p-1)(x_n-\xi)^2}{p x_n} \\
+    &> 0
+  \end{align*}
+  by (1).
+  Therefore, $\varepsilon_n > 0$ or $x_n > \sqrt{\alpha}$.
+  \item[(3)]
+  \emph{Show that $\{x_n\}$ decreases monotonically.}
+  \begin{align*}
+    x_{n+1} - x_n
+    &= \frac{p-1}{p} x_n + \frac{\alpha}{p} x_n^{-p+1} - x_n \\
+    &= \frac{\xi^p - x_n^p}{p x_n^{p-1}} \\
+    &< 0
+  \end{align*}
+  for $n = 1,2,\ldots$ ((1)(2)).
+  Hence $\{x_n\}$ decreases monotonically.
+  \item[(4)]
+  Since $\{x_n\}$ is monotonic and bounded by (2)(3),
+  $\{x_n\}$ converges to $x > 0$ (Theorem 3.14).
+  $x$ satisfies $$x = \frac{p-1}{p} x + \frac{\alpha}{p} x^{-p+1}$$
+  (since $\lim x_{n+1} = \lim x_n = x$),
+  or $x^p = \alpha$.
+  Therefore, $\lim x_n = x = \alpha^{\frac{1}{p}}$ since $x \geq 0$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  By (a)(2), we have
+  \begin{align*}
+    \varepsilon_{n+1}
+    &= \frac{p-1}{p} (x_n-\xi)
+      - \frac{\xi}{p x_n^{p-1}}(x_n - \xi)( x_n^{p-2} + \cdots + \xi^{p-2} ) \\
+    &< \frac{p-1}{p} (x_n-\xi)
+      - \frac{\xi}{p x_n^{p-1}}(x_n-\xi) (p-1)\xi^{p-2} \\
+    &= \frac{(p-1)\varepsilon_n}{p x_n^{p-1}}( x_n^{p-1} - \xi^{p-1}) \\
+    &= \frac{(p-1)\varepsilon_n}{p x_n^{p-1}}(x_n - \xi)( x_n^{p-2} + \cdots + \xi^{p-2} ) \\
+    &< \frac{(p-1)\varepsilon_n}{p x_n^{p-1}}(x_n - \xi)(p-1)x_n^{p-2} \\
+    &= \frac{(p-1)^2\varepsilon_n^2}{p x_n} \\
+    &< \frac{(p-1)^2\varepsilon_n^2}{p \alpha^{\frac{1}{p}}}.
+  \end{align*}
+\item[(2)]
+\emph{Show that
+$$\varepsilon_{n+1}
+< \beta \left( \frac{\varepsilon_1}{\beta} \right)^{2^n}.$$}
+
+Induction on $n$.
+  \begin{enumerate}
+  \item[(a)]
+  $n = 1$.
+  $$\varepsilon_2
+  < \frac{(p-1)^2\varepsilon_1^2}{p \alpha^{\frac{1}{p}}}
+  = \frac{\varepsilon_1^2}{\beta}
+  = \beta \left( \frac{\varepsilon_1}{\beta} \right)^{2^1}.$$
+  \item[(b)]
+  Assume $n=k$ the statement holds.
+  Then as $n=k+1$, we have
+  \begin{align*}
+    \varepsilon_{k+2}
+    &< \frac{\varepsilon_{k+1}^2}{\beta}
+      &((1)) \\
+    &< \frac{1}{\beta} \left( \beta \left( \frac{\varepsilon_1}{\beta} \right)^{2^k} \right)^2
+      &\text{(Induction hypothesis)}\\
+    &= \beta \left( \frac{\varepsilon_1}{\beta} \right)^{2^{k+1}}.
+  \end{align*}
+  \end{enumerate}
+  By induction, the statement holds for all $n \in \mathbb{Z}^+$.
+\end{enumerate}
 $\Box$ \\\\
 
 
