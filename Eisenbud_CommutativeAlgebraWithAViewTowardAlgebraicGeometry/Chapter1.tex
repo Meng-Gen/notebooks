@@ -387,6 +387,47 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 1.9.}
+\emph{Let $S = k[x_1,\ldots,x_r]$, with $k$ an algebraically closed field.
+Show that under the correspondence of radical ideals in $S$ and
+algebraic subsets of $\mathbb{A}^r$,
+the primes ideals correspond to the algebraic sets that
+cannot be written as a proper union of smaller algebraic sets.} \\
+
+\emph{Proof.}
+Let $I(X)$ be a prime ideal where $X$ is some subset of $k^n$.
+\begin{enumerate}
+  \item[(1)]
+  (Reductio ad absurdum)
+  If $X$ were a proper union of smaller algebraic sets, write $X = X_1 \cup X_2$
+  where $X_1 \subsetneq X$ and $X_2 \subsetneq X$.
+  \item[(2)]
+  Therefore, $I(X_1) \supsetneq I(X)$ and $I(X_2) \supsetneq I(X)$ (Exercise 1.8).
+  Now we can take $f \in I(X_1)-I(X)$ and $g \in I(X_2)-I(X)$.
+  \item[(3)]
+  By the definition of $I$,
+  \begin{align*}
+    f(a_1,\ldots,a_n) = 0 \: \forall \: (a_1, \ldots, a_n) \in X_1, \\
+    g(a_1,\ldots,a_n) = 0 \: \forall \: (a_1, \ldots, a_n) \in X_2,
+  \end{align*}
+  or
+  \[
+    f(a_1, \ldots, a_n)
+    g(a_1, \ldots, a_n) = 0 \: \forall \: (a_1, \ldots, a_n) \in X_1 \cup X_2 = X,
+  \]
+  or $fg \in I(X)$.
+  \item[(4)]
+  Since $I(X)$ is prime, $f \in I(X)$ or $g \in I(X)$,
+  which is absurd.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.12.}
 \emph{Find equations for a parabola meeting a circle just once
 in the complex plane, represented by Figure 1.5 (see the textbook).} \\
