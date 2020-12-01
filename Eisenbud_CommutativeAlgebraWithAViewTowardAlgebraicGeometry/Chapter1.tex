@@ -39,6 +39,10 @@
 
 
 
+\textbf{\large Noetherian Rings and Modules} \\\\
+
+
+
 \textbf{Exercise 1.1.}
 \emph{Prove that the following conditions on a module $M$ over a commutative ring $R$
 are equivalent (the fourth is Hilbert's original formulation;
@@ -279,6 +283,107 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{\large Algebra and Geometry} \\\\
+
+
+
+\textbf{Exercise 1.8 (A formal Nullstellensatz).}
+\emph{Let $\mathcal{X}$ and $\mathcal{J}$ be partially ordered sets,
+and suppose that $I: \mathcal{X} \to \mathcal{J}$ and $Z: \mathcal{J} \to \mathcal{X}$
+are functions such that}
+\begin{quote}
+  \begin{enumerate}
+  \item[(i)]
+  \emph{$I$ and $Z$ reverse the order in the sense that $x \leq y \in \mathcal{X}$
+  implies $I(x) \geq I(y)$, and $i \leq j \in \mathcal{J}$ implies $Z(i) \geq Z(j)$.}
+  \item[(ii)]
+  \emph{$ZI$ and $IZ$ are increasing functions, in the sense that
+  $x \in \mathcal{X}$ implies $ZI(x) \geq x$,
+  and $i \in \mathcal{J}$ implies $IZ(i) \geq i$.}
+  \end{enumerate}
+\end{quote}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $I$ and $Z$ establish a one-to-one correspondence between
+  the subsets $I(\mathcal{X}) \subseteq \mathcal{J}$ and $Z(\mathcal{J}) \subseteq \mathcal{X}$.}
+\item[(b)]
+  \emph{Let $k$ be a field.
+  Call an ideal $I \subseteq k[x_1,\ldots,x_n]$ \textbf{formally radical}
+  if it is of the form $I(X)$ for some set $X \subseteq k^n$.
+  Use part (a) to prove that there is a one-to-one correspondence between
+  formally radical ideals and algebraic subsets of $k^n$.
+  (Hilbert's Nullstellensatz identifies the formally radical ideals
+  with the ordinary radical ideals when $k$ is algebraically closed.)} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+  \item[(1)]
+  \emph{It suffices to show that $IZ$ is the identity map on $I(\mathcal{X})$
+  and $ZI$ is the identity map on $Z(\mathcal{J})$.}
+  By symmetry, it suffices to show the first statement.
+  \item[(2)]
+  Given any $y \in I(\mathcal{X})$, there exists $x \in \mathcal{X}$ such that $y = I(x)$.
+  Take $IZ$ on the both sides, we have $IZ(y) \geq y$ by (ii).
+  Hence $IZI(x) \geq I(x)$.
+  \item[(3)]
+  Besides, $ZI(x) \geq x$ by (ii). Take $I$ on the both sides,
+  we have $I(x) \geq IZI(x)$ by (i).
+  Since $\mathcal{J}$ is a partially ordered set,
+  $I(x) = IZI(x)$
+  or $y = IZ(y)$ for all $y \in I(\mathcal{X})$,
+  or $IZ$ is the identity map on $I(\mathcal{X})$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(1)]
+  Let
+  \begin{align*}
+    \mathcal{X} &= \{ \text{subsets } X \subseteq k^n \}, \\
+    \mathcal{J} &= \{ \text{ideals } \mathfrak{a} \subseteq k[x_1,\ldots,x_n] \}.
+  \end{align*}
+  Define the partially order of $\mathcal{X}$ or $\mathcal{J}$ by the set inclusion.
+  \item[(2)]
+  Let $I: \mathcal{X} \to \mathcal{J}$ defined by
+  \[
+    I(X)
+    = \{ f \in k[x_1,\ldots,x_n] : f(a_1,\ldots,a_n) = 0
+      \: \forall \: (a_1, \ldots, a_n) \in X \}
+  \]
+  and $Z: \mathcal{J} \to \mathcal{X}$ defined by
+  \[
+    Z(\mathfrak{a})
+    = \{(a_1, \ldots, a_n) \in k^n : f(a_1,\ldots,a_n) = 0
+      \: \forall \: f \in \mathfrak{a} \}.
+  \]
+  \item[(3)]
+  It is clear that
+    \begin{enumerate}
+    \item[(a)]
+      $I(X) \supseteq I(Y)$ if $Y \supseteq X$.
+    \item[(b)]
+      $Z(\mathfrak{a}) \supseteq Z(\mathfrak{b})$ if $\mathfrak{b} \supseteq \mathfrak{a}$.
+    \item[(c)]
+      $ZI(X) \supseteq X$ and $IZ(\mathfrak{a}) \supseteq \mathfrak{a}$.
+    \end{enumerate}
+  \item[(4)]
+  By (a),
+  there a one-to-one correspondence between
+  the subsets $I(\mathcal{X}) \subseteq \mathcal{J}$ and $Z(\mathcal{J}) \subseteq \mathcal{X}$,
+  or there a one-to-one correspondence between
+  formally radical ideals and algebraic subsets of $k^n$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
