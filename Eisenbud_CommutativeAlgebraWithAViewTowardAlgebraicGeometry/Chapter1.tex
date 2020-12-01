@@ -29,7 +29,10 @@
 
 
 
-%https://kconrad.math.uconn.edu/blurbs/linmultialg/noetherianmod.pdf
+% https://kconrad.math.uconn.edu/blurbs/linmultialg/noetherianmod.pdf
+% http://www.math.unl.edu/~tmarley1/math902/homework/902hw2soln.pdf
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -140,6 +143,79 @@ Every increasing sequence $x_1 \leq x_2 \leq \cdots \in \Sigma$ is stationary.
 \item[(2)]
 Every non-empty subset of $\Sigma$ has a maximal element. \\\\
 \end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.2 (Emmy Noether).}
+\emph{Prove that if $R$ is Noetherian,
+and $I \subsetneq R$ is an ideal,
+then among the primes of $R$ containing $I$ there are only finitely many
+that are minimal with respect to inclusion
+(these are usually called the \textbf{minimal primes of $I$},
+or the \textbf{primes minimal over $I$}) as follows:
+Assuming that the proposition fails, the Noetherian hypothesis guarantees
+the existence of an ideal $I$ maximal among ideals in $R$ for which it fails.
+Show that $I$ cannot be prime,
+so we can find elements $f$ and $g$ in $R$, not in $I$, such that $fg \in I$.
+Now show that every prime minimal over $I$ is minimal over
+one of the larger ideals $(I,f)$ and $(I,g)$.} \\
+
+\emph{Note.}
+With Hilbert's basis theorem and the Nullstellensatz (see Exercise 1.9),
+Exercise 1.2 gives one of the fundamental finiteness theorems of algebraic geometry:
+An algebraic set can have only finitely many irreducible components.
+Originally the result was proved by difficult inductive arguments and elimination theory.
+For a further discussion of the significance of this reslt
+see the beginning of Chapter 3, and particularly example 2 there.
+The result of this exercise is strengthened in Theorem 3.1. \\\\
+
+
+
+\textbf{Lemma.}
+\emph{For any $\mathfrak{p} \supseteq \mathfrak{a} \mathfrak{b}$,
+$\mathfrak{p} \supseteq \mathfrak{a}$ or $\mathfrak{p} \supseteq \mathfrak{b}$.} \\
+
+\emph{Proof of Lemma.}
+\begin{enumerate}
+\item[(1)] If $\mathfrak{p} \supseteq \mathfrak{a}$. We are done.
+\item[(2)] If $\mathfrak{p} \not\supseteq \mathfrak{a}$,
+there exists $a \in \mathfrak{a} - \mathfrak{p}$.
+So for any $b \in \mathfrak{b}$, $b \in \mathfrak{p}$
+since $ab \in \mathfrak{ab} \subseteq \mathfrak{p}$ and $\mathfrak{p}$ is a prime ideal,
+that is, $\mathfrak{p} \supseteq \mathfrak{b}$.
+\end{enumerate}
+By (1)(2), $\mathfrak{p} \supseteq \mathfrak{a}$ or $\mathfrak{p} \supseteq \mathfrak{b}$.
+$\Box$ \\\\
+
+
+
+\emph{Proof.}
+(Reductio ad absurdum)
+\begin{enumerate}
+\item[(1)]
+Assuming that the proposition fails, the Noetherian hypothesis of $R$
+guarantees the existence of an ideal $I$ maximal among ideals in $R$ for which it fails.
+\item[(2)]
+\emph{Show that $I$ cannot be prime.}
+(Reductio ad absurdum)
+If $I$ were prime,
+then there were only one minimal prime $I$ itself, which is absurd.
+\item[(3)]
+Therefore, there exist elements $f, g \in R$ such that $fg \in I$
+but $f \not\in I$ and $g \not\in I$.
+$(I,f) \supsetneq I$, $(I,g) \supsetneq I$ and $(I,f)(I,g) \subseteq I$.
+\item[(4)]
+By Lemma, any prime containing $I$ must contain either $(I,f)$ or $(I,g)$.
+In particular, any prime minimal over $I$ is minimal over either $(I,f)$ or $(I,g)$.
+However, by the choice of $I$,
+both $(I,f)$ and $(I,g)$ have only finitely many minimal primes,
+which is absurd.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
