@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\begin{document}
+
+\textbf{\Large Chapter 2: Four Important Linear PDE} \\\\
+
+
+
+\emph{Author: Meng-Gen Tsai} \\
+\emph{Email: plover@gmail.com} \\\\
+
+
+
+% https://math24.files.wordpress.com/2013/02/evans_solutions-ch2.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 2.2.}
+\emph{Prove that Laplace's equation $\Delta u = 0$ is rotation invariant;
+that is, if $O$ is an orthogonal $n \times n$ matrix and we define
+\[
+  v(x) := u(Ox) \:\:(x \in \mathbb{R}^n),
+\]
+then $\Delta v = 0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Let $O = [O_{ij}]$.
+$O$ is orthogonal if $OO^{t} = O^{t}O = I$,
+or
+\[
+  \sum_{i=1}^{n} O_{pi} O_{qi} = \delta_{pq}
+\]
+where $\delta_{pq}$ is the Kronecker delta.
+\item[(2)]
+Let $y = Ox$.
+So that
+\begin{align*}
+  D_i v(x)
+  &= \sum_{p=1}^{n} D_p u(y) O_{pi}, \\
+  D_{ij} v(x)
+  &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qj}, \\
+  \Delta v(x)
+  &= \sum_{i=1}^{n} D_{ii} v(x) \\
+  &= \sum_{i=1}^{n} \sum_{q=1}^{n}\sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qi} \\
+  &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} u(y) \left( \sum_{i=1}^{n} O_{pi} O_{qi} \right) \\
+  &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} \delta_{pq} \\
+  &= \sum_{q=1}^{n} D_{qq}u(y) \\
+  &= \Delta u(y).
+\end{align*}
+\item[(3)]
+As $\Delta u(y) = 0$, $\Delta v(x) = 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
