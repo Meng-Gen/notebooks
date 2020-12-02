@@ -27,6 +27,52 @@
 
 
 % https://math24.files.wordpress.com/2013/02/evans_solutions-ch2.pdf
+% http://math.gmu.edu/~memelian/teaching/Fall11/math678/hw/hw1sol.pdf
+% http://www-users.math.umn.edu/~sands265/writeups/PDE_homework1.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 2.1.}
+\emph{Write down an explicit formula for a function $u$ solving
+the initial-value problem
+\begin{equation*}
+  \begin{cases}
+    u_t + b \cdot Du + cu &= 0 \text{ in } \mathbb{R}^n \times (0,\infty) \\
+    u                     &= g \text{ on } \mathbb{R}^n \times \{ t=0 \}.
+  \end{cases}
+\end{equation*}
+Here $c \in \mathbb{R}$ and $b \in \mathbb{R}^n$ are constants.} \\
+
+\emph{Proof (Transport equation).}
+Define
+\[
+  z(s) = u(x+sb,t+s) \:\: (s \in \mathbb{R}).
+\]
+So
+\begin{align*}
+  \dot{z}(s)
+  &= Du(x+sb,t+s) \cdot b + u_t(x+sb,t+s) \\
+  &= -cu(x+sb,t+s) \\
+  &= -cz(s).
+\end{align*}
+Solve this ODE to get
+\begin{align*}
+  z(s) = z(0) e^{-cs}
+  &\Longrightarrow
+  u(x+sb,t+s) = u(x,t) e^{-cs} \\
+  &\Longrightarrow
+  u(x-tb,0) = u(x,t) e^{ct}
+    &\text{(Let $s = -t$)} \\
+  &\Longrightarrow
+  g(x-tb) = u(x,t) e^{ct} \\
+  &\Longrightarrow
+  u(x,t) = g(x-tb) e^{-ct}.
+\end{align*}
+$\Box$ \\\\
 
 
 
