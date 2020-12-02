@@ -401,11 +401,11 @@ $\mathfrak{a}$.
 $(\Longleftarrow)$.
 \begin{align*}
   \mathfrak{a}
-  &= \bigcap \{ \mathfrak{p} \in \text{some subset of } \text{Spec}(A) \} \\
-  &= \bigcap \{ \mathfrak{p} \in \text{some subset of } \text{Spec}(A)
+  &= \bigcap \{ \mathfrak{p} \in \text{some subset of } \mathrm{Spec}(A) \} \\
+  &= \bigcap \{ \mathfrak{p} \in \text{some subset of } \mathrm{Spec}(A)
     : \mathfrak{p} \supseteq \mathfrak{a} \} \\
   &\supseteq
-  \bigcap \{ \mathfrak{p} \in \text{Spec}(A) : \mathfrak{p} \supseteq \mathfrak{a} \} \\
+  \bigcap \{ \mathfrak{p} \in \mathrm{Spec}(A) : \mathfrak{p} \supseteq \mathfrak{a} \} \\
   &= r(\mathfrak{a}) \\
   &\supseteq \mathfrak{a}.
 \end{align*}
@@ -448,7 +448,7 @@ for any ideals $\mathfrak{a}$, $\mathfrak{b}$ of $A$.}
 the axioms for closed sets in a topological space.
 The resulting topology is called the Zariski topology.
 The topological space $X$ is called the prime spectrum of $A$,
-and is written $\text{Spec}(A)$.} \\
+and is written $\mathrm{Spec}(A)$.} \\
 
 Note that if $E_1 \subseteq E_2$,
 then $V(E_1) \supseteq V(E_2)$. \\
@@ -579,7 +579,7 @@ $\Box$ \\\\
 
 \textbf{Exercise 1.17.}
 \emph{For each $f \in A$,
-let $X_f$ denote the complement of $V(f)$ in $X = \text{Spec}(A)$.
+let $X_f$ denote the complement of $V(f)$ in $X = \mathrm{Spec}(A)$.
 The sets $X_f$ are open.
 Show that they form a basis of open sets for the Zariski topology, and that}
 \begin{enumerate}
@@ -602,7 +602,7 @@ it is a finite union of sets $X_f$.}
 \end{enumerate}
 
 \emph{The sets $X_f$ are called basic open sets of
-$X = \text{Spec}(A)$.} \\
+$X = \mathrm{Spec}(A)$.} \\
 
 \emph{(Hint: To prove (v), remark that it is enough to consider a covering of $X$
 by basic open sets $X_{f_i} (i \in I)$.
@@ -696,10 +696,10 @@ Actually,
 \begin{align*}
 X_f \subseteq X_g
 &\Longrightarrow V(f) \supseteq V(g) \\
-&\Longrightarrow \{ \mathfrak{p} \in \text{Spec}(A) : \mathfrak{p} \supseteq (f) \}
-  \supseteq \{ \mathfrak{p} \in \text{Spec}(A) : \mathfrak{p} \supseteq (g) \} \\
-&\Longrightarrow \bigcap_{(f) \subseteq \mathfrak{p} \in \text{Spec}(A)} \mathfrak{p}
-  \subseteq \bigcap_{(g) \subseteq \mathfrak{p} \in \text{Spec}(A)} \mathfrak{p}  \\
+&\Longrightarrow \{ \mathfrak{p} \in \mathrm{Spec}(A) : \mathfrak{p} \supseteq (f) \}
+  \supseteq \{ \mathfrak{p} \in \mathrm{Spec}(A) : \mathfrak{p} \supseteq (g) \} \\
+&\Longrightarrow \bigcap_{(f) \subseteq \mathfrak{p} \in \mathrm{Spec}(A)} \mathfrak{p}
+  \subseteq \bigcap_{(g) \subseteq \mathfrak{p} \in \mathrm{Spec}(A)} \mathfrak{p}  \\
 &\overset{1.14}{\Longrightarrow} r(f) \subseteq r(g) \\
 &\Longrightarrow V(r(f)) \supseteq V(r(g)) \\
 &\Longrightarrow V(f) \supseteq V(g) \\
@@ -811,15 +811,16 @@ $\Box$ \\\\
 \textbf{Exercise 1.18.}
 \emph{For psychological reasons it is sometimes convenient to
 denote a prime ideal of $A$ by a letter such as $x$ or $y$
-when thinking of it as a point of $X = \text{Spec}(A)$.
+when thinking of it as a point of $X = \mathrm{Spec}(A)$.
 When thinking of $x$ as a prime ideal of $A$, we denote it by $\mathfrak{p}_x$
 (logically, of course, it is the same thing).
 Show that}
 \begin{enumerate}
 \item[(i)]
-\emph{The set $\{x\}$ is closed (we say that $x$ is a ``closed point'') in $\text{Spec}(A)$
+\emph{The set $\{x\}$ is closed (we say that $x$ is a ``closed point'') in $\mathrm{Spec}(A)$
 $\Longleftrightarrow$ $\mathfrak{p}_x$ is maximal;}
 \end{enumerate}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -830,8 +831,25 @@ $\Longleftrightarrow$ $\mathfrak{p}_x$ is maximal;}
 \emph{A topological space $X$ is said to be irreducible if
 $X \neq \varnothing$ and if every pair of non-empty open sets in $X$ intersect, or
 equivalently if every non-empty open set is dense in $X$.
-Show that $\text{Spec}(A)$ is irreducible if and only if
+Show that $\mathrm{Spec}(A)$ is irreducible if and only if
 the nilradical of $A$ is a prime ideal.} \\
+
+\emph{Proof.}
+Use the notations in Proposition 1.7 and Exercise 1.17.
+\begin{align*}
+  &\text{$\mathrm{Spec}(A)$ is irreducible} \\
+  \Longleftrightarrow&
+  \text{$X_f \cap X_g \neq \varnothing$ for any nonempty $X_f, X_g \in \mathrm{Spec}(A)$} \\
+  \Longleftrightarrow&
+  \text{$X_{fg} \neq \varnothing$ for any nonempty $X_f, X_g \in \mathrm{Spec}(A)$}
+    &\text{(Exercise 1.17 (i))} \\
+  \Longleftrightarrow&
+  \text{$fg \not\in \mathfrak{N}$ for any $f,g \not\in \mathfrak{N}$} 
+    &\text{(Exercise 1.17 (ii))} \\
+  \Longleftrightarrow&
+  \text{$\mathfrak{N}$ is prime.}
+\end{align*}
+$\Box$ \\\\
 
 
 
@@ -883,8 +901,12 @@ $$\overline{Y} \subseteq Y_1 \cup Y_2,
   \end{enumerate}
   By (a)(b), $Y$ is reducible, which is absurd.
 \end{enumerate}
-
 $\Box$ \\
+
+
+
+% TODO(plover): Give proof for (ii)(iii)(iv).
+
 
 
 \textbf{Supplement.}
