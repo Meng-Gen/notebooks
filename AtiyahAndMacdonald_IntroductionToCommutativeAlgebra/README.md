@@ -3,4 +3,4 @@
 
 # Exercises
 - Chapter 1: Rings and Ideals [WIP]
-- Chapter 2: Chapter 2: Modules [WIP]
+- Chapter 2: Modules [WIP]

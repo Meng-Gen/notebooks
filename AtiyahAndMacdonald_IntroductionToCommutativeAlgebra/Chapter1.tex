@@ -900,7 +900,26 @@ A nonempty subset $Y$ of a topological space $X$ is irreducible
 if it cannot be expressed as the union $Y = Y_1 \cup Y_2$ of two proper subsets,
 each one of which is closed in $Y$. The empty set is not considered to be irreducible. \\
 
-The proof is the same as Exercise 1.20(i). \\\\
+The proof is the same as Exercise 1.20(i) except
+that any nonempty open subset of an irreducible topological space is irreducible. \\
+
+\emph{Proof (Irreducibility of open subsets).}
+Given any open subset $U$ of an irreducible topological space $X$.
+Write $U \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$.
+  \begin{align*}
+  U \subseteq Y_1 \cup Y_2
+  \Longrightarrow&
+  \overline{U} \subseteq \overline{Y_1 \cup Y_2} \\
+  \Longrightarrow&
+  X \subseteq Y_1 \cup Y_2
+    &\text{($U$ is dense, $Y_1 \cup Y_2$ is closed)} \\
+  \Longrightarrow&
+  Y_1 = X \supseteq U \text{ or } Y_2 = X \supseteq U
+    &\text{($X$ is irreducible)} \\
+  \Longrightarrow&
+  \text{$U$ is irreducible.}
+  \end{align*}
+$\Box$ \\\\
 
 
 
