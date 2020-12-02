@@ -353,13 +353,13 @@ $\Box$ \\
   Let $I: \mathcal{X} \to \mathcal{J}$ defined by
   \[
     I(X)
-    = \{ f \in k[x_1,\ldots,x_n] : f(a_1,\ldots,a_n) = 0
-      \: \forall \: (a_1, \ldots, a_n) \in X \}
+    = \{ f \in k[x_1,\ldots,x_n] : f(P) = 0
+      \: \forall \: P = (a_1, \ldots, a_n) \in X \}
   \]
   and $Z: \mathcal{J} \to \mathcal{X}$ defined by
   \[
     Z(\mathfrak{a})
-    = \{(a_1, \ldots, a_n) \in k^n : f(a_1,\ldots,a_n) = 0
+    = \{ P \in k^n : f(P) = 0
       \: \forall \: f \in \mathfrak{a} \}.
   \]
   \item[(3)]
@@ -407,13 +407,12 @@ Let $I(X)$ be a prime ideal where $X$ is some subset of $k^n$.
   \item[(3)]
   By the definition of $I$,
   \begin{align*}
-    f(a_1,\ldots,a_n) = 0 \: \forall \: (a_1, \ldots, a_n) \in X_1, \\
-    g(a_1,\ldots,a_n) = 0 \: \forall \: (a_1, \ldots, a_n) \in X_2,
+    f(P) = 0 \: \forall \: P \in X_1, \\
+    g(P) = 0 \: \forall \: P \in X_2,
   \end{align*}
   or
   \[
-    f(a_1, \ldots, a_n)
-    g(a_1, \ldots, a_n) = 0 \: \forall \: (a_1, \ldots, a_n) \in X_1 \cup X_2 = X,
+    f(P) g(P) = 0 \: \forall \: P \in X_1 \cup X_2 = X,
   \]
   or $fg \in I(X)$.
   \item[(4)]
@@ -440,6 +439,95 @@ in the complex plane, represented by Figure 1.5 (see the textbook).} \\
   \end{cases}
 \end{equation*}
 meets at $(0,0)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1.13.}
+\emph{Suppose that $I$ is an ideal in a commutative ring.
+Show that if $\mathrm{rad}(I)$ is finitely generated,
+then for some integer $N$ we have $(\mathrm{rad}(I))^N \subseteq I$.
+Conclude that in a Noetherian ring the ideals $I$ and $J$ have the same radical
+iff there is some integer $N$ such that $I^N \subseteq J$ and $J^N \subseteq I$.
+Use the Nullstellensatz to deduce that if $I, J \subseteq S = k[x_1,\ldots,x_n]$
+are ideals and $k$ is algebraically closed,
+then $Z(I) = Z(J)$ iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that if $\mathrm{rad}(I)$ is finitely generated,
+  then for some integer $N$ we have $(\mathrm{rad}(I))^N \subseteq I$.}
+  Say $x_1, \ldots, x_m \in \mathrm{rad}(I)$ generate $\mathrm{rad}(I)$.
+  \begin{enumerate}
+    \item[(a)]
+    For each $i$, there exists an integer $n_i > 0$ such that $x_i^{n_i} \in I$
+    (since $\mathrm{rad}(I)$ is radical).
+    \item[(b)]
+    Let $N = n_1 + \cdots + n_m$.
+    Given any $x = \sum_{i=1}^{m} r_i x_i \in \mathrm{rad}(I)$,
+    so
+    \begin{align*}
+      x^N
+      &= \left( \sum_{i=1}^{m} r_i x_i \right)^{N} \\
+      &= \sum_{k_1 + \cdots + k_m = N} {N \choose k1,\ldots,k_m}
+        r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m}.
+    \end{align*}
+    \item[(c)]
+    Note that for each term there is some $j$ such that $k_j \geq n_j$.
+    Hence,
+    \begin{align*}
+      &x_j^{k_j} = x_j^{k_j-n_j} x_j^{n_j} \in I
+        &\text{($I$ is an ideal)} \\
+      \Longrightarrow&
+      r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m} \in I \text{ for each term }
+        &\text{($I$ is an ideal)} \\
+      \Longrightarrow&
+      x^N \in I.
+        &\text{($I$ is an ideal)} \\
+      \Longrightarrow&
+        (\mathrm{rad}(I))^N \subseteq I.
+    \end{align*}
+  \end{enumerate}
+  \item[(2)]
+  \emph{Show that in a Noetherian ring the ideals $I$ and $J$ have the same radical
+  iff there is some integer $N$ such that $I^N \subseteq J$ and $J^N \subseteq I$.}
+  \begin{enumerate}
+    \item[(a)]
+    $(\Longrightarrow)$
+    Since in a Noetherian ring every ideal is finitely generated,
+    $\mathrm{rad}(I)$ and $\mathrm{rad}(J)$ are finitely generated.
+    By (1), there is a common integer $N$ such that
+    \[
+      (\mathrm{rad}(I))^N \subseteq I \:\: \text{ and } \:\:
+      (\mathrm{rad}(J))^N \subseteq J.
+    \]
+    Note that $I^N \subseteq (\mathrm{rad}(I))^N$ and $J^N \subseteq (\mathrm{rad}(J))^N$.
+    Since $\mathrm{rad}(I)$ = $\mathrm{rad}(J)$ by assumption,
+    \begin{align*}
+      I^N &\subseteq (\mathrm{rad}(I))^N = (\mathrm{rad}(J))^N \subseteq J, \\
+      J^N &\subseteq (\mathrm{rad}(J))^N = (\mathrm{rad}(I))^N \subseteq I.
+    \end{align*}
+    \item[(b)]
+    $(\Longleftarrow)$
+    It suffices to show that $\mathrm{rad}(I) \subseteq \mathrm{rad}(J)$.
+    $\mathrm{rad}(J) \subseteq \mathrm{rad}(I)$ is similar.
+    Given any $x \in \mathrm{rad}(I)$, there is an integer $M > 0$ such that
+    $x^M \in I$.
+    Hence $x^{MN} \in I^N \subseteq J$, or $x \in \mathrm{rad}(J)$.
+  \end{enumerate}
+  \item[(3)]
+  \emph{Show that if $I, J \subseteq S = k[x_1,\ldots,x_n]$
+  are ideals and $k$ is algebraically closed,
+  then $Z(I) = Z(J)$ iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.}
+  Note that $S$ is Noetherian and we can apply part (2).
+  By the Nullstellensatz, $Z(I) = Z(J)$ iff $\mathrm{rad}(I) = \mathrm{rad}(J)$
+  iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.
+\end{enumerate}
 $\Box$ \\\\
 
 
