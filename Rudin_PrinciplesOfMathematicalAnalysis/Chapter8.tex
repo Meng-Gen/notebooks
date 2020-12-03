@@ -29,11 +29,10 @@
 
 
 
-% References:
-% 1. http://math.ucsd.edu/~lni/math140/HW140B_7_solutions.pdf
-% 2. http://www.math.ucsd.edu/~ibejenar/teaching/2019/140B/HW1S.pdf
-% 3. https://minds.wisconsin.edu/bitstream/handle/1793/67009/rudin%20ch%208.pdf?sequence=4
-% 4. https://math.mit.edu/~gs/cse/websections/cse41.pdf
+% http://math.ucsd.edu/~lni/math140/HW140B_7_solutions.pdf
+% http://www.math.ucsd.edu/~ibejenar/teaching/2019/140B/HW1S.pdf
+% https://minds.wisconsin.edu/bitstream/handle/1793/67009/rudin%20ch%208.pdf?sequence=4
+% https://math.mit.edu/~gs/cse/websections/cse41.pdf
 
 
 
@@ -239,6 +238,83 @@ As $n = k + 1$, by (1)(2) we have
 Thus, $f^{(n)}(0) = 0$ for $n \in \mathbb{Z}^+$.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.2.}
+\emph{Let $a_{ij}$ be the number in the $i$th row and $j$th column of the array
+\[
+\begin{array}{rrrrr}
+           -1 &           0 &           0 &      0 & \cdots \\
+  \frac{1}{2} &          -1 &           0 &      0 & \cdots \\
+  \frac{1}{4} & \frac{1}{2} &          -1 &      0 & \cdots \\
+  \frac{1}{8} & \frac{1}{4} & \frac{1}{2} &     -1 & \cdots \\
+       \vdots &      \vdots &      \vdots & \vdots & \ddots
+\end{array}
+\]
+so that
+\begin{equation*}
+  a_{ij} =
+    \begin{cases}
+      0       & (i < j), \\
+      -1      & (i = j), \\
+      2^{j-i} & (i > j).
+    \end{cases}
+\end{equation*}
+Prove that
+\[
+  \sum_{i} \sum_{j} a_{ij} = -2, \:\: \sum_{j} \sum_{i} a_{ij} = 0.
+\]
+} \\
+
+Also see Theorem 8.3. \\
+
+\emph{Proof (Brute-force).}
+\begin{align*}
+  \sum_{i} \sum_{j} a_{ij}
+  &= \sum_{i=1}^{\infty} \left( \sum_{j = i} a_{ij} + \sum_{j < i} a_{ij} \right) \\
+  &= \sum_{i=1}^{\infty} \left( -1 + \sum_{j=1}^{i-1} 2^{j-i} \right) \\
+  &= \sum_{i=1}^{\infty} ( -1 + (1 - 2^{1-i}) ) \\
+  &= \sum_{i=1}^{\infty} -2^{1-i} \\
+  &= -2.
+\end{align*}
+\begin{align*}
+  \sum_{j} \sum_{i} a_{ij}
+  &= \sum_{j=1}^{\infty} \left( \sum_{i = j} a_{ij} + \sum_{i > j} a_{ij} \right) \\
+  &= \sum_{j=1}^{\infty} \left( -1 + \sum_{i=j+1}^{\infty} 2^{j-i} \right) \\
+  &= \sum_{j=1}^{\infty} ( -1 + 1 ) \\
+  &= \sum_{j=1}^{\infty} 0 \\
+  &= 0.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.3.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.4.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.5.}
 
 
 
