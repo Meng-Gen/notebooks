@@ -299,6 +299,7 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.3.}
+PLACEHOLDER. \\\\
 
 
 
@@ -307,6 +308,7 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.4.}
+PLACEHOLDER. \\\\
 
 
 
@@ -315,6 +317,7 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.5.}
+PLACEHOLDER. \\\\
 
 
 
@@ -483,6 +486,14 @@ or $\sigma$ is the identity.
 $\Box$ \\\\
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.7.}
+PLACEHOLDER. \\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -531,6 +542,107 @@ It follows that
   &\leq (k+1)|\sin x|.
 \end{align*}
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.9 (The Euler-Mascheroni constant).}
+\begin{enumerate}
+\item[(a)]
+\emph{Put $s_N = 1 + \frac{1}{2} + \cdots + \frac{1}{N}$.
+Prove that
+\[
+  \lim_{N \to \infty}(s_N - \log N)
+\]
+exists.
+(The limit, often denoted by $\gamma$, is called Euler's constant.
+Its numerical value is $0.5772\ldots$.
+It is not known whether $\gamma$ is rational or not.)}
+\item[(b)]
+\emph{Roughly how large must $m$ be so that $N = 10^m$ satisfies $s_N > 100$?} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Note that
+\begin{align*}
+  &\frac{1}{1+\frac{1}{n}} \leq \frac{1}{x} \leq 1
+    \text{ for } x \in \left[ 1,1+\frac{1}{n} \right] \\
+  \Longrightarrow&
+  \int_{1}^{1+\frac{1}{n}} \frac{dx}{1+\frac{1}{n}}
+  \leq \int_{1}^{1+\frac{1}{n}} \frac{dx}{x}
+  \leq \int_{1}^{1+\frac{1}{n}} dx
+    &\text{(Theorem 6.12(b))} \\
+  \Longrightarrow&
+  \frac{1}{n+1}
+  \leq \int_{1}^{1+\frac{1}{n}} \frac{dx}{x}
+  \leq \frac{1}{n} \\
+  \Longrightarrow&
+  \frac{1}{n+1}
+  \leq \log \left(1 + \frac{1}{n} \right)
+  \leq \frac{1}{n}.
+    &\text{(Equation (39) on page 180)}
+\end{align*}
+
+\item[(2)]
+Define
+\[
+  \gamma_n = s_n - \log n.
+\]
+It suffices to show that $\{\gamma_n\}$ is monotonic and bounded (Theorem 3.14).
+
+\item[(3)]
+\emph{Show that $\{\gamma_n\}$ is decreasing.}
+\begin{align*}
+  \gamma_{n+1} - \gamma_n
+  &= (s_{n+1} - \log(n+1)) - (s_n - \log n) \\
+  &= (s_{n+1} - s_n) - (\log(n+1)-\log n) \\
+  &= \frac{1}{n+1} - \log \left( \frac{n+1}{n} \right) \\
+  &= \frac{1}{n+1} - \log \left(1 + \frac{1}{n} \right) \\
+  &\leq 0.
+    &\text{((1))}
+\end{align*}
+\emph{Note.} $\gamma_n \leq \cdots \leq \gamma_1 = 1$ for all $n=1,2,3,\ldots$.
+
+\item[(4)]
+\emph{Show that $\gamma_n \geq 0$ for all $n=1,2,3,\ldots$.}
+Since
+\begin{align*}
+  \log n
+  &= \sum_{k=2}^{n} (\log k - \log(k-1)) \\
+  &= \sum_{k=2}^{n} \log \frac{k}{k-1} \\
+  &= \sum_{k=2}^{n} \log \left( 1 + \frac{1}{k-1} \right) \\
+  &\leq \sum_{k=2}^{n} \frac{1}{k-1}
+    &\text{((1))} \\
+  &= s_{n-1},
+\end{align*}
+we have
+\[
+  \gamma_n = s_n - \log n \geq s_n - s_{n-1} = \frac{1}{n} > 0.
+\]
+\end{enumerate}
+By (3)(4), $\{\gamma_n\}$ converges to $\lim_{N \to \infty} (s_N - \log N) = \gamma$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+By (a)(4),
+it suffices to choose $N = 10^m$ such that
+$s_N \geq \log(N+1) > 100$, or
+\[
+  m > \frac{\log(\exp(100) - 1)}{\log 10},
+\]
+or choose $m$ satisfying
+\[
+  m
+  > \frac{100}{\log 10}
+  > \frac{\log(\exp(100) - 1)}{\log 10},
+\]
+or $m = 44$.
 $\Box$ \\\\
 
 
@@ -665,6 +777,15 @@ $\exp\left(\sum_{p \leq N} \frac{1}{p} \right) \rightarrow \infty$ as $N \righta
 $\sum_{p \leq N} \frac{1}{p} \rightarrow \infty$ as $N \rightarrow \infty$.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.11.}
+PLACEHOLDER. \\\\
 
 
 
@@ -882,11 +1003,28 @@ $$\frac{1}{2 \pi} \cdot \frac{(2 \pi)^3}{3}
 or
 $$\sum_{n = 1}^{\infty} \frac{1}{n^2}
 = \frac{\pi^2}{6}.$$
-$\Box$ \\\\
+$\Box$ \\
+
+
 
 \textbf{Supplement.} \emph{
 Put $f(x) = x^k$ if $k \in \mathbb{Z}^+$ and $0 \leq x < 2 \pi$.
 Might show that
-$$\sum_{n = 1}^{\infty} \frac{1}{n^{2k}} = r_k \pi^{2k}, r_k \in \mathbb{Q}.$$}
+$$\sum_{n = 1}^{\infty} \frac{1}{n^{2k}} = r_k \pi^{2k}, r_k \in \mathbb{Q}.$$} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.14-8.31.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \end{document}
