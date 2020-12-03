@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -402,6 +404,57 @@ $\sigma(a) \sigma(m) = \sigma(n)$. By (3), we have $\sigma(a)m = n$,
 or $$\sigma(a) = \frac{m}{n} = a$$
 provided $n \neq 0$,
 or $\sigma$ is the identity.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.8.}
+\emph{For $n=0,1,2,\ldots$, and $x$ real, prove that
+\[
+  |\sin(nx)| \leq n |\sin x|.
+\]
+Note that this inequality may be false for other values of $n$.
+For instance,
+\[
+  \abs{ \sin(\frac{1}{2} \pi) } > \frac{1}{2}|\sin \pi|.
+\]} \\
+
+\emph{Proof.}
+Induction on $n$.
+\begin{enumerate}
+\item[(1)]
+Note that
+\[
+  \sin(a+b) = \sin a \cos b + \cos a \sin b
+\]
+for any $a, b \in \mathbb{R}$.
+\item[(2)]
+$n = 0,1$ are clearly true.
+\item[(3)]
+Assume the induction hypothesis that for the single case $n = k$ holds,
+meaning
+\[
+  |\sin(kx)| \leq k |\sin x|
+\]
+is true.
+It follows that
+\begin{align*}
+  |\sin((k+1)x)|
+  &= |\sin(kx) \cos x + \cos(kx) \sin x|
+    &\text{((1))} \\
+  &\leq |\sin(kx)| |\cos x| + |\cos(kx)| |\sin x|
+    &\text{(Triangle inequality)} \\
+  &\leq |\sin(kx)| + |\sin x|
+    &\text{($|\cos(\cdot)| \leq 1$)} \\
+  &\leq k |\sin x| + |\sin x|
+    &\text{(Induction hypothesis)} \\
+  &\leq (k+1)|\sin x|.
+\end{align*}
+\end{enumerate}
 $\Box$ \\\\
 
 
