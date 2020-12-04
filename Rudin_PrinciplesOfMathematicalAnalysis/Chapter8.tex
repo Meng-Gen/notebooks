@@ -783,6 +783,64 @@ $\Box$ \\
 
 
 
+\emph{Proof of (a) (Existence of $\int_{1}^{\infty} \frac{\{x\}}{x^2} dx$).}
+\begin{enumerate}
+\item[(1)]
+Define $\{x\} = x - [x]$ where $[x]$ is the greatest integer $\leq x$
+(Exercise 6.16).
+\emph{Show that
+\[
+  \int_{1}^{\infty} \frac{\{x\}}{x^2} dx < \infty.
+\]}
+Since
+$\frac{\{x\}}{x^2} \leq \frac{1}{x^2}$ on $[1,\infty)$
+and $\int_{1}^{\infty} \frac{1}{x^2} dx = 1$ exists,
+the result is established (Theorem 6.12(b)).
+
+\item[(2)]
+\emph{Show that
+\[
+  \int_{1}^{N} \frac{[x]}{x^2} dx = s_N - 1.
+\]}
+In fact,
+\begin{align*}
+  \int_{1}^{N} \frac{[x]}{x^2} dx
+  &= \sum_{k=1}^{N-1} \int_{k}^{k+1} \frac{[x]}{x^2} dx \\
+  &= \sum_{k=1}^{N-1} \int_{k}^{k+1} \frac{k}{x^2} dx \\
+  &= \sum_{k=1}^{N-1} \int_{k}^{k+1} \frac{k}{x^2} dx \\
+  &= \sum_{k=1}^{N-1} \frac{1}{k+1} \\
+  &= \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{N} \\
+  &= s_N - 1.
+\end{align*}
+
+\item[(3)]
+\emph{Show that
+\[
+  \int_{1}^{N} \frac{\{x\}}{x^2} dx = \log N - s_N + 1 = 1 - \gamma_N.
+\]}
+In fact,
+\begin{align*}
+  \int_{1}^{N} \frac{\{x\}}{x^2} dx
+  &= \int_{1}^{N} \frac{x-[x]}{x^2} dx \\
+  &= \int_{1}^{N} \frac{1}{x} dx - \int_{1}^{N} \frac{[x]}{x^2} dx \\
+  &= \log N - (s_N - 1) \\
+  &= \log N - s_N + 1 \\
+  &= 1 - \gamma_N.
+\end{align*}
+
+\item[(4)]
+Since
+\[
+  \lim_{N \to \infty} \int_{1}^{N} \frac{\{x\}}{x^2} dx
+  = \int_{1}^{\infty} \frac{\{x\}}{x^2} dx
+\]
+exists (by (1)),
+$\gamma = \lim \gamma_N$ exists.
+\end{enumerate}
+$\Box$ \\
+
+
+
 \emph{Proof of (b).}
 By $s_n - \log n > 0$ in (a)(4)(Theorem 3.14),
 it suffices to choose $N = 10^m$ such that
@@ -797,7 +855,13 @@ or choose $m$ satisfying
   > \frac{\log(\exp(100) - 1)}{\log 10},
 \]
 or $m = 44$.
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.}
+The exact value of $N$ is
+\[
+  15092688622113788323693563264538101449859497 \approx 1.509 \times 10^{43}.
+\] \\\\
 
 
 
