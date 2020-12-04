@@ -552,6 +552,8 @@ $\Box$ \\\\
 
 % https://rivoal.perso.math.cnrs.fr/articles/cteuler.pdf
 % - Lots of identities about the Euler-Mascheroni constant (without proof)
+% https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant
+% - Wikipedia.
 
 
 
@@ -619,10 +621,10 @@ It suffices to show that $\{\gamma_n\}$ is monotonic and bounded (Theorem 3.14).
 Since
 \begin{align*}
   \log n
-  &= \sum_{k=2}^{n} (\log k - \log(k-1)) \\
-  &= \sum_{k=2}^{n} \log \frac{k}{k-1} \\
-  &= \sum_{k=2}^{n} \log \left( 1 + \frac{1}{k-1} \right) \\
-  &\leq \sum_{k=2}^{n} \frac{1}{k-1}
+  &= \sum_{k=1}^{n-1} (\log (k+1) - \log k) \\
+  &= \sum_{k=1}^{n-1} \log \frac{k+1}{k} \\
+  &= \sum_{k=1}^{n-1} \log \left( 1 + \frac{1}{k} \right) \\
+  &\leq \sum_{k=1}^{n-1} \frac{1}{k}
     &\text{((1))} \\
   &= s_{n-1},
 \end{align*}
@@ -634,18 +636,68 @@ we have
 By (3)(4), $\{\gamma_n\}$ converges to $\lim_{N \to \infty} (s_N - \log N) = \gamma$.
 $\Box$ \\
 
-\emph{Note.}
-This proof is based on \textbf{integral test} (Theorem 8.23) in this textbook:
-\emph{Apostol, Mathematical Analysis, 2nd edition.} \\
+
+
+\textbf{Supplement.}
+\begin{enumerate}
+  \item[(1)]
+  This proof is based on \textbf{integral test} (Theorem 8.23) in the textbook:
+  \emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.}
+
+  \item[(2)]
+  \emph{Show that if $f \geq 0$ on $[0,\infty)$ and $f$ is monotonically decreasing,
+  and if $$c_n = \sum_{k=1}^{n} f(k) - \int_{1}^{n} f(x) dx,$$
+  then $\lim_{n \to \infty} c_n$ exists.}
+  (Exercise 10 of Section 5.2 in the textbook:
+  \emph{R Creighton Buck, Advanced Calculus, 3rd edition}. See page 235.)
+  If this exercise is true,
+  we can get the existence of $\gamma$ by taking $f(x) = \frac{1}{x}$.
+  \begin{enumerate}
+    \item[(a)]
+    Note that
+    \[
+       f(n+1)
+      \leq \int_{n}^{n+1} f(x) dx
+      \leq f(n).
+    \]
+
+    \item[(b)]
+    \emph{Show that $\{c_n\}$ is decreasing.}
+    \[
+      c_{n+1} - c_n
+      = f(n+1) - \int_{n}^{n+1} f(x)dx
+      \leq 0.
+    \]
+
+    \item[(c)]
+    \emph{Show that $c_n \geq 0$.}
+    Since $f(k) \geq \int_{k}^{k+1} f(x) dx$,
+    \begin{align*}
+      \sum_{k=1}^{n} f(k)
+      &\geq \sum_{k=1}^{n} \int_{k}^{k+1} f(x) dx \\
+      &= \int_{1}^{n+1} f(x) dx \\
+      &\geq \int_{1}^{n} f(x) dx.
+        &(f \geq 0)
+    \end{align*}
+    So that $c_n = \sum_{k=1}^{n} f(k) - \int_{1}^{n} f(x) dx \geq 0$.
+
+    \item[(d)]
+    By (b)(c), $\{c_n\}$ converges (Theorem 3.14).
+  \end{enumerate}
+  $\Box$ \\
+\end{enumerate}
 
 
 
 \emph{Proof of (a) (Limit comparison test).}
+Inspired by this paper:
+\emph{Philippe Flajolet and Ilan Vardi,
+Zeta Function Expansions of Classical Constants}.
 \begin{enumerate}
 \item[(1)]
 Rewrite
 \[
-  \gamma_n
+  \gamma_n + \log n - \log(n+1)
   = \sum_{k=1}^{n} \left( \frac{1}{k} - \log \left(1+\frac{1}{k}\right) \right)
 \]
 (similar to the argument in (a)(4)(Theorem 3.14)).
@@ -674,13 +726,60 @@ In fact,
 By limit comparison test or comparison test,
 $\sum \left( \frac{1}{k} - \log \left(1+\frac{1}{k}\right) \right)$
 converges since $\sum \frac{1}{k^2}$ converges.
+Also, $$\lim_{n \to \infty} \log n - \log(n+1) = 0.$$
+Therefore, $\lim_{n \to \infty} \gamma_n$ exists.
 \end{enumerate}
 $\Box$ \\
 
 \emph{Note.}
 This proof is based on \textbf{limit comparison test} (Theorem 8.21) in this textbook:
-\emph{Apostol, Mathematical Analysis, 2nd edition.
+\emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.
 It is easy to prove by the original comparison test.} \\
+
+
+
+\emph{Proof of (a) (Uniformly convergence of $\sum \frac{x}{n(x+n)}$).}
+(One example to Exercise 7 of Section 6.2 in the textbook:
+\emph{R Creighton Buck, Advanced Calculus, 3rd edition}.
+See pages 270 to 271.)
+\begin{enumerate}
+\item[(1)]
+Let
+\[
+  f_n(x) = \frac{x}{n(x+n)} = \frac{1}{n} - \frac{1}{x+n}
+\]
+defined on $E = [0,1]$.
+
+\item[(2)]
+Note that
+\[
+  |f_n(x)| \leq \frac{1}{n^2}
+\]
+for all $x \in [0,1]$. Since $\sum \frac{1}{n^2}$ converges,
+$\sum f_n$ converges uniformly on $[0,1]$ (Theorem 7.10).
+
+\item[(3)]
+Corollary to Theorem 7.16 implies that
+\begin{align*}
+  \int_{0}^{1} \sum_{n=1}^{\infty} \frac{x}{n(x+n)} dx
+  &= \sum_{n=1}^{\infty} \int_{0}^{1} \frac{x}{n(x+n)} dx \\
+  &= \sum_{n=1}^{\infty} \int_{0}^{1} \left( \frac{1}{n} - \frac{1}{x+n} \right) dx \\
+  &= \sum_{n=1}^{\infty} \left( \frac{1}{n} - \log\frac{n+1}{n} \right) \\
+  &= \lim_{N \to \infty}
+    \left( \sum_{n=1}^{N} \frac{1}{n} - \log(N+1) \right) \\
+  &= \lim_{N \to \infty}
+    \left( s_N - \log(N+1) \right)
+\end{align*}
+exists.
+Since $\lim_{N \to \infty}(\log(N+1) - \log N) = 0$,
+\begin{align*}
+  \gamma
+  &= \lim_{N \to \infty}( s_N - \log N ) \\
+  &= \lim_{N \to \infty}( s_N - \log(N+1) ) + \lim_{N \to \infty}(\log(N+1) - \log N)
+\end{align*}
+exists.
+\end{enumerate}
+$\Box$ \\
 
 
 
