@@ -1051,11 +1051,11 @@ As $t > 0$,
     &\text{((3) and $e^{-tx} \leq 1$)} \\
   \leq& t \int_{0}^{A_0}(M + 1) dx + t \int_{A_0}^{\infty} e^{-tx} \frac{\varepsilon}{64} dx
     &\text{((4))} \\
-  =& t(M + 1)(1 - \exp(-A_0t)) + \exp(-A_0t) \frac{\varepsilon}{64} \\
-  <& t(M + 1) + \frac{\varepsilon}{64}.
+  =& t A_0 (M + 1) + \exp(-A_0t) \frac{\varepsilon}{64} \\
+  \leq& t A_0 (M + 1) + \frac{\varepsilon}{64}.
     &\text{($e^{-tx} \leq 1$)}
 \end{align*}
-Since $t$ is arbitrary, take $t = \frac{\varepsilon}{89(M+1)} > 0$ to get
+Since $t$ is arbitrary, take $t = \frac{\varepsilon}{89 A_0 (M+1)} > 0$ to get
 \[
   \abs{\left( t \int_{0}^{\infty} e^{-tx}f(x)dx \right) - 1}
   < \frac{\varepsilon}{89} + \frac{\varepsilon}{64}
