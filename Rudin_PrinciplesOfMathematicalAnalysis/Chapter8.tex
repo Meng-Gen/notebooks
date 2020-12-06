@@ -300,7 +300,114 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.3.}
-PLACEHOLDER. \\\\
+\emph{Prove that
+\[
+  \sum_{i} \sum_{j} a_{ij} = \sum_{j} \sum_{i} a_{ij}
+\]
+if $a_{ij} \geq 0$ for all $i$ and $j$ (the case $+\infty = +\infty$ may occur).} \\
+
+\emph{Note.}
+It can be proved by Theorem 8.3 if both summations are finite. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Let $\mathscr{F}(I)$ be the collection of all finite subsets of $I$.
+
+\item[(2)]
+Let
+\[
+  s = \sup \left\{
+    \sum_{(i,j) \in E} a_{ij} : E \in \mathscr{F}(\mathbb{N}^2)
+  \right\}
+\]
+
+(the case $s = +\infty$ may occur).
+\emph{It suffices to show that $\sum_{i}\sum_{j} a_{ij} = s$.}
+The case $\sum_{j}\sum_{i} a_{ij} = s$ is similar, and thus
+$\sum_{i}\sum_{j} a_{ij} = \sum_{j}\sum_{i} a_{ij}.$
+
+\item[(3)]
+\emph{Show that $\sum_{i}\sum_{j} a_{ij} \geq s$.}
+Given any $E \in \mathscr{F}(\mathbb{N}^2)$.
+It is clear that
+\[
+  \sum_{i=1}^{\infty}\sum_{j=1}^{\infty}a_{ij} \geq \sum_{(i,j) \in E} a_{ij}
+\]
+
+(since $a_{ij} \geq 0$).
+Thus,
+\[
+  \sum_{i=1}^{\infty}\sum_{j=1}^{\infty}a_{ij}
+  \geq
+  \sup \left\{
+    \sum_{(i,j) \in E} a_{ij} : E \in \mathscr{F}(\mathbb{N}^2)
+  \right\}
+  = s.
+\]
+
+\item[(4)]
+\emph{Show that $\sum_{i}\sum_{j} a_{ij} \leq s$.}
+(Reductio ad absurdum)
+If $\sum_{i}\sum_{j} a_{ij} > s$,
+especially $s < \infty$,
+then there exists $\varepsilon > 0$ such that
+\[
+  \sum_{i=1}^{\infty} \sum_{j=1}^{\infty} a_{ij} > s + \varepsilon,
+\]
+or
+\[
+  \sum_{i=1}^{n} \sum_{j=1}^{\infty} a_{ij} > s + \varepsilon
+\]
+for some integer $n$.
+Consider two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  If there is some $1 \leq i_0 \leq n$
+  such that
+  \[
+    \sum_{j=1}^{\infty} a_{i_0 j} = \infty,
+  \]
+  then there is some $m$ such that
+  \[
+    \sum_{j=1}^{m} a_{i_0 j} > s.
+  \]
+  For $E = \{ (i_0,1),\ldots,(i_0,m) \} \in \mathscr{F}(\mathbb{N}^2)$,
+  \[
+    \sum_{(i,j) \in E} a_{ij} = \sum_{j=1}^{m} a_{i_0 j} > s,
+  \]
+  contrary to the supremum of $s$.
+
+  \item[(b)]
+  Otherwise, for each  $1 \leq i \leq n$
+  we have
+  \[
+    \sum_{j=1}^{\infty} a_{ij} < \infty,
+  \]
+  or there exists some $m_i$ such that
+  \[
+    \sum_{j=1}^{m_i} a_{ij} > \sum_{j=1}^{\infty} a_{ij} - \frac{\varepsilon}{n}.
+  \]
+  For $E = \bigcup_{1 \leq i \leq n} \{ (i,1),\ldots,(i,m_i) \} \in \mathscr{F}(\mathbb{N}^2)$,
+  \begin{align*}
+    \sum_{(i,j) \in E} a_{ij}
+    &= \sum_{i=1}^{n} \sum_{j=1}^{m_i} a_{ij} \\
+    &> \sum_{i=1}^{n} \left( \sum_{j=1}^{\infty} a_{ij} - \frac{\varepsilon}{n} \right) \\
+    &= \sum_{i=1}^{n}\sum_{j=1}^{\infty} a_{ij} - \sum_{i=1}^{n}\frac{\varepsilon}{n} \\
+    &> s + \varepsilon - \varepsilon \\
+    &= s,
+  \end{align*}
+  contrary to the supremum of $s$.
+  \end{enumerate}
+  Therefore, $\sum_{i}\sum_{j} a_{ij} \leq s$.
+
+  \item[(5)]
+  By (3)(4), $\sum_{i}\sum_{j} a_{ij} = s$.
+  Similarly, $\sum_{j}\sum_{i} a_{ij} = s$.
+  Hence, $\sum_{i}\sum_{j} a_{ij} = \sum_{j}\sum_{i} a_{ij}$
+  (including the case $+\infty = +\infty$).
+\end{enumerate}
+$\Box$ \\\\
 
 
 
