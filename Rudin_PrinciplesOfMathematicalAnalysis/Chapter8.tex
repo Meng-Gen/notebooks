@@ -33,6 +33,7 @@
 % http://www.math.ucsd.edu/~ibejenar/teaching/2019/140B/HW1S.pdf
 % https://minds.wisconsin.edu/bitstream/handle/1793/67009/rudin%20ch%208.pdf?sequence=4
 % https://math.mit.edu/~gs/cse/websections/cse41.pdf
+% https://julypraise.files.wordpress.com/2012/07/rudin-solution-collection1.pdf
 
 
 
@@ -694,17 +695,22 @@ Rewrite
   = \sum_{k=1}^{n} \left( \frac{1}{k} - \log \left(1+\frac{1}{k}\right) \right)
 \]
 (similar to the argument in (a)(4)(Theorem 3.14)).
+Let
+\[
+  c_k = \frac{1}{k} - \log \left(1+\frac{1}{k}\right).
+\]
 \item[(2)]
 \emph{Show that
 \[
   \lim_{k \to \infty}
-  \frac{\frac{1}{k} - \log \left(1+\frac{1}{k}\right)}{ \frac{1}{k^2} }
+  \frac{c_k}{ \frac{1}{k^2} }
   = \frac{1}{2}.
 \]}
+
 In fact,
 \begin{align*}
   &\lim_{k \to \infty}
-  \frac{\frac{1}{k} - \log \left(1+\frac{1}{k}\right)}{ \frac{1}{k^2} } \\
+  \frac{c_k}{ \frac{1}{k^2} } \\
   =&
   \lim_{x \to 0} \frac{x - \log(1+x)}{ x^2 }
     &\text{(Put $x = \frac{1}{k}$)} \\
@@ -717,7 +723,7 @@ In fact,
 \end{align*}
 \item[(3)]
 By limit comparison test or comparison test,
-$\sum \left( \frac{1}{k} - \log \left(1+\frac{1}{k}\right) \right)$
+$\sum c_k$
 converges since $\sum \frac{1}{k^2}$ converges.
 Also, $$\lim_{n \to \infty} \log n - \log(n+1) = 0.$$
 Therefore, $\lim_{n \to \infty} \gamma_n$ exists.
@@ -726,8 +732,42 @@ $\Box$ \\
 
 \emph{Note.}
 This proof is based on \textbf{limit comparison test} (Theorem 8.21) in this textbook:
-\emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.
-It is easy to prove by the original comparison test.} \\
+\emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.}
+It is easy to prove by the original comparison test. \\
+
+
+
+\emph{Proof of (a) (Comparison test).}
+\begin{enumerate}
+\item[(1)]
+Note that
+\[
+  0 \leq x - \log(x+1) \leq \frac{x^2}{2}
+\]
+for all $x \geq 0$.
+
+\item[(2)]
+Write
+\[
+  c_n = \frac{1}{n} - \log \left(1+\frac{1}{n}\right).
+\]
+as in the the proof of (a) (Limit comparison test).
+By (1),
+\[
+  |c_n| \leq \frac{1}{2n^2}
+\]
+for all $n=1,2,\ldots$.
+Hence, by the comparison test (Theorem 3.25(a),
+$\sum c_n$ converges since $\sum \frac{1}{n^2}$ converges (to $\frac{\pi^2}{6}$).
+Use the same argument in the proof of (a) (Limit comparison test), since
+\[
+  \gamma_n + \log n - \log(n+1) = \sum c_n
+  \text{ and }
+  \lim_{n \to \infty} \log n - \log(n+1) = 0,
+\]
+we have the existence of $\lim \gamma_n = \gamma$.
+\end{enumerate}
+$\Box$ \\
 
 
 
@@ -808,6 +848,25 @@ Use the similar argument in Exercise 6.16(a),
   &= \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{N} \\
   &= s_N - 1.
 \end{align*}
+
+\textbf{Supplement (Euler's summation formula).}
+(Theorem 7.13 in the textbook:
+\emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.})
+\emph{If $f$ has a continuous derivative $f'$ on $[a,b]$, then we have
+\[
+  \sum_{a < n \leq b} f(n)
+  = \int_{a}^{b} f(x)dx
+  + \int_{a}^{b} f'(x)\{x\}dx + f(a)\{a\} - f(b)\{b\},
+\]
+where $\sum_{a < n \leq b}$ means the sum from $n=[a]+1$ to $n=[b]$.
+When $a$ and $b$ are integers, this becomes
+\[
+  \sum_{n=a}^{b} f(n)
+  = \int_{a}^{b} f(x)dx
+  + \int_{a}^{b} f'(x)\left( \{x\}-\frac{1}{2} \right)dx
+  + \frac{f(a)+f(b)}{2}.
+\]}
+By taking $f(x) = \frac{1}{x}$ we can get the same result. \\
 
 \item[(3)]
 \emph{Show that
@@ -1069,10 +1128,6 @@ or
 \]
 \end{enumerate}
 $\Box$ \\\\
-
-
-
-% TODO(plover): Compare with Evans, PDE. Any other exercises?
 
 
 
