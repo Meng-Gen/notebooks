@@ -416,7 +416,56 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.4.}
-PLACEHOLDER. \\\\
+\emph{Prove the following limit relations:}
+\begin{enumerate}
+  \item[(a)]
+  $\lim_{x \to 0} \frac{b^x - 1}{x} = \log b \:\:\:\:\:\:\:\: (b > 0).$
+  \item[(b)]
+  $\lim_{x \to 0} \frac{\log(1+x)}{x} = 1.$
+  \item[(c)]
+  $\lim_{x \to 0} (1+x)^{\frac{1}{x}} = e.$
+  \item[(d)]
+  $\lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^{n} = e^x.$ \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+  \lim_{x \to 0} \frac{b^x - 1}{x}
+  &= \lim_{x \to 0} \frac{\exp(x \log b) - 1}{x} \\
+  &= \left. \frac{d}{dx} \exp(x \log b) \right\vert_{x=0} \\
+  &= \left. \exp(x \log b) \cdot \log b \right\vert_{x=0} \\
+  &= \log b.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+  \lim_{x \to 0} \frac{\log(1+x)}{x}
+  &= \left. \frac{d}{dx} \log(1+x) \right\vert_{x=0} \\
+  &= \left. \frac{1}{x+1} \right\vert_{x=0} \\
+  &= 1.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{align*}
+  \lim_{x \to 0} (1+x)^{\frac{1}{x}}
+  &= \lim_{x \to 0} \exp\left( \frac{\log(1+x)}{x} \right) \\
+  &= \exp\left( \lim_{x \to 0} \frac{\log(1+x)}{x} \right) \\
+  &= \exp(1) \\
+  &= e.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{align*}
+  \lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^{n}
+  &= \lim_{n \to \infty} \left( \left( 1 + \frac{x}{n} \right)^{\frac{n}{x}} \right)^{x} \\
+  &= \left( \lim_{n \to \infty} \left( 1 + \frac{x}{n} \right)^{\frac{n}{x}} \right)^{x} \\
+  &= \left( \lim_{y \to 0} (1+y)^{\frac{1}{y}} \right)^{x} \\
+  &= \exp(x).
+\end{align*}
+$\Box$ \\\\
 
 
 
