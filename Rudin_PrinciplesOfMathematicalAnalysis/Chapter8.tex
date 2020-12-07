@@ -474,7 +474,129 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.5.}
-PLACEHOLDER. \\\\
+\emph{Find the following limits}
+\begin{enumerate}
+  \item[(a)]
+  $\lim_{x \to 0} \frac{e-(1+x)^{\frac{1}{x}}}{x}.$
+  \item[(b)]
+  $\lim_{n \to \infty} \frac{n}{\log n}\left[ n^{\frac{1}{n}} - 1 \right].$
+  \item[(c)]
+  $\lim_{x \to 0} \frac{\tan x - x}{x(1 - \cos x)}.$
+  \item[(d)]
+  $\lim_{x \to 0} \frac{x - \sin x}{\tan x - x}.$ \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+By L'Hospital's rule (Theorem 5.13),
+\begin{align*}
+  \lim_{x \to 0} \frac{e-(1+x)^{\frac{1}{x}}}{x}
+  &= \lim_{x \to 0} \frac{-(1+x)^{\frac{1}{x}} \cdot
+    \frac{ \frac{x}{x+1} - \log(x+1) }{x^2}}{1} \\
+  &= \lim_{x \to 0} \left( -(1+x)^{\frac{1}{x}} \cdot
+    \frac{ \frac{x}{x+1} - \log(x+1) }{x^2} \right) \\
+  &= - \lim_{x \to 0}(1+x)^{\frac{1}{x}} \cdot
+    \lim_{x \to 0} \frac{ \frac{x}{x+1} - \log(x+1) }{x^2} \\
+  &= -e \cdot
+    \lim_{x \to 0} \frac{ \frac{x}{x+1} - \log(x+1) }{x^2}
+    &\text{(Exercise 8.4(c))} \\
+  &= -e \cdot \lim_{x \to 0} \frac{ -\frac{x}{(x+1)^2} }{2x} \\
+  &= e \cdot \lim_{x \to 0} \frac{1}{2(x+1)^2} \\
+  &= e \cdot \frac{1}{2} \\
+  &= \frac{e}{2}.
+\end{align*}
+Here
+\begin{align*}
+  \frac{d}{dx}\left( e-(1+x)^{\frac{1}{x}} \right)
+  &= \frac{d}{dx}\left( e-\exp\left( \frac{\log(x+1)}{x} \right) \right) \\
+  &= -\exp\left( \frac{1}{x} \log(x+1) \right) \cdot
+    \frac{ \frac{1}{x+1} \cdot x - \log(x+1) \cdot 1 }{x^2} \\
+  &= -(1+x)^{\frac{1}{x}} \cdot \frac{ \frac{x}{x+1} - \log(x+1) }{x^2},
+\end{align*}
+and
+\begin{align*}
+  \frac{d}{dx}\left( \frac{x}{x+1} - \log(x+1) \right)
+  &= \frac{(x+1) - x}{(x+1)^2} - \frac{1}{x+1} \\
+  &= -\frac{x}{(x+1)^2}.
+\end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Let $x = \frac{\log n}{n}$.
+Note that $\lim_{n \to \infty} \frac{\log n}{n} = 0$.
+
+\item[(2)]
+\begin{align*}
+  \lim_{n \to \infty} \frac{n}{\log n}\left[ n^{\frac{1}{n}} - 1 \right]
+  &= \lim_{n \to \infty} \frac{n}{\log n}\left[ \exp\left( \frac{\log n}{n} \right) - 1 \right] \\
+  &= \lim_{x \to 0} \frac{\exp(x) - 1}{x}
+    &\text{((1))} \\
+  &= \left.\frac{d}{dx} \exp(x) \right\vert_{x=0} \\
+  &= \left.\exp(x) \right\vert_{x=0} \\
+  &= 1.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c) (L'Hospital's rule).}
+By L'Hospital's rule (Theorem 5.13) three times,
+\begin{align*}
+  \lim_{x \to 0} \frac{\tan x - x}{x(1 - \cos x)}
+  &= \lim_{x \to 0} \frac{\sec^2 x - 1}{1 - \cos x + x \sin x} \\
+  &= \lim_{x \to 0} \frac{2 \sec x (\tan x \sec x)}{\sin x + \sin x + x \cos x} \\
+  &= \lim_{x \to 0} \frac{2 \tan x \sec^2 x}{2 \sin x + x \cos x} \\
+  &= \lim_{x \to 0}
+    \frac{2 [\sec^2 x \sec^2 x + \tan x \cdot 2 \sec x (\tan x \sec x)]}
+    {2 \cos x + \cos x - x \sin x} \\
+  &= \lim_{x \to 0} \frac{2 \sec^4 x + 2 \sec^2 x \tan^2 x}{3 \cos x - x \sin x} \\
+  &= \frac{2}{3}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c) (Taylor series).}
+Since
+\begin{align*}
+  \cos x &= 1 - \frac{x^2}{2} + O(x^4) \\
+  \tan x &= x + \frac{x^3}{3} + O(x^5),
+\end{align*}
+we have
+\[
+  \lim_{x \to 0} \frac{\tan x - x}{x(1 - \cos x)}
+  = \lim_{x \to 0} \frac{\frac{x^3}{3} + O(x^5)}{\frac{x^3}{2} + O(x^5)}
+  = \frac{2}{3}.
+\]
+$\Box$ \\
+
+\emph{Proof of (d) (L'Hospital's rule).}
+By L'Hospital's rule (Theorem 5.13) three times,
+\begin{align*}
+  \lim_{x \to 0} \frac{x - \sin x}{\tan x - x}
+  &= \lim_{x \to 0} \frac{1 - \cos x}{\sec^2 x - 1} \\
+  &= \lim_{x \to 0} \frac{\sin x}{2 \sec x (\tan x \sec x)} \\
+  &= \lim_{x \to 0} \frac{\sin x}{2 \tan x \sec^2 x} \\
+  &= \lim_{x \to 0} \frac{\cos x}{2 \tan x \sec^2 x} \\
+  &= \lim_{x \to 0} \frac{\cos x}{2 [\sec^2 x \sec^2 x + \tan x \cdot 2 \sec x (\tan x \sec x)]} \\
+  &= \lim_{x \to 0} \frac{\cos x}{2 \sec^4 x + 2 \sec^2 x \tan^2 x} \\
+  &= \frac{1}{2}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (d) (Taylor series).}
+Since
+\begin{align*}
+  \sin x &= x - \frac{x^3}{6} + O(x^5) \\
+  \tan x &= x + \frac{x^3}{3} + O(x^5),
+\end{align*}
+we have
+\[
+  \lim_{x \to 0} \frac{x - \sin x}{\tan x - x}
+  = \lim_{x \to 0} \frac{\frac{x^3}{6} + O(x^5)}{\frac{x^3}{2} + O(x^5)}
+  = \frac{1}{2}.
+\]
+$\Box$ \\\\
 
 
 
