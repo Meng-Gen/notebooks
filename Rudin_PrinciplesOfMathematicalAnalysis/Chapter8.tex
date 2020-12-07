@@ -1698,7 +1698,165 @@ PLACEHOLDER. \\\\
 
 
 \textbf{Exercise 8.15.}
-PLACEHOLDER. \\\\
+\emph{With the Dirichlet kernel $D_n$ as defined by
+\[
+  D_n(x)
+  = \sum_{k=-n}^{n} \exp(ikx)
+  = \frac{\sin(n+\frac{1}{2})x}{\sin(\frac{x}{2})},
+\]
+put the \textbf{Fej\'er kernel}
+\[
+  K_N(x) = \frac{1}{N+1} \sum_{n=0}^{N} D_n(x).
+\]
+Prove that
+\[
+  K_N(x) = \frac{1}{N+1} \cdot \frac{1-\cos(N+1)x}{1-\cos x}
+\]
+and that}
+\begin{enumerate}
+  \item[(a)]
+  $K_N \geq 0$,
+
+  \item[(b)]
+  $\frac{1}{2\pi} \int_{-\pi}^{\pi} K_N(x) dx = 1$,
+
+  \item[(c)]
+  \emph{$K_N(x) \leq \frac{1}{N+1} \cdot \frac{2}{1-\cos \delta}$
+  if $0 < \delta \leq |x| \leq \pi$.}
+\end{enumerate}
+
+\emph{If $s_N = s_N(f;x)$ is the $N$th partial sum of the Fourier series of $f$,
+consider the arithmetic means
+\[
+  \sigma_N = \frac{s_0+s_1+\cdots+s_N}{N+1}.
+\]
+Prove that
+\[
+  s_N(f;x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-t)K_N(t)dt,
+\]
+and hence prove \textbf{Fej\'er's theorem:}}
+\begin{quote}
+  \emph{If $f$ is continuous, with period $2\pi$,
+  then $\sigma_N(f;x) \to f(x)$ uniformly on $[-\pi,\pi]$.}
+\end{quote}
+\emph{(Hint: Use properties (a),(b),(c) to proceed as in Theorem 7.26.)} \\
+
+
+
+\emph{Proof of $K_N(x) = \frac{1}{N+1} \cdot \frac{1-\cos(N+1)x}{1-\cos x}$.}
+Since
+  \begin{align*}
+    (1-\cos x) K_N(x)
+    =& 2 \left( \sin \frac{x}{2} \right)^2 \frac{1}{N+1}
+      \sum_{n=0}^{N} \frac{\sin(n+\frac{1}{2})x}{\sin(\frac{x}{2})} \\
+    =& \frac{1}{N+1}
+      \sum_{n=0}^{N} 2 \sin \frac{x}{2} \sin(n+\frac{1}{2})x \\
+    =& \frac{1}{N+1}
+      \sum_{n=0}^{N} (\cos(nx) - \cos(n+1)x) \\
+    =& \frac{1 - \cos(N+1)x}{N+1},
+  \end{align*}
+\[
+  K_N(x) = \frac{1}{N+1} \cdot \frac{1-\cos(N+1)x}{1-\cos x}
+\]
+if $x \neq 2k\pi$ for $k \in \mathbb{Z}$.
+$\Box$ \\
+
+\emph{Proof of (a).}
+It is clear since $\cos x \leq 1$ for all $x \in \mathbb{R}$.
+Or we may write
+\[
+  K_N(x) = \frac{1}{N+1} \left( \frac{\sin \frac{(N+1)x}{2}}{\sin \frac{x}{2}} \right)^2 \geq 0.
+\]
+$\Box$ \\
+
+\emph{Proof of (b).}
+By the definition of $D_n(x)$,
+  \begin{align*}
+     \frac{1}{2\pi} \int_{-\pi}^{\pi} K_N(x) dx
+     =& \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{1}{N+1} \sum_{n=0}^{N} D_n(x) dx \\
+     =& \frac{1}{N+1} \sum_{n=0}^{N} \frac{1}{2\pi} \int_{-\pi}^{\pi} D_n(x) dx \\
+     =& \frac{1}{N+1} \sum_{n=0}^{N} 1 \\
+     =& 1.
+  \end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+Since $\cos x$ is bounded by $1$ and monotonically decreasing on $(0, \pi]$,
+  \begin{align*}
+    K_N(x)
+    =& \frac{1}{N+1} \cdot \frac{1-\cos(N+1)x}{1-\cos x} \\
+    \leq& \frac{1}{N+1} \cdot \frac{2}{1-\cos \delta}.
+  \end{align*}
+$\Box$ \\
+
+\emph{Proof of $s_N(f;x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-t)K_N(t)dt$.}
+  \begin{align*}
+    \sigma_N(f;x)
+    &= \frac{1}{N+1} \sum_{n=0}^{N} s_N(f;x) \\
+    &= \frac{1}{N+1} \sum_{n=0}^{N} \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-t)D_N(t)dt \\
+    &= \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-t)
+      \left( \frac{1}{N+1} \sum_{n=0}^{N} D_N(t) \right) dt \\
+    &= \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-t) K_N(t) dt.
+  \end{align*}
+$\Box$ \\
+
+\emph{Proof of Fej\'er's theorem.}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    \abs{ \sigma_N(f;x) - f(x) }
+    =& \abs{ \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x-t) K_N(t) dt
+      - \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) K_N(t) dt } \\
+    =& \abs{ \frac{1}{2\pi} \int_{-\pi}^{\pi} (f(x-t)-f(x)) K_N(t) dt } \\
+    \leq& \frac{1}{2\pi} \int_{-\pi}^{\pi} |f(x-t)-f(x)| K_N(t) dt.
+  \end{align*}
+
+\item[(2)]
+Since $f$ is continuous on a compact set $[-\pi,\pi]$, $f$ is continuous uniformly.
+For such $\varepsilon > 0$, there exists $\delta > 0$
+such that
+\[
+  |f(y) - f(x)| < \frac{\varepsilon}{2}
+\]
+whenever $x,y \in [-\pi,\pi]$ and $|y-x| < \delta$.
+
+\item[(3)]
+Since $f$ is continuous on a compact set $[-\pi,\pi]$, $f$ is bounded
+on $[-\pi,\pi]$, say $M = \sup|f(x)|$.
+
+\item[(4)]
+Therefore,
+  \begin{align*}
+    &\abs{ \sigma_N(f;x) - f(x) } \\
+    \leq& \frac{1}{2\pi} \int_{-\pi}^{\pi} |f(x-t)-f(x)| K_N(t) dt \\
+    =& \frac{1}{2\pi} \int_{-\pi}^{-\delta} |f(x-t)-f(x)| K_N(t) dt \\
+      &+ \frac{1}{2\pi} \int_{-\delta}^{\delta} |f(x-t)-f(x)| K_N(t) dt \\
+      &+ \frac{1}{2\pi} \int_{\delta}^{\pi} |f(x-t)-f(x)| K_N(t) dt \\
+    \leq& \frac{1}{2\pi} \int_{-\pi}^{-\delta}
+        2M \cdot \frac{1}{N+1} \cdot \frac{2}{1-\cos \delta} dt \\
+      &+ \frac{1}{2\pi} \int_{-\delta}^{\delta} \frac{\varepsilon}{2} K_N(t) dt \\
+      &+ \frac{1}{2\pi} \int_{\delta}^{\pi}
+        2M \cdot \frac{1}{N+1} \cdot \frac{2}{1-\cos \delta} dt \\
+    =& \frac{4M (\pi - \delta)}{(N+1)(1 - \cos \delta) \pi}
+      + \frac{\varepsilon}{2} \cdot \frac{1}{2\pi} \int_{-\delta}^{\delta} K_N(t) dt \\
+    \leq& \frac{4M (\pi - \delta)}{(N+1)(1 - \cos \delta) \pi} + \frac{\varepsilon}{2}.
+  \end{align*}
+
+\item[(5)]
+Since $N$ is arbitrary,
+we can take an integer
+$N > \frac{4M(\pi-\delta)}{(1-\cos\delta)\pi\varepsilon} - 1$
+so that
+  \begin{align*}
+    \abs{ \sigma_N(f;x) - f(x) }
+    \leq& \frac{4M (\pi - \delta)}{(N+1)(1 - \cos \delta) \pi} + \frac{\varepsilon}{2} \\
+    <& \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+    =& \varepsilon.
+  \end{align*}
+Therefore, the conclusion holds.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -1707,9 +1865,122 @@ PLACEHOLDER. \\\\
 
 
 \textbf{Exercise 8.16.}
-PLACEHOLDER. \\\\
+\emph{Prove a pointwise version of Fej\'er's theorem:
+If $f \in \mathscr{R}$ and $f(x+)$, $f(x-)$ exist for some $x$, then
+\[
+  \lim_{N \to \infty} \sigma_N(f;x) = \frac{1}{2}[f(x+)+f(x-)].
+\]
+} \\
 
+\emph{Proof.}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+Since $K_N(-x) = K_N(x)$, we have
+\[
+  \sigma_N(f;x)
+  = \frac{1}{2\pi} \int_{0}^{\pi} f(x-t)K_N(t)dt
+    + \frac{1}{2\pi} \int_{0}^{\pi} f(x+t)K_N(t)dt
+\]
+and
+\[
+  \frac{1}{2\pi} \int_{0}^{\pi} K_N(t)dt = \frac{1}{2}.
+\]
 
+\item[(2)]
+Since $f \in \mathscr{R}$,
+$f$ is bounded on $[-\pi,\pi]$, say $M = \sup|f(x)|$.
+
+\item[(3)]
+Therefore,
+  \begin{align*}
+    &\abs{ \frac{1}{2\pi} \int_{0}^{\pi} f(x-t)K_N(t)dt - \frac{1}{2} f(x-) } \\
+    =& \abs{ \frac{1}{2\pi} \int_{0}^{\pi} (f(x-t)-f(x-))K_N(t)dt } \\
+    \leq& \frac{1}{2\pi} \int_{0}^{\pi} |f(x-t)-f(x-)|K_N(t)dt.
+  \end{align*}
+Since $f(x-)$ exists,
+for fixed $\varepsilon > 0$, there exists $\delta > 0$
+such that
+\[
+  |f(y) - f(x-)| < \frac{\varepsilon}{2}
+\]
+whenever $y \in (x-\delta,x) \cap [-\pi,\pi]$.
+Hence,
+  \begin{align*}
+    &\abs{ \frac{1}{2\pi} \int_{0}^{\pi} f(x-t)K_N(t)dt - \frac{1}{2} f(x-) } \\
+    \leq& \frac{1}{2\pi} \int_{0}^{\pi} |f(x-t)-f(x-)|K_N(t)dt \\
+    =& \frac{1}{2\pi} \int_{0}^{\delta} |f(x-t)-f(x-)|K_N(t)dt \\
+      &+ \frac{1}{2\pi} \int_{\delta}^{\pi} |f(x-t)-f(x-)|K_N(t)dt \\
+    \leq& \frac{1}{2\pi} \int_{0}^{\delta} \frac{\varepsilon}{2} K_N(t)dt
+      + \frac{1}{2\pi} \int_{\delta}^{\pi} 2M \cdot \frac{1}{N+1} \cdot \frac{2}{1-\cos \delta} dt \\
+    =& \frac{\varepsilon}{2} \cdot \frac{1}{2\pi} \int_{0}^{\delta} K_N(t)dt
+      + \frac{2M(\pi-\delta)}{(N+1)(1-\cos \delta)\pi} \\
+    \leq& \frac{\varepsilon}{4} + \frac{2M(\pi-\delta)}{(N+1)(1-\cos \delta)\pi}. \\
+  \end{align*}
+
+\item[(4)]
+Since $N$ is arbitrary,
+we can take an integer
+$N_1 > \frac{8M(\pi-\delta)}{(1-\cos\delta)\pi\varepsilon} - 1$
+such that
+  \begin{align*}
+    \abs{ \frac{1}{2\pi} \int_{0}^{\pi} f(x-t)K_{n}(t)dt - \frac{1}{2} f(x-) }
+    \leq& \frac{\varepsilon}{4} + \frac{2M(\pi-\delta)}{(n+1)(1-\cos \delta)\pi} \\
+    <& \frac{\varepsilon}{4} + \frac{\varepsilon}{4} \\
+    =& \frac{\varepsilon}{2}
+  \end{align*}
+whenever $n \geq N_1$.
+Similarly,
+we can take an integer $N_2$ such that
+  \begin{align*}
+    \abs{ \frac{1}{2\pi} \int_{0}^{\pi} f(x+t)K_{n}(t)dt - \frac{1}{2} f(x+) }
+    \leq& \frac{\varepsilon}{4} + \frac{2M(\pi-\delta)}{(n+1)(1-\cos \delta)\pi} \\
+    <& \frac{\varepsilon}{4} + \frac{\varepsilon}{4} \\
+    =& \frac{\varepsilon}{2}.
+  \end{align*}
+whenever $n \geq N_2$.
+
+\item[(5)]
+Hence,
+  \begin{align*}
+    &\abs{ \sigma_N(f;x) - \frac{1}{2}[f(x+)+f(x-)] } \\
+    \leq& \abs{ \frac{1}{2\pi} \int_{0}^{\pi} f(x-t)K_{n}(t)dt - \frac{1}{2} f(x-) } \\
+      &+ \abs{ \frac{1}{2\pi} \int_{0}^{\pi} f(x+t)K_{n}(t)dt - \frac{1}{2} f(x+) } \\
+    <& \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+    =& \varepsilon.
+  \end{align*}
+whenever $n \geq \max\{N_1,N_2\}$.
+Hence, $\lim \sigma_N(f;x) = \frac{1}{2}[f(x+)+f(x-)]$.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.} Poisson's equation.
+(Theorem 1 of Section 2.2 in the textbook:
+\emph{Lawrence C. Evans, Partial Differential Equations.})
+\emph{Let the fundamental solution of Laplace's equation be
+\begin{equation*}
+  \Phi(x) =
+    \begin{cases}
+      -\frac{1}{2\pi} \log|x|                       & (n = 2) \\
+      \frac{1}{n(n-2)\alpha(n)} \frac{1}{|x|^{n-2}} & (n \geq 3),
+    \end{cases}
+\end{equation*}
+where $x \in \mathbb{R}^n$, $x \neq 0$.
+Let
+\[
+  u(x) = \int_{\mathbb{R}^n} \Phi(x-y)f(y) dy.
+\]
+Then $-\Delta u = -f$ in $\mathbb{R}^n$.}
+Note that $\Phi(x)$ blows up at $0$.
+To calculate $\Delta u(x)$,
+we need to isolate this singularity inside a small ball, say $B(0;\varepsilon)$.
+Therefore,
+\[
+  \Delta u(x)
+  = \int_{B(0;\varepsilon)} \Phi(y) \Delta_x f(x-y)dy
+    + \int_{\mathbb{R}^n - B(0;\varepsilon)} \Phi(y) \Delta_x f(x-y)dy,
+\]
+and we can continue estimating two integrals individually as the textbook did. \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1937,6 +2208,7 @@ $\Box$ \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \end{document}
