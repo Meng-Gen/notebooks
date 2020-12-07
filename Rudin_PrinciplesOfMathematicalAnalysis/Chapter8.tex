@@ -1688,8 +1688,250 @@ Might get
 
 
 
-\textbf{Exercise 8.14-8.31.}
+\textbf{Exercise 8.14.}
 PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.15.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.16.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.17.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.18.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.19.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.20.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.21.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.22.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.23.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.24.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.25.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.26.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.27.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.28.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.29.}
+PLACEHOLDER. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.30.}
+\emph{Use Stirling's formula to prove that
+\[
+  \lim_{x \to \infty} \frac{\Gamma(x+c)}{x^c \Gamma(x)} = 1
+\]
+for every real constant $c$.} \\
+
+\emph{Proof.}
+By Stirling's formula,
+\begin{align*}
+  \lim_{x \to \infty}
+  \frac{\Gamma(x+c)}{\left( \frac{x+c-1}{e} \right)^{x+c-1} \sqrt{2\pi(x+c-1)}}
+  &= 1 \\
+  \lim_{x \to \infty}
+  \frac{\Gamma(x)}{\left( \frac{x-1}{e} \right)^{x-1} \sqrt{2\pi(x-1)}}
+  &= 1,
+\end{align*}
+we have
+\begin{align*}
+  \lim_{x \to \infty} \frac{\Gamma(x+c)}{x^c \Gamma(x)}
+  =&
+  \lim_{x \to \infty} \frac{\Gamma(x+c)}{x^c \Gamma(x)} \\
+  &\times
+  \lim_{x \to \infty}
+  \frac{\left( \frac{x+c-1}{e} \right)^{x+c-1} \sqrt{2\pi(x+c-1)}}{\Gamma(x+c)} \\
+  &\times
+  \lim_{x \to \infty}
+  \frac{\Gamma(x)}{\left( \frac{x-1}{e} \right)^{x-1} \sqrt{2\pi(x-1)}} \\
+  =&
+  \lim_{x \to \infty} \frac{\left( \frac{x+c-1}{e} \right)^{x+c-1} \sqrt{2\pi(x+c-1)}}
+    {x^c \left( \frac{x-1}{e} \right)^{x-1} \sqrt{2\pi(x-1)}} \\
+  =&
+  \lim_{x \to \infty}
+  \frac{\left( \frac{x+c-1}{e} \right)^{c}}{x^c}
+  \frac{\left( \frac{x+c-1}{e} \right)^{x-1}}{\left( \frac{x-1}{e} \right)^{x-1}}
+  \sqrt{\frac{x+c-1}{x-1}} \\
+  =& \frac{1}{e^c} \cdot e^c \cdot 1 \\
+  =& 1
+\end{align*}
+since
+\begin{enumerate}
+\item[(1)]
+\[
+  \lim_{x \to \infty}
+    \frac{\left( \frac{x+c-1}{e} \right)^{c}}{x^c}
+  = \frac{1}{e^c} \lim_{x \to \infty} \left( \frac{x+c-1}{x} \right)^{c}
+  = \frac{1}{e^c}.
+\]
+
+\item[(2)]
+\[
+  \lim_{x \to \infty}
+    \frac{\left( \frac{x+c-1}{e} \right)^{x-1}}{\left( \frac{x-1}{e} \right)^{x-1}}
+  = \lim_{x \to \infty} \left( \frac{x+c-1}{x-1} \right)^{x-1}
+  = \lim_{x \to \infty} \left( 1+\frac{c}{x-1} \right)^{x-1}
+  = e^c.
+\]
+
+\item[(3)]
+and
+\[
+  \lim_{x \to \infty} \sqrt{\frac{x+c-1}{x-1}}
+  = \lim_{x \to \infty} \sqrt{1+\frac{c}{x-1}} = 1.
+\]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 8.31.}
+\emph{In the proof of Theorem 7.26 it was shown that
+\[
+  \int_{-1}^{1} (1-x^2)^n dx \geq \frac{4}{3\sqrt{n}}
+\]
+for $n=1,2,3,\ldots$.
+Use Theorem 8.20 and Exercise 8.30 to show the more precise result
+\[
+\lim_{n \to \infty} \sqrt{n} \int_{-1}^{1} (1-x^2)^n dx = \sqrt{\pi}.
+\]} \\
+
+\emph{Proof.}
+\begin{align*}
+  &\lim_{n \to \infty} \sqrt{n} \int_{-1}^{1} (1-x^2)^n dx \\
+  =& \lim_{n \to \infty} \sqrt{n} \int_{0}^{1} u^{-\frac{1}{2}} (1-u)^n dx
+    &(u = x^2) \\
+  =& \lim_{n \to \infty} \sqrt{n}
+    \frac{\Gamma\left( \frac{1}{2} \right) \Gamma(n+1)}{\Gamma\left( n+\frac{3}{2} \right)}
+    &\text{(Theorem 8.20)} \\
+  =& \Gamma\left( \frac{1}{2} \right) \lim_{n \to \infty}
+    \frac{n^{\frac{1}{2}} \Gamma(n+1)}{\Gamma\left( n+\frac{3}{2} \right)} \\
+  =& \Gamma\left( \frac{1}{2} \right)
+    &\text{(Exercise 8.30)} \\
+  =& \sqrt{\pi}.
+    &\text{(Some consequences 8.21)}
+\end{align*}
+$\Box$ \\\\
 
 
 
