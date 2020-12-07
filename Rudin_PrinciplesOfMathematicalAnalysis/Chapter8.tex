@@ -765,12 +765,58 @@ or $\sigma$ is the identity.
 $\Box$ \\\\
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \textbf{Exercise 8.7.}
-PLACEHOLDER. \\\\
+\emph{If $0 < x < \frac{\pi}{2}$, prove that
+\[
+  \frac{2}{\pi} < \frac{\sin x}{x} < 1.
+\]} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Let
+\begin{equation*}
+  f(x) =
+    \begin{cases}
+      \frac{\sin x}{x} & \text{ if } x \neq 0 \\
+      1                & \text{ if } x = 0
+    \end{cases}
+\end{equation*}
+be a continuous function on $\left[ 0, \frac{\pi}{2} \right]$
+(since $\lim_{x \to 0+} f(x) = 1$).
+So
+\[
+  f'(x) = \frac{x \cos x - \sin x}{x^2} < 0
+\]
+on $\left( 0, \frac{\pi}{2} \right)$
+since $\tan x > x$ on $\left( 0, \frac{\pi}{2} \right)$.
+
+\item[(2)]
+\emph{Show that $\frac{\sin x}{x} < 1$ on $\left( 0, \frac{\pi}{2} \right)$.}
+Given any $x \in \left( 0, \frac{\pi}{2} \right)$, there exists $\xi_1 \in (0,x)$ such that
+\[
+  \frac{f(x) - f(0)}{x - 0} = f'(\xi_1) < 0
+\]
+by the mean value theorem (Theorem 5.10).
+So $f(x) < f(0) = 1$,
+or $\frac{\sin x}{x} < 1$.
+
+\item[(3)]
+\emph{Show that $\frac{\sin x}{x} > \frac{2}{\pi}$ on $\left( 0, \frac{\pi}{2} \right)$.}
+Given any $x \in \left( 0, \frac{\pi}{2} \right)$, there exists $\xi_2 \in (0,x)$ such that
+\[
+  \frac{f(\frac{\pi}{2}) - f(x)}{\frac{\pi}{2} - x} = f'(\xi_2) < 0
+\]
+by the mean value theorem (Theorem 5.10).
+So $f(x) > f(\frac{\pi}{2}) = \frac{2}{\pi}$,
+or $\frac{\sin x}{x} > \frac{2}{\pi}$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
