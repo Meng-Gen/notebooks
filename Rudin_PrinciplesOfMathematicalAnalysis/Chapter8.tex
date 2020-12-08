@@ -2007,7 +2007,108 @@ PLACEHOLDER. \\\\
 
 
 \textbf{Exercise 8.19.}
-PLACEHOLDER. \\\\
+\emph{Suppose $f$ is a continuous function on $\mathbb{R}$,
+$f(x+2\pi) = f(x)$, and $\frac{\alpha}{\pi}$ is irrational.
+Prove that
+\[
+  \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} f(x+n\alpha)
+  = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) dt
+\]
+for every $x$.
+(Hint: Do it first for $f(x) = \exp(ikx)$.)}\\
+
+\emph{Proof (Hint).}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+Do it first for $f(x) = \exp(ikx)$.
+Note that
+\begin{equation*}
+  \frac{1}{2\pi} \int_{-\pi}^{\pi}\exp(ikx)dt =
+    \begin{cases}
+      1 & (k = 0), \\
+      0 & (k \neq 0).
+    \end{cases}
+\end{equation*}
+  \begin{enumerate}
+  \item[(a)]
+    $k = 0$ is nothing to do.
+  \item[(b)]
+    Suppose $k \neq 0$.
+    \begin{align*}
+      \frac{1}{N} \sum_{n=1}^{N} f(x+n\alpha)
+      &= \frac{1}{N} \sum_{n=1}^{N} \exp(ik(x+n\alpha)) \\
+      &= \frac{1}{N} \sum_{n=1}^{N} \exp(ikx) \exp(ik\alpha n) \\
+      &= \frac{1}{N} \exp(ikx) \cdot
+        \frac{\exp(ik\alpha) - \exp(ik\alpha(N+1))}{1 - \exp(ik\alpha)} \\
+      &= \exp(ik(x+\alpha)) \left[
+        \frac{1}{N} \cdot \frac{1 - \exp(ik\alpha N)}{1 - \exp(ik\alpha)}
+        \right] \\
+      &= f(x+\alpha) \frac{1}{N} \frac{1 - \exp(ik\alpha N)}{1 - \exp(ik\alpha)} \to 0
+    \end{align*}
+    as $N \to \infty$ since $\exp(iy)$ is bounded ($y \in \mathbb{R}$).
+    (Note that the denominator
+    $1-\exp(ik\alpha) \neq 0$ since $k \neq 0$ and $\frac{\alpha}{\pi}$ is irrational.)
+  \end{enumerate}
+  By (a)(b),
+  \[
+    \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} f(x+n\alpha)
+    = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) dt.
+  \]
+  for $f(x) = \exp(ikx)$ and any $x \in \mathbb{R}$.
+
+\item[(2)]
+Therefore,
+\[
+  \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} f(x+n\alpha)
+  = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) dt
+\]
+is also true for trigonometric polynomials $f(x)$.
+
+\item[(3)]
+By Theorem 8.15, there is a trigonometric polynomial
+\[
+  P(x) = \sum_{n=-N_1}^{N_1} c_n \exp(inx)
+\]
+such that
+\[
+  |P(x) - f(x)| < \frac{\varepsilon}{89}.
+\]
+By (2), there is an integer $N_2$ such that
+\[
+  \abs{\frac{1}{N} \sum_{n=1}^{N} P(x+n\alpha)
+  - \frac{1}{2\pi} \int_{-\pi}^{\pi} P(t) dt} < \frac{\varepsilon}{64}
+\]
+whenever $N \geq N_2$.
+Therefore,
+  \begin{align*}
+    &\abs{\frac{1}{N} \sum_{n=1}^{N} f(x+n\alpha)
+      - \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) dt} \\
+    \leq&
+    \abs{\frac{1}{N} \sum_{n=1}^{N} f(x+n\alpha) - \frac{1}{N} \sum_{n=1}^{N} P(x+n\alpha)} \\
+      &+ \abs{\frac{1}{N} \sum_{n=1}^{N} P(x+n\alpha) - \frac{1}{2\pi} \int_{-\pi}^{\pi} P(t) dt} \\
+      &+ \abs{\frac{1}{2\pi} \int_{-\pi}^{\pi} P(t) dt - \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) dt} \\
+    \leq&
+    \frac{1}{N} \sum_{n=1}^{N} \abs{ f(x+n\alpha) - P(x+n\alpha) } \\
+      &+ \abs{\frac{1}{N} \sum_{n=1}^{N} P(x+n\alpha) - \frac{1}{2\pi} \int_{-\pi}^{\pi} P(t) dt} \\
+      &+ \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{P(t) - f(t)} dt \\
+    <&
+    \frac{1}{N} \sum_{n=1}^{N} \frac{\varepsilon}{89}
+      + \frac{\varepsilon}{64}
+      + \frac{1}{2\pi} \int_{-\pi}^{\pi} \frac{\varepsilon}{89} dt \\
+    =&
+    \frac{\varepsilon}{89} + \frac{\varepsilon}{64} + \frac{\varepsilon}{89} \\
+    <& \varepsilon
+  \end{align*}
+whenever $N \geq N_2$.
+Hence
+\[
+  \lim_{N \to \infty} \frac{1}{N} \sum_{n=1}^{N} f(x+n\alpha)
+  = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) dt
+\]
+is also true for continuous function $f(x)$ (with period $2\pi$).
+\end{enumerate}
+$\Box$ \\\\
 
 
 
