@@ -2390,8 +2390,156 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 8.22.}
-PLACEHOLDER. \\\\
+\textbf{Exercise 8.22 (Newton's generalized binomial theorem).}
+\emph{If $\alpha$ is a real and $-1<x<1$, prove Newton's binomial theorem
+\[
+  (1+x)^{\alpha}
+  = 1 + \sum_{n=1}^{\infty} \frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!} x^n.
+\]
+(Hint: Denote the right side by $f(x)$.
+Prove that the series converges.
+Prove that
+\[
+  (1+x)f'(x) = \alpha f(x)
+\]
+and solve this differential equation.)
+Show also that
+\[
+  (1-x)^{-\alpha} = \sum_{n=0}^{\infty} \frac{\Gamma(n+\alpha)}{n!\Gamma(\alpha)} x^n
+\]
+if $-1<x<1$ and $\alpha > 0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Let
+\[
+  f(x) = \sum_{n=0}^{\infty} {\alpha \choose n} x^n
+\]
+where ${\alpha \choose n}$ is defined by
+\[
+  {\alpha \choose n} = \frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}.
+\]
+
+\item[(2)]
+\emph{Show that ${\alpha-1 \choose n} + {\alpha-1 \choose n-1} = {\alpha \choose n}$.}
+\begin{align*}
+  {\alpha-1 \choose n} + {\alpha-1 \choose n-1}
+  &= \frac{(\alpha-1)\cdots(\alpha-n+1)(\alpha-n)}{n!}
+    + \frac{(\alpha-1)\cdots(\alpha-n+1)}{(n-1)!} \\
+  &= \frac{(\alpha-1)\cdots(\alpha-n+1)}{n!}[(\alpha-n) + n] \\
+  &= \frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!} \\
+  &= {\alpha \choose n}.
+\end{align*}
+
+\item[(3)]
+\emph{Show that $f(x)$ converges.}
+Write $c_n = {\alpha \choose n}$.
+Since
+\[
+  \lim_{n \to \infty} \abs{ \frac{c_{n+1}}{c_{n}} }
+  = \lim_{n \to \infty} \abs{ \frac{\alpha-n}{n+1} } = 1,
+\]
+we have
+\[
+  \lim_{n \to \infty} \sqrt[n]{|c_n|}
+  = \lim_{n \to \infty} \abs{ \frac{c_{n+1}}{c_{n}} }
+  = 1
+\]
+(Theorem 3.37) and thus the radius of convergence is $1$.
+$f(x)$ converges if $|x| < 1$.
+
+\item[(4)]
+\emph{Show that $(1+x)f'(x) = \alpha f(x)$.}
+By Theorem 8.1,
+\begin{align*}
+  f'(x)
+  &= \sum_{n=0}^{\infty} {\alpha \choose n} n x^{n-1} \\
+  &= \sum_{n=1}^{\infty} {\alpha \choose n} n x^{n-1} \\
+  &= \sum_{n=1}^{\infty} \alpha {\alpha-1 \choose n-1} x^{n-1} \\
+  &= \sum_{n=0}^{\infty} \alpha {\alpha-1 \choose n} x^{n}.
+\end{align*}
+Besides,
+\[
+  x f'(x)
+  = \sum_{n=0}^{\infty} {\alpha \choose n} n x^{n}
+  = \sum_{n=0}^{\infty} \alpha {\alpha-1 \choose n-1} x^{n}.
+\]
+Hence,
+\begin{align*}
+  (1+x)f'(x)
+  &= \sum_{n=0}^{\infty} \alpha {\alpha-1 \choose n} x^{n}
+    + \sum_{n=0}^{\infty} \alpha {\alpha-1 \choose n-1} x^{n} \\
+  &= \alpha \sum_{n=0}^{\infty} \left[ {\alpha-1 \choose n}+{\alpha-1 \choose n-1} \right] x^{n} \\
+  &= \alpha \sum_{n=0}^{\infty} {\alpha \choose n} x^{n}
+    &((2)) \\
+  &= \alpha f(x).
+\end{align*}
+
+\item[(5)]
+\emph{Solve the differential equation $(1+x)f'(x) = \alpha f(x)$.}
+Given any $1 > \varepsilon > 0$.
+Use the notations in Exercise 5.27.
+Let
+\[
+  \phi(x,y) = \frac{\alpha y}{1+x}
+\]
+defined on $[-1+\varepsilon,1-\varepsilon] \times \mathbb{R}$.
+Let
+\[
+  g(x) = (1+x)^\alpha
+\]
+defined on $[-1+\varepsilon,1-\varepsilon]$.
+Thus,
+\[
+  g'(x)
+  = \alpha (1+x)^{\alpha-1}
+  = \frac{\alpha (1+x)^\alpha}{1+x}
+  = \frac{\alpha g(x)}{1+x}
+  = \phi(x,g(x))
+\]
+and $g(0) = 1$.
+(Clearly, $f'(x) = \phi(x,f(x))$ and $f(0)=1$.)
+\emph{To show $f(x) = g(x)$, it suffices to show that
+there is a constant $A$ such that
+\[
+  \abs{\phi(x,g(x)) - \phi(x,f(x))} \leq A \abs{g(x) - f(x)}
+\]
+whenever $(x,f(x)) \in \mathbb{R}$ and $(x,g(x)) \in \mathbb{R}$.}
+In fact,
+\begin{align*}
+  \abs{\phi(x,g(x)) - \phi(x,f(x))}
+  &= \abs{\frac{\alpha g(x)}{1+x} - \frac{\alpha f(x)}{1+x}} \\
+  &= \frac{\alpha}{1+x} \abs{g(x)-f(x)} \\
+  &\leq \frac{\alpha}{\varepsilon} \abs{g(x)-f(x)}.
+\end{align*}
+(Here $A = \frac{\alpha}{\varepsilon}$ is a constant.)
+By Exercise 5.27,
+$f(x) = g(x)$ on $[-1+\varepsilon,1-\varepsilon]$ for any $1 > \varepsilon > 0$.
+So
+$f(x) = g(x)$ on $(-1,1)$,
+or
+\[
+  \sum_{n=0}^{\infty} {\alpha \choose n} x^n = (1+x)^\alpha
+\]
+if $x \in (-1,1)$.
+
+\item[(6)]
+\emph{Show that
+\[
+  (1-x)^{-\alpha} = \sum_{n=0}^{\infty} \frac{\Gamma(n+\alpha)}{n!\Gamma(\alpha)} x^n
+\]
+if $-1<x<1$ and $\alpha > 0$.}
+In fact,
+\begin{align*}
+  (1-x)^{-\alpha}
+  &= \sum_{n=0}^{\infty} {-\alpha \choose n} (-x)^n \\
+  &= \sum_{n=0}^{\infty} \frac{(-\alpha)(-\alpha-1)\cdots(-\alpha-n+1)}{n!} (-1)^n x^n \\
+  &= \sum_{n=0}^{\infty} \frac{(\alpha)(\alpha+1)\cdots(\alpha+n-1)}{n!} x^n \\
+  &= \sum_{n=0}^{\infty} \frac{\Gamma(n+\alpha)}{n!\Gamma(\alpha)} x^n.
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
