@@ -2083,6 +2083,7 @@ Hence
 \]
 
 \item[(4)]
+\emph{Show that $J_n - \frac{4}{\pi^2}\log n$ is uniformly bounded.}
 Since
 \begin{align*}
   J_n
@@ -2136,10 +2137,19 @@ Hence,
 \[
   0
   \leq
+  J_n - \frac{4}{\pi^2}\log n
+  \leq
+  \frac{4}{\pi^2} + \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx.
+\]
+
+\item[(5)]
+By (3)(4),
+\[
+  0
+  \leq
   L_n - \frac{4}{\pi^2}\log n
   \leq
-  \frac{4}{\pi^2} + \frac{2}{\pi} + \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx
-  < 2.221.
+  \frac{2}{\pi} + \frac{4}{\pi^2} + \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx.
 \]
 \end{enumerate}
 $\Box$ \\\\
