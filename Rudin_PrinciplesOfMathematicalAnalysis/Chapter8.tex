@@ -1876,7 +1876,7 @@ If $f \in \mathscr{R}$ and $f(x+)$, $f(x-)$ exist for some $x$, then
 Given any $\varepsilon > 0$.
 \begin{enumerate}
 \item[(1)]
-Since $K_N(-x) = K_N(x)$, we have
+Since $K_N(-t) = K_N(t)$, we have
 \[
   \sigma_N(f;x)
   = \frac{1}{2\pi} \int_{0}^{\pi} f(x-t)K_N(t)dt
@@ -2024,8 +2024,125 @@ PLACEHOLDER. \\\\
 
 
 
-\textbf{Exercise 8.21.}
-PLACEHOLDER. \\\\
+% https://warwick.ac.uk/fac/sci/masdoc/people/masdoc_alumni/davidmccormick/ara-v0.1.pdf
+
+
+
+\textbf{Exercise 8.21 (Norm of Dirichlet kernel).}
+\emph{Let
+\[
+  L_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{ D_n(t) } dt
+  \:\:\:\:\:\:\:\: (n = 1,2,3,\ldots).
+\]
+Prove that there exists a constant $C > 0$ such that
+\[
+  L_n > C \log n
+  \:\:\:\:\:\:\:\: (n = 1,2,3,\ldots),
+\]
+or, more precisely, that the sequence
+\[
+  \left\{ L_n - \frac{4}{\pi^2} \log n \right\}
+\]
+is bounded.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write
+\begin{align*}
+  L_n
+  &= \frac{1}{2\pi} \int_{-\pi}^{\pi} \abs{ D_n(t) } dt \\
+  &= \frac{1}{\pi} \int_{0}^{\pi} \abs{ D_n(t) } dt
+    &(D_n(-t) = D_n(t)) \\
+  &= \frac{1}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin(n+\frac{1}{2})t }}{\sin(\frac{t}{2})} dt.
+    &\text{($\sin(\frac{t}{2}) \geq 0$ on $[0,\pi]$)}
+\end{align*}
+
+\item[(2)]
+So,
+\begin{align*}
+  L_n
+  &= \frac{1}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin(n+\frac{1}{2})t }}{\sin(\frac{t}{2})} dt \\
+  &= \frac{1}{\pi} \int_{0}^{\pi} \abs{ \sin(n+\frac{1}{2})t }
+    \left( \frac{1}{\sin(\frac{t}{2})} - \frac{1}{\frac{t}{2}} + \frac{1}{\frac{t}{2}} \right) dt \\
+  &= \underbrace{
+      \frac{1}{\pi} \int_{0}^{\pi} \abs{ \sin(n+\frac{1}{2})t }
+      \left( \frac{1}{\sin(\frac{t}{2})} - \frac{1}{\frac{t}{2}} \right) dt }_{:= I_n}
+    + \underbrace{
+      \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin(n+\frac{1}{2})t }}{t} dt }_{:= J_n}.
+\end{align*}
+
+\item[(3)]
+\emph{Show that $I_n$ is uniformly bounded.}
+Note that $f(x) = \frac{1}{\sin(x)} - \frac{1}{x}$ is bounded
+(since $\lim_{x \to 0} f(x) = 0$ by using L'Hospital's rule twice).
+Also, $\abs{ \sin(n+\frac{1}{2})t } \leq 1$ for any $n$.
+Hence
+\[
+  0 \leq I_n < \sup(f(x)) = \frac{2}{\pi}.
+\]
+
+\item[(4)]
+Since
+\begin{align*}
+  J_n
+  &= \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin(n+\frac{1}{2})t }}{t} dt \\
+  &= \frac{2}{\pi} \int_{0}^{\left( n+\frac{1}{2} \right)\pi}
+      \frac{\abs{ \sin x }}{x} dx,
+    &\text{(Let $x = \left( n+\frac{1}{2} \right) t$)}
+\end{align*}
+we have
+\[
+  \underbrace{ \frac{2}{\pi}
+      \sum_{k=0}^{n-1} \int_{k\pi}^{(k+1)\pi}
+      \frac{\abs{ \sin x }}{x} dx }_{:= J^{(1)}_n}
+  \leq J_n
+  \leq \underbrace{ \frac{2}{\pi}
+      \sum_{k=0}^{n} \int_{k\pi}^{(k+1)\pi}
+      \frac{\abs{ \sin x }}{x} dx }_{:= J^{(2)}_n}.
+\]
+So
+\begin{align*}
+  J^{(1)}_n
+  &\geq
+  \frac{2}{\pi} \sum_{k=0}^{n-1} \int_{k\pi}^{(k+1)\pi} \frac{\abs{ \sin x }}{(k+1)\pi} dx \\
+  &=
+  \frac{2}{\pi} \sum_{k=0}^{n-1} \frac{2}{(k+1)\pi}
+    &(\int_{0}^{\pi}\abs{ \sin x } dx = 0) \\
+  &\geq \frac{4}{\pi^2} \log n,
+    &\text{(Exercise 8.9)}
+\end{align*}
+and
+\begin{align*}
+  J^{(2)}_n
+  &=
+  \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx
+    + \frac{2}{\pi} \sum_{k=1}^{n} \int_{k\pi}^{(k+1)\pi} \frac{\abs{ \sin x }}{x} dx \\
+  &\leq
+  \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx
+    + \frac{2}{\pi} \sum_{k=1}^{n} \int_{k\pi}^{(k+1)\pi} \frac{\abs{ \sin x }}{k\pi} dx \\
+  &=
+  \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx
+    + \frac{2}{\pi} \sum_{k=1}^{n} \frac{2}{k\pi} \\
+  &\leq
+  \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx
+    + \frac{4}{\pi^2} (\log n + 1) \\
+  &=
+  \frac{4}{\pi^2}\log n
+    + \frac{4}{\pi^2}
+    + \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx.
+\end{align*}
+Hence,
+\[
+  0
+  \leq
+  L_n - \frac{4}{\pi^2}\log n
+  \leq
+  \frac{4}{\pi^2} + \frac{2}{\pi} + \frac{2}{\pi} \int_{0}^{\pi} \frac{\abs{ \sin x }}{x} dx
+  < 2.221.
+\]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
