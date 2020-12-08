@@ -2016,7 +2016,136 @@ PLACEHOLDER. \\\\
 
 
 \textbf{Exercise 8.20.}
-PLACEHOLDER. \\\\
+\emph{The following simple computation yields a good approximation to
+Stirling's formula.
+For $m=1,2,3,\ldots$, define
+\[
+  f(x) = (m+1-x) \log m + (x-m) \log(m+1)
+\]
+if $m \leq x \leq m+1$, and define
+\[
+  g(x) = \frac{x}{m} - 1 + \log m
+\]
+if $m - \frac{1}{2} \leq x < m + \frac{1}{2}$.
+Draw the graphs of $f$ and $g$.
+Note that $f(x) \leq \log x \leq g(x)$ if $x \geq 1$ and that
+\[
+  \int_{1}^{n} f(x)dx = \log(n!) - \frac{1}{2} \log n > -\frac{1}{8} + \int_{1}^{n} g(x)dx.
+\]
+Integrate $\log x$ over $[1,n]$.
+Conclude that
+\[
+  \frac{7}{8} < \log(n!) - \left(n+\frac{1}{2}\right) \log n + n < 1
+\]
+for $n=2,3,4,\ldots$.
+(Note: $\log \sqrt{2\pi} \approx 0.918\ldots$.)
+Thus
+\[
+  e^{\frac{7}{8}} < \frac{n!}{(\frac{n}{e})^n \sqrt{n}} < e.
+\]} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Omit the  graphs of $f$ and $g$.
+Note that the concavity of $\log(x)$ implies that $f(x) \leq \log(x)$.
+Here the equality holds if and only if $x \in \mathbb{Z}^+$.
+Besides, since
+$g(x)$ is the tangent line at $(x, \log x)$ whenever $x \in \mathbb{Z}^+$,
+$g(x) \geq \log(x)$ and
+the equality holds if and only if $x \in \mathbb{Z}^+$.
+
+\item[(2)]
+\begin{align*}
+  \int_{1}^{n} f(x)dx
+  =& \sum_{m=1}^{n-1} \int_{m}^{m+1} f(x)dx \\
+  =& \sum_{m=1}^{n-1} \int_{m}^{m+1} (m+1-x) \log m + (x-m) \log(m+1) dx \\
+  =& \sum_{m=1}^{n-1} \int_{m}^{m+1}
+    (\log(m+1)-\log m)x + (m+1)\log m-m\log(m+1) dx \\
+  =& \sum_{m=1}^{n-1} (\log(m+1)-\log m)\left( \frac{(m+1)^2-m^2}{2} \right)
+    + (m+1)\log m - m\log(m+1) \\
+  =& \sum_{m=1}^{n-1} \log m + \frac{1}{2} \sum_{m=1}^{n-1}(\log(m+1)-\log m) \\
+  =& \log((n-1)!) + \frac{1}{2} \log n \\
+  =& \log(n!) - \frac{1}{2} \log n.
+\end{align*}
+
+\item[(3)]
+Write
+\[
+  \int_{1}^{n} g(x)dx
+  = \left( \sum_{m=1}^{n} \int_{m-\frac{1}{2}}^{m+\frac{1}{2}} g(x)dx \right)
+    - \int_{\frac{1}{2}}^{1} g(x)dx
+    - \int_{n}^{n+\frac{1}{2}} g(x)dx.
+\]
+  \begin{enumerate}
+  \item[(a)]
+    \begin{align*}
+      \sum_{m=1}^{n} \int_{m-\frac{1}{2}}^{m+\frac{1}{2}} g(x) dx
+      &=
+      \sum_{m=1}^{n} \int_{m-\frac{1}{2}}^{m+\frac{1}{2}}
+        \left( \frac{x}{m} - 1 + \log m \right) dx \\
+      &=
+      \sum_{m=1}^{n} \log m \\
+      &= \log(n!).
+    \end{align*}
+  \item[(b)]
+    \[
+      \int_{\frac{1}{2}}^{1} g(x)dx
+      = \int_{\frac{1}{2}}^{1} (x - 1 + \log 1) dx
+      = -\frac{1}{8}.
+    \]
+  \item[(c)]
+    \[
+      \int_{n}^{n+\frac{1}{2}} g(x)dx
+      = \int_{\frac{1}{2}}^{1} \left( \frac{x}{n} - 1 + \log n \right) dx
+      = \frac{1}{2} \log n - \frac{1}{8n}.
+    \]
+  \end{enumerate}
+By (a)(b)(c),
+\[
+  \int_{1}^{n} g(x)dx
+  = \log(n!) - \frac{1}{2} \log n + \frac{1}{8}(1 - \frac{1}{n})
+  < \log(n!) - \frac{1}{2} \log n + \frac{1}{8}.
+\]
+
+\item[(4)]
+Since $f(x) \leq \log x \leq g(x)$
+and the equality holds if and only if $x \in \mathbb{Z}^+$ (by (1)),
+\[
+  \int_{1}^{n} f(x)dx \leq \int_{1}^{n} \log x dx \leq \int_{1}^{n} g(x)dx
+\]
+for all $n = 1,2,3,\ldots$. The equality holds if and only if $n=1$.
+Hence by (2)(3)
+\[
+  \log(n!) - \frac{1}{2} \log n
+  \leq n \log n - n + 1
+  \leq \log(n!) - \frac{1}{2} \log n + \frac{1}{8}.
+\]
+Arrange the inequality to get
+\[
+  \frac{7}{8} < \log(n!) - \left(n+\frac{1}{2}\right) \log n + n \leq 1
+\]
+for $n = 1,2,3,\ldots$.
+Note that the equality holds if and only if $n = 1$.
+Therefore
+\[
+  \frac{7}{8} < \log(n!) - \left(n+\frac{1}{2}\right) \log n + n < 1
+\]
+for $n = 2,3,\ldots$.
+
+\item[(5)]
+Exponentiate to get
+\[
+  \exp(\frac{7}{8}) < \exp[\log(n!) - \left(n+\frac{1}{2}\right) \log n + n] < \exp(1),
+\]
+or
+\[
+  e^\frac{7}{8} < \frac{\exp(\log(n!))\exp(n)}{\exp[\left(n+\frac{1}{2}\right) \log n]} < e,
+\]
+or $e^{\frac{7}{8}} < \frac{n!}{(\frac{n}{e})^n \sqrt{n}} < e$
+(since $\exp(x)$ is a strictly increasing function of $x$).
+\end{enumerate}
+$\Box$ \\\\
 
 
 
