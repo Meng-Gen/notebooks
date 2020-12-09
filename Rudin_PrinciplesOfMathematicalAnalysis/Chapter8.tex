@@ -2548,7 +2548,99 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.23.}
-PLACEHOLDER. \\\\
+\emph{Let $\gamma$ be a continuously differentiable \textbf{closed} curve in the complex plain,
+with parameter interval $[a,b]$,
+and assume that $\gamma(t) \neq 0$ for every $t \in [a,b]$.
+Define the \textbf{index} of $\gamma$ to be
+\[
+  \mathrm{Ind}(\gamma)
+  = \frac{1}{2\pi i}\int_{a}^{b} \frac{\gamma'(t)}{\gamma(t)} dt.
+\]
+Prove that $\mathrm{Ind}(\gamma)$ is always an integer.
+(Hint: There exists $\varphi$ on $[a,b]$ with $\varphi' = \frac{\gamma'}{\gamma}$,
+$\varphi(a) = 0$.
+Hence $\gamma \exp(-\varphi)$ is constant.
+Since $\gamma(a) = \gamma(b)$ it follows that $\exp(\varphi(b)) = \exp(\varphi(b)) = 1$.
+Note that $\varphi(b) = 2\pi i \mathrm{Ind}(\gamma)$.)}
+\emph{Compute $\mathrm{Ind}(\gamma)$ when $\gamma(t) = \exp(int)$, $a=0$, $b=2\pi$.}
+\emph{Explain why $\mathrm{Ind}(\gamma)$ is often called the
+\textbf{winding number} of $\gamma$ around $0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathrm{Ind}(\gamma)$ is always an integer.}
+Define
+\[
+  \varphi(x) = \int_{a}^{x} \frac{\gamma'(t)}{\gamma(t)} dt
+\]
+if $x \in [a,b]$.
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $\varphi(x)$ is well-defined.}
+    Since $\gamma$ is continuously differentiable with $\gamma(t) \neq 0$ on $[a,b]$,
+    $\frac{\gamma'(t)}{\gamma(t)}$ is continuous on $[a,b]$.
+    Hence $\varphi(x)$ is well-defined.
+
+  \item[(b)]
+    \emph{Show that $\varphi' = \frac{\gamma'}{\gamma}$ and $\varphi(a) = 0$.}
+    By Theorem 6.20,
+    $\varphi(x)$ is continuous.
+    Furthermore, $\varphi(x)$ is differentiable on $[a,b]$ and
+    $\varphi'(x) = \frac{\gamma'(x)}{\gamma(x)}$.
+    By the definition of $\varphi$, $\varphi(a) = 0$.
+
+  \item[(c)]
+    \emph{Show that $\gamma \exp(-\varphi)$ is constant.}
+    Write $f(x) = \gamma(x) \exp(-\varphi(x))$.
+    \begin{align*}
+      f'(x)
+      &= \gamma'(x) \exp(-\varphi(x)) + \gamma(x)(-\varphi'(x)) \exp(-\varphi(x)) \\
+      &= (\gamma'(x) - \gamma(x)\varphi'(x)) \exp(-\varphi(x)) \\
+      &= 0.
+    \end{align*}
+    Hence $f = \gamma \exp(-\varphi)$ is constant (Theorem 5.11(b)).
+
+  \item[(d)]
+    \emph{Show that $\mathrm{Ind}(\gamma) \in \mathbb{Z}$.}
+    By (c),
+    \begin{align*}
+      &\gamma(b) \exp(-\varphi(b)) = \gamma(a) \exp(-\varphi(a)) \\
+      \Longrightarrow&
+      \exp(-\varphi(b)) = \exp(-\varphi(a))
+        &\text{($\gamma$ is closed)} \\
+      \Longrightarrow&
+      \exp(\varphi(b)) = \exp(\varphi(a)) \\
+      \Longrightarrow&
+      \exp(2\pi i \mathrm{Ind}(\gamma)) = \exp(0) = 1
+        &\text{((b))} \\
+      \Longrightarrow&
+      2\pi i \mathrm{Ind}(\gamma) = 2\pi i n \text{ for some } n \in \mathbb{Z}
+        &\text{(Theorem 8.7)} \\
+      \Longrightarrow&
+      \mathrm{Ind}(\gamma) = n \text{ for some } n \in \mathbb{Z}.
+    \end{align*}
+  \end{enumerate}
+
+\item[(2)]
+\emph{Compute $\mathrm{Ind}(\gamma)$ when $\gamma(t) = \exp(int)$, $a=0$, $b=2\pi$.}
+\begin{align*}
+  \mathrm{Ind}(\gamma)
+  &= \frac{1}{2\pi i}\int_{a}^{b} \frac{\gamma'(t)}{\gamma(t)} dt \\
+  &= \frac{1}{2\pi i}\int_{0}^{2\pi} \frac{in\exp(int)}{\exp(int)} dt \\
+  &= \frac{1}{2\pi i}\int_{0}^{2\pi} in dt \\
+  &= n.
+\end{align*}
+
+\item[(3)]
+\emph{Explain why $\mathrm{Ind}(\gamma)$ is often called the
+\textbf{winding number} of $\gamma$ around $0$.}
+As (2) suggested,
+$\mathrm{Ind}(\gamma)$ is an integer
+representing the total number of times that curve travels counterclockwise around $0$.
+That's why we might say $\mathrm{Ind}(\gamma)$ is the winding number.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
