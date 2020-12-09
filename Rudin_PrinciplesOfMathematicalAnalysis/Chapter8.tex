@@ -2566,7 +2566,7 @@ Note that $\varphi(b) = 2\pi i \mathrm{Ind}(\gamma)$.)}
 \emph{Explain why $\mathrm{Ind}(\gamma)$ is often called the
 \textbf{winding number} of $\gamma$ around $0$.} \\
 
-\emph{Proof.}
+\emph{Proof (Hint).}
 \begin{enumerate}
 \item[(1)]
 \emph{Show that $\mathrm{Ind}(\gamma)$ is always an integer.}
@@ -2649,7 +2649,109 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.24.}
-PLACEHOLDER. \\\\
+\emph{Let $\gamma$ be as in Exercise 8.23, and assume in addition that
+the range of $\gamma$ does not intersect the negative real axis.
+Prove that $\mathrm{Ind}(\gamma)$ = 0.
+(Hint: For $0 \leq c < \infty$, $\mathrm{Ind}(\gamma+c)$ is a continuous
+integer-valued function of $c$.
+Also, $\mathrm{Ind}(\gamma) \to 0$ as $c \to \infty$.)} \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+Let $f(t,c) = \gamma(t) + c$ defined on $E = [a,b] \times [0,\infty)$.
+
+\item[(2)]
+\emph{Define $E_K = [a,b] \times [0,K]$ for some $K \geq 0$.
+Show that
+\[
+  0 < m_K \leq |f(E_K)| \leq M_K
+\]
+for some $m_K, M_K$.
+Especially, take $K = 0$ to get
+\[
+  0 < |f(t,0)| = |\gamma(t)| \leq M_0
+\]
+and thus
+\[
+  |f(t,c)| = |\gamma(t)+c| \geq c - |\gamma(t)| > 2M_0 - M_0 = M_0
+\]
+whenever $c > 2M_0$.}
+  \begin{enumerate}
+  \item[(a)]
+    Since $f$ is a continuous mapping of compact metric space $E_K$
+    into $\mathbb{R}^2$, $f(E_K)$ is bounded (Theorem 4.15).
+    Hence
+    $0 \leq m_K \leq |f(E_K)| \leq M_K$
+    for some $m_K$ and $M_K$.
+
+  \item[(b)]
+  Note that $f(t,c) \neq 0$
+  since the range of $\gamma$ does not intersect the negative real axis.
+  Hence, $m_K \neq 0$ (Theorem 4.16).
+  \end{enumerate}
+
+\item[(3)]
+\emph{Show that
+\[
+  m = \inf_{(t,c) \in E} |f(t,c)| > 0.
+\]}
+  \begin{enumerate}
+  \item[(a)]
+  By (2), there exists $M_0 > 0$ such that
+  \[
+    |f(t,c)| \geq M_0 \text{ on } E - E_{2M_0}.
+  \]
+
+  \item[(b)]
+  For such $K = 2M_0$, we apply (2) again to get that
+  there exists $m_K = m_{2M_0} > 0$ such that
+  \[
+    |f(t,c)| \geq m_{2M_0} \text{ on } E_{2M_0}.
+  \]
+
+  \item[(c)]
+  By (a)(b),
+  \[
+    |f(t,c)| > \min\{M_0,m_{2M_0}\} > 0 \text{ on } E.
+  \]
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Show that $\mathrm{Ind}(\gamma+c)$ is uniformly continuous.}
+  Since $[a,b]$ is compact and $\gamma'$ is continuous,
+  $|\gamma'| \leq M$ for some $M > 0$.
+  Hence for any $c_1, c_2 \in [0,\infty)$, we have
+  \begin{align*}
+    &\abs{ \mathrm{Ind}(\gamma+c_1) - \mathrm{Ind}(\gamma+c_2) } \\
+    =& \abs{ \frac{1}{2\pi i}\int_{a}^{b} \frac{(\gamma(t)+c_1)'}{\gamma(t)+c_1} dt
+      - \frac{1}{2\pi i}\int_{a}^{b} \frac{(\gamma(t)+c_2)'}{\gamma(t)+c_2} dt } \\
+    =& \abs{ \frac{1}{2\pi i}\int_{a}^{b}
+        \frac{\gamma'(t)(c_2-c_1)}{(\gamma(t)+c_1)(\gamma(t)+c_2)} dt } \\
+    \leq& \frac{1}{2\pi} \int_{a}^{b}
+        \frac{|\gamma'(t)|}{|(\gamma(t)+c_1)(\gamma(t)+c_2)|} |c_1-c_2|dt \\
+    \leq& \frac{(b-a)M}{2\pi m^2} |c_1-c_2|.
+  \end{align*}
+  Hence, $\mathrm{Ind}(\gamma+c)$ is uniformly continuous on $[0,\infty)$.
+
+\item[(5)]
+  \emph{Show that $\mathrm{Ind}(\gamma) = 0$.}
+  Since $\mathrm{Ind}(\gamma+c)$ is continuous (by (4)) and
+  $\mathrm{Ind}(\gamma+c) \in \mathbb{Z}$ (by Exercise 8.23),
+  $\mathrm{Ind}(\gamma+c)$ is constant.
+  \emph{It suffices to show that $\mathrm{Ind}(\gamma+c_0) = 0$ for some $c_0 \in [0,\infty)$.}
+  In fact,
+  \begin{align*}
+    \abs{ \mathrm{Ind}(\gamma+c) }
+    =& \abs{ \frac{1}{2\pi i}\int_{a}^{b} \frac{\gamma'(t)}{\gamma(t)+c} dt } \\
+    \leq& \frac{1}{2\pi} \int_{a}^{b} \frac{|\gamma'(t)|}{|\gamma(t)+c|} dt \\
+    \leq& \frac{1}{2\pi} \int_{a}^{b} \frac{|\gamma'(t)|}{|\gamma(t)|+c} dt \\
+    \leq& \frac{(b-a)M}{2\pi(m+c)}.
+  \end{align*}
+  Let $c \to \infty$ to get $\abs{ \mathrm{Ind}(\gamma+c) } \to 0$.
+  Hence, $\mathrm{Ind}(\gamma+c_0) = 0$ for some $c_0 \in [0,\infty)$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
