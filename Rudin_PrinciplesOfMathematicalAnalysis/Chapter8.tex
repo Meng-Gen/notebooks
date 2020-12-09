@@ -2825,7 +2825,145 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.26.}
-PLACEHOLDER. \\\\
+\emph{Let $\gamma$ be a closed curve in the complex plane (not necessarily differentiable)
+with parameter interval $[0,2\pi]$, such that $\gamma(t) \neq 0$ for every $t \in [0,2\pi]$.
+Choose $\delta > 0$ so that $|\gamma(t)| > \delta$ for all $t \in [0,2\pi]$.
+If $P_1$ and $P_2$ are trigonometric polynomials such that
+$|P_j(t)-\gamma(t)| < \frac{\delta}{4}$ ($j = 1, 2$)
+for all $t \in [0,2\pi]$ (their existence is assured by Theorem 8.15), prove that
+\[
+  \mathrm{Ind}(P_1) = \mathrm{Ind}(P_2)
+\]
+by applying Exercise 8.25.
+Define this common value to be $\mathrm{Ind}(\gamma)$.
+Prove that the statements of Exercises 8.24 and 8.25 hold without any
+differentiability assumption.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathrm{Ind}(P_1) = \mathrm{Ind}(P_2)$.}
+Since
+\begin{align*}
+  |P_1(t) - P_2(t)|
+  &\leq |P_1(t) - \gamma(t)| + |\gamma(t) - P_2(t)|
+  \leq \frac{\delta}{4} + \frac{\delta}{4}
+  = \frac{\delta}{2}, \\
+  |P_1(t)|
+  &\geq |\gamma(t)| - |\gamma(t) - P_1(t)|
+  \geq \delta - \frac{\delta}{4}
+  = \frac{3\delta}{4},
+\end{align*}
+we have
+\[
+  |P_1(t) - P_2(t)| \leq \frac{\delta}{2} < \frac{3\delta}{4} < |P_1(t)|.
+\]
+By Exercise 8.25, $\mathrm{Ind}(P_1) = \mathrm{Ind}(P_2)$.
+
+\item[(2)]
+\emph{Show that the new definition of $\mathrm{Ind}(\gamma)$
+is the same as Exercise 8.23 if $\gamma$ is differentiable.}
+Since
+\[
+  |P_j(t)-\gamma(t)|
+  < \frac{\delta}{4}
+  < \delta
+  < |\gamma(t)|,
+\]
+by Exercise 8.25 we have $\mathrm{Ind}(\gamma) = \mathrm{Ind}(P_j)$.
+
+\item[(3)]
+\emph{Show that the statements of Exercises 8.24 holds
+without any differentiability assumption.}
+  \begin{enumerate}
+  \item[(a)]
+    Note that in the argument of Exercise 8.24,
+    we never use the differentiability of $\gamma$ to get
+    \[
+      m = \inf_{(t,c) \in E} |\gamma(t)+c| > 0.
+    \]
+    where $E = [0,2\pi] \times [0,\infty)$.
+
+  \item[(b)]
+  Choose $\delta > 0$ so that $|\gamma(t)| > \delta$.
+  By Theorem 8.15, there is a trigonometric polynomial $P(t)$ such that
+  \[
+    |P(t) - \gamma(t)| < \frac{\min\{m, \delta\}}{4} < \frac{m}{4}.
+  \]
+  Hence, $\mathrm{Ind}(\gamma) = \mathrm{Ind}(P)$.
+
+  \item[(c)]
+  \emph{Show that $P(t)$ does not intersect the negative real axis.}
+  Given any $c \in [0,\infty)$, we have
+  \[
+    |P(t)+c|
+    \geq |\gamma(t)+c| - |\gamma(t)-P(t)|
+    \geq m - \frac{m}{4}
+    = \frac{3m}{4}
+    > 0.
+  \]
+
+  \item[(d)]
+  Apply Exercise 8.24 for $P(t)$ to get $\mathrm{Ind}(P) = 0$.
+  Therefore,
+  \[
+    \mathrm{Ind}(\gamma) = \mathrm{Ind}(P) = 0
+  \]
+  without any differentiability assumption about $\gamma$.
+  \end{enumerate}
+
+\item[(4)]
+\emph{Show that the statements of Exercises 8.25 holds
+without any differentiability assumption.}
+  \begin{enumerate}
+  \item[(a)]
+  Define $f(t) = |\gamma_1(t)| - |\gamma_1(t) - \gamma_2(t)| > 0$.
+  Since $f(t)$ is continuous on a compact set $[0,2\pi]$,
+  by Theorem 4.16 there exists $m > 0$ such that $f(t) \geq m$ for all $t \in [0,2\pi]$.
+  Hence
+  \[
+    |\gamma_1(t) - \gamma_2(t)| \leq |\gamma_1(t)| - m
+  \]
+  where $m > 0$ for all $t \in [0,2\pi]$.
+
+  \item[(b)]
+  Choose $\delta_j$ ($j=1,2$) so that $|\gamma_j(t)| > \delta$
+  for all $t \in [0,2\pi]$.
+  By Theorem 8.15, there are trigonometric polynomials $P_j(t)$ such that
+  \[
+    |P_j(t) - \gamma_j(t)| < \frac{\min\{m, \delta_j\}}{4} < \frac{m}{4}
+  \]
+  for all $t \in [0,2\pi]$.
+  Hence, $\mathrm{Ind}(\gamma_j) = \mathrm{Ind}(P_j)$.
+
+  \item[(c)]
+  \emph{Show that $|P_1(t)-P_2(t)| < |P_1(t)|$ for all $t \in [0,2\pi]$.}
+  Since
+  \begin{align*}
+    |P_1(t)-P_2(t)|
+    \leq& |P_1(t)-\gamma_1(t)| + |\gamma_1(t)-\gamma_2(t)| + |\gamma_2(t)-P_2(t)| \\
+    <& \frac{m}{4} + |\gamma_1(t)| - m + \frac{m}{4} \\
+    =& |\gamma_1(t)| - \frac{m}{2}, \\
+    |P_1(t)|
+    \geq& |\gamma_1(t)| - |\gamma_1(t)-P_1(t)| \\
+    >& |\gamma_1(t)| - \frac{m}{4},
+  \end{align*}
+  we have
+  \[
+    |P_1(t)-P_2(t)| < |\gamma_1(t)| - \frac{m}{2} < |\gamma_1(t)| - \frac{m}{4} < |P_1(t)|.
+  \]
+
+  \item[(d)]
+  Apply Exercise 8.25 for $P_1(t)$ and $P_2(t)$ to get
+  $\mathrm{Ind}(P_1) = \mathrm{Ind}(P_2)$.
+  Therefore,
+  \[
+    \mathrm{Ind}(\gamma_1) = \mathrm{Ind}(P_1) = \mathrm{Ind}(P_2) = \mathrm{Ind}(\gamma_2)
+  \]
+  without any differentiability assumption about $\gamma_j$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
