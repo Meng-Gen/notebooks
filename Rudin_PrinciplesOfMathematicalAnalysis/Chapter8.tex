@@ -2760,7 +2760,63 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.25.}
-PLACEHOLDER. \\\\
+\emph{Suppose $\gamma_1$ and $\gamma_2$ are curves as in Exercise 8.23,
+and
+\[
+  \abs{ \gamma_1(t) - \gamma_2(t) } < \abs{ \gamma_1(t) }
+  \:\:\:\:\:\:\:\: (a \leq t \leq b).
+\]
+Prove that $\mathrm{Ind}(\gamma_1) = \mathrm{Ind}(\gamma_2)$.
+(Hint: Put $\gamma = \frac{\gamma_2}{\gamma_1}$.
+Then $|1-\gamma| < 1$, hence $\mathrm{Ind}(\gamma) = 0$, by Exercise 8.24.
+Also,
+\[
+  \frac{\gamma'}{\gamma} = \frac{\gamma_2'}{\gamma_2} - \frac{\gamma_1'}{\gamma_1}.)
+\]} \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+  Put $\gamma = \frac{\gamma_2}{\gamma_1}$.
+  It is well-defined since $\gamma_1(t) \neq 0$.
+  Then
+  \[
+    \frac{\gamma'}{\gamma}
+    = \frac{\frac{\gamma_1'\gamma_2-\gamma_1\gamma_2'}{\gamma_1^2}}{\frac{\gamma_2}{\gamma_1}}
+    = \frac{\gamma_1'\gamma_2-\gamma_1\gamma_2'}{\gamma_1\gamma_2}
+    = \frac{\gamma_2'}{\gamma_2} - \frac{\gamma_1'}{\gamma_1}.
+  \]
+
+\item[(2)]
+Since
+\[
+  |1-\gamma|
+  = \abs{ 1 - \frac{\gamma_2}{\gamma_1} }
+  = \abs{ \frac{\gamma_1 - \gamma_2}{\gamma_1} }
+  = \frac{|\gamma_1 - \gamma_2|}{|\gamma_1|}
+  < 1,
+\]
+the range of $\gamma$ does not intersect the negative real axis.
+(If not, there were some $t_0 \in [a,b]$ such that $\gamma(t_0) \leq 0$.
+Thus $|1-\gamma(t_0)| \geq 1$, contrary to the assumption.)
+By Exercise 8.24, $\mathrm{Ind}(\gamma) = 0$.
+
+\item[(3)]
+Since
+\begin{align*}
+  \mathrm{Ind}(\gamma)
+  &= \frac{1}{2\pi i}\int_{a}^{b} \frac{\gamma'(t)}{\gamma(t)} dt \\
+  &= \frac{1}{2\pi i}\int_{a}^{b}
+      \left( \frac{\gamma_2'(t)}{\gamma_2(t)} - \frac{\gamma_1'(t)}{\gamma_1(t)} \right) dt
+    &((1)) \\
+  &= \frac{1}{2\pi i}\int_{a}^{b} \frac{\gamma_2'(t)}{\gamma_2(t)} dt
+    - \frac{1}{2\pi i}\int_{a}^{b} \frac{\gamma_1'(t)}{\gamma_1(t)} dt \\
+  &= \mathrm{Ind}(\gamma_2) - \mathrm{Ind}(\gamma_1),
+\end{align*}
+$\mathrm{Ind}(\gamma) = 0$ implies
+$\mathrm{Ind}(\gamma_1) = \mathrm{Ind}(\gamma_2)$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
