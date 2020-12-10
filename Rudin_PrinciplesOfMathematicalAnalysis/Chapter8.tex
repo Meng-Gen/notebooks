@@ -2073,7 +2073,121 @@ and we can continue estimating two integrals individually as the textbook did. \
 
 
 \textbf{Exercise 8.17.}
-PLACEHOLDER. \\\\
+\emph{Assume $f$ is bounded and monotonic on $[-\pi,\pi)$
+with Fourier coefficients $c_n$,
+as given by
+\[
+  c_n = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-inx} dx.
+\]}
+\begin{enumerate}
+\item[(a)]
+\emph{Use Exercise 6.17 to prove that $\{nc_n\}$ is a bounded sequence.}
+\item[(b)]
+\emph{Combine (a) with Exercise 8.16 and with Exercise 3.14(e),
+to conclude that
+\[
+  \lim_{N \to \infty} s_N(f;x) = \frac{1}{2}[f(x+)+f(x-)]
+\]
+for every $x$.}
+\item[(c)]
+\emph{Assume only that $f \in \mathscr{R}$ on $[-\pi,\pi]$ and
+that $f$ monotonic in some segment $(\alpha,\beta) \subseteq [-\pi,\pi]$.
+Prove that the conclusion of (b) holds for every $x \in (\alpha,\beta)$.
+(This is an application of the localization theorem.)} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Since $f$ is bounded and monotonic on $[-\pi,\pi)$,
+  we might extend $f$ to $[-\pi,\pi]$ by letting $f(\pi) = f(\pi-) < 0$ additionally.
+  Note that $f \in \mathscr{R}$ on $[-\pi,\pi]$ (Theorem 6.9)
+  and $e^{-inx} \in \mathscr{R}$ on $[-\pi,\pi]$.
+  Thus $c_n$ is well-defined (Theorem 6.13).
+
+\item[(2)]
+  Let $\alpha(x) = f(x)$, $g(x) = e^{-inx}$ and $G(x) = \frac{1}{-in}e^{-inx}$.
+  Since $G'(x) = g(x)$, by Exercise 6.17 we have
+  \begin{align*}
+    nc_n
+    &= \frac{n}{2\pi} \int_{-\pi}^{\pi} f(x)e^{-inx} dx \\
+    &= \frac{n}{2\pi} \left[ \frac{1}{-in}e^{-inx}f(x) \right]_{x=-\pi}^{x=\pi}
+      - \frac{n}{2\pi} \int_{-\pi}^{\pi} \frac{1}{-in}e^{-inx} dx \\
+    &= -\frac{1}{2\pi i} \left[ e^{-in\pi}f(\pi) - e^{in\pi}f(-\pi) \right].
+  \end{align*}
+  So
+  \begin{align*}
+    |nc_n|
+    &\leq \frac{1}{2\pi} (|f(\pi)| + |f(-\pi)|)
+  \end{align*}
+  is bounded for every integer $n$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Given any $x \in [-\pi,\pi)$.
+  Since $f$ is bounded and monotonic on $[-\pi,\pi)$,
+  $f(x+)$ and $f(x-)$ exist.
+  By Exercise 8.16,
+  \[
+    \lim_{N \to \infty} \sigma_N(f;x) = \frac{1}{2}[f(x+)+f(x-)].
+  \]
+
+\item[(2)]
+  By (a) and Exercise 3.14(e),
+  \[
+    \lim_{N \to \infty} s_N(f;x)
+    = \lim_{N \to \infty} \sigma_N(f;x)
+    = \frac{1}{2}[f(x+)+f(x-)].
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  It is nature to define a monotonic function $g(x)$ on $[-\pi,\pi]$
+  by
+  \begin{equation*}
+    g(x) =
+      \begin{cases}
+        f(\alpha) & (x \leq \alpha), \\
+        f(x)      & (\alpha < x < \beta), \\
+        f(\beta)  & (x \geq \beta).
+      \end{cases}
+  \end{equation*}
+
+  $g(x)$ is well-defined.
+  ($f \in \mathscr{R}$
+  $\Longrightarrow$ $f$: bounded
+  $\Longrightarrow$ $f(\alpha), f(\beta) < \infty$.)
+
+\item[(2)]
+  Since $f$ is monotonic on $(\alpha,\beta)$,
+  $g(x)$ is bounded and monotonic.
+  Thus by (b),
+  \[
+    \lim_{N \to \infty} s_N(g;x) = \frac{1}{2}[g(x+)+g(x-)].
+  \]
+  for every $x \in [-\pi,\pi]$.
+
+\item[(3)]
+  $g(x) = f(x)$,
+  $g(x-) = f(x-)$,
+  and $g(x+) = f(x+)$ for $x \in (\alpha,\beta)$ by definition.
+  Hence by (2) we have,
+  \[
+    \lim_{N \to \infty} s_N(f;x) = \frac{1}{2}[f(x+)+f(x-)].
+  \]
+  for every $x \in (\alpha,\beta)$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
