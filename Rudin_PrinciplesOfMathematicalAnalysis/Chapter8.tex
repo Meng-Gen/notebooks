@@ -2082,7 +2082,110 @@ PLACEHOLDER. \\\\
 
 
 \textbf{Exercise 8.18.}
-PLACEHOLDER. \\\\
+\emph{Define
+\begin{align*}
+  f(x) &= x^3 - \sin^2 x \tan x \\
+  g(x) &= 2x^2 - \sin^2 x - x \tan x.
+\end{align*}
+Find out, for each of these two functions, whether it is positive or negative
+for all $x \in (0, \frac{\pi}{2})$,
+or whether it changes sign.
+Prove your answer.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that
+\[
+  (\tan^n x)' = n \tan^{n-1} x + n \tan^{n+1} x
+\]
+if $n$ is a positive integer.}
+Induction on $n$.
+The case $n=1$ is true since
+\[
+  (\tan x)' = \sec^2 x = 1 + \tan^2 x.
+\]
+Assume the induction hypothesis that the case $n=k$ holds.
+It follows that
+\begin{align*}
+  (\tan^{k+1} x)'
+  &= (\tan^{k} x \cdot \tan x)' \\
+  &= (\tan^{k} x)' \cdot \tan x + \tan^{k} x \cdot (\tan x)' \\
+  &= (k \tan^{k-1} x + k \tan^{k+1} x) \tan x
+    + \tan^{k} x \cdot (1 + \tan^2 x) \\
+  &= k \tan^{k} x + k \tan^{k+2} x + \tan^{k} x + \tan^{k+2} x \\
+  &= (k+1)\tan^{k} x + (k+1)\tan^{k+2} x.
+\end{align*}
+Since both the base case and the inductive step have been proved as true,
+by mathematical induction the result holds for every positive integer $n$.
+
+\item[(2)]
+\emph{Show that $f(x) < 0$ if $x \in (0, \frac{\pi}{2})$.}
+  \begin{enumerate}
+    \item[(a)]
+      Write
+      \begin{align*}
+        f(x)
+        &= x^3 + (\cos^2 x-1) \tan x \\
+        &= x^3 + \cos^2 x \tan x - \tan x\\
+        &= x^3 + \cos x \sin x - \tan x \\
+        &= x^3 + \frac{1}{2} \sin(2x) - \tan x.
+      \end{align*}
+      Hence,
+      \begin{align*}
+        f^{(1)}(x) =& 3x^2 + \cos(2x) - (1 + \tan^2 x). \\
+        f^{(2)}(x) =& 6x - 2\sin(2x) - (2 \tan x + 2\tan^3 x). \\
+        f^{(3)}(x) =& 6 - 4\cos(2x) - (2 + 8 \tan^2 x + 6\tan^4 x) \\
+        f^{(4)}(x) =& 8\sin(2x) - (16\tan x + 40 \tan^3 x + 24 \tan^5 x). \\
+        f^{(5)}(x) =& 16\cos(2x) - (16 + 136\tan^2 x + 240 \tan^4 x + 120 \tan^6 x). \\
+        f^{(6)}(x) =& -32\sin(2x) - (272\tan x + 1232\tan^3 x + 1680\tan^5 x - 720\tan^7 x).
+      \end{align*}
+
+    \item[(b)]
+      Clearly, all $f^{(j)}(0) = 0$ $(j=0,1,2,3,4,5,6)$.
+
+    \item[(c)]
+      Since $f^{(6)}(x) < 0$ for $x \in (0, \frac{\pi}{2})$,
+      $f^{(5)}(x)$ is strictly monotonically decreasing (denoted by $\searrow$).
+
+    \item[(d)]
+      Since $f^{(5)}(0) = 0$ and $f^{(5)} \searrow$,
+      $f^{(5)}(x) < 0$ for $x \in (0, \frac{\pi}{2})$.
+      Repeat this argument for $f^{(4)}$, $f^{(3)}$, $f^{(2)}$ and $f^{(1)}$
+      to get $f(x) < 0$ for $x \in (0, \frac{\pi}{2})$.
+  \end{enumerate}
+
+\item[(3)]
+\emph{Show that $g(x) < 0$ if $x \in (0, \frac{\pi}{2})$.}
+  \begin{enumerate}
+    \item[(a)]
+      \begin{align*}
+        g(x) =& 2x^2 - \sin^2 x - x \tan x. \\
+        g^{(1)}(x) =& 3x - \sin(2x) - \tan x - x\tan^2 x. \\
+        g^{(2)}(x) =& 2 - 2\cos(2x) - 2 \tan^2 x - x(2 \tan x + 2\tan^3 x). \\
+        g^{(3)}(x) =& 4\sin(2x) - (6\tan x + 6\tan^3 x) \\
+          &- x(2 + 8 \tan^2 x + 6\tan^4 x). \\
+        g^{(4)}(x) =& 8\cos(2x) - (8 + 32 \tan^2 x + 24\tan^4 x) \\
+          &- x(16\tan x + 40 \tan^3 x + 24 \tan^5 x). \\
+        g^{(5)}(x) =& -16\sin(2x) - (80 \tan x + 200\tan^3 x + 120\tan^5 x) \\
+          &- x(16 + 136\tan^2 x + 240 \tan^4 x + 120 \tan^6 x).
+      \end{align*}
+
+    \item[(b)]
+      Clearly, all $g^{(j)}(0) = 0$ $(j=0,1,2,3,4,5)$.
+
+    \item[(c)]
+      Since $g^{(5)}(x) < 0$ for $x \in (0, \frac{\pi}{2})$,
+      $g^{(4)}(x)$ is strictly monotonically decreasing (denoted by $\searrow$).
+
+    \item[(d)]
+      Since $g^{(4)}(0) = 0$ and $g^{(4)} \searrow$,
+      $g^{(4)}(x) < 0$ for $x \in (0, \frac{\pi}{2})$.
+      Repeat this argument for $g^{(3)}$, $g^{(2)}$ and $g^{(1)}$
+      to get $g(x) < 0$ for $x \in (0, \frac{\pi}{2})$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
