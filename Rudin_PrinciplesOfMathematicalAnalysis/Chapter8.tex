@@ -1644,13 +1644,14 @@ $\Box$ \\\\
 
 \textbf{Exercise 8.13.}
 \emph{Put $f(x) = x$ if $0 \leq x < 2 \pi$, and apply Parseval's theorem to conclude that
-$$\sum_{n = 1}^{\infty} \frac{1}{n^2} = \frac{\pi}{6}.$$}
+$$\sum_{n = 1}^{\infty} \frac{1}{n^2} = \frac{\pi}{6}.$$} \\
+
 \emph{Proof.}
-\begin{align*}
-c_0
-&= \frac{1}{2 \pi} \int_{0}^{2 \pi} x dx \\
-&= \pi,
-\end{align*}
+\[
+  c_0
+  = \frac{1}{2 \pi} \int_{0}^{2 \pi} x dx
+  = \pi.
+\]
 For $n \neq 0$,
 \begin{align*}
 c_n
@@ -1661,7 +1662,7 @@ c_n
 &= \frac{i}{n}.
 \end{align*}
 Since $f(x)$ is a Riemann-integrable function with period $2 \pi$,
-by Parseval's theorem
+by Parseval's theorem (Theorem 8.16)
 $$\frac{1}{2 \pi} \int_{-\pi}^\pi |f(x)|^2 dx = \sum_{-\infty}^{\infty} |c_n|^2.$$
 So
 $$\frac{1}{2 \pi} \cdot \frac{(2 \pi)^3}{3}
@@ -1689,7 +1690,90 @@ Might get
 
 
 \textbf{Exercise 8.14.}
-PLACEHOLDER. \\\\
+\emph{If $f(x)=(\pi-|x|)^2$ on $[-\pi,\pi]$, prove that
+\[
+  f(x) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4}{n^2} \cos(nx)
+\]
+and deduce that
+\[
+  \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6},
+  \:\:\:\:\:\:\:\:
+  \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{\pi^4}{90}.
+\]
+(A recent article by E. L. Stark contains many references to series of the form
+$\sum n^{-s}$, where $s$ is a positive integer.
+See Math. Mag., vol. 47, 1974, pp. 197-202.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\begin{equation*}
+  c_n = \frac{1}{2 \pi} \int_{-\pi}^{\pi} (\pi - |x|)^2 e^{-inx} dx =
+    \begin{cases}
+      \frac{\pi^2}{3} & (n = 0), \\
+      \frac{2}{n^2} & (n \neq 0).
+    \end{cases}
+\end{equation*}
+Hence
+\[
+  f(x)
+  \sim
+  \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{2}{n^2}(e^{inx} + e^{-inx})
+  =
+  \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4}{n^2} \cos(nx).
+\]
+
+\item[(2)]
+\emph{Show that $f(x) = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4}{n^2} \cos(nx)$.}
+By Theorem 8.14,
+it suffices to show that there are constants $\delta > 0$ and $M < \infty$ such that
+\[
+  |f(x+t) - f(x)| \leq M|t| \text{ whenever } |t| < \delta.
+\]
+By the periodicity of $f(x)$, we might take both $x$ and $x+t$ in $[-\pi,\pi]$
+(which implies that $|t| \leq 2\pi$).
+Hence,
+\begin{align*}
+  |f(x+t) - f(x)|
+  &= |(\pi-|x+t|)^2 - (\pi-|x|)^2| \\
+  &= \abs{ 2\pi-|x|-|x+t| } \cdot \abs{ |x|-|x+t| } \\
+  &\leq 2\pi |t|.
+\end{align*}
+
+\item[(3)]
+\emph{Show that $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$.}
+Take $x = 0 \in [-\pi,\pi]$ in
+\[
+  (\pi-|x|)^2 = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4}{n^2} \cos(nx)
+\]
+to get
+\[
+  \pi^2 = \frac{\pi^2}{3} + \sum_{n=1}^{\infty} \frac{4}{n^2},
+\]
+or
+\[
+  \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}.
+\]
+
+\item[(4)]
+\emph{Show that $\sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{\pi^4}{90}$.}
+Since $f(x)$ is a Riemann-integrable function with period $2 \pi$,
+by Parseval's theorem (Theorem 8.16)
+\[
+  \frac{1}{2 \pi} \int_{-\pi}^\pi |f(x)|^2 dx = \sum_{-\infty}^{\infty} |c_n|^2.
+\]
+So
+\[
+  \frac{1}{2\pi} \cdot \frac{2\pi^5}{5}
+  = \left( \frac{\pi^2}{3} \right)^2
+    + 2 \sum_{n=1}^{\infty} \left( \frac{2}{n^2} \right)^2,
+\]
+or
+\[
+  \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{\pi^4}{90}.
+\]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
