@@ -2849,7 +2849,7 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.23.}
-\emph{Let $\gamma$ be a continuously differentiable \textbf{closed} curve in the complex plain,
+\emph{Let $\gamma$ be a continuously differentiable \textbf{closed} curve in the complex plane,
 with parameter interval $[a,b]$,
 and assume that $\gamma(t) \neq 0$ for every $t \in [a,b]$.
 Define the \textbf{index} of $\gamma$ to be
@@ -3037,8 +3037,10 @@ whenever $c > 2M_0$.}
 
 \item[(5)]
   \emph{Show that $\mathrm{Ind}(\gamma) = 0$.}
-  Since $\mathrm{Ind}(\gamma+c)$ is continuous (by (4)) and
-  $\mathrm{Ind}(\gamma+c) \in \mathbb{Z}$ (by Exercise 8.23),
+
+  Since $[0,\infty)$ is connected, by (4) with Theorem 4.22
+  the image of $\mathrm{Ind}(\gamma+c)$ is connected.
+  Since the image of $\mathrm{Ind}(\gamma+c)$ is contained in $\mathbb{Z}$ (by Exercise 8.23),
   $\mathrm{Ind}(\gamma+c)$ is constant.
   \emph{It suffices to show that $\mathrm{Ind}(\gamma+c_0) = 0$ for some $c_0 \in [0,\infty)$.}
   In fact,
@@ -3274,7 +3276,148 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.27.}
-PLACEHOLDER. \\\\
+\emph{Let $f$ be a continuous complex function defined in the complex plane.
+Suppose there is a positive integer $n$ and a complex number $c \neq 0$ such that
+\[
+  \lim_{|z| \to \infty} z^{-n} f(z) = c.
+\]
+Prove that $f(z) = 0$ for at least one complex number $z$.
+Note that this is a generalization of Theorem 8.8.
+(Hint: Assume $f(z) \neq 0$ for all $z$,
+define
+\[
+  \gamma_r(t) = f(re^{it})
+\]
+for $0 \leq r < \infty$, $0 \leq t \leq 2\pi$,
+and prove the following statements about the curves $\gamma_r(t)$:}
+\begin{enumerate}
+  \item[(a)]
+  \emph{$\mathrm{Ind}(\gamma_0) = 0$.}
+
+  \item[(b)]
+  \emph{$\mathrm{Ind}(\gamma_r) = n$ for all sufficiently larger $r$.}
+
+  \item[(c)]
+  \emph{$\mathrm{Ind}(\gamma_r)$ is a continuous function of $r$, on $[0,\infty)$.}
+\end{enumerate}
+\emph{[In (b) and (c), use the last part of Exercise 8.26.]}
+\emph{Show that (a), (b), and (c) are contradictory, since $n > 0$).} \\
+
+\emph{Proof of (a).}
+\begin{align*}
+  \mathrm{Ind}(\gamma_0)
+  &= \mathrm{Ind}(f(0))
+    &\text{(Well-defined)} \\
+  &= \frac{1}{2\pi i}\int_{0}^{2\pi} \frac{f(0)'}{f(0)} dt
+    &\text{($f(0)$ is differentiable)} \\
+  &= \frac{1}{2\pi i}\int_{0}^{2\pi} 0 dt
+    &\text{($f(0)$ is constant)} \\
+  &= 0.
+\end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(1)]
+  Take $z = re^{it}$ in $\lim_{|z| \to \infty} z^{-n} f(z) = c$
+  to get
+  \[
+    c
+    = \lim_{r \to \infty} (re^{it})^{-n} f(re^{it})
+    = \lim_{r \to \infty} \frac{\gamma_r(t)}{r^n e^{int}}.
+  \]
+
+  Thus, for $|c| > 0$, there exists $M > 0$
+  such that
+  \[
+    \abs{ \frac{\gamma_r(t)}{r^n e^{int}} - c } < |c|
+    \text{ whenever } r \geq M.
+  \]
+  Hence, for some sufficiently large $r \geq M$ we have
+  \begin{align*}
+    &\abs{ \frac{\gamma_r(t)}{r^n e^{int}} - c } < |c| \\
+    \Longrightarrow&
+    \abs{ \frac{\gamma_r(t)}{r^n e^{int}} - c }|r^n e^{int}| < |c||r^n e^{int}|
+      &(|r^n e^{int}| \neq 0) \\
+    \Longrightarrow&
+    | \gamma_r(t) - cr^n e^{int} | < |cr^n e^{int}|.
+  \end{align*}
+
+  \item[(2)]
+  Let $\gamma(t) = cr^n e^{int}$ defined for $0 \leq r < \infty$, $0 \leq t \leq 2\pi$.
+  $\gamma$ is a differentiable closed curve in the complex plane.
+  By the last part of Exercise 8.26,
+  \begin{align*}
+    \mathrm{Ind}(\gamma_r)
+    &= \mathrm{Ind}(\gamma) \\
+    &= \frac{1}{2\pi i}\int_{0}^{2\pi} \frac{\gamma'}{\gamma} dt \\
+    &= \frac{1}{2\pi i}\int_{0}^{2\pi} \frac{in cr^n e^{int}}{cr^n e^{int}} dt \\
+    &= \frac{1}{2\pi i}\int_{0}^{2\pi} in dt \\
+    &= n.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $m = \inf_{t \in [0, 2\pi]} |\gamma_r(t)| > 0$
+  for any given $r \in [0,\infty)$.}
+  Since
+  $t \mapsto re^{it} \mapsto f(re^{it}) = \gamma_r(t) \mapsto |\gamma_r(t)|$
+  is a composition of three continuous functions,
+  $t \mapsto |\gamma_r(t)|$ is a continuous real function (Theorem 4.7).
+  Moreover, since $[0,2\pi]$ is a compact subset of $\mathbb{R}$,
+  and $|\gamma_r(t)| \neq 0$,
+  \[
+    m = \inf_{t \in [0, 2\pi]} |\gamma_r(t)| > 0
+  \]
+  (Theorem 4.16).
+
+  \item[(2)]
+  \emph{Show that there exists $\delta > 0$ such that
+  $|\gamma_r(t) - \gamma_s(t)| < |\gamma_r(t)|$
+  whenever $|r-s| < \delta$ (with $r, s \in [0,\infty)$).}
+  Similar to (1), $r \mapsto \gamma_r(t)$ is also continuous.
+  So given any $r \in [0,\infty)$, for $m > 0$ there exists $\delta > 0$
+  such that
+  \[
+    |\gamma_r(t) - \gamma_s(t)| < m
+  \]
+  whenever $|r-s| < \delta$ (with $s \in [0,\infty)$).
+  By (1),
+  \[
+    |\gamma_r(t) - \gamma_s(t)| < m \leq |\gamma_r(t)|.
+  \]
+  whenever $|r-s| < \delta$ (with $s \in [0,\infty)$).
+
+  \item[(3)]
+  \emph{Show that $\mathrm{Ind}(\gamma_r)$ is continuous on $[0,\infty)$.}
+  Given any $r \in [0,\infty)$.
+  By the last part of Exercise 8.26, there exists $\delta > 0$ such that
+  \[
+    \mathrm{Ind}(\gamma_r) = \mathrm{Ind}(\gamma_s)
+  \]
+  whenever $|r-s| < \delta$ (with $r, s \in [0,\infty)$).
+  Hence $\mathrm{Ind}(\gamma_r)$ is continuous.
+  Since $r \in [0,\infty)$ is arbitrary,
+  $\mathrm{Ind}(\gamma_r)$ is continuous on $[0,\infty)$
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of contradiction among (a)(b)(c).}
+Since $[0,\infty)$ is connected, by (c) with Theorem 4.22
+the image of $\mathrm{Ind}(\gamma_r)$ is connected.
+Since the image of $\mathrm{Ind}(\gamma_r)$ is contained in $\mathbb{Z}$,
+$\mathrm{Ind}(\gamma_r)$ is constant, contrary to (a)(b) since $n > 0$ or $n \neq 0$.
+Therefore, $f(z) = 0$ for some $z \in \mathbb{C}$.
+$\Box$ \\\\
 
 
 
@@ -3283,6 +3426,8 @@ PLACEHOLDER. \\\\
 
 
 \textbf{Exercise 8.28.}
+\emph{Let $\overline{D}$ ...}
+
 PLACEHOLDER. \\\\
 
 
@@ -3291,7 +3436,16 @@ PLACEHOLDER. \\\\
 
 
 
-\textbf{Exercise 8.29.}
+\textbf{Exercise 8.29 (Brouwer's fixed-point theorem).}
+\emph{Prove that every continuous mapping $f$ of $\overline{D}$ into $\overline{D}$
+has a fixed point in $\overline{D}$.
+(This is the 2-dimensional case of Brouwer's fixed-point theorem.)
+(Hint: Assume $f(z) \neq z$ for every $z \in \overline{D}$ ...)} \\
+
+
+
+
+
 PLACEHOLDER. \\\\
 
 
