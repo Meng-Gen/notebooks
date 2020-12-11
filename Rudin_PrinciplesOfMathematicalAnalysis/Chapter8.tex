@@ -3383,7 +3383,8 @@ $\Box$ \\
   $|\gamma_r(t) - \gamma_s(t)| < |\gamma_r(t)|$
   whenever $|r-s| < \delta$ (with $r, s \in [0,\infty)$).}
   Similar to (1), $r \mapsto \gamma_r(t)$ is also continuous.
-  So given any $r \in [0,\infty)$, for $m > 0$ there exists $\delta > 0$
+  So given any $r \in [0,\infty)$,
+  for $\varepsilon = m > 0$ there exists $\delta > 0$
   such that
   \[
     |\gamma_r(t) - \gamma_s(t)| < m
@@ -3426,9 +3427,145 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 8.28.}
-\emph{Let $\overline{D}$ ...}
+\emph{Let $\overline{D}$ be the closed unit disc in the complex plane.
+(Thus $z \in \overline{D}$ if and only if $|z| \leq 1$.)
+Let $g$ be a continuous mapping of $\overline{D}$ into the unit circle $T$.
+(Thus $|g(z)| = 1$ for every $z \in \overline{D}$.)
+Prove that $g(z)=-z$ for at least one $z \in T$.
+(Hint:
+For $0 \leq r \leq 1$, $0 \leq t \leq 2\pi$,
+put
+\[
+  \gamma_r(t) = g(re^{it}),
+\]
+and put $\psi(t) = e^{-it} \gamma_1(t)$.
+If $g(z) \neq -z$ for every $z \in T$, then $\psi(t) \neq -1$ for every $t \in [0,2\pi]$.
+Hence $\mathrm{Ind}(\psi) = 0$, by Exercise 8.24 and 8.26.
+It follows that $\mathrm{Ind}(\gamma_1) = 1$.
+But $\mathrm{Ind}(\gamma_0) = 0$.
+Derive a contradiction, as in Exercise 8.27.)} \\
 
-PLACEHOLDER. \\\\
+\emph{Proof (Hint).}
+\begin{enumerate}
+  \item[(1)]
+  For $0 \leq r \leq 1$, $0 \leq t \leq 2\pi$,
+  put
+  \[
+    \gamma_r(t) = g(re^{it}),
+  \]
+  and put $\psi(t) = e^{-it} \gamma_1(t) = e^{-it} g(e^{it})$.
+  Clearly, $\psi$ is a continuous closed curve in $\mathbb{C}$
+  and the image of $\psi$ is contained in $T$.
+  Especially $\psi(t) \neq 0$ for all $t \in [0,2\pi]$.
+
+  \item[(2)]
+  \emph{Show that $\mathrm{Ind}(\psi) = 0$.}
+  (Reductio ad absurdum)
+  Assume $g(z) \neq -z$ for all $z \in T$.
+  Thus $\psi(t) \neq -1$ for every $t \in [0,2\pi]$.
+  So that the range of $\psi$ does not intersect the negative real axis.
+  By the last part of Exercise 8.26,
+  \[
+    \mathrm{Ind}(\psi) = 0.
+  \]
+
+  \item[(3)]
+  \emph{Show that $\mathrm{Ind}(\gamma_0) = 0$.}
+  Similar to Exercise 8.27(a).
+  \begin{align*}
+  \mathrm{Ind}(\gamma_0)
+  &= \mathrm{Ind}(g(0))
+    &\text{(Well-defined)} \\
+  &= \frac{1}{2\pi i}\int_{0}^{2\pi} \frac{g(0)'}{g(0)} dt
+    &\text{($g(0)$ is differentiable)} \\
+  &= \frac{1}{2\pi i}\int_{0}^{2\pi} 0 dt
+    &\text{($g(0)$ is constant)} \\
+  &= 0.
+  \end{align*}
+
+  \item[(4)]
+  \emph{Show that $\mathrm{Ind}(\gamma_1) = 1$.}
+  \begin{enumerate}
+    \item[(a)]
+    By the first part of Exercise 8.26, we choose $\delta > 0$
+    so that $|\psi(t)| > \delta$ for all $t \in [0,2\pi]$.
+    There exists a trigonometric polynomial $P(t)$
+    such that
+    \[
+      |P(t) - \psi(t)| < \frac{\delta}{4}
+      \:\:\:\:\:\:\:\:
+      (t \in [0,2\pi]).
+    \]
+    Here
+    \[
+      \mathrm{Ind}(P) = \mathrm{Ind}(\psi) = 0.
+    \]
+
+    \item[(b)]
+    Write $Q(t) = e^{it}P(t)$.
+    So that
+    \begin{align*}
+      |Q(t) - \gamma_1(t)|
+      &= |e^{it}P(t) - e^{it}\psi(t)| \\
+      &= |e^{it}||P(t) - \psi(t)| \\
+      &< \frac{\delta}{4}.
+    \end{align*}
+    Since $Q(t)$ is differentiable,
+    as the argument in Exercise 8.26, we have
+    \[
+      \mathrm{Ind}(Q) = \mathrm{Ind}(\gamma_1).
+    \]
+
+    \item[(c)]
+    As the hint in Exercise 8.25, we have
+    \[
+      \frac{Q'}{Q} = \frac{(e^{it})'}{e^{it}} + \frac{P'}{P}
+    \]
+    and thus
+    \[
+      \mathrm{Ind}(Q) = 1 + \mathrm{Ind}(P) = 1.
+    \]
+    (the second part of Exercise 8.23), or $\mathrm{Ind}(\gamma_1) = 1$.
+  \end{enumerate}
+
+  \item[(5)]
+  \emph{Show that $\mathrm{Ind}(\gamma_r)$ is a continuous function of $r$, on $[0,1]$.}
+  Similar to Exercise 8.27(c).
+  \begin{enumerate}
+    \item[(a)]
+    Since $r \mapsto re^{it} \mapsto g(re^{it}) = \gamma_r(t)$
+    is a composition of two continuous functions,
+    $r \mapsto \gamma_r(t)$ is a continuous function (Theorem 4.7).
+    So given any $r \in [0,1]$,
+    for $\varepsilon = \frac{64}{89} > 0$,
+    there exists $\delta' > 0$ such that
+    \[
+      |\gamma_r(t) - \gamma_s(t)| < \frac{64}{89}
+    \]
+    whenever $|r-s| < \delta'$ (with $s \in [0,1]$).
+    By $|\gamma_r(t)| = |g(re^{it})| = 1$,
+    \[
+      |\gamma_r(t) - \gamma_s(t)| < \frac{64}{89} < 1 = |\gamma_r(t)|
+    \]
+    whenever $|r-s| < \delta'$ (with $s \in [0,1]$).
+
+    \item[(b)]
+    By the last part of Exercise 8.26, there exists $\delta' > 0$ such that
+    \[
+      \mathrm{Ind}(\gamma_r) = \mathrm{Ind}(\gamma_s)
+    \]
+    whenever $|r-s| < \delta'$ (with $s \in [0,1]$).
+    Hence $\mathrm{Ind}(\gamma_r)$ is continuous.
+  \end{enumerate}
+
+  \item[(6)]
+  Since $[0,1]$ is connected, by (c) with Theorem 4.22
+  the image of $\mathrm{Ind}(\gamma_r)$ is connected.
+  Since the image of $\mathrm{Ind}(\gamma_r)$ is contained in $\mathbb{Z}$,
+  $\mathrm{Ind}(\gamma_r)$ is constant, contrary to (3)(4) since $0 \neq 1$.
+  Therefore, $g(z) = -z$ for some $z \in T$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -3440,9 +3577,24 @@ PLACEHOLDER. \\\\
 \emph{Prove that every continuous mapping $f$ of $\overline{D}$ into $\overline{D}$
 has a fixed point in $\overline{D}$.
 (This is the 2-dimensional case of Brouwer's fixed-point theorem.)
-(Hint: Assume $f(z) \neq z$ for every $z \in \overline{D}$ ...)} \\
+(Hint: Assume $f(z) \neq z$ for every $z \in \overline{D}$.
+Associate to each $z \in \overline{D}$ the point $g(z) \in T$
+which lies on the ray that starts at $f(z)$ and passes through $z$.
+Then $g$ maps $\overline{D}$ into $T$,
+$g(z) = z$ if $z \in T$, and $g$ is continuous,
+because
+\[
+  g(z) = z - s(z)[f(z)-z],
+\]
+where $s(z)$ is the unique nonnegative root of a certain quadratic equation whose
+coefficients are continuous functions of $f$ and $z$.
+Apply Exercise 8.28.)} \\
 
-
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+\end{enumerate}
+$\Box$ \\
 
 
 
