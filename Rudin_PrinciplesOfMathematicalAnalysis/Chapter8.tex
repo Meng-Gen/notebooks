@@ -3593,6 +3593,33 @@ Apply Exercise 8.28.)} \\
 \emph{Proof.}
 \begin{enumerate}
   \item[(1)]
+  The ray that starts at $f(z)$ and passes through $z$
+  is given by $f(z) + s(z - f(z)) = sz + (1-s)f(z)$ where $s = s(z) \geq 0$.
+  $g(z)$ satisfies
+  \begin{align*}
+    |g(z)| = 1
+    &\Longleftrightarrow
+    g(z) \overline{g(z)} = 1 \\
+    &\Longleftrightarrow
+    (sz + (1-s)f(z))(s\overline{z} + (1-s)\overline{f(z)}) = 1 \\
+    &\Longleftrightarrow
+    s^2 |z|^2 + (1-s)^2 |f(z)|^2 + s(1-s) 2 \Re(z\overline{f(z)}) = 1 \\
+    &\Longleftrightarrow
+    |z-f(z)|^2 s^2 + 2(\Re(z\overline{f(z)}) - |f(z)|^2)s + (|f(z)|^2 - 1) = 0.
+  \end{align*}
+  Since $s = s(z) \geq 0$,
+  $s$ is the unique nonnegative root of a certain quadratic equation whose
+  coefficients are continuous functions of $f$ and $z$.
+  Therefore, $g(z) = f(z) + s(z)(z - f(z))$ is continuous.
+
+  \item[(2)]
+  Note that $|g(z)| = 1$ by construction,
+  by Exercise 8.28 we have
+  \[
+    g(z_0) = -z_0 \text{ for some } z_0 \in T.
+  \]
+  However, for such $z_0$ we have $g(z_0) = z_0$ by construction.
+  So $z_0 = 0$, contrary to $z_0 \in T$.
 \end{enumerate}
 $\Box$ \\
 
