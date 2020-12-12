@@ -1773,7 +1773,115 @@ or
   \sum_{n=1}^{\infty} \frac{1}{n^4} = \frac{\pi^4}{90}.
 \]
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\textbf{Supplement (Basel problem).}
+A simple proof of the formula $\zeta(2) = \frac{\pi^2}{6}$.
+\begin{enumerate}
+  \item[(1)]
+    By equating imaginary parts in DeMoivre's formula
+    \begin{align*}
+      \cos(n\theta) + i \sin(n\theta)
+      &= (\cos \theta + i \sin \theta)^n \\
+      &= \sin^n \theta (i + \cot \theta)^n \\
+      &= \sin^n \theta \sum_{k=0}^{n} {n \choose k} (i)^k (\cot \theta)^{n-k}
+    \end{align*}
+    to obtain
+    \[
+      \sin(n\theta)
+      = \sin^n \theta
+        \left[
+          {n \choose 1} \cot^{n-1} \theta
+          - {n \choose 3} \cot^{n-3} \theta
+          + {n \choose 5} \cot^{n-5} \theta
+          \mp \cdots
+        \right].
+    \]
+  \item[(2)]
+    Take $n = 2m+1$,
+    \begin{align*}
+      &\sin((2m+1)\theta) \\
+      =& \sin^{2m+1} \theta
+        \left[
+          {2m+1 \choose 1} \cot^{2m} \theta
+          - {2m+1 \choose 3} \cot^{2m-2} \theta
+          + {2m+1 \choose 5} \cot^{2m-4} \theta
+          \mp \cdots
+        \right] \\
+      =& \sin^{2m+1} \theta
+        \left[
+          {2m+1 \choose 1} (\cot^{2}\theta)^m
+          - {2m+1 \choose 3} (\cot^{2}\theta)^{m-1}
+          + {2m+1 \choose 5} (\cot^{2}\theta)^{m-2}
+          \mp \cdots
+        \right] \\
+      =& \sin^{2m+1} \theta P_m(\cot^{2}\theta)
+    \end{align*}
+    where $P_m$ is the polynomail of degree $m$ given by
+    \[
+      P_m(x) = {2m+1 \choose 1} x^m
+          - {2m+1 \choose 3} x^{m-1}
+          + {2m+1 \choose 5} x^{m-2}
+          \mp \cdots.
+    \]
+    As $m$ distinct $\theta_k = \frac{k\pi}{2m+1}$ for $1 \leq k \leq m$,
+    $0 < \theta_k < \frac{\pi}{2}$, $\sin((2m+1)\theta_k) = 0$
+    and $\sin^{2m+1} \theta_k \neq 0$.
+    Hence, $m$ distince points $x_k = \cot^2 \theta_k$
+    (since $\cot^2 x$ is one-to-one on $(0,\frac{\pi}{2})$)
+    are roots of $P_m(x)$ exactly.
+
+  \item[(3)]
+    By Vieta's formulas,
+    the sum of the zeros of $P_m$ is
+    \[
+      \sum_{k=1}^m \cot^2 \frac{k\pi}{2m+1}
+      = -\frac{-{2m+1 \choose 3}}{{2m+1 \choose 1}}
+      = \frac{m(2m-1)}{3}.
+    \]
+
+  \item[(4)]
+    Start with the inequality $\sin x < x < \tan x$ with $x \in (0, \frac{\pi}{2})$,
+    take reciprocals, and square each member to obtain
+    \[
+      \cot^2 x < \frac{1}{x} < 1 + \cot^2 x.
+    \]
+
+  \item[(5)]
+    Now put $x = \frac{k\pi}{2m+1}$, where $k$ and $m$ are integers, with $1 \leq k \leq m$,
+    and sum on $k$ to obtain
+    \[
+      \sum_{k=1}^{m} \cot^2 \frac{k\pi}{2m+1}
+      < \frac{(2m+1)^2}{\pi^2} \sum_{k=1}^{m} \frac{1}{k^2}
+      < m + \sum_{k=1}^{m} \cot^2 \frac{k\pi}{2m+1}.
+    \]
+
+  \item[(6)]
+    By (3),
+    \[
+      \frac{m(2m-1)\pi^2}{3(2m+1)^2}
+      < \sum_{k=1}^{m} \frac{1}{k^2}
+      < \frac{2m(m+1)\pi^2}{3(2m+1)^2}.
+    \]
+    Now let $m \to \infty$ to obtain $\zeta(2) = \frac{\pi^2}{6}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Note.}
+In (3), we might use Newton's identities (also known as the Girard-Newton formula)
+to calculate
+\[
+  \sum_{k=1}^m \cot^{2n} \frac{k\pi}{2m+1}
+  = \frac{(-1)^{n+1}B_{2n}2^{4n-1}}{(2n)!} m^{2n} + O(m^{2m-1}).
+\]
+Similar argument to get
+\[
+  \zeta(2n)
+  = \sum_{k = 1}^{\infty} \frac{1}{k^{2n}}
+  = \frac{(-1)^{n+1} B_{2n} (2\pi)^{2n}}{2(2n)!}.
+\] \\\\
 
 
 
@@ -3623,9 +3731,22 @@ Apply Exercise 8.28.)} \\
 \end{enumerate}
 $\Box$ \\
 
+\textbf{Supplement.} Brouwer's fixed-point theorem.
+\begin{enumerate}
+  \item[(1)]
+    In the $\mathbb{R}^1$, see Exercise 4.14.
 
+  \item[(2)]
+    In the $\mathbb{R}^2$, see Exercise 8.29 itself.
 
-PLACEHOLDER. \\\\
+  \item[(3)]
+    In the $\mathbb{R}^n$,
+    every continuous function from a closed ball of a Euclidean space $\mathbb{R}^n$
+    into itself has a fixed point (without proof).
+
+  \item[(4)]
+    In a Banach space, Schauder fixed-point theorem. \\\\
+\end{enumerate}
 
 
 
