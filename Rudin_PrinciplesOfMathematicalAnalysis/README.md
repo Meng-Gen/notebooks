@@ -8,4 +8,4 @@
 - Chapter 4: Continuity [WIP]
 - Chapter 5: Differentiation [WIP]
 - Chapter 6: The Riemann-Stieltjes Integral [WIP]
-- Chapter 8: Some Special Functions [WIP]
+- Chapter 8: Some Special Functions [Finished]
