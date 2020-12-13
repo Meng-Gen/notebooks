@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -15,6 +17,8 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 \begin{document}
+
+
 
 \textbf{\Large Chapter 3: Operators} \\\\
 
@@ -214,6 +218,39 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 3.33.}
+\emph{Prove the multiple-integral identity
+\[
+  \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+    F(x)G(y)H(z)dx dy dz
+  = \int_{-\infty}^{\infty} F(x) dx
+    \int_{-\infty}^{\infty} G(y) dy
+    \int_{-\infty}^{\infty} H(z) dz.
+\]}
+
+\emph{Proof.}
+Write $\int = \int_{-\infty}^{\infty}$.
+\begin{align*}
+  &\int\int\int
+    F(x)G(y)H(z)dx dy dz \\
+  =&
+  \int\int \left( \int F(x)\underbrace{G(y)H(z)}_{\text{constant w.r.t $x$}}dx \right) dy dz \\
+  =&
+  \int\int G(y)H(z) \underbrace{\int F(x)dx}_{\text{constant w.r.t $y$ and $z$}} dy dz \\
+  =&
+  \int F(x)dx \int\int G(y)H(z) dy dz \\
+  =& \int F(x) dx\int G(y) dy\int H(z) dz.
+    &\text{(Similar arguments)}
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
