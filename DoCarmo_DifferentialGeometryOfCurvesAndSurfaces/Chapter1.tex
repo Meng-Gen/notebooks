@@ -69,6 +69,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1-2.2.}
 \emph{Let $\alpha(t)$ be a parametrized curve which does not pass through the origin.
 If $\alpha(t_0)$ is the point of the trace of $\alpha$ closest to the origin
@@ -78,7 +82,7 @@ orthogonal to $\alpha'(t_0)$.} \\
 \emph{Proof.}
 Let $f(t) = |\alpha(t)|^2 = \alpha(t) \cdot \alpha(t)$.
 $f(t)$ is differentiable and $f(t)$ has a local minimum at a point $t = t_0 \in I$.
-So $f'(t_0) = 0$. [Theorem 5.8 in W. Rudin, Principles of Mathematical Analysis, 3rd edition.]
+So $f'(t_0) = 0$. [Theorem 5.8 in \emph{W. Rudin, Principles of Mathematical Analysis, 3rd edition}.]
 Since
 $$f'(t) = 2 \alpha(t) \cdot \alpha'(t),$$
 $f'(t_0) = 2 \alpha(t_0) \cdot \alpha'(t_0) = 0$,
@@ -86,6 +90,10 @@ or $\alpha(t_0) \cdot \alpha'(t_0) = 0$.
 Since $\alpha(t_0) \neq 0$ and $\alpha'(t_0) \neq 0$,
 $\alpha(t_0)$ is orthogonal to $\alpha'(t_0)$.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -105,6 +113,10 @@ Since $f'(t) = \alpha'(t) - a = 0$,
 $f(t) = \alpha(t) - at = b$ is a constant again.
 Therefore, $\alpha(t) = at+b$, which is a straight line (on $I$).
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -131,6 +143,10 @@ $$f(t) = 0,$$
 or $\alpha(t) \cdot v = 0$,
 or $\alpha(t)$ is orthogonal to $v$.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -166,6 +182,8 @@ $\Box$ \\\\
 
 
 % No exercises left.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -310,6 +328,99 @@ So the length of the segment is
 &= \sqrt{(\sin t)^2+ (\cos t)^2} \\
 &= 1.
 \end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 1-3.8.}
+\emph{Let $\alpha: I \to \mathbb{R}^3$ be a differentiable curve and
+let $[a,b] \subseteq I$ be a closed interval.
+For every partition
+\[
+  a = t_0 < t_1 < \cdots < t_n = b
+\]
+of $[a,b]$, consider the sum
+\[
+  \sum_{i=1}^{n} |\alpha(t_i) - \alpha(t_{i-1})| = l(\alpha,P),
+\]
+where $P$ stands for the given partition.
+The norm $|P|$ of a partition $P$ is defined as
+\[
+  |P| = \max(t_i - t_{i-1}), i = 1, \cdots, n.
+\]
+Geometrically, $l(\alpha,P)$ is the length of a polygon inscribed in $\alpha([a,b])$
+with vertices in $\alpha(t_i)$
+(see Figure 1-3 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces).
+The point of the exercise is to show that the arc length of $\alpha([a,b])$ is,
+in some sense, a limit of lengths of inscribed polygons.
+Prove that given $\varepsilon > 0$ there exists $\delta > 0$ such that
+if $|P| < \delta$ then
+\[
+  \abs{ \int_{a}^{b} |\alpha'(t)|dt - l(\alpha,P) } < \varepsilon.
+\]} \\
+
+Assume that $\alpha'(t)$ is continuous. \\
+
+\emph{Proof.}
+Given $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+  Since $\alpha'(t)$ is continuous on a compact set $[a,b]$,
+  $\alpha'(t)$ is uniformly continuous, that is,
+  there there exists $\delta > 0$ such that
+  \[
+    |\alpha'(s) - \alpha'(t)| < \frac{\varepsilon}{2(b-a)}
+    \text{ whenever } |s-t| < \delta.
+  \]
+\item[(2)]
+  Let $P = \{a = t_0, t_1, \ldots, t_n = b \}$
+  be a partition of $[a,b]$, with $\Delta t_i = t_i - t_{i-1} < \delta$
+  for all $i = 1, \ldots, n$.
+  If $t_{i-1} \leq t \leq t_i$, it follows that
+  \[
+    |\alpha'(t_i)| - \frac{\varepsilon}{2(b-a)}
+    \leq |\alpha'(t)|
+    \leq |\alpha'(t_i)| + \frac{\varepsilon}{2(b-a)}.
+  \]
+  Hence,
+  \begin{align*}
+    &\int_{t_{i-1}}^{t_i} |\alpha'(t)| dt \\
+    \geq& |\alpha'(t_i)| \Delta t_i
+      - \frac{\varepsilon}{2(b-a)} \Delta t_i \\
+    =& \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t)+\alpha'(t_i)-\alpha'(t)] dt }
+      - \frac{\varepsilon}{2(b-a)} \Delta t_i \\
+    \geq& \abs{ \int_{t_{i-1}}^{t_i} \alpha'(t) dt }
+      - \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t_i)-\alpha'(t)] dt }
+      - \frac{\varepsilon}{2(b-a)} \Delta t_i \\
+    \geq& \abs{ \alpha(t_i) - \alpha(t_{i-1}) }
+      - \frac{\varepsilon}{b-a} \Delta t_i
+  \end{align*}
+  and
+  \begin{align*}
+    &\int_{t_{i-1}}^{t_i} |\alpha'(t)| dt \\
+    \leq& |\alpha'(t_i)| \Delta t_i
+      + \frac{\varepsilon}{2(b-a)} \Delta t_i \\
+    =& \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t)+\alpha'(t_i)-\alpha'(t)] dt }
+      + \frac{\varepsilon}{2(b-a)} \Delta t_i \\
+    \leq& \abs{ \int_{t_{i-1}}^{t_i} \alpha'(t) dt }
+      + \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t_i)-\alpha'(t)] dt }
+      + \frac{\varepsilon}{2(b-a)} \Delta t_i \\
+    \leq& \abs{ \alpha(t_i) - \alpha(t_{i-1}) }
+      + \frac{\varepsilon}{b-a} \Delta t_i.
+  \end{align*}
+
+\item[(3)]
+  If we add these inequalities, we obtain
+  \[
+    l(\alpha,P) - \varepsilon
+    \leq \int_{a}^{b} |\alpha'(t)| dt
+    \leq l(\alpha,P) + \varepsilon.
+  \]
+\end{enumerate}
 $\Box$ \\\\
 
 
