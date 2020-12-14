@@ -8,4 +8,8 @@
 - Chapter 4: Continuity [WIP]
 - Chapter 5: Differentiation [WIP]
 - Chapter 6: The Riemann-Stieltjes Integral [WIP]
+- Chapter 7: Sequences and Series of Functions [WIP]
 - Chapter 8: Some Special Functions [Finished]
+- Chapter 9: Functions of Several Variables [WIP]
+- Chapter 10: Integration of Differential Forms [WIP]
+- Chapter 11: The Lebesuge Theory [WIP]
