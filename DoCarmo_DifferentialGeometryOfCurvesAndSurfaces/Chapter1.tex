@@ -429,6 +429,88 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 1-3.9.}
+\begin{enumerate}
+  \item[(a)]
+  \emph{Let $\alpha: I \to \mathbb{R}^3$ be a curve of class $C^{0}$
+  (compare Exercise 1-3.7).
+  Use the approximation by polygons described in Exercise 1-3.8 to give
+  a reasonable defintion of arc length of $\alpha$.}
+  \item[(b)]
+  \emph{(A Nonrectifiable Curve.)
+  The following example shows that, with any reasonable definition,
+  the arc length of a $C^{0}$ curve in a closed interval may be unbounded.
+  Let $\alpha:[0,1] \to \mathbb{R}^2$ be given as
+  $\alpha(t) = (t, t \sin(\frac{\pi}{t}))$ if $t \neq 0$,
+  and $\alpha(0) = (0,0)$.
+  Show, geometrically, that the arc length of the portion of the curve corresponding to
+  $\frac{1}{n+1} \leq t \leq \frac{1}{n}$ is at least $\frac{2}{n + \frac{1}{2}}$.
+  Use this to show that the length of curve in the interval $\frac{1}{N} \leq t \leq 1$
+  is greater than $2 \sum_{n=1}^{N-1} \frac{1}{n+1}$,
+  and thus it tends to infinity as $N \to \infty$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Define
+\[
+  l(\alpha) = \sup \{ l(\alpha,P) : P \text{ is a partition of } [a,b] \}.
+\]
+$\Box$ \\
+
+\emph{Note.}
+(Theorem 6.17 in \emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.}).
+$\alpha$ is rectifiable if and only $\alpha$ is of bounded variation on $[a,b]$. \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(1)]
+  Consider a partition
+  $P = \left\{ \frac{1}{n+1}, \frac{1}{n+\frac{1}{2}}, \frac{1}{n} \right\}$
+  of $\left[ \frac{1}{n+1},\frac{1}{n} \right]$.
+  So that $\alpha(\frac{1}{n+1}) = \alpha(\frac{1}{n}) = 0$
+  and $\alpha(\frac{1}{n+\frac{1}{2}}) = \pm 1$.
+
+  \item[(2)]
+  Thus,
+  \begin{align*}
+    &\text{The arc length of the portion of $\alpha$ over
+      $\left[ \frac{1}{n+1},\frac{1}{n} \right]$} \\
+    \geq&
+    \text{The sum of each length of the individual chords} \\
+    =& \sqrt{
+      \left( \frac{1}{n+\frac{1}{2}} - \frac{1}{n+1} \right)^2
+        + \left( \frac{1}{n + \frac{1}{2}} \right)^2
+    }
+    + \sqrt{
+      \left( \frac{1}{n} - \frac{1}{n+\frac{1}{2}} \right)^2
+        + \left( \frac{1}{n + \frac{1}{2}} \right)^2
+    } \\
+    \geq&
+    \frac{2}{n + \frac{1}{2}}.
+  \end{align*}
+
+  \item[(3)]
+  So
+  \begin{align*}
+    &\text{The arc length of $\alpha$ over $\left[\frac{1}{N},1\right]$} \\
+    =& \sum_{n=1}^{N-1}
+      \left\{
+        \text{The arc length of $\alpha$ over $\left[\frac{1}{n+1},\frac{1}{n}\right]$}
+      \right\} \\
+    \geq& \sum_{n=1}^{N-1} \frac{2}{n + \frac{1}{2}} \\
+    >& 2 \sum_{n=1}^{N-1} \frac{1}{n + 1}.
+  \end{align*}
+  It tends to infinity as $N \to \infty$, or
+  $\alpha$ is nonrectifiable.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1-3.10.}
 \emph{(Straight Lines as Shortest.)
 Let $\alpha: I \to \mathbb{R}^3$ be a parametrized curve.
