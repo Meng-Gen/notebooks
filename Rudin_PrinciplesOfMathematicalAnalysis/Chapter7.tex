@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -15,6 +17,8 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 \begin{document}
+
+
 
 \textbf{\Large Chapter 7: Sequences and Series of Functions} \\\\
 
@@ -31,12 +35,178 @@
 
 
 \textbf{Exercise 7.1.}
-\emph{...} \\
+\emph{Prove that every uniformly convergent sequence of bounded functions
+is uniformly bounded.} \\
 
-\emph{Proof.}
+\emph{Proof (Cauchy criterion).}
+Let $\{f_n\}$ be a uniformly convergent sequence of bounded functions.
 \begin{enumerate}
 \item[(1)]
-...
+Since $f_n$ is bounded, there exists $M_n$ such that $|f_n(x)| \leq M_n$.
+
+\item[(2)]
+Since $\{f_n\}$ converges uniformly, given $1 > 0$ there exists an integer $N$
+such that
+\[
+  |f_n(x) - f_m(x)| \leq 1 \text{ whenever } n, m \geq N
+\]
+(Theorem 7.8 (Cauchy criterion for uniformly convergence)).
+Especially,
+\[
+  |f_n(x)| \leq |f_n(x) - f_N(x)| + |f_N(x)| \leq 1 + M_N \text{ whenever } n \geq N.
+\]
+
+\item[(3)]
+Thus, $\{f_n\}$ is uniformly bounded by $M = \max\{ M_1, \ldots, M_{N-1}, M_{N}+1 \}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.2.}
+\emph{If $\{f_n\}$ and $\{g_n\}$ converge uniformly on a set $E$,
+prove that $\{f_n + g_n\}$ converge uniformly on $E$.
+If, in addition, $\{f_n\}$ and $\{g_n\}$ are sequences of bounded functions,
+prove that $\{f_n g_n\}$ converges uniformly on $E$.} \\
+
+\emph{Proof.}
+Let $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly.
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $\{f_n + g_n\}$ converges uniformly.}
+    Given $\varepsilon > 0$.
+    Since $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly,
+    there exist two integers $N_1$ and $N_2$ such that
+    \begin{align*}
+      |f_n(x) - f(x)| \leq \frac{\varepsilon}{2}
+      &\text{ whenever }
+      n \geq N_1, x \in E \\
+      |g_n(x) - g(x)| \leq \frac{\varepsilon}{2}
+      &\text{ whenever }
+      n \geq N_2, x \in E.
+    \end{align*}
+    Take $N = \max\{N_1,N_2\}$, we have
+    \begin{align*}
+      &|(f_n(x)+ g_n(x)) - (f(x) + g(x))| \\
+      =& |(f_n(x) - f(x)) + (g_n(x) - g(x))| \\
+      \leq& |f_n(x) - f(x)| + |g_n(x) - g(x)| \\
+      \leq& \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+      =& \varepsilon
+    \end{align*}
+    whenever $n \geq N$, $x \in E$.
+    Hence $\{f_n + g_n\}$ converges to $f+g$ uniformly on $E$.
+
+  \item[(2)]
+  \emph{Show that $\{f_n g_n\}$ converges uniformly
+  if, in addition, $\{f_n\}$ and $\{g_n\}$ are sequences of bounded functions.}
+  Given $\varepsilon > 0$.
+  \begin{enumerate}
+    \item[(a)]
+    By Exercise 7.1, both $\{f_n\}$ and $\{g_n\}$ are uniformly bounded.
+    So there exist $M_1$ and $M_2$
+    such that
+    \[
+      |f_n(x)| \leq M_1 \text{ and } |g_n(x)| \leq M_2
+    \]
+    for all $n$ and $x \in E$.
+    Also, $|f(x)| \leq M_1 + 1$ and $|g(x)| \leq M_2 + 1$.
+
+    \item[(b)]
+    Since $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly,
+    there exist two integers $N_1$ and $N_2$ such that
+    \begin{align*}
+      |f_n(x) - f(x)| \leq \frac{\varepsilon}{2(M_2 + 1)}
+      &\text{ whenever }
+      n \geq N_1, x \in E \\
+      |g_n(x) - g(x)| \leq \frac{\varepsilon}{2(M_1 + 1)}
+      &\text{ whenever }
+      n \geq N_2, x \in E.
+    \end{align*}
+    (Note that each denominator of $\frac{\varepsilon}{2(M_j + 1)}$ $(j=1,2)$
+    is well-defined and positive!)
+    Take $N = \max\{N_1,N_2\}$, we have
+    \begin{align*}
+      &|f_n(x)g_n(x) - f(x)g(x)| \\
+      =& |[f_n(x) - f(x)]g_n(x) + f(x)[g_n(x) - g(x)]| \\
+      \leq& |f_n(x) - f(x)||g_n(x)| + |f(x)||g_n(x) - g(x)| \\
+      \leq& \frac{\varepsilon}{2(M_2 + 1)} \cdot M_2
+        + (M_1 + 1) \cdot \frac{\varepsilon}{2(M_1 + 1)} \\
+      \leq& \varepsilon
+    \end{align*}
+    whenever $n \geq N$, $x \in E$.
+    Hence $\{f_n g_n\}$ converges to $fg$ uniformly on $E$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Cauchy criterion).}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $\{f_n + g_n\}$ converges uniformly.}
+    Given $\varepsilon > 0$.
+    Since $\{f_n\}$ and $\{g_n\}$ converge uniformly,
+    there exist two integers $N_1$ and $N_2$ such that
+    \begin{align*}
+      |f_n(x) - f_m(x)| \leq \frac{\varepsilon}{2}
+      &\text{ whenever }
+      n,m \geq N_1, x \in E \\
+      |g_n(x) - g_m(x)| \leq \frac{\varepsilon}{2}
+      &\text{ whenever }
+      n,m \geq N_2, x \in E.
+    \end{align*}
+    Take $N = \max\{N_1,N_2\}$, we have
+    \begin{align*}
+      &|(f_n(x)+ g_n(x)) - (f_m(x) + g_m(x))| \\
+      =& |(f_n(x) - f_n(x)) + (g_n(x) - g_m(x))| \\
+      \leq& |f_n(x) - f_n(x)| + |g_n(x) - g_m(x)| \\
+      \leq& \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+      =& \varepsilon
+    \end{align*}
+    whenever $n,m \geq N$, $x \in E$.
+    Hence $\{f_n + g_n\}$ converges uniformly on $E$.
+
+  \item[(2)]
+  \emph{Show that $\{f_n g_n\}$ converges uniformly
+  if, in addition, $\{f_n\}$ and $\{g_n\}$ are sequences of bounded functions.}
+  Given $\varepsilon > 0$.
+  \begin{enumerate}
+    \item[(a)]
+    By Exercise 7.1, both $\{f_n\}$ and $\{g_n\}$ are uniformly bounded.
+    So there exist $M_1$ and $M_2$
+    such that
+    \[
+      |f_n(x)| \leq M_1 \text{ and } |g_n(x)| \leq M_2
+    \]
+    for all $n$ and $x \in E$.
+    Also, $|f(x)| \leq M_1 + 1$ and $|g(x)| \leq M_2 + 1$.
+
+    \item[(b)]
+    Since $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly,
+    there exist two integers $N_1$ and $N_2$ such that
+    \begin{align*}
+      |f_n(x) - f_m(x)| \leq \frac{\varepsilon}{2(M_2 + 1)}
+      &\text{ whenever }
+      n,m \geq N_1, x \in E \\
+      |g_n(x) - g_m(x)| \leq \frac{\varepsilon}{2(M_1 + 1)}
+      &\text{ whenever }
+      n,m \geq N_2, x \in E.
+    \end{align*}
+    Take $N = \max\{N_1,N_2\}$, we have
+    \begin{align*}
+      &|f_n(x)g_n(x) - f_m(x)g_m(x)| \\
+      =& |[f_n(x) - f_m(x)]g_n(x) + f_m(x)[g_n(x) - g_m(x)]| \\
+      \leq& |f_n(x) - f_m(x)||g_n(x)| + |f_m(x)||g_n(x) - g_m(x)| \\
+      \leq& \frac{\varepsilon}{2(M_2 + 1)} \cdot M_2
+        + M_1 \cdot \frac{\varepsilon}{2(M_1 + 1)} \\
+      \leq& \varepsilon
+    \end{align*}
+    whenever $n \geq N$, $x \in E$.
+    Hence $\{f_n g_n\}$ converges uniformly on $E$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
