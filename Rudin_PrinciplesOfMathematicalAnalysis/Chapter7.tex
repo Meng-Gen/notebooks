@@ -433,6 +433,62 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.8.}
+\emph{If
+  \begin{equation*}
+  I(x) =
+    \begin{cases}
+      0 & (x \leq 0), \\
+      1 & (x > 0),
+    \end{cases}
+  \end{equation*}
+if $\{ x_n \}$ is a sequence of distinct points of $(a,b)$,
+and if $\sum|c_n|$ converges,
+prove that the series
+\[
+  f(x) = \sum_{n=1}^{\infty} c_n I(x-x_n)
+  \:\:\:\:\:\:\:\:
+  (a \leq x \leq b)
+\]
+converges uniformly,
+and that $f$ is continuous for every $x \neq x_n$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Define $f_n(x) = c_n I(x-x_n)$ on $(a,b)$. So
+\[
+  |f_n(x)| = |c_n| |I(x-x_n)| \leq |c_n|
+  \:\:\:\:\:\:\:\:
+  (x \in (a,b), n = 1,2,3,\ldots).
+\]
+Since $\sum|c_n|$ converges, $f = \sum f_n$ converges uniformly (Theorem 7.10).
+
+\item[(2)]
+Given any $p \in (a,b)$ with $p \neq x_n$ for all $n=1,2,3,\ldots$.
+So each $I(x-x_n)$ is continuous at $x=p$, and thus
+each partial sum $\sum_{n=1}^{N} f_n(x)$ is continuous.
+
+\item[(3)]
+By Theorem 7.11
+\begin{align*}
+  \lim_{x \to p} f(x)
+  &= \lim_{x \to p} \sum_{n=1}^{\infty} f_n(x) \\
+  &= \lim_{N \to \infty} \left( \lim_{x \to p} \sum_{n=1}^{N} f_n(x) \right) \\
+  &= \lim_{N \to \infty} \sum_{n=1}^{N} f_n(p) \\
+  &= \sum_{n=1}^{\infty} f_n(p) \\
+  &= f(p).
+\end{align*}
+$f(x)$ is continuous at $x=p$ too.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
