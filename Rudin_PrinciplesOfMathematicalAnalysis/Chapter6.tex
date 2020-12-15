@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -16,12 +18,19 @@
 
 \begin{document}
 
+
+
 \textbf{\Large Chapter 6: The Riemann-Stieltjes Integral} \\\\
 
 
 
 \emph{Author: Meng-Gen Tsai} \\
 \emph{Email: plover@gmail.com} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -37,12 +46,13 @@ if there exists $A \in \mathbb{R}$ having the property that
 for any $\varepsilon > 0$, there exists $\delta > 0$ such that
 for any partition $P$ of $[a, b]$ with norm $\Vert P \Vert < \delta$
 and for any choice of $t_i \in [x_{i-1}, x_i]$,
-we have $|\sum_{i = 1}^{n} f(t_i) \Delta \alpha_i - A| < \varepsilon$.} \\
+we have $|\sum_{i = 1}^{n} f(t_i) \Delta \alpha_i - A| < \varepsilon$.} \\\\
 
 \textbf{Cliam.}
 \emph{$f \in \mathscr{R}$ in the sense of Definition 6.2
 implies that
 $f \in \mathscr{R}$ in the sense of this another definition.} \\
+
 \emph{Proof of Claim.}
 Let $A = \int f dx$, $M > 0$ be one upper bound of $|f|$ on $[a, b]$.
 Given $\varepsilon > 0$, there exists a partition
@@ -71,6 +81,11 @@ $\Box$ \\
 
 This supplement will be used in computing
 $\int_0^{\infty} (\frac{\sin x}{x})^2 dx = \frac{\pi}{2}$ in Exercise 8.12. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \textbf{Exercise 6.1.}
@@ -149,6 +164,53 @@ $\Box$ \\
 $f \in \mathscr{R}(\alpha)$ by Theorem 6.10.
 Thus, by Claim 1
 $$\int f d \alpha = \lowint_a^b f d\alpha = \sup L(P, f, \alpha) = 0.$$
-$\Box$ \\
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.2.}
+\emph{Suppose $f \geq 0$,
+$f$ is continuous on $[a,b]$, and $\int_{a}^{b} f(x) dx = 0$.
+Prove that $f(x) = 0$ for all $x \in [a,b]$.
+(Compare with Exercise 6.1.)} \\
+
+For one application, see Exercise 7.20. \\
+
+\emph{Proof.}
+(Reductio ad absurdum)
+If there were $p \in [a,b]$ such that $f(p) > 0$.
+Since $f$ is continuous on $[a,b]$, given $\varepsilon = \frac{1}{64}f(p) > 0$
+there exists $\delta > 0$
+such that
+\[
+  |f(x) - f(p)| \leq \frac{1}{64}f(p) \text{ whenever } |x-p| \leq \delta, x \in [a,b].
+\]
+Hence
+\[
+  f(x) \geq \frac{63}{64}f(p)
+\]
+whenever $x \in E = [\max\{a,p-\delta\}, \min\{b,p+\delta\}] \subseteq [a,b]$.
+Note that the length of $E$ is $|E| > 0$.
+So
+\[
+  0
+  = \int_{a}^{b} f(x) dx
+  \geq \int_{E} f(x) dx
+  \geq \int_{E} \frac{63}{64}f(p) dx
+  = \frac{63}{64}f(p)|E| > 0,
+\]
+which is absurd.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \end{document}
