@@ -436,6 +436,22 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 7.4.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.5.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Dirichlet's test for convergence of a series} \\
 See Theorem 3.42.
 Suppose
@@ -517,10 +533,20 @@ Write $f_n(x) = (-1)^n$ on $E$ and $g_n(x) = \frac{x^2+n}{n^2}$ on $E$.
   \]
   as $n \to \infty$,
   $\lim_{n \to \infty} g_n(x) = 0$.
+  By Dirichlet's test,
+  $\sum_{n=1}^{\infty} f_n(x) g_n(x) = \sum_{n=1}^{\infty} (-1)^n \frac{x^2+n}{n^2}$
+  converges.
+
+  \item[(4)]
+  \begin{align*}
+    \sum |f_n(x)|
+    &= \sum \frac{x^2+n}{n^2} \\
+    &\geq \sum \frac{n}{n^2} \\
+    &= \sum \frac{1}{n} \to \log n + \gamma
+  \end{align*}
+  (Exercise 8.9).
+  Hence $\sum (-1)^n \frac{x^2+n}{n^2}$ does not converge absolutely for any value of $x$
 \end{enumerate}
-By Dirichlet's test,
-$\sum_{n=1}^{\infty} f_n(x) g_n(x) = \sum_{n=1}^{\infty} (-1)^n \frac{x^2+n}{n^2}$
-converges.
 $\Box$ \\\\
 
 
