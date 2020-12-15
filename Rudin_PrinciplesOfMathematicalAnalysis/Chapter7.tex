@@ -213,6 +213,226 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.3.}
+\emph{Construct sequences $\{f_n\}$, $\{g_n\}$ which converge uniformly on some set $E$,
+but such that $\{f_n g_n\}$ does not converge uniformly on $E$
+(of course, $\{f_n g_n\}$ must converge on $E$).} \\
+
+We provides some examples here. \\
+
+\emph{Proof ($f_n(x) = x + \frac{1}{n}$).}
+\begin{enumerate}
+  \item[(1)]
+  Define $\{f_n(x)\}$ on $E = \mathbb{R}$ by $f_n(x) = x + \frac{1}{n}$ and $f(x) = x$.
+  Clearly, $\{f_n(x)\}$ converges to $f(x)$ pointwise.
+
+  \item[(2)]
+  \emph{Show that $\{f_n\}$ converges uniformly.}
+  Given $\varepsilon > 0$.
+  There exists an integer $N \geq \frac{1}{\varepsilon}$ such that
+  \[
+    |f_n(x) - f(x)| = \frac{1}{n} \leq \frac{1}{N} \leq \varepsilon
+  \]
+  whenever $n \geq N$ and $x \in E$.
+  Hence $\{f_n\} \to f$ uniformly.
+
+  \item[(3)]
+  \emph{Show that $\{f_n^2\}$ does not converge uniformly.}
+  Clearly, $\{f_n(x)^2\}$ converges to $f(x)^2$ pointwise.
+  Hence
+  \[
+    \sup_{x \in E} |f_n(x)^2 - f(x)^2|
+    = \sup_{x \in E} \abs{\frac{2x}{n} + \frac{1}{n^2}}
+    \to \infty
+  \]
+  as $n \to \infty$ (by considering $x = n^2 \in E$).
+  Hence $\{f_n^2 \}$ does not converge uniformly (Theorem 7.9).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof ($f_n(x) = \frac{1}{x}$, $g_n(x) = \frac{1}{n}$).}
+\begin{enumerate}
+  \item[(1)]
+  Let $E = (0,1)$.
+  Let $\{f_n(x)\}$ on $E$ be $f_n(x) = \frac{1}{x}$
+  and $\{g_n(x)\}$ on $E$ be $g_n(x) = \frac{1}{n}$.
+  Clearly, $\{f_n(x)\}$ converges to $f(x) = \frac{1}{x}$ pointwise
+  and $\{g_n(x)\}$ converges to $g(x) = 0$ pointwise.
+
+  \item[(2)]
+  \emph{Show that $\{f_n\}$ converges uniformly.}
+  Given $\varepsilon > 0$.
+  There exists an integer $N = 1$ such that
+  \[
+    |f_n(x) - f(x)| = 0 \leq \varepsilon
+  \]
+  whenever $n \geq N$ and $x \in E$.
+  Hence $\{f_n\} \to f$ uniformly.
+
+  \item[(3)]
+  \emph{Show that $\{g_n\}$ converges uniformly.}
+  Given $\varepsilon > 0$.
+  There exists an integer $N \geq \frac{1}{\varepsilon}$ such that
+  \[
+    |g_n(x) - g(x)| = \frac{1}{n} \leq \frac{1}{N} \leq \varepsilon
+  \]
+  whenever $n \geq N$ and $x \in E$.
+  Hence $\{g_n\} \to g$ uniformly.
+
+  \item[(4)]
+  \emph{Show that $\{f_n g_n\}$ does not converge uniformly.}
+  Clearly, $\{f_n(x) g_n(x) \}$ converges to $f(x) g(x) = 0$ pointwise.
+  Hence
+  \[
+    \sup_{x \in E} |f_n(x) g_n(x) - 0|
+    = \sup_{x \in E} \abs{\frac{1}{nx}}
+    \to \infty
+  \]
+  as $n \to \infty$ (by considering $x = \frac{1}{n^2} \in E$).
+  Hence $\{f_n g_n \}$ does not converge uniformly (Theorem 7.9).
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Exercise 9.2 in Tom M. Apostol, Mathematical Analysis, 2nd edition).}
+\begin{enumerate}
+  \item[(1)]
+  Let $E = [\alpha,\beta] \subseteq \mathbb{R}$ be a bounded interval.
+  Define two sequences $\{f_n\}$ and $\{g_n\}$ on $E$ as follows:
+  \[
+    f_n(x) = x \left( 1+\frac{1}{n} \right)
+    \text{ if $x \in \mathbb{R}$, $n = 1,2,\cdots$},
+  \]
+  \begin{equation*}
+  g_n(x) =
+    \begin{cases}
+      \frac{1}{n}   & \text{ if $x=0$ or if $x$ is irrational}, \\
+      b+\frac{1}{n} & \text{ if $x$ is rational $\neq 0$, say $x=\frac{a}{b}$, $b>0$}.
+    \end{cases}
+  \end{equation*}
+  Here we assume that $\mathrm{gcd}(a,b) = 1$.
+  Clearly, $f(x) = x$ and
+  \begin{equation*}
+  g(x) =
+    \begin{cases}
+      0 & \text{ if $x=0$ or if $x$ is irrational}, \\
+      b & \text{ if $x$ is rational $\neq 0$, say $x=\frac{a}{b}$, $b>0$}.
+    \end{cases}
+  \end{equation*}
+  Let $M = \max\{|\alpha|,|\beta|\} \geq 0$.
+
+  \item[(2)]
+  \emph{Show that $\{f_n\}$ converges uniformly.}
+  Given $\varepsilon > 0$.
+  There exists an integer $N \geq \frac{M}{\varepsilon}$ such that
+  \[
+    |f_n(x) - f(x)| = \frac{|x|}{n} \leq \frac{M}{N} \leq \varepsilon
+  \]
+  whenever $n \geq N$ and $x \in E$.
+  Hence $\{f_n\} \to f$ uniformly.
+
+  \item[(3)]
+  \emph{Show that $\{g_n\}$ converges uniformly.}
+  Given $\varepsilon > 0$.
+  There exists an integer $N \geq \frac{1}{\varepsilon}$ such that
+  \[
+    |g_n(x) - g(x)| = \frac{1}{n} \leq \frac{1}{N} \leq \varepsilon
+  \]
+  whenever $n \geq N$ and $x \in E$.
+  Hence $\{g_n\} \to g$ uniformly.
+
+  \item[(4)]
+  \emph{Show that $\{f_n g_n\}$ does not converge uniformly.}
+  \begin{enumerate}
+    \item[(a)]
+      Clearly, $\{f_n(x) g_n(x) \}$ converges to $f(x)g(x)$ pointwise
+      where
+      \begin{equation*}
+      f(x) g(x) =
+        \begin{cases}
+          0 & \text{ if $x=0$ or if $x$ is irrational}, \\
+          a & \text{ if $x=\frac{a}{b}$ is rational $\neq 0$, $b>0$}.
+        \end{cases}
+      \end{equation*}
+
+    \item[(b)]
+      Note that
+      \begin{equation*}
+      f_n(x) g_n(x) =
+        \begin{cases}
+          \frac{x}{n} \left( 1 + \frac{1}{n} \right)
+            & \text{ if $x=0$ or if $x$ is irrational}, \\
+          \left( a + \frac{x}{n} \right)\left( 1 + \frac{1}{n} \right)
+            & \text{ if $x=\frac{a}{b}$ is rational $\neq 0$, $b>0$}.
+        \end{cases}
+      \end{equation*}
+      Therefore,
+      \begin{equation*}
+      f_n(x) g_n(x) - f(x) g(x) =
+        \begin{cases}
+          \frac{x}{n} \left( 1 + \frac{1}{n} \right)
+            & \text{ if $x=0$ or if $x$ is irrational}, \\
+          \frac{x}{n} \left( 1 + b + \frac{1}{n} \right)
+            & \text{ if $x=\frac{a}{b}$ is rational $\neq 0$, $b>0$}.
+        \end{cases}
+      \end{equation*}
+
+    \item[(c)]
+      Hence
+      \begin{align*}
+        \sup_{x \in E} |f_n(x) g_n(x) - f(x) g(x)|
+        &\geq \sup_{x \in E \cap \mathbb{Q}} |f_n(x) g_n(x) - f(x) g(x)| \\
+        &= \sup_{x \in E \cap \mathbb{Q}}
+          \abs{a} \left( \frac{1}{n} + \frac{1}{bn} + \frac{1}{bn^2} \right) \\
+        &\geq \sup_{x \in E \cap \mathbb{Q}}
+          \abs{a} \left( \frac{1}{n} \right) \\
+        &= \sup_{x \in E \cap \mathbb{Q}} \frac{\abs{a}}{n}.
+      \end{align*}
+
+    \item[(d)]
+      \emph{Given any irrational number $\gamma \in E$,
+      there exists a sequence
+      \[
+        \left\{ r_m = \frac{a_m}{b_m} \right\}
+      \]
+      of nonzero rational numbers in $E$ such that $\lim r_m = \gamma$.
+      Show that $\{a_m\}$ is unbounded.}
+      If it is true, we can find $x_n = r_{m_n} = \frac{a_{m_n}}{b_{m_n}}$
+      such that $|a_{m_n}| \geq n^2$ and
+      \[
+        \sup_{x \in E} |f_n(x) g_n(x) - f(x) g(x)|
+        \geq \sup_{x \in E \cap \mathbb{Q}} \frac{\abs{a}}{n}
+        \geq \frac{n^2}{n}
+        = n \to \infty
+      \]
+      as $n \to \infty$.
+
+    \item[(e)]
+      (Reductio ad absurdum)
+      If $\{a_m\}$ were bounded, then there exists
+      a \textbf{constant} subsequence of $\{a_{m_k}\}$
+      such that $\lim a_{m_k} = a \in \mathbb{Z}$.
+      Since $\lim_{m \to \infty} r_m = \gamma$, $\lim_{k \to \infty} r_{m_k} = \gamma$ or
+      \[
+        \lim_{k \to \infty} b_{m_k}
+        = \lim_{k \to \infty} \frac{a_{m_k}}{r_{m_k}}
+        = \frac{a}{\gamma}
+      \]
+      (it is well-defined since $r_{m_k}$ and $\gamma$ cannot be zero).
+      Since all $b_{m_k}$ are positive integers,
+      the limit $\lim b_{m_k} = b$ is a positive integer too,
+      or $b = \frac{a}{\gamma} \in \mathbb{Z}^+$, or $\gamma = \frac{a}{b} \in \mathbb{Z}$,
+      which is absurd.
+  \end{enumerate}
+  Therefore, $\{f_n g_n\}$ does not converge uniformly.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
