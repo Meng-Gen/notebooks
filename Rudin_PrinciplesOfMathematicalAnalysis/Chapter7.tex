@@ -437,6 +437,24 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.4.}
+\emph{Consider
+\[
+  f(x) = \sum_{n=1}^{\infty} \frac{1}{1+n^2x}.
+\]
+For what values of $x$ does the series converge absolutely?
+On what intervals does it converge uniformly?
+On what intervals does it fail to converge uniformly?
+Is $f$ continuous whenever the series converges?
+Is $f$ bounded?} \\
+
+\emph{Proof.}
+Clearly, $f(x)$ is defined on
+$\mathbb{R} - \{ -1, -\frac{1}{4}, -\frac{1}{9}, \ldots \}$.
+\begin{enumerate}
+  \item[(1)]
+\end{enumerate}
+
+PLACEHOLDER \\\\
 
 
 
@@ -446,56 +464,11 @@ $\Box$ \\\\
 
 \textbf{Exercise 7.5.}
 
+PLACEHOLDER \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\textbf{Dirichlet's test for convergence of a series} \\
-See Theorem 3.42.
-Suppose
-\begin{enumerate}
-  \item[(a)]
-  the partial sums $A_n$ of $\sum a_n$ form a bounded sequence;
-  \item[(b)]
-  $b_0 \geq b_1 \geq b_2 \geq \cdots$;
-  \item[(c)]
-  $\lim_{n \to \infty} b_n = 0$.
-\end{enumerate}
-Then $\sum a_n b_n$ converges. \\\\
-
-
-
-\textbf{Dirichlet's test for uniformly convergence of a function series.}
-Suppose
-\begin{enumerate}
-  \item[(a)]
-  the partial sums $F_n(x)$ of $\sum f_n(x)$ form a uniformly bounded sequence;
-  \item[(b)]
-  $g_1(x) \geq g_2(x) \geq \cdots$;
-  \item[(c)]
-  $\lim_{n \to \infty} g_n(x) = 0$.
-\end{enumerate}
-Then $\sum f_n(x) g_n(x)$ converges. \\
-
-\emph{Proof (Theorem 3.42).}
-Choose $M$ such that $|F_n(x)| \leq M$ for all $n$.
-Given $\varepsilon > 0$,
-there is an integer $N$ such that $g_N(x) \leq \frac{\varepsilon}{2(M+1)}$.
-For $N \leq p \leq q$, we have
-\begin{align*}
-  &\abs{\sum_{n=p}^{q} f_n(x) g_n(x)} \\
-  =& \abs{\sum_{n=p}^{q-1} F_n(x)(g_n(x)-g_{n+1}(x)) + F_q(x)g_q(x) - F_{p-1}(x)g_p(x)} \\
-  \leq& M \abs{\sum_{n=p}^{q-1}(g_n(x)-g_{n+1}(x)) + g_q(x) + g_p(x)} \\
-  =& 2M g_p(x) \\
-  \leq& 2M g_N(x) \\
-  \leq& \varepsilon.
-\end{align*}
-Uniformly convergence now follows from the Cauchy criterion (Theorem 7.8).
-Note that the first inequality in the above chain depends of course on the fact that
-$g_n(x) - g_{n+1}(x) \geq 0$.
-$\Box$ \\\\
 
 
 
@@ -533,7 +506,7 @@ Write $f_n(x) = (-1)^n$ on $E$ and $g_n(x) = \frac{x^2+n}{n^2}$ on $E$.
   \]
   as $n \to \infty$,
   $\lim_{n \to \infty} g_n(x) = 0$.
-  By Dirichlet's test,
+  By Dirichlet's test (Exercise 7.11),
   $\sum_{n=1}^{\infty} f_n(x) g_n(x) = \sum_{n=1}^{\infty} (-1)^n \frac{x^2+n}{n^2}$
   converges.
 
@@ -666,6 +639,234 @@ By Theorem 7.11
 $f(x)$ is continuous at $x=p$ too.
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.9.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.10.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.11 (Dirichlet's test).}
+\emph{Suppose $\{f_n\}$, $\{g_n\}$ are defined on $E$, and}
+\begin{enumerate}
+  \item[(a)]
+  \emph{$\sum f_n(x)$ has uniformly bounded partial sums;}
+  \item[(b)]
+  \emph{$g_n(x) \to 0$ uniformly on $E$;}
+  \item[(b)]
+  \emph{$g_1(x) \geq g_2(x) \geq g_3(x) \geq \cdots$ for every $x \in E$.}
+\end{enumerate}
+\emph{Prove that $\sum f_n(x) g_n(x)$ converges uniformly on $E$.
+(Hint: Compare with Theorem 3.42.)} \\
+
+
+
+\emph{Theorem 3.42 (Dirichlet's test).}
+Suppose
+\begin{enumerate}
+  \item[(a)]
+  the partial sums $A_n$ of $\sum a_n$ form a bounded sequence;
+  \item[(b)]
+  $b_0 \geq b_1 \geq b_2 \geq \cdots$;
+  \item[(c)]
+  $\lim_{n \to \infty} b_n = 0$.
+\end{enumerate}
+Then $\sum a_n b_n$ converges. \\
+
+
+
+\emph{Proof (Theorem 3.42).}
+Let $F_n(x) = \sum_{k=1}^{n} f_k(x)$.
+Choose $M$ such that $|F_n(x)| \leq M$ for all $n$, all $x \in E$.
+Given $\varepsilon > 0$,
+there is an integer $N$ such that $g_N(x) \leq \frac{\varepsilon}{2(M+1)}$ for all $x \in E$.
+For $N \leq p \leq q$, we have
+\begin{align*}
+  &\abs{\sum_{n=p}^{q} f_n(x) g_n(x)} \\
+  =& \abs{\sum_{n=p}^{q-1} F_n(x)(g_n(x)-g_{n+1}(x)) + F_q(x)g_q(x) - F_{p-1}(x)g_p(x)} \\
+  \leq& M \abs{\sum_{n=p}^{q-1}(g_n(x)-g_{n+1}(x)) + g_q(x) + g_p(x)} \\
+  =& 2M g_p(x) \\
+  \leq& 2M g_N(x) \\
+  \leq& \varepsilon
+\end{align*}
+for all $x \in E$.
+Uniformly convergence now follows from the Cauchy criterion (Theorem 7.8).
+Note that the first inequality in the above chain depends of course on the fact that
+$g_n(x) - g_{n+1}(x) \geq 0$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.12.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.13.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.14.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.15.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.16.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.17.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.18.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.19.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.20.}
+\emph{If $f$ is continuous on $[0,1]$ and if
+\[
+  \int_{0}^{1} f(x) x^n dx = 0
+  \:\:\:\:\:\:\:\:
+  (n=0,1,2,\ldots),
+\]
+prove that $f(x) = 0$ on $[0,1]$.
+(Hint: The integral of the product of $f$ with any polynomial is zero.
+Use the Weierstrass theorem to show that
+$\int_{0}^{1} f^2(x) dx = 0$.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+...
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.21.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.22.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.23.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.24.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.25.}
+PLACEHOLDER
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.26.}
+PLACEHOLDER
 
 
 
