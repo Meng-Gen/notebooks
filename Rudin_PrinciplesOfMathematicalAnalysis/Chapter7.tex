@@ -74,12 +74,12 @@ If, in addition, $\{f_n\}$ and $\{g_n\}$ are sequences of bounded functions,
 prove that $\{f_n g_n\}$ converges uniformly on $E$.} \\
 
 \emph{Proof.}
-Let $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly.
+Let $f_n \to f$ uniformly and $g_n \to g$ uniformly.
 \begin{enumerate}
   \item[(1)]
   \emph{Show that $\{f_n + g_n\}$ converges uniformly.}
     Given $\varepsilon > 0$.
-    Since $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly,
+    Since $f_n \to f$ uniformly and $g_n \to g$ uniformly,
     there exist two integers $N_1$ and $N_2$ such that
     \begin{align*}
       |f_n(x) - f(x)| \leq \frac{\varepsilon}{2}
@@ -98,7 +98,7 @@ Let $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly.
       =& \varepsilon
     \end{align*}
     whenever $n \geq N$, $x \in E$.
-    Hence $\{f_n + g_n\}$ converges to $f+g$ uniformly on $E$.
+    Hence $f_n + g_n \to f+g$ uniformly on $E$.
 
   \item[(2)]
   \emph{Show that $\{f_n g_n\}$ converges uniformly
@@ -116,7 +116,7 @@ Let $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly.
     Also, $|f(x)| \leq M_1 + 1$ and $|g(x)| \leq M_2 + 1$.
 
     \item[(b)]
-    Since $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly,
+    Since $f_n \to f$ uniformly and $g_n \to g$ uniformly,
     there exist two integers $N_1$ and $N_2$ such that
     \begin{align*}
       |f_n(x) - f(x)| \leq \frac{\varepsilon}{2(M_2 + 1)}
@@ -138,7 +138,7 @@ Let $\{f_n\} \to f$ uniformly and $\{g_n\} \to g$ uniformly.
       \leq& \varepsilon
     \end{align*}
     whenever $n \geq N$, $x \in E$.
-    Hence $\{f_n g_n\}$ converges to $fg$ uniformly on $E$.
+    Hence $f_n g_n \to fg$ uniformly on $E$.
   \end{enumerate}
 \end{enumerate}
 $\Box$ \\
@@ -435,6 +435,7 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
 \textbf{Dirichlet's test for convergence of a series} \\
 See Theorem 3.42.
 Suppose
@@ -529,8 +530,51 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.7.}
+\emph{For $n=1,2,3,\ldots$, $x$ real, put
+\[
+  f_n(x) = \frac{x}{1+nx^2}.
+\]
+Show that $\{f_n\}$ converges uniformly to a function $f$,
+and that the equation
+\[
+  f'(x) = \lim_{n \to \infty} f_n'(x)
+\]
+is correct if $x \neq 0$, but false if $x = 0$.} \\
 
-PLACEHOLDER \\\\
+$f_n(x)$ is defined on $\mathbb{R}$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  Since
+  \[
+    \abs{ f_n(x) }
+    = \abs{ \frac{x}{1+nx^2} }
+    \leq \frac{|x|}{\sqrt{n}|x|}
+    = \frac{1}{\sqrt{n}} \to \infty
+  \]
+  as $n \to \infty$, $f_n \to 0$ uniformly (Theorem 7.9).
+
+  \item[(2)]
+  Clearly, $f'(x) = 0$.
+  Since
+  \[
+    f_n'(x) = \frac{1-nx^2}{(1+nx^2)^2},
+  \]
+  \begin{equation*}
+  \lim_{n \to \infty} f_n'(x) =
+    \begin{cases}
+      0 & (x = 0), \\
+      1 & (x \neq 0).
+    \end{cases}
+  \end{equation*}
+  So that the equation
+  \[
+    f'(x) = \lim_{n \to \infty} f_n'(x)
+  \]
+  is correct if $x \neq 0$, but false if $x = 0$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
