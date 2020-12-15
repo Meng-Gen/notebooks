@@ -103,19 +103,25 @@ On the contrary, if both $f$ and $\alpha$ are discontinuous at $x_0$,
 it might be $f \not\in \mathscr{R}(\alpha)$.
 Besides, if $f$ has too many points of discontinuity
 ($f(x) = 0$ if $x \in \mathbb{Q}$ and $f(x) = 1$ otherwise, for example),
-then $f$ might not be Riemann-integrable on $[0, 1]$. \\
+then $f$ might not be Riemann-integrable on $[0, 1]$. \\\\
+
+
 
 \textbf{Claim 1.}
 \emph{$L(P, f, \alpha) = 0$.} \\
+
 \emph{Proof of Claim 1.}
 $m_i = 0$ since $\inf f(x) = 0$ on any subinterval of $[a, b]$.
 So $L(P, f, \alpha) = \sum m_i \Delta \alpha_i = 0$.
 Here we don't need the condition that $\alpha$ is continuous at $x_0$.
-$\Box$ \\
+$\Box$ \\\\
+
+
 
 \textbf{Claim 2.}
 \emph{For any $\varepsilon > 0$,
 there exists a partition $P$ such that $U(P, f, \alpha) < \varepsilon$.} \\
+
 \emph{Proof of Claim 2.}
 Let $x_0 \in [p_{i_0 - 1}, p_{i_0}]$ for some $i_0$. Then
 $M_i = \sup_{p_{i - 1} \leq x \leq p_i} f(x) = 0$ if $i \neq i_0$, and $M_{i_0} = 1$.
@@ -140,7 +146,9 @@ and $\Delta \alpha$ on $[x_0 - \delta_1, x_0 + \delta_2]$ is
 &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 \end{align*}
 Therefore, $U(P, f, \alpha) < \varepsilon$.
-$\Box$ \\
+$\Box$ \\\\
+
+
 
 \emph{Proof (Definition 6.2).}
 By Claim 1 and 2 and notice that $U(P, f, \alpha) \geq 0$ for any partition $P$,
