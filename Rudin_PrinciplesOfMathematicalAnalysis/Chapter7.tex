@@ -435,6 +435,108 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\textbf{Dirichlet's test for convergence of a series} \\
+See Theorem 3.42.
+Suppose
+\begin{enumerate}
+  \item[(a)]
+  the partial sums $A_n$ of $\sum a_n$ form a bounded sequence;
+  \item[(b)]
+  $b_0 \geq b_1 \geq b_2 \geq \cdots$;
+  \item[(c)]
+  $\lim_{n \to \infty} b_n = 0$.
+\end{enumerate}
+Then $\sum a_n b_n$ converges. \\\\
+
+
+
+\textbf{Dirichlet's test for uniformly convergence of a function series.}
+Suppose
+\begin{enumerate}
+  \item[(a)]
+  the partial sums $F_n(x)$ of $\sum f_n(x)$ form a uniformly bounded sequence;
+  \item[(b)]
+  $g_1(x) \geq g_2(x) \geq \cdots$;
+  \item[(c)]
+  $\lim_{n \to \infty} g_n(x) = 0$.
+\end{enumerate}
+Then $\sum f_n(x) g_n(x)$ converges. \\
+
+\emph{Proof (Theorem 3.42).}
+Choose $M$ such that $|F_n(x)| \leq M$ for all $n$.
+Given $\varepsilon > 0$,
+there is an integer $N$ such that $g_N(x) \leq \frac{\varepsilon}{2(M+1)}$.
+For $N \leq p \leq q$, we have
+\begin{align*}
+  &\abs{\sum_{n=p}^{q} f_n(x) g_n(x)} \\
+  =& \abs{\sum_{n=p}^{q-1} F_n(x)(g_n(x)-g_{n+1}(x)) + F_q(x)g_q(x) - F_{p-1}(x)g_p(x)} \\
+  \leq& M \abs{\sum_{n=p}^{q-1}(g_n(x)-g_{n+1}(x)) + g_q(x) + g_p(x)} \\
+  =& 2M g_p(x) \\
+  \leq& 2M g_N(x) \\
+  \leq& \varepsilon.
+\end{align*}
+Uniformly convergence now follows from the Cauchy criterion (Theorem 7.8).
+Note that the first inequality in the above chain depends of course on the fact that
+$g_n(x) - g_{n+1}(x) \geq 0$.
+$\Box$ \\\\
+
+
+
+\textbf{Exercise 7.6.}
+\emph{Prove that the series
+\[
+  \sum_{n=1}^{\infty} (-1)^n \frac{x^2+n}{n^2}
+\]
+converges uniformly in every bounded interval,
+but does not converge absolutely for any value of $x$.} \\
+
+\emph{Proof (Dirichlet's test).}
+Given any bounded interval $E = [\alpha,\beta] \subseteq \mathbb{R}$.
+Write $f_n(x) = (-1)^n$ on $E$ and $g_n(x) = \frac{x^2+n}{n^2}$ on $E$.
+\begin{enumerate}
+  \item[(1)]
+  The partial sums $F_n(x)$ of $\sum f_n(x)$ form a uniformly bounded sequence.
+
+  \item[(2)]
+  $g_1(x) \geq g_2(x) \geq \cdots$ since
+  \[
+    g_{n+1}(x)
+    = \frac{x^2}{(n+1)^2} + \frac{1}{n+1}
+    < \frac{x^2}{n^2} + \frac{1}{n}
+    = g_n(x).
+  \]
+
+  \item[(3)]
+  Write $M = \max\{|\alpha|,|\beta|\}$.
+  Since
+  \[
+    |g_n(x)|
+    = \frac{x^2}{n^2} + \frac{1}{n}
+    \leq \frac{M^2}{n^2} + \frac{1}{n} \to \infty
+  \]
+  as $n \to \infty$,
+  $\lim_{n \to \infty} g_n(x) = 0$.
+\end{enumerate}
+By Dirichlet's test,
+$\sum_{n=1}^{\infty} f_n(x) g_n(x) = \sum_{n=1}^{\infty} (-1)^n \frac{x^2+n}{n^2}$
+converges.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 7.7.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \textbf{Exercise 7.8.}
 \emph{If
