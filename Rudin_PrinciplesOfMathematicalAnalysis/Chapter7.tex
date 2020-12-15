@@ -809,7 +809,39 @@ $\int_{0}^{1} f^2(x) dx = 0$.)} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-...
+Since $\int_{0}^{1} f(x) x^n dx = 0$ for all $n = 0,1,2,\ldots$,
+\[
+  \int_{0}^{1} f(x) P(x) dx = 0 \text{ for all } P(x) \in \mathbb{R}[x].
+\]
+
+\item[(2)]
+By Theorem 7.26 (Stone-Weierstrass Theorem),
+there exists a sequence of $P_n(x) \in \mathbb{R}[x]$ such that
+\[
+  P_n(x) \to f(x)
+\]
+uniformly on $[0,1]$.
+Since $f(x)$ is continuous on the compact set $[0,1]$, $f(x)$ is bounded on $[0,1]$.
+Hence
+\[
+  f(x) P_n(x) \to f^2(x)
+\]
+uniformly on $[0,1]$.
+
+\item[(3)]
+Since each $f(x) P_n(x)$ is continuous,
+$f(x) P_n(x) \in \mathscr{R}$ on $[0,1]$ (Theorem 6.8).
+By Theorem 7.16,
+\[
+  \int_{0}^{1} f^2(x) dx
+  = \lim_{n \to \infty} \int_{0}^{1} f(x) P_n(x) dx
+  = \lim_{n \to \infty} 0
+  = 0.
+\]
+
+\item[(4)]
+Since $f^2(x)$ is continuous,
+$f^2(x) = 0$ or $f(x) = 0$ by (3) and Exercise 6.2.
 \end{enumerate}
 $\Box$ \\\\
 
