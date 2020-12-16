@@ -1115,7 +1115,8 @@ PLACEHOLDER
 
 
 \textbf{Exercise 7.15.}
-PLACEHOLDER
+
+PLACEHOLDER \\\\
 
 
 
@@ -1124,7 +1125,63 @@ PLACEHOLDER
 
 
 \textbf{Exercise 7.16.}
-PLACEHOLDER
+\emph{Suppose $\{f_n\}$ is an equicontinuous sequence of functions on a compact set $K$,
+and $\{f_n\}$ converges pointwise on $K$.
+Prove that $\{f_n\}$ converges uniformly on $K$.} \\
+
+(Assume that $\{f_n\}$ is a sequence of complex-valued functions.) \\
+
+\emph{Proof.}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+  \item[(1)]
+  Since $\{f_n\}$ is equicontinuous, there is $\delta > 0$ such that
+  \[
+    |f_n(x) - f_n(y)| < \frac{\varepsilon}{3}
+  \]
+  whenever $x,y \in K$, $|x-y| < \delta$, $n = 1,2,3,\ldots$
+  (where $d$ is the metric function).
+
+  \item[(2)]
+  (Similar to Proof (Heine-Borel Theorem) in Exercise 4.8.)
+  For such $\delta > 0$, we construct an open covering of $K$.
+  Pick a collection $\mathscr{C}$ of open balls
+  $B(a;\delta) \subseteq K$
+  where $a$ runs over all elements of $K$.
+  Since $\mathscr{C}$ is an open covering of a compact set $K$,
+  there is a finite subcollection $\mathscr{C}'$ of $\mathscr{C}$
+  also covers $K$, say
+  \[
+    \mathscr{C}'
+    = \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.
+  \]
+
+  \item[(3)]
+  Since $f_n$ converges pointwise on $K$,
+  for each $i$ there is an integer $N_i$ such that
+  \[
+    |f_n(a_i)-f_m(a_i)| < \frac{\varepsilon}{3}
+  \]
+  whenever $n,m \geq N_i$.
+
+  \item[(4)]
+  Now given any $x \in K$, by (2) there exists $a_j$ $(1 \leq j \leq m)$
+  such that $x \in B(a_j;\delta)$.
+  Take $N = \max\{N_1,\ldots,N_m\}$.
+  Hence
+  \begin{align*}
+    |f_n(x)-f_m(x)|
+    &\leq
+    |f_n(x)-f_n(a_j)| + |f_n(a_j)-f_m(a_j)| + |f_m(a_j)-f_m(x)| \\
+    &<
+    \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
+    &=
+    \varepsilon.
+  \end{align*}
+  whenever $n,m \geq N$.
+  Hence $\{f_n\}$ converges uniformly (Theorem 7.8).
+\end{enumerate}
+$\Box$ \\
 
 
 
