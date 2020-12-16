@@ -29,6 +29,14 @@
 
 
 
+% http://math.ucsd.edu/~lni/math140/HW140B_5_solutions.pdf
+% https://minds.wisconsin.edu/bitstream/handle/1793/67009/rudin%20ch%207.pdf
+% http://www.math.ust.hk/~majhu/Math204/Homework204_Set03.pdf
+% https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxtYXRoc29sdXRpb25ndWlkZXN8Z3g6MzIxZGJmOTAzNzQzZTAyYw
+% https://www.csie.ntu.edu.tw/~b89089/old/math/pma/pma7.html
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -647,6 +655,68 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.9.}
+\emph{Let $\{f_n\}$ be a sequence of continuous functions
+which converges uniformly to a function $f$ on a set $E$.
+Prove that
+\[
+  \lim_{n \to \infty} f_n(x_n) = f(x)
+\]
+for every sequence of points $x_n \in E$ such that $x_n \to x$,
+and $x \in E$.
+Is the converse of this true?} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  Given any $x \in E$ and any $\varepsilon > 0$.
+  Since each $f_n$ is continuous and $f_n \to f$ uniformly,
+  $f$ is continuous (Theorem 7.12).
+  Hence as $x_n \to x$, there exists an integer $N_1$
+  such that
+  \[
+    |f(x_n) - f(x)| \leq \frac{\varepsilon}{2}
+    \text{ whenever } n \geq N_1
+  \]
+  (Theorem 4.2).
+  Also, $f_n \to f$ uniformly implies that there exists an integer $N_2$
+  such that
+  \[
+    |f_n(x_n) - f(x_n)| \leq \frac{\varepsilon}{2}
+    \text{ whenever } n \geq N_2.
+  \]
+  Let $N = \max\{N_1,N_2\}$ be an integer.
+  Then
+  \[
+    |f_n(x_n) - f(x)|
+    \leq |f_n(x_n) - f(x_n)| + |f(x_n) - f(x)|
+    \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
+    = \varepsilon
+  \]
+  whenever $n \geq N$.
+  Therefore, $\lim_{n \to \infty} f_n(x_n) = f(x)$.
+
+  \item[(2)]
+  \emph{Show that the converse is false.}
+  Let $E = (0,1)$ and $f_n = \frac{1}{nx}$ on $E$.
+  Given any $x \in E$.
+  First,
+  \[
+    f(x) = \lim_{n \to \infty} f_n = \lim_{n \to \infty} \frac{1}{nx} = 0
+  \]
+  Next, for each sequence of points $x_n \in E$ such that $x_n \to x$
+  (note that each $x_n \neq 0$ and $x \neq 0$), we have
+  \[
+    \lim_{n \to \infty} f_n(x_n)
+    = \lim_{n \to \infty} \frac{1}{nx_n}
+    = \lim_{n \to \infty} \frac{1}{n} \lim_{n \to \infty} \frac{1}{x_n}
+    = 0 \cdot \frac{1}{x}
+    = 0.
+  \]
+  Hence $\lim_{n \to \infty} f_n(x_n) = f(x) = 0$.
+  However, $\{f_n\}$ does not converge uniformly.
+  (See \emph{Proof ($f_n(x) = \frac{1}{x}$, $g_n(x) = \frac{1}{n}$)} in Exercise 7.3.)
+\end{enumerate}
+$\Box$ \\\\
 
 PLACEHOLDER \\\\
 
@@ -657,6 +727,19 @@ PLACEHOLDER \\\\
 
 
 \textbf{Exercise 7.10.}
+\emph{Letting $(x)$ denote the fractional part of the real number $x$
+(see Exercise 4.16 for the definition),
+consider the function
+\[
+  f(x) = \sum_{n=1}^{\infty} \frac{(nx)}{n^2}
+  \:\:\:\:\:\:\:\:
+  (x \in \mathbb{R}).
+\]
+Find all discontinuities of $f$, and show that they form a countable dense set.
+Show that $f$ is nevertheless Riemann-integrable on every bounded interval.} \\
+
+\emph{Proof.}
+
 
 PLACEHOLDER \\\\
 
