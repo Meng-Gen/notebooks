@@ -718,8 +718,6 @@ Is the converse of this true?} \\
 \end{enumerate}
 $\Box$ \\\\
 
-PLACEHOLDER \\\\
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -739,9 +737,113 @@ Find all discontinuities of $f$, and show that they form a countable dense set.
 Show that $f$ is nevertheless Riemann-integrable on every bounded interval.} \\
 
 \emph{Proof.}
+Let $f_n(x) = \frac{(nx)}{n^2}$ on $\mathbb{R}$,
+$F_n(x) = \sum_{k=1}^{n} f_k(x)$ on $\mathbb{R}$.
+\begin{enumerate}
+\item[(1)]
+Since
+\[
+  \abs{f_n(x)} = \abs{ \frac{(nx)}{n^2} } \leq \frac{1}{n^2}
+\]
+for all $x \in \mathbb{R}$ and $n=1,2,3,\ldots$
+and $\sum \frac{1}{n^2}$ converges (to $\frac{\pi^2}{6}$),
+$F_n = \sum f_k$ converges uniformly to $f$ on $\mathbb{R}$ (Theorem 7.10).
 
+\item[(2)]
+Note that $(x)$ is continuous on $\mathbb{R} - \mathbb{Z}$
+and not continuous on $\mathbb{Z}$ (Exercise 4.16).
+Now we define $E_n = \{ x \in \mathbb{R} : nx \in \mathbb{Z}\}$.
+So $E_1 = \mathbb{Z}$, and
+\[
+  \bigcup_{n=1}^{\infty} E_n = \mathbb{Q}.
+\]
+So $f_n$ is continuous on $\mathbb{R} - E_n$
+and not continuous on $E_n$.
+So $F_n = \sum f_k$ is continuous on
+$\mathbb{R} - \bigcup_{k=1}^{n} E_k
+\supseteq \mathbb{R}$ - $\mathbb{Q}$.
 
-PLACEHOLDER \\\\
+\item[(3)]
+\emph{Show that $f(x)$ is continuous on $\mathbb{R}$ - $\mathbb{Q}$.}
+Since
+$\{F_n\}$ is a sequence of continuous functions on $\mathbb{R}$ - $\mathbb{Q}$ (by (2))
+and $F_n \to f$ uniformly (by (1)),
+$f$ is continuous on $\mathbb{R}$ - $\mathbb{Q}$ (Theorem 7.12).
+
+\item[(4)]
+\emph{Show that $f(x)$ is not continuous on $\mathbb{Q}$,
+which is a countable dense set of $\mathbb{R}$.}
+  \begin{enumerate}
+  \item[(a)]
+  (Reductio ad absurdum)
+  If there were $p = \frac{a}{b} \in \mathbb{Q}$
+  with $a,b \in \mathbb{Z}$, $(a,b) = 1$ and $b > 0$
+  such that $f(x)$ is continuous at $x = p$,
+  then
+  \[
+    \lim_{x \to p^{-}} f(x) = \lim_{x \to p^{+}} f(x).
+  \]
+
+  \item[(b)]
+  As $b \mid n$, say $n = bq$ for some $q \in \mathbb{Z}^{+}$, we have
+  \begin{align*}
+    \lim_{x \to p^{-}} f_n(x)
+    &= \lim_{x \to p^{-}} \frac{1}{b^2 q^2}
+    = \frac{1}{b^2 q^2}, \\
+    \lim_{x \to p^{+}} f_n(x)
+    &= \lim_{x \to p^{+}} \frac{0}{b^2 q^2}
+    = 0.
+  \end{align*}
+  As $b \nmid n$,
+  \[
+    \lim_{x \to p^{-}} f_n(x) = \lim_{x \to p^{+}} f_n(x) = f_n(p).
+  \]
+  Thus,
+  \[
+    \lim_{x \to p^{-}} F_n(x) - \lim_{x \to p^{+}} F_n(x)
+    = \frac{1}{b^2} \sum_{q = 1}^{[\frac{n}{b}]} \frac{1}{q^2}.
+  \]
+
+  \item[(c)]
+  Since $F_n \to f$ uniformly, given $\varepsilon = \frac{64}{1989 b^2} > 0$,
+  there exists an integer $N'$ such that
+  \[
+    \abs{ \sum_{n=m}^{\infty} f_n(x) }
+    = \sum_{n=m}^{\infty} f_n(x)
+    \leq \frac{64}{1989 b^2}
+  \]
+  whenever $m \geq N'$.
+
+  \item[(d)]
+  Take $N = \max\{N', b\}$.
+  \begin{align*}
+    &\abs{ \underbrace{\lim_{x \to p^{-}} f(x)}_{\text{exists}}
+      - \underbrace{\lim_{x \to p^{+}} f(x)}_{\text{exists}} } \\
+    =& \abs{
+      \underbrace{\lim_{x \to p^{-}} F_N(x)}_{\text{exists}}
+      - \underbrace{\lim_{x \to p^{+}} F_N(x)}_{\text{exists}}
+      + \underbrace{\lim_{x \to p^{-}} \sum_{n=N+1}^{\infty} f_n(x)}_{\text{exists}}
+      - \underbrace{\lim_{x \to p^{+}} \sum_{n=N+1}^{\infty} f_n(x)}_{\text{exists}} } \\
+    \geq& \abs{ \lim_{x \to p^{-}} F_N(x) - \lim_{x \to p^{+}} F_N(x) }
+      - \abs{  \lim_{x \to p^{-}} \sum_{n=N+1}^{\infty} f_n(x) }
+      - \abs{  \lim_{x \to p^{+}} \sum_{n=N+1}^{\infty} f_n(x) } \\
+    \geq& \frac{1}{b^2} \sum_{q = 1}^{[\frac{n}{b}]} \frac{1}{q^2}
+      - \frac{64}{1989 b^2} - \frac{64}{1989 b^2} \\
+    \geq& \frac{1}{q^2} - \frac{64}{1989 b^2} - \frac{64}{1989 b^2} \\
+    =& \frac{1861}{1989 b^2} \\
+    >& 0,
+  \end{align*}
+  which is absurd.
+  \end{enumerate}
+
+  \item[(4)]
+  \emph{Show that $f$ is nevertheless Riemann-integrable on every bounded interval.}
+  Since each $f_n \in \mathscr{R}$ on every bounded interval,
+  $F_n \in \mathscr{R}$ on every bounded interval.
+  Since $F_n \to f$ uniformly,
+  $f \in \mathscr{R}$ on every bounded interval by Theorem 7.16.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
