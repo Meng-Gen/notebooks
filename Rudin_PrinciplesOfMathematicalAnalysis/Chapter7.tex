@@ -216,7 +216,10 @@ $\Box$ \\
     Hence $\{f_n g_n\}$ converges uniformly on $E$.
   \end{enumerate}
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.} It proved that $f_n g_n \to fg$ in Theorem 7.29.
+\\\\
 
 
 
@@ -471,8 +474,186 @@ PLACEHOLDER \\\\
 
 
 \textbf{Exercise 7.5.}
+\emph{Let
+\begin{equation*}
+  f_n(x) =
+    \begin{cases}
+      0                    & (x < \frac{1}{n+1}), \\
+      \sin^2 \frac{\pi}{x} & (\frac{1}{n+1} \leq x \leq \frac{1}{n}), \\
+      0                    & (\frac{1}{n} < x).
+    \end{cases}
+\end{equation*}
+Show that $\{f_n\}$ converges to a continuous function, but not uniformly.
+Use the series $\sum f_n$ to show that absolute convergence, even for all $x$,
+does not imply uniform convergence.} \\
 
-PLACEHOLDER \\\\
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\lim_{n \to \infty} f_n(x) = 0$.
+Hence $\{f_n\}$ converges to a continuous function $0$ pointwise.}
+Clearly, $f_n(x) = 0$ for all $x \not\in (0,1)$.
+Next, for any fixed $x \in (0,1)$, there exists an integer $N > \frac{1}{x}$
+such that
+\[
+  x > \frac{1}{N} \geq \frac{1}{n}
+\]
+whenever $n \geq N$.
+Hence $f_n(x) = 0$ whenever $n \geq N$.
+
+\item[(2)]
+\emph{Show that $f_n \to f = 0$ not uniformly.}
+Let
+\[
+  x_n = \frac{1}{n+\frac{1}{2}} \to 0
+\]
+for all $n=1,2,3,\ldots$.
+Thus, $f_m(x_n) = \delta_{mn}$, where $\delta_{mn}$ is Kronecker delta.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{(Definition 7.7.)}
+  (Reductio ad absurdum)
+  If $\{f_n\}$ were convergent uniformly, then
+  given $\varepsilon = \frac{1}{64} > 0$,
+  there exists an integer $N$ such that $n \geq N$ implies
+  \[
+    |f_n(x) - f(x)| \leq \frac{1}{64}
+  \]
+  for all real $x$.
+  However,
+  \[
+    |f_N(x_N) - f(x_N)| =  1 > \frac{1}{64},
+  \]
+  which is absurd.
+
+  \item[(b)]
+  \emph{(Theorem 7.8)}
+  (Reductio ad absurdum)
+  If $\{f_n\}$ were convergent uniformly, then
+  given $\varepsilon = \frac{1}{64} > 0$,
+  there exists an integer $N$ such that $n,m \geq N$ implies
+  \[
+    |f_n(x) - f_m(x)| \leq \frac{1}{64}
+  \]
+  for all real $x$.
+  However,
+  \[
+    |f_N(x_{N}) - f_{N+1}(x_{N})| =  1 > \frac{1}{64},
+  \]
+  which is absurd.
+
+  \item[(c)]
+  \emph{(Theorem 7.9)}
+  Since
+  \[
+    M_n
+    = \sup_{x \in \mathbb{R}}|f_n(x) - f(x)|
+    \geq |f_n(x_n) - f(x_n)| = 1,
+  \]
+  $f_n \to f$ not uniformly.
+
+  \item[(d)]
+  \emph{(Exercise 7.9.)}
+  Since
+  each $f_n$ is continuous and
+  \[
+    \lim_{n \to \infty} f_n(x_n) = \lim_{n \to \infty} 1 = 1 \neq 0 = f(0),
+  \]
+  $f_n \to f = 0$ not uniformly.
+  \end{enumerate}
+
+\item[(3)]
+\emph{Show that $\sum f_n$ converges absolutely.}
+Write $F_n = \sum_{k=1}^{n} f_k$ and $F = \sum f_n$.
+Clearly,
+\begin{equation*}
+  F(x) =
+    \begin{cases}
+      0                    & (x \leq 0), \\
+      \sin^2 \frac{\pi}{x} & (0 < x \leq 1), \\
+      0                    & (x \geq 1).
+    \end{cases}
+\end{equation*}
+Note that $f_n \geq 0$ for each $n$.
+Hence $\sum f_n$ converges absolutely.
+
+\item[(4)]
+\emph{Show that $\sum f_n$ does not converge uniformly.}
+Similar to (2).
+Let
+\[
+  x_n = \frac{1}{n+\frac{1}{2}} \to 0
+\]
+for all $n=1,2,3,\ldots$.
+Thus
+\begin{equation*}
+  F_m(x_n) =
+    \begin{cases}
+      1 & (m \geq n), \\
+      0 & (m < n).
+    \end{cases}
+\end{equation*}
+
+  \begin{enumerate}
+  \item[(a)]
+  \emph{(Definition 7.7.)}
+  (Reductio ad absurdum)
+  If $\{F_n\}$ were convergent uniformly, then
+  given $\varepsilon = \frac{1}{64} > 0$,
+  there exists an integer $N$ such that $n \geq N$ implies
+  \[
+    |F_n(x) - F(x)| \leq \frac{1}{64}
+  \]
+  for all real $x$.
+  However,
+  \[
+    |F_N(x_{N+1}) - F(x_{N+1})| =  1 > \frac{1}{64},
+  \]
+  which is absurd.
+
+  \item[(b)]
+  \emph{(Theorem 7.8)}
+  (Reductio ad absurdum)
+  If $\{F_n\}$ were convergent uniformly, then
+  given $\varepsilon = \frac{1}{64} > 0$,
+  there exists an integer $N$ such that $n,m \geq N$ implies
+  \[
+    |F_n(x) - F_m(x)| \leq \frac{1}{64}
+  \]
+  for all real $x$.
+  However,
+  \[
+    |F_N(x_{N+1}) - F_{N+1}(x_{N+1})| =  1 > \frac{1}{64},
+  \]which is absurd.
+
+  \item[(c)]
+  \emph{(Theorem 7.9)}
+  Since
+  \[
+    M_n
+    = \sup_{x \in \mathbb{R}}|F_n(x) - F(x)|
+    \geq |F_n(x_{n+1}) - F(x_{n+1})| = 1,
+  \]
+  $F_n \to F$ not uniformly.
+
+  \item[(d)]
+  \emph{(Exercise 7.9.)}
+  Since
+  each $F_n$ is continuous and
+  \[
+    \lim_{n \to \infty} F_n(x_{n+1}) = \lim_{n \to \infty} 0 \neq 1 = F(x_{n+1}),
+  \]
+  $F_n \to F$ not uniformly.
+
+  \item[(e)]
+  \emph{(Theorem 7.12.)}
+  (Reductio ad absurdum)
+  If $\{F_n\}$ were converging to $F$ uniformly, then
+  $F$ were continuous since each $F_n$ is continuous by Theorem 7.12.
+  However, $F$ is not continuous at $x = 0$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -526,7 +707,7 @@ Write $f_n(x) = (-1)^n$ on $E$ and $g_n(x) = \frac{x^2+n}{n^2}$ on $E$.
     &= \sum \frac{1}{n} \to \log n + \gamma
   \end{align*}
   (Exercise 8.9).
-  Hence $\sum (-1)^n \frac{x^2+n}{n^2}$ does not converge absolutely for any value of $x$
+  Hence $\sum (-1)^n \frac{x^2+n}{n^2}$ does not converge absolutely for any value of $x$.
 \end{enumerate}
 $\Box$ \\\\
 
