@@ -34,7 +34,7 @@
 
 
 
-\textbf{Supplement.} Another definition of Riemann-Stieltjes integral. \\
+\textbf{Supplement.} Another definition of Riemann-Stieltjes integral.
 \emph{(Exercise 7.3, 7.4 of the book
 T. M. Apostol, Mathematical Analysis, Second Edition.)
 Let $P$ be a partition of $[a, b]$.
@@ -48,7 +48,7 @@ for any partition $P$ of $[a, b]$ with norm $\Vert P \Vert < \delta$
 and for any choice of $t_i \in [x_{i-1}, x_i]$,
 we have $|\sum_{i = 1}^{n} f(t_i) \Delta \alpha_i - A| < \varepsilon$.} \\\\
 
-\textbf{Cliam.}
+\textbf{Claim.}
 \emph{$f \in \mathscr{R}$ in the sense of Definition 6.2
 implies that
 $f \in \mathscr{R}$ in the sense of this another definition.} \\
@@ -56,7 +56,7 @@ $f \in \mathscr{R}$ in the sense of this another definition.} \\
 \emph{Proof of Claim.}
 Let $A = \int f dx$, $M > 0$ be one upper bound of $|f|$ on $[a, b]$.
 Given $\varepsilon > 0$, there exists a partition
-$P_0 = \{a = x_0, x_1, ..., x_{N-1}, x_N = b \}$
+$P_0 = \{a = x_0, x_1, \ldots, x_{N-1}, x_N = b \}$
 such that
 $U(P_0, f) \leq A + \frac{\varepsilon}{2}$.
 Let $\delta = \frac{\varepsilon}{2MN} > 0$.
@@ -73,7 +73,7 @@ S_2 &\leq NM \Vert P \Vert < NM \delta < \frac{\varepsilon}{2}.
 Therefore, $U(P, f) < A + \varepsilon$.
 Similarly, $L(P, f) > A - \varepsilon$ whenever $\Vert P \Vert < \delta'$.
 Hence, $|\sum_{i = 1}^{n} f(t_i) \Delta x_i - A| < \varepsilon$
-whenever $\Vert P \Vert < \min(\delta, \delta')$.
+whenever $\Vert P \Vert < \min\{\delta, \delta'\}$.
 (Copy Apostol's hint and ensure $M > 0$. $M$ in Apostol's hint might be zero if $f = 0$.)
 $\Box$ \\
 
@@ -93,7 +93,7 @@ $\int_0^{\infty} (\frac{\sin x}{x})^2 dx = \frac{\pi}{2}$ in Exercise 8.12. \\\\
 $\alpha$ is continuous at $x_0$, $f(x_0) = 1$, and $f(x) = 0$ if $x \neq x_0$.
 Prove that $f \in \mathscr{R}(\alpha)$ and that $\int f d \alpha = 0$.} \\
 
-Given any partition $P = \{a = p_0, p_1, ..., p_{n-1}, p_n = b \}$,
+Given any partition $P = \{a = p_0, p_1, \ldots, p_{n-1}, p_n = b \}$,
 where $a = p_0 \leq p_1 \leq \cdots \leq p_{n-1} \leq p_n = b$.
 We might compute $L(P, f, \alpha)$ and $U(P, f, \alpha)$ by using $\varepsilon$-$\delta$ argument
 since we are hinted by the condition that $\alpha$ is continuous.
@@ -123,8 +123,15 @@ $\Box$ \\\\
 there exists a partition $P$ such that $U(P, f, \alpha) < \varepsilon$.} \\
 
 \emph{Proof of Claim 2.}
-Let $x_0 \in [p_{i_0 - 1}, p_{i_0}]$ for some $i_0$. Then
-$M_i = \sup_{p_{i - 1} \leq x \leq p_i} f(x) = 0$ if $i \neq i_0$, and $M_{i_0} = 1$.
+Say $x_0 \in [p_{i_0 - 1}, p_{i_0}]$ for some $i_0$.
+Then
+\begin{equation*}
+  M_i = \sup_{p_{i - 1} \leq x \leq p_i} f(x) =
+    \begin{cases}
+      0 & \text{ if $i \neq i_0$}, \\
+      1 & \text{ if $i = i_0$}.
+    \end{cases}
+\end{equation*}
 So
 $$U(P, f, \alpha) = \sum M_i \Delta \alpha_i = \Delta \alpha_{i_0}.$$
 It is not true for any arbitrary $\alpha$. (For example, $\alpha$ has a jump on $x = x_0$.)
@@ -134,8 +141,8 @@ there exists $\delta > 0$ such that $|\alpha(x) - \alpha(x_0)| < \frac{\varepsil
 whenever $|x - x_0| < \delta$ (and $x \in [a, b]$).
 Now we pick a nice partition
 $$P = \{ a, x_0 - \delta_1, x_0 + \delta_2, b \},$$
-where $\delta_1 = \min(\delta, x_0 - a) \geq 0$
-and $\delta_2 = \min(\delta, b - x_0) \geq 0$.
+where $\delta_1 = \min\{\delta, x_0 - a\} \geq 0$
+and $\delta_2 = \min\{\delta, b - x_0\} \geq 0$.
 (It is a trick about resizing ``$\delta$''
 to avoid considering the edge cases $x_0 = a$ or $x_0 = b$ or $a = b$.)
 Then $x_0 \in [x_0 - \delta_1, x_0 + \delta_2]$
@@ -213,6 +220,59 @@ So
 \]
 which is absurd.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.3.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.4.}
+\emph{If
+\begin{equation*}
+  f(x) =
+    \begin{cases}
+      0 & \text{ for all irrational $x$}, \\
+      1 & \text{ for all rational $x$},
+    \end{cases}
+\end{equation*}
+prove that $f \not\in \mathscr{R}$ on $[a,b]$ for any $a < b$.} \\
+
+\emph{Proof.}
+Given any partition
+\[
+  P = \{a = p_0, p_1, \ldots, p_{n-1}, p_n = b \}
+\]
+of $[a,b]$ where $a = p_0 \leq p_1 \leq \cdots \leq p_{n-1} \leq p_n = b$.
+Since $a < b$, we might assume that $a = p_0 < p_1 < \cdots < p_{n-1} < p_n = b$
+by removing duplicated points.
+Since $\mathbb{Q}$ and $\mathbb{R} - \mathbb{Q}$ are dense in $\mathbb{R}$, we have
+\begin{align*}
+  M_i &= \sup_{p_{i-1} \leq x \leq p_i} f(x) = 1, \\
+  m_i &= \inf_{p_{i-1} \leq x \leq p_i} f(x) = 0, \\
+  U(P,f) &= \sum_{i=1}^{n} M_i \Delta x_i = \sum_{i=1}^{n} \Delta x_i = b - a, \\
+  L(P,f) &= \sum_{i=1}^{n} m_i \Delta x_i = \sum_{i=1}^{n} 0 = 0.
+\end{align*}
+Since $P$ is arbitrary,
+\begin{align*}
+  \upint_a^b f dx &= \inf U(P,f) = b-a > 0, \\
+  \lowint_a^b f dx &= \sup L(P,f) = 0.
+\end{align*}
+Hence $f \not\in \mathscr{R}$ on $[a,b]$ for any $a < b$.
+$\Box$ \\
+
+\emph{Note.} Clearly, $f \in \mathscr{R}$ on $[a,b]$ if $a = b$.
+\\\\
 
 
 
