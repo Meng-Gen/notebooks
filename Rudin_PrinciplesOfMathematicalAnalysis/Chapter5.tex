@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -16,12 +18,19 @@
 
 \begin{document}
 
+
+
 \textbf{\Large Chapter 5: Differentiation} \\\\
 
 
 
 \emph{Author: Meng-Gen Tsai} \\
 \emph{Email: plover@gmail.com} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -46,6 +55,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 5.4.}
 \emph{If
 $$C_0 + \frac{C_1}{2} + \cdots + \frac{C_{n- 1}}{n} + \frac{C_n}{n + 1} = 0,$$
@@ -64,5 +77,116 @@ $$g(1) - g(0) = g'(\xi)(1 - 0),$$
 or $g'(\xi) = 0.$ That is, there exists a real root $x = \xi$ between $0$ and $1$
 at which $C_0 + C_1 x + \cdots + C_{n - 1} x^{n - 1} + C_n x^n = 0$.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.14.}
+\emph{Let $f$ be a differentiable real function defined in $(a,b)$.
+Prove that $f$ is convex if and only if $f'$ is monotonically increasing.
+Assume next $f''(x)$ exists for every $x \in (a,b)$,
+and prove that $f$ is convex if and only if $f''(x) \geq 0$ for all $x \in (a,b)$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $f'$ is monotonically increasing if $f$ is convex.}
+  \begin{enumerate}
+  \item[(a)]
+  Since $f$ is convex, by definition (Exercise 4.23)
+  \[
+    f(\lambda x + (1-\lambda) y) \leq \lambda f(x) + (1-\lambda) f(y)
+  \]
+  whenever $a < x < b$, $a < y < b$, $0 < \lambda < 1$.
+
+  \item[(b)]
+  As $x \neq y$, we have
+  \begin{align*}
+    f(y) - f(x)
+    &\geq \frac{f(x + \lambda(y-x)) - f(x)}{\lambda} \\
+    &= \frac{f(x + \lambda(y-x)) - f(x)}{\lambda(y-x)} \cdot (y-x)
+  \end{align*}
+  and let $\lambda \to 0$ to get
+  \[
+    f(y) - f(x) \geq f'(x)(y - x)
+  \]
+  (since $f'(x)$ exists).
+  Similarly, we have
+  \[
+    f(x) - f(y) \geq f'(y)(x - y).
+  \]
+
+  \item[(c)]
+  Given any $y > x$, we have
+  \[
+    f'(y)(y - x) \geq f(y) - f(x) \geq f'(x)(y - x).
+  \]
+  Hence $f'(y) \geq f'(x)$ whenever $y > x$,
+  or $f'$ is monotonically increasing.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that $f$ is convex if $f'$ is monotonically increasing.}
+  Given any $y > x$ and any $0 < \lambda < 1$.
+  \begin{enumerate}
+  \item[(a)]
+  By Theorem 5.10 (mean value theorem), there is a point $x < \xi < y$ such that
+  \[
+    f(y) - f(x) = f'(\xi)(y - x).
+  \]
+  Since $f'$ is monotonically increasing,
+  \[
+    f'(y)(y - x) \geq f(y) - f(x) \geq f'(x)(y - x).
+  \]
+
+  \item[(b)]
+  Write $z = \lambda x + (1-\lambda)y$.
+  Hence
+  \begin{align*}
+    f(y)-f(z) &\geq f'(z)(y-z), \\
+    f(z)-f(x) &\leq f'(z)(z-x),
+  \end{align*}
+  or
+  \begin{align*}
+    f(y) &\geq f(z) + f'(z)(y-z), \\
+    f(x) &\geq f(z) + f'(z)(x-z),
+  \end{align*}
+  or
+  \begin{align*}
+    \lambda f(x) + (1-\lambda)f(y)
+    \geq&
+    \lambda [f(z) + f'(z)(x-z)] \\
+      &+ (1-\lambda)[f(z) + f'(z)(y-z)] \\
+    =& f(z) \\
+    =& f(\lambda x + (1-\lambda)y).
+  \end{align*}
+  Hence $f$ is convex.
+  \end{enumerate}
+
+\item[(3)]
+  \emph{Show that $f''(x) \geq 0$ if $f$ is convex and $f''$ exists.}
+  By (1), $f'$ is monotonically increasing since $f$ is convex.
+  Given any $x \neq y$, we have
+  \[
+    \frac{f'(y)-f'(x)}{y - x} \geq 0.
+  \]
+  Let $y \to x$, we have $f''(x) \geq 0$ if $f''$ exists.
+
+\item[(4)]
+  \emph{Show that $f$ is convex if $f''$ exists and $f''(x) \geq 0$.}
+  By Theorem 5.11(a), $f'$ is monotonically increasing.
+  By (2), $f$ is convex.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \end{document}
