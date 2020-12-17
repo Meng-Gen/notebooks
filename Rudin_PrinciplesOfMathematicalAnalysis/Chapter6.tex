@@ -271,8 +271,36 @@ Since $P$ is arbitrary,
 Hence $f \not\in \mathscr{R}$ on $[a,b]$ for any $a < b$.
 $\Box$ \\
 
-\emph{Note.} Clearly, $f \in \mathscr{R}$ on $[a,b]$ if $a = b$.
-\\\\
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  $f \in \mathscr{R}$ on $[a,b]$ iff $a = b$.
+
+\item[(2)]
+  (Problem 4.1 in \emph{H. L. Royden, Real Analysis, 3rd edition}.)
+  \emph{Construct a sequence $\{f_n\}$ of nonnegative,
+  Riemann integrable functions such that $f_n$ increases monotonically to $f$.
+  What does this imply about changing the order of integration and the limiting process?}
+  (Since $\mathbb{Q}$ is countable, write
+  \[
+    \mathbb{Q} = \{ r_1, r_2, \ldots \}.
+  \]
+  Define
+  \begin{equation*}
+    f_n(x) =
+      \begin{cases}
+        0 & \text{ if $x \not\in \{ r_1, \ldots, r_n \}$ }, \\
+        1 & \text{ if $x \in \{ r_1, \ldots, r_n \}$ }.
+      \end{cases}
+  \end{equation*}
+  By construction, $f_n$ increases monotonically to $f$ pointwise.
+  Note that $f_n \to f$ not uniformly.
+  Also, $\int_{a}^{b} f_n(x) dx = 0$ by using the same argument in Theorem 6.10.
+  Therefore,
+  $\lim_{n \to \infty} \int_{a}^{b} f_n(x) dx = 0$
+  but $\int_{a}^{b} \lim_{n \to \infty} f_n(x) dx = \int_{a}^{b} f(x) dx$
+  does not exist.) \\\\
+\end{enumerate}
 
 
 
