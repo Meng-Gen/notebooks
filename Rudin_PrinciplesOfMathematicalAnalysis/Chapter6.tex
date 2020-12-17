@@ -29,6 +29,10 @@
 
 
 
+% https://carma.newcastle.edu.au/resources/jon/Preprints/Books/CUP/CUPold/np-convex.pdf
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -378,29 +382,88 @@ Prove the following statements.}
 \end{enumerate}
 
 \emph{Proof of (a)(Young's inequality).}
-$u = 0$ or $v = 0$ is nothing to do.
-For $u > 0$ and $v > 0$,
-\begin{align*}
-  uv
-  &= \exp(\log(uv)) \\
-  &= \exp(\frac{1}{p}\log(u^p) + \frac{1}{q}\log(v^q)) \\
-  &\leq \frac{1}{p} \exp(\log(u^p)) + \frac{1}{q}\exp(\log(v^q))
-    &\text{($\exp$ is convex)} \\
-  &= \frac{u^p}{p} + \frac{v^q}{q}.
-\end{align*}
-Or
-\begin{align*}
-  \log(\frac{u^p}{p} + \frac{v^q}{q})
-  &\geq \frac{1}{p} \log(u^p) + \frac{1}{q}\log(v^q)
-    &\text{($\log$ is concave)} \\
-  &= \log(u) + \log(v) \\
-  &= \log(uv)
-\end{align*}
-and notice that $\log$ increases monotonically.
+\begin{enumerate}
+  \item[(1)]
+  $u = 0$ or $v = 0$ is nothing to do.
+  For $u > 0$ and $v > 0$, we give some different proofs.
 
+  \item[(2)]
+  First proof.
+  \begin{align*}
+    uv
+    &= \exp(\log(uv)) \\
+    &= \exp(\frac{1}{p}\log(u^p) + \frac{1}{q}\log(v^q)) \\
+    &\leq \frac{1}{p} \exp(\log(u^p)) + \frac{1}{q}\exp(\log(v^q))
+      &\text{(Convexity of $\exp(x)$)} \\
+    &= \frac{u^p}{p} + \frac{v^q}{q}.
+  \end{align*}
+  Here the convexity of $\exp(x)$ can be derived
+  by the fact that $(\exp(x))'' > 0$ and Exercise 5.14.
+  (For the details about the exponential and logarithmic functions,
+  might see Chapter 8.)
 
+  \item[(3)]
+  Second proof.
+  \begin{align*}
+    \log(\frac{u^p}{p} + \frac{v^q}{q})
+    &\geq \frac{1}{p} \log(u^p) + \frac{1}{q}\log(v^q)
+      &\text{(Concavity of $\log(x)$)} \\
+    &= \log(u) + \log(v) \\
+    &= \log(uv).
+  \end{align*}
+  Since $\log(x)$ increases monotonically ($(\log(x))' = \frac{1}{x} > 0$ if $x > 0$),
+  $\frac{u^p}{p} + \frac{v^q}{q} \geq uv$
+  (or take the exponential function to get the same conclusion).
 
-PLACEHOLDER \\\\
+  \item[(4)]
+  Third proof.
+  \emph{Suppose that $f:[0,\infty) \to [0,\infty)$ is a strictly increasing continuous function
+  such that $f(0) = 0$ and $\lim_{x \to \infty} f(x) = \infty$.
+  Then
+  \[
+    uv \leq \int_{0}^{u} f(x)dx + \int_{0}^{v} f^{-1}(x)dx
+  \]
+  for every $u,v \geq 0$, and equality occurs if and only if $v = f(u)$.}
+  Define
+  \[
+    F(x) = -xf(x) + \int_{0}^{x} f(t)dt + \int_{0}^{f(x)} f^{-1}(t)dt.
+  \]
+  By Theorem 6.20 (the fundamental theorem of calculus) and Theorem 5.5 (chain rule),
+  \[
+    F'(x) = -(f(x) + xf'(x))+ f(x) + f'(x) f^{-1}(f(x)) = 0.
+  \]
+  Hence $F(x)$ is a constant on $(0,u)$ (Theorem 5.11(b)).
+  Note that $F(x)$ is continuous on $[0,u]$ and $F(0) = 0$,
+  so $F(x) = 0$ on $[0,u]$
+  or
+  \[
+    \int_{0}^{x} f(t)dt + \int_{0}^{f(x)} f^{-1}(t)dt = xf(x).
+  \]
+  Take $x = u$ to get
+  \[
+    \int_{0}^{u} f(x)dx + \int_{0}^{f(u)} f^{-1}(x)dx = uf(u).
+  \]
+  Hence
+  \begin{align*}
+    &\int_{0}^{u} f(x)dx + \int_{0}^{v} f^{-1}(x)dx - uv \\
+    =&
+    \int_{0}^{u} f(x)dx + \int_{0}^{f(u)} f^{-1}(x)dx + \int_{f(u)}^{v} f^{-1}(x)dx - uv \\
+    =&
+    uf(u) + \int_{f(u)}^{v} f^{-1}(x)dx - uv \\
+    =&
+    \int_{f(u)}^{v} [ f^{-1}(x)-f^{-1}(f(u)) ] dx \\
+    \geq&
+    0.
+  \end{align*}
+  The last inequality holds since $f$ is strictly increasing
+  and thus $f^{-1}$ is strictly increasing too.
+  Besides, the equality holds if and only if $f(u) = v$.
+  Now the conclusion holds by taking $f(x) = x^{p-1}$ in
+  \[
+    uv \leq \int_{0}^{u} f(x)dx + \int_{0}^{v} f^{-1}(x)dx.
+  \]
+\end{enumerate}
+$\Box$ \\
 
 
 
