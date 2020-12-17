@@ -305,6 +305,289 @@ $\Box$ \\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.5.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.6.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.7.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.8.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.9.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.10.}
+\emph{Let $p$ and $q$ be positive real integers such that
+\[
+  \frac{1}{p} + \frac{1}{q} = 1.
+\]
+Prove the following statements.}
+\begin{enumerate}
+  \item[(a)]
+  \emph{If $u \geq 0$ and $v \geq 0$, then
+  \[
+    uv \leq \frac{u^p}{p} + \frac{v^q}{q}.
+  \]
+  Equality holds if and only if $u^p = v^q$.}
+
+  \item[(b)]
+
+  \item[(c)]
+\end{enumerate}
+
+\emph{Proof of (a)(Young's inequality).}
+$u = 0$ or $v = 0$ is nothing to do.
+For $u > 0$ and $v > 0$,
+\begin{align*}
+  uv
+  &= \exp(\log(uv)) \\
+  &= \exp(\frac{1}{p}\log(u^p) + \frac{1}{q}\log(v^q)) \\
+  &\leq \frac{1}{p} \exp(\log(u^p)) + \frac{1}{q}\exp(\log(v^q))
+    &\text{($\exp$ is convex)} \\
+  &= \frac{u^p}{p} + \frac{v^q}{q}.
+\end{align*}
+Or
+\begin{align*}
+  \log(\frac{u^p}{p} + \frac{v^q}{q})
+  &\geq \frac{1}{p} \log(u^p) + \frac{1}{q}\log(v^q)
+    &\text{($\log$ is concave)} \\
+  &= \log(u) + \log(v) \\
+  &= \log(uv)
+\end{align*}
+and notice that $\log$ increases monotonically.
+
+
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.11.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.12.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.13.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.14.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.15.}
+\emph{Suppose $f$ is a real, continuously differentiable function on $[a,b]$,
+$f(a)=f(b)=0$, and
+\[
+  \int_{a}^{b} f(x)^2 dx = 1.
+\]
+Prove that
+\[
+  \int_{a}^{b} xf(x)f'(x) dx = -\frac{1}{2}
+\]
+and that
+\[
+  \int_{a}^{b} [f'(x)]^2 dx \int_{a}^{b} x^2f(x)^2 dx > \frac{1}{4}.
+\]
+} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  By Theorem 6.22 (integration by parts),
+  \[
+    \int_{a}^{b} x \left( \frac{f(x)^2}{2} \right)' dx
+    =
+    \left[ x \cdot \frac{f(x)^2}{2} \right]_{x=a}^{x=b}
+      - \int_{a}^{b} \frac{f(x)^2}{2} dx,
+  \]
+  or
+  \[
+    \int_{a}^{b} xf(x)f'(x) dx
+    =
+      \left[b \cdot \frac{f(b)^2}{2} - a \cdot \frac{f(a)^2}{2} \right]
+      - \frac{1}{2} \int_{a}^{b} f(x)^2 dx
+    = \frac{1}{2}.
+  \]
+
+  \item[(2)]
+  By Exercise 6.10(c),
+  \[
+    \int_{a}^{b} [f'(x)]^2 dx \int_{a}^{b} x^2f(x)^2 dx
+    \geq \left( \int_{a}^{b} xf(x)f'(x) dx \right)^2 = \frac{1}{4}.
+  \]
+  The equality holds iff
+  \[
+    f'(x) = \lambda x f(x)
+  \:\:\:\:\:\:\:\:
+  \text{ or }
+  \:\:\:\:\:\:\:\:
+  x f(x) = \mu f'(x)
+  \]
+  on $[a,b]$ for some constant $\lambda, \mu \in \mathbb{R}$.
+  \begin{enumerate}
+  \item[(a)]
+    If $\lambda = 0$, then $f'(x) = 0$ or $f(x)$ is a constant.
+    Since $f$ is continuous and $f(a) = f(b) = 0$, $f(x) = 0$ on $[a,b]$,
+    contrary to $\int_{a}^{b} f(x)^2 dx = 1$.
+
+  \item[(b)]
+    If $\mu = 0$, then $x f(x) = 0$, contrary to $\int_{a}^{b} xf(x)f'(x) dx = -\frac{1}{2}$.
+  \end{enumerate}
+  By (a)(b),
+  The equality holds iff
+  \[
+    f'(x) = c_1 x f(x)
+  \]
+  on $[a,b]$ for some constant $c_1 \in \mathbb{R}$.
+
+  \item[(3)]
+  Let $g(x) = f(x) \cdot \exp(-\frac{c_1}{2}x^2)$.
+  Since
+  \begin{align*}
+    g'(x)
+    &= f'(x) \cdot \exp(-\frac{c_1}{2}x^2) + f(x) \cdot (-c_1 x) \exp(-\frac{c_1}{2}x^2) \\
+    &= c_1 x f(x) \cdot \exp(-\frac{c_1}{2}x^2) + f(x) \cdot (-c_1 x) \exp(-\frac{c_1}{2}x^2) \\
+    &= 0
+  \end{align*}
+  for all $x \in (a,b)$,
+  $g(x) = c_2$ is a constant.
+  Hence $f(x) = c_2 \exp(\frac{c_1}{2}x^2)$ on $(a,b)$.
+  Since $f$ is continuous on $[a,b]$,
+  $\lim_{x \to a} f(x) = f(a)$,
+  or $c_2 \exp(\frac{c_1}{2}a^2) = 0$,
+  or $c_2 = 0$,
+  or $f(x) = 0$ on $[a,b]$,
+  contrary to $\int_{a}^{b} f(x)^2 dx = 1$.
+
+  \item[(4)]
+  Therefore, the equality does not hold, or
+  \[
+    \int_{a}^{b} [f'(x)]^2 dx \int_{a}^{b} x^2f(x)^2 dx > \frac{1}{4}.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.16.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.17.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.18.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 6.19.}
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
