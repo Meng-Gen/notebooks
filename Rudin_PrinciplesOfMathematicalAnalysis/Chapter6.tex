@@ -605,7 +605,75 @@ $\Box$ \\
 
 
 \emph{Proof of (d).}
-$\Box$ \\
+\begin{enumerate}
+\item[(1)]
+  \emph{Suppose $f$ and $g$ are real functions on $(0,1]$
+  and $f, g \in \mathscr{R}$ on $[c,1]$ for every $c > 0$.
+  Show that
+  \[
+    \abs{ \int_{0}^{1} fg dx }
+    \leq
+    \left\{ \int_{0}^{1} |f|^p dx \right\}^{\frac{1}{p}}
+    \left\{ \int_{0}^{1} |g|^q dx \right\}^{\frac{1}{q}}.
+  \]
+  Here $\int_{0}^{1}$ is one improper integral defined in Exercise 6.7.}
+  \begin{enumerate}
+  \item[(a)]
+    By (c), we have
+    \[
+      \abs{ \int_{c}^{1} fg dx }
+      \leq
+      \left\{ \int_{c}^{1} |f|^p dx \right\}^{\frac{1}{p}}
+      \left\{ \int_{c}^{1} |g|^q dx \right\}^{\frac{1}{q}}
+    \]
+    for any $c \in (0,1]$.
+    Here every integral is well-defined (Theorem 6.11 and Theorem 6.13).
+
+  \item[(b)]
+    Since every integral is $\geq 0$, by taking the limit in the right hand side
+    we have
+    \begin{align*}
+      \abs{ \int_{c}^{1} fg dx }
+      &\leq
+      \left\{ \int_{c}^{1} |f|^p dx \right\}^{\frac{1}{p}}
+      \left\{ \int_{c}^{1} |g|^q dx \right\}^{\frac{1}{q}} \\
+      &\leq
+      \left\{ \int_{0}^{1} |f|^p dx \right\}^{\frac{1}{p}}
+      \left\{ \int_{0}^{1} |g|^q dx \right\}^{\frac{1}{q}}.
+    \end{align*}
+    It is possible that $\left\{ \int_{0}^{1} |f|^p dx \right\}^{\frac{1}{p}} = \infty$
+    or $\left\{ \int_{0}^{1} |g|^q dx \right\}^{\frac{1}{q}} = \infty$.
+
+  \item[(c)]
+    Now $\abs{ \int_{c}^{1} fg dx }$ is bounded by
+    $\left\{ \int_{0}^{1} |f|^p dx \right\}^{\frac{1}{p}}
+    \left\{ \int_{0}^{1} |g|^q dx \right\}^{\frac{1}{q}}$.
+    Take limit to get
+    \[
+      \abs{ \int_{0}^{1} fg dx }
+      \leq
+      \left\{ \int_{0}^{1} |f|^p dx \right\}^{\frac{1}{p}}
+      \left\{ \int_{0}^{1} |g|^q dx \right\}^{\frac{1}{q}}
+    \]
+    even if some limit is divergent.
+  \end{enumerate}
+
+  \item[(2)]
+  \emph{Suppose $f$ and $g$ are real functions on $[a,b]$
+  and $f, g \in \mathscr{R}$ on $[a,b]$ for every $b > a$ where $a$ is fixed.
+  Show that
+  \[
+    \abs{ \int_{a}^{\infty} fg dx }
+    \leq
+    \left\{ \int_{a}^{\infty} |f|^p dx \right\}^{\frac{1}{p}}
+    \left\{ \int_{a}^{\infty} |g|^q dx \right\}^{\frac{1}{q}}.
+  \]
+  Here $\int_{a}^{\infty}$ is one improper integral defined in Exercise 6.8.}
+  Same as (1).
+\end{enumerate}
+$\Box$ \\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
