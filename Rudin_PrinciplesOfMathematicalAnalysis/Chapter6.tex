@@ -377,9 +377,34 @@ Prove the following statements.}
   Equality holds if and only if $u^p = v^q$.}
 
   \item[(b)]
+  \emph{If $f \in \mathscr{R}(\alpha)$, $g \in \mathscr{R}(\alpha)$,
+  $f \geq 0$, $g \geq 0$, and
+  \[
+    \int_{a}^{b} f^p d\alpha = \int_{a}^{b} g^q d\alpha = 1,
+  \]
+  then
+  \[
+    \int_{a}^{b} fg d\alpha \leq 1.
+  \]}
 
   \item[(c)]
+  \emph{If $f$ and $g$ are complex functions in $\mathscr{R}(\alpha)$, then
+  \[
+    \abs{ \int_{a}^{b} fg d\alpha }
+    \leq
+    \left\{ \int_{a}^{b} |f|^p d\alpha \right\}^{\frac{1}{p}}
+    \left\{ \int_{a}^{b} |g|^q d\alpha \right\}^{\frac{1}{q}}.
+  \]
+  This is \textbf{H\"older's inequality}.
+  When $p=q=2$ it is usually called the Schwarz inequality.
+  (Note that Theorem 1.35 is a very special case of this.)}
+
+  \item[(d)]
+  \emph{Show that H\"older's inequality is also true for the ``improper'' integrals
+  described in Exercise 6.7 and 6.8.} \\
 \end{enumerate}
+
+
 
 \emph{Proof of (a)(Young's inequality).}
 \begin{enumerate}
@@ -399,6 +424,8 @@ Prove the following statements.}
   \end{align*}
   Here the convexity of $\exp(x)$ can be derived
   by the fact that $(\exp(x))'' > 0$ and Exercise 5.14.
+  The fact that the equality holds if and only if $u^p = v^q$
+  is derived from the strictly convexity of $\exp(x)$ additionally.
   (For the details about the exponential and logarithmic functions,
   might see Chapter 8.)
 
@@ -414,6 +441,12 @@ Prove the following statements.}
   Since $\log(x)$ increases monotonically ($(\log(x))' = \frac{1}{x} > 0$ if $x > 0$),
   $\frac{u^p}{p} + \frac{v^q}{q} \geq uv$
   (or take the exponential function to get the same conclusion).
+  Here the concavity of $\log(x)$ can be derived
+  by the fact that $(\log(x))'' < 0$ and a statement that
+  $f''(x) \leq 0$ if and only if $f$ is concave.
+  The fact that the equality holds if and only if $u^p = v^q$
+  is derived from the strictly concavity of $\log(x)$ additionally.
+  (The proof is analogous to Exercise 5.14.)
 
   \item[(4)]
   Third proof.
@@ -460,12 +493,119 @@ Prove the following statements.}
   Besides, the equality holds if and only if $f(u) = v$.
   Now the conclusion holds by taking $f(x) = x^{p-1}$ in
   \[
-    uv \leq \int_{0}^{u} f(x)dx + \int_{0}^{v} f^{-1}(x)dx.
+    uv \leq \int_{0}^{u} f(x)dx + \int_{0}^{v} f^{-1}(x)dx
   \]
+  and the equality holds if and only if $u^p = v^q$.
 \end{enumerate}
 $\Box$ \\
 
 
+
+\emph{Proof of (b).}
+Every integral is well-defined (Theorem 6.11 and Theorem 6.13(a)).
+Let $u = f \geq 0$ and $v = g \geq 0$ in (a).
+Integrate both sides of the inequality
+\[
+  fg \leq \frac{f^p}{p} + \frac{g^q}{q}
+\]
+to get
+\begin{align*}
+  \int_{a}^{b} fg d\alpha
+  &\leq \int_{a}^{b} \left( \frac{f^p}{p} + \frac{g^q}{q} \right) d\alpha
+    &\text{(Theorem 6.12(b))} \\
+  &= \int_{a}^{b} \frac{f^p}{p} d\alpha + \int_{a}^{b} \frac{g^q}{q} d\alpha
+    &\text{(Theorem 6.12(a))} \\
+  &= \frac{1}{p} \int_{a}^{b} f^p d\alpha + \frac{1}{q} \int_{a}^{b} g^q d\alpha
+    &\text{(Theorem 6.12(a))} \\
+  &= \frac{1}{p} + \frac{1}{q}
+    &\text{(Assumption)} \\
+  &= 1.
+\end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+There are three possible cases.
+\begin{enumerate}
+\item[(1)]
+  The case $\left\{ \int_{a}^{b} |f|^p d\alpha \right\}^{\frac{1}{p}} = 0$.
+  So $\int_{a}^{b} |f|^p d\alpha = 0$.
+
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\int_{a}^{b} |f| d\alpha = 0$ if $\int_{a}^{b} |f|^p d\alpha = 0$.}
+  (Reductio ad absurdum)
+  If $\int_{a}^{b} |f| d\alpha = A > 0$, then given $\varepsilon = \frac{A}{2} > 0$,
+  there exists a partition $P_0 = \{a=x_0 \leq \cdots \leq x_n = b \}$ such that
+  \[
+    \sum_{i=0}^{n} m_i \Delta \alpha_i > \frac{A}{2},
+  \]
+  where $m_i = \inf_{x \in [x_{i-1},x_i]} |f|$ and
+  $\Delta \alpha_i = \alpha(x_i) - \alpha(x_{i-1})$.
+  By the pigeonhole principle,
+  there exists $1 \leq i_0 \leq n$
+  such that
+  \[
+    L(P_0,|f|,\alpha) = m_{i_0} \Delta \alpha_{i_0} > \frac{A}{2n} > 0.
+  \]
+  Now we consider $L(P,|f|^p,\alpha)$.
+  Hence
+  \[
+    L(P_0,|f|^p,\alpha)
+  = \sum_{i=0}^{n} m_i^p \Delta \alpha_i
+  \geq m_{i_0}^p \Delta \alpha_{i_0} > 0,
+  \]
+  or
+  \[
+    \lowint_{a}^{b}|f|d\alpha = \sup L(P,f,\alpha) \geq m_{i_0}^p \Delta \alpha_{i_0} > 0,
+  \]
+  which is absurd.
+
+  \item[(b)]
+  \emph{Show that $\int_{a}^{b} |fg| d\alpha = 0$ if $\int_{a}^{b} |f| d\alpha = 0$.}
+  Since $g \in \mathscr{R}(\alpha)$, $|g|$ is bounded by some real $M$ on $[a,b]$,
+  that is, $|g(x)| \leq M$.
+  Hence
+  \[
+    0
+  \leq \int_{a}^{b} |fg| d\alpha
+  \leq \int_{a}^{b} M|f| d\alpha
+  = M \int_{a}^{b}|f| d\alpha
+  = 0.
+  \]
+  Therefore $\int_{a}^{b} |fg| d\alpha = 0$.
+  \end{enumerate}
+  By (a)(b), $\int_{a}^{b} |fg| d\alpha = 0$
+  and thus H\"older's inequality holds for this case.
+
+\item[(2)]
+  The case $\left\{ \int_{a}^{b} |g|^q d\alpha \right\}^{\frac{1}{q}} = 0$.
+  Similar to (1).
+
+\item[(3)]
+  If both
+  $\left\{ \int_{a}^{b} |f|^p d\alpha \right\}^{\frac{1}{p}} > 0$
+  and
+  $\left\{ \int_{a}^{b} |g|^q d\alpha \right\}^{\frac{1}{q}} > 0$,
+  then we apply (b)
+  to
+  \[
+    F(x) = \frac{|f(x)|}{\left\{ \int_{a}^{b} |f(x)|^p d\alpha \right\}^{\frac{1}{p}}}
+    \:\:\:\:\:\:\:\:
+    \text{ and }
+    \:\:\:\:\:\:\:\:
+    G(x) = \frac{|g(x)|}{\left\{ \int_{a}^{b} |g(x)|^q d\alpha \right\}^{\frac{1}{q}}}.
+  \]
+  Here $F(x) \geq 0$ and $G(x) \geq 0$ are well-defined and Riemann integrable.
+  Thus the conclusion holds.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+$\Box$ \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -528,6 +668,7 @@ and that
 } \\
 
 \emph{Proof.}
+Every integral is well-defined (Theorem 4.9 and Theorem 6.8).
 \begin{enumerate}
   \item[(1)]
   By Theorem 6.22 (integration by parts),
