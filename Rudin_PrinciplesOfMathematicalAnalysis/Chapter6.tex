@@ -223,7 +223,12 @@ So
   = \frac{63}{64}f(p)|E| > 0,
 \]
 which is absurd.
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.}
+(Lebesgue integral)
+\emph{Let $f$ be a nonnegative measurable function.
+Then $\int f = 0$ implies $f = 0$ a.e.} \\\\
 
 
 
@@ -522,9 +527,10 @@ to get
   &= 1.
 \end{align*}
 The equality holds if $f^p = g^q$.
-(Note that $\alpha$ is not necessary increasing strictly,
-the equality does not hold only if $f^p = g^q$ as $\alpha$ is constant on some subinterval
-of $[a,b]$.)
+Note that the equality does not hold only if $f^p = g^q$.
+(Consider $\alpha$ is a constant function.)
+Luckily, it is true for the additional assumption that
+$\alpha(x) = x$ and $f, g$ are continuous on $[a,b]$.
 $\Box$ \\
 
 
@@ -611,14 +617,23 @@ There are three possible cases.
     =
     \frac{|g|^q}{\int_{a}^{b} |g|^q d\alpha}.
   \]
-  (Note that $\alpha$ is not necessary increasing strictly,
-  the equality does not hold only if
-  $\frac{|f|^p}{\int_{a}^{b} |f|^p d\alpha} = \frac{|g|^q}{\int_{a}^{b} |g|^q d\alpha}$
-  as $\alpha$ is constant on some subinterval of $[a,b]$.
-  It implies that if $\alpha$ is increasing strictly, $\alpha(x) = x$ for example,
-  then the equality holds if and only if
-  $\frac{|f|^p}{\int_{a}^{b} |f|^p d\alpha} = \frac{|g|^q}{\int_{a}^{b} |g|^q d\alpha}$.)
+  Note that the equality does not hold only if
+  $\frac{|f|^p}{\int_{a}^{b} |f|^p d\alpha}
+  =
+  \frac{|g|^q}{\int_{a}^{b} |g|^q d\alpha}$.
+  Luckily, it is true for the additional assumption that
+  $\alpha(x) = x$ and $f, g$ are continuous on $[a,b]$.
 \end{enumerate}
+By (1)(2)(3),
+in any case the equality holds if
+\[
+  |f|^p \int_{a}^{b} |g|^q d\alpha = |g|^q \int_{a}^{b} |f|^p d\alpha.
+\]
+In addition, if $\alpha(x) = x$ and $f, g$ are continuous on $[a,b]$,
+then the equality holds if and only if
+\[
+  |f|^p \int_{a}^{b} |g|^q d\alpha = |g|^q \int_{a}^{b} |f|^p d\alpha.
+\]
 $\Box$ \\
 
 
@@ -745,7 +760,7 @@ we have
 \[
   \norm{f-h}_2 \leq \norm{f-g}_2 + \norm{g-h}_2.
 \]
-Every integral is well-defined (Theorem 6.12 and Theorem 6.13 (or Theorem 6.11)).
+Here every integral is well-defined (Theorem 6.12 and Theorem 6.13 (or Theorem 6.11)).
 
 \end{enumerate}
 $\Box$ \\\\
@@ -757,8 +772,121 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 6.12.}
+\emph{With the notations of Exercise 6.11,
+suppose $f \in \mathscr{R}(\alpha)$ and $\varepsilon > 0$.
+Prove that there exists a continuous function $g$ on $[a,b]$
+such that $\norm{f-g}_2 < \varepsilon$.
+(Hint: Let $P = \{a=x_0 \leq \cdots \leq x_n = b\}$ be a suitable partition of $[a,b]$,
+define
+\[
+  g(t) = \frac{x_i-t}{\Delta x_i} f(x_{i-1}) + \frac{t-x_{i-1}}{\Delta x_i} f(x_i)
+\]
+if $x_{i-1} \leq t \leq x_i$.)} \\
 
-PLACEHOLDER \\\\
+\emph{Proof.}
+Given $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+There are some real numbers $m$ and $M$
+such that $m \leq f(x) \leq M$ if $x \in [a,b]$ since $f \in \mathscr{R}(\alpha)$
+or $f$ is bounded on $[a,b]$.
+By Theorem 6.6, there exists a partition
+$P = \{a=x_0 \leq \cdots \leq x_n = b\}$ such that
+\[
+  U(P,f,\alpha) - L(P,f,\alpha) < \frac{\varepsilon^2}{M - m + 1}.
+\]
+Here
+\begin{align*}
+  U(P,f,\alpha) &= \sum_{i=1}^n M_i \Delta \alpha_i
+    \text{ where } M_i = \sup_{x_{i-1} \leq x \leq x_i} f(x) \\
+  L(P,f,\alpha) &= \sum_{i=1}^n m_i \Delta \alpha_i
+    \text{ where } m_i = \inf_{x_{i-1} \leq x \leq x_i} f(x).
+\end{align*}
+
+\item[(2)]
+For such partition $P$, define $g$ on $[a,b]$ by
+\[
+  g(t) = \frac{x_i-t}{\Delta x_i} f(x_{i-1}) + \frac{t-x_{i-1}}{\Delta x_i} f(x_i)
+\]
+if $x_{i-1} \leq t \leq x_i$.
+So that
+\begin{align*}
+  \abs{ f(t) - g(t) }
+  &= \abs{ \left( \frac{x_i-t}{\Delta x_i} + \frac{t-x_{i-1}}{\Delta x_i} \right) f(t)
+    - \frac{x_i-t}{\Delta x_i} f(x_{i-1}) + \frac{t-x_{i-1}}{\Delta x_i} f(x_i) } \\
+  &= \abs{ \frac{x_i-t}{\Delta x_i}(f(t) - f(x_{i-1}))
+    +  \frac{t-x_{i-1}}{\Delta x_i}(f(t) - f(x_i)) } \\
+  &\leq \frac{x_i-t}{\Delta x_i}\abs{ f(t) - f(x_{i-1}) }
+    +  \frac{t-x_{i-1}}{\Delta x_i}\abs{ f(t) - f(x_i) } \\
+  &\leq \frac{x_i-t}{\Delta x_i} (M_i - m_i) + \frac{t-x_{i-1}}{\Delta x_i}(M_i - m_i) \\
+  &= M_i - m_i
+\end{align*}
+if $x_{i-1} \leq t \leq x_i$.
+Especially,
+\[
+  \abs{ f(t) - g(t) } \leq M - m
+\]
+if $a \leq t \leq b$.
+
+\item[(3)]
+Note that the integral $\int_{a}^{b} |f-g|^2 d\alpha$ is well-defined
+(Theorem 6.8, Theorem 6.11 and Theorem 6.12).
+So that
+\begin{align*}
+  \int_{a}^{b} |f-g|^2 d\alpha
+  =& \sum_{i=1}^n \int_{x_{i-1}}^{x_i} |f-g|^2 d\alpha \\
+  \leq& \sum_{i=1}^n \int_{x_{i-1}}^{x_i} (M-m)(M_i - m_i) d\alpha \\
+  =& (M-m) \sum_{i=1}^n \int_{x_{i-1}}^{x_i} (M_i - m_i) \Delta \alpha_i \\
+  =& (M-m) [ U(P,f,\alpha) - L(P,f,\alpha) ] \\
+  \leq& (M-m) \cdot \frac{\varepsilon^2}{M - m + 1} \\
+  <& \varepsilon^2.
+\end{align*}
+Hence,
+\[
+  \norm{f-g}_2
+  = \left\{ \int_{a}^{b} |f-g|^2 d\alpha \right\}^{\frac{1}{2}}
+  < \varepsilon.
+\]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  Apply the same argument we can prove the following statement:
+  \begin{quote}
+    \emph{Suppose $f \in \mathscr{R}(\alpha)$ and $\varepsilon > 0$.
+    Prove that there exists a continuous function $g$ on $[a,b]$
+    such that $\int_{a}^{b} |f-g| d\alpha < \varepsilon$.}
+  \end{quote}
+
+\item[(2)]
+  (Lebesgue integral)
+  \begin{enumerate}
+    \item[(a)]
+    \emph{Let $f$ be Lebesgue integrable over $E$.
+    Then, given $\varepsilon > 0$,
+    there is a simple function $\varphi$ such that
+    \[
+      \int_E |f-\varphi| < \varepsilon.
+    \]}
+
+    \item[(b)]
+    \emph{Under the same hypothesis there is a step function $\psi$ such that
+    \[
+      \int_E |f-\psi| < \varepsilon.
+    \]}
+
+    \item[(c)]
+    \emph{Under the same hypothesis there is a continuous function $g$
+    vanishing outside a finite interval such that
+    \[
+      \int_E |f-g| < \varepsilon.
+    \]} \\\\
+  \end{enumerate}
+\end{enumerate}
 
 
 
@@ -819,7 +947,7 @@ Every integral is well-defined (Theorem 4.9 and Theorem 6.8).
     =
       \left[b \cdot \frac{f(b)^2}{2} - a \cdot \frac{f(a)^2}{2} \right]
       - \frac{1}{2} \int_{a}^{b} f(x)^2 dx
-    = \frac{1}{2}.
+    = - \frac{1}{2}.
   \]
 
   \item[(2)]
@@ -828,61 +956,121 @@ Every integral is well-defined (Theorem 4.9 and Theorem 6.8).
     \int_{a}^{b} [f'(x)]^2 dx \int_{a}^{b} x^2f(x)^2 dx
     \geq \left( \int_{a}^{b} xf(x)f'(x) dx \right)^2 = \frac{1}{4}.
   \]
-  The equality holds iff
-  \[
-    f'(x) = \lambda x f(x)
-  \:\:\:\:\:\:\:\:
-  \text{ or }
-  \:\:\:\:\:\:\:\:
-  x f(x) = \mu f'(x)
-  \]
-  on $[a,b]$ for some constant $\lambda, \mu \in \mathbb{R}$.
-  \begin{enumerate}
-  \item[(a)]
-    If $\lambda = 0$, then $f'(x) = 0$ or $f(x)$ is a constant.
-    Since $f$ is continuous and $f(a) = f(b) = 0$, $f(x) = 0$ on $[a,b]$,
-    contrary to $\int_{a}^{b} f(x)^2 dx = 1$.
-
-  \item[(b)]
-    If $\mu = 0$, then $x f(x) = 0$, contrary to $\int_{a}^{b} xf(x)f'(x) dx = -\frac{1}{2}$.
-  \end{enumerate}
-  By (a)(b),
-  The equality holds iff
-  \[
-    f'(x) = c_1 x f(x)
-  \]
-  on $[a,b]$ for some constant $c_1 \in \mathbb{R}$.
 
   \item[(3)]
-  Let $g(x) = f(x) \cdot \exp(-\frac{c_1}{2}x^2)$.
-  Since
-  \begin{align*}
-    g'(x)
-    &= f'(x) \cdot \exp(-\frac{c_1}{2}x^2) + f(x) \cdot (-c_1 x) \exp(-\frac{c_1}{2}x^2) \\
-    &= c_1 x f(x) \cdot \exp(-\frac{c_1}{2}x^2) + f(x) \cdot (-c_1 x) \exp(-\frac{c_1}{2}x^2) \\
-    &= 0
-  \end{align*}
-  for all $x \in (a,b)$,
-  $g(x) = c_2$ is a constant.
-  Hence $f(x) = c_2 \exp(\frac{c_1}{2}x^2)$ on $(a,b)$.
-  Since $f$ is continuous on $[a,b]$,
-  $\lim_{x \to a} f(x) = f(a)$,
-  or $c_2 \exp(\frac{c_1}{2}a^2) = 0$,
-  or $c_2 = 0$,
-  or $f(x) = 0$ on $[a,b]$,
-  contrary to $\int_{a}^{b} f(x)^2 dx = 1$.
-
-  \item[(4)]
-  Therefore, the equality does not hold, or
+  (Reductio ad absurdum)
+  If the equality were holding, then by Exercise 6.10(c)
   \[
-    \int_{a}^{b} [f'(x)]^2 dx \int_{a}^{b} x^2f(x)^2 dx > \frac{1}{4}.
+    (f'(x))^2 \int_{a}^{b} x^2f(x)^2 dx
+    = x^2f(x)^2 \int_{a}^{b} [f'(x)]^2 dx
   \]
+  on $[a,b]$
+  (since $x$, $f(x)$ and $f'(x)$ are continuous on $[a,b]$).
+
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that both integrals are nonzero.}
+    (Reductio ad absurdum)
+    If $\int_{a}^{b} x^2f(x)^2 dx = 0$,
+    then $x^2f(x)^2 = 0$ or $xf(x) = 0$ on $[a,b]$ (Exercise 6.2).
+    So that
+    \[
+      \int_{a}^{b} xf(x)f'(x) dx = 0 \neq -\frac{1}{2},
+    \]
+    which is absure.
+    Similarly, $\int_{a}^{b} [f'(x)]^2 dx \neq 0$.
+
+  \item[(b)]
+    By (a), we write
+    \[
+      C
+      =
+      \left\{ \frac{\int_{a}^{b} [f'(x)]^2 dx}{\int_{a}^{b} x^2f(x)^2 dx} \right\}^{\frac{1}{2}}
+      > 0
+    \]
+    be a positive constant.
+    Hence
+    \[
+      f'(x) = \pm C x f(x).
+    \]
+    Here the sign ``$\pm$'' is not necessary unchanged on $[a,b]$.
+    Luckily, we can show that the sign ``$\pm$'' is unchanged on some subinterval of $[a,b]$.
+
+  \item[(c)]
+    To find such subinterval of $[a,b]$,
+    we consider the zero set $Z(f')$ and $Z(xf)$ on $[a,b]$.
+    Since $f'(x) = \pm C x f(x)$ with $C > 0$, we have
+    \[
+      Z(f') = Z(xf).
+    \]
+    Note that $Z(f') = Z(xf)$ is closed (Exercise 4.3) and not equal to $[a,b]$
+    (by applying the same argument in (a)).
+    Hence the complement of $Z(f') = Z(xf)$ is open and nonempty,
+    which can be written as the union of an at most countable collection
+    of disjoint segments (Exercise 2.29).
+
+  \item[(d)]
+    Consider any nonempty open interval in (c), say
+    \[
+      (c,d) \subseteq [a,b].
+    \]
+    By construction, $f'(x) \neq 0$ for all $x \in (c,d)$.
+    Since $f'(x)$ is continuous, by Theorem 4.23
+    there are only two mutually exclusive possible cases:
+    \begin{enumerate}
+      \item[(i)]
+      $f'(x) > 0$ for all $x \in (c,d)$,
+
+      \item[(ii)]
+      $f'(x) < 0$ for all $x \in (c,d)$.
+    \end{enumerate}
+    Similar result for $xf(x)$.
+    Therefore, the sign ``$\pm$'' of $f'(x) = \pm C x f(x)$ are unchanged on $(c,d)$,
+    that is,
+    \begin{enumerate}
+      \item[(i)]
+      $f'(x) = C x f(x)$ for all $x \in (c,d)$,
+
+      \item[(ii)]
+      $f'(x) = -C x f(x)$ for all $x \in (c,d)$,
+    \end{enumerate}
+
+  \item[(e)]
+    Suppose $f'(x) = C xf(x)$ on $(c,d)$.
+    Since $f'(x)$ and $xf(x)$ are both vanishing at $x = c$ and $x = d$,
+    $f'(x) = C xf(x)$ at $x = c$ and $x = d$.
+    So
+    \[
+      f'(x) = C xf(x) \:\text{ if }\: x \in [c,d].
+    \]
+    Define
+    \[
+      \phi(x,y) = Cxy
+    \]
+    be a real function on $R = [c,d] \times \mathbb{R}$.
+    And consider the initial-value problem
+    \[
+      y' = \phi(x,y)
+      \:\:\:\:\:\:\:\:
+      \text{ with }
+      \:\:\:\:\:\:\:\:
+      y(c) = 0.
+    \]
+    Then
+    \[
+      |\phi(x,y_2) - \phi(x,y_1)|
+      = Cx|y_2-y_1|
+      \leq A|y_2-y_1|
+    \]
+    where $A = C \cdot \max\{|c|,|d|\}$ is a constant.
+    By Exercise 5.27, this initial-value problem has at most one solution.
+    Clearly, $y = f(x) = 0$ on $[c,d]$ is one solution of this initial-value problem,
+    contrary to the construction of $[c,d]$.
+    Similar result for the case $f'(x) = -C xf(x)$.
+  \end{enumerate}
+  Therefore, the equality does not hold.
 \end{enumerate}
 $\Box$ \\\\
-
-
-
-PLACEHOLDER \\\\
 
 
 
