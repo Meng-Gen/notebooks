@@ -521,6 +521,10 @@ to get
     &\text{(Assumption)} \\
   &= 1.
 \end{align*}
+The equality holds if $f^p = g^q$.
+(Note that $\alpha$ is not necessary increasing strictly,
+the equality does not hold only if $f^p = g^q$ as $\alpha$ is constant on some subinterval
+of $[a,b]$.)
 $\Box$ \\
 
 
@@ -600,6 +604,20 @@ There are three possible cases.
   \]
   Here $F(x) \geq 0$ and $G(x) \geq 0$ are well-defined and Riemann integrable.
   Thus the conclusion holds.
+  The equality holds if $F(x)^p = G(x)^q$
+  or
+  \[
+    \frac{|f|^p}{\int_{a}^{b} |f|^p d\alpha}
+    =
+    \frac{|g|^q}{\int_{a}^{b} |g|^q d\alpha}.
+  \]
+  (Note that $\alpha$ is not necessary increasing strictly,
+  the equality does not hold only if
+  $\frac{|f|^p}{\int_{a}^{b} |f|^p d\alpha} = \frac{|g|^q}{\int_{a}^{b} |g|^q d\alpha}$
+  as $\alpha$ is constant on some subinterval of $[a,b]$.
+  It implies that if $\alpha$ is increasing strictly, $\alpha(x) = x$ for example,
+  then the equality holds if and only if
+  $\frac{|f|^p}{\int_{a}^{b} |f|^p d\alpha} = \frac{|g|^q}{\int_{a}^{b} |g|^q d\alpha}$.)
 \end{enumerate}
 $\Box$ \\
 
@@ -681,8 +699,56 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 6.11.}
+\emph{Let $\alpha$ be a fixed increasing function on $[a,b]$.
+For $u \in \mathscr{R}(\alpha)$, define
+\[
+  \norm{u}_2 = \left\{ \int_{a}^{b} |u|^2 d\alpha \right\}^{\frac{1}{2}}.
+\]
+Suppose $f,g,h \in \mathscr{R}(\alpha)$, and prove the triangle inequality
+\[
+  \norm{f-h}_2 \leq \norm{f-g}_2 + \norm{g-h}_2
+\]
+as a consequence of the Schwarz inequality, as in the proof of Theorem 1.37.} \\
 
-PLACEHOLDER \\\\
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+By Exercise 6.10(c) with $p=q=2$, we have
+\begin{align*}
+  \int_{a}^{b} |f-g||g-h| d\alpha
+  &=
+    \abs{ \int_{a}^{b} |f-g||g-h| d\alpha } \\
+  &\leq
+    \left\{ \int_{a}^{b} |f-g|^2 dx \right\}^{\frac{1}{2}}
+    \left\{ \int_{a}^{b} |g-h|^2 dx \right\}^{\frac{1}{2}} \\
+  &= \norm{f-g}_2 \norm{g-h}_2.
+\end{align*}
+Every integral is well-defined (Theorem 6.12 and Theorem 6.13 (or Theorem 6.11)).
+
+\item[(2)]
+Since
+\begin{align*}
+  \norm{f-h}_2^2
+  &= \int_{a}^{b} |f-h|^2 d\alpha \\
+  &\leq \int_{a}^{b} (|f-g|+|g-h|)^2 d\alpha
+    &\text{(Triangle inequality)} \\
+  &= \int_{a}^{b} (|f-g|^2 + 2|f-g||g-h| + |g-h|^2) d\alpha \\
+  &= \int_{a}^{b} |f-g|^2 d\alpha
+    + 2\int_{a}^{b} |f-g||g-h| d\alpha
+    + \int_{a}^{b} |g-h|^2 d\alpha \\
+  &\leq
+    \norm{f-g}_2^2 + 2 \norm{f-g}_2 \norm{g-h}_2 + \norm{g-h}_2^2
+    &\text{((1))} \\
+  &= (\norm{f-g}_2 + \norm{g-h}_2)^2,
+\end{align*}
+we have
+\[
+  \norm{f-h}_2 \leq \norm{f-g}_2 + \norm{g-h}_2.
+\]
+Every integral is well-defined (Theorem 6.12 and Theorem 6.13 (or Theorem 6.11)).
+
+\end{enumerate}
+$\Box$ \\\\
 
 
 
