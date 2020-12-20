@@ -338,8 +338,125 @@ PLACEHOLDER \\\\
 
 
 \textbf{Exercise 6.7.}
+\emph{Suppose $f$ is a real function on $(0,1]$ and $f \in \mathscr{R}$ on $[c,1]$
+for every $c > 0$.
+Define
+\[
+  \int_{0}^{1}f(x)dx = \lim_{c \to 0} \int_{c}^{1}f(x)dx
+\]
+if this limit exists (and is finite).}
+\begin{enumerate}
+  \item[(a)]
+  \emph{If $f \in \mathscr{R}$ on $[0,1]$,
+  show that this definition of the integral agrees with the old one.}
 
-PLACEHOLDER \\\\
+  \item[(b)]
+  \emph{Construct a function such that the above limit exists,
+  although it fails to exist with $|f|$ in place of $f$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Since $f \in \mathscr{R}$ on $[0,1]$, $f$ is bounded or
+  $|f| \leq M$ for some real $M$.
+
+\item[(2)]
+For any $0 < c < 1$,
+we have
+\begin{align*}
+  \abs{ \int_{0}^{1} f(x)dx - \int_{c}^{1} f(x)dx }
+  &= \abs{ \int_{0}^{c} f(x)dx }
+    &\text{(Theorem 6.12(c))}\\
+  &\leq Mc.
+    &\text{(Theorem 6.12(d))}
+\end{align*}
+
+\item[(3)]
+Given any $\varepsilon > 0$, there exists $\delta = \frac{\varepsilon}{M+1} > 0$
+such that
+\[
+  \abs{ \int_{0}^{c} f(x)dx - \int_{0}^{1} f(x)dx }
+  \leq Mc
+  < M \delta
+  = M \cdot \frac{\varepsilon}{M+1}
+  < \varepsilon
+\]
+whenever $0 < c < \delta$.
+Hence $\lim_{c \to 0} \int_{0}^{c} f(x)dx = \int_{0}^{1} f(x)dx$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b)(Construct by nonabsolutely convergent series).}
+\begin{enumerate}
+\item[(1)]
+Given any nonabsolutely (conditionally) convergent series $\sum_{k=1}^{n} a_k$
+(take $\sum \frac{(-1)^n}{n}$ for example and then see Remark 3.46),
+we define $f$ on $(0,1]$ by
+\[
+  f(x) = 2^{n} a_n
+\]
+if $\frac{1}{2^{n}} < x \leq \frac{1}{2^{n-1}}$ as $n = 1,2,\ldots$.
+
+\item[(2)]
+By construction,
+\[
+  \int_{\frac{1}{2^{n}}}^{\frac{1}{2^{n-1}}} f(x) dx
+  = \left( \frac{1}{2^{n-1}} - \frac{1}{2^{n}}\right) 2^n a_n = a_n.
+\]
+and thus
+\[
+  \int_{\frac{1}{2^{n}}}^{1} f(x) dx
+  = \int_{\frac{1}{2^{n}}}^{\frac{1}{2^{n-1}}} f(x) dx
+    + \cdots
+    + \int_{\frac{1}{2}}^{1} f(x) dx
+  = \sum_{k=1}^{n} a_k.
+\]
+
+\item[(3)]
+Given any $\varepsilon > 0$.
+Since $\sum a_n$ is convergent, there exists a common integer $N$
+such that
+\[
+  |a_n| \leq \frac{\varepsilon}{89}
+\]
+and
+\[
+  \abs{ \sum_{k=1}^{n} a_k - A } \leq \frac{\varepsilon}{64}
+\]
+for some real $A$ whenever $n \geq N$
+(Definition 3.21 and Theorem 3.23).
+Therefore, for any $0 < c \leq \frac{1}{2^N}$,
+say $\frac{1}{2^{n+1}} < c \leq \frac{1}{2^n} \leq \frac{1}{2^N}$ for some $n \geq N$,
+we have
+\begin{align*}
+  \abs{ \int_{c}^{1} f(x) dx - A }
+  &= \abs{ \int_{c}^{\frac{1}{2^{n}}} f(x) dx
+    + \int_{\frac{1}{2^{n}}}^{1} f(x) dx
+    - A } \\
+  &\leq \abs{ \left( \frac{1}{2^{n}} - c \right) 2^{n+1} a_{n+1} }
+    + \abs{ \sum_{k=1}^{n} a_k - A } \\
+  &\leq \abs{ a_{n+1} } + \abs{ \sum_{k=1}^{n} a_k - A } \\
+  &\leq \frac{\varepsilon}{89} + \frac{\varepsilon}{64} \\
+  &\leq \varepsilon.
+\end{align*}
+Hence, $\lim_{c \to 0} \int_{c}^{1} f(x) dx = A$ exists.
+
+\item[(4)]
+Since
+\[
+  \int_{\frac{1}{2^{n}}}^{1} |f(x)| dx
+  = \int_{\frac{1}{2^{n}}}^{\frac{1}{2^{n-1}}} |f(x)| dx
+    + \cdots
+    + \int_{\frac{1}{2}}^{1} |f(x)| dx
+  = \sum_{k=1}^{n} |a_k| \to \infty
+\]
+as $n \to \infty$,
+$\lim_{c \to 0} \int_{c}^{1}f(x)dx$ does not exist.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
