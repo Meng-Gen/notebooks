@@ -283,9 +283,13 @@ $\Box$ \\
 \emph{Note.}
 \begin{enumerate}
 \item[(1)]
-  $f \in \mathscr{R}$ on $[a,b]$ iff $a = b$.
+  (Lebesgue integral)
+  $f$ is Lebesgue integrable.
 
 \item[(2)]
+  $f \in \mathscr{R}$ on $[a,b]$ iff $a = b$.
+
+\item[(3)]
   (Problem 4.1 in \emph{H. L. Royden, Real Analysis, 3rd edition}.)
   \emph{Construct a sequence $\{f_n\}$ of nonnegative,
   Riemann integrable functions such that $f_n$ increases monotonically to $f$.
@@ -308,12 +312,8 @@ $\Box$ \\
   Therefore,
   $\lim_{n \to \infty} \int_{a}^{b} f_n(x) dx = 0$
   but $\int_{a}^{b} \lim_{n \to \infty} f_n(x) dx = \int_{a}^{b} f(x) dx$
-  does not exist.) \\
+  does not exist.) \\\\
 \end{enumerate}
-
-\emph{Note.}
-(Lebesgue integral)
-\emph{$f$ is Lebesgue integrable.} \\\\
 
 
 
@@ -326,6 +326,9 @@ $\Box$ \\
 and $f^2 \in \mathscr{R}$ on $[a,b]$.
 Does it follow that $f \in \mathscr{R}$?
 Does the answer change if we assume that $f^3 \in \mathscr{R}$?} \\
+
+Actually we can omit the boundedness assumption of $f$
+since $f^2 \in \mathscr{R}$ or $f^3 \in \mathscr{R}$. \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -350,9 +353,11 @@ $f \not\in \mathscr{R}$ on $[a,b]$ for any $a < b$.
 $f \in \mathscr{R}$.}
 Let $\phi(x) = x^{\frac{1}{3}}$ on $\mathbb{R}$.
 By Theorem 6.11, $f(x) = \phi(f(x)^3) \in \mathscr{R}$.
-
+(The boundedness condition in Theorem 6.11 is unnecessary.)
 \end{enumerate}
 $\Box$ \\
+
+
 
 \emph{Note.}
 (Lebesgue integral)
