@@ -308,8 +308,12 @@ $\Box$ \\
   Therefore,
   $\lim_{n \to \infty} \int_{a}^{b} f_n(x) dx = 0$
   but $\int_{a}^{b} \lim_{n \to \infty} f_n(x) dx = \int_{a}^{b} f(x) dx$
-  does not exist.) \\\\
+  does not exist.) \\
 \end{enumerate}
+
+\emph{Note.}
+(Lebesgue integral)
+\emph{$f$ is Lebesgue integrable.} \\\\
 
 
 
@@ -318,8 +322,44 @@ $\Box$ \\
 
 
 \textbf{Exercise 6.5.}
+\emph{Suppose $f$ is a bounded real function on $[a,b]$,
+and $f^2 \in \mathscr{R}$ on $[a,b]$.
+Does it follow that $f \in \mathscr{R}$?
+Does the answer change if we assume that $f^3 \in \mathscr{R}$?} \\
 
-PLACEHOLDER \\\\
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f^2 \in \mathscr{R}$ on $[a,b]$ does not imply that
+$f \in \mathscr{R}$ (unless $f \geq 0$ on $[a,b]$).}
+Similar to Exercise 6.4,
+define
+\begin{equation*}
+  f(x) =
+    \begin{cases}
+      -1 & \text{ for all irrational $x$}, \\
+      1 & \text{ for all rational $x$}.
+    \end{cases}
+\end{equation*}
+$f^2 = 1 \in \mathscr{R}$ on $[a,b]$ but
+$f \not\in \mathscr{R}$ on $[a,b]$ for any $a < b$.
+(The proof for the ``unless'' part is similar to (2).)
+
+\item[(2)]
+\emph{Show that $f^3 \in \mathscr{R}$ on $[a,b]$ implies that
+$f \in \mathscr{R}$.}
+Let $\phi(x) = x^{\frac{1}{3}}$ on $\mathbb{R}$.
+By Theorem 6.11, $f(x) = \phi(f(x)^3) \in \mathscr{R}$.
+
+\end{enumerate}
+$\Box$ \\
+
+\emph{Note.}
+(Lebesgue integral)
+\emph{Suppose that $f^2$ is Lebesgue integrable.
+Does it follow that $f$ is Lebesgue integrable?
+Does the answer change if we assume that $f^3$ is Lebesgue integrable?}
+Both answers are no. \\\\
 
 
 
