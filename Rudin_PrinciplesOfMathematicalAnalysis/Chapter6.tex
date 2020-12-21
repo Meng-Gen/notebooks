@@ -1251,6 +1251,58 @@ PLACEHOLDER \\\\
 
 
 \textbf{Exercise 6.17.}
+\emph{Suppose $\alpha$ increases monotonically on $[a,b]$,
+$g$ is continuous,
+and $g(x) = G'(x)$ for $a \leq x \leq b$.
+Prove that
+\[
+  \int_{a}^{b} \alpha(x)g(x)dx
+  = G(b)\alpha(b) - G(a)\alpha(a) - \int_{a}^{b}G d\alpha.
+\]
+(Hint: Take $g$ real, without loss of generality.
+Given $P = \{a = x_0, x_1, \ldots, x_n = b\}$,
+choose $t_i \in (x_{i-1},x_i)$ so that $g(t_i)\Delta x_i = G(x_i) - G(x_{i-1})$.
+Show that
+\[
+  \sum_{i=1}^{n} \alpha(x_i)g(t_i)\Delta x_i
+  = G(b)\alpha(b) - G(a)\alpha(a) - \sum_{i=1}^{n} G_{i-1}\Delta \alpha_i.)
+\]} \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+  \item[(1)]
+  Take $g$ real, without loss of generality.
+  Given any partition
+  \[
+    P = \{a = x_0 < x_1 < \ldots < x_n = b\}
+  \]
+  of $[a,b]$.
+
+  \item[(2)]
+  By the mean value theorem (Theorem 5.10), there is $t_i \in (x_{i-1},x_i)$
+  such that
+  \[
+    G(x_i) - G(x_{i-1}) = (x_i - x_{i-1})G'(t_i) = g(t_i)\Delta x_i.
+  \]
+
+  \item[(3)]
+  Hence,
+  \begin{align*}
+    \sum_{i=1}^{n} \alpha(x_i)g(t_i)\Delta x_i
+    &= \sum_{i=1}^{n} \alpha(x_i)(G(x_i) - G(x_{i-1})) \\
+    &= \sum_{i=1}^{n} \alpha(x_i)G(x_i) - \sum_{i=1}^{n} \alpha(x_i)G(x_{i-1}) \\
+    &= \underbrace{G(b)\alpha(b) - G(a)\alpha(a)
+      + \sum_{i=1}^{n} \alpha(x_{i-1})G(x_{i-1})}_{\text{
+        adjust the index of $\sum_{i=1}^{n} \alpha(x_i)G(x_i)$}}
+      - \sum_{i=1}^{n} \alpha(x_i)G(x_{i-1}) \\
+    &= G(b)\alpha(b) - G(a)\alpha(a) - \sum_{i=1}^{n} G(x_{i-1}) \Delta\alpha_i.
+  \end{align*}
+
+  \item[(4)]
+  ...
+\end{enumerate}
+$\Box$ \\\\
+
 
 PLACEHOLDER \\\\
 
