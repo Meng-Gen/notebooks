@@ -40,10 +40,19 @@ $$|f(x) - f(y)| \leq (x - y)^2$$
 for all real $x$ and $y$. Prove that $f$ is a constant.} \\
 
 \emph{Proof.}
-$$\left| \frac{f(x) - f(y)}{x - y} \right| \leq |x - y|$$
-for $x \neq y$.
+\begin{enumerate}
+\item[(1)]
+Write
+\[
+  \left| \frac{f(x) - f(y)}{x - y} \right| \leq |x - y|
+\]
+if $x \neq y$.
+
+\item[(2)]
 Given any $y \in \mathbb{R}$,
-$|\frac{f(x) - f(y)}{x - y}| \rightarrow 0$ as $x \rightarrow y$,
+\[
+  \abs{ \frac{f(x) - f(y)}{x - y} } \to 0 \:\: \text{ as } \:\: x \to y,
+\]
 or $|f'(y)| = 0$.
 (Or using $\varepsilon$-$\delta$ argument. Fix $y \in \mathbb{R}$.
 Given any $\varepsilon > 0$, there exists $\delta = \varepsilon > 0$ such that
@@ -51,7 +60,33 @@ $$\left| \frac{f(x) - f(y)}{x - y} - 0 \right| \leq |x - y| < \delta = \varepsil
 whenever $|x - y| < \delta$. That is, $|f'(y)| = 0$.)
 So $f'(y) = 0$ for any $y \in \mathbb{R}$.
 By Theorem 5.11 (b), $f$ is a constant.
+\end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.2.}
+
+
+
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.3.}
+
+
+
+PLACEHOLDER \\\\
 
 
 
