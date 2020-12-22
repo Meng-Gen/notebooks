@@ -647,6 +647,7 @@ $\Box$ \\
 \emph{Proof (Heine-Borel Theorem).}
 Heine-Borel theorem provides the finiteness property to construct
 the boundedness property of $f$.
+
 \begin{enumerate}
 \item[(1)]
 \emph{Let $E$ be a bounded subset of a metric space $X$.
@@ -660,11 +661,13 @@ $$\overline{E}
 = \{ x \in X : d_X(x, a) \leq r \}
 \subseteq B_X(a;2r),$$
 or $\overline{E}$ is bounded.
+
 \item[(2)]
 Since $f: E \to \mathbb{R}$ is uniformly continuous,
 given any $\varepsilon > 0$, there is $\delta > 0$ such that
 $\abs{f(x) - f(y)} < \varepsilon$ whenever $\abs{x - y} < \delta$.
 In particular, pick $\varepsilon = 1$.
+
 \item[(3)]
 For such $\delta > 0$, we construct an open covering of $\overline{E} \subseteq \mathbb{R}$.
 Pick a collection $\mathscr{C}$ of open balls
@@ -679,6 +682,7 @@ That is, there is a finite subcollection $\mathscr{C}'$ of $\mathscr{C}$
 also covers $\overline{E}$, say
 $$\mathscr{C}'
 = \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.$$
+
 \item[(4)]
 Given any $x \in E \subseteq \overline{E}$,
 there is some $a_i \in E$ $(1 \leq i \leq m)$ such that $x \in B(a_i;\delta)$.
@@ -689,12 +693,15 @@ Almost done.
 Notice that $a_i$ depends on $x$,
 and thus we might use finiteness of $\{ a_1, a_2, ..., a_m \}$
 to remove dependence of $a_i$.
+
 \item[(5)]
 Let
 $$M = 1 + \max_{1 \leq i \leq m}{\abs{f(a_i)}}.$$
 So given any $x \in E$, $\abs{f(x)} < M$.
 \end{enumerate}
 $\Box$ \\
+
+
 
 \textbf{Supplement.}
 Exercise about considering the closure.
@@ -715,6 +722,95 @@ Then $\sum l(I_n) \geq 1$.} \\
 = \sum l(I_n).
 \end{align*}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.9.}
+\emph{Show that the requirement in the definition of uniformly continuity
+can be rephrased as follows, in terms of diameters of sets:
+To every $\varepsilon > 0$ there exists a $\delta > 0$ such that
+$\mathrm{diam}f(E) < \varepsilon$ for all $E \subseteq X$ with
+$\mathrm{diam}E < \delta$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+($\Longrightarrow$)
+Given $\varepsilon > 0$.
+By Definition 4.18, there exists a $\delta > 0$ such that
+\[
+  d(f(p),f(q)) < \frac{\varepsilon}{2}
+\]
+for all $p$ and $q$ in $X$ for which $d(p,q) < \delta$.
+Let $E$ be any subset of $X$ satisfying $\mathrm{diam}E < \delta$.
+Then for any $p, q \in E$,
+\[
+  d(p,q) \leq \mathrm{diam}E < \delta.
+\]
+So that
+\[
+  d(f(p),f(q)) < \frac{\varepsilon}{2},
+\]
+or $\frac{\varepsilon}{2}$ is an upper bound of $S = \{d(f(p),f(q)) : p, q \in E\}$.
+Hence
+\[
+  \mathrm{diam}f(E) = \sup S \leq \frac{\varepsilon}{2} < \varepsilon.
+\]
+
+\item[(2)]
+($\Longleftarrow$)
+Easy.
+Given $\varepsilon > 0$ there exists a $\delta > 0$ such that
+$\mathrm{diam}f(E) < \varepsilon$ for all $E \subseteq X$ with
+$\mathrm{diam}E < \delta$.
+In particular, for any $p, q \in X$ with $d(p,q) < \delta$,
+we can take $E = \{p,q\} \subseteq X$ and its diameter
+\[
+  \mathrm{diam}E = d(p,q) < \delta.
+\]
+So that
+\[
+  d(f(p),f(q)) = \mathrm{diam}f(E) < \varepsilon,
+\]
+or Definition 4.18 holds.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.10.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.11.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.12.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.13.}
 
 
 
