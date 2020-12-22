@@ -30,6 +30,7 @@
 
 
 % https://carma.newcastle.edu.au/resources/jon/Preprints/Books/CUP/CUPold/np-convex.pdf
+% https://www.math.mcgill.ca/gantumur/math249w15/assignment3sol.pdf
 
 
 
@@ -1346,25 +1347,129 @@ $\Box$ \\
 \]}
 \begin{enumerate}
   \item[(a)]
-  \emph{Prove that $|f(x)| < \frac{1}{x}$ if $x > 0$.}
+  \emph{Prove that $|f(x)| < \frac{1}{x}$ if $x > 0$.
+  (Hint: Put $t^2 = u$ and integrate by parts, to show that $f(x)$ is equal to
+  \[
+    \frac{\cos(x^2)}{2x} - \frac{\cos[(x+1)^2]}{2(x+1)}
+    - \int_{x^2}^{(x+1)^2} \frac{\cos u}{4u^{\frac{3}{2}}} du.
+  \]
+  Replace $\cos u$ by $-1$.)}
+
   \item[(b)]
   \emph{Prove that
   \[
     2xf(x) = \cos(x^2) - \cos[(x+1)^2] + r(x)
   \]
   where $|r(x)| < \frac{c}{x}$ and $c$ is a constant.}
+
   \item[(c)]
   \emph{Find the upper and lower limits of $xf(x)$, as $x \to \infty$.}
+
   \item[(d)]
   \emph{Does $\int_{0}^{\infty} \sin(t^2)dt$ converges?} \\
 \end{enumerate}
 
 \emph{Proof of (a).}
+\begin{enumerate}
+  \item[(1)]
+  Put $t^2 = u$ and integrate by parts to get
+  \begin{align*}
+    f(x)
+    &= \int_{x}^{x+1} \sin(t^2)dt \\
+    &= \int_{x^2}^{(x+1)^2} \frac{\sin u}{2u^{\frac{1}{2}}} du \\
+    &= - \frac{\cos[(x+1)^2]}{2(x+1)}
+      + \frac{\cos(x^2)}{2x}
+      - \int_{x^2}^{(x+1)^2} \frac{\cos u}{4u^{\frac{3}{2}}} du.
+  \end{align*}
+
+  \item[(2)]
+  \begin{align*}
+    |f(x)|
+    &\leq \abs{ \frac{\cos[(x+1)^2]}{2(x+1)} }
+      + \abs{ \frac{\cos(x^2)}{2x} }
+      + \abs{ \int_{x^2}^{(x+1)^2} \frac{\cos u}{4u^{\frac{3}{2}}} du } \\
+    &\leq \abs{ \frac{\cos[(x+1)^2]}{2(x+1)} }
+      + \abs{ \frac{\cos(x^2)}{2x} }
+      + \int_{x^2}^{(x+1)^2} \frac{|\cos u|}{4u^{\frac{3}{2}}} du \\
+    &\leq \frac{1}{2(x+1)}
+      + \frac{1}{2x}
+      + \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du \\
+    &= \frac{1}{2(x+1)}
+      + \frac{1}{2x}
+      + \left[ \frac{1}{2x} - \frac{1}{2(x+1)} \right] \\
+    &= \frac{1}{x}.
+  \end{align*}
+
+  \item[(3)]
+  The equality in (2) holds only if
+  $\abs{ \cos[(x+1)^2] } = 1$, $\abs{ \cos(x^2) } = 1$,
+  and
+  \[
+    \abs{ \int_{x^2}^{(x+1)^2} \frac{\cos u}{4u^{\frac{3}{2}}} du }
+    = \int_{x^2}^{(x+1)^2} \frac{\abs{\cos u}}{4u^{\frac{3}{2}}} du
+    = \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du.
+  \]
+  Since $\cos u$ has two absolute minimums or maximums at two different points
+  $u = x^2$ and $u = (x+1)^2$, by the property of $\cos(u)$ there is some
+  $u_0 \in [x^2,(x+1)^2]$ such that $\cos(u_0) = 0$.
+  Hence given $\varepsilon = \frac{1}{2} > 0$ there exists $\delta > 0$
+  such that
+  \[
+    |\cos(u)| \leq \frac{1}{2}
+  \]
+  whenever
+  \[
+    u \in E = [\max\{u_0-\delta,x^2\},\min\{u_0+\delta,(x+1)^2\}]
+    \subseteq [x^2,(x+1)^2].
+  \]
+  Here $|E| > 0$.
+  So that
+  \[
+    \int_{x^2}^{(x+1)^2} \frac{\abs{\cos u}}{4u^{\frac{3}{2}}} du
+    = \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du
+      - \frac{1}{2} \int_{E} \frac{1}{4u^{\frac{3}{2}}} du
+    < \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du,
+  \]
+  which is absurd.
+  Hence the equality in (2) does not hold.
+\end{enumerate}
+$\Box$ \\
 
 
 
-% https://www.math.mcgill.ca/gantumur/math249w15/assignment3sol.pdf
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(1)]
+  By (a),
+  \[
+    2xf(x) = \cos(x^2) - \cos[(x+1)^2] + r(x)
+  \]
+  where
+  \[
+    r(x)
+    = \frac{\cos[(x+1)^2]}{x+1}
+    - 2x\int_{x^2}^{(x+1)^2} \frac{\cos u}{4u^{\frac{3}{2}}} du.
+  \]
 
+  \item[(2)]
+  Similar to (a),
+  \begin{align*}
+    |2xf(x)|
+    &\leq \frac{1}{x+1}
+      + 2x \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du \\
+    &= \frac{1}{x+1}
+      + 2x \left[ \frac{1}{2x} - \frac{1}{2(x+1)} \right] \\
+    &= \frac{2}{x+1} \\
+    &< \frac{2}{x}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+
+$\Box$ \\\\
 
 
 \emph{Note.}
@@ -1373,8 +1478,6 @@ $\Box$ \\
   = \int_{0}^{\infty} \cos(t^2)dt
   = \frac{\sqrt{\pi}}{2\sqrt{2}}.
 \]
-
-PLACEHOLDER \\\\
 
 
 
