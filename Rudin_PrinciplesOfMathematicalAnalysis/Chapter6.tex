@@ -570,8 +570,93 @@ Both answers are no. \\\\
 
 
 \textbf{Exercise 6.6.}
+\emph{Let $P$ be the Cantor set constructed in Sec. 2.44.
+Let $f$ be a bounded real function on $[0,1]$ which is continuous at every point outside $P$.
+Prove that $f \in \mathscr{R}$ on $[0,1]$.
+(Hint: $P$ can be covered by finitely many segments
+whose total length can be made as small as desired. Proceed as in Theorem 6.10.)} \\
 
-PLACEHOLDER \\\\
+
+
+\emph{Proof (Theorem 6.10).}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+\item[(1)]
+Note that in Section 2.44, we have
+\[
+  P = \bigcap_{n=1}^{\infty} E_n
+\]
+and each $E_n$ is the union of $2^n$ intervals, each of length $\frac{1}{3^n}$.
+For each interval $[u_j,v_j] \subseteq E_n$ of $E_n$ ($1 \leq j \leq 2^n$),
+we construct a slightly larger open set
+\[
+  (u_j-\lambda,v_j+\lambda) \supsetneq [u,v]
+\]
+where $\lambda = \frac{1}{2}\left( \frac{1}{2.28^n} - \frac{1}{3^n} \right) > 0$.
+Each length of $(u_j-\lambda,v_j+\lambda)$ is $\frac{1}{2.28^n}$.
+Write
+\[
+  G_n = \bigcup_{1 \leq j \leq 2^n} (u_j-\lambda,v_j+\lambda).
+\]
+Hence
+\[
+  G_n \supsetneq \bigcup_{1 \leq j \leq 2^n} [u_j,v_j] = E_n \supseteq P,
+\]
+and the total length $|G_n|$ of $G_n$ satisfies
+\[
+  |G_n|
+  \leq \sum_{1 \leq j \leq 2^n} |(u_j-\lambda,v_j+\lambda)|
+  = \left(\frac{2}{2.28}\right)^n.
+\]
+(Two different subintervals might be overlapped.)
+As $n \to \infty$, $P$ can be covered by finitely many open segments
+whose total length can be made as small as desired.
+Now we take an integer $N$ such that
+$\left(\frac{2}{2.28}\right)^N < \frac{\varepsilon}{64(M+1)}$.
+
+\item[(2)]
+Let $K = [0,1] - G_N$ be a compact set (Theorem 2.35).
+By construction, $f$ is continuous on $K$ and thus $f$ is uniformly continuous.
+So there is $\delta > 0$ such that $|f(s) - f(t)| < \frac{\varepsilon}{89}$
+if $s, t \in K$ and $|s-t| < \delta$.
+
+\item[(3)]
+Now we construct a partition $P = \{x_0, x_1, \ldots, x_n\}$ of $[a,b]$,
+as the following steps:
+  \begin{enumerate}
+  \item[(a)]
+  Put $\frac{0}{m}, \frac{1}{m}, \ldots, \frac{m}{m}$
+  in $P$ for some integer $m \geq \frac{1}{\delta}$.
+
+  \item[(b)]
+  Put $u_j-\lambda$ and $v_j+\lambda$ in $P$.
+
+  \item[(c)]
+  Remove any points in the segment $(u_j-\lambda,v_j+\lambda)$
+  except $0$ and $1$.
+  \end{enumerate}
+
+\item[(4)]
+  Note that $M_i - m_i \leq 2M$ $(1 \leq i \leq n)$ where $M = \sup|f(x)|$ is defined.
+  Hence,
+  \[
+    U(P,f) - L(P,f)
+    \leq \frac{\varepsilon}{89} + 2M \cdot \frac{\varepsilon}{64(M+1)}
+    \leq \varepsilon.
+  \]
+  Since $\varepsilon$ is arbitrary, Theorem 6.6 shows that $f \in \mathscr{R}$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\textbf{Supplement (Lebesgue's criterion for Riemann-integrability).}
+\emph{Let $f$ be a bounded real function on $[a,b]$
+and let $D$ be the set of discontinuities of $f$ in $[a,b]$.
+Then $f \in \mathscr{R}$ on $[a,b]$ if and only if $D$ has measure zero.} \\
+
+For a proof,
+see Theorem 7.48 in \emph{Tom M. Apostol, Mathematical Analysis, 2nd edition}. \\\\
 
 
 
