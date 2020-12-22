@@ -171,10 +171,10 @@ the inf and sup again being taken over all partitions.
 Hence $f \in \mathscr{R}(\alpha)$ and that $\int f d \alpha = 0$ by Definition 6.2.
 $\Box$ \\
 
-\emph{Proof (Theorem 6.5).}
+\emph{Proof (Theorem 6.6).}
 By Claim 1 and 2,
 $$0 \leq U(P, f, \alpha) - L(P, f, \alpha) < \varepsilon.$$
-Hence $f \in \mathscr{R}(\alpha)$ by Theorem 6.5.
+Hence $f \in \mathscr{R}(\alpha)$ by Theorem 6.6.
 Furthermore,
 $$\int f d \alpha = \lowint_a^b f d\alpha = \sup L(P, f, \alpha) = 0.$$
 $\Box$ \\
@@ -237,8 +237,205 @@ Then $\int f = 0$ implies $f = 0$ a.e.} \\\\
 
 
 \textbf{Exercise 6.3.}
+\emph{Define three functions $\beta_1$, $\beta_2$, $\beta_3$ as follows:
+$\beta_j(x) = 0$ if $x < 0$, $\beta_j(x) = 1$ if $x > 0$ for $j=1,2,3$;
+and $\beta_1(0) = 0$, $\beta_2(0) = 1$, $\beta_3(0) = \frac{1}{2}$.
+Let $f$ be a bounded functions on $[-1,1]$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that $f \in \mathscr{R}(\beta_1)$ if and only if $f(0+) = f(0)$ and that then
+  \[
+    \int f d\beta_1 = f(0).
+  \]}
+\item[(b)]
+  \emph{State and prove a similar result for $\beta_2$.}
 
-PLACEHOLDER \\\\
+\item[(c)]
+  \emph{Prove that $f \in \mathscr{R}(\beta_3)$ if and only if $f$ is continuous at $0$.}
+
+\item[(d)]
+  \emph{If $f$ is continuous at $0$ prove that
+  \[
+    \int f d\beta_1 = \int f d\beta_2 = \int f d\beta_3 = f(0).
+  \]} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Given any $\delta > 0$,
+  we have
+  \[
+    |f(x) - f(0)| \leq \sup_{x\in[0,\delta]} f(x) - \inf_{x\in[0,\delta]} f(x)
+  \]
+  if $x \in [0,\delta]$.
+
+\item[(2)]
+  Given any $\varepsilon > 0$ and $\delta > 0$.
+  \emph{Show that if $f$ is bounded and $|f(x) - f(0)| < \varepsilon$ on $[0,\delta]$ then
+  \[
+    \sup_{x\in[0,\delta]} f(x) - \inf_{x\in[0,\delta]} f(x) < 2\varepsilon.
+  \]}
+
+  Since $f$ is bounded, there exists $x_1,x_2 \in [0,\delta]$
+  such that
+  \[
+    f(x_1) = \sup_{x\in[0,\delta]} f(x) \:\: \text{ and } \:\:
+    f(x_2) = \inf_{x\in[0,\delta]} f(x).
+  \]
+  By assumption,
+  \[
+    f(x_1) - f(x_2) \leq |f(x_1) - f(0)| + |f(0) - f(x_2)| < 2\varepsilon.
+  \]
+
+\item[(3)]
+\emph{Show that $f \in \mathscr{R}(\beta_1)$ iff $f(0+) = f(0)$.}
+  \begin{align*}
+    &f \in \mathscr{R}(\beta_1) \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ such that
+      $U(P,f,\beta_1) - L(P,f,\beta_1) < \varepsilon$}
+        &\text{(Theorem 6.6)} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ containing $0$ such that
+      $U(P,f,\beta_1) - L(P,f,\beta_1) < \varepsilon$}
+        &\text{(Theorem 6.4)} \\
+      &\text{where $P = \{-1 = x_0 < x_1 < \ldots < x_k = 0 < \ldots < x_n = 1\}$} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ containing $0$ such that
+      $M_{k+1} - m_{k+1} < \varepsilon$} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ containing $0$ such that
+      $\sup_{x\in[0,\delta]} f(x) - \inf_{x\in[0,\delta]} f(x) < \varepsilon$} \\
+      &\text{where $[x_k,x_{k+1}] = [0,\delta]$, $\delta > 0$} \\
+      &\text{(Take $P = \{-1,0,\delta,1\}$ in ``$\Longleftarrow$'' direction)} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $\delta > 0$ such that
+      $|f(x) - f(0)| < \varepsilon$ whenever $x \in [0,\delta]$}
+        &((1)(2)) \\
+      &\text{(Replace $\varepsilon$ by $\frac{\varepsilon}{2}$ in ``$\Longleftarrow$'' direction)} \\
+    \Longleftrightarrow&
+      \lim_{x \to 0+} f(x) = f(0).
+  \end{align*}
+
+\item[(4)]
+  \emph{Show that $\int f d\beta_1 = f(0)$ if $f \in \mathscr{R}(\beta_1)$.}
+  By (3) and Theorem 6.7,
+  \[
+    \abs{ f(0) - \int_{a}^{b} f d\beta_1 } < \varepsilon.
+  \]
+  Since $\varepsilon$ is arbitrary, $\int f d\beta_1 = f(0)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\emph{Show that $f \in \mathscr{R}(\beta_2)$ if and only if $f(0-) = f(0)$ and that then
+\[
+  \int f d\beta_2 = f(0).
+\]}
+
+Similar to (a).
+\begin{enumerate}
+\item[(1)]
+  Given any $\delta > 0$,
+  we have
+  \[
+    |f(x) - f(0)| \leq \sup_{x\in[-\delta,0]} f(x) - \inf_{x\in[-\delta,0]} f(x)
+  \]
+  if $x \in [-\delta,0]$.
+
+\item[(2)]
+  Given any $\varepsilon > 0$ and $\delta > 0$.
+  \emph{Show that if $f$ is bounded and $|f(x) - f(0)| < \varepsilon$ on $[-\delta,0]$ then
+  \[
+    \sup_{x\in[-\delta,0]} f(x) - \inf_{x\in[-\delta,0]} f(x) < 2\varepsilon.
+  \]}
+
+  Since $f$ is bounded, there exists $x_1,x_2 \in [-\delta,0]$
+  such that
+  \[
+    f(x_1) = \sup_{x\in[-\delta,0]} f(x) \:\: \text{ and } \:\:
+    f(x_2) = \inf_{x\in[-\delta,0]} f(x).
+  \]
+  By assumption,
+  \[
+    f(x_1) - f(x_2) \leq |f(x_1) - f(0)| + |f(0) - f(x_2)| < 2\varepsilon.
+  \]
+
+\item[(3)]
+\emph{Show that $f \in \mathscr{R}(\beta_1)$ iff $f(0-) = f(0)$.}
+  \begin{align*}
+    &f \in \mathscr{R}(\beta_2) \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ such that
+      $U(P,f,\beta_2) - L(P,f,\beta_2) < \varepsilon$}
+        &\text{(Theorem 6.6)} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ containing $0$ such that
+      $U(P,f,\beta_2) - L(P,f,\beta_2) < \varepsilon$}
+        &\text{(Theorem 6.4)} \\
+      &\text{where $P = \{-1 = x_0 < x_1 < \ldots < x_k = 0 < \ldots < x_n = 1\}$} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ containing $0$ such that
+      $M_{k} - m_{k} < \varepsilon$} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $P$ containing $0$ such that
+      $\sup_{x\in[-\delta,0]} f(x) - \inf_{x\in[-\delta,0]} f(x) < \varepsilon$} \\
+      &\text{where $[x_{k-1},x_{k}] = [-\delta,0]$, $\delta > 0$} \\
+      &\text{(Take $P = \{-1,-\delta,0,1\}$ in ``$\Longleftarrow$'' direction)} \\
+    \Longleftrightarrow&
+      \text{$\forall \varepsilon > 0$ there is $\delta > 0$ such that
+      $|f(x) - f(0)| < \varepsilon$ whenever $x \in [-\delta,0]$}
+        &((1)(2)) \\
+      &\text{(Replace $\varepsilon$ by $\frac{\varepsilon}{2}$ in ``$\Longleftarrow$'' direction)} \\
+    \Longleftrightarrow&
+      \lim_{x \to 0-} f(x) = f(0).
+  \end{align*}
+
+\item[(4)]
+  \emph{Show that $\int f d\beta_2 = f(0)$ if $f \in \mathscr{R}(\beta_2)$.}
+  By (3) and Theorem 6.7,
+  \[
+    \abs{ f(0) - \int_{a}^{b} f d\beta_2 } < \varepsilon.
+  \]
+  Since $\varepsilon$ is arbitrary, $\int f d\beta_2 = f(0)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+Note that $f$ is continuous at $0$ iff $f(0+) = f(0-) = f(0)$.
+Apply the same argument in (a) and (b),
+we have $f \in \mathscr{R}(\beta_3)$ if and only if $f(0+) = f(0-) = f(0)$.
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\emph{It suffices to show that
+\[
+  \int_{a}^{b} f d\beta_3 = f(0).
+\]}
+
+We can apply Theorem 6.12(d)(e) to $\beta_3 = \frac{1}{2}(\beta_1+\beta_2)$.
+That is,
+\[
+  \int_{a}^{b} f d\beta_3
+  = \frac{1}{2}\left[ \int_{a}^{b} f d\beta_1 + \int_{a}^{b} f d\beta_2 \right]
+  = \frac{1}{2}[f(0) + f(0)] = f(0).
+\]
+
+Or apply the same argument in (a) and (b) to get
+\[
+  \abs{ f(0) - \int_{a}^{b} f d\beta_3 } < \varepsilon
+\]
+for any $\varepsilon > 0$, or $\int_{a}^{b} f d\beta_3 = f(0)$.
+$\Box$ \\\\
 
 
 
@@ -500,6 +697,7 @@ Since
 \]
 as $n \to \infty$,
 $\lim_{c \to 0} \int_{c}^{1}f(x)dx$ does not exist.
+(Or show that $\lim_{c \to 0} \int_{c}^{1}f(x)dx = \infty$ by definition directly.)
 \end{enumerate}
 $\Box$ \\\\
 
@@ -1057,6 +1255,39 @@ $\Box$ \\
 
 
 \textbf{Exercise 6.13.}
+\emph{Define
+\[
+  f(x) = \int_{x}^{x+1} \sin(t^2)dt.
+\]}
+\begin{enumerate}
+  \item[(a)]
+  \emph{Prove that $|f(x)| < \frac{1}{x}$ if $x > 0$.}
+  \item[(b)]
+  \emph{Prove that
+  \[
+    2xf(x) = \cos(x^2) - \cos[(x+1)^2] + r(x)
+  \]
+  where $|r(x)| < \frac{c}{x}$ and $c$ is a constant.}
+  \item[(c)]
+  \emph{Find the upper and lower limits of $xf(x)$, as $x \to \infty$.}
+  \item[(d)]
+  \emph{Does $\int_{0}^{\infty} \sin(t^2)dt$ converges?} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+
+
+
+% https://www.math.mcgill.ca/gantumur/math249w15/assignment3sol.pdf
+
+
+
+\emph{Note.}
+\[
+  \int_{0}^{\infty} \sin(t^2)dt
+  = \int_{0}^{\infty} \cos(t^2)dt
+  = \frac{\sqrt{\pi}}{2\sqrt{2}}.
+\]
 
 PLACEHOLDER \\\\
 
