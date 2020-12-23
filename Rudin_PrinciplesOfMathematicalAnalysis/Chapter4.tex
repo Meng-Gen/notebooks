@@ -790,16 +790,14 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 4.10.}
-\emph{Complete the details of the following alternative proof of Theorem 4.19:
+\emph{Complete the details of the following alternative proof of Theorem 4.19
+(Let $f$ be a continuous mapping of a compact metric space $X$ into a metric space $Y$.
+Then $f$ is uniformly continuous on $X$):
 If $f$ is not uniformly continuous,
 then for some $\varepsilon > 0$
 there are sequences $\{p_n\}$, $\{q_n\}$ in $X$ such that
 $d_X(p_n,q_n) \to 0$ but $d_Y(f(p_n),f(q_n)) > \varepsilon$.
 Use Theorem 2.37 to obtain a contradiction.} \\
-
-\textbf{Theorem 4.19.}
-\emph{Let $f$ be a continuous mapping of a compact metric space $X$ into a metric space $Y$.
-Then $f$ is uniformly continuous on $X$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -911,6 +909,75 @@ $\Box$ \\
   \item[(4)]
     In a Banach space, Schauder fixed-point theorem. \\\\
 \end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.15.}
+\emph{Call a mapping of $X$ into $Y$ \textbf{open} if $f(V)$ is an open set in $Y$
+whenever $V$ is an open set in $X$.
+Prove that every continuous open mapping of $\mathbb{R}^1$ into $\mathbb{R}^1$
+is monotonic.} \\
+
+In fact, $f$ is strictly monotonic. \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  (Reductio ad absurdum)
+  If $f$ were not strictly monotonic,
+  then there exist $a < c < b \in \mathbb{R}^1$ such that
+  \[
+    f(a) \leq f(c) \geq f(b)
+  \]
+  or
+  \[
+    f(a) \geq f(c) \leq f(b).
+  \]
+
+  \item[(2)]
+  In any case, $f$ is a real continuous function on a compact set $[a,b]$.
+  By Theorem 4.16,
+  there exists $p, q \in [a,b]$ such that
+  \begin{align*}
+    M &= \sup_{x \in [a,b]}f(x) = f(p), \\
+    m &= \inf_{x \in [a,b]}f(x) = f(q).
+  \end{align*}
+
+  \item[(3)]
+  As $f(a) \leq f(c) \geq f(b)$, we consider where $f$ reaches its maximum value $M$ (by (2)).
+  \begin{enumerate}
+  \item[(a)]
+    $f(a) = M$ or $f(b) = M$. Since $f(a) \leq f(c) \geq f(b)$, by the maximality of $M$,
+    $f(c) = M$ or $M \in f((a,b))$.
+
+  \item[(b)]
+    $f(a) < M$ and $f(b) < M$. Hence $M \in f((a,b))$ clearly.
+  \end{enumerate}
+  In any case, $M \in f((a,b))$.
+  Note that $f((a,b))$ is open
+  since $f$ is an open mapping and $(a,b)$ is open.
+
+  Since $M$ is in an open set $f((a,b))$,
+  there exists an open neighborhood $B(M;r) \subseteq f((a,b))$ where $r > 0$.
+  Hence
+  \[
+    M+\frac{r}{64} \in B(M;r) \subseteq f((a,b)),
+  \]
+  contrary to the maximality of $M$.
+
+  \item[(4)]
+  As $f(a) \geq f(c) \leq f(b)$,
+  we consider where $f$ reaches its minimum value $m$ (by (2)).
+  Similar to (3), we can reach a contradiction again.
+
+  \item[(5)]
+  By (3)(4), (1) is absurd, and thus $f$ is strictly monotonic.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
