@@ -853,6 +853,51 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 4.12.}
+\emph{A uniformly continuous function of a uniformly continuous function
+is uniformly continuous. State this more precisely and prove it.} \\
+
+Statement (similar to Theorem 4.7):
+\emph{suppose $X$, $Y$, $Z$ are metric space, $E \subseteq X$,
+$f$ maps $E$ into $Y$,
+$g$ maps the range of $f$, $f(E)$, into $Z$,
+and $h$ is the mapping of $E$ into $Z$ defined by
+\[
+  h(x) = g(f(x)) \:\:\:\:\:\:\:\: (x \in E).
+\]
+If $f$ is uniformly continuous on $E$ and
+$g$ is uniformly continuous on $f(E)$,
+then $h$ is uniformly continuous on $E$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Given $\varepsilon > 0$.
+Since $g$ is uniformly continuous on $f(E)$,
+there exists $\eta > 0$ such that
+\[
+  d_Z(g(f(p)),g(f(q))) < \varepsilon
+  \:\:\text{ if }\:\: d_Y(f(p),f(q)) < \eta
+  \:\:\text{ and }\:\: f(p), f(q) \in f(E).
+\]
+
+\item[(2)]
+Since $f$ is uniformly continuous on $E$,
+there exists $\delta > 0$ such that
+\[
+  d_Y(f(p),f(q)) < \eta
+  \:\:\text{ if }\:\: d_X(p,q) < \delta
+  \:\:\text{ and }\:\: p, q \in E.
+\]
+
+\item[(3)]
+By (1)(2),
+\[
+  d_Z(h(p),h(q)) = d_Z(g(f(p)),g(f(q))) < \varepsilon
+\]
+if $d_X(p,q) < \delta$ and $p, q \in E$.
+Hence $h$ is uniformly continuous on $E$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
