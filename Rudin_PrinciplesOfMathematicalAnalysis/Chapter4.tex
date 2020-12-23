@@ -743,7 +743,7 @@ $\mathrm{diam}E < \delta$.} \\
 Given $\varepsilon > 0$.
 By Definition 4.18, there exists a $\delta > 0$ such that
 \[
-  d(f(p),f(q)) < \frac{\varepsilon}{2}
+  d(f(p),f(q)) < \frac{\varepsilon}{64}
 \]
 for all $p$ and $q$ in $X$ for which $d(p,q) < \delta$.
 Let $E$ be any subset of $X$ satisfying $\mathrm{diam}E < \delta$.
@@ -753,13 +753,16 @@ Then for any $p, q \in E$,
 \]
 So that
 \[
-  d(f(p),f(q)) < \frac{\varepsilon}{2},
+  d(f(p),f(q)) < \frac{\varepsilon}{64},
 \]
-or $\frac{\varepsilon}{2}$ is an upper bound of $S = \{d(f(p),f(q)) : p, q \in E\}$.
+or $\frac{\varepsilon}{64}$ is an upper bound of $S = \{d(f(p),f(q)) : p, q \in E\}$.
 Hence
 \[
-  \mathrm{diam}f(E) = \sup S \leq \frac{\varepsilon}{2} < \varepsilon.
+  \mathrm{diam}f(E) = \sup S \leq \frac{\varepsilon}{64} < \varepsilon.
 \]
+(Here we pick ``$\frac{\varepsilon}{64}$'' instead of $\varepsilon$
+since we want to get ``$\mathrm{diam}f(E) < \varepsilon$''
+instead of $\mathrm{diam}f(E) \leq \varepsilon$.)
 
 \item[(2)]
 ($\Longleftarrow$)
@@ -787,6 +790,55 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 4.10.}
+\emph{Complete the details of the following alternative proof of Theorem 4.19:
+If $f$ is not uniformly continuous,
+then for some $\varepsilon > 0$
+there are sequences $\{p_n\}$, $\{q_n\}$ in $X$ such that
+$d_X(p_n,q_n) \to 0$ but $d_Y(f(p_n),f(q_n)) > \varepsilon$.
+Use Theorem 2.37 to obtain a contradiction.} \\
+
+\textbf{Theorem 4.19.}
+\emph{Let $f$ be a continuous mapping of a compact metric space $X$ into a metric space $Y$.
+Then $f$ is uniformly continuous on $X$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+(Reductio ad absurdum)
+If $f$ were not uniformly continuous,
+then for some $\varepsilon > 0$
+there are sequences $\{p_n\}$, $\{q_n\}$ in $X$ such that
+$d_X(p_n,q_n) \to 0$ but $d_Y(f(p_n),f(q_n)) > \varepsilon$.
+
+\item[(2)]
+By Theorem 2.37,
+there is a subsequence $\{p_{n_k}\}$ of $\{p_n\}$ such that
+$\{p_{n_k}\}$ converges to $p \in X$.
+Similar argument to $\{q_n\}$,
+we have a subsequence $\{q_{n'_k}\}$ of $\{q_n\}$ converging to $q \in X$.
+
+\item[(3)]
+Since
+\[
+  d_X(p,q)
+  \leq d_X(p,p_{n_k}) + d_X(p_{n_k},q_{n'_k}) + d_X(q_{n'_k},q)
+  \to 0
+\]
+(by assumption and (2)) and $d_X(p,q)$ is a constant,
+$d_X(p,q) = 0$ or $p = q$.
+
+\item[(4)]
+Since $f$ is continuous,
+\[
+  \lim_{k \to \infty} f(p_{n_k})
+  = f(p)
+  = f(q)
+  = \lim_{k \to \infty} f(q_{n'_k})
+\]
+or $d_Y(f(p_{n_k}),f(q_{n'_k})) \to 0$,
+contrary to the assumption.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -818,7 +870,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 4.14.}
+\textbf{Exercise 4.14 (Brouwer's fixed-point theorem).}
 \emph{Let $I=[0,1]$ be the closed unit interval.
 Suppose $f$ is continuous mapping of $I$ into $I$.
 Prove that $f(x) = x$ for at least one $x \in I$.} \\
@@ -839,7 +891,26 @@ there is a point in $\xi \in (0, 1)$ such that $g(\xi) = 0$.
 That is, $f(\xi) = \xi$ for some $\xi \in (0,1)$.
 \end{enumerate}
 In any case, the conclusion holds.
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\textbf{Supplement.} Brouwer's fixed-point theorem.
+\begin{enumerate}
+  \item[(1)]
+    In the $\mathbb{R}^1$, see Exercise 4.14 itself.
+
+  \item[(2)]
+    In the $\mathbb{R}^2$, see Exercise 8.29.
+
+  \item[(3)]
+    In the $\mathbb{R}^n$,
+    every continuous function from a closed ball of a Euclidean space $\mathbb{R}^n$
+    into itself has a fixed point (without proof).
+
+  \item[(4)]
+    In a Banach space, Schauder fixed-point theorem. \\\\
+\end{enumerate}
 
 
 
