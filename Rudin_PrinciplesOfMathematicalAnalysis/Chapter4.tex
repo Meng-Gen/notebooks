@@ -1466,6 +1466,162 @@ What discontinuities do the function $[x]$ and $(x)$ have?} \\
 $\Box$ \\\\
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.17.}
+
+
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.18.}
+
+
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.19.}
+\emph{Suppose $f$ is a real function with domain $\mathbb{R}^1$
+which has the intermediate value property:
+If $f(a) < c < f(b)$, then $f(x)=c$ for some $x$ between $a$ and $b$.
+Suppose also, for every rational $r$,
+that the set of all $x$ with $f(x)=r$ is closed.
+Prove that $f$ is continuous.
+(Hint: If $x_n \to x_0$ but $f(x_n) > r > f(x_0)$ for some $r$ and all $n$,
+then $f(t_n) = r$ for some $t_n$ between $x_0$ and $x_n$;
+thus $t_n \to x_0$.
+Find a contradiction.
+(N. J. Fine, Amer. Math. Monthly, vol. 73, 1966, p.782.))} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+(Reductio ad absurdum)
+If $f$ were not continuous at $x = x_0$, then there exists a sequence $\{x_n\}$ in $\mathbb{R}^1$
+such that $\{f(x_n)\}$ in $\mathbb{R}^1$ not converging to $f(x_0)$.
+So there exists $\varepsilon_0 > 0$ and a subsequence $\{x_{n'}\}$ of $\{x_n\}$
+such that
+\[
+  \abs{ f\left(x_{n'}\right) - f(x_0) } \geq \varepsilon_0
+\]
+for all $n'$.
+Hence
+\[
+  f\left(x_{n'}\right) \geq f(x_0) + \varepsilon_0
+  \:\: \text{ or } \:\:
+  f\left(x_{n'}\right) \leq f(x_0) - \varepsilon_0
+\]
+for all $n'$.
+
+\item[(2)]
+Since there are infinitely many $\{x_{n'}\}$,
+there are only two possible cases:
+  \begin{enumerate}
+  \item[(a)]
+  There is a subsequence $\{x_{n''}\}$ of $\{x_{n'}\}$
+  such that
+  $f\left(x_{n''}\right) \geq f(x_0) + \varepsilon_0$
+  for all $n''$.
+
+  \item[(b)]
+  There is a subsequence $\{x_{n''}\}$ of $\{x_{n'}\}$
+  such that
+  $f\left(x_{n''}\right) \leq f(x_0) - \varepsilon_0$
+  for all $n''$.
+  \end{enumerate}
+In any case, we may assume that there exists $\varepsilon_0 > 0$
+and a sequence $\{x_n\}$
+such that
+\[
+  f(x_{n}) \geq f(x_0) + \varepsilon_0
+\]
+for all $n$.
+(The case that $f(x_{n}) \leq f(x_0) - \varepsilon_0$ is similar.)
+
+\item[(3)]
+Pick any rational number $r \in (f(x_0), f(x_0) + \varepsilon_0)$
+since $\mathbb{Q}$ is dense in $\mathbb{R}$.
+(In fact, $\mathbb{Q}$ can be replaced by any dense subset of $\mathbb{R}$ in this exercise.)
+Since
+\[
+  f(x_n) \geq f(x_0) + \varepsilon_0 > r > f(x_0),
+\]
+by the intermediate value property,
+there exists some $t_n$ between $x_0$ and $x_n$
+such that $f(t_n) = r$.
+
+\item[(4)]
+Let $E = \{ t : f(t) = r \}$ be a closed set
+(since $r \in \mathbb{Q}$ and the assumption).
+Hence $t_n \in E$ for all $n$ (by (3)).
+
+\item[(5)]
+$\lim t_n = x_0$ since $\lim x_n = x_0$.
+Hence $x_0$ is a limit point of $E$.
+(Note that $x_0 \not\in E$ since $f(x_0) < r$ (by (3)).)
+Since $E$ is closed, $x_0 \in E$ or $f(x_0) = r$, which is absurd.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+\emph{Suppose $f$ is a differentiable real function with domain $\mathbb{R}^1$.
+Suppose for every rational $r$,
+that the set of all $x$ with $f'(x)=r$ is closed.
+Prove that $f'$ is continuous.}
+Theorem 5.12 (Darboux's theorem) and Exercise 4.19 itself implies all.
+\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.20.}
+
+
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.21.}
+
+
+
+PLACEHOLDER \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 4.22.}
+
+
+
+PLACEHOLDER \\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
