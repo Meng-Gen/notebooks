@@ -363,10 +363,10 @@ Since $\lim_{x \to 0} f(x) = -\infty$,
 we cannot find any real continuous function $g$ defined on $x = 0$.
 \item[(4)]
 For a vector-valued function
-$\mathbf{f} = (f_1, ..., f_k)$,
+$\mathbf{f} = (f_1, \ldots, f_k)$,
 with each $f_i$ is continuous on a closed set $E \subseteq \mathbb{R}^1$,
 extend $f_i$ to a continuous function $g_i$ on $\mathbb{R}^1$ as (2).
-Put $\mathbf{g} = (g_1, ..., g_k)$.
+Put $\mathbf{g} = (g_1, \ldots, g_k)$.
 Clearly $\mathbf{g}$ is an extension of $\mathbf{f}$.
 Besides, $\mathbf{g}$ is continuous in $\mathbb{R}^1$ by Theorem 4.10.
 \end{enumerate}
@@ -681,7 +681,7 @@ $\overline{E}$ is compact
 That is, there is a finite subcollection $\mathscr{C}'$ of $\mathscr{C}$
 also covers $\overline{E}$, say
 $$\mathscr{C}'
-= \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.$$
+= \left\{B(a_1;\delta)), B(a_2;\delta), \ldots, B(a_m;\delta) \right\}.$$
 
 \item[(4)]
 Given any $x \in E \subseteq \overline{E}$,
@@ -691,7 +691,7 @@ By (2), $\abs{f(x) - f(a_i)} < 1$,
 or $\abs{f(x)} < 1 + \abs{f(a_i)}$.
 Almost done.
 Notice that $a_i$ depends on $x$,
-and thus we might use finiteness of $\{ a_1, a_2, ..., a_m \}$
+and thus we might use finiteness of $\{ a_1, a_2, \ldots, a_m \}$
 to remove dependence of $a_i$.
 
 \item[(5)]
@@ -845,6 +845,69 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 4.11.}
+\emph{Suppose $f$ is a uniformly continuous mapping of a metric space $X$ into a metric space $Y$
+and prove that $\{f(x_n)\}$ is a Cauchy sequence in $Y$ for every Cauchy sequence $\{x_n\}$ in $X$.
+Use this result to give an alternative proof of the theorem stated in Exercise 4.13.} \\
+
+An alternative proof of Exercise 4.13 will be in Exercise 4.13 itself. \\
+
+\emph{Proof (Definition 4.18).}
+Given any Cauchy sequence $\{x_n\}$ in $X$.
+\begin{enumerate}
+\item[(1)]
+Given any $\varepsilon > 0$.
+Since $f$ is uniformly continuous, there exists a $\delta > 0$ such that
+\[
+  d_Y(f(p),f(q)) < \varepsilon
+\]
+for all $p$ and $q$ in $X$ for which $d_X(p,q) < \delta$.
+
+\item[(2)]
+Since $\{x_n\}$ is Cauchy in $X$, for such $\delta > 0$ there is an integer $N$ such that
+\[
+  d_X(x_n,x_m) < \delta
+\]
+whenever $n, m \geq N$.
+
+\item[(3)]
+By (1)(2),
+\[
+  d_Y(f(x_n),f(x_m)) < \varepsilon
+\]
+whenever $n, m \geq N$.
+Hence $\{f(x_n)\}$ is Cauchy in $Y$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Exercise 4.9).}
+Given any Cauchy sequence $\{x_n\}$ in $X$.
+\begin{enumerate}
+\item[(1)]
+Given any $\varepsilon > 0$.
+Since $f$ is uniformly continuous, there exists a $\delta > 0$ such that
+$\mathrm{diam}f(E) < \varepsilon$ for all $E \subseteq X$ with
+$\mathrm{diam}E < \delta$.
+
+\item[(2)]
+Since $\{x_n\}$ is Cauchy in $X$, for such $\delta > 0$ there is an integer $N$ such that
+\[
+  d_X(x_n,x_m) < \frac{\delta}{64}
+\]
+whenever $n, m \geq N$.
+
+\item[(3)]
+Consider $E = \{ x_N, x_{N+1}, \ldots \}$.
+By (2), $\mathrm{diam}E \leq \frac{\delta}{64} < \delta$.
+By (1),
+\[
+  d_Y(f(x_n),f(x_m)) \leq \mathrm{diam}f(E) < \varepsilon
+\]
+whenever $n, m \geq N$.
+Hence $\{f(x_n)\}$ is Cauchy in $Y$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -906,6 +969,340 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 4.13.}
+\emph{Let $E$ be a dense subset of a metric space $X$,
+and let $f$ be a uniformly continuous real function defined on $E$.
+Prove that $f$ has a continuous extension from $E$ to $X$
+(see Exercise 4.5 for terminology).
+(Uniqueness follows from Exercise 4.4.)
+(Hint:
+For each $p \in X$ and each positive integer $n$,
+let $V_n(p)$ be the set of all $q \in E$ with $d(p,q) < \frac{1}{n}$.
+Use Exercise 4.9 to show that the intersection of the closures of the sets
+$f(V_1(p)), f(V_2(p)), \ldots$,
+consists of a single point, say $g(p)$, of $\mathbb{R}^1$.
+Prove that the function $g$ so define on $X$ is the desired extension of $f$.)
+Could the range space $\mathbb{R}^1$ be replaced by $\mathbb{R}^k$?
+By any compact metric space?
+By any complete metric space?
+By any metric space?} \\
+
+\emph{Proof (Hint).}
+We prove the case that the range metric space is complete.
+\begin{enumerate}
+\item[(1)]
+Given any $p \in X$. We will extend $f$ on $x = p$.
+For any positive integer $n$, let
+$V_n(p)$ be the set of all $q \in E$ with $d(p,q) < \frac{1}{n}$.
+
+\item[(2)]
+\emph{Show that $\overline{f(V_n(p))} \supseteq \overline{f(V_{n+1}(p))}$.}
+By construction, $V_n(p) \supseteq V_{n+1}(p)$.
+Thus $f(V_n(p)) \supseteq f(V_{n+1}(p))$
+and
+\[
+  \overline{f(V_n(p))} \supseteq \overline{f(V_{n+1}(p))}.
+\]
+
+\item[(3)]
+\emph{Show that $\lim_{n \to \infty} \mathrm{diam} \overline{f(V_n(p))} = 0$.}
+\begin{enumerate}
+  \item[(a)]
+  Since $E$ is dense in $X$, $V_n(p) \neq \varnothing$ and thus
+  \[
+    f(V_n(p)) \neq \varnothing.
+  \]
+  Especially,
+  \[
+    \overline{f(V_n(p))} \supseteq f(V_n(p)) \neq \varnothing.
+  \]
+  Hence $\mathrm{diam}V_n(p)$ and $\mathrm{diam}f(V_n(p))$
+  are well-defined.
+
+  \item[(b)]
+  By the definition of $V_n(p)$ or $0 \leq \mathrm{diam}V_n(p) \leq \frac{2}{n}$,
+  \[
+    \lim_{n \to \infty} \mathrm{diam}V_n(p) = 0.
+  \]
+
+  \item[(c)]
+  By the uniformly continuity of $f$ (Exercise 4.9),
+  \[
+    \lim_{n \to \infty} \mathrm{diam}f(V_n(p)) = 0.
+  \]
+
+  \item[(d)]
+  Since $\mathrm{diam} \overline{f(V_n(p))} = \mathrm{diam}f(V_n(p))$ (Theorem 3.10(a)),
+  \[
+    \lim_{n \to \infty} \mathrm{diam} \overline{f(V_n(p))} = 0.
+  \]
+\end{enumerate}
+
+\item[(4)]
+\emph{Show that there is an integer $N$ such that
+$\overline{f(V_n(p))}$ is closed and bounded whenever $n \geq N$.}
+\begin{enumerate}
+  \item[(a)]
+  (Closeness.)
+  Each $\overline{f(V_n(p))}$ is closed.
+
+  \item[(b)]
+  (Boundedness.)
+  Since $\lim_{n \to \infty} \mathrm{diam} \overline{f(V_n(p))} = 0$ by (3),
+  there is an integer $N$ such that
+  \[
+    \mathrm{diam} \overline{f(V_n(p))} \leq \frac{1}{89}
+  \]
+  whenever $n \geq N$.
+  By the definition of diameters of $\overline{f(V_n(p))}$,
+  each $\overline{f(V_n(p))}$ is bounded by $\frac{1}{64}$ whenever $n \geq N$.
+
+  \item[(c)]
+  \emph{Note.}
+  If we apply Exercise 4.8 instead,
+  we need extra efforts to generalize Exercise 4.8
+  to different range spaces for answering the following questions.
+\end{enumerate}
+
+\item[(5)]
+By (2)(3)(4) and Exercise 3.21,
+\[
+  \bigcap_{n=N}^{\infty} \overline{f(V_n(p))}
+\]
+or
+\[
+  \bigcap_{n=1}^{\infty} \overline{f(V_n(p))}
+\]
+consists of exactly one point, say $g(p)$.
+This point $g(p)$ is an extension of $f$ at $x = p$.
+Clearly, $g(p) = f(p)$ if $p \in E$.
+
+\item[(6)]
+\emph{Define
+\begin{equation*}
+  g(p) =
+    \begin{cases}
+      \bigcap_{n=1}^{\infty} \overline{f(V_n(p))} = f(p)
+        & (p \in E), \\
+      \bigcap_{n=1}^{\infty} \overline{f(V_n(p))}
+        & (p \not\in E).
+    \end{cases}
+\end{equation*}
+Show that $g$ is uniformly continuous.}
+  \begin{enumerate}
+  \item[(a)]
+  Given any $\varepsilon > 0$.
+  Since $f$ is uniformly continuous on $E$,
+  there exists $\delta > 0$ such that
+  \[
+    d(f(p),f(q)) < \frac{\varepsilon}{3} < \varepsilon
+  \]
+  whenever $d(p,q) < \delta$ and $p, q \in E$.
+  We will show that such $\delta$ also holds for $g$.
+  Now given any $p, q \in X$ with $d(p,q) < \delta$.
+
+  \item[(b)]
+  Since $\mathrm{diam} f(V_n(p)) = \mathrm{diam} \overline{f(V_n(p))}$
+  and $\lim_{n \to \infty} \mathrm{diam} \overline{f(V_n(p))} = 0$
+  (whether $p \in E$ or not),
+  there is an integer $N_1$ such that
+  \[
+    \mathrm{diam} f(V_n(p)) < \frac{\varepsilon}{3}
+  \]
+  whenever $n \geq N_1$.
+  Similarly,
+  there is an integer $N_2$ such that
+  \[
+    \mathrm{diam} f(V_n(q)) < \frac{\varepsilon}{3}
+  \]
+  whenever $n \geq N_2$.
+
+  \item[(c)]
+  Take an integer $N_3$ satisfying
+  \[
+    N_3 > \frac{4}{\delta-d(p,q)} > 0.
+  \]
+  For any $p' \in V_n(p) \neq \varnothing$ and
+  $q' \in V_n(q) \neq \varnothing$ as $n \geq N_3$,
+  we have
+  \begin{align*}
+    d(p',q')
+    &\leq d(p',p) + d(p,q) + d(q,q') \\
+    &\leq \frac{2}{n} + d(p,q) + \frac{2}{n} \\
+    &\leq \frac{2}{N_3} + d(p,q) + \frac{2}{N_3} \\
+    &< \frac{2(\delta-d(p,q))}{4} + d(p,q) + \frac{2(\delta-d(p,q))}{4} \\
+    &= \delta.
+  \end{align*}
+
+  \item[(d)]
+  Take $N = \max\{N_1,N_2,N_3\}$.
+  For any $p' \in V_N(p)$ and $q' \in V_N(p)$,
+  we have
+  \begin{align*}
+    d(g(p),f(p')) &\leq \mathrm{diam} f(V_N(p)) < \frac{\varepsilon}{3}, \\
+    d(f(p'),f(q')) &< \frac{\varepsilon}{3}, \\
+    d(f(q'),g(q)) &\leq \mathrm{diam} f(V_N(q)) < \frac{\varepsilon}{3}.
+  \end{align*}
+  Hence
+  \begin{align*}
+    d(g(p),g(q))
+    &\leq
+    d(g(p),f(p')) + d(f(p'),f(q')) + d(f(q'),g(q)) \\
+    &< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
+    &= \varepsilon.
+  \end{align*}
+  \end{enumerate}
+
+\item[(7)]
+\emph{Show that the range space $\mathbb{R}^1$ cannot be replaced by any metric space.}
+  \begin{enumerate}
+  \item[(a)]
+  Take $X = \mathbb{R}$ and $Y = \mathbb{Q}$ with the Euclidean metric.
+  Let $E = \mathbb{Q}$ be a dense subset of $X = \mathbb{R}$.
+  Define $f: E \to Y$ by
+  \[
+    f(x) = x.
+  \]
+
+  \item[(b)]
+  $f$ is uniformly continuous on $E$.
+
+  \item[(c)]
+  (Reductio ad absurdum)
+  If $f$ were having a continuous extension $g$ on $X$,
+  then
+  \[
+    \lim_{n \to \infty} g(p_n) = g(p)
+  \]
+  for any sequence $\{p_n\}$ in $X$ such that $p_n \neq p$ and $\lim_{n \to \infty} p_n = p$.
+
+  \item[(d)]
+  In particular, for some rational sequence $\{p_n\}$ in $E = \mathbb{Q}$
+  converging to $\sqrt{2} \in X$, we have
+  \[
+    \lim_{n \to \infty} g(p_n)
+    = \lim_{n \to \infty} f(p_n)
+    = \lim_{n \to \infty} p_n
+    = \sqrt{2} = g(p) \in \mathbb{Q},
+  \]
+  which is absurd.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Exercise 4.11).}
+We prove the case that the range metric space is complete.
+\begin{enumerate}
+\item[(1)]
+Given any $p \in X$. We will extend $f$ on $x = p$.
+Since $E$ is dense in $X$, there exists a sequence $\{p_n\}$ in $E$ converging to $p$
+(whether $p \in E$ or not).
+
+\item[(2)]
+Since $E$ is dense in $X$, there exists a sequence $\{p_n\}$ in $E$ converging to $p$
+(whether $p \in E$ or not).
+Hence $\{p_n\}$ is Cauchy in $E$ (Theorem 3.11(a)).
+Since $f$ is uniformly continuous, $\{f(p_n)\}$ is Cauchy.
+Since the range space is complete, $\{f(p_n)\}$ converges to a point, say $g(p)$.
+This point $g(p)$ is an extension of $f$ at $x = p$.
+Clearly, $g(p) = f(p)$ if $p \in E$.
+
+\item[(3)]
+\emph{Show that $g(p)$ is well-defined.}
+If $\{p'_n\}$ is another sequence in $E$ converging to $p$,
+we construct a new sequence $\{p''_n\}$ based on $\{p_n\}$ and $\{p'_n\}$ by
+\begin{equation*}
+  p''_n =
+    \begin{cases}
+      p_{\frac{n+1}{2}} & (n \equiv 1 \pmod{2}), \\
+      p'_{\frac{n}{2}}  & (n \equiv 0 \pmod{2}).
+    \end{cases}
+\end{equation*}
+Clearly $\{p''_n\}$ also converges to $p$.
+So $\{f(p''_n)\}$ converges to a single point.
+Note that $\{f(p_n)\}$ and $\{f(p'_n)\}$ are two subsequences of $\{f(p''_n)\}$,
+and thus both subsequences converge to the same point.
+
+\item[(4)]
+\emph{Define
+\begin{equation*}
+  g(p) =
+    \begin{cases}
+      f(p) & (p \in E), \\
+      \lim_{n \to \infty} f(p_n)
+        & (p \not\in E)
+    \end{cases}
+\end{equation*}
+where $\{p_n\}$ is any sequence in $E$ converging to $p$.
+Show that $g$ is uniformly continuous.}
+  \begin{enumerate}
+  \item[(a)]
+  Given any $\varepsilon > 0$.
+  Since $f$ is uniformly continuous on $E$,
+  there exists $\delta > 0$ such that
+  \[
+    d(f(p),f(q)) < \frac{\varepsilon}{3} < \varepsilon
+  \]
+  whenever $d(p,q) < \delta$ and $p, q \in E$.
+  We will show that such $\delta$ also holds for $g$.
+  Now given any $p, q \in X$ with $d(p,q) < \delta$.
+
+  \item[(b)]
+  By (2), there exists a sequence $\{p_n\}$ in $E$ such that $\lim p_n = p$.
+  Take an integer $N_1$ such that
+  \[
+    d(p_n,p) < \frac{\delta - d(p,q)}{2}
+  \]
+  whenever $n \geq N_1$.
+  Similarly, there exists a sequence $\{q_n\}$ in $E$ such that $\lim q_n = q$.
+  Take an integer $N_2$ such that
+  \[
+    d(q_n,q) < \frac{\delta - d(p,q)}{2}
+  \]
+  whenever $n \geq N_2$.
+  Therefore,
+  \begin{align*}
+    d(p_n,q_n)
+    &\leq d(p_n,p) + d(p,q) + d(q,q_n) \\
+    &< \frac{\delta - d(p,q)}{2} + d(p,q) + \frac{\delta - d(p,q)}{2} \\
+    &= \delta.
+  \end{align*}
+  whenever $n \geq N_1$ and $n \geq N_2$.
+
+  \item[(c)]
+  Since $\lim f(p_n) = g(p)$,
+  there is an integer $N_3$ such that
+  \[
+    d(f(p_n), g(p)) < \frac{\varepsilon}{3}
+  \]
+  whenever $n \geq N_3$.
+  Similarly,
+  since $\lim f(q_n) = g(q)$,
+  there is an integer $N_4$ such that
+  \[
+    d(f(q_n), g(q)) < \frac{\varepsilon}{3}
+  \]
+  whenever $n \geq N_4$.
+
+  \item[(d)]
+  Take $N = \max\{N_1,N_2,N_3,N_4\}$, we have
+  \begin{align*}
+    d(g(p),f(p_N)) & < \frac{\varepsilon}{3}, \\
+    d(f(p_N),f(q_N)) &< \frac{\varepsilon}{3}, \\
+    d(f(q_N),g(q)) & < \frac{\varepsilon}{3}.
+  \end{align*}
+  Hence
+  \begin{align*}
+    d(g(p),g(q))
+    &\leq
+    d(g(p),f(p_N)) + d(f(p_N),f(q_N)) + d(f(q_N),g(q)) \\
+    &< \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
+    &= \varepsilon.
+  \end{align*}
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
