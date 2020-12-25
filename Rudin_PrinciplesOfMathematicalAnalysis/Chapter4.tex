@@ -1482,11 +1482,112 @@ PLACEHOLDER \\\\
 
 
 
-\textbf{Exercise 4.18.}
+\textbf{Exercise 4.18 (Thomae's function).}
+\emph{Every rational $x$ can be written in the form $x = \frac{m}{n}$, where $n > 0$,
+and $m$ and $n$ are integers without any common divisors.
+When $x = 0$, we take $n = 1$.
+Consider the function $f$ defined on $\mathbb{R}^1$ by
+\begin{equation*}
+  f(x) =
+    \begin{cases}
+      0           & (\text{$x$ irrational}), \\
+      \frac{1}{n} & (x = \frac{m}{n}).
+    \end{cases}
+\end{equation*}
+Prove that $f$ is continuous at every irrational point,
+and that $f$ has a simple discontinuity at every rational point.} \\
+
+\emph{Proof.}
+
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f$ has period $1$.}
+  \begin{enumerate}
+  \item[(a)]
+  As $x$ is irrational, $x+1$ is irrational too.
+  Hence $f(x+1) = 0 = f(x)$.
+
+  \item[(b)]
+  As $x = \frac{m}{n} \in \mathbb{Q}$, where $n > 0$,
+  and $m$ and $n$ are integers without any common divisors.
+  \[
+    x+1 = \frac{m+n}{n} \in \mathbb{Q},
+  \]
+  where $n > 0$, and $\gcd(m+n,n) = \gcd(m,n) = 1$.
+  Hence $f(x+1) = \frac{1}{n} = f(x)$.
+  \end{enumerate}
+  In any case, $f(x+1) = f(x)$ for any $x \in \mathbb{R}$.
+
+\item[(2)]
+\emph{Show that $f(p+) = f(p-) = 0$ for any $p \in \mathbb{R}$.}
+\begin{enumerate}
+  \item[(a)]
+  By (1), we might assume $p \in [0,1]$.
+  For the edge cases $f(0-)$ and $f(1+)$,
+  note that $f(0-) = f(1-)$ and $f(1+) = f(0+)$.
+
+  \item[(b)]
+  Now given any point $p \in [0,1]$.
+  Given $\varepsilon > 0$,
+  it suffices to find $\delta > 0$ such that
+  \[
+    \abs{ f(x) - 0 } < \varepsilon
+    \:\:\text{ whenever }\:\:
+    p < x < p + \delta.
+  \]
+  (The case $f(p-) = 0$ is similar.)
+
+  \item[(c)]
+  For such $\varepsilon > 0$,
+  there is an integer $N \geq s$ such that
+  \[
+    \frac{1}{N} < \varepsilon.
+  \]
+  Hence
+  \[
+    E = \left\{ \frac{m}{n} \in [0,1] : n \leq N
+      \text{ where $\frac{m}{n}$ is defined as this exercise} \right\}
+      - \left\{ p \right\}
+  \]
+  is finite since $m$ and $n$ are satisfying the relation $0 \leq m \leq n \leq N$
+  and there are only finitely many pairs of $(m,n)$.
+
+  \item[(d)]
+  Now we can take
+  \[
+    \delta = \min\{ |q - p| : q \in E \} > 0.
+  \]
+  As $p < x < p + \delta$,
+  $\abs{ f(x) - 0 } = 0 < \varepsilon$ if $x$ is irrational;
+  \[
+    \abs{ f(x) - 0 } < \frac{1}{N} < \varepsilon
+  \]
+  if $x$ is rational.
+  (Note that $x \not\in E$ by the construction of $\delta$
+  and thus the denominator of $x$ is $> N$.)
+  In any case, $\abs{ f(x) - 0 } < \varepsilon$.
+  \end{enumerate}
+
+\item[(3)]
+Since $f(x) = 0$ if $x \in \mathbb{R} - \mathbb{Q}$
+and $f(x) \neq 0$ if $x \in \mathbb{Q}$,
+$f$ is continuous at every irrational point
+and $f$ has a simple discontinuity at every rational point (by (2)).
+\end{enumerate}
+$\Box$ \\
 
 
 
-PLACEHOLDER \\\\
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+\emph{$f$ is nowhere differentiable.}
+(Hint: Use Lemma in Proof (Liouville, 1844) of Exercise 2.3.)
+
+\item[(2)]
+\emph{$f \in \mathscr{R}$ on any bounded interval $[a,b]$ and $\int_{a}^{b} f dx = 0$.}
+To prove this, use the similar argument in Exercise 6.6. \\\\
+\end{enumerate}
 
 
 
