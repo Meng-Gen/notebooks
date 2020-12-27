@@ -1582,7 +1582,50 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
 \emph{$f$ is nowhere differentiable.}
-(Hint: Use Lemma in Proof (Liouville, 1844) of Exercise 2.3.)
+  \begin{enumerate}
+  \item[(a)]
+  For any rational number, this follows from discontinuity.
+
+  \item[(b)]
+  For any irrational number $x$, given $\varepsilon = \frac{1}{64} > 0$,
+  \emph{it suffices to show that for any $\delta > 0$, there exists $x < t < x + \delta$ such that
+  \[
+    \frac{f(t)-f(x)}{t-x} > \frac{1}{64}.
+  \]}
+
+  \item[(c)]
+  It is clear to find $t$ in $\mathbb{Q}$.
+  For such $\delta > 0$, there is an integer $n$ such that
+  \[
+    n > \frac{1}{\delta} > 0.
+  \]
+  For such $n > 0$, there is an integer $m$ such that
+  \[
+    m-1 < nx < m.
+  \]
+  ($m-1 \leq nx < m$ is true trivially and notice that the equality does not hold
+  since $x$ is irrational.)
+  Take
+  \[
+    t = \frac{m}{n}.
+  \]
+  So that
+  \[
+    x < t < x + \frac{1}{n} < x + \delta.
+  \]
+
+  \item[(d)]
+  Let $\gcd(m,n) = g \geq 1$.
+  Then
+  \[
+    f(t) = \frac{1}{\frac{n}{g}} = \frac{g}{n} \geq \frac{1}{n}
+  \]
+  and thus
+  \[
+    \frac{f(t)-f(x)}{t-x} > \frac{\frac{1}{n}}{\frac{1}{n}} = 1 > \frac{1}{64}.
+  \]
+  \end{enumerate}
+  $\Box$ \\
 
 \item[(2)]
 \emph{$f \in \mathscr{R}$ on any bounded interval $[a,b]$ and $\int_{a}^{b} f dx = 0$.}
