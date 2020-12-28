@@ -1964,8 +1964,54 @@ Show that the conclusion may fail for two disjoint closed sets if neither is com
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+Define $\rho_F: K \to \mathbb{R}$ by
+\[
+  \rho_F(x) = \inf_{q \in F} d(x,q).
+\]
 
 \item[(2)]
+$K \cap F = \varnothing$ and $F = \overline{F}$ is closed,
+$\rho_F(x) > 0$ (Exercise 4.20(a)).
+
+\item[(3)]
+Since $\rho_F(x)$ is continuous (Exercise 4.20(b)) on a compact set $K$,
+there exists $\xi \in K$ such that
+\[
+  \rho_F(\xi) = \inf_{p \in K} \rho_F(p)
+\]
+(Theorem 4.16).
+By (2), $\rho_F(\xi) > 0$.
+Write
+\[
+  \rho_F(\xi) = \delta > 0.
+\]
+Hence
+\begin{align*}
+  &\rho_F(\xi) = \inf_{p \in K} \rho_F(p) = \delta > 0 \\
+  \Longleftrightarrow&
+  \rho_F(p) = \inf_{q \in F} d(p,q) \geq \delta > 0 \: \forall \: p \in K \\
+  \Longleftrightarrow&
+  d(p,q) \geq \delta > 0 \: \forall \: p \in K \: \forall \: q \in F.
+\end{align*}
+
+\item[(4)]
+\emph{Show that the conclusion may fail for two disjoint closed sets if neither is compact.}
+Let $X = \mathbb{R}$ equipped with the Euclidean metric,
+\[
+  K = \{ n : n \in \mathbb{Z}^{+} \},
+\]
+and
+\[
+  F = \left\{ n + \frac{1}{64^n} : n \in \mathbb{Z}^{+} \right\}.
+\]
+Both $K$ and $F$ are closed and neither is compact.
+And for any positive integer $n$,
+we have
+\[
+  d\left(n, n+\frac{1}{64^n}\right) = \frac{1}{64^n} \to 0
+\]
+as $n \to \infty$.
+(Here $n \in K$ and $n+\frac{1}{64^n} \in F$.)
 \end{enumerate}
 $\Box$\\\\
 
