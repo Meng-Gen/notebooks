@@ -1913,6 +1913,8 @@ define the distance from $x \in X$ to $E$ by
 \end{enumerate}
 
 \emph{Proof of (a).}
+Note that $\rho_E(x) = \inf_{z \in E} d(x,z) \geq 0$ since $d(x,z) \geq 0$.
+So
 \begin{align*}
   \rho_E(x) > 0
   &\Longleftrightarrow
@@ -1996,22 +1998,36 @@ Hence
 
 \item[(4)]
 \emph{Show that the conclusion may fail for two disjoint closed sets if neither is compact.}
-Let $X = \mathbb{R}$ equipped with the Euclidean metric,
-\[
-  K = \{ n : n \in \mathbb{Z}^{+} \},
-\]
-and
-\[
-  F = \left\{ n + \frac{1}{64^n} : n \in \mathbb{Z}^{+} \right\}.
-\]
-Both $K$ and $F$ are closed and neither is compact.
-And for any positive integer $n$,
-we have
-\[
-  d\left(n, n+\frac{1}{64^n}\right) = \frac{1}{64^n} \to 0
-\]
-as $n \to \infty$.
-(Here $n \in K$ and $n+\frac{1}{64^n} \in F$.)
+\begin{enumerate}
+  \item[(a)]
+  Let $X = \mathbb{R}$ equipped with the Euclidean metric,
+  \[
+    K = \{ n : n \in \mathbb{Z}^{+} \},
+  \]
+  and
+  \[
+    F = \left\{ n + \frac{1}{64^n} : n \in \mathbb{Z}^{+} \right\}.
+  \]
+  Both $K$ and $F$ are closed and neither is compact.
+  And for any positive integer $n$,
+  we have
+  \[
+    d\left(n, n+\frac{1}{64^n}\right) = \frac{1}{64^n} \to 0
+  \]
+  as $n \to \infty$.
+  (Here $n \in K$ and $n+\frac{1}{64^n} \in F$.)
+
+  \item[(b)]
+  Another example.
+  Let $X = \mathbb{R}^2$ equipped with the Euclidean metric,
+  \[
+    K = \{ (x,y) : xy = 1, x, y \in \mathbb{R} \},
+  \]
+  and
+  \[
+    F = \{ (x,0) : x \in \mathbb{R} \} \bigcup \{ (0,y) : y \in \mathbb{R} \}.
+  \]
+\end{enumerate}
 \end{enumerate}
 $\Box$\\\\
 
@@ -2021,7 +2037,7 @@ $\Box$\\\\
 
 
 
-\textbf{Exercise 4.22.}
+\textbf{Exercise 4.22 (Urysohn's lemma).}
 \emph{Let $A$ and $B$ be disjoint nonempty closed sets in a metric space $X$,
 and define
 \[
@@ -2045,8 +2061,87 @@ This property of metric spaces is called normality.)} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+\emph{Show that $f(p) = \frac{\rho_A(p)}{\rho_A(p)+\rho_B(p)}$ is well-defined.}
+It suffices to show that $\rho_A(p)+\rho_B(p) > 0$.
+Note that $\rho_A(p)+\rho_B(p) \geq 0$.
+Hence
+\begin{align*}
+  &\rho_A(p)+\rho_B(p) = 0 \\
+  \Longleftrightarrow&
+  \rho_A(p) = 0 \text{ and } \rho_B(p) = 0 \\
+  \Longleftrightarrow&
+  p \in \overline{A} \text{ and } p \in \overline{B}
+    &\text{(Exercise 4.20(a))} \\
+  \Longleftrightarrow&
+  p \in A \text{ and } p \in B
+    &\text{($A, B$: closed)} \\
+  \Longleftrightarrow&
+  p \in A \cap B = \varnothing.
+    &\text{($A, B$: disjoint)} \\
+\end{align*}
+implies that $\rho_A(p)+\rho_B(p) > 0$.
 
 \item[(2)]
+\emph{Show that $f$ is a continuous function on $X$ whose range lies in $[0,1]$.}
+Since $\rho_A$ and $\rho_B$ are continuous and
+$\rho_A(p)+\rho_B(p) \neq 0$ for all $p \in X$,
+$f$ is continuous (Theorem 4.9).
+Also, since $\rho_A(p) \geq 0$ and $\rho_B(p) \geq 0$,
+\[
+  f(p)
+  = \frac{\rho_A(p)}{\rho_A(p)+\rho_B(p)}
+  \geq 0
+\]
+and
+\[
+  f(p)
+  = \frac{\rho_A(p)}{\rho_A(p)+\rho_B(p)}
+  \leq \frac{\rho_A(p)+\rho_B(p)}{\rho_A(p)+\rho_B(p)}
+  = 1.
+\]
+So $f(p) \in [0,1]$ for all $p \in X$.
+
+\item[(3)]
+\emph{Show that $f(p) = 0$ precisely on $A$ and $f(p) = 1$ precisely on $B$.}
+\begin{align*}
+  f(p) = 0
+  &\Longleftrightarrow
+  \frac{\rho_A(p)}{\rho_A(p)+\rho_B(p)} = 0 \\
+  &\Longleftrightarrow
+  \rho_A(p) = 0 \\
+  &\Longleftrightarrow
+  p \in \overline{A}
+    &\text{(Exercise 4.20(a))} \\
+  &\Longleftrightarrow
+  p \in A.
+    &\text{($A$: closed)}
+\end{align*}
+Similarly, we apply the same argument to $1 - f$ to get
+$f(p) = 1$ if and only if $p \in B$.
+
+\item[(4)]
+\emph{Setting
+\[
+  V = f^{-1}{\left(\left[0,\frac{1}{2}\right)\right)},
+  \:\:\:\:\:\:\:\:
+  W = f^{-1}{\left(\left(\frac{1}{2},1\right]\right)},
+\]
+show that $V$ and $W$ are open and disjoint,
+and that $A$ is contained in $V$, $B$ is contained in $W$.}
+  \begin{enumerate}
+  \item[(a)]
+  Since $\left[0,\frac{1}{2}\right)$ is open in $[0,1]$,
+  $V$ is open (Theorem 4.8).
+  Similarly, $W$ is open.
+
+  \item[(b)]
+  Since $\left[0,\frac{1}{2}\right)$ and $\left(\frac{1}{2},1\right]$ are disjoint,
+  $V$ and $W$ are disjoint.
+
+  \item[(c)]
+  By (3), $A = f^{-1}(0) \subseteq V$ and $B = f^{-1}(1) \subseteq W$.
+  \end{enumerate}
+Hence, any metric space is a normal space.
 \end{enumerate}
 $\Box$\\\\
 
