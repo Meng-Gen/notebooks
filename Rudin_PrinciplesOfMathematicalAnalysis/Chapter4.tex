@@ -1471,10 +1471,164 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 4.17.}
+\emph{Let $f$ be a real function defined on $(a,b)$.
+Prove that the set of points at which $f$ has a simple discontinuity is at most countable.
+(Hint: Let $E$ be the set on which $f(x-) < f(x+)$.
+With each point $x$ of $E$, associate a triple $(p,q,r)$ of rational numbers such that}
+\begin{enumerate}
+  \item[(a)]
+  \emph{$f(x-) < p < f(x+)$,}
+  \item[(b)]
+  \emph{$a < q < t < x$ implies $f(t) < p$,}
+  \item[(c)]
+  \emph{$x < t < r < b$ implies $f(t) > p$.}
+\end{enumerate}
+\emph{The set of all such triples is countable.
+Show that each triple is associated with at most one point of $E$.
+Deal similarly with the other possible types of simple discontinuities.)} \\
 
+\emph{Proof (Hint).}
+\begin{enumerate}
+  \item[(1)]
+  By Definition 4.26,
+  \emph{it suffices to show that each following set is at most countable}
+  and thus the union of four sets are at most countable (Corollary to Theorem 2.12).
+  \begin{enumerate}
+    \item[(a)]
+    $E_1 = \{ x : f(x+) > f(x-) \}$,
 
+    \item[(b)]
+    $E_2 = \{ x : f(x+) < f(x-) \}$,
 
-PLACEHOLDER \\\\
+    \item[(c)]
+    $E_3 = \{ x : f(x) > f(x+) = f(x-) \}$,
+
+    \item[(d)]
+    $E_4 = \{ x : f(x) < f(x+) = f(x-) \}$,
+  \end{enumerate}
+
+  \item[(2)]
+  \emph{Show that with each point $x$ of $E_1$,
+  we can associate a triple $(p,q,r)$ of rational numbers such that}
+  \begin{enumerate}
+    \item[(a)]
+    \emph{$f(x-) < p < f(x+)$,}
+    \item[(b)]
+    \emph{$a < q < t < x$ implies $f(t) < p$,}
+    \item[(c)]
+    \emph{$x < t < r < b$ implies $f(t) > p$.}
+  \end{enumerate}
+  \begin{enumerate}
+    \item[(i)]
+    For (a), as $(f(x-),f(x+))$ is a nonempty open set in $\mathbb{R}$
+    and $\mathbb{Q}$ is dense in $\mathbb{R}$,
+    there exists a rational number $p \in (f(x-),f(x+))$ or $f(x-) < p < f(x+)$.
+
+    \item[(ii)]
+    For (b), since $f(x-)$ exists, for $\varepsilon = p - f(x-) > 0$
+    there exists $\delta > 0$ such that
+    \[
+      f(x-)-\varepsilon < f(t) < f(x-)+\varepsilon
+      \:\:\text{ whenever }\:\:
+      a < x - \delta < t < x.
+    \]
+    So
+    \[
+      f(t) < p
+      \:\:\text{ whenever }\:\:
+      a < x - \delta < t < x.
+    \]
+    Since $(x-\delta,x)$ is a nonempty open set in $\mathbb{R}$
+    and $\mathbb{Q}$ is dense in $\mathbb{R}$,
+    there exists a rational number $q \in (x-\delta,x)$ or $a < x-\delta < q < x$.
+    Hence if $a < q < t < x$ we have $f(t) < p$.
+
+    \item[(iii)]
+    For (c), similar to (ii).
+    Since $f(x+)$ exists, for $\varepsilon = f(x+) - p > 0$
+    there exists $\delta > 0$ such that
+    \[
+      f(x+)-\varepsilon < f(t) < f(x+)+\varepsilon
+      \:\:\text{ whenever }\:\:
+      x < t < x + \delta < b.
+    \]
+    So
+    \[
+      f(t) > p
+      \:\:\text{ whenever }\:\:
+      x < t < x + \delta < b.
+    \]
+    Since $(x,x+\delta)$ is a nonempty open set in $\mathbb{R}$
+    and $\mathbb{Q}$ is dense in $\mathbb{R}$,
+    there exists a rational number $r \in (x,x+\delta)$ or $x < r < x+\delta < b$.
+    Hence if $x < t < r < b$ we have $f(t) > p$.
+  \end{enumerate}
+
+  \item[(3)]
+  \emph{Show that each triple in (2) is associated with at most one point of $E_1$.}
+  (Reductio ad absurdum)
+  If there were another $x' > x$ such that
+  \begin{enumerate}
+    \item[(a)]
+    $f(x'-) < p < f(x'+)$,
+    \item[(b)]
+    $a < q < t < x'$ implies $f(t) < p$,
+    \item[(c)]
+    $x' < t < r < b$ implies $f(t) > p$,
+  \end{enumerate}
+  then there exists $t_0 \in \mathbb{R}$ satisfying $x < t_0 < x'$
+  such that $f(t_0) > p$ (property (c) of $x$) and $f(t_0) < p$ (property (b) of $x'$),
+  which is absurd.
+  The case $x' < x$ is similar.
+
+  \item[(4)]
+  By (2)(3), the set $E_1$ is a subset of a countable set
+  \[
+    \{ (p,q,r) : (p,q,r) \in \mathbb{Q}^3 \},
+  \]
+  which is at most countable (Theorem 2.8 and Corollary to Theorem 2.12).
+  Similarly, $E_2$ is at most countable.
+
+  \item[(5)]
+  Similar to (2), for each point $x$ of $E_3$,
+  we can associate a triple $(p,q,r)$ of rational numbers such that
+  \begin{enumerate}
+    \item[(a)]
+    $f(x) > p > f(x+) = f(x-)$,
+    \item[(b)]
+    $a < q < t < x$ implies $f(t) < p$,
+    \item[(c)]
+    $x < t < r < b$ implies $f(t) < p$.
+  \end{enumerate}
+
+  \item[(6)]
+  \emph{Show that each triple in (5) is associated with at most one point of $E_3$.}
+  (Reductio ad absurdum)
+  If there were another $x' > x$ such that
+  \begin{enumerate}
+    \item[(a)]
+    $f(x') > p > f(x'+) = f(x'-)$,
+    \item[(b)]
+    $a < q < t < x'$ implies $f(t) < p$,
+    \item[(c)]
+    $x' < t < r < b$ implies $f(t) < p$,
+  \end{enumerate}
+  then $f(x) < p$ (property (b) of $x'$), which is absurd.
+  The case $x' < x$ is similar.
+
+  \item[(7)]
+  By (5)(6), the set $E_3$ is a subset of a countable set
+  \[
+    \{ (p,q,r) : (p,q,r) \in \mathbb{Q}^3 \},
+  \]
+  which is at most countable (Theorem 2.8 and Corollary to Theorem 2.12).
+  Similarly, $E_4$ is at most countable.
+
+  \item[(8)]
+  By (4)(7), all $E_j$ ($j=1,2,3,4$) are at most countable.
+  Hence the set of points at which $f$ has a simple discontinuity is at most countable.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
