@@ -1890,10 +1890,63 @@ Theorem 5.12 (Darboux's theorem) and Exercise 4.19 itself implies all.
 
 
 \textbf{Exercise 4.20.}
+\emph{If $E$ is a nonempty subset of a metric space $X$,
+define the distance from $x \in X$ to $E$ by
+\[
+  \rho_E(x) = \inf_{z \in E} d(x,z).
+\]}
+\begin{enumerate}
+  \item[(a)]
+  \emph{Prove that $\rho_E(x) = 0$ if and only if $x \in \overline{E}$.}
 
+  \item[(b)]
+  \emph{Prove that $\rho_E(x)$ is a uniformly continuous function on $X$,
+  by showing that
+  \[
+    \abs{ \rho_E(x) - \rho_E(y) } \leq d(x,y)
+  \]
+  for all $x \in X$, $y \in X$.
+  (Hint: $\rho_E(x) \leq d(x,z) \leq d(x,y) + d(y,z)$, so that
+  \[
+    \rho_E(x) \leq d(x,y) + \rho_E(y).)
+  \]}
+\end{enumerate}
 
+\emph{Proof of (a).}
+Hence
+\begin{align*}
+  \rho_E(x) > 0
+  &\Longleftrightarrow
+  \inf_{z \in E} d(x,z) > 0 \\
+  &\Longleftrightarrow
+  \exists \: r > 0 \text{ such that } B(x;r) \cap E = \varnothing \\
+  &\Longleftrightarrow
+  x \not\in \overline{E}.
+\end{align*}
+$\Box$ \\
 
-PLACEHOLDER \\\\
+\emph{Proof of (b) (Hint).}
+Given any $x \in X$, $y \in X$.
+For any $z \in E$, we have
+\[
+  \rho_E(x) \leq d(x,z) \leq d(x,y) + d(y,z).
+\]
+$\rho_E(x) - d(x,y)$ is a lower bound of the set $\{ d(y,z) : z \in E \}$.
+So that
+\[
+  \rho_E(x) \leq d(x,y) + \rho_E(y).
+\]
+Similarly,
+\[
+  \rho_E(y) \leq d(x,y) + \rho_E(x).
+\]
+Hence
+\[
+  \abs{ \rho_E(x) - \rho_E(y) } \leq d(x,y),
+\]
+or $\rho_E(x)$ is uniformly continuous on $X$
+(by taking $\delta = \varepsilon > 0$ in Definition 4.18).
+$\Box$ \\\\
 
 
 
