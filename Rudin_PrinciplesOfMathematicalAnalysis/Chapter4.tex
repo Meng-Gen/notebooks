@@ -2356,7 +2356,7 @@ The result becomes false if ``continuity of $f$'' is omitted. \\\\
 
 
 \textbf{Exercise 4.25.}
-\emph{If $A \subset \mathbb{R}^k$ and $B \subset \mathbb{R}^k$,
+\emph{If $A \subseteq \mathbb{R}^k$ and $B \subseteq \mathbb{R}^k$,
 define $A+B$ to be the set of all sums $\mathbf{x}+\mathbf{y}$ with
 $\mathbf{x} \in A$, $\mathbf{y} \in B$.}
 
@@ -2379,11 +2379,158 @@ whose sum $C_1 + C_2$ is not closed,
 by showing that $C_1 + C_2$ is a countable dense subset of $\mathbb{R}^1$.} \\
 \end{enumerate}
 
-\emph{Proof.}
+\emph{Proof of (a) (Hint).}
 \begin{enumerate}
 \item[(1)]
+If $K+C = \mathbb{R}^k$, the result is established since $\mathbb{R}^k$ is closed.
 
 \item[(2)]
+If $K+C \neq \mathbb{R}^k$, we take $\mathbf{z} \notin K+C$
+and put
+\[
+  F = \mathbf{z}-C = \{ \mathbf{z}-\mathbf{y} : \mathbf{y} \in C \}.
+\]
+
+\item[(3)]
+\emph{Show that $K \cap F = \varnothing$.}
+\begin{align*}
+  &\mathbf{z}-\mathbf{y} \in K \cap F, \mathbf{z} \not\in K+C, \mathbf{y} \in C \\
+  \Longrightarrow&
+  \mathbf{z} = (\mathbf{z}-\mathbf{y}) + \mathbf{y} \in K+C,
+\end{align*}
+contrary to the choice of $\mathbf{z}$.
+
+\item[(4)]
+\emph{Show that $F$ is closed.}
+\begin{align*}
+  &\text{$\mathbf{p}$ is a limit point of $F = \mathbf{z}-C$} \\
+  \Longleftrightarrow&
+  \text{$\mathbf{z} - \mathbf{p}$ is a limit point of $C$} \\
+  \Longrightarrow&
+  \text{$\mathbf{z} - \mathbf{p} \in C$}
+    &\text{($C$ is closed)} \\
+  \Longrightarrow&
+  \text{$\mathbf{p} \in \mathbf{z}-C = F$} \\
+  \Longrightarrow&
+  \text{$F$ is closed}.
+\end{align*}
+
+\item[(5)]
+Note that $K$ is compact, (3) and (4).
+By Exercise 4.21, there exists $\delta > 0$ such that
+$\abs{\mathbf{x} - \mathbf{p}} > \delta$ if $\mathbf{x} \in K$ and $\mathbf{p} \in F$.
+Write $\mathbf{p} = \mathbf{z} - \mathbf{y}$ for $\mathbf{y} \in C$.
+Hence
+\[
+  \abs{(\mathbf{x}+\mathbf{y}) - \mathbf{z}} > \delta
+\]
+if $\mathbf{x} \in K$ and $\mathbf{y} \in C$.
+That is, there is an open ball $B(\mathbf{z},\delta)$ does not intersect $K+C$.
+\end{enumerate}
+$\Box$\\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+$C_1$ and $C_2$ are closed
+since all points of $C_1$ or $C_2$ are isolated.
+
+\item[(2)]
+\emph{Show that $C_1+C_2$ is countable.}
+$C_1 \times C_2$ is countable since both $C_1$ and $C_2$ are countable.
+Define $f: C_1 + C_2 \to C_1 \times C_2$ by
+\[
+  f(m+n\alpha) = (m,n\alpha).
+\]
+$f$ is well-defined and injective since $\alpha$ is irrational.
+So that we can identify $C_1 + C_2$ as a subset of $C_1 \times C_2$.
+Besides, $C_1 + C_2$ is infinite since there is an infinite subset $C_1 \subseteq C_1 + C_2$.
+Hence $C_1+C_2$ is countable subset of $C_1 \times C_2$.
+
+\item[(3)]
+  \emph{Given any real $\alpha > 0$ and an integer $N > 1$,
+  show that there exist integers $h$ and $k$ with $0 < k \leq N$ such that
+  \[
+    \abs{ k\alpha - h } < \frac{1}{N}.
+  \]}
+
+  (Pigeonhole principle)
+  Let
+  $x_k = \frac{i}{N}$ ($0 \leq k \leq N$) and
+  \[
+    P = \left\{ x_0 = 1, x_1, \ldots, x_{N-1}, x_N = 1\right\}
+  \]
+  be a partition of $[0,1)$.
+  Consider a sequence
+  \[
+    \{ (n\alpha) \} = \{ n\alpha - [n\alpha] \}
+  \]
+  in $[0,1)$
+  where $n = 1,2,3,\ldots,N+1$.
+  The pigeonhole principle implies that there exists a subinterval $[x_{k-1},x_k)$
+  ($0 < k \leq N$)
+  containing at least two elements of $\{ (n\alpha) \}$,
+  say
+  \[
+    (n_1\alpha), (n_2\alpha) \in [x_{k-1},x_k)
+  \]
+  for some $n_1 > n_2$.
+  Thus
+  \begin{align*}
+    &\abs{ (n_1\alpha) - (n_2\alpha) } < \frac{1}{N} \\
+    \Longleftrightarrow&
+    \abs{ ( n_1\alpha - [n_1\alpha] ) - ( n_2\alpha - [n_2\alpha] ) } < \frac{1}{N} \\
+    \Longleftrightarrow&
+    \abs{ (n_1-n_2)\alpha - ([n_1\alpha]-[n_2\alpha]) } < \frac{1}{N}.
+  \end{align*}
+  Write $k = n_1-n_2 \in \mathbb{Z}$ and $h = [n_1\alpha]-[n_2\alpha] \in \mathbb{Z}$.
+  Here $0 < k \leq N$.
+
+\item[(4)]
+\emph{Given any irrational $\alpha > 0$.
+Show that $C_1+C_2$ is dense in $\mathbb{R}$.}
+  It suffices to show that $C_1+C_2$ is dense in $[0,1)$
+  (since we can write $x = [x] + (x)$ where $[x]$ is always in $C_1$).
+  \begin{enumerate}
+  \item[(a)]
+  Given any $x \in [0,1)$, it suffices to show that
+  for any given $\varepsilon > 0$, there exists $m+n\alpha \in C_1+C_2$
+  (where $m, n \in \mathbb{Z}$)
+  such that $m+n\alpha \in B(x;\varepsilon)$.
+
+  \item[(b)]
+  For such $\varepsilon > 0$, take $N > \max\{1, \frac{1}{\varepsilon} \}$
+  and apply (3) to get that
+  there exist integers $h$ and $k$ with $0 < k \leq N$ such that
+  \[
+    \abs{ k\alpha - h } < \frac{1}{N} < \varepsilon.
+  \]
+  Note that $\abs{ k \alpha - h } > 0$ since $\alpha$ is irrational.
+
+  \item[(c)]
+  For such $\abs{ k \alpha - h } > 0$, there exists an integer $a \geq 0$
+  (since $x \geq 0$)
+  such that
+  \[
+    a\abs{ k \alpha - h } \leq x < (a+1)\abs{ k \alpha - h }.
+  \]
+  \begin{align*}
+    &a\abs{ k \alpha - h } \leq x < (a+1)\abs{ k \alpha - h } \\
+    \Longleftrightarrow&
+    0 \leq x - a\abs{ k \alpha - h } < \abs{ k \alpha - h } \\
+    \Longleftrightarrow&
+    0 \leq x - \abs{ ak \alpha - ah } < \abs{ k \alpha - h }
+      &(a \geq 0) \\
+    \Longrightarrow&
+    0 \leq x - \abs{ ak \alpha - ah } < \varepsilon
+      &((b)) \\
+    \Longrightarrow&
+    \abs{ ak \alpha - ah } \in B(x;\varepsilon) \\
+    \Longleftrightarrow&
+    \pm(ak \alpha - ah) \in B(x;\varepsilon).
+  \end{align*}
+  \end{enumerate}
+  Hence $C_1+C_2$ is dense in $[0,1)$, or in $\mathbb{R}$.
 \end{enumerate}
 $\Box$\\\\
 
