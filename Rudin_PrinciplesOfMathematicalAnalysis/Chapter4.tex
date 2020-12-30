@@ -2618,7 +2618,7 @@ and put $h(x) = g(f(x))$ for $x \in X$.} \\
 \emph{Prove that $f$ is uniformly continuous if $h$ is uniformly continuous.
 (Hint: $g^{-1}$ has compact domain $g(Y)$, and $f(x) = g^{-1}(h(x))$.)} \\
 
-\emph{Prove also that $f$ is continuous if $h$ is continuous. } \\
+\emph{Prove also that $f$ is continuous if $h$ is continuous.} \\
 
 \emph{Show (by modifying Example 4.21, or by finding a different example) that
 the compactness of $Y$ cannot be omitted from the hypotheses,
@@ -2627,8 +2627,82 @@ even when $X$ and $Z$ are compact.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+\emph{Show that $f$ is uniformly continuous if $h$ is uniformly continuous.}
+  \begin{enumerate}
+  \item[(a)]
+  Since $g$ is a continuous one-to-one mapping of a compact metric space $Y$
+  onto a metric space $g(Y)$,
+  $g^{-1}$ is a continuous mapping of $g(Y)$ onto $Y$ (Theorem 4.17).
+
+  \item[(b)]
+  Since $g(Y)$ is compact (Theorem 4.14) and
+  $g^{-1}$ is a continuous mapping of $g(Y)$ onto $Y$,
+  $g^{-1}$ is uniformly continuous on $g(Y)$ (Theorem 4.19).
+
+  \item[(c)]
+  Since $g^{-1}$ and $h$ are uniformly continuous,
+  the composition $f(x) = g^{-1}(h(x))$ is uniformly continuous (Exercise 4.12).
+  \end{enumerate}
 
 \item[(2)]
+\emph{Show that $f$ is continuous if $h$ is continuous.}
+  By (1)(a), $g^{-1}$ is a continuous mapping of $g(Y)$ onto $Y$.
+  Since $g^{-1}$ and $h$ are continuous,
+  the composition $f(x) = g^{-1}(h(x))$ is continuous (Theorem 4.7).
+
+\item[(3)]
+\emph{Show that
+the compactness of $Y$ cannot be omitted from the hypotheses,
+even when $X$ and $Z$ are compact.}
+  \begin{enumerate}
+  \item[(a)]
+  (Example 4.21)
+  Let $X = Z = S^1$ be the unit circle
+  ($|\mathbf{x}| = 1$ for all $\mathbf{x} \in \mathbb{R}^2$)
+  equipped with the Euclidean metric.
+  Let $Y = [0, 2\pi)$ be the half-open interval on the real line
+  equipped with the Euclidean metric.
+  Let $\mathbf{g}: Y \to X$ defined by
+  \[
+    \mathbf{g}(x) = (\cos x, \sin x),
+  \]
+  and $\mathbf{f}: X \to Y$ be the inverse mapping of $\mathbf{g}$.
+  (See Example 4.21.)
+  Hence
+  \[
+    \mathbf{h}(x,y) = \mathbf{g}(\mathbf{f}(x,y)) = (x,y)
+  \]
+  is the identity map of $X$.
+  Note that $\mathbf{g}$ and $\mathbf{h}$ are uniformly continuous.
+  (Since the map $x \mapsto (\cos x, \sin x)$ is a continuous mapping of
+  a compact metric space $[0,2\pi]$ into a metric space $S^1$,
+  this map is uniformly continuous on $[0,2\pi]$ (Theorem 4.19).
+  Hence $\mathbf{g}$ is uniformly continuous on a subset of $[0,2\pi]$.)
+  However, $\mathbf{f}$ is not continuous.
+
+  \item[(b)]
+  (Another example)
+  Let $X = Z = [0,1]$ equipped with the Euclidean metric.
+  Let $Y = \left[0,\frac{1}{2}\right) \cup [1,2]$ equipped with the Euclidean metric.
+  Let $f: X \to Y$ defined by
+  \begin{equation*}
+  f(x) =
+    \begin{cases}
+      x  & \text{ if } x \in \left[0,\frac{1}{2}\right), \\
+      2x & \text{ if } x \in \left[\frac{1}{2},1\right],
+    \end{cases}
+  \end{equation*}
+  $g: Y \to X$ defined by
+  \begin{equation*}
+  g(x) =
+    \begin{cases}
+      x           & \text{ if } x \in \left[0,\frac{1}{2}\right), \\
+      \frac{x}{2} & \text{ if } x \in \left[1,2\right],
+    \end{cases}
+  \end{equation*}
+  and $h(x) = x$ on $X$. Clearly $h(x) = g(f(x))$.
+  $g$ and $h$ are uniformly continuous, but $f$ is not continuous.
+  \end{enumerate}
 \end{enumerate}
 $\Box$\\\\
 
