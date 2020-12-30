@@ -54,10 +54,14 @@ Given any $y \in \mathbb{R}$,
   \abs{ \frac{f(x) - f(y)}{x - y} } \to 0 \:\: \text{ as } \:\: x \to y,
 \]
 or $|f'(y)| = 0$.
-(Or using $\varepsilon$-$\delta$ argument. Fix $y \in \mathbb{R}$.
+
+\item[(3)]
+Or using $\varepsilon$-$\delta$ argument. Fix $y \in \mathbb{R}$.
 Given any $\varepsilon > 0$, there exists $\delta = \varepsilon > 0$ such that
 $$\left| \frac{f(x) - f(y)}{x - y} - 0 \right| \leq |x - y| < \delta = \varepsilon$$
-whenever $|x - y| < \delta$. That is, $|f'(y)| = 0$.)
+whenever $|x - y| < \delta$. That is, $|f'(y)| = 0$.
+
+\item[(4)]
 So $f'(y) = 0$ for any $y \in \mathbb{R}$.
 By Theorem 5.11 (b), $f$ is a constant.
 \end{enumerate}
@@ -70,11 +74,57 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.2.}
+\emph{Suppose $f'(x)>0$ in $(a,b)$.
+Prove that $f$ is strictly increasing in $(a,b)$, and let $g$ be its inverse function.
+Prove that $g$ is differentiable, and that
+\[
+  g'(f(x)) = \frac{1}{f'(x)} \:\:\:\:\:\:\:\: (a<x<b).
+\]}
 
+\emph{Proof.}
+Let $E = (a,b)$.
+\begin{enumerate}
+\item[(1)]
+Theorem 5.10 implies that
+for any $a < p < q < b$ there exists $\xi \in (p,q)$ such that
+\[
+  f(p)-f(q) = (p-q)f'(\xi).
+\]
+Since $\xi \in (p,q) \subseteq E$, by assumption $f'(\xi) > 0$.
+Hence $f(p)-f(q) = (p-q)f'(\xi) < 0$ (here $p-q < 0$), or
+\[
+  f(p) < f(q)
+\]
+if $p < q$.
+Therefore, $f$ is strictly increasing in $(a,b)$.
 
+\item[(2)]
+\emph{Show that $f$ is one-to-one in $E$ if $f$ is strictly increasing in $E$.}
+If $f(p) = f(q)$, then it cannot be $p > q$ or $p < q$ ((1)).
+So that $p = q$, or $f$ is injective.
 
+\item[(3)]
+\emph{Show that $g$ is well-defined.}
+Theorem 5.2 and Theorem 4.17.
 
-PLACEHOLDER \\\\
+\item[(4)]
+\emph{Show that $ g'(f(x)) = \frac{1}{f'(x)}$.}
+Given $y \in f(E)$, say $y = f(x)$ for some $x \in E$.
+Given any $s \in f(E)$ with $s \neq y$.
+Here $s = f(t)$ for some $t \in E$ and $t \neq x$.
+\begin{align*}
+  \lim_{s \to y} \frac{g(s) - g(y)}{s - y}
+  &= \lim_{f(t) \to f(x)} \frac{g(f(t)) - g(f(x))}{f(t) - f(x)} \\
+  &= \lim_{t \to x} \frac{t - x}{f(t) - f(x)} \\
+  &= \lim_{t \to x} \frac{1}{\frac{f(t) - f(x)}{t - x}} \\
+  &=\frac{1}{f'(x)}.
+    &(f' > 0)
+\end{align*}
+Here $s \to y$ if and only if $t \to x$ since both $f$ and $g$
+are continuous and one-to-one.
+Hence $g$ is differentiable and $g'(f(x)) = \frac{1}{f'(x)}$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -83,10 +133,34 @@ PLACEHOLDER \\\\
 
 
 \textbf{Exercise 5.3.}
+\emph{Suppose $g$ is a real function on $\mathbb{R}^1$,
+with bounded derivative (say $|g'|\leq M$).
+Fix $\varepsilon > 0$, and define $f(x)=x+\varepsilon g(x)$.
+Prove that $f$ is one-to-one if $\varepsilon$ is small enough.
+(A set of admissible values of $\varepsilon$ can be determined which depends only on $M$.)} \\
 
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Note that
+$f'(x) = 1 + \varepsilon g'(x)$ (Theorem 5.3).
+Since $|g'|\leq M$,
+\[
+  1 - \varepsilon M \leq f'(x) \leq 1 + \varepsilon M.
+\]
 
-
-PLACEHOLDER \\\\
+\item[(2)]
+Pick
+\[
+  \varepsilon = \frac{1}{M+1} > 0.
+\]
+Thus,
+\[
+  f'(x) \geq \frac{1}{M+1} > 0.
+\]
+By Exercise 5.2, $f(x)$ is strictly increasing in $\mathbb{R}$ or one-to-one in $\mathbb{R}$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
