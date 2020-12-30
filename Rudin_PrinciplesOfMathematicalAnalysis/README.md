@@ -5,7 +5,7 @@
 - Chapter 1: The Real and Complex Number Systems [Finished]
 - Chapter 2: Basic Topology [Finished]
 - Chapter 3: Numerical Sequences and Series [Finished]
-- Chapter 4: Continuity [WIP]
+- Chapter 4: Continuity [Finished]
 - Chapter 5: Differentiation [WIP]
 - Chapter 6: The Riemann-Stieltjes Integral [WIP]
 - Chapter 7: Sequences and Series of Functions [WIP]
