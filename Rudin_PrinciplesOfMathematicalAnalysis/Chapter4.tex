@@ -1779,9 +1779,78 @@ $\Box$ \\
     \frac{f(t)-f(x)}{t-x} > \frac{\frac{1}{n}}{\frac{1}{n}} = 1 > \frac{1}{64}.
   \]
   \end{enumerate}
-  $\Box$ \\
+  $\Box$
 
 \item[(2)]
+  Another proof for showing that $f$ is nowhere differentiable.
+  \begin{enumerate}
+  \item[(a)]
+  In Proof of (b) in Exercise 4.25, we showed that
+  \begin{quote}
+    \emph{Given any real $\alpha > 0$ and an integer $N > 1$,
+    show that there exist integers $h$ and $k$ with $0 < k \leq N$ such that
+    \[
+      \abs{ k\alpha - h } < \frac{1}{N}.
+    \]}
+  \end{quote}
+
+  \item[(b)]
+  \emph{Given any irrational $\alpha > 0$,
+  show that there are infinitely many rational numbers
+  $\frac{h}{k}$ with $k > 0$ such that
+  \[
+    \abs{ \alpha - \frac{h}{k} } < \frac{1}{k^2}.
+  \]}
+  (Reductio ad absurdum)
+  If there were only a finite numbers
+  $\frac{h_1}{k_1}, \ldots, \frac{h_r}{k_r}$,
+  write
+  \[
+    \delta = \min\left\{ \abs{ \alpha - \frac{h_i}{k_i} } : 1 \leq i \leq r \right\}.
+  \]
+  Here $\delta > 0$ since $\alpha$ is irrational.
+  Take $N > \max\{1, \frac{1}{\delta} \}$ and apply (a) to get that
+  there exist integers $h$ and $k$ with $0 < k \leq N$ such that
+  \[
+    \abs{ k\alpha - h } < \frac{1}{N}.
+  \]
+  Hence
+  \[
+    \abs{ \alpha - \frac{h}{k} } < \frac{1}{kN} \leq \frac{1}{k^2}
+  \]
+  and
+  \[
+    \abs{ \alpha - \frac{h}{k} } < \frac{1}{kN} \leq \frac{1}{N} < \delta,
+  \]
+  contrary to the construction of $\delta$.
+
+  \item[(c)]
+  For any rational number, this follows from discontinuity.
+  For any irrational number $x$,
+  by (b) there is a sequence
+  \[
+    \left\{ \frac{h_n}{k_n} \right\}
+  \]
+  of rational numbers such that
+  \[
+    \abs{ \frac{h_n}{k_n} - x } < \frac{1}{k_n^2}
+    \:\:\:\:\:\:\:\:\text{ and }\:\:\:\:\:\:\:\:
+    \lim_{n \to \infty} k_n = \infty.
+  \]
+  Hence
+  \[
+    \abs{ \frac{f\left( \frac{h_n}{k_n} \right) - f(x)}{\frac{h_n}{k_n} - x} }
+    \geq
+    \frac{1}{k_n} \cdot \left( \frac{1}{k_n^2} \right)^{-1}
+    = k_n
+    \to \infty
+  \]
+  as $n \to \infty$.
+  Therefore, $f$ is not differentiable.
+  \end{enumerate}
+  $\Box$
+
+\item[(3)]
 \emph{$f \in \mathscr{R}$ on any bounded interval $[a,b]$ and $\int_{a}^{b} f dx = 0$.}
 To prove this, use the similar argument in Exercise 6.6. \\\\
 \end{enumerate}
