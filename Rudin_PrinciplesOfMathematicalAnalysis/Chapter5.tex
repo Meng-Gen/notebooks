@@ -193,6 +193,39 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 5.5.}
+\emph{Suppose $f$ is defined and differentiable for every $x > 0$,
+and $f'(x) \to 0$ as $x \to +\infty$.
+Put $g(x) = f(x+1) - f(x)$.
+Prove that $g(x) \to 0$ as $x \to +\infty$.} \\
+
+\emph{Proof.}
+Given any $x > 0$.
+Since f is differentiable for every $x > 0$,
+f is differentiable on $[x,x+1]$.
+By Theorem 5.2 and Theorem 5.10 (the mean value theorem),
+there is a point $\xi \in (x,x+1)$ at which
+\[
+  f(x+1) - f(x) = [(x+1) - x ]f'(\xi)
+\]
+or
+\[
+  g(x) = f'(\xi).
+\]
+As $x \to +\infty$, $\xi \to +\infty$.
+Hence
+\[
+  \lim_{x \to +\infty} g(x)
+  = \lim_{\xi \to +\infty} f'(\xi) = 0.
+\]
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 5.14.}
 \emph{Let $f$ be a differentiable real function defined in $(a,b)$.
 Prove that $f$ is convex if and only if $f'$ is monotonically increasing.
