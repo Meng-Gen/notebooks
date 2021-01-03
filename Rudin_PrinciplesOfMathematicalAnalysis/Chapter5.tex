@@ -395,6 +395,107 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.12.}
+\emph{If $f(x) = |x|^3$, compute $f'(x)$, $f''(x)$ for all real $x$,
+and show that $f^{(3)} (0)$ does not exist.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  Write
+  \begin{equation*}
+    f(x) =
+    \begin{cases}
+      x^3 & (x \geq 0), \\
+      -x^3 & (x \leq 0).
+    \end{cases}
+  \end{equation*}
+
+  \item[(2)]
+  \emph{Show that $f'(x) = 3x|x|$.}
+  It is trivial that
+  \begin{equation*}
+    f'(x) =
+    \begin{cases}
+      3x^2 & (x > 0), \\
+      -3x^2 & (x < 0).
+    \end{cases}
+  \end{equation*}
+  Note that
+  \[
+    \lim_{x \to 0} f'(x) = 0.
+  \]
+  Apply the same argument in Exercise 5.9, we have
+  \[
+    f'(0) = 0.
+  \]
+  Hence $f'$ exists and $f'(x) = 3x|x|$ for any $x \in \mathbb{R}$.
+
+  \item[(3)]
+  \emph{Show that $f''(x) = 6|x|$.}
+  Similar to (2).
+  \begin{equation*}
+    f''(x) =
+    \begin{cases}
+      6x & (x > 0), \\
+      -6x & (x < 0).
+    \end{cases}
+  \end{equation*}
+  Note that
+  \[
+    \lim_{x \to 0} f''(x) = 0.
+  \]
+  Apply the same argument in Exercise 5.9, we have
+  \[
+    f''(0) = 0.
+  \]
+  Hence $f''$ exists and $f''(x) = 6|x|$ for any $x \in \mathbb{R}$.
+
+  \item[(4)]
+  \emph{Show that $f^{(3)} (0)$ does not exist.}
+  \begin{equation*}
+    f'''(x) =
+    \begin{cases}
+      6 & (x > 0), \\
+      -6 & (x < 0).
+    \end{cases}
+  \end{equation*}
+
+  There are some proofs for showing that $f^{(3)} (0)$ does not exist.
+  \begin{enumerate}
+  \item[(a)]
+  Since
+  \[
+    \lim_{t \to 0+} \frac{f''(t) - f''(0)}{t - 0}
+    = \lim_{t \to 0+} \frac{6t}{t} = 6
+  \]
+  and
+  \[
+    \lim_{t \to 0-} \frac{f''(t) - f''(0)}{t - 0}
+    = \lim_{t \to 0-} \frac{-6t}{t} = -6,
+  \]
+  $f^{(3)} (0)$ does not exist.
+
+  \item[(b)]
+  (Reductio ad absurdum)
+  If $f$ were differentiable on $\mathbb{R}^1$,
+  then
+  \[
+    \lim_{t \to 0+} f'''(t) = 6
+  \]
+  and
+  \[
+    \lim_{t \to 0-} f'''(t) = -6,
+  \]
+  or $f'''$ has a simple discontinuity at $x = 0$,
+  contrary to Corollary to Theorem 5.12.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Note.}
+We can construct one real function $f = |x|^k$ on $\mathbb{R}^1$ such that
+all $f^{(0)}(0) = \cdots = f^{(k-1)}(0) = 0$ exist but $f^{(k)}(0)$ does not exist.
+\\\\
 
 
 
