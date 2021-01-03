@@ -325,6 +325,52 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.9.}
+\emph{Let $f$ be a continuous real function on $\mathbb{R}^1$,
+of which it is known that $f'(x)$ exists for all $x \neq 0$ and that $f'(x) \to 3$ as $x \to 0$.
+Dose it follow that $f'(0)$ exists?} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $f'(0) = 3$.}
+  It suffices to show that
+  \[
+    \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} = 3.
+  \]
+  Write $F(x) = f(x) - f(0)$ and $G(x) = x - 0$ on $\mathbb{R}^1$.
+  So that
+  \[
+    \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0} \frac{F(x)}{G(x)} = 0.
+  \]
+
+  \item[(2)]
+  Note that
+    \[
+      \lim_{x \to 0} \frac{F'(x)}{G'(x)}
+      = \lim_{x \to 0} \frac{f'(x)}{1}
+      = 3.
+    \]
+
+  \item[(3)]
+  Since $f$ is continuous on $\mathbb{R}^1$,
+  $F$ is continuous on $\mathbb{R}^1$.
+  Hence
+    \[
+      \lim_{x \to 0} F(x) = F(\lim_{x \to 0} x) = F(0) = 0.
+    \]
+  Also, $G$ is continuous on $\mathbb{R}^1$ implies that
+    \[
+      \lim_{x \to 0} G(x) = G(\lim_{x \to 0} x) = G(0) = 0.
+    \]
+
+  \item[(4)]
+  Apply L'Hospital's rule (Theorem 5.13) to (2)(3), we have
+  \[
+    \lim_{x \to 0} \frac{F(x)}{G(x)} = 3,
+  \]
+  or $f'(0) = 3$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
