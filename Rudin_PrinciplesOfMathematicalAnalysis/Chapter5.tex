@@ -226,6 +226,69 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 5.6.}
+\emph{Suppose}
+\begin{enumerate}
+  \item[(a)]
+  \emph{$f$ is continuous for $x \geq 0$},
+
+  \item[(b)]
+  \emph{$f'(x)$ exists for $x > 0$},
+
+  \item[(c)]
+  \emph{$f(0) = 0$},
+
+  \item[(d)]
+  \emph{$f'$ is monotonically increasing.}
+\end{enumerate}
+\emph{Put
+\[
+  g(x) = \frac{f(x)}{x} \:\:\:\:\:\:\:\: (x>0)
+\]
+and prove that $g$ is monotonically increasing.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  It suffices to show that $g'(x) \geq 0$ for $x>0$ (Theorem 5.11(a)),
+  that is, to show that
+  \[
+    g'(x) = \frac{x f'(x) - f(x)}{x^2} \geq 0 \:\:\:\:\:\:\:\: (x>0),
+  \]
+  or
+  \[
+    x f'(x) - f(x) \geq 0 \:\:\:\:\:\:\:\: (x>0)
+  \]
+  since $x^2 > 0$ for all nonzero $x$.
+
+  \item[(2)]
+  Given $x > 0$.
+  By (a)(b), we apply the mean value theorem (Theorem 5.10) on $f$ to get
+  \[
+    f(x) - f(0) = (x - 0)f'(\xi)
+  \]
+  for some $\xi \in (0,x)$.
+  By (c),
+  \[
+    f(x) = x f'(\xi).
+  \]
+  By (d),
+  \[
+    f(x) = x f'(\xi) \leq x f'(x).
+  \]
+  Hence $x f'(x) - f(x) \geq 0$,
+  or $g$ is monotonically increasing.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Note.}
+$g$ is increasing strictly if $f$ is increasing strictly. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \textbf{Exercise 5.14.}
 \emph{Let $f$ be a differentiable real function defined in $(a,b)$.
 Prove that $f$ is convex if and only if $f'$ is monotonically increasing.
