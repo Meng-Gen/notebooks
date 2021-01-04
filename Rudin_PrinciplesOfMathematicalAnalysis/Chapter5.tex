@@ -333,7 +333,7 @@ Dose it follow that $f'(0)$ exists?} \\
 \begin{enumerate}
   \item[(1)]
   \emph{Show that $f'(0) = 3$.}
-  It suffices to show that
+  It is equivalent to show that
   \[
     \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} = 3.
   \]
@@ -387,6 +387,100 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.11.}
+\emph{Suppose $f$ is defined in a neighborhood of $x$, and suppose $f''(x)$ exists.
+Show that
+\[
+  \lim_{h \to 0}{\frac{f(x+h) + f(x-h) - 2f(x)}{h^2}} = f''(x).
+\]
+Show by an example that the limit may exist even if $f''(x)$ dose not.
+(Hint: Use Theorem 5.13.)} \\
+
+\emph{Proof (Theorem 5.13).}
+\begin{enumerate}
+  \item[(1)]
+  Write $F(h) = f(x+h) + f(x-h) - 2f(x)$ and $G(h) = h^2$.
+  It is equivalent to show that
+  \[
+    \lim_{h \to 0}\frac{F(h)}{G(h)} = f''(x).
+  \]
+  We might apply Theorem 5.13 (L'Hospital rule) to get it.
+
+  \item[(2)]
+  \emph{Show that $\lim_{h \to 0} F(h) = 0$ and $\lim_{h \to 0} G(h) = 0$.}
+  It is clear that $\lim_{h \to 0} G(h) = \lim_{h \to 0} h^2 = 0$
+  since $x \mapsto x^2$ is continuous on $\mathbb{R}^1$.
+  Besides, since $f$ is continuous at $x$ (by applying Theorem 5.2 twice),
+  \[
+    \lim_{h \to 0} F(h)
+    = f(x) + f(x) - 2f(x)
+    = 0.
+  \]
+
+  \item[(3)]
+  \emph{Show that
+  \[
+    \lim_{h \to 0} \frac{F'(h)}{G'(h)} = \lim_{h \to 0} \frac{f'(x+h) - f'(x-h)}{2h}
+  \]
+  is well-defined.}
+  Since $f''(x)$ exists in a neighborhood $B(x;r)$ of $x$ (where $r > 0$),
+  $f'(x)$ exists and is continuous in $B(x;r)$ (Theorem 5.2).
+  As $0 < |h| < \frac{r}{2}$,
+  \[
+    x+h \in B\left(x+h;\frac{r}{2}\right) \subseteq B(x;r)
+  \]
+  and
+  \[
+    x-h \in B\left(x-h;\frac{r}{2}\right) \subseteq B(x;r).
+  \]
+  So $f'(x+h)$ and $f'(x-h)$ exist in $B(x;r)$ as $0 < |h| < \frac{r}{2}$.
+  Hence
+  \[
+    \lim_{h \to 0} \frac{F'(h)}{G'(h)}
+    = \lim_{h \to 0} \frac{f'(x+h) - f'(x-h)}{2h}
+  \]
+  is well-defined (Theorem 5.3 and Theorem 5.5 (the chain rule)).
+
+  \item[(4)]
+  \emph{Show that
+  \[
+    \lim_{h \to 0} \frac{f'(x+h) - f'(x-h)}{2h} = f''(x).
+  \]}
+
+  Since $f''(x)$ exists, by definition
+  \[
+    \lim_{h \to 0} \frac{f'(x+h) - f'(x)}{h} = f''(x)
+  \]
+  and
+  \[
+    \lim_{h \to 0} \frac{f'(x-h) - f'(x)}{-h} = f''(x).
+  \]
+  Sum up two expressions to get
+  \[
+    2 f''(x) = \lim_{h \to 0} \frac{f'(x-h) - f'(x-h)}{h}.
+  \]
+
+  \item[(5)]
+  By (2)(3)(4) and Theorem 5.13 (L'Hospital rule),
+  the result is established.
+
+  \item[(6)]
+  \emph{Given $f(x) = x|x|$ on $\mathbb{R}^1$.
+  Show that
+  \[
+    \lim_{h \to 0}{\frac{f(h) + f(-h) - 2f(0)}{h^2}} = 0
+  \]
+  but $f''(x)$ does not exist at $x = 0$.}
+  Clearly,
+  \begin{align*}
+    \lim_{h \to 0}{\frac{f(h) + f(-h) - 2f(0)}{h^2}}
+    &= \lim_{h \to 0}{\frac{h|h| + (-h)|-h| - 2 \cdot 0}{h^2}} \\
+    &= \lim_{h \to 0}{\frac{h|h| - h|h| - 0}{h^2}} \\
+    &= \lim_{h \to 0}{0} \\
+    &= 0.
+  \end{align*}
+  But $f''(x)$ does not exist by Exercise 5.12.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -493,7 +587,16 @@ and show that $f^{(3)} (0)$ does not exist.} \\
 $\Box$ \\
 
 \emph{Note.}
-We can construct one real function $f = |x|^k$ on $\mathbb{R}^1$ such that
+Given $k > 0$.
+We can construct one real function $f$ on $\mathbb{R}^1$, say
+  \begin{equation*}
+    f(x) =
+    \begin{cases}
+      |x|^k      & (\text{$k$ is odd}), \\
+      x|x|^{k-1} & (\text{$k > 0$ is even}),
+    \end{cases}
+  \end{equation*}
+such that
 all $f^{(0)}(0) = \cdots = f^{(k-1)}(0) = 0$ exist but $f^{(k)}(0)$ does not exist.
 \\\\
 
