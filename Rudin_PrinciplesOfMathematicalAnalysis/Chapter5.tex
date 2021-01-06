@@ -718,7 +718,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 5.15.}
+\textbf{Exercise 5.15 (Landau-Kolmogorov inequality on the half-line).}
 \emph{Suppose $a \in \mathbb{R}^1$,
 $f$ is a twice-differentiable real function on $(a,\infty)$,
 and $M_0$, $M_1$, $M_2$ are the least upper bounds of
@@ -747,6 +747,33 @@ Hence
 \end{equation*}
 and show that $M_0 = 1$, $M_1 = 4$, $M_2 = 4$.}
 \emph{Does $M_1 ^2 \leq 4 M_0 M_2$ hold for vector-valued functions too?} \\
+
+
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+Write
+\[
+  M_1 \leq 2 M_0^{\frac{1}{2}} M_2^{\frac{1}{2}}.
+\]
+$2$ is called the Landau-Kolmogorov constant,
+which is the best possible by the above example.
+
+\item[(2)]
+In general,
+suppose $a \in \mathbb{R}^1$,
+$f$ is a $n$th differentiable real function on $(a,\infty)$,
+and $M_0$, $M_k$, $M_n$ are the least upper bounds of
+$\abs{ f(x) }$, $\abs{ f^{(k)}(x) }$, $\abs{ f^{(n)}(x) }$, respectively, on $(a,\infty)$
+where $1 \leq k < n$.
+Then
+\[
+  M_k \leq C(n,k) M_0^{1 - \frac{k}{n}} M_n^{\frac{k}{n}}.
+\]
+\end{enumerate}
+
+
 
 \emph{Proof.}
 \begin{enumerate}
@@ -791,7 +818,7 @@ for some $\xi \in (x,x+2h) \subseteq (a,+\infty)$.
 Thus
 \begin{align*}
   2h|f'(x)|
-  &\leq |f(x+h)| + |f(x)| + 2 h^2 |f''(\xi)| \\
+  &\leq |f(x+2h)| + |f(x)| + 2 h^2 |f''(\xi)| \\
   &\leq 2 M_0 + 2 h^2 M_2, \\
   |f'(x)|
   &\leq \frac{M_0}{h} + h M_2
@@ -876,10 +903,10 @@ for some $\xi \in (x,x+2h) \subseteq (a,+\infty)$.
 Thus by the Schwarz inequality (Theorem 1.35)
 \begin{align*}
   2h|(\mathbf{v} \cdot \mathbf{f})'(x)|
-  &\leq |(\mathbf{v} \cdot \mathbf{f})(x+h)|
+  &\leq |(\mathbf{v} \cdot \mathbf{f})(x+2h)|
     + |(\mathbf{v} \cdot \mathbf{f})(x)|
     + 2 h^2 |(\mathbf{v} \cdot \mathbf{f})''(\xi)| \\
-  &\leq |\mathbf{v}| |\mathbf{f}(x+h)|
+  &\leq |\mathbf{v}| |\mathbf{f}(x+2h)|
     + |\mathbf{v}||\mathbf{f}(x)|
     + 2 h^2 |\mathbf{v}| |\mathbf{f}''(\xi)| \\
   &\leq (2 M_0 + 2 h^2 M_2)|\mathbf{v}|, \\
@@ -915,8 +942,131 @@ or
 \[
   M_1^2 \leq 4 M_0 M_2.
 \]
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement (Landau-Kolmogorov inequality on the real line).}
+\emph{Suppose $f$ is a twice-differentiable real function on $(-\infty,+\infty)$,
+and $M_0$, $M_1$, $M_2$ are the least upper bounds of
+$|f(x)|$, $|f'(x)|$, $|f''(x)|$, respectively, on $(-\infty,+\infty)$.
+Prove that
+\[
+  M_1^2 \leq 2 M_0 M_2.
+\]}
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Similar to (1) in Landau-Kolmogorov inequality on the half-line,
+we suppose that $0 < M_0 < +\infty$ and $0 < M_2 < +\infty$.
+
+\item[(2)]
+Similar to (2) in Landau-Kolmogorov inequality on the half-line.
+Given $x \in \mathbb{R}^1$ and $h>0$.
+By Taylor's theorem (Theorem 5.15):
+\begin{align*}
+  f(x+2h) &= f(x) + 2h f'(x) + 2 h^2 f''(\xi_1) \tag{1} \\
+  f(x-2h) &= f(x) - 2h f'(x) + 2 h^2 f''(\xi_2) \tag{2}
+\end{align*}
+for some $\xi_1 \in (x,x+2h)$ and $\xi_2 \in (x,x-2h)$.
+So (1) subtracts (2):
+\[
+  f(x+2h)-f(x-2h) = 4h f'(x) + 2 h^2 f''(\xi_1) - 2 h^2 f''(\xi_2).
+\]
+Thus
+\begin{align*}
+  4h|f'(x)|
+  &\leq |f(x+2h)| + |f(x-2h)| + 2 h^2 |f''(\xi_1)| + 2 h^2 |f''(\xi_2)| \\
+  &\leq 2 M_0 + 4 h^2 M_2, \\
+  |f'(x)|
+  &\leq \frac{M_0}{2h} + h M_2
+\end{align*}
+holds for all $h > 0$.
+In particular, take
+\[
+  h = \sqrt{\frac{M_0}{2M_2}}
+\]
+to get
+\[
+  |f'(x)| \leq \sqrt{2 M_0 M_2}.
+\]
+Thus $\sqrt{2 M_0 M_2}$ is an upper bound of $|f'(x)|$ for all $x \in \mathbb{R}^1$.
+Hence
+\[
+  M_1 \leq \sqrt{2 M_0 M_2}
+\]
+or
+\[
+  M_1^2 \leq 2 M_0 M_2.
+\]
+\end{enumerate}
+$\Box$ \\
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+Write
+\[
+  M_1 \leq \sqrt{2} M_0^{\frac{1}{2}} M_2^{\frac{1}{2}}.
+\]
+$\sqrt{2}$ is called the Landau-Kolmogorov constant,
+which is the best possible.
+
+\item[(2)]
+In general,
+suppose $f$ is a $n$th differentiable real function on $\mathbb{R}^1$,
+and $M_0$, $M_k$, $M_n$ are the least upper bounds of
+$\abs{ f(x) }$, $\abs{ f^{(k)}(x) }$, $\abs{ f^{(n)}(x) }$, respectively, on $\mathbb{R}^1$
+where $1 \leq k < n$.
+Then
+\[
+  M_k \leq C(n,k) M_0^{1 - \frac{k}{n}} M_n^{\frac{k}{n}}.
+\] \\
+\end{enumerate}
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.16.}
+\emph{Suppose $f$ is twice-differentiable on $(0,\infty)$,
+$f''$ is bounded on $(0,\infty)$,
+and $f(x) \to 0$ as $x \to \infty$.
+Prove that $f'(x) \to 0$ as $x \to \infty$.
+(Hint: Let $a \to \infty$ in Exercise 5.15.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write $|f''| \leq M$ for some real $M$ since $f''$ is bounded on $(0,\infty)$.
+
+\item[(2)]
+Given any $a > 0$.
+As in Exercise 5.15, define $M_0, M_1, M_2$ are the least upper bounds of
+$|f(x)|$, $|f'(x)|$, $|f''(x)|$ on $(a,\infty)$.
+Note that $M_2 \leq M$ for any $a > 0$ (by (1)).
+So that
+\[
+  M_1^2 \leq 4 M_0 M_2 \leq 4M M_0
+\]
+for any $a > 0$.
+
+\item[(3)]
+By assumption, $M_0 \to 0$ as $a \to \infty$.
+(So given any $\varepsilon > 0$, there exists a real $A$ such that
+\[
+  0 \leq M_0 < \frac{\varepsilon}{4M + 1}
+\]
+whenever $a \geq A$.
+Hence
+\[
+  M_1^2 \leq 4M M_0 \leq 4M \cdot \frac{\varepsilon}{4M + 1} < \varepsilon.
+\]
+whenever $a \geq A$.)
+Therefore $M_1^2 \to 0$ as $a \to \infty$,
+or $f'(x) \to 0$ as $x \to \infty$.
 \end{enumerate}
 $\Box$ \\\\
 
