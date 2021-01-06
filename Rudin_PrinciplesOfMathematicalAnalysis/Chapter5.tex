@@ -1199,7 +1199,10 @@ $\Box$ \\\\
 \textbf{Exercise 5.19.}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \textbf{Exercise 5.20.}
 
@@ -1210,6 +1213,13 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.21.}
+\emph{Let $E$ be a closed subset of $\mathbb{R}^1$.
+We saw in Exercise 4.22, that there is a real continuous function $f$ on $\mathbb{R}^1$
+whose zero set is $E$.
+Is it possible, for each closed set $E$,
+to find such an $f$ which is differentiable on $\mathbb{R}^1$,
+or one which is $n$ times differentiable,
+or even one which has derivatives of all orders on $\mathbb{R}^1$?} \\
 
 
 
@@ -1226,14 +1236,6 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.23.}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\textbf{Exercise 5.16.}
 
 
 
@@ -1258,6 +1260,87 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.26.}
+\emph{Suppose $f$ is differentiable on $[a,b]$, $f(a) = 0$,
+and there is a real number $A$ such that $|f'(x)| \leq A|f(x)|$ on $[a,b]$.
+Prove that $f(x)=0$ for all $x \in [a,b]$.
+(Hint: Fix $x_0 \in [a,b]$, let
+\[
+  M_0 = \sup{|f(x)|}, \:\:\:\:\:\:\:\: M_1 = \sup{|f'(x)|}
+\]
+for $a \leq x \leq x_0$.
+For any such $x$,
+\[
+  |f(x)| \leq M_1(x_0-a) \leq A(x_0-a) M_0.
+\]
+Hence $M_0 = 0$ if $A(x_0-a) < 1$.
+That is, $f = 0$ on $[a,x_0]$.
+Proceed.)} \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+If $A = 0$, then $f'(x) = 0$ or $f(x)$ is constant on $[a,b]$ (Theorem 5.11(b)).
+Since $f(a) = 0$, $f(x) = 0$ on $[a,b]$.
+
+\item[(2)]
+Suppose that $A > 0$.
+Fix $x_0 \in [a,b]$, let
+\[
+  M_0 = \sup{|f(x)|}, \:\:\:\:\:\:\:\: M_1 = \sup{|f'(x)|}
+\]
+for $a \leq x \leq x_0$.
+Since $|f'(x)| \leq A|f(x)|$ on $[a,b]$,
+\[
+  |f'(x)| \leq A|f(x)| \leq A M_0.
+\]
+Since $A M_0$ is an upper bound for $|f'(x)|$,
+\[
+  M_1 \leq A M_0.
+\]
+
+\item[(3)]
+Given any $x \in [a,x_0]$.
+Since $f$ is differentiable on $[a,x_0] \subseteq [a,b]$,
+by the mean value theorem (Theorem 5.10), there is $\xi \in (a,x)$
+such that
+\[
+  f(x) - f(a) = f'(\xi)(x - a).
+\]
+Note that $f(a) = 0$ by assumption.
+So that
+\begin{align*}
+  |f(x)|
+  &= |f'(\xi)|(x - a) \\
+  &\leq M_1 (x - a)
+    &(\text{Definition of $M_1$}) \\
+  &\leq A M_0 (x - a)
+    &((2)) \\
+  &\leq A M_0 (x_0 - a).
+    &(x \in [a,x_0])
+\end{align*}
+Since $A M_0 (x_0 - a)$ is an upper bound for $|f(x)|$,
+\[
+  M_0 \leq A M_0 (x_0 - a).
+\]
+Take
+\[
+  x_0 = \min \left\{ \frac{1}{2A} + a, b \right\}
+\]
+so that $M_0 \leq A M_0 (x_0 - a) \leq \frac{M_0}{2}$.
+$M_0 = 0$ or $f(x) = 0$ on $[a,x_0]$.
+
+\item[(4)]
+Take a partition
+\[
+  P = \{ a = x_{-1}, x_0, \ldots, x_n = b \}
+\]
+of $[a,b]$ such that each subinterval $[x_{i-1},x_i]$ satisfying
+$\Delta x_i = x_i - x_{i-1} < \frac{1}{2A}$.
+By (3), $f(x) = 0$ on $[x_{-1},x_0]$.
+Apply the same argument in (3), $f(x) = 0$ on $[x_0,x_1]$.
+Continue this process, $f(x) = 0$ on each subinterval and thus on the whole interval $[a,b]$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
