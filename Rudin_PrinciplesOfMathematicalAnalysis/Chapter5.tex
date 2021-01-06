@@ -317,6 +317,110 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.8.}
+\emph{Suppose $f'(x)$ is continuous on $[a,b]$ and $\varepsilon > 0$.
+Prove that there exists $\delta > 0$ such that
+\[
+  \abs{ \frac{f(t)-f(x)}{t-x} - f'(x) } < \varepsilon
+\]
+whenever $0 < |t-x| < \delta$, $a \leq x \leq b$, $a \leq t \leq b$.
+(This could be expressed by saying $f$ is \textbf{uniformly differentiable}
+on $[a,b]$ if $f'$ is continuous on $[a,b]$.)
+Does this hold for vector-valued functions too?} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  Since $f'(x)$ is continuous on a compact set $[a,b]$,
+  $f'(x)$ is uniformly continuous on $[a,b]$.
+  So given any $\varepsilon > 0$ there exists $\delta > 0$ such that
+  \[
+    | f'(t) - f'(x) | < \varepsilon
+  \]
+  whenever $0 < |t-x| < \delta$, $a \leq x \leq b$, $a \leq t \leq b$.
+
+  \item[(2)]
+  For such $t < x$ in (1),
+  by the mean value theorem (Theorem 5.10),
+  there exists a point $\xi \in (t,x)$
+  at which
+  \[
+    f'(\xi) = \frac{f(t)-f(x)}{t-x}.
+  \]
+  Note that $\xi$ is also satisfying $0 < |t-\xi| < |t-x| < \delta$
+  and $a \leq \xi \leq b$.
+  Hence by (1) we also have
+  \[
+    | f'(\xi) - f'(x) | < \varepsilon,
+  \]
+  or
+  \[
+    \abs{ \frac{f(t)-f(x)}{t-x} - f'(x) } < \varepsilon.
+  \]
+
+  \item[(3)]
+  \emph{Suppose $\mathbf{f}'(x)$ is continuous on $[a,b]$ and $\varepsilon > 0$.
+  Prove that there exists $\delta > 0$ such that
+  \[
+    \abs{ \frac{\mathbf{f}(t)-\mathbf{f}(x)}{t-x} - \mathbf{f}'(x) } < \varepsilon
+  \]
+  whenever $0 < |t-x| < \delta$, $a \leq x \leq b$, $a \leq t \leq b$.}
+  \begin{enumerate}
+  \item[(a)]
+  Write
+  \[
+    \mathbf{f}(x) = (f_1(x), \ldots, f_k(x)) \in \mathbb{R}^k.
+  \]
+  By Remarks 5.16,
+  $\mathbf{f}(x)$ is differentiable at a point $x$ if and only if
+  each $f_1, \ldots, f_k$ is differentiable at $x$.
+  So that
+  \[
+    \mathbf{f}'(x) = (f_1'(x), \ldots, f_k'(x)) \in \mathbb{R}^k.
+  \]
+  By Theorem 4.10,
+  $\mathbf{f}'(x)$ is continuous if and only if
+  each $f_1, \ldots, f_k$ is continuous.
+
+  \item[(b)]
+  Similar to (1)(2),
+  Since $f_i'(x)$ is continuous on a compact set $[a,b]$ where $1 \leq i \leq k$,
+  $f_i'(x)$ is uniformly continuous on $[a,b]$.
+  So given any $\varepsilon > 0$ there exists $\delta_i > 0$ such that
+  \[
+    | f_i'(t) - f_i'(x) | < \frac{\varepsilon}{\sqrt{k}}
+  \]
+  whenever $0 < |t-x| < \delta_i$, $a \leq x \leq b$, $a \leq t \leq b$.
+  Take $\delta = \min_{1 \leq i \leq k} \delta_i > 0$.
+
+  \item[(c)]
+  For such $t < x$ in (1),
+  by the mean value theorem (Theorem 5.10),
+  there exists a point $\xi_i \in (t,x)$
+  at which
+  \[
+    f_i'(\xi_i) = \frac{f_i(t)-f_i(x)}{t-x}.
+  \]
+  Note that $\xi_i$ is also satisfying $0 < |t-\xi_i| < |t-x| < \delta$
+  and $a \leq \xi_i \leq b$.
+  Hence by (1) we also have
+  \[
+    | f_i'(\xi_i) - f_i'(x) | < \frac{\varepsilon}{\sqrt{k}},
+  \]
+  or
+  \[
+    \abs{ \frac{f_i(t)-f_i(x)}{t-x} - f_i'(x) } < \frac{\varepsilon}{\sqrt{k}}.
+  \]
+
+  \item[(d)]
+  Hence
+  \[
+    \abs{ \frac{\mathbf{f}(t)-\mathbf{f}(x)}{t-x} - \mathbf{f}'(x) }
+    = \left( \sum_{i=1}^{k} \abs{ \frac{f_i(t)-f_i(x)}{t-x} - f_i'(x) }^2 \right)^{\frac{1}{2}}
+    < \varepsilon.
+  \]
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -965,11 +1069,11 @@ Similar to (2) in Landau-Kolmogorov inequality on the half-line.
 Given $x \in \mathbb{R}^1$ and $h>0$.
 By Taylor's theorem (Theorem 5.15):
 \begin{align*}
-  f(x+2h) &= f(x) + 2h f'(x) + 2 h^2 f''(\xi_1) \tag{1} \\
-  f(x-2h) &= f(x) - 2h f'(x) + 2 h^2 f''(\xi_2) \tag{2}
+  f(x+2h) &= f(x) + 2h f'(x) + 2 h^2 f''(\xi_1) \tag{I} \\
+  f(x-2h) &= f(x) - 2h f'(x) + 2 h^2 f''(\xi_2) \tag{II}
 \end{align*}
 for some $\xi_1 \in (x,x+2h)$ and $\xi_2 \in (x,x-2h)$.
-So (1) subtracts (2):
+So (I) subtracts (II):
 \[
   f(x+2h)-f(x-2h) = 4h f'(x) + 2 h^2 f''(\xi_1) - 2 h^2 f''(\xi_2).
 \]
@@ -1073,8 +1177,116 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.17.}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\textbf{Exercise 5.18.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.19.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Exercise 5.20.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.21.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.22.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.23.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.16.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.24.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.25.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.26.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.27.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.28.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 5.29.}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
