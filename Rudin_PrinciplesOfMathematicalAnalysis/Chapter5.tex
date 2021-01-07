@@ -2,6 +2,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
@@ -1340,7 +1341,20 @@ By (3), $f(x) = 0$ on $[x_{-1},x_0]$.
 Apply the same argument in (3), $f(x) = 0$ on $[x_0,x_1]$.
 Continue this process, $f(x) = 0$ on each subinterval and thus on the whole interval $[a,b]$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\emph{Note.}
+It holds for vector-valued functions too:
+\begin{quote}
+\emph{Suppose $\mathbf{f}$ is a vector-valued differentiable function on $[a,b]$, $f(a) = 0$,
+and there is a real number $A$ such that $|\mathbf{f}'(x)| \leq A|\mathbf{f}(x)|$ on $[a,b]$.
+Prove that $\mathbf{f}(x)=0$ for all $x \in [a,b]$.}
+\end{quote}
+The proof is similar except using Theorem 5.19
+($|\mathbf{f}(b) - \mathbf{f}(a)| \leq (b-a)|\mathbf{f}'(x)|$)
+in addition. \\\\
 
 
 
@@ -1458,7 +1472,7 @@ Find all other solutions.} \\
   which is absurd.
   Hence $b_i = \infty$ and thus $E$ is of the form
   \[
-    E = (a,\infty). \:\:\:\:\:\:\:\: (a \geq 0)
+    E = (a,\infty) \:\:\:\:\:\:\:\: (a \geq 0).
   \]
   Therefore,
   \begin{equation*}
@@ -1479,6 +1493,65 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.28.}
+\emph{Formulate and prove an analogous uniqueness theorem for
+systems of differential equations of the form
+\[
+  y'_j = \phi_j(x, y_1, \ldots, y_k), \:\:\:\:\:\:\:\:
+  y_j(a) = c_j \:\:\:\:\:\:\:\:
+  (j = 1, \ldots, k)
+\]
+Note that this can be rewritten in the form
+\[
+  \mathbf{y}' = \bm{\phi}(x,y), \:\:\:\:\:\:\:\:
+  \mathbf{y}(a) = \mathbf{c}
+\]
+where $\mathbf{y} = (y_1, ..., y_k)$ ranges over a $k$-cell,
+$\bm{\phi}$ is the mapping of a $(k+1)$-cell into the Euclidean $k$-space
+whose components are the function $\phi_1, \ldots, \phi_k$,
+and $\mathbf{c}$ is the vector $(c_1, \ldots, c_k)$.
+Use Exercise 5.26, for vector-valued functions.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{A \textbf{solution} of the initial-value problem
+\[
+  \mathbf{y}' = \bm{\phi}(x,y), \:\:\:\:\:\:\:\:
+  \mathbf{y}(a) = \mathbf{c}
+\]
+is, by definition, a differentiable function $\mathbf{f}$ on $[a,b]$
+such that $\mathbf{f}(a) = \mathbf{c}$, and
+\[
+  \mathbf{f}'(x) = \bm{\phi}(x,\mathbf{f}(x)) \:\:\:\:\:\:\:\: (a \leq x \leq b).
+\]
+Then this problem has at most one solution if there is a constant $A$ such that
+\[
+  \abs{ \bm{\phi}(x,\mathbf{y}_2) - \bm{\phi}(x,\mathbf{y}_1) }
+  \leq A \abs{ \mathbf{y}_2 - \mathbf{y}_1 }
+\]
+whenever $(x,\mathbf{y}_1) \in R$ and $(x,\mathbf{y}_2) \in R$
+where $R$ is a $(k+1)$-cell defined by
+\[
+  R = [a,b] \times [\alpha_1,\beta_1] \times \cdots \times [\alpha_k,\beta_k].
+\]}
+\item[(2)]
+Similar to Exercise 5.27,
+Suppose $\mathbf{f}_1$ and $\mathbf{f}_2$ are two solutions of that problem.
+Define $\mathbf{f} = \mathbf{f}_1 - \mathbf{f}_2$.
+$\mathbf{f}$ is differentiable on $[a,b]$,
+$\mathbf{f}(a) = \mathbf{f}_1(a) - \mathbf{f}_2(a) = \mathbf{c} - \mathbf{c} = 0$.
+And
+\begin{align*}
+  |\mathbf{f}'(x)|
+  &= |\mathbf{f}_1'(x) - \mathbf{f}_2'(x)| \\
+  &= \abs{ \bm{\phi}(x,\mathbf{f}_1(x)) - \bm{\phi}(x,\mathbf{f}_2(x)) } \\
+  &\leq A | \mathbf{f}_1(x) - \mathbf{f}_2(x) |
+\end{align*}
+on $[a,b]$.
+By Note in Exercise 5.26,
+$\mathbf{f}(x) = 0$ on $[a,b]$, or $\mathbf{f}_1(x) = \mathbf{f}_2(x)$ on $[a,b]$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
