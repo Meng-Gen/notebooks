@@ -1502,7 +1502,7 @@ systems of differential equations of the form
 \]
 Note that this can be rewritten in the form
 \[
-  \mathbf{y}' = \bm{\phi}(x,y), \:\:\:\:\:\:\:\:
+  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \:\:\:\:\:\:\:\:
   \mathbf{y}(a) = \mathbf{c}
 \]
 where $\mathbf{y} = (y_1, \ldots, y_k)$ ranges over a $k$-cell,
@@ -1516,7 +1516,7 @@ Use Exercise 5.26, for vector-valued functions.} \\
 \item[(1)]
 \emph{A \textbf{solution} of the initial-value problem
 \[
-  \mathbf{y}' = \bm{\phi}(x,y), \:\:\:\:\:\:\:\:
+  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \:\:\:\:\:\:\:\:
   \mathbf{y}(a) = \mathbf{c}
 \]
 is, by definition, a differentiable function $\mathbf{f}$ on $[a,b]$
@@ -1560,6 +1560,92 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.29.}
+\emph{Specialize Exercise 5.28 by considering the system
+\begin{align*}
+  y_j' &= y_{j+1} \:\:\:\:\:\:\:\: (j = 1, \ldots, k-1), \\
+  y_k' &= f(x) - \sum_{j=1}^{k}{g_j(x)y_j}
+\end{align*}
+where $f, g_1, \ldots, g_k$ are continuous real functions on $[a,b]$,
+and derive a uniqueness theorem for solutions of the equation
+\[
+  y^{(k)} + g_k(x)y^{(k-1)} + \cdots + g_2(x)y' + g_1(x)y = f(x),
+\]
+  subject to initial conditions
+\[
+  y(a) = c_1, \:\:\:\:\:\:\:\:
+  y'(a) = c_1, \:\:\:\:\:\:\:\:
+  \ldots, \:\:\:\:\:\:\:\:
+  y^{(k-1)}(a) = c_k.
+\]}
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write
+\begin{align*}
+  \mathbf{y}
+  &= (y_1, \ldots, y_k) \\
+  &= \left(y, y', y'', \ldots, y^{(k-1)}\right), \\
+  \bm{\phi}(x, \mathbf{y})
+  &= \left(y_2, y_3, \ldots, y_{k-1}, f(x) - \sum_{j=1}^{k}{g_j(x)y_j}\right) \\
+  &= \left(y', y'', \ldots, y^{(k-1)}, f(x) - \sum_{j=1}^{k}{g_j(x)y^{(j-1)}}\right), \\
+  \mathbf{c}
+  &= (c_1, \ldots, c_k).
+\end{align*}
+So that
+\[
+  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \:\:\:\:\:\:\:\:
+  \mathbf{y}(a) = \mathbf{c}
+\]
+where $\mathbf{y}$ ranges over a $k$-cell $R$.
+
+\item[(2)]
+\emph{To show that the problem has at most one solution, by Exercise 5.28
+it suffices to show that there is a constant $A$ such that
+\[
+  \abs{ \bm{\phi}(x,\mathbf{y}) - \bm{\phi}(x,\mathbf{z}) }
+  \leq A \abs{ \mathbf{y} - \mathbf{z} }
+\]
+whenever $(x,\mathbf{y}) \in R$ and $(x,\mathbf{z}) \in R$.}
+
+\item[(3)]
+Since all $g_j$ ($1 \leq j \leq k$) are real continuous functions on a compact set $[a,b]$,
+all $g_j$ are bounded (Theorem 4.15),
+say $|g_j| \leq M$ on $[a,b]$ for some $M_j \in \mathbb{R}^1$ ($1 \leq j \leq k$).
+
+\item[(4)]
+Write $\mathbf{y} = (y_{1}, \ldots, y_{k})$
+and $\mathbf{z} = (z_{1}, \ldots, z_{k})$.
+So
+\begin{align*}
+  &\abs{ \bm{\phi}(x,\mathbf{y}) - \bm{\phi}(x,\mathbf{z}) }^2 \\
+  =&
+  \abs{ \left(y_{2} - z_{2}, y_{3} - z_{3}, \ldots, y_{k-1} - z_{k-1},
+    - \sum_{j=1}^{k}{g_j(x)(y_{j} - z_{j})}\right) }^2 \\
+  =&
+  \sum_{j=2}^{k-1} (y_{j} - z_{j})^2
+    + \left( -\sum_{j=1}^{k}{g_j(x)(y_{j} - z_{j})} \right)^2 \\
+  \leq&
+  \sum_{j=2}^{k-1} (y_{j} - z_{j})^2
+    + \sum_{j=1}^{k} g_j(x)^2 \sum_{j=1}^{k}(y_{j} - z_{j})^2
+    &(\text{Theorem 1.35}) \\
+  \leq&
+  \sum_{j=2}^{k-1} (y_{j} - z_{j})^2
+    + \sum_{j=1}^{k} M_j^2 \sum_{j=1}^{k}(y_{j} - z_{j})^2
+    &((3)) \\
+  \leq&
+  \sum_{j=1}^{k} (y_{j} - z_{j})^2
+    + \sum_{j=1}^{k} M_j^2 \sum_{j=1}^{k}(y_{j} - z_{j})^2
+    &(x^2 \geq 0 \: \forall x \in \mathbb{R}^1) \\
+  \leq&
+   \left( 1 + \sum_{j=1}^{k} M_j^2 \right) |\mathbf{y} - \mathbf{z}|^2.
+\end{align*}
+Hence
+$\abs{ \bm{\phi}(x,\mathbf{y}) - \bm{\phi}(x,\mathbf{z}) }
+\leq A \abs{ \mathbf{y} - \mathbf{z} }$
+for some $A = \left( 1 + \sum_{j=1}^{k} M_j^2 \right)^{\frac{1}{2}}$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
