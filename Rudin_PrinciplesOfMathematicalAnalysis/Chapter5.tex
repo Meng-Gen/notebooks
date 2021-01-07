@@ -1349,6 +1349,128 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.27.}
+\emph{Let $\phi$ be a real function defined on a rectangle $R$ in the plane,
+given by $a \leq x \leq b$, $\alpha \leq y \leq \beta$.
+A \textbf{solution} of the initial-value problem
+\[
+  y' = \phi(x,y), \:\:\:\:\:\:\:\: y(a) = c \:\:\:\:\:\:\:\: (\alpha \leq c \leq \beta)
+\]
+is, by definition, a differentiable function $f$ on $[a,b]$ such that
+$f(a) = c$, $\alpha \leq f(x) \leq \beta$, and
+\[
+  f'(x) = \phi(x,f(x)) \:\:\:\:\:\:\:\: (a \leq x \leq b)
+\]
+Prove that such a problem has at most one solution if there is a constant $A$ such that
+\[
+  |\phi(x,y_2) - \phi(x,y_1)| \leq A|y_2 - y_1|
+\]
+whenever $(x,y_1) \in R$ and $(x,y_2) \in R$.
+(Hint: Apply Exercise 26 to the difference of two solutions.)
+Note that this uniqueness theorem does not hold for the initial-value problem
+\[
+  y' = y^{\frac{1}{2}}, \:\:\:\:\:\:\:\: y(0) = 0,
+\]
+which has two solutions: $f(x) = 0$ and $f(x) = \frac{x^2}{4}$.
+Find all other solutions.} \\
+
+
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+Suppose $f_1$ and $f_2$ are two solutions of that problem.
+Define $f = f_1 - f_2$.
+$f$ is differentiable on $[a,b]$, $f(a) = f_1(a) - f_2(a) = c - c = 0$.
+And
+\begin{align*}
+  |f'(x)|
+  &= |f_1'(x) - f_2'(x)| \\
+  &= \abs{ \phi(x,f_1(x)) - \phi(x,f_2(x)) } \\
+  &\leq A | f_1(x) - f_2(x) |
+\end{align*}
+on $[a,b]$.
+By Exercise 5.26, $f(x) = 0$ on $[a,b]$, or $f_1(x) = f_2(x)$ on $[a,b]$.
+
+\item[(2)]
+\emph{The initial-value problem
+\[
+  y' = y^{\frac{1}{2}}, \:\:\:\:\:\:\:\: y(0) = 0,
+\]
+which has two solutions: $f(x) = 0$ and $f(x) = \frac{x^2}{4}$.
+Find all other solutions.} \\
+
+  \emph{Note.}
+  It does not exist a real $A$ such that $|\phi(x,y_2) - \phi(x,y_1)| \leq A|y_2 - y_1|$
+  in this initial-value problem.
+
+  \begin{enumerate}
+  \item[(a)]
+  Clearly, $f(x) = 0$ and $f(x) = \frac{x^2}{4}$ are two solutions for the initial-value problem.
+
+  \item[(b)]
+  Suppose $f(x) \neq 0$ on $[0,\infty)$.
+  Since $f'(x) = f(x)^{\frac{1}{2}}$, $f(x) \geq 0$.
+  Since $f(x)$ is continuous (Theorem 5.2), the set
+  \[
+    E = \{ x \in [0, \infty) : f(x) > 0 \}
+  \]
+  is open in $\mathbb{R}^1$ (Theorem 4.8).
+  By Exercise 2.29
+  we write $E$ as the union of an at most countable collection of disjoint segments,
+  say
+  \[
+    E = \bigcup_{(a_i,b_i) \subseteq [0, \infty)} (a_i,b_i)
+  \]
+  where all $(a_i,b_i)$ segments are disjoint.
+  Note that $E$ is nonempty.
+
+  \item[(c)]
+  For any segment $(a_i,b_i)$,
+  define $g(x) = f(x)^{\frac{1}{2}}$ on $(a_i,b_i)$.
+  (Clearly, $g(a_i) = f(a_i) = 0$ by the definition of $E$.)
+  Thus
+  \[
+    g'(x) = \frac{1}{2} f(x)^{-\frac{1}{2}} f'(x) = \frac{1}{2}.
+  \]
+  Hence
+  \[
+    g(x) = \frac{1}{2} x + c
+  \]
+  for some constant $c \in \mathbb{R}^1$.
+  So
+  \[
+    f(x) = g(x)^2 = \left( \frac{1}{2} x + c \right)^2.
+  \]
+  $f(a_i) = 0$ implies that $c = -\frac{a_i}{2}$.
+  Hence
+  \[
+    f(x) = \frac{1}{4}(x - a_i)^2
+  \]
+  on $(a_i,b_i)$.
+
+  \item[(d)]
+  By (c), if $b_i < 0$ is defined as a real number,
+  then $f(b_i) = 0$ by definition of $E$.
+  Note that
+  \[
+    \lim_{x \to b_i-} f(x) = \frac{1}{4}(b_i - a_i)^2 > 0,
+  \]
+  which is absurd.
+  Hence $b_i = \infty$ and thus $E$ is of the form
+  \[
+    E = (a,\infty). \:\:\:\:\:\:\:\: (a \geq 0)
+  \]
+  Therefore,
+  \begin{equation*}
+  f(x) =
+    \begin{cases}
+      0                    & (0 \leq x \leq a), \\
+      \frac{1}{4}(x - a)^2 & (x > a \geq 0).
+    \end{cases}
+  \end{equation*}
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
