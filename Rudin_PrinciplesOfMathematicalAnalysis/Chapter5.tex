@@ -832,8 +832,99 @@ Prove the following statements:}
   \emph{$f''$ is bounded if and only if $a \geq 2+2c$.}
 
   \item[(g)]
-  \emph{$f''$ is continuous if and only if $a > 2+2c$.}
+  \emph{$f''$ is continuous if and only if $a > 2+2c$.} \\
 \end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+  \item[(1)]
+  Since $x^a \sin{(x^{-c})}$ is continuous on $\mathbb{R}^1 - \{0\}$,
+  $f$ is continuous if and only if
+  \[
+    \lim_{x \to 0} x^a \sin{(x^{-c})} = 0.
+  \]
+
+  \item[(2)]
+  \emph{Given $a > 0$.
+  Show that}
+  \[
+    \lim_{x \to 0} x^a \sin{(x^{-c})} = 0.
+  \]
+  Since $x^a \to 0$ as $x \to 0$ and $\abs{ \sin{(x^{-c})} }$ is bounded by $1$,
+  the limit $\lim x^a \sin{(x^{-c})}$ exists and is equal to $0$.
+
+  \item[(3)]
+  \emph{Given $a = 0$.
+  Show that
+  \[
+    \lim_{x \to 0} x^a \sin{(x^{-c})} = \lim_{x \to 0} \sin{(x^{-c})}
+  \]
+  does not exist although
+  $x^a \sin{(x^{-c})} = \sin{(x^{-c})}$ is bounded on $[-1,1] - \{0\}$.}
+  \begin{enumerate}
+    \item[(a)]
+    Take $x_n = \left( \frac{\pi}{2} + 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+    for $n = 1, 2, 3, \ldots$.
+    The sequence $\{ x_n \}$ converges to $0$, and
+    \[
+      \lim_{n \to \infty} f(x_n)
+      = \lim_{n \to \infty} \sin{(x_n^{-c})}
+      = \lim_{n \to \infty} 1
+      = 1.
+    \]
+
+    \item[(b)]
+    Similarly, take $y_n = \left( 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+    for $n = 1, 2, 3, \ldots$.
+    The sequence $\{ y_n \}$ converges to $0$, and
+    \[
+      \lim_{n \to \infty} f(y_n) = 0.
+    \]
+
+    \item[(c)]
+    By (a)(b), $\lim_{x \to 0} x^a \sin{(x^{-c})}$ does not exist (Theorem 4.2).
+
+    \item[(d)]
+    Clearly, $|\sin{(x^{-c})}| \leq 1$ as $\sin{(x^{-c})}$ is well-defined.
+  \end{enumerate}
+
+  \item[(4)]
+  \emph{Given $a < 0$.
+  Show that
+  \[
+    \lim_{x \to 0} x^a \sin{(x^{-c})}
+  \]
+  does not exist.}
+  Similar to (3), we take the same $\{x_n\}$ and $\{y_n\}$ as (3)
+  to get the similar result:
+  \begin{align*}
+    \lim_{n \to \infty} f(x_n) &= \infty, \\
+    \lim_{n \to \infty} f(y_n) &= 0.
+  \end{align*}
+  By Theorem 4.2, $\lim_{x \to 0} x^a \sin{(x^{-c})}$ does not exist.
+
+  \item[(5)]
+  By (2)(3)(4), $f$ is continuous if and only if $a > 0$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(1)]
+  By definition,
+  \[
+    f'(0)
+    = \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0}
+    = \lim_{x \to 0} x^{a-1} \sin{(x^{-c})}.
+  \]
+
+  \item[(2)]
+  By (2)(3)(4) in the proof of (a),
+  $f'(0)$ exists if and only if $a - 1 > 0$.
+\end{enumerate}
+$\Box$ \\
 
 
 
