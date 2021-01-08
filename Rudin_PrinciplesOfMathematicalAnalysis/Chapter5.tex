@@ -484,6 +484,96 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.10.}
+\emph{Suppose $f$ and $g$ are complex differentiable functions on $(0,1)$,
+$f(x) \to 0$, $g(x) \to 0$, $f'(x) \to A$, $g'(x) \to B$ as $x \to 0$,
+where $A$ and $B$ are complex numbers, $B \neq 0$.
+Prove that
+\[
+  \lim_{x \to 0}{\frac{f(x)}{g(x)}}= \frac{A}{B}.
+\]
+Compare with Example 5.18.
+(Hint:
+\[
+  \frac{f(x)}{g(x)}
+  = \left( \frac{f(x)}{x} - A \right) \frac{x}{g(x)} +  A\frac{x}{g(x)}.
+\]
+Apply Theorem 5.13 to
+the real and imaginary parts of $\frac{f(x)}{x}$ and $\frac{g(x)}{x}$.)} \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+  \item[(1)]
+  Write
+  \[
+    f(x) = f_1(x) + i f_2(x)
+  \]
+  for $x \in (0,1)$,
+  where both $f_1$ and  $f_2$ are real functions.
+  By Remarks 5.16, it is clear that
+  \[
+    f'(x) = f_1'(x) + i f_2'(x).
+  \]
+
+  \item[(2)]
+  Write
+  \[
+    A = A_1 + i A_2
+  \]
+  where both $A_1$ and $A_2$ are real numbers.
+  Then as $x \to 0$, we have
+  \begin{enumerate}
+    \item[(a)]
+    $f(x) \to 0$ if and only if $f_1(x) \to 0$ and $f_2(x) \to 0$.
+
+    \item[(b)]
+    $f'(x) \to A$ if and only if $f_1'(x) \to A_1$ and $f_2'(x) \to A_2$.
+  \end{enumerate}
+
+  Hence by L'Hospital's rule (Theorem 5.13),
+  \[
+    \lim_{x \to 0} \frac{f_i(x)}{x}
+    = \lim_{x \to 0} \frac{f_i'(x)}{1} = A_i
+  \]
+  ($i = 1, 2$) or
+  \begin{align*}
+    \lim_{x \to 0} \frac{f(x)}{x}
+    &= \lim_{x \to 0} \frac{f_1(x) + i f_2(x)}{x} \\
+    &= \lim_{x \to 0} \frac{f_1(x)}{x} + i \lim_{x \to 0} \frac{f_2(x)}{x} \\
+    &= A_1 + i A_2 \\
+    &= A.
+  \end{align*}
+  Similarly,
+  \[
+    \lim_{x \to 0} \frac{g(x)}{x} = B.
+  \]
+  Note that $B \neq 0$, and thus
+  \[
+    \lim_{x \to 0} \frac{x}{g(x)} = \frac{1}{B}.
+  \]
+
+  \item[(3)]
+  Hence
+  \begin{align*}
+    \lim_{x \to 0} \frac{f(x)}{g(x)}
+    &= \lim_{x \to 0}
+      \left[ \left( \frac{f(x)}{x} - A \right) \frac{x}{g(x)} + A\frac{x}{g(x)} \right] \\
+    &= \lim_{x \to 0} \left( \frac{f(x)}{x} - A \right) \cdot \lim_{x \to 0} \frac{x}{g(x)}
+      + \lim_{x \to 0} A\frac{x}{g(x)} \\
+    &= 0 \cdot \frac{1}{B} + \frac{A}{B} \\
+    &= \frac{A}{B}.
+  \end{align*}
+
+  \item[(4)]
+  \emph{Compare with Example 5.18.}
+  Define $f(x) = x$ and $g(x) = x + x^2 \exp(\frac{i}{x^2})$ as in Example 5.18.
+  Note that $f(x) \to 0$, $g(x) \to 0$, $f'(x) \to 1$ and $g'(x) \to \infty$ as $x \to 0$.
+  By Example 5.18
+  \[
+    \lim_{x \to 0} \frac{f(x)}{g(x)} = 1
+    \neq 0 = \frac{1}{\infty} = \lim_{x \to 0} \frac{A}{B}.
+  \]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
