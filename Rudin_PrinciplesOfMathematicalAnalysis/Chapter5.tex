@@ -1272,6 +1272,48 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 5.17.}
+\emph{Suppose $f$ is a real, three times differentiable function on $[-1,1]$, such that
+\[
+  f(-1)=0, \:\:\:\:\:\:\:\:
+  f(0)=0, \:\:\:\:\:\:\:\:
+  f(1)=1, \:\:\:\:\:\:\:\:
+  f'(0)=0.
+\]
+Prove that $f^{(3)}(x) \geq 3$ for some $x \in (-1,1)$.
+Note that equality holds for $\frac{1}{2}(x^3+x^2)$.
+(Hint: Use Theorem 5.15, with $\alpha = 0$ and $\beta=\pm 1$,
+to show that there exist $s \in (0,1)$ and $t \in (-1,0)$ such that
+\[
+  f^{(3)}(s) + f^{(3)}(t) = 6.)
+\]}
+
+We can drop the assumption that $f(0)=0$ actually. \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+Use the Taylor's theorem (Theorem 5.15), with $\alpha = 0$ and $\beta=\pm 1$,
+\begin{align*}
+  f(1) &= f(0) + f'(0) + \frac{f''(0)}{2} + \frac{f'''(s)}{6} \tag{I} \\
+  f(-1) &= f(0) - f'(0) + \frac{f''(0)}{2} - \frac{f'''(t)}{6} \tag{II}
+\end{align*}
+for some $s \in (0,1)$ and $t \in (-1,0)$.
+
+\item[(2)]
+(I) subtracts (II) implies that
+\[
+  f(1) - f(-1) = 2 f'(0) + \frac{f'''(s)}{6} + \frac{f'''(t)}{6}.
+\]
+By assumption, $f(-1)=0$, $f(1)=1$ and $f'(0)=0$.
+Hence
+\[
+  f^{(3)}(s) + f^{(3)}(t) = 6
+\]
+for some $s \in (0,1)$ and $t \in (-1,0)$.
+So either $f^{(3)}(s) \geq 3$ or $f^{(3)}(t) \geq 3$
+for some $s, t \in (-1,1)$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
