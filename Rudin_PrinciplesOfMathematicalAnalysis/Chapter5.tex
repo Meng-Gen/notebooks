@@ -835,32 +835,42 @@ Prove the following statements:}
   \emph{$f''$ is continuous if and only if $a > 2+2c$.} \\
 \end{enumerate}
 
+Note that $f$ is not well-defined as a real function if $x < 0$.
+Hence we modify the definition of $f$ for the case $x < 0$:
+  \begin{equation*}
+  f(x) =
+    \begin{cases}
+      |x|^a \sin{(|x|^{-c})} & (\text{if } x \neq 0), \\
+      0                      & (\text{if } x = 0). \\
+    \end{cases}
+  \end{equation*}
+
 \emph{Proof of (a).}
 \begin{enumerate}
   \item[(1)]
-  Since $x^a \sin{(x^{-c})}$ is continuous on $\mathbb{R}^1 - \{0\}$,
+  Since $|x|^a \sin{(|x|^{-c})}$ is continuous on $\mathbb{R}^1 - \{0\}$,
   $f$ is continuous if and only if
   \[
-    \lim_{x \to 0} x^a \sin{(x^{-c})} = 0.
+    \lim_{x \to 0} |x|^a \sin{(|x|^{-c})} = 0.
   \]
 
   \item[(2)]
   \emph{Given $a > 0$.
   Show that}
   \[
-    \lim_{x \to 0} x^a \sin{(x^{-c})} = 0.
+    \lim_{x \to 0} |x|^a \sin{(|x|^{-c})} = 0.
   \]
-  Since $x^a \to 0$ as $x \to 0$ and $\abs{ \sin{(x^{-c})} }$ is bounded by $1$,
-  the limit $\lim x^a \sin{(x^{-c})}$ exists and is equal to $0$.
+  Since $|x|^a \to 0$ as $x \to 0$ and $\abs{ \sin{(|x|^{-c})} }$ is bounded by $1$,
+  the limit $\lim |x|^a \sin{(|x|^{-c})}$ exists and is equal to $0$.
 
   \item[(3)]
   \emph{Given $a = 0$.
   Show that
   \[
-    \lim_{x \to 0} x^a \sin{(x^{-c})} = \lim_{x \to 0} \sin{(x^{-c})}
+    \lim_{x \to 0} |x|^a \sin{(|x|^{-c})} = \lim_{x \to 0} \sin{(|x|^{-c})}
   \]
   does not exist although
-  $x^a \sin{(x^{-c})} = \sin{(x^{-c})}$ is bounded on $[-1,1] - \{0\}$.}
+  $|x|^a \sin{(|x|^{-c})} = \sin{(|x|^{-c})}$ is bounded on $[-1,1] - \{0\}$.}
   \begin{enumerate}
     \item[(a)]
     Take $x_n = \left( \frac{\pi}{2} + 2n\pi \right)^{-\frac{1}{c}} \neq 0$
@@ -868,7 +878,7 @@ Prove the following statements:}
     The sequence $\{ x_n \}$ converges to $0$, and
     \[
       \lim_{n \to \infty} f(x_n)
-      = \lim_{n \to \infty} \sin{(x_n^{-c})}
+      = \lim_{n \to \infty} \sin{(|x_n|^{-c})}
       = \lim_{n \to \infty} 1
       = 1.
     \]
@@ -882,17 +892,17 @@ Prove the following statements:}
     \]
 
     \item[(c)]
-    By (a)(b), $\lim_{x \to 0} x^a \sin{(x^{-c})}$ does not exist (Theorem 4.2).
+    By (a)(b), $\lim_{x \to 0} |x|^a \sin{(|x|^{-c})}$ does not exist (Theorem 4.2).
 
     \item[(d)]
-    Clearly, $|\sin{(x^{-c})}| \leq 1$ as $\sin{(x^{-c})}$ is well-defined.
+    Clearly, $|\sin{(|x|^{-c})}| \leq 1$ as $\sin{(|x|^{-c})}$ is well-defined.
   \end{enumerate}
 
   \item[(4)]
   \emph{Given $a < 0$.
   Show that
   \[
-    \lim_{x \to 0} x^a \sin{(x^{-c})}
+    \lim_{x \to 0} |x|^a \sin{(|x|^{-c})}
   \]
   does not exist.}
   Similar to (3), we take the same $\{x_n\}$ and $\{y_n\}$ as (3)
@@ -901,7 +911,7 @@ Prove the following statements:}
     \lim_{n \to \infty} f(x_n) &= \infty, \\
     \lim_{n \to \infty} f(y_n) &= 0.
   \end{align*}
-  By Theorem 4.2, $\lim_{x \to 0} x^a \sin{(x^{-c})}$ does not exist.
+  By Theorem 4.2, $\lim_{x \to 0} |x|^a \sin{(|x|^{-c})}$ does not exist.
 
   \item[(5)]
   By (2)(3)(4), $f$ is continuous if and only if $a > 0$.
@@ -917,12 +927,54 @@ $\Box$ \\
   \[
     f'(0)
     = \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0}
-    = \lim_{x \to 0} x^{a-1} \sin{(x^{-c})}.
+    = \lim_{x \to 0} |x|^{a-1} \sin{(|x|^{-c})}.
   \]
 
   \item[(2)]
   By (2)(3)(4) in the proof of (a),
   $f'(0)$ exists if and only if $a - 1 > 0$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+  \item[(1)]
+  Write $E = [-1,1] - \{0\}$.
+  $f'$ is bounded if and only if $f'(0)$ exists and $f'$ is bounded on $E$.
+
+  \item[(2)]
+  Given any $x \in E$,
+  \begin{align*}
+    f'(x)
+    &= a|x|^{a-1} \sin(|x|^{-c}) + |x|^a \cos(|x|^{-c})(-c)|x|^{-c-1} \\
+    &= |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right).
+  \end{align*}
+
+  \item[(3)]
+  \emph{Given $a-c-1 \geq 0$.
+  Show that $f'$ is bounded on $E$.}
+  Since $|x|^{a-c-1}$ is bounded by $1$ on $E$ and
+  $a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c})$ is bounded by $|a|+|c|$ on $E$,
+  $f'$ is bounded on $E$.
+
+  \item[(4)]
+  \emph{Given $a-c-1 < 0$.
+  Show that $f'$ is unbounded on $E$.}
+  Take $x_n = \left( 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+  for $n = 1, 2, 3, \ldots$.
+  The sequence $\{ x_n \}$ converges to $0$, and
+  \[
+    \lim_{n \to \infty} f'(x_n)
+    = \lim_{n \to \infty} -c (2n\pi)^{-\frac{a-c-1}{c}}
+    = -\infty.
+  \]
+
+  \item[(5)]
+  By (b), $f'(0)$ exists if and only if $a > 1$.
+  By (3)(4), $f'$ is bounded on $E$ if and only if $a-c-1 \geq 0$.
+  Since $c > 0$, $f'$ is bounded on $[-1,1]$ if and only if $a-c-1 \geq 0$.
 \end{enumerate}
 $\Box$ \\
 
