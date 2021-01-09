@@ -980,6 +980,80 @@ $\Box$ \\
 
 
 
+\emph{Proof of (d).}
+\begin{enumerate}
+  \item[(1)]
+  Write $E = [-1,1] - \{0\}$.
+  By (b)(c),
+  \begin{equation*}
+  f'(x) =
+    \begin{cases}
+      0
+        & \text{ if } x = 0, \\
+      |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right)
+        & \text{ if } x \in E.
+    \end{cases}
+  \end{equation*}
+  Clearly, $f'$ is continuous on $E$.
+  Hence, $f'$ is continuous if and only if $\lim_{x \to 0} f'(x) = f'(0) = 0$.
+
+  \item[(2)]
+  \emph{Given $a-c-1 > 0$.
+  Show that $\lim_{x \to 0} f'(x) = 0$.}
+  Since $|x|^{a-c-1} \to 0$ as $x \to 0$ and
+  $a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c})$ is bounded by $|a|+|c|$ on $E$,
+  \[
+    |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right) \to 0
+  \]
+  as $x \to 0$.
+  The result is established.
+
+  \item[(3)]
+  \emph{Given $a-c-1 = 0$.
+  Show that $\lim_{x \to 0} f'(x)$ does not exist.}
+  \begin{enumerate}
+    \item[(a)]
+    Take $x_n = \left( \frac{\pi}{2} + 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+    for $n = 1, 2, 3, \ldots$.
+    The sequence $\{ x_n \}$ converges to $0$, and
+    \begin{align*}
+      \lim_{n \to \infty} f'(x_n)
+      &= \lim_{n \to \infty} \left( a|x_n|^{c}\sin(|x_n|^{-c}) - c\cos(|x_n|^{-c}) \right) \\
+      &= \lim_{n \to \infty} \frac{a}{\frac{\pi}{2} + 2n\pi} \\
+      &= 0.
+    \end{align*}
+
+    \item[(b)]
+    Similarly, take $y_n = \left( 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+    for $n = 1, 2, 3, \ldots$.
+    The sequence $\{ y_n \}$ converges to $0$, and
+    \begin{align*}
+      \lim_{n \to \infty} f'(y_n)
+      &= \lim_{n \to \infty} \left( a|y_n|^{c}\sin(|y_n|^{-c}) - c\cos(|y_n|^{-c}) \right) \\
+      &= \lim_{n \to \infty} -c \\
+      &= -c \neq 0.
+    \end{align*}
+
+    \item[(c)]
+    By (a)(b), $\lim_{x \to 0} f'(x)$
+    does not exist (Theorem 4.2).
+  \end{enumerate}
+
+  \item[(4)]
+  \emph{Given $a-c-1 < 0$.
+  Show that $\lim_{x \to 0} f'(x)$ does not exist.}
+  It is the same as (4) in the proof of (c).
+
+  \item[(5)]
+  By (2)(3)(4),
+  $f'$ is continuous if and only if
+  $\lim_{x \to 0} f'(x) = 0$ if and only if
+  $a-c-1 > 0$.
+\end{enumerate}
+$\Box$ \\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
