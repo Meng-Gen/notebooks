@@ -1054,6 +1054,35 @@ $\Box$ \\
 
 
 
+\emph{Proof of (e).}
+\begin{enumerate}
+  \item[(1)]
+  Write $E = [-1,1] - \{0\}$.
+  By the proof of (d),
+  \begin{equation*}
+  f'(x) =
+    \begin{cases}
+      0
+        & \text{ if } x = 0, \\
+      |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right)
+        & \text{ if } x \in E.
+    \end{cases}
+  \end{equation*}
+  By definition
+  \begin{align*}
+    f''(0)
+    &= \lim_{x \to 0} \frac{f'(x) - f'(0)}{x - 0} \\
+    &= \lim_{x \to 0} \frac{|x|^{a-c-1}}{x} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right).
+  \end{align*}
+
+  \item[(2)]
+  Similar to (2)(3)(4) in the proof of (d),
+  $f'(0) = 0$ exists if and only if $(a-c-1) - 1 = a-c-2 > 0$.
+\end{enumerate}
+$\Box$ \\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
