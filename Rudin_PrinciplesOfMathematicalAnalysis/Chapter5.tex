@@ -1153,6 +1153,90 @@ $\Box$ \\
 
 
 
+\emph{Proof of (g).}
+Similar to the proof of (a) or (d).
+\begin{enumerate}
+  \item[(1)]
+  Write $E = [-1,1] - \{0\}$.
+  By (e)(f),
+  \begin{equation*}
+  f''(x) =
+    \begin{cases}
+      0
+        & \text{ if } x = 0, \\
+      |x|^{a-2c-2} \left[
+        ( a(a-1)|x|^{2c} - c^2 ) \sin(|x|^{-c}) - c(2a-c-1)|x|^c\cos(|x|^{-c})
+      \right].
+        & \text{ if } x \in E. \\
+    \end{cases}
+  \end{equation*}
+  Clearly, $f''$ is continuous on $E$.
+  Hence, $f''$ is continuous if and only if $\lim_{x \to 0} f''(x) = f''(0) = 0$.
+
+  \item[(2)]
+  \emph{Given $a-2c-2 > 0$.
+  Show that $\lim_{x \to 0} f''(x) = 0$.}
+  Since $|x|^{a-2c-2} \to 0$ as $x \to 0$ and
+  \[
+    ( a(a-1)|x|^{2c} - c^2 ) \sin(|x|^{-c}) - c(2a-c-1)|x|^c\cos(|x|^{-c})
+  \]
+  is bounded by $|a(a-1)| + |c^2| + |c(2a-c-1)|$ on $E$,
+  \begin{align*}
+    &|x|^{a-2c-2} \\
+    &\cdot \left[
+      ( a(a-1)|x|^{2c} - c^2 ) \sin(|x|^{-c}) - c(2a-c-1)|x|^c\cos(|x|^{-c})
+    \right] \to 0
+  \end{align*}
+  as $x \to 0$.
+  The result is established.
+
+  \item[(3)]
+  \emph{Given $a-2c-2 = 0$.
+  Show that $\lim_{x \to 0} f''(x)$ does not exist.}
+  \begin{enumerate}
+    \item[(a)]
+    Take $x_n = \left( \frac{\pi}{2} + 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+    for $n = 1, 2, 3, \ldots$.
+    The sequence $\{ x_n \}$ converges to $0$, and
+    \begin{align*}
+      &\lim_{n \to \infty} f''(x_n) \\
+      =& \lim_{n \to \infty}
+        ( a(a-1)|x_n|^{2c} - c^2 ) \sin(|x_n|^{-c}) - c(2a-c-1)|x_n|^c\cos(|x_n|^{-c}) \\
+      =& \lim_{n \to \infty} \frac{a(a-1)}{\left( \frac{\pi}{2} + 2n\pi \right)^2} - c^2 \\
+      =& -c^2
+    \end{align*}
+
+    \item[(b)]
+    Similarly, take $y_n = \left( \frac{3\pi}{2} + 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+    for $n = 1, 2, 3, \ldots$.
+    The sequence $\{ y_n \}$ converges to $0$, and
+    \begin{align*}
+      &\lim_{n \to \infty} f''(y_n) \\
+      =& \lim_{n \to \infty}
+        ( a(a-1)|y_n|^{2c} - c^2 ) \sin(|y_n|^{-c}) - c(2a-c-1)|y_n|^c\cos(|y_n|^{-c}) \\
+      =& \lim_{n \to \infty} -\frac{a(a-1)}{\left( \frac{3\pi}{2} + 2n\pi \right)^2} + c^2 \\
+      =& c^2.
+    \end{align*}
+
+    \item[(c)]
+    By (a)(b), $\lim_{x \to 0} f''(x)$
+    does not exist (Theorem 4.2).
+  \end{enumerate}
+
+  \item[(4)]
+  \emph{Given $a-2c-2 < 0$.
+  Show that $\lim_{x \to 0} f''(x)$ does not exist.}
+  It is the same as (4) in the proof of (f).
+
+  \item[(5)]
+  By (2)(3)(4),
+  $f''$ is continuous if and only if
+  $\lim_{x \to 0} f''(x) = 0$ if and only if
+  $a-2c-2 > 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
