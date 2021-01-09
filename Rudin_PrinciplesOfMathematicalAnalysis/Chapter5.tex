@@ -927,8 +927,17 @@ $\Box$ \\
   \[
     f'(0)
     = \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0}
-    = \lim_{x \to 0} \frac{|x|^{a}}{x} \sin{(|x|^{-c})}.
+    = \lim_{x \to 0} \mathrm{sgn}(x) |x|^{a-1} \sin{(|x|^{-c})}.
   \]
+  Here $\mathrm{sgn}(x)$ is the sign function defined by
+  \begin{equation*}
+  \mathrm{sgn}(x) =
+    \begin{cases}
+      1 & (x > 0), \\
+      0 & (x = 0), \\
+      -1 & (x < 0).
+    \end{cases}
+  \end{equation*}
 
   \item[(2)]
   Similar to (2)(3)(4) in the proof of (a),
@@ -948,14 +957,15 @@ $\Box$ \\
   Given any $x \in E$,
   \begin{align*}
     f'(x)
-    &= a|x|^{a-1} \sin(|x|^{-c}) + |x|^a \cos(|x|^{-c})(-c)|x|^{-c-1} \\
-    &= |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right).
+    &= \mathrm{sgn}(x)\left( a|x|^{a-1} \sin(|x|^{-c}) + |x|^a \cos(|x|^{-c})(-c)|x|^{-c-1} \right) \\
+    &= \mathrm{sgn}(x)|x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right).
   \end{align*}
 
   \item[(3)]
   \emph{Given $a-c-1 \geq 0$.
   Show that $f'$ is bounded on $E$.}
-  Since $|x|^{a-c-1}$ is bounded by $1$ on $E$ and
+  Since $\mathrm{sgn}(x)$ is bounded by $1$ on $E$,
+  $|x|^{a-c-1}$ is bounded by $1$ on $E$ and
   $a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c})$ is bounded by $|a|+|c|$ on $E$,
   $f'$ is bounded on $E$.
 
@@ -981,6 +991,7 @@ $\Box$ \\
 
 
 \emph{Proof of (d).}
+Similar to the proof of (a).
 \begin{enumerate}
   \item[(1)]
   Write $E = [-1,1] - \{0\}$.
@@ -990,7 +1001,7 @@ $\Box$ \\
     \begin{cases}
       0
         & \text{ if } x = 0, \\
-      |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right)
+      \mathrm{sgn}(x)|x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right)
         & \text{ if } x \in E.
     \end{cases}
   \end{equation*}
@@ -1000,10 +1011,11 @@ $\Box$ \\
   \item[(2)]
   \emph{Given $a-c-1 > 0$.
   Show that $\lim_{x \to 0} f'(x) = 0$.}
-  Since $|x|^{a-c-1} \to 0$ as $x \to 0$ and
+  Since $|x|^{a-c-1} \to 0$ as $x \to 0$,
+  $\mathrm{sgn}(x)$ is bounded by $1$ on $E$, and
   $a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c})$ is bounded by $|a|+|c|$ on $E$,
   \[
-    |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right) \to 0
+    \mathrm{sgn}(x) |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right) \to 0
   \]
   as $x \to 0$.
   The result is established.
@@ -1018,7 +1030,8 @@ $\Box$ \\
     The sequence $\{ x_n \}$ converges to $0$, and
     \begin{align*}
       \lim_{n \to \infty} f'(x_n)
-      &= \lim_{n \to \infty} \left( a|x_n|^{c}\sin(|x_n|^{-c}) - c\cos(|x_n|^{-c}) \right) \\
+      &= \lim_{n \to \infty} \mathrm{sgn}(x_n)
+        \left( a|x_n|^{c}\sin(|x_n|^{-c}) - c\cos(|x_n|^{-c}) \right) \\
       &= \lim_{n \to \infty} \frac{a}{\frac{\pi}{2} + 2n\pi} \\
       &= 0.
     \end{align*}
@@ -1029,7 +1042,8 @@ $\Box$ \\
     The sequence $\{ y_n \}$ converges to $0$, and
     \begin{align*}
       \lim_{n \to \infty} f'(y_n)
-      &= \lim_{n \to \infty} \left( a|y_n|^{c}\sin(|y_n|^{-c}) - c\cos(|y_n|^{-c}) \right) \\
+      &= \lim_{n \to \infty} \mathrm{sgn}(y_n)
+        \left( a|y_n|^{c}\sin(|y_n|^{-c}) - c\cos(|y_n|^{-c}) \right) \\
       &= \lim_{n \to \infty} -c \\
       &= -c \neq 0.
     \end{align*}
@@ -1055,6 +1069,7 @@ $\Box$ \\
 
 
 \emph{Proof of (e).}
+Similar to the proof of (b).
 \begin{enumerate}
   \item[(1)]
   Write $E = [-1,1] - \{0\}$.
@@ -1064,7 +1079,7 @@ $\Box$ \\
     \begin{cases}
       0
         & \text{ if } x = 0, \\
-      |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right)
+      \mathrm{sgn}(x) |x|^{a-c-1} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right)
         & \text{ if } x \in E.
     \end{cases}
   \end{equation*}
@@ -1072,14 +1087,70 @@ $\Box$ \\
   \begin{align*}
     f''(0)
     &= \lim_{x \to 0} \frac{f'(x) - f'(0)}{x - 0} \\
-    &= \lim_{x \to 0} \frac{|x|^{a-c-1}}{x} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right).
+    &= \lim_{x \to 0} |x|^{a-c-2} \left( a|x|^{c}\sin(|x|^{-c}) - c\cos(|x|^{-c}) \right).
   \end{align*}
+  (Here $\mathrm{sgn}(x)^2 = 1$ if $x \neq 0$.)
 
   \item[(2)]
   Similar to (2)(3)(4) in the proof of (d),
-  $f'(0) = 0$ exists if and only if $(a-c-1) - 1 = a-c-2 > 0$.
+  $f''(0) = 0$ exists if and only if $(a-c-1) - 1 = a-c-2 > 0$.
 \end{enumerate}
 $\Box$ \\
+
+
+
+\emph{Proof of (f).}
+Similar to the proof of (c).
+\begin{enumerate}
+  \item[(1)]
+  Write $E = [-1,1] - \{0\}$.
+  $f''$ is bounded if and only if $f''(0)$ exists and $f''$ is bounded on $E$.
+
+  \item[(2)]
+  Given any $x \in E$,
+  \begin{align*}
+    f''(x)
+    =& |x|^{a-2c-2} \\
+      &\cdot \left[
+        ( a(a-1)|x|^{2c} - c^2 ) \sin(|x|^{-c})
+        - c(2a-c-1)|x|^c\cos(|x|^{-c})
+      \right].
+  \end{align*}
+
+  \item[(3)]
+  \emph{Given $a-2c-2 \geq 0$.
+  Show that $f''$ is bounded on $E$.}
+  Since $|x|^{a-2c-2}$ is bounded by $1$ on $E$ and
+  \begin{align*}
+    &\abs{( a(a-1)|x|^{2c} - c^2 ) \sin(|x|^{-c}) - c(2a-c-1)|x|^c\cos(|x|^{-c})} \\
+    \leq&
+    |a(a-1)| + |c^2| + |c(2a-c-1)|
+  \end{align*}
+  is bounded on $E$, $f''$ is bounded on $E$.
+
+  \item[(4)]
+  \emph{Given $a-2c-2 < 0$.
+  Show that $f''$ is unbounded on $E$.}
+  Take
+  $x_n = \left( \frac{\pi}{2} + 2n\pi \right)^{-\frac{1}{c}} \neq 0$
+  for $n = 1, 2, 3, \ldots$.
+  The sequence $\{ x_n \}$ converges to $0$, and
+  \begin{align*}
+    &\lim_{n \to \infty} f''(x_n) \\
+    =& \lim_{n \to \infty}
+      \underbrace{\left( a(a-1)
+        \left( \frac{\pi}{2} + 2n\pi \right)^{-2} - c^2 \right)}_{\to -c^2 \neq 0}
+      \underbrace{\left( \frac{\pi}{2} + 2n\pi \right)^{-\frac{a-2c-2}{c}}}_{\to \infty} \\
+    =& - \infty.
+  \end{align*}
+
+  \item[(5)]
+  By (e), $f''(0)$ exists if and only if $a - c - 2 > 0$.
+  By (3)(4), $f''$ is bounded on $E$ if and only if $a - 2c - 2 \geq 0$.
+  Since $c > 0$, $f''$ is bounded on $[-1,1]$ if and only if $a-2c-2 \geq 0$.
+\end{enumerate}
+$\Box$ \\
+
 
 
 
