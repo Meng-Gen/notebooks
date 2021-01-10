@@ -1771,10 +1771,105 @@ and derive the following version of Taylor's theorem:
 \[
   f(\beta) = P(\beta)
     + \frac{Q^{(n-1)}(\alpha)}{(n-1)!} (\beta - \alpha)^n.
-\]} \\
+\]}
 
 \emph{Proof.}
-$\Box$ \\\\
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that
+  \[
+    f^{(k)}(t) = kQ^{(k-1)}(t) + (t - \beta)Q^{(k)}(t)
+  \]
+  for $k = 1, 2, \ldots, n$.}
+  Induction on $k$.
+  \begin{enumerate}
+  \item[(a)]
+  If $k = 1$, then
+  \[
+    f'(t) = Q(t) + (t-\beta)Q'(t)
+  \]
+  (Theorem 5.3(b)).
+
+  \item[(b)]
+  Assume the induction hypothesis that for the single case $k = m-1$ holds.
+  Apply Theorem 5.3(b) again to get
+  \begin{align*}
+    f^{(m)}(t)
+    &= (f^{(m-1)}(t))' \\
+    &= ((m-1)Q^{(m-2)}(t) + (t - \beta)Q^{(m-1)}(t))' \\
+    &= (m-1)Q^{(m-1)}(t) + Q^{(m-1)}(t) + (t - \beta)Q^{(m)}(t) \\
+    &= mQ^{(m-1)}(t) + (t - \beta)Q^{(m)}(t).
+  \end{align*}
+
+  \item[(c)]
+  Since both the base case in (a) and
+  the inductive step in (b) have been proved as true,
+  by mathematical induction the result holds.
+  \end{enumerate}
+
+  \item[(2)]
+  \emph{Show that
+  \[
+    f(\beta) = P(\beta)
+    + \frac{Q^{(n-1)}(\alpha)}{(n-1)!} (\beta - \alpha)^n
+  \]
+  where}
+  \[
+    P(t) = \sum_{k=0}^{n-1} \frac{f^{(k)}(\alpha)}{k!}(t - \alpha)^k.
+  \]
+  Induction on $n$.
+  \begin{enumerate}
+  \item[(a)]
+  If $n = 1$, then by the definition of $Q(t)$
+  \[
+    f(\beta) = f(\alpha) + Q(\alpha)(\beta - \alpha).
+  \]
+
+  \item[(b)]
+  Assume the induction hypothesis that for the single case $n = m-1$ holds.
+  By (1), we have
+  \[
+    Q^{(m-2)}(\alpha) = \frac{1}{m-1}( f^{(m-1)}(\alpha) + Q^{(m-1)}(\alpha)(\beta - \alpha) ).
+  \]
+  Hence
+  \begin{align*}
+    f(\beta)
+    =& \sum_{k=0}^{m-2} \frac{f^{(k)}(\alpha)}{k!}(\beta - \alpha)^k
+      + \frac{Q^{(m-2)}(\alpha)}{(m-2)!} (\beta - \alpha)^{m-1} \\
+    =& \sum_{k=0}^{m-2} \frac{f^{(k)}(\alpha)}{k!}(\beta - \alpha)^k \\
+      &+ \frac{ f^{(m-1)}(\alpha) }{(m-1)!} (\beta - \alpha)^{m-1}
+      + \frac{Q^{(m-1)}(\alpha)(\beta - \alpha)}{(m-1)!} (\beta - \alpha)^{m-1} \\
+    =& \sum_{k=0}^{m-1} \frac{f^{(k)}(\alpha)}{k!}(\beta - \alpha)^k
+      + \frac{Q^{(m-1)}(\alpha)}{(m-1)!} (\beta - \alpha)^{m}.
+  \end{align*}
+
+  \item[(c)]
+  Since both the base case in (a) and
+  the inductive step in (b) have been proved as true,
+  by mathematical induction the result holds.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Note.}
+It is also true for vector-valued functions:
+  \emph{Suppose $\mathbf{f}$ is a function of $[a,b]$ into $\mathbb{R}^{m}$,
+  $n$ is a positive integer,
+  $\mathbf{f}^{(n-1)}$ is continuous on $[a,b]$,
+  $\mathbf{f}^{(n)}(t)$ exists for every $t \in (a,b)$.
+  Let $\alpha$, $\beta$ be distinct points of $[a,b]$, and define
+  \[
+    \mathbf{P}(t) = \sum_{k=0}^{n-1} \frac{\mathbf{f}^{(k)}(\alpha)}{k!}(t - \alpha)^k
+  \]
+  and
+  \[
+    \mathbf{Q}(t) = \frac{\mathbf{f}(t) - \mathbf{f}(\beta)}{t - \beta}.
+  \]
+  Then
+  \[
+    \mathbf{f}(\beta) = \mathbf{P}(\beta)
+      + \frac{\mathbf{Q}^{(n-1)}(\alpha)}{(n-1)!} (\beta - \alpha)^n.
+  \]} \\\\
 
 
 
@@ -1819,7 +1914,7 @@ which remains valid for vector-valued function.} \\
 
 \emph{Proof.}
 \begin{enumerate}
-  \item[(a)]
+  \item[(1)]
   \emph{Suppose $\mathbf{f}$ is a function of $[a,b]$ into $\mathbb{R}^{m}$,
   $n$ is a positive integer,
   $\mathbf{f}^{(n-1)}$ is continuous on $[a,b]$,
@@ -1836,7 +1931,7 @@ which remains valid for vector-valued function.} \\
 
   For $n = 1$, this is just Theorem 5.19.
 
-  \item[(b)]
+  \item[(2)]
   Similar to the proof of Theorem 5.19.
   Put
   \[
@@ -1855,7 +1950,7 @@ which remains valid for vector-valued function.} \\
   Also, $\varphi^{(n-1)}$ is continuous on $[\alpha,\beta]$,
   and $\varphi^{(n)}(t)$ exists for every $t \in (\alpha,\beta)$.
 
-  \item[(c)]
+  \item[(3)]
   By Taylor's theorem (Theorem 5.15), there exists $x \in (\alpha,\beta)$ such that
   \[
     \varphi(\beta) = Q(\beta) + \frac{\varphi^{(n)}(x)}{n!}(\beta-\alpha)^n
@@ -1864,7 +1959,7 @@ which remains valid for vector-valued function.} \\
   \[
     Q(t) = \sum_{k=0}^{n-1} \frac{\varphi^{(k)}(\alpha)}{k!}(t - \alpha)^k.
   \]
-  By (b), we have $Q(t) = \mathbf{z} \cdot \mathbf{P}(t)$ and thus
+  By (2), we have $Q(t) = \mathbf{z} \cdot \mathbf{P}(t)$ and thus
   \[
     \mathbf{z} \cdot (\mathbf{f}(\beta) - \mathbf{P}(\beta))
     = \mathbf{z} \cdot \frac{\mathbf{f}^{(n)}(x)}{n!}(\beta-\alpha)^n.
