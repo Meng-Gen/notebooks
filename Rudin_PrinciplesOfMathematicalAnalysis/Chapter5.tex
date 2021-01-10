@@ -1842,8 +1842,6 @@ which remains valid for vector-valued function.} \\
   \[
     \mathbf{z} = \mathbf{f}(\beta) - \mathbf{P}(\beta).
   \]
-  Might assume that $\mathbf{z} \neq 0$.
-  (Otherwise there is nothing to prove.)
   Define
   \[
     \varphi(t) = \mathbf{z} \cdot \mathbf{f}(t)
@@ -1886,8 +1884,9 @@ which remains valid for vector-valued function.} \\
   or
   \[
     |\mathbf{f}(\beta) - \mathbf{P}(\beta)|
-    \leq \abs{ \frac{\mathbf{f}^{(n)}(x)}{n!} } (\beta-\alpha)^n.
+    \leq \abs{ \frac{\mathbf{f}^{(n)}(x)}{n!} } (\beta-\alpha)^n
   \]
+  (whether $\mathbf{f}(\beta) - \mathbf{P}(\beta)$ is zero nor not).
 \end{enumerate}
 $\Box$ \\\\
 
