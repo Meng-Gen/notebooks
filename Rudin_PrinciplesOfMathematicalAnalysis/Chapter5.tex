@@ -1879,8 +1879,8 @@ It is also true for vector-valued functions:
 
 \textbf{Exercise 5.19.}
 \emph{Suppose $f$ is defined in $(-1,1)$ and $f'(0)$ exists.
-Suppose $-1 < \alpha_n < \beta_n < 1$, $\alpha_n \rightarrow 0$,
-and $\beta_n \rightarrow 0$ as $n \rightarrow \infty$.
+Suppose $-1 < \alpha_n < \beta_n < 1$, $\alpha_n \to 0$,
+and $\beta_n \to 0$ as $n \to \infty$.
 Define the difference quotients
 \[
   D_n = \frac{f(\beta_n) - f(\alpha_n)}{\beta_n - \alpha_n}
@@ -1901,6 +1901,166 @@ Prove the following statements:}
 (but $f'$ is not continuous at $0$) and in which
 $\alpha_n$, $\beta_n$ tend to $0$ in such a way that $\lim{D_n}$ exists
 but is different from $f'(0)$.} \\
+
+\emph{Proof of (a).}
+\begin{enumerate}
+  \item[(1)]
+  Write
+  \[
+    D_n = \frac{f(\beta_n) - f(0)}{\beta_n - 0} \cdot \frac{\beta_n}{\beta_n - \alpha_n}
+      - \frac{f(\alpha_n) - f(0)}{\alpha_n - 0} \cdot \frac{\alpha_n}{\beta_n - \alpha_n}.
+  \]
+  It is well-defined since $\alpha_n \neq 0$ and $\beta_n \neq 0$.
+
+  \item[(2)]
+  Given any $\varepsilon > 0$.
+  Since $f'(0)$ exists, there exists a common integer $N$ such that
+  \[
+    \abs{\frac{f(\alpha_n) - f(0)}{\alpha_n - 0} - f'(0)} < \varepsilon
+    \: \text{ and } \:
+    \abs{\frac{f(\beta_n) - f(0)}{\beta_n - 0} - f'(0)} < \varepsilon
+  \]
+  whenever $n \geq N$.
+
+  \item[(3)]
+  Thus
+  \begin{align*}
+    &|D_n - f'(0)| \\
+    \leq&
+    \frac{\beta_n}{\beta_n - \alpha_n}
+      \cdot \abs{\frac{f(\beta_n) - f(0)}{\beta_n - 0} - f'(0)}
+      + \frac{-\alpha_n}{\beta_n - \alpha_n}
+      \cdot \abs{\frac{f(\alpha_n) - f(0)}{\alpha_n - 0} - f'(0)} \\
+    <&
+    \frac{\beta_n}{\beta_n - \alpha_n} \varepsilon
+    + \frac{-\alpha_n}{\beta_n - \alpha_n} \varepsilon \\
+    =& \varepsilon.
+  \end{align*}
+  whenever $n \geq N$.
+  Therefore, $\lim{D_n} = f'(0)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(1)]
+  Similar to (1) in the proof of (a).
+  Write
+  \[
+    D_n = \frac{f(\beta_n) - f(0)}{\beta_n - 0} \cdot \frac{\beta_n}{\beta_n - \alpha_n}
+      - \frac{f(\alpha_n) - f(0)}{\alpha_n - 0} \cdot \frac{\alpha_n}{\beta_n - \alpha_n}.
+  \]
+  It is well-defined since $\alpha_n \neq 0$ and $\beta_n \neq 0$.
+
+  \item[(2)]
+  Write
+  \[
+    \abs{ \frac{\beta_n}{\beta_n-\alpha_n} } \leq M
+  \]
+  for some real $M \geq 0$.
+  Hence $\left\{\frac{\alpha_n}{\beta_n-\alpha_n}\right\}$ is bounded too, say
+  \[
+    \abs{ \frac{\alpha_n}{\beta_n-\alpha_n} }
+    = \abs{ \frac{\beta_n}{\beta_n-\alpha_n} - 1 } \leq M + 1.
+  \]
+
+  \item[(3)]
+  Given any $\varepsilon > 0$.
+  Since $f'(0)$ exists, there exists a common integer $N$ such that
+  \begin{align*}
+    \abs{\frac{f(\alpha_n) - f(0)}{\alpha_n - 0} - f'(0)} &< \frac{\varepsilon}{64(M+1)}, \\
+    \abs{\frac{f(\beta_n) - f(0)}{\beta_n - 0} - f'(0)} &< \frac{\varepsilon}{89(M+1)}
+  \end{align*}
+  whenever $n \geq N$.
+
+  \item[(4)]
+  Thus
+  \begin{align*}
+    &|D_n - f'(0)| \\
+    \leq&
+    \abs{\frac{\beta_n}{\beta_n - \alpha_n}}
+      \cdot \abs{\frac{f(\beta_n) - f(0)}{\beta_n - 0} - f'(0)} \\
+      &+ \abs{\frac{-\alpha_n}{\beta_n - \alpha_n}}
+      \cdot \abs{\frac{f(\alpha_n) - f(0)}{\alpha_n - 0} - f'(0)} \\
+    <&
+    \frac{M}{89(M+1)} \varepsilon + \frac{M+1}{64(M+1)} \varepsilon \\
+    <&
+    \frac{\varepsilon}{89} + \frac{\varepsilon}{64} \\
+    <& \varepsilon
+  \end{align*}
+  whenever $n \geq N$.
+  Therefore, $\lim{D_n} = f'(0)$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+By the mean value theorem (Theorem 5.10),
+there is point $\xi_n \in (\alpha_n,\beta_n)$ at which
+\[
+  f(\beta_n) - f(\alpha_n) = (\beta_n - \alpha_n) f'(\xi_n)
+\]
+or
+\[
+  f'(\xi_n) = \frac{f(\beta_n) - f(\alpha_n)}{\beta_n - \alpha_n} = D_n.
+\]
+Since $\xi_n \in (\alpha_n,\beta_n)$ and $\lim \alpha_n = \lim \beta_n = 0$,
+$\lim \xi_n = 0$.
+Since $f'$ is continuous at $x = 0$,
+\[
+  \lim D_n = \lim f'(\xi_n) = f'(\lim \xi_n) = f'(0).
+\]
+$\Box$ \\
+
+
+
+\emph{Note.}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Give an example in which $f$ is differentiable in $(-1,1)$
+  (but $f'$ is not continuous at $0$) and in which
+  $\alpha_n$, $\beta_n$ tend to $0$ in such a way that $\lim{D_n}$ exists
+  but is different from $f'(0)$.}
+
+  \item[(2)]
+  Let $f$ be defined by
+  \begin{equation*}
+    f(x) =
+    \begin{cases}
+      x^2 \sin \frac{1}{x} & (x \neq 0), \\
+      0                    & (x = 0)
+    \end{cases}
+  \end{equation*}
+  as in Examples 5.6(b).
+  So
+  \begin{equation*}
+    f'(x) =
+    \begin{cases}
+      2x \sin\frac{1}{x} - \cos\frac{1}{x} & (x \neq 0), \\
+      0                                    & (x = 0).
+    \end{cases}
+  \end{equation*}
+
+  \item[(3)]
+  Take $\alpha_n = \left(2n\pi \right)^{-1} \neq 0$
+  and $\beta_n = \left(\frac{\pi}{2} + 2n\pi \right)^{-1} \neq 0$
+  for $n = 1, 2, 3, \ldots$.
+  Hence $\lim \alpha_n = \lim \beta_n = 0$, and
+  \begin{align*}
+    \lim D_n
+    &=
+    \lim \frac{\left(\frac{\pi}{2} + 2n\pi \right)^{-2}}
+      {\left(\frac{\pi}{2} + 2n\pi \right)^{-1} - \left(2n\pi \right)^{-1}} \\
+    &=
+    \lim \frac{2n\pi}{(2n\pi)\left(\frac{\pi}{2} + 2n\pi \right)
+      - \left(\frac{\pi}{2} + 2n\pi \right)^2} \\
+    &=
+    \lim \frac{2n\pi}{-\frac{\pi}{2}\left(\frac{\pi}{2} + 2n\pi \right)} \\
+    &= -\frac{2}{\pi} \neq f'(0).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
