@@ -2211,7 +2211,7 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 5.22.}
+\textbf{Exercise 5.22 (Fixed-point iteration).}
 \emph{Suppose $f$ is a real function on $(-\infty,+\infty)$.
 Call $x$ a \textbf{fixed point} of $f$ if $f(x)=x$.}
 \begin{enumerate}
@@ -2241,6 +2241,139 @@ Call $x$ a \textbf{fixed point} of $f$ if $f(x)=x$.}
     (x_1,x_2) \to (x_2,x_2) \to (x_2,x_3) \to (x_3,x_3) \to (x_3,x_4) \to \ldots.
   \]}
   \end{enumerate}
+
+\emph{Proof of (a).}
+(Reductio ad absurdum)
+\begin{enumerate}
+\item[(1)]
+Suppose that there were two different fixed points $x_1 < x_2$.
+By the mean value theorem (Theorem 5.10),
+there exists $\xi \in (x_1, x_2)$ such that
+\[
+  f(x_1) - f(x_2) = (x_1 - x_2) f'(\xi).
+\]
+
+\item[(2)]
+Since $x_1$ and $x_2$ are fixed points, $f(x_1) = x_1$ and $f(x_2) = x_2$ or
+\[
+  (x_1 - x_2)(f'(\xi) - 1) = 0.
+\]
+Since $x_1 \neq x_2$, $f'(\xi) = 1$,
+contrary to the fact that $f'(t) \neq 1 \: \forall t \in \mathbb{R}^1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f$ has no fixed point.}
+\begin{align*}
+  f(t) = t
+  &\Longleftrightarrow
+  t+(1+e^t)^{-1} = t \\
+  &\Longleftrightarrow
+  (1+e^t)^{-1} = 0,
+\end{align*}
+which is absurd since $1+e^t > 1$ (Theorem 8.6(c)) and
+the multiplicative inverse of $(1+e^t)^{-1}$ is never zero.
+
+\item[(2)]
+\emph{Show that $0 < f'(t) < 1$.}
+\[
+  f'(t) = 1 - \frac{e^t}{(1+e^t)^2} = \frac{1+e^t+e^{2t}}{1+2e^t+e^{2t}}.
+\]
+Since $e^t > 0$ for all $t \in \mathbb{R}^1$,
+$0 < f'(t) < 1$ for all $t \in \mathbb{R}^1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c)(Banach fixed point theorem).}
+Might assume that $A > 0$.
+(If $A = 0$, then $f(x) = c$ for some constant $c$ (Theorem 5.11(b))
+and thus $x = c$ is the unique fixed point.)
+\begin{enumerate}
+\item[(1)]
+Given any integer $n > 1$.
+By the mean value theorem (Theorem 5.10),
+there exists $\xi_{n-1}$ between $x_{n-1}$ and $x_{n}$ such that
+\[
+  f(x_{n}) - f(x_{n-1}) = (x_{n} - x_{n-1}) f'(\xi_{n-1}).
+\]
+By definition of $\{x_n\}$,
+$f(x_{n}) = x_{n+1}$ and $f(x_{n-1}) = x_{n}$.
+So that
+\begin{align*}
+  |x_{n+1} - x_{n}|
+  &= |f(x_n) - f(x_{n-1})| \\
+  &= |x_{n} - x_{n-1}||f'(\xi_{n-1})| \\
+  &\leq A|x_{n} - x_{n-1}|.
+\end{align*}
+
+\item[(2)]
+Hence by induction
+\[
+  |x_{n+1} - x_{n}| \leq A^{n-1}|x_2 - x_1|.
+\]
+So if $m > n$ we have
+\begin{align*}
+  |x_{m} - x_{n}|
+  &\leq \sum_{i=n}^{m-1} \abs{x_{i+1} - x_{i}} \\
+  &\leq \sum_{i=n}^{m-1} A^{i-1}|x_2 - x_1| \\
+  &\leq \sum_{i=n}^{\infty} A^{i-1} |x_2 - x_1| \\
+  &= \frac{A^{n-1}}{1-A} |x_2 - x_1|.
+\end{align*}
+
+\item[(3)]
+Given $\varepsilon > 0$.
+Take an integer $N$ such that
+\[
+  \frac{A^{n-1}}{1-A} |x_2 - x_1| < \varepsilon
+\]
+whenever $n \geq N$.
+For example,
+\[
+  N > 1 + \frac{\log \frac{(1-A)\varepsilon}{1 + |x_2-x_1|}}{\log A}.
+\]
+Hence as $m > n \geq N$, $|x_{m} - x_{n}| < \varepsilon$,
+or $\{x_n\}$ is a Cauchy sequence.
+Since $\mathbb{R}^1$ is complete (Theorem 3.11(c)),
+$\{x_n\}$ converges to $x \in \mathbb{R}^1$.
+
+\item[(4)]
+Since $f$ is differentiable, $f$ is continuous (Theorem 5.2).
+Take $n \to \infty$ in $x_{n+1} = f(x_n)$
+to get
+\[
+  x = \lim x_{n+1} = \lim f(x_n) = f(\lim x_n) = f(x).
+\]
+So that $\lim x_n = x$ is a fixed point of $f$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+Write
+\[
+  (x_1,x_2) \to (x_2,x_2) \to (x_2,x_3) \to (x_3,x_3) \to \ldots
+\]
+as
+\[
+  \underbrace{(x_1,f(x_1))}_{\text{in }y = f(x)}
+  \to
+  \overbrace{(f(x_1),x_2)}^{\text{in }y = x}
+  \to
+  \underbrace{(x_2,f(x_2))}_{\text{in }y = f(x)}
+  \to
+  \overbrace{(f(x_2),x_3)}^{\text{in }y = x} \to \ldots.
+\]
+Hence the path is zig-zag in the visualization.
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
