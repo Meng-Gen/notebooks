@@ -2160,6 +2160,51 @@ to find such an $f$ which is differentiable on $\mathbb{R}^1$,
 or one which is $n$ times differentiable,
 or even one which has derivatives of all orders on $\mathbb{R}^1$?} \\
 
+It is possible by leveraging Exercise 8.1. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Every open set in $\mathbb{R}^1$ is the union of an at most countable collection
+of disjoint segments (Exercise 2.29).
+
+\item[(2)]
+We need to construct an infinitely differentiable real function $f$ on $\mathbb{R}^1$
+such that the zero set $Z(f)$ is $E$.
+By (1), write $\widetilde{E}$ as the union of an at most countable collection of disjoint segments,
+say
+\[
+  \widetilde{E} = \bigcup_{(a_i,b_i) \in \mathscr{C}} (a_i,b_i)
+\]
+where $\mathscr{C}$ is at most countable and all $(a_i,b_i)$ segments are disjoint.
+
+\item[(3)]
+For each disjoint segment $(a_i,b_i)$ of
+\[
+  \widetilde{E} = \bigcup_{(a_i,b_i) \in \mathscr{C}} (a_i,b_i),
+\]
+define $f(x)$ on $\mathbb{R}^1$ by
+  \begin{equation*}
+    f(x) =
+      \begin{cases}
+        1
+          & (x \in (-\infty,\infty)), \\
+        \exp(-\frac{1}{(x-a_i)^2})
+          & (x \in (a_i,\infty), a_i \neq -\infty), \\
+        \exp(-\frac{1}{(x-b_i)^2})
+          & (x \in (-\infty,b_i), b_i \neq \infty), \\
+        \exp(-\frac{1}{(x-a_i)^2(x-b_i)^2})
+          & (x \in (a_i,b_i), a_i \neq -\infty, b_i \neq \infty), \\
+        0
+          & (x \in E).
+      \end{cases}
+  \end{equation*}
+By construction, $f(x) = 0$ if and only if $x \in E$ (Theorem 8.6(c)).
+By the same argument in the proof of Exercise 8.1,
+$f(x)$ is infinitely differentiable on $\mathbb{R}^1$.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2737,10 +2782,10 @@ Find all other solutions.} \\
   we write $E$ as the union of an at most countable collection of disjoint segments,
   say
   \[
-    E = \bigcup_{(a_i,b_i) \subseteq [0, \infty)} (a_i,b_i)
+    E = \bigcup_{(a_i,b_i) \in \mathscr{C}} (a_i,b_i)
   \]
-  where all $(a_i,b_i)$ segments are disjoint.
-  Note that $E$ is nonempty.
+  where $\mathscr{C}$ is at most countable and all $(a_i,b_i)$ segments are disjoint.
+  Note that $E$ (or $\mathscr{C}$) is nonempty.
 
   \item[(c)]
   For any segment $(a_i,b_i)$,
