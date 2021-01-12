@@ -2387,7 +2387,7 @@ $\Box$ \\\\
 \]
 has three fixed points, say $\alpha$, $\beta$, $\gamma$, where
 \[
-  −2 < \alpha < −1, \:\:\:\:\:\:\:\:
+  -2 < \alpha < -1, \:\:\:\:\:\:\:\:
   0 < \beta < 1, \:\:\:\:\:\:\:\:
   1 < \gamma < 2.
 \]
@@ -2404,6 +2404,246 @@ For arbitrarily chosen $x_1$, define $\{x_n\}$ by setting $x_{n+1} = f(x_n)$.}
   \end{enumerate}
 \emph{Thus $\beta$ can be located by this method,
 but $\alpha$ and $\gamma$ cannot.} \\
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+$f'(x) = x^2$ is unbounded.
+So that it does not exist such $\sup|f'(x)| = A < 1$ in Exercise 5.22(c).
+
+\item[(2)]
+Cardano's Formula implies that
+\begin{align*}
+  \alpha &= -2 \cos\frac{\pi}{9}, \\
+  \beta &= 2 \sin\frac{\pi}{18}, \\
+  \gamma &= \sqrt{3} \sin\frac{\pi}{9} + \cos\frac{\pi}{9}.
+\end{align*}
+
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Write
+\[
+  g(x) = f(x) - x = \frac{x^3}{3} - x + \frac{1}{3}.
+\]
+$f(x) = x$ if and only if $g(x) = 0$.
+
+\item[(2)]
+$\alpha$, $\beta$ and $\gamma$ are the only three roots of $g(x)$ (Theorem 8.8).
+Hence $\alpha$, $\beta$ and $\gamma$ are the only three fixed points of $f(x)$.
+
+\item[(3)]
+\emph{Show that $\{x_n\}$ is strictly decreasing,
+or $x_{n+1} < x_n < \alpha$ for $n = 1, 2, 3, \ldots$.}
+Induction on $n$.
+  \begin{enumerate}
+  \item[(a)]
+  As $n = 1$, it suffices to show that
+  \[
+    g(x_1) = f(x_1) - x_1 = x_2 - x_1 < 0.
+  \]
+
+  $g'(x) = x^2 - 1$ implies that $g(x)$ is strictly increasing on $(-\infty,-1)$.
+  Since $x_1 < \alpha < -1$, $g(x_1) < g(\alpha) = 0$.
+
+  \item[(b)]
+  Assume the induction hypothesis that for the single case $n = k$ holds.
+  So that $x_{k+1} < x_k < \alpha$.
+  Apply the same argument in (a) to get
+  \[
+    g(x_{k+1}) < g(\alpha) = 0.
+  \]
+  Hence $x_{k+2} < x_{k+1} < \alpha$.
+
+  \item[(c)]
+  Since both the base case in (a) and
+  the inductive step in (b) have been proved as true,
+  by mathematical induction $x_{n+1} < x_n$ for all $n$.
+  \end{enumerate}
+
+\item[(4)]
+\emph{Show that $\{x_n\}$ is unbounded.}
+(Reductio ad absurdum)
+If $\{x_n\}$ were bounded,
+by (3) $\{x_n\}$ converges to some $\xi \in \mathbb{R}^1$ (Theorem 3.14).
+That is, $\xi$ is a fixed point of $f$.
+Note that $\xi \leq x_1 < \alpha$, contrary to (2).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+Consider three possible cases.
+\begin{enumerate}
+\item[(1)]
+The case $x_1 = \beta$.
+There is nothing to prove since all $x_n = \beta$.
+
+\item[(2)]
+The case $x_1 \in (\alpha,\beta)$.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $g(x) > 0$ on $(\alpha, \beta)$.}
+  $g'(x) = x^2 - 1 = (x-1)(x+1)$ implies that
+    \begin{enumerate}
+    \item[(i)]
+    $g(x)$ is strictly increasing on $(-\infty,-1)$.
+
+    \item[(ii)]
+    $g(x)$ is strictly decreasing on $(-1,1)$.
+
+    \item[(iii)]
+    $g(x)$ is strictly increasing on $(1, \infty)$.
+    \end{enumerate}
+  As $x \in (\alpha,-1)$, $g(x) > g(\alpha) = 0$.
+  As $x \in (-1,\beta)$, $g(x) > g(\beta) = 0$.
+  As $x = -1$, $g(-1) = 1 > 0$.
+  Hence $g(x) > 0$ on $(\alpha, \beta)$.
+
+  \item[(b)]
+  \emph{Show that $x_n \in (\alpha, \beta)$ for $n = 1, 2, 3, \ldots$.}
+  Induction on $n$.
+    \begin{enumerate}
+    \item[(i)]
+    $x_1 \in (\alpha, \beta)$ by assumption.
+
+    \item[(ii)]
+    Assume the induction hypothesis that for the single case $n = k$ holds,
+    that is, $\beta > x_k > \alpha$.
+    Since $x \mapsto x^3$ is strictly increasing,
+    \begin{align*}
+      \beta > x_k > \alpha
+      &\Longrightarrow
+      \beta^3 > x_k^3 > \alpha^3 \\
+      &\Longrightarrow
+      \frac{\beta^3 + 1}{3} > \frac{x_k^3+1}{3} > \frac{\alpha^3+1}{3} \\
+      &\Longrightarrow
+      \beta > x_{k+1} > \alpha.
+    \end{align*}
+    By (a),
+    \[
+      g(x_{k}) > 0.
+    \]
+    Hence $x_{k+1} > x_{k} > \alpha$.
+
+    \item[(iii)]
+    Since both the base case in (i) and
+    the inductive step in (ii) have been proved as true,
+    by mathematical induction $x_n \in (\alpha, \beta)$ for all $n$.
+    \end{enumerate}
+
+  \item[(c)]
+  \emph{Show that $\{x_n\}$ is strictly increasing,
+  or $\beta > x_{n+1} > x_n > \alpha$ for $n = 1, 2, 3, \ldots$.}
+  Induction on $n$.
+    \begin{enumerate}
+    \item[(i)]
+    As $n = 1$, by (a)
+    \[
+      g(x_1) = f(x_1) - x_1 = x_2 - x_1 > 0.
+    \]
+    Note that $x_2 \in (\alpha, \beta)$ by (b).
+
+    \item[(ii)]
+    Assume the induction hypothesis that for the single case $n = k$ holds,
+    that is, $\beta > x_{k+1} > x_k > \alpha$.
+    By (a)
+    \[
+      g(x_{k+1}) > 0.
+    \]
+    Hence $x_{k+2} > x_{k+1}$.
+    Note that $x_{k+2} \in (\alpha, \beta)$ by (b).
+
+    \item[(iii)]
+    Since both the base case in (i) and
+    the inductive step in (ii) have been proved as true,
+    by mathematical induction $\beta > x_{n+1} > x_n > \alpha$ for all $n$.
+    \end{enumerate}
+
+  \item[(d)]
+  By (b)(c),
+  $\{x_n\}$ converges to some $\xi \in \mathbb{R}^1$ (Theorem 3.14).
+  That is, $\xi$ is a fixed point of $f$.
+  Note that $\beta \geq \xi \geq x_1 > \alpha$.
+  By (2) in the proof of (a), $\lim x_n = \xi = \beta$.
+  \end{enumerate}
+
+\item[(3)]
+The case $x_1 \in (\beta,\gamma)$.
+Similar to (2).
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $g(x) < 0$ on $(\beta,\gamma)$.}
+  Similar to (2)(a).
+
+  \item[(b)]
+  \emph{Show that $x_n \in (\beta,\gamma)$ for $n = 1, 2, 3, \ldots$.}
+  Similar to (2)(b).
+
+  \item[(c)]
+  \emph{Show that $\{x_n\}$ is strictly decreasing,
+  or $\beta < x_{n+1} < x_n < \gamma$ for $n = 1, 2, 3, \ldots$.}
+  Similar to (2)(c).
+
+  \item[(d)]
+  By (b)(c),
+  $\{x_n\}$ converges to some $\xi \in \mathbb{R}^1$ (Theorem 3.14).
+  That is, $\xi$ is a fixed point of $f$.
+  Note that $\beta \leq \xi \leq x_1 < \gamma$.
+  By (2) in the proof of (a), $\lim x_n = \xi = \beta$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+Similar to (a).
+Recall $g(x) = f(x) - x = \frac{x^3}{3} - x + \frac{1}{3}$.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\{x_n\}$ is strictly increasing,
+or $x_{n+1} > x_n > \gamma$ for $n = 1, 2, 3, \ldots$.}
+Induction on $n$.
+  \begin{enumerate}
+  \item[(a)]
+  As $n = 1$, it suffices to show that
+  \[
+    g(x_1) = f(x_1) - x_1 = x_2 - x_1 > 0.
+  \]
+
+  $g'(x) = x^2 - 1$ implies that $g(x)$ is strictly increasing on $(1, \infty)$.
+  Since $x_1 > \gamma > 1$, $g(x_1) > g(\gamma) = 0$.
+
+  \item[(b)]
+  Assume the induction hypothesis that for the single case $n = k$ holds.
+  So that $x_{k+1} > x_k > \gamma$.
+  Apply the same argument in (a) to get
+  \[
+    g(x_{k+1}) > g(\gamma) = 0.
+  \]
+  Hence $x_{k+2} > x_{k+1} > \gamma$.
+
+  \item[(c)]
+  Since both the base case in (a) and
+  the inductive step in (b) have been proved as true,
+  by mathematical induction $x_{n+1} > x_n$ for all $n$.
+  \end{enumerate}
+
+\item[(2)]
+\emph{Show that $\{x_n\}$ is unbounded.}
+(Reductio ad absurdum)
+If $\{x_n\}$ were bounded,
+by (1) $\{x_n\}$ converges to some $\xi \in \mathbb{R}^1$ (Theorem 3.14).
+That is, $\xi$ is a fixed point of $f$.
+Note that $\xi \geq x_1 > \gamma$, contrary to (2) in the proof of (a).
+\end{enumerate}
+$\Box$ \\\\
 
 
 
