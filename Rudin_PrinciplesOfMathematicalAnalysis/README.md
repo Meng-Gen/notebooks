@@ -6,7 +6,7 @@
 - Chapter 2: Basic Topology [Finished]
 - Chapter 3: Numerical Sequences and Series [Finished]
 - Chapter 4: Continuity [Finished]
-- Chapter 5: Differentiation [WIP]
+- Chapter 5: Differentiation [Finished]
 - Chapter 6: The Riemann-Stieltjes Integral [WIP]
 - Chapter 7: Sequences and Series of Functions [WIP]
 - Chapter 8: Some Special Functions [Finished]

@@ -2418,7 +2418,6 @@ Cardano's Formula implies that
   \beta &= 2 \sin\frac{\pi}{18}, \\
   \gamma &= \sqrt{3} \sin\frac{\pi}{9} + \cos\frac{\pi}{9}.
 \end{align*}
-
 \end{enumerate}
 
 
@@ -2664,6 +2663,30 @@ Try to explain, on the basis of properties of $f$ and $g$,
 why the convergence in Exercise 3.16, is so much more rapid than it is in Exercise 3.17.
 (Compare $f'$ and $g'$, draw the zig-zags suggested in Exercise 5.22.)} \\
 
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Note that
+\begin{align*}
+  f'(x) &= \frac{1}{2} \left(1-\frac{\alpha}{x^2}\right) \to 0 \:\: \text{ and } \\
+  g'(x) &= \frac{1-\alpha}{(1+x)^2} \to \frac{1-\sqrt{\alpha}}{1+\sqrt{\alpha}} \neq 0
+\end{align*}
+as $x \to \alpha$.
+
+\item[(2)]
+The rate of convergence of $f(x)$ is
+at least quadratically geometric (since $A \to 0$ in the sense of Exercise 5.22(c)).
+
+\item[(3)]
+The rate of convergence of $g(x)$ is geometric
+of the ratio $A = \frac{1-\sqrt{\alpha}}{1+\sqrt{\alpha}}$ in the sense of Exercise 5.22(c).
+
+\item[(4)]
+Hence the rate of convergence of $f(x)$ is much more rapid than of $g(x)$.
+(Omit drawing two zig-zag paths.)
+\end{enumerate}
+
+$\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
