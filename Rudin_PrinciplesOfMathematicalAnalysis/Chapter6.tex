@@ -794,6 +794,27 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 6.8.}
+\emph{Suppose $f \in \mathscr{R}$ on $[a,b]$ for every $b > a$ where $a$ is fixed.
+Define
+\[
+  \int_{a}^{\infty} f(x) dx
+  = \lim_{b \to \infty} \int^b_a f(x) dx
+\]
+if this limit exists (and is finite).
+In that case, we say that the integral on the left \textbf{converges}.
+If it also converges after $f$ has been replaced by $|f|$,
+it is said to converge \textbf{absolutely}.
+Assume that $f(x) \geq 0$ and that $f$ decreases monotonically on $[1,\infty)$.
+Prove that
+\[
+  \int_1^{\infty} f(x) dx
+\]
+converges if and only if
+\[
+  \sum_{n=1}^{\infty} f(n)
+\]
+converges.
+(This is the so-called ``integral test'' for convergence of series.)} \\
 
 PLACEHOLDER \\\\
 
@@ -804,6 +825,16 @@ PLACEHOLDER \\\\
 
 
 \textbf{Exercise 6.9.}
+\emph{Show that integration by parts can sometimes be applied to the
+``improper'' integrals defined in Exercise 6.7 and 6.8.
+(State appropriate hypotheses, formulate a theorem, and prove it.)
+For instance show that
+\[
+  \int_{0}^{\infty} \frac{\cos x}{1+x} dx
+  = \int_{0}^{\infty} \frac{\sin x}{(1+x)^2} dx.
+\]
+Show that one of these integrals converges \textbf{absolutely}, but that
+the other does not.} \\
 
 PLACEHOLDER \\\\
 
@@ -1468,8 +1499,8 @@ $\Box$ \\
 
 
 \emph{Proof of (c).}
+$\Box$ \\
 
-$\Box$ \\\\
 
 
 \emph{Note.}
@@ -1477,7 +1508,7 @@ $\Box$ \\\\
   \int_{0}^{\infty} \sin(t^2)dt
   = \int_{0}^{\infty} \cos(t^2)dt
   = \frac{\sqrt{\pi}}{2\sqrt{2}}.
-\]
+\] \\\\
 
 
 
@@ -2034,6 +2065,20 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 6.18.}
+\emph{Let $\gamma_1$, $\gamma_2$, $\gamma_3$ be curves in the complex plane,
+defined on $[0,2\pi]$ by
+\begin{align*}
+  \gamma_1 &= \exp(it), \\
+  \gamma_2 &= \exp(2it), \\
+  \gamma_3 &= \exp(2\pi it \sin(\frac{1}{t})).
+\end{align*}
+Show that these three curves have the same range,
+that $\gamma_1$ and $\gamma_2$ are rectifiable,
+that the length of $\gamma_1$ is $2\pi$,
+that the length of $\gamma_2$ is $4\pi$,
+and that $\gamma_3$ is not rectifiable.} \\
+
+Might assume that $\gamma_3(0) = 1$. \\
 
 PLACEHOLDER \\\\
 
@@ -2044,6 +2089,12 @@ PLACEHOLDER \\\\
 
 
 \textbf{Exercise 6.19.}
+\emph{Let $\gamma_1$ be a curve in $\mathbb{R}^k$, defined on $[a,b]$;
+let $\psi$ be a continuous $1$-$1$ mapping of $[c,d]$ onto $[a,b]$, such that
+$\psi(c) = a$; and define $\gamma_2(s) = \gamma_1(\psi(s))$.
+Prove that $\gamma_2$ is an arc, a closed curve, or a rectifiable curve
+if and only if the same is true of $\gamma_1$.
+Prove that $\gamma_2$ and $\gamma_1$ have the same length.} \\
 
 PLACEHOLDER \\\\
 
