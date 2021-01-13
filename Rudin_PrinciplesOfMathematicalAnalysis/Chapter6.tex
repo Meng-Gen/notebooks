@@ -1700,7 +1700,7 @@ and the $N$th partial sum of the series that defines $\zeta(s)$.)} \\
 
 \emph{Proof of (a) (Hint).}
 \begin{enumerate}
-  \item[(a)]
+  \item[(1)]
   Define
   \[
     a_N = s \int_{1}^{N} \frac{[x]}{x^{s+1}} dx - \sum_{n=1}^{N} \frac{1}{n^s}.
@@ -1721,6 +1721,8 @@ and the $N$th partial sum of the series that defines $\zeta(s)$.)} \\
   \[
     a_N = -\frac{1}{N^{s-1}}.
   \]
+
+  \item[(2)]
   So
   \[
     \lim_{N \to \infty} a_N = 0
@@ -1733,7 +1735,7 @@ and the $N$th partial sum of the series that defines $\zeta(s)$.)} \\
   \]
   converges.
 
-  \item[(b)]
+  \item[(3)]
   Hence given any real $b > 1$, there exists an integer $N$ such that $N \leq b < N+1$.
   Since $x \mapsto \frac{[x]}{x^{s+1}} \geq 0$ on $[1,\infty)$,
   \[
@@ -1771,7 +1773,7 @@ $\Box$ \\
 
 \emph{Proof of (b).}
 \begin{enumerate}
-  \item[(a)]
+  \item[(1)]
   \emph{Show that}
   \[
     s \int_{1}^{\infty} \frac{1}{x^{s}} dx = \frac{s}{s-1}.
@@ -1787,9 +1789,8 @@ $\Box$ \\
   \]
   since $\frac{1}{b^{s-1}} \to 0$ as $b \to \infty$ (in the sense of Exercise 6.8).
 
-  \item[(b)]
-  By $\zeta(s) = s \int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx$ and
-  $s \int_{1}^{\infty} \frac{1}{x^{s}} dx = \frac{s}{s-1}$,
+  \item[(2)]
+  By (a) and (1),
   $s \int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx$ exists
   and equal to
   \[
@@ -1799,7 +1800,7 @@ $\Box$ \\
   \]
   The result is established.
 
-  \item[(c)]
+  \item[(3)]
   \emph{Show that
   \[
     \int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx
@@ -1829,12 +1830,16 @@ $\Box$ \\
 
 
 \emph{Note.}
+\begin{enumerate}
+\item[(1)]
 The integral
-$\int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx$ does not converge for all $1 \geq s > 0$. \\
+$\int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx$ does not converge for all $1 \geq s > 0$.
 
+\item[(2)]
+Compare to Exercise 8.9.
 
-
-\textbf{Supplement (Euler's summation formula).}
+\item[(3)]
+\textbf{Euler's summation formula.}
 (Theorem 7.13 in the textbook:
 \emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.})
 \emph{If $f$ has a continuous derivative $f'$ on $[a,b]$, then we have
@@ -1852,6 +1857,7 @@ When $a$ and $b$ are integers, this becomes
   + \frac{f(a)+f(b)}{2}.
 \]}
 By taking $f(x) = \frac{1}{x^s}$ we can get (a) as well. \\\\
+\end{enumerate}
 
 
 
