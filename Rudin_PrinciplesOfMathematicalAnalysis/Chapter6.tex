@@ -1486,6 +1486,19 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 6.14.}
+\emph{Deal similarly with
+\[
+  f(x) = \int_{x}^{x+1} \sin(e^t) dt.
+\]
+Show that
+\[
+  e^x|f(x)| < 2
+\]
+and that
+\[
+  e^x f(x) = \cos(e^x) - e^{-1} \cos(e^{x+1}) + r(x)
+\]
+where $|r(x)| < Ce^{-x}$ for some constant $C$.} \\
 
 PLACEHOLDER \\\\
 
@@ -1660,8 +1673,185 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 6.16.}
+\emph{For $1 < s < \infty$, define
+\[
+  \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}.
+\]
+(This is Riemann's zeta function, of great importance in the study of the
+distribution of prime numbers.)
+Prove that}
+\begin{enumerate}
+  \item[(a)]
+  \[
+    \zeta(s) = s \int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx
+  \]
+\end{enumerate}
+\emph{and that}
+\begin{enumerate}
+  \item[(b)]
+  \[
+    \zeta(s) = \frac{s}{s-1} - s \int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx,
+  \]
+\end{enumerate}
+\emph{where $[x]$ denotes the greatest integer $\leq x$.
+Prove that the integral in (b) converges for all $s > 0$.
+(Hint: To prove (a), compute the difference between the integral over $[1,N]$
+and the $N$th partial sum of the series that defines $\zeta(s)$.)} \\
 
-PLACEHOLDER \\\\
+\emph{Proof of (a) (Hint).}
+\begin{enumerate}
+  \item[(a)]
+  Define
+  \[
+    a_N = s \int_{1}^{N} \frac{[x]}{x^{s+1}} dx - \sum_{n=1}^{N} \frac{1}{n^s}.
+  \]
+  Hence
+  \begin{align*}
+    s \int_{1}^{N} \frac{[x]}{x^{s+1}} dx
+    &=
+    \sum_{n=1}^{N-1} s \int_{n}^{n+1} \frac{[x]}{x^{s+1}} dx \\
+    &=
+    \sum_{n=1}^{N-1} s \int_{n}^{n+1} \frac{n}{x^{s+1}} dx \\
+    &=
+    \sum_{n=1}^{N-1} n \left( \frac{1}{n^s} - \frac{1}{(n+1)^s} \right) \\
+    &=
+    \left( \sum_{n=1}^N \frac{1}{n^s} \right) - \frac{1}{N^{s-1}},
+  \end{align*}
+  or
+  \[
+    a_N = -\frac{1}{N^{s-1}}.
+  \]
+  So
+  \[
+    \lim_{N \to \infty} a_N = 0
+  \]
+  (since $s - 1 > 0$).
+  By Theorem 3.28, $\zeta(s)$ converges if $s > 1$.
+  Hence
+  \[
+    \lim_{N \to \infty} s \int_{1}^{N} \frac{[x]}{x^{s+1}} dx = \zeta(s)
+  \]
+  converges.
+
+  \item[(b)]
+  Hence given any real $b > 1$, there exists an integer $N$ such that $N \leq b < N+1$.
+  Since $x \mapsto \frac{[x]}{x^{s+1}} \geq 0$ on $[1,\infty)$,
+  \[
+    s \int_{1}^{N} \frac{[x]}{x^{s+1}} dx
+    \leq
+    s \int_{1}^{b} \frac{[x]}{x^{s+1}} dx
+    \leq
+    s \int_{1}^{N+1} \frac{[x]}{x^{s+1}} dx.
+  \]
+  Since $b \to \infty$ if and only if $N \to \infty$,
+  \begin{align*}
+    &\lim_{N \to \infty} s \int_{1}^{N} \frac{[x]}{x^{s+1}} dx
+      \leq
+      \lim_{b \to \infty} s \int_{1}^{b} \frac{[x]}{x^{s+1}} dx
+      \leq
+      \lim_{N \to \infty} s \int_{1}^{N+1} \frac{[x]}{x^{s+1}} dx \\
+    \Longrightarrow&
+      \zeta(s)
+      \leq
+      \lim_{b \to \infty} s \int_{1}^{b} \frac{[x]}{x^{s+1}} dx
+      \leq
+      \zeta(s).
+  \end{align*}
+  Hence
+  \[
+    \lim_{b \to \infty} s \int_{1}^{b} \frac{[x]}{x^{s+1}} dx
+    = s \int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx
+    = \zeta(s)
+  \]
+  (in the sense of Exercise 6.8).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+  \item[(a)]
+  \emph{Show that}
+  \[
+    s \int_{1}^{\infty} \frac{1}{x^{s}} dx = \frac{s}{s-1}.
+  \]
+  Given any real $b > 1$. By the fundamental theorem of calculus (Theorem 6.21),
+  \[
+    s \int_{1}^{b} \frac{1}{x^{s}} dx
+    = \frac{s}{s-1} - \frac{s}{(s-1)b^{s-1}}.
+  \]
+  Hence
+  \[
+    \lim_{b \to \infty} s \int_{1}^{b} \frac{1}{x^{s}} dx = \frac{s}{s-1}
+  \]
+  since $\frac{1}{b^{s-1}} \to 0$ as $b \to \infty$ (in the sense of Exercise 6.8).
+
+  \item[(b)]
+  By $\zeta(s) = s \int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx$ and
+  $s \int_{1}^{\infty} \frac{1}{x^{s}} dx = \frac{s}{s-1}$,
+  $s \int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx$ exists
+  and equal to
+  \[
+    s \int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx
+    = s \int_{1}^{\infty} \frac{1}{x^{s}} dx - s \int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx
+    = \frac{s}{s-1} - \zeta(s).
+  \]
+  The result is established.
+
+  \item[(c)]
+  \emph{Show that
+  \[
+    \int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx
+  \]
+  converges for all $s > 0$.}
+  Note that $0 \leq x - [x] < 1$ on $[1,\infty)$.
+  So
+  \[
+    \int_{1}^{b} \frac{x - [x]}{x^{s+1}} dx
+    \leq
+    \int_{1}^{b} \frac{1}{x^{s+1}} dx
+    = \frac{1}{s} - \frac{1}{sb^s}.
+  \]
+  Since $\frac{1}{sb^{s}} \to 0$ as $b \to \infty$,
+  \[
+    \int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx
+    = \lim_{b \to \infty} \int_{1}^{b} \frac{x - [x]}{x^{s+1}} dx
+    \leq \lim_{b \to \infty} \frac{1}{s} - \frac{1}{sb^s}
+    = \frac{1}{s}.
+  \]
+  Note that $\frac{1}{s}$ is finite, and thus
+  the integral $\int_{1}^{\infty} \frac{x - [x]}{x^{s+1}} dx$
+  converges.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+The integral
+$\int_{1}^{\infty} \frac{[x]}{x^{s+1}} dx$ does not converge for all $1 \geq s > 0$. \\
+
+
+
+\textbf{Supplement (Euler's summation formula).}
+(Theorem 7.13 in the textbook:
+\emph{Tom. M. Apostol, Mathematical Analysis, 2nd edition.})
+\emph{If $f$ has a continuous derivative $f'$ on $[a,b]$, then we have
+\[
+  \sum_{a < n \leq b} f(n)
+  = \int_{a}^{b} f(x)dx
+  + \int_{a}^{b} f'(x)\{x\}dx + f(a)\{a\} - f(b)\{b\},
+\]
+where $\sum_{a < n \leq b}$ means the sum from $n=[a]+1$ to $n=[b]$.
+When $a$ and $b$ are integers, this becomes
+\[
+  \sum_{n=a}^{b} f(n)
+  = \int_{a}^{b} f(x)dx
+  + \int_{a}^{b} f'(x)\left( \{x\}-\frac{1}{2} \right)dx
+  + \frac{f(a)+f(b)}{2}.
+\]}
+By taking $f(x) = \frac{1}{x^s}$ we can get (a) as well. \\\\
 
 
 
