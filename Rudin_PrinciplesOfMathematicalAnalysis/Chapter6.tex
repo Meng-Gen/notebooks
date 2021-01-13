@@ -816,7 +816,57 @@ converges if and only if
 converges.
 (This is the so-called ``integral test'' for convergence of series.)} \\
 
-PLACEHOLDER \\\\
+
+
+\emph{Proof.}
+Similar to Exercise 8.9.
+\begin{enumerate}
+\item[(1)]
+Define
+\begin{align*}
+  a_n &= \int_{1}^{n} f(x) dx, \\
+  b_n &= \sum_{k=1}^{n} f(k), \\
+  c_n &= b_n - a_n
+\end{align*}
+for $n = 1,2,3,\ldots$.
+
+\item[(2)]
+\emph{Show that $\{c_n\}$ decreases.}
+Since $f$ decreases monotonically on $[1,\infty)$, we have
+\begin{align*}
+  c_n - c_{n+1}
+  &= (b_{n} - a_{n}) - (b_{n+1} - a_{n+1}) \\
+  &= (a_{n+1} - a_{n}) - (b_{n+1} - b_{n}) \\
+  &= \int_{n}^{n+1} f(x) dx - f(n+1) \\
+  &\geq \int_{n}^{n+1} f(n+1) dx - f(n+1) \\
+  &= f(n+1) - f(n+1) \\
+  &= 0.
+\end{align*}
+
+\item[(3)]
+\emph{Show that $\{c_n\}$ is bounded.}
+Since $f$ decreases monotonically on $[1,\infty)$,
+\begin{align*}
+  c_{n}
+  &= b_n - a_n \\
+  &= \sum_{k=1}^{n} f(k) - \int_{1}^{n} f(x) dx \\
+  &= \sum_{k=1}^{n} f(k) - \sum_{k=1}^{n-1} \int_{k}^{k+1} f(x) dx \\
+  &\geq \sum_{k=1}^{n} f(k) - \sum_{k=1}^{n-1} \int_{k}^{k+1} f(k) dx \\
+  &= \sum_{k=1}^{n} f(k) - \sum_{k=1}^{n-1} f(k) \\
+  &= f(n).
+\end{align*}
+Since $f(n)$ is nonnegative, $c_n \geq 0$.
+
+\item[(4)]
+By (2)(3), $\{c_n\}$ converges (Theorem 3.14).
+
+\item[(5)]
+Since $c_n = b_n - a_n$ and $\{c_n\}$ converges,
+$\{a_n\}$ converges if and only if $\{b_n\}$ converges,
+or $\int_1^{\infty} f(x) dx$ converges if and only if
+$\sum_{n=1}^{\infty} f(n)$ converges.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
