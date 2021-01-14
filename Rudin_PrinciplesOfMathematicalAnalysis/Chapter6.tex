@@ -2260,7 +2260,163 @@ and that $\gamma_3$ is not rectifiable.} \\
 
 Might assume that $\gamma_3(0) = 1$. \\
 
-PLACEHOLDER \\\\
+
+
+\emph{Proof.}
+Write $S^1 = \{ z \in \mathbb{C} : |z| = 1 \}$.
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $\gamma_1$ has the range $S^1$.}
+  Given any $z \in S^1$.
+  Theorem 8.7(d) implies that there is a unique $t \in [0,2\pi)$
+  such that $\exp(it) = z$.
+
+  \item[(2)]
+  \emph{Show that $\gamma_1$ is rectifiable and its length is $2\pi$.}
+  By the definition of $\exp(z)$,
+  \[
+    \gamma_1'(t) = i\exp(it),
+  \]
+  which is continuous on $[0,2\pi]$.
+  Hence $\gamma_1$ is rectifiable is rectifiable, and its length is
+  \[
+    \Lambda(\gamma_1)
+    = \int_{0}^{2\pi}|\gamma_1'(t)|dt
+    = \int_{0}^{2\pi} dt
+    = 2\pi
+  \]
+  (Theorem 6.27).
+
+  \item[(3)]
+  \emph{Show that $\gamma_2$ has the range $S^1$.}
+  Similar to (1).
+  Given any $z \in S^1$.
+  Theorem 8.7(d) implies that there is a unique $t \in [0,2\pi)$
+  such that $\exp(it) = z$.
+  Write $\exp(it) = \exp(2i\left(\frac{t}{2}\right))$
+  where $\frac{t}{2} \in [0,\pi) \subseteq [0,2\pi)$.
+
+  \item[(4)]
+  \emph{Show that $\gamma_2$ is rectifiable and its length is $4\pi$.}
+  Similar to (2).
+  \[
+    \gamma_2'(t) = 2i\exp(2it),
+  \]
+  and
+  \[
+    \Lambda(\gamma_2)
+    = \int_{0}^{2\pi}|\gamma_2'(t)|dt
+    = \int_{0}^{2\pi} 2 dt
+    = 4\pi.
+  \]
+
+  \item[(5)]
+  \emph{Show that $\gamma_3$ has the range $S^1$.}
+  Define
+  \begin{equation*}
+  f(t) =
+    \begin{cases}
+      0
+      & (t = 0), \\
+      t \sin\frac{1}{t}
+      & (t \neq 0).
+    \end{cases}
+  \end{equation*}
+  It suffices to show that $f(I) \supseteq J$
+  for for some segment $I \subseteq [0,2\pi]$ and
+  some segment $J$ in $\mathbb{R}$ of the length $\geq 1$ (Theorem 8.7(a)).
+  Define $I = \left[\frac{6}{7\pi}, \frac{6}{\pi} \right] \subseteq [0,2\pi]$
+  and $J = \left[-\frac{3}{7\pi}, \frac{3}{\pi} \right]$ of the length $\frac{24}{7\pi} > 1$.
+  Hence $f(I)$ is connected since $I$ is connected (Theorem 4.22).
+  Since
+  \begin{align*}
+    f\left(\frac{6}{7\pi}\right) &= \frac{6}{7\pi} \sin\frac{7\pi}{6} = -\frac{3}{7\pi}, \\
+    f\left(\frac{6}{\pi}\right) &= \frac{6}{\pi} \sin\frac{\pi}{6} = \frac{3}{\pi},
+  \end{align*}
+  $f(I) \supseteq J$ (Theorem 2.47).
+  The result is established.
+
+  \item[(6)]
+  \emph{Show that $\gamma_3$ is not rectifiable.}
+  \begin{enumerate}
+    \item[(a)]
+    Since
+    \[
+      \gamma_3'
+      = 2\pi i \left(\sin\frac{1}{t} - \frac{1}{t}\cos\frac{1}{t} \right)
+        \exp(2\pi it \sin(\frac{1}{t}))
+    \]
+    is continuous on $[c,2\pi]$ for any $c > 0$,
+    $\gamma_3$ is rectifiable on $[c,2\pi]$ (not on $[0,2\pi]$),
+    and
+    \[
+      \Lambda_{[c,2\pi]}(\gamma_3)
+      = \int_{c}^{2\pi} |\gamma_3'(t)| dt
+    \]
+    on $[c,2\pi]$.
+
+    \item[(b)]
+    \begin{align*}
+      \int_{c}^{2\pi} |\gamma_3'(t)| dt
+      &= 2\pi \int_{c}^{2\pi} \abs{\sin\frac{1}{t} - \frac{1}{t}\cos\frac{1}{t}} dt \\
+      &\geq 2\pi \int_{c}^{2\pi} \abs{\frac{1}{t}\cos\frac{1}{t}} - 1 dt \\
+      &= 2\pi \int_{c}^{2\pi} \abs{\frac{1}{t}\cos\frac{1}{t}} dt - 4\pi^2.
+    \end{align*}
+
+    \item[(c)]
+    For any integer $n > 0$, we have
+    \begin{align*}
+      &\int_{\left(2n\pi + \frac{\pi}{3}\right)^{-1}}^{\left(2n\pi - \frac{\pi}{3}\right)^{-1}}
+        \abs{\frac{1}{t}\cos\frac{1}{t}} dt \\
+      \geq&
+      \int_{\left(2n\pi + \frac{\pi}{3}\right)^{-1}}^{\left(2n\pi - \frac{\pi}{3}\right)^{-1}}
+         \left(2n\pi - \frac{\pi}{3}\right) \cdot \frac{1}{2} dt \\
+      =&
+      \left[ \left(2n\pi - \frac{\pi}{3}\right)^{-1}
+        - \left(2n\pi + \frac{\pi}{3}\right)^{-1} \right]
+        \cdot \left(2n\pi - \frac{\pi}{3}\right) \cdot \frac{1}{2} \\
+      =&
+      \frac{\frac{\pi}{3}}{2n\pi + \frac{\pi}{3}} \\
+      >&
+      \frac{1}{6} \cdot \frac{1}{n+1}
+    \end{align*}
+    since both
+    $t \mapsto \frac{1}{t} \geq 2n\pi - \frac{\pi}{3}$
+    and
+    $t \mapsto \cos t \geq \frac{1}{2}$ on
+    $\left[\left(2n\pi + \frac{\pi}{3}\right)^{-1}, \left(2n\pi - \frac{\pi}{3}\right)^{-1} \right]$.
+
+    \item[(d)]
+    As $c \geq \frac{1}{2N\pi - \frac{\pi}{3}}$ for some integer $N$,
+    by (b)(c) we have
+    \begin{align*}
+      \int_{c}^{2\pi} |\gamma_3'(t)| dt
+      &\geq
+      2\pi \int_{c}^{2\pi} \abs{\frac{1}{t}\cos\frac{1}{t}} dt - 4\pi^2 \\
+      &\geq
+      2\pi \sum_{n=1}^{n=N}
+        \int_{\left(2n\pi + \frac{\pi}{3}\right)^{-1}}^{\left(2n\pi - \frac{\pi}{3}\right)^{-1}}
+          \abs{\frac{1}{t}\cos\frac{1}{t}} dt - 4\pi^2 \\
+      &\geq
+      2\pi \sum_{n=1}^{n=N}
+        \frac{1}{6} \cdot \frac{1}{n+1} - 4\pi^2 \\
+      &=
+      \frac{\pi}{3} \sum_{n=1}^{n=N} \frac{1}{n+1} - 4\pi^2.
+    \end{align*}
+
+    \item[(e)]
+    Hence
+    \[
+      \Lambda(\gamma_3)
+      \geq
+      \Lambda_{\left[\left(2N\pi - \frac{\pi}{3}\right)^{-1},2\pi\right]}(\gamma_3)
+      \geq
+      \frac{\pi}{3} \sum_{n=1}^{n=N} \frac{1}{n+1} - 4\pi^2.
+    \]
+    Let $N \to \infty$, and thus $\Lambda(\gamma_3)$ cannot be bounded (Theorem 3.28).
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
