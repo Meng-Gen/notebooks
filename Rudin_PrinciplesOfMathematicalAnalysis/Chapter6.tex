@@ -886,7 +886,137 @@ For instance show that
 Show that one of these integrals converges \textbf{absolutely}, but that
 the other does not.} \\
 
-PLACEHOLDER \\\\
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Suppose $F$ and $G$ are differentiable functions on $(0,1]$,
+$F' = f \in \mathscr{R}$ on $[c,1]$ and $G' = g \in \mathscr{R}$ on $[c,1]$
+for every $c > 0$.
+Then
+\[
+  \int_{0}^{1} F(x)g(x) dx
+  = F(1)G(1) - \lim_{c \to 0} F(c)G(c)
+  - \int_{0}^{1} f(x)G(x) dx
+\]
+if any two of $\int_{0}^{1} F(x)g(x) dx$, $\int_{0}^{1} f(x)G(x) dx$
+or $\lim_{c \to 0} F(c)G(c)$ exist.}
+Theorem 6.22 (integration by parts) implies that
+\[
+  \int_{c}^{1} F(x)g(x) dx
+  = F(1)G(1) - F(c)G(c)
+  - \int_{c}^{1} f(x)G(x) dx.
+\]
+Since any two of $\int_{0}^{1} F(x)g(x) dx$ or $\int_{0}^{1} f(x)G(x) dx$
+or $\lim_{c \to 0} F(c)G(c)$ exist,
+the rest one exists and satisfies the identity
+\[
+  \int_{0}^{1} F(x)g(x) dx
+  = F(1)G(1) - \lim_{c \to 0} F(c)G(c)
+  - \int_{0}^{1} f(x)G(x) dx
+\]
+by letting $c \to 0$.
+
+\item[(2)]
+\emph{Suppose $F$ and $G$ are differentiable functions on $[a,b]$
+for every $b > a$ where $a$ is fixed,
+$F' = f \in \mathscr{R}$ on $[a,b]$ and $G' = g \in \mathscr{R}$ on $[a,b]$.
+Then
+\[
+  \int_{a}^{\infty} F(x)g(x) dx
+  = \lim_{b \to \infty}F(b)G(b) - F(a)G(a)
+  - \int_{a}^{\infty} f(x)G(x) dx
+\]
+if any two of $\int_{a}^{\infty} F(x)g(x) dx$, $\int_{a}^{\infty} f(x)G(x) dx$
+or $\lim_{b \to \infty}F(b)G(b)$ exist.}
+Theorem 6.22 (integration by parts) implies that
+\[
+  \int_{a}^{b} F(x)g(x) dx
+  = F(b)G(b) - F(a)G(a)
+  - \int_{a}^{b} f(x)G(x) dx.
+\]
+Since any two of $\int_{a}^{\infty} F(x)g(x) dx$ or $\int_{a}^{\infty} f(x)G(x) dx$
+or $\lim_{b \to \infty}F(b)G(b)$ exist,
+the rest one exists and satisfies the identity
+\[
+  \int_{a}^{\infty} F(x)g(x) dx
+  = \lim_{b \to \infty}F(b)G(b) - F(a)G(a)
+  - \int_{a}^{\infty} f(x)G(x) dx
+\]
+by letting $b \to \infty$.
+
+\item[(3)]
+\emph{Show that}
+\[
+  \int_{0}^{\infty} \frac{\cos x}{1+x} dx
+  = \int_{0}^{\infty} \frac{\sin x}{(1+x)^2} dx.
+\]
+Put $a = 0$, $F(x) = \frac{1}{1+x}$ and $G(x) = \sin x$ in
+\[
+  \int_{a}^{\infty} F(x)g(x) dx
+  = \lim_{b \to \infty}F(b)G(b) - F(a)G(a)
+  - \int_{a}^{\infty} f(x)G(x) dx
+\]
+to get
+\[
+  \int_{0}^{\infty} \frac{(\sin x)'}{1+x} dx
+  = \lim_{b \to \infty}\frac{\sin(b)}{1+b} - \frac{\sin(0)}{1+0}
+  - \int_{0}^{\infty} \left(\frac{1}{1+x}\right)' \sin x dx
+\]
+or
+\[
+  \int_{0}^{\infty} \frac{\cos x}{1+x} dx
+  = \int_{0}^{\infty} \frac{\sin x}{(1+x)^2} dx.
+\]
+
+\item[(4)]
+\emph{Show that
+\[
+  \int_{0}^{\infty} \frac{\sin x}{(1+x)^2} dx
+\]
+converges absolutely.}
+Notice that
+\begin{align*}
+  \int_{0}^{\infty} \abs{\frac{\sin x}{(1+x)^2}} dx
+  &\leq \int_{0}^{\infty} \frac{1}{(1+x)^2} dx \\
+  &= \lim_{b \to \infty} \left[ -\frac{1}{1+x} \right]_{0}^{b} - (-1) \\
+  &= 1.
+\end{align*}
+
+\item[(5)]
+\emph{Show that
+\[
+  \int_{0}^{\infty} \frac{\cos x}{1+x} dx
+\]
+converges conditionally.}
+By (3)(4), $\int_{0}^{\infty} \frac{\cos x}{1+x} dx$ converges.
+Note that
+\[
+  \cos x \geq \frac{1}{2}
+\]
+if $x \in [-\frac{\pi}{3} + 2n\pi, \frac{\pi}{3} + 2n\pi]$ for $n = 1,2,3,\ldots$.
+Hence
+\begin{align*}
+  \int_{0}^{\infty} \abs{\frac{\cos x}{1+x}} dx
+  &\geq
+  \sum_{n=1}^{\infty} \int_{-\frac{\pi}{3} + 2n\pi}^{\frac{\pi}{3} + 2n\pi}
+    \abs{\frac{\cos x}{1+x}} dx \\
+  &\geq
+  \sum_{n=1}^{\infty} \int_{-\frac{\pi}{3} + 2n\pi}^{\frac{\pi}{3} + 2n\pi}
+    \frac{\frac{1}{2}}{1+\frac{\pi}{3} + 2n\pi} dx \\
+  &=
+  \sum_{n=1}^{\infty} \frac{2\pi}{3} \cdot \frac{\frac{1}{2}}{1+\frac{\pi}{3} + 2n\pi} \\
+  &>
+  \frac{\pi}{3}
+    \sum_{n=1}^{\infty} \frac{1}{\pi + \pi + 2n\pi} \\
+  &=
+  \frac{1}{6} \sum_{n=1}^{\infty} \frac{1}{n+1}.
+\end{align*}
+By Theorem 3.28, $\sum_{n=1}^{\infty} \frac{1}{n+1} = \infty$
+and thus $\int_{0}^{\infty} \frac{\cos x}{1+x} dx$ does not converge absolutely.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
