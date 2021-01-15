@@ -1665,7 +1665,7 @@ $\Box$ \\
   \item[(2)]
   Similar to (a),
   \begin{align*}
-    |2xf(x)|
+    |r(x)|
     &\leq \frac{1}{x+1}
       + 2x \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du \\
     &= \frac{1}{x+1}
@@ -1679,11 +1679,102 @@ $\Box$ \\
 
 
 \emph{Proof of (c).}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that}
+  \[
+    \limsup_{x \to \infty} x f(x) = 1.
+  \]
+
+  \item[(2)]
+  \emph{Show that}
+  \[
+    \liminf_{x \to \infty} x f(x) = -1.
+  \]
+
+\end{enumerate}
 $\Box$ \\
 
 
 
 \emph{Proof of (d).}
+\begin{enumerate}
+  \item[(1)]
+  Given any integer $N > 0$.
+  Write
+  \begin{align*}
+    \int_{0}^{N} \sin(t^2) dt
+    &= \sum_{n=0}^{N-1} \int_{n}^{n+1} \sin(t^2) dt \\
+    &= \sum_{n=0}^{N-1} f(n) \\
+    &= f(0)
+      + \sum_{n=1}^{N-1}
+      \frac{\cos(n^2)}{2n} - \frac{\cos[(n+1)^2]}{2n} + \frac{r(n)}{2n} \\
+    &= f(0)
+      + \sum_{n=1}^{N-1} \frac{\cos(n^2)}{2n}
+      - \sum_{n=1}^{N-1} \frac{\cos[(n+1)^2]}{2n}
+      + \sum_{n=1}^{N-1} \frac{r(n)}{2n} \\
+    &= f(0)
+      + \sum_{n=1}^{N-1} \frac{\cos(n^2)}{2n}
+      - \sum_{n=2}^{N} \frac{\cos(n^2)}{2(n-1)}
+      + \sum_{n=1}^{N-1} \frac{r(n)}{2n} \\
+    &= f(0) + \frac{\cos(1)}{2} - \frac{\cos(N^2)}{2(N-1)}
+      - \frac{1}{2} \sum_{n=2}^{N-1} \frac{\cos(n^2)}{n(n-1)}
+      + \sum_{n=1}^{N-1} \frac{r(n)}{2n}
+  \end{align*}
+  where $|r(n)| \leq \frac{2}{n}$ (by (b)).
+
+  \item[(2)]
+  $\frac{\cos(N^2)}{2(N-1)} \to 0$ as $N \to \infty$
+  since $\cos(N^2)$ is bounded by $1$ and $\frac{1}{N-1} \to 0$ as $N \to \infty$.
+
+  \item[(3)]
+  Since $\cos(n^2)$ is bounded by $1$ and
+  $\sum \frac{1}{n(n-1)} < \sum \frac{1}{(n-1)^2}$ converges,
+  \[
+    \frac{1}{2} \sum_{n=2}^{\infty} \frac{\cos(n^2)}{n(n-1)}
+  \]
+  converges absolutely.
+
+  \item[(4)]
+  Since $|r(n)| \leq \frac{2}{n}$ and
+  $\sum \frac{1}{n^2}$ converges,
+  \[
+    \sum_{n=1}^{\infty} \frac{|r(n)|}{2n}
+    \leq \sum_{n=1}^{\infty} \frac{1}{n^2}
+  \]
+  converges.
+  So $\sum_{n=1}^{\infty} \frac{r(n)}{2n}$ converges absolutely.
+
+  \item[(5)]
+  By (1)(2)(3)(4),
+  \[
+    \lim_{N \to \infty} \int_{0}^{N} \sin(t^2) dt
+  \]
+  exists.
+  Note that
+  \[
+    \abs{ \int_{x}^{y} \sin(t^2) dt } < \frac{1}{x}
+  \]
+  if $y \geq x > 0$ (by applying the same argument in (a)(2)).
+  So
+  \[
+    \lim_{\substack{x \to \infty \\ y \to \infty \\ y \geq x}}
+      \int_{x}^{y} \sin(t^2) dt = 0.
+  \]
+  Therefore,
+  \begin{align*}
+    \int_{0}^{\infty} \sin(t^2) dt
+    &= \lim_{b \to \infty} \int_{0}^{b} \sin(t^2) dt \\
+    &= \lim_{b \to \infty} \int_{0}^{[b]} \sin(t^2) dt + \int_{[b]}^{b} \sin(t^2) dt \\
+    &= \lim_{b \to \infty} \int_{0}^{[b]} \sin(t^2) dt
+      + \lim_{b \to \infty} \int_{[b]}^{b} \sin(t^2) dt \\
+    &= \lim_{N \to \infty} \int_{0}^{N} \sin(t^2) dt
+      + \lim_{\substack{[b] \to \infty \\ b \to \infty \\ b \geq [b]}}
+        \int_{[b]}^{b} \sin(t^2) dt \\
+    &= \lim_{N \to \infty} \int_{0}^{N} \sin(t^2) dt
+  \end{align*}
+  exists.
+\end{enumerate}
 $\Box$ \\
 
 
@@ -1742,7 +1833,7 @@ where $|r(x)| < Ce^{-x}$ for some constant $C$.} \\
       + \int_{\exp(x)}^{\exp(x+1)} \frac{|\cos u|}{u^2} du \\
     &\leq \frac{1}{e^{x+1}}
       + \frac{1}{e^x}
-      + \int_{x^2}^{(x+1)^2} \frac{1}{u^2} du \\
+      + \int_{\exp(x)}^{\exp(x+1)} \frac{1}{u^2} du \\
     &= \frac{1}{e^{x+1}}
       + \frac{1}{e^x}
       + \left[ \frac{1}{e^x} - \frac{1}{e^{x+1}} \right] \\
