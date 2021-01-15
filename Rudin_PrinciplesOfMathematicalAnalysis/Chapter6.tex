@@ -1698,6 +1698,7 @@ $\Box$ \\
 
 
 \emph{Proof of (d).}
+Yes. $\int_{0}^{\infty} \sin(t^2) dt$ converges.
 \begin{enumerate}
   \item[(1)]
   Given any integer $N > 0$.
@@ -1773,7 +1774,7 @@ $\Box$ \\
         \int_{[b]}^{b} \sin(t^2) dt \\
     &= \lim_{N \to \infty} \int_{0}^{N} \sin(t^2) dt
   \end{align*}
-  exists.
+  converges.
 \end{enumerate}
 $\Box$ \\
 
@@ -1823,6 +1824,7 @@ where $|r(x)| < Ce^{-x}$ for some constant $C$.} \\
   \end{align*}
 
   \item[(2)]
+  \emph{Show that $e^x|f(x)| \leq 2$.}
   \begin{align*}
     |f(x)|
     &\leq \abs{ \frac{\cos(e^{x+1})}{e^{x+1}} }
@@ -1842,39 +1844,71 @@ where $|r(x)| < Ce^{-x}$ for some constant $C$.} \\
   Hence $e^x|f(x)| \leq 2$.
 
   \item[(3)]
-  The equality in (2) holds only if
-  $\abs{ \cos(e^{x+1}) } = 1$, $\abs{ \cos(e^x) } = 1$,
-  and
-  \[
-    \abs{ \int_{\exp(x)}^{\exp(x+1)} \frac{\cos u}{u^2} du }
-    = \int_{\exp(x)}^{\exp(x+1)} \frac{|\cos u|}{u^2} du
-    = \int_{\exp(x)}^{\exp(x+1)} \frac{1}{u^2} du.
-  \]
-  Since $\cos u$ has two absolute minimums or maximums at two different points
-  $u = e^x$ and $u = e^{x+1}$, by the property of $\cos(u)$ there is some
-  $u_0 \in [e^x,e^{x+1}]$ such that $\cos(u_0) = 0$.
-  Hence given $\varepsilon = \frac{1}{2} > 0$ there exists $\delta > 0$
-  such that
-  \[
-    |\cos(u)| \leq \frac{1}{2}
-  \]
-  whenever
-  \[
-    u \in E = [\max\{u_0-\delta,e^x\},\min\{u_0+\delta,e^{x+1}\}]
-    \subseteq [e^x,e^{x+1}].
-  \]
-  Here $|E| > 0$.
-  So that
-  \[
-    \int_{\exp(x)}^{\exp(x+1)} \frac{|\cos u|}{u^2} du
-    \int_{\exp(x)}^{\exp(x+1)} \frac{1}{u^2} du
-      - \frac{1}{2} \int_{E} \frac{1}{u^2} du
-    < \int_{\exp(x)}^{\exp(x+1)} \frac{1}{u^2} du,
-  \]
-  which is absurd.
-  Hence the equality in (2) does not hold, or $e^x|f(x)| < 2$.
+  \emph{Show that $e^x|f(x)| < 2$.}
+  Similar to (b)(3) in the proof of Exercise 6.13.
 
   \item[(4)]
+  \emph{Show that
+  \[
+    e^x f(x) = \cos(e^x) - e^{-1} \cos(e^{x+1}) + r(x)
+  \]
+  where $|r(x)| < Ce^{-x}$ for some constant $C$.}
+  By (1),
+  \[
+    e^x f(x) = \cos(e^x) - e^{-1}\cos(e^{x+1})
+      - e^x \int_{\exp(x)}^{\exp(x+1)} \frac{\cos u}{u^2} du.
+  \]
+  So that
+  \[
+    r(x) = - e^x \int_{\exp(x)}^{\exp(x+1)} \frac{\cos u}{u^2} du.
+  \]
+  By integration by parts (Theorem 6.22),
+  \begin{align*}
+    \int_{\exp(x)}^{\exp(x+1)} \frac{\cos u}{u^2} du
+    &= \left[ \frac{\sin u}{u^2} \right]_{u=\exp(x)}^{u=\exp(x+1)}
+      - \int_{\exp(x)}^{\exp(x+1)} \frac{-2 \sin u}{u^3} du \\
+    &= \frac{\sin e^{x+1}}{e^{2x+2}} - \frac{\sin e^{x}}{e^{2x}}
+      + 2 \int_{\exp(x)}^{\exp(x+1)} \frac{\sin u}{u^3} du.
+  \end{align*}
+  So that
+  \begin{align*}
+    |r(x)|
+    &\leq \abs{ \frac{\sin e^{x+1}}{e^{x+2}} }
+      + \abs{ \frac{\sin e^{x}}{e^{x}} }
+      + 2 e^x \int_{\exp(x)}^{\exp(x+1)} \frac{\abs{\sin u}}{u^3} du \\
+    &\leq \frac{1}{e^{x+2}}
+      + \frac{1}{e^{x}}
+      + 2 e^x \int_{\exp(x)}^{\exp(x+1)} \frac{du}{u^3} \\
+    &= \frac{1}{e^{x+2}}
+      + \frac{1}{e^{x}}
+      + 2 e^x \left[ -\frac{1}{2} u^{-2} \right]_{u=\exp(x)}^{u=\exp(x+1)} \\
+    &= \frac{2}{e^{x}}.
+  \end{align*}
+  The equality does not hold as in (3), or $|r(x)| < 2 e^{-x}$.
+
+  \item[(5)]
+  \emph{Show that $\int_{0}^{\infty} \sin(e^t) dt$ converges.}
+  Similar to (d) in Exercise 6.13.
+  Given any integer $N > 0$, write
+  \[
+    \int_{0}^{N} \sin(e^t) dt
+    = f(0) + \frac{\cos(e)}{e} - \underbrace{\frac{\cos(e^N)}{e^N}}_{\to 0}
+      + \underbrace{\sum_{n=1}^{N-1} \frac{r(n)}{e^n}}_{< \infty}
+  \]
+  where $|r(n)| \leq \frac{2}{e^n}$ (by (4)).
+  So $\lim \int_{0}^{N} \sin(e^t) dt$ exists.
+  Also note that
+  \[
+    \abs{ \int_{x}^{y} \sin(e^t) dt } < \frac{2}{e^x}
+  \]
+  if $y \geq x > 0$ (by applying the same argument in (2)).
+  Therefore
+  \[
+    \int_{0}^{\infty} \sin(e^t) dt
+    = \lim_{b \to \infty} \int_{0}^{b} \sin(e^t) dt
+    = \lim_{N \to \infty} \int_{0}^{N} \sin(e^t) dt
+  \]
+  converges.
 \end{enumerate}
 $\Box$ \\\\
 
