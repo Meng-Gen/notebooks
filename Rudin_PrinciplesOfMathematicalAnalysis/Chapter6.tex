@@ -1637,7 +1637,7 @@ $\Box$ \\
   So that
   \[
     \int_{x^2}^{(x+1)^2} \frac{\abs{\cos u}}{4u^{\frac{3}{2}}} du
-    = \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du
+    \leq \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du
       - \frac{1}{2} \int_{E} \frac{1}{4u^{\frac{3}{2}}} du
     < \int_{x^2}^{(x+1)^2} \frac{1}{4u^{\frac{3}{2}}} du,
   \]
@@ -1683,6 +1683,11 @@ $\Box$ \\
 
 
 
+\emph{Proof of (d).}
+$\Box$ \\
+
+
+
 \emph{Note.}
 \[
   \int_{0}^{\infty} \sin(t^2)dt
@@ -1711,7 +1716,76 @@ and that
 \]
 where $|r(x)| < Ce^{-x}$ for some constant $C$.} \\
 
-PLACEHOLDER \\\\
+
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  Put $e^t = u$ and integrate by parts to get
+  \begin{align*}
+    f(x)
+    &= \int_{x}^{x+1} \sin(e^t)dt \\
+    &= \int_{\exp(x)}^{\exp(x+1)} \frac{\sin u}{u} du \\
+    &= - \frac{\cos(e^{x+1})}{e^{x+1}}
+      + \frac{\cos(e^x)}{e^x}
+      - \int_{\exp(x)}^{\exp(x+1)} \frac{\cos u}{u^2} du.
+  \end{align*}
+
+  \item[(2)]
+  \begin{align*}
+    |f(x)|
+    &\leq \abs{ \frac{\cos(e^{x+1})}{e^{x+1}} }
+      + \abs{ \frac{\cos(e^x)}{e^x} }
+      + \abs{ \int_{\exp(x)}^{\exp(x+1)} \frac{\cos u}{u^2} du } \\
+    &\leq \abs{ \frac{\cos(e^{x+1})}{e^{x+1}} }
+      + \abs{ \frac{\cos(e^x)}{e^x} }
+      + \int_{\exp(x)}^{\exp(x+1)} \frac{|\cos u|}{u^2} du \\
+    &\leq \frac{1}{e^{x+1}}
+      + \frac{1}{e^x}
+      + \int_{x^2}^{(x+1)^2} \frac{1}{u^2} du \\
+    &= \frac{1}{e^{x+1}}
+      + \frac{1}{e^x}
+      + \left[ \frac{1}{e^x} - \frac{1}{e^{x+1}} \right] \\
+    &= \frac{2}{e^x}.
+  \end{align*}
+  Hence $e^x|f(x)| \leq 2$.
+
+  \item[(3)]
+  The equality in (2) holds only if
+  $\abs{ \cos(e^{x+1}) } = 1$, $\abs{ \cos(e^x) } = 1$,
+  and
+  \[
+    \abs{ \int_{\exp(x)}^{\exp(x+1)} \frac{\cos u}{u^2} du }
+    = \int_{\exp(x)}^{\exp(x+1)} \frac{|\cos u|}{u^2} du
+    = \int_{\exp(x)}^{\exp(x+1)} \frac{1}{u^2} du.
+  \]
+  Since $\cos u$ has two absolute minimums or maximums at two different points
+  $u = e^x$ and $u = e^{x+1}$, by the property of $\cos(u)$ there is some
+  $u_0 \in [e^x,e^{x+1}]$ such that $\cos(u_0) = 0$.
+  Hence given $\varepsilon = \frac{1}{2} > 0$ there exists $\delta > 0$
+  such that
+  \[
+    |\cos(u)| \leq \frac{1}{2}
+  \]
+  whenever
+  \[
+    u \in E = [\max\{u_0-\delta,e^x\},\min\{u_0+\delta,e^{x+1}\}]
+    \subseteq [e^x,e^{x+1}].
+  \]
+  Here $|E| > 0$.
+  So that
+  \[
+    \int_{\exp(x)}^{\exp(x+1)} \frac{|\cos u|}{u^2} du
+    \int_{\exp(x)}^{\exp(x+1)} \frac{1}{u^2} du
+      - \frac{1}{2} \int_{E} \frac{1}{u^2} du
+    < \int_{\exp(x)}^{\exp(x+1)} \frac{1}{u^2} du,
+  \]
+  which is absurd.
+  Hence the equality in (2) does not hold, or $e^x|f(x)| < 2$.
+
+  \item[(4)]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
