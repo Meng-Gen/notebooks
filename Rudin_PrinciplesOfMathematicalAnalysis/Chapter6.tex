@@ -2426,13 +2426,111 @@ $\Box$ \\\\
 
 \textbf{Exercise 6.19.}
 \emph{Let $\gamma_1$ be a curve in $\mathbb{R}^k$, defined on $[a,b]$;
-let $\psi$ be a continuous $1$-$1$ mapping of $[c,d]$ onto $[a,b]$, such that
-$\psi(c) = a$; and define $\gamma_2(s) = \gamma_1(\psi(s))$.
+let $\phi$ be a continuous $1$-$1$ mapping of $[c,d]$ onto $[a,b]$, such that
+$\phi(c) = a$; and define $\gamma_2(s) = \gamma_1(\phi(s))$.
 Prove that $\gamma_2$ is an arc, a closed curve, or a rectifiable curve
 if and only if the same is true of $\gamma_1$.
 Prove that $\gamma_2$ and $\gamma_1$ have the same length.} \\
 
-PLACEHOLDER \\\\
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that $\phi$ is strictly monotonic.}
+  Similar to Exercise 4.15.
+  \begin{enumerate}
+    \item[(a)]
+    (Reductio ad absurdum)
+    If $\phi$ were not strictly monotonic,
+    then there exist $a < c < b \in \mathbb{R}^1$ such that
+    \[
+      \phi(a) \leq \phi(c) \geq \phi(b)
+    \]
+    or
+    \[
+      \phi(a) \geq \phi(c) \leq \phi(b).
+    \]
+    Since $\phi$ is one-to-one, all equalities does not hold.
+    Hence
+    \[
+      \phi(a) < \phi(c) > \phi(b)
+    \]
+    or
+    \[
+      \phi(a) > \phi(c) < \phi(b).
+    \]
+
+    \item[(b)]
+    The case $\phi(a) < \phi(c) > \phi(b)$.
+    Take
+    \[
+      t = \frac{\max\{\phi(a),\phi(b)\} + \phi(c)}{2}
+    \]
+    so that $\phi(c) > t > \phi(a)$ and $\phi(c) > t > \phi(b)$.
+    By Theorem 4.23 there exist $\xi_1 \in (a,c)$ and $\xi_2 \in(c,b)$
+    such that $\phi(\xi_1) = \phi(\xi_2) = t$.
+    Here $\xi_1 \neq \xi_2$, contrary to the injectivity of $\phi$.
+
+    \item[(c)]
+    The case $\phi(a) > \phi(c) < \phi(b)$.
+    The proof is similar to (b).
+
+    \item[(d)]
+    By (b)(c), $\phi$ is strictly monotonic.
+  \end{enumerate}
+
+  \item[(2)]
+  $\phi(d) = b$
+  since $\phi$ is strictly monotonic (by (1)), surjective and $\phi(c) = a$.
+
+  \item[(3)]
+  The inverse mapping $\phi^{-1}$ is a continuous and injective mapping of $[a,b]$ onto $[c,d]$
+  since $\phi$ is continuous and injective on a compact set $[c,d]$ (Theorem 4.17).
+
+  \item[(4)]
+  \emph{Show that $\gamma_2$ is an arc if and only if $\gamma_1$ is an arc.}
+  Note the the composition of two injective maps is injective.
+  Hence the result is established since
+  $\gamma_2 = \gamma_1 \circ \phi$ and $\gamma_1 = \gamma_2 \circ \phi^{-1}$.
+
+  \item[(5)]
+  \emph{Show that $\gamma_2$ is a closed curve if and only if $\gamma_1$ is a closed curve.}
+  Since $\gamma_2 = \gamma_1 \circ \phi$ and $\gamma_1 = \gamma_2 \circ \phi^{-1}$
+  (as in (4)),
+  $\gamma_1(a) = \gamma_1(b)$ if and only if $\gamma_2(c) = \gamma_2(d)$.
+
+  \item[(6)]
+  \emph{Show that $\gamma_2$ is a rectifiable curve if and only if
+  $\gamma_1$ is a rectifiable curve.}
+  Given any partition $P_1 = \{x_0, \ldots, x_n\}$ of $[a,b]$,
+  there is a corresponding partition
+  $P_2 = \{ \phi^{-1}(x_0), \ldots, \phi^{-1}(x_n) \}$ of $[c,d]$,
+  and vice versa.
+  (Given a partition $P_2 = \{x_0, \ldots, x_n\}$ of $[c,d]$,
+  there is a corresponding partition
+  $P_1 = \{ \phi(x_0), \ldots, \phi(x_n) \}$ of $[a,b]$.)
+  Again, since $\gamma_2 = \gamma_1 \circ \phi$ and $\gamma_1 = \gamma_2 \circ \phi^{-1}$
+  (as in (4)),
+  \[
+    \Lambda(P_1, \gamma_1) = \Lambda(P_2, \gamma_2).
+  \]
+  Hence $\gamma_2$ is rectifiable if and only if $\gamma_1$ is rectifiable.
+
+  \item[(7)]
+  \emph{Show that $\gamma_2$ and $\gamma_1$ have the same length.}
+  Take the supremum over all partitions $P_1$ of $[a,b]$ to get
+  \[
+    \Lambda(P_1, \gamma_1) = \Lambda(P_2, \gamma_2) \leq \Lambda(\gamma_1).
+  \]
+  Hence $\Lambda(\gamma_1)$ is an upper of $\Lambda(P_2, \gamma_2)$.
+  So
+  \[
+    \Lambda(\gamma_2) \leq \Lambda(\gamma_1).
+  \]
+  Similarly, $\Lambda(\gamma_1) \leq \Lambda(\gamma_2)$.
+  Therefore $\Lambda(\gamma_1) = \Lambda(\gamma_2)$
+  (whether $\Lambda(\gamma_1)$ or $\Lambda(\gamma_2)$ is finite or not).
+\end{enumerate}
+$\Box$ \\\\
 
 
 
