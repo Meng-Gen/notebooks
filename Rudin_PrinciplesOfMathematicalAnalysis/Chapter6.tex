@@ -1679,18 +1679,52 @@ $\Box$ \\
 
 
 \emph{Proof of (c).}
+\emph{Show that}
+\[
+  \limsup_{x \to \infty} x f(x) = 1.
+\]
+The case $\liminf_{x \to \infty} x f(x) = -1$ is similar.
 \begin{enumerate}
   \item[(1)]
-  \emph{Show that}
+  By (b), \emph{it suffices to show that}
   \[
-    \limsup_{x \to \infty} x f(x) = 1.
+    \limsup_{x \to \infty} \left[ \cos(x^2) - \cos(x+1)^2 \right] = 2.
+  \]
+  Take $x_n = 2n \sqrt{\pi}$ for $n = 1, 2, 3, \ldots$.
+  So
+  \[
+    \cos(x_n^2) - \cos(x_n+1)^2
+    = 1 + \cos(4n\sqrt{\pi} + 1).
+  \]
+  \emph{It suffices to show that}
+  \[
+    \limsup_{n \to \infty} \cos(4n\sqrt{\pi} + 1) = -1.
   \]
 
   \item[(2)]
-  \emph{Show that}
+  $x \mapsto \cos(x)$ is uniformly continuous by the mean value theorem (Theorem 5.10)
+  and $x \mapsto -\sin(x)$ is bounded by $1$.
+  So given any $\varepsilon > 0$, there exists $\delta > 0$
+  such that $\abs{ \cos(x) - \cos(y) } < \varepsilon$
+  whenever $|x-y| < \delta$
+
+  \item[(3)]
+  Define $\alpha = \frac{1}{\sqrt{\pi}}$ and $x = \frac{\pi-1}{4\pi}$.
+  Note that $\alpha$ is irrational.
+  Exercise 4.25(b) implies that
+  there exist integers $n > 0$ and $m$ such that
   \[
-    \liminf_{x \to \infty} x f(x) = -1.
+    \abs{ n \alpha - m - x } < \frac{\delta}{4\pi},
   \]
+  or
+  \[
+    \abs{ (4n\sqrt{\pi} + 1) - (4m\pi - \pi) } < \delta.
+  \]
+  By (2),
+  \[
+    \abs{ \cos(4n\sqrt{\pi} + 1) - (-1) } < \varepsilon.
+  \]
+  Hence $\limsup_{n \to \infty} \cos(4n\sqrt{\pi} + 1) = -1$.
 
 \end{enumerate}
 $\Box$ \\
