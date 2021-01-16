@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -31,14 +33,54 @@
 
 
 \textbf{Exercise 11.1.}
-\emph{...} \\
+\emph{If $f \geq 0$ and $\int_{E} f d\mu = 0$,
+prove that $f(x) = 0$ almost everywhere on $E$.
+(Hint: Let $E_n$ be the subset of $E$ on which $f(x) > \frac{1}{n}$.
+Write $A = \bigcup E_n$.
+Then $\mu(A) = 0$ if and only if $\mu(E_n) = 0$ for every $n$.)} \\
 
-\emph{Proof.}
+\emph{Proof (Hint).}
 \begin{enumerate}
 \item[(1)]
-...
+Define $A = \{ x \in E : f(x) > 0 \}$.
+So $f(x) = 0$ almost everywhere on $E$ if and only if $\mu(A) = 0$.
+
+\item[(2)]
+Define
+\[
+  E_n = \left\{ x \in E : f(x) > \frac{1}{n} \right\}
+\]
+for $n = 1,2,3,\ldots$.
+Note that $E_1 \subseteq E_2 \subseteq E_3 \subseteq \cdots$ and
+\[
+  A = \bigcup_{n=1}^{\infty} E_n.
+\]
+Since $\mu$ is a measure,
+\[
+  \lim_{n \to \infty} \mu(E_n) = \mu(A)
+\]
+(Theorem 11.3).
+
+\item[(3)]
+(Reductio ad absurdum)
+If $\mu(A)> 0$, there is an integer $N$ such that
+$\mu(E_n) \geq \frac{\mu(A)}{2}$ whenever $n \geq N$ (by (2)).
+In particular, take $n = N$ to get
+\begin{align*}
+  \int_E f d\mu
+  &\geq \int_{E_N} f d\mu
+    &\text{($\mu$ is a measure and $E_N \subseteq E$)}\\
+  &\geq \frac{1}{N} \cdot \mu(E_N)
+    &\text{(Remarks 11.23(b))} \\
+  &\geq \frac{1}{N} \cdot \frac{\mu(A)}{2} \\
+  & > 0,
+\end{align*}
+contrary to the assumption that $\int_{E} f d\mu = 0$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.}
+Compare to Exercise 6.2. \\\\
 
 
 
