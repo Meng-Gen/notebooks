@@ -1352,7 +1352,127 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.23.}
-PLACEHOLDER
+\emph{Put $P_0 = 0$, and define, for $n = 0,1,2,\ldots$,
+\[
+  P_{n+1}(x) = P_n(x) + \frac{x^2-P_n^2(x)}{2}.
+\]
+Prove that
+\[
+  \lim_{n \to \infty} P_n(x) = |x|,
+\]
+uniformly on $[-1,1]$.
+(This makes it possible to prove the Stone-Weierstrass theorem without
+first proving Theorem 7.26.)
+(Hint: Use the identity
+\[
+  |x| - P_{n+1} = [|x| - P_n(x)]\left[1-\frac{|x|+P_n(x)}{2}\right]
+\]
+to prove that $0 \leq P_n(x) \leq P_{n+1}(x) \leq |x|$ if $|x| \leq 1$, and that
+\[
+  |x| - P_n(x) \leq |x| \left(1-\frac{|x|}{2}\right)^n < \frac{2}{n+1}
+\]
+if $|x| \leq 1$.)} \\
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+  |x| - P_{n+1}(x)
+  &= |x| - P_n(x) - \frac{|x|^2 - P_n^2(x)}{2} \\
+  &= |x| - P_n(x) - \frac{(|x| + P_n(x))(|x| - P_n(x))}{2} \\
+  &= [|x| - P_n(x)]\left[1-\frac{|x|+P_n(x)}{2}\right].
+\end{align*}
+
+\item[(2)]
+\emph{Show that $0 \leq P_n(x) \leq |x|$ if $|x| \leq 1$.}
+Induction on $n$.
+  \begin{enumerate}
+  \item[(a)]
+  If $n = 0$, then $P_n(x) = P_0(x) = 0$ and thus $0 \leq P_0(x) \leq |x|$.
+
+  \item[(b)]
+  Assume the induction hypothesis that for the single case $n = k$ holds,
+  and thus $0 \leq P_k(x) \leq |x|$ if $|x| \leq 1$.
+  So
+  \begin{align*}
+    0 &\leq |x|-P_k(x) \leq |x|, \\
+    0 \leq 1-|x| &\leq 1-\frac{|x|+P_k(x)}{2} \leq 1-\frac{|x|}{2} \leq 1
+  \end{align*}
+  if $|x| \leq 1$.
+  Hence
+  \[
+    0 \leq [|x| - P_k(x)]\left[1-\frac{|x|+P_k(x)}{2}\right] \leq |x|.
+  \]
+  By (1),
+  \[
+    0 \leq |x| - P_{k+1}(x) \leq |x|
+  \]
+  or $0 \leq P_{k+1}(x) \leq |x|$ if $|x| \leq 1$
+
+  \item[(c)]
+  Since both the base case in (a) and
+  the inductive step in (b) have been proved as true,
+  by mathematical induction the result holds.
+  \end{enumerate}
+
+\item[(3)]
+\emph{Show that $0 \leq P_n(x) \leq P_{n+1}(x) \leq |x|$ if $|x| \leq 1$.}
+By (2), it suffices to show that $P_{n}(x) \leq P_{n+1}(x)$.
+By (1)(2), we have
+\begin{align*}
+  |x| - P_{n+1}(x)
+  &= [|x| - P_n(x)]\left[1-\frac{|x|+P_n(x)}{2}\right] \\
+  &\leq |x| - P_n(x)
+\end{align*}
+or $P_{n}(x) \leq P_{n+1}(x)$.
+
+\item[(4)]
+\emph{Define $f_n(t) = t(1-t)^n$ on $\left[0,\frac{1}{2}\right]$ for $n=1,2,3,\ldots$.
+Show that $f_n(t) \leq \frac{1}{n+1}$.}
+Since
+\[
+  f'_n(t) = (1-t)^{n-1}(1 - (n+1)t)
+\]
+$f'_n(t) = 0$ on $\left[0,\frac{1}{2}\right]$ if and only if $t = \frac{1}{n+1}$.
+By Theorem 5.11, $f_n(t)$ reaches its maximum at $t = \frac{1}{n+1}$.
+Hence
+\[
+  f_n(t)
+  \leq f_n\left(\frac{1}{n+1}\right)
+  = \frac{1}{n+1} \left(\frac{n}{n+1}\right)^n
+  < \frac{1}{n+1}.
+\]
+
+\item[(5)]
+\emph{Show that
+\[
+  |x| - P_n(x) \leq |x| \left(1-\frac{|x|}{2}\right)^n < \frac{2}{n+1}
+\]
+if $|x| \leq 1$.}
+Note that
+\begin{align*}
+  |x| - P_n(x)
+  &\leq [ |x| - P_0(x) ] \prod_{k=0}^{n-1}\left[1-\frac{|x|+P_k(x)}{2}\right]
+    & ((1)) \\
+  &\leq |x| \prod_{k=0}^{n-1}\left[1-\frac{|x|}{2}\right]
+    & ((2)) \\
+  &\leq |x| \left[1-\frac{|x|}{2}\right]^n \\
+  & < \frac{2}{n+1}
+    & \text{(Put $t=\frac{|x|}{2}$ in (4))}.
+\end{align*}
+
+\item[(6)]
+(5) implies that
+\[
+  \lim_{n \to \infty} P_n(x) = |x|
+\]
+and
+\[
+  \lim_{n \to \infty} \sup_{x \in [-1,1]}\abs{ P_n(x) - |x| } = 0.
+\]
+By Theorem 7.9, $P_n(x) \to |x|$ uniformly on $[-1,1]$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
