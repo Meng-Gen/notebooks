@@ -1231,6 +1231,8 @@ Hence
 \end{enumerate}
 $\Box$ \\
 
+
+
 \textbf{Supplement (Tannery's convergence theorem for Riemann integrals).}
 \emph{(Exercise 10.7 of the book
 T. M. Apostol, Mathematical Analysis, Second Edition.)
@@ -1272,7 +1274,129 @@ if $p > -1$.} \\\\
 
 
 \textbf{Exercise 7.13.}
-PLACEHOLDER
+\emph{Assume that $\{f_n\}$ is a sequence of monotonically increasing functions on $\mathbb{R}^1$
+with $0 \leq  f_n(x) \leq 1$ for all $x$ and all $n$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that there is a function $f$ and a sequence $\{n_k\}$ such that
+  \[
+    f(x) = \lim_{k \to \infty} f_{n_k}(x)
+  \]
+  for every $x \in \mathbb{R}^1$.
+  (The existence of such a pointwise convergent subsequence is usually
+  called \textbf{Helly's selection theorem}.)}
+
+\item[(b)]
+  \emph{If, moreover, $f$ is continuous, does $f_{n_k} \to f$ uniformly on $\mathbb{R}^1$
+  or on any compact subset $K$ of $\mathbb{R}^1$?}
+\end{enumerate}
+
+\emph{(Hint:}
+\begin{enumerate}
+\item[(i)]
+\emph{Some subsequence $\{f_{n_i}\}$ converges at all rational points $r$, say, to $f(r)$.}
+
+\item[(ii)]
+\emph{Define $f(x)$, for any $x \in \mathbb{R}^1$, to be $\sup f(r)$,
+the sup being taken over all $r \leq x$.}
+
+\item[(iii)]
+\emph{Show that $f_{n_i}(x) \to f(x)$ at every $x$ at which $f$ is continuous.
+(This is where monotonicity is strongly used.)}
+
+\item[(iv)]
+\emph{A subsequence of $\{f_{n_i}\}$ converges at every point of discontinuity of $f$
+since there are at most countably many such points.}
+
+\end{enumerate}
+\emph{This proves (a).
+To prove (b), modify your proof of (iii) appropriately.)} \\
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that there is a subsequence $\{f_{n_i}\}$ converges at all rational points $r$,
+  say, to $f(r)$.}
+  Let $E = \mathbb{Q}$ be a countable subset of $\mathbb{R}^1$ in Theorem 7.23.
+
+\item[(2)]
+  Define $f(x)$, for any $x \in \mathbb{R}^1$, to be $\sup f(r)$,
+  the sup being taken over all $r \leq x$.
+  It is well-defined since $f(x) = \sup f(r) \leq 1$
+  and the construction of $\mathbb{R}^1$ (Theorem 1.19).
+  Note that $f$ is monotonically increasing.
+
+\item[(3)]
+  \emph{Show that $f_{n_i}(x) \to f(x)$ at every $x$ at which $f$ is continuous.}
+  \begin{enumerate}
+  \item[(a)]
+    Given any $x$ at which $f$ is continuous.
+    Given any $\varepsilon > 0$.
+    Since $f$ is continuous at $x$, there exists $\delta > 0$
+    such that
+    \[
+      f(x)-\frac{\varepsilon}{89} < f(r) < f(x)+\frac{\varepsilon}{89}
+    \]
+    whenever $r \in (x-\delta,x+\delta)$.
+
+  \item[(b)]
+    By (1), there is an integer $N$ such that
+    \[
+      f(r)-\frac{\varepsilon}{64} < f_{n_i}(r) < f(r)+\frac{\varepsilon}{64}
+    \]
+    whenever $i \geq N$ and $r \in \mathbb{Q}$.
+
+  \item[(c)]
+    As $r \in (x,x+\delta) \bigcap \mathbb{Q} \neq \varnothing$
+    (since $\mathbb{Q}$ is dense in $\mathbb{R}$)
+    and $i \geq N$, we have
+      \begin{align*}
+        f_{n_i}(x)
+        &\leq f_{n_i}(r)
+          &\text{($f_{n_i}$: increasing)} \\
+        &< f(r) + \frac{\varepsilon}{64}
+          &\text{((b))} \\
+        &< f(x)+\frac{\varepsilon}{89} + \frac{\varepsilon}{64}
+          &\text{((a))} \\
+        &< f(x) + \varepsilon.
+      \end{align*}
+    Similarly,
+    \[
+      f_{n_i}(x) > f(x) - \varepsilon.
+    \]
+    Therefore
+    \[
+      \abs{ f_{n_i}(x) - f(x) } < \varepsilon
+    \]
+    whenever $i \geq N$.
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Show that there is a subsequence of $\{f_{n_i}\}$ converging
+  at every point of discontinuity of $f$
+  since there are at most countably many such points.}
+  \begin{enumerate}
+  \item[(a)]
+    By construction of $f$, $f$ is monotonically increasing and $0 \leq f(x) \leq 1$.
+
+  \item[(b)]
+    Theorem 4.30 implies that there are at most countably many discontinuity points of $f$.
+
+  \item[(c)]
+    Apply Theorem 7.23 again to get there is
+    a subsequence of $\{f_{n_i}\}$ converging
+    at every point of discontinuity of $f$.
+  \end{enumerate}
+
+\item[(5)]
+  Since any subsequence of $\{f_{n_i}\}$ converges at every point of continuity of $f$,
+  there exists a subsequence $\{f_{n_k}\}$ of $\{f_n\}$ such that
+  \[
+    \lim_{k \to \infty} f_{n_k}(x) = f(x)
+  \]
+  for $x \in \mathbb{R}^1$ (by (3)(4)).
+\end{enumerate}
+$\Box$ \\
 
 
 
