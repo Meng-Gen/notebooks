@@ -1088,7 +1088,182 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.12.}
-PLACEHOLDER
+\emph{Suppose $g$ and $f_n$ ($n=1,2,3\ldots$) are defined on $(0,\infty)$,
+are Riemann-integrable on $[t,T]$ whenever $0 < t < T < \infty$,
+$|f_n| \leq g$, $f_n \to f$ uniformly on every compact subset of $(0,\infty)$),
+and
+\[
+  \int_{0}^{\infty} g(x)dx < \infty.
+\]
+Prove that
+\[
+  \lim_{n \to \infty} \int_{0}^{\infty} f_n(x)dx = \int_{0}^{\infty} f(x)dx.
+\]
+(See Exercises 6.7 and 6.8 for the relevant definitions.)
+This is a rather weak form of Lebesgue's dominated convergence theorem (Theorem 11.32).
+Even in the context of the Riemann integral,
+uniform convergence can be replaced by pointwise convergence if
+it is assumed that $f \in \mathscr{R}$.
+(See the articles by F. Cunningham in Math. Mag., vol. 40, 1967, pp. 179-186,
+and by H. Kestelman in Amer. Math. Monthly, vol. 77, 1970, pp. 182-187.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+It is equivalent to show that
+\[
+  \lim_{n \to \infty} \int_{0}^{1} f_n(x)dx = \int_{0}^{1} f(x)dx
+\]
+and
+\[
+  \lim_{n \to \infty} \int_{1}^{\infty} f_n(x)dx = \int_{1}^{\infty} f(x)dx
+\]
+in the sense of Exercises 6.7 and 6.8.
+
+\item[(2)]
+\emph{Show that $\int_{0}^{1} f_n(x)dx$ ($n=1,2,3\ldots$) and $\int_{0}^{1} f(x)dx$ are
+convergent (well-defined) in in the sense of Exercises 6.7.}
+By assumption, as $0 < t < 1$ we have
+\[
+  \abs{\int_{t}^{1} f_n(x)dx}
+  \leq \int_{t}^{1} \abs{f_n(x)}dx
+  \leq \int_{t}^{1} g(x)dx.
+\]
+Note that
+\[
+  \lim_{t \to 0} \int_{t}^{1} g(x)dx = \int_{0}^{1} g(x)dx < \infty
+\]
+(Exercises 6.7).
+Hence
+\[
+  \lim_{t \to 0}\abs{\int_{t}^{1} f_n(x)dx}
+  = \abs{\lim_{t \to 0} \int_{t}^{1} f_n(x)dx}
+  \leq \int_{0}^{1} g(x)dx
+  < \infty.
+\]
+Also,
+since $|f_n(x)| \leq g(x)$ and $f_n \to f$ uniformly, $f(x) \leq g(x)$ pointwise.
+Apply the same argument to get
+\[
+  \abs{\lim_{t \to 0} \int_{t}^{1} f(x)dx}
+  < \infty.
+\]
+Here $\int_{t}^{1} f(x)dx$ exists by Theorem 7.16.
+
+\item[(3)]
+Given any integer $n > 0$ and $t \in (0,1]$, we have
+\begin{align*}
+  \abs{ \int_{0}^{1} f_n(x)dx - \int_{0}^{1} f(x)dx }
+  \leq&
+  \abs{ \int_{0}^{1} f_n(x)dx - \int_{t}^{1} f_n(x)dx } \\
+    &+ \abs{ \int_{t}^{1} f_n(x)dx - \int_{t}^{1} f(x)dx } \\
+    &+ \abs{ \int_{t}^{1} f(x)dx - \int_{0}^{1} f(x)dx } \\
+  \leq&
+  \abs{ \int_{0}^{t} f_n(x)dx } \\
+    &+ \int_{t}^{1} \abs{ f_n(x) - f(x) } dx \\
+    &+ \abs{ \int_{0}^{t} f(x)dx } \\
+\end{align*}
+
+\item[(4)]
+Given $\varepsilon > 0$.
+Apply the similar argument in (2),
+we have
+\begin{align*}
+  \abs{ \int_{0}^{t} f_n(x)dx }
+  &\leq \int_{0}^{t} |f_n(x)|dx
+  \leq \int_{0}^{t} g(x)dx, \\
+  \abs{ \int_{0}^{t} f(x)dx }
+  &\leq \int_{0}^{t} |f(x)|dx
+  \leq \int_{0}^{t} g(x)dx.
+\end{align*}
+Since $\int_{0}^{t} g(x)dx < \infty$,
+there exists a real number $c \in (0,1)$ such that
+\[
+  \int_{0}^{t} g(x)dx < \frac{\varepsilon}{3}
+\]
+whenever $0 < t \leq c$.
+In particular, for any integer $n > 0$ we have
+\begin{align*}
+  \abs{ \int_{0}^{c} f_n(x)dx }
+  &\leq \frac{\varepsilon}{3}, \\
+  \abs{ \int_{0}^{c} f(x)dx }
+  &\leq \frac{\varepsilon}{3}.
+\end{align*}
+
+\item[(5)]
+For such $c \in (0,1)$ in (4), there is an integer $N$ such that
+\[
+  \abs{f_n(x) - f(x)} < \frac{\varepsilon}{3(1-c)}
+\]
+whenever $n \geq N$ and $x \in [c,1]$
+since $f_n \to f$ uniformly on a compact set $[c,1]$.
+
+\item[(6)]
+By (3)(4)(5),
+\begin{align*}
+  &\abs{ \int_{0}^{1} f_n(x)dx - \int_{0}^{1} f(x)dx } \\
+  \leq&
+  \abs{ \int_{0}^{c} f_n(x)dx }
+    + \int_{c}^{1} \abs{ f_n(x) - f(x) } dx
+    + \abs{ \int_{0}^{c} f(x)dx } \\
+  <&
+  \frac{\varepsilon}{3}
+    + (1-c) \cdot \frac{\varepsilon}{3(1-c)}
+    + \frac{\varepsilon}{3} \\
+  =&
+  \varepsilon
+\end{align*}
+whenever $n \geq N$.
+Therefore
+\[
+  \lim_{n \to \infty} \int_{0}^{1} f_n(x)dx = \int_{0}^{1} f(x)dx.
+\]
+Similarly,
+\[
+  \lim_{n \to \infty} \int_{1}^{\infty} f_n(x)dx = \int_{1}^{\infty} f(x)dx.
+\]
+Hence
+\[
+  \lim_{n \to \infty} \int_{0}^{\infty} f_n(x)dx = \int_{0}^{\infty} f(x)dx.
+\]
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement (Tannery's convergence theorem for Riemann integrals).}
+\emph{(Exercise 10.7 of the book
+T. M. Apostol, Mathematical Analysis, Second Edition.)
+Prove Tannery's convergence theorem for Riemann integrals:
+Given a sequence of functions $\{f_n\}$ and an increasing sequence $\{p_n\}$
+of real numbers such that $p_n \to +\infty$ as $n \to \infty$.
+Assume that}
+\begin{enumerate}
+\item[(a)]
+\emph{$f_n \to f$ uniformly on $[a,b]$ for every $b \geq a$.}
+
+\item[(b)]
+\emph{$f_n$ is Riemann-integrable on $[a,b]$ for every $b \geq a$.}
+
+\item[(c)]
+\emph{$|f_n(x)| \leq g(x)$ on $[a,+\infty)$,
+where $g$ is improper Riemann-integrable on $[a,+\infty)$.}
+\end{enumerate}
+
+\emph{Then both $f$ and $|f|$ are improper Riemann-integrable on $[a,+\infty)$,
+the sequence $\{\int_{a}^{p_n}f_n(x)dx\}$ converges, and
+\[
+  \int_{a}^{\infty} f(x)dx = \lim_{n \to \infty}\int_{a}^{p_n}f_n(x)dx.
+\]}
+\begin{enumerate}
+\item[(d)]
+\emph{Use Tannery's theorem to prove that
+\[
+  \lim_{n \to \infty} \int_{0}^{n} \left( 1-\frac{x}{n} \right)^n x^p dx
+  = \int_{0}^{\infty} e^{-x}x^p dx,
+\]
+if $p > -1$.} \\\\
+\end{enumerate}
 
 
 
