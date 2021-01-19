@@ -50,7 +50,7 @@ is uniformly bounded.} \\
 Let $\{f_n\}$ be a uniformly convergent sequence of bounded functions.
 \begin{enumerate}
 \item[(1)]
-Since $f_n$ is bounded, there exists $M_n$ such that $|f_n(x)| \leq M_n$.
+Since $f_n$ is bounded, there exists a $M_n$ such that $|f_n(x)| \leq M_n$.
 
 \item[(2)]
 Since $\{f_n\}$ converges uniformly, given $1 > 0$ there exists an integer $N$
@@ -1332,7 +1332,7 @@ To prove (b), modify your proof of (iii) appropriately.)} \\
   \item[(a)]
     Given any $x$ at which $f$ is continuous.
     Given any $\varepsilon > 0$.
-    Since $f$ is continuous at $x$, there exists $\delta > 0$
+    Since $f$ is continuous at $x$, there exists a $\delta > 0$
     such that
     \[
       f(x)-\frac{\varepsilon}{89} < f(r) < f(x)+\frac{\varepsilon}{89}
@@ -1449,7 +1449,7 @@ $\Box$ \\
     Given any $\varepsilon > 0$.
     Since $f$ is continuous on a compact set $E$,
     $f$ is continuous uniformly on $E$,
-    and thus there exists $\delta > 0$ such that
+    and thus there exists a $\delta > 0$ such that
     \[
       |f(x) - f(y)| < \frac{\varepsilon}{89}
     \]
@@ -1541,8 +1541,48 @@ PLACEHOLDER
 
 
 \textbf{Exercise 7.15.}
+\emph{Suppose that $f$ is a real continuous function on $\mathbb{R}^1$,
+$f_n(t)= f(nt)$ for $n=1,2,3,\ldots$,
+and $\{f_n\}$ is equicontinuous on $[0,1]$.
+What conclusion can you draw about $f$?} \\
 
-PLACEHOLDER \\\\
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $f$ is constant on $[0,\infty)$.}
+
+\item[(2)]
+  Given any $\varepsilon > 0$.
+  Since $\{f_n\}$ is equicontinuous on $[0,1]$,
+  there exists a $1 > \delta > 0$ such that
+  \[
+    |f_n(x)-f_n(y)| < \varepsilon
+  \]
+  whenever $n \in \mathbb{Z}^{+}$, $x,y \in [0,1]$ and $|x-y| < \delta < 1$.
+  Take $x = t \in [0,1]$ and $y = 0$.
+  Note that $f_n(t) = f(nt)$ for any $n \in \mathbb{Z}^{+}$ and
+  $t \in \mathbb{R}^1$.
+  Hence
+  \[
+    |f(nt) - f(0)| < \varepsilon
+  \]
+  for all integer $n > 0$ and $0 \leq t < \delta < 1$.
+
+\item[(3)]
+  Given any $x \in [0,\infty)$.
+  There is an integer $N > 0$ such that $0 \leq x < N\delta$
+  (by taking $N > \frac{\delta}{x}$).
+  Let $t = \frac{x}{N}$.
+  So that $0 \leq t < \delta$.
+  Hence
+  \[
+    |f(x) - f(0)| = |f(Nt) - f(0)| < \varepsilon.
+  \]
+  Since $\varepsilon > 0$ is arbitrary,
+  $f(x) = f(0)$ for any $x \in [0,+\infty)$.
+  Therefore $f$ is constant on $[0,\infty)$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
@@ -1591,7 +1631,7 @@ Given any $\varepsilon > 0$.
   whenever $n,m \geq N_i$.
 
   \item[(4)]
-  Now given any $x \in K$, by (2) there exists $a_j$ $(1 \leq j \leq m)$
+  Now given any $x \in K$, by (2) there exist $a_j$ $(1 \leq j \leq m)$
   such that $x \in B(a_j;\delta)$.
   Take $N = \max\{N_1,\ldots,N_m\}$.
   Hence
