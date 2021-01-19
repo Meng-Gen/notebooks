@@ -1680,8 +1680,8 @@ $\Box$ \\
 
 
 \textbf{Theorem 7.8 over complete metric spaces.}
-\emph{Suppose $(X,d_X)$ is a metric space
-and $(Y,d_Y)$ is a complete metric spaces, $E \subseteq X$.
+\emph{Suppose $(X,d_X)$ is a metric space,
+$(Y,d_Y)$ is a complete metric spaces, $E \subseteq X$.
 The sequence of functions $\{f_n\}$ of $f_n: E \to Y$,
 converges uniformly on $E$ if and only if
 for every $\varepsilon > 0$
@@ -1800,11 +1800,134 @@ $\Box$ \\
 
 
 \textbf{Theorem 7.11 over complete metric spaces.}
+\emph{Suppose $(X,d_X)$ is a metric space,
+$(Y,d_Y)$ is a complete metric spaces, $E \subseteq X$.
+Suppose the sequence of functions $\{f_n\}$ of $f_n: E \to Y$
+converges uniformly on $E$.
+Let $x$ be a limit point of $E$, and suppose that
+\[
+  \lim_{t \to x} f_n(t) = A_n
+  \:\:\:\:\:\:\:\:
+  (n=1,2,3,\ldots).
+\]
+Then $\{A_n\}$ converges, and
+\[
+  \lim_{t \to x}f(t) = \lim_{n \to \infty} A_n.
+\]
+In other words, the conclusion is that}
+\[
+  \lim_{t \to x} \lim_{n \to \infty} f_n(t)
+  = \lim_{n \to \infty} \lim_{t \to x} f_n(t).
+\]
+
+\emph{Proof (Theorem 7.11).}
+\begin{enumerate}
+\item[(1)]
+  Let $\varepsilon > 0$ be given.
+  By the uniform convergence of $\{f_n\}$, there exists an integer $N$
+  such that $n \geq N$, $m \geq N$, $t \in E$ imply
+  \[
+    d_Y(f_n(t),f_m(t)) \leq \varepsilon.
+  \]
+  Letting $t \to x$, we obtain
+  \[
+    d_Y(A_n,A_m) \leq \varepsilon
+  \]
+  for $n \geq N$, $m \geq N$, so that $\{A_n\}$ is a Cauchy sequence in $Y$
+  and therefore converges, say to $A$ (since $Y$ is complete).
+
+\item[(2)]
+  Next,
+  \[
+    d_Y(f(t),A)
+    \leq
+    d_Y(f(t),f_n(t)) + d_Y(f_n(t),A_n) + d_Y(A_n,A).
+  \]
+
+\item[(3)]
+  We choose $N_1$ such that
+  \[
+    d_Y(f(t),f_n(t)) \leq \frac{\varepsilon}{3}
+  \]
+  whenever $n \geq N_1$ and $t \in E$
+  (by the uniform convergence of $\{f_n\}$).
+
+\item[(4)]
+  We choose $N_2$ such that
+  \[
+    d_Y(A_n,A) \leq \frac{\varepsilon}{3}
+  \]
+  whenever $n \geq N_2$.
+
+\item[(5)]
+  In particular, we choose $n = \max\{N_1,N_2\}$ in (3)(4).
+  For such $n$, there is an open neighborhood $B(x)$ of $x$ such that
+  \[
+    d_Y(f_n(t),A_n) \leq \frac{\varepsilon}{3}
+  \]
+  if $t \in B(x) \bigcap E - \{x\}$.
+
+\item[(6)]
+  Substituting the inequalities (3)(4)(5) into (2), we see that
+  \[
+    d_Y(f(t),A) \leq \varepsilon,
+  \]
+  provided $t \in B(x) \bigcap E - \{x\}$.
+\end{enumerate}
 $\Box$ \\
 
 
 
 \textbf{Theorem 7.12 over metric spaces.}
+\emph{Suppose $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, $E \subseteq X$.
+If $\{f_n\}$ is a sequence of continuous functions of $f_n: E \to Y$,
+and if $f_n \to f$ uniformly on $E$,
+then $f$ is continuous on $E$.} \\
+
+\emph{Note.}
+It is not a corollary of Theorem 7.11 over complete metric spaces
+since $Y$ might not be complete. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Suppose $x \in E$.
+  If $x$ is an isolated point of $E$, there is nothing to do.
+  We might assume that $x$ is a limit point of $E$.
+  Let $\varepsilon > 0$ be given.
+
+\item[(2)]
+  Next, write
+  \[
+    d_Y(f(y),f(x))
+    \leq
+    d_Y(f(y),f_n(y)) + d_Y(f_n(y),f_n(x)) + d_Y(f_n(x),f(x))
+  \]
+  if $y \in E$.
+
+\item[(3)]
+  By the uniform convergence of $\{f_n\}$, there exists an integer $N$
+  such that $n \geq N$, $t \in E$ imply
+  \[
+    d_Y(f_n(t),f(t)) \leq \frac{\varepsilon}{3}.
+  \]
+
+\item[(4)]
+  In particular, we choose $n = N$ in (3).
+  For such $n$, by the continuity of $f_n$
+  there is a $\delta > 0$ such that
+  \[
+    d_Y(f_n(t),f_n(x)) < \frac{\varepsilon}{3}
+  \]
+  if $0 < d_X(t,x) < \delta$ and $t \in E$.
+
+\item[(5)]
+  Substituting the inequalities (3)(4) into (2), we see that
+  \[
+    d_Y(f(y),f(x)) < \varepsilon,
+  \]
+  provided $0 < d_X(y,x) < \delta$ and $y \in E$.
+\end{enumerate}
 $\Box$ \\
 
 
