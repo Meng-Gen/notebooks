@@ -2617,7 +2617,96 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.24.}
-PLACEHOLDER
+\emph{Let $X$ be a metric space, with metric $d$.
+Fix a point $a \in X$.
+Assign to each $p \in X$ the function $f_p$ defined by
+\[
+  f_p(x) = d(x,p) - d(x,a)
+  \:\:\:\:\:\:\:\:
+  (x \in X).
+\]
+Prove that $\abs{ f_p(x) } \leq d(a,p)$ for all $x \in X$,
+and that therefore, $f_p \in \mathscr{C}(X)$.
+Prove that
+\[
+  \norm{ f_p - f_q } = d(p,q)
+\]
+for all $p,q \in X$.
+If $\Phi(p) = f_p$ it follows that $\Phi$ is an \textbf{isometry}
+(a distance-preserving mapping)
+of $X$ onto $\Phi(X) \subseteq \mathscr{C}(X)$.
+Let $Y$ be the closure of $\Phi(X)$ in $\mathscr{C}(X)$.
+Show that $Y$ is complete.
+Conclusion: $X$ is isometric to a dense subset of a complete metric space $Y$.
+(Exercise 3.24 contains a different proof of this.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\abs{ f_p(x) } \leq d(a,p)$ for all $x \in X$.}
+  Since $d$ is a metric,
+  \begin{align*}
+    d(x,p) - d(x,a) &\leq d(a,p),
+    d(x,a) - d(x,p) &\leq d(a,p)
+  \end{align*}
+  for any $x \in X$.
+  Thus $\abs{ f_p(x) } \leq d(a,p)$ for any $x \in X$.
+
+\item[(2)]
+  \emph{Show that $f_p \in \mathscr{C}(X)$, i.e, $f_p$ is continuous on $X$.}
+  Given any $\varepsilon > 0$, there exists a $\delta = \frac{\varepsilon}{2}$ such that
+  \begin{align*}
+    \abs{ f_p(x) - f_p(y) }
+    &= \abs{ (d(x,p) - d(x,a)) - (d(y,p) - d(y,a)) } \\
+    &= \abs{ (d(x,p) - d(y,p)) - (d(x,a) - d(y,a)) } \\
+    &\leq \abs{ d(x,p) - d(y,p) } + \abs{ d(x,a) - d(y,a) } \\
+    &\leq d(x,y) + d(x,y) \\
+    &< \delta + \delta \\
+    &= \varepsilon
+  \end{align*}
+  whenever $d(x,y) < \delta$ and $x,y \in X$.
+  Hence $f_p$ is (uniformly) continuous on $X$.
+
+\item[(3)]
+  \emph{Show that
+  \[
+    \norm{ f_p - f_q } = d(p,q)
+  \]
+  for all $p,q \in X$.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $\norm{ f_p - f_q } \leq d(p,q)$.}
+    Given any $x \in X$, we have
+    \begin{align*}
+      \abs{f_p(x)-f_q(x)}
+      &= \abs{(d(x,p) - d(x,a))-(d(x,q) - d(x,a))} \\
+      &= \abs{d(x,p) - d(x,q)} \\
+      &\leq d(p,q).
+    \end{align*}
+    $d(p,q)$ is an upper bound of $\left\{ \abs{f_p(x)-f_q(x)} : x \in E \right\}$.
+    Take sup over all $x \in E$ to get $\norm{ f_p - f_q } \leq d(p,q)$.
+
+  \item[(b)]
+    \emph{Show that $\norm{ f_p - f_q } \geq d(p,q)$.}
+    Note that
+    \begin{align*}
+      \norm{ f_p - f_q }
+      &= \sup_{x \in E} \abs{f_p(x)-f_q(x)} \\
+      &\geq \sup_{x \in \{p,q\}} \abs{f_p(x)-f_q(x)} \\
+      &= \sup_{x \in \{p,q\}} d(p,q) \\
+      &= d(p,q).
+    \end{align*}
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Show that $Y$ is complete.}
+  By Theorem 3.11 and Definition 3.12,
+  every closed subset of a complete metric space is complete.
+  Note that $Y$ is a closed subset (by construction)
+  of a complete metric space $\mathscr{C}(X)$ (Theorem 7.15).
+  Therefore $Y$ is complete.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
