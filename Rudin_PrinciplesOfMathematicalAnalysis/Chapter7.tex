@@ -1558,7 +1558,7 @@ What conclusion can you draw about $f$?} \\
   \[
     |f_n(x)-f_n(y)| < \varepsilon
   \]
-  whenever $n \in \mathbb{Z}^{+}$, $x,y \in [0,1]$ and $|x-y| < \delta < 1$.
+  whenever $n \in \mathbb{Z}^{+}$, $|x-y| < \delta < 1$, $x \in [0,1]$ and $y \in [0,1]$.
   Take $x = t \in [0,1]$ and $y = 0$.
   Note that $f_n(t) = f(nt)$ for any $n \in \mathbb{Z}^{+}$ and
   $t \in \mathbb{R}^1$.
@@ -1656,7 +1656,189 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.17.}
-PLACEHOLDER
+\emph{Define the notions of uniform convergence and equicontinuous
+for mappings into any metric space.
+Show that Theorems 7.9 and 7.12 are valid for mappings into any metric space,
+that Theorems 7.8 and 7.11 are valid for mappings into any complete metric space,
+and that Theorems 7.10, 7.16, 7.17, 7.24, and 7.25 hold for
+vector-valued functions, that is, for mappings into any $\mathbb{R}^k$.} \\
+
+
+
+\textbf{Definition 7.7 over metric spaces.}
+\emph{Suppose $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, $E \subseteq X$.
+We say that a sequence of functions $\{f_n\}$ of $f_n: E \to Y$,
+$n = 1,2,3,\ldots$,
+\textbf{converges uniformly} on $E$ to a function $f$ mapping from $E$ to $Y$
+if for every $\varepsilon > 0$ there is an integer $N$ such that $n \geq N$ implies
+\[
+  d_Y(f_n(x),f(x)) \leq \varepsilon
+\]
+for all $x \in E$.}
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.8 over complete metric spaces.}
+\emph{Suppose $(X,d_X)$ is a metric space
+and $(Y,d_Y)$ is a complete metric spaces, $E \subseteq X$.
+The sequence of functions $\{f_n\}$ of $f_n: E \to Y$,
+converges uniformly on $E$ if and only if
+for every $\varepsilon > 0$
+there is an integer $N$ such that $m \geq N$, $n \geq N$, $x \in E$ implies}
+\[
+  d_Y(f_n(x),f_m(x)) \leq \varepsilon.
+\]
+
+\emph{Proof (Theorem 7.8).}
+\begin{enumerate}
+  \item[(1)]
+  Suppose $\{f_n\}$ converges uniformly on $E$, and let $f$ be the limit function.
+  Then there is an integer $N$ such that $n \geq N$, $x \in E$ implies
+  \[
+    d_Y(f_n(x),f(x)) \leq \frac{\varepsilon}{2},
+  \]
+  so that
+  \[
+    d_Y(f_n(x),f_m(x))
+    \leq d_Y(f_n(x),f(x)) + d_Y(f(x),f_m(x))
+    \leq \varepsilon
+  \]
+  if $n \geq N$, $m \geq N$, $x \in E$.
+
+  \item[(2)]
+  Conversely, suppose the Cauchy condition holds.
+  By Theorem 3.11,
+  the sequence $\{f_n(x)\}$ converges, for every $x$, to a limit which we may call $f(x)$.
+  Thus the sequence $\{f_n\}$ converges on $E$, to $f$.
+  We have to prove that the convergence is uniformly.
+  Let $\varepsilon > 0$ be given, and choose $N$ such that
+  \[
+    d_Y(f_n(x),f_m(x)) \leq \varepsilon.
+  \]
+  Fix $n$, and let $m \to \infty$.
+  Since $f_m(x) \to f(x)$ as $m \to \infty$, this gives
+  \[
+    d_Y(f_n(x),f(x)) \leq \varepsilon
+  \]
+  for every $n \geq N$ and every $x \in E$, which completes the proof.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.9 over metric spaces.}
+\emph{Suppose $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, $E \subseteq X$.
+Let $\{f_n\}$ be a sequence of functions of $f_n: E \to Y$.
+Suppose
+\[
+  \lim_{n \to \infty}f_n(x) = f(x)
+  \:\:\:\:\:\:\:\:
+  (x \in E).
+\]
+Put
+\[
+  M_n = \sup_{x \in E} d_Y(f_n(x),f(x)).
+\]
+Then $f_n \to f$ uniformly on $E$ if and only if $M_n \to 0$ as $n \to \infty$.} \\
+
+\emph{Proof (Theorem 7.9).}
+Given any $\varepsilon > 0$.
+\begin{enumerate}
+  \item[(1)]
+  Suppose $\{f_n\}$ converges uniformly on $E$.
+  Then there is an integer $N$ such that $n \geq N$, $x \in E$ implies
+  \[
+    d_Y(f_n(x),f(x)) \leq \varepsilon.
+  \]
+  Take sup over all $x \in E$ to get
+  \[
+    M_n = \sup_{x \in E} d_Y(f_n(x),f(x)) \leq \varepsilon
+  \]
+  whenever $n \geq N$.
+
+  \item[(2)]
+  Conversely, suppose $M_n \to 0$ as $n \to \infty$.
+  Then there is an integer $N$ such that $n \geq N$ implies
+  \[
+    M_n = \sup_{x \in E} d_Y(f_n(x),f(x)) \leq \varepsilon
+  \]
+  whenever $n \geq N$.
+  Hence
+  \[
+    d_Y(f_n(x),f(x)) \leq \sup_{x \in E} d_Y(f_n(x),f(x)) \leq \varepsilon
+  \]
+  whenever $n \geq N$ and $x \in E$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.10 over $\mathbb{R}^k$.}
+\emph{Suppose $E \subseteq \mathbb{R}^1$,
+$\{\mathbf{f}_n\}$ is a sequence of functions of $\mathbf{f}_n: E \to \mathbb{R}^k$,
+and
+\[
+  |\mathbf{f}_n(x)| \leq M_n
+  \:\:\:\:\:\:\:\:
+  (x \in E, n = 1,2,3,\ldots).
+\]
+Then $\sum \mathbf{f}_n$ converges uniformly on $E$ if $\sum M_n$ converges.} \\
+
+\emph{Proof (Theorem 7.10).}
+If $\sum M_n$ converges, then for arbitrary $\varepsilon > 0$,
+\[
+  \abs{\sum_{i=n}^{m}\mathbf{f}_i(x)} \leq \sum_{i=n}^{m}M_i \leq \varepsilon
+  \:\:\:\:\:\:\:\:
+  (x \in E),
+\]
+provided $m$ and $n$ are large enough.
+Uniform convergence now follows from Theorem 7.8 over complete metric spaces
+(since $\mathbb{R}^1$ is complete).
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.11 over complete metric spaces.}
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.12 over metric spaces.}
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.16 over $\mathbb{R}^k$.}
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.17 over $\mathbb{R}^k$.}
+$\Box$ \\
+
+
+
+\textbf{Definition 7.22 over metric spaces.}
+\emph{Suppose $(X,d_X)$ and $(Y,d_Y)$ are metric spaces, $E \subseteq X$.
+A family $\mathscr{F}$ of functions $f: E \to Y$ is
+said to be \textbf{equicontinuous} on $E$
+if for every $\varepsilon > 0$ there is a $\delta > 0$ such that
+\[
+  d_Y(f(y),f(x)) < \varepsilon
+\]
+whenever $d_X(x,y) < \delta$, $x \in E$, $y \in E$, and $f \in \mathscr{F}$.} \\
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.24 over $\mathbb{R}^k$.}
+$\Box$ \\
+
+
+
+\textbf{Theorem 7.25 over $\mathbb{R}^k$.}
+$\Box$ \\\\
 
 
 
@@ -1665,7 +1847,15 @@ PLACEHOLDER
 
 
 \textbf{Exercise 7.18.}
-PLACEHOLDER
+\emph{Let $\{f_n\}$ be a uniformly bounded sequence of functions which are
+Riemann-integrable on $[a,b]$, and put
+\[
+  F_n(x) = \int_{a}^{x} f_n(t)dt
+  \:\:\:\:\:\:\:\:
+  (a \leq x \leq b).
+\]
+Prove that there exists a subsequence $\{F_{n_k}\}$ which
+converges uniformly on $[a,b]$.} \\
 
 
 
@@ -1674,7 +1864,6 @@ PLACEHOLDER
 
 
 \textbf{Exercise 7.19.}
-
 PLACEHOLDER \\\\
 
 
