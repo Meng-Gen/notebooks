@@ -2294,6 +2294,50 @@ Riemann-integrable on $[a,b]$, and put
 Prove that there exists a subsequence $\{F_{n_k}\}$ which
 converges uniformly on $[a,b]$.} \\
 
+\emph{Proof (Theorem 7.25).}
+\begin{enumerate}
+\item[(1)]
+  Since $\{f_n\}$ is uniformly bounded,
+  there exists a $M$ such that $|f_n(x)| \leq M$ for all $n$ and $x \in [a,b]$.
+  Note that $[a,b]$ is compact.
+
+\item[(2)]
+  \emph{Show that $\{F_n\}$ is uniformly bounded
+  (and thus pointwise bounded) on $[a,b]$.}
+  \begin{align*}
+    \abs{F_n(x)}
+    &= \abs{ \int_{a}^{x} f_n(t)dt } \\
+    &\leq \int_{a}^{x} \abs{f_n(t)}dt \\
+    &\leq \int_{a}^{x} M dt \\
+    &= (x-a)M \\
+    &\leq (b-a)M.
+  \end{align*}
+  Here $(b-a)M$ is constant.
+
+\item[(3)]
+  \emph{Show that $\{F_n\}$ is equicontinuous on $[a,b]$.}
+  Similar to (2).
+  Given any $\varepsilon > 0$,
+  there is a $\delta = \frac{\varepsilon}{M+1} > 0$ such that
+  \begin{align*}
+    \abs{F_n(x)-F_n(y)}
+    &= \abs{ \int_{a}^{x} f_n(t)dt - \int_{a}^{y} f_n(t)dt } \\
+    &= \abs{ \int_{y}^{x} f_n(t)dt } \\
+    &\leq \int_{\min\{x,y\}}^{\max\{x,y\}} \abs{f_n(t)}dt \\
+    &\leq \int_{\min\{x,y\}}^{\max\{x,y\}} M dt \\
+    &\leq |x-y|M \\
+    &\leq \frac{\varepsilon}{M+1} \cdot M \\
+    &< \varepsilon
+  \end{align*}
+  whenever $|x-y| < \delta$, $x \in [a,b]$ and $y \in [a,b]$.
+  Hence $\{F_n\}$ is equicontinuous on $[a,b]$.
+
+\item[(4)]
+  By Theorem 7.25(b),
+  $\{F_n\}$ contains a uniformly convergent sequence.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
