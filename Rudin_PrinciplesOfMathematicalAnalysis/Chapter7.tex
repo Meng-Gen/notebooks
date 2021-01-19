@@ -1785,7 +1785,7 @@ and
 \]
 Then $\sum \mathbf{f}_n$ converges uniformly on $E$ if $\sum M_n$ converges.} \\
 
-\emph{Proof (Theorem 7.10).}
+\emph{Proof (Brute-force).}
 If $\sum M_n$ converges, then for arbitrary $\varepsilon > 0$,
 \[
   \abs{\sum_{i=n}^{m}\mathbf{f}_i(x)} \leq \sum_{i=n}^{m}M_i \leq \varepsilon
@@ -1933,11 +1933,138 @@ $\Box$ \\
 
 
 \textbf{Theorem 7.16 over $\mathbb{R}^k$.}
+\emph{Let $\alpha$ be monotonically increasing on $[a,b]$.
+Suppose $\mathbf{f}_n \in \mathscr{R}(\alpha)$ on $[a,b]$,
+for $n = 1,2,3,\ldots$,
+and suppose $\mathbf{f}_n \to \mathbf{f}$ uniformly on $[a,b]$.
+Then $\mathbf{f} \in \mathscr{R}(\alpha)$ on $[a,b]$,
+and
+\[
+  \int_{a}^{b} \mathbf{f} d\alpha
+  = \lim_{n \to \infty} \int_{a}^{b} \mathbf{f}_n d\alpha.
+\]
+(The existence of the limit is part of the conclusion.)} \\
+
+\emph{Proof (Theorem 7.16).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
+    \:\:\:\:\:\:\:\:
+    \text{ and }
+    \:\:\:\:\:\:\:\:
+    \mathbf{f} = \left(f_{(1)}, \ldots, f_{(k)}\right)
+  \]
+  be the corresponding mappings of $[a,b]$ into $\mathbb{R}^k$.
+  Since $\mathbf{f}_n \to \mathbf{f}$ uniformly on $[a,b]$,
+  $f_{n(j)} \to f_{(j)}$ uniformly on $[a,b]$ for $j = 1,\ldots,k$
+  by noting that
+  \[
+    \abs{ f_{n(j)}(x) - f_{(j)}(x) }
+    \leq
+    \abs{ \mathbf{f}_n(x) - \mathbf{f}(x) }
+  \]
+  for all $j$.
+
+\item[(2)]
+  By Definition 6.23,
+  $\mathbf{f}_n \in \mathscr{R}(\alpha)$ on $[a,b]$
+  means that
+  $f_{n(j)} \in \mathscr{R}(\alpha)$ on $[a,b]$ for all $j$.
+  By Theorem 7.16, $f_{(j)} \in \mathscr{R}(\alpha)$ on $[a,b]$ and
+  \[
+    \int_{a}^{b} f_{(j)} d\alpha
+    = \lim_{n \to \infty} \int_{a}^{b} f_{n(j)} d\alpha
+  \]
+  for all $j$.
+
+\item[(3)]
+  By Definition 6.23, $\mathbf{f} \in \mathscr{R}(\alpha)$ on $[a,b]$, and
+  \begin{align*}
+    \int_{a}^{b} \mathbf{f} d\alpha
+    &= \left(
+        \int_{a}^{b} f_{(1)} d\alpha,
+        \ldots,
+        \int_{a}^{b} f_{(k)} d\alpha
+      \right) \\
+    &= \left(
+        \lim_{n \to \infty} \int_{a}^{b} f_{n(1)} d\alpha,
+        \ldots,
+        \lim_{n \to \infty} \int_{a}^{b} f_{n(k)} d\alpha
+      \right) \\
+    &= \lim_{n \to \infty} \left(
+        \int_{a}^{b} f_{n(1)} d\alpha,
+        \ldots,
+        \int_{a}^{b} f_{n(k)} d\alpha
+      \right) \\
+    &= \lim_{n \to \infty} \int_{a}^{b} \mathbf{f}_n d\alpha.
+  \end{align*}
+\end{enumerate}
 $\Box$ \\
 
 
 
 \textbf{Theorem 7.17 over $\mathbb{R}^k$.}
+\emph{Suppose $\{\mathbf{f}_n\}$ is a sequence of vector-valued functions,
+differentiable on $[a,b]$ and such that
+$\{\mathbf{f}_n(x_0)\}$ converges for some point $x_0 \in [a,b]$.
+If $\{\mathbf{f}'_n\}$ converges uniformly on $[a,b]$,
+then $\{\mathbf{f}_n\}$ converges uniformly on $[a,b]$ to a function $\mathbf{f}$,
+and}
+\[
+  \mathbf{f}'(x) = \lim_{n \to \infty} \mathbf{f}'_n(x)
+  \:\:\:\:\:\:\:\:
+  (a \leq x \leq b).
+\]
+\emph{Proof (Theorem 7.17).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
+  \]
+  be the corresponding mappings of $[a,b]$ into $\mathbb{R}^k$.
+
+\item[(2)]
+  $\{\mathbf{f}_n\}$ is a sequence of differentiable functions on $[a,b]$
+  if and only if
+  $\{f_{n(j)}\}$ is a sequence of differentiable functions on $[a,b]$ for all $j=1,\ldots,k$
+  (Remarks 5.16).
+
+\item[(3)]
+  $\{\mathbf{f}_n(x_0)\}$ converges for some point $x_0 \in [a,b]$
+  if and only if
+  $\{f_{n(j)}(x_0)\}$ converges for some point $x_0 \in [a,b]$ and all $j=1,\ldots,k$.
+
+\item[(4)]
+  $\{\mathbf{f}'_n\}$ converges uniformly on $[a,b]$
+  if and only if
+  $\{ f'_{n(j)} \}$ converges uniformly on $[a,b]$ for all $j=1,\ldots,k$.
+
+\item[(5)]
+  By Theorem 7.17, $\{f_{n(j)}\}$ converges uniformly on $[a,b]$, to a function $f_{(j)}$,
+  and
+  \[
+    f'_{(j)}(x) = \lim_{n \to \infty} f'_{n(j)}(x)
+    \:\:\:\:\:\:\:\:
+    (a \leq x \leq b).
+  \]
+  for all $j$.
+  Define
+  \[
+    \mathbf{f} = \left(f_{(1)}, \ldots, f_{(k)}\right).
+  \]
+  Hence $\{\mathbf{f}_n\}$ converges uniformly on $[a,b]$ to $\mathbf{f}$,
+  and
+  \begin{align*}
+    \mathbf{f}'(x)
+    &= \left( f'_{(1)}(x), \ldots, f'_{(k)}(x) \right) \\
+    &= \left( \lim_{n \to \infty} f'_{n(1)}(x), \ldots, \lim_{n \to \infty} f'_{n(k)}(x) \right) \\
+    &= \lim_{n \to \infty} \left( f'_{n(1)}(x), \ldots, f'_{n(k)}(x) \right) \\
+    &= \lim_{n \to \infty} \mathbf{f}'_n(x).
+  \end{align*}
+\end{enumerate}
 $\Box$ \\
 
 
@@ -1950,17 +2077,204 @@ if for every $\varepsilon > 0$ there is a $\delta > 0$ such that
 \[
   d_Y(f(y),f(x)) < \varepsilon
 \]
-whenever $d_X(x,y) < \delta$, $x \in E$, $y \in E$, and $f \in \mathscr{F}$.} \\
+whenever $d_X(x,y) < \delta$, $x \in E$, $y \in E$, and $f \in \mathscr{F}$.}
 $\Box$ \\
 
 
 
 \textbf{Theorem 7.24 over $\mathbb{R}^k$.}
+\emph{If $K$ is a compact metric space,
+if $\mathbf{f}_n \in \mathscr{C}(K)$ for $n=1,2,3,\ldots$,
+and if $\{\mathbf{f}_n\}$ converges uniformly on $K$,
+then $\{\mathbf{f}_n\}$ is equicontinuous on $K$.} \\
+
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+  Note that Definition 7.14 works for vector-valued functions.
+
+\item[(2)]
+  Similar to the proof of Theorem 7.24.
+  Let $\varepsilon > 0$ be given.
+  Since $\{\mathbf{f}_n\}$ converges uniformly, there is an integer $N$ such that
+  \[
+    \norm{ \mathbf{f}_n - \mathbf{f}_N } < \frac{\varepsilon}{3}
+    \:\:\:\:\:\:\:\:
+    (n > N).
+  \]
+
+\item[(3)]
+  Since continuous functions are uniformly continuous on compact set,
+  there is a $\delta > 0$ such that
+  \[
+    \abs{ \mathbf{f}_i(x) - \mathbf{f}_i(y) } < \frac{\varepsilon}{3}
+  \]
+  if $1 \leq i \leq N$ and $d(x,y) < \delta$.
+
+\item[(4)]
+  If $n > N$ and $d(x,y) < \delta$, it follows that
+  \begin{align*}
+    &\abs{\mathbf{f}_n(x)-\mathbf{f}_n(y)} \\
+    \leq& \abs{\mathbf{f}_n(x)-\mathbf{f}_N(x)}
+     + \abs{\mathbf{f}_N(x)-\mathbf{f}_N(y)}
+     + \abs{\mathbf{f}_N(y)-\mathbf{f}_n(y)} \\
+    \leq& \norm{ \mathbf{f}_n - \mathbf{f}_N }
+     + \abs{\mathbf{f}_N(x)-\mathbf{f}_N(y)}
+     + \norm{ \mathbf{f}_n - \mathbf{f}_N } \\
+    <& \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} \\
+    =& \varepsilon.
+  \end{align*}
+
+\item[(5)]
+By (3)(4), the result is established.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Theorem 7.24).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
+  \]
+  be the corresponding mappings of $K$ into $\mathbb{R}^k$.
+  Each $f_{n(j)} \in \mathscr{C}(K)$ too.
+
+\item[(2)]
+  $\{\mathbf{f}_n\}$ converges uniformly on $K$
+  if and only if
+  $\{ f_{n(j)} \}$ converges uniformly on $K$ for all $j=1,\ldots,k$.
+
+\item[(3)]
+  By Theorem 7.24,
+  $\{ f_{n(j)} \}$ is equicontinuous on $K$ for all $j=1,\ldots,k$.
+  Let $\varepsilon > 0$ be given.
+  There exist $\delta_j > 0$ such that
+  \[
+    \abs{f_{n(j)}(x) - f_{n(j)}(y)} < \frac{\varepsilon}{\sqrt{k}}
+  \]
+  whenever $d(x,y) < \delta_j$, $x \in K$ and $y \in K$.
+  Take $\delta = \min\{\delta_1, \ldots, \delta_k\} > 0$.
+  Hence
+  \begin{align*}
+    &\abs{\mathbf{f}_n(x) - \mathbf{f}(y)} \\
+    =& \left\{ \abs{f_{n(1)}(x) - f_{n(1)}(y)}^2
+      + \ldots
+      + \abs{f_{n(k)}(x) - f_{n(k)}(y)}^2 \right\}^{\frac{1}{2}} \\
+    <& \left\{ k \cdot \left(\frac{\varepsilon}{\sqrt{k}}\right)^2 \right\}^{\frac{1}{2}} \\
+    =& \varepsilon.
+  \end{align*}
+\end{enumerate}
 $\Box$ \\
 
 
 
 \textbf{Theorem 7.25 over $\mathbb{R}^k$.}
+\emph{If $K$ is compact, if $\mathbf{f}_n \in \mathscr{C}(K)$ for $n = 1,2,3,\ldots$,
+and if $\{\mathbf{f}_n\}$ is pointwise bounded and equicontinuous on $K$, then}
+\begin{enumerate}
+\item[(a)]
+  \emph{$\{\mathbf{f}_n\}$ is uniformly bounded on $K$.}
+
+\item[(b)]
+  \emph{$\{\mathbf{f}_n\}$ contains a uniformly convergent subsequence.} \\
+\end{enumerate}
+
+\emph{Proof of (a)(Theorem 7.25).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
+  \]
+  be the corresponding mappings of $K$ into $\mathbb{R}^k$.
+  Each $f_{n(j)} \in \mathscr{C}(K)$ too.
+
+\item[(2)]
+  $\{\mathbf{f}_n\}$ is pointwise bounded on $K$
+  if and only if
+  $\{ f_{n(j)} \}$ is pointwise bounded on $K$ for all $j=1,\ldots,k$.
+
+\item[(3)]
+  $\{\mathbf{f}_n\}$ is equicontinuous on $K$
+  if and only if
+  $\{ f_{n(j)} \}$ is equicontinuous on $K$ for all $j=1,\ldots,k$.
+
+\item[(4)]
+  By Theorem 7.25(a),
+  $\{ f_{n(j)} \}$ is uniformly bounded on $K$,
+  say $\abs{f_{n(j)}(x)} \leq M_j$ ($x \in K$), for all $j=1,\ldots,k$.
+  So
+  \begin{align*}
+    \abs{\mathbf{f}_n(x)}
+    &= \left\{ f_{n(1)}(x)^2 + \cdots + f_{n(k)}(x)^2 \right\}^{\frac{1}{2}} \\
+    &\leq \left\{ M_1^2 + \cdots + M_k^2 \right\}^{\frac{1}{2}}.
+  \end{align*}
+  Here $\left\{ M_1^2 + \cdots + M_k^2 \right\}^{\frac{1}{2}}$ is a constant
+  and thus $\{\mathbf{f}_n\}$ is uniformly bounded on $K$.
+  \end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b)(Theorem 7.25).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
+  \]
+  be the corresponding mappings of $K$ into $\mathbb{R}^k$.
+  Each $f_{n(j)} \in \mathscr{C}(K)$ too.
+
+\item[(2)]
+  $\{\mathbf{f}_n\}$ is pointwise bounded on $K$
+  if and only if
+  $\{ f_{n(j)} \}$ is pointwise bounded on $K$ for all $j=1,\ldots,k$.
+
+\item[(3)]
+  $\{\mathbf{f}_n\}$ is equicontinuous on $K$
+  if and only if
+  $\{ f_{n(j)} \}$ is equicontinuous on $K$ for all $j=1,\ldots,k$.
+
+\item[(4)]
+  By Theorem 7.25(b),
+  $\{ f_{n(1)} \}$ contains a uniformly convergent subsequence,
+  say
+  \[
+    \left\{ f_{n_{m(1)}(1)} \right\}.
+  \]
+
+\item[(5)]
+  Again,
+  $\{ f_{n_{m(1)}(2)} \}$ contains a uniformly convergent subsequence,
+  say
+  \[
+    \left\{ f_{n_{m(1),m(2)}(2)} \right\}.
+  \]
+  Note that
+  \[
+    \left\{ f_{n_{m(1),m(2)}(1)} \right\}
+  \]
+  is also a subsequence of $\left\{ f_{n_{m(1)}(1)} \right\}$ or $\{f_{n(1)}\}$
+  and thus is uniformly convergent.
+
+\item[(6)]
+  Continue this process again and again.
+  So we can get a uniformly convergent subsequence of $\{ f_{n(j)} \}$,
+  say
+  \[
+    \left\{ f_{n_{m(1),\ldots,m(k)}(j)} \right\},
+  \]
+  which is uniformly convergent for all $j=1,\ldots,k$.
+  Therefore,
+  $\{\mathbf{f}_n\}$ contains a uniformly convergent subsequence
+  \[
+    \left\{ \mathbf{f}_{n_{m(1),\ldots,m(k)}} \right\}.
+  \]
+  \end{enumerate}
 $\Box$ \\\\
 
 
