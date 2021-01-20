@@ -79,7 +79,7 @@ $\Box$ \\\\
 Prove that $f$ is strictly increasing in $(a,b)$, and let $g$ be its inverse function.
 Prove that $g$ is differentiable, and that
 \[
-  g'(f(x)) = \frac{1}{f'(x)} \:\:\:\:\:\:\:\: (a<x<b).
+  g'(f(x)) = \frac{1}{f'(x)} \qquad (a<x<b).
 \]}
 
 \emph{Proof.}
@@ -244,7 +244,7 @@ $\Box$ \\\\
 \end{enumerate}
 \emph{Put
 \[
-  g(x) = \frac{f(x)}{x} \:\:\:\:\:\:\:\: (x>0)
+  g(x) = \frac{f(x)}{x} \qquad (x>0)
 \]
 and prove that $g$ is monotonically increasing.} \\
 
@@ -254,11 +254,11 @@ and prove that $g$ is monotonically increasing.} \\
   It suffices to show that $g'(x) \geq 0$ for $x>0$ (Theorem 5.11(a)),
   that is, to show that
   \[
-    g'(x) = \frac{x f'(x) - f(x)}{x^2} \geq 0 \:\:\:\:\:\:\:\: (x>0),
+    g'(x) = \frac{x f'(x) - f(x)}{x^2} \geq 0 \qquad (x>0),
   \]
   or
   \[
-    x f'(x) - f(x) \geq 0 \:\:\:\:\:\:\:\: (x>0)
+    x f'(x) - f(x) \geq 0 \qquad (x>0)
   \]
   since $x^2 > 0$ for all nonzero $x$.
 
@@ -1707,9 +1707,9 @@ $\Box$ \\\\
 \textbf{Exercise 5.17.}
 \emph{Suppose $f$ is a real, three times differentiable function on $[-1,1]$, such that
 \[
-  f(-1)=0, \:\:\:\:\:\:\:\:
-  f(0)=0, \:\:\:\:\:\:\:\:
-  f(1)=1, \:\:\:\:\:\:\:\:
+  f(-1)=0, \qquad
+  f(0)=0, \qquad
+  f(1)=1, \qquad
   f'(0)=0.
 \]
 Prove that $f^{(3)}(x) \geq 3$ for some $x \in (-1,1)$.
@@ -2100,7 +2100,7 @@ which remains valid for vector-valued function.} \\
   Define
   \[
     \varphi(t) = \mathbf{z} \cdot \mathbf{f}(t)
-    \:\:\:\:\:\:\:\: (\alpha \leq t \leq \beta).
+    \qquad (\alpha \leq t \leq \beta).
   \]
   Then $\varphi(t)$ is a function of $[a,b]$ into $\mathbb{R}^1$, and
   \[
@@ -2387,8 +2387,8 @@ $\Box$ \\\\
 \]
 has three fixed points, say $\alpha$, $\beta$, $\gamma$, where
 \[
-  -2 < \alpha < -1, \:\:\:\:\:\:\:\:
-  0 < \beta < 1, \:\:\:\:\:\:\:\:
+  -2 < \alpha < -1, \qquad
+  0 < \beta < 1, \qquad
   1 < \gamma < 2.
 \]
 For arbitrarily chosen $x_1$, define $\{x_n\}$ by setting $x_{n+1} = f(x_n)$.}
@@ -2655,7 +2655,7 @@ $\Box$ \\\\
 functions that map $(0,\infty)$ to $(0,\infty)$.
 Fix some $\alpha > 1$, and put
 \[
-  f(x) = \frac{1}{2} \left( x + \frac{\alpha}{x} \right), \:\:\:\:\:\:\:\:
+  f(x) = \frac{1}{2} \left( x + \frac{\alpha}{x} \right), \qquad
   g(x) = \frac{\alpha + x}{1 + x}.
 \]
 Both $f$ and $g$ have $\sqrt{\alpha}$ as their fixed point in $(0,\infty)$.
@@ -3011,7 +3011,7 @@ and there is a real number $A$ such that $|f'(x)| \leq A|f(x)|$ on $[a,b]$.
 Prove that $f(x)=0$ for all $x \in [a,b]$.
 (Hint: Fix $x_0 \in [a,b]$, let
 \[
-  M_0 = \sup{|f(x)|}, \:\:\:\:\:\:\:\: M_1 = \sup{|f'(x)|}
+  M_0 = \sup{|f(x)|}, \qquad M_1 = \sup{|f'(x)|}
 \]
 for $a \leq x \leq x_0$.
 For any such $x$,
@@ -3032,7 +3032,7 @@ Since $f(a) = 0$, $f(x) = 0$ on $[a,b]$.
 Suppose that $A > 0$.
 Fix $x_0 \in [a,b]$, let
 \[
-  M_0 = \sup{|f(x)|}, \:\:\:\:\:\:\:\: M_1 = \sup{|f'(x)|}
+  M_0 = \sup{|f(x)|}, \qquad M_1 = \sup{|f'(x)|}
 \]
 for $a \leq x \leq x_0$.
 Since $|f'(x)| \leq A|f(x)|$ on $[a,b]$,
@@ -3112,12 +3112,12 @@ in addition. \\\\
 given by $a \leq x \leq b$, $\alpha \leq y \leq \beta$.
 A \textbf{solution} of the initial-value problem
 \[
-  y' = \phi(x,y), \:\:\:\:\:\:\:\: y(a) = c \:\:\:\:\:\:\:\: (\alpha \leq c \leq \beta)
+  y' = \phi(x,y), \qquad y(a) = c \qquad (\alpha \leq c \leq \beta)
 \]
 is, by definition, a differentiable function $f$ on $[a,b]$ such that
 $f(a) = c$, $\alpha \leq f(x) \leq \beta$, and
 \[
-  f'(x) = \phi(x,f(x)) \:\:\:\:\:\:\:\: (a \leq x \leq b)
+  f'(x) = \phi(x,f(x)) \qquad (a \leq x \leq b)
 \]
 Prove that such a problem has at most one solution if there is a constant $A$ such that
 \[
@@ -3127,7 +3127,7 @@ whenever $(x,y_1) \in R$ and $(x,y_2) \in R$.
 (Hint: Apply Exercise 26 to the difference of two solutions.)
 Note that this uniqueness theorem does not hold for the initial-value problem
 \[
-  y' = y^{\frac{1}{2}}, \:\:\:\:\:\:\:\: y(0) = 0,
+  y' = y^{\frac{1}{2}}, \qquad y(0) = 0,
 \]
 which has two solutions: $f(x) = 0$ and $f(x) = \frac{x^2}{4}$.
 Find all other solutions.} \\
@@ -3153,7 +3153,7 @@ By Exercise 5.26, $f(x) = 0$ on $[a,b]$, or $f_1(x) = f_2(x)$ on $[a,b]$.
 \item[(2)]
 \emph{The initial-value problem
 \[
-  y' = y^{\frac{1}{2}}, \:\:\:\:\:\:\:\: y(0) = 0,
+  y' = y^{\frac{1}{2}}, \qquad y(0) = 0,
 \]
 which has two solutions: $f(x) = 0$ and $f(x) = \frac{x^2}{4}$.
 Find all other solutions.} \\
@@ -3217,7 +3217,7 @@ Find all other solutions.} \\
   which is absurd.
   Hence $b_i = \infty$ and thus $E$ is of the form
   \[
-    E = (a,\infty) \:\:\:\:\:\:\:\: (a \geq 0).
+    E = (a,\infty) \qquad (a \geq 0).
   \]
   Therefore,
   \begin{equation*}
@@ -3241,13 +3241,13 @@ $\Box$ \\\\
 \emph{Formulate and prove an analogous uniqueness theorem for
 systems of differential equations of the form
 \[
-  y'_j = \phi_j(x, y_1, \ldots, y_k), \:\:\:\:\:\:\:\:
-  y_j(a) = c_j \:\:\:\:\:\:\:\:
+  y'_j = \phi_j(x, y_1, \ldots, y_k), \qquad
+  y_j(a) = c_j \qquad
   (j = 1, \ldots, k)
 \]
 Note that this can be rewritten in the form
 \[
-  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \:\:\:\:\:\:\:\:
+  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \qquad
   \mathbf{y}(a) = \mathbf{c}
 \]
 where $\mathbf{y} = (y_1, \ldots, y_k)$ ranges over a $k$-cell,
@@ -3261,13 +3261,13 @@ Use Exercise 5.26, for vector-valued functions.} \\
 \item[(1)]
 \emph{A \textbf{solution} of the initial-value problem
 \[
-  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \:\:\:\:\:\:\:\:
+  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \qquad
   \mathbf{y}(a) = \mathbf{c}
 \]
 is, by definition, a differentiable function $\mathbf{f}$ on $[a,b]$
 such that $\mathbf{f}(a) = \mathbf{c}$, and
 \[
-  \mathbf{f}'(x) = \bm{\phi}(x,\mathbf{f}(x)) \:\:\:\:\:\:\:\: (a \leq x \leq b).
+  \mathbf{f}'(x) = \bm{\phi}(x,\mathbf{f}(x)) \qquad (a \leq x \leq b).
 \]
 Then this problem has at most one solution if there is a constant $A$ such that
 \[
@@ -3307,7 +3307,7 @@ $\Box$ \\\\
 \textbf{Exercise 5.29.}
 \emph{Specialize Exercise 5.28 by considering the system
 \begin{align*}
-  y_j' &= y_{j+1} \:\:\:\:\:\:\:\: (j = 1, \ldots, k-1), \\
+  y_j' &= y_{j+1} \qquad (j = 1, \ldots, k-1), \\
   y_k' &= f(x) - \sum_{j=1}^{k}{g_j(x)y_j}
 \end{align*}
 where $f, g_1, \ldots, g_k$ are continuous real functions on $[a,b]$,
@@ -3317,9 +3317,9 @@ and derive a uniqueness theorem for solutions of the equation
 \]
   subject to initial conditions
 \[
-  y(a) = c_1, \:\:\:\:\:\:\:\:
-  y'(a) = c_1, \:\:\:\:\:\:\:\:
-  \ldots, \:\:\:\:\:\:\:\:
+  y(a) = c_1, \qquad
+  y'(a) = c_1, \qquad
+  \ldots, \qquad
   y^{(k-1)}(a) = c_k.
 \]}
 
@@ -3339,7 +3339,7 @@ Write
 \end{align*}
 So that
 \[
-  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \:\:\:\:\:\:\:\:
+  \mathbf{y}' = \bm{\phi}(x,\mathbf{y}), \qquad
   \mathbf{y}(a) = \mathbf{c}
 \]
 where $\mathbf{y}$ ranges over a $k$-cell $R$.
