@@ -2452,7 +2452,82 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.19.}
-PLACEHOLDER \\\\
+\emph{Let $K$ be a compact metric space,
+let $S$ be a subset of $\mathscr{C}(K)$.
+Prove that $S$ is compact (with respect to the metric defined in Section 7.14)
+if and only if
+$S$ is uniformly closed, pointwise bounded, and equicontinuous.
+(If $S$ is not equicontinuous,
+then $S$ contains a sequence which has no equicontinuous subsequence,
+hence has no subsequence that converges uniformly on $K$.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $S$ is compact
+  if $S$ is uniformly closed, pointwise bounded, and equicontinuous.}
+  \begin{enumerate}
+  \item[(a)]
+    By Exercise 2.26, it suffices to
+    \emph{show that every infinite subset $E$ of $S$ has a limit point.}
+    From such infinite subset $E$ we can take
+    $f_n \in E \subseteq S \subseteq \mathscr{C}(K)$ for $n = 1,2,3,\ldots$.
+    Consider the sequence $\{f_n\}$.
+
+  \item[(b)]
+    $\{f_n\}$ is uniformly (pointwise) bounded since $S$ is uniformly bounded.
+
+  \item[(c)]
+    $\{f_n\}$ is equicontinuous since $S$ is equicontinuous.
+
+  \item[(d)]
+    Since $K$ is compact, we can apply Theorem 7.25(b)(Arzel\`{a}-Ascoli theorem)
+    to (b)(c) to get that
+    $\{f_n\}$ contains a uniformly convergent subsequence
+    $\{f_{n_k}\}$ converging to a limit point $f$.
+    Since $f_{n_k} \in S$ and $S$ is uniformly closed, $f \in S$.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that $S$ is uniformly closed if $S$ is compact.}
+  $S$ is closed since $S$ is compact (Theorem 2.34).
+  By Definition 7.14, $S$ is also called uniformly closed.
+
+\item[(3)]
+  \emph{Show that $S$ is uniformly (pointwise) bounded if $S$ is compact.}
+  Let
+  \[
+    G_n = \{ f \in S : \norm{f} < n \}
+  \]
+  for $n = 1,2,3,\ldots$.
+  Note that
+  \[
+    \mathscr{C} = \{ G_n \}_{n=1,2,3,\ldots}
+  \]
+  is an open covering of $S$ since each $f \in S \subseteq \mathscr{C}(K)$ is bounded.
+  Since $S$ is compact, there exists a finite subcovering $\mathscr{C}'$ of $\mathscr{C}$,
+  say
+  \[
+    \mathscr{C}' = \left\{ G_{n_1}, \ldots, G_{n_k} \right\}.
+  \]
+  Let $N = \max\{n_1, \ldots, n_k\}$.
+  Then
+  \[
+    S \subseteq G_{n_1} \cup \cdots \cup G_{n_k} = G_N,
+  \]
+  or $S$ is uniformly (pointwise) bounded by $N$.
+
+\item[(4)]
+  \emph{Show that $S$ is equicontinuous if $S$ is compact.}
+  (Reductio ad absurdum)
+  If $S$ were not equicontinuous,
+  then $S$ contains a sequence $\{f_n\}$ which has no equicontinuous subsequence,
+  hence has no subsequence that converges uniformly on $K$.
+  However, $\{f_n\} \subseteq S$ and the compactness of $S$ imply that
+  some subsequence of $\{f_n\}$ converges to a point of $S$ (Theorem 3.6(a)),
+  which is absurd.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
