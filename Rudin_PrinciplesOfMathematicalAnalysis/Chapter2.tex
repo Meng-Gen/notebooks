@@ -1333,15 +1333,15 @@ Given any $x = p/q$ where $p, q \in \mathbb{Z}$, $q > 0$.
   Write $$x = x_0.x_1 x_2 \cdots.$$
   \item[(b)]
   Apply Euclidean algorithm to get
-  $$p = x_0 q + r_0 \:\:\:\: \text{with} \:\:\:\: 0 \leq r_0 < q.$$
+  $$p = x_0 q + r_0 \qquad \text{with} \qquad 0 \leq r_0 < q.$$
   $x_0$ is the integer part of $x = p/q$.
   Continue Euclidean algorithm to get $x_1$ by
-  $$10 r_0 = x_1 q + r_1 \:\:\:\: \text{with} \:\:\:\: 0 \leq r_1 < q.$$
+  $$10 r_0 = x_1 q + r_1 \qquad \text{with} \qquad 0 \leq r_1 < q.$$
   In general, for $n \geq 1$, $x_n$ is given by
-  $$10 r_{i-1} = x_i q + r_i \:\:\:\: \text{with} \:\:\:\: 0 \leq r_i < q.$$
+  $$10 r_{i-1} = x_i q + r_i \qquad \text{with} \qquad 0 \leq r_i < q.$$
   \item[(c)]
   The pigeonhole principle shows that there must be two equal remainders,
-  that is, $$r_n = r_{n+m} \:\:\:\: \text{with} \:\:\:\: m > 0.$$
+  that is, $$r_n = r_{n+m} \qquad \text{with} \qquad m > 0.$$
   By induction, $r_{n+k} = r_{n+m+k}$ for any $k \geq 0$.
   Thus $x_{n+k} = x_{n+m+k}$ holds for any $k > 0$, that is,
   $x$ has a decimal expansion
@@ -1619,7 +1619,7 @@ then $t \in A_0$ and $t$ is a limit point of $B_0$.
   Given any $\varepsilon > 0$,
   there is $s \in B_0$ such that
   $$|t-s| < \frac{\varepsilon}{|\mathbf{a} - \mathbf{b}|}
-  \:\:\:\: \text{with} \:\:\:\: s \neq t$$
+  \qquad \text{with} \qquad s \neq t$$
   since $t$ is a limit point of $B_0$.
   So by (1),
   $$|\mathbf{p}(t) - \mathbf{p}(s)| = |t-s||\mathbf{a} - \mathbf{b}|

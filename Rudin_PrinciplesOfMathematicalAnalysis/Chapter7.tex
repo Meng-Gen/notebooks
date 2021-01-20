@@ -2,6 +2,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
@@ -458,14 +459,93 @@ On what intervals does it fail to converge uniformly?
 Is $f$ continuous whenever the series converges?
 Is $f$ bounded?} \\
 
+\emph{Note.}
+In the sense of Definition 2.17, the interval is always closed.
+We might consider all closed intervals, open intervals, and half-open intervals
+together. \\
+
 \emph{Proof.}
-Clearly, $f(x)$ is defined on
-$\mathbb{R} - \{ -1, -\frac{1}{4}, -\frac{1}{9}, \ldots \}$.
 \begin{enumerate}
-  \item[(1)]
+\item[(1)]
+  $f(x)$ is well-defined on
+  \[
+    E = \mathbb{R} - \left\{ -\frac{1}{m^2} : m = 1,2,3,\ldots \right\}.
+  \]
+
+\item[(2)]
+  \emph{Show that $f(x)$ converges absolutely if and only if $x \in E - \{0\}$.}
+  \begin{enumerate}
+    \item[(a)]
+    The case $x > 0$.
+    Consider
+    \[
+      \sum \abs{\frac{1}{1+n^2x}}
+      = \sum \frac{1}{1+n^2x}
+      = x^{-1} \sum \frac{1}{n^2 + x^{-1}}.
+    \]
+    Since $\frac{1}{n^2 + x^{-1}} < \frac{1}{n^2}$ and $\sum \frac{1}{n^2} < \infty$,
+    $\sum \abs{\frac{1}{1+n^2x}}$ converges
+    (Theorem 3.25(a)(the comparison test) and Theorem 3.28).
+
+    \item[(b)]
+    The case $x = 0$.
+    $f(0) = \sum 1 = \infty$ diverges.
+
+    \item[(c)]
+    The case $x < 0$ and $x \neq -\frac{1}{m^2}$ for any integer $m > 0$.
+    There is an integer $N > 0$ such that
+    \[
+      \frac{1}{n^2 + x^{-1}} > 0
+    \]
+    whenever $n \geq N$.
+    (We might take $N > (-x^{-1})^{\frac{1}{2}}$.)
+    Now consider
+    \begin{align*}
+      \sum_{n=1}^{\infty} \abs{\frac{1}{1+n^2x}}
+      &= \sum_{n=1}^{N-1} \abs{\frac{1}{1+n^2x}}
+        + \sum_{n=N}^{\infty} \abs{\frac{1}{1+n^2x}} \\
+      &= \sum_{n=1}^{N-1} \abs{\frac{1}{1+n^2x}}
+        + \abs{x^{-1}} \sum_{n=N}^{\infty} \frac{1}{n^2 + x^{-1}}.
+    \end{align*}
+    Here $\sum_{n=1}^{N-1} \abs{\frac{1}{1+n^2x}}$ is a fixed number
+    and $\sum_{n=N}^{\infty} \abs{\frac{1}{1+n^2x}}$ converges
+    (as in (a)).
+    Hence $\sum_{n=1}^{\infty} \abs{\frac{1}{1+n^2x}}$ converges.
+  \end{enumerate}
+
+\item[(3)]
+  To find on what intervals, say $I$, $f(x)$ converges uniformly, by (1)(2)
+  there are only three possible cases:
+  \begin{enumerate}
+    \item[(a)]
+      $I \subseteq (0,\infty)$.
+      \begin{enumerate}
+        \item[(i)]
+          \emph{Show that $f$ does not converge uniformly on $(0,b)$ if $b > 0$.}
+
+        \item[(ii)]
+          \emph{Show that $f$ converges uniformly on $[a,\infty)$ if $a > 0$.}
+      \end{enumerate}
+
+    \item[(b)]
+      $I \subseteq \left(-\frac{1}{m^2}, -\frac{1}{(m+1)^2}\right)$
+      for some integer $m > 0$.
+      \emph{Show that $f$ converges uniformly on
+      $\left(-\frac{1}{m^2}, -\frac{1}{(m+1)^2}\right)$ for all integer $m > 0$.}
+
+    \item[(c)]
+      $I \subseteq (-\infty,-1)$.
+      \emph{Show that $f$ converges uniformly on $(-\infty,-1)$.}
+
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Show that $f$ is continuous whenever the series converges.}
+
+\item[(5)]
+  \emph{Show that $f$ is unbounded.}
 \end{enumerate}
 
-PLACEHOLDER \\\\
 
 
 
@@ -793,7 +873,7 @@ and if $\sum|c_n|$ converges,
 prove that the series
 \[
   f(x) = \sum_{n=1}^{\infty} c_n I(x-x_n)
-  \:\:\:\:\:\:\:\:
+  \qquad
   (a \leq x \leq b)
 \]
 converges uniformly,
@@ -805,7 +885,7 @@ and that $f$ is continuous for every $x \neq x_n$.} \\
 Define $f_n(x) = c_n I(x-x_n)$ on $(a,b)$. So
 \[
   |f_n(x)| = |c_n| |I(x-x_n)| \leq |c_n|
-  \:\:\:\:\:\:\:\:
+  \qquad
   (x \in (a,b), n = 1,2,3,\ldots).
 \]
 Since $\sum|c_n|$ converges, $f = \sum f_n$ converges uniformly (Theorem 7.10).
@@ -911,7 +991,7 @@ $\Box$ \\\\
 consider the function
 \[
   f(x) = \sum_{n=1}^{\infty} \frac{(nx)}{n^2}
-  \:\:\:\:\:\:\:\:
+  \qquad
   (x \in \mathbb{R}).
 \]
 Find all discontinuities of $f$, and show that they form a countable dense set.
@@ -1840,7 +1920,7 @@ Let $\{f_n\}$ be a sequence of functions of $f_n: E \to Y$.
 Suppose
 \[
   \lim_{n \to \infty}f_n(x) = f(x)
-  \:\:\:\:\:\:\:\:
+  \qquad
   (x \in E).
 \]
 Put
@@ -1887,7 +1967,7 @@ $\{\mathbf{f}_n\}$ is a sequence of functions of $\mathbf{f}_n: E \to \mathbb{R}
 and
 \[
   |\mathbf{f}_n(x)| \leq M_n
-  \:\:\:\:\:\:\:\:
+  \qquad
   (x \in E, n = 1,2,3,\ldots).
 \]
 Then $\sum \mathbf{f}_n$ converges uniformly on $E$ if $\sum M_n$ converges.} \\
@@ -1896,7 +1976,7 @@ Then $\sum \mathbf{f}_n$ converges uniformly on $E$ if $\sum M_n$ converges.} \\
 If $\sum M_n$ converges, then for arbitrary $\varepsilon > 0$,
 \[
   \abs{\sum_{i=n}^{m}\mathbf{f}_i(x)} \leq \sum_{i=n}^{m}M_i \leq \varepsilon
-  \:\:\:\:\:\:\:\:
+  \qquad
   (x \in E),
 \]
 provided $m$ and $n$ are large enough.
@@ -1914,7 +1994,7 @@ converges uniformly on $E$.
 Let $x$ be a limit point of $E$, and suppose that
 \[
   \lim_{t \to x} f_n(t) = A_n
-  \:\:\:\:\:\:\:\:
+  \qquad
   (n=1,2,3,\ldots).
 \]
 Then $\{A_n\}$ converges, and
@@ -2058,9 +2138,9 @@ and
   Write
   \[
     \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
-    \:\:\:\:\:\:\:\:
+    \qquad
     \text{ and }
-    \:\:\:\:\:\:\:\:
+    \qquad
     \mathbf{f} = \left(f_{(1)}, \ldots, f_{(k)}\right)
   \]
   be the corresponding mappings of $[a,b]$ into $\mathbb{R}^k$.
@@ -2121,7 +2201,7 @@ then $\{\mathbf{f}_n\}$ converges uniformly on $[a,b]$ to a function $\mathbf{f}
 and}
 \[
   \mathbf{f}'(x) = \lim_{n \to \infty} \mathbf{f}'_n(x)
-  \:\:\:\:\:\:\:\:
+  \qquad
   (a \leq x \leq b).
 \]
 \emph{Proof (Theorem 7.17).}
@@ -2154,7 +2234,7 @@ and}
   and
   \[
     f'_{(j)}(x) = \lim_{n \to \infty} f'_{n(j)}(x)
-    \:\:\:\:\:\:\:\:
+    \qquad
     (a \leq x \leq b).
   \]
   for all $j$.
@@ -2206,7 +2286,7 @@ then $\{\mathbf{f}_n\}$ is equicontinuous on $K$.} \\
   Since $\{\mathbf{f}_n\}$ converges uniformly, there is an integer $N$ such that
   \[
     \norm{ \mathbf{f}_n - \mathbf{f}_N } < \frac{\varepsilon}{3}
-    \:\:\:\:\:\:\:\:
+    \qquad
     (n > N).
   \]
 
@@ -2395,7 +2475,7 @@ $\Box$ \\\\
 Riemann-integrable on $[a,b]$, and put
 \[
   F_n(x) = \int_{a}^{x} f_n(t)dt
-  \:\:\:\:\:\:\:\:
+  \qquad
   (a \leq x \leq b).
 \]
 Prove that there exists a subsequence $\{F_{n_k}\}$ which
@@ -2539,7 +2619,7 @@ $\Box$ \\\\
 \emph{If $f$ is continuous on $[0,1]$ and if
 \[
   \int_{0}^{1} f(x) x^n dx = 0
-  \:\:\:\:\:\:\:\:
+  \qquad
   (n=0,1,2,\ldots),
 \]
 prove that $f(x) = 0$ on $[0,1]$.
@@ -2598,7 +2678,7 @@ $\Box$ \\\\
 and let $\mathscr{A}$ be the algebra of all functions of the form
 \[
   f(e^{i\theta}) = \sum_{n=0}^{N} c_n e^{in\theta}.
-  \:\:\:\:\:\:\:\:
+  \qquad
   (\theta \text{ real}).
 \]
 Then $\mathscr{A}$ separates points on $K$ and
@@ -2884,7 +2964,7 @@ Fix a point $a \in X$.
 Assign to each $p \in X$ the function $f_p$ defined by
 \[
   f_p(x) = d(x,p) - d(x,a)
-  \:\:\:\:\:\:\:\:
+  \qquad
   (x \in X).
 \]
 Prove that $\abs{ f_p(x) } \leq d(a,p)$ for all $x \in X$,
@@ -2977,7 +3057,66 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.25.}
-PLACEHOLDER
+\emph{Suppose $\phi$ is a continuous bounded real function in the strip defined by
+$0 \leq x \leq 1$, $-\infty < y < \infty$.
+Prove that the initial-value problem
+\[
+  y' = \phi(x, y), \qquad y(0) = c
+\]
+has a solution.
+(Note that the hypothesis of the existence theorem are less stringent than
+those of the corresponding uniqueness theorem; see Exercise 5.27.)}
+\emph{(Hint: Fix $n$.
+For $i = 0,\ldots,n$, put $x_i = \frac{i}{n}$.
+Let $f_n$ be a continuous function on $[0, 1]$ such that $f_n(0) = c$,
+\[
+  f'_n(t) = \phi(x_i, f_n(x_i))
+  \qquad \text{if } x_i < t < x_{i+1}
+\]
+and put
+\[
+  \Delta_n(t) = f_n'(t) - \phi(t, f_n(t)),
+\]
+except at the points $x_i$, where $\Delta_n(t) = 0$.
+Then
+\[
+  f_n(x) = c + \int_{0}^{x} [\phi(t, f_n(t)) + \Delta_n(t)] dt.
+\]
+Choose $M < \infty$ so that $|\phi| \leq M$.
+Verify the following assertions.}
+\begin{enumerate}
+  \item[(a)]
+  \emph{$|f_n'| \leq M$, $|\Delta_n| \leq 2M$, $\Delta \in \mathscr{R}$,
+  and $|f_n| \leq |c| + M = M_1$, say, on $[0, 1]$, for all $n$.}
+
+  \item[(b)]
+  \emph{$\{f_n\}$ is equicontinuous on $[0, 1]$, since $|f_n'| \leq M$.}
+
+  \item[(c)]
+  \emph{Some $\{f_{n_k}\}$ converges to some $f$, uniformly on $[0, 1]$.}
+
+  \item[(d)]
+  \emph{Since $\phi$ is uniformly continuous on the rectangle $0 \leq x \leq 1$, $|y| \leq M_1$,
+  \[
+    \phi(t, f_{n_k}(t)) \to \phi(t, f(t))
+  \]
+  uniformly on $[0, 1]$.}
+
+  \item[(e)]
+  \emph{$\Delta_n(t) \to 0$ uniformly on $[0, 1]$,
+  since
+  \[
+    \Delta_n(t) = \phi(x_i, f_n(x_i)) - \phi(t, f_n(t))
+  \]
+  in $(x_i, x_{i+1})$.}
+
+  \item[(f)]
+  \emph{Hence}
+  \[
+    f(x) = c + \int_{0}^{x} \phi(t, f(t)) dt.
+  \]
+\end{enumerate}
+\emph{This $f$ is a solution of the given problem.)} \\
 
 
 
@@ -2986,7 +3125,15 @@ PLACEHOLDER
 
 
 \textbf{Exercise 7.26.}
-PLACEHOLDER
+\emph{Prove an analogous existence theorem for the initial-value problem
+\[
+  \mathbf{y}' = \bm{\Phi}(x, \mathbf{y}), \qquad \mathbf{y}(0) = \mathbf{c},
+\]
+where now $\mathbf{c} \in \mathbb{R}^k$, $\mathbf{y} \in \mathbb{R}^k$,
+and $\bm{\Phi}$ is a continuous bounded mapping of the part of $\mathbb{R}^{k+1}$
+defined by $0 \leq x \leq 1$, $\mathbf{y} \in \mathbb{R}^k$ into $\mathbb{R}^k$.
+(Compare Exercise 5.28.)
+(Hint: Use the vector-valued version of Theorem 7.25.)} \\
 
 
 
