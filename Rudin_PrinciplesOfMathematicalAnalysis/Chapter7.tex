@@ -2518,8 +2518,88 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 7.21.}
+\emph{Let $K$ be the unit circle in the complex plane
+(i.e., the set of all $z$ with $|z|=1$),
+and let $\mathscr{A}$ be the algebra of all functions of the form
+\[
+  f(e^{i\theta}) = \sum_{n=0}^{N} c_n e^{in\theta}.
+  \:\:\:\:\:\:\:\:
+  (\theta \text{ real}).
+\]
+Then $\mathscr{A}$ separates points on $K$ and
+$\mathscr{A}$ vanishes at no point of $K$.
+But nevertheless there are continuous functions on $K$ which
+are not in the uniform closure of $\mathscr{A}$.
+(Hint: For every $f \in \mathscr{A}$
+\[
+  \int_{0}^{2\pi} f(e^{i\theta})e^{i\theta}d\theta = 0,
+\]
+and this is also true for every $f$ in the clousure of $\mathscr{A}$.)} \\
 
-PLACEHOLDER \\\\
+\emph{Note.}
+$\mathscr{A}$ is not a self-adjoint algebra of complex continuous functions
+on $K$, and thus Theorem 7.33 does not hold. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathscr{A}$ separates points on $K$ and
+  $\mathscr{A}$ vanishes at no point of $K$.}
+  Take $f \in \mathscr{A}$ defined by
+  \[
+    f(e^{i\theta}) = e^{i\theta}.
+  \]
+  Since $f(z) = z$ for every $z \in K$,
+  $f(z_1) \neq f(z_2)$ for every pair of distinct points $z_1, z_2 \in K$.
+  Hence $\mathscr{A}$ separates points on $K$.
+  Besides, $f(z) \neq 0$ for all $z \in K = \{ z \in \mathbb{C} : |z|=1 \}$.
+  Hence $\mathscr{A}$ vanishes at no point of $K$.
+
+\item[(2)]
+  \emph{Show that for every $f \in \mathscr{A}$}
+  \[
+    \int_{0}^{2\pi} f(e^{i\theta})e^{i\theta}d\theta = 0.
+  \]
+  Similar to Definition 8.9. Given $f \in \mathscr{A}$.
+  \begin{align*}
+    \int_{0}^{2\pi} f(e^{i\theta})e^{i\theta}d\theta
+    &= \int_{0}^{2\pi} \sum_{n=0}^{N} c_n e^{in\theta}e^{i\theta}d\theta \\
+    &= \sum_{n=0}^{N} c_n \int_{0}^{2\pi} e^{i(n+1)\theta} d\theta \\
+    &= \sum_{n=0}^{N} c_n \cdot 0 \\
+    &= 0.
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that for every $f$ in the clousure of $\mathscr{A}$}
+  \[
+    \int_{0}^{2\pi} f(e^{i\theta})e^{i\theta}d\theta = 0.
+  \]
+  Given $f$ in the clousure of $\mathscr{A}$.
+  Then $f$ is the limit function of some uniformly convergent sequences $\{f_n\}$
+  of members of $\mathscr{A}$.
+  Note that $e^{i\theta}$ is bounded on $K$
+  and thus $f_n(e^{i\theta})e^{i\theta} \to f(e^{i\theta})e^{i\theta}$ uniformly (Theorem 7.9).
+  So Theorem 7.16 implies that
+  \[
+    \int_{0}^{2\pi} f(e^{i\theta})e^{i\theta}d\theta
+    = \lim_{n \to \infty} \int_{0}^{2\pi} f_n(e^{i\theta})e^{i\theta}d\theta
+    = \lim_{n \to \infty} 0
+    = 0.
+  \]
+
+\item[(4)]
+  Consider $g(e^{i\theta}) = e^{-i\theta}$ on $K$, or $g(z) = \frac{1}{z}$.
+  By definition, $g$ is continuous on $K$ but
+  \[
+    \int_{0}^{2\pi} g(e^{i\theta})e^{i\theta}d\theta
+    = \int_{0}^{2\pi} d\theta
+    = 2\pi
+    \neq 0.
+  \]
+  Hence there are continuous functions on $K$ which
+  are not in the uniform closure of $\mathscr{A}$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
