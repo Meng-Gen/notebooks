@@ -552,7 +552,7 @@ together. \\
             \leq \frac{1}{1+n^2a}
             < \frac{1}{n^2a}.
           \]
-          Note that $\sum \frac{1}{n^2a} = a \sum \frac{1}{n^2}$ converges,
+          Since $\sum \frac{1}{n^2a} = a \sum \frac{1}{n^2}$ converges,
           $f$ converges uniformly (Theorem 7.10).
       \end{enumerate}
 
@@ -561,10 +561,37 @@ together. \\
       for some integer $m > 0$.
       \emph{Show that $f$ converges uniformly on
       $\left(-\frac{1}{m^2}, -\frac{1}{(m+1)^2}\right)$ for all integer $m > 0$.}
+      For $n$th term $\frac{1}{1+n^2x}$ of $f(x)$ on $(-\infty,-1)$, we have
+      \[
+        \abs{\frac{1}{1+n^2x}}
+        \leq \frac{(m+1)^2}{n^2 - (m+1)^2}
+        \leq \frac{(m+1)^2}{(n-(m+1))^2}
+      \]
+      if $n > m+1$.
+      Since
+      $\sum_{n=m+2}^{\infty} \frac{(m+1)^2}{(n-(m+1))^2} = \frac{(m+1)^2\pi^2}{6}$
+      converges,
+      \[
+        f(x) = \sum_{n=1}^{m+1} \frac{1}{1+n^2x} + \sum_{n=m+2}^{\infty} \frac{1}{1+n^2x}
+      \]
+      converges uniformly (Theorem 7.10).
 
     \item[(c)]
       $I \subseteq (-\infty,-1)$.
       \emph{Show that $f$ converges uniformly on $(-\infty,-1)$.}
+      Similar to (b).
+      For $n$th term $\frac{1}{1+n^2x}$ of $f(x)$ on $(-\infty,-1)$, we have
+      \[
+        \abs{\frac{1}{1+n^2x}}
+        \leq \frac{1}{n^2 - 1}
+        \leq \frac{1}{(n-1)^2}
+      \]
+      if $n > 1$.
+      Since $\sum_{n=2}^{\infty} \frac{1}{(n-1)^2} = \frac{\pi^2}{6}$ converges,
+      \[
+        f(x) = \frac{1}{1+x} + \sum_{n=2}^{\infty} \frac{1}{1+n^2x}
+      \]
+      converges uniformly (Theorem 7.10).
 
   \end{enumerate}
 
