@@ -514,6 +514,19 @@ together. \\
   \end{enumerate}
 
 \item[(3)]
+  \emph{Show that $f$ is unbounded on $(0,b) \subseteq E$ where $b > 0$.}
+  For any integer $N > 0$,
+  \begin{align*}
+    f\left(\frac{1}{N^2}\right)
+    &= \sum_{n=1}^{\infty} \frac{N^2}{n^2 + N^2} \\
+    &> \sum_{n=1}^{N} \frac{N^2}{n^2 + N^2} \\
+    &\geq \sum_{n=1}^{N} \frac{N^2}{N^2 + N^2} \\
+    &= \frac{N}{2}.
+  \end{align*}
+  So $\frac{1}{N^2} \in (0,b)$ as $N \to \infty$ and
+  $f\left(\frac{1}{N^2}\right) \to \infty$ as $N \to \infty$.
+
+\item[(4)]
   To find on what intervals, say $I$, $f(x)$ converges uniformly, by (1)(2)
   there are only three possible cases:
   \begin{enumerate}
@@ -522,6 +535,14 @@ together. \\
       \begin{enumerate}
         \item[(i)]
           \emph{Show that $f$ does not converge uniformly on $(0,b)$ if $b > 0$.}
+          Consider the $N$th partial sum
+          \[
+            s_N(x) = \sum_{n=1}^{N} \frac{1}{1+n^2x}
+          \]
+          on $(0,b)$.
+          $s_N(x)$ is bounded by $N$ since each term $\frac{1}{1+n^2x}$ is less than $1$.
+          Since $f$ is unbounded on $(0,b)$ (by (3)),
+          $f$ does not converge uniformly on $(0,b)$ (Exercise 7.1).
 
         \item[(ii)]
           \emph{Show that $f$ converges uniformly on $[a,\infty)$ if $a > 0$.}
@@ -542,10 +563,8 @@ together. \\
 \item[(4)]
   \emph{Show that $f$ is continuous whenever the series converges.}
 
-\item[(5)]
-  \emph{Show that $f$ is unbounded.}
 \end{enumerate}
-
+$\Box$ \\\\
 
 
 
