@@ -81,6 +81,125 @@ Any subspace of $X$ that contains $S$ must also contain $\mathrm{span}(S)$. \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 9.2.}
+\emph{Prove (as asserted in Section 9.6) that $BA$ is linear
+if $A$ and $B$ are linear transformations.
+Prove also that $A^{-1}$ is linear and invertible if $A$ is invertible.} \\
+
+\emph{Proof.}
+Use the notation in Definitions 9.6.
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $BA$ is linear if $A$ and $B$ are linear transformations.}
+  Let $X, Y, Z$ be vector spaces, $A \in L(X,Y)$ and $B \in L(Y,Z)$.
+  \begin{enumerate}
+  \item[(a)]
+    Given any $\mathbf{x}_1, \mathbf{x}_2 \in X$.
+    \begin{align*}
+      (BA)(\mathbf{x}_1+\mathbf{x}_2)
+      &= B(A(\mathbf{x}_1+\mathbf{x}_2)) \\
+      &= B(A\mathbf{x}_1+A\mathbf{x}_2)
+        & (\text{$A$ is a linear transformation}) \\
+      &= B(A\mathbf{x}_1) + B(A\mathbf{x}_2)
+        & (\text{$B$ is a linear transformation}) \\
+      &= (BA)\mathbf{x}_1 + (BA)\mathbf{x}_2.
+    \end{align*}
+
+  \item[(b)]
+    For any $\mathbf{x} \in X$ and scalar $c$,
+    \begin{align*}
+    (BA)(c\mathbf{x})
+    &= B(A(c\mathbf{x})) \\
+    &= B(cA\mathbf{x})
+      & (\text{$A$ is a linear transformation}) \\
+    &= cB(A\mathbf{x})
+      & (\text{$B$ is a linear transformation}) \\
+    &= c(BA)\mathbf{x}.
+    \end{align*}
+  \end{enumerate}
+  By (a)(b), $BA \in L(X,Z)$.
+
+\item[(2)]
+  \emph{Show that $A^{-1}$ is linear if $A$ is invertible.}
+  \begin{enumerate}
+  \item[(a)]
+    Given any $\mathbf{y}_1, \mathbf{y}_2 \in X$.
+    Since $A$ is surjective,
+    there exist $\mathbf{x}_1, \mathbf{x}_2 \in X$ such that
+    \begin{align*}
+      \mathbf{y}_1 &= A\mathbf{x}_1 \\
+      \mathbf{y}_2 &= A\mathbf{x}_2.
+    \end{align*}
+    So
+    \begin{align*}
+      A^{-1}\mathbf{y}_1 &= A^{-1}(A\mathbf{x}_1) = \mathbf{x}_1 \\
+      A^{-1}\mathbf{y}_2 &= A^{-1}(A\mathbf{x}_2) = \mathbf{x}_2
+    \end{align*}
+    (by Definitions 9.4).
+    Hence
+    \begin{align*}
+      A^{-1}(\mathbf{y}_1+\mathbf{y}_2)
+      &= A^{-1}(A\mathbf{x}_1+A\mathbf{x}_2) \\
+      &= A^{-1}(A(\mathbf{x}_1+\mathbf{x}_2))
+        & (\text{$A$ is a linear transformation}) \\
+      &= \mathbf{x}_1+\mathbf{x}_2
+        & (\text{Definitions 9.4}) \\
+      &= A^{-1}\mathbf{y}_1+A^{-1}\mathbf{y}_2.
+    \end{align*}
+
+  \item[(b)]
+    For any $\mathbf{y} \in X$ and scalar $c$,
+    there is a corresponding $\mathbf{x} \in X$ such that $\mathbf{y} = A\mathbf{x}$
+    since $A$ is surjective. So $A^{-1}\mathbf{y} = \mathbf{x}$ by Definition 9.4.
+    Hence
+    \begin{align*}
+      A^{-1}(c\mathbf{y})
+      &= A^{-1}(cA\mathbf{x}) \\
+      &= A^{-1}(A(c\mathbf{x}))
+        & (\text{$A$ is a linear transformation}) \\
+      &= c\mathbf{x}
+        & (\text{Definitions 9.4}) \\
+      &= cA^{-1}\mathbf{y}.
+    \end{align*}
+  \end{enumerate}
+  By (a)(b), $A^{-1} \in L(X)$.
+
+\item[(3)]
+  \emph{Show that $A^{-1}$ is invertible if $A$ is invertible.}
+  It suffices to show that $A^{-1}$ is injective and surjective.
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $A^{-1}$ is injective.}
+    Given any $\mathbf{y}_1, \mathbf{y}_2 \in X$.
+    Since $A$ is surjective,
+    there exist $\mathbf{x}_1, \mathbf{x}_2 \in X$ such that
+    \begin{align*}
+      \mathbf{y}_1 &= A\mathbf{x}_1 \\
+      \mathbf{y}_2 &= A\mathbf{x}_2.
+    \end{align*}
+    Suppose $A^{-1}\mathbf{y}_1 = A^{-1}\mathbf{y}_2$.
+    So $A^{-1}(A\mathbf{x}_1) = A^{-1}(A\mathbf{x}_2)$,
+    or $\mathbf{x}_1 = \mathbf{x}_2$,
+    or $\mathbf{y}_1 = A\mathbf{x}_1 = A\mathbf{x}_2 = \mathbf{y}_2$.
+
+  \item[(b)]
+    \emph{Show that $A^{-1}$ is surjective.}
+    For any $\mathbf{x} \in X$, there exists $A\mathbf{x} \in X$ such that
+    $A^{-1}(A\mathbf{x}) = \mathbf{x}$ by Definitions 9.4.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
