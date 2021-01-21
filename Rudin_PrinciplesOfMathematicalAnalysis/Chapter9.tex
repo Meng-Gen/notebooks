@@ -2,8 +2,11 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -15,6 +18,8 @@
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
 \begin{document}
+
+
 
 \textbf{\Large Chapter 9: Functions of Several Variables} \\\\
 
@@ -31,14 +36,47 @@
 
 
 \textbf{Exercise 9.1.}
-\emph{...} \\
+\emph{If $S$ is a nonempty subset of a vector space $X$,
+prove (as asserted in Section 9.1) that the span of $S$ is a vector space.} \\
+
+Denote the span of $S$ by $\mathrm{span}(S)$. \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-...
+  Since $S \neq \varnothing$, there is $\mathbf{z} \in S$.
+  So $1\mathbf{z} = \mathbf{z} \in \mathrm{span}(S) \neq \varnothing$.
+  (In fact, $\mathrm{span}(S) \supseteq S$.)
+
+\item[(2)]
+  If $\mathbf{x}, \mathbf{y} \in \mathrm{span}(S)$,
+  then there exist elements
+  $\mathbf{x}_1, \ldots, \mathbf{x}_m$, $\mathbf{y}_1, \ldots, \mathbf{y}_n \in S$
+  and scalars $a_1, \ldots, a_m$, $b_1, \ldots, b_n$ such that
+  \begin{align*}
+    \mathbf{x} &= a_1 \mathbf{x}_1 + \cdots + a_m \mathbf{x}_m, \\
+    \mathbf{y} &= b_1 \mathbf{y}_1 + \cdots + b_n \mathbf{y}_n.
+  \end{align*}
+  Then
+  \[
+    \mathbf{x}+\mathbf{y}
+    = a_1 \mathbf{x}_1 + \cdots + a_m \mathbf{x}_m
+      + b_1 \mathbf{y}_1 + \cdots + b_n \mathbf{y}_n
+  \]
+  is a linear combination of the elements of $S$.
+  For any scalar $c$,
+  \[
+    c\mathbf{x} = (ca_1) \mathbf{x}_1 + \cdots + (ca_m) \mathbf{x}_m
+  \]
+  is again linear combination of the elements of $S$.
+
+\item[(3)]
+  By (1)(2), $\mathrm{span}(S)$ is a vector space.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.}
+Any subspace of $X$ that contains $S$ must also contain $\mathrm{span}(S)$. \\\\
 
 
 
