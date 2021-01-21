@@ -3176,6 +3176,230 @@ Verify the following assertions.}
 \end{enumerate}
 \emph{This $f$ is a solution of the given problem.)} \\
 
+Same as the hint. \\
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\abs{f_n'} \leq M$.}
+  $\abs{f_n'(t)} = \abs{\phi(x_i, f_n(x_i))} \leq M$ if $x_i < t < x_{i+1}$
+  by assumption.
+  (Here $f_n'(x_i)$ is undefined, and that is why we define $\Delta_n(t)$ on $[0,1]$.)
+
+\item[(2)]
+  \emph{Show that $\abs{\Delta_n(t)} \leq 2M$.}
+  \begin{enumerate}
+  \item[(a)]
+    If $t = x_i$ for some $i$,
+    then $\abs{\Delta_n(t)} = 0 \leq 2M$.
+
+  \item[(b)]
+    If $x_i < t < x_{i+1}$ for some $i$,
+    then
+    \[
+      \abs{\Delta_n(t)} \leq \abs{f_n'(t)} + \abs{\phi(t, f_n(t))} \leq 2M.
+    \]
+  \end{enumerate}
+  In any case, $\abs{\Delta_n(t)} \leq 2M$ on $[0,1]$.
+
+\item[(3)]
+  \emph{Show that $\Delta_n(t) \in \mathscr{R}$.}
+  By the construction of $\Delta_n(t)$,
+  Since $\phi$ is continuous,
+  by construction $\Delta_n(t)$ is continuous on $[0,1]$
+  except finitely many points $x_0, \ldots, x_n$.
+  By (2), $\Delta_n(t)$ is bounded.
+  So Theorem 6.10 implies that $\Delta_n(t) \in \mathscr{R}$.
+
+\item[(4)]
+  \emph{Show that $|f_n| \leq |c| + M = M_1$, say, on $[0, 1]$, for all $n$.}
+  Since $\phi$ is continuous and bounded, $f_n(x)$ is well-defined.
+  Let
+  \begin{equation*}
+    g(t) = \phi(t, f_n(t)) + \Delta_n(t) =
+    \begin{cases}
+      f_n'(t)         & (x \neq x_i \text{ for all } 0 \leq i \leq n) \\
+      \phi(t, f_n(t)) & (x = x_i \text{ for some } 0 \leq i \leq n).
+    \end{cases}
+  \end{equation*}
+  By (1) and $|\phi| \leq M$, $|g| \leq M$.
+  As $x \in [0,1]$,
+  \begin{align*}
+    |f_n(x)|
+    &= \abs{ c + \int_{0}^{x} g(t) dt } \\
+    &\leq |c| + \abs{\int_{0}^{x} g(t) dt} \\
+    &\leq |c| + \int_{0}^{x} \abs{ g(t) } dt \\
+    &\leq |c| + x M
+      & (x \in [0,1]) \\
+    &\leq |c| + M.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  Recall the definition of $g(x)$ in (a)(4).
+  Given any $\varepsilon > 0$, there exists a $\delta = \frac{\varepsilon}{M+1} > 0$
+  such that
+  \[
+    \abs{f_n(x) - f_n(y)}
+    = \abs{ \int_{y}^{x} g(t) dt }
+    < M |x-y|
+    < \varepsilon
+  \]
+  whenever $|x-y| < \delta$, and $x, y \in [0,1]$.
+  Hence $\{f_n\}$ is equicontinuous on $[0,1]$.
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+Apply Theorem 7.25(b)(Arzel\`{a}-Ascoli theorem) to (a)(b).
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  Given any $\varepsilon > 0$.
+  Since $\phi$ is continuous on a compact set $[0,1] \times [-M_1,M_1]$,
+  $\phi$ is continuous uniformly.
+  So there is a $\delta > 0$ such that
+  \[
+    \abs{ \phi(t,y_1) - \phi(t,y_2) } < \varepsilon
+  \]
+  whenever $\abs{ y_1 - y_2 } < \delta$, $t \in [0,1]$, and $y_1, y_2 \in [-M_1,M_1]$.
+
+\item[(2)]
+  By (c), $\{f_{n_k}\}$ converges to some $f$, uniformly on $[0, 1]$.
+  So there is an integer $N$ such that
+  \[
+    \abs{ f_{n_k}(t) - f(t) } < \delta
+  \]
+  whenever $k \geq N$ and $t \in [0,1]$.
+
+\item[(3)]
+  Take $y_1 = f_{n_k}(t) \in [-M_1,M_1]$
+  and $y_2 = f(t) \in [-M_1,M_1]$.
+  (It is possible since $\abs{f_{n_k}} \leq M_1$ and its limit function $f$
+  is also satisfying $\abs{f} \leq M_1$.)
+  Hence
+  \[
+    \abs{ \phi(t,f_{n_k}(t)) - \phi(t,f(t)) } < \varepsilon
+  \]
+  whenever $k \geq N$ and $t \in [0,1]$.
+  Hence
+  $\phi(t,f_{n_k}(t)) \to \phi(t,f(t))$ uniformly.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+  Given any $\varepsilon > 0$.
+  It suffices to show that there exists an integer $N$ such that
+  \[
+    \abs{ \Delta_n(t) } \leq \varepsilon
+  \]
+  whenever $n \geq N$ and $t \in [0,1]$.
+  Since $\Delta_n(x_i) = 0$ if $0 \leq i \leq n$,
+  it suffices to \emph{show that there exists an integer $N$ such that
+  \[
+    \abs{ \Delta_n(t) } \leq \varepsilon
+  \]
+  whenever $n \geq N$, $t \in [0,1]$ and $t \neq x_i$ for all $0 \leq i \leq n$.}
+
+\item[(2)]
+  Given any $t \in [0,1]$ with $t \neq x_j$ ($0 \leq j \leq n$).
+  There exists some $i$ such that $x_i < t < x_{i+1}$ for $0 \leq i \leq n$.
+  Write
+  \begin{align*}
+    \abs{ \Delta_n(t) }
+    &= \abs{ f_n'(t) - \phi(t, f_n(t)) } \\
+    &= \abs{ \phi(x_i, f_n(x_i)) - \phi(t, f_n(t)) } \\
+    &\leq \abs{ \phi(x_i, f_n(x_i)) - \phi(x_i, f_n(t)) }
+      + \abs{ \phi(x_i, f_n(t)) - \phi(t, f_n(t)) } \\
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that there is an integer $N_1$ such that
+  \[
+    \abs{ \phi(x_i, f_n(x_i)) - \phi(x_i, f_n(t)) } < \frac{\varepsilon}{89}
+  \]
+  whenever $n \geq N_1$.}
+  Since $\phi$ is uniformly continuous,
+  there exists a $\delta > 0$ such that
+  \[
+    \abs{ \phi(x_i, y_1)) - \phi(x_i, y_2) } < \frac{\varepsilon}{89}
+  \]
+  whenever $|y_1 - y_2| < \delta$, and $y_1, y_2 \in [-M_1,M_1]$.
+  Since $\{f_n\}$ is equicontinuous on $[0,1]$ (by (b)),
+  there exists an integer $N_1 > 0$ such that
+  \[
+    \abs{ f_n(x_i) - f_n(t) } < \delta
+  \]
+  whenever $n \geq N_1$.
+  (Here by the construction of $\{x_0, \ldots, x_n\}$ we have
+  $|x_i - t| < \frac{1}{n} \leq \frac{1}{N_1}$ for $n \geq N_1$.)
+  Since $|f_n| \leq M_1$, we can take $y_1 = |f_n(x_i)|$ and $y_2 = |f_n(t)|$
+  to get the conclusion.
+
+\item[(4)]
+  \emph{Show that there is an integer $N_2$ such that
+  \[
+    \abs{ \phi(x_i, f_n(t)) - \phi(t, f_n(t)) } < \frac{\varepsilon}{64}
+  \]
+  whenever $n \geq N_2$.}
+  Similar to (3).
+  Since $\phi$ is uniformly continuous,
+  there exists a $\delta > 0$ such that
+  \[
+    \abs{ \phi(w_1, f_n(t)) - \phi(w_2 ,f_n(t)) } < \frac{\varepsilon}{64}
+  \]
+  whenever $|w_1 - w_2| < \delta$, and $w_1, w_2 \in [0,1]$.
+  By the construction of $\{x_0, \ldots, x_n\}$,
+  there is an integer $N_2 > 0$ such that
+  $|x_i - t| < \delta$ for $n \geq N_2$.
+  Take $w_1 = x_i$ and $w_2 = t$ to get the conclusion.
+
+\item[(5)]
+  By (2)(3)(4), we take an integer $N = \max\{N_1, N_2\}$
+  such that
+  \begin{align*}
+    \abs{ \Delta_n(t) }
+    &\leq \abs{ \phi(x_i, f_n(x_i)) - \phi(x_i, f_n(t)) }
+      + \abs{ \phi(x_i, f_n(t)) - \phi(t, f_n(t)) } \\
+    &< \frac{\varepsilon}{89} + \frac{\varepsilon}{64} \\
+    &< \varepsilon
+  \end{align*}
+  whenever $n \geq N$.
+  Combine (1) and this result to get that
+  $\Delta_n(t) \to 0$ uniformly on $[0,1]$.
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (f).}
+\begin{align*}
+  f(x)
+  &= \lim_{k \to \infty} f_{n_k}(x)
+    &((c)) \\
+  &= \lim_{k \to \infty}
+    \left\{ c + \int_{0}^{x}[ \phi(t,f_{n_k}(t)) + \Delta_{n_k}(t) ]dt \right\} \\
+  &= c + \int_{0}^{x} \left[ \lim_{k \to \infty} \phi(t,f_{n_k}(t))
+    + \lim_{k \to \infty} \Delta_{n_k}(t) \right] dt
+    &(\text{Theorem 7.16}, (d)(e)) \\
+  &= c + \int_{0}^{x} \left[ \phi(t,f(t)) + 0 \right] dt \\
+  &= c + \int_{0}^{x} \phi(t,f(t)) dt.
+\end{align*}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
