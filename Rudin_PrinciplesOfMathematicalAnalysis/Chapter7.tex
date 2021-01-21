@@ -3144,7 +3144,7 @@ Choose $M < \infty$ so that $|\phi| \leq M$.
 Verify the following assertions.}
 \begin{enumerate}
   \item[(a)]
-  \emph{$|f_n'| \leq M$, $|\Delta_n| \leq 2M$, $\Delta \in \mathscr{R}$,
+  \emph{$|f_n'| \leq M$, $|\Delta_n| \leq 2M$, $\Delta_n \in \mathscr{R}$,
   and $|f_n| \leq |c| + M = M_1$, say, on $[0, 1]$, for all $n$.}
 
   \item[(b)]
@@ -3204,7 +3204,6 @@ Same as the hint. \\
 
 \item[(3)]
   \emph{Show that $\Delta_n(t) \in \mathscr{R}$.}
-  By the construction of $\Delta_n(t)$,
   Since $\phi$ is continuous,
   by construction $\Delta_n(t)$ is continuous on $[0,1]$
   except finitely many points $x_0, \ldots, x_n$.
@@ -3228,7 +3227,8 @@ Same as the hint. \\
     |f_n(x)|
     &= \abs{ c + \int_{0}^{x} g(t) dt } \\
     &\leq |c| + \abs{\int_{0}^{x} g(t) dt} \\
-    &\leq |c| + \int_{0}^{x} \abs{ g(t) } dt \\
+    &\leq |c| + \int_{0}^{x} \abs{ g(t) } dt
+      & (\text{Theorem 6.13}) \\
     &\leq |c| + x M
       & (x \in [0,1]) \\
     &\leq |c| + M.
@@ -3379,7 +3379,6 @@ $\Box$ \\
   whenever $n \geq N$.
   Combine (1) and this result to get that
   $\Delta_n(t) \to 0$ uniformly on $[0,1]$.
-
 \end{enumerate}
 $\Box$ \\
 
@@ -3398,6 +3397,7 @@ $\Box$ \\
   &= c + \int_{0}^{x} \left[ \phi(t,f(t)) + 0 \right] dt \\
   &= c + \int_{0}^{x} \phi(t,f(t)) dt.
 \end{align*}
+This $f$ satisfies that $f(c) = 0$ and $f(t)' = \phi(t,f(t))$.
 $\Box$ \\\\
 
 
@@ -3416,6 +3416,122 @@ and $\bm{\Phi}$ is a continuous bounded mapping of the part of $\mathbb{R}^{k+1}
 defined by $0 \leq x \leq 1$, $\mathbf{y} \in \mathbb{R}^k$ into $\mathbb{R}^k$.
 (Compare Exercise 5.28.)
 (Hint: Use the vector-valued version of Theorem 7.25.)} \\
+
+\emph{Outline.}
+\emph{Fix $n$.
+For $i = 0,\ldots,n$, put $x_i = \frac{i}{n}$.
+Let $\mathbf{f}_n$ be a continuous function on $[0, 1]$ such that
+$\mathbf{f}_n(0) = \mathbf{c}$,
+\[
+  \mathbf{f}'_n(t) = \bm{\Phi}(x_i, \mathbf{f}_n(x_i))
+  \qquad \text{if } x_i < t < x_{i+1}
+\]
+and put
+\[
+  \mathbf{\Delta}_n(t) = \mathbf{f}_n'(t) - \bm{\Phi}(t, \mathbf{f}_n(t)),
+\]
+except at the points $x_i$, where $\mathbf{\Delta}_n(t) = \mathbf{0}$.
+Then
+\[
+  \mathbf{f}_n(x)
+  = \mathbf{c} + \int_{0}^{x} [\bm{\Phi}(t, \mathbf{f}_n(t)) + \mathbf{\Delta}_n(t)] dt.
+\]
+Choose $M < \infty$ so that $|\bm{\Phi}| \leq M$.
+Verify the following assertions.}
+\begin{enumerate}
+  \item[(a)]
+  \emph{$|\mathbf{f}_n'| \leq M$, $|\mathbf{\Delta}_n| \leq 2M$,
+  $\mathbf{\Delta}_n \in \mathscr{R}$,
+  and $|\mathbf{f}_n| \leq |\mathbf{c}| + M = M_1$, say, on $[0, 1]$, for all $n$.}
+
+  \item[(b)]
+  \emph{$\{\mathbf{f}_n\}$ is equicontinuous on $[0, 1]$,
+  since $|\mathbf{f}_n'| \leq M$.}
+
+  \item[(c)]
+  \emph{Some $\{\mathbf{f}_{n_h}\}$ converges to some $\mathbf{f}$, uniformly on $[0, 1]$.}
+
+  \item[(d)]
+  \emph{Since $\bm{\Phi}$ is uniformly continuous on the rectangle
+  $0 \leq x \leq 1$, $|\mathbf{y}| \leq M_1$,
+  \[
+    \bm{\Phi}(t, \mathbf{f}_{n_h}(t)) \to \bm{\Phi}(t, \mathbf{f}(t))
+  \]
+  uniformly on $[0, 1]$.}
+
+  \item[(e)]
+  \emph{$\mathbf{\Delta}_n(t) \to 0$ uniformly on $[0, 1]$,
+  since
+  \[
+    \mathbf{\Delta}_n(t)
+    = \bm{\Phi}(x_i, \mathbf{f}_n(x_i)) - \bm{\Phi}(t, \mathbf{f}_n(t))
+  \]
+  in $(x_i, x_{i+1})$.}
+
+  \item[(f)]
+  \emph{Hence}
+  \[
+    \mathbf{f}(x) = \mathbf{c} + \int_{0}^{x} \bm{\Phi}(t, \mathbf{f}(t)) dt.
+  \]
+\end{enumerate}
+\emph{This $\mathbf{f}$ is a solution of the given problem.} \\
+
+Similar to Exercise 7.25. \\
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\abs{\mathbf{f}_n'} \leq M$.}
+  Similar to Exercise 7.25(a)(1).
+
+\item[(2)]
+  \emph{Show that $\abs{\mathbf{\Delta}_n(t)} \leq 2M$.}
+  Similar to Exercise 7.25(a)(2).
+
+\item[(3)]
+  \emph{Show that $\mathbf{\Delta}_n(t) \in \mathscr{R}$.}
+  $\bm{\Phi}$ is continuous if and only if each component of $\bm{\Phi}$ is continuous.
+  By Exercise 7.25(a)(3),
+  each component of $\mathbf{\Delta}_n(t) \in \mathscr{R}$.
+  Therefore $\mathbf{\Delta}_n(t) \in \mathscr{R}$ (Definition 6.23).
+
+\item[(4)]
+  \emph{Show that $|\mathbf{f}_n| \leq |\mathbf{c}| + M = M_1$, say, on $[0, 1]$, for all $n$.}
+  Similar to Exercise 7.25(a)(4).
+  (Note that Theorem 6.25 is the vector-valued version of Theorem 6.13.)
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+Similar to Exercise 7.25(b).
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+Use the vector-valued version of Theorem 7.25(b)(Arzel\`{a}-Ascoli theorem)
+(in Exercise 7.17) to (a)(b).
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+Apply Exercise 7.25(d) to each component of $\bm{\Phi}(t,\mathbf{f}_{n_h}(t))$ repeatedly.
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+Apply Exercise 7.25(e) to each component of $\mathbf{\Delta}_n(t)$ repeatedly.
+$\Box$ \\
+
+
+
+\emph{Proof of (f).}
+Apply Exercise 7.25(f) to each component of $\mathbf{f}$ repeatedly.
+$\Box$ \\\\
 
 
 
