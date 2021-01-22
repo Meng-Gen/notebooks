@@ -612,13 +612,41 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.13.}
-\emph{...} \\
+\emph{Suppose $\mathbf{f}$ is a differentiable mapping of $\mathbb{R}^1$ into
+$\mathbb{R}^3$ such that $|\mathbf{f}(t)| = 1$ for every $t$.
+Prove that $\mathbf{f}'(t) \cdot \mathbf{f}(t) = 0$.
+Interpret this result geometrically.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Write $\mathbf{f} = (f_1, f_2, f_3)$ as a vector-valued function.
+  By Remarks 5.16, $\mathbf{f}$ is differentiable if and only if each $f_1, f_2, f_3$
+  is differentiable. So $\mathbf{f}' = (f_1', f_2', f_3)'$.
+  Hence
+  \begin{align*}
+    &\text{$|\mathbf{f}(t)| = 1$ for every $t$} \\
+    \Longleftrightarrow&
+    \mathbf{f}(t) \cdot \mathbf{f}(t) = 1 \\
+    \Longleftrightarrow&
+    f_1(t)^2 + f_2(t)^2 + f_3(t)^2 = 1 \\
+    \Longrightarrow&
+    2 f_1(t) f_1'(t) + 2 f_2(t) f_2'(t) + 2 f_3(t) f_3'(t) = 0 \\
+    \Longleftrightarrow&
+    f_1(t) f_1'(t) + f_2(t) f_2'(t) + f_3(t) f_3'(t) = 0 \\
+    \Longleftrightarrow&
+    (f_1(t), f_2(t), f_3(t)) \cdot (f_1'(t), f_2'(t), f_3'(t)) = 0 \\
+    \Longleftrightarrow&
+    \mathbf{f}(t) \cdot \mathbf{f}'(t) = \mathbf{f}'(t) \cdot \mathbf{f}(t) = 0.
+  \end{align*}
 
+\item[(2)]
+  The vector $\mathbf{f}'(t)$ is called the
+  \emph{\textbf{tangent vector}} (or \emph{\textbf{velocity vector}})
+  of $\mathbf{f}$ at $t$.
+  Geometrically,
+  given any mapping $\mathbf{f}$ lying on the sphere $S^2$,
+  its tangent vector at $t$ is lying on the tangent plane of $S^2$ at $t$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -629,13 +657,105 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.14.}
-\emph{...} \\
+\emph{Define $f(0,0) = 0$ and}
+\[
+  f(x,y) = \frac{x^3}{x^2 + y^2}
+  \qquad \text{if }
+  (x,y) \neq (0,0).
+\]
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that $D_1 f$ and $D_2 f$ are bounded functions in $\mathbb{R}^2$.
+  (Hence $f$ is continuous.)}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Let $\mathbf{u}$ be any unit vector in $\mathbb{R}^2$.
+  Show that the directional derivative
+  $(D_{\mathbf{u}}f)(0,0)$ exists, and that its absolute value is at most $1$.}
+
+\item[(c)]
+
+\item[(d)]
+
+\end{enumerate}
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that}
+    \begin{equation*}
+    (D_1 f)(x,y) =
+      \begin{cases}
+        1
+          & \text{ if $(x,y)=(0,0)$}, \\
+        \frac{x^2(x^2 +3y^2)}{(x^2+y^2)^2}
+          & \text{ if $(x,y)\neq(0,0)$}.
+      \end{cases}
+    \end{equation*}
+    If $(x,y) = (0,0)$,
+    \[
+      (D_1 f)(0,0)
+      = \lim_{t \to 0} \frac{f(t,0) - f(0,0)}{t}
+      = \lim_{t \to 0} \frac{t - 0}{t}
+      = 1.
+    \]
+    If $(x,y) \neq (0,0)$,
+    \begin{align*}
+      (D_1 f)(x,y)
+      &= \lim_{t \to 0} \frac{f(x+t,y) - f(x,y)}{t} \\
+      &= \lim_{t \to 0} \frac{\frac{(x+t)^3}{(x+t)^2+y^2} - \frac{x^3}{x^2+y^2}}{t} \\
+      &= \lim_{t \to 0}
+        \frac{x^2(x^2+3y^2) + tx(2x^2+3y^2) + t^2(x^2+y^2)}{((x+t)^2+y^2)(x^2+y^2)} \\
+      &= \frac{x^2(x^2 +3y^2)}{(x^2+y^2)^2}.
+    \end{align*}
+    (Or differentiate directly.)
 
+\item[(2)]
+  \emph{Show that $(D_1 f)(x,y)$ is bounded.}
+  It suffices to show that $(D_1 f)(x,y)$ is bounded if $(x,y) \neq (0,0)$.
+  Write $x = r\cos\theta$ and $y = r\sin\theta$ in the polar coordinates.
+  (Here $r > 0$.)
+  Hence
+  \[
+    (D_1 f)(x,y)
+    = \frac{x^2(x^2 +3y^2)}{(x^2+y^2)^2}
+    = \cos^2\theta (\cos^2\theta + 3\sin^2\theta)
+  \]
+  is bounded by $1\cdot(1+3) = 4$.
+
+\item[(3)]
+  \emph{Show that}
+    \begin{equation*}
+    (D_2 f)(x,y) =
+      \begin{cases}
+        0
+          & \text{ if $(x,y)=(0,0)$}, \\
+        \frac{-2x^3y}{(x^2+y^2)^2}
+          & \text{ if $(x,y)\neq(0,0)$}.
+      \end{cases}
+    \end{equation*}
+    If $(x,y) = (0,0)$,
+    \[
+      (D_2 f)(0,0)
+      = \lim_{t \to 0} \frac{f(0,t) - f(0,0)}{t}
+      = \lim_{t \to 0} \frac{0 - 0}{t}
+      = 0.
+    \]
+    If $(x,y) \neq (0,0)$,
+    \begin{align*}
+      (D_2 f)(x,y)
+      &= \lim_{t \to 0} \frac{f(x,y+t) - f(x,y)}{t} \\
+      &= \lim_{t \to 0} \frac{\frac{x^3}{x^2+(y+t)^2} - \frac{x^3}{x^2+y^2}}{t} \\
+      &= \lim_{t \to 0}
+        \frac{-2x^3y - tx^3}{(x^2+(y+t)^2)(x^2+y^2)} \\
+      &= \frac{-2x^3y}{(x^2+y^2)^2}.
+    \end{align*}
+    (Or differentiate directly.)
+
+\item[(4)]
+  \emph{Show that $(D_2 f)(x,y)$ is bounded.}
+  Similar to (2).
 \end{enumerate}
 $\Box$ \\\\
 
