@@ -300,6 +300,81 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 9.5.}
+\emph{Prove that to every $A \in L(\mathbb{R}^n, \mathbb{R}^1)$
+corresponds a unique $\mathbf{y} \in \mathbb{R}^n$ such that
+$A\mathbf{x} = \mathbf{x} \cdot \mathbf{y}$.
+Prove also that $\norm{A} = |\mathbf{y}|$.
+(Hint: Under certain conditions, equality holds in the Schwarz inequality.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Recall that $\{ \mathbf{e}_1, \ldots, \mathbf{e}_n \}$
+  is the standard basis of $\mathbb{R}^n$ (Definitions 9.1).
+  Given any $\mathbf{x} \in \mathbb{R}^n$,
+  write $\mathbf{x} = (x_1, \ldots, x_n)$ as $\mathbf{x} = \sum x_j \mathbf{e}_j$.
+
+\item[(2)]
+  \emph{Show that $\mathbf{y}$ exists.}
+  Since $A$ is a linear transformation,
+  \begin{align*}
+    A\mathbf{x}
+    &= A\left(\sum x_j \mathbf{e}_j\right) \\
+    &= \sum x_j A\mathbf{e}_j \\
+    &= (x_1, \ldots, x_n) \cdot (A\mathbf{e}_1, \ldots, A\mathbf{e}_n) \\
+    &= \mathbf{x} \cdot \sum (A\mathbf{e}_j) \mathbf{e}_j.
+  \end{align*}
+  Define $\mathbf{y} = \sum (A\mathbf{e}_j) \mathbf{e}_j \in \mathbb{R}^n$
+  so that $A\mathbf{x} = \mathbf{x} \cdot \mathbf{y}$.
+
+\item[(3)]
+  \emph{Show that $\mathbf{y}$ is unique.}
+  Suppose there exists some $\mathbf{z} \in \mathbb{R}^n$
+  such that $A\mathbf{x} = \mathbf{x} \cdot \mathbf{z}$.
+  So
+  \begin{align*}
+    0
+    &= A\mathbf{x} -  A\mathbf{x} \\
+    &= \mathbf{x} \cdot \mathbf{y}-\mathbf{x} \cdot \mathbf{z} \\
+    &= \mathbf{x} \cdot (\mathbf{y}-\mathbf{z})
+  \end{align*}
+  for any $\mathbf{x} \in \mathbb{R}^n$.
+  In particular, take $\mathbf{x} = \mathbf{y}-\mathbf{z} \in \mathbb{R}^n$
+  to get
+  \[
+    0
+    = (\mathbf{y}-\mathbf{z}) \cdot (\mathbf{y}-\mathbf{z})
+    = |\mathbf{y}-\mathbf{z}|^2
+  \]
+  or $\mathbf{y}-\mathbf{z} = \mathbf{0}$ or $\mathbf{y}=\mathbf{z}$.
+
+\item[(4)]
+  \emph{Show that $\norm{A} = |\mathbf{y}|$.}
+  By the Schwarz inequality (Theorem 1.37(d)),
+  \[
+    |A\mathbf{x}| = |\mathbf{x} \cdot \mathbf{y}| \leq |\mathbf{x}||\mathbf{y}|
+    \leq |\mathbf{y}|
+  \]
+  as $|\mathbf{x}| \leq 1$.
+  Take the sup over all $|\mathbf{x}| \leq 1$ to get
+  \[
+    \norm{A} \leq |\mathbf{y}|.
+  \]
+  If $\mathbf{y} = \mathbf{0}$, then $\norm{A} = |\mathbf{y}| = 0$.
+  If $\mathbf{y} \neq \mathbf{0}$,
+  then the equality holds when
+  $\mathbf{x} = \frac{\mathbf{y}}{|\mathbf{y}|} \in \mathbb{R}^n$.
+  (Here $|\mathbf{x}| = 1$.)
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
