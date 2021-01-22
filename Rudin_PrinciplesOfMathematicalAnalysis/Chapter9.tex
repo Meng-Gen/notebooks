@@ -528,13 +528,63 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.11.}
-\emph{...} \\
+\emph{If $f$ and $g$ are differentiable real functions in $\mathbb{R}^n$,
+prove that
+\[
+  \nabla(fg) = f \nabla g + g \nabla f
+\]
+and that
+\[
+  \nabla\left(\frac{1}{f}\right) = -\frac{1}{f^2} \nabla f
+\]
+whenever $f \neq 0$.} \\
 
 \emph{Proof.}
+Recall Example 9.18:
+\[
+  (\nabla(f))(\mathbf{x}) = \sum_{i=1}^{n}(D_i f)(\mathbf{x})\mathbf{e}_i.
+\]
+
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that $\nabla(fg) = f \nabla g + g \nabla f$.}
+  For any $\mathbf{x} \in \mathbb{R}^n$,
+  \begin{align*}
+    (\nabla(fg))(\mathbf{x})
+    &= \sum_{i=1}^{n}(D_i(fg))(\mathbf{x})\mathbf{e}_i \\
+    &= \sum_{i=1}^{n}(g (D_i f) + f (D_i g))(\mathbf{x})\mathbf{e}_i
+      &(\text{Theorem 5.3(b)}) \\
+    &= \sum_{i=1}^{n} \left[ g(\mathbf{x}) (D_i f)(\mathbf{x})
+      + f(\mathbf{x}) (D_i g)(\mathbf{x}) \right]\mathbf{e}_i \\
+    &= g(\mathbf{x}) \sum_{i=1}^{n} (D_i f)(\mathbf{x})\mathbf{e}_i
+      + f(\mathbf{x}) \sum_{i=1}^{n} (D_i g)(\mathbf{x})\mathbf{e}_i \\
+    &= g(\mathbf{x}) (\nabla f)(\mathbf{x})
+      + f(\mathbf{x}) (\nabla g)(\mathbf{x}) \\
+    &= (f \nabla g + g \nabla f)(\mathbf{x}).
+  \end{align*}
 
+\item[(2)]
+  \emph{Show that $$\nabla\left(\frac{1}{f}\right) = -\frac{1}{f^2} \nabla f$$
+  whenever $f \neq 0$.}
+  Note that $\nabla(1) = 0$
+  since
+  \[
+    \nabla(1)(\mathbf{x})
+    = \sum (D_i 1)(\mathbf{x})\mathbf{e}_i
+    = \sum (0)(\mathbf{x})\mathbf{e}_i
+    = \sum 0 \mathbf{e}_i
+    = 0.
+  \]
+  Hence as $f \neq 0$, we have
+  \begin{align*}
+    0
+    &= \nabla(1) \\
+    &= \nabla\left(f \frac{1}{f}\right)
+      & (f \neq 0) \\
+    &= f \nabla\left(\frac{1}{f}\right) + \frac{1}{f} \nabla f
+      & ((1)),
+  \end{align*}
+  or $\nabla\left(\frac{1}{f}\right) = -\frac{1}{f^2} \nabla f$.
 \end{enumerate}
 $\Box$ \\\\
 
