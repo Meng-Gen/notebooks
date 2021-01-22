@@ -199,6 +199,106 @@ $\Box$ \\\\
 
 
 
+\textbf{Exercise 9.3.}
+\emph{Assume $A \in L(X,Y)$ and $A\mathbf{x} = \mathbf{0}$ only when $\mathbf{x} = \mathbf{0}$.
+Prove that $A$ is then $1$-$1$.} \\
+
+\emph{Proof.}
+Suppose $A\mathbf{x} = A\mathbf{y}$.
+Since $A$ is a linear transformation,
+$A(\mathbf{x}-\mathbf{y}) = A\mathbf{x} - A\mathbf{y} = \mathbf{0}$.
+By assumption, $\mathbf{x}-\mathbf{y} = \mathbf{0}$
+or $\mathbf{x} = \mathbf{y}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Exercise 9.4.}
+\emph{Prove (as asserted in Section 9.30) that null spaces and ranges of
+linear transformations are vector spaces.} \\
+
+\emph{Proof.}
+Use the notation in Definitions 9.30.
+Suppose $X$, $Y$ are vector spaces, and $A \in L(X,Y)$, as in Definition 9.6.
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathscr{N}(A)$ is a vector space in $X$.}
+  \begin{enumerate}
+  \item[(a)]
+    Note that $\mathbf{0} \in X$.
+    Since $A\mathbf{0} = \mathbf{0}$, $\mathbf{0} \in \mathscr{N}(A) \neq \varnothing$.
+
+  \item[(b)]
+    Suppose $\mathbf{x}_1, \mathbf{x}_2 \in \mathscr{N}(A)$.
+    Then
+    \begin{align*}
+      A(\mathbf{x}_1+\mathbf{x}_2)
+      &= A\mathbf{x}_1+A\mathbf{x}_2
+        & (\text{$A$ is a linear transformation}) \\
+      &= \mathbf{0}+\mathbf{0}
+        & (\mathbf{x}_1, \mathbf{x}_2 \in \mathscr{N}(A)) \\
+      &= \mathbf{0}.
+    \end{align*}
+    So $\mathbf{x}_1+\mathbf{x}_2 \in \mathscr{N}(A)$.
+
+  \item[(c)]
+    Suppose $\mathbf{x} \in \mathscr{N}(A)$ and $c$ is a scalar.
+    Then
+    \begin{align*}
+      A(c\mathbf{x})
+      &= cA\mathbf{x}
+        & (\text{$A$ is a linear transformation}) \\
+      &= c\mathbf{0}
+        & (\mathbf{x} \in \mathscr{N}(A)) \\
+      &= \mathbf{0}.
+    \end{align*}
+    So $c\mathbf{x} \in \mathscr{N}(A)$.
+  \end{enumerate}
+  By (a)(b)(c), $\mathscr{N}(A)$ is a vector space.
+
+\item[(2)]
+  \emph{Show that $\mathscr{R}(A)$ is a vector space in $Y$.}
+  \begin{enumerate}
+  \item[(a)]
+    Note that $\mathbf{0} \in X$.
+    So $A\mathbf{0} = \mathbf{0} \in \mathscr{R}(A) \neq \varnothing$.
+
+  \item[(b)]
+    Suppose $\mathbf{y}_1, \mathbf{y}_2 \in \mathscr{R}(A)$.
+    Then there exist $\mathbf{x}_1, \mathbf{x}_2 \in X$
+    such that $A\mathbf{x}_1 = \mathbf{y}_1$
+    and $A\mathbf{x}_2 = \mathbf{y}_2$.
+    Hence
+    \begin{align*}
+      \mathbf{y}_1+\mathbf{y}_2
+      &= A\mathbf{x}_1+A\mathbf{x}_2 \\
+      &= A(\mathbf{x}_1+\mathbf{x}_2)
+        & (\text{$A$ is a linear transformation}).
+    \end{align*}
+    So $\mathbf{y}_1+\mathbf{y}_2 \in \mathscr{R}(A)$.
+
+  \item[(c)]
+    Suppose $\mathbf{y} \in \mathscr{R}(A)$ and $c$ is a scalar.
+    Then there exists $\mathbf{x} \in X$ such that $A\mathbf{x} = \mathbf{y}$.
+    Hence
+    \begin{align*}
+      c\mathbf{y}
+      &= cA\mathbf{x} \\
+      &= A(c\mathbf{x})
+        & (\text{$A$ is a linear transformation}).
+    \end{align*}
+    So $c\mathbf{y} \in \mathscr{R}(A)$.
+  \end{enumerate}
+  By (a)(b)(c), $\mathscr{R}(A)$ is a vector space.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
