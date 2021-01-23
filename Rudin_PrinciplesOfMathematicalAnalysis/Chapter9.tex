@@ -30,6 +30,10 @@
 
 
 
+% http://www2.math.uu.se/~astrombe/reellanalys2019/solutions_pub.pdf
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -535,12 +539,41 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.8.}
-\emph{...} \\
+\emph{Suppose that $f$ is a differentiable real function in an open set
+$E \subseteq \mathbb{R}^n$,
+and that $f$ has a local maximum at a point $\mathbf{x} \in E$.
+Prove that $f'(\mathbf{x}) = \mathbf{0}$.} \\
 
-\emph{Proof.}
+\emph{Proof (Theorem 5.8).}
 \begin{enumerate}
 \item[(1)]
+Apply Theorem 5.8 to each $D_j f$ for $1 \leq j \leq n$.
+Since $f$ has a local maximum at a point $\mathbf{x} \in E$,
+there is an open neighborhood $B(\mathbf{x};r)$ of $\mathbf{x}$ in $E$
+such that
+\[
+  f(\mathbf{y}) \leq f(\mathbf{x})
+\]
+for all $\mathbf{y} \in B(\mathbf{x};r)$.
+Therefore,
+\[
+  f(\mathbf{x} + t\mathbf{e}_j) \leq f(\mathbf{x})
+\]
+for all $|t| < r$ and $1 \leq j \leq n$,
+or $t \mapsto f(\mathbf{x} + t\mathbf{e}_j)$ has a local maximum at a point
+$t = 0 \in (-r,r)$.
+
+
 \item[(2)]
+Since $f$ is a differentiable in $E$, each partial derivatives $D_j f$ exist (Theorem 9.21).
+Hence Theorem 5.8 implies that $(D_j f)(\mathbf{x}) = 0$ for all $1 \leq j \leq n$.
+So
+\[
+  f'(\mathbf{x})
+  = [ (D_1 f)(\mathbf{x}) \cdots (D_k f)(\mathbf{x}) ]
+  = [ 0 \cdots 0 ]
+  = \mathbf{0}.
+\]
 
 \end{enumerate}
 $\Box$ \\\\
