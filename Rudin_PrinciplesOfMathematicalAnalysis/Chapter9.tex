@@ -469,8 +469,62 @@ Prove that $f$ is continuous in $E$.
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Since $D_j f$ is bounded in $E$, there is a real number $M_j$ such that
+  $|D_j f| \leq M_j$ in $E$.
+  Take $M = \max_{1 \leq j \leq n} M_j$ so that $|D_j f| \leq M$ in $E$ for all $1 \leq j \leq n$.
 
+\item[(2)]
+  Fix $\mathbf{x} \in E$ and $\varepsilon > 0$.
+  Since $E$ is open,
+  there is an open neighborhood
+  \[
+    B(\mathbf{x};r)
+    = \{ \mathbf{x}+\mathbf{h} \in E : |\mathbf{h}| < r \}
+    \subseteq E
+  \]
+  with
+  \[
+    0 < r < \frac{\varepsilon}{n(M+1)}.
+  \]
+
+\item[(3)]
+  Write $\mathbf{h} = \sum h_j \mathbf{e}_j$, $|\mathbf{h}| < r$,
+  put $\mathbf{v}_0 = \mathbf{0}$,
+  and $\mathbf{v}_k = h_1 \mathbf{e}_1 + \cdots + h_k \mathbf{e}_k$
+  for $1 \leq k \leq n$.
+  Then
+  \[
+    f(\mathbf{x}+\mathbf{h}) - f(\mathbf{x})
+    = \sum_{j=1}^{n}
+      [f(\mathbf{x}+\mathbf{v}_j) - f(\mathbf{x}+\mathbf{v}_{j-1})].
+  \]
+  Since $|\mathbf{v}_k| < r$ for $1 \leq k \leq n$ and
+  since $B(\mathbf{x};r)$ is convex,
+  the open interval with end points
+  $\mathbf{x}+\mathbf{v}_{j-1}$ and $\mathbf{x}+\mathbf{v}_{j}$ lie in $B(\mathbf{x};r)$.
+  Since $\mathbf{v}_{j} = \mathbf{v}_{j-1} - h_j\mathbf{e}_j$,
+  the mean value theorem (Theorem 5.10) show that
+  \[
+    f(\mathbf{x}+\mathbf{v}_j) - f(\mathbf{x}+\mathbf{v}_{j-1})
+    = h_j (D_j f)(\mathbf{x}+\mathbf{v}_{j-1} + \theta_j h_j \mathbf{e}_j)
+  \]
+  for some $\theta_j \in (0,1)$.
+
+\item[(4)]
+  Note that $\abs{h_j} \leq \abs{\mathbf{h}} < r < \frac{\varepsilon}{n(M+1)}$.
+  Hence
+  \begin{align*}
+    \abs{f(\mathbf{x}+\mathbf{h}) - f(\mathbf{x})}
+    &\leq \sum_{j=1}^{n}
+      \abs{f(\mathbf{x}+\mathbf{v}_j) - f(\mathbf{x}+\mathbf{v}_{j-1})} \\
+    &= \sum_{j=1}^{n}
+      \abs{h_j} \abs{(D_j f)(\mathbf{x}+\mathbf{v}_{j-1} + \theta_j h_j \mathbf{e}_j)} \\
+    &\leq \sum_{j=1}^{n}
+      \frac{\varepsilon}{n(M+1)} \cdot M \\
+    &< \varepsilon
+  \end{align*}
+  as $\abs{\mathbf{h}} < r < \frac{\varepsilon}{n(M+1)}$.
+  Hence $f$ is continuous at all $\mathbf{x} \in E$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -762,7 +816,7 @@ $\Box$ \\\\
 \item[(4)]
   \emph{Show that $(D_2 f)(x,y)$ is bounded.}
   Similar to (2).
-  
+
 \item[(5)]
   \emph{Show that $f$ is continuous.}
   Apply Exercise 9.7 to (2)(4).
@@ -801,7 +855,7 @@ $\Box$ \\
 \emph{Proof of (d).}
   (Reductio ad absurdum)
   If $f$ were differentiable,
-  then 
+  then
   \[
     (D_{\mathbf{u}}f)(0,0) = (D_1 f)(0,0)u_1 + (D_2 f)(0,0)u_2 = u_1
   \]
