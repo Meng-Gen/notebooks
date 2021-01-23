@@ -460,7 +460,11 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.7.}
-\emph{...} \\
+\emph{Suppose that $f$ is a real-valued function
+defined in an open set $E \subseteq \mathbb{R}^n$,
+and that the partial derivatives $D_1 f, \ldots, D_n f$ are bounded in $E$.
+Prove that $f$ is continuous in $E$.
+(Hint: Proceed as in the proof of Theorem 9.21.)} \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -676,8 +680,10 @@ $\Box$ \\\\
 \item[(c)]
 
 \item[(d)]
+  \emph{In spite of this, prove that $f$ is not differentiable at $(0,0)$.} \\
 
 \end{enumerate}
+
 
 
 \emph{Proof of (a).}
@@ -756,7 +762,50 @@ $\Box$ \\\\
 \item[(4)]
   \emph{Show that $(D_2 f)(x,y)$ is bounded.}
   Similar to (2).
+  
+\item[(5)]
+  \emph{Show that $f$ is continuous.}
+  Apply Exercise 9.7 to (2)(4).
 \end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Write $\mathbf{u} = (u_1, u_2)$.
+  The formula
+  \[
+    (D_{\mathbf{u}}f)(0,0) = (D_1 f)(0,0)u_1 + (D_2 f)(0,0)u_2 = u_1
+  \]
+  might be false since we don't know if $f$ is differentiable or not.
+  Actually, we will show that $(D_{\mathbf{u}}f)(0,0) = u_1^3 \neq u_1$.
+
+\item[(2)]
+  \begin{align*}
+    (D_{\mathbf{u}}f)(0,0)
+    &= \lim_{t \to 0} \frac{f(tu_1,tu_2) - f(0,0)}{t} \\
+    &= \lim_{t \to 0} \frac{\frac{t^3u_1^3}{t^2u_1^2 + t^2u_2^2} - 0}{t} \\
+    &= \lim_{t \to 0} u_1^3
+      & (|\mathbf{u}| = 1) \\
+    &= u_1^3.
+  \end{align*}
+  Also $\abs{(D_{\mathbf{u}}f)(0,0)} = \abs{u_1}^3 \leq 1$
+  since $|\mathbf{u}| = 1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+  (Reductio ad absurdum)
+  If $f$ were differentiable,
+  then 
+  \[
+    (D_{\mathbf{u}}f)(0,0) = (D_1 f)(0,0)u_1 + (D_2 f)(0,0)u_2 = u_1
+  \]
+  (Formula (40) in Chapter 9), contrary to (b).
 $\Box$ \\\\
 
 
