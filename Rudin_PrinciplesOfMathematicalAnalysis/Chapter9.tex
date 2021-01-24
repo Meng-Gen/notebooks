@@ -585,12 +585,62 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.9.}
-\emph{...} \\
+\emph{If $\mathbf{f}$ is a differentiable mapping
+of a connected open set $E \subseteq \mathbb{R}^n$,
+and if $\mathbf{f}'(\mathbf{x}) = 0$ for every $\mathbf{x} \in E$,
+prove that $\mathbf{f}$ is a constant in $E$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\mathbf{f}$ is \textbf{locally constant}.}
+  Given any $\mathbf{x} \in E$.
+  Since $E$ is open, there exists an open neighborhood $B(\mathbf{x};r)$ of $\mathbf{x}$
+  such that $B(\mathbf{x};r) \subseteq E$ and $r > 0$.
+  Corollary to Theorem 9.19 implies that
+  $\mathbf{f}$ is a constant on $B(\mathbf{x};r)$, that is,
+  $\mathbf{f}$ is locally constant.
+
 \item[(2)]
+  \emph{Show that $\mathbf{f}$ is constant
+  if $\mathbf{f}$ is locally constant in a connected set $E \subseteq \mathbb{R}^n$.}
+  Might assume that $E \neq \varnothing$. (Otherwise there is nothing to do.)
+  Take some $\mathbf{x}_0 \in E$.
+  \begin{enumerate}
+  \item[(a)]
+    Let
+    \[
+      U = \{ \mathbf{y} \in E : \mathbf{f}(\mathbf{y}) = \mathbf{f}(\mathbf{x}_0) \}.
+    \]
+
+  \item[(b)]
+    $U$ is open since $\mathbf{f}$ is locally constant (by (1)).
+    (Take any $\mathbf{y} \in U$.
+    Since $\mathbf{f}$ is locally constant,
+    there is an open neighborhood $B(\mathbf{y}) \subseteq E$
+    of $\mathbf{y}$ such that $f(\mathbf{z}) = f(\mathbf{y}) = f(\mathbf{x}_0)$
+    whenever $\mathbf{z} \in B(\mathbf{y})$.
+    So that $B(\mathbf{y}) \subseteq U$, or $U$ is open.)
+
+  \item[(c)]
+    Besides, since $\mathbf{f}$ is continuous (Remarks 9.13(c)),
+    the set $U$ is closed.
+    (The proof is the same as Proof (Definition 2.18(d)) in Exercise 4.3.)
+
+  \item[(d)]
+    So $U$ is open and closed.
+    Write $E = U \cup (E - U)$.
+    Here $U$ and $E - U$ are both open and closed.
+    Hence $U \cap \overline{E-U} = U \cap (E-U) = \varnothing$
+    and $\overline{U} \cap (E-U) = U \cap (E-U) = \varnothing$.
+    Note that $\mathbf{x}_0 \in U \neq \varnothing$.
+    By the connectedness of $E$, $E-U = \varnothing$, or $E = U$,
+    or $\mathbf{f}$ is constant on $E$.
+  \end{enumerate}
+
+  \emph{Note.}
+  \emph{The only subsets of a connected set $E$ which are both open and closed
+  are $E$ and $\varnothing$.}
 
 \end{enumerate}
 $\Box$ \\\\
