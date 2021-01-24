@@ -815,6 +815,12 @@ $\Box$ \\\\
   $(D_{\mathbf{u}}f)(0,0)$ exists, and that its absolute value is at most $1$.}
 
 \item[(c)]
+  \emph{Let $\gamma$ be a differentiable mapping of $\mathbb{R}^1$ into $\mathbb{R}^2$
+  (in other words, $\gamma$ is a differentiable curve in $\mathbb{R}^2$),
+  with $\gamma(t) = (0,0)$ and $\gamma'(t) \neq (0,0)$ for any $t \in \mathbb{R}^1$.
+  Put $g(t) = f(\gamma(t))$ and prove that
+  $g$ is differentiable for every $t \in \mathbb{R}^1$.
+  If $\gamma \in \mathscr{C}'$, prove that $g \in \mathscr{C}'$.}
 
 \item[(d)]
   \emph{In spite of this, prove that $f$ is not differentiable at $(0,0)$.} \\
@@ -935,6 +941,130 @@ $\Box$ \\
 
 
 
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Given any $t \in \mathbb{R}^1$.
+  \[
+    g'(t)
+    = \lim_{x \to t} \frac{g(x)-g(t)}{x-t}
+    = \lim_{x \to t} \frac{f(\gamma(x))-f(\gamma(t))}{x-t}.
+  \]
+  Write $\gamma(t) = (\gamma_1(t),\gamma_2(t))$.
+
+\item[(2)]
+  Suppose that $\gamma(t) \neq (0,0)$.
+  Since $\gamma$ is differentiable, $\gamma$ is continuous.
+  So there exists an open neighborhood $B(t) \subseteq \mathbb{R}^1$ of $t$
+  such that $\gamma(x) \neq (0,0)$ whenever $x \in B(t)$.
+  Hence
+  \begin{align*}
+    g'(t)
+    &= \lim_{x \to t} \frac{\frac{\gamma_1(x)^3}{\gamma_1(x)^2+\gamma_2(x)^2}
+      -\frac{\gamma_1(t)^3}{\gamma_1(t)^2+\gamma_2(t)^2}}{x-t} \\
+    &= \frac{d}{dt}\left(\frac{\gamma_1(t)^3}{\gamma_1(t)^2+\gamma_2(t)^2}\right) \\
+    &= \frac{3\gamma_1(t)^2\gamma_1'(t)}{\gamma_1(t)^2+\gamma_2(t)^2}
+      - \frac{\gamma_1(t)^3(2\gamma_1(t)\gamma_1'(t)+2\gamma_2(t)\gamma_2'(t))}
+        {(\gamma_1(t)^2+\gamma_2(t)^2)^2}.
+  \end{align*}
+  exists
+  since $\gamma_1$ and $\gamma_2$ are differentiable.
+
+\item[(3)]
+  Suppose that $\gamma(t) = (0,0)$ and thus $\gamma'(t) \neq (0,0)$.
+  So
+  \[
+    g'(t) = \lim_{x \to t} \frac{f(\gamma(x))}{x-t}
+  \]
+  Note that $\gamma(x) \neq (0,0)$ in some open neighborhood of $t$
+  since
+  \[
+    \lim_{\substack{x \to t \\ \gamma(x) = (0,0)}} \frac{\gamma(x) - \gamma(t)}{x-t}
+    = (0,0),
+  \]
+  contrary to the assumption that $\gamma'(t) \neq (0,0)$.
+  Note that $\gamma_1(t) = \gamma_2(t) = 0$.
+  So
+  \begin{align*}
+    g'(t)
+    &= \lim_{x \to t} \frac{f(\gamma(x))}{x-t} \\
+    &= \lim_{x \to t}
+      \frac{\gamma_1(x)^3}{\gamma_1(x)^2+\gamma_2(x)^2}
+      \cdot \frac{1}{x-t} \\
+    &= \lim_{x \to t}
+      \frac{(\gamma_1(x)-\gamma_1(t))^3}
+        {(\gamma_1(x)-\gamma_1(t))^2+(\gamma_2(x)-\gamma_2(t))^2}
+      \cdot \frac{1}{x-t} \\
+    &= \lim_{x \to t}
+      \frac{\left(\frac{\gamma_1(x)-\gamma_1(t)}{x-t}\right)^3}
+        {\left(\frac{\gamma_1(x)-\gamma_1(t)}{x-t}\right)^2
+        +\left(\frac{\gamma_2(x)-\gamma_2(t)}{x-t}\right)^2} \\
+    &= \frac{\gamma_1'(t)^3}{\gamma_1'(t)^2+\gamma_2'(t)^2}
+  \end{align*}
+  since $\gamma'(t) \neq (0,0)$.
+
+\item[(4)]
+By (2)(3), $g'(t)$ exists and
+\begin{equation*}
+  g'(t) =
+    \begin{cases}
+      \frac{3\gamma_1(t)^2\gamma_1'(t)}{\gamma_1(t)^2+\gamma_2(t)^2}
+        - \frac{\gamma_1(t)^3(2\gamma_1(t)\gamma_1'(t)+2\gamma_2(t)\gamma_2'(t))}
+          {(\gamma_1(t)^2+\gamma_2(t)^2)^2}
+        & \text{ if $\gamma(t) \neq (0,0)$}, \\
+      \frac{\gamma_1'(t)^3}{\gamma_1'(t)^2+\gamma_2'(t)^2}
+        & \text{ if $\gamma(t) = (0,0)$}.
+    \end{cases}
+\end{equation*}
+
+\item[(5)]
+  Now suppose $\gamma \in \mathscr{C}'$.
+  To show $g' \in \mathscr{C}'$, it suffices to show that
+  \[
+    \lim_{x \to t} g'(x) = g'(t)
+  \]
+  if $\gamma(t) = (0,0)$ since $g'(t)$ is always continuous if $\gamma(t) \neq (0,0)$.
+  Here all $\gamma_1, \gamma_2, \gamma_1', \gamma_2'$ are continuous
+  and $\gamma_1(t)^2+\gamma_2(t)^2 \neq 0$ by assumption.
+  So
+  \begin{align*}
+    &\lim_{x \to t}
+      \frac{3\gamma_1(x)^2\gamma_1'(x)}{\gamma_1(x)^2+\gamma_2(x)^2} \\
+    =& \lim_{x \to t}
+      \frac{3\left(\frac{\gamma_1(x)-\gamma_1(t)}{x-t}\right)^2\gamma_1'(x)}
+      {\left(\frac{\gamma_1(x)-\gamma_1(t)}{x-t}\right)^2
+        +\left(\frac{\gamma_2(x)-\gamma_2(t)}{x-t}\right)^2} \\
+    =& \frac{3\gamma_1'(t)^2 \cdot \gamma_1'(t)}{\gamma_1'(t)^2+\gamma_2'(t)^2} \\
+    =& \frac{3\gamma_1'(t)^3}{\gamma_1'(t)^2+\gamma_2'(t)^2}
+  \end{align*}
+  and similarly
+  \begin{align*}
+    &\lim_{x \to t}
+      \frac{\gamma_1(t)^3(2\gamma_1(t)\gamma_1'(t)+2\gamma_2(t)\gamma_2'(t))}
+        {(\gamma_1(t)^2+\gamma_2(t)^2)^2} \\
+    =& \lim_{x \to t}
+      \frac{\left(\frac{\gamma_1(x)-\gamma_1(t)}{x-t}\right)^3
+        \left( 2\frac{\gamma_1(x)-\gamma_1(t)}{x-t}\gamma_1'(t)
+        +2\frac{\gamma_2(x)-\gamma_2(t)}{x-t}\gamma_2'(t) \right)}
+      {\left( \left(\frac{\gamma_1(x)-\gamma_1(t)}{x-t}\right)^2
+        +\left(\frac{\gamma_2(x)-\gamma_2(t)}{x-t}\right)^2 \right)^2} \\
+    =& \frac{\gamma_1'(t)^3 \cdot (2\gamma_1'(t)\gamma_1'(t) + 2\gamma_2'(t)\gamma_2'(t))}
+      {(\gamma_1'(t)^2+\gamma_2'(t)^2)^2} \\
+    =& \frac{2\gamma_1'(t)^3}{\gamma_1'(t)^2+\gamma_2'(t)^2}.
+  \end{align*}
+  Hence
+  \[
+    \lim_{x \to t} g'(x)
+    = \frac{3\gamma_1'(t)^3}{\gamma_1'(t)^2+\gamma_2'(t)^2}
+      - \frac{2\gamma_1'(t)^3}{\gamma_1'(t)^2+\gamma_2'(t)^2}
+    = g'(t).
+  \]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
 \emph{Proof of (d).}
   (Reductio ad absurdum)
   If $f$ were differentiable,
@@ -942,7 +1072,8 @@ $\Box$ \\
   \[
     (D_{\mathbf{u}}f)(0,0) = (D_1 f)(0,0)u_1 + (D_2 f)(0,0)u_2 = u_1
   \]
-  (Formula (40) in Chapter 9), contrary to (b).
+  (Formula (40) in Chapter 9), contrary to (b)
+  if we take $\mathbf{u} = \left(\frac{1}{64}, \frac{\sqrt{4095}}{64} \right)$.
 $\Box$ \\\\
 
 
