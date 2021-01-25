@@ -1323,9 +1323,7 @@ given by}
   and verify the formula}
   \[
     \mathbf{g}'(\mathbf{y})
-    = \{ \mathbf{f}'(\mathbf{g}(\mathbf{y})) \}^{-1}
-    \qquad
-    (\mathbf{y} \in \mathbb{R}^2 - \{(0,0)\}).
+    = \{ \mathbf{f}'(\mathbf{g}(\mathbf{y})) \}^{-1}.
   \]
 
 \item[(d)]
@@ -1342,7 +1340,7 @@ given by}
 \item[(2)]
   If $(a,b) \neq (0,0)$,
   then
-  $\mathbf{f}: \left(\log(\sqrt{a^2+b^2}), \mathrm{atan2}(b,a)\right) \mapsto (a,b)$
+  $\mathbf{f}: \left(\log \sqrt{a^2+b^2}, \mathrm{atan2}(b,a)\right) \mapsto (a,b)$
   where
   \begin{equation*}
     \mathrm{atan2}(b,a) =
@@ -1351,8 +1349,7 @@ given by}
         \arctan\left(\frac{b}{a}\right) + \pi & \text{ if $a < 0$ and $b \geq 0$}, \\
         \arctan\left(\frac{b}{a}\right) - \pi & \text{ if $a < 0$ and $b < 0$}, \\
         \frac{\pi}{2} & \text{ if $a = 0$ and $b > 0$}, \\
-        -\frac{\pi}{2} & \text{ if $a = 0$ and $b < 0$}, \\
-        \text{undefined} & \text{ if $a = 0$ and $b = 0$}.
+        -\frac{\pi}{2} & \text{ if $a = 0$ and $b < 0$}.
       \end{cases}
   \end{equation*}
   (Or apply Theorem 8.7(d).)
@@ -1363,6 +1360,168 @@ given by}
   we have
   $f_1(x,y)^2 + f_2(x,y)^2 = e^{2x} \neq 0$.
   So that there is no $(x,y)$ such that $\mathbf{f}: (x,y) \mapsto (0,0)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \[
+    [\mathbf{f}'(x,y)]
+    =
+    \begin{bmatrix}
+      e^x \cos y & -e^x \sin y \\
+      e^x \sin y &  e^x \cos y
+    \end{bmatrix}.
+  \]
+  So
+  \[
+    J_{\mathbf{f}}(x,y)
+    = \det \mathbf{f}'(x,y)
+    = e^{2x}
+    \neq 0.
+  \]
+
+\item[(2)]
+  Since $J_{\mathbf{f}}(x,y) \neq 0$, $\mathbf{f}'(x,y)$ is invertible (Theorem 9.36).
+  So the inverse function theorem (Theorem 9.24) implies that
+  there exists an open neighborhood $B(x,y)$ of $(x,y)$ such that
+  $\mathbf{f}$ is injective on $B(x,y)$.
+
+\item[(3)]
+  Note that
+  \[
+    \mathbf{f}(0,0) = \mathbf{f}(0,2\pi) = (1,0).
+  \]
+  So that $\mathbf{f}$ is not injective on the whole $\mathbb{R}^2$.
+  (Injectivity of $\mathbf{f}$ is a local property.)
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  If $\mathbf{a} = \left(0, \frac{\pi}{3}\right)$, then
+  $\mathbf{b} = \mathbf{f}(\mathbf{a}) = \left( \frac{1}{2}, \frac{\sqrt{3}}{2} \right)$.
+
+\item[(2)]
+  Similar to (2) in the proof of (a),
+  define $\mathbf{g}: E \to \mathbb{R}^2$ by
+  \[
+    \mathbf{g}(x,y) = \left(\log \sqrt{x^2+y^2}, \arctan\left(\frac{y}{x}\right) \right).
+  \]
+  where $E$ is some open neighborhood of the point $\mathbf{b} \in \mathbb{R}^2$ described in (b).
+  So $\mathbf{g}$ is a continuous inverse of $\mathbf{f}$.
+
+\item[(3)]
+  Since
+  \[
+    [\mathbf{f}'(x,y)]
+    =
+    \begin{bmatrix}
+      e^x \cos y & -e^x \sin y \\
+      e^x \sin y &  e^x \cos y
+    \end{bmatrix},
+  \]
+  \[
+    [\mathbf{f}'(\mathbf{a})]
+    =
+    \begin{bmatrix}
+      \mathbf{f}'\left(0, \frac{\pi}{3}\right)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      e^0 \cos \frac{\pi}{3} & -e^0 \sin \frac{\pi}{3} \\
+      e^0 \sin \frac{\pi}{3} &  e^0 \cos \frac{\pi}{3}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      \frac{1}{2} & -\frac{\sqrt{3}}{2} \\
+      \frac{\sqrt{3}}{2} & \frac{1}{2}
+    \end{bmatrix}.
+  \]
+
+\item[(4)]
+  Since
+  \[
+    [\mathbf{g}'(x,y)]
+    =
+    \begin{bmatrix}
+      \frac{x}{x^2+y^2} & \frac{y}{x^2+y^2} \\
+      \frac{-y}{x^2+y^2} & \frac{x}{x^2+y^2}
+    \end{bmatrix},
+  \]
+  \[
+    [\mathbf{g}'(\mathbf{b})]
+    =
+    \begin{bmatrix}
+      \mathbf{g}'\left( \frac{1}{2}, \frac{\sqrt{3}}{2} \right)
+    \end{bmatrix} \\
+    =
+    \begin{bmatrix}
+      \frac{1}{2} & \frac{\sqrt{3}}{2} \\
+      -\frac{\sqrt{3}}{2} & \frac{1}{2}
+    \end{bmatrix}.
+  \]
+  Here we can see $[\mathbf{f}'(\mathbf{a})][\mathbf{g}'(\mathbf{b})]
+  = [\mathbf{g}'(\mathbf{b})][\mathbf{f}'(\mathbf{a})] = 1$.
+
+\item[(5)]
+  \begin{align*}
+    [\mathbf{g}'(\mathbf{y})]
+    &= [\mathbf{g}'(\mathbf{f}(\mathbf{x}))] \\
+    &= [\mathbf{g}'(e^x \cos y, e^x \sin y)] \\
+    &=
+    \begin{bmatrix}
+      \frac{e^x \cos y}{e^{2x}} & \frac{e^x \sin y}{e^{2x}} \\
+      \frac{-e^x \sin y}{e^{2x}} & \frac{e^x \cos y}{e^{2x}}
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+      e^{-x} \cos y & e^{-x} \sin y \\
+      -e^{-x} \sin y & e^{-x} \cos y
+    \end{bmatrix},
+  \end{align*}
+  and
+  \[
+    [\mathbf{f}'(\mathbf{g}(\mathbf{y}))]
+    = [\mathbf{f}'(\mathbf{x})]
+    =
+    \begin{bmatrix}
+      e^x \cos y & -e^x \sin y \\
+      e^x \sin y &  e^x \cos y
+    \end{bmatrix}.
+  \]
+  Note that
+  \[
+    \begin{bmatrix}
+      e^{-x} \cos y & e^{-x} \sin y \\
+      -e^{-x} \sin y & e^{-x} \cos y
+    \end{bmatrix}
+    \begin{bmatrix}
+      e^x \cos y & -e^x \sin y \\
+      e^x \sin y &  e^x \cos y
+    \end{bmatrix}
+    = 1.
+  \]
+  Therefore
+  \[
+    \mathbf{g}'(\mathbf{y})
+    = \{ \mathbf{f}'(\mathbf{g}(\mathbf{y})) \}^{-1}
+  \]
+  on $\mathbf{g}(E)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
 \end{enumerate}
 $\Box$ \\\\
 
