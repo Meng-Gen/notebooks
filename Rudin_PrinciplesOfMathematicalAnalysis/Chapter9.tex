@@ -652,13 +652,58 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.10.}
-\emph{...} \\
+\emph{If $f$ is a real function defined in a convex open set $E \subseteq \mathbb{R}^n$,
+such that $(D_1 f)(\mathbf{x})$ = 0 for every $\mathbf{x} \in E$,
+prove that $f(\mathbf{x})$ depends only on $x_2, \ldots, x_n$.
+Show that the convexity of $E$ can be replaced by a weaker condition,
+but that some condition is required.
+For example, if $n=2$ and $E$ is shaped like a horseshoe,
+the statement may be false.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  It suffices to show that
+  \[
+    f(a, x_2, \ldots, x_n) = f(b, x_2, \ldots, x_n)
+  \]
+  whenever $\mathbf{x} = (a, x_2, \ldots, x_n) \in E$
+  and $\mathbf{y} = (b, x_2, \ldots, x_n) \in E$
+  if $(D_1 f)(\mathbf{x}) = 0$ in the convex open set $E$.
 
+\item[(2)]
+  Might assume that $a < b$.
+  Since $g: t \mapsto f(t, x_2, \ldots, x_n)$ is a real continuous function
+  on $[a,b]$ (by the openness of $E$) and differentiable in $(a,b)$
+  (by the existence of $D_1 f$),
+  \[
+    g(b) - g(a) = (b - a)g'(\xi)
+  \]
+  for some $\xi \in (a,b)$.
+  Note that
+  \[
+    g'(\xi) = (D_1 f)(\xi, x_2, \ldots, x_n) = 0
+  \]
+  by assumption. $g(b) = g(a)$ or $f(a, x_2, \ldots, x_n) = f(b, x_2, \ldots, x_n)$.
+
+\item[(3)]
+  (2) shows that the convexity of $E$ can be replaced by a weaker condition
+  that $E \subseteq \mathbb{R}^n $ is convex in the first coordinate, say
+  $E$ is open and
+  \[
+    \lambda \mathbf{x} + (1-\lambda) \mathbf{y}
+    = (\lambda a + (1-\lambda) b, x_2, \ldots, x_n) \in E
+  \]
+  whenever
+  $\mathbf{x} = (a, x_2, \ldots, x_n) \in E$,
+  $\mathbf{y} = (b, x_2, \ldots, x_n) \in E$, and $0 < \lambda < 1$.
+
+\item[(4)]
+  \emph{Show that the convexity of $E$ or some weaker condition is required.}
+  Define $f(x,y) = \mathrm{sgn}(x)$ on $E = \{ (x,y) \in \mathbb{R}^2 : x \neq 0 \}$.
+  $E$ is open and $(D_1 f)(x,y) = 0$ in $E$.
+  Note that $f(1989, 0) = 1$ and $f(-64, 0) = -1$,
+  and thus $f(x,y)$ does not depend only on $y = 0$.
 \end{enumerate}
 $\Box$ \\\\
 
