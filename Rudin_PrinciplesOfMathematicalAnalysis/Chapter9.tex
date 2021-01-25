@@ -1216,8 +1216,8 @@ $\Box$ \\
       \frac{t^2 - 2t^3 \cos^2\theta\sin\theta
         - \frac{4t^4\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2} - 0}{t} \\
     &= \lim_{t \to 0}
-      t - 2t^2 \cos^2\theta\sin\theta
-        - \frac{4t^3\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2} \\
+      \left( t - 2t^2 \cos^2\theta\sin\theta
+        - \frac{4t^3\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2} \right) \\
     &= 0.
   \end{align*}
   If $\sin\theta = 0$, then
@@ -1250,8 +1250,8 @@ $\Box$ \\
       \frac{2t - 6t^2\cos^2\theta\sin\theta
         - \frac{16t^3\cos^6\theta\sin^4\theta}{(t^2\cos^4\theta+\sin^2\theta)^3} - 0}{t} \\
     &= \lim_{t \to 0}
-      t - 6t\cos^2\theta\sin\theta
-        - \frac{16t^2\cos^6\theta\sin^4\theta}{(t^2\cos^4\theta+\sin^2\theta)^3} \\
+      \left( t - 6t\cos^2\theta\sin\theta
+        - \frac{16t^2\cos^6\theta\sin^4\theta}{(t^2\cos^4\theta+\sin^2\theta)^3} \right) \\
     &= 2.
   \end{align*}
   If $\sin\theta = 0$, then
@@ -1281,13 +1281,78 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.16.}
-\emph{...} \\
+\emph{Show that the continuity of $\mathbf{f}'$ at the point $\mathbf{a}$
+is needed in the inverse function theorem, even in the case $n=1$: If
+\[
+  f(t) = t + 2t^2 \sin \frac{1}{t}
+\]
+for $t \neq 0$, and $f(0) = 0$, then $f'(0) = 1$, $f'$ is bouneded in $(-1,1)$,
+but $f$ is not one-to-one in any neighborhood of $0$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that}
+  \begin{equation*}
+    f'(t) =
+      \begin{cases}
+        1 + 4t\sin\frac{1}{t} - 2\cos\frac{1}{t}
+          & \text{ if $t \neq 0$}, \\
+        1
+          & \text{ if $t = 0$}.
+      \end{cases}
+  \end{equation*}
+  It suffices to show that $f'(0) = 1$.
+  In fact,
+  \[
+    f'(0)
+    = \lim_{t \to 0} \frac{t + 2t^2 \sin \frac{1}{t} - 0}{t - 0}
+    = \lim_{t \to 0} \left( 1 + 2t \sin \frac{1}{t} \right)
+    = 1
+  \]
+  (since $\sin \frac{1}{t}$ is bounded and $2t \to 0$ as $t \to 0$).
+\end{enumerate}
 
+\emph{Note.} $f'(t)$ is not continuous at $t = 0$.
+
+\begin{enumerate}
+\item[(2)]
+  \emph{Show that $f'$ is bouneded in $(-1,1)$.}
+  \[
+    \abs{f'(t)}
+    \leq 1 + 4\abs{t}\abs{\sin\frac{1}{t}} + 2\abs{\cos\frac{1}{t}}
+    \leq 1 + 4 + 2
+    = 7
+  \]
+  if $t \neq 0$.
+  Hence $f'$ is bounded by $7$ in $(-1,1)$.
+
+\item[(3)]
+  \emph{Show that $f$ is not one-to-one in any neighborhood of $0$.}
+  Take
+  \[
+    x_n = \frac{1}{2n\pi}
+    \qquad
+    \text{ and }
+    \qquad
+    y_n = \frac{1}{2n\pi+\pi}
+  \]
+  for $n = 1,2,3,\ldots$.
+  So that
+  \[
+    f'(x_n) = -1 < 0
+    \qquad
+    \text{ and }
+    \qquad
+    f'(y_n) = 3 > 0.
+  \]
+  Since $f'(t)$ is continuous if $t \neq 0$,
+  there exists $\xi_n \in (y_n, x_n)$ such that $f'(\xi_n) = 0$ (Theorem 4.23).
+  Then Theorem 5.11 implies that $f$ has a local maximum at $\xi_n$,
+  that is, $f$ is not one-to-one in the interval $[y_n, x_n]$
+  (by applying Theorem 4.23 again).
+  Since $x_n \to 0$ and $y_n \to 0$ as $n \to \infty$,
+  $f$ is not one-to-one in any neighborhood of $0$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -1376,7 +1441,7 @@ $\Box$ \\
       e^x \sin y &  e^x \cos y
     \end{bmatrix}.
   \]
-  So
+  So $\mathbf{f}'$ is continuous and
   \[
     J_{\mathbf{f}}(x,y)
     = \det \mathbf{f}'(x,y)
@@ -1666,13 +1731,14 @@ $\Box$ \\
       2 &  2 & -3 &  2
     \end{bmatrix},
   \]
+  $\mathbf{f}'$ is continuous,
   \[
     [\mathbf{f}'(0,0,0,0)]
     = \begin{bmatrix}
       3 &  1 & -1 &  0 \\
       1 & -1 &  2 &  1 \\
       2 &  2 & -3 &  2
-    \end{bmatrix}
+    \end{bmatrix},
   \]
   and
   \[
