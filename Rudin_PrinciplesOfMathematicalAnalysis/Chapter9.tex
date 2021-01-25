@@ -1128,7 +1128,33 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.15.}
-\emph{...} \\
+\emph{Define $f(0,0) = 0$, and put
+\[
+  f(x,y) = x^2+y^2-2x^2y-\frac{4x^6y^2}{(x^4+y^2)^2}
+\]
+if $(x,y) \neq (0,0)$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove, for all $(x,y) \in \mathbb{R}^2$, that
+  \[
+    4x^4y^2 \leq (x^4+y^2)^2.
+  \]
+  Conclude that $f$ is continuous.}
+
+\item[(b)]
+  \emph{For $0 \leq \theta \leq 2\pi$, $-\infty < t < \infty$, define
+  \[
+    g_{\theta}(t) = f(t\cos\theta, t\sin\theta).
+  \]
+  Show that $g_{\theta}(0) = 0$, $g_{\theta}'(0) = 0$, $g_{\theta}''(0) = 2$.
+  Each $g_{\theta}$ has therefore a strict local minimum at $t=0$.
+  In other words, the restriction of $f$ to each line through $(0,0)$
+  has a strict local minimum at $(0,0)$.}
+
+\item[(c)]
+  \emph{Show that $(0,0)$ is nevertheless not a local minimum for $f$,
+  since $f(x,x^2)=-x^4$.} \\
+\end{enumerate}
 
 \emph{Proof.}
 \begin{enumerate}
@@ -1162,13 +1188,71 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.17.}
-\emph{...} \\
+\emph{Let $\mathbf{f} = (f_1,f_2)$ be the mapping of $\mathbb{R}^2$ into $\mathbb{R}^2$
+given by}
+\[
+  f_1(x,y) = e^x \cos y,
+  \qquad
+  f_2(x,y) = e^x \sin y.
+\]
+\begin{enumerate}
+\item[(a)]
+  \emph{What is the range of $\mathbf{f}$?}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Show that the Jacobian of $\mathbf{f}$ is not zero at any point of $\mathbb{R}^2$.
+  Thus every point of $\mathbb{R}^2$ has a neighborhood in which $\mathbf{f}$ is one-to-one.
+  Nevertheless, $\mathbf{f}$ is not one-to-one on $\mathbb{R}^2$.}
+
+\item[(c)]
+  \emph{Put $\mathbf{a} = \left(0, \frac{\pi}{3}\right)$,
+  $\mathbf{b} = \mathbf{f}(\mathbf{a})$, let $\mathbf{g}$ be the continuous inverse of $\mathbf{f}$,
+  defined in a neighborhood of $\mathbf{b}$ such that $\mathbf{g}(\mathbf{b}) = \mathbf{a}$.
+  Find an explicit formula for $\mathbf{g}$,
+  compute $\mathbf{f}'(\mathbf{a})$ and $\mathbf{g}'(\mathbf{b})$,
+  and verify the formula}
+  \[
+    \mathbf{g}'(\mathbf{y})
+    = \{ \mathbf{f}'(\mathbf{g}(\mathbf{y})) \}^{-1}
+    \qquad
+    (\mathbf{y} \in \mathbb{R}^2 - \{(0,0)\}).
+  \]
+
+\item[(d)]
+  \emph{What are the images under $\mathbf{f}$ of lines parallel to the coordinate axes?} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  The range of $\textbf{f}$ is $\mathbb{R}^2 - \{(0,0)\}$.
 
+\item[(2)]
+  If $(a,b) \neq (0,0)$,
+  then
+  $\mathbf{f}: \left(\log(\sqrt{a^2+b^2}), \mathrm{atan2}(b,a)\right) \mapsto (a,b)$
+  where
+  \begin{equation*}
+    \mathrm{atan2}(b,a) =
+      \begin{cases}
+        \arctan\left(\frac{b}{a}\right) & \text{ if $a > 0$}, \\
+        \arctan\left(\frac{b}{a}\right) + \pi & \text{ if $a < 0$ and $b \geq 0$}, \\
+        \arctan\left(\frac{b}{a}\right) - \pi & \text{ if $a < 0$ and $b < 0$}, \\
+        \frac{\pi}{2} & \text{ if $a = 0$ and $b > 0$}, \\
+        -\frac{\pi}{2} & \text{ if $a = 0$ and $b < 0$}, \\
+        \text{undefined} & \text{ if $a = 0$ and $b = 0$}.
+      \end{cases}
+  \end{equation*}
+  (Or apply Theorem 8.7(d).)
+
+\item[(3)]
+  If $(a,b) = (0,0)$,
+  then for any $(x,y) \in \mathbb{R}^2$
+  we have
+  $f_1(x,y)^2 + f_2(x,y)^2 = e^{2x} \neq 0$.
+  So that there is no $(x,y)$ such that $\mathbf{f}: (x,y) \mapsto (0,0)$.
 \end{enumerate}
 $\Box$ \\\\
 
