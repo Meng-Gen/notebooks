@@ -1570,13 +1570,144 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.19.}
-\emph{...} \\
+\emph{Show that the system of equations
+\begin{align*}
+  3x+y-z+u^2 &= 0 \\
+  x-y+2z+u &= 0 \\
+  2x+2y-3z+2u &= 0
+\end{align*}
+can solved
+for $x,y,u$ in terms of $z$;
+for $x,z,u$ in terms of $y$;
+for $y,z,u$ in terms of $x$;
+but not for $x,y,z$ in terms of $u.$} \\
 
-\emph{Proof.}
+\emph{Proof (Brute-force).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Denote
+  \begin{align*}
+    3x+y-z+u^2 &= 0 \tag{I} \\
+    x-y+2z+u &= 0 \tag{II} \\
+    2x+2y-3z+2u &= 0 \tag{III}
+  \end{align*}
+  So (I) - 3(II) implies that
+  \[
+    4y + u(u-3) = 7z \tag{IV},
+  \]
+  and (III) - 2(II) implies that
+  \[
+    4y = 7z \tag{V}.
+  \]
+  By (IV)(V), we have $u(u-3) = 0$.
+  Hence $u = 0$ or $u = 3$ in any case.
 
+\item[(2)]
+  \emph{Show that (I)(II)(III) can be solve for $x,y,u$ in terms of $z$.}
+  (V) implies that $y = \frac{7z}{4}$.
+  Hence
+  \[
+    (x,y,u)
+    =
+    \left(-\frac{z}{4}, \frac{7z}{4}, 0 \right),
+    \left(-\frac{z}{4}-3, \frac{7z}{4}, 3 \right).
+  \]
+
+\item[(3)]
+  \emph{Show that (I)(II)(III) can be solve for $x,z,u$ in terms of $y$.}
+  \[
+    (x,z,u)
+    =
+    \left(-\frac{y}{7}, \frac{4y}{7}, 0 \right),
+    \left(-\frac{y}{7}-3, \frac{4y}{7}, 3 \right).
+  \]
+
+\item[(4)]
+  \emph{Show that (I)(II)(III) can be solve for $y,z,u$ in terms of $x$.}
+  \[
+    (y,z,u)
+    =
+    \left(-7x, -4x, 0 \right),
+    \left(-7x-21, -4x-12, 3 \right).
+  \]
+
+\item[(5)]
+  \emph{Show that (I)(II)(III) can not be solve for $x,y,z$ in terms of $u$.}
+  Actually,
+  \[
+    (x,y,z)
+    = \left(-t-u, 7t, 4t \right)
+  \]
+  for all $t \in \mathbb{R}^1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (The implicit function theorem).}
+\begin{enumerate}
+\item[(1)]
+  Define $\mathbf{f}$ be a $\mathscr{C}'$-mapping
+  of $\mathbb{R}^{3+1}$ into $\mathbb{R}^3$ by
+  \[
+    \mathbf{f}(x,y,z,u)
+    = (3x+y-z+u^2,x-y+2z+u,2x+2y-3z+2u).
+  \]
+  Note that $\mathbf{f}(0,0,0,0) = \mathbf{0}$
+  and $\mathbf{f}(-3,0,0,3) = \mathbf{0}$.
+
+\item[(2)]
+  Since
+  \[
+    [\mathbf{f}'(x,y,z,u)]
+    = \begin{bmatrix}
+      3 &  1 & -1 & 2u \\
+      1 & -1 &  2 &  1 \\
+      2 &  2 & -3 &  2
+    \end{bmatrix},
+  \]
+  \[
+    [\mathbf{f}'(0,0,0,0)]
+    = \begin{bmatrix}
+      3 &  1 & -1 &  0 \\
+      1 & -1 &  2 &  1 \\
+      2 &  2 & -3 &  2
+    \end{bmatrix}
+  \]
+  and
+  \[
+    [\mathbf{f}'(-3,0,0,3)]
+    = \begin{bmatrix}
+      3 &  1 & -1 &  6 \\
+      1 & -1 &  2 &  1 \\
+      2 &  2 & -3 &  2
+    \end{bmatrix}.
+  \]
+
+\item[(3)]
+  The submatrix
+  \[
+    [\mathbf{f}'(0,0,0,0)]_x
+    = \begin{bmatrix}
+       1 & -1 &  0 \\
+      -1 &  2 &  1 \\
+       2 & -3 &  2
+    \end{bmatrix}
+  \]
+  is invertiable since its determinant is $3 \neq 0$.
+  By the implicit function theorem (Theorem 9.28),
+  the system can be solved for $y,z,u$ in terms of $x$.
+  Similar arguments to
+  $[\mathbf{f}'(0,0,0,0)]_y$,
+  $[\mathbf{f}'(0,0,0,0)]_z$,
+  $[\mathbf{f}'(-3,0,0,3)]_x$,
+  $[\mathbf{f}'(-3,0,0,3)]_y$, and
+  $[\mathbf{f}'(-3,0,0,3)]_z$.
+
+\item[(4)]
+  Note that $[\mathbf{f}'(0,0,0,0)]_u$ and $[\mathbf{f}'(-3,0,0,3)]_u$
+  are not invertible, we cannot apply the implicit function theorem (Theorem 9.28).
+  We need to show by brute-force in this case.
 \end{enumerate}
 $\Box$ \\\\
 
