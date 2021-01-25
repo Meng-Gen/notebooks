@@ -1156,7 +1156,117 @@ if $(x,y) \neq (0,0)$.}
   since $f(x,x^2)=-x^4$.} \\
 \end{enumerate}
 
-\emph{Proof.}
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Since $t^2 \geq 0$ for all $t \in \mathbb{R}^1$,
+  \[
+    (x^4+y^2)^2 - 4x^4y^2 = (x^4-y^2)^2 \geq 0.
+  \]
+  Hence $4x^4y^2 \leq (x^4+y^2)^2$.
+\item[(2)]
+  $f(x,y)$ is continuous at $(x,y) \neq (0,0)$.
+  Besides,
+  \begin{align*}
+    \abs{f(x,y)}
+    &= \abs{x^2+y^2-2x^2y-\frac{4x^6y^2}{(x^4+y^2)^2}} \\
+    &\leq \abs{x^2}+\abs{y^2}+\abs{2x^2y}+\abs{x^2}\abs{\frac{4x^4y^2}{(x^4+y^2)^2}} \\
+    &\leq \abs{x^2}+\abs{y^2}+\abs{2x^2y}+\abs{x^2}.
+  \end{align*}
+  Hence
+  $\abs{x^2}+\abs{y^2}+\abs{2x^2y}+\abs{x^2} \to 0$ as $(x,y) \to (0,0)$,
+  or
+  \[
+    \lim_{(x,y) \to (0,0)} \abs{f(x,y)} = 0 = f(0,0),
+  \]
+  or $\lim_{(x,y) \to (0,0)} f(x,y) = f(0,0)$,
+  or $f(x,y)$ is continuous at $(0,0)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \begin{equation*}
+    g_{\theta}(t) =
+      \begin{cases}
+        t^2 - 2t^3 \cos^2\theta\sin\theta
+          - \frac{4t^4\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2}
+          & \text{ if $t \neq 0$}, \\
+        0
+          & \text{ if $t = 0$}.
+      \end{cases}
+  \end{equation*}
+  (Note that $\frac{4t^4\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2}$
+  is undefined as $t = 0$ and $\sin\theta = 0$.)
+
+\item[(2)]
+  $g_{\theta}(0) = 0$ by definition.
+
+\item[(3)]
+  \emph{Show that $g_{\theta}'(0) = 0$ for any $\theta \in [0,2\pi]$.}
+  If $\sin\theta \neq 0$ ($\theta \neq 0, \pi, 2\pi$), then
+  \begin{align*}
+    g_{\theta}'(0)
+    &= \lim_{t \to 0}
+      \frac{t^2 - 2t^3 \cos^2\theta\sin\theta
+        - \frac{4t^4\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2} - 0}{t} \\
+    &= \lim_{t \to 0}
+      t - 2t^2 \cos^2\theta\sin\theta
+        - \frac{4t^3\cos^6\theta\sin^2\theta}{(t^2\cos^4\theta+\sin^2\theta)^2} \\
+    &= 0.
+  \end{align*}
+  If $\sin\theta = 0$, then
+  \[
+    g_{\theta}'(0)
+    = \lim_{t \to 0} \frac{t^2 - 0}{t}
+    = \lim_{t \to 0} t
+    = 0.
+  \]
+
+\item[(4)]
+  Combine (3) and a direct calculation for the case $t \neq 0$, we have
+  \begin{equation*}
+    g_{\theta}'(t) =
+      \begin{cases}
+        2t - 6t^2\cos^2\theta\sin\theta
+          - \frac{16t^3\cos^6\theta\sin^4\theta}{(t^2\cos^4\theta+\sin^2\theta)^3}
+          & \text{ if $t \neq 0$}, \\
+        0
+          & \text{ if $t = 0$}.
+      \end{cases}
+  \end{equation*}
+
+\item[(5)]
+  \emph{Show that $g_{\theta}''(0) = 2$ for any $\theta \in [0,2\pi]$.}
+  If $\sin\theta \neq 0$ ($\theta \neq 0, \pi, 2\pi$), then
+  \begin{align*}
+    g_{\theta}''(0)
+    &= \lim_{t \to 0}
+      \frac{2t - 6t^2\cos^2\theta\sin\theta
+        - \frac{16t^3\cos^6\theta\sin^4\theta}{(t^2\cos^4\theta+\sin^2\theta)^3} - 0}{t} \\
+    &= \lim_{t \to 0}
+      t - 6t\cos^2\theta\sin\theta
+        - \frac{16t^2\cos^6\theta\sin^4\theta}{(t^2\cos^4\theta+\sin^2\theta)^3} \\
+    &= 2.
+  \end{align*}
+  If $\sin\theta = 0$, then
+  \[
+    g_{\theta}''(0)
+    = \lim_{t \to 0} \frac{2t - 0}{t}
+    = \lim_{t \to 0} 2
+    = 2.
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
