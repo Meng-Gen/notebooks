@@ -31,6 +31,7 @@
 
 
 % http://www2.math.uu.se/~astrombe/reellanalys2019/solutions_pub.pdf
+% https://www.math.utah.edu/~toledo/3220hw4.pdf
 
 
 
@@ -781,13 +782,206 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.12.}
-\emph{...} \\
+\emph{Fix two real numbers $a$ and $b$, $0<a<b$.
+Define a mapping $\mathbf{f}=(f_1,f_2,f_3)$ of $\mathbb{R}^2$ into $\mathbb{R}^3$ by
+\begin{align*}
+  f_1(s,t) &= (b + a\cos s)\cos t \\
+  f_2(s,t) &= (b + a\cos s)\sin t \\
+  f_3(s,t) &= a \sin s.
+\end{align*}
+Describe the range $K$ if $\mathbf{f}$.
+(It is a certain compact subset of $\mathbb{R}^3$.)}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that there are exactly $4$ points $\mathbf{p} \in K$ such that
+  \[
+    (\nabla f_1)(\mathbf{f}^{-1}(\mathbf{p})) = \mathbf{0}.
+  \]
+  Find these points.}
+
+\item[(b)]
+  \emph{Determine the set of all $\mathbf{q} \in K$ such that
+  \[
+    (\nabla f_3)(\mathbf{f}^{-1}(\mathbf{q})) = \mathbf{0}.
+  \]}
+\item[(c)]
+  \emph{Show that
+  one of the point $\mathbf{p}$ found in part (a) corresponds to a local maximum of $f_1$,
+  one corresponds to a local minimum,
+  and that the other two are neither (they are so-called ``saddle points'').
+  Which of the points $\mathbf{q}$ found in part (b) corresponds to maxima or minima?}
+
+\item[(d)]
+  \emph{Let $\lambda$ be an irrational real number, and define
+  $\mathbf{g}(t) = \mathbf{f}(t,\lambda t)$.
+  Prove that $\mathbf{g}$ is a one-to-one mapping of $\mathbb{R}^1$
+  onto a dense subset of $K$.
+  Prove that
+  \[
+    \abs{ \mathbf{g}'(t) }^2= a^2 + \lambda^2(b + a \cos t)^2.
+  \]}
+\end{enumerate}
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  $K$ is a torus,
+  where
+  \begin{enumerate}
+  \item[(a)]
+    $s, t$ are angles which make a full circle
+    (so that their values start and end at the same point).
+  \item[(b)]
+    $b$ is the distance from the center of the tube to the center of the torus.
+  \item[(c)]
+    $a$ is the radius of the tube.
+  \end{enumerate}
 
+\item[(2)]
+  \emph{Show that $K$ is compact.}
+  Since $\sin$ and $\cos$ are periodic (with period $2\pi$),
+  $K = \mathbf{f}\left([0,2\pi]^2\right)$ is compact
+  by the compactness of $[0,2\pi]^2$ and the continuity of $\mathbf{f}$ (Theorem 4.14).
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    (\nabla f_1)(\mathbf{x})
+    &= (D_1 f_1)(\mathbf{x})\mathbf{e}_1 + (D_2 f_1)(\mathbf{x})\mathbf{e}_2 \\
+    &= ((D_1 f_1)(s,t), (D_2 f_1)(s,t)) \\
+    &= (-a \sin s \cos t, -(b + a \cos t) \sin t)
+  \end{align*}
+  So
+  $(\nabla f_1)(\mathbf{x}) = \mathbf{0}$
+  if and only if
+  \begin{align*}
+    0 &= -a \sin s \cos t, \\
+    0 &= -(b + a \cos t) \sin t.
+  \end{align*}
+
+\item[(2)]
+  Note that $b + a \cos t > 0$ for any $b > a > 0$ and $t \in \mathbb{R}^1$.
+  Hence $(\nabla f_1)(\mathbf{x}) = \mathbf{0}$ if and only if $\sin t = \sin s = 0$.
+  Therefore,
+  $\mathbf{p} = (\pm (b \pm a),0,0)$,
+  or there are exactly $4$ points
+  $\mathbf{p} = (b + a, 0, 0)$,
+  $(b - a, 0, 0)$,
+  $(-b - a, 0, 0)$, or
+  $(-b + a, 0, 0) \in K$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    (\nabla f_3)(\mathbf{x})
+    &= (D_1 f_3)(\mathbf{x})\mathbf{e}_1 + (D_2 f_3)(\mathbf{x})\mathbf{e}_2 \\
+    &= ((D_1 f_3)(s,t), (D_2 f_3)(s,t)) \\
+    &= (a \cos s, 0)
+  \end{align*}
+  So
+  $(\nabla f_1)(\mathbf{x}) = \mathbf{0}$
+  if and only if $\cos s = 0$ (since $a > 0$).
+
+\item[(2)]
+  Therefore,
+  $\mathbf{q} = (b\cos t, b\sin t, \pm a)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Since $-1 \leq \cos s \leq 1$ and $-1 \leq \cos t \leq 1$,
+  $-b-a \leq f_1(s,t) \leq b+a$.
+
+  \begin{enumerate}
+  \item[(a)]
+    $(b+a, 0, 0)$ corresponds to a local maximum of $f_1$.
+
+  \item[(b)]
+    $(-b-a, 0, 0)$ corresponds to a local minimum of $f_1$.
+
+  \item[(c)]
+    $(b - a, 0, 0)$ and $(-b + a, 0, 0)$ are saddle points
+    by considering any open neighborhood of $(s,t)$
+    at which $\cos s = \pm 1$ and $\cos t = \mp 1$.
+  \end{enumerate}
+
+\item[(2)]
+  Since $-1 \leq \sin s \leq 1$,
+  $-a \leq f_3(s,t) \leq a$.
+  \begin{enumerate}
+  \item[(a)]
+    $(b\cos t, b\sin t, a)$ corresponds to a local maximum of $f_3$.
+
+  \item[(b)]
+    $(b\cos t, b\sin t, -a)$ corresponds to a local minimum of $f_3$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  \[
+    \mathbf{g}(t)
+    = \mathbf{f}(t,\lambda t)
+    = ( (b+a\cos t)\cos(\lambda t), (b+a\cos t)\sin(\lambda t), a\sin t ).
+  \]
+
+\item[(2)]
+  \emph{Show that $\mathbf{g}$ is a one-to-one mapping of $\mathbb{R}^1$.}
+  It suffices to show that $\mathbf{g}(t) = \mathbf{g}(s)$ implies $t = s$.
+
+  \begin{enumerate}
+  \item[(a)]
+    By $\mathbf{g}(t) = \mathbf{g}(s)$,
+    \begin{align*}
+      (b+a\cos t)\cos(\lambda t) &= (b+a\cos s)\cos(\lambda s) \tag{I}, \\
+      (b+a\cos t)\sin(\lambda t) &= (b+a\cos s)\sin(\lambda s) \tag{II}, \\
+      a\sin t &= a\sin s \tag{III}.
+    \end{align*}
+    (I) and (II) imply that $\cos t = \cos s$ (since $b > a > 0$).
+    (III) implies that $\sin t = \sin s$.
+    Hence
+    \[
+      t = s+2n\pi
+    \]
+    for some integer $n$.
+
+  \item[(b)]
+    Again, (I) and (II) imply that
+    \[
+      \cos(\lambda t) = \cos(\lambda s)
+      \qquad \text{ and } \qquad
+      \sin(\lambda t) = \sin(\lambda s).
+    \]
+    Hence
+    \[
+      \lambda t = \lambda s + 2m\pi
+    \]
+    for some integer $m$.
+    By assumption that $t = s+2n\pi$, we have $m = n \lambda$.
+    Since $\lambda$ is irrational, $m = n = 0$.
+    Therefore $t = s$ holds.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
