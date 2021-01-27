@@ -982,6 +982,48 @@ $\Box$ \\
     Since $\lambda$ is irrational, $m = n = 0$.
     Therefore $t = s$ holds.
   \end{enumerate}
+
+\item[(3)]
+  \emph{Show that $\mathbf{g}(\mathbb{R}^1)$ is dense in $K$.}
+  Note that $\mathbf{f}\left([0,2\pi]^2\right) = K$.
+  Use the notations $\{x\}$ in Exercise 4.16.
+  It suffices to show that the set
+  \[
+    \left\{ \left(
+      2\pi\left\{\frac{t}{2\pi}\right\},
+      2\pi\left\{\frac{\lambda t}{2\pi}\right\}
+    \right) : t \in \mathbb{R}^1 \right\}
+  \]
+  is dense in $[0,2\pi]^2$ (Exercise 4.4),
+  or to show that
+  \[
+    \left\{ \left(\{ t \}, \{ \lambda t \} \right) : t \in \mathbb{R}^1 \right\}
+  \]
+  is dense in $[0,1]^2$, which is the conclusion of Exercise 4.25(b).
+
+\item[(4)]
+  \emph{Show that $\abs{ \mathbf{g}'(t) }^2= a^2 + \lambda^2(b + a \cos t)^2$.}
+  By
+  \begin{align*}
+    \mathbf{g}'(t)
+    = \left( \right.
+        &-a\sin t \cos(\lambda t)-\lambda(b+a\cos t)\sin(\lambda t), \\
+        &-a\sin t \sin(\lambda t)+\lambda(b+a\cos t)\cos(\lambda t), \\
+        &a\cos t
+      \left. \right),
+  \end{align*}
+  \begin{align*}
+    \abs{ \mathbf{g}'(t) }^2
+    =& \mathbf{g}'(t) \cdot \mathbf{g}'(t) \\
+    =& (-a\sin t \cos(\lambda t)-\lambda(b+a\cos t)\sin(\lambda t))^2 \\
+      &+ (-a\sin t \sin(\lambda t)+\lambda(b+a\cos t)\cos(\lambda t))^2 + (a\cos t)^2 \\
+    =& \underbrace{a^2 \sin^2 t \cos^2(\lambda t) + a^2 \cos^2 t}_{= a^2} \\
+      &+ \underbrace{\lambda^2(b+a\cos t)^2\sin^2(\lambda t)
+        + \lambda^2(b+a\cos t)^2\cos^2(\lambda t)}_{= \lambda^2(b+a\cos t)^2} \\
+      &+ 2a\lambda \sin t\cos(\lambda t)\lambda(b+a\cos t)\sin(\lambda t) \\
+      &- 2a\lambda \sin t\sin(\lambda t)\lambda(b+a\cos t)\cos(\lambda t) \\
+    =& a^2 + \lambda^2(b+a\cos t)^2.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
