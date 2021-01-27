@@ -2066,10 +2066,11 @@ and interpret the theorem (as well as its proof) graphically.} \\
 In the notations of Exercise 4.6,
 define the graph of $f$ by the set
 \[
-  \{ (x,y) \in E : f(x,y) = 0 \}.
+  S = \{ (x,y) \in E : f(x,y) = 0 \}.
 \]
 
 \item[(2)]
+Consider the graph $S$.
 As $D_1 f(a,b) \neq 0$ and $f(x,y) \in \mathscr{C}'$,
 there are an open neighborhood $U \subseteq E$ of $(a,b)$
 and an open neighborhood $W$ of $b$
@@ -2094,13 +2095,34 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.21.}
-\emph{...} \\
+\emph{Define $f$ in $\mathbb{R}^2$ by}
+\[
+  f(x,y) = 2x^3-3x^2+2y^3+3y^2.
+\]
+\begin{enumerate}
+\item[(a)]
+  \emph{Find the four points in $\mathbb{R}^2$ at which the gradient of $f$ is zero.
+  Show that $f$ has exactly one local maximum and one local minimum in $\mathbb{R}^1$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Let $S$ ...} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
+\end{enumerate}
+$\Box$ \\
 
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
 \end{enumerate}
 $\Box$ \\\\
 
@@ -2111,13 +2133,38 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.22.}
-\emph{...} \\
+\emph{Given a similar discussion for}
+\[
+  f(x,y) = 2x^3+6xy^2-3x^2+3y^2.
+\]
 
-\emph{Proof.}
+
+
+\emph{Outline.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Find the two points in $\mathbb{R}^2$ at which the gradient of $f$ is zero.
+  Show that $f$ has exactly one saddle point and one local minimum in $\mathbb{R}^1$.}
+
+\item[(b)]
+  \emph{Let $S$ ...} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
+\end{enumerate}
+$\Box$ \\
 
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
 \end{enumerate}
 $\Box$ \\\\
 
@@ -2145,12 +2192,121 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.24.}
-\emph{...} \\
+\emph{For $(x,y) \neq (0,0)$, define $\mathbf{f} = (f_1,f_2)$ by
+\[
+  f_1(x,y) = \frac{x^2-y^2}{x^2+y^2},
+  \qquad
+  f_2(x,y) = \frac{xy}{x^2+y^2}.
+\]
+Compute the rank of $\mathbf{f}'(x,y)$, and find the range of $\mathbf{f}$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \[
+    [\mathbf{f}'(x,y)]
+    =
+    \begin{bmatrix}
+      \frac{4xy^2}{(x^2+y^2)^2} & \frac{4x^2y}{(x^2+y^2)^2} \\
+      \frac{-y(x^2-y^2)}{(x^2+y^2)^2} & \frac{x(x^2-y^2)}{(x^2+y^2)^2}
+    \end{bmatrix}.
+  \]
+
 \item[(2)]
+  \emph{Show that $\rank([\mathbf{f}'(x,y)]) \neq 2$.}
+  It is equivalent to show that $\det[\mathbf{f}'(x,y)] = 0$.
+  Actually,
+  \[
+    \det[\mathbf{f}'(x,y)]
+    = \frac{4xy^2}{(x^2+y^2)^2} \cdot \frac{x(x^2-y^2)}{(x^2+y^2)^2}
+      - \frac{4x^2y}{(x^2+y^2)^2} \cdot \frac{-y(x^2-y^2)}{(x^2+y^2)^2}
+    = 0.
+  \]
+
+\item[(3)]
+  \emph{Show that $\rank([\mathbf{f}'(x,y)]) \neq 0$.}
+  \begin{align*}
+    [\mathbf{f}'(x,y)]
+    \begin{bmatrix}
+      1 \\
+      0
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+      \frac{4xy^2}{(x^2+y^2)^2} & \frac{4x^2y}{(x^2+y^2)^2} \\
+      \frac{-y(x^2-y^2)}{(x^2+y^2)^2} & \frac{x(x^2-y^2)}{(x^2+y^2)^2}
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 \\
+      0
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+      \frac{4xy^2}{(x^2+y^2)^2} \\
+      \frac{-y(x^2-y^2)}{(x^2+y^2)^2}
+    \end{bmatrix} \\
+    &\neq
+    \begin{bmatrix}
+      0 \\
+      0
+    \end{bmatrix}
+  \end{align*}
+  for all $(x,y) \in \mathbb{R}^2 - \{(0,0)\}$.
+
+\item[(4)]
+  Since the rank of $\mathbf{f}'$ is the dimension of the subspace
+  $\mathscr{R}(\mathbf{f}')$ in $\mathbb{R}^2$,
+  $\rank([\mathbf{f}'(x,y)]) = 0, 1, 2$.
+  By (2)(3), $\rank([\mathbf{f}'(x,y)]) = 1$.
+
+\item[(5)]
+  \emph{Show that the range of $\mathbf{f}$ is an ellipse}
+  \[
+    E = \{ (s,t) \in \mathbb{R}^2 : s^2 + 4t^2 = 1 \}.
+  \]
+  \begin{enumerate}
+  \item[(a)]
+    Clearly, $(f_1(x,y), f_2(x,y)) \in E$.
+
+  \item[(b)]
+    Conversely, for any $(s,t) \in E$ write
+    \[
+      s = \cos\theta
+      \qquad \text{ and } \qquad
+      t = \frac{1}{2} \sin\theta
+    \]
+    for some unique $\theta \in [0,2\pi)$ (Theorem 8.7(d)).
+    By the tangent half-angle formula,
+    \[
+      s = \cos\theta = \frac{1-\tan^2\frac{\theta}{2}}{1+\tan^2\frac{\theta}{2}}
+      \qquad \text{ and } \qquad
+      t = \frac{1}{2} \sin\theta = \frac{\tan\frac{\theta}{2}}{1+\tan^2\frac{\theta}{2}}.
+    \]
+    Thus, there exists a point
+    $\left(1, \tan\frac{\theta}{2}\right) \in \mathbb{R}^2$ such that
+    \[
+      f: \left(1, \tan\frac{\theta}{2}\right)
+      \mapsto (s, t) \in E.
+    \]
+
+  \item[(c)]
+    Or we can do a linear projection from a given point $P = (1,0)$,
+    say for any $\lambda \in \mathbb{R}^1$ we define a line through $P$
+    with slope $-\lambda$ meeting $E$ in a further point
+    \[
+      Q_{\lambda}
+      = \left(\frac{\lambda^2-1}{\lambda^2+1},
+        \frac{\lambda}{\lambda^2+1}\right).
+    \]
+    Might define $Q_{\infty} = P$.
+    Graphically and informally,
+    \[
+      \{ Q_{\lambda} : \lambda \in \mathbb{P}^1(\mathbb{R}) = \mathbb{R} \cup \{\infty\} \} = E.
+    \]
+    Therefore, $f(1,0) = P$ and $f(\lambda, 1) \in E-\{P\}$.
+
+  \end{enumerate}
+  By (a)(b), the range of $\mathbf{f}$ is exactly the same as an ellipse $E$.
 
 \end{enumerate}
 $\Box$ \\\\
