@@ -2023,13 +2023,67 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.20.}
-\emph{...} \\
+\emph{Take $n=m=1$ in the implicit function theorem,
+and interpret the theorem (as well as its proof) graphically.} \\
+
+
+
+\textbf{Implicit function theorem (for $n=m=1$).}
+  Let $f(x,y)$ be a $\mathscr{C}'$-mapping of
+  an open set $E \subseteq \mathbb{R}^2$ into $\mathbb{R}$,
+  such that $f(a,b) = 0$ for some point $(a,b) \in E$.
+  Assume that
+  \[
+    D_1 f(a,b) \neq 0.
+  \]
+  Then there exist open sets $U \subseteq E$ and $W \subseteq \mathbb{R}^1$,
+  with $(a,b) \in U$ and $b \in W$, having the following property:
+  \begin{quote}
+    To every $y \in W$ corresponds a unique $x$ such that
+    \[
+      (x,y) \in U
+      \qquad \text{ and } \qquad
+      f(x,y) = 0.
+    \]
+    If this $x$ is defined to be $g(y)$,
+    then $g$ is a $\mathscr{C}'$-mapping of $W$ into $\mathbb{R}^1$,
+    $g(b) = a$,
+    \[
+      f(g(y),y) = 0
+      \qquad
+      (y \in W),
+    \]
+    and
+    \[
+      g'(b) = - \frac{D_2 f(a,b)}{D_1 f(a,b)}.
+    \]
+  \end{quote}
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+In the notations of Exercise 4.6,
+define the graph of $f$ by the set
+\[
+  \{ (x,y) \in E : f(x,y) = 0 \}.
+\]
 
+\item[(2)]
+As $D_1 f(a,b) \neq 0$ and $f(x,y) \in \mathscr{C}'$,
+there are an open neighborhood $U \subseteq E$ of $(a,b)$
+and an open neighborhood $W$ of $b$
+such that $x \mapsto f(x,y)$ is strictly monotonic whenever $y \in W$.
+``Graphically'' by the monotony of $f(x,y)$, for any fixed $y$
+there is a unique $x$ such that $f(x,y) = 0$.
+
+\item[(3)]
+``Graphically''
+the tangent line passing through $(a,b)$ is
+\[
+  D_1 f(a,b)(x - a) + D_2 f(a,b)(y - b) = 0.
+\]
+Thus $g'(b) = -\frac{D_2 f(a,b)}{D_1 f(a,b)}$ if $D_1 f(a,b) \neq 0$.
 \end{enumerate}
 $\Box$ \\\\
 
