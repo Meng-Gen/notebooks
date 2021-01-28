@@ -2105,7 +2105,10 @@ $\Box$ \\\\
   Show that $f$ has exactly one local maximum and one local minimum in $\mathbb{R}^1$.}
 
 \item[(b)]
-  \emph{Let $S$ ...} \\
+  \emph{Let $S$ be the set of all $(x,y) \in \mathbb{R}^2$ at which $f(x,y) = 0$.
+  Find those points of $S$ that have no neighborhoods in which the equation
+  $f(x,y) = 0$ can be solved for $y$ in terms of $x$ (or for $x$ in terms of $y$).
+  Describe $S$ as precisely as you can.} \\
 \end{enumerate}
 
 
@@ -2113,7 +2116,23 @@ $\Box$ \\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  \[
+    (\nabla f)(x,y)
+    = ((D_1 f)(x,y), (D_2 f)(x,y))
+    = (6x(x-1), 6y(y+1)).
+  \]
+  So $(\nabla f)(x,y) = 0$ if and only if
+  $(x,y) = (0,0)$, $(0,-1)$, $(1,0)$, $(1,-1)$.
+
 \item[(2)]
+  $x \mapsto 2x^3 - 3x^2$
+  have one local maximum at $x = 0$ and one local minimum at $x = 1$.
+  $y \mapsto 2y^3 + 3y^2$
+  have one local maximum at $y = -1$ and one local minimum at $y = 0$.
+  Hence $f: (x,y) \mapsto to (2x^3 - 3x^2) + (2y^3 + 3y^2)$
+  have one local maximum at $(x,y) = (0,-1)$ and
+  one local minimum at $(x,y) = (1,0)$.
+  Other two points $(0,0)$ and $(1,-1)$ are saddle points.
 \end{enumerate}
 $\Box$ \\
 
@@ -2122,8 +2141,79 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  By definition,
+  \begin{align*}
+    S
+    &= \{ f(x,y) = 0 \} \\
+    &= \{ (x+y)(2x^2-2xy-3x+2y^2+3y) = 0 \} \\
+    &= \{ x+y = 0 \} \cup \{ 2x^2-2xy-3x+2y^2+3y = 0 \},
+  \end{align*}
+  which is a union of a line $L = \{ x+y = 0 \}$
+  and an ellipse $E = \{ 2x^2-2xy-3x+2y^2+3y = 0 \}$.
+  The intersection of $L \cap E$ is $\{ (0,0), (1,-1) \}$,
+  and it suggested that $f(x,y) = 0$ cannot be solved for $y$ in terms of $x$
+  (or for $x$ in terms of $y$) on $L \cap E = \{ (0,0), (1,-1) \}$.
+
 \item[(2)]
+  By (1) in the proof of (a) and the implicit function theorem (Theorem 9.28),
+  $f(x,y) = 0$ can be solved for $y$ in terms of $x$ (or for $x$ in terms of $y$)
+  whenever $x \not\in \{0,1\}$ and $y \not\in \{0,-1\}$.
+  Now we consider the rest cases, say
+  \[
+    (x,y) \in T = \left\{
+      (0,0),
+      (1,-1),
+      \left(0,-\frac{3}{2}\right),
+      \left(1,\frac{1}{2}\right),
+      \left(\frac{3}{2},0\right),
+      \left(-\frac{1}{2}, -1\right)
+    \right\}.
+  \]
+
+\item[(3)]
+  $T \cap L = \{(0,0), (1,-1)\}$ and $T \cap E = T$.
+
+
+\item[(4)]
+  As $(x,y) \in T - T \cap L = \left\{
+    \left(0,-\frac{3}{2}\right),
+    \left(1,\frac{1}{2}\right),
+    \left(\frac{3}{2},0\right),
+    \left(-\frac{1}{2}, -1\right)
+  \right\}$,
+  $f(x,y) = 0$ if and only if $2x^2-2xy-3x+2y^2+3y = 0$.
+  Hence
+  \[
+    x = \frac{1}{4}\left( 2y-3 \pm \sqrt{-3(2y-1)(2y+3)} \right)
+  \]
+  at $(x,y) \in \left\{\left(\frac{3}{2},0\right), \left(-\frac{1}{2}, -1\right)\right\}$,
+  and
+  \[
+    y = \frac{1}{4}\left( 2x-3 \pm \sqrt{-3(2x+1)(2x-3)} \right)
+  \]
+  at $(x,y) \in \left\{\left(0,-\frac{3}{2}\right), \left(1,\frac{1}{2}\right)\right\}$.
+
+\item[(5)]
+  As $(x,y) \in T \cap L = \{(0,0), (1,-1)\}$,
+  \begin{equation*}
+    \begin{cases}
+      x = -y \\
+      x = \frac{1}{4}\left( 2y-3 \pm \sqrt{-3(2y-1)(2y+3)} \right)
+    \end{cases}
+  \end{equation*}
+  or
+  \begin{equation*}
+    \begin{cases}
+      y = -x \\
+      y = \frac{1}{4}\left( 2x-3 \pm \sqrt{-3(2x+1)(2x-3)} \right).
+    \end{cases}
+  \end{equation*}
+  Both expressions are not unique, and thus cannot be solved
+  for $y$ in terms of $x$ (or for $x$ in terms of $y$).
 \end{enumerate}
+Therefore, $f(x,y) = 0$ cannot be solved
+for $y$ in terms of $x$ (or for $x$ in terms of $y$)
+in the neighborhoods of $(0,0)$ or $(1,-1)$.
 $\Box$ \\\\
 
 
