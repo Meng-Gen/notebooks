@@ -2402,7 +2402,7 @@ if $(x,y) \neq (0,0)$. Prove that}
   \item[(a)]
     $(x,y) \neq (0,0)$ implies that
     \[
-      (D_1 f)(x,y) = \frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2}.
+      (D_1 f)(x,y) = \frac{x^4y+4x^2y^3-y^5}{(x^2+y^2)^2}.
     \]
     Besides,
     \begin{align*}
@@ -2411,6 +2411,16 @@ if $(x,y) \neq (0,0)$. Prove that}
       &= \lim_{x \to 0} \frac{0}{x} \\
       &= 0.
     \end{align*}
+    In summary,
+    \begin{equation*}
+      (D_{1} f)(x,y) =
+      \begin{cases}
+        0
+          & \text{if $(x,y) = (0,0)$} \\
+        \frac{x^4y+4x^2y^3-y^5}{(x^2+y^2)^2}
+          & \text{if $(x,y) \neq (0,0)$}.
+      \end{cases}
+    \end{equation*}
 
   \item[(b)]
     Clearly, $(D_1 f)(x,y)$ is continuous if $(x,y) \neq (0,0)$.
@@ -2426,12 +2436,11 @@ if $(x,y) \neq (0,0)$. Prove that}
     Hence
     \begin{align*}
       \lim_{(x,y) \to (0,0)} (D_1 f)(x,y)
-      &= \lim_{(x,y) \to (0,0)} \frac{y(x^4+4x^2y^2-y^4)}{(x^2+y^2)^2} \\
-      &= \lim_{r \to 0} r \sin\theta
-        (\cos^4\theta+4\cos^2\theta\sin^2\theta-\sin^4\theta) \\
+      &= \lim_{(x,y) \to (0,0)} \frac{x^4y+4x^2y^3-y^5}{(x^2+y^2)^2} \\
+      &= \lim_{r \to 0} r (\cos^4\theta\sin\theta+4\cos^2\theta\sin^3\theta-\sin^5\theta) \\
       &= 0
     \end{align*}
-    since $\sin\theta(\cos^4\theta+4\cos^2\theta\sin^2\theta-\sin^4\theta)$ is bounded by $6$.
+    since $\cos^4\theta\sin\theta+4\cos^2\theta\sin^3\theta-\sin^5\theta$ is bounded by $6$.
   \end{enumerate}
 
 \item[(3)]
@@ -2441,7 +2450,7 @@ if $(x,y) \neq (0,0)$. Prove that}
   \item[(a)]
     $(x,y) \neq (0,0)$ implies that
     \[
-      (D_2 f)(x,y) = \frac{x(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2}.
+      (D_2 f)(x,y) = \frac{x^5-4x^3y^2-xy^4}{(x^2+y^2)^2}.
     \]
     Besides,
     \begin{align*}
@@ -2450,6 +2459,16 @@ if $(x,y) \neq (0,0)$. Prove that}
       &= \lim_{y \to 0} \frac{0}{y} \\
       &= 0.
     \end{align*}
+    In summary,
+    \begin{equation*}
+      (D_{2} f)(x,y) =
+      \begin{cases}
+        0
+          & \text{if $(x,y) = (0,0)$} \\
+        \frac{x^5-4x^3y^2-xy^4}{(x^2+y^2)^2}
+          & \text{if $(x,y) \neq (0,0)$}.
+      \end{cases}
+    \end{equation*}
 
   \item[(b)]
     Clearly, $(D_2 f)(x,y)$ is continuous if $(x,y) \neq (0,0)$.
@@ -2465,12 +2484,11 @@ if $(x,y) \neq (0,0)$. Prove that}
     Hence
     \begin{align*}
       \lim_{(x,y) \to (0,0)} (D_2 f)(x,y)
-      &= \lim_{(x,y) \to (0,0)} \frac{x(x^4-4x^2y^2-y^4)}{(x^2+y^2)^2} \\
-      &= \lim_{r \to 0} r \cos\theta
-        (\cos^4\theta-4\cos^2\theta\sin^2\theta-\sin^4\theta) \\
+      &= \lim_{(x,y) \to (0,0)} \frac{x^5-4x^3y^2-xy^4}{(x^2+y^2)^2} \\
+      &= \lim_{r \to 0} r(\cos^5\theta-4\cos^3\theta\sin^2\theta-\cos\theta\sin^4\theta) \\
       &= 0
     \end{align*}
-    since $r \cos\theta(\cos^4\theta-4\cos^2\theta\sin^2\theta-\sin^4\theta)$ is bounded by $6$.
+    since $\cos^5\theta-4\cos^3\theta\sin^2\theta-\cos\theta\sin^4\theta$ is bounded by $6$.
   \end{enumerate}
 \end{enumerate}
 $\Box$ \\
@@ -2481,15 +2499,103 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
   \emph{Show that $D_{12}f$ exists at every point of $\mathbb{R}^2$.}
+  \begin{enumerate}
+  \item[(a)]
+    $(x,y) \neq (0,0)$ implies that
+    \[
+      (D_{12} f)(x,y)
+      = (D_{1}D_{2} f)(x,y)
+      = \frac{x^6+9x^4y^2-9x^2y^4-y^6}{(x^2+y^2)^3}.
+    \]
+
+  \item[(b)]
+    Besides,
+    \begin{align*}
+      (D_{12} f)(0,0)
+      &= \lim_{x \to 0} \frac{(D_2 f)(x,0) - (D_2 f)(0,0)}{x - 0} \\
+      &= \lim_{x \to 0} \frac{x}{x} \\
+      &= 1.
+    \end{align*}
+  \end{enumerate}
+  In summary,
+  \begin{equation*}
+    (D_{12} f)(x,y) =
+    \begin{cases}
+      1
+        & \text{if $(x,y) = (0,0)$} \\
+      \frac{x^6+9x^4y^2-9x^2y^4-y^6}{(x^2+y^2)^3}
+        & \text{if $(x,y) \neq (0,0)$}.
+    \end{cases}
+  \end{equation*}
 
 \item[(2)]
   \emph{Show that $D_{12}f$ is continuous except at $(0,0)$.}
+  \begin{enumerate}
+  \item[(a)]
+    Clearly, $(D_{12} f)(x,y)$ is continuous if $(x,y) \neq (0,0)$.
+    So it suffices to show that
+    \[
+      \lim_{(x,y) \to (0,0)} (D_{12} f)(x,y)
+    \]
+    does not exist.
+
+  \item[(b)]
+    Take
+    \[
+      \mathbf{p}_n = \left( \frac{1}{n}, 0 \right)
+      \qquad
+      \text{ and }
+      \qquad
+      \mathbf{q}_n = \left( 0, \frac{1}{n} \right)
+    \]
+    for $n = 1,2,3,\ldots$.
+    So $\lim \mathbf{p}_n = \lim \mathbf{q}_n = \mathbf{0}$,
+    \[
+      \lim (D_{12} f)(\mathbf{p}_n) = 1
+      \qquad
+      \text{ and }
+      \qquad
+      \lim (D_{12} f)(\mathbf{q}_n) = -1.
+    \]
+    Hence $\lim_{(x,y) \to (0,0)} (D_{12} f)(x,y)$ does not exist.
+  \end{enumerate}
 
 \item[(3)]
   \emph{Show that $D_{21}f$ exists at every point of $\mathbb{R}^2$.}
+  Similar to (1).
+  \begin{enumerate}
+  \item[(a)]
+    $(x,y) \neq (0,0)$ implies that
+    \[
+      (D_{21} f)(x,y)
+      = (D_{2}D_{1} f)(x,y)
+      = \frac{x^6+9x^4y^2-9x^2y^4-y^6}{(x^2+y^2)^3},
+    \]
+    which is the same as $(D_{12} f)(x,y)$.
+
+  \item[(b)]
+    Besides,
+    \begin{align*}
+      (D_{21} f)(0,0)
+      &= \lim_{y \to 0} \frac{(D_1 f)(0,y) - (D_1 f)(0,0)}{y - 0} \\
+      &= \lim_{y \to 0} \frac{-y}{y} \\
+      &= -1.
+    \end{align*}
+  \end{enumerate}
+  In summary,
+  \begin{equation*}
+    (D_{21} f)(x,y) =
+    \begin{cases}
+      -1
+        & \text{if $(x,y) = (0,0)$} \\
+      \frac{x^6+9x^4y^2-9x^2y^4-y^6}{(x^2+y^2)^3}
+        & \text{if $(x,y) \neq (0,0)$}.
+    \end{cases}
+  \end{equation*}
 
 \item[(4)]
   \emph{Show that $D_{21}f$ is continuous except at $(0,0)$.}
+  Exactly the same as (2) since $(D_{21} f)(x,y) = (D_{12} f)(x,y)$ if $(x,y) \neq (0,0)$.
 
 \end{enumerate}
 $\Box$ \\
@@ -2497,14 +2603,7 @@ $\Box$ \\
 
 
 \emph{Proof of (c).}
-\begin{enumerate}
-\item[(1)]
-  \emph{Show that $(D_{12}f)(0,0) = 1$.}
-
-\item[(2)]
-  \emph{Show that $(D_{21}f)(0,0) = -1$.}
-
-\end{enumerate}
+  See (2)(4) in the proof of(b).
 $\Box$ \\\\
 
 
