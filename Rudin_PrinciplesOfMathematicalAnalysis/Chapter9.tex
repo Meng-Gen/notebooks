@@ -2173,7 +2173,6 @@ $\Box$ \\
 \item[(3)]
   $T \cap L = \{(0,0), (1,-1)\}$ and $T \cap E = T$.
 
-
 \item[(4)]
   As $(x,y) \in T - T \cap L = \left\{
     \left(0,-\frac{3}{2}\right),
@@ -2183,15 +2182,14 @@ $\Box$ \\
   \right\}$,
   $f(x,y) = 0$ if and only if $2x^2-2xy-3x+2y^2+3y = 0$.
   Hence
-  \[
-    x = \frac{1}{4}\left( 2y-3 \pm \sqrt{-3(2y-1)(2y+3)} \right)
-  \]
-  at $(x,y) \in \left\{\left(\frac{3}{2},0\right), \left(-\frac{1}{2}, -1\right)\right\}$,
-  and
-  \[
-    y = \frac{1}{4}\left( 2x-3 \pm \sqrt{-3(2x+1)(2x-3)} \right)
-  \]
-  at $(x,y) \in \left\{\left(0,-\frac{3}{2}\right), \left(1,\frac{1}{2}\right)\right\}$.
+  \begin{align*}
+    x &= \frac{1}{4}\left( 2y-3 \pm \sqrt{-3(2y-1)(2y+3)} \right), \\
+    y &= \frac{1}{4}\left( 2x-3 \pm \sqrt{-3(2x+1)(2x-3)} \right).
+  \end{align*}
+  As $(x,y) \in \left\{\left(\frac{3}{2},0\right), \left(-\frac{1}{2}, -1\right)\right\}$,
+  we can write $y$ in terms of $x$ but cannot write $x$ in terms of $y$.
+  As $(x,y) \in \left\{\left(0,-\frac{3}{2}\right), \left(1,\frac{1}{2}\right)\right\}$,
+  we can write $x$ in terms of $y$ but cannot write $y$ in terms of $x$.
 
 \item[(5)]
   As $(x,y) \in T \cap L = \{(0,0), (1,-1)\}$,
@@ -2211,9 +2209,6 @@ $\Box$ \\
   Both expressions are not unique, and thus cannot be solved
   for $y$ in terms of $x$ (or for $x$ in terms of $y$).
 \end{enumerate}
-Therefore, $f(x,y) = 0$ cannot be solved
-for $y$ in terms of $x$ (or for $x$ in terms of $y$)
-in the neighborhoods of $(0,0)$ or $(1,-1)$.
 $\Box$ \\\\
 
 
@@ -2237,7 +2232,10 @@ $\Box$ \\\\
   Show that $f$ has exactly one saddle point and one local minimum in $\mathbb{R}^1$.}
 
 \item[(b)]
-  \emph{Let $S$ ...} \\
+  \emph{Let $S$ be the set of all $(x,y) \in \mathbb{R}^2$ at which $f(x,y) = 0$.
+  Find those points of $S$ that have no neighborhoods in which the equation
+  $f(x,y) = 0$ can be solved for $y$ in terms of $x$ (or for $x$ in terms of $y$).
+  Describe $S$ as precisely as you can.} \\
 \end{enumerate}
 
 
@@ -2245,6 +2243,7 @@ $\Box$ \\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+
 \item[(2)]
 \end{enumerate}
 $\Box$ \\
@@ -2254,6 +2253,9 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  $S$ is a folium of Descartes
+  with a double point at the origin and asymptote $x + \frac{1}{2} = 0$.
+
 \item[(2)]
 \end{enumerate}
 $\Box$ \\\\
