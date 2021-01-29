@@ -2129,6 +2129,8 @@ $\Box$ \\\\
   have one local maximum at $x = 0$ and one local minimum at $x = 1$.
   $y \mapsto 2y^3 + 3y^2$
   have one local maximum at $y = -1$ and one local minimum at $y = 0$.
+
+\item[(3)]
   Hence $f: (x,y) \mapsto to (2x^3 - 3x^2) + (2y^3 + 3y^2)$
   have one local maximum at $(x,y) = (0,-1)$ and
   one local minimum at $(x,y) = (1,0)$.
@@ -2157,59 +2159,88 @@ $\Box$ \\
 \item[(2)]
   By (1) in the proof of (a) and the implicit function theorem (Theorem 9.28),
   $f(x,y) = 0$ can be solved for $y$ in terms of $x$ (or for $x$ in terms of $y$)
-  whenever $x \not\in \{0,1\}$ and $y \not\in \{0,-1\}$.
-  Now we consider the rest cases, say
+  whenever $(D_2 f)(x,y) \neq 0$ (or $(D_1 f)(x,y) \neq 0$).
+
+\item[(3)]
+  \emph{Show that $f(x,y) = 0$ cannot be solved for $y$ in terms of $x$
+  if $(D_2 f)(x,y) = 0$.}
+  $(D_2 f)(x,y) = 0$ if and only if
   \[
     (x,y) \in T = \left\{
       (0,0),
-      (1,-1),
-      \left(0,-\frac{3}{2}\right),
-      \left(1,\frac{1}{2}\right),
       \left(\frac{3}{2},0\right),
+      (1,-1),
       \left(-\frac{1}{2}, -1\right)
     \right\}.
   \]
-
-\item[(3)]
-  $T \cap L = \{(0,0), (1,-1)\}$ and $T \cap E = T$.
+  Solve $y$ to get
+  \begin{align*}
+    y &= -x \\
+    y &= \frac{1}{4}\left( 2x-3 + \sqrt{-3(2x+1)(2x-3)} \right) \\
+    y &= \frac{1}{4}\left( 2x-3 - \sqrt{-3(2x+1)(2x-3)} \right)
+  \end{align*}
+  In any case, $y$ can not be uniquely determined by $x$ for any $(x,y) \in T$.
+  (``Graphically'' we can see the set $S$ to get the conclusion.
+  Explicitly, we can take the limit to each expression
+  (as $(s,t) \to (x,y) \in T$), and observe that not all limits are equal.)
 
 \item[(4)]
-  As $(x,y) \in T - T \cap L = \left\{
-    \left(0,-\frac{3}{2}\right),
-    \left(1,\frac{1}{2}\right),
-    \left(\frac{3}{2},0\right),
-    \left(-\frac{1}{2}, -1\right)
-  \right\}$,
-  $f(x,y) = 0$ if and only if $2x^2-2xy-3x+2y^2+3y = 0$.
-  Hence
-  \begin{align*}
-    x &= \frac{1}{4}\left( 2y-3 \pm \sqrt{-3(2y-1)(2y+3)} \right), \\
-    y &= \frac{1}{4}\left( 2x-3 \pm \sqrt{-3(2x+1)(2x-3)} \right).
-  \end{align*}
-  As $(x,y) \in \left\{\left(\frac{3}{2},0\right), \left(-\frac{1}{2}, -1\right)\right\}$,
-  we can write $y$ in terms of $x$ but cannot write $x$ in terms of $y$.
-  As $(x,y) \in \left\{\left(0,-\frac{3}{2}\right), \left(1,\frac{1}{2}\right)\right\}$,
-  we can write $x$ in terms of $y$ but cannot write $y$ in terms of $x$.
-
-\item[(5)]
-  As $(x,y) \in T \cap L = \{(0,0), (1,-1)\}$,
-  \begin{equation*}
-    \begin{cases}
-      x = -y \\
-      x = \frac{1}{4}\left( 2y-3 \pm \sqrt{-3(2y-1)(2y+3)} \right)
-    \end{cases}
-  \end{equation*}
-  or
-  \begin{equation*}
-    \begin{cases}
-      y = -x \\
-      y = \frac{1}{4}\left( 2x-3 \pm \sqrt{-3(2x+1)(2x-3)} \right).
-    \end{cases}
-  \end{equation*}
-  Both expressions are not unique, and thus cannot be solved
-  for $y$ in terms of $x$ (or for $x$ in terms of $y$).
+  \emph{Show that $f(x,y) = 0$ cannot be solved for $x$ in terms of $y$
+  if $(D_1 f)(x,y) = 0$.}
+  $(D_1 f)(x,y) = 0$ if and only if
+  \[
+    (x,y) \in T = \left\{
+      (0,0),
+      \left(0,-\frac{3}{2}\right),
+      (1,-1),
+      \left(1,\frac{1}{2}\right)
+    \right\}.
+  \]
+  Similar to (3),
+  $x$ can not be uniquely determined by $y$ for any $(x,y) \in T$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\textbf{Supplement (Second-derivative test for extrema).}
+\begin{enumerate}
+\item[(1)]
+  \emph{(Theorem 13.11 in Tom M. Apostol, Mathematical Analysis, 2nd edition).
+  Let $f$ be a real-valued function with
+  continuous second-order partial derivatives at a stationary point $\mathbf{a} \in \mathbb{R}^2$.
+  Let
+  \[
+    A = (D_{11}f)(\mathbf{a}),
+    \qquad
+    B = (D_{12}f)(\mathbf{a}),
+    \qquad
+    C = (D_{22}f)(\mathbf{a}),
+  \]
+  and let
+  \[
+    \Delta
+    = \det\begin{bmatrix}
+      A & B \\
+      B & C
+    \end{bmatrix}
+    = AC - B^2.
+  \]
+  Then we have:}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{If $\Delta > 0$ and $A > 0$, $f$ has a local minimum at $\mathbf{a}$.}
+
+  \item[(b)]
+    \emph{If $\Delta > 0$ and $A < 0$, $f$ has a local maximum at $\mathbf{a}$.}
+
+  \item[(c)]
+    \emph{If $\Delta < 0$, $f$ has a saddle point at $\mathbf{a}$.}
+  \end{enumerate}
+
+\item[(2)]
+  We can give another proof of (a) by the second-derivative test for extrema. \\\\
+\end{enumerate}
 
 
 
@@ -2229,7 +2260,7 @@ $\Box$ \\\\
 \begin{enumerate}
 \item[(a)]
   \emph{Find the two points in $\mathbb{R}^2$ at which the gradient of $f$ is zero.
-  Show that $f$ has exactly one saddle point and one local minimum in $\mathbb{R}^1$.}
+  Show that $f$ has one saddle point and one local minimum in $\mathbb{R}^1$.}
 
 \item[(b)]
   \emph{Let $S$ be the set of all $(x,y) \in \mathbb{R}^2$ at which $f(x,y) = 0$.
@@ -2243,8 +2274,30 @@ $\Box$ \\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  \[
+    (\nabla f)(x,y)
+    = ((D_1 f)(x,y), (D_2 f)(x,y))
+    = (6(x^2+y^2-x), 6y(2x+1)).
+  \]
+  So $(\nabla f)(x,y) = 0$ if and only if
+  $(x,y) = (0,0)$ or $(1,0)$.
 
 \item[(2)]
+  \emph{Show that $f$ has one saddle point at $(x,y) = (0,0)$.}
+  Since $f(x,x) = 8x^3$,
+  $f(x,x) \leq 0 = f(0,0)$ if $x < 0$
+  and $f(x,x) \geq 0 = f(0,0)$ if $x > 0$.
+  Hence $(x,y)$ is not a local maximum or a local minimum for $f$.
+
+\item[(3)]
+  \emph{Show that $f$ has one local minimum at $(x,y) = (1,0)$.}
+  Write
+  \[
+    f(x,y) = 2x^3-3x^2 + (6x+3)y^2.
+  \]
+  Note that $2x^3-3x^2 \geq -1$ and $(6x+3)y^2 \geq 0$
+  in some open neighborhood $B\left((1,0);\frac{1}{64}\right)$ of $(1,0)$.
+  Therefore $f$ has one local minimum at $(x,y) = (1,0)$.
 \end{enumerate}
 $\Box$ \\
 
@@ -2256,7 +2309,41 @@ $\Box$ \\
   $S$ is a folium of Descartes
   with a double point at the origin and asymptote $x + \frac{1}{2} = 0$.
 
-\item[(2)]
+  whenever $(D_2 f)(x,y) \neq 0$ (or $(D_1 f)(x,y) \neq 0$).
+
+\item[(3)]
+  \emph{Show that $f(x,y) = 0$ cannot be solved for $y$ in terms of $x$
+  if $(D_2 f)(x,y) = 0$.}
+  $(D_2 f)(x,y) = 0$ if and only if
+  \[
+    (x,y) \in T = \left\{ (0,0), \left(\frac{3}{2},0\right) \right\}.
+  \]
+  Solve $y$ to get
+  \begin{align*}
+    y &= \sqrt{\frac{-x^2(2x-3)}{3(2x+1)}} \\
+    y &= -\sqrt{\frac{-x^2(2x-3)}{3(2x+1)}}
+  \end{align*}
+  In any case, $y$ can not be uniquely determined by $x$ for any $(x,y) \in T$.
+  (``Graphically'' we can see the set $S$ to get the conclusion.
+  Explicitly, we can take the limit to each expression
+  (as $(s,t) \to (x,y) \in T$), and observe that two limits are different.)
+
+\item[(4)]
+  \emph{Show that $f(x,y) = 0$ cannot be solved for $x$ in terms of $y$
+  if $(D_1 f)(x,y) = 0$.}
+  $(D_1 f)(x,y) = 0$ if and only if
+  \[
+    (x,y) \in T = \left\{ (0,0), \pm \sqrt{ -\frac{3}{4} + \sqrt{\frac{3}{4}}} \right\}.
+  \]
+  Similar to (3),
+  $x$ can not be uniquely determined by $y$ for any $(x,y) \in T$.
+  That is,
+  \begin{align*}
+    x =& g(y) \\
+      =& \frac{1-4y^2}{2} \left\{ 2\sqrt{16y^6+24y^4-3y^2}-12y^2+1 \right\}^{-\frac{1}{3}} \\
+      &+ \left\{ 2\sqrt{16y^6+24y^4-3y^2}-12y^2+1 \right\}^{\frac{1}{3}} + 1.
+  \end{align*}
+  So as $y \neq 0$, $x = g(y) = g(-y)$. The expression $x = g(y)$ is not unique.
 \end{enumerate}
 $\Box$ \\\\
 
