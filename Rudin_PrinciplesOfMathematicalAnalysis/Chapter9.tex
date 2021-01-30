@@ -2530,6 +2530,7 @@ $\Box$ \\\\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+
 \item[(2)]
 
 \end{enumerate}
@@ -2542,15 +2543,51 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.26.}
-\emph{...} \\
+\emph{Show that the existence (and even the continuity) of $D_{12}f$
+does not imply the existence of $D_1 f$.
+For example, let $f(x,y) = g(x)$, where $g$ is nowhere differentiable.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Consider the function $g$ defined on $\mathbb{R}^1$ by
+  \begin{equation*}
+    g(x) =
+      \begin{cases}
+        0           & (\text{$x$ irrational}), \\
+        \frac{1}{n} & (x = \frac{m}{n}).
+      \end{cases}
+  \end{equation*}
+  $g(x)$ is nowhere differentiable by (1) in the note of Exercise 4.18.
+  Define $f(x,y) = g(x)$ on $\mathbb{R}^2$. \\
 
+\item[(2)]
+  $(D_1 f)(x,y) = g'(x)$ does not exist on $\mathbb{R}^2$.
+  However, $(D_{12} f)(x,y) = (D_1 0)(x,y) = 0$ is continuous on $\mathbb{R}^2$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.} Some nowhere differentiable functions.
+  \begin{enumerate}
+  \item[(1)]
+    Exercise 4.18.
+
+  \item[(2)]
+    Theorem 7.18.
+
+  \item[(3)]
+    (Weierstrass functions.)
+    \[
+      f(x) = \sum_{n=0}^{\infty} a^n \cos(b^n \pi x)
+    \]
+    where $0 < a < 1$, $b$ is a positive odd integer, and $ab > 1 + \frac{3}{2}\pi$.
+
+  \item[(4)]
+    \[
+      f(x) = \sum_{n=1}^{\infty} \frac{1}{n^2}\sin(n^2 \pi x).
+    \]
+  \end{enumerate}
+  (And so on.) \\\\
 
 
 
