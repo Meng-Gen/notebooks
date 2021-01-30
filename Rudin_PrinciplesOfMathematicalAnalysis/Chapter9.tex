@@ -1714,11 +1714,11 @@ $\Box$ \\
 
 \item[(2)]
   Similar to (2) in the proof of (a),
-  define $\mathbf{g}: E \to \mathbb{R}^2$ by
+  define $\mathbf{g}: U \to \mathbb{R}^2$ by
   \[
     \mathbf{g}(x,y) = \left(\log \sqrt{x^2+y^2}, \arctan\left(\frac{y}{x}\right) \right).
   \]
-  where $E$ is some open neighborhood of the point $\mathbf{b} \in \mathbb{R}^2$ described in (b).
+  where $U$ is some open neighborhood of the point $\mathbf{b} \in \mathbb{R}^2$ described in (b).
   So $\mathbf{g}$ is a continuous inverse of $\mathbf{f}$.
 
 \item[(3)]
@@ -1817,7 +1817,7 @@ $\Box$ \\
     \mathbf{g}'(\mathbf{y})
     = \{ \mathbf{f}'(\mathbf{g}(\mathbf{y})) \}^{-1}
   \]
-  on $\mathbf{g}(E)$.
+  on $\mathbf{g}(U)$.
 \end{enumerate}
 $\Box$ \\
 
@@ -1857,13 +1857,249 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.18.}
-\emph{...} \\
+\emph{Answer analogous questions for the mapping defined by}
+\[
+  u = x^2-y^2, \qquad v = 2xy.
+\]
 
-\emph{Proof.}
+\emph{Outline.}
+Let $\mathbf{f}(x,y) = (u, v) = (x^2-y^2,2xy)$.
+
+\begin{enumerate}
+\item[(a)]
+  \emph{What is the range of $\mathbf{f}$?}
+
+\item[(b)]
+  \emph{Show that the Jacobian of $\mathbf{f}$ is not zero
+  at any point of $\mathbb{R}^2 - \{(0,0)\}$.
+  Thus every point of $\mathbb{R}^2 - \{(0,0)\}$ has a neighborhood
+  in which $\mathbf{f}$ is one-to-one.
+  Nevertheless, $\mathbf{f}$ is not one-to-one on $\mathbb{R}^2 - \{(0,0)\}$.}
+
+\item[(c)]
+  \emph{Put $\mathbf{a} = \left(1, 1\right)$,
+  $\mathbf{b} = \mathbf{f}(\mathbf{a})$, let $\mathbf{g}$ be the continuous inverse of $\mathbf{f}$,
+  defined in a neighborhood of $\mathbf{b}$ such that $\mathbf{g}(\mathbf{b}) = \mathbf{a}$.
+  Find an explicit formula for $\mathbf{g}$,
+  compute $\mathbf{f}'(\mathbf{a})$ and $\mathbf{g}'(\mathbf{b})$,
+  and verify the formula}
+  \[
+    \mathbf{g}'(\mathbf{y})
+    = \{ \mathbf{f}'(\mathbf{g}(\mathbf{y})) \}^{-1}.
+  \]
+
+\item[(d)]
+  \emph{What are the images under $\mathbf{f}$ of lines parallel to the coordinate axes?} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  \emph{Show that the range of $\textbf{f}$ is $\mathbb{R}^2$.}
+  Clearly, $f(0,0) = (0,0)$.
+  If $(a,b) \neq (0,0)$,
+  then
+  \[
+    \mathbf{f}: \left(
+      \sqrt{\frac{\sqrt{a^2+b^2}+a}{2}},
+      \mathrm{sgn}(b) \sqrt{\frac{\sqrt{a^2+b^2}-a}{2}},
+    \right) \mapsto (a,b).
+  \]
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \[
+    [\mathbf{f}'(x,y)]
+    =
+    \begin{bmatrix}
+      2x & -2y \\
+      2y &  2x
+    \end{bmatrix}.
+  \]
+  So $\mathbf{f}'$ is continuous and
+  \[
+    J_{\mathbf{f}}(x,y)
+    = \det \mathbf{f}'(x,y)
+    = 4(x^2+y^2)
+    \neq 0
+  \]
+  if $(x,y) \neq (0,0)$.
 
+\item[(2)]
+  Since $J_{\mathbf{f}}(x,y) \neq 0$ if $(x,y) \neq (0,0)$,
+  $\mathbf{f}'(x,y)$ is invertible if $(x,y) \neq (0,0)$ (Theorem 9.36).
+  So the inverse function theorem (Theorem 9.24) implies that
+  there exists an open neighborhood $B(x,y)$ of $(x,y) \neq (0,0)$ such that
+  $\mathbf{f}$ is injective on $B(x,y)$.
+
+\item[(3)]
+  Note that
+  \[
+    \mathbf{f}(1,0) = \mathbf{f}(-1,0) = (1,0).
+  \]
+  So that $\mathbf{f}$ is not injective on the whole $\mathbb{R}^2 - \{(0,0)\}$.
+  (Injectivity of $\mathbf{f}$ is a local property.)
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  If $\mathbf{a} = \left(1, 1\right)$, then
+  $\mathbf{b} = \mathbf{f}(\mathbf{a}) = \left(0,2\right)$.
+
+\item[(2)]
+  Similar to (2) in the proof of (a),
+  define $\mathbf{g}: U \to \mathbb{R}^2$ by
+  \[
+    \mathbf{g}(x,y)
+    = \left(
+      \sqrt{\frac{\sqrt{x^2+y^2}+x}{2}},
+      \sqrt{\frac{\sqrt{x^2+y^2}-x}{2}},
+    \right),
+  \]
+  where $U$ is some open neighborhood of the point
+  $\mathbf{b} \in \mathbb{R}^2 - \{(0,0)\}$ described in (b).
+  So $\mathbf{g}$ is a continuous inverse of $\mathbf{f}$.
+
+\item[(3)]
+  Since
+  \[
+    [\mathbf{f}'(x,y)]
+    =
+    \begin{bmatrix}
+      2x & -2y \\
+      2y &  2x
+    \end{bmatrix},
+  \]
+  \[
+    [\mathbf{f}'(\mathbf{a})]
+    =
+    \begin{bmatrix}
+      \mathbf{f}'(1, 1)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      2 & -2 \\
+      2 &  2
+    \end{bmatrix}.
+  \]
+
+\item[(4)]
+  Since
+  \[
+    [\mathbf{g}'(x,y)]
+    =
+    \frac{1}{2\sqrt{x^2+y^2}}
+    \begin{bmatrix}
+      \sqrt{\frac{\sqrt{x^2+y^2}+x}{2}}
+        & \sqrt{\frac{\sqrt{x^2+y^2}-x}{2}} \\
+      -\sqrt{\frac{\sqrt{x^2+y^2}-x}{2}}
+        & \sqrt{\frac{\sqrt{x^2+y^2}+x}{2}}
+    \end{bmatrix},
+  \]
+  \[
+    [\mathbf{g}'(\mathbf{b})]
+    =
+    \begin{bmatrix}
+      \mathbf{g}'(0,2)
+    \end{bmatrix} \\
+    =
+    \begin{bmatrix}
+       \frac{1}{4} & \frac{1}{4} \\
+      -\frac{1}{4} & \frac{1}{4}
+    \end{bmatrix}.
+  \]
+  Here we can see $[\mathbf{f}'(\mathbf{a})][\mathbf{g}'(\mathbf{b})]
+  = [\mathbf{g}'(\mathbf{b})][\mathbf{f}'(\mathbf{a})] = 1$.
+
+\item[(5)]
+  \begin{align*}
+    [\mathbf{g}'(\mathbf{y})]
+    &= [\mathbf{g}'(\mathbf{f}(\mathbf{x}))] \\
+    &= [\mathbf{g}'(x^2-y^2, 2xy)] \\
+    &=
+    \begin{bmatrix}
+       \frac{x}{2(x^2+y^2)} & \frac{y}{2(x^2+y^2)} \\
+      -\frac{y}{2(x^2+y^2)} & \frac{x}{2(x^2+y^2)}
+    \end{bmatrix},
+  \end{align*}
+  and
+  \[
+    [\mathbf{f}'(\mathbf{g}(\mathbf{y}))]
+    = [\mathbf{f}'(\mathbf{x})]
+    =
+    \begin{bmatrix}
+      2x & -2y \\
+      2y &  2x
+    \end{bmatrix}.
+  \]
+  Note that
+  \[
+    \begin{bmatrix}
+       \frac{x}{2(x^2+y^2)} & \frac{y}{2(x^2+y^2)} \\
+      -\frac{y}{2(x^2+y^2)} & \frac{x}{2(x^2+y^2)}
+    \end{bmatrix}
+    \begin{bmatrix}
+      2x & -2y \\
+      2y &  2x
+    \end{bmatrix}
+    = 1.
+  \]
+  Therefore
+  \[
+    \mathbf{g}'(\mathbf{y})
+    = \{ \mathbf{f}'(\mathbf{g}(\mathbf{y})) \}^{-1}
+  \]
+  on $\mathbf{g}(U)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  The case $L_{\alpha} = \{ (x,y) \in \mathbb{R}^2 : x = \alpha \}$ parallel to $y$-axis
+  where $\alpha \in \mathbb{R}^1$ is constant.
+  If $\alpha = 0$, then
+  \[
+    \mathbf{f}(L_{0})
+    = \{ (-y^2, 0) \in \mathbb{R}^2 : y \in \mathbb{R}^1 \}
+    = \{ (-t, 0) \in \mathbb{R}^2 : t \in \mathbb{R}^1, t \geq 0 \}
+  \]
+  is a ray from the origin $(0,0)$ (included) to the infinity $(-\infty,0)$.
+  If $\alpha \neq 0$, then
+  \begin{align*}
+    \mathbf{f}(L_{\alpha})
+    &= \{ (\alpha^2 - y^2, 2\alpha y) \in \mathbb{R}^2 : y \in \mathbb{R}^1 \} \\
+    &= \left\{ (s, t) \in \mathbb{R}^2 : s = \alpha^2 - \frac{t^2}{4\alpha^2} \right\},
+  \end{align*}
+  which is a parabola.
+
+\item[(2)]
+  The case $L_{\beta} = \{ (x,y) \in \mathbb{R}^2 : y = \beta \}$ parallel to $x$-axis
+  where $\beta \in \mathbb{R}^1$ is constant.
+  If $\beta = 0$, then
+  \[
+    \mathbf{f}(L_{0})
+    = \{ (x^2, 0) \in \mathbb{R}^2 : x \in \mathbb{R}^1 \}
+    = \{ (t, 0) \in \mathbb{R}^2 : t \in \mathbb{R}^1, t \geq 0 \}
+  \]
+  is a ray from the origin $(0,0)$ (included) to the infinity $(\infty,0)$.
+  If $\beta \neq 0$, then
+  \begin{align*}
+    \mathbf{f}(L_{\beta})
+    &= \{ (x^2 - \beta^2, 2\beta x) \in \mathbb{R}^2 : x \in \mathbb{R}^1 \} \\
+    &= \left\{ (s, t) \in \mathbb{R}^2 : s = \frac{t^2}{4\beta^2} - \beta^2 \right\},
+  \end{align*}
+  which is a parabola.
 \end{enumerate}
 $\Box$ \\\\
 
