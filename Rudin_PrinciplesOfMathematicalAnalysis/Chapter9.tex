@@ -2354,12 +2354,40 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.23.}
-\emph{...} \\
+\emph{Define $f$ in $\mathbb{R}^3$ by
+\[
+  f(x,y_1,y_2) = x^2 y_1 + e^x + y_2.
+\]
+Show that $f(0,1,-1) = 0$, $(D_1 f)(0, 1, -1) \neq 0$, and that
+there exists therefore a differentiable function $g$ in some neighborhood of
+$(1,-1)$ in $\mathbb{R}^2$, such that $g(1,-1) = 0$ and
+\[
+  f(g(y_1,y_2),y_1,y_2) = 0.
+\]
+Find $(D_1 g)(1,-1)$ and $(D_2 g)(1,-1)$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Note that $f(0,1,-1) = 0$.
+  Since
+  \begin{align*}
+    \left[ \nabla f((x,y_1,y_2) \right]_{(x,y_1,y_2)=(0,1,-1)}
+    &= \left[ (2xy_1 + e^x, x^2, 1) \right]_{(x,y_1,y_2)=(0,1,-1)} \\
+    &= (1,0,1),
+  \end{align*}
+  $A_x = (1)$ and $A_y = (0,1)$.
+  By the implicit function theorem (Theorem 9.28),
+  there exists a $\mathscr{C}'$ function
+  in some open neighborhood of $(1,-1)$ such that $g(1,-1) = 0$
+  and $f(g(y_1,y_2),y_1,y_2) = 0$.
+
 \item[(2)]
+  Besides,
+  $g'(1,-1) = -(A_x)^{-1} A_y = (0,-1)$
+  implies that $(D_1 g)(1,-1) = 0$ and $(D_2 g)(1,-1) = -1$.
 
 \end{enumerate}
 $\Box$ \\\\
@@ -2782,7 +2810,7 @@ $\Box$ \\
 
 
 \emph{Proof of (c).}
-  See (2)(4) in the proof of(b).
+  See (2)(4) in the proof of (b).
 $\Box$ \\\\
 
 
