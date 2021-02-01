@@ -3189,15 +3189,56 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 9.29.}
-\emph{...} \\
+\textbf{Exercise 9.29 (Symmetry of second derivatives).}
+\emph{Let $E$ be an open set in $\mathbb{R}^n$.
+The classes $\mathscr{C}'(E)$ and $\mathscr{C}''(E)$ are defined in the text.
+By induction, $\mathscr{C}^{(k)}(E)$ can be defined as follows,
+for all positive integer $k$:
+To say that $f \in \mathscr{C}^{(k)}(E)$
+means that the partial derivatives $D_1 f, \ldots D_n f$ belongs to $\mathscr{C}^{(k-1)}(E)$.
+Assume $f \in \mathscr{C}^{(k)}(E)$, and show (by repeated application of Theorem 9.41)
+that the $k$th-order derivative
+\[
+  D_{i_1 i_2 \cdots i_k} f = D_{i_1} D_{i_2} \cdots D_{i_k} f
+\]
+is unchanged if the subscripts $i_1,\ldots,i_k$ are permuted.
+For instance, if $n \geq 3$, then
+\[
+  D_{1213} f = D_{3112} f
+\]
+for every $f \in \mathscr{C}^{(4)}(E)$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that the $k$th-order derivative is unchanged if
+  any two adjacent subscripts $i_{h}$ and $i_{h+1}$ are exchanged.}
+  Since $D_{i_{h+2}} \cdots D_{i_{k}} f \in \mathscr{C}^{(k-h-1)}(E)
+  \subseteq \mathscr{C}^{2}(E)$,
+  \[
+    D_{i_{h+1} i_{h} i_{h+2} \cdots i_k} f
+    = D_{i_{h} i_{h+1} i_{h+2} \cdots i_k} f.
+  \]
+  Hence
+  \[
+    D_{i_1 \cdots i_{h-1} i_{h+1} i_{h} i_{h+2} \cdots i_k} f
+    = D_{i_1 \cdots i_{h-1} i_{h} i_{h+1} i_{h+2} \cdots i_k} f
+    = D_{i_1 \cdots i_k} f.
+  \]
 
+\item[(2)]
+  \emph{Show that every permutation can be written as a product of adjacent transpositions.}
+  It is well known that
+  every permutation can be written as a product of transpositions.
+  Notice that
+  \[
+    (i \:\: j) = (i \:\: i+1)(i+1 \:\: i+2) \cdots
+    (j-1 \:\: j)(j-2 \:\: j-1) \cdots (i \:\: i+1)
+  \]
 \end{enumerate}
+By (1)(2), the result is established.
 $\Box$ \\\\
 
 
