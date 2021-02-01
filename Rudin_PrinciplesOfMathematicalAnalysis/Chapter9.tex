@@ -2761,14 +2761,94 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.25.}
-\emph{...} \\
+\emph{Suppose $A \in L(\mathbb{R}^n, \mathbb{R}^m)$, let $r$ be the rank of $A$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Define $S$ as the proof of Theorem 9.32.
+  Show that $SA$ is a projection in $\mathbb{R}^n$
+  whose null space is $\mathscr{N}(A)$ and whose range is $\mathscr{R}(S)$.
+  (Hint: By (68), $SASA = SA$.)}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Use (a) to show that}
+  \[
+    \dim \mathscr{N}(A) + \dim \mathscr{R}(A) = n.
+  \]
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+Might assume $r > 0$.
 \begin{enumerate}
 \item[(1)]
+  Since $\dim \mathscr{R}(A) = r$ (Definition 9.30),
+  $\mathscr{R}(A)$ has a basis $\{ \mathbf{y}_1,\ldots,\mathbf{y}_r \}$.
+  Choose $\mathbf{z}_i \in \mathbb{R}^n$ so that
+  $A\mathbf{z}_i = \mathbf{y}_i$ ($1 \leq i \leq r$),
+  and define a linear mapping $S$ of $\mathscr{R}(A)$ into $\mathbb{R}^n$ by setting
+  \[
+    S(c_1 \mathbf{y}_1 + \cdots + c_r \mathbf{y}_r)
+    = c_1 \mathbf{z}_1 + \cdots + c_r \mathbf{z}_r
+  \]
+  for all scalars $c_1, \ldots, c_r$.
 
 \item[(2)]
+  \emph{Show that $SA$ is a projection.}
+  Given any $\mathbf{x} \in \mathbb{R}^n$.
+  Since $A\mathbf{x} \in \mathscr{R}(A)$, there exist scalars $c_1, \ldots, c_r$
+  such that
+  \[
+    A\mathbf{x} = c_1 \mathbf{y}_1 + \cdots + c_r \mathbf{y}_r.
+  \]
+  Note that $AS \mathbf{y}_i = A \mathbf{z}_i = \mathbf{y}_i$ for $1 \leq i \leq r$.
+  Hence
+  \begin{align*}
+    SASA\mathbf{x}
+    &= SAS(c_1 \mathbf{y}_1 + \cdots + c_r \mathbf{y}_r) \\
+    &= SA(c_1 \mathbf{z}_1 + \cdots + c_r \mathbf{z}_r) \\
+    &= S(c_1 \mathbf{y}_1 + \cdots + c_r \mathbf{y}_r) \\
+    &= SA\mathbf{x},
+  \end{align*}
 
+\item[(3)]
+  \emph{Show that $\mathscr{N}(SA) = \mathscr{N}(A)$.}
+  It is clear that $\mathscr{N}(SA) \supseteq \mathscr{N}(A)$.
+  Conversely, given any $\mathbf{x} \in \mathscr{N}(SA)$.
+  Write $\mathbf{0} = SA\mathbf{x} = S(A\mathbf{x})$.
+  Since $S$ is injective, $A\mathbf{x} = 0$, or $\mathbf{x} \in \mathscr{N}(A)$.
+
+\item[(4)]
+  \emph{Show that $\mathscr{R}(SA) = \mathscr{R}(S)$.}
+  It is clear that $\mathscr{R}(SA) \subseteq \mathscr{R}(S)$.
+  Conversely, given any $\mathbf{z} \in \mathscr{R}(S)$.
+  There exists $\mathbf{y} \in \mathscr{R}(A)$ such that $\mathbf{z} = S\mathbf{y}$.
+  Since $\mathbf{y} \in \mathscr{R}(A)$,
+  there exists $\mathbf{x} \in \mathbb{R}^n$ such that $\mathbf{y} = A\mathbf{x}$.
+  So $\mathbf{z} = S\mathbf{y} = SA\mathbf{x}$, or $\mathbf{z} \in \mathscr{R}(SA)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  By Projections 9.31(a),
+  \[
+    \dim \mathscr{N}(P) + \dim \mathscr{R}(P) = n
+  \]
+  for any projection $P$.
+
+\item[(2)]
+  Since $SA$ is a projection,
+  \[
+    \dim \mathscr{N}(SA) + \dim \mathscr{R}(SA) = n.
+  \]
+  Since $\mathscr{N}(SA) = \mathscr{N}(A)$ and $\mathscr{R}(SA) = \mathscr{R}(S)$,
+  it suffices to show that $\dim \mathscr{R}(S) = \dim \mathscr{R}(A)$.
+  Since $S$ is injective, $\mathscr{R}(A) \cong S(\mathscr{R}(A)) = \mathscr{S}(A)$.
+  Thus $\dim \mathscr{R}(S) = \dim \mathscr{R}(A)$.
 \end{enumerate}
 $\Box$ \\\\
 
