@@ -3328,7 +3328,7 @@ and suppose $\mathbf{x} \in \mathbb{R}^n$ is so close to $\mathbf{0}$ that the p
 \[
  \mathbf{p}(t) = \mathbf{a} + t \mathbf{x}
 \]
-lie ine $E$ whenever $0 \leq t \leq 1$.
+lie in $E$ whenever $0 \leq t \leq 1$.
 Define
 \[
   h(t) = f(\mathbf{p}(t))
@@ -3389,10 +3389,84 @@ for all $t \in \mathbb{R}^1$ for which $\mathbf{p}(t) \in E$.}
 
 
 \emph{Proof of (a).}
+Induction on $k$.
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  The base case $k = 1$.
+  Note that
+  \[
+    f'(\mathbf{p}(t))
+    =
+    \begin{bmatrix}
+      (D_1 f)(\mathbf{p}(t)) & \cdots & (D_n f)(\mathbf{p}(t))
+    \end{bmatrix}
+  \]
+  and
+  \[
+    \mathbf{p}'(t)
+    = \mathbf{x}
+    =
+    \begin{bmatrix}
+      x_1 \\
+      \vdots \\
+      x_n
+    \end{bmatrix}.
+  \]
+  Hence by the chain rule (Theorem 9.15),
+  \begin{align*}
+    h'(t)
+    &= f'(\mathbf{p}(t)) \mathbf{p}'(t) \\
+    &= \begin{bmatrix}
+      (D_1 f)(\mathbf{p}(t)) & \cdots & (D_n f)(\mathbf{p}(t))
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\
+      \vdots \\
+      x_n
+    \end{bmatrix} \\
+    &= \sum_{i=1}^{n} (D_i f)(\mathbf{p}(t))x_i.
+  \end{align*}
 
+\item[(2)]
+  The inductive step.
+  \emph{Show that for any $s \geq 1$,
+  if $h^{(s)}(t) = \sum (D_{i_1 \cdots i_s}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_s}$ holds,
+  then $h^{(s+1)}(t)
+  = \sum (D_{i_1 \cdots i_{s+1}}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_{s+1}}$ also holds.}
+  \begin{align*}
+    h^{(s+1)}(t)
+    &= \frac{d}{dt} h^{(s)}(t) \\
+    &= \frac{d}{dt} \sum
+      (D_{i_1 \cdots i_s}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_s} \\
+    &= \sum
+      \frac{d}{dt} (D_{i_1 \cdots i_s}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_s} \\
+    &= \sum
+      \left( \sum D_{i_{s+1}} (D_{i_1 \cdots i_s}f)(\mathbf{p}(t))x_{i_{s+1}} \right)
+      x_{i_1} \cdots x_{i_s}
+      &(\text{The chain rule}) \\
+    &= \sum
+      (D_{i_{s+1} i_1 \cdots i_s}f)(\mathbf{p}(t)) x_{i_{s+1}} x_{i_1} \cdots x_{i_{s}} \\
+    &= \sum (D_{i_1 \cdots i_{s+1}}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_{s+1}}
+      &(\text{Rearrange index}).
+  \end{align*}
+  Here
+  \begin{align*}
+    \frac{d}{dt} (D_{i_1 \cdots i_s}f)(\mathbf{p}(t))
+    &= \begin{bmatrix}
+      (D_1 D_{i_1 \cdots i_s}f)(\mathbf{p}(t)) & \cdots &
+        (D_n D_{i_1 \cdots i_s}f)(\mathbf{p}(t))
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1 \\
+      \vdots \\
+      x_n
+    \end{bmatrix} \\
+    &= \sum_{i_{s+1}=1}^{n} D_{i_{s+1}} (D_{i_1 \cdots i_s}f)(\mathbf{p}(t))x_{i_{s+1}}.
+  \end{align*}
+
+\item[(3)]
+  Since both the base case ((1)) and the inductive step ((2)) have been proved as true,
+  by mathematical induction the conclusion holds for every positive integer $k$.
 \end{enumerate}
 $\Box$ \\
 
@@ -3401,8 +3475,61 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \begin{align*}
+    f(\mathbf{a}+\mathbf{x})
+    =& h(1) \\
+    =& \sum_{k=0}^{m-1} \frac{h^{(k)}(0)}{k!} + \frac{h^{(m)}(t)}{m!}
+      &(\text{Theorem 5.15}) \\
+    =& \sum_{k=0}^{m-1}
+       \frac{1}{k!}
+         \sum (D_{i_1 \cdots i_k}f)(\mathbf{p}(0)) x_{i_1} \cdots x_{i_k} \\
+        &+ \sum \frac{1}{m!}(D_{i_1 \cdots i_m}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_m}
+      &(\text{(a)}) \\
+    =& \sum_{k=0}^{m-1}
+       \frac{1}{k!}
+         \sum (D_{i_1 \cdots i_k}f)(\mathbf{a}) x_{i_1} \cdots x_{i_k}
+       + r(\mathbf{x})
+  \end{align*}
+  where
+  \begin{align*}
+    r(\mathbf{x})
+    &= \frac{1}{m!} \sum (D_{i_1 \cdots i_m}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_m} \\
+    &= \frac{1}{m!} \sum (D_{i_1 \cdots i_m}f)(\mathbf{a}+t\mathbf{x}) x_{i_1} \cdots x_{i_m}
+  \end{align*}
+  for some $t \in (0,1)$.
 
+\item[(2)]
+  Since $f \in \mathscr{C}^{(m)}(E)$,
+  $f$ is continuous on a compact subset
+  \[
+    K = \{ \mathbf{y} : |\mathbf{a} - \mathbf{y}| \leq |\mathbf{x}| \}
+  \]
+  of $E$ (by the construction of $\mathbf{x}$).
+  Note that all $\mathbf{p}(t) = \mathbf{a} + t \mathbf{x} \in K$ for all $0 \leq t \leq 1$.
+  Hence
+  $(D_{i_1 \cdots i_m}f)(\mathbf{a}+t\mathbf{x})$ is bounded by some $M \in \mathbb{R}^1$
+  (Theorem 4.15).
+  Hence
+  \begin{align*}
+    \abs{ r(\mathbf{x}) }
+    &= \abs{ \frac{h^{(m)}(t)}{m!} } \\
+    &= \abs{ \frac{1}{m!}
+      \sum (D_{i_1 \cdots i_m}f)(\mathbf{a}+t\mathbf{x}) x_{i_1} \cdots x_{i_m} } \\
+    &\leq \frac{1}{m!} \sum \abs{ (D_{i_1 \cdots i_m}f)(\mathbf{a}+t\mathbf{x}) }
+      \abs{ x_{i_1} } \cdots \abs{ x_{i_m} } \\
+    &\leq \frac{1}{m!} \sum M |\mathbf{x}|^m \\
+    &= \frac{1}{m!} \cdot m! M |\mathbf{x}|^m \\
+    &= M |\mathbf{x}|^m .
+  \end{align*}
+  So
+  \[
+    0 \leq \abs{ \frac{r(\mathbf{x})}{|\mathbf{x}|^{m-1}} }
+    \leq |\mathbf{x}|.
+  \]
+  Therefore,
+  \[
+    \lim_{\mathbf{x} \to \mathbf{0}} \frac{r(\mathbf{x})}{|\mathbf{x}|^{m-1}} = 0.
+  \]
 \end{enumerate}
 $\Box$ \\
 
@@ -3411,7 +3538,30 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  As $s_1 + \cdots + s_n = k$,
+  the number of terms of the form
+  \[
+    (D_1^{s_1} \cdots D_n^{s_n}f)(\mathbf{a}) x_1^{s_1} \cdots x_n^{s_n}
+  \]
+  is
+  \[
+    {k \choose s_1 \:\: \cdots \:\: s_n}
+    = \frac{k!}{s_1! \cdots s_n!}.
+  \]
+
 \item[(2)]
+  Hence we can write
+  \begin{align*}
+    f(\mathbf{a} + \mathbf{x})
+    &= \sum_{k=0}^{m-1} \frac{1}{k!}(D_{i_1 \cdots i_k}f)(\mathbf{a})x_{i_1} \cdots x_{i_k}
+      + r(\mathbf{x}) \\
+    &= \sum_{s_1+\cdots+s_n \leq m-1}
+      \frac{1}{k!} \frac{k!}{s_1! \cdots s_n!}
+      (D_1^{s_1} \cdots D_n^{s_n}f)(\mathbf{a}) x_1^{s_1} x_n^{s_n} + r(\mathbf{x}) \\
+    &= \sum_{s_1+\cdots+s_n \leq m-1}
+      \frac{(D_1^{s_1} \cdots D_n^{s_n}f)(\mathbf{a})}{s_1! \cdots s_n!}
+        x_1^{s_1} \cdots x_n^{s_n} + r(\mathbf{x}).
+  \end{align*}
 
 \end{enumerate}
 $\Box$ \\\\
