@@ -3173,13 +3173,86 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.28.}
-\emph{...} \\
+\emph{For $t \geq 0$, put
+\begin{equation*}
+  \varphi(x,t) =
+    \begin{cases}
+      x
+        & (0 \leq x \leq \sqrt{t}), \\
+      -x + 2\sqrt{t}
+        & (\sqrt{t} \leq x \leq 1\sqrt{t}), \\
+      0
+        & (\text{otherwise}).
+    \end{cases}
+\end{equation*}
+and put $\varphi(x,t) = -\varphi(x,|t|)$ if $t < 0$.
+Show that $\varphi$ is continuous on $\mathbb{R}^2$, and
+\[
+  (D_2 \varphi)(x,0) = 0
+\]
+for all $x$.
+Define
+\[
+  f(t) = \int_{-1}^{1} \varphi(x,t)dx.
+\]
+Show that $f(t) = t$ if $|t| < \frac{1}{4}$.
+Hence}
+\[
+  f'(0) \neq \int_{-1}^{1} (D_2 \varphi)(x,0) dx.
+\]
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that $\varphi$ is continuous on $\mathbb{R}^2$.}
 
+\item[(2)]
+  \emph{Show that $(D_2 \varphi)(x,0) = 0$ for all $x \in \mathbb{R}^1$.}
+
+\item[(3)]
+  \emph{Show that $f(t) = \int_{-1}^{1} \varphi(x,t)dx = t$ if $|t| < \frac{1}{4}$.}
+  As $0 \leq t < \frac{1}{4}$,
+  \begin{align*}
+    f(t)
+    &= \int_{-1}^{1} \varphi(x,t)dx \\
+    &= \int_{-1}^{0} \varphi(x,t)dx
+      + \int_{0}^{\sqrt{t}} \varphi(x,t)dx
+      + \int_{\sqrt{t}}^{2\sqrt{t}} \varphi(x,t)dx
+      + \int_{2\sqrt{t}}^{1} \varphi(x,t)dx \\
+    &= 0
+      + \int_{0}^{\sqrt{t}} x dx
+      + \int_{\sqrt{t}}^{2\sqrt{t}} (-x+2\sqrt{t})dx
+      + 0 \\
+    &= \left[ \frac{x^2}{2} \right]_{x=0}^{x=\sqrt{t}}
+      + \left[ -\frac{x^2}{2} + 2\sqrt{t}x \right]_{x=\sqrt{t}}^{x=2\sqrt{t}} \\
+    &= t.
+  \end{align*}
+  As $-\frac{1}{4} < t \leq 0$,
+  \[
+    f(t)
+    = \int_{-1}^{1} \varphi(x,t)dx
+    = -\int_{-1}^{1} \varphi(x,-t)dx
+    = -(-t)
+    = t.
+  \]
+  Hence $f(t) = t$ if $-\frac{1}{4} < t < \frac{1}{4}$.
+
+\item[(4)]
+  \emph{Show that $f'(0) \neq \int_{-1}^{1} (D_2 \varphi)(x,0) dx$.}
+  By (3),
+  \[
+    f'(0)
+    = \lim_{t \to 0} \frac{f(t) - f(0)}{t - 0}
+    = \lim_{t \to 0} \frac{t - 0}{t - 0}
+    = 1.
+  \]
+  By (2),
+  \[
+    \int_{-1}^{1} (D_2 \varphi)(x,0) dx
+    = \int_{-1}^{1} 0 dx
+    = 0.
+  \]
+  Hence $f'(0) \neq \int_{-1}^{1} (D_2 \varphi)(x,0) dx$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -3248,9 +3321,93 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.30.}
-\emph{...} \\
+\emph{Let $f \in \mathscr{C}^{(m)}(E)$, where $E$ is an open subset of $\mathbb{R}^n$.
+Fix $\mathbf{a} \in E$,
+and suppose $\mathbf{x} \in \mathbb{R}^n$ is so close to $\mathbf{0}$ that the points
+\[
+ \mathbf{p}(t) = \mathbf{a} + t \mathbf{x}
+\]
+lie ine $E$ whenever $0 \leq t \leq 1$.
+Define
+\[
+  h(t) = f(\mathbf{p}(t))
+\]
+for all $t \in \mathbb{R}^1$ for which $\mathbf{p}(t) \in E$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{For $1 \leq k \leq m$, show (by repeated application of the chain rule) that
+  \[
+    h^{(k)}(t) = \sum (D_{i_1 \cdots i_k}f)(\mathbf{p}(t)) x_{i_1} \cdots x_{i_k}.
+  \]
+  The sum extends over all ordered $k$-tuples
+  $(i_1,\ldots,i_k)$
+  in which each $i_j$ is one of the integers $1,\ldots,n$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{By Taylor's theorem (Theorem 5.15),
+  \[
+    h(1) = \sum_{k=0}^{m-1} \frac{h^{(k)}(0)}{k!} + \frac{h^{(m)}(t)}{m!}
+  \]
+  for some $t \in (0,1)$.
+  Use this to prove Taylor's theorem in $n$ variables by show that the formula
+  \[
+    f(\mathbf{a} + \mathbf{x})
+    = \sum_{k=0}^{m-1} \frac{1}{k!}(D_{i_1 \cdots i_k}f)(\mathbf{a})x_{i_1} \cdots x_{i_k}
+     + r(\mathbf{x})
+  \]
+  represents $f(\mathbf{a} + \mathbf{x})$ as the sum of its so-called
+  ``Taylor polynomial of degree $m-1$,''
+  plus a remainder that satisfies
+  \[
+    \lim_{\mathbf{x} \to \mathbf{0}} \frac{r(\mathbf{x})}{|\mathbf{x}|^{m-1}} = 0.
+  \]
+  Each of the inner sums extends over all ordered $k$-tuples
+  $(i_1,\ldots,i_k)$, as in part (a);
+  as usual, the zero-order derivative of $f$ is simply $f$,
+  so that the constant term of the Taylor polynomial of $f$ at $\mathbf{a}$ is
+  $f(\mathbf{a})$.}
+
+\item[(c)]
+  \emph{Exercise 9.29 shows that repetition occurs in the Taylor polynomial
+  as written in part (b).
+  For instance, $D_{113}$ occurs three times, as $D_{113}, D_{131}, D_{311}$.
+  The sum of the corresponding three terms can be written in the form
+  \[
+    3 (D_1^2 D_3 f)(\mathbf{a})x_1^2 x_3.
+  \]
+  Prove (by calculating how often each derivative occurs) that the Taylor polynomial
+  in be can be written in the form
+  \[
+    \sum \frac{(D_1^{s_1} \cdots D_n^{s_n}f)(\mathbf{a})}{s_1! \cdots s_n!}
+      x_1^{s_1} \cdots x_n^{s_n}.
+  \]
+  Here the summation extends over all ordered $n$-tuples $(s_1,\ldots,s_n)$
+  such that each $s_i$ is a nonnegative integer, and $s_1 + \cdots + s_n \leq m-1$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
@@ -3265,7 +3422,14 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 9.31.}
-\emph{...} \\
+\emph{Suppose $f \in \mathscr{C}^{(3)}$ in some neighborhood of a point
+$\mathbf{a} \in \mathbb{R}^2$,
+the gradient of $f$ is $\mathbf{0}$ at $\mathbf{a}$,
+but not all second-order derivatives of $f$ are $0$ at $\mathbf{a}$.
+Show how one can then determine from the Taylor polynomial of $f$ at $\mathbf{a}$
+(of degree $2$) whether $f$ has a local maximum,
+or a local minimum, or neither, at the point $\mathbf{a}$.
+Extend this to $\mathbb{R}^n$ in place of $\mathbb{R}^2$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
