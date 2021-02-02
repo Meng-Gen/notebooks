@@ -3206,9 +3206,72 @@ Hence}
 \begin{enumerate}
 \item[(1)]
   \emph{Show that $\varphi$ is continuous on $\mathbb{R}^2$.}
+  \begin{enumerate}
+  \item[(a)]
+    Define $g(x) = \max\{ 1-|1-x|,0 \}$ on $\mathbb{R}^1$.
+    Write
+    \begin{equation*}
+      \varphi(x,t) =
+        \begin{cases}
+          \mathrm{sgn}(t) |t|^{\frac{1}{2}} g\left(x|t|^{-\frac{1}{2}}\right)
+            & (t \neq 0), \\
+          0
+            & (t = 0).
+        \end{cases}
+    \end{equation*}
+    Note that $|\varphi(x,t)| \leq \sqrt{t}$ for all $(x,t) \in \mathbb{R}^2$.
+
+  \item[(b)]
+    So $\varphi(x,t)$ is continuous on $\{ (x,t) \in \mathbb{R}^2 : t \neq 0 \}$.
+  \item[(c)]
+    For any $(y,0) \in \{ (x,t) \in \mathbb{R}^2 : t = 0 \}$,
+    it suffices to show that $\varphi(x,t)$ is continuous at $(y,0)$.
+    Given any $\varepsilon > 0$.
+    There is an open neighborhood
+    \[
+      B\left( (y,0);\frac{\varepsilon^2}{64} \right)
+    \]
+    of $(y,0)$
+    such that
+    \begin{align*}
+      |\varphi(x,t) - \varphi(y,0)|
+      &= |\varphi(x,t) - 0| \\
+      &\leq \sqrt{t} \\
+      &\leq \sqrt{\frac{\varepsilon^2}{64}} \\
+      &< \varepsilon
+    \end{align*}
+    whenever $(x,t) \in B\left( (y,0);\frac{\varepsilon^2}{64} \right)$.
+    Hence $\varphi(x,t)$ is continuous on $\{ (x,t) \in \mathbb{R}^2 : t = 0 \}$.
+  \end{enumerate}
+  By (b)(c), the result is true.
 
 \item[(2)]
   \emph{Show that $(D_2 \varphi)(x,0) = 0$ for all $x \in \mathbb{R}^1$.}
+  \begin{enumerate}
+  \item[(a)]
+    Fix $x \in \mathbb{R}^1$.
+    \emph{It suffices to show that
+    \[
+      (D_2 \varphi)(x,0)
+      = \lim_{t \to 0}\frac{\varphi(x,t) - \varphi(x,0)}{t - 0}
+      = \lim_{t \to 0}\frac{\varphi(x,t)}{t}
+      = 0
+    \]
+    for all $x \in \mathbb{R}^1$.}
+
+  \item[(b)]
+    Note that
+    \[
+      \varphi(x,t)
+      = \mathrm{sgn}(t) |t|^{\frac{1}{2}} g\left(x|t|^{-\frac{1}{2}}\right)
+    \]
+    if $t \neq 0$ (by (1)(a)).
+    If $x \leq 0$, then $g\left(x|t|^{-\frac{1}{2}}\right) = 0$ is automatically true.
+    If $x > 0$, then as $\frac{x^2}{4} > |t| > 0$
+    we have $g\left(x|t|^{-\frac{1}{2}}\right) = 0$ again.
+    In any case, $\varphi(x,t) = 0$ if $t$ is small enough.
+  \end{enumerate}
+  Therefore, $(D_2 \varphi)(x,0) = 0$.
 
 \item[(3)]
   \emph{Show that $f(t) = \int_{-1}^{1} \varphi(x,t)dx = t$ if $|t| < \frac{1}{4}$.}

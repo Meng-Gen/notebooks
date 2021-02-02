@@ -10,6 +10,6 @@
 - Chapter 6: The Riemann-Stieltjes Integral [Finished]
 - Chapter 7: Sequences and Series of Functions [Finished]
 - Chapter 8: Some Special Functions [Finished]
-- Chapter 9: Functions of Several Variables [WIP]
+- Chapter 9: Functions of Several Variables [Finished]
 - Chapter 10: Integration of Differential Forms [WIP]
 - Chapter 11: The Lebesuge Theory [WIP]
