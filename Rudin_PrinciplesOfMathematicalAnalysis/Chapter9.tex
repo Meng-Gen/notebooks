@@ -32,6 +32,7 @@
 
 % http://www2.math.uu.se/~astrombe/reellanalys2019/solutions_pub.pdf
 % https://www.math.utah.edu/~toledo/3220hw4.pdf
+% http://slpl.cse.nsysu.edu.tw/chiaping/la/pdm.pdf
 
 
 
@@ -3434,8 +3435,98 @@ Extend this to $\mathbb{R}^n$ in place of $\mathbb{R}^2$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Since the gradient of $f$ is $\mathbf{0}$ at $\mathbf{a}$,
+  \[
+    (D_1 f)(\mathbf{a}) = (D_2 f)(\mathbf{a}) = 0.
+  \]
+  So that the Taylor polynomial of $f$ at $\mathbf{a}$ is
+  \begin{align*}
+    f(\mathbf{a}+\mathbf{x}) - f(\mathbf{a})
+    =& (D_1 f)(\mathbf{a})x_1 + (D_2 f)(\mathbf{a})x_2 \\
+      &+ \frac{1}{2}\left[
+        (D_1^2 f)(\mathbf{a})x_1^2
+        + 2(D_1 D_2 f)(\mathbf{a})x_1 x_2
+        + (D_2^2 f)(\mathbf{a})x_2^2\right] \\
+      &+ r(\mathbf{x}) \\
+    =& \frac{1}{2}\left[
+        (D_1^2 f)(\mathbf{a})x_1^2
+        + 2(D_1 D_2 f)(\mathbf{a})x_1 x_2
+        + (D_2^2 f)(\mathbf{a})x_2^2\right] \\
+      &+ r(\mathbf{x}) \\
+    =& \frac{1}{2}
+        \begin{bmatrix}
+          x_1 & x_2
+        \end{bmatrix}
+        \begin{bmatrix}
+          (D_{11}f)(\mathbf{a}) & (D_{12}f)(\mathbf{a}) \\
+          (D_{21}f)(\mathbf{a}) & (D_{22}f)(\mathbf{a})
+        \end{bmatrix}
+        \begin{bmatrix}
+          x_1 \\
+          x_2
+        \end{bmatrix}
+      + r(\mathbf{x}).
+  \end{align*}
+  Here $\mathbf{x} \in \mathbb{R}^2$ is so close to $\mathbf{0}$,
+  and the remainder satisfies
+  \[
+    \lim_{\mathbf{x} \to \mathbf{0}} \frac{r(\mathbf{x})}{|\mathbf{x}|^{2}} = 0.
+  \]
 
+\item[(2)]
+  Define the \textbf{Hessian matrix} of $f$ of $\mathbf{a}$ be
+  \[
+    H(\mathbf{a}) = \begin{bmatrix}
+      (D_{11}f)(\mathbf{a}) & (D_{12}f)(\mathbf{a}) \\
+      (D_{21}f)(\mathbf{a}) & (D_{22}f)(\mathbf{a})
+    \end{bmatrix}.
+  \]
+  Let $H(\mathbf{a})_k$ be the submatrix of $H(\mathbf{a})$ obtained by
+  taking the upper left-hand corner $k \times k$ submatrix of $H(\mathbf{a})$.
+  Furthermore, let $\Delta_k = \det H(\mathbf{a})_k$, the $k$th principal
+  minor of $H(\mathbf{a})$.
+  \begin{enumerate}
+  \item[(a)]
+    $f$ has a local minimum if $H(\mathbf{a})$ is positive definite.
+    Since $H(\mathbf{a})$ is positive definite if and only if
+    $\Delta_k > 0$,
+    $f$ has a local minimum if $\Delta_k > 0$ ($k = 1, 2$).
+
+  \item[(b)]
+    $f$ has a local maximum if $H(\mathbf{a})$ is negative definite.
+    Since $H(\mathbf{a})$ is negative definite if and only if
+    $(-1)^k \Delta_k > 0$,
+    $f$ has a local maximum if $(-1)^k \Delta_k > 0$ ($k = 1, 2$).
+
+  \item[(c)]
+    $f$ has no local minimum or local maximum at the point $\mathbf{a}$
+    if $H(\mathbf{a})$ is indefinite.
+  \end{enumerate}
+  (See Supplement (Second-derivative test for extrema) in Exercise 9.21.)
+
+\item[(3)]
+  Now we extend this to $\mathbb{R}^n$ in place of $\mathbb{R}^2$.
+  Similar to (1)-(5),
+  Define the \textbf{Hessian matrix} of $f$ of $\mathbf{a}$ be
+  \[
+    H(\mathbf{a}) = \begin{bmatrix}
+      (D_{11}f)(\mathbf{a}) & \cdots & (D_{1n}f)(\mathbf{a}) \\
+      \vdots & \ddots & \vdots \\
+      (D_{n1}f)(\mathbf{a}) & \cdots & (D_{nn}f)(\mathbf{a})
+    \end{bmatrix}.
+  \]
+  So
+  \begin{enumerate}
+  \item[(a)]
+    $f$ has a local minimum if $\Delta_k > 0$ ($k = 1, \cdots, n$).
+
+  \item[(b)]
+    $f$ has a local maximum if $(-1)^k \Delta_k > 0$ ($k = 1, \cdots, n$).
+
+  \item[(c)]
+    $f$ has no local minimum or local maximum at the point $\mathbf{a}$
+    if $H(\mathbf{a})$ is indefinite.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
