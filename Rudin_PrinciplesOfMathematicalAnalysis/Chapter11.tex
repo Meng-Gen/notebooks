@@ -130,13 +130,38 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.3.}
-\emph{...} \\
+\emph{If $\{f_n\}$ is a sequence of measurable functions,
+prove that the set of points $x$ at which $\{f_n(x)\}$ converges is measurable.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  It suffices to show that
+  \[
+    E
+    = \{ x : \{ f_n(x) \} \text{ is convergent } \}
+    = \{ x : \{ f_n(x) \} \text{ is Cauchy } \}
+  \]
+  is measurable (since $\mathbb{R}^1$ is complete).
 
+\item[(2)]
+  Write
+  \[
+    E
+    =
+    \bigcap_{k=1}^{\infty}
+    \bigcup_{N=1}^{\infty}
+    \bigcap_{n,m \geq N} \left\{ x : |f_n(x)-f_m(x)| \leq \frac{1}{k} \right\}
+  \]
+  Since $\{f_n\}$ is a sequence of measurable functions,
+  $x \mapsto |f_n(x)-f_m(x)|$ is measurable
+  (Theorem 11.16 and Theorem 11.18).
+  Hence
+  \[
+    \left\{ x : |f_n(x)-f_m(x)| \leq \frac{1}{k} \right\}
+  \]
+  is measurable (Theorem 11.15).
+  Therefore $E$ is measurable.
 \end{enumerate}
 $\Box$ \\\\
 
