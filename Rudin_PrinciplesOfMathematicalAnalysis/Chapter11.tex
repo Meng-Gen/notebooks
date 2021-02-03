@@ -39,6 +39,8 @@ prove that $f(x) = 0$ almost everywhere on $E$.
 Write $A = \bigcup E_n$.
 Then $\mu(A) = 0$ if and only if $\mu(E_n) = 0$ for every $n$.)} \\
 
+Might assume that $f$ is measurable on $E$. \\
+
 \emph{Proof (Hint).}
 \begin{enumerate}
 \item[(1)]
@@ -89,13 +91,35 @@ Compare to Exercise 6.2. \\\\
 
 
 \textbf{Exercise 11.2.}
-\emph{...} \\
+\emph{If $\int_A f d\mu = 0$ for every measurable subset $A$ of a measurable set $E$,
+then $f(x) = 0$ almost everywhere on $E$.} \\
+
+Might assume that $f$ is measurable on $E$. \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Define
+  \[
+    A = \{ x \in E : f(x) \geq 0 \}
+    \qquad \text{ and } \qquad
+    B = \{ x \in E : f(x) \leq 0 \}.
+  \]
+  $A$ and $B$ are measurable subsets of a measurable set $E$ since $f$ is measurable.
 
+\item[(2)]
+  Apply Exercise 11.1 to the fact that $f \geq 0$ on $A$ (by construction)
+  and $\int_A f d\mu = 0$ (by assumption),
+  we have $f(x) = 0$ almost everywhere on $A$.
+
+\item[(3)]
+  Similarly,
+  apply Exercise 11.1 to the fact that $-f \geq 0$ on $B$
+  and $\int_B (-f) d\mu = -\int_B f d\mu = 0$,
+  we have $f(x) = 0$ almost everywhere on $B$.
+
+\item[(4)]
+  As $E = A \cup B$, $f(x) = 0$ almost everywhere on $E$ by (2)(3).
 \end{enumerate}
 $\Box$ \\\\
 
