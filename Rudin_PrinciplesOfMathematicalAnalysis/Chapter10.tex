@@ -52,7 +52,23 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.2.}
-\emph{...} \\
+\emph{For $i=1,2,3,\ldots$, let $\varphi_i \in \mathscr{C}(\mathbb{R}^1)$ have support
+in $(2^{-i},2^{1-i})$, such that $\int \varphi_i = 1$.
+Put
+\[
+  f(x,y) = \sum_{i=1}^{\infty}[ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y)
+\]
+Then $f$ has compact support in $\mathbb{R}^2$,
+$f$ is continuous except at $(0,0)$,
+and
+\[
+  \int dy \int f(x,y) dx = 0
+  \qquad
+  \text{ but }
+  \qquad
+  \int dx \int f(x,y) dy = 1.
+\]
+Observe that $f$ is unbounded in every neighborhood of $(0,0)$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -86,12 +102,113 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.4.}
-\emph{...} \\
+\emph{For $(x,y) \in \mathbb{R}^2$, define
+\[
+  \mathbf{F}(x,y) = (e^x \cos y - 1, e^x \sin y)
+\]
+Prove that $\mathbf{F} = \mathbf{G}_2 \circ \mathbf{G}_1$, where
+\begin{align*}
+  \mathbf{G}_1(x,y) &= (e^x \cos y - 1, y) \\
+  \mathbf{G}_2(u,v) &= (u, (1+u) \tan v)
+\end{align*}
+are primitive in some neighborhood of $(0,0)$.
+Compute the Jacobians of $\mathbf{G}_1$, $\mathbf{G}_2$, $\mathbf{F}$ at $(0,0)$.
+Define
+\[
+  \mathbf{H}_2(x,y) = (x, e^x \sin y)
+\]
+and find
+\[
+  \mathbf{H}_1(u,v) = (h(u,v),v)
+\]
+so that $\mathbf{F} = \mathbf{H}_1 \circ \mathbf{H}_2$
+is in some neighborhood of $(0,0)$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  By Definition 10.5,
+  \begin{align*}
+    \mathbf{G}_1(x,y) &= (e^x \cos y - 1) \mathbf{e}_1 + y \mathbf{e}_2, \\
+    \mathbf{G}_2(u,v) &= u \mathbf{e}_1 + ((1+u) \tan v) \mathbf{e}_2
+  \end{align*}
+  are primitive in some neighborhood of $(0,0)$.
+
 \item[(2)]
+  \emph{Show that $\mathbf{F} = \mathbf{G}_2 \circ \mathbf{G}_1$.}
+  Given any $(x,y) \in \mathbb{R}^2$, we have
+  \begin{align*}
+    (\mathbf{G}_2 \circ \mathbf{G}_1)(x,y)
+    &= \mathbf{G}_2(\mathbf{G}_1(x,y)) \\
+    &= \mathbf{G}_2(e^x \cos y - 1, y) \\
+    &= (e^x \cos y - 1, (1+(e^x \cos y - 1)) \tan y) \\
+    &= (e^x \cos y - 1, e^x \sin y) \\
+    &= \mathbf{F}(x,y).
+  \end{align*}
+
+\item[(3)]
+  Since
+  \begin{align*}
+    J_{\mathbf{G}_1}(x,y)
+    &=
+    \begin{bmatrix}
+      e^x \cos y & -e^x \sin y \\
+      0 & 1
+    \end{bmatrix} \\
+    J_{\mathbf{G}_2}(x,y)
+    &=
+    \begin{bmatrix}
+      1 & 0 \\
+      \tan y & (1+x)\sec^2 y
+    \end{bmatrix} \\
+    J_{\mathbf{F}}(x,y)
+    &=
+    \begin{bmatrix}
+      e^x \cos y & -e^x \sin y \\
+      e^x \sin y & e^x \cos y
+    \end{bmatrix},
+  \end{align*}
+  \begin{align*}
+    J_{\mathbf{G}_1}(0,0)
+    &=
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix} \\
+     J_{\mathbf{G}_2}(0,0)
+    &=
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix} \\
+     J_{\mathbf{F}}(0,0)
+    &=
+    \begin{bmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{bmatrix}.
+  \end{align*}
+
+\item[(4)]
+  Define $h(u,v) = \sqrt{e^{2u} - v^{2}} - 1$ on
+  \[
+    B\left((0,0);\frac{1}{64}\right) \subseteq \mathbb{R}^2.
+  \]
+  $h(u,v)$ is well-defined since $e^{2u}-v^2 > 0$
+  for all $(u,v) \in B\left((0,0);\frac{1}{64}\right)$.
+
+\item[(5)]
+  Given any $(x,y) \in \mathbb{R}^2$, we have
+  \begin{align*}
+    (\mathbf{H}_1 \circ \mathbf{H}_2)(x,y)
+    &= \mathbf{H}_1(\mathbf{H}_2(x,y)) \\
+    &= \mathbf{H}_1(x, e^x \sin y) \\
+    &= (\sqrt{e^{2x} - (e^x \sin y)^2} - 1, e^x \sin y) \\
+    &= (e^x \cos y - 1, e^x \sin y) \\
+    &= \mathbf{F}(x,y).
+  \end{align*}
 
 \end{enumerate}
 $\Box$ \\\\
