@@ -25,6 +25,10 @@
 
 
 
+%http://pages.cs.wisc.edu/~wentaowu/other-docs/POMA_Solution_Sheet.pdf
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -269,13 +273,48 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.15.}
-\emph{...} \\
+\emph{If $\omega$ and $\lambda$ are $k$- and $m$-forms, respectively, 
+prove that}
+\[
+  \omega \wedge \lambda = (-1)^{km} \lambda \wedge \omega.
+\]
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Write
+  \[
+    \omega = \sum_I b_I(\mathbf{x}) dx_I,
+    \qquad
+    \lambda = \sum_J c_J(\mathbf{x}) dx_J
+  \]
+  in the stardard presentations,
+  where $I$ and $J$ range over all increasing $k$-indices
+  and over all increasing $m$-indices taken from the set $\{1,\ldots,n\}$.
 
+\item[(2)]
+  \emph{Show that $dx_I \wedge dx_J = (-1)^{km} dx_J \wedge dx_I$.}
+  \begin{align*}
+    dx_I \wedge dx_J
+    &= dx_{i_1} \wedge \cdots \wedge dx_{i_k}
+      \wedge dx_J \\
+    &= (-1)^m dx_{i_1} \wedge \cdots \wedge dx_{i_{k-1}}
+      \wedge dx_J \wedge dx_{i_{k}} \\
+    &= (-1)^{2m} dx_{i_1} \wedge \cdots \wedge dx_{i_{k-2}}
+      \wedge dx_J \wedge dx_{i_{k-1}} \wedge dx_{i_{k}} \\
+    &\cdots \\
+    &= (-1)^{km} dx_J
+      \wedge dx_{i_1} \wedge \cdots \wedge dx_{i_k} \\
+    &= (-1)^{km} dx_J \wedge dx_I.
+  \end{align*}
+
+\item[(3)]
+  \begin{align*}
+    \omega \wedge \lambda
+    &= \sum_{I,J} b_I(\mathbf{x}) c_J(\mathbf{x}) dx_I \wedge dx_J \\
+    &= (-1)^{km} \sum_{J,I} c_J(\mathbf{x}) b_I(\mathbf{x}) dx_J \wedge dx_I \\
+    &= (-1)^{km} \lambda \wedge \omega.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
