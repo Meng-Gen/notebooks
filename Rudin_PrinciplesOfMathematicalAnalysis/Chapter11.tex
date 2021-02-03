@@ -172,15 +172,34 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.4.}
-\emph{...} \\
+\emph{If $f \in \mathscr{L}(\mu)$ on $E$ and $g$ is bounded and measurable on $E$,
+then $fg \in \mathscr{L}(\mu)$ on $E$.} \\
 
-\emph{Proof.}
+\emph{Proof (Theorem 11.27).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  $fg$ is measurable since both $f$ and $g$ are measurable (Theorem 11.18).
 
+\item[(2)]
+  $|g| \leq M$ for some real $M \in \mathbb{R}^1$ by the boundedness of $g$.
+  Hence
+  \[
+    |fg| \leq M|f|
+  \]
+  on $E$.
+
+\item[(3)]
+  To apply Theorem 11.27, it suffices to show that
+  $M|f| \in \mathscr{L}(\mu)$ on $E$.
+  Theorem 11.26 implies that $|f| \in \mathscr{L}(\mu)$ if $f \in \mathscr{L}(\mu)$.
+  And Remarks 11.23(d) implies that $M|f| \in \mathscr{L}(\mu)$ if $|f| \in \mathscr{L}(\mu)$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.}
+  It is not true for Riemann integrable functions:
+  \emph{If $f \in \mathscr{R}$ on $[a,b]$ and $g$ is bounded and measurable on $[a,b]$,
+  then $fg$ might be not Riemann integrable.} \\\\
 
 
 
