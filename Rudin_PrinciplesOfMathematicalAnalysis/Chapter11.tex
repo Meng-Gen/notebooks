@@ -208,13 +208,63 @@ $\Box$ \\
 
 
 \textbf{Exercise 11.5.}
-\emph{...} \\
+\emph{Put
+  \begin{equation*}
+    g(x) =
+    \begin{cases}
+      0 & (0 \leq x \leq \frac{1}{2}), \\
+      1 & (\frac{1}{2} < x \leq 1),
+    \end{cases}
+  \end{equation*}
+  and
+  \begin{align*}
+    f_{2k}(x) &= g(x) &(0 \leq x \leq 1), \\
+    f_{2k+1}(x) &= g(1-x) &(0 \leq x \leq 1).
+  \end{align*}
+Show that
+\[
+  \liminf_{n \to \infty} f_n(x) = 0
+  \qquad
+  (0 \leq x \leq 1),
+\]
+but
+\[
+  \int_{0}^{1} f_n(x)dx = \frac{1}{2}.
+\]
+(Compare with the Fatou's theorem.)} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that $\liminf_{n \to \infty} f_n(x) = 0$.}
+  Note that
+  \begin{equation*}
+    g(1-x) =
+    \begin{cases}
+      1 & (0 \leq x < \frac{1}{2}), \\
+      0 & (\frac{1}{2} < x \leq 1).
+    \end{cases}
+  \end{equation*}
+  Since $f_n(x) \geq 0$ by definition,
+  $\liminf_{n \to \infty} f_n(x) \geq 0$.
+  Since $f_{2k}(0) = f_{2k+1}(1) = 0$ for all positive integers $k$,
+  $\liminf_{n \to \infty} f_n(x) \leq 0$.
+  Therefore the result is established.
 
+\item[(2)]
+  \emph{Show that $\int_{0}^{1} f_n(x)dx = \frac{1}{2}$.}
+  Since
+  \begin{align*}
+    \int_{0}^{1} f_{2k}(x)dx
+    &= \int_{0}^{1} g(x)dx = \frac{1}{2}, \\
+    \int_{0}^{1} f_{2k+1}(x)dx
+    &= \int_{0}^{1} g(1-x)dx = \frac{1}{2},
+  \end{align*}
+  in any case $\int_{0}^{1} f_n(x)dx = \frac{1}{2}$ for all positive integers $n$.
+
+\item[(3)]
+  This example shows that the strict inequality in the Fatou's theorem
+  might hold.
 \end{enumerate}
 $\Box$ \\\\
 
