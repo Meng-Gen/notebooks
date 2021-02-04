@@ -426,15 +426,78 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.9.}
-\emph{...} \\
+\emph{Prove that the function $F$ given by
+\[
+  F(x) = \int_{a}^{x} f dt
+  \qquad
+  (a \leq x \leq b)
+\]
+(where $f \in \mathscr{L}$ on $[a,b]$) is continuous on $[a,b]$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Let $f \in \mathscr{L}$ on $E$.
+  Show that given any $\varepsilon > 0$ there is a $\delta > 0$ such that
+  \[
+    \int_{A} f d\mu < \varepsilon
+  \]
+  whenever $A \subseteq E$ with $\mu(A) < \delta$.}
+  \begin{enumerate}
+  \item[(a)]
+    Define $f_n(x) = \min\{ f(x), n \}$ on $E$ for $n=1,2,3,\ldots$.
+    Then $\{f_n\}$ is a sequence of measurable functions such that
+    \[
+      0 \leq f_1(x) \leq f_2(x) \leq \cdots.
+    \]
+    Also, $f_n \to f$.
+    Then by the Lebesuge's monotone convergenece theorem (Theorem 11.28),
+    \[
+      \lim_{n \to \infty} \int_{E} f_n d\mu = \int_{E} f d\mu.
+    \]
 
+  \item[(b)]
+    For such $\varepsilon > 0$, there is an integer $N \geq 1$ such that
+    \[
+      \int_{E} (f - f_N) d\mu < \frac{\varepsilon}{2}.
+    \]
+    Choose $\delta > 0$ so that $\delta < \frac{\varepsilon}{2N}$.
+    If $\mu(A) < \delta$, we have
+    \begin{align*}
+      \int_{A} f d\mu
+      &= \int_{A} (f-f_N) d\mu + \int_{A} f_N d\mu \\
+      &\leq \int_{E} (f-f_N) d\mu + N \mu(A) \\
+      &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+      &= \varepsilon.
+    \end{align*}
+  \end{enumerate}
+
+\item[(2)]
+  Apply (1) to $f^{+}$ and $f^{-}$ on $E = [a,b]$.
+  Given any $\varepsilon > 0$, there is a common $\delta > 0$
+  such that
+  \[
+    \abs{ \int_{x}^{y} f^{+} dt } < \frac{\varepsilon}{2}
+    \qquad \text{and} \qquad
+    \abs{ \int_{x}^{y} f^{-} dt } < \frac{\varepsilon}{2}
+  \]
+  whenever $|y - x| < \delta$.
+  So
+  \[
+    \abs{ F(y) - F(x) }
+    \leq \abs{\int_{x}^{y} f^{+} dt} + \abs{\int_{x}^{y} f^{-} dt}
+    < \varepsilon
+  \]
+  whenever $|y - x| < \delta$.
+  Hence $F$ is uniformly continuous.
+  (In fact, $F$ is absolutely continuous by the same argument.)
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note.}
+Compare to Theorem 6.20. \\\\
 
 
 
