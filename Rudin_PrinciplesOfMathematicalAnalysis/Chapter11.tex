@@ -196,8 +196,7 @@ then $fg \in \mathscr{L}(\mu)$ on $E$.} \\
 \end{enumerate}
 $\Box$ \\
 
-\emph{Note.}
-  It is not true for Riemann integrable functions:
+\emph{Note} (Riemann integral).
   \emph{If $f \in \mathscr{R}$ on $[a,b]$ and $g$ is bounded and measurable on $[a,b]$,
   then $fg$ might be not Riemann integrable.} \\\\
 
@@ -373,9 +372,100 @@ By Theorem 11.35, $f \in \mathscr{L}(\mu)$, and
 \]
 
 \item[(2)]
+  \emph{Show that $f^2 \in \mathscr{L}$ on $\mathbb{R}^1$.}
+  To apply Theorem 11.33,
+  we might restrict the measure space $X = \mathbb{R}^1$ to some interval $[a,b]$.
+  Then apply the Lebesgue's monotone convegence theorem (Theorem 11.28) to get the conclusion.
+  \begin{enumerate}
+  \item[(a)]
+  Write
+  \[
+    f(x)^2
+    = \left(\frac{1}{1+|x|}\right)^2
+    = \frac{1}{1 + 2|x| + x^2}
+    \leq \frac{1}{1+x^2}.
+  \]
+  By Theorem 11.27,
+  \emph{it suffices to show that $\frac{1}{1+x^2} \in \mathscr{L}$ on $\mathbb{R}^1$.}
 
+  \item[(b)]
+  Consider the sequence $\{f_n\}$ defined by
+  \[
+    f_n(x) = \frac{1}{1+x^2} \chi_{[-n,n]}(x).
+  \]
+  (Here $\chi_{[-n,n]} = K_{[-n,n]}$ is the characteristic function of $[-n,n]$
+  defined in Definition 11.19.)
+  By construction,
+  \[
+    0 \leq f_1(x) \leq f_2(x) \leq \cdots
+    \qquad
+    (x \in \mathbb{R}^1)
+  \]
+  and
+  \[
+    f_n(x) \to \frac{1}{1+x^2}
+    \qquad
+    (x \in \mathbb{R}^1).
+  \]
+
+  \item[(c)]
+  Hence
+  \begin{align*}
+    \int_{\mathbb{R}^1} \frac{1}{1+x^2} dx
+    &= \lim_{n \to \infty} \int_{\mathbb{R}^1} f_n(x) dx
+      &(\text{Theorem 11.28}) \\
+    &= \lim_{n \to \infty} \int_{\mathbb{R}^1} \frac{1}{1+x^2} \chi_{[-n,n]}(x) dx \\
+    &= \lim_{n \to \infty} \int_{-n}^{n} \frac{1}{1+x^2} dx \\
+    &= \lim_{n \to \infty} \mathscr{R}\int_{-n}^{n} \frac{1}{1+x^2} dx
+      &(\text{Theorem 11.33}) \\
+    &= \lim_{n \to \infty} 2 \arctan(n) \\
+    &= \pi < \infty.
+  \end{align*}
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Show that $f \not\in \mathscr{L}$ on $\mathbb{R}^1$.}
+  \begin{enumerate}
+  \item[(a)]
+  Consider the sequence $\{f_n\}$ defined by
+  \[
+    f_n(x) = f(x) \chi_{[-n,n]}(x) = \frac{1}{1+|x|} \chi_{[-n,n]}(x).
+  \]
+  By construction,
+  \[
+    0 \leq f_1(x) \leq f_2(x) \leq \cdots
+    \qquad
+    (x \in \mathbb{R}^1)
+  \]
+  and
+  \[
+    f_n(x) \to f(x)
+    \qquad
+    (x \in \mathbb{R}^1).
+  \]
+
+  \item[(b)]
+  Hence
+  \begin{align*}
+    \int_{\mathbb{R}^1} f(x) dx
+    &= \lim_{n \to \infty} \int_{\mathbb{R}^1} f_n(x) dx
+      &(\text{Theorem 11.28}) \\
+    &= \lim_{n \to \infty} \int_{\mathbb{R}^1} \frac{1}{1+|x|} \chi_{[-n,n]}(x) dx \\
+    &= \lim_{n \to \infty} \int_{-n}^{n} \frac{1}{1+|x|} dx \\
+    &= \lim_{n \to \infty} \mathscr{R}\int_{-n}^{n} \frac{1}{1+|x|} dx
+      &(\text{Theorem 11.33}) \\
+    &= \lim_{n \to \infty} 2 \log(n+1) \\
+    &= \infty,
+  \end{align*}
+  or $f \not\in \mathscr{L}$ on $\mathbb{R}^1$.
+  \end{enumerate}
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\emph{Note.}
+Compare to Exercise 6.5. \\\\
 
 
 
