@@ -263,10 +263,16 @@ but
   in any case $\int_{0}^{1} f_n(x)dx = \frac{1}{2}$ for all positive integers $n$.
 
 \item[(3)]
-  This example shows that the strict inequality in the Fatou's theorem
-  might hold.
+  This example shows that we may have the strict inequality in the Fatou's theorem.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\textbf{Supplement (Similar exercise).}
+  \emph{Consider the sequence $\{f_n\}$ defined by $f_n(x) = 1$ if $n \leq x < n+1$,
+  with $f_n(x) = 0$ otherwise.
+  Show that we may have the strict inequality in the Fatou's theorem.}\\\\
 
 
 
@@ -343,11 +349,29 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.10.}
-\emph{...} \\
+\emph{If $\mu(X) < +\infty$ and $f \in \mathscr{L}^2(\mu)$ on $X$,
+prove that $f \in \mathscr{L}$ on $X$.
+If
+\[
+  \mu(X) = +\infty,
+\]
+this is false. For instance, if
+\[
+  f(x) = \frac{1}{1+|x|},
+\]
+then $f^2 \in \mathscr{L}$ on $\mathbb{R}^1$,
+but $f \not\in \mathscr{L}$ on $\mathbb{R}^1$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+Since $\mu(X) < +\infty$, $1 \in \mathscr{L}^2(\mu)$ on $X$.
+By Theorem 11.35, $f \in \mathscr{L}(\mu)$, and
+\[
+  \int_X |f| d\mu
+  \leq \norm{f} \norm{1}.
+\]
+
 \item[(2)]
 
 \end{enumerate}
