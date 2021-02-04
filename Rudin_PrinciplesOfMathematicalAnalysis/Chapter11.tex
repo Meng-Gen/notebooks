@@ -280,13 +280,101 @@ $\Box$ \\
 
 
 \textbf{Exercise 11.6.}
-\emph{...} \\
+\emph{Let
+\begin{equation*}
+f_n(x) =
+  \begin{cases}
+    \frac{1}{n}
+      & (|x| \leq n), \\
+    0
+      & (|x| > n).
+  \end{cases}
+\end{equation*}
+Then $f_n(x) \to 0$ uniformly on $\mathbb{R}^1$,
+but
+\[
+  \int_{-\infty}^{\infty} f_n(x) dx = 2
+  \qquad
+  (n = 1,2,3,\ldots).
+\]
+(We write $\int_{-\infty}^{\infty}$ in place of $\int_{\mathbb{R}^1}$.)
+Thus uniform convergence does not imply dominated convergence
+in the sense of Theorem 11.32.
+However, on sets of finite measure,
+uniformly convergent sequences of bounded functions do satisfy Theorem 11.32.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that $f_n(x) \to 0$ uniformly on $\mathbb{R}^1$.}
+  Given any $\varepsilon > 0$, there is an integer $N > \frac{1}{\varepsilon}$
+  such that
+  \[
+    |f_n(x) - 0| \leq \frac{1}{n} \leq \frac{1}{N} < \varepsilon
+  \]
+  whenever $n \geq N$ and $x \in \mathbb{R}^1$.
+  Hence $f_n(x) \to 0$ uniformly.
 
+\item[(2)]
+  \emph{Show that $\int_{-\infty}^{\infty} f_n(x) dx = 2$.}
+  \[
+    \int_{-\infty}^{\infty} f_n(x) dx
+    = \int_{-n}^{n} \frac{1}{n} dx
+    = 2.
+  \]
+
+\item[(3)]
+  By (1)(2),
+  \[
+    \lim_{n \to \infty} \int_{-\infty}^{\infty} f_n(x) dx
+    \neq \int_{-\infty}^{\infty} \lim_{n \to \infty} f_n(x) dx
+  \]
+  suggests that the Lebesgue's dominated convergence theorem (Theorem 11.32)
+  does not hold in this case.
+  In fact,
+  if there were $g \in \mathscr{L}$ such that $|f_n(x)| \leq g(x)$,
+  then
+  \begin{align*}
+    \int_{-\infty}^{\infty} g(x) dx
+    &\geq \int_{0}^{\infty} g(x) dx
+      &(\text{Theorem 11.24}) \\
+    &= \sum_{n=1}^{\infty} \int_{n-1}^{n} g(x) dx
+      &(\text{Theorem 11.24}) \\
+    &\geq \sum_{n=1}^{\infty} \int_{n-1}^{n} |f_n(x)| dx \\
+    &= \sum_{n=1}^{\infty} \int_{n-1}^{n} \frac{1}{n} dx \\
+    &= \sum_{n=1}^{\infty} \frac{1}{n} \\
+    &= \infty,
+  \end{align*}
+  which is absurd.
+
+\item[(4)]
+  \emph{Show that on sets of finite measure,
+  uniformly convergent sequences of bounded functions $\{f_n\}$
+  do satisfy Theorem 11.32.}
+  \begin{enumerate}
+  \item[(a)]
+    Since $\{f_n\}$ is uniformly convergent,
+    $\{f_n\}$ is uniformly bounded (Exercise 7.1), or
+    there exists a real number $M$ such that
+    \[
+      |f_n(x)| \leq M
+    \]
+    for all positive integer $n$ and $x \in E$.
+
+  \item[(b)]
+    Define $g(x) = M$ on $E$.
+    It is clear that
+    \[
+      \int_E g(x) dx = M \mu(E) < +\infty.
+    \]
+    Now we can apply the Lebesgue's dominated convergence theorem (Theorem 11.32)
+    to get
+    \[
+      \lim_{n \to \infty} \int_E f_n d\mu = \int_E \lim_{n \to \infty} f_n d\mu.
+    \]
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
