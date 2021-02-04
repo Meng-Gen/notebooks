@@ -632,13 +632,129 @@ Compare to Exercise 6.5. \\\\
 
 
 \textbf{Exercise 11.11.}
-\emph{...} \\
+\emph{If $f, g \in \mathscr{L}(\mu)$ on $X$, defined the distance between $f$ and $g$ by
+\[
+  \int_{X} |f-g| d\mu.
+\]
+Prove that $\mathscr{L}(\mu)$ is a complete metric space.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Define
+  \[
+    \norm{f-g}_1 = \int_{X} |f-g| d\mu.
+  \]
+  Thus $\norm{f-g}_1 = 0$ if and only if $f = g$ almost everywhere on $X$ (Exercise 11.1).
+  As in Remark 11.37, we identify two functions to be equivalent
+  if they are equal almost everywhere.
 
+\item[(2)]
+  \emph{Show that $\mathscr{L}(\mu)$ is a metric space.}
+  \begin{enumerate}
+  \item[(a)]
+    By definition, $\norm{f-g}_1 \geq 0$.
+    Besides, $\norm{f-g}_1 = 0$ if and only if $f = g$ almost everywhere by (1).
+
+  \item[(b)]
+    $\norm{f-g}_1 = \norm{g-f}_1$ since $|f(x)-g(x)| = |g(x)-f(x)|$ for all $x \in X$.
+
+  \item[(c)]
+    Since $|f(x)-g(x)| \leq |f(x)-h(x)| + |h(x)-g(x)|$ for all $x \in X$,
+    Remarks 11.23(c) and Theorem 11.29 imply that
+    \[
+      \norm{f-g}_1 \leq \norm{f-h}_1 + \norm{h-g}_1.
+    \]
+  \end{enumerate}
+
+\item[(3)]
+  \emph{Show that $\mathscr{L}(\mu)$ is complete.}
+  Similar to the proof of Theorem 11.42.
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Let $\{f_n\}$ be a Cauchy sequence in $\mathscr{L}(\mu)$,
+    show that there exists a function $f \in \mathscr{L}(\mu)$ such that
+    $\{f_n\}$ converges to $f \in \mathscr{L}(\mu)$.}
+
+  \item[(b)]
+    Since $\{f_n\}$ is a Cauchy sequence,
+    we can find a sequence $\{n_k\}$, $k = 1,2,3,\ldots$, such that
+    \[
+      \norm{ f_{n_k} - f_{n_{k+1}} }_1
+      = \int_{X} \abs{f_{n_k} - f_{n_{k+1}}} d\mu
+      < \frac{1}{2^k}
+      \qquad
+      (k = 1,2,3,\ldots).
+    \]
+    Hence
+    \[
+      \sum_{k=1}^{\infty} \int_{X} \abs{f_{n_k} - f_{n_{k+1}}} d\mu
+      \leq \sum_{k=1}^{\infty} \frac{1}{2^k}
+      = 1
+      < +\infty.
+    \]
+
+  \item[(c)]
+    By Theorem 11.30, we may interchange the summation and integration to get
+    \[
+      \int_{X} \sum_{k=1}^{\infty} \abs{f_{n_k} - f_{n_{k+1}}} d\mu < +\infty,
+    \]
+    or
+    \[
+      \sum_{k=1}^{\infty} \abs{f_{n_k}(x) - f_{n_{k+1}}(x)}
+      = \sum_{k=1}^{\infty} \abs{f_{n_{k+1}}(x) - f_{n_{k}}(x)}
+      < +\infty
+    \]
+    almost everywhere on $X$.
+
+  \item[(d)]
+    Since the $k$th partial sum of the series
+    \[
+      \sum_{k=1}^{\infty} (f_{n_{k+1}}(x) - f_{n_{k}}(x))
+    \]
+    which converges almost everywhere on $X$ (Theorem 3.45), is
+    \[
+      f_{n_{k+1}}(x) - f_{n_{1}}(x),
+    \]
+    we see that the equation
+    \[
+      f(x) = \lim_{k \to \infty} f_{n_k}(x)
+    \]
+    defines $f(x)$ for almost all $x \in X$,
+    and it does not matter how we define $f(x)$ at the remaining points of $X$.
+
+  \item[(e)]
+    We shall now show that this function $f$ has the desired properties.
+    Let $\varepsilon > 0$ be given, and choose $N$ such that
+    \[
+      \norm{ f_n-f_m }_1 \leq \varepsilon
+    \]
+    whenever $n, m \geq N$.
+    If $n_k > N$, Fatou's theorem shows that
+    \[
+      \norm{ f-f_{n_k} }_1
+      \leq \liminf_{i \to \infty} \norm{ f_{n_i}-f_{n_k} }_1
+      \leq \varepsilon.
+    \]
+    Thus $f-f_{n_k} \in \mathscr{L}(\mu)$,
+    and since $f = (f-f_{n_k}) + f_{n_k} \in \mathscr{L}(\mu)$,
+    we see that $f \in \mathscr{L}(\mu)$.
+    Also, since $\varepsilon$ is arbitrary,
+    \[
+      \lim_{k \to \infty} \norm{f-f_{n_k}}_1 = 0.
+    \]
+
+  \item[(f)]
+    Finally, the inequality
+    \[
+      \norm{f-f_n}_1 \leq \norm{f-f_{n_k}}_1 + \norm{f_{n_k}-f_n}_1
+    \]
+    shows that $\{f_n\}$ converges to $f \in \mathscr{L}(\mu)$;
+    for if we take $n$ and $n_k$ large enough,
+    each of the two terms can be made arbitrary small.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
