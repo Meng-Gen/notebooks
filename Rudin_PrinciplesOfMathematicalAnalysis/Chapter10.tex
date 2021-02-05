@@ -3,7 +3,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{physics}
 \parindent=0pt
 
 \def\upint{\mathchoice%
@@ -271,13 +273,132 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.8.}
-\emph{...} \\
+\emph{Let $H$ be the parallelogram in $\mathbb{R}^2$ whose vertices are
+$(1,1)$, $(3,2)$, $(4,5)$, $(2,4)$.
+Find the affine map $T$ which sends
+$(0,0)$ to $(1,1)$, $(1,0)$ to $(3,2)$, $(1,1)$ to $(4,5)$, $(0,1)$ to $(2,4)$.
+Show that $J_{T} = 5$.
+Use $T$ to convert the integral
+\[
+  \alpha = \int_{H} e^{x-y} dxdy
+\]
+to an integral over $I^2$ and thus compute $\alpha$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  By Affine simplexes 10.26,
+  \[
+    T(\mathbf{x}) = T(\mathbf{0}) + A\mathbf{x},
+  \]
+  where $A \in L(\mathbb{R}^2, \mathbb{R}^2)$, say
+  $A = \begin{bmatrix}
+    a & b \\
+    c & d
+  \end{bmatrix}$.
+  Note that $T:
+  \begin{bmatrix}
+    0 \\
+    0
+  \end{bmatrix} \mapsto
+  \begin{bmatrix}
+    1 \\
+    1
+  \end{bmatrix}$.
+  Thus
+  \[
+    T:
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix} \mapsto
+    \begin{bmatrix}
+      1 \\
+      1
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      1+ax+by \\
+      1+cx+dy
+    \end{bmatrix}.
+  \]
 
+\item[(2)]
+  By $T: (1,0) \mapsto (3,2)$ and $T: (0,1) \mapsto (2,4)$,
+  we can solve $A$ as
+  \[
+    A = \begin{bmatrix}
+      2 & 1 \\
+      1 & 3
+    \end{bmatrix}.
+  \]
+  It is easy to verify such
+  \[
+    T:
+    \underbrace{\begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}}_{\mathbf{x}}
+    \mapsto
+    \underbrace{\begin{bmatrix}
+      1 \\
+      1
+    \end{bmatrix}}_{T(\mathbf{0})}
+    +
+    \underbrace{\begin{bmatrix}
+      2 & 1 \\
+      1 & 3
+    \end{bmatrix}}_{A}
+    \underbrace{\begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}}_{\mathbf{x}}
+    =
+    \begin{bmatrix}
+      1+2x+y \\
+      1+x+3y
+    \end{bmatrix}
+  \]
+  satisfying our requirement.
+
+\item[(3)]
+  \[
+    J_T
+    =
+    \det\begin{bmatrix}
+      2 & 1 \\
+      1 & 3
+    \end{bmatrix}
+    = 5.
+  \]
+
+\item[(4)]
+  We cannot apply Theorem 10.9 directly as Exercise 10.9.
+  Luckily, we might use the first part of the proof in Theorem 10.9 to
+  show that
+  \[
+    \int_{\mathbb{R}^2} f(\mathbf{y}) d\mathbf{y}
+    = \int_{\mathbb{R}^2} f(T(\mathbf{x})) \abs{J_T(\mathbf{x})} d\mathbf{x}
+  \]
+  holds for affine maps by Theorem 10.2 again.
+  Hence
+  \begin{align*}
+    \int_{H} e^{x-y} dxdy
+    &= \int_{[0,1]^2} e^{(1+2u+v)-(1+u+3v)} \abs{J_T} du dv \\
+    &= 5 \int_{[0,1]^2} e^{u-2v} du dv \\
+    &= 5 \left\{ \int_{0}^{1} e^u du \right\}\left\{ \int_{0}^{1} e^{-2v} dv \right\}
+      &(\text{Theorem 10.2}) \\
+    &= \frac{5}{2}(e-1)(1-e^{-2}).
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
