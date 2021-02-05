@@ -992,15 +992,53 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.18.}
-\emph{...} \\
+\emph{Suppose $f \in \mathscr{L}^2(\mu)$, $g \in \mathscr{L}^2(\mu)$.
+Prove that
+\[
+  \abs{ \int f\overline{g} d\mu }^2 = \int |f|^2 d\mu \int |g|^2 d\mu
+\]
+if and only if $f(x) = 0$ almost everywhere or there is a constant $c$ such that
+$g(x) = cf(x)$ almost everywhere.
+(Compare Theorem 11.35.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Since $g \in \mathscr{L}^2(\mu)$, $\overline{g} \in \mathscr{L}^2(\mu)$.
+  Theorem 11.35 implies that
+  $f\overline{g} \in \mathscr{L}^2(\mu)$, and
+  \[
+    \left\{ \int \abs{ f\overline{g} } d\mu \right\}^2
+    \leq \int |f|^2 d\mu \int |g|^2 d\mu.
+  \]
+  With Theorem 11.26, we have
+  \[
+    \abs{ \int f\overline{g} d\mu }^2
+    \leq \left\{ \int \abs{ f\overline{g} } d\mu \right\}^2
+    \leq \int |f|^2 d\mu \int |g|^2 d\mu.
+  \]
+  Thus
+  \[
+    \abs{ \int f\overline{g} d\mu }^2 = \int |f|^2 d\mu \int |g|^2 d\mu
+  \]
+  if and only if
+  \[
+    \left\{ \int \abs{ f\overline{g} } d\mu \right\}^2 = \int |f|^2 d\mu \int |g|^2 d\mu
+    \text{ and }
+    \abs{ \int f\overline{g} d\mu } = \int \abs{ f\overline{g} } d\mu.
+  \]
+
 \item[(2)]
 
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\emph{Note.}
+Compare Exercise 1.15 and Exercise 6.10. \\\\
 
 
 
