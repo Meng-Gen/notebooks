@@ -81,7 +81,7 @@ $\Box$ \\\\
 
 \textbf{Exercise 2.2.}
 \emph{A complex number $z$ is said to be algebraic if there are integers
-$a_0, ..., a_n$, not all zero, such that
+$a_0, \ldots, a_n$, not all zero, such that
 $$a_0 z^n + a_1 z^{n-1} + \cdots + a_{n-1} z + a_n = 0.$$
 Prove that the set of all algebraic numbers is countable.
 (Hint: For every positive integer $N$ there are only finitely many equations with
@@ -129,7 +129,7 @@ $P$ is the set of all polynomials over $\mathbb{Z}$. \\
 Each $P_N$ is finite for given $N$
 (since the equation $n + |a_0| + |a_1| + \cdots + |a_n| = N$
 has finitely many solutions
-$(n, a_0, a_1, ..., a_n) \in \mathbb{Z}^{n+2}$).
+$(n, a_0, a_1, \ldots, a_n) \in \mathbb{Z}^{n+2}$).
 So $P$ is a countable union of finite sets, and hence at most countable.
 $P$ is infinite since $\mathbb{Z}$ is a subring of $\mathbb{Z}[x]$.
 So $P$ is countable.
@@ -150,7 +150,7 @@ $$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
 \emph{Claim: $P_n$ is countable.}
 Define a 1-1 map $\varphi_n: P_n \rightarrow \mathbb{Z}^{n+1}$ by
 $$\varphi_n(a_0 z^n + a_1 z^{n-1} + \cdots + a_n)
-= (a_0, a_1, ..., a_{n-1}, a_n).$$
+= (a_0, a_1, \ldots, a_{n-1}, a_n).$$
 By (1) and Theorem 2.8, $P_n$ is countable.
 ($P_n$ is infinite since $a_n \in \mathbb{Z}$.)
 Now $P$ is a countable union of countable sets,
@@ -162,8 +162,8 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
 \emph{The set of prime numbers is countable.}
-Write all primes in the ascending order as $p_1, p_2, ..., p_n, ...$
-where $p_1 = 2, p_2 = 3, ..., p_{10001} = 104743, ...$
+Write all primes in the ascending order as $p_1, p_2, \ldots, p_n, \ldots$
+where $p_1 = 2, p_2 = 3, \ldots, p_{10001} = 104743, \ldots$
 (See \href{https://projecteuler.net/problem=7}{ProjectEuler 7: 10001st prime}.
 Use sieve of Eratosthenes to get $p_{10001}$.)
 \item[(2)]
@@ -457,11 +457,11 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 2.7.}
-\emph{Let $A_1, A_2, A_3, ...$ be subsets of a metric space.}
+\emph{Let $A_1, A_2, A_3, \ldots$ be subsets of a metric space.}
 \begin{enumerate}
 \item[(a)]
 \emph{If $B_n = \bigcup^{n}_{i=1} A_i$, prove that
-$\overline{B_n} = \bigcup^{n}_{i=1}{\overline{A_i}}$, for $n = 1, 2, 3, ...$}
+$\overline{B_n} = \bigcup^{n}_{i=1}{\overline{A_i}}$, for $n = 1, 2, 3, \ldots$}
 \item[(b)]
 \emph{If $B = \bigcup^{\infty}_{i=1} A_i$,
 prove that $\overline{B} \supseteq \bigcup^{\infty}_{i=1} \overline{A_i}$.}
@@ -758,15 +758,15 @@ without using Definition 2.18 (f).
 \begin{enumerate}
 \item[(a)]
 \emph{Any finite subset is compact.}
-Say $E = \{p_1, p_2, ..., p_k\}$, and $\{ G_{\alpha} \}$ be an open covering of $E$.
+Say $E = \{p_1, p_2, \ldots, p_k\}$, and $\{ G_{\alpha} \}$ be an open covering of $E$.
 From $\{ G_{\alpha} \}$
 we pick
 $G_{\alpha_1}$ containing $p_1$,
-$G_{\alpha_2}$ containing $p_2$, ..., and
+$G_{\alpha_2}$ containing $p_2$, $\ldots$, and
 $G_{\alpha_k}$ containing $p_k$.
 This process can be done in the finitely many steps.
 Therefore,
-$$\{ G_{\alpha_1}, G_{\alpha_2}, ..., G_{\alpha_k} \}$$
+$$\{ G_{\alpha_1}, G_{\alpha_2}, \ldots, G_{\alpha_k} \}$$
 is a finite subcovering of $\{ G_{\alpha} \}$ covering $E$.
 \item[(b)]
 \emph{Any infinite subset is not compact.}
@@ -775,11 +775,11 @@ $$\mathscr{G} = \left\{ G_p = \{ p \} \right\}$$
 of open subsets where $p$ runs all points in $E$.
 Clearly, $\{ G_p \}$ is an open covering.
 Assume
-$$\mathscr{G}' = \left\{ G_{p_1}, G_{p_2}, ..., G_{p_k} \right\}$$
+$$\mathscr{G}' = \left\{ G_{p_1}, G_{p_2}, \ldots, G_{p_k} \right\}$$
 is any finite subcovering of $\mathscr{G}$.
 Since $E$ is infinite, there exist a point $p \in E$ such that
 $p \neq p_1$,
-$p \neq p_2$, ...,
+$p \neq p_2$, $\ldots$,
 $p \neq p_k$.
 Therefore, $\mathscr{G}'$ does not cover $p$,
 or $\mathscr{G}$ does not contains any finite subcovering $\mathscr{G}'$.
@@ -923,7 +923,7 @@ $\Box$ \\\\
 
 \textbf{Exercise 2.12.}
 \emph{Let $K \subseteq \mathbb{R}^1$
-consist of $0$ and the numbers $\frac{1}{n}$, for $n = 1, 2, 3, ...$.
+consist of $0$ and the numbers $\frac{1}{n}$, for $n = 1, 2, 3, \ldots$.
 Prove that $K$ is compact directly from the definition
 (without using the Heine-Borel theorem).} \\
 
@@ -934,12 +934,12 @@ So there exists an open neighborhood $U = B(0;r)$ of $0$ such that $U \subseteq 
 So $U$ contains all points $q = \frac{1}{n}$ of $K$ whenever $n > \frac{1}{r}$.
 To construct a finite subcovering of $\{ G_{\alpha} \}$,
 we need to pick finitely many open sets from $\{ G_{\alpha} \}$
-to cover the remaining points $q = \frac{1}{n}$ where $n = 1, 2, ..., \left[\frac{1}{r}\right]$,
-say $G_1$ contains $q = \frac{1}{1}$, $G_2$ contains $q = \frac{1}{2}$, ...,
+to cover the remaining points $q = \frac{1}{n}$ where $n = 1, 2, \ldots, \left[\frac{1}{r}\right]$,
+say $G_1$ contains $q = \frac{1}{1}$, $G_2$ contains $q = \frac{1}{2}$, $\ldots$,
 $G_{\left[\frac{1}{r}\right]}$ contains $q = \frac{1}{\left[\frac{1}{r}\right]}$.
 (Might be duplicated.)
 Hence,
-$$\left\{ G_0, G_1, G_2, ..., G_{\left[\frac{1}{r}\right]} \right\}$$
+$$\left\{ G_0, G_1, G_2, \ldots, G_{\left[\frac{1}{r}\right]} \right\}$$
 is a finite subcovering of $\{ G_{\alpha} \}$ covering $K$.
 $\Box$ \\
 
@@ -1032,11 +1032,11 @@ Actually, given $x \in (0, 1)$, there exists an positive integer $n$ such that $
 That is, $x \in \left(\frac{1}{n}, 1\right) = G_n$.
 \item[(2)]
 \emph{There is no finite subcovering of $\mathscr{G}$.}
-Assume $$\mathscr{G}' = \left\{ G_{n_1}, G_{n_2}, ..., G_{n_k} \right\}$$
-is any finite subcovering of $\mathscr{G}$ where $n_1 < n_2 < ... < n_k$.
+Assume $$\mathscr{G}' = \left\{ G_{n_1}, G_{n_2}, \ldots, G_{n_k} \right\}$$
+is any finite subcovering of $\mathscr{G}$ where $n_1 < n_2 < \cdots < n_k$.
 Take $x \in \left(0, \frac{1}{n_k}\right) \neq \varnothing$,
 $x = \frac{1}{2 n_k}$ for example.
-Then $x \not\in G_{n_1}$, $x \not\in G_{n_1}$, ..., $x \not\in G_{n_k}$,
+Then $x \not\in G_{n_1}$, $x \not\in G_{n_1}$, $\ldots$, $x \not\in G_{n_k}$,
 which contradicts that $\mathscr{G}'$ is a finite subcovering of $\mathscr{G}$ covering $(0, 1)$.
 \end{enumerate}
 $\Box$ \\\\
