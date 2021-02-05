@@ -271,7 +271,7 @@ $\Box$ \\
 \textbf{Supplement (Similar exercise).}
   \emph{Consider the sequence $\{f_n\}$ defined by $f_n(x) = 1$ if $n \leq x < n+1$,
   with $f_n(x) = 0$ otherwise.
-  Show that we may have the strict inequality in the Fatou's theorem.}\\\\
+  Show that we may have the strict inequality in the Fatou's theorem.} \\\\
 
 
 
@@ -765,15 +765,84 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.12.}
-\emph{...} \\
+\emph{Suppose}
+\begin{enumerate}
+\item[(a)]
+  \emph{$|f(x,y)| \leq 1$ if $0 \leq x \leq 1$, $0 \leq y \leq 1$.}
+
+\item[(b)]
+  \emph{for fixed $x$, $f(x,y)$ is a continuous function of $y$.}
+
+\item[(c)]
+  \emph{for fixed $y$, $f(x,y)$ is a continuous function of $x$.}
+\end{enumerate}
+\emph{Put
+\[
+  g(x) = \int_{0}^{1} f(x,y) dy
+  \qquad
+  (0 \leq x \leq 1).
+\]
+Is $g$ continuous?} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that $g$ is continuous.}
 
+\item[(2)]
+  Let $\{ x_n \}$ be a sequence in $[0,1]$ such that
+  $x_n \neq x$ and $\lim x_n = x$.
+  It suffices to show that
+  \begin{align*}
+    \lim_{n \to \infty} g(x_n)
+    &= \lim_{n \to \infty} \int_{0}^{1} f(x_n,y) dy \\
+    &= \int_{0}^{1} \lim_{n \to \infty} f(x_n,y) dy \\
+    &= \int_{0}^{1} f(x,y) dy \\
+    &= g(x)
+  \end{align*}
+  (Theorem 4.2).
+  Since $\lim_{n \to \infty} f(x_n,y) = f(x,y)$ for any fixed $y$ (by (c)),
+  it suffices to show that
+  \[
+    \lim_{n \to \infty} \int_{0}^{1} f(x_n,y) dy
+    = \int_{0}^{1} \lim_{n \to \infty} f(x_n,y) dy.
+  \]
+
+\item[(3)]
+  Define $\{f_n\}$ by $f_n(y) = f(x_n,y)$.
+  $f_n(y)$ is a continuous function of $y$ for every fixed $n$ (by (b)).
+  Thus $f_n(y)$ is measurable (Example 11.14).
+  Besides, $|f_n(y)| \leq 1$ and $1 \in \mathscr{L}$ on $[0,1]$ (by (a)).
+  The Lebesgue's dominated convergence theorem (Theorem 11.32) implies that
+  \[
+    \lim_{n \to \infty} \int_{0}^{1} f(x_n,y) dy
+    = \int_{0}^{1} \lim_{n \to \infty} f(x_n,y) dy.
+  \]
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\textbf{Supplement (Similar exercise).}
+\emph{Suppose}
+\begin{enumerate}
+\item[(a)]
+  \emph{$|f(x,y)| \leq g(y)$ if $0 \leq x \leq 1$, $0 \leq y \leq 1$,
+  where $g \in \mathscr{L}$ on $[0,1]$.}
+
+\item[(b)]
+  \emph{for fixed $x$, $f(x,y)$ is a measurable function of $y$.}
+
+\item[(c)]
+  \emph{for fixed $y$, $f(x,y)$ is a continuous function of $x$.}
+\end{enumerate}
+\emph{Show that
+\[
+  h(x) = \int_{0}^{1} f(x,y) dy
+  \qquad
+  (0 \leq x \leq 1).
+\]
+is continuous.} \\\\
 
 
 
