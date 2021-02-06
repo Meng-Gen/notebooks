@@ -554,13 +554,64 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.16.}
-\emph{...} \\
+\emph{If $k \geq 2$ and $\sigma = [\mathbf{p}_0,\mathbf{p}_1,\ldots,\mathbf{p}_k]$
+is an oriented affine $k$-simplex, prove that $\partial^2 \sigma = 0$,
+directly from the definition of the boundary operator $\partial$.
+Deduce from this that $\partial^2 \Psi = 0$ for every chain $\Psi$.
+(Hint: For orientation, do it first for $k=2$, $k=3$.
+In general, if $i < j$, let $\sigma_{ij}$ be the $(k-2)$-simplex obtained by
+deleting $\mathbf{p}_i$ and $\mathbf{p}_j$ from $\sigma$.
+Show that each $\sigma_{ij}$ occurs twice in $\partial^2\sigma$, with opposite sign.)} \\
 
-\emph{Proof.}
+\emph{Proof (Brute-force).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Write the boundary of the oriented affine $k$-simplex
+  $\sigma = [\mathbf{p}_0,\mathbf{p}_1,\ldots,\mathbf{p}_k]$ as
+  \[
+    \partial \sigma
+    = \sum_{i=0}^{k}(-1)^i
+    [\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_i},\ldots,\mathbf{p}_k]
+  \]
+  where where the oriented $(k-1)$-simplex
+  $[\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_i},\ldots,\mathbf{p}_k]$
+  is obtained by deleting $\sigma$'s $i$-th vertex (Boundaries 10.29).
 
+\item[(2)]
+  \begin{align*}
+    \partial^2 \sigma
+    =& \partial \left( \sum_{i}(-1)^{i}
+      [\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_i},\ldots,\mathbf{p}_k] \right) \\
+    =& \sum_{i}(-1)^{i}
+      \partial [\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_i},\ldots,\mathbf{p}_k] \\
+    =& \sum_{j<i} (-1)^{i}(-1)^{j}
+      [\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_j},\ldots,\widehat{\mathbf{p}_i},\ldots,\mathbf{p}_k] \\
+      &+ \sum_{j>i} (-1)^{i}(-1)^{j-1}
+      [\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_i},\ldots,\widehat{\mathbf{p}_j},\ldots,\mathbf{p}_k] \\
+    =& \sum_{j<i} (-1)^{i+j}
+      [\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_j},\ldots,\widehat{\mathbf{p}_i},\ldots,\mathbf{p}_k] \\
+      &- \sum_{j>i} (-1)^{i+j}
+      [\mathbf{p}_0,\ldots,\widehat{\mathbf{p}_i},\ldots,\widehat{\mathbf{p}_j},\ldots,\mathbf{p}_k].
+  \end{align*}
+  The latter two summations cancel since after switching $i$ and $j$ in the second sum.
+  Therefore $\partial^2 \sigma = 0$.
+
+\item[(3)]
+  The boundary of a chain is the linear combination of boundaries of the simplices in the chain.
+  Write $\Psi = \sum_{i=1}^{r} \sigma_i$. where $\sigma_i$ is an oriented affine simplex.
+  Then
+  \begin{align*}
+    \partial^2 \Psi
+    &= \partial \left(\partial \sum_{i=1}^{r} \sigma_i \right) \\
+    &= \partial \left( \sum_{i=1}^{r} \partial\sigma_i \right)
+      &(\text{Linearity of $\partial$}) \\
+    &= \sum_{i=1}^{r} \partial^2 \sigma_i
+      &(\text{Linearity of $\partial$}) \\
+    &= \sum_{i=1}^{r} 0
+      &(\text{(2)}) \\
+    &= 0
+  \end{align*}
+  for any affine chain $\Psi$.
 \end{enumerate}
 $\Box$ \\\\
 
