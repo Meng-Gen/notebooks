@@ -600,17 +600,14 @@ Show that each $\sigma_{ij}$ occurs twice in $\partial^2\sigma$, with opposite s
   The boundary of a chain is the linear combination of boundaries of the simplices in the chain.
   Write $\Psi = \sum_{i=1}^{r} \sigma_i$. where $\sigma_i$ is an oriented affine simplex.
   Then
-  \begin{align*}
+  \[
     \partial^2 \Psi
-    &= \partial \left(\partial \sum_{i=1}^{r} \sigma_i \right) \\
-    &= \partial \left( \sum_{i=1}^{r} \partial\sigma_i \right)
-      &(\text{Linearity of $\partial$}) \\
-    &= \sum_{i=1}^{r} \partial^2 \sigma_i
-      &(\text{Linearity of $\partial$}) \\
-    &= \sum_{i=1}^{r} 0
-      &(\text{(2)}) \\
-    &= 0
-  \end{align*}
+    = \partial \left(\partial \sum \sigma_i \right)
+    = \partial \left( \sum \partial\sigma_i \right)
+    = \sum \partial^2 \sigma_i
+    = \sum 0
+    = 0
+  \]
   for any affine chain $\Psi$.
 \end{enumerate}
 $\Box$ \\\\
