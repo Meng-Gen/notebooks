@@ -484,14 +484,68 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 10.14.}
-\emph{...} \\
+\textbf{Exercise 10.14 (Levi-Civita symbol).}
+\emph{Prove $\varepsilon(j_1, \ldots, j_k) = s(j_1, \ldots, j_k)$,
+where}
+\[
+  s(j_1, \ldots, j_k) = \prod_{p < q} \mathrm{sgn}(j_q - j_p).
+\] \\
+
+It is usually to define the Levi-Civita symbol by
+\begin{equation*}
+\varepsilon(j_1, \ldots, j_k) =
+  \begin{cases}
+    1
+      & \text{ if $(j_1,\cdots,j_k)$ is an even permutation of $J$}, \\
+    -1
+      & \text{ if $(j_1,\cdots,j_k)$ is an odd permutation of $J$}, \\
+    0
+      & \text{otherwise}
+  \end{cases}
+\end{equation*}
+(Basic $k$-forms 10.14).
+Thus, it is the sign of the permutation in the case of a permutation, and zero otherwise.
+So $\varepsilon(j_1, \ldots, j_k)$ is equivalent to an explicit expression
+$s(j_1, \ldots, j_k) = \prod_{p < q} \mathrm{sgn}(j_q - j_p)$. \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Induction on $k$.
+  Base case: \emph{Show that $\varepsilon(j_1,j_2) = s(j_1,j_2)$.}
+  Since
+  \begin{equation*}
+  \varepsilon(j_1,j_2) =
+    \begin{cases}
+      1
+        & \text{ if $j_1 < j_2$} \\
+      -1
+        & \text{ if $j_1 > j_2$},
+    \end{cases}
+  \end{equation*}
+  $\varepsilon(j_1,j_2) = \mathrm{sgn}(j_2-j_1) = s(j_1,j_2)$.
 
+\item[(2)]
+  Inductive step: \emph{Show that for any $s \geq 2$,
+  if $\varepsilon(j_1, \ldots, j_{s}) = s(j_1, \ldots, j_{s})$ holds,
+  then $\varepsilon(j_1, \ldots, j_{s+1}) = s(j_1, \ldots, j_{s+1})$ also holds.}
+  \begin{align*}
+    \varepsilon(j_1, \ldots, j_{s+1})
+    &= \varepsilon(j_1, \ldots, j_{s})
+      \prod_{\substack{1 \leq p \leq s \\ q=s+1}} \mathrm{sgn}(j_q-j_p) \\
+    &= s(j_1, \ldots, j_{s})
+      \prod_{\substack{1 \leq p \leq s \\ q=s+1}} \mathrm{sgn}(j_q-j_p) \\
+    &= \prod_{1 \leq p < q \leq s} \mathrm{sgn}(j_q-j_p)
+      \prod_{\substack{1 \leq p \leq s \\ q=s+1}} \mathrm{sgn}(j_q-j_p) \\
+    &= \prod_{1 \leq p < q \leq s+1} \mathrm{sgn}(j_q - j_p) \\
+    &= s(j_1, \ldots, j_{s+1}).
+  \end{align*}
+
+\item[(3)]
+  Conclusion: Since both the base case and the inductive step have been proved as true,
+  by mathematical induction the statement holds for every integer $k \geq 2$.
 \end{enumerate}
 $\Box$ \\\\
 
