@@ -27,6 +27,10 @@
 
 
 
+%http://www-users.math.umn.edu/~safon002/Archive/Math5616H/NOTES/B.pdf
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -385,13 +389,279 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.7.}
-\emph{...} \\
+\emph{Find a necessary and sufficient condition that $f \in \mathscr{R}(\alpha)$ on $[a,b]$.
+(Hint: Consider Example 11.6(b) and Theorem 11.33.)} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Defines the regular measure $\mu$ by
+  \begin{align*}
+    \mu([a,b)) &= \alpha(b-) - \alpha(a-) \\
+    \mu([a,b]) &= \alpha(b+) - \alpha(a-) \\
+    \mu((a,b]) &= \alpha(b+) - \alpha(a+) \\
+    \mu((a,b)) &= \alpha(b-) - \alpha(a+)
+  \end{align*}
+  where $\alpha: \mathbb{R}^1 \to \mathbb{R}^1$ might be defined by
+  \begin{equation*}
+    \alpha(x) =
+      \begin{cases}
+        \alpha(a) & \text{ if $x < a$}, \\
+        \alpha(x) & \text{ if $a \leq x \leq b$}, \\
+        \alpha(b) & \text{ if $x > b$}.
+      \end{cases}
+  \end{equation*}
+  (Example 11.6(b)).
 
+\item[(2)]
+  \emph{Suppose $f$ is bounded on $[a,b]$.
+  Then $f \in \mathscr{R}(\alpha)$ on $[a,b]$ if and only if
+  $f$ and $\alpha$ satisfy both properties (I) and (II) below.}
+  \begin{enumerate}
+  \item[(I)]
+    \emph{$f$ and $\alpha$
+    cannot be both left-discontinuous, or both right-discontinuous at same point.}
+  \item[(II)]
+    \emph{$f$ is continuous almost everywhere with respect to $\mu$ on $[a,b] - D_{\alpha}$
+    where $D_{\alpha}$ is the set of discontinuities of $\alpha$ on $[a,b]$.}
+  \end{enumerate}
+
+\item[(3)]
+  Similar to Theorem 11.33.
+  By Definition 6.2 and Theorem 6.4 there is a sequence $\{P_k\}$ of partitions of $[a,b]$,
+  such that $P_{k+1}$ is a refinement of $P_k$,
+  such that the distance between adjacent points of $P_k$ is less than $\frac{1}{k}$,
+  and such that
+  \[
+    \lim_{k \to \infty} L(P_k,f,\alpha) = \mathscr{R}\lowint f d\alpha,
+    \qquad
+    \lim_{k \to \infty} L(P_k,f,\alpha) = \mathscr{R}\upint f d\alpha.
+  \]
+  (In this proof, all integrals are taken over $[a,b]$.)
+
+\item[(4)]
+  If $P_k = \{ x_0, x_1, \ldots, x_n \}$, with $x_0 = a$, $x_n = b$, define
+  \[
+    L_k(a) = U_k(a) = f(a);
+  \]
+  put $U_k(x) = M_i$ and $L_k(x) = m_i$ for $x_{i-1} < x \leq x_{i}$, $1 \leq i \leq n$,
+  using the notation introduced in Definition 6.1.
+  Then
+  \[
+    L(P_k,f,\alpha) = \int L_k d\mu,
+    \qquad
+    U(P_k,f,\alpha) = \int U_k d\mu
+  \]
+  and
+  \[
+    L_1(x) \leq L_2(x) \leq \cdots \leq f(x) \leq \cdots \leq U_2(x) \leq U_1(x)
+  \]
+  for all $x \in [a,b]$, since $P_{k+1}$ refines $P_k$.
+
+\item[(5)]
+  So there exist
+  \[
+    L(x) = \lim_{k \to \infty} L_k(x),
+    \qquad
+    U(x) = \lim_{k \to \infty} U_k(x).
+  \]
+  Observe that $L$ and $U$ are bounded $\mu$-measurable function on $[a,b]$,
+  that
+  \[
+    L(x) \leq f(x) \leq U(x)
+    \qquad
+    (a \leq x \leq b),
+  \]
+  and that
+  \begin{align*}
+    \int L d\mu &= \lim \int L_k d\mu = \lim L(P_k,f,\alpha) = \mathscr{R}\lowint f d\alpha, \\
+    \int U d\mu &= \lim \int U_k d\mu = \lim U(P_k,f,\alpha) = \mathscr{R}\upint f d\alpha
+  \end{align*}
+  by the Lebesgue's monotone convergence theorem (Theorem 11.28).
+
+\item[(6)]
+  So $f \in \mathscr{R}(\alpha)$ on $[a,b]$
+  if and only if
+  $\int L d\mu = \int U d\mu$
+  if and only if
+  \begin{enumerate}
+  \item[(III)]
+    $L(x) = U(x)$ almost everywhere with respect to $\mu$
+  \end{enumerate}
+  by Exercise 11.1 and the fact that $U(x) - L(x) \geq 0$.
+
+\item[(7)]
+  \emph{Show that $f \in \mathscr{R}(\alpha)$ on $[a,b]$ implies the property (I).}
+  It is independent of the Lebesgue theory.
+  \begin{enumerate}
+  \item[(a)]
+    Suppose both $f$ and $\alpha$ are discontinuous from the right at $x = c$;
+    that is,
+    suppose that there exists an $\varepsilon > 0$ such that for every $\delta > 0$
+    there are values of $x, y \in (c,c+\delta) \subseteq [a,b]$ for which
+    \[
+      |f(x)-f(c)| \geq \sqrt{\varepsilon},
+      \qquad
+      |\alpha(y)-\alpha(c)| \geq \sqrt{\varepsilon}.
+    \]
+
+  \item[(b)]
+    Let $P = \{x_0 < \cdots < x_n \}$ be any partition of $[a,b]$ containing $c$,
+    say $c = x_{i-1}$ for some $i = 1,\ldots,n$.
+    Then
+    \begin{align*}
+      U(P,f,\alpha) - L(P,f,\alpha)
+      &= \sum_{j=1}^{n} (M_j - m_j)(\alpha(x_j) - \alpha(x_{j-1})) \\
+      &\geq (M_i - m_i)(\alpha(x_i) - \alpha(x_{i-1})).
+    \end{align*}
+    Take $\delta = x_i - x_{i-1}$. $x_i = x_{i-1}+\delta = c+\delta$.
+    Then
+    \[
+      \alpha(x_i) - \alpha(x_{i-1})
+      = \alpha(c+\delta) - \alpha(c)
+      \geq \alpha(y) - \alpha(c)
+      \geq \sqrt{\varepsilon}
+    \]
+    (by the monotonicity of $\alpha$).
+    Besides,
+    \[
+      M_i - m_i \geq |f(x)-f(c)| \geq \sqrt{\varepsilon}.
+    \]
+    Hence,
+    \[
+      U(P,f,\alpha) - L(P,f,\alpha) \geq \varepsilon.
+    \]
+    Therefore,
+    Theorem 6.6 implies that $f \not\in \mathscr{R}(\alpha)$ on $[a,b]$.
+
+  \item[(c)]
+    The argument is similar if $c$ is a common discontinuity from the left.
+  \end{enumerate}
+
+\item[(8)]
+  \emph{Show that (III) implies (II).}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $f$ is continuous at $x \in [a,b] - D_{\alpha}$ if
+    $U(x) = L(x)$ and $x \not\in \bigcup_{k=1}^{\infty} P_k$.}
+    (Reductio ad absurdum)
+    If $f$ were not continuous at $x$,
+    then there exists an $\varepsilon > 0$ such that
+    there is a sequence $\{ y_m \}$ in $[a,b]$
+    such that $|y_m - x| < \frac{1}{m}$ but
+    \[
+      |f(y_m) - f(x)| > \varepsilon
+    \]
+    for $m = 1,2,3,\ldots$ (Theorem 4.2).
+
+  \item[(b)]
+    Given any $P_k$.
+    Since $x \not \in P_k$, $x \in (x_{i-1},x_{i})$ for some $i$.
+    Since $(x_{i-1},x_{i})$ is open,
+    there exists an integer $N_k$ such that $y_m \in (x_{i-1},x_{i})$ whenever $m \geq N_k$.
+    Hence,
+    \[
+      U_k(x) - L_k(x) = M_i - m_i \geq |f(y_m) - f(x)| > \varepsilon.
+    \]
+    Take the limit to get
+    \[
+      U(x) - L(x) \geq \varepsilon,
+    \]
+    which is absurd. Therefore, the statement in (a) is proved.
+
+  \item[(c)]
+    Now it suffices to show that both sets
+    \begin{align*}
+      E_1 &= \left\{ x \in [a,b] - D_{\alpha} : L(x) \neq U(x) \right\} \\
+      E_2 &= \left\{ x \in [a,b] - D_{\alpha} : x \in \bigcup_{k=1}^{\infty} P_k \right\}
+    \end{align*}
+    are $\mu$-measure zero.
+    $E_1$ is $\mu$-measure zero by (III).
+    $E_2$ is $\mu$-measure zero since $E_2$ is countable and defined on $[a,b] - D_{\alpha}$.
+  \end{enumerate}
+  Therefore, (II) is established.
+
+\item[(9)]
+  \emph{Show that (I)(II) implies (III).}
+  Use the notation in (8).
+  \begin{enumerate}
+  \item[(a)]
+    It suffices to show that
+    \begin{align*}
+      &\{ x \in [a,b] : L(x) \neq U(x) \} \\
+      =& \underbrace{\{ x \in [a,b] - D_{\alpha} : L(x) \neq U(x) \}}_{= E_1}
+      \bigcup
+        \underbrace{\{ x \in D_{\alpha} : L(x) \neq U(x) \}}_{= E_3}
+    \end{align*}
+    is $\mu$-measure zero.
+
+  \item[(b)]
+    Note that $E_2$ is $\mu$-measure zero.
+    Hence (II) and (8)(a) imply that $E_1$ is $\mu$-measure zero.
+    So it suffices to show that $E_3$ is $\mu$-measure zero.
+    In fact, we will show that $E_3 = \varnothing$,
+    or $L(x) = U(x)$ whenever $x \in D_{\alpha}$.
+
+  \item[(c)]
+    Write
+    \[
+      D_{\alpha} = \{ y_1, \ldots, y_m, \ldots \}
+    \]
+    since $D_{\alpha}$ is at most countable (Theorem 4.30).
+    (Set $y_m = y_{m+1} = \cdots$ if $D_{\alpha}$ is finite.)
+    Define a refinement of $P_k$ by
+    \[
+      P_k \cup \{ y_1, \ldots, y_k \}
+    \]
+    and use the same symbol $P_k$ to denote this refinement.
+
+  \item[(d)]
+    Given any $x \in D_{\alpha}$.
+    Suppose $\alpha$ is discontinuous from the right at $x$.
+    By the construction in (c),
+    there is an integer $N_1$ such that
+    $x = x_{i-1}$ is in some subinterval $[x_{i-1},x_{i}]$ of $P_k$
+    whenever $k \geq N_1$.
+
+  \item[(e)]
+    Note that $f$ is continuous from the right at $x$ by (I).
+    Given an $\varepsilon > 0$, there exists a $\delta > 0$ such that
+    \[
+      |f(y) - f(x)| \leq \frac{\varepsilon}{2}
+    \]
+    whenever $y \in [x,x+\delta)$.
+    So
+    \[
+      |f(y) - f(z)|
+      \leq |f(y) - f(x)| + |f(x) - f(z)|
+      \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
+      = \varepsilon
+    \]
+    whenever $y, z \in [x,x+\delta)$.
+
+  \item[(f)]
+    Take an integer $N_2 > \frac{1}{\delta}$ such that
+    for any any subinterval $[x_{i-1},x_{i}]$ of $P_k$ we have
+    $[x_{i-1},x_{i}] \subseteq [x,x+\delta)$ whenever $k \geq N_2$.
+
+  \item[(g)]
+    Take $N = \max\{ N_1, N_2 \}$.
+    As $k \geq N$, $[x_{i-1},x_{i}] \subseteq [x,x+\delta)$ and
+    \[
+      U_k(x) - L_k(x)
+      = M_i - m_i
+      = \sup_{y,z \in [x_{i-1},x_{i}]} |f(y) - f(z)|
+      \leq \varepsilon.
+    \]
+    Take the limit to get
+    \[
+      U(x) - L(x) \leq \varepsilon.
+    \]
+    Since $\varepsilon$ is arbitrary, $L(x) = U(x)$.
+
+  \item[(h)]
+    The argument is similar if $\alpha$ is discontinuous from the left at $x$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
@@ -533,7 +803,7 @@ By Theorem 11.35, $f \in \mathscr{L}(\mu)$, and
   \emph{Show that $f^2 \in \mathscr{L}$ on $\mathbb{R}^1$.}
   To apply Theorem 11.33,
   we might restrict the measure space $X = \mathbb{R}^1$ to some interval $[a,b]$.
-  Then apply the Lebesgue's monotone convegence theorem (Theorem 11.28) to get the conclusion.
+  Then apply the Lebesgue's monotone convergence theorem (Theorem 11.28) to get the conclusion.
   \begin{enumerate}
   \item[(a)]
   Write
