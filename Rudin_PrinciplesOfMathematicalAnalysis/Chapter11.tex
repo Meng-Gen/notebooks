@@ -27,7 +27,7 @@
 
 
 
-%http://www-users.math.umn.edu/~safon002/Archive/Math5616H/NOTES/B.pdf
+% http://www-users.math.umn.edu/~safon002/Archive/Math5616H/NOTES/B.pdf
 
 
 
@@ -1194,7 +1194,8 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.14.}
-\emph{...} \\
+\emph{Prove that a complex function $f$ is measurable
+if and only if $f^{-1}(V)$ is measurable for every open set $V$ in the plane.} \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -1211,13 +1212,92 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.15.}
-\emph{...} \\
+\emph{Let $\mathscr{R}$ be the ring of all elementary subsets of $(0,1]$.
+If $0 < a \leq b \leq 1$, define
+\[
+  \phi([a,b])
+  = \phi([a,b))
+  = \phi((a,b])
+  = \phi((a,b))
+  = b-a,
+\]
+but define
+\[
+  \phi((0,b)) = \phi((0,b]) = 1+b
+\]
+if $0 < b \leq 1$.
+Show that this gives an additive set function $\phi$ on $\mathscr{R}$,
+which is not regular and
+which cannot be extended to a countably additive set function on a $\sigma$-ring.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Define $\phi: \mathscr{R} \to \mathbb{R} \cup \{ \pm \infty \}$ by
+  \[
+    \phi(A) = \sum_{i=1}^{n} \phi(I_i)
+  \]
+  where $A$ is a finite number of disjoint intervals $I_1, \ldots, I_n$ (Definition 11.4).
 
+\item[(2)]
+  \emph{Show that $\phi$ is an additive set function.}
+  Given any two elementary sets $A, B \in \mathscr{R}$ with $A \bigcap B = \varnothing$.
+  By Definition 11.4,
+  \[
+    A = \bigcup_{i=1}^{n} I_i,
+    \qquad
+    B = \bigcup_{j=1}^{m} J_j
+  \]
+  where $I_i \bigcap J_j = \varnothing$ for all $1 \leq i \leq n$ and $1 \leq j \leq m$
+  (since $A \bigcap B = \varnothing$).
+  Hence,
+  \begin{align*}
+    \phi\left(A \bigcup B\right)
+    &= \phi\left( \left\{ \bigcup_{i=1}^{n} I_i \right\}
+      \bigcup \left\{ \bigcup_{j=1}^{m} J_j \right\} \right) \\
+    &= \sum_{i=1}^{n} \phi(I_i) + \sum_{j=1}^{m} \phi(J_j) \\
+    &= \phi(A) + \phi(B).
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that $\phi$ is not countably additive.}
+  Write
+  \[
+    (0,1]
+    = \bigcup_{i=1}^{\infty} A_i
+  \]
+  where $A_i = \left( 2^{-i},2^{-i+1} \right]$.
+  Note that $A_i \bigcap A_j = \varnothing$ if $i \neq j$.
+  So
+  \[
+    \sum_{i=1}^{\infty} \phi(A_i)
+    = \sum_{i=1}^{\infty} 2^{-i}
+    = 1
+    \neq 2
+    = \phi((0,1]).
+  \]
+
+\item[(4)]
+  \emph{Show that $\phi$ is not regular.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Given any closed set $F \in \mathscr{R}$. Show that $\phi(F) \leq 1$.}
+    Write $F = \bigcup_{i=1}^{n} I_i$ where each $I_i$ are disjoint by Definition 11.4.
+    Here every $I_i$ is never of the form $(0,b]$ or $(0,b)$ where $b > 0$.
+    (Otherwise $0$ is a limit point of $F$, or $0 \in \overline{F} = F$,
+    which is absurd.)
+    Hence $\phi(F) = \sum \phi(I_i) \leq 1$.
+
+  \item[(b)]
+    Take $A = \left(0,\frac{1}{2}\right] \in \mathscr{R}$
+    and $\varepsilon = \frac{1}{64} > 0$.
+    Then for every closed set $F \in \mathscr{R}$,
+    we have
+    \[
+      \phi(A) = \frac{3}{2} > 1 + \frac{1}{64} \geq \phi(F) + \varepsilon.
+    \]
+    That is, $\phi$ cannot be regular.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
@@ -1228,7 +1308,18 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.16.}
-\emph{...} \\
+\emph{Suppose $\{n_k\}$ is an increasing sequence of positive integers and
+$E$ is the set of all $x \in (-\pi,\pi)$ at which $\{ \sin(n_k x) \}$ converges.
+Prove that $m(E) = 0$.
+(Hint: For every $A \subseteq E$,
+\[
+  \int_A \sin(n_k x) dx \to 0,
+\]
+and
+\[
+  2 \int_A (\sin(n_k x))^2 dx = \int_A (1-\cos(2n_k x)) dx \to m(A)
+\]
+as $k \to \infty$.)} \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -1245,7 +1336,9 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 11.17.}
-\emph{...} \\
+\emph{Suppose $E \subseteq (-\pi,\pi)$, $m(E) > 0$, $\delta > 0$.
+Use the Bessel inequality to prove that there are at most finitely many integers $n$
+such that $\sin(nx) \geq \delta$ for all $x \in E$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
