@@ -1405,8 +1405,36 @@ such that $\sin(nx) \geq \delta$ for all $x \in E$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  (Reductio ad absurdum)
+  If there were infinitely many integers $n$
+  such that $\sin(nx) \geq \delta$ for all $x \in E$,
+  then there exists an increasing sequence of positive integers $\{n_k\}$
+  such that $\sin(n_k x) \geq \delta$ for all $x \in E$ and $n_k$.
 
+\item[(2)]
+  Since $E$ is measurable,
+  we apply the Bessel inequality (Theorem 8.12 and Definition 11.39) to
+  the function $\chi_{E} \in \mathscr{L}^2$ on $[-\pi,\pi]$:
+  \[
+    c_{-n}
+    = \int_{[-\pi,\pi]} \chi_{E} e^{inx} dx
+    \to 0
+  \]
+  as $n \to \infty$.
+  Hence
+  \[
+    \lim_{k \to \infty} \int_{E} \sin(n_k x) dx
+    = 0.
+  \]
+
+\item[(3)]
+  Note that for all $n_k$, we have
+  \[
+    \int_{E} \sin(n_k x) dx
+    \geq m(E) \delta.
+  \]
+  Here $m(E) \delta > 0$ is a constant, contrary to
+  $\lim_{k \to \infty} \int_{E} \sin(n_k x) dx = 0$.
 \end{enumerate}
 $\Box$ \\\\
 
