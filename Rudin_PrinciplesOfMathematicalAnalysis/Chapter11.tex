@@ -1321,192 +1321,60 @@ and
 \]
 as $k \to \infty$.)} \\
 
-\emph{Proof.}
+\emph{Proof (Hint).}
 \begin{enumerate}
 \item[(1)]
-  \emph{Let $f \in \mathscr{L}$ over $I = [a,b]$.
-  Then given any $\varepsilon > 0$, there is a step function such that}
-  \[
-    \int_{I} |f-s| dx < \varepsilon.
-  \]
-  By Definition 11.22, we might assume that $f$ is nonnegative.
-  (Consider the cases $f^{+}$ and $f^{-}$ separately
-  and then use the triangle inequality.)
-  \begin{enumerate}
-  \item[(a)]
-    Definition 11.21 implies that
-    there exists a simple function
-    \[
-      \varphi(x) = \sum_{i=1}^{n} c_i \chi_{E_i}(x)
-    \]
-    with $E_i = \{ x \in I : \varphi(x) = c_i \} \subseteq$
-    such that
-    \[
-      \int_{I} |f - \varphi| dx < \frac{\varepsilon}{2}.
-    \]
-
-  \item[(b)]
-    For each measurable set $E_i$,
-    there is a countable covering $\{ A_{i(k)} \}$ of $E_i$ by open elementary sets $A_{i(k)}$
-    such that
-    \[
-      E_i \subseteq \bigcup_{k=1}^{\infty} A_{i(k)}
-    \]
-    and
-    \[
-      \sum_{k=1}^{\infty} m\left(A_{i(k)}\right) \leq m(E_i) + \frac{\varepsilon}{2}.
-    \]
-    (Definition 11.7 and the proof of Theorem 11.8).
-
-  \item[(c)]
-    Since $m(E_i) \leq m(I) = b-a < \infty$, $\sum m\left(A_{i(k)}\right) < \infty$,
-    or there exists an integer $N_i > 0$ such that
-    \[
-      \sum_{k=N_i+1}^{\infty} m\left(A_{i(k)}\right) < \frac{\varepsilon}{2n(|c_i|+1)}.
-    \]
-    Take
-    \[
-      F_i = \bigcup_{k=1}^{N_i} A_{i(k)}
-    \]
-    be an open elementary set.
-    So $F_i$ is the union of a finite number of disjoint intervals
-    (by Definition 11.4 and the proof of Exercise 2.29).
-    Define
-    \[
-      s(x) = \sum_{i=1}^{n} c_i \chi_{F_i}(x)
-    \]
-    on $I$.
-
-  \item[(d)]
-    Note that $s$ is a step function on $I$.
-    Since
-    \begin{align*}
-      \abs{\varphi(x) - s(x)}
-      &= \abs{ \sum_{i=1}^{n} c_i (\chi_{E_i}(x) - \chi_{F_i}(x)) } \\
-      &= \abs{ \sum_{i=1}^{n} c_i \chi_{E_i-F_i}(x) } \\
-      &\leq \sum_{i=1}^{n} |c_i| \chi_{E_i-F_i}(x)
-    \end{align*}
-    and
-    \begin{align*}
-      m(E_i-F_i)
-      &\leq m\left(\bigcup_{k=N_i+1}^{\infty} A_{i(k)}\right) \\
-      &\leq \sum_{k=N_i+1}^{\infty} m\left(A_{i(k)}\right) \\
-      &\leq \frac{\varepsilon}{2n(|c_i|+1)},
-    \end{align*}
-    we have
-    \begin{align*}
-      \int_{I} \abs{\varphi(x) - s(x)} dx
-      &\leq \int_{I} \sum_{i=1}^{n} |c_i| \chi_{E_i-F_i}(x) dx \\
-      &= \sum_{i=1}^{n} |c_i| \int_{I} \chi_{E_i-F_i}(x) dx \\
-      &= \sum_{i=1}^{n} |c_i| m(E_i-F_i) \\
-      &\leq \sum_{i=1}^{n} |c_i| \cdot \frac{\varepsilon}{2n(|c_i|+1)} \\
-      &< \frac{\varepsilon}{2}.
-    \end{align*}
-
-  \item[(e)]
-    Therefore,
-    \[
-      \int_{I} |f-s| dx
-      \leq \int_{I} |f-\varphi| dx + \int_{I} |\varphi-s| dx
-      < \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
-      = \varepsilon.
-    \]
-  \end{enumerate}
-
-\item[(2)]
-  (The Riemann-Lebesgue Lemma.)
-  \emph{Assume that $f \in \mathscr{L}$ on $I = [a,b]$.
-  Then for each $\beta \in \mathbb{R}$,}
-  \begin{align*}
-    \lim_{\alpha \to \infty} \int_I f(x) \sin(\alpha x + \beta) dx &= 0, \\
-    \lim_{\alpha \to \infty} \int_I f(x) \cos(\alpha x + \beta) dx &= 0.
-  \end{align*}
-  \begin{enumerate}
-  \item[(a)]
-    Given any bounded closed interval $[a_i,b_i] \subseteq I = [a,b]$, we have
-    \begin{align*}
-      \abs{\int_{[a_i,b_i]} \sin(\alpha x + \beta) dx}
-      &= \abs{\mathscr{R} \int_{a_i}^{b_i} \sin(\alpha x + \beta) dx}
-        &\text{(Theorem 11.33)} \\
-      &= \abs{\frac{\cos(\alpha a_i + \beta)-\cos(\alpha b_i + \beta)}{\alpha}} \\
-      &\leq \frac{2}{|\alpha|} \to 0
-    \end{align*}
-    as $\alpha \to \infty$.
-
-  \item[(b)]
-    Given any $\varepsilon > 0$, by (1) there exists a step function $s$ such that
-    \[
-      \int_I |f-s| dx < \frac{\varepsilon}{2}.
-    \]
-    By (a),
-    \[
-      \lim_{\alpha \to \infty} \int_I s(x) \sin(\alpha x + \beta) dx = 0
-    \]
-    holds for any step function s, that is,
-    for such $\varepsilon > 0$ there exists a real $M > 0$ such that
-    \[
-      \abs{ \int_I s(x) \sin(\alpha x + \beta) dx } < \frac{\varepsilon}{2}
-    \]
-    whenever $\alpha \geq M$.
-
-  \item[(c)]
-    Therefore,
-    \begin{align*}
-      &\abs{ \int_I f(x) \sin(\alpha x + \beta) dx } \\
-      \leq& \abs{ \int_I (f(x)-s(x)) \sin(\alpha x + \beta) dx }
-        + \abs{ \int_I s(x) \sin(\alpha x + \beta) dx } \\
-      \leq& \int_I \abs{(f(x)-s(x)) \sin(\alpha x + \beta)} dx
-        + \abs{ \int_I s(x) \sin(\alpha x + \beta) dx } \\
-      \leq& \int_I \abs{f(x)-s(x)} dx
-        + \abs{ \int_I s(x) \sin(\alpha x + \beta) dx } \\
-      <& \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
-      =& \varepsilon
-    \end{align*}
-    as $\alpha \geq M$.
-
-  \item[(d)]
-    The argument is similar for
-    $\lim_{\alpha \to \infty} \int_I f(x) \cos(\alpha x + \beta) dx = 0$.
-  \end{enumerate}
-
-\item[(3)]
-  Define $\{f_k\}$ by $f_k(x) = \sin(n_k x)$ on $(-\pi,\pi)$ for $k = 1,2,3,\ldots$.
-  $\{f_k\}$ is a sequence of measurable functions on $(-\pi,\pi)$
+  Define $\{f_k\}$ by $f_k(x) = \sin(n_k x)$ on $[-\pi,\pi]$ for $k = 1,2,3,\ldots$.
+  $\{f_k\}$ is a sequence of measurable functions on $[-\pi,\pi]$
   since each $f_k: x \to \sin(n_k x)$ is continuous (Example 11.14).
   By Exercise 11.3, $E$ is measurable.
   Given any measurable subset $A$ of $E$,
   $\{f_k\}$ is a sequence of measurable functions on $A$
   and $f(x) = \lim_{k \to \infty} f_k(x)$ is well-defined by the definition of $A \subseteq E$.
 
-\item[(4)]
+\item[(2)]
+  Apply the Bessel inequality (Theorem 8.12 and Definition 11.39) to
+  the function $\chi_{A} \in \mathscr{L}^2$ on $[-\pi,\pi]$,
+  we have
+  \[
+    c_{-n}
+    = \int_{[-\pi,\pi]} \chi_{A} e^{inx} dx
+    \to 0
+  \]
+  as $n \to \infty$.
+  Hence
+  \[
+    \lim_{k \to \infty} \int_{A} \sin(n_k x) dx
+    = 0
+  \]
+  for any measurable subset $A$ of $E$.
+
+\item[(3)]
   \emph{Show that $f(x) = 0$ almost everywhere on $E$.}
   Note that
   \[
     |f_k(x)| = |\sin(n_k x)| \leq 1
   \]
-  on $A \subseteq E \subseteq (-\pi,\pi) \subseteq [-\pi,\pi]$ and
+  on $A$ and
   \[
-    \int_{A} 1 dx
-    = \int_{[-\pi,\pi]} \chi_{A} dx
+    \int_{A} dx
     = m(A)
     \leq m([-\pi,\pi])
     = 2\pi
     < \infty.
   \]
-  By the Lebesgue's dominated convergence theorem (Theorem 11.32)
-  and the Riemann-Lebesgue Lemma,
-  \begin{align*}
+  By (2) and the Lebesgue's dominated convergence theorem (Theorem 11.32),
+  \[
     \int_{A} f dx
-    &= \lim_{k \to \infty} \int_{A} f_k dx \\
-    &= \lim_{k \to \infty} \int_{A} \sin(n_k x) dx \\
-    &= \lim_{k \to \infty} \int_{[-\pi,\pi]} \chi_{A} \sin(n_k x) dx \\
-    &= 0
-  \end{align*}
+    = \lim_{k \to \infty} \int_{A} f_k dx
+    = \lim_{k \to \infty} \int_{A} \sin(n_k x) dx
+    = 0
+  \]
   for any measurable subset $A$ of $E$.
   By Exercise 11.2, the conclusion holds.
 
-\item[(5)]
-  Apply (3)(4) to the sequence of measurable functions $\{f_k^2\}$ on $(-\pi,\pi)$,
+\item[(4)]
+  Apply (1)(2)(3) to the sequence of measurable functions $\{f_k^2\}$ on $[-\pi,\pi]$,
   we have
   \begin{align*}
     0
@@ -1517,12 +1385,11 @@ as $k \to \infty$.)} \\
     &= \lim_{k \to \infty} \int_A (1-\cos(2n_k x)) dx \\
     &= m(A) - \lim_{k \to \infty} \int_A \cos(2n_k x) dx \\
     &= m(A)
-      &(\text{Riemann-Lebesgue Lemma})
   \end{align*}
   for any measurable subset $A$ of $E$.
   In particular, take $A = E$ to get $m(E) = 0$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
 
 
 
