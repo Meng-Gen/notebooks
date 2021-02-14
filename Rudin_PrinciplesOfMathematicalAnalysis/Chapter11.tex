@@ -1512,39 +1512,103 @@ $g(x) = cf(x)$ almost everywhere.
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Since $g \in \mathscr{L}^2(\mu)$, $\overline{g} \in \mathscr{L}^2(\mu)$.
-  Theorem 11.35 implies that
-  $f\overline{g} \in \mathscr{L}^2(\mu)$, and
-  \[
-    \left\{ \int \abs{ f\overline{g} } d\mu \right\}^2
-    \leq \int |f|^2 d\mu \int |g|^2 d\mu.
-  \]
-  With Theorem 11.26, we have
-  \[
-    \abs{ \int f\overline{g} d\mu }^2
-    \leq \left\{ \int \abs{ f\overline{g} } d\mu \right\}^2
-    \leq \int |f|^2 d\mu \int |g|^2 d\mu.
-  \]
-  Thus
+  \emph{Show that
   \[
     \abs{ \int f\overline{g} d\mu }^2 = \int |f|^2 d\mu \int |g|^2 d\mu
   \]
-  if and only if
-  \[
-    \left\{ \int \abs{ f\overline{g} } d\mu \right\}^2 = \int |f|^2 d\mu \int |g|^2 d\mu
-    \text{ and }
-    \abs{ \int f\overline{g} d\mu } = \int \abs{ f\overline{g} } d\mu.
-  \]
+  if $f(x) = 0$ almost everywhere or
+  there is a constant $c$ such that $g(x) = cf(x)$ almost everywhere.}
+  \begin{enumerate}
+  \item[(a)]
+    If $f(x) = 0$ almost everywhere,
+    then
+    \[
+      \abs{ \int f\overline{g} d\mu }^2 = 0
+    \]
+    and
+    \[
+      \int |f|^2 d\mu \int |g|^2 d\mu = 0.
+    \]
+
+  \item[(b)]
+    If there is a constant $c \in \mathbb{C}$ such that $g(x) = cf(x)$ almost everywhere,
+    then
+    \[
+      \abs{ \int f\overline{g} d\mu }^2
+      = \abs{ \int \overline{c}|f|^2 d\mu }^2
+      = |\overline{c}|^2 \left\{ \int |f|^2 d\mu \right\}^2
+    \]
+    and
+    \[
+      \int |f|^2 d\mu \int |g|^2 d\mu
+      = \int |f|^2 d\mu \int |c|^2 |f|^2 d\mu
+      = |c|^2 \left\{ \int |f|^2 d\mu \right\}^2.
+    \]
+    Since $|\overline{c}| = |c|$, the conclusion holds.
+  \end{enumerate}
 
 \item[(2)]
+  \emph{Show that $f(x) = 0$ almost everywhere
+  or there is a constant $c$ such that $g(x) = cf(x)$ almost everywhere
+  if}
+  \[
+    \abs{ \int f\overline{g} d\mu }^2 = \int |f|^2 d\mu \int |g|^2 d\mu.
+  \]
+  \begin{enumerate}
+  \item[(a)]
+    We might assume that $\int |f|^2 d\mu > 0$.
+    (The case $\int |f|^2 d\mu = 0$ implies that $f(x) = 0$ almost everywhere (Exercise 11.1).)
 
+  \item[(b)]
+    Let
+    \[
+      c = \frac{\overline{\int f\overline{g} d\mu}}{\int |f|^2 d\mu} \in \mathbb{C}.
+    \]
+    $c$ is well-defined since $\int |f|^2 d\mu \neq 0$ by (a).
+    Then it suffices to show that $\int |g-cf|^2 d\mu = 0$
+    since this conclusion implies that $g(x) = cf(x)$ almost everywhere by Exercise 11.1.
+
+  \item[(c)]
+    \emph{Show that $\int |c|^2|f|^2 d\mu = \int |g|^2 d\mu$.}
+    \begin{align*}
+      \int |c|^2|f|^2 d\mu
+      &= |c|^2 \int |f|^2 d\mu \\
+      &= \frac{\abs{ \int f\overline{g} d\mu }^2}{ \left\{ \int |f|^2 d\mu \right\}^2 }
+        \int |f|^2 d\mu \\
+      &= \frac{\abs{ \int f\overline{g} d\mu }^2}{\int |f|^2 d\mu} \\
+      &= \int |g|^2 d\mu
+    \end{align*}
+
+  \item[(d)]
+    \emph{Show that $\int \Re(cf\overline{g}) d\mu = \int |g|^2 d\mu$.}
+    \begin{align*}
+      \int \Re(cf\overline{g}) d\mu
+      &= \Re\left( \int cf\overline{g} d\mu \right) \\
+      &= \Re\left( c \int f\overline{g} d\mu \right) \\
+      &= \Re\left( \frac{\overline{\int f\overline{g} d\mu}}{\int |f|^2 d\mu}
+        \int f\overline{g} d\mu \right) \\
+      &= \Re\left( \frac{\abs{\int f\overline{g} d\mu}^2}{\int |f|^2 d\mu} \right) \\
+      &= \Re\left( \int |g|^2 d\mu \right) \\
+      &= \int |g|^2 d\mu.
+    \end{align*}
+
+  \item[(e)]
+    By (c)(d), we have
+    \begin{align*}
+      \int |g-cf|^2 d\mu
+      &= \int |g|^2 - 2\Re(cf\overline{g}) + |c|^2|f|^2 d\mu \\
+      &= \int |g|^2 d\mu - 2 \int \Re(cf\overline{g}) d\mu + \int |c|^2|f|^2 d\mu \\
+      &= \int |g|^2 d\mu - 2 \int |g|^2 d\mu + \int |g|^2 d\mu \\
+      &= 0.
+    \end{align*}
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\
 
 
 
 \emph{Note.}
-Compare Exercise 1.15 and Exercise 6.10. \\\\
+Compare Exercise 1.15. \\\\
 
 
 

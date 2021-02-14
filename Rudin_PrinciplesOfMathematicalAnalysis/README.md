@@ -12,4 +12,4 @@
 - Chapter 8: Some Special Functions [Finished]
 - Chapter 9: Functions of Several Variables [Finished]
 - Chapter 10: Integration of Differential Forms [WIP]
-- Chapter 11: The Lebesuge Theory [WIP]
+- Chapter 11: The Lebesuge Theory [Finished]
