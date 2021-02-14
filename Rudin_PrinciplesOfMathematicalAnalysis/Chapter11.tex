@@ -1200,8 +1200,61 @@ if and only if $f^{-1}(V)$ is measurable for every open set $V$ in the plane.} \
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Write $f=u+iv$, where $u$ and $v$ are real.
+  $f$ is measurable if and only if both $u$ and $v$ are measurable.
 
+\item[(2)]
+  \emph{Show that $f$ is measurable
+  if $f^{-1}(V)$ is measurable for every open set $V \subseteq \mathbb{C}$.}
+  For every real $a$,
+  both sets
+  \begin{align*}
+    f^{-1}((a,\infty) \times \mathbb{R}^1) &= \{ x : u(x) > a \}, \\
+    f^{-1}(\mathbb{R}^1 \times (a,\infty)) &= \{ x : v(x) > a \}
+  \end{align*}
+  are measurable.
+  By Definition 11.13, both $u$ and $v$ are measurable, or $f$ is measurable.
+
+\item[(3)]
+  \emph{Show that $f^{-1}(V)$ is measurable for every open set $V \subseteq \mathbb{C}$
+  if $f$ is measurable.}
+  Since $\mathbb{R}^2$ is separable (Exercise 2.22),
+  $V$ is the union of a subcollection of a countable base (Exercise 2.23).
+  In particular,
+  define
+  \[
+    \widehat{B}((a,b);r)
+    = B(a;r) \times B(b;r)
+    = (a-r,a+r) \times (b-r,b+r)
+    \subseteq \mathbb{R}^2
+  \]
+  for all $a, b, r \in \mathbb{Q}$.
+  The collection
+  \[
+    \{ \widehat{B}((a,b);r) \}
+  \]
+  is a countable base for $\mathbb{R}^2$.
+  Write $V$ as a countable union of $\widehat{B}((a,b);r)$:
+  \[
+    V = \bigcup \widehat{B}((a,b);r).
+  \]
+
+\item[(4)]
+  \emph{Show that $f^{-1}(V)$ is measurable for every open set $V \subseteq \mathbb{C}$.}
+  \begin{align*}
+    f^{-1}(V)
+    &= f^{-1} \left( \bigcup \widehat{B}((a,b);r) \right) \\
+    &= \bigcup f^{-1}(\widehat{B}((a,b);r)) \\
+    &= \bigcup \{ x : f(x) \in \widehat{B}((a,b);r) \} \\
+    &= \bigcup \{ x : (u(x), v(x)) \in B(a;r) \times B(b;r) \} \\
+    &= \bigcup \left( \{ x : u(x) \in B(a;r) \} \bigcap \{ x : v(x) \in B(b;r) \} \right) \\
+    &= \bigcup \left( u^{-1}(B(a;r)) \bigcap v^{-1}(B(b;r)) \right).
+  \end{align*}
+  Since both $u$ and $v$ are measurable,
+  \[
+    u^{-1}(B(a;r)) \bigcap v^{-1}(B(b;r))
+  \]
+  is measurable, and thus $f^{-1}(V)$ is measurable (since the union is countable).
 \end{enumerate}
 $\Box$ \\\\
 
