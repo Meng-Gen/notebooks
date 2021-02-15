@@ -894,15 +894,95 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.30.}
-\emph{...} \\
+\emph{If $\mathbf{N}$ is the vector given by
+\[
+  \mathbf{N}
+  = (\alpha_2 \beta_3 - \alpha_3 \beta_2) \mathbf{e}_1
+    + (\alpha_3 \beta_1 - \alpha_1 \beta_3) \mathbf{e}_2
+    + (\alpha_1 \beta_2 - \alpha_2 \beta_1) \mathbf{e}_3
+\]
+(Equation (135)), prove that
+\[
+  \det\begin{bmatrix}
+    \alpha_1 & \beta_1 & \alpha_2 \beta_3 - \alpha_3 \beta_2 \\
+    \alpha_2 & \beta_2 & \alpha_3 \beta_1 - \alpha_1 \beta_3 \\
+    \alpha_3 & \beta_3 & \alpha_1 \beta_2 - \alpha_2 \beta_1
+  \end{bmatrix}
+  = \abs{\mathbf{N}}^2
+\]
+Also, verify
+\[
+  \mathbf{N} \cdot (T\mathbf{e}_1) = \mathbf{N} \cdot (T\mathbf{e}_2)
+\]
+(Equation (137)).} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  By Laplace's expansion along the third column,
+    \begin{align*}
+    &\det\begin{bmatrix}
+      \alpha_1 & \beta_1 & \alpha_2 \beta_3 - \alpha_3 \beta_2 \\
+      \alpha_2 & \beta_2 & \alpha_3 \beta_1 - \alpha_1 \beta_3 \\
+      \alpha_3 & \beta_3 & \alpha_1 \beta_2 - \alpha_2 \beta_1
+    \end{bmatrix} \\
+    =& (-1)^{1+3} (\alpha_2 \beta_3 - \alpha_3 \beta_2)
+      \det\begin{bmatrix}
+        \alpha_2 & \beta_2 \\
+        \alpha_3 & \beta_3
+      \end{bmatrix} \\
+      &+ (-1)^{2+3} (\alpha_3 \beta_1 - \alpha_1 \beta_3)
+      \det\begin{bmatrix}
+        \alpha_1 & \beta_1 \\
+        \alpha_3 & \beta_3
+      \end{bmatrix} \\
+      &+ (-1)^{3+3} (\alpha_1 \beta_2 - \alpha_2 \beta_1)
+      \det\begin{bmatrix}
+        \alpha_1 & \beta_1 \\
+        \alpha_2 & \beta_2
+      \end{bmatrix} \\
+    =& (\alpha_2 \beta_3 - \alpha_3 \beta_2)^2
+      + (\alpha_3 \beta_1 - \alpha_1 \beta_3)^2
+      + (\alpha_1 \beta_2 - \alpha_2 \beta_1)^2 \\
+    =& \abs{\mathbf{N}}^2.
+  \end{align*}
 
+\item[(2)]
+  \begin{align*}
+    \mathbf{N} \cdot (T\mathbf{e}_1)
+    &= (\alpha_2 \beta_3 - \alpha_3 \beta_2,
+      \alpha_3 \beta_1 - \alpha_1 \beta_3,
+      \alpha_1 \beta_2 - \alpha_2 \beta_1) \cdot
+      (\alpha_1, \alpha_2, \alpha_3) \\
+    &= (\alpha_2 \beta_3 - \alpha_3 \beta_2) \alpha_1
+      + (\alpha_3 \beta_1 - \alpha_1 \beta_3) \alpha_2
+      + (\alpha_1 \beta_2 - \alpha_2 \beta_1)) \alpha_3 \\
+    &= (\alpha_3 \alpha_2 - \alpha_2 \alpha_3) \beta_1
+      + (\alpha_1 \alpha_3 - \alpha_3 \alpha_1) \beta_2
+      + (\alpha_2 \alpha_1 - \alpha_1 \alpha_2)\beta_3 \\
+    &= 0.
+  \end{align*}
+
+\item[(3)]
+  \begin{align*}
+    \mathbf{N} \cdot (T\mathbf{e}_2)
+    &= (\alpha_2 \beta_3 - \alpha_3 \beta_2,
+      \alpha_3 \beta_1 - \alpha_1 \beta_3,
+      \alpha_1 \beta_2 - \alpha_2 \beta_1) \cdot
+      (\beta_1, \beta_2, \beta_3) \\
+    &= (\alpha_2 \beta_3 - \alpha_3 \beta_2) \beta_1
+      + (\alpha_3 \beta_1 - \alpha_1 \beta_3) \beta_2
+      + (\alpha_1 \beta_2 - \alpha_2 \beta_1)) \beta_3 \\
+    &= (\beta_2 \beta_3 - \beta_3 \beta_2) \alpha_1
+      + (\beta_3 \beta_1 - \beta_1 \beta_3) \alpha_2
+      + (\beta_1 \beta_2 - \beta_2 \beta_1) \alpha_3 \\
+    &= 0.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
