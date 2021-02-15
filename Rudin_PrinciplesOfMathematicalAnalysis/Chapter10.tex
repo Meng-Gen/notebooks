@@ -256,12 +256,132 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.7.}
-\emph{...} \\
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that the simplex $Q^k$ is the smallest convex subset of $\mathbb{R}^k$
+  such that contains $\mathbf{0}, \mathbf{e}_1, \ldots, \mathbf{e}_k$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Show that affine mappings take convex sets to convex sets.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $Q^k$ contains $\mathbf{0}, \mathbf{e}_1, \ldots, \mathbf{e}_k$.}
+  Recall
+  \[
+    Q^k = \{ (x_1,\ldots,x_k) \in \mathbb{R}^k :
+      x_1 + \cdots + x_k \leq 1 \text{ and }
+      x_1, \ldots, x_k \geq 0 \}
+  \]
+  (Example 10.14).
+  Hence $\mathbf{0} = (0,\ldots,0) \in Q^k$ and
+  \[
+    \mathbf{e}_i = (0,\ldots,\underbrace{1}_{\text{$i$th coordinate}},\ldots,0) \in Q^k.
+  \]
+
 \item[(2)]
+  \emph{Show that $Q^k$ is a convex subset of $\mathbb{R}^k$.}
+  Given any $\mathbf{x} = (x_1,\ldots,x_k) \in Q^k$,
+  $\mathbf{y} = (y_1,\ldots,y_k) \in Q^k$ and $0 < \lambda < 1$.
+  Hence
+  \[
+    \lambda \mathbf{x} + (1-\lambda) \mathbf{y}
+    = (\lambda x_1 + (1-\lambda)y_1, \ldots, \lambda x_k + (1-\lambda)y_k) \in Q^k
+  \]
+  since each $\lambda x_i + (1-\lambda)y_i \geq 0$
+  and
+  \[
+    \sum_{i=1}^{k} (\lambda x_i + (1-\lambda)y_i)
+    = \lambda \sum_{i=1}^{k} x_i + (1-\lambda) \sum_{i=1}^{k} y_i
+    \leq \lambda + (1-\lambda)
+    = 1.
+  \]
+
+\item[(3)]
+  \emph{Given any convex set $E \subseteq \mathbb{R}^k$ containing
+  $\mathbf{0}, \mathbf{e}_1, \ldots, \mathbf{e}_k$.
+  Show that $E \supseteq Q^k$.}
+  \begin{enumerate}
+  \item[(a)]
+    Induction on $k$.
+    Base case: $k = 1$. Given any $\mathbf{x} = (x_1) \in Q^1$.
+    We have $0 \leq x_1 \leq 1$ by the definition of $Q^1$.
+    So that $\mathbf{x} = x_1 \mathbf{e}_1 + (1-x_1) \mathbf{0} \in E$
+    since $\mathbf{0}, \mathbf{e}_1 \in E$ and $E$ is convex.
+
+  \item[(b)]
+    Inductive step: suppose the statement holds for $k = n$.
+    Given any $\mathbf{x} = (x_1,\ldots,x_n,x_{n+1}) \in Q^{n+1}$.
+    If $x_{n+1} = 1$, then $x_1 = \cdots = x_n = 0$ by the definition of $Q^{n+1}$.
+    So $\mathbf{x} = \mathbf{e}_{n+1} \in E$ by the assumption of $E$.
+    If $0 \leq x_{n+1} < 1$, then $x_1 + \cdots + x_n \leq 1 - x_{n+1}$ or
+    \[
+      \frac{x_1}{1-x_{n+1}} + \cdots + \frac{x_{n}}{1-x_{n+1}} \leq 1.
+    \]
+    So the point
+    \[
+      \left( \frac{x_1}{1-x_{n+1}}, \ldots, \frac{x_{n}}{1-x_{n+1}} \right)
+      \in Q^n,
+    \]
+    or
+    \[
+      \left( \frac{x_1}{1-x_{n+1}}, \ldots, \frac{x_{n}}{1-x_{n+1}}, 0 \right),
+      \text{ say } \widehat{\mathbf{x}}, \in E
+    \]
+    by the induction hypothesis.
+    Note that $\mathbf{e}_{n+1} \in E$.
+    Hence
+    \[
+      \mathbf{x}
+      = x_{n+1} \mathbf{e}_{n+1} + (1-x_{n+1})\widehat{\mathbf{x}}
+      \in E
+    \]
+    by the convexity of $E$.
+
+  \item[(c)]
+    Conclusion: Since both the base case and the inductive step have been proved as true,
+    by mathematical induction the statement holds.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let $\mathbf{f}$ be an affine mapping that carries a vector space $X$ into a vector space $Y$
+  such that
+  \[
+    \mathbf{f}(\mathbf{x}) = \mathbf{f}(\mathbf{0}) + A\mathbf{x}
+  \]
+  for some $A \in L(X,Y)$.
+
+\item[(2)]
+  Given any convex subset $C$ of $X$.
+  To show that $\mathbf{f}(C)$ is convex, it suffices to show that
+  \[
+    \lambda \mathbf{y}_1 + (1-\lambda) \mathbf{y}_2 \in \mathbf{f}(C)
+  \]
+  for any $\mathbf{y}_1, \mathbf{y}_2 \in \mathbf{f}(C)$ and $0 < \lambda < 1$.
+  Write $\mathbf{y}_1 = \mathbf{f}(\mathbf{x}_1)$,
+  $\mathbf{y}_2 = \mathbf{f}(\mathbf{x}_2)$ for some $\mathbf{x}_1, \mathbf{x}_2 \in C$.
+  Note that $\lambda \mathbf{x}_1 + (1-\lambda) \mathbf{x}_2 \in C$ by the convexity of $C$.
+  Hence
+  \begin{align*}
+    &\mathbf{f}(\lambda\mathbf{x}_1 + (1-\lambda) \mathbf{x}_2) \\
+    =& \mathbf{f}(\mathbf{0}) + A(\lambda\mathbf{x}_1 + (1-\lambda) \mathbf{x}_2) \\
+    =& \mathbf{f}(\mathbf{0}) + \lambda A\mathbf{x}_1 + (1-\lambda) A\mathbf{x}_2
+      &(A \in L(X,Y)) \\
+    =& \lambda(\mathbf{f}(\mathbf{0}) + A\mathbf{x}_1)
+      + (1-\lambda)(\mathbf{f}(\mathbf{0}) + A\mathbf{x}_2) \\
+    =& \lambda \mathbf{f}(\mathbf{x}_1) + (1-\lambda)\mathbf{f}(\mathbf{x}_2) \\
+    =& \lambda \mathbf{y}_1 + (1-\lambda)\mathbf{y}_2 \in \mathbf{f}(C).
+  \end{align*}
 
 \end{enumerate}
 $\Box$ \\\\
