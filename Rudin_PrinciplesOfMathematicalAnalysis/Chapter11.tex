@@ -1223,36 +1223,35 @@ if and only if $f^{-1}(V)$ is measurable for every open set $V$ in the plane.} \
   In particular,
   define
   \[
-    \widehat{B}((a,b);r)
-    = B(a;r) \times B(b;r)
+    I((a,b);r)
     = (a-r,a+r) \times (b-r,b+r)
     \subseteq \mathbb{R}^2
   \]
   for all $a, b, r \in \mathbb{Q}$.
   The collection
   \[
-    \{ \widehat{B}((a,b);r) \}
+    \{ I((a,b);r) \}
   \]
   is a countable base for $\mathbb{R}^2$.
-  Write $V$ as a countable union of $\widehat{B}((a,b);r)$:
+  Write $V$ as a countable union of $I((a,b);r)$:
   \[
-    V = \bigcup \widehat{B}((a,b);r).
+    V = \bigcup I((a,b);r).
   \]
 
 \item[(4)]
   \emph{Show that $f^{-1}(V)$ is measurable for every open set $V \subseteq \mathbb{C}$.}
   \begin{align*}
     f^{-1}(V)
-    &= f^{-1} \left( \bigcup \widehat{B}((a,b);r) \right) \\
-    &= \bigcup f^{-1}(\widehat{B}((a,b);r)) \\
-    &= \bigcup \{ x : f(x) \in \widehat{B}((a,b);r) \} \\
-    &= \bigcup \{ x : (u(x), v(x)) \in B(a;r) \times B(b;r) \} \\
-    &= \bigcup \left( \{ x : u(x) \in B(a;r) \} \bigcap \{ x : v(x) \in B(b;r) \} \right) \\
-    &= \bigcup \left( u^{-1}(B(a;r)) \bigcap v^{-1}(B(b;r)) \right).
+    &= f^{-1} \left( \bigcup I((a,b);r) \right) \\
+    &= \bigcup f^{-1}(I((a,b);r)) \\
+    &= \bigcup \{ x : f(x) \in I((a,b);r) \} \\
+    &= \bigcup \{ x : (u(x), v(x)) \in (a-r,a+r) \times (b-r,b+r) \} \\
+    &= \bigcup \left( \{ x : u(x) \in (a-r,a+r) \} \bigcap \{ x : v(x) \in (b-r,b+r) \} \right) \\
+    &= \bigcup \left( u^{-1}((a-r,a+r)) \bigcap v^{-1}((b-r,b+r)) \right).
   \end{align*}
   Since both $u$ and $v$ are measurable,
   \[
-    u^{-1}(B(a;r)) \bigcap v^{-1}(B(b;r))
+    u^{-1}((a-r,a+r)) \bigcap v^{-1}((b-r,b+r))
   \]
   is measurable, and thus $f^{-1}(V)$ is measurable (since the union is countable).
 \end{enumerate}
