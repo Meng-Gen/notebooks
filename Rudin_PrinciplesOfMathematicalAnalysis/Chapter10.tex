@@ -30,6 +30,9 @@
 % http://pages.cs.wisc.edu/~wentaowu/other-docs/POMA_Solution_Sheet.pdf
 % https://linearalgebras.com/baby-rudin-chapter-10.html
 % https://www.researchgate.net/publication/248817777_Partitions_of_Unity_for_Countable_Covers
+% https://www.math.lsu.edu/~lawson/Chapter4.pdf
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -320,13 +323,132 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.6.}
-\emph{...} \\
+\emph{Strengthen the conclusion of Theorem 10.8 by showing that
+the functions $\psi_i$ can be made differentiable, and even infinitely differentiable.
+(Use Exercise 8.1 in the construction of the auxiliary functions $\psi_i$.)} \\
 
-\emph{Proof.}
+
+
+\emph{Proof (Theorem 10.8).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  It is trivial that some $V_{\alpha} = \mathbb{R}^n$
+  by taking $s = 1$ and $\psi_1(\mathbf{x}) = 1 \in \mathscr{C}^{\infty}(\mathbb{R}^n)$.
+  Now we assume that all $V_{\alpha} \subsetneq \mathbb{R}^n$.
 
+\item[(2)]
+  Associate with each $\mathbf{x} \in K$ an index $\alpha(x)$ so that $\mathbf{x} \in V_{\alpha(x)}$.
+  Then there are open $n$-cells $B(\mathbf{x})$ and $W(\mathbf{x})$ (Definition 10.1),
+  centered at $\mathbf{x}$,
+  with
+  \[
+    \mathbf{x}
+    \in B(\mathbf{x})
+    \subseteq \overline{B(\mathbf{x})}
+    \subseteq W(\mathbf{x})
+    \subseteq \overline{W(\mathbf{x})}
+    \subseteq V_{\alpha(\mathbf{x})}
+  \]
+  (Since $V_{\alpha(\mathbf{x})}$ is open, there exists $r > 0$
+  such that $B(\mathbf{x};r) \subseteq V_{\alpha(\mathbf{x})}$.
+  Take
+  \[
+    B(\mathbf{x}) = I\left(\mathbf{x};\frac{r}{89\sqrt{n}}\right),
+    \qquad
+    W(\mathbf{x}) = I\left(\mathbf{x};\frac{r}{64\sqrt{n}}\right)
+  \]
+  where $I(\mathbf{p};r)$ is the open $n$-cell centered at $\mathbf{p} = (p_1,\ldots,p_n)$
+  defined by
+  \[
+    I(\mathbf{p};r)
+    = (p_1-r,p_1+r) \times \cdots \times (p_n-r,p_n+r) \subseteq \mathbb{R}^n.
+  \]
+
+\item[(3)]
+  Define
+  \begin{equation*}
+    f(y) =
+    \begin{cases}
+      e^{-\frac{1}{y^2}} & (y > 0), \\
+      0 & (y \leq 0).
+    \end{cases}
+  \end{equation*}
+  $f(y) \in \mathscr{C}^{\infty}(\mathbb{R}^1)$
+  by applying the similar argument in Exercise 8.1.
+
+\item[(4)]
+  Given any $\mathbf{x} = (x_1,\ldots,x_n) \in K$
+  and construct $B(\mathbf{x})$ and $W(\mathbf{x})$ as in (2).
+  Define
+  \[
+    g_{x_j}(y_j)
+    = \frac{f(y_j)}{f(y_j)+f\left(\frac{r}{64\sqrt{n}}-\frac{r}{89\sqrt{n}}-y_j\right)}
+  \]
+  for $1 \leq j \leq n$.
+  $g_{x_j}$ is well-defined and $g_{x_j} \in \mathscr{C}^{\infty}(\mathbb{R}^1)$.
+  So
+  \begin{equation*}
+    g_{x_j}(y_j) =
+    \begin{cases}
+      0
+        & \text{if } y_j \leq 0, \\
+      \text{strictly increasing}
+        & \text{if } 0 \leq y_j \leq \frac{r}{64\sqrt{n}} - \frac{r}{89\sqrt{n}}, \\
+      1
+        & \text{if } y_j \geq \frac{r}{64\sqrt{n}} - \frac{r}{89\sqrt{n}}.
+    \end{cases}
+  \end{equation*}
+  Next, define
+  \[
+    h_{x_j}(y_j)
+    = g_{x_j}\left(y_j-x_j+\frac{r}{64\sqrt{n}}\right)
+      g_{x_j}\left(x_j+\frac{r}{64\sqrt{n}}-y_j\right)
+  \]
+  for $1 \leq j \leq n$.
+  $h_{x_j} \in \mathscr{C}^{\infty}(\mathbb{R}^1)$.
+  So
+  \begin{equation*}
+    h_{x_j}(y_j) =
+    \begin{cases}
+      0
+        & \text{if } y_j \leq x_j - \frac{r}{64\sqrt{n}}, \\
+      \text{strictly increasing}
+        & \text{if } x_j - \frac{r}{64\sqrt{n}} \leq y_j \leq x_j - \frac{r}{89\sqrt{n}}, \\
+      1
+        & \text{if } x_j - \frac{r}{89\sqrt{n}} \leq y_j \leq x_j + \frac{r}{89\sqrt{n}}, \\
+      \text{strictly decreasing}
+        & \text{if } x_j + \frac{r}{89\sqrt{n}} \leq y_j \leq x_j + \frac{r}{64\sqrt{n}}, \\
+      0
+        & \text{if } y_j \geq x_j + \frac{r}{64\sqrt{n}}.
+    \end{cases}
+  \end{equation*}
+  Finally we define $\mathbf{h}_{\mathbf{x}}: \mathbb{R}^n \to \mathbb{R}^1$ by
+  \[
+    \mathbf{h}_{\mathbf{x}}(\mathbf{y})
+    = \prod_{j=1}^{n} h_{x_j}(y_j)
+  \]
+  where $\mathbf{y} = (y_1,\ldots,y_n) \in \mathbb{R}^n$.
+  Hence, $\mathbf{h}_{\mathbf{x}} \in \mathscr{C}^{\infty}(\mathbb{R}^n)$ (Theorem 9.21).
+  Also, $\mathbf{h}_{\mathbf{x}}(\mathbf{y}) = 1$ on $\overline{B(\mathbf{x})}$,
+  $\mathbf{h}_{\mathbf{x}}(\mathbf{y}) = 0$ outside $W(\mathbf{x})$,
+  and $0 \leq \mathbf{h}_{\mathbf{x}}(\mathbf{y}) \leq 1$.
+
+\item[(5)]
+  Since $K$ is compact, there are finitely many points
+  $\mathbf{x}_1, \ldots, \mathbf{x}_s \in K$ such that
+  \[
+    K \subseteq B(\mathbf{x}_1) \cup \cdots \cup B(\mathbf{x}_s).
+  \]
+  Take
+  \[
+    \varphi_i(\mathbf{x})
+    = \mathbf{h}_{\mathbf{x}_i}(\mathbf{x})
+    \in \mathscr{C}^{\infty}(\mathbb{R}^n)
+  \]
+  for $1 \leq i \leq s$.
+
+\item[(6)]
+  The rest are the same as the proof of Theorem 10.8 or Exercise 10.5.
 \end{enumerate}
 $\Box$ \\\\
 
