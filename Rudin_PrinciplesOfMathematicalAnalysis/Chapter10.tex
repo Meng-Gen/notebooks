@@ -27,9 +27,9 @@
 
 
 
-%http://pages.cs.wisc.edu/~wentaowu/other-docs/POMA_Solution_Sheet.pdf
-
-
+% http://pages.cs.wisc.edu/~wentaowu/other-docs/POMA_Solution_Sheet.pdf
+% https://linearalgebras.com/baby-rudin-chapter-10.html
+% https://www.researchgate.net/publication/248817777_Partitions_of_Unity_for_Countable_Covers
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,13 +222,94 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.5.}
-\emph{...} \\
+\emph{Formulate and prove an analogue of Theorem 10.8,
+in which $K$ is a compact subset of an arbitrary metric space.
+(Replace the functions $\varphi_i$ that occur in the proof of Theorem 10.8
+by functions of the type constructed in Exercise 4.22.)} \\
 
-\emph{Proof.}
+\emph{Proof (Theorem 10.8).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{(Partitions of unity.)
+  Suppose $K$ is a compact subset of a metric space $X$,
+  and $\{V_{\alpha}\}$ is an open cover of $K$.
+  Then there exist function $\psi_1, \ldots, \psi_s \in \mathscr{C}(X)$ such that}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{$0 \leq \psi_i \leq 1$ for $1 \leq i \leq s$.}
 
+  \item[(b)]
+    \emph{each $\psi_i$ has its support in some $V_{\alpha}$, and}
+
+  \item[(c)]
+    \emph{$\psi_1(x) + \cdots + \psi_s(x) = 1$ for every $x \in K$.}
+  \end{enumerate}
+
+\item[(2)]
+  It is trivial that some $V_{\alpha} = X$
+  by taking $s = 1$ and $\psi_1(x) = 1 \in \mathscr{C}(X)$.
+  Now we assume that all $V_{\alpha} \subsetneq X$.
+
+\item[(3)]
+  Associate with each $x \in K$ an index $\alpha(x)$ so that $x \in V_{\alpha(x)}$.
+  Then there are open balls $B(x)$ and $W(x)$, centered at $x$,
+  with
+  \[
+    x
+    \in B(x)
+    \subseteq \overline{B(x)}
+    \subseteq W(x)
+    \subseteq \overline{W(x)}
+    \subseteq V_{\alpha(x)}
+  \]
+  (Since $V_{\alpha(x)}$ is open, there exists $r > 0$
+  such that $B(x;r) \subseteq V_{\alpha(x)}$.
+  Take $B(x) = B\left(x;\frac{r}{89}\right)$
+  and $W(x) = B\left(x;\frac{r}{64}\right)$.)
+
+\item[(4)]
+  Since $K$ is compact, there are finitely many points
+  $x_1, \ldots, x_s \in K$ such that
+  \[
+    K \subseteq B(x_1) \cup \cdots \cup B(x_s).
+  \]
+  Note that
+  \begin{enumerate}
+  \item[(a)]
+    $\overline{B(x_i)}$ is a nonempty closed set since $x_i \in B(x_i) \subseteq \overline{B(x_i)}$.
+
+  \item[(b)]
+    $X - W(x_i) \supseteq X - V_{\alpha(x_i)}$ is a nonempty closed set by the assumption in (2).
+
+  \item[(c)]
+    $\overline{B(x_i)} \cap (X - W(x_i)) \subseteq W(x_i) \cap (X - W(x_i)) = \varnothing$.
+
+  \end{enumerate}
+  By Exercise 4.22, there is a function
+  \[
+    \varphi_i(x)
+    = \frac{\rho_{\overline{B(x_i)}}(x)}{\rho_{\overline{B(x_i)}}(x) + \rho_{X-W(x_i)}(x)}
+    \in \mathscr{C}(X)
+  \]
+  such that $\varphi_i(x) = 1$ on $\overline{B(x_i)}$,
+  $\varphi_i(x) = 0$ outside $W(x_i)$, and $0 \leq \varphi_i(x) \leq 1$ on $X$
+  for $1 \leq i \leq s$.
+
+\item[(5)]
+  Define $\psi_{1} = \varphi_{1}$ and
+  \[
+    \psi_{i+1} = (1-\varphi_{1}) \cdots (1-\varphi_{i})\varphi_{i+1}
+  \]
+  for $1 \leq i \leq s-1$.
+  Properties (a) and (b) in (1) are clear.
+  Also,
+  \[
+    \psi_1(x) + \cdots + \psi_s(x) = 1 - (1-\varphi_1(x)) \cdots (1-\varphi_s(x))
+  \]
+  by the construction of $\psi_i$.
+  If $x \in K$, then $x \in B(x_i)$ for some $i$, hence $\varphi_i(x)=1$,
+  and the product $(1-\varphi_1(x)) \cdots (1-\varphi_s(x)) = 0$.
+  This proves property (c) in (1).
 \end{enumerate}
 $\Box$ \\\\
 
