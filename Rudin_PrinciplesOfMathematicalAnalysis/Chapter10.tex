@@ -1138,6 +1138,41 @@ and that their union covers $I^3$.
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\sigma_1$ (regarded as a linear transformation) has determinant $1$.}
+  Given any $\mathbf{u}
+  = \alpha_1 \mathbf{e}_1 + \alpha_2 \mathbf{e}_2 + \alpha_3 \mathbf{e}_3 \in \mathbb{R}^3$,
+  we have
+  \begin{align*}
+    \sigma_1(\mathbf{u})
+    &= ([\mathbf{0}, \mathbf{e}_1, \mathbf{e}_1+\mathbf{e}_2, \mathbf{e}_1+\mathbf{e}_2+\mathbf{e}_3])
+    (\mathbf{u}) \\
+    &= \mathbf{0}
+      + \alpha_1 \mathbf{e}_1
+      + \alpha_2 (\mathbf{e}_1+\mathbf{e}_2)
+      + \alpha_3 (\mathbf{e}_1+\mathbf{e}_2+\mathbf{e}_3) \\
+    &= \mathbf{0}
+      + (\alpha_1+\alpha_2+\alpha_3) \mathbf{e}_1
+      + (\alpha_2+\alpha_3) \mathbf{e}_2
+      + \alpha_3 \mathbf{e}_3 \\
+    &= \mathbf{0} +
+      \begin{bmatrix}
+        1 & 1 & 1 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1
+      \end{bmatrix}
+      \mathbf{u}.
+  \end{align*}
+  So
+  \[
+    \det
+    \begin{bmatrix}
+      1 & 1 & 1 \\
+      0 & 1 & 1 \\
+      0 & 0 & 1
+    \end{bmatrix}
+    = 1.
+  \]
+
 \item[(2)]
 
 \end{enumerate}
