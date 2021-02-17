@@ -1096,7 +1096,44 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.18.}
-\emph{...} \\
+\emph{Consider the oriented affine $3$-simplex
+\[
+  \sigma_1
+  = [\mathbf{0}, \mathbf{e}_1, \mathbf{e}_1+\mathbf{e}_2, \mathbf{e}_1+\mathbf{e}_2+\mathbf{e}_3]
+\]
+in $\mathbb{R}^3$.
+Show that $\sigma_1$ (regarded as a linear transformation) has determinant $1$.
+Thus $\sigma_1$ is positively oriented.} \\
+
+\emph{Let $\sigma_2, \ldots, \sigma_6$ be five other oriented $3$-simplexes,
+obtained as follows:
+There are five permutations $(i_1, i_2, i_3)$ of $(1, 2, 3)$,
+distinct from $(1, 2, 3)$.
+Associate with each $(i_1, i_2, i_3)$ the simplex
+\[
+  s(i_1, i_2, i_3)
+  [
+    \mathbf{0},
+    \mathbf{e}_{i_1},
+    \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+    \mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3}
+  ]
+\]
+where $s$ is the sign that occurs in the definition of the determinant.
+(This is how $\tau_2$ was obtained from $\tau_1$ in Exercise 10.17.)
+Show that $\sigma_2, \ldots, \sigma_6$ are positively oriented.} \\
+
+\emph{Put $J^3 = \sigma_1+\cdots+\sigma_6$.
+Then $J^3$ may be called the positively oriented unit cube in $\mathbb{R}^3$.
+Show that $\partial J^3$ is the sum of $12$ oriented affine $2$-simplexes.
+(These $12$ triangles cover the surface of the unit cube $I^3$.)} \\
+
+\emph{Show that $\mathbf{x} = (x_1, x_2, x_3)$ is in the range of $\sigma_1$
+if and only if $0 \leq x3 \leq x2 \leq x1 \leq 1$.} \\
+
+\emph{Show that the range of $\sigma_1, \ldots, \sigma_6$ have disjoint interiors,
+and that their union covers $I^3$.
+(Compared with Exercise 10.13; note that $3!=6$.)} \\
 
 \emph{Proof.}
 \begin{enumerate}
