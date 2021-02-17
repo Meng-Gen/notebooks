@@ -1155,15 +1155,17 @@ and that their union covers $I^3$.
       + (\alpha_2+\alpha_3) \mathbf{e}_2
       + \alpha_3 \mathbf{e}_3 \\
     &= \mathbf{0} +
-      \begin{bmatrix}
+      \underbrace{\begin{bmatrix}
         1 & 1 & 1 \\
         0 & 1 & 1 \\
         0 & 0 & 1
-      \end{bmatrix}
+      \end{bmatrix}}_{\text{say }A}
       \mathbf{u}.
   \end{align*}
   So
   \[
+    \det(A)
+    =
     \det
     \begin{bmatrix}
       1 & 1 & 1 \\
@@ -1174,6 +1176,64 @@ and that their union covers $I^3$.
   \]
 
 \item[(2)]
+  \emph{Show that $\sigma_2, \ldots, \sigma_6$ are positively oriented.}
+  Define the permutation matrix $P_{(i_1,i_2,i_3)}$ corresponding to
+  a permutation $(i_1,i_2,i_3)$ of $(1,2,3)$ by
+  \[
+    P_{(i_1,i_2,i_3)}
+    =
+    \begin{bmatrix}
+      \mathbf{e}_{i_1} & \mathbf{e}_{i_2} & \mathbf{e}_{i_3}
+    \end{bmatrix}.
+  \]
+  For example,
+  \[
+    P_{(2,3,1)}
+    =
+    \begin{bmatrix}
+      \mathbf{e}_{2} & \mathbf{e}_{3} & \mathbf{e}_{1}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      0 & 0 & 1 \\
+      1 & 0 & 0 \\
+      0 & 1 & 0
+    \end{bmatrix}.
+  \]
+  Note that the sign $s(i_1,i_2,i_3)$ of the permutation $(i_1,i_2,i_3)$
+  is exactly the same as the determinant of the permutation matrix $P_{(i_1,i_2,i_3)}$.
+  Hence,
+  \begin{align*}
+    &
+    (s(i_1, i_2, i_3)[
+      \mathbf{0},
+      \mathbf{e}_{i_1},
+      \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+      \mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3}
+    ])(\mathbf{u}) \\
+    &= s(i_1, i_2, i_3)(\mathbf{0}
+      + \alpha_1 \mathbf{e}_{i_1}
+      + \alpha_2 (\mathbf{e}_{i_1}+\mathbf{e}_{i_2})
+      + \alpha_3 (\mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3})) \\
+    &= \mathbf{0}
+      + s(i_1, i_2, i_3)(\alpha_1 \mathbf{e}_{i_1}
+      + \alpha_2 (\mathbf{e}_{i_1}+\mathbf{e}_{i_2})
+      + \alpha_3 (\mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3})) \\
+    &= \mathbf{0}
+      + s(i_1, i_2, i_3)((\alpha_1+\alpha_2+\alpha_3) \mathbf{e}_{i_1}
+      + (\alpha_2+\alpha_3) \mathbf{e}_{i_2}
+      + \alpha_3 \mathbf{e}_{i_3}) \\
+    &= \mathbf{0} + s(i_1, i_2, i_3)P_{(i_1,i_2,i_3)} A\mathbf{u}.
+  \end{align*}
+  So
+  \begin{align*}
+    \det(s(i_1, i_2, i_3)P_{(i_1,i_2,i_3)} A)
+    &= s(i_1, i_2, i_3)^3 \det(P_{(i_1,i_2,i_3)}) \det(A) \\
+    &= s(i_1, i_2, i_3)^3 \cdot s(i_1, i_2, i_3) \cdot 1 \\
+    &= 1.
+  \end{align*}
+
+\item[(3)]
 
 \end{enumerate}
 $\Box$ \\\\
