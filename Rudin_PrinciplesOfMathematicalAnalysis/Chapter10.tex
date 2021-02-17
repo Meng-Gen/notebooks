@@ -31,6 +31,7 @@
 % https://linearalgebras.com/baby-rudin-chapter-10.html
 % https://www.researchgate.net/publication/248817777_Partitions_of_Unity_for_Countable_Covers
 % https://www.math.lsu.edu/~lawson/Chapter4.pdf
+% https://www2.math.upenn.edu/~ryrogers/HW7-solutions.pdf
 
 
 
@@ -996,13 +997,95 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.17.}
-\emph{...} \\
+\emph{Put $J^2 = \tau_1 + \tau_2$, where
+\[
+  \tau_1 = [\mathbf{0}, \mathbf{e}_1, \mathbf{e}_1+\mathbf{e}_2],
+  \qquad
+  \tau_2 = -[\mathbf{0}, \mathbf{e}_2, \mathbf{e}_2+\mathbf{e}_1].
+\]
+Explain why it is reasonable to call $J^2$ the positively oriented unit square in $\mathbb{R}^2$.
+Show that $\partial J^2$ is the sum of $4$ oriented affine $1$-simplexes.
+Find these.
+What is $\partial(\tau_1 - \tau_2)$?} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Note that the unit square $I^2 \in \mathbb{R}^2$ is the union of
+  $\tau_1(Q^2)$ and $\tau_2(Q_2)$, where
+  \begin{align*}
+    \tau_1(\mathbf{u})
+    &= ([\mathbf{0}, \mathbf{e}_1, \mathbf{e}_1+\mathbf{e}_2])(\mathbf{u}) \\
+    &= \mathbf{0} + \alpha_1 \mathbf{e}_1 + \alpha_2 (\mathbf{e}_1+\mathbf{e}_2) \\
+    &= \mathbf{0} + (\alpha_1+\alpha_2) \mathbf{e}_1 + \alpha_2 \mathbf{e}_2 \\
+    &= \mathbf{0} +
+      \begin{bmatrix}
+        1 & 1 \\
+        0 & 1
+      \end{bmatrix}
+      \mathbf{u}
+  \end{align*}
+  and
+  \begin{align*}
+    \tau_2(\mathbf{u})
+    &= (-[\mathbf{0}, \mathbf{e}_2, \mathbf{e}_2+\mathbf{e}_1])(\mathbf{u}) \\
+    &= ([\mathbf{0}, \mathbf{e}_2+\mathbf{e}_1, \mathbf{e}_2])(\mathbf{u}) \\
+    &= \mathbf{0} + \alpha_1 (\mathbf{e}_1+\mathbf{e}_2) + \alpha_2 \mathbf{e}_2 \\
+    &= \mathbf{0} + \alpha_1 \mathbf{e}_1 + (\alpha_1+\alpha_2) \mathbf{e}_2 \\
+    &= \mathbf{0} +
+      \begin{bmatrix}
+        1 & 0 \\
+        1 & 1
+      \end{bmatrix}
+      \mathbf{u}
+  \end{align*}
+  where $\mathbf{u} = \alpha_1 \mathbf{e}_1 + \alpha_2 \mathbf{e}_2 \in \mathbb{R}^2$
+  (as in Equation (78)).
+  Both $\tau_1$ and $\tau_2$ have Jacobian $1 > 0$, or positively oriented
+  (Affine simplexes 10.26).
+  So it is reasonable to call $J^2$ the positively oriented unit square in $\mathbb{R}^2$.
 
+\item[(2)]
+  \begin{align*}
+    \partial \tau_1
+    &= [\mathbf{e}_1, \mathbf{e}_1+\mathbf{e}_2]
+      - [\mathbf{0}, \mathbf{e}_1+\mathbf{e}_2]
+      + [\mathbf{0}, \mathbf{e}_1], \\
+    \partial \tau_2
+    &= [\mathbf{e}_2+\mathbf{e}_1, \mathbf{e}_2]
+      - [\mathbf{0}, \mathbf{e}_2]
+      + [\mathbf{0}, \mathbf{e}_2+\mathbf{e}_1] \\
+    &= [\mathbf{e}_1+\mathbf{e}_2, \mathbf{e}_2]
+      + [\mathbf{e}_2, \mathbf{0}]
+      + [\mathbf{0}, \mathbf{e}_1+\mathbf{e}_2].
+  \end{align*}
+
+\item[(3)]
+  By (2),
+  \[
+    \partial J^2
+    = \partial \tau_1 + \partial \tau_2
+    = [\mathbf{0}, \mathbf{e}_1]
+      + [\mathbf{e}_1, \mathbf{e}_1+\mathbf{e}_2]
+      + [\mathbf{e}_1+\mathbf{e}_2, \mathbf{e}_2]
+      + [\mathbf{e}_2, \mathbf{0}],
+  \]
+  which is the positively oriented boundary of $I^2$.
+
+\item[(4)]
+  By (2),
+  \begin{align*}
+    \partial(\tau_1 - \tau_2)
+    =& \partial \tau_1 - \partial \tau_2 \\
+    =& [\mathbf{0}, \mathbf{e}_1]
+      + [\mathbf{e}_1, \mathbf{e}_1+\mathbf{e}_2]
+      + [\mathbf{e}_1+\mathbf{e}_2, \mathbf{0}] \\
+      &+ [\mathbf{0}, \mathbf{e}_2]
+      + [\mathbf{e}_2, \mathbf{e}_1+\mathbf{e}_2]
+      + [\mathbf{e}_1+\mathbf{e}_2, \mathbf{0}].
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
