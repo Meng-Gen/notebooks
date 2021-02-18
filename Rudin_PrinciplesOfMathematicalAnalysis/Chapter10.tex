@@ -1129,7 +1129,7 @@ Show that $\partial J^3$ is the sum of $12$ oriented affine $2$-simplexes.
 (These $12$ triangles cover the surface of the unit cube $I^3$.)} \\
 
 \emph{Show that $\mathbf{x} = (x_1, x_2, x_3)$ is in the range of $\sigma_1$
-if and only if $0 \leq x3 \leq x2 \leq x1 \leq 1$.} \\
+if and only if $0 \leq x_3 \leq x_2 \leq x_1 \leq 1$.} \\
 
 \emph{Show that the range of $\sigma_1, \ldots, \sigma_6$ have disjoint interiors,
 and that their union covers $I^3$.
@@ -1243,6 +1243,159 @@ and that their union covers $I^3$.
   \end{align*}
 
 \item[(3)]
+  \emph{Show that $\partial J^3$ is the sum of $12$ oriented affine $2$-simplexes.}
+  Note that
+  \begin{align*}
+    &\sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3)
+    [
+      \mathbf{0},
+      \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+      \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+    ] \\
+    =&
+    \sum_{\substack{(i_1,i_2,i_3) \\ i_1 > i_2}}
+    s(i_1, i_2, i_3)
+    [
+      \mathbf{0},
+      \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+      \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+    ] \\
+    &+ \sum_{\substack{(i_1,i_2,i_3) \\ i_1 < i_2}}
+    s(i_1, i_2, i_3)
+    [
+      \mathbf{0},
+      \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+      \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+    ] \\
+    =&
+    \sum_{\substack{(i_1,i_2,i_3) \\ i_1 > i_2}} s(i_1, i_2, i_3)
+    [
+      \mathbf{0},
+      \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+      \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+    ] \\
+    &+ \sum_{\substack{(i_1,i_2,i_3) \\ i_2 > i_1}} -s(i_2, i_1, i_3)
+      [
+        \mathbf{0},
+        \mathbf{e}_{i_2}+\mathbf{e}_{i_1},
+        \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+      ] \\
+    =& \mathbf{0}
+  \end{align*}
+  and
+  \begin{align*}
+    &\sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3) [
+      \mathbf{0},
+      \mathbf{e}_{i_1},
+      \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+    ] \\
+    =&
+    \sum_{\substack{(i_1,i_2,i_3) \\ i_2 > i_3}} s(i_1, i_2, i_3)
+    [
+      \mathbf{0},
+      \mathbf{e}_{i_1},
+      \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+    ] \\
+    &+ \sum_{\substack{(i_1,i_2,i_3) \\ i_2 < i_3}} s(i_1, i_2, i_3)
+      [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+      ] \\
+    =&
+    \sum_{\substack{(i_1,i_2,i_3) \\ i_2 > i_3}} s(i_1, i_2, i_3)
+    [
+      \mathbf{0},
+      \mathbf{e}_{i_1},
+      \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+    ] \\
+    &+ \sum_{\substack{(i_1,i_2,i_3) \\ i_3 > i_2}} -s(i_1, i_3, i_2)
+      [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+      ] \\
+    =&
+    \mathbf{0}.
+  \end{align*}
+  So
+  \begin{align*}
+    \partial J^3
+    =& \sum_{(i_1,i_2,i_3)} \partial( s(i_1, i_2, i_3)
+      [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3}
+      ] ) \\
+    =& \sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3) \partial
+      [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3}
+      ] \\
+    =& \sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3)
+      ([
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3}
+      ] \\
+      &- [
+        \mathbf{0},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3}
+      ] \\
+      &+ [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}+\mathbf{e}_{i_3}
+      ] \\
+      &- [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}
+      ]) \\
+    =& \sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3)
+      [
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+        \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+      ] \\
+      &- \underbrace{\sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3) [
+        \mathbf{0},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+        \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+      ]}_{= \mathbf{0}} \\
+      &+ \underbrace{\sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3) [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+      ]}_{= \mathbf{0}} \\
+      &- \sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3) [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}
+      ].
+  \end{align*}
+  Thus,
+  \begin{align*}
+    \partial J^3
+    =& \sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3)
+      [
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2},
+        \mathbf{e}_{1}+\mathbf{e}_{2}+\mathbf{e}_{3}
+      ] \\
+      &- \sum_{(i_1,i_2,i_3)} s(i_1, i_2, i_3) [
+        \mathbf{0},
+        \mathbf{e}_{i_1},
+        \mathbf{e}_{i_1}+\mathbf{e}_{i_2}
+      ]
+  \end{align*}
+  is the sum of $12$ oriented affine $2$-simplexes. (Note that $3! = 6$.)
+
+\item[(4)]
 
 \end{enumerate}
 $\Box$ \\\\
