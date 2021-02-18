@@ -1612,13 +1612,86 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.20.}
-\emph{...} \\
+\emph{State conditions under which the formula
+\[
+  \int_{\Phi} fd\omega
+  = \int_{\partial\Phi} f\omega - \int_{\Phi}(df) \wedge \omega
+\]
+is valid, and show that it generalizes the formula for integration by parts.
+(Hint: $d(f\omega) = (df) \wedge \omega + f d\omega$.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{If}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{$\Phi$ is a $k$-chain of class $\mathscr{C}''$ in an open set $V \subseteq \mathbb{R}^m$,}
 
+  \item[(b)]
+    \emph{$\omega$ is a $(k-1)$-form of class $\mathscr{C}'$ in $V$,}
+
+  \item[(c)]
+    \emph{$f$ is a $0$-form of class $\mathscr{C}'$ in $V$,}
+  \end{enumerate}
+  \emph{then}
+  \[
+    \int_{\Phi} fd\omega
+    = \int_{\partial\Phi} f\omega - \int_{\Phi}(df) \wedge \omega
+  \]
+
+\item[(2)]
+  Theorem 10.20(a) implies that
+  \[
+    d(f\omega) = (df) \wedge \omega + f d\omega.
+  \]
+
+\item[(3)]
+  The Stokes' theorem (Theorem 10.33) shows that
+  \[
+    \int_{\Phi} d(f\omega) = \int_{\partial\Phi} f\omega.
+  \]
+  Hence
+  \[
+    \int_{\Phi} fd\omega
+    = \int_{\Phi} d(f\omega) - \int_{\Phi}(df) \wedge \omega
+    = \int_{\partial\Phi} f\omega - \int_{\Phi}(df) \wedge \omega.
+  \]
+
+\item[(4)]
+  Define $\Phi: Q^1 = [0,1] \to [a,b]$ by
+  \[
+    \Phi(\alpha) = a + \alpha (b - a).
+  \]
+  $\Phi$ is a $1$-simplex of class $\mathscr{C}''$ in an open set $V \supseteq [a,b]$.
+  Also,
+  \[
+    \partial\Phi = [b] - [a].
+  \]
+  Let $\omega = g$ be a $0$-form of class $\mathscr{C}'(V)$.
+
+\item[(5)]
+  Note that
+  \begin{align*}
+    \int_{\Phi} fd\omega
+    &= \int_{\Phi} fdg
+    = \int_{0}^{1} f(\Phi(t)) g'(\Phi(t)) \Phi'(t) dt
+    = \int_{a}^{b} f(u) g'(u) du, \\
+    \int_{\partial\Phi} f\omega
+    &= \int_{[b]} fg + \int_{-[a]} fg
+    = f(b)g(b) + (-1) f(a)f(a), \\
+    \int_{\Phi}(df) \wedge \omega
+    &= \int_{\Phi}(df) g
+    = \int_{0}^{1} f'(\Phi(t)) g(\Phi(t)) \Phi'(t) dt
+    = \int_{a}^{b} f'(u) g(u) du.
+  \end{align*}
+  Hence
+  \[
+    \int_{a}^{b} f(u) g'(u) du = f(b)g(b) - f(a)f(a) - \int_{a}^{b} f'(u) g(u) du,
+  \]
+  which is the same as the integration by parts (Theorem 6.22).
 \end{enumerate}
 $\Box$ \\\\
 
