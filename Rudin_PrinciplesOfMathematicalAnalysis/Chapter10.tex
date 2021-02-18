@@ -1396,7 +1396,64 @@ and that their union covers $I^3$.
   is the sum of $12$ oriented affine $2$-simplexes. (Note that $3! = 6$.)
 
 \item[(4)]
+  \emph{Show that $\mathbf{x} = (x_1, x_2, x_3)$ is in the range of $\sigma_1$
+  if and only if $0 \leq x_3 \leq x_2 \leq x_1 \leq 1$.}
+  \begin{enumerate}
+  \item[(a)]
+    By (1),
+    $\mathbf{x}$ is in the range of $\sigma_1$ if and only if
+    $\mathbf{x} = A\mathbf{u}$ for $\mathbf{u} = (u_1,u_2,u_3) \in Q^3$, or
+    \[
+      \begin{bmatrix}
+          x_1 \\
+          x_2 \\
+          x_3
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+          1 & 1 & 1 \\
+          0 & 1 & 1 \\
+          0 & 0 & 1
+      \end{bmatrix}
+      \begin{bmatrix}
+          u_1 \\
+          u_2 \\
+          u_3
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+          u_1+u_2+u_3 \\
+          u_2+u_3 \\
+          u_3
+      \end{bmatrix}.
+    \]
 
+  \item[(b)]
+    Since $\mathbf{u} = (u_1,u_2,u_3) \in Q^3$,
+    $u_1+u_2+u_3 \leq 1$ and $u_1,u_2,u_3 \geq 0$.
+    Hence $0 \leq u_3 \leq u_2+u_3 \leq u_1+u_2+u_3 \leq 1$
+    or $0 \leq x_3 \leq x_2 \leq x_1 \leq 1$.
+
+  \item[(c)]
+    Conversely, if $0 \leq x_3 \leq x_2 \leq x_1 \leq 1$,
+    we define
+    \[
+      \mathbf{v}
+      =
+      \begin{bmatrix}
+          v_1 \\
+          v_2 \\
+          v_3
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+          x_1-x_2 \\
+          x_2-x_3 \\
+          x_3
+      \end{bmatrix}.
+    \]
+    Clearly, $\mathbf{v} \in Q^3$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
