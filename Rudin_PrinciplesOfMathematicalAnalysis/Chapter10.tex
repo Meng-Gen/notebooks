@@ -1702,9 +1702,132 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.21.}
-\emph{...} \\
+\emph{As in Example 10.36, consider the $1$-form
+\[
+  \eta = \frac{x dy - y dx}{x^2+y^2}
+\]
+in $\mathbb{R}^2-\{\mathbf{0}\}$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Carry out the computation that leads to
+  \[
+    \int_{\gamma} \eta = 2\pi \neq 0,
+  \]
+  and prove that $d\eta = 0$.}
 
-\emph{Proof.}
+\item[(b)]
+
+\item[(c)]
+\item[(d)]
+\item[(e)]
+\item[(f)]
+  \emph{If $\Gamma$ is any closed $\mathscr{C}'$-curve in $\mathbb{R}^2 - \{ \mathbf{0} \}$,
+  prove that
+  \[
+    \frac{1}{2\pi} \int_{\Gamma} \eta = \mathrm{Ind}(\Gamma).
+  \]
+  (See Exercise 8.23 for the definition of the index of a curve.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    \int_{\gamma} \eta
+    &= \int_{0}^{2\pi}
+      \frac{(r\cos t) d(r\sin t) - (r\sin t) d(r\cos t)}{(r\cos t)^2 + (r\sin t)^2} \\
+    &= \int_{0}^{2\pi}
+      \frac{(r \cos t)(r \cos t) - (r\sin t) (-r\sin t)}{(r\cos t)^2 + (r\sin t)^2} dt \\
+    &= \int_{0}^{2\pi} dt \\
+    &= 2\pi.
+  \end{align*}
+
+\item[(2)]
+  \begin{align*}
+    d \eta
+    =& d \left( \frac{x dy - y dx}{x^2+y^2} \right) \\
+    =& d \left( \frac{x}{x^2+y^2} \right) \wedge dy
+      + \frac{x}{x^2+y^2} \wedge {d^2y} \\
+      &- d \left( \frac{y}{x^2+y^2} \right) \wedge dx
+      - \frac{y}{x^2+y^2} \wedge {d^2x} \\
+    =& d \left( \frac{x}{x^2+y^2} \right) \wedge dy
+      - d \left( \frac{y}{x^2+y^2} \right) \wedge dx
+      &(d^2 = 0) \\
+    =& \left\{ D_1\left(\frac{x}{x^2+y^2}\right) dx
+      + D_2\left(\frac{y}{x^2+y^2}\right) dy \right\} \wedge dy \\
+      &- \left\{ D_1\left(\frac{x}{x^2+y^2}\right) dx
+      + D_2\left(\frac{y}{x^2+y^2}\right) dy \right\} \wedge dx \\
+    =& D_1\left(\frac{x}{x^2+y^2}\right) dx \wedge dy
+      &(dy \wedge dy = 0) \\
+      &- D_2\left(\frac{y}{x^2+y^2}\right) dy \wedge dx
+      &(dx \wedge dx = 0) \\
+    =& 0
+  \end{align*}
+
+\end{enumerate}
+$\Box$ \\
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  $\eta$ is closed and locally exact, that is,
+  $\eta = dt$ on $\mathbb{R}^2 - L$
+  where $L$ is a half-line issuing from $\mathbf{0}$.
+  $\eta$ is not exact since $\int_{\gamma} \eta = 2\pi \neq 0$.
+
+\item[(2)]
+  \emph{(Poincar\'e's Lemma for $1$-form.)
+  Let $\omega = \sum a_i dx_i$ be defined in an open set $U \subseteq \mathbb{R}^n$.
+  Then $d\omega = 0$ if and only if for each $p \in U$ there is a neighborhood $V \subseteq U$
+  of $p$ and a differentiable function $f: V \to \mathbb{R}^1$ with
+  $df = \omega$ (i.e., $\omega$ is locally exact).} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (f).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
@@ -1719,9 +1842,76 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.22.}
-\emph{...} \\
+\emph{As in Example 10.37, define $\zeta$ in $\mathbb{R}^3-\{\mathbf{0}\}$ by
+\[
+  \zeta = \frac{x dy \wedge dz + y dz \wedge dx + z dx \wedge dy}{r^3}
+\]
+where $r = (x^2+y^2+z^2)^{\frac{1}{2}}$,} \\
 
-\emph{Proof.}
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (f).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (g).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
@@ -1738,7 +1928,39 @@ $\Box$ \\\\
 \textbf{Exercise 10.23.}
 \emph{...} \\
 
-\emph{Proof.}
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
@@ -1953,13 +2175,46 @@ $\Box$ \\\\
 \textbf{Exercise 10.31.}
 \emph{...} \\
 
-\emph{Proof.}
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
 
 \end{enumerate}
 $\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
