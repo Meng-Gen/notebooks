@@ -1718,8 +1718,16 @@ in $\mathbb{R}^2-\{\mathbf{0}\}$.}
 \item[(b)]
 
 \item[(c)]
+  \emph{Take $\Gamma(t) = (a\cos t, b\sin t)$ where $a > 0$, $b > 0$ are fixed.
+  Use part (b) to show that}
+  \[
+    \int_{0}^{2\pi} \frac{ab}{a^2\cos^2 t + b^2 \sin^2 t}dt = 2\pi.
+  \]
+
 \item[(d)]
+
 \item[(e)]
+
 \item[(f)]
   \emph{If $\Gamma$ is any closed $\mathscr{C}'$-curve in $\mathbb{R}^2 - \{ \mathbf{0} \}$,
   prove that
@@ -1765,9 +1773,10 @@ in $\mathbb{R}^2-\{\mathbf{0}\}$.}
       &(dx \wedge dx = 0) \\
     =& 0
   \end{align*}
-
 \end{enumerate}
 $\Box$ \\
+
+
 
 \emph{Note.}
 \begin{enumerate}
@@ -1800,8 +1809,24 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  $\Gamma$ satisfies all conditions described in (b).
+  So
+  \[
+    \int_{\Gamma} \eta = 2\pi.
+  \]
 
+\item[(2)]
+  A direct calculation shows that
+  \begin{align*}
+    2\pi = \int_{\Gamma} \eta
+    &= \int_{\Gamma} \frac{x dy - y dx}{x^2+y^2} \\
+    &= \int_{0}^{2\pi}
+      \frac{a \cos(t) d(b \sin(t)) - b \sin(t) d(a \cos(t))}{(a \cos(t))^2+(b \sin(t))^2} \\
+    &= \int_{0}^{2\pi}
+      \frac{ab (\cos^2 t + \sin^2 t)}{a^2\cos^2 t + b^2 \sin^2 t} \\
+    &= \int_{0}^{2\pi}
+      \frac{ab}{a^2\cos^2 t + b^2 \sin^2 t}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
