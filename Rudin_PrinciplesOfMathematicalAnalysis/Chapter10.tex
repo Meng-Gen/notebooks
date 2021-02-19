@@ -1725,8 +1725,20 @@ in $\mathbb{R}^2-\{\mathbf{0}\}$.}
   \]
 
 \item[(d)]
+  \emph{Show that
+  \[
+    \eta = d\left( \arctan\frac{y}{x} \right)
+  \]
+  in any convex open set in which $x \neq 0$, and that
+  \[
+    \eta = d\left( -\arctan\frac{x}{y} \right)
+  \]
+  in any convex open set in which $y \neq 0$.
+  Explain why this justifies the notation $\eta = d\theta$,
+  in spite of the fact that $\eta$ is not exact in $\mathbb{R}^2 - \{0\}$.}
 
 \item[(e)]
+  \emph{Show that (b) can be derived from (d).}
 
 \item[(f)]
   \emph{If $\Gamma$ is any closed $\mathscr{C}'$-curve in $\mathbb{R}^2 - \{ \mathbf{0} \}$,
@@ -1835,7 +1847,33 @@ $\Box$ \\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
+  In any convex open set in which $x \neq 0$,
+  we have
+  \begin{align*}
+    d\left( \arctan\frac{y}{x} \right)
+    &= \left( D_1\arctan\frac{y}{x} \right) dx
+      + \left( D_2\arctan\frac{y}{x} \right) dy \\
+    &= -\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy \\
+    &= \eta.
+  \end{align*}
+
 \item[(2)]
+  In any convex open set in which $y \neq 0$,
+  we have
+  \begin{align*}
+    d\left( -\arctan\frac{x}{y} \right)
+    &= \left( D_1\left(-\arctan\frac{x}{y}\right) \right) dx
+      + \left( D_2\left(-\arctan\frac{x}{y}\right) \right) dy \\
+    &= -\frac{y}{x^2+y^2} dx + \frac{x}{x^2+y^2} dy \\
+    &= \eta.
+  \end{align*}
+
+\item[(3)]
+  By (1)(2), $\eta$ is locally exact.
+  Note that $\theta_1 = \arctan\frac{y}{x}$
+  and $\theta_2 = -\arctan\frac{x}{y}$
+  cannot be patched together to defined a global $0$-form $\theta$
+  on $\mathbb{R}^2 - \{\mathbf{0}\}$.
 
 \end{enumerate}
 $\Box$ \\
