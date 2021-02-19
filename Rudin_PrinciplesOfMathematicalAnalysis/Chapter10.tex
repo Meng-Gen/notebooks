@@ -2000,13 +2000,124 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.24.}
-\emph{...} \\
+\emph{Let $\omega = \sum a_i(\mathbf{x}) dx_i$ be a $1$-form of class $\mathscr{C}''$
+in a convex open set $E \subseteq \mathbb{R}^n$.
+Assume $d\omega = 0$ and prove that $\omega$ is exact in $E$,
+by completing the following outline:} \\
+
+\emph{Fix $\mathbf{p} \in E$.
+Define
+\[
+  f(\mathbf{x}) = \int_{[\mathbf{p},\mathbf{x}]} \omega
+  \qquad
+  (\mathbf{x} \in E).
+\]
+Apply Stokes' theorem to affine-oriented $2$-simplexs $[\mathbf{p},\mathbf{x},\mathbf{y}]$ in $E$.
+Deduce that
+\[
+  f(\mathbf{y}) - f(\mathbf{x})
+  = \sum_{i=1}^{n}(y_i - x_i) \int_{0}^{1} a_i((1-t)\mathbf{x} + t\mathbf{y}) dt
+\]
+for $\mathbf{x} \in E$, $\mathbf{y} \in E$.
+Hence $(D_i f)(\mathbf{x}) = a_i(\mathbf{x})$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Fix $\mathbf{p} \in E$.
+  Define
+  \[
+    f(\mathbf{x}) = \int_{[\mathbf{p},\mathbf{x}]} \omega
+    \qquad
+    (\mathbf{x} \in E).
+  \]
 
+\item[(2)]
+  Given any $\mathbf{x} \in E$, $\mathbf{y} \in E$, and $\mathbf{x} \neq \mathbf{y}$.
+  The affine-oriented $2$-simplexs $\Psi = [\mathbf{p},\mathbf{x},\mathbf{y}]$ is in $E$
+  by the convexity of $E$.
+  (If $E$ is open but not convex,
+  we can show that $\omega = df$ \textbf{\emph{locally}} as the note in Exercise 10.21(a).
+  That is why we say that $\omega$ is locally exact.
+  The proof is exactly the same.)
+
+\item[(3)]
+  Note that
+  \[
+    \partial \Psi
+    = \partial [\mathbf{p},\mathbf{x},\mathbf{y}]
+    = [\mathbf{x},\mathbf{y}] - [\mathbf{p},\mathbf{y}] + [\mathbf{p},\mathbf{x}].
+  \]
+  The Stokes' theorem (Theorem 10.33) implies that
+  \begin{align*}
+    \int_{\Psi} d\omega
+    = \int_{\partial \Psi} \omega
+    &\Longleftrightarrow
+    \int_{\Psi} 0
+    = \int_{[\mathbf{x},\mathbf{y}]} \omega
+      - \int_{[\mathbf{p},\mathbf{y}]} \omega
+      + \int_{[\mathbf{p},\mathbf{x}]} \omega \\
+    &\Longleftrightarrow
+    0 = \int_{[\mathbf{x},\mathbf{y}]} \omega - f(\mathbf{y}) + f(\mathbf{x}) \\
+    &\Longleftrightarrow
+    f(\mathbf{y}) - f(\mathbf{x}) = \int_{[\mathbf{x},\mathbf{y}]} \omega.
+  \end{align*}
+
+\item[(4)]
+  Define $\gamma: [0,1] \to E$ by
+  \begin{align*}
+    \gamma(t)
+    &= \mathbf{x} + t(\mathbf{y}-\mathbf{x}) \\
+    &= \sum_{i=1}^{n} x_i + t(y_i - x_i)
+  \end{align*}
+  (where $\mathbf{x} = (x_1, \ldots, x_n)$ and $\mathbf{y} = (y_1, \ldots, y_n)$).
+  Hence $[0,1]$ is the parameter domain of $\Psi$ with respect to $\gamma$.
+  So
+  \begin{align*}
+    \int_{[\mathbf{x},\mathbf{y}]} \omega
+    &= \int_{0}^{1} \sum_{i=1}^{n} a_i(\gamma(t))
+      \frac{\partial (x_i + t(y_i - x_i))}{\partial t} dt \\
+    &= \int_{0}^{1} \sum_{i=1}^{n} a_i(\mathbf{x} + t(\mathbf{y}-\mathbf{x}))(y_i - x_i) dt \\
+    &= \sum_{i=1}^{n} (y_i - x_i) \int_{0}^{1} a_i(\mathbf{x} + t(\mathbf{y}-\mathbf{x})) dt.
+  \end{align*}
+  Thus,
+  \[
+    f(\mathbf{y}) - f(\mathbf{x})
+    = \sum_{i=1}^{n} (y_i - x_i) \int_{0}^{1} a_i(\mathbf{x} + t(\mathbf{y}-\mathbf{x})) dt.
+  \]
+
+\item[(5)]
+  Note that
+  \begin{align*}
+    f(\mathbf{x} + h \mathbf{e}_j) - f(\mathbf{x})
+    &= \sum_{i=1}^{n} ((x_i + h\delta_{ij}) - x_i)
+      \int_{0}^{1} a_i(\mathbf{x} + t((\mathbf{x} + h \mathbf{e}_j)-\mathbf{x})) dt \\
+    &= \sum_{i=1}^{n} h\delta_{ij}
+      \int_{0}^{1} a_i(\mathbf{x} + th \mathbf{e}_j) dt \\
+    &= h \int_{0}^{1} a_j(\mathbf{x} + th \mathbf{e}_j) dt.
+  \end{align*}
+  (Here $\delta_{ij}$ is the Kronecker delta.)
+  So
+  \begin{align*}
+    (D_j f)(\mathbf{x})
+    &= \lim_{h \to 0}
+      \frac{f(\mathbf{x} + h \mathbf{e}_j) - f(\mathbf{x})}{h} \\
+    &= \lim_{h \to 0}
+      \int_{0}^{1} a_j(\mathbf{x} + th \mathbf{e}_j) dt \\
+    &= \int_{0}^{1} a_j(\mathbf{x}) dt
+      &(a_j \in \mathscr{C}'') \\
+    &= a_j(\mathbf{x}).
+  \end{align*}
+  Thus,
+  \[
+    df
+    = \sum_{j=1}^{n} (D_j f)(\mathbf{x}) dx_j
+    = \sum_{j=1}^{n} a_j(\mathbf{x}) dx_j
+    = \omega,
+  \]
+  or $\omega$ is exact in $E$.
 \end{enumerate}
 $\Box$ \\\\
 
