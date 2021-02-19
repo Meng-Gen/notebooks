@@ -2265,13 +2265,76 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.28.}
-\emph{...} \\
+\emph{Fix $b > a > 0$, define
+\[
+  \Phi(r,\theta) = (r\cos\theta, r\sin\theta)
+\]
+for $a \leq r \leq b$, $0 \leq \theta \leq 2\pi$.
+(The range of $\Phi$ is an annulus in $\mathbb{R}^2$.)
+Put $\omega = x^3 dy$,
+and compute both
+\[
+  \int_{\Phi} d\omega
+  \qquad
+  \text{and}
+  \qquad
+  \int_{\partial\Phi} \omega
+\]
+to verify that they are equal.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Note that
+  \[
+    \frac{\partial(x,y)}{\partial(r,\theta)}
+    =
+    \det
+    \begin{bmatrix}
+      \cos\theta & -r\sin\theta \\
+      \sin\theta & r\cos\theta
+    \end{bmatrix}
+    = r.
+  \]
+  So
+  \begin{align*}
+    \int_{\Phi} d\omega
+    &= \int_{\Phi} 3x^2 dx \wedge dy
+      &(dy \wedge dy = 0) \\
+    &= \int_{[a,b]\times[0,2\pi]} 3(r\cos\theta)^2
+      \frac{\partial(x,y)}{\partial(r,\theta)} dr d\theta \\
+    &= \int_{a}^{b} \int_{0}^{2\pi} 3 r^3 (\cos\theta)^2 dr d\theta \\
+    &= \frac{3\pi}{4}(b^4-a^4).
+  \end{align*}
 
+\item[(2)]
+  Similar to Exercise 10.21(b),
+  write
+  \[
+    \partial \Phi = \Gamma - \gamma,
+  \]
+  where $\Gamma(t) = (b\cos t,b\sin t)$ on $[0,2\pi]$
+  and $\gamma(t) = (a\cos t,a\sin t)$ on $[0,2\pi]$.
+  Hence
+  \begin{align*}
+    \int_{\partial\Phi} \omega
+    &= \int_{\Gamma} \omega - \int_{\gamma} \omega \\
+    &= \int_{\Gamma} x^3 dy - \int_{\gamma} x^3 dy \\
+    &= \int_{[0,2\pi]} (b\cos\theta)^3 \frac{\partial y}{\partial \theta}d\theta
+      - \int_{[0,2\pi]} (a\cos\theta)^3 \frac{\partial y}{\partial \theta}d\theta \\
+    &= \int_{0}^{2\pi} b^4 (\cos\theta)^4 d\theta
+      - \int_{0}^{2\pi} a^4 (\cos\theta)^4 d\theta \\
+    &= \frac{3\pi}{4}(b^4-a^4).
+  \end{align*}
+
+\item[(3)]
+  \[
+    \int_{\Phi} d\omega
+    = \int_{\partial\Phi} \omega
+    = \frac{3\pi}{4}(b^4-a^4).
+  \]
 \end{enumerate}
 $\Box$ \\\\
 
