@@ -2073,7 +2073,7 @@ Hence $(D_i f)(\mathbf{x}) = a_i(\mathbf{x})$.} \\
     &= \sum_{i=1}^{n} x_i + t(y_i - x_i)
   \end{align*}
   (where $\mathbf{x} = (x_1, \ldots, x_n)$ and $\mathbf{y} = (y_1, \ldots, y_n)$).
-  Hence $[0,1]$ is the parameter domain of $\Psi$ with respect to $\gamma$.
+  Hence $[0,1]$ is the parameter domain of $[\mathbf{x},\mathbf{y}]$ with respect to $\gamma$.
   So
   \begin{align*}
     \int_{[\mathbf{x},\mathbf{y}]} \omega
@@ -2128,13 +2128,70 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.25.}
-\emph{...} \\
+\emph{Assume $\omega$ is a $1$-form in an open set $E \subseteq \mathbb{R}^n$
+such that
+\[
+  \int_{\gamma} \omega = 0
+\]
+for every closed curve $\gamma$ in $E$, of class $\mathscr{C}'$.
+Prove that $\omega$ is exact in $E$,
+by imitating part of the argument sketched in Exercise 10.24.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Assume that $E$ is a \textbf{connected} open subset of $\mathbb{R}^n$.
+  Show that $\omega$ is exact in $E$
+  if $\int_{\gamma} \omega = 0$
+  for every closed curve $\gamma$ in $E$, of class $\mathscr{C}'$.}
 
+\item[(2)]
+  Fix $\mathbf{p} \in E$.
+  Define
+  \[
+    f(\mathbf{x}) = \int_{[\mathbf{p},\mathbf{x}]} \omega
+    \qquad
+    (\mathbf{x} \in E).
+  \]
+  It is well-defined since $E$ is connected and
+  $\int_{\gamma} \omega = 0$ for every closed curve $\gamma$ in $E$.
+
+\item[(3)]
+  Given any $\mathbf{x} \in E$, $\mathbf{y} \in E$, and $\mathbf{x} \neq \mathbf{y}$.
+  Let
+  \[
+    \gamma = [\mathbf{x},\mathbf{y}] - [\mathbf{p},\mathbf{y}] + [\mathbf{p},\mathbf{x}]
+  \]
+  be a closed curve in $E$.
+  Hence,
+  \begin{align*}
+    0
+    &= \int_{\gamma} \omega
+      &(\text{Assumption}) \\
+    &= \int_{[\mathbf{x},\mathbf{y}]} \omega
+      - \int_{[\mathbf{p},\mathbf{y}]} \omega
+      + \int_{[\mathbf{p},\mathbf{x}]} \omega \\
+    &= \int_{[\mathbf{x},\mathbf{y}]} \omega - f(\mathbf{y}) + f(\mathbf{x}).
+  \end{align*}
+  So
+  \begin{align*}
+    f(\mathbf{y}) - f(\mathbf{x}) = \int_{[\mathbf{x},\mathbf{y}]} \omega
+  \end{align*}
+
+\item[(4)]
+  Similar to (4)(5) in the proof of Exercise 10.24, we have $df = \omega$.
+  So the statement in (1) is proved.
+  In general, we can define each $f_{\alpha}$
+  on each connected component $E_{\alpha}$ (which is open) of $E$
+  such that $d f_{\alpha} = \omega$ on $E_{\alpha}$.
+  Take
+  \[
+    f|_{E_{\alpha}} = f_{\alpha}
+  \]
+  on $E$.
+  Hence, $df = \omega$ on the whole $E$.
 \end{enumerate}
 $\Box$ \\\\
 
