@@ -2202,15 +2202,44 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.26.}
-\emph{...} \\
+\emph{Assume $\omega$ is a $1$-form in $\mathbb{R}^3 - \{\mathbf{0}\}$,
+of class $\mathscr{C}'$ and $d\omega = 0$.
+Prove that $\omega$ is exact in $\mathbb{R}^3 - \{\mathbf{0}\}$.
+(Hint: Every closed continuously differentiable curve in $\mathbb{R}^3 - \{\mathbf{0}\}$
+is the boundary of a $2$-surface in $\mathbb{R}^3 - \{\mathbf{0}\}$.
+Apply Stokes' theorem and Exercise 10.25.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Let $E = \mathbb{R}^3 - \{\mathbf{0}\}$.
+  By Exercise 10.25,
+  it suffices to show that
+  \[
+    \int_{\gamma} \omega = 0
+  \]
+  for every closed curve $\gamma$ in $E$, of class $\mathscr{C}'$.
 
+\item[(2)]
+  Intuitively, every closed continuously differentiable curve in $\mathbb{R}^3 - \{\mathbf{0}\}$
+  is the boundary of a $2$-surface in $\mathbb{R}^3 - \{\mathbf{0}\}$.
+  So there is some $2$-surface $\Psi$ such that $\partial \Psi = \gamma$.
+  The Stokes' theorem (Theorem 10.33) implies that
+  \[
+    \int_{\gamma} \omega
+    = \int_{\partial \Psi} \omega
+    = \int_{\Psi} d\omega
+    = \int_{\Psi} 0
+    = 0.
+  \]
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+% Seifert surface
 
 
 
