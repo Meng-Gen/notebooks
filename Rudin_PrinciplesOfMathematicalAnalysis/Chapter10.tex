@@ -32,6 +32,7 @@
 % https://www.researchgate.net/publication/248817777_Partitions_of_Unity_for_Countable_Covers
 % https://www.math.lsu.edu/~lawson/Chapter4.pdf
 % https://www2.math.upenn.edu/~ryrogers/HW7-solutions.pdf
+% https://www.math.ucla.edu/~tao/preprints/forms.pdf
 
 
 
@@ -41,7 +42,15 @@
 
 
 \textbf{Exercise 10.1.}
-\emph{...} \\
+\emph{Let $H$ be a compact convex set in $\mathbb{R}^k$, with nonempty interior.
+Let $f \in \mathscr{C}(H)$, put $f(\mathbf{x}) = 0$ in the complement of $H$,
+and define $\int_{H} f$ as in Definition 10.3.
+Prove that $\int_{H} f$ is independent of the order in which the $k$ integrations are carried out.
+(Hint: Approximate $f$ by functions that are continuous on $\mathbb{R}^k$
+and whose supports are in $H$,
+as was done in Example 10.4.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
@@ -91,9 +100,137 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.3.}
-\emph{...} \\
+\begin{enumerate}
+\item[(a)]
+  \emph{If $\mathbf{F}$ is as in Theorem 10.7,
+  put $\mathbf{A} = \mathbf{F}'(\mathbf{0})$,
+  $\mathbf{F}_1(\mathbf{x}) = \mathbf{A}^{-1} \mathbf{F}(\mathbf{x})$.
+  Then $\mathbf{F}_1(\mathbf{0}) = \mathbf{I}$.
+  Show that
+  \[
+    \mathbf{F}_1(\mathbf{x})
+    = \mathbf{G}_{n} \circ \mathbf{G}_{n-1} \circ \cdots \circ \mathbf{G}_1(\mathbf{x})
+  \]
+  in some neighborhood of $\mathbf{0}$,
+  for certain primitive mappings $\mathbf{G}_{1}, \ldots, \mathbf{G}_{n}$.
+  This gives another version of Theorem 10.7:}
+  \[
+    \mathbf{F}(\mathbf{x})
+    =
+    \mathbf{F}'(\mathbf{0})
+    \mathbf{G}_{n} \circ \mathbf{G}_{n-1} \circ \cdots \circ \mathbf{G}_1(\mathbf{x}).
+  \]
 
-\emph{Proof.}
+\item[(b)]
+  \emph{...} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Suppose $\mathbf{F}$ is a $\mathscr{C}'$-mapping of an open set $E \subseteq \mathbb{R}^n$
+  into $\mathbb{R}^n$, $\mathbf{0} \in E$, $\mathbf{F}(\mathbf{0}) = \mathbf{0}$,
+  and $\mathbf{F}'(\mathbf{0})$ is invertible.
+
+\item[(2)]
+  Similar to the proof of Theorem 10.7.
+  Put $\mathbf{F}_1 = \mathbf{F}$.
+
+\item[(3)]
+  As $m = 1$, there is an open neighborhood $V_1 \subseteq E$ of $\mathbf{0}$
+  such that
+  $\mathbf{F}_1(\mathbf{0}) = (\mathbf{F}'(\mathbf{0}))^{-1} \mathbf{F}(\mathbf{0}) = \mathbf{0}$,
+  $\mathbf{F}'_1(\mathbf{0}) = \mathbf{I}$ is invertible, and
+  \[
+    \mathbf{F}_1(\mathbf{x}) = \sum_{i=1}^{n} \alpha_i(\mathbf{x}) \mathbf{e}_i,
+  \]
+  where $\alpha_1, \ldots, \alpha_n$ are real $\mathscr{C}'$-functions in $V_1$.
+  Hence
+  \[
+    \mathbf{F}'_1(\mathbf{0})\mathbf{e}_1
+    = \sum_{i=1}^{n} (D_1 \alpha_i)(\mathbf{0}) \mathbf{e}_i.
+  \]
+  Note that $(D_1 \alpha_1)(\mathbf{0}) = 1 \neq 0$, and we might pick $B_1 = \mathbf{I}$.
+  Thus we can define
+  \[
+    \mathbf{G}_1(\mathbf{x})
+    = \mathbf{x} + [\alpha_1(\mathbf{x}) - x_1] \mathbf{e}_1
+    \qquad
+    (\mathbf{x} \in V_1).
+  \]
+  Then $\mathbf{G}_1 \in \mathscr{C}'(V_1)$, $\mathbf{G}_1$ is primitive,
+  and $\mathbf{G}'_1(\mathbf{0}) = \mathbf{I}$ is invertible.
+
+\item[(4)]
+  Now we make the induction hypothesis for $1 \leq m \leq n-1$.
+
+\item[(5)]
+  Since $\mathbf{G}'_{m}(\mathbf{0}) = \mathbf{I}$ is invertible,
+  the inverse function theorem shows that there is an open set $U_{m}$,
+  with $\mathbf{0} \in U_{m} \subseteq V_{m}$, such that
+  $\mathbf{G}_m$ is an injective mapping of $U_{m}$ onto a neighborhood $V_{m+1}$ of $\mathbf{0}$,
+  in which $\mathbf{G}_m^{-1} \in \mathscr{C}'(V_{m+1})$.
+  Define $\mathbf{F}_{m+1}$ by
+  \[
+    \mathbf{F}_{m+1}(\mathbf{y}) = \mathbf{F}_{m} \circ \mathbf{G}_m^{-1}(\mathbf{y})
+    \qquad
+    (\mathbf{y} \in V_{m+1}).
+  \]
+  Then $\mathbf{F}_{m+1} \in \mathscr{C}'(V_{m+1})$, $\mathbf{F}_m(\mathbf{0}) = \mathbf{0}$,
+  and $\mathbf{F}'_{m+1}(\mathbf{0}) = \mathbf{I}$ is invertible by the chain rule
+  and the inverse function theorem.
+  So
+  \[
+    \mathbf{F}_{m+1}(\mathbf{x})
+    = P_m \mathbf{x}
+      + \sum_{i=m+1}^{n} \alpha_i(\mathbf{x}) \mathbf{e}_i,
+  \]
+  where $\alpha_1, \ldots, \alpha_n$ are real $\mathscr{C}'$-functions in $V_{m+1}$.
+  Hence
+  \[
+    \mathbf{F}'_{m+1}(\mathbf{0})\mathbf{e}_{m+1}
+    = \sum_{i=m+1}^{n} (D_{m+1} \alpha_i)(\mathbf{0}) \mathbf{e}_i.
+  \]
+  Note that $(D_{m+1} \alpha_{m+1})(\mathbf{0}) = 1 \neq 0$,
+  and we might pick $B_{m+1} = \mathbf{I}$.
+  Thus we can define
+  \[
+    \mathbf{G}_{m+1}(\mathbf{x})
+    = \mathbf{x} + [\alpha_{m+1}(\mathbf{x}) - x_{m+1}] \mathbf{e}_{m+1}
+    \qquad
+    (\mathbf{x} \in V_{m+1}).
+  \]
+  Then $\mathbf{G}_{m+1} \in \mathscr{C}'(V_{m+1})$, $\mathbf{G}_{m+1}$ is primitive,
+  and $\mathbf{G}'_{m+1}(\mathbf{0}) = \mathbf{I}$ is invertible.
+  Our induction hypothesis holds therefore with $m+1$ in place of $m$.
+
+\item[(6)]
+  Note that
+  \[
+    \mathbf{F}_{m}(\mathbf{x}) = \mathbf{F}_{m+1}(\mathbf{G}_{m}(\mathbf{x}))
+    \qquad
+    (\mathbf{x} \in U_{m}).
+  \]
+  If we apply this with $m = 1, \ldots, n-1$, we successively obtain
+  \[
+    \mathbf{F}_1
+    = \mathbf{F}_{n} \circ \mathbf{G}_{n-1} \circ \cdots \circ \mathbf{G}_1
+  \]
+  in some open neighborhood of $\mathbf{0}$.
+  Note that $\mathbf{F}_{n}$ is primitive since
+  \[
+    \mathbf{F}_{n}(\mathbf{x})
+    = P_{n-1} \mathbf{x} + \alpha_n(\mathbf{x}) \mathbf{e}_n.
+  \]
+  This completes the proof.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
 \item[(2)]
