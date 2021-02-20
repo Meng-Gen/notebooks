@@ -2958,8 +2958,33 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  The divergence theorem (Theorem 10.51) implies that
+  \begin{align*}
+    &\int_{\Omega} (\nabla \cdot \mathbf{F}) dV
+    = \int_{\partial\Omega} (\mathbf{F} \cdot \mathbf{n}) dA \\
+    \Longrightarrow&
+    \int_{\Omega} [g \nabla^2 h + (\nabla g) \cdot (\nabla h)] dV
+    = \int_{\partial\Omega} g \underbrace{\nabla h \cdot \mathbf{n}}_{=\frac{\partial h}{\partial n}} dA.
+  \end{align*}
 
+\item[(2)]
+  Green's identities are a set of three identities in vector calculus
+  relating the bulk with the boundary of a region on which differential operators act.
+  \emph{(Green's third identity.)
+  Assume that $h$ is harmonic in $E$.
+  If $G(\mathbf{x},\mathbf{x}_0)$ is the Green's function,
+  then}
+  \[
+    h(\mathbf{x}_0)
+    = \int_{\partial \Omega}
+      \left[ h(\mathbf{x}) \frac{\partial G(\mathbf{x},\mathbf{x}_0)}{\partial n}
+      - G(\mathbf{x},\mathbf{x}_0) \frac{\partial h(\mathbf{x})}{\partial n} \right] dA.
+  \]
+  For example,
+  \[
+    G(\mathbf{x},\mathbf{x}_0) = -\frac{1}{4\pi\norm{\mathbf{x},\mathbf{x}_0}}
+  \]
+  in $\mathbb{R}^3$.
 \end{enumerate}
 $\Box$ \\
 
