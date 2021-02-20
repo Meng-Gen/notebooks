@@ -373,42 +373,48 @@ is in some neighborhood of $(0,0)$.} \\
   \begin{align*}
     J_{\mathbf{G}_1}(x,y)
     &=
-    \begin{bmatrix}
+    \det\begin{bmatrix}
       e^x \cos y & -e^x \sin y \\
       0 & 1
-    \end{bmatrix} \\
+    \end{bmatrix}
+    = e^x \cos y \\
     J_{\mathbf{G}_2}(x,y)
     &=
-    \begin{bmatrix}
+    \det\begin{bmatrix}
       1 & 0 \\
       \tan y & (1+x)\sec^2 y
-    \end{bmatrix} \\
+    \end{bmatrix}
+    = (1+x)\sec^2 y \\
     J_{\mathbf{F}}(x,y)
     &=
-    \begin{bmatrix}
+    \det\begin{bmatrix}
       e^x \cos y & -e^x \sin y \\
       e^x \sin y & e^x \cos y
-    \end{bmatrix},
+    \end{bmatrix}
+    = e^{2x},
   \end{align*}
   \begin{align*}
     J_{\mathbf{G}_1}(0,0)
     &=
-    \begin{bmatrix}
+    \det\begin{bmatrix}
       1 & 0 \\
       0 & 1
-    \end{bmatrix} \\
-     J_{\mathbf{G}_2}(0,0)
+    \end{bmatrix}
+    = 1 \\
+    J_{\mathbf{G}_2}(0,0)
     &=
-    \begin{bmatrix}
+    \det\begin{bmatrix}
       1 & 0 \\
       0 & 1
-    \end{bmatrix} \\
-     J_{\mathbf{F}}(0,0)
+    \end{bmatrix}
+    = 1 \\
+    J_{\mathbf{F}}(0,0)
     &=
-    \begin{bmatrix}
+    \det\begin{bmatrix}
       1 & 0 \\
       0 & 1
-    \end{bmatrix}.
+    \end{bmatrix}
+    = 1.
   \end{align*}
 
 \item[(4)]
@@ -938,7 +944,21 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.9.}
-\emph{...} \\
+\emph{Define $(x,y) = T(r,\theta)$ one the rectangle
+\[
+  0 \leq r \leq a,
+  \qquad
+  0 \leq \theta \leq 2\pi
+\]
+by the equations
+\[
+  x = r \cos\theta,
+  \qquad
+  y = r \sin\theta.
+\]
+Show that $T$ maps this rectangle onto the closed disc $D$ with center at $(0,0)$ and radius $a$,
+that $T$ is one-to-one in the interior of the rectangle,
+and that $J_T(r,\theta) = r$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
