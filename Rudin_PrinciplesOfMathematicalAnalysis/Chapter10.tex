@@ -122,7 +122,10 @@ $\Box$ \\\\
   \]
 
 \item[(b)]
-  \emph{...} \\
+  \emph{Prove that the mapping $(x,y) \mapsto (y,x)$ of $\mathbb{R}^2$ onto $\mathbb{R}^2$
+  is not the composition of any two primitive mappings,
+  in any neighborhood of the origin.
+  (This shows that the flips $B_i$ cannot be omitted from the statement of Theorem 10.7.)} \\
 \end{enumerate}
 
 
@@ -233,7 +236,81 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  For $(x,y) \in \mathbb{R}^2$, define
+  \[
+    \mathbf{F}(x,y) = (y,x).
+  \]
+
 \item[(2)]
+  (Reductio ad absurdum)
+  If $\mathbf{F} = \mathbf{G}_2 \circ \mathbf{G}_1$ for some primitive mappings
+  $\mathbf{G}_{i}$ ($i = 1,2$) in some neighborhood $V_{i}$ of the origin,
+  $\mathbf{G}_{i}(\mathbf{0}) = \mathbf{0}$ and $\mathbf{G}_{i}'$ is invertible,
+  then we may assume that
+  \[
+    \mathbf{G}_1(x,y) = (x, g_1(x,y))
+    \qquad
+    \text{and}
+    \qquad
+    \mathbf{G}_2(x,y) = (g_2(x,y),y).
+  \]
+  Here the case $\mathbf{G}_1(x,y) = (g_1(x,y),y)$ and $\mathbf{G}_2(x,y) = (x,g_2(x,y))$
+  is similar to the above case.
+  Besides, $\mathbf{G}_1(x,y) = (x,g_1(x,y))$ and $\mathbf{G}_2(x,y) = (x,g_2(x,y))$
+  implies that
+  \[
+    \mathbf{G}_2 \circ \mathbf{G}_1(x,y) = (x,g_2(x,g_1(x,y)))
+    \neq (y,x) = \mathbf{F}(x,y).
+  \]
+  Same reason for
+  $\mathbf{G}_1(x,y) = (g_1(x,y),y)$ and $\mathbf{G}_2(x,y) = (g_2(x,y),y)$.
+
+\item[(3)]
+  Note that
+  \[
+    \mathbf{F}'(\mathbf{0})
+    =
+    \begin{bmatrix}
+      0 & 1 \\
+      1 & 0
+    \end{bmatrix}
+  \]
+  Since
+  \[
+    \mathbf{F}'(\mathbf{0})
+    = \mathbf{G}_2'(\mathbf{G}_1(\mathbf{0})) \mathbf{G}_1'(\mathbf{0})
+    = \mathbf{G}_2'(\mathbf{0}) \mathbf{G}_1'(\mathbf{0}),
+  \]
+  we have
+  \begin{align*}
+    \begin{bmatrix}
+      0 & 1 \\
+      1 & 0
+    \end{bmatrix}
+    &=
+    \begin{bmatrix}
+      D_1 g_2(0,0) & D_2 g_2(0,0) \\
+      0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & 0 \\
+      D_1 g_1(0,0) & D_2 g_1(0,0)
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+      * & * \\
+      D_1 g_1(0,0) & D_2 g_1(0,0)
+    \end{bmatrix}.
+  \end{align*}
+  So $D_1 g_1(0,0) = 1$ and $D_2 g_1(0,0) = 0$, and thus
+  $\mathbf{G}_1'(\mathbf{0})
+  =
+  \begin{bmatrix}
+    1 & 0 \\
+    1 & 0
+  \end{bmatrix}$
+  is not invertible, which is absurd.
+
 
 \end{enumerate}
 $\Box$ \\\\
