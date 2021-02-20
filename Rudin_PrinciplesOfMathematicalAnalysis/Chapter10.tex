@@ -3032,8 +3032,42 @@ $\Box$ \\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{(The divergence theorem in $\mathbb{R}^2$.)
+  If $\mathbf{F} = F_1 \mathbf{e}_1 + F_2 \mathbf{e}_2$ is a vector field of class
+  $\mathscr{C}'$ in an open set $E \subseteq \mathbb{R}^2$,
+  and if $\Omega$ is a closed subset of $E$ with positively oriented boundary $\partial\Omega$
+  then}
+  \[
+    \int_{\Omega} (\nabla \cdot \mathbf{F}) dA
+    = \int_{\partial\Omega} (\mathbf{F} \cdot \mathbf{n}) ds.
+  \]
+  Define a $1$-form by
+  \[
+    \omega_{\mathbf{F}} = F_1 dy - F_2 dx.
+  \]
+  So
+  \[
+    d\omega_{\mathbf{F}}
+    = (\nabla \cdot \mathbf{F})dx \wedge dy
+    = (\nabla \cdot \mathbf{F})dA.
+  \]
+  Hence the Stokes' theorem (Theorem 10.33) implies that
+  \[
+    \int_{\Omega} (\nabla \cdot \mathbf{F}) dA
+    = \int_{\Omega} d\omega_{\mathbf{F}}
+    = \int_{\partial\Omega} \omega_{\mathbf{F}}
+    = \int_{\partial\Omega} (\mathbf{F} \cdot \mathbf{n}) ds.
+  \]
 
+\item[(2)]
+  Note that
+  \[
+    \nabla \cdot \mathbf{F} = g \nabla^2 h + (\nabla g) \cdot (\nabla h)
+  \]
+  is also true in $\mathbb{R}^2$.
+  Similar to (b), two Green's identities are also true in $\mathbb{R}^2$.
+  (In $\mathbb{R}^1$, the Green's first identity is
+  the integration by parts (Theorem 6.22).)
 \end{enumerate}
 $\Box$ \\\\
 
