@@ -926,10 +926,11 @@ to an integral over $I^2$ and thus compute $\alpha$.} \\
   \]
 
 \item[(4)]
+  By Example 10.4 and Theorem 10.9, we have
   \begin{align*}
     \int_{H} e^{x-y} dx \: dy
-    &= \int_{[0,1]^2} e^{(1+2u+v)-(1+u+3v)} \abs{J_T} du \: dv \\
-    &= 5 \int_{[0,1]^2} e^{u-2v} du \: dv \\
+    &= \int_{I^2} e^{(1+2u+v)-(1+u+3v)} \abs{J_T} du \: dv \\
+    &= 5 \int_{I^2} e^{u-2v} du \: dv \\
     &= 5 \left\{ \int_{0}^{1} e^u du \right\}\left\{ \int_{0}^{1} e^{-2v} dv \right\}
       &(\text{Theorem 10.2}) \\
     &= \frac{5}{2}(e-1)(1-e^{-2}).
@@ -1079,7 +1080,7 @@ shows that the volume of $Q^k$ is $\frac{1}{k!}$.} \\
   \]
 
 \item[(2)]
-  By Exercise 10.12, Example 10.4, Theorem 10.9 and Theorems 8.20, we have
+  By Exercise 10.12, Example 10.4 and Theorems 10.9, we have
   \begin{align*}
     \int_{Q^k} x_1^{r_1} \cdots x_k^{r_k} d\mathbf{x}
     &=
@@ -1095,11 +1096,13 @@ shows that the volume of $Q^k$ is $\frac{1}{k!}$.} \\
       \prod_{i=1}^{k} u_i^{r_i} (1-u_i)^{k-i+\sum_{j=i+1}^{k}r_j} d\mathbf{u} \\
     &=
     \prod_{i=1}^{k}
-      \int_{0}^{1} u_i^{r_i} (1-u_i)^{k-i+\sum_{j=i+1}^{k}r_j} du_i \\
+      \int_{0}^{1} u_i^{r_i} (1-u_i)^{k-i+\sum_{j=i+1}^{k}r_j} du_i
+      & (\text{Theorem 10.2}) \\
     &=
     \prod_{i=1}^{k}
       \frac{r_i! \left(k-i+\sum_{j=i+1}^{k}r_j\right)!}
-        {\left(k-i+1+\sum_{j=i}^{k}r_j\right)!} \\
+        {\left(k-i+1+\sum_{j=i}^{k}r_j\right)!}
+      & (\text{Theorem 8.20}) \\
     &=
     \frac{r_1! \cdots r_k!}{(k + r_1 + \cdots + r_k)!}.
   \end{align*}
