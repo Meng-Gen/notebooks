@@ -2862,9 +2862,37 @@ and consider the vector field}
   is the so-called ``Laplacian'' of $h$.}
 
 \item[(b)]
-\item[(c)]
-\item[(d)]
+  \emph{If $\Omega$ is a closed subset of $E$ with positively oriented boundary $\partial \Omega$
+  (as in Theorem 10.51), prove that
+  \[
+    \int_{\Omega} [ g\nabla^2 h + (\nabla g)\cdot(\nabla h) ] dV
+    = \int_{\partial \Omega} g \frac{\partial h}{\partial n} dA
+  \]
+  where (as is customary) we have written $\frac{\partial h}{\partial n}$
+  in place of $(\nabla h) \cdot \mathbf{n}$.
+  (Thus $\frac{\partial h}{\partial n}$ is the directional derivative of $h$
+  in the direction of the outward normal to $\partial \Omega$,
+  the so-called \textbf{normal derivative} of $h$.)
+  Interchange $g$ and $h$,
+  substract the resulting formula from the first one, to obtain
+  \[
+    \int_{\Omega} ( g\nabla^2 h - h \nabla^2 g) dV
+    = \int_{\partial \Omega}
+      \left( g \frac{\partial h}{\partial n} - h \frac{\partial g}{\partial n} \right) dA.
+  \]
+  These two formulas are usually called \textbf{Green's identities}.}
 
+\item[(c)]
+  \emph{Assume that $h$ is \textbf{harmonic} in $E$;
+  this means that $\nabla^2 h = 0$.
+  Take $g = 1$ and conclude that
+  \[
+    \int_{\partial \Omega} \frac{\partial h}{\partial n} dA = 0.
+  \]
+  Take $g = h$, and conclude that $h = 0$ in $\Omega$ if $h = 0$ on $\partial \Omega$.}
+
+\item[(d)]
+  \emph{Show that Green's identities are also valid in $\mathbb{R}^2$.} \\
 \end{enumerate}
 
 
@@ -2916,10 +2944,38 @@ $\Box$ \\
 
 
 \emph{Proof of (c).}
+Assume $\nabla^2 h = 0$.
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Take $g = 1$ in
+  \[
+    \int_{\Omega}[ g\nabla^2 h + (\nabla g)\cdot(\nabla h) ] dV
+    = \int_{\partial \Omega} g \frac{\partial h}{\partial n} dA
+  \]
+  to get the conclusion.
+  (Here $\nabla g = \mathbf{0}$ as $g = 1$.)
 
+\item[(2)]
+  Take $g = h$ in
+  \[
+    \int_{\Omega}[ g\nabla^2 h + (\nabla g)\cdot(\nabla h) ] dV
+    = \int_{\partial \Omega} g \frac{\partial h}{\partial n} dA
+  \]
+  to get
+  \[
+    \int_{\Omega} |\nabla h|^2 dV
+    = \int_{\partial \Omega} h \frac{\partial h}{\partial n} dA
+    = 0
+  \]
+  (since $h = 0$ on $\partial\Omega$).
+  Since $h \in \mathscr{C}'(\Omega)$, Exercise 6.2 implies that
+  $|\nabla h|^2 = 0$ on $\Omega$.
+  So $D_1 h = D_2 h = D_3 h = 0$ on $\Omega$.
+  Since $h \in \mathscr{C}'(\Omega)$, Theorem 9.21 implies that
+  $h = \mathbf{0}$ on $\Omega$, or
+  $h$ is locally constant in $\Omega$ (Exercise 9.9).
+  Note that $h = 0$ globally on $\partial \Omega$,
+  and thus $h = 0$ globally on $\Omega$.
 \end{enumerate}
 $\Box$ \\
 
