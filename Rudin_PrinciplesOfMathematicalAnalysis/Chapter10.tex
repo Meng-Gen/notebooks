@@ -1054,13 +1054,55 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.13.}
-\emph{...} \\
+\emph{Let $r_1, \ldots, r_k$ be nonnegative integers, and prove that
+\[
+  \int_{Q^k} x_1^{r_1} \cdots x_k^{r_k} d\mathbf{x}
+  =
+  \frac{r_1! \cdots r_k!}{(k+r_1+\cdots+r_k)!}
+\]
+(Hint: Use Exercise 10.12, Theorems 10.9 and 8.20.)
+Note that the special case $r_1 = \cdots = r_k = 0$
+shows that the volume of $Q^k$ is $\frac{1}{k!}$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Define $T: I^k$ onto $Q^k$ as in Exercise 10.12,
+  and $f: Q^k \to \mathbb{R}^1$ by
+  \[
+    f(\mathbf{x})
+    = f(x_1, \ldots, x_k)
+    = x_1^{r_1} \cdots x_k^{r_k}
+    = \prod_{i=1}^{k} x_i^{r_i}.
+  \]
 
+\item[(2)]
+  By Exercise 10.12, Example 10.4, Theorem 10.9 and Theorems 8.20, we have
+  \begin{align*}
+    \int_{Q^k} x_1^{r_1} \cdots x_k^{r_k} d\mathbf{x}
+    &=
+    \int_{Q^k} f(\mathbf{x}) d\mathbf{x} \\
+    &=
+    \int_{I^k} f(T(\mathbf{u})) |J_T(\mathbf{u})| d\mathbf{u} \\
+    &=
+    \int_{I^k}
+      \prod_{i=1}^{k} \left( u_i \prod_{j=1}^{i-1}(1-u_j) \right)^{r_i}
+      \prod_{i=1}^{k}(1-u_i)^{k-i} d\mathbf{u} \\
+    &=
+    \int_{I^k}
+      \prod_{i=1}^{k} u_i^{r_i} (1-u_i)^{k-i+\sum_{j=i+1}^{k}r_j} d\mathbf{u} \\
+    &=
+    \prod_{i=1}^{k}
+      \int_{0}^{1} u_i^{r_i} (1-u_i)^{k-i+\sum_{j=i+1}^{k}r_j} du_i \\
+    &=
+    \prod_{i=1}^{k}
+      \frac{r_i! \left(k-i+\sum_{j=i+1}^{k}r_j\right)!}
+        {\left(k-i+1+\sum_{j=i}^{k}r_j\right)!} \\
+    &=
+    \frac{r_1! \cdots r_k!}{(k + r_1 + \cdots + r_k)!}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
