@@ -824,7 +824,7 @@ $(0,0)$ to $(1,1)$, $(1,0)$ to $(3,2)$, $(1,1)$ to $(4,5)$, $(0,1)$ to $(2,4)$.
 Show that $J_{T} = 5$.
 Use $T$ to convert the integral
 \[
-  \alpha = \int_{H} e^{x-y} dxdy
+  \alpha = \int_{H} e^{x-y} dx \: dy
 \]
 to an integral over $I^2$ and thus compute $\alpha$.} \\
 
@@ -927,9 +927,9 @@ to an integral over $I^2$ and thus compute $\alpha$.} \\
 
 \item[(4)]
   \begin{align*}
-    \int_{H} e^{x-y} dxdy
-    &= \int_{[0,1]^2} e^{(1+2u+v)-(1+u+3v)} \abs{J_T} du dv \\
-    &= 5 \int_{[0,1]^2} e^{u-2v} du dv \\
+    \int_{H} e^{x-y} dx \: dy
+    &= \int_{[0,1]^2} e^{(1+2u+v)-(1+u+3v)} \abs{J_T} du \: dv \\
+    &= 5 \int_{[0,1]^2} e^{u-2v} du \: dv \\
     &= 5 \left\{ \int_{0}^{1} e^u du \right\}\left\{ \int_{0}^{1} e^{-2v} dv \right\}
       &(\text{Theorem 10.2}) \\
     &= \frac{5}{2}(e-1)(1-e^{-2}).
@@ -958,7 +958,18 @@ by the equations
 \]
 Show that $T$ maps this rectangle onto the closed disc $D$ with center at $(0,0)$ and radius $a$,
 that $T$ is one-to-one in the interior of the rectangle,
-and that $J_T(r,\theta) = r$.} \\
+and that $J_T(r,\theta) = r$.
+If $f \in \mathscr{C}(D)$, prove the formula for integration in polar coordinates:
+\[
+  \int_{D} f(x,y)dx \: dy
+  = \int_{0}^{a} \int_{0}^{2\pi} f(T(r,\theta))r dr \: d\theta.
+\]
+(Hint: Let $D_0$ be the interior of $D$,
+minus the interval from $(0,0)$ to $(0,a)$.
+As it stands, Theorem 10.9 applies to continuous functions $f$
+whose support lies in $D_0$.
+To remove this restriction,
+proceed as in Example 10.4.)} \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -975,7 +986,24 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.10.}
-\emph{...} \\
+\emph{Let $a \to \infty$ in Exercise 10.9 and prove that
+\[
+  \int_{\mathbb{R}^2} f(x,y) dx \: dy
+  = \int_{0}^{\infty} \int_{0}^{2\pi} f(T(r,\theta))r dr \: d\theta,
+\]
+for continuous functions $f$ that decrease sufficiently rapidly
+as $|x|+|y| \to \infty$.
+(Find a more precise formulation.)
+Apply this to
+\[
+  f(x,y) = \exp(-x^2-y^2)
+\]
+to derive formula}
+\[
+  \int_{-\infty}^{\infty} e^{-s^2} ds = \sqrt{\pi}.
+\]
+
+
 
 \emph{Proof.}
 \begin{enumerate}
