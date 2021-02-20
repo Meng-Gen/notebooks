@@ -2216,16 +2216,60 @@ $\Box$ \\\\
 \[
   \zeta = \frac{x dy \wedge dz + y dz \wedge dx + z dx \wedge dy}{r^3}
 \]
-where $r = (x^2+y^2+z^2)^{\frac{1}{2}}$,} \\
+where $r = (x^2+y^2+z^2)^{\frac{1}{2}}$,
+let $D$ be the rectangle given by $0 \leq u \leq \pi$, $0 \leq v \leq 2\pi$,
+and let $\Sigma$ be the $2$-surface in $\mathbb{R}^3$,
+with parameter domain $D$, given by
+\[
+  x = \sin u \cos v,
+  \qquad
+  y = \sin u \sin v,
+  \qquad
+  z = \cos u.
+\]}
+
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that $d\zeta = 0$ in $\mathbb{R}^3 - \{ \mathbf{0} \}$.}
+
+\item[(b)]
+
+\item[(c)]
+
+\item[(d)]
+
+\item[(e)]
+
+\item[(f)]
+
+\item[(g)]
+  \emph{Is $\zeta$ exact in the complement of every line through the origin?} \\
+\end{enumerate}
 
 
 
 \emph{Proof of (a).}
-\begin{enumerate}
-\item[(1)]
-\item[(2)]
-
-\end{enumerate}
+  Note that $\zeta$ is well-defined on $\mathbb{R}^3 - \{ \mathbf{0} \}$.
+  Hence,
+  \begin{align*}
+    d\zeta
+    =& \: d\left( \frac{x dy \wedge dz + y dz \wedge dx + z dx \wedge dy}{r^3} \right) \\
+    =& \: d\left(\frac{x}{r^3}\right) \wedge dy \wedge dz
+      + d\left(\frac{y}{r^3}\right) \wedge dz \wedge dx
+      + d\left(\frac{z}{r^3}\right) \wedge dx \wedge dy \\
+    =& \: D_1\left(\frac{x}{r^3}\right) \wedge dy \wedge dz
+      + D_2\left(\frac{y}{r^3}\right) \wedge dz \wedge dx
+      + D_3\left(\frac{z}{r^3}\right) \wedge dx \wedge dy \\
+    =& \: \frac{r^3 - 3rx^2}{r^6} dx \wedge dy \wedge dz
+      + \frac{r^3 - 3ry^2}{r^6} dy \wedge dz \wedge dx
+      + \frac{r^3 - 3rz^2}{r^6} dz \wedge dx \wedge dy \\
+    =& \: \left(\frac{r^3 - 3rx^2}{r^6}
+      + \frac{r^3 - 3ry^2}{r^6}
+      + \frac{r^3 - 3rz^2}{r^6}\right) dx \wedge dy \wedge dz \\
+    =& \: 0 dx \wedge dy \wedge dz \\
+    =& \: 0
+  \end{align*}
+  in $\mathbb{R}^3 - \{ \mathbf{0} \}$.
 $\Box$ \\
 
 
@@ -2256,8 +2300,7 @@ $\Box$ \\
 \item[(2)]
 
 \end{enumerate}
-$\Box$ \\\\
-
+$\Box$ \\
 
 
 
