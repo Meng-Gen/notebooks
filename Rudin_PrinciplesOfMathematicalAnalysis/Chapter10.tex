@@ -1038,13 +1038,193 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.12.}
-\emph{...} \\
+\emph{Let $I^k$ be the set of all $\mathbf{u} = (u_1,\ldots,u_k) \in \mathbb{R}^k$
+with $0 \leq u_i \leq 1$ for all $i$;
+let $Q^k$ be the set of all $\mathbf{x} = (x_1,\ldots,x_k) \in \mathbb{R}^k$
+with $x_i \geq 0$, $\sum x_i \leq 1$.
+($I^k$ is the unit cube; $Q^k$ is the standard simplex in $\mathbb{R}^k$.)
+Define $\mathbf{x} = T(\mathbf{u})$ by
+\begin{align*}
+  x_1 &= u_1 \\
+  x_2 &= (1-u_1)u_2 \\
+  &\cdots \\
+  x_k &= (1-u_1) \cdots (1-u_{k-1})u_k.
+\end{align*}
+Show that
+\[
+  \sum_{i=1}^{k} x_i = 1 - \prod_{i=1}^{k} (1-u_i).
+\]
+Show that $T$ maps $I^k$ onto $Q^k$, that $T$ is $1$-$1$ in the interior of $I^k$,
+and that its inverse $S$ is defined in the interior of $Q^k$ by $u_1 = x_1$ and
+\[
+  u_i = \frac{x_i}{1-x_1-\cdots-x_{i-1}}
+\]
+for $i = 2, \ldots, k$.
+Show that
+\[
+  J_T(\mathbf{u}) = (1-u_1)^{k-1}(1-u_2)^{k-2} \cdots (1-u_{k-1}),
+\]
+and}
+\[
+  J_S(\mathbf{x}) = [(1-x_1)(1-x_1-x_2) \cdots (1-x_1-\cdots-x_{k-1})]^{-1}.
+\] \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that
+  \[
+    \sum_{i=1}^{m} x_i = 1 - \prod_{i=1}^{m} (1-u_i)
+  \]
+  for all $1 \leq m \leq k$.}
+  Induction on $m$.
+  Base case: $x_1 = 1 - (1-u_1)$.
+  Inductive step: Suppose the case $m = h$ is true.
+  Consider the the case $m = h+1$:
+  \begin{align*}
+    \sum_{i=1}^{h+1} x_i
+    &= \left( \sum_{i=1}^{h} x_i \right) + x_{h+1} \\
+    &= 1 - \prod_{i=1}^{h} (1-u_i) + x_{h+1}
+      &(\text{Induction hypothesis}) \\
+    &= 1 - \prod_{i=1}^{h} (1-u_i) + u_{h+1}\prod_{i=1}^{h} (1-u_i)
+      &(\text{Definition of $x_{h+1}$}) \\
+    &= 1 - (1-u_{h+1})\prod_{i=1}^{h} (1-u_i) \\
+    &= 1 - \prod_{i=1}^{h+1} (1-u_i).
+  \end{align*}
+  Since both the base case and the inductive step have been proved as true,
+  by mathematical induction the statement is established.
 
+\item[(2)]
+  \emph{Show that $T$ maps $I^k$ onto $Q^k$.}
+  Given any $\mathbf{x} = (x_1,\ldots,x_k) \in Q^k$.
+  It is equivalent to solve $\mathbf{u} = (u_1, \ldots, u_k)$ from
+  \begin{align*}
+    x_1 &= u_1 \\
+    x_2 &= (1-u_1)u_2 \\
+    &\cdots \\
+    x_k &= (1-u_1) \cdots (1-u_{k-1})u_k
+  \end{align*}
+  in terms of $\mathbf{x} = (x_1, \ldots, x_k)$.
+  It is clear that $u_1 = x_1$
+  and
+  \begin{equation*}
+    u_i =
+      \begin{cases}
+        x_i(1 - x_1 - \cdots - x_{i-1})^{-1}
+          & \text{ if $x_1+\cdots+x_{i-1} \neq 1$}, \\
+        0
+          & \text{ if $x_1+\cdots+x_{i-1} = 1$}.
+      \end{cases}
+  \end{equation*}
+  for $i = 2, \ldots, k$.
+  (If $x_1+\cdots+x_{i-1} \neq 1$, by (1) we have
+  \[
+    \prod_{j=1}^{i-1}(1-u_j)
+    = 1 - \sum_{j=1}^{i-1} x_i
+    \neq 0
+  \]
+  and thus
+  \[
+    u_i
+    = x_i \left\{ \prod_{j=1}^{i-1}(1-u_j) \right\}^{-1}
+    = x_i(1 - x_1 - \cdots - x_{i-1})^{-1}.
+  \]
+  If $x_1+\cdots+x_{i-1} = 1$,
+  then $x_{i} = \cdots = x_{k} = 0$.
+  We may take $u_{i} = 0$ to set the expression $x_{i} = (1-u_1)\cdots(1-u_{i-1})u_i$ to zero.)
+  Note that the solution $\mathbf{u} \in I^k$ is well-defined by construction,
+  or $T(I^k) = Q^k$.
+
+\item[(3)]
+  \emph{Show that $T$ is $1$-$1$ in the interior of $I^k$.}
+  Suppose $T(\mathbf{u}) = T(\mathbf{v}) = \mathbf{x}$ with
+  $\mathbf{u}, \mathbf{v} \in \mathrm{int}(I^k)$.
+  Then we consider the following equation:
+  \begin{align*}
+    x_1 &= u_1 = v_1 \\
+    x_2 &= (1-u_1)u_2 = (1-v_1)v_2 \\
+    &\cdots \\
+    x_k &= (1-u_1) \cdots (1-u_{k-1})u_k = (1-v_1) \cdots (1-v_{k-1})v_k.
+  \end{align*}
+  By (1),
+  \[
+    \mathbf{x} \in \mathrm{int}(Q^k)
+    = \left\{ (x_1,\ldots,x_k) \in \mathbb{R}^k : x_i > 0, \sum x_i < 1 \right\}.
+  \]
+  Hence,
+  \begin{align*}
+    u_1 = v_1 &= x_1 \\
+    u_2 = v_1 &= x_2(1-x_1)^{-1} \\
+    &\cdots \\
+    u_k = v_k &= x_k(1-x_1-\cdots-x_{k-1})^{-1}.
+  \end{align*}
+  Here all $(1-x_1)^{-1}, \ldots, (1-x_1-\cdots-x_{i})^{-1}$
+  are well-defined since $\mathbf{x} \in \mathrm{int}(Q^k)$.
+  Therefore, $T$ is injective on $\mathrm{int}(I^k)$.
+
+\item[(4)]
+  By (2)(3), $T$ maps $\mathrm{int}(I^k)$ onto $\mathrm{int}(Q^k)$.
+  That is, given any $\mathbf{x} = (x_1,\ldots,x_k) \in \mathrm{int}(Q^k)$,
+  we can pick
+  \begin{align*}
+    u_1 &= x_1 \\
+    u_i &= x_i(1 - x_1 - \cdots - x_{i-1})^{-1}
+    \qquad
+    (i = 2, \ldots, k)
+  \end{align*}
+  such that $\mathbf{u} \in \mathrm{int}(I^k)$ and $T(\mathbf{u}) = \mathbf{x}$ .
+
+\item[(5)]
+  Note that
+  $T(\mathbf{u}) = (u_1, (1-u_1)u_2, \ldots, (1-u_1)\cdots(1-u_{k-1})u_{k})$
+  on $\mathrm{int}(I^k)$.
+  So
+  \[
+    T'(\mathbf{u})
+    =
+    \begin{bmatrix}
+      1      & 0       & 0                      & \cdots & 0 \\
+      *      & (1-u_1) & 0                      & \cdots & 0 \\
+      *      & *       & \prod_{i=1}^{2}(1-u_i) & \cdots & 0 \\
+      \vdots &  \vdots & \vdots                 & \ddots & \vdots \\
+      *      & *       & *                      & \cdots & \prod_{i=1}^{k-1}(1-u_i)
+    \end{bmatrix}
+  \]
+  is a lower triangular matrix.
+  Hence,
+  \begin{align*}
+    J_T(\mathbf{u})
+    &= \det T'(\mathbf{u}) \\
+    &= 1 \cdot (1-u_1) \cdot \prod_{i=1}^{2}(1-u_i) \cdots \prod_{i=1}^{k-1}(1-u_i) \\
+    &= \prod_{i=1}^{k-1}(1-u_i)^{k-i}.
+  \end{align*}
+
+\item[(6)]
+  Similar to (5).
+  $S(\mathbf{x}) = (x_1, x_2(1-x_1)^{-1}, \ldots, x_k(1-x_1-\cdots-x_{k-1})^{-1})$
+  on $\mathrm{int}(Q^k)$.
+  So
+  \[
+    S'(\mathbf{x})
+    =
+    \begin{bmatrix}
+      1      & 0            & 0                & \cdots & 0 \\
+      *      & (1-x_1)^{-1} & 0                & \cdots & 0 \\
+      *      & *            & (1-x_1-x_2)^{-1} & \cdots & 0 \\
+      \vdots &  \vdots      & \vdots           & \ddots & \vdots \\
+      *      & *            & *                & \cdots & (1-x_1-\cdots-x_{k-1})^{-1}
+    \end{bmatrix}
+  \]
+  is a lower triangular matrix.
+  Hence,
+  \begin{align*}
+    J_S(\mathbf{x})
+    &= \det S'(\mathbf{x}) \\
+    &= 1 \cdot (1-x_1)^{-1} \cdot (1-x_1-x_2)^{-1} \cdots (1-x_1-\cdots-x_{k-1})^{-1} \\
+    &= [(1-x_1)(1-x_1-x_2) \cdots (1-x_1-\cdots-x_{k-1})]^{-1}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
