@@ -2256,20 +2256,14 @@ in $\mathbb{R}^2-\{\mathbf{0}\}$.}
     d \eta
     =& d \left( \frac{x dy - y dx}{x^2+y^2} \right) \\
     =& d \left( \frac{x}{x^2+y^2} \right) \wedge dy
-      + \frac{x}{x^2+y^2} \wedge {d^2y} \\
-      &- d \left( \frac{y}{x^2+y^2} \right) \wedge dx
-      - \frac{y}{x^2+y^2} \wedge {d^2x} \\
-    =& d \left( \frac{x}{x^2+y^2} \right) \wedge dy
       - d \left( \frac{y}{x^2+y^2} \right) \wedge dx
       &(d^2 = 0) \\
-    =& \left\{ D_1\left(\frac{x}{x^2+y^2}\right) dx
-      + D_2\left(\frac{y}{x^2+y^2}\right) dy \right\} \wedge dy \\
-      &- \left\{ D_1\left(\frac{x}{x^2+y^2}\right) dx
-      + D_2\left(\frac{y}{x^2+y^2}\right) dy \right\} \wedge dx \\
     =& D_1\left(\frac{x}{x^2+y^2}\right) dx \wedge dy
       &(dy \wedge dy = 0) \\
       &- D_2\left(\frac{y}{x^2+y^2}\right) dy \wedge dx
       &(dx \wedge dx = 0) \\
+    =& \left(\frac{1}{x^2+y^2} - \frac{2x^2}{(x^2+y^2)^2}\right) dx \wedge dy \\
+      &+ \left(\frac{1}{x^2+y^2} - \frac{2y^2}{(x^2+y^2)^2}\right) dx \wedge dy \\
     =& 0
   \end{align*}
 \end{enumerate}
@@ -2574,8 +2568,27 @@ Note also that}
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  Note that
+  \[
+    D_i r_k = \frac{1}{2r_k} \cdot (2x_i) = \frac{x_i}{r_k}.
+  \]
 \item[(2)]
-
+  \begin{align*}
+    d\omega_k
+    &= \sum_{i=1}^{k} d\left(
+      (-1)^{i-1} (r_k)^{-k} x_i
+      dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k\right) \\
+    &= \sum_{i=1}^{k} D_i \left( (-1)^{i-1} (r_k)^{-k} x_i \right)
+      dx_i \wedge dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k \\
+    &= \sum_{i=1}^{k} (-1)^{i-1} \left(
+      (r_k)^{-k} \cdot 1 + \underbrace{(-k)(r_k)^{-k-1} \frac{x_i}{r_k}}_{\text{chain rule}}
+        \cdot x_i \right)
+      \underbrace{(-1)^{i-1} dx_1 \wedge \cdots \wedge dx_k}_{\text{anticommutative relation}} \\
+    &= (r_k)^{-k-2} \underbrace{\sum_{i=1}^{k} \left(
+      (r_k)^2 - k x_i^2 \right)}_{= 0}
+      dx_1 \wedge \cdots \wedge dx_k \\
+    &= 0.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
