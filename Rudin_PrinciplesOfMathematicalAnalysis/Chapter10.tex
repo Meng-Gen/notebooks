@@ -2580,8 +2580,56 @@ $\Box$ \\
 \emph{Proof of (e).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Partition $[0,2\pi]$ into five subintervals
+  \[
+    I_i
+    = \left[ \frac{(2i-3)\pi}{4}, \frac{(2i-1)\pi}{4} \right]
+      \cap [0,2\pi].
+  \]
+  for $i = 1,2,3,4,5$.
+  Hence
+  \begin{align*}
+    \int_{\gamma} \eta
+    =& \: \sum_{i=1}^{5} \int_{\gamma(I_i)} \eta \\
+    =& \: \sum_{i=1,3,5} \int_{\gamma(I_i)} d\left( \arctan\frac{y}{x} \right)
+      + \sum_{i=2,4} \int_{\gamma(I_i)} d\left( -\arctan\frac{x}{y} \right).
+  \end{align*}
 
+\item[(2)]
+  The Stokes' theorem (Theorem 10.33) implies that
+  \begin{align*}
+    \int_{\gamma(I_1)} d\left( \arctan\frac{y}{x} \right)
+    &= \int_{\partial\gamma(I_1)} \arctan\frac{y}{x} \\
+    &= \left[ \arctan\frac{r\cos t}{r\sin t} \right]_{t = 0}^{t = \frac{\pi}{4}} \\
+    &= \left[ \arctan(\tan(t)) \right]_{t = 0}^{t = \frac{\pi}{4}} \\
+    &= \frac{\pi}{4},
+  \end{align*}
+  and
+  \begin{align*}
+    \int_{\gamma(I_2)} d\left( -\arctan\frac{x}{y} \right)
+    &= \int_{\partial\gamma(I_2)} -\arctan\frac{x}{y} \\
+    &= \left[ \arctan\frac{r\sin t}{r\cos t} \right]_{t = \frac{\pi}{4}}^{t = \frac{3\pi}{4}} \\
+    &= \left[ \arctan(\cot(t)) \right]_{t = \frac{\pi}{4}}^{t = \frac{3\pi}{4}} \\
+    &= \frac{\pi}{2}.
+  \end{align*}
+  Similarly,
+  \begin{align*}
+    \int_{\gamma(I_3)} d\left( \arctan\frac{y}{x} \right)
+    &= \frac{\pi}{2} \\
+    \int_{\gamma(I_4)} d\left( -\arctan\frac{x}{y} \right)
+    &= \frac{\pi}{2} \\
+    \int_{\gamma(I_5)} d\left( \arctan\frac{y}{x} \right)
+    &= \frac{\pi}{4}.
+  \end{align*}
+
+\item[(3)]
+  Therefore,
+  \[
+    \int_{\gamma} \eta
+    = \left( \frac{\pi}{4} + \frac{\pi}{2} + \frac{\pi}{4} \right)
+      + \left( \frac{\pi}{2} + \frac{\pi}{2} \right)
+    = 2\pi.
+  \]
 \end{enumerate}
 $\Box$ \\
 
