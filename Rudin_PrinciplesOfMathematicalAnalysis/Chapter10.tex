@@ -2590,8 +2590,43 @@ $\Box$ \\
 \emph{Proof of (f).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Regard $\Gamma(t)$ as a plane curve $(\Gamma_1(t), \Gamma_2(t))$ over $\mathbb{R}^2$
+  or $\Gamma_1(t) + i \Gamma_2(t)$ over $\mathbb{C}^1$.
+  Note that
+  \begin{align*}
+    \frac{\Gamma'(t)}{\Gamma(t)}
+    &= \frac{\Gamma_1'(t) + i \Gamma_2'(t)}{\Gamma_1(t) + i \Gamma_2(t)} \\
+    &= \frac{\Gamma_1'(t) \Gamma_1'(t) + \Gamma_2'(t) \Gamma_2'(t)}
+      {\Gamma_1(t)^2 + \Gamma_2(t)^2}
+      + i \frac{\Gamma_1(t) \Gamma_2'(t) - \Gamma_2(t) \Gamma_1'(t)}
+      {\Gamma_1(t)^2 + \Gamma_2(t)^2}.
+  \end{align*}
+  So
+  \[
+    \mathrm{Im}\left(\frac{\Gamma'(t)}{\Gamma(t)}\right)
+    = \frac{\Gamma_1(t) \Gamma_2'(t) - \Gamma_2(t) \Gamma_1'(t)}
+      {\Gamma_1(t)^2 + \Gamma_2(t)^2}.
+  \]
 
+\item[(2)]
+  By Exercise 8.23,
+  \[
+    \mathrm{Ind}(\Gamma)
+    = \frac{1}{2\pi i}\int_{0}^{2\pi} \frac{\Gamma'(t)}{\Gamma(t)} dt
+  \]
+  is always an integer.
+  That is,
+  \begin{align*}
+    \mathrm{Ind}(\Gamma)
+    &= \frac{1}{2\pi}\int_{0}^{2\pi} \mathrm{Im}\left(\frac{\Gamma'(t)}{\Gamma(t)}\right) dt \\
+    &= \frac{1}{2\pi}\int_{0}^{2\pi}
+      \frac{\Gamma_1(t) \Gamma_2'(t) - \Gamma_2(t) \Gamma_1'(t)}
+        {\Gamma_1(t)^2 + \Gamma_2(t)^2} dt \\
+    &= \frac{1}{2\pi}\int_{\Gamma} \frac{xdy - ydx}{x^2+y^2} \\
+    &= \frac{1}{2\pi}\int_{\Gamma} \eta.
+  \end{align*}
+  (Note that $\mathrm{Ind}(\Gamma) = 1$ if $\Gamma$ is defined as in (c).
+  Hence the integral in (c) is equal to $2\pi \mathrm{Ind}(\Gamma) = 2\pi$.)
 \end{enumerate}
 $\Box$ \\\\
 
