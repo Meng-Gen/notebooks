@@ -3022,7 +3022,49 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Note that
+  \[
+    D_i \left( \frac{x_k}{r_k} \right)
+    = \frac{\delta_{ik}(r_k)^2 - x_i x_k}{(r_k)^3}
+  \]
+  where $\delta_{ik}$ is the Kronecker delta.
+  So
+  \begin{align*}
+    (D_i f_k)(\mathbf{x})
+    &= D_i \left( (-1)^k g_k\left(\frac{x_k}{r_k}\right) \right) \\
+    &= D_i \left( (-1)^k \int_{-1}^{\frac{x_k}{r_k}}(1-s^2)^{\frac{k-3}{2}} ds \right) \\
+    &= (-1)^k D_i\left( \frac{x_k}{r_k} \right)
+      \left(1-\left(\frac{x_k}{r_k}\right)^2 \right)^{\frac{k-3}{2}} \\
+    &= (-1)^k \frac{\delta_{ik}(r_k)^2 - x_i x_k}{(r_k)^3}
+      \frac{(r_{k-1})^{k-3}}{(r_k)^{k-3}} \\
+    &= (-1)^k \frac{(r_{k-1})^{k-3}}{(r_k)^{k}}(\delta_{ik}(r_k)^2 - x_i x_k).
+  \end{align*}
+  In particular,
+  \[
+    (D_k f_k)(\mathbf{x})
+    = (-1)^k \frac{(r_{k-1})^{k-3}}{(r_k)^{k}}((r_k)^2 - (x_k)^2)
+    = (-1)^k \frac{(r_{k-1})^{k-1}}{(r_k)^{k}}
+  \]
+  (since $(r_k)^2 - (x_k)^2 = (r_{k-1})^2$).
+
 \item[(2)]
+  Note that
+  \begin{align*}
+    \sum_{i} x_i (\delta_{ik}(r_k)^2 - x_i x_k)
+    &= (r_k)^2 \sum_{i} x_i\delta_{ik} - x_k \sum_{i} x_i^2 \\
+    &= (r_k)^2 x_k - x_k (r_k)^2 \\
+    &= 0.
+  \end{align*}
+  Hence,
+  \begin{align*}
+    \mathbf{x} \cdot (\nabla f_k)(\mathbf{x})
+    &= \sum_{i} x_i (D_i f_k)(\mathbf{x}) \\
+    &= \sum_{i} x_i (-1)^k \frac{(r_{k-1})^{k-3}}{(r_k)^{k}}(\delta_{ik}(r_k)^2 - x_i x_k) \\
+    &= (-1)^k \frac{(r_{k-1})^{k-3}}{(r_k)^{k}} \sum_{i} x_i (\delta_{ik}(r_k)^2 - x_i x_k) \\
+    &= 0.
+  \end{align*}
+
+\item[(3)]
 
 \end{enumerate}
 $\Box$ \\
