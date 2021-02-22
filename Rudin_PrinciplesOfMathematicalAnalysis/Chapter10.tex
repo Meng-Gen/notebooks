@@ -2883,8 +2883,30 @@ $\Box$ \\
 \emph{Proof of (e).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Note that
+  \[
+    d \left( -\frac{z}{r} \right)
+    = \frac{xz}{r^3} dx + \frac{yz}{r^3} dy - \frac{r^2-z^2}{r^3} dz
+    = \frac{xz}{r^3} dx + \frac{yz}{r^3} dy - \frac{x^2+y^2}{r^3} dz
+  \]
+  since $r^2 = x^2+y^2+z^2$.
 
+\item[(2)]
+  \begin{align*}
+    d\lambda
+    &= d \left( -\frac{z}{r}\eta \right) \\
+    &= \underbrace{d \left( -\frac{z}{r} \right)}_{\text{apply (1)}} \wedge \eta
+      + (-1)^1 \left( -\frac{z}{r} \right) \wedge \underbrace{d\eta}_{= 0} \\
+    &= \left( \frac{xz}{r^3} dx + \frac{yz}{r^3} dy - \frac{x^2+y^2}{r^3} dz \right)
+      \wedge \left( \frac{-ydx + xdy}{x^2+y^2} \right) \\
+    &= \left( \frac{x(x^2+y^2)}{r^3(x^2+y^2)} \right) dy \wedge dz
+      + \left( \frac{y(x^2+y^2)}{r^3(x^2+y^2)} \right) dz \wedge dx
+      + \left( \frac{x^2 z + y^2 z}{r^3(x^2+y^2)} \right) dx \wedge dy \\
+    &= \left( \frac{x}{r^3} \right) dy \wedge dz
+      + \left( \frac{y}{r^3} \right) dz \wedge dx
+      + \left( \frac{z}{r^3} \right) dx \wedge dy \\
+    &= \zeta.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
