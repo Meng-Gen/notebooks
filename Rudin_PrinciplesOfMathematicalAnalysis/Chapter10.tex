@@ -2469,8 +2469,47 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  For $0 \leq t \leq 2\pi$, $0 \leq u \leq 1$, define
+  \[
+    \Phi(t,u) = (1-u)\Gamma(t) + u\gamma(t).
+  \]
+  Then $\Phi$ is a $2$-surface in $\mathbb{R}^2 - \{\mathbf{0}\}$
+  whose parameter domain
+  $D = \{(t,u) : 0 \leq t \leq 2\pi, 0 \leq u \leq 1 \}$ is the indicated rectangle.
 
+\item[(2)]
+  Similar to Example 10.32,
+  \[
+    \partial \Phi = \gamma_1 + \gamma_2 + \gamma_3 + \gamma_4
+  \]
+  where
+  \begin{align*}
+    \gamma_1(t) &= \Phi(t,0) = \Gamma(t), \\
+    \gamma_2(u) &= \Phi(2\pi,u) = (1-u)\Gamma(2\pi) + u\gamma(2\pi), \\
+    \gamma_3(t) &= \Phi(2\pi-t,1) = \gamma(2\pi-t), \\
+    \gamma_4(u) &= \Phi(0,1-u) = u\Gamma(0) + (1-u)\gamma(0).
+  \end{align*}
+  Because of cancellations (as in Example 10.32), $\gamma(0) = \gamma(2\pi)$
+  and $\Gamma(0) = \Gamma(2\pi)$,
+  $\gamma_4 = -\gamma_2$ and $\gamma_3 = -\gamma$.
+  Hence,
+  \[
+    \partial \Phi = \Gamma - \gamma.
+  \]
+
+\item[(3)]
+  The Stokes' theorem (Theorem 10.33) implies that
+  \[
+    \int_{\Phi} d\eta
+    = \int_{\partial\Phi} \eta
+    = \int_{\Gamma - \gamma} \eta
+    = \int_{\Gamma} \eta - \int_{\gamma} \eta.
+  \]
+  Hence,
+  \[
+    \int_{\Gamma} \eta = \int_{\gamma} \eta
+  \]
+  (since $d\eta = 0$ by (a)).
 \end{enumerate}
 $\Box$ \\
 
