@@ -1150,7 +1150,30 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.11.}
-\emph{...} \\
+\emph{Define $(u,v)=T(s,t)$ on the strip
+\[
+  0 < s < \infty,
+  \qquad
+  0 < t < 1
+\]
+by setting $u=s-st$, $v=st$.
+Show that $T$ is a $1$-$1$ mapping of the strip onto the positive quadrant $Q$ in $\mathbb{R}^2$.
+Show that $J_T(s,t) = s$.
+For $x > 0$, $y > 0$, integrate
+\[
+  u^{x-1} e^{-u} v^{y-1} e^{-v}
+\]
+over $Q$, use Theorem 10.9 to convert the integral to one over the strip,
+and derive
+\[
+  \int_{0}^{1} t^{x-1}(1-t)^{y-1} dt = \frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}
+\]
+in this way.
+(For this application,
+Theorem 10.9 has to be extended so as to cover certain improper integrals.
+Provide this extension.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
@@ -2332,6 +2355,31 @@ in $\mathbb{R}^2-\{\mathbf{0}\}$.}
   and prove that $d\eta = 0$.}
 
 \item[(b)]
+  \emph{Let $\gamma(t) = (r \cos t, r \sin t)$, for some $r > 0$,
+  and let $\Gamma$ be a $\mathscr{C}''$-curve in $\mathbb{R}^2 - \{\mathbf{0}\}$,
+  with parameter interval $[0,2\pi]$,
+  with $\Gamma(0) = \Gamma(2\pi)$,
+  such that the intervals $[\gamma(t),\Gamma(t)]$ do not contain $\mathbf{0}$
+  for any $t \in [0,2\pi]$.
+  Prove that
+  \[
+    \int_{\Gamma} \eta = 2\pi.
+  \]
+  (Hint: For $0 \leq t \leq 2\pi$, $0 \leq u \leq 1$, define
+  \[
+    \Phi(t,u) = (1-u)\Gamma(t) + u\gamma(t).
+  \]
+  Then $\Phi$ is a $2$-surface in $\mathbb{R}^2 - \{\mathbf{0}\}$
+  whose parameter domain is the indicated rectangle.
+  Because of cancellations (as in Example 10.32),
+  \[
+    \partial \Phi = \Gamma - \gamma.
+  \]
+  Use Stokes' theorem to deduce that
+  \[
+    \int_{\Gamma} \eta = \int_{\gamma} \eta
+  \]
+  because $d\eta = 0$.)}
 
 \item[(c)]
   \emph{Take $\Gamma(t) = (a\cos t, b\sin t)$ where $a > 0$, $b > 0$ are fixed.
@@ -2530,20 +2578,101 @@ with parameter domain $D$, given by
   \qquad
   z = \cos u.
 \]}
-
 \begin{enumerate}
 \item[(a)]
   \emph{Prove that $d\zeta = 0$ in $\mathbb{R}^3 - \{ \mathbf{0} \}$.}
 
 \item[(b)]
+  \emph{Let $S$ denote the restriction of $\Sigma$ to a parameter domain $E \subseteq D$.
+  Prove that
+  \[
+    \int_{S} \zeta
+    = \int_{E} \sin u \: du \: dv
+    = A(S),
+  \]
+  where $A$ denotes area, as in Section 10.43.
+  Note that this contains
+  \[
+    \int_{\Sigma} \zeta
+    = \int_{D} \sin u \: du \: dv
+    = 4\pi \neq 0
+  \]
+  as a special case.}
 
 \item[(c)]
+  \emph{Suppose $g, h_1, h_2, h_3$, are $\mathscr{C}''$-functions on $[0,1]$, $g > 0$.
+  Let $(x,y,z) = \Phi(s,t)$ define a $2$-surface $\Phi$,
+  with parameter domain $I^2$, by
+  \[
+    x = g(t)h_1(s),
+    \qquad
+    y = g(t)h_2(s),
+    \qquad
+    z = g(t)h_3(s).
+  \]
+  Prove that
+  \[
+    \int_{\Phi} \zeta = 0,
+  \]
+  directly from Equation (35) in Chapter 10.
+  Note the shape of the range of $\Phi$:
+  For fixed $s$, $\Phi(s,t)$ runs over an interval on a line through $\mathbf{0}$.
+  The range of $\Phi$ thus lies in a ``cone'' with vertex at the origin.}
 
 \item[(d)]
+  \emph{Let $E$ be a closed rectangle in $D$, with edges parallel to those of $D$.
+  Suppose $f \in \mathscr{C}''(D)$, $f > 0$.
+  Let $\Omega$ be the $2$-surface with parameter domain $E$,
+  defined by
+  \[
+    \Omega(u,v) = f(u,v)\Sigma(u,v).
+  \]
+  Define $S$ as in (b) and prove that
+  \[
+    \int_{\Omega} \zeta = \int_{S} \zeta = A(S).
+  \]
+  (Since $S$ is the ``radical projection'' of $\Omega$ into the unit sphere,
+  this result makes it reasonable to call $\int_{\Omega} \zeta$ the ``solid angle''
+  subtended by the range of $\Omega$ at the origin.)
+  (Hint:
+  Consider the $3$-surface $\Psi$ given by
+  \[
+    \Psi(t,u,v) = [1-t+tf(u,v)]\Sigma(u,v),
+  \]
+  where $(u,v) \in E$, $0 \leq t \leq 1$.
+  For fixed $v$, the mapping $(t,u) \mapsto \Psi(t,u,v)$ is a $2$-surface $\Phi$
+  to which (c) can be applied to show that $\int_{\Phi} \zeta = 0$.
+  The same thing holds when $u$ is fixed.
+  By (a) and Stokes' theorem,
+  \[
+    \int_{\partial \Psi} \zeta = \int_{\Psi} d\zeta = 0.)
+  \]}
 
 \item[(e)]
-
+  \emph{Put $\lambda = -\frac{z}{r}\eta$, where
+  \[
+    \eta = \frac{xdy-ydx}{x^2+y^2},
+  \]
+  as in Exercise 10.21.
+  Then $\lambda$ is a $1$-form in the open set $V \subseteq \mathbb{R}^3$ in which $x^2+y^2 > 0$.
+  Show that $\zeta$ is exact in $V$ by showing that
+  \[
+    \zeta = d\lambda.
+  \]}
 \item[(f)]
+  \emph{Derive (d) from (e), without using (c).
+  (Hint: To begin with, assume $0 < u < \pi$ on $E$.
+  By (e),
+  \[
+    \int_{\Omega} \zeta = \int_{\partial\Omega} \lambda
+    \qquad
+    \text{and}
+    \qquad
+    \int_{S} \zeta = \int_{\partial S} \lambda.
+  \]
+  Show that the two integrals of $\lambda$ are equal,
+  by using part (d) of Exercise 10.21,
+  and by noting that $\frac{z}{r}$ is the same at $\Sigma(u,v)$ as at $\Omega(u,v)$.)}
 
 \item[(g)]
   \emph{Is $\zeta$ exact in the complement of every line through the origin?} \\
@@ -2685,7 +2814,30 @@ Note also that}
   \emph{Prove that $d\omega_k = 0$ in $E_k$.}
 
 \item[(b)]
+  \emph{For $k=2,\ldots,n$, prove that $\omega_k$ is exact in $E_{k-1}$,
+  by showing that
+  \[
+    \omega_k = d(f_k\omega_{k-1}) = df_k \wedge \omega_{k-1}
+  \]
+  where $f_k(\mathbf{x}) = (-1)^k g_k\left( \frac{x_k}{r_k} \right)$
+  where
+  \[
+    g_k(t) = \int_{-1}^{t} (1-s^2)^{\frac{k-3}{2}} ds
+    \qquad
+    (-1 < t < 1).
+  \]
+  (Hint: $f_k$ satisfies the differential equations
+  \[
+    \mathbf{x} \cdot (\nabla f_k)(\mathbf{x}) = 0
+  \]
+  and
+  \[
+    (D_k f_k)(\mathbf{x}) = \frac{(-1)^k(r_{k-1})^{k-1}}{(r_k)^k}.)
+  \]}
+
 \item[(c)]
+  \emph{Is $\omega_n$ exact in $E_n$?}
+
 \item[(d)]
   \emph{Note that (b) is a generalization of part (e) of Exercise 10.22.
   Try to extend some of the other assertions of Exercise 10.21 and Exercise 10.22
