@@ -3048,14 +3048,14 @@ $\Box$ \\
   (since $(r_k)^2 - (x_k)^2 = (r_{k-1})^2$).
 
 \item[(2)]
-  Note that
-  \begin{align*}
+  Since
+  \[
     \sum_{i} x_i (\delta_{ik}(r_k)^2 - x_i x_k)
-    &= (r_k)^2 \sum_{i} x_i\delta_{ik} - x_k \sum_{i} x_i^2 \\
-    &= (r_k)^2 x_k - x_k (r_k)^2 \\
-    &= 0.
-  \end{align*}
-  Hence,
+    = (r_k)^2 \underbrace{\sum_{i} x_i\delta_{ik}}_{= x_k}
+      - x_k \underbrace{\sum_{i} x_i^2}_{= (r_k)^2}
+    = 0,
+  \]
+  we have
   \begin{align*}
     \mathbf{x} \cdot (\nabla f_k)(\mathbf{x})
     &= \sum_{i} x_i (D_i f_k)(\mathbf{x}) \\
