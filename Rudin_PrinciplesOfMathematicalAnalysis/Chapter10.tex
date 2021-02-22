@@ -88,8 +88,137 @@ Observe that $f$ is unbounded in every neighborhood of $(0,0)$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  If $f, g: \mathbb{R}^{n} \to \mathbb{R}^{m}$ are two functions,
+  then
+  \begin{enumerate}
+  \item[(a)]
+    $\mathrm{supp}(fg) \subseteq \mathrm{supp}(f) \cap \mathrm{supp}(g)$.
+  \item[(b)]
+    $\mathrm{supp}(f+g) \subseteq \mathrm{supp}(f) \cup \mathrm{supp}(g)$.
+  \end{enumerate}
 
+\item[(2)]
+  Note that $f(x,y)$ is well-defined on $\mathbb{R}^2$
+  since only finitely many terms are nonzero for each fixed point $(x,y) \in \mathbb{R}^2$ (by (1)).
+  Besides,
+  \begin{align*}
+    &\mathrm{supp}([ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y)) \\
+    \subseteq \: &
+    \{ (x,y) :
+      x \in \mathrm{supp}(\varphi_i) \cup \mathrm{supp}(\varphi_{i+1}),
+      y \in \mathrm{supp}(\varphi_i)
+    \} \\
+    \subseteq \: &
+    \{ (x,y) :
+      x \in (2^{-i},2^{-i+1}) \cup (2^{-i-1},2^{-i}),
+      y \in (2^{-i},2^{-i+1})
+    \} \\
+    \subseteq \: &
+    \{ (x,y) :
+      x \in (0,1),
+      y \in (0,1)
+    \}
+  \end{align*}
+  for all $i=1,2,3,\ldots$.
+  So $\mathrm{supp}(f) \subseteq (0,1)^2$, or $\mathrm{supp}(f)$ is bounded.
+  As $\mathrm{supp}(f)$ is closed (by definition),
+  $\mathrm{supp}(f)$ is compact (Theorem 2.41).
+
+\item[(3)]
+  \emph{Show that $f(x,y)$ is not continuous at $(0,0)$.}
+  \begin{enumerate}
+  \item[(a)]
+    Note that $f(0,0) = 0$ since $(0,0) \not\in \mathrm{supp}(f) \subseteq (0,1)^2$.
+    It suffices to show that there exists a sequence
+    $\{ (t_n,t_n) \}$ in $\mathbb{R}^2$ such that
+    $(t_n,t_n) \neq (0,0)$, $\lim_{n \to \infty}(t_n,t_n) = (0,0)$
+    but $\lim_{n \to \infty} f(t_n,t_n)$ does not converge to $0$
+    (Theorem 4.2).
+
+  \item[(b)]
+    For any $n = 1,2,3,\ldots$,
+    \begin{align*}
+      1
+      = \int \varphi_n
+      = \int_{2^{-n}}^{2^{-n+1}} \varphi(t)dt
+      \leq 2^{-n} \sup_{t \in [2^{-n},2^{-n+1}]} \varphi(t),
+    \end{align*}
+    or $\sup_{t \in [2^{-n},2^{-n+1}]} \varphi(t) \geq 2^n$.
+    By the continunity of $\varphi_n$, there exists $t_n \in [2^{-n},2^{-n+1}]$
+    such that $\varphi_n(t_n) \geq 2^n$ (Theorem 4.16).
+
+  \item[(c)]
+    We construct $\{ (t_n,t_n) \}$ in $\mathbb{R}^2$ by (b) for all $n=1,2,3,\ldots$.
+    Clearly, $(t_n,t_n) \neq (0,0)$ and $\lim_{n \to \infty}(t_n,t_n) = (0,0)$.
+    However,
+    \[
+      f(t_n,t_n)
+      = [\varphi_{n}(t_n) - \varphi_{n+1}(t_n)]\varphi_{n}(t_n)
+      = \varphi_{n}(t_n)^2
+      \geq 2^{2n}
+    \]
+    does not converge to $0$ as $n \to \infty$.
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Show that $f(x,y)$ is continuous at $\mathbf{x}_0 = (x_0,y_0) \neq (0,0)$.}
+  Consider an open neighborhood
+  $B(\mathbf{x}_0;r)$ of $\mathbf{x}_0$ with $r=\frac{\norm{\mathbf{x}_0}}{64} > 0$.
+  Hence,
+  \[
+    f(x,y)|_{B(\mathbf{x}_0;r)}
+    = \sum_{i=1}^{N}[ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y)
+  \]
+  is the sum of finitely many terms
+  where $N = \log_2 \frac{89}{\norm{\mathbf{x}_0}} \geq 1$
+  (since $[ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y) = 0$
+  on ${B(\mathbf{x}_0;r)}$ whenever $i \geq N$).
+  Therefore,
+  $f(x,y)|_{B(\mathbf{x}_0;r)}$ is continuous
+  by the continunity of $\varphi_i$.
+
+\item[(5)]
+  \emph{Show that $\int dy \int f(x,y) dx = 0$.}
+  For any fixed $y$,
+  there is a positive integer $N(y)$ such that
+  $\varphi_{N(y)+1}(y) = \varphi_{N(y)+2}(y) = \ldots = 0$ and
+  \[
+    f(x,y) = \sum_{i=1}^{N(y)}[ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y).
+  \]
+  So
+  \begin{align*}
+    \int f(x,y) dx
+    &= \int \sum_{i=1}^{N(y)}[ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y) dx \\
+    &= \sum_{i=1}^{N(y)} \varphi_i(y) \int [ \varphi_i(x)-\varphi_{i+1}(x) ] dx \\
+    &= \sum_{i=1}^{N(y)} \varphi_i(y) \left( \int \varphi_i(x) dx - \int \varphi_{i+1}(x) dx \right) \\
+    &= \sum_{i=1}^{N(y)} \varphi_i(y) \left( 1 - 1 \right) \\
+    &= 0,
+  \end{align*}
+  and thus
+  \[
+    \int dy \int f(x,y) dx = \int 0 dy = 0.
+  \]
+
+\item[(6)]
+  \emph{Show that $\int dx \int f(x,y) dy = 0$.}
+  For any fixed $x$,
+  there is a positive integer $N(x)$ such that
+  $\varphi_{N(x)+1}(x) = \varphi_{N(x)+2}(x) = \ldots = 0$ and
+  \[
+    f(x,y) = \sum_{i=1}^{N(x)}[ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y).
+  \]
+  So
+  \begin{align*}
+    \int f(x,y) dy
+    &= \int \sum_{i=1}^{N(x)}[ \varphi_i(x)-\varphi_{i+1}(x) ] \varphi_i(y) dy \\
+    &= \sum_{i=1}^{N(x)} [ \varphi_i(x)-\varphi_{i+1}(x) ] \int \varphi_i(y) dy \\
+    &= \sum_{i=1}^{N(x)} [ \varphi_i(x)-\varphi_{i+1}(x) ] \\
+    &= \varphi_1(x), \\
+  \end{align*}
+  and thus
+  \[
+    \int dx \int f(x,y) dy = \int \varphi_1(x) dx = 1.
+  \]
 \end{enumerate}
 $\Box$ \\\\
 
