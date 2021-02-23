@@ -3115,8 +3115,12 @@ $\Box$ \\
       (-D_k f_k(x) x_k)
       dx_1 \wedge \cdots \wedge dx_{k-1} \\
     =& \:
-    \frac{(-1)^k D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
-      (-1)^{k-1} x_k dx_1 \wedge \cdots \wedge dx_{k-1} \wedge \widehat{dx_{k}}.
+    \frac{-D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
+      x_k dx_1 \wedge \cdots \wedge dx_{k-1} \wedge \widehat{dx_{k}} \\
+    =& \:
+    (r_{k})^{-k}
+      (-1)^{k-1} x_k dx_1 \wedge \cdots \wedge dx_{k-1} \wedge \widehat{dx_{k}}
+      & ((1)).
   \end{align*}
   Also,
   \begin{align*}
@@ -3127,34 +3131,27 @@ $\Box$ \\
         \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k-1} \\
     =& \:
     \frac{(-1)^{k} D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
-      \sum_{j=1}^{k-1}
-      (-1)^{j-1} x_j
-      dx_1 \wedge \cdots
-        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k}.
+      \sum_{j=1}^{k-1} (-1)^{j-1} x_j
+        dx_1 \wedge \cdots \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k} \\
+    =& \:
+    (r_{k})^{-k}
+      \sum_{j=1}^{k-1} (-1)^{j-1} x_j
+        dx_1 \wedge \cdots \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k}
+      & ((1)).
   \end{align*}
 
 \item[(5)]
   Hence,
   \begin{align*}
     & \: d(f_k \omega_{k-1}) \\
-    =& \: \frac{(-1)^k D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
+    =& \: (r_{k})^{-k}
       (-1)^{k-1} x_k dx_1 \wedge \cdots \wedge dx_{k-1} \wedge \widehat{dx_{k}} \\
-      &+ \: \frac{(-1)^{k} D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
-        \sum_{j=1}^{k-1}
-        (-1)^{j-1} x_j
-        dx_1 \wedge \cdots
-          \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k} \\
-    =& \: \frac{(-1)^k D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
-      \sum_{j=1}^{k}
-        (-1)^{j-1} x_j
-        dx_1 \wedge \cdots
-          \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k} \\
-    =& \: \frac{1}{(r_k)^{k}}
-      \sum_{j=1}^{k}
-        (-1)^{j-1} x_j
-        dx_1 \wedge \cdots
-          \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k}
-      & ((1)) \\
+      &+ \: (r_{k})^{-k}
+        \sum_{j=1}^{k-1} (-1)^{j-1} x_j
+          dx_1 \wedge \cdots \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k} \\
+    =& \: (r_{k})^{-k}
+      \sum_{j=1}^{k} (-1)^{j-1} x_j
+        dx_1 \wedge \cdots \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k} \\
     =& \: \omega_{k}.
   \end{align*}
 \end{enumerate}
@@ -3162,11 +3159,96 @@ $\Box$ \\
 
 
 
+% https://scholar.rose-hulman.edu/cgi/viewcontent.cgi?article=1064&context=rhumj
+
+
+
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  $\omega_n$ is not exact in $E_n$ (though it is locally exact).
 
+\item[(2)]
+  Let
+  \begin{align*}
+    S^{n-1}
+    &= \{ (x_1,\ldots,x_n) \in \mathbb{R}^n : x_1^2+\cdots+x_n^2 = 1 \} \\
+    B^{n}
+    &= \{ (x_1,\ldots,x_n) \in \mathbb{R}^n : x_1^2+\cdots+x_n^2 \leq 1 \}.
+  \end{align*}
+  \emph{It suffices to show that}
+  \[
+    \int_{S^{n-1}} \omega_n
+    = \frac{n \pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} \neq 0.
+  \]
+  Therefore, $\omega_n$ is not exact in $E_n$.
+
+\item[(3)]
+  Note that
+  \[
+    \omega_n
+    = \sum_{i=1}^{n} (-1)^{i-1} x_i
+    dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_{n}
+  \]
+  on $S^{n-1}$ (and that's why we pick $S^{n-1}$).
+  The Stokes' theorem (Theorem 10.33) implies that
+  \[
+    \int_{\partial B^{n}} \omega_n = \int_{B^{n}} d\omega_n.
+  \]
+  Here $\partial B^{n} = S^{n-1}$ and
+  \[
+    d\omega_n
+    = n dx_1 \wedge \cdots \wedge dx_n
+  \]
+  (in the sense of Volume elements 10.44).
+  Thus,
+  \[
+    \int_{S^{n-1}} \omega_n
+    = n \int_{B^{n}} dx_1 \wedge \cdots \wedge dx_n
+    = n \mathrm{Vol}(B^n),
+  \]
+  where $\mathrm{Vol}(B^n)$ is the volume of $B^n$.
+  Thus
+  \emph{it suffices to show that}
+  \[
+    \mathrm{Vol}(B^n) = \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} \neq 0.
+  \]
+  There are many proofs for this.
+  We give a direct integration in spherical coordinates.
+
+\item[(4)]
+  Similar to Exercise 10.9.
+  The spherical coordinate system has a radial coordinate $r$ and
+  angular coordinates $\varphi_1, \ldots, \varphi_{n-1}$,
+  where the domain of each $\varphi_1, \ldots, \varphi_{n-2}$ is $[0,\pi]$
+  and the domain of $\varphi_{n-1}$ is $[0,2\pi]$.
+  That is,
+  \[
+    x_i = \left( \prod_{j=1}^{i-1} \sin\varphi_j \right) \cos\varphi_i.
+  \]
+  The spherical volume element is
+  \[
+    r^{n-1} \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
+    dr \: d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1}.
+  \]
+  Thus by Some consequences 8.21,
+  \begin{align*}
+    \mathrm{Vol}(B^n)
+    &= \int_{B^{n}} dx_1 \cdots dx_n \\
+    &= \int_{0}^{1} \int_{0}^{\pi} \cdots \int_{0}^{2\pi}
+      r^{n-1} \sin(\varphi_1)^{n-2} \cdots \sin(\varphi_{n-2})
+      dr \: d\varphi_1 \cdots d\varphi_{n-1} \\
+    &= \left( \int_{0}^{1} r^{n-1} dr \right)
+      \left(\int_{0}^{\pi} \sin(\varphi_1)^{n-2} d\varphi_1 \right)
+      \cdots
+      \left(\int_{0}^{2\pi} d\varphi_{n-1} \right) \\
+    &= \frac{1}{n}
+      \cdot \frac{\Gamma(\frac{n-1}{2})\Gamma(\frac{1}{2})}{\Gamma(\frac{n}{2})}
+      \cdot \frac{\Gamma(\frac{n-2}{2})\Gamma(\frac{1}{2})}{\Gamma(\frac{n-1}{2})}
+      \cdots
+      \frac{\Gamma(1)\Gamma(\frac{1}{2})}{\Gamma(\frac{3}{2})} \cdot 2\pi \\
+    &= \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
