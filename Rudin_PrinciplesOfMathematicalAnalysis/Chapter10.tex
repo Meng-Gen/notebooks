@@ -3517,13 +3517,118 @@ $\Box$ \\\\
 
 
 \textbf{Exercise 10.27.}
-\emph{...} \\
+\emph{Let $E$ be an open $3$-cell in $\mathbb{R}^3$,
+with edges parallel to the coordinate axes.
+Suppose $(a,b,c) \in E$, $f_i \in \mathscr{C}'(E)$ for $i=1,2,3$,
+\[
+  \omega
+  = f_1 dy \wedge dz + f_2 dz \wedge dx + f_3 dx \wedge dy,
+\]
+and assume that $d\omega = 0$ in $E$.
+Define
+\[
+  \lambda = g_1 dx + g_2 dy
+\]
+where
+\begin{align*}
+  g_1(x,y,z) &= \int_{c}^{z} f_2(x,y,s) ds - \int_{b}^{y} f_3(x,t,c)dt \\
+  g_2(x,y,z) &= - \int_{c}^{z} f_1(x,y,s) ds,
+\end{align*}
+for $(x,y,z) \in E$.
+Prove that $d\lambda = \omega$ in $E$.
+Evaluate these integrals when $\omega = \zeta$ and thus find the form $\lambda$
+that occurs in part (e) of Exercise 10.22.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Let $\mathbf{F} = f_1 \mathbf{e}_1 + f_2 \mathbf{e}_2 + f_3 \mathbf{e}_3$
+  as in Vector fields 10.42.
+  Then
+  \[
+    d\omega = (\nabla \cdot F) dx \wedge dy \wedge dz.
+  \]
+  As $d\omega = 0$ by assumption, $\nabla \cdot F = D_1 f_1 + D_2 f_2 + D_3 f_3 = 0$.
 
+\item[(2)]
+  As
+  \begin{align*}
+    d\lambda
+    =& \: d(g_1 dx + g_2 dy) \\
+    =& \: (D_1g_1 dx + D_2g_1 dy + D_3g_1 dz) \wedge dx \\
+      &+ (D_1g_2 dx + D_2g_2 dy + D_3g_2 dz) \wedge dy \\
+    =& \: (-D_3 g_2) dy \wedge dz
+      + (D_3 g_1) dz \wedge dx + (D_1 g_2 - D_2 g_1) dx \wedge dy,
+  \end{align*}
+  it suffices to show that
+  \begin{align*}
+    f_1 &= -D_3 g_2, \\
+    f_2 &= D_3 g_1, \\
+    f_3 &= D_1 g_2 - D_2 g_1
+  \end{align*}
+  on $E$.
+
+\item[(3)]
+  Theorem 6.20 implies that
+  \[
+    -D_3 g_2 = D_3 \int_{c}^{z} f_1(x,y,s) ds = f_1(x,y,z)
+  \]
+  and
+  \[
+    D_3 g_1
+    = D_3 \int_{c}^{z} f_2(x,y,s) ds - D_3 \int_{b}^{y} f_3(x,t,c)dt \\
+    = f_2(x,y,z).
+  \]
+  Also,
+  \begin{align*}
+    & \: D_1 g_2 - D_2 g_1 \\
+    =& \: D_1 \left( -\int_{c}^{z} f_1(x,y,s) ds \right) \\
+      &- D_2 \left( \int_{c}^{z} f_2(x,y,s) ds - \int_{b}^{y} f_3(x,t,c)dt \right) \\
+    =& - \int_{c}^{z} D_1 f_1(x,y,s) ds
+      &(f_1 \in \mathscr{C}') \\
+      &- \int_{c}^{z} D_2 f_2(x,y,s) ds + f_3(x,y,c)
+        &(\text{$f_2 \in \mathscr{C}'$, Theorem 6.20}) \\
+    =& \int_{c}^{z} D_3 f_3(x,y,s) ds + f_3(x,y,c)
+      &((1)) \\
+    =& f_3(x,y,z)
+      &(\text{Theorem 6.21}).
+  \end{align*}
+  Therefore, $d\lambda = \omega$ in $E$.
+
+\item[(4)]
+  When $\omega = \zeta = r^{-3} (x dy \wedge dz + y dz \wedge dx + z dx \wedge dy)$,
+  we get
+  \begin{align*}
+    f_1(x,y,z) &= x (x^2+y^2+z^2)^{-\frac{3}{2}}, \\
+    f_2(x,y,z) &= y (x^2+y^2+z^2)^{-\frac{3}{2}}, \\
+    f_3(x,y,z) &= z (x^2+y^2+z^2)^{-\frac{3}{2}}.
+  \end{align*}
+  So,
+  \begin{align*}
+    \int_{c}^{z} f_2(x,y,s) ds
+    &= \left[ ys (x^2+y^2)^{-1}(x^2+y^2+s^2)^{-\frac{1}{2}} \right]_{s=c}^{s=z}, \\
+    \int_{b}^{y} f_3(x,t,c) dt
+    &= \left[ ct (x^2+c^2)^{-1}(x^2+t^2+c^2)^{-\frac{1}{2}} \right]_{t=b}^{t=y}, \\
+    \int_{c}^{z} f_1(x,y,s) ds
+    &= \left[ xs (x^2+y^2)^{-1}(x^2+y^2+s^2)^{-\frac{1}{2}} \right]_{s=c}^{s=z}.
+  \end{align*}
+  Hence,
+  \begin{align*}
+    \lambda
+    =& \: g_1 dx + g_2 dy \\
+    =& \: \left[ ys (x^2+y^2)^{-1}(x^2+y^2+s^2)^{-\frac{1}{2}} \right]_{s=c}^{s=z} dx \\
+      &- \left[ ct (x^2+c^2)^{-1}(x^2+t^2+c^2)^{-\frac{1}{2}} \right]_{t=b}^{t=y} dx \\
+      &+ \left[ xs (x^2+y^2)^{-1}(x^2+y^2+s^2)^{-\frac{1}{2}} \right]_{s=c}^{s=z} dy \\
+    =& - \left[ zr^{-1} - c(x^2+y^2+c^2)^{-\frac{1}{2}} \right] \eta
+      &(\text{Definition of $\eta$}) \\
+      &- c(x^2+c^2)^{-1} \left[ y(x^2+y^2+c^2)^{-\frac{1}{2}}
+        - b(x^2+b^2+c^2)^{-\frac{1}{2}} \right] dx.
+  \end{align*}
+  As we pick $(a,b,c) = (a,0,0) \in \mathbb{R}^3 - \{ \mathbf{0} \}$ (or $a \neq 0$),
+  we have $\lambda = -zr^{-1} \eta$ such that $d\lambda = \omega = \zeta$,
+  which is the same as part (e) in Exercise 10.22.
 \end{enumerate}
 $\Box$ \\\\
 
