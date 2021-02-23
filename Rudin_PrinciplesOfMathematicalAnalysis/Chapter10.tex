@@ -3065,7 +3065,98 @@ $\Box$ \\
   \end{align*}
 
 \item[(3)]
+  On $E_{k-1} \subsetneq E_k$, we write
+  \begin{align*}
+    & \: d(f_k \omega_{k-1}) \\
+    =& \: (df_k) \wedge \omega_{k-1} + (-1)^{0} f_k \wedge \underbrace{(d\omega_{k-1})}_{=0} \\
+    =& \: (df_k) \wedge \omega_{k-1} \\
+    =& \: \left\{
+        \sum_{i=1}^{k} D_i f_k(\mathbf{x}) dx_i
+      \right\}
+      \wedge \\
+      &\left\{
+        \frac{1}{(r_{k-1})^{k-1}}
+        \sum_{j=1}^{k-1} (-1)^{j-1} x_j dx_1 \wedge \cdots
+        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k-1}
+      \right\} \\
+    =& \: \frac{1}{(r_{k-1})^{k-1}}
+      \sum_{\substack{1 \leq i \leq k \\ 1 \leq j \leq k-1}}
+      (-1)^{j-1} x_j D_i f_k(\mathbf{x})
+      dx_i \wedge dx_1 \wedge \cdots
+        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k-1} \\
+    =& \: \frac{1}{(r_{k-1})^{k-1}}
+      \sum_{j=1}^{k-1}
+      (-1)^{j-1} x_j D_j f_k(\mathbf{x})
+      dx_j \wedge dx_1 \wedge \cdots
+        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k-1} \\
+      &+
+      \frac{1}{(r_{k-1})^{k-1}}
+      \sum_{j=1}^{k-1}
+      (-1)^{j-1} x_j D_k f_k(\mathbf{x})
+      dx_k \wedge dx_1 \wedge \cdots
+        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k-1}.
+  \end{align*}
 
+\item[(4)]
+  By (2),
+  \begin{align*}
+    &\frac{1}{(r_{k-1})^{k-1}}
+      \sum_{j=1}^{k-1}
+      (-1)^{j-1} x_j D_j f_k(\mathbf{x})
+      dx_j \wedge dx_1 \wedge \cdots
+        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k-1} \\
+    =& \:
+    \frac{1}{(r_{k-1})^{k-1}}
+      \sum_{j=1}^{k-1}
+      x_j D_j f_k(\mathbf{x})
+      dx_1 \wedge \cdots \wedge dx_{k-1} \\
+    =& \:
+    \frac{1}{(r_{k-1})^{k-1}}
+      (-D_k f_k(x) x_k)
+      dx_1 \wedge \cdots \wedge dx_{k-1} \\
+    =& \:
+    \frac{(-1)^k D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
+      (-1)^{k-1} x_k dx_1 \wedge \cdots \wedge dx_{k-1} \wedge \widehat{dx_{k}}.
+  \end{align*}
+  Also,
+  \begin{align*}
+    &\frac{1}{(r_{k-1})^{k-1}}
+      \sum_{j=1}^{k-1}
+      (-1)^{j-1} x_j D_k f_k(\mathbf{x})
+      dx_k \wedge dx_1 \wedge \cdots
+        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k-1} \\
+    =& \:
+    \frac{(-1)^{k} D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
+      \sum_{j=1}^{k-1}
+      (-1)^{j-1} x_j
+      dx_1 \wedge \cdots
+        \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k}.
+  \end{align*}
+
+\item[(5)]
+  Hence,
+  \begin{align*}
+    & \: d(f_k \omega_{k-1}) \\
+    =& \: \frac{(-1)^k D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
+      (-1)^{k-1} x_k dx_1 \wedge \cdots \wedge dx_{k-1} \wedge \widehat{dx_{k}} \\
+      &+ \: \frac{(-1)^{k} D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
+        \sum_{j=1}^{k-1}
+        (-1)^{j-1} x_j
+        dx_1 \wedge \cdots
+          \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k} \\
+    =& \: \frac{(-1)^k D_k f_k(\mathbf{x})}{(r_{k-1})^{k-1}}
+      \sum_{j=1}^{k}
+        (-1)^{j-1} x_j
+        dx_1 \wedge \cdots
+          \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k} \\
+    =& \: \frac{1}{(r_k)^{k}}
+      \sum_{j=1}^{k}
+        (-1)^{j-1} x_j
+        dx_1 \wedge \cdots
+          \wedge \widehat{dx_j} \wedge \cdots \wedge dx_{k}
+      & ((1)) \\
+    =& \: \omega_{k}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
