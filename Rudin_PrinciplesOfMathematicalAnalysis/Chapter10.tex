@@ -4040,8 +4040,92 @@ $\Box$ \\\\
 
 
 
-\textbf{Exercise 10.32.}
-\emph{...} \\
+% http://ms.mcmaster.ca/gabardo/moebius.pdf
+
+
+
+\textbf{Exercise 10.32 (M\"obius band).}
+\emph{Fix $\delta$, $0 < \delta < 1$.
+Let $D$ be the set of all $(\theta,t) \in \mathbb{R}^2$ such that $0 \leq \theta \leq \pi$,
+$-\delta \leq t \leq \delta$.
+Let $\Phi$ be the $2$-surface in $\mathbb{R}^3$, with parameter domain $D$, given by
+\begin{align*}
+  x &= (1-t\sin\theta) \cos(2\theta) \\
+  y &= (1-t\sin\theta) \sin(2\theta) \\
+  z &= t \cos\theta
+\end{align*}
+where $(x,y,z) = \Phi(\theta,t)$.
+Note that $\Phi(\pi,t) = \Phi(0,-t)$, and that $\Phi$ is one-to-one on the rest of $D$.} \\
+
+\emph{The range $M = \Phi(D)$ of $\Phi$ is known as a \textbf{M\"obius band}.
+It is the simplest example of a nonorientable surface.} \\
+
+\emph{Prove the various assertions made in the following description:
+Put
+$\mathbf{p}_1 = (0,-\delta)$,
+$\mathbf{p}_2 = (\pi,-\delta)$,
+$\mathbf{p}_3 = (\pi,\delta)$,
+$\mathbf{p}_4 = (0,\delta)$,
+$\mathbf{p}_5 = \mathbf{p}_1$.
+Put $\gamma_i = [\mathbf{p}_i,\mathbf{p}_{i+1}]$, $i=1,\ldots,4$,
+and put $\Gamma_i = \Phi \circ \gamma_i$.
+Then
+\[
+  \partial \Phi = \Gamma_1 + \Gamma_2 + \Gamma_3 + \Gamma_4.
+\]
+Put $\mathbf{a} = (1,0,-\delta)$, $\mathbf{b} = (1,0,\delta)$.
+Then
+\[
+  \Phi(\mathbf{p}_1) = \Phi(\mathbf{p}_3) = \mathbf{a},
+  \qquad
+  \Phi(\mathbf{p}_2) = \Phi(\mathbf{p}_4) = \mathbf{b},
+\]
+and $\partial \Phi$ can be described as follows.}
+\begin{enumerate}
+\item[(1)]
+  \emph{$\Gamma_1$ spirals up from $\mathbf{a}$ to $\mathbf{b}$;
+  its projection into the $(x,y)$-plane has winding number $+1$ around the origin.
+  (See Exercise 8.23.)}
+
+\item[(2)]
+  \emph{$\Gamma_2 = [\mathbf{b}, \mathbf{a}]$.}
+
+\item[(3)]
+  \emph{$\Gamma_3$ spirals up from $\mathbf{a}$ to $\mathbf{b}$;
+  its projection into the $(x,y)$-plane has winding number $-1$ around the origin.}
+
+\item[(4)]
+  \emph{$\Gamma_4 = [\mathbf{b}, \mathbf{a}]$.}
+\end{enumerate}
+\emph{Thus $\partial \Phi = \Gamma_1 + \Gamma_3 + 2 \Gamma_2.$} \\
+
+\emph{If we go from $\mathbf{a}$ to $\mathbf{b}$ along $\Gamma_1$
+and continue along the ``edge'' of $M$ until we return to $\mathbf{a}$,
+the curve traced out is
+\[
+  \Gamma = \Gamma_1 - \Gamma_3,
+\]
+which may also be represented on the parameter interval $[0,2\pi]$ by the equations
+\begin{align*}
+  x &= (1+\delta\sin\theta) \cos(2\theta) \\
+  y &= (1+\delta\sin\theta) \sin(2\theta) \\
+  z &= -\delta\cos\theta.
+\end{align*}
+It should be emphasized that $\Gamma \neq \partial \Phi$:
+Let $\eta = \frac{xdy-ydx}{x^2+y^2}$
+be the $1$-form discussed in Exercise 10.21 and Exercise 10.22.
+Since $d\eta = 0$, Stokes' theorem shows that
+\[
+  \int_{\partial \Phi} \eta = 0.
+\]
+But although $\Gamma$ is the ``geometric'' boundary of $M$, we have
+\[
+  \int_{\Gamma} \eta = 4 \pi.
+\]
+In order to avoid this possible source of confusion,
+Stokes' formula (Theorem 10.50) is frequently stated only for orientable surfaces $\Phi$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
