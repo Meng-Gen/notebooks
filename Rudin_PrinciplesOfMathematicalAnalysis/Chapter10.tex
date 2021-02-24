@@ -4130,8 +4130,119 @@ Stokes' formula (Theorem 10.50) is frequently stated only for orientable surface
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  \emph{Show that $\partial \Phi = \Gamma_1 + \Gamma_2 + \Gamma_3 + \Gamma_4$.}
+  \begin{align*}
+    \partial \Phi
+    &= \Phi \circ (\partial D) \\
+    &= \Phi \circ (\gamma_1 + \gamma_2 + \gamma_3 + \gamma_4) \\
+    &= \Phi \circ \gamma_1 + \Phi \circ \gamma_2 + \Phi \circ \gamma_3 + \Phi \circ \gamma_4 \\
+    &= \Gamma_1 + \Gamma_2 + \Gamma_3 + \Gamma_4.
+  \end{align*}
 
+\item[(2)]
+  It is trivial that
+  $\Phi(\mathbf{p}_1) = \Phi(\mathbf{p}_3) = \mathbf{a} = (1,0,-\delta)$
+  and
+  $\Phi(\mathbf{p}_2) = \Phi(\mathbf{p}_4) = \mathbf{b} = (1,0,\delta)$
+  by the definition of $\Phi$.
+
+\item[(3)]
+  \emph{Show that $\Gamma_1$ spirals up from $\mathbf{a}$ to $\mathbf{b}$;
+  its projection into the $(x,y)$-plane has winding number $+1$ around the origin.}
+  By definition,
+  $\Gamma_1 = \Phi \circ \gamma_1 = \Phi([\mathbf{p}_1, \mathbf{p}_2])$.
+  That is,
+  $\Gamma_1$ spirals up from $\Phi(\mathbf{p}_1) = \mathbf{a}$
+  to $\Phi(\mathbf{p}_2) = \mathbf{b}$.
+  Besides, the projection $P_{\Gamma_1}$ of $\Gamma_1$ into the $(x,y)$-plane ($z = 0$)
+  can be parameterized as
+  \begin{align*}
+    x &= \left(1+\delta\sin\frac{t}{2}\right) \cos t \\
+    y &= \left(1+\delta\sin\frac{t}{2}\right) \sin t
+  \end{align*}
+  for $0 \leq t \leq 2\pi$.
+  Note that $P_{\Gamma_1}$ satisfies the condition in Exercise 10.21(b).
+  Hence $\int_{P_{\Gamma_1}} \eta = 2\pi$.
+  (Here $\eta$ is well-defined.)
+  Apply Exercise 10.21(f) to get
+  \[
+    \mathrm{Ind}(P_{\Gamma_1})
+    = \frac{1}{2\pi} \int_{P_{\Gamma_1}} \eta
+    = \frac{1}{2\pi} \cdot 2\pi
+    = 1.
+  \]
+
+\item[(4)]
+  \emph{Show that $\Gamma_2 = [\mathbf{b}, \mathbf{a}]$.}
+  By definition,
+  $\Gamma_2 = \Phi \circ \gamma_2 = \Phi([\mathbf{p}_2, \mathbf{p}_3])$
+  is $[\mathbf{b}, \mathbf{a}]$ exactly.
+
+\item[(5)]
+  \emph{Show that $\Gamma_3$ spirals up from $\mathbf{a}$ to $\mathbf{b}$;
+  its projection into the $(x,y)$-plane has winding number $-1$ around the origin.}
+  Similar to (3),
+  $\Gamma_3$ spirals up from $\Phi(\mathbf{p}_3) = \mathbf{a}$
+  to $\Phi(\mathbf{p}_4) = \mathbf{b}$.
+  Now we consider $-\Gamma_3$ instead of $\Gamma_3$.
+  The projection $P_{-\Gamma_3}$ of $-\Gamma_3$ into the $(x,y)$-plane ($z = 0$)
+  can be parameterized as
+  \begin{align*}
+    x &= \left(1-\delta\sin\frac{t}{2}\right) \cos t \\
+    y &= \left(1-\delta\sin\frac{t}{2}\right) \sin t
+  \end{align*}
+  for $0 \leq t \leq 2\pi$.
+  Similar to (3), $\mathrm{Ind}(P_{-\Gamma_3}) = 1$. Therefore,
+  \[
+    \mathrm{Ind}(P_{\Gamma_3})
+    = -\mathrm{Ind}(-P_{\Gamma_3})
+    = -\mathrm{Ind}(P_{-\Gamma_3})
+    = -1.
+  \]
+
+\item[(6)]
+  \emph{Show that $\Gamma_4 = [\mathbf{b}, \mathbf{a}]$.}
+  Similar to (4).
+
+\item[(7)]
+  \emph{Show that $\Gamma = \Gamma_1 - \Gamma_3$
+  is the trace of from $\mathbf{a}$ to $\mathbf{b}$ along $\Gamma_1$
+  and continue along the ``edge'' of $M$ until we return to $\mathbf{a}$.}
+  By definition, $\Gamma$ can be parameterized as
+  \begin{align*}
+    x &= (1+\delta\sin t) \cos(2t) \\
+    y &= (1+\delta\sin t) \sin(2t) \\
+    z &= -\delta \cos t
+  \end{align*}
+  for $t \in [0,2\pi]$.
+  Thus, $\Gamma$ is $\Gamma_1$ if $t \in [0,\pi]$
+  and $\Gamma$ is $-\Gamma_3$ if $t \in [\pi,2\pi]$ by (3)(5).
+  So $\Gamma = \Gamma_1 - \Gamma_3$.
+
+\item[(8)]
+  \emph{Show that $\int_{\partial \Phi} \eta = 0$.}
+  Note that $\eta$ is well-defined since $M$ does not intersect the $z$-axis.
+  So the Stokes' theorem (Theorem 10.33) and $d\eta = 0$ on $M$ implies that
+  \[
+    \int_{\partial \Phi} \eta
+    = \int_{\Phi} d\eta
+    = 0.
+  \]
+
+\item[(9)]
+  \emph{Show that $\int_{\Gamma} \eta = 4 \pi$.}
+  \begin{align*}
+    \int_{\Gamma} \eta
+    &= \int_{\Gamma} \frac{xdy-ydx}{x^2+y^2} \\
+    &= \int_{0}^{2\pi} \frac{x(t)y'(t) - y(t)x'(t)}{x(t)^2+y(t)^2} dt
+      &((7)) \\
+    &= \int_{0}^{2\pi} 2 \: dt \\
+    &= 4 \pi.
+  \end{align*}
+  (So the winding number of $\Gamma$ around of $\mathbf{0}$ is $2$.)
+
+\item[(10)]
+  By (8)(9), $\Gamma \neq \partial \Phi$.
 \end{enumerate}
 $\Box$ \\\\
 
