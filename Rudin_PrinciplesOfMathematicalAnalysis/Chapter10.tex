@@ -2712,7 +2712,7 @@ with parameter domain $D$, given by
     = \int_{E} \sin u \: du \: dv
     = A(S),
   \]
-  where $A$ denotes area, as in Section 10.43.
+  where $A$ denotes area, as in Section 10.46.
   Note that this contains
   \[
     \int_{\Sigma} \zeta
@@ -2853,7 +2853,58 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  By Area elements in $\mathbb{R}^3$,
+  \begin{align*}
+    \mathbf{N}(u,v)
+    &= \frac{\partial(y,z)}{\partial(u,v)} \mathbf{e}_1
+      + \frac{\partial(z,x)}{\partial(u,v)} \mathbf{e}_2
+      + \frac{\partial(x,y)}{\partial(u,v)}\mathbf{e}_3 \\
+    &= (\sin^2 u \cos v) \mathbf{e}_1
+      + (\sin^2 u \sin v) \mathbf{e}_2
+      + (\sin u \cos u) \mathbf{e}_3.
+  \end{align*}
+  Here
+  $\abs{\mathbf{N}(u,v)} = \sin u \geq 0$ (by noting that $u \in [0,\pi]$),
+  and
+  \begin{align*}
+    \mathbf{n}(u,v)
+    &= \frac{\mathbf{N}(u,v)}{ \abs{\mathbf{N}(u,v)} } \\
+    &= (\sin u \cos v) \mathbf{e}_1
+      + (\sin u \sin v) \mathbf{e}_2
+      + (\cos u) \mathbf{e}_3 \\
+    &= x \mathbf{e}_1
+      + y \mathbf{e}_2
+      + z \mathbf{e}_3.
+  \end{align*}
+
 \item[(2)]
+  Note that $\zeta = x dy \wedge dz + y dz \wedge dx + z dx \wedge dy$ on $S \subseteq \Sigma$.
+  Hence,
+  by Integrals of $2$-forms in $\mathbb{R}^3$ 10.49,
+  \begin{align*}
+    \int_{S} \zeta
+    =& \: \int_{S} x dy \wedge dz + y dz \wedge dx + z dx \wedge dy \\
+    =& \: \int_{E} (x \mathbf{e}_1
+      + y \mathbf{e}_2
+      + z \mathbf{e}_3) \cdot \mathbf{n}(u,v) \abs{\mathbf{N}(u,v)} du \: dv \\
+    =& \: \int_{E} \mathbf{n}(u,v) \cdot \mathbf{n}(u,v) \abs{\mathbf{N}(u,v)} du \: dv \\
+    =& \: \int_{E} \abs{\mathbf{N}(u,v)} du \: dv \\
+    =& \: A(S).
+  \end{align*}
+
+\item[(3)]
+  In particular,
+  \begin{align*}
+    \int_{\Sigma} \zeta
+    =& \: \int_{D} \sin u \: du \: dv \\
+    =& \: \int_{0}^{\pi} \int_{0}^{2\pi} \sin u \: du \: dv \\
+    =& \: \left( \int_{0}^{\pi} \sin u \: du \right)
+      \left( \int_{0}^{2\pi} dv \right) \\
+    =& \: 2 \cdot 2 \pi \\
+    =& \: 4 \pi.
+  \end{align*}
+
+
 
 \end{enumerate}
 $\Box$ \\
@@ -3205,13 +3256,13 @@ $\Box$ \\
   \[
     \int_{S^{n-1}} \omega_n
     = n \int_{B^{n}} dx_1 \wedge \cdots \wedge dx_n
-    = n \mathrm{Vol}(B^n),
+    = n \mathrm{vol}(B^n),
   \]
-  where $\mathrm{Vol}(B^n)$ is the volume of $B^n$.
+  where $\mathrm{vol}(B^n)$ is the volume of $B^n$.
   Thus
   \emph{it suffices to show that}
   \[
-    \mathrm{Vol}(B^n) = \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} \neq 0.
+    \mathrm{vol}(B^n) = \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} \neq 0.
   \]
   There are many proofs for this.
   We give a direct integration in spherical coordinates.
@@ -3233,7 +3284,7 @@ $\Box$ \\
   \]
   Thus by Some consequences 8.21,
   \begin{align*}
-    \mathrm{Vol}(B^n)
+    \mathrm{vol}(B^n)
     &= \int_{B^{n}} dx_1 \cdots dx_n \\
     &= \int_{0}^{1} \int_{0}^{\pi} \cdots \int_{0}^{2\pi}
       r^{n-1} \sin(\varphi_1)^{n-2} \cdots \sin(\varphi_{n-2})
@@ -3249,6 +3300,30 @@ $\Box$ \\
       \frac{\Gamma(1)\Gamma(\frac{1}{2})}{\Gamma(\frac{3}{2})} \cdot 2\pi \\
     &= \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)}.
   \end{align*}
+
+\item[(5)]
+  Note that we can apply the spherical coordinate system
+  to $\int_{S^{n-1}} \omega_n$ directly (without the Stokes' theorem).
+  The area element of the 2-sphere, is given by
+  \[
+    \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
+    d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1}.
+  \]
+  A tedious calculation (in the proof of (d)) shows that
+  \begin{align*}
+    &\int_{S^{n-1}} \omega_n \\
+    =& \: \int_{0}^{\pi} \cdots \int_{0}^{2\pi}
+      \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
+      d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1} \\
+    =& \: \left(\int_{0}^{\pi} \sin(\varphi_1)^{n-2} d\varphi_1 \right)
+      \cdots
+      \left(\int_{0}^{2\pi} d\varphi_{n-1} \right) \\
+    =& \: \frac{\Gamma(\frac{n-1}{2})\Gamma(\frac{1}{2})}{\Gamma(\frac{n}{2})}
+      \cdot \frac{\Gamma(\frac{n-2}{2})\Gamma(\frac{1}{2})}{\Gamma(\frac{n-1}{2})}
+      \cdots
+      \frac{\Gamma(1)\Gamma(\frac{1}{2})}{\Gamma(\frac{3}{2})} \cdot 2\pi \\
+    =& \: \frac{n\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
@@ -3257,7 +3332,25 @@ $\Box$ \\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
+  Let $\Sigma$ be the $(n-1)$-surface in $\mathbb{R}^n$,
+  with parameter domain $D = [0,\pi]^{n-2} \times [0,2\pi]$,
+  given by
+  \[
+    x_i = \left( \prod_{j=1}^{i-1} \sin\varphi_j \right) \cos\varphi_i.
+  \]
+  That is, $\Sigma = S^{n-1}$.
+
 \item[(2)]
+  \emph{Let $S$ denote the restriction of $\Sigma$ to a parameter domain $E \subseteq D$.
+  Prove that
+  \[
+    \int_{S} \omega_n
+    = \int_{E}  \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
+      d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1}
+    = A(S),
+  \]
+  where $A$ denotes surface area.
+  Note that this proves (c)(5).}
 
 \end{enumerate}
 $\Box$ \\\\
