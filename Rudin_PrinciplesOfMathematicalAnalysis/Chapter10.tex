@@ -2869,12 +2869,7 @@ $\Box$ \\
   \begin{align*}
     \mathbf{n}(u,v)
     &= \frac{\mathbf{N}(u,v)}{ \abs{\mathbf{N}(u,v)} } \\
-    &= (\sin u \cos v) \mathbf{e}_1
-      + (\sin u \sin v) \mathbf{e}_2
-      + (\cos u) \mathbf{e}_3 \\
-    &= x \mathbf{e}_1
-      + y \mathbf{e}_2
-      + z \mathbf{e}_3.
+    &= (\sin u \cos v, \sin u \sin v, \cos u).
   \end{align*}
 
 \item[(2)]
@@ -2884,11 +2879,9 @@ $\Box$ \\
   \begin{align*}
     \int_{S} \zeta
     =& \: \int_{S} x dy \wedge dz + y dz \wedge dx + z dx \wedge dy \\
-    =& \: \int_{E} (x \mathbf{e}_1
-      + y \mathbf{e}_2
-      + z \mathbf{e}_3) \cdot \mathbf{n}(u,v) \abs{\mathbf{N}(u,v)} du \: dv \\
-    =& \: \int_{E} \mathbf{n}(u,v) \cdot \mathbf{n}(u,v) \abs{\mathbf{N}(u,v)} du \: dv \\
-    =& \: \int_{E} \abs{\mathbf{N}(u,v)} du \: dv \\
+    =& \: \int_{E} (\sin u \cos v, \sin u \sin v, \cos u) \cdot \mathbf{N}(u,v) \: du \: dv \\
+    =& \: \int_{E} \mathbf{n}(u,v) \cdot \mathbf{n}(u,v) \abs{\mathbf{N}(u,v)} \: du \: dv \\
+    =& \: \int_{E} \abs{\mathbf{N}(u,v)} \: du \: dv \\
     =& \: A(S).
   \end{align*}
 
@@ -2903,9 +2896,6 @@ $\Box$ \\
     =& \: 2 \cdot 2 \pi \\
     =& \: 4 \pi.
   \end{align*}
-
-
-
 \end{enumerate}
 $\Box$ \\
 
@@ -2914,8 +2904,40 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Similar to (b).
+  \begin{align*}
+    &\mathbf{N}(s,t) \\
+    =& \: \frac{\partial(y,z)}{\partial(s,t)} \mathbf{e}_1
+      + \frac{\partial(z,x)}{\partial(s,t)} \mathbf{e}_2
+      + \frac{\partial(x,y)}{\partial(s,t)}\mathbf{e}_3 \\
+    =& \: g(t)g'(t)[ (h_1(s),h_2(s),h_3(s)) \times (h_1'(s),h_2'(s),h_3'(s)) ] \\
+    =& \: g(t)g'(t)[ \mathbf{H}(s) \times \mathbf{H}'(s)],
+  \end{align*}
+  where $\mathbf{H}(s) = (h_1(s),h_2(s),h_3(s))$
+  and $\mathbf{H}'(s) = (h_1'(s),h_2'(s),h_3'(s))$.
+  (Here ``$\times$'' is the cross product in $\mathbb{R}^3$.)
 
+\item[(2)]
+  Assume $\zeta$ is well-defined, i.e., $\mathbf{H}(s) \neq \mathbf{0}$ for all $s \in [0,1]$.
+  By Integrals of $2$-forms in $\mathbb{R}^3$ 10.49,
+  \begin{align*}
+    \int_{\Phi} \zeta
+    =& \: \int_{\Phi} \frac{x dy \wedge dz + y dz \wedge dx + z dx \wedge dy}{r^3} \\
+    =& \: \int_{I^2} \frac{g(t)}{g(t)^3 |\mathbf{H}(s)|^3} \mathbf{H}(s)
+      \cdot \mathbf{N}(s,t) \: ds \: dt \\
+    =& \: \int_{I^2} \frac{g(t)}{g(t)^3 |\mathbf{H}(s)|^3} \mathbf{H}(s)
+      \cdot g(t)g'(t)[ \mathbf{H}(s) \times \mathbf{H}'(s)] \: ds \: dt \\
+    =& \: \int_{I^2} \frac{g'(t)}{g(t) |\mathbf{H}(s)|^3} \mathbf{H}(s)
+      \cdot [ \mathbf{H}(s) \times \mathbf{H}'(s)] \: ds \: dt \\
+    =& \: 0
+  \end{align*}
+  (since $\mathbf{H}(s) \cdot [ \mathbf{H}(s) \times \mathbf{H}'(s)] = 0$.)
+
+\item[(3)]
+  Note that $\Sigma$ in spherical coordinate system
+  cannot be parameterized as
+  $(x,y,z) = g(t)\mathbf{H}(s)$,
+  and thus $\int_{S} \zeta$ could be nonzero as shown in (b).
 \end{enumerate}
 $\Box$ \\
 
