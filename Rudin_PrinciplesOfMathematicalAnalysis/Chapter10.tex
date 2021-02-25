@@ -3080,8 +3080,62 @@ $\Box$ \\
 \emph{Proof of (f).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  To ensure that $\eta$ is well-defined on $E$,
+  we might assume $x^2+y^2 = \sin^2 u \neq 0$ or $0 < u < \pi$ on $E$.
+  It is fine since
+  $\int_{\Omega} \zeta$ and $\int_{S} \zeta$ is well-defined on any closed rectangle in $D$
+  and we can apply the argument in Exercise 6.7 to remedy for additional assumption.
 
+\item[(2)]
+  By the Stokes' theorem (Theorem 10.33) and (e),
+  \[
+    \int_{\Omega} \zeta = \int_{\partial\Omega} \lambda
+    \qquad
+    \text{and}
+    \qquad
+    \int_{S} \zeta = \int_{\partial S} \lambda.
+  \]
+  So it suffices to show that
+  \[
+    \int_{\partial\Omega} \lambda = \int_{\partial S} \lambda.
+  \]
+  Note that $\lambda = -\frac{z}{r} \eta$,
+  and thus it suffices to show that
+  $\frac{z}{r}|_{\partial\Omega} = \frac{z}{r}|_{\partial S}$
+  and $\eta|_{\partial\Omega} = \eta|_{\partial S}$.
+
+\item[(3)]
+  \emph{Show that $\frac{z}{r}|_{\partial\Omega} = \frac{z}{r}|_{\partial S}$.}
+  For any $(x_{\Omega}, y_{\Omega}, z_{\Omega}) \in \partial\Omega$,
+  \[
+    (x_{\Omega}, y_{\Omega}, z_{\Omega}) = f(u,v)(x_{\Sigma}, y_{\Sigma}, z_{\Sigma})
+  \]
+  where $(x_{\Sigma}, y_{\Sigma}, z_{\Sigma}) \in \partial S$.
+  So
+  \begin{align*}
+    \frac{z}{r}|_{\partial\Omega}
+    &= \frac{z_{\Omega}}{(x_{\Omega}^2+y_{\Omega}^2+z_{\Omega}^2)^{\frac{1}{2}}} \\
+    &= \frac{f(u,v)z_{\Sigma}}{f(u,v)(x_{\Sigma}^2+y_{\Sigma}^2+z_{\Sigma}^2)^{\frac{1}{2}}} \\
+    &= \frac{z_{\Sigma}}{(x_{\Sigma}^2+y_{\Sigma}^2+z_{\Sigma}^2)^{\frac{1}{2}}} \\
+    &= \frac{z}{r}|_{\partial S}.
+  \end{align*}
+  (Note that $f > 0$.)
+
+\item[(4)]
+  \emph{Show that $\eta|_{\partial\Omega} = \eta|_{\partial S}$.}
+  Similar to (3).
+  If $x_{\Omega} \neq 0$ (or $x_{\Sigma} \neq 0$),
+  then by Exercise 10.21(d)
+  \begin{align*}
+    \eta|_{\partial\Omega}
+    &= d\left(\arctan\frac{y_{\Omega}}{x_{\Omega}}\right) \\
+    &= d\left(\arctan\frac{f(u,v)y_{\Sigma}}{f(u,v)x_{\Sigma}}\right) \\
+    &= d\left(\arctan\frac{y_{\Sigma}}{x_{\Sigma}}\right) \\
+    &= \eta|_{\partial S}.
+  \end{align*}
+  Similarly, $\eta|_{\partial\Omega} = \eta|_{\partial S}$ is also true if $y_{\Omega} \neq 0$.
+  Note that $(x_{\Omega},y_{\Omega}) \neq (0,0)$ by assumption.
+  Therefore the result is established.
 \end{enumerate}
 $\Box$ \\
 
