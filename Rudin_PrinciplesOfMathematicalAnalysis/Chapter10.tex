@@ -2,6 +2,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
@@ -3186,10 +3187,10 @@ $\Box$ \\
   say $T = R_x(u)R_y(v)R_z(w)$.
   For example, the rotation
   \[
-    T = R_y(-u)R_z(-v)
+    T = R_y\left(u-\frac{\pi}{2}\right)R_z(-v)
   \]
-  maps $L$ to the $z$-axis.
-  by showing that $T(r \sin u \cos v, r \sin u \sin v, r \cos u) = (0,0,r)$.
+  maps $L$ to the $z$-axis
+  (by showing that $T(r \sin u \cos v, r \sin u \sin v, r \cos u) = (0,0,r)$).
   By Theorem 10.22
   it suffices to show that $\zeta$ is invariant under $R_x(u)$, $R_x(v)$ and $R_z(w)$.
   By the symmetricity of $\zeta$, it suffices to show that $\zeta$ is invariant under $T = R_x(u)$.
@@ -3268,8 +3269,8 @@ and let $\omega_k$ be the $(k-1)$-form defined in $E_k$ by
 \[
   \omega_k
   = (r_k)^{-k}
-    \sum_{i=1}^{k} (-1)^{i-1} x_i dx_1 \wedge \cdots
-    \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
+    \sum_{i=1}^{k} (-1)^{i-1} x_i
+    dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
 \]
 Note that $\omega_2 = \eta$, $\omega_3 = \zeta$ in the terminology of
 Exercise 10.21 and Exercise 10.22.
@@ -3495,47 +3496,44 @@ $\Box$ \\
 \item[(2)]
   Let
   \begin{align*}
-    S^{n-1}
+    \mathbb{S}^{n-1}
     &= \{ (x_1,\ldots,x_n) \in \mathbb{R}^n : x_1^2+\cdots+x_n^2 = 1 \} \\
-    B^{n}
+    \mathbb{B}^{n}
     &= \{ (x_1,\ldots,x_n) \in \mathbb{R}^n : x_1^2+\cdots+x_n^2 \leq 1 \}.
   \end{align*}
   \emph{It suffices to show that}
   \[
-    \int_{S^{n-1}} \omega_n
+    \int_{\mathbb{S}^{n-1}} \omega_n
     = \frac{n \pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} \neq 0.
   \]
   Therefore, $\omega_n$ is not exact in $E_n$.
 
 \item[(3)]
-  Note that
+  Define
   \[
-    \omega_n
-    = \sum_{i=1}^{n} (-1)^{i-1} x_i
+    \omega = \frac{1}{n} \sum_{i=1}^{n} (-1)^{i-1} x_i
     dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_{n}
   \]
-  on $S^{n-1}$ (and that's why we pick $S^{n-1}$).
+  on $\mathbb{S}^{n-1}$.
+  Note that
+  \[
+    \omega = \frac{1}{n} \omega_n
+  \]
+  on $\mathbb{S}^{n-1}$ (and that's why we pick $\mathbb{S}^{n-1}$).
   The Stokes' theorem (Theorem 10.33) implies that
   \[
-    \int_{\partial B^{n}} \omega_n = \int_{B^{n}} d\omega_n.
+    \int_{\mathbb{S}^{n-1}} \frac{1}{n} \omega_n
+    = \int_{\partial \mathbb{B}^{n}} \omega
+    = \int_{\mathbb{B}^{n}} d\omega
+    = \int_{\mathbb{B}^{n}} dx_1 \wedge \cdots \wedge dx_n
+    = \mathrm{vol}(\mathbb{B}^n),
   \]
-  Here $\partial B^{n} = S^{n-1}$ and
-  \[
-    d\omega_n
-    = n dx_1 \wedge \cdots \wedge dx_n
-  \]
-  (in the sense of Volume elements 10.44).
-  Thus,
-  \[
-    \int_{S^{n-1}} \omega_n
-    = n \int_{B^{n}} dx_1 \wedge \cdots \wedge dx_n
-    = n \mathrm{vol}(B^n),
-  \]
-  where $\mathrm{vol}(B^n)$ is the volume of $B^n$.
+  where $\mathrm{vol}(\mathbb{B}^n)$ is the volume of $\mathbb{B}^n$.
   Thus
   \emph{it suffices to show that}
   \[
-    \mathrm{vol}(B^n) = \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} \neq 0.
+    \mathrm{vol}(\mathbb{B}^n)
+    = \frac{\pi^{\frac{n}{2}}}{\Gamma\left(\frac{n}{2}+1\right)} \neq 0.
   \]
   There are many proofs for this.
   We give a direct integration in spherical coordinates.
@@ -3543,25 +3541,31 @@ $\Box$ \\
 \item[(4)]
   Similar to Exercise 10.9.
   The spherical coordinate system has a radial coordinate $r$ and
-  angular coordinates $\varphi_1, \ldots, \varphi_{n-1}$,
+  angular coordinates $\bm{\varphi} = (\varphi_1, \ldots, \varphi_{n-1})$,
   where the domain of each $\varphi_1, \ldots, \varphi_{n-2}$ is $[0,\pi]$
   and the domain of $\varphi_{n-1}$ is $[0,2\pi]$.
   That is,
-  \[
-    x_i = \left( \prod_{j=1}^{i-1} \sin\varphi_j \right) \cos\varphi_i.
-  \]
+  \begin{align*}
+    x_1 &= \cos\varphi_1 \\
+    x_2 &= \sin\varphi_1 \cos\varphi_2 \\
+    x_3 &= \sin\varphi_1 \sin\varphi_2 \cos\varphi_3 \\
+    & \cdots \\
+    x_{n-1} &= \sin\varphi_1 \cdots \sin\varphi_{n-2} \cos\varphi_{n-1} \\
+    x_n &= \sin\varphi_1 \cdots \sin\varphi_{n-2} \sin\varphi_{n-1}.
+  \end{align*}
+  (It is different from Exercise 10.22.)
   The spherical volume element is
   \[
     r^{n-1} \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
-    dr \: d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1}.
+    dr \: d\bm{\varphi}.
   \]
   Thus by Some consequences 8.21,
   \begin{align*}
-    \mathrm{vol}(B^n)
-    &= \int_{B^{n}} dx_1 \cdots dx_n \\
+    \mathrm{vol}(\mathbb{B}^n)
+    &= \int_{\mathbb{B}^{n}} d\mathbf{x} \\
     &= \int_{0}^{1} \int_{0}^{\pi} \cdots \int_{0}^{2\pi}
       r^{n-1} \sin(\varphi_1)^{n-2} \cdots \sin(\varphi_{n-2})
-      dr \: d\varphi_1 \cdots d\varphi_{n-1} \\
+      dr \: d\bm{\varphi} \\
     &= \left( \int_{0}^{1} r^{n-1} dr \right)
       \left(\int_{0}^{\pi} \sin(\varphi_1)^{n-2} d\varphi_1 \right)
       \cdots
@@ -3576,18 +3580,18 @@ $\Box$ \\
 
 \item[(5)]
   Note that we can apply the spherical coordinate system
-  to $\int_{S^{n-1}} \omega_n$ directly (without the Stokes' theorem).
-  The area element of the 2-sphere, is given by
+  to $\int_{\mathbb{S}^{n-1}} \omega_n$ directly (without the Stokes' theorem).
+  The area element of the $2$-sphere, is given by
   \[
     \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
-    d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1}.
+    d\bm{\varphi}.
   \]
   A tedious calculation (in the proof of (d)) shows that
   \begin{align*}
-    &\int_{S^{n-1}} \omega_n \\
+    &\int_{\mathbb{S}^{n-1}} \omega_n \\
     =& \: \int_{0}^{\pi} \cdots \int_{0}^{2\pi}
       \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
-      d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1} \\
+      d\bm{\varphi} \\
     =& \: \left(\int_{0}^{\pi} \sin(\varphi_1)^{n-2} d\varphi_1 \right)
       \cdots
       \left(\int_{0}^{2\pi} d\varphi_{n-1} \right) \\
@@ -3602,29 +3606,234 @@ $\Box$ \\
 
 
 
-\emph{Proof of (d).}
+
+\emph{Outline of (d).}
 \begin{enumerate}
-\item[(1)]
-  Let $\Sigma$ be the $(n-1)$-surface in $\mathbb{R}^n$,
+\item[(i)]
+  Generalization of Exercise 10.21(a) and 10.22(a).
+  Exercise 10.23(a).
+
+\item[(ii)]
+  Generalization of Exercise 10.22(b).
+  \emph{Let $\Sigma = \mathbb{S}^{n-1}$ be the $(n-1)$-surface in $\mathbb{R}^n$,
   with parameter domain $D = [0,\pi]^{n-2} \times [0,2\pi]$,
   given by
-  \[
-    x_i = \left( \prod_{j=1}^{i-1} \sin\varphi_j \right) \cos\varphi_i.
-  \]
-  That is, $\Sigma = S^{n-1}$.
+  \begin{align*}
+    x_1 &= \cos\varphi_1 \\
+    x_2 &= \sin\varphi_1 \cos\varphi_2 \\
+    x_3 &= \sin\varphi_1 \sin\varphi_2 \cos\varphi_3 \\
+    & \cdots \\
+    x_{n-1} &= \sin\varphi_1 \cdots \sin\varphi_{n-2} \cos\varphi_{n-1} \\
+    x_n &= \sin\varphi_1 \cdots \sin\varphi_{n-2} \sin\varphi_{n-1}.
+  \end{align*}
+  Let $S$ denote the restriction of $\Sigma$ to a parameter domain $E \subseteq D$.
+  Prove that
+  \begin{align*}
+    \int_{S} \omega_n
+    &= \int_{E}  \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
+      d\bm{\varphi} \\
+    &= A(S),
+  \end{align*}
+  where $A$ denotes surface area.}
 
-\item[(2)]
-  \emph{Let $S$ denote the restriction of $\Sigma$ to a parameter domain $E \subseteq D$.
+\item[(iii)]
+  Generalization of Exercise 10.22(c).
+  \emph{Suppose $g \in \mathscr{C}''(I)$,
+  $\mathbf{h} = (h_1, \ldots, h_{n}) \in \mathscr{C}''(I^{n-2})$, and $g > 0$
+  where $I = [0,1]$.
+  Let
+  \[
+    \mathbf{x}
+    = \Phi(\mathbf{s},t)
+  \]
+  define a $(n-1)$-surface $\Phi$, with parameter domain $I^{n-1}$, by
+  \[
+    \mathbf{x} = g(t)\mathbf{h}(\mathbf{s}).
+  \]
   Prove that
   \[
-    \int_{S} \omega_n
-    = \int_{E}  \sin(\varphi_1)^{n-2} \sin(\varphi_2)^{n-3} \cdots \sin(\varphi_{n-2})
-      d\varphi_1 \: d\varphi_2 \cdots d\varphi_{n-1}
-    = A(S),
-  \]
-  where $A$ denotes surface area.
-  Note that this proves (c)(5).}
+    \int_{\Phi} \zeta = 0.
+  \]}
 
+\item[(iv)]
+  Generalization of Exercise 10.21(b) and 10.22(d).
+  \emph{Let $E$ be a closed cell in $D$,
+  with edges parallel to those of $D$.
+  Suppose $f \in \mathscr{C}''(D)$, $f > 0$.
+  Let $\Omega$ be the $(n-1)$-surface with parameter domain $E$,
+  defined by
+  \[
+    \Omega(\bm{\varphi}) = f(\bm{\varphi}) \Sigma(\bm{\varphi}).
+  \]
+  Define $S$ as in (ii) and prove that
+  \[
+    \int_{\Omega} \zeta = \int_{S} \zeta = A(S).
+  \]}
+
+\item[(v)]
+  Generalization of Exercise 10.21(d) and 10.22(e).
+  Exercise 10.23(b).
+
+\item[(vi)]
+  Generalization of Exercise 10.21(e) and 10.22(f).
+  \emph{Derive (iv) from Exercise 10.23(b), without using (iii).}
+
+\item[(vii)]
+  Generalization of Exercise 10.21(f).
+  $\pi_{n-1}(\mathbb{S}^{n-1}) = \mathbb{Z}$ (without proof).
+
+\item[(viii)]
+  Generalization of Exercise 10.22(g).
+  \emph{Show that $\omega_k$ is exact in the complement of every line $L$ passing
+  through the origin.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (d)(ii).}
+\begin{enumerate}
+\item[(1)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d)(iii).}
+\begin{enumerate}
+\item[(1)]
+
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d)(iv).}
+\begin{enumerate}
+\item[(1)]
+
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d)(vi).}
+\begin{enumerate}
+\item[(1)]
+
+\item[(2)]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d)(viii).}
+Similar to Exercise 10.22(g).
+\begin{enumerate}
+\item[(1)]
+  Given any line $L$ passing through $\mathbf{0}$,
+  say
+  \[
+    (r \cos\varphi_1, \cdots, \sin\varphi_1 \cdots \sin\varphi_{n-2} \sin\varphi_{n-1})
+    \in L
+    \subseteq \mathbb{R}^n
+  \]
+  where $r \in \mathbb{R}^1$
+  for some $\bm{\varphi} \in [0,\pi]^{n-2} \times [0,2\pi]$.
+  We will show that $\omega_n$ is exact in $U = \mathbb{R}^n - L$.
+
+\item[(2)]
+  Linear algebra says that all rotation matrices $T \in SO(n)$ can be obtained from
+  \[
+    R_i(u) = \begin{bmatrix}
+      1 &               &   &      &   &               &   \\
+        &        \ddots &   &      &   & \text{\huge0} &   \\
+        &               & 1 &      &   &               &   \\
+        &               &   & R(u) &   &               &   \\
+        &               &   &      & 1 &               &   \\
+        & \text{\huge0} &   &      &   &        \ddots &   \\
+        &               &   &      &   &               & 1
+    \end{bmatrix}
+  \]
+  using matrix multiplication.
+  Here
+  \[
+    R(u) =
+    \begin{bmatrix}
+      \cos u & -\sin u \\
+      \sin u &  \cos u
+    \end{bmatrix}
+  \]
+  is a $2$-by-$2$ rotation matrix at the $i$th row and $i$th column.
+  For example, the rotation
+  \[
+    T
+    = R_1(-\varphi_1) R_2(-\varphi_2) \cdots
+      R_{n-2}(-\varphi_{n-2}) R_{n-1}(-\varphi_{n-1})
+  \]
+  maps $L$ to the $x_n$-axis.
+  Similar to Exercise 10.22(g), it suffices to show that $\omega_n$ is invariant under $T = R_1(u)$.
+
+\item[(3)]
+  \emph{Show that $\omega_n$ is invariant under $T = R_1(u)$.}
+  By
+  \[
+    T: \mathbf{x} \mapsto (x_1 \cos u - x_2 \sin u, x_1 \sin u + x_2 \cos u, x_3, \ldots, x_n),
+  \]
+  we have
+  \begin{align*}
+    r_n &\mapsto r_n \\
+    dx_1 &\mapsto \cos u dx_1 - \sin u dx_2 \\
+    dx_2 &\mapsto \sin u dx_1 + \cos u dx_2 \\
+    dx_3 &\mapsto dx_3 \\
+    &\cdots \\
+    dx_n &\mapsto dx_n.
+  \end{align*}
+  So $dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_n$ maps to
+  \begin{equation*}
+    \begin{cases}
+      \cos u \: \widehat{dx_1} \wedge \cdots \wedge dx_n
+      + \sin u \: dx_1 \wedge \widehat{dx_2} \wedge \cdots \wedge dx_n
+      & \text{if $i = 1$} \\
+      -\sin u \: \widehat{dx_1} \wedge \cdots \wedge dx_n
+        + \cos u \: dx_1 \wedge \widehat{dx_2} \wedge \cdots \wedge dx_n
+      & \text{if $i = 2$} \\
+      dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_n
+      & \text{otherwise}.
+    \end{cases}
+  \end{equation*}
+  Thus
+  \begin{align*}
+    \omega_n
+    \mapsto& \:
+      (r_n)^{-n} (x_1 \cos u - x_2 \sin u) \\
+        &\qquad \left(\cos u \: \widehat{dx_1} \wedge \cdots \wedge dx_n
+          + \sin u \: dx_1 \wedge \widehat{dx_2} \wedge \cdots \wedge dx_n\right) \\
+      & + (r_n)^{-n}(x_1 \sin u + x_2 \cos u) \\
+        &\qquad \left(-\sin u \: \widehat{dx_1} \wedge \cdots \wedge dx_n
+          + \cos u \: dx_1 \wedge \widehat{dx_2} \wedge \cdots \wedge dx_n\right) \\
+      & + (r_n)^{-n}\sum_{i=3}^{n}(-1)^{i-1} x_i
+        dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_n \\
+    =& \:
+      (r_n)^{-n} x_1 \widehat{dx_1} \wedge \cdots \wedge dx_n \\
+      & - (r_n)^{-n} x_2 \: dx_1 \wedge \widehat{dx_2} \wedge \cdots \wedge dx_n \\
+      & + (r_n)^{-n} \sum_{i=3}^{n}(-1)^{i-1} x_i
+        dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_n \\
+    =& \:
+      (r_n)^{-n} \sum_{i=1}^{n}(-1)^{i-1} x_i
+        dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_n \\
+    =& \: \omega_n.
+  \end{align*}
+
+\item[(4)]
+  Similar to Exercise 10.22(g),
+  $\omega_n$ is exact in $\mathbb{R}^n - L$.
+  (Or $\omega_n$ is locally exact in $\mathbb{R}^n - \{ \mathbf{0} \}$.)
 \end{enumerate}
 $\Box$ \\\\
 
