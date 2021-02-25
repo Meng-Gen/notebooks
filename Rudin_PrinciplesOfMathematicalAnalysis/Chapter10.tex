@@ -3145,8 +3145,111 @@ $\Box$ \\
 \emph{Proof of (g).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Yes.
+  Given any line $L$ passing through $\mathbf{0}$,
+  say
+  \[
+    (r \sin u \cos v, r \sin u \sin v, r \cos u) \in L
+    \qquad
+    (r \in \mathbb{R}^1),
+  \]
+  for some $u \in [0,\pi]$ and $v \in [0,2\pi]$.
+  We will show that $\zeta$ is exact in $U = \mathbb{R}^3 - L$.
 
+\item[(2)]
+  Linear algebra says that all rotation matrices $T \in SO(3)$ can be obtained from
+  \begin{align*}
+    R_x(u)
+    &=
+    \begin{bmatrix}
+      1 &      0 &       0 \\
+      0 & \cos u & -\sin u \\
+      0 & \sin u &  \cos u
+    \end{bmatrix} \\
+    R_y(v)
+    &=
+    \begin{bmatrix}
+      \cos v & 0 & -\sin v \\
+           0 & 1 &       0 \\
+      \sin v & 0 &  \cos v
+    \end{bmatrix} \\
+    R_z(w)
+    &=
+    \begin{bmatrix}
+      \cos w & -\sin u & 0 \\
+      \sin w &  \cos u & 0 \\
+           0 &       0 & 1
+    \end{bmatrix}
+  \end{align*}
+  using matrix multiplication,
+  say $T = R_x(u)R_y(v)R_z(w)$.
+  For example, the rotation
+  \[
+    T = R_y(-u)R_z(-v)
+  \]
+  maps $L$ to the $z$-axis.
+  by showing that $T(r \sin u \cos v, r \sin u \sin v, r \cos u) = (0,0,r)$.
+  By Theorem 10.22
+  it suffices to show that $\zeta$ is invariant under $R_x(u)$, $R_x(v)$ and $R_z(w)$.
+  By the symmetricity of $\zeta$, it suffices to show that $\zeta$ is invariant under $T = R_x(u)$.
+
+\item[(3)]
+  \emph{Show that $\zeta$ is invariant under $T = R_x(u)$.}
+  By
+  \[
+    T: (x,y,z) \mapsto (x, y \cos u - z \sin u, y \sin u + z \cos u),
+  \]
+  we have
+  \begin{align*}
+    r &\mapsto r \\
+    dx &\mapsto dx \\
+    dy &\mapsto \cos u dy - \sin u dz \\
+    dz &\mapsto \sin u dy + \cos u dz.
+  \end{align*}
+  So
+  \begin{align*}
+    dy \wedge dz
+      &\mapsto (\cos u dy - \sin u dz) \wedge (\sin u dy + \cos u dz) \\
+      &= dy \wedge dz, \\
+    dz \wedge dx
+      &\mapsto (\sin u dy + \cos u dz) \wedge dx \\
+      &= -\sin u dx \wedge dy + \cos u dz \wedge dx, \\
+    dx \wedge dy
+      &\mapsto dx \wedge (\sin u dy + \cos u dz) \\
+      &= \cos u dx \wedge dy + \sin u dz \wedge dx.
+  \end{align*}
+  Thus
+  \begin{align*}
+    \zeta
+    \mapsto& \:
+      r^{-3} \{ x dy \wedge dz \\
+      &\qquad + (y \cos u - z \sin u)(-\sin u dx \wedge dy + \cos u dz \wedge dx) \\
+      &\qquad + (y \sin u + z \cos u)(\cos u dx \wedge dy + \sin u dz \wedge dx) \} \\
+    =& \:
+      r^{-3} \{ x dy \wedge dz \\
+      &\qquad + [\cos u(y \cos u - z \sin u) + \sin u(y \sin u + z \cos u)] dz \wedge dx \\
+      &\qquad + [-\sin u(y \cos u - z \sin u) + \cos u(y \sin u + z \cos u)] dx \wedge dy \} \\
+    =& \:
+      r^{-3} \{ x dy \wedge dz + y dz \wedge dx + z dx \wedge dy \} \\
+    =& \: \zeta.
+  \end{align*}
+
+\item[(4)]
+  Let $V = \mathbb{R}^3 - \text{$z$-axis}$.
+  Since $\zeta_T = \zeta$ (by (3)) is well-defined in $V$,
+  $\zeta_T = \zeta = d\lambda$ by (e).
+  Here $\lambda$ is in $V$, not necessary in $U$ (if $L \neq$ $z$-axis).
+  Luckily, we can use $T^{-1}$ to pullback $\lambda$ in $U$.
+  Thus
+  \[
+    \zeta
+    = (\zeta_T)_{T^{-1}}
+    = (d\lambda)_{T^{-1}}
+    = d(\lambda_{T^{-1}})
+  \]
+  by Theorems 10.22 and 10.23.
+  That is, $\zeta$ is exact in $U = \mathbb{R}^3 - L$.
+  (Or $\zeta$ is locally exact in $\mathbb{R}^3 - \{ \mathbf{0} \}$.)
 \end{enumerate}
 $\Box$ \\\\
 
