@@ -3101,11 +3101,12 @@ $\Box$ \\
   \]
   Note that $\lambda = -\frac{z}{r} \eta$,
   and thus it suffices to show that
-  $\frac{z}{r}|_{\partial\Omega} = \frac{z}{r}|_{\partial S}$
+  $\left.\frac{z}{r}\right|_{\partial\Omega} = \left.\frac{z}{r}\right|_{\partial\Sigma}$
   and $\eta|_{\partial\Omega} = \eta|_{\partial S}$.
 
 \item[(3)]
-  \emph{Show that $\frac{z}{r}|_{\partial\Omega} = \frac{z}{r}|_{\partial S}$.}
+  \emph{Show that
+  $\left.\frac{z}{r}\right|_{\partial\Omega} = \left.\frac{z}{r}\right|_{\partial\Sigma}$.}
   For any $(x_{\Omega}, y_{\Omega}, z_{\Omega}) \in \partial\Omega$,
   \[
     (x_{\Omega}, y_{\Omega}, z_{\Omega}) = f(u,v)(x_{\Sigma}, y_{\Sigma}, z_{\Sigma})
@@ -3113,11 +3114,11 @@ $\Box$ \\
   where $(x_{\Sigma}, y_{\Sigma}, z_{\Sigma}) \in \partial S$.
   So
   \begin{align*}
-    \frac{z}{r}|_{\partial\Omega}
+    \left.\frac{z}{r}\right|_{\partial\Omega}
     &= \frac{z_{\Omega}}{(x_{\Omega}^2+y_{\Omega}^2+z_{\Omega}^2)^{\frac{1}{2}}} \\
     &= \frac{f(u,v)z_{\Sigma}}{f(u,v)(x_{\Sigma}^2+y_{\Sigma}^2+z_{\Sigma}^2)^{\frac{1}{2}}} \\
     &= \frac{z_{\Sigma}}{(x_{\Sigma}^2+y_{\Sigma}^2+z_{\Sigma}^2)^{\frac{1}{2}}} \\
-    &= \frac{z}{r}|_{\partial S}.
+    &= \left.\frac{z}{r}\right|_{\partial S}.
   \end{align*}
   (Note that $f > 0$.)
 
