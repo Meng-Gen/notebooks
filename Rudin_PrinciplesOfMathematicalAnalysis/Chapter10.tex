@@ -3610,11 +3610,11 @@ $\Box$ \\
 \emph{Outline of (d).}
 \begin{enumerate}
 \item[(i)]
-  Generalization of Exercise 10.21(a) and 10.22(a).
+  One generalization of Exercise 10.21(a) and 10.22(a).
   See Exercise 10.23(a).
 
 \item[(ii)]
-  Generalization of Exercise 10.22(b).
+  One generalization of Exercise 10.22(b).
   \emph{Let $\Sigma = \mathbb{S}^{n-1}$ be the $(n-1)$-surface in $\mathbb{R}^n$,
   with parameter domain $D = [0,\pi]^{n-2} \times [0,2\pi]$,
   given by
@@ -3637,26 +3637,27 @@ $\Box$ \\
   where $A$ denotes surface area.}
 
 \item[(iii)]
-  Generalization of Exercise 10.22(c).
-  \emph{Suppose $g \in \mathscr{C}''(I)$,
-  $\mathbf{h} = (h_1, \ldots, h_{n}) \in \mathscr{C}''(I^{n-2})$, and $g > 0$
-  where $I = [0,1]$.
+  One generalization of Exercise 10.22(c).
+  \emph{Suppose $g \in \mathscr{C}''([0,1])$,
+  $\mathbf{h} = (h_1, \ldots, h_{n}) \in \mathscr{C}''([0,1]^{n-2})$, and $g > 0$.
+  Write
+  $\mathbf{x} = (x_1,\ldots,x_n)$ and $\mathbf{s} = (s_1,\ldots,s_{n-2})$.
   Let
   \[
     \mathbf{x}
     = \Phi(\mathbf{s},t)
   \]
-  define a $(n-1)$-surface $\Phi$, with parameter domain $I^{n-1}$, by
+  define a $(n-1)$-surface $\Phi$, with parameter domain $[0,1]^{n-1}$, by
   \[
     \mathbf{x} = g(t)\mathbf{h}(\mathbf{s}).
   \]
   Prove that
   \[
-    \int_{\Phi} \zeta = 0.
+    \int_{\Phi} \omega_n = 0.
   \]}
 
 \item[(iv)]
-  Generalization of Exercise 10.21(b) and 10.22(d).
+  One generalization of Exercise 10.21(b) and 10.22(d).
   \emph{Let $E$ be a closed cell in $D$,
   with edges parallel to those of $D$.
   Suppose $f \in \mathscr{C}''(D)$, $f > 0$.
@@ -3667,28 +3668,28 @@ $\Box$ \\
   \]
   Define $S$ as in (ii) and prove that
   \[
-    \int_{\Omega} \zeta = \int_{S} \zeta = A(S).
+    \int_{\Omega} \omega_n = \int_{S} \omega_n = A(S).
   \]}
 
 \item[(v)]
-  Generalization of Exercise 10.21(d) and 10.22(e).
+  One generalization of Exercise 10.21(d) and 10.22(e).
   See Exercise 10.23(b).
 
 \item[(vi)]
-  Generalization of Examples 10.36 and 10.37.
+  One generalization of Examples 10.36 and 10.37.
   See Exercise 10.23(c).
 
 \item[(vii)]
-  Generalization of Exercise 10.21(e) and 10.22(f).
+  One generalization of Exercise 10.21(e) and 10.22(f).
   \emph{Derive (iv) from Exercise 10.23(b), without using (iii).}
 
 \item[(viii)]
-  Generalization of Exercise 10.21(f).
+  One generalization of Exercise 10.21(f).
   $\pi_{n-1}(\mathbb{S}^{n-1}) = \mathbb{Z}$ (without proof).
 
 \item[(ix)]
-  Generalization of Exercise 10.22(g).
-  \emph{Show that $\omega_k$ is exact in the complement of every line $L$ passing
+  One generalization of Exercise 10.22(g).
+  \emph{Show that $\omega_n$ is exact in the complement of every line $L$ passing
   through the origin.} \\
 \end{enumerate}
 
@@ -3706,9 +3707,113 @@ $\Box$ \\
 \emph{Proof of (d)(iii).}
 \begin{enumerate}
 \item[(1)]
-
+  Similar to Exercise 10.22(c).
+  Assume that $\omega_n$ is well-defined, i.e., $\mathbf{h}(\mathbf{s}) \neq 0$
+  for all $\mathbf{s} \in [0,1]^{n-2}$.
+  \begin{align*}
+    \frac{\partial(x_1,\ldots,\widehat{x_i},\ldots,x_n)}
+      {\partial(s_1,\ldots,s_{n-2},t)}
+    =& \:
+    \det
+    \begin{bmatrix}
+      \frac{\partial x_1}{\partial s_1}
+        & \cdots
+        & \frac{\partial x_1}{\partial s_{n-2}}
+        & \frac{\partial x_1}{\partial t} \\
+      \vdots & \ddots & \vdots & \vdots \\
+      \widehat{\frac{\partial x_i}{\partial s_1}}
+        & \cdots
+        & \widehat{\frac{\partial x_i}{\partial s_{n-2}}}
+        & \widehat{\frac{\partial x_i}{\partial t}} \\
+      \vdots & \ddots & \vdots & \vdots \\
+      \frac{\partial x_1}{\partial s_1}
+        & \cdots
+        & \frac{\partial x_n}{\partial s_{n-2}}
+        & \frac{\partial x_n}{\partial t}
+    \end{bmatrix} \\
+    =& \:
+    \det
+    \begin{bmatrix}
+      g \frac{\partial h_1}{\partial s_1}
+        & \cdots
+        & g \frac{\partial h_1}{\partial s_{n-2}}
+        & g' h_1 \\
+      \vdots & \ddots & \vdots & \vdots \\
+      \widehat{g \frac{\partial h_i}{\partial s_1}}
+        & \cdots
+        & \widehat{g \frac{\partial h_i}{\partial s_{n-2}}}
+        & \widehat{g' h_i} \\
+      \vdots & \ddots & \vdots & \vdots \\
+      g \frac{\partial h_n}{\partial s_1}
+        & \cdots
+        & g \frac{\partial h_n}{\partial s_{n-2}}
+        & g' h_n
+    \end{bmatrix} \\
+    =& \:
+    g^{n-2} g' \det
+    \underbrace{\begin{bmatrix}
+      \frac{\partial h_1}{\partial s_1}
+        & \cdots
+        & \frac{\partial h_1}{\partial s_{n-2}}
+        & h_1 \\
+      \vdots & \ddots & \vdots & \vdots \\
+      \widehat{\frac{\partial h_i}{\partial s_1}}
+        & \cdots
+        & \widehat{\frac{\partial h_i}{\partial s_{n-2}}}
+        & \widehat{h_i} \\
+      \vdots & \ddots & \vdots & \vdots \\
+      \frac{\partial h_n}{\partial s_1}
+        & \cdots
+        & \frac{\partial h_n}{\partial s_{n-2}}
+        & h_n
+    \end{bmatrix}}_{\text{say $A$}}.
+  \end{align*}
 \item[(2)]
-
+  So
+  \begin{align*}
+    \int_{\Phi} \omega_n
+    =& \: \int_{[0,1]^{n-1}} \frac{1}{g(t)^{n}|\mathbf{h}(\mathbf{s})|^{n}}
+      \sum_{i=1}^{n} (-1)^{i-1} g(t) h_i g(t)^{n-2} g'(t) \det(A) \: d\mathbf{s} \: dt \\
+    =& \: \int_{[0,1]^{n-1}} \frac{g'(t)}{g(t)|\mathbf{h}(\mathbf{s})|^{n}}
+      \sum_{i=1}^{n} (-1)^{i-1} h_i
+      \det
+      \begin{bmatrix}
+        \frac{\partial h_1}{\partial s_1}
+          & \cdots
+          & \frac{\partial h_1}{\partial s_{n-2}}
+          & h_1 \\
+        \vdots & \ddots & \vdots & \vdots \\
+        \widehat{\frac{\partial h_i}{\partial s_1}}
+          & \cdots
+          & \widehat{\frac{\partial h_i}{\partial s_{n-2}}}
+          & \widehat{h_i} \\
+        \vdots & \ddots & \vdots & \vdots \\
+        \frac{\partial h_n}{\partial s_1}
+          & \cdots
+          & \frac{\partial h_n}{\partial s_{n-2}}
+          & h_n
+      \end{bmatrix}
+      \: d\mathbf{s} \: dt \\
+    =& \: \int_{[0,1]^{n-1}} \frac{g'(t)}{g(t)|\mathbf{h}(\mathbf{s})|^{n}}
+      \det
+      \underbrace{\begin{bmatrix}
+        h_1
+          & \frac{\partial h_1}{\partial s_1}
+          & \cdots
+          & \frac{\partial h_1}{\partial s_{n-2}}
+          & h_1 \\
+        \vdots & \vdots & \ddots & \vdots & \vdots \\
+        h_n
+          & \frac{\partial h_n}{\partial s_1}
+          & \cdots
+          & \frac{\partial h_n}{\partial s_{n-2}}
+          & h_n
+      \end{bmatrix}}_{\text{say $B$}}
+      \: d\mathbf{s} \: dt.
+  \end{align*}
+  Since the first column is the same as the last column in $B$,
+  $\det(B) = 0$ (Theorem 9.34(d)).
+  Therefore, $\int_{\Phi} \omega_n = \int_{[0,1]^{n-1}} 0 \: d\mathbf{s} \: dt = 0$.
 \end{enumerate}
 $\Box$ \\
 
