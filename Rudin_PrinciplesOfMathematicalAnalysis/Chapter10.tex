@@ -3029,12 +3029,15 @@ $\Box$ \\
   So
   \begin{align*}
     0
-    =& \: \int_{\Psi} d\zeta (\text{$d\zeta = 0$ on $\mathbb{R}^3-\{\mathbf{0}\}$}) \\
+    =& \: \int_{\Psi} d\zeta
+      &(\text{$d\zeta = 0$ on $\mathbb{R}^3-\{\mathbf{0}\}$}) \\
     =& \: \int_{\partial \Psi} \zeta
       &(\text{Theorem 10.33}) \\
     =& \: \int_{S} \zeta - \int_{\Omega} \zeta \\
-      &+ \underbrace{\int_{\Psi|_{u=a_1}} \zeta - \int_{\Psi|_{u=b_1}} \zeta
-      + \int_{\Psi|_{u=a_2}} \zeta - \int_{\Psi|_{u=b_2}} \zeta}_{\text{all are zero by (2)(3)}}
+      &+ \underbrace{\int_{\Psi|_{u=a_1}} \zeta - \int_{\Psi|_{u=b_1}} \zeta}_{
+        \text{all are zero by (2)}} \\
+      &+ \underbrace{\int_{\Psi|_{v=a_2}} \zeta - \int_{\Psi|_{v=b_2}} \zeta}_{
+        \text{all are zero by (3)}}
         &((1)) \\
     =& \: \int_{S} \zeta - \int_{\Omega} \zeta.
   \end{align*}
