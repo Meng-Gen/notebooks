@@ -3825,8 +3825,109 @@ $\Box$ \\
 \emph{Proof of (d)(iv).}
 \begin{enumerate}
 \item[(1)]
+  Consider the $n$-surface $\Psi$ given by
+  \[
+    \Psi(t,\bm{\varphi}) = [1-t+tf(\bm{\varphi})]\Sigma(\bm{\varphi}),
+  \]
+  where $\bm{\varphi} \in E$, $0 \leq t \leq 1$.
+  Write
+  \[
+    E = [a_1,b_1] \times \cdots \times [a_{n-1},b_{n-1}] \subseteq D.
+  \]
+  Note that $\Psi(t,\bm{\varphi}) \subseteq \mathbb{R}^n - \{ \mathbf{0} \}$.
+  So the boundary of $\Psi$ is
+  \[
+    \partial \Psi
+    = \Psi(0,\bm{\varphi}) - \Psi(1,\bm{\varphi})
+      + \sum_{i=1}^{n-1} ( \Psi|_{\varphi_i=a_i} - \Psi|_{\varphi_i=b_i}),
+  \]
+  where $\Psi|_{\varphi_i=\theta}:
+  [a_1,b_1] \times \cdots \times \widehat{[a_i,b_i]} \times \cdots \times [a_{n-1},b_{n-1}]
+  \to \Omega$ is a mapping defined by
+  \begin{align*}
+   \Psi|_{\varphi_i=\theta}(t,\varphi_1,\ldots,\widehat{\varphi_i},\ldots,\varphi_{n-1})
+    &= \Psi(t,\varphi_1,\ldots,\varphi_{i-1},\theta,\varphi_{i+1},\ldots,\varphi_{n-1}) \\
+    &= \Psi(t,\bm{\varphi} + (\theta-\varphi_i)\mathbf{e}_i).
+  \end{align*}
 
 \item[(2)]
+  \emph{Show that
+  \[
+    \int_{\Psi|_{\varphi_1=\theta}} \omega_n = 0
+  \]
+  for any fixed $\varphi_1 = \theta \in [a_1, b_1]$.}
+  Note that $\omega_n$ is well-defined on $\Psi|_{\varphi_1=\theta}$. \\
+
+  TODO: A placeholder to resume here. \\
+
+  Write $\Psi|_{v=v_0}(t,u) = (x,y,z) = (x(t,u),y(t,u),z(t,u))$.
+  By definition of $\Psi$, we have
+  \begin{align*}
+    x &= g(t,u) \sin u \cos v_0 \\
+    y &= g(t,u) \sin u \sin v_0 \\
+    z &= g(t,u) \cos u,
+  \end{align*}
+  where $g(t,u) = 1-t+tf(u,v_0)$.
+  Similar to (c),
+  \begin{align*}
+    \mathbf{N}(t,u)
+    =& \: \frac{\partial(y,z)}{\partial(t,u)} \mathbf{e}_1
+      + \frac{\partial(z,x)}{\partial(t,u)} \mathbf{e}_2
+      + \frac{\partial(x,y)}{\partial(t,u)}\mathbf{e}_3 \\
+    =& \: g(t,u) D_1 g(t,u) (-\sin v_0, \cos v_0, 0).
+  \end{align*}
+  Note that
+  \[
+    (x(t,u),y(t,u),z(t,u)) \cdot \mathbf{N}(t,u) = 0.
+  \]
+  So
+  \begin{align*}
+    \int_{\Psi|_{v=v_0}} \zeta
+    =& \: \int_{\Psi|_{v=v_0}} r^{-3} (x dy \wedge dz + y dz \wedge dx + z dx \wedge dy) \\
+    =& \: \int_{[0,1]\times[a_1,b_1]}
+      r^{-3}(x(t,u),y(t,u),z(t,u)) \cdot \mathbf{N}(t,u) \: dt \: du \\
+    =& \: \int_{[0,1]\times[a_1,b_1]} 0 \: dt \: du \\
+    =& \: 0.
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that
+  \[
+    \int_{\Psi|_{u=u_0}} \zeta = 0
+  \]
+  for any fixed $u = u_0 \in [a_1, b_1]$.}
+  Similar to (2).
+  \begin{align*}
+    \mathbf{N}(t,v)
+    =& \: \frac{\partial(y,z)}{\partial(t,v)} \mathbf{e}_1
+      + \frac{\partial(z,x)}{\partial(t,v)} \mathbf{e}_2
+      + \frac{\partial(x,y)}{\partial(t,v)}\mathbf{e}_3 \\
+    =& \: \sin u_0 g(t,v) D_1 g(t,v)(-\cos u_0 \cos v, -\cos u_0 \sin v, \sin u_0).
+  \end{align*}
+  where $g(t,v) = 1-t+tf(u_0,v)$.
+  So $(x(t,v),y(t,v),z(t,v)) \cdot \mathbf{N}(t,v) = 0$ and thus
+  $\int_{\Psi|_{u=u_0}} \zeta = 0$.
+
+\item[(4)]
+  So
+  \begin{align*}
+    0
+    =& \: \int_{\Psi} d\zeta
+      &(\text{$d\zeta = 0$ on $\mathbb{R}^3-\{\mathbf{0}\}$}) \\
+    =& \: \int_{\partial \Psi} \zeta
+      &(\text{Theorem 10.33}) \\
+    =& \: \int_{S} \zeta - \int_{\Omega} \zeta \\
+      &+ \underbrace{\int_{\Psi|_{u=a_1}} \zeta - \int_{\Psi|_{u=b_1}} \zeta}_{
+        \text{all are zero by (2)}} \\
+      &+ \underbrace{\int_{\Psi|_{v=a_2}} \zeta - \int_{\Psi|_{v=b_2}} \zeta}_{
+        \text{all are zero by (3)}}
+        &((1)) \\
+    =& \: \int_{S} \zeta - \int_{\Omega} \zeta.
+  \end{align*}
+  Hence
+  \[
+    \int_{\Omega} \zeta = \underbrace{\int_{S} \zeta = A(S)}_{\text{by (b)}}.
+  \]
 
 \end{enumerate}
 $\Box$ \\
