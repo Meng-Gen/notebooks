@@ -3832,26 +3832,9 @@ $\Box$ \\
   where $\bm{\varphi} \in E \subseteq D$, $0 \leq t \leq 1$.
 
 \item[(2)]
-  We might assume
-  \[
-    E
-    \subseteq (0,\pi)^{n-1}
-    \subseteq D.
-  \]
-  It is fine since
-  \begin{enumerate}
-  \item[(a)]
-    the case $E \subseteq (0,\pi)^{n-2} \times (\pi,2\pi)$ is similar
-    to the case $E\subseteq (0,\pi)^{n-1}$.
-  \item[(b)]
-    $\int_{\Omega} \omega_n$ and $\int_{S} \omega_n$ is well-defined on any closed rectangle in $D$
-    and we can apply the argument in Exercise 6.7 to remove the additional restriction.
-  \end{enumerate}
-
-\item[(3)]
   Write
   \[
-    E = [a_1,b_1] \times \cdots \times [a_{n-1},b_{n-1}] \subseteq (0,\pi)^{n-1}.
+    E = [a_1,b_1] \times \cdots \times [a_{n-1},b_{n-1}] \subseteq D.
   \]
   Note that $\Psi(t,\bm{\varphi}) \subseteq \mathbb{R}^n - \{ \mathbf{0} \}$.
   So the boundary of $\Psi$ is
@@ -3869,7 +3852,7 @@ $\Box$ \\
     &= \Psi(t,\bm{\varphi} + (\theta-\varphi_i)\mathbf{e}_i).
   \end{align*}
 
-\item[(4)]
+\item[(3)]
   \emph{Show that
   \[
     \int_{\Psi|_{\varphi_1=\theta}} \omega_n = 0
@@ -3896,32 +3879,17 @@ $\Box$ \\
   where
   $g(t,\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)
   = 1-t+tf(\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)$.
-\item[(5)]
-  Note that all $x_i \neq 0$ ($i = 1,\ldots,n$) by the assumption made in (2).
-  Also,
+
+\item[(4)]
+  Since
   \[
     \frac{\partial x_i}{\partial t}
-    = \frac{\partial g}{\partial t} \frac{x_i}{g}.
+    = \frac{\partial g}{\partial t} g^{-1} x_i,
   \]
-  As $j \neq 1$,
-  \begin{equation*}
-    \frac{\partial x_i}{\partial \varphi_j} =
-    \begin{cases}
-      \frac{\partial g}{\partial \varphi_j}\frac{x_i}{g}
-        & \text{ if $j > i$}, \\
-      \frac{\partial g}{\partial \varphi_j}\frac{x_i}{g} - g \tan(\varphi_j) x_i
-        & \text{ if $j = i$}, \\
-      \frac{\partial g}{\partial \varphi_j}\frac{x_i}{g} - g \cot(\varphi_j) x_i
-        & \text{ if $j < i$}.
-    \end{cases}
-  \end{equation*}
-
-\item[(6)]
-  So the Jacobian $\frac{\partial(x_1,\ldots,\widehat{x_i},\ldots,x_n)}
-    {\partial(t,\widehat{\varphi_1}, \varphi_2,\ldots,\varphi_{n-1})}$
-  is
   \begin{align*}
-    & \: \det
+    \frac{\partial(x_1,\ldots,\widehat{x_i},\ldots,x_n)}
+      {\partial(t,\widehat{\varphi_1}, \varphi_2,\ldots,\varphi_{n-1})}
+    =& \: \det
     \begin{bmatrix}
       \frac{\partial x_1}{\partial t}
         & \frac{\partial x_1}{\partial \varphi_2}
@@ -3940,103 +3908,116 @@ $\Box$ \\
     \end{bmatrix} \\
     =& \:
     \det
-    \underbrace{
     \begin{bmatrix}
-      \frac{\partial g}{\partial t} \frac{x_1}{g}
-        & \frac{\partial g}{\partial \varphi_2}\frac{x_1}{g}
-        & \frac{\partial g}{\partial \varphi_3}\frac{x_1}{g}
+      \frac{\partial g}{\partial t} g^{-1} x_1
+        & *
         & \cdots
-        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_1}{g} \\
-      \frac{\partial g}{\partial t} \frac{x_2}{g}
-        & \frac{\partial g}{\partial \varphi_2}\frac{x_2}{g} - g\tan(\varphi_2) x_2
-        & \frac{\partial g}{\partial \varphi_3}\frac{x_2}{g}
+        & * \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \widehat{\frac{\partial g}{\partial t} g^{-1} x_i}
+        & \widehat{*}
         & \cdots
-        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_2}{g} \\
-      \frac{\partial g}{\partial t} \frac{x_3}{g}
-        & \frac{\partial g}{\partial \varphi_2}\frac{x_3}{g} - g\cot(\varphi_2) x_3
-        & \frac{\partial g}{\partial \varphi_3}\frac{x_3}{g} - g\tan(\varphi_3) x_3
+        & \widehat{*} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \frac{\partial g}{\partial t} g^{-1} x_n
+        & *
         & \cdots
-        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_3}{g} \\
-      \vdots & \vdots & \vdots & \ddots & \vdots \\
-      \widehat{\frac{\partial g}{\partial t} \frac{x_i}{g}}
-        & \widehat{\frac{\partial g}{\partial \varphi_2}\frac{x_i}{g} - g\cot(\varphi_2) x_i}
-        & \widehat{\frac{\partial g}{\partial \varphi_3}\frac{x_i}{g} - g\cot(\varphi_3) x_i}
+        & *
+    \end{bmatrix} \\
+    =& \:
+    \frac{\partial g}{\partial t} g^{-1}
+    \det
+    \underbrace{\begin{bmatrix}
+      x_1
+        & *
         & \cdots
-        & \widehat{\frac{\partial g}{\partial \varphi_n}\frac{x_i}{g}} \\
-      \vdots & \vdots & \vdots & \ddots & \vdots \\
-      \frac{\partial g}{\partial t} \frac{x_n}{g}
-        & \frac{\partial g}{\partial \varphi_2}\frac{x_n}{g} - g\cot(\varphi_2) x_n
-        & \frac{\partial g}{\partial \varphi_3}\frac{x_n}{g} - g\cot(\varphi_3) x_n
+        & * \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \widehat{x_i}
+        & \widehat{*}
         & \cdots
-        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_n}{g} - g\cot(\varphi_{n-1}) x_n
-    \end{bmatrix}}_{\text{say $A$}}
+        & \widehat{*} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      x_n
+        & *
+        & \cdots
+        & *
+    \end{bmatrix}}_{\text{say $A$}}.
   \end{align*}
   So
   \begin{align*}
-    \int_{\Phi} \omega_n
+    \int_{\Psi|_{\varphi_1=\theta}} \omega_n
     =& \: \int_{E} \frac{1}{g^n}
-      \sum_{i=1}^{n} (-1)^{i-1} x_i \det(A) \: dt \: d\varphi_2 \cdots d\varphi_{n-1} \\
-    =& \: \int_{[0,1]^{n-1}} \frac{g'(t)}{g(t)|\mathbf{h}(\mathbf{s})|^{n}}
-      \sum_{i=1}^{n} (-1)^{i-1} h_i
+      \sum_{i=1}^{n} (-1)^{i-1} x_i
+      \frac{\partial g}{\partial t} g^{-1}
+      \det(A)
+      \: dt \: d\varphi_2 \cdots d\varphi_{n-1} \\
+    =& \: \int_{E} \frac{\partial g}{\partial t} g^{-n-1}
+      \sum_{i=1}^{n} (-1)^{i-1} x_i
       \det
       \begin{bmatrix}
-        \frac{\partial h_1}{\partial s_1}
+        x_1
+          & *
           & \cdots
-          & \frac{\partial h_1}{\partial s_{n-2}}
-          & h_1 \\
-        \vdots & \ddots & \vdots & \vdots \\
-        \widehat{\frac{\partial h_i}{\partial s_1}}
+          & * \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \widehat{x_i}
+          & \widehat{*}
           & \cdots
-          & \widehat{\frac{\partial h_i}{\partial s_{n-2}}}
-          & \widehat{h_i} \\
-        \vdots & \ddots & \vdots & \vdots \\
-        \frac{\partial h_n}{\partial s_1}
+          & \widehat{*} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        x_n
+          & *
           & \cdots
-          & \frac{\partial h_n}{\partial s_{n-2}}
-          & h_n
+          & *
       \end{bmatrix}
-      \: d\mathbf{s} \: dt \\
+      \: dt \: d\varphi_2 \cdots d\varphi_{n-1} \\
+    =& \: \int_{E} \frac{\partial g}{\partial t} g^{-n-1}
+      \det
+      \underbrace{\begin{bmatrix}
+        x_1
+          & x_1
+          & *
+          & \cdots
+          & * \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        x_i
+          & x_i
+          & *
+          & \cdots
+          & * \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        x_n
+          & x_n
+          & *
+          & \cdots
+          & *
+      \end{bmatrix}}_{\text{say $B$}}
+      \: dt \: d\varphi_2 \cdots d\varphi_{n-1}.
   \end{align*}
+  Since the first column is the same as the second column in $B$,
+  $\det(B) = 0$ (Theorem 9.34(d)).
+  Therefore, $\int_{\Psi|_{\varphi_1=\theta}} \omega_n = 0$.
 
-\item[(3)]
-  \emph{Show that
-  \[
-    \int_{\Psi|_{u=u_0}} \zeta = 0
-  \]
-  for any fixed $u = u_0 \in [a_1, b_1]$.}
-  Similar to (2).
-  \begin{align*}
-    \mathbf{N}(t,v)
-    =& \: \frac{\partial(y,z)}{\partial(t,v)} \mathbf{e}_1
-      + \frac{\partial(z,x)}{\partial(t,v)} \mathbf{e}_2
-      + \frac{\partial(x,y)}{\partial(t,v)}\mathbf{e}_3 \\
-    =& \: \sin u_0 g(t,v) D_1 g(t,v)(-\cos u_0 \cos v, -\cos u_0 \sin v, \sin u_0).
-  \end{align*}
-  where $g(t,v) = 1-t+tf(u_0,v)$.
-  So $(x(t,v),y(t,v),z(t,v)) \cdot \mathbf{N}(t,v) = 0$ and thus
-  $\int_{\Psi|_{u=u_0}} \zeta = 0$.
-
-\item[(4)]
-  So
+\item[(5)]
+  $\int_{\Psi|_{\varphi_i=\theta}} \omega_n = 0$ is also true for all $i = 1,\ldots,n-1$
+  by the same argument in (3)(4).
+  Hence,
   \begin{align*}
     0
-    =& \: \int_{\Psi} d\zeta
-      &(\text{$d\zeta = 0$ on $\mathbb{R}^3-\{\mathbf{0}\}$}) \\
-    =& \: \int_{\partial \Psi} \zeta
-      &(\text{Theorem 10.33}) \\
-    =& \: \int_{S} \zeta - \int_{\Omega} \zeta \\
-      &+ \underbrace{\int_{\Psi|_{u=a_1}} \zeta - \int_{\Psi|_{u=b_1}} \zeta}_{
-        \text{all are zero by (2)}} \\
-      &+ \underbrace{\int_{\Psi|_{v=a_2}} \zeta - \int_{\Psi|_{v=b_2}} \zeta}_{
-        \text{all are zero by (3)}}
-        &((1)) \\
-    =& \: \int_{S} \zeta - \int_{\Omega} \zeta.
+    =& \: \int_{\Psi} d\omega_n \\
+    =& \: \int_{\partial \Psi} \omega_n \\
+    =& \: \int_{S} \omega_n - \int_{\Omega} \omega_n
+      + \sum_{i=1}^{n-1}
+        \left( \int_{\Psi|_{\varphi_i=a_i}} \omega_n
+        - \int_{\Psi|_{\varphi_i=b_i}} \omega_n \right) \\
+    =& \: \int_{S} \omega_n - \int_{\Omega} \omega_n
   \end{align*}
-  Hence
+  by (a) and the Stokes' theorem (Theorem 10.33),
+  or
   \[
-    \int_{\Omega} \zeta = \underbrace{\int_{S} \zeta = A(S)}_{\text{by (b)}}.
+    \int_{\Omega} \omega_n = \underbrace{\int_{S} \omega_n = A(S)}_{\text{by (d)(ii)}}.
   \]
-
 \end{enumerate}
 $\Box$ \\
 
