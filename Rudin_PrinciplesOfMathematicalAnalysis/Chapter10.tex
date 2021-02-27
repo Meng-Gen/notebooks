@@ -3089,7 +3089,7 @@ $\Box$ \\
   we might assume $x^2+y^2 = \sin^2 u \neq 0$ or $0 < u < \pi$ on $E$.
   It is fine since
   $\int_{\Omega} \zeta$ and $\int_{S} \zeta$ is well-defined on any closed rectangle in $D$
-  and we can apply the argument in Exercise 6.7 to remedy for additional assumption.
+  and we can apply the argument in Exercise 6.7 to remove the additional restriction.
 
 \item[(2)]
   By the Stokes' theorem (Theorem 10.33) and (e),
@@ -3829,10 +3829,29 @@ $\Box$ \\
   \[
     \Psi(t,\bm{\varphi}) = [1-t+tf(\bm{\varphi})]\Sigma(\bm{\varphi}),
   \]
-  where $\bm{\varphi} \in E$, $0 \leq t \leq 1$.
+  where $\bm{\varphi} \in E \subseteq D$, $0 \leq t \leq 1$.
+
+\item[(2)]
+  We might assume
+  \[
+    E
+    \subseteq (0,\pi)^{n-1}
+    \subseteq D.
+  \]
+  It is fine since
+  \begin{enumerate}
+  \item[(a)]
+    the case $E \subseteq (0,\pi)^{n-2} \times (\pi,2\pi)$ is similar
+    to the case $E\subseteq (0,\pi)^{n-1}$.
+  \item[(b)]
+    $\int_{\Omega} \omega_n$ and $\int_{S} \omega_n$ is well-defined on any closed rectangle in $D$
+    and we can apply the argument in Exercise 6.7 to remove the additional restriction.
+  \end{enumerate}
+
+\item[(3)]
   Write
   \[
-    E = [a_1,b_1] \times \cdots \times [a_{n-1},b_{n-1}] \subseteq D.
+    E = [a_1,b_1] \times \cdots \times [a_{n-1},b_{n-1}] \subseteq (0,\pi)^{n-1}.
   \]
   Note that $\Psi(t,\bm{\varphi}) \subseteq \mathbb{R}^n - \{ \mathbf{0} \}$.
   So the boundary of $\Psi$ is
@@ -3850,44 +3869,133 @@ $\Box$ \\
     &= \Psi(t,\bm{\varphi} + (\theta-\varphi_i)\mathbf{e}_i).
   \end{align*}
 
-\item[(2)]
+\item[(4)]
   \emph{Show that
   \[
     \int_{\Psi|_{\varphi_1=\theta}} \omega_n = 0
   \]
   for any fixed $\varphi_1 = \theta \in [a_1, b_1]$.}
   Note that $\omega_n$ is well-defined on $\Psi|_{\varphi_1=\theta}$. \\
-
-  TODO: A placeholder to resume here. \\
-
-  Write $\Psi|_{v=v_0}(t,u) = (x,y,z) = (x(t,u),y(t,u),z(t,u))$.
+  Write
+  \[
+    \Psi|_{\varphi_1=\theta}(t,\widehat{\varphi_1},\varphi_2,\ldots,\varphi_{n-1})
+    = \mathbf{x}(t,\widehat{\varphi_1},\varphi_2,\ldots,\varphi_{n-1}).
+  \]
   By definition of $\Psi$, we have
   \begin{align*}
-    x &= g(t,u) \sin u \cos v_0 \\
-    y &= g(t,u) \sin u \sin v_0 \\
-    z &= g(t,u) \cos u,
+    x_1 &= g(t,\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)
+      \cos\theta \\
+    x_2 &= g(t,\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)
+      \sin\theta \cos\varphi_2 \\
+    & \cdots \\
+    x_{n-1} &= g(t,\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)
+      \sin\theta \cdots \sin\varphi_{n-2} \cos\varphi_{n-1} \\
+    x_n &= g(t,\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)
+      \sin\theta \cdots \sin\varphi_{n-2} \sin\varphi_{n-1},
   \end{align*}
-  where $g(t,u) = 1-t+tf(u,v_0)$.
-  Similar to (c),
-  \begin{align*}
-    \mathbf{N}(t,u)
-    =& \: \frac{\partial(y,z)}{\partial(t,u)} \mathbf{e}_1
-      + \frac{\partial(z,x)}{\partial(t,u)} \mathbf{e}_2
-      + \frac{\partial(x,y)}{\partial(t,u)}\mathbf{e}_3 \\
-    =& \: g(t,u) D_1 g(t,u) (-\sin v_0, \cos v_0, 0).
-  \end{align*}
-  Note that
+  where
+  $g(t,\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)
+  = 1-t+tf(\bm{\varphi} + (\theta-\varphi_1)\mathbf{e}_1)$.
+\item[(5)]
+  Note that all $x_i \neq 0$ ($i = 1,\ldots,n$) by the assumption made in (2).
+  Also,
   \[
-    (x(t,u),y(t,u),z(t,u)) \cdot \mathbf{N}(t,u) = 0.
+    \frac{\partial x_i}{\partial t}
+    = \frac{\partial g}{\partial t} \frac{x_i}{g}.
   \]
+  As $j \neq 1$,
+  \begin{equation*}
+    \frac{\partial x_i}{\partial \varphi_j} =
+    \begin{cases}
+      \frac{\partial g}{\partial \varphi_j}\frac{x_i}{g}
+        & \text{ if $j > i$}, \\
+      \frac{\partial g}{\partial \varphi_j}\frac{x_i}{g} - g \tan(\varphi_j) x_i
+        & \text{ if $j = i$}, \\
+      \frac{\partial g}{\partial \varphi_j}\frac{x_i}{g} - g \cot(\varphi_j) x_i
+        & \text{ if $j < i$}.
+    \end{cases}
+  \end{equation*}
+
+\item[(6)]
+  So the Jacobian $\frac{\partial(x_1,\ldots,\widehat{x_i},\ldots,x_n)}
+    {\partial(t,\widehat{\varphi_1}, \varphi_2,\ldots,\varphi_{n-1})}$
+  is
+  \begin{align*}
+    & \: \det
+    \begin{bmatrix}
+      \frac{\partial x_1}{\partial t}
+        & \frac{\partial x_1}{\partial \varphi_2}
+        & \cdots
+        & \frac{\partial x_1}{\partial \varphi_{n-1}} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \widehat{\frac{\partial x_i}{\partial t}}
+        & \widehat{\frac{\partial x_i}{\partial \varphi_2}}
+        & \cdots
+        & \widehat{\frac{\partial x_i}{\partial \varphi_{n-1}}} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \frac{\partial x_n}{\partial t}
+        & \frac{\partial x_n}{\partial \varphi_2}
+        & \cdots
+        & \frac{\partial x_n}{\partial \varphi_{n-1}}
+    \end{bmatrix} \\
+    =& \:
+    \det
+    \underbrace{
+    \begin{bmatrix}
+      \frac{\partial g}{\partial t} \frac{x_1}{g}
+        & \frac{\partial g}{\partial \varphi_2}\frac{x_1}{g}
+        & \frac{\partial g}{\partial \varphi_3}\frac{x_1}{g}
+        & \cdots
+        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_1}{g} \\
+      \frac{\partial g}{\partial t} \frac{x_2}{g}
+        & \frac{\partial g}{\partial \varphi_2}\frac{x_2}{g} - g\tan(\varphi_2) x_2
+        & \frac{\partial g}{\partial \varphi_3}\frac{x_2}{g}
+        & \cdots
+        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_2}{g} \\
+      \frac{\partial g}{\partial t} \frac{x_3}{g}
+        & \frac{\partial g}{\partial \varphi_2}\frac{x_3}{g} - g\cot(\varphi_2) x_3
+        & \frac{\partial g}{\partial \varphi_3}\frac{x_3}{g} - g\tan(\varphi_3) x_3
+        & \cdots
+        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_3}{g} \\
+      \vdots & \vdots & \vdots & \ddots & \vdots \\
+      \widehat{\frac{\partial g}{\partial t} \frac{x_i}{g}}
+        & \widehat{\frac{\partial g}{\partial \varphi_2}\frac{x_i}{g} - g\cot(\varphi_2) x_i}
+        & \widehat{\frac{\partial g}{\partial \varphi_3}\frac{x_i}{g} - g\cot(\varphi_3) x_i}
+        & \cdots
+        & \widehat{\frac{\partial g}{\partial \varphi_n}\frac{x_i}{g}} \\
+      \vdots & \vdots & \vdots & \ddots & \vdots \\
+      \frac{\partial g}{\partial t} \frac{x_n}{g}
+        & \frac{\partial g}{\partial \varphi_2}\frac{x_n}{g} - g\cot(\varphi_2) x_n
+        & \frac{\partial g}{\partial \varphi_3}\frac{x_n}{g} - g\cot(\varphi_3) x_n
+        & \cdots
+        & \frac{\partial g}{\partial \varphi_{n-1}}\frac{x_n}{g} - g\cot(\varphi_{n-1}) x_n
+    \end{bmatrix}}_{\text{say $A$}}
+  \end{align*}
   So
   \begin{align*}
-    \int_{\Psi|_{v=v_0}} \zeta
-    =& \: \int_{\Psi|_{v=v_0}} r^{-3} (x dy \wedge dz + y dz \wedge dx + z dx \wedge dy) \\
-    =& \: \int_{[0,1]\times[a_1,b_1]}
-      r^{-3}(x(t,u),y(t,u),z(t,u)) \cdot \mathbf{N}(t,u) \: dt \: du \\
-    =& \: \int_{[0,1]\times[a_1,b_1]} 0 \: dt \: du \\
-    =& \: 0.
+    \int_{\Phi} \omega_n
+    =& \: \int_{E} \frac{1}{g^n}
+      \sum_{i=1}^{n} (-1)^{i-1} x_i \det(A) \: dt \: d\varphi_2 \cdots d\varphi_{n-1} \\
+    =& \: \int_{[0,1]^{n-1}} \frac{g'(t)}{g(t)|\mathbf{h}(\mathbf{s})|^{n}}
+      \sum_{i=1}^{n} (-1)^{i-1} h_i
+      \det
+      \begin{bmatrix}
+        \frac{\partial h_1}{\partial s_1}
+          & \cdots
+          & \frac{\partial h_1}{\partial s_{n-2}}
+          & h_1 \\
+        \vdots & \ddots & \vdots & \vdots \\
+        \widehat{\frac{\partial h_i}{\partial s_1}}
+          & \cdots
+          & \widehat{\frac{\partial h_i}{\partial s_{n-2}}}
+          & \widehat{h_i} \\
+        \vdots & \ddots & \vdots & \vdots \\
+        \frac{\partial h_n}{\partial s_1}
+          & \cdots
+          & \frac{\partial h_n}{\partial s_{n-2}}
+          & h_n
+      \end{bmatrix}
+      \: d\mathbf{s} \: dt \\
   \end{align*}
 
 \item[(3)]
