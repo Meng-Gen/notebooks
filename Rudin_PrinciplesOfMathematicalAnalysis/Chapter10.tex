@@ -2855,7 +2855,7 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  By Area elements in $\mathbb{R}^3$,
+  By Area elements in $\mathbb{R}^3$ 10.46,
   \begin{align*}
     \mathbf{N}(u,v)
     &= \frac{\partial(y,z)}{\partial(u,v)} \mathbf{e}_1
@@ -3701,7 +3701,80 @@ $\Box$ \\
 \emph{Proof of (d)(ii).}
 \begin{enumerate}
 \item[(1)]
+  On $S \subseteq \mathbb{S}^{n-1}$, we have
+    \begin{align*}
+    \int_{S} \omega_n
+    =& \:
+    \int_{S} \sum_{i=1}^{n} (-1)^{i-1} x_i
+      dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_n \\
+    =& \:
+    \int_{S} \sum_{i=1}^{n} (-1)^{i-1} x_i(\bm{\varphi})
+      \frac{\partial(x_1,\ldots,\widehat{x_i},\ldots,x_n)}
+        {\partial(\varphi_1,\ldots,\varphi_{n-1})}
+      d\varphi_1 \wedge \cdots \wedge d\varphi_{n-1}.
+  \end{align*}
+  Since $\sum_{i=1}^n x_i(\bm{\varphi})^2 = 1$,
+  it suffices to show that
+  \[
+    \frac{\partial(x_1,\ldots,\widehat{x_i},\ldots,x_n)}
+      {\partial(\varphi_1,\ldots,\varphi_{n-1})}
+    = (-1)^{i-1}
+      \sin^{n-2}\varphi_1 \sin^{n-3}\varphi_2 \cdots \sin\varphi_{n-2} x_i.
+  \]
 
+\item[(2)]
+  Similar to Exercise 10.22(f),
+  we might assume that
+  $\varphi_1 \in (0,\pi), \ldots, \varphi_{n-2} \in (0,\pi)$
+  and $\varphi_{n-1} \in (0,\pi) \cup (\pi,2\pi)$.
+  To remove this additional restriction, apply the argument in Exercise 6.7.
+  Note that
+  \[
+    \frac{\partial(x_1,\ldots,\widehat{x_i},\ldots,x_n)}
+      {\partial(\varphi_1,\ldots,\varphi_{n-1})}
+    = \det
+    \underbrace{\begin{bmatrix}
+      \frac{\partial x_1}{\partial \varphi_1}
+        & \frac{\partial x_1}{\partial \varphi_2}
+        & \cdots
+        & \frac{\partial x_1}{\partial \varphi_{n-1}} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \widehat{\frac{\partial x_i}{\partial \varphi_1}}
+        & \widehat{\frac{\partial x_i}{\partial \varphi_2}}
+        & \cdots
+        & \widehat{\frac{\partial x_i}{\partial \varphi_{n-1}}} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \frac{\partial x_n}{\partial \varphi_1}
+        & \frac{\partial x_n}{\partial \varphi_2}
+        & \cdots
+        & \frac{\partial x_n}{\partial \varphi_{n-1}}
+    \end{bmatrix}}_{\text{say $A_i$}}
+  \]
+  where
+  \begin{equation*}
+    \frac{\partial x_i}{\partial \varphi_j} =
+      \begin{cases}
+        0
+          & \text{ if $i < j$}, \\
+        -\tan(\varphi_i) x_i
+          & \text{ if $i = j$}, \\
+        \cot(\varphi_j) x_i
+          & \text{ if $i > j$},
+      \end{cases}
+  \end{equation*}
+  with $\cos\varphi_n := 1$ or $\varphi_n := 0$ by convention.
+
+\item[(3)]
+  \emph{Show that
+  \[
+    \det(A_i)
+    =
+    (-1)^{i-1}
+      \sin^{n-2}\varphi_1
+      \sin^{n-3}\varphi_2
+      \sin\varphi_{n-2} x_i
+  \]
+  by induction.}
 \end{enumerate}
 $\Box$ \\
 
