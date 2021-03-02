@@ -1091,13 +1091,14 @@ by the equations
 Show that $T$ maps this rectangle onto the closed disc $D$ with center at $(0,0)$ and radius $a$,
 that $T$ is one-to-one in the interior of the rectangle,
 and that $J_T(r,\theta) = r$.
-If $f \in \mathscr{C}(D)$, prove the formula for integration in polar coordinates:
+If $f \in \mathscr{C}(D)$, prove the formula for integration in polar coordinates:}
 \[
   \int_{D} f(x,y)dx \: dy
   = \int_{0}^{a} \int_{0}^{2\pi} f(T(r,\theta))r dr \: d\theta.
-\]
-(Hint: Let $D_0$ be the interior of $D$,
-minus the interval from $(0,0)$ to $(0,a)$.
+\] \\
+
+\emph{(Hint: Let $D_0$ be the interior of $D$,
+minus the interval from $(0,0)$ to $(a,0)$.
 As it stands, Theorem 10.9 applies to continuous functions $f$
 whose support lies in $D_0$.
 To remove this restriction,
@@ -1106,7 +1107,56 @@ proceed as in Example 10.4.)} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $T$ maps $[0,a] \times [0,2\pi]$ onto $D$.}
+  Given any $(x,y) \in D$.
+  \begin{enumerate}
+  \item[(a)]
+    It is equivalent to solve $(r,\theta)$ from
+    \begin{align*}
+      x &= r\cos\theta \\
+      y &= r\sin\theta
+    \end{align*}
+    in terms of $(x,y)$.
+    Let $L$ be the closed interval from $(0,0)$ to $(a,0)$,
+    say $L = \{ (r,0) \in \mathbb{R}^2 : 0 \leq r \leq a \} \subseteq D$.
+
+  \item[(b)]
+    If $(x,y) \in L$, say $(x,y) = (r,0)$ for some $r \in [0,a]$,
+    then there exists $(r,0)$ or $(r,2\pi)$
+    such that $T(r,0) = T(r,2\pi) = (r,0)$.
+    (Therefore, $T$ is not one-to-one on $L$.)
+
+  \item[(c)]
+    If $(x,y) \in D - L$, then there is $r = (x^2+y^2)^{\frac{1}{2}}$ in $[0,a]$
+    (since $(x,y) \in D = \{ (x,y) \in \mathbb{R}^2 : (x^2+y^2)^{\frac{1}{2}} \leq a \}$).
+    Define
+    \begin{equation*}
+      \theta =
+        \begin{cases}
+          \arccos\left(\frac{x}{r}\right) & \text{ if $y \geq 0$}, \\
+          2\pi - \arccos\left(\frac{x}{r}\right) & \text{ if $y < 0$}.
+        \end{cases}
+    \end{equation*}
+    It is well-defined since $r \neq 0$.
+    Besides, $\theta \in [0,2\pi]$ and $T(r,\theta) = (x,y)$.
+  \end{enumerate}
+
 \item[(2)]
+  \emph{Show that $T$ is one-to-one in the interior of the rectangle.}
+
+
+\item[(3)]
+  \emph{Show that $J_T(r,\theta) = r$.}
+  \[
+    J_T(r,\theta)
+    =
+    \det
+    \begin{bmatrix}
+      \cos\theta & -r\sin\theta \\
+      \sin\theta & r\cos\theta
+    \end{bmatrix}
+    = r.
+  \]
 
 \end{enumerate}
 $\Box$ \\\\
