@@ -34,6 +34,7 @@
 % https://www.math.lsu.edu/~lawson/Chapter4.pdf
 % https://www2.math.upenn.edu/~ryrogers/HW7-solutions.pdf
 % https://www.math.ucla.edu/~tao/preprints/forms.pdf
+% https://en.wikipedia.org/wiki/N-sphere
 
 
 
@@ -3759,10 +3760,6 @@ $\Box$ \\
 
 
 
-% https://en.wikipedia.org/wiki/N-sphere
-
-
-
 \item[(2)]
   \emph{Show that $\det(A_n)= \sin^{n-2}\varphi_1 \sin^{n-3}\varphi_2 \cdots \sin\varphi_{n-2}$.}
   Induction on $n$.
@@ -4245,11 +4242,69 @@ $\Box$ \\
 
 
 \emph{Proof of (d)(vii).}
+Similar to Exercise 10.22(f).
 \begin{enumerate}
 \item[(1)]
+  To ensure that $\omega_n$ is well-defined on
+  $E_1 \subseteq E_2 \subseteq \cdots \subseteq E_n = \mathbb{R}^n - \{ \mathbf{0} \}$,
+  we might assume $0 < \varphi_1 < \pi$.
+  It is fine since
+  $\int_{\Omega} \omega_n$ and $\int_{S} \omega_n$ is well-defined on any closed rectangle in $D$
+  and we can apply the argument in Exercise 6.7 to remove the additional restriction.
 
 \item[(2)]
+  By the Stokes' theorem (Theorem 10.33) and (b),
+  \[
+    \int_{\Omega} \omega_{n} = \int_{\partial\Omega} f_n \omega_{n-1}
+    \qquad
+    \text{and}
+    \qquad
+    \int_{S} \omega_{n} = \int_{\partial S} f_n \omega_{n-1}.
+  \]
+  So it suffices to show that
+  \[
+    \int_{\partial\Omega} f_n \omega_{n-1} = \int_{\partial S} f_n \omega_{n-1}.
+  \]
+  So it suffices to show that
+  $\left.f_n\right|_{\partial\Omega} = \left.f_n\right|_{\partial S}$
+  and $\omega_{n-1}|_{\partial\Omega} = \omega_{n-1}|_{\partial S}$.
 
+\item[(3)]
+  \emph{Show that
+  $\left.f_n\right|_{\partial\Omega} = \left.f_n\right|_{\partial S}$.}
+  For any $\mathbf{x}_{\Omega} \in \partial\Omega$,
+  \[
+    \mathbf{x}_{\Omega} = f(\bm{\varphi}) \mathbf{x}_{\Sigma}.
+  \]
+  So
+  \begin{align*}
+    f_n(\mathbf{x}_{\Omega})
+    &= (-1)^n g_n\left(
+      \frac{(x_n)_{\Omega}}
+        {((x_1)_{\Omega}^2+\cdots+(x_n)_{\Omega}^2)^\frac{1}{2}}\right) \\
+    &= (-1)^n g_n\left(
+      \frac{f(\bm{\varphi})(x_n)_{\Sigma}}
+        {f(\bm{\varphi})((x_1)_{\Sigma}^2+\cdots+(x_n)_{\Sigma}^2)^\frac{1}{2}}\right) \\
+    &= (-1)^n g_n\left(
+      \frac{(x_n)_{\Sigma}}
+        {((x_1)_{\Sigma}^2+\cdots+(x_n)_{\Sigma}^2)^\frac{1}{2}}\right) \\
+    &= f_n(\mathbf{x}_{\Sigma}).
+  \end{align*}
+  (Note that $f > 0$.)
+
+\item[(4)]
+  \emph{Show that $\omega_{n-1}|_{\partial\Omega} = \omega_{n-1}|_{\partial S}$.}
+  Induction on $n$.
+  When $n = 2$ or $n = 3$, it is proved in Exercise 10.22(f).
+  Now for large $n-1$, (3) is also true for $n-1$.
+  Hence,
+  \[
+    \left.\omega_{n-1}\right|_{\partial\Omega}
+    = \left.d(f_{n-1}\omega_{n-2})\right|_{\partial\Omega}
+    = \left.d(f_{n-1}\omega_{n-2})\right|_{\partial S}
+    = \left.\omega_{n-1}\right|_{\partial S}.
+  \]
+  By induction, the result is established.
 \end{enumerate}
 $\Box$ \\
 
