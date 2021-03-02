@@ -1105,9 +1105,10 @@ To remove this restriction,
 proceed as in Example 10.4.)} \\
 
 \emph{Proof.}
+Define $E = [0,a] \times [0,2\pi]$.
 \begin{enumerate}
 \item[(1)]
-  \emph{Show that $T$ maps $[0,a] \times [0,2\pi]$ onto $D$.}
+  \emph{Show that $T$ maps $E$ onto $D$.}
   Given any $(x,y) \in D$.
   \begin{enumerate}
   \item[(a)]
@@ -1142,10 +1143,25 @@ proceed as in Example 10.4.)} \\
   \end{enumerate}
 
 \item[(2)]
-  \emph{Show that $T$ is one-to-one in the interior of the rectangle.}
-
+  \emph{Show that $T$ is one-to-one in the interior of the rectangle $E$.}
+  Suppose $(r_1,\theta_1), (r_2,\theta_2) \in \mathrm{int}(E) = (0,a) \times (0,2\pi)$
+  and $T(r_1,\theta_1) = T(r_2,\theta_2) = (x,y) \in D$.
+  Then
+  \begin{align*}
+    x &= r_1 \cos\theta_1 = r_2 \cos\theta_2, \\
+    y &= r_1 \sin\theta_1 = r_2 \sin\theta_2.
+  \end{align*}
+  Note that $r_1^2 = r_2^2 = x^2+y^2$ and $r_1, r_2 > 0$,
+  we have $r_1 = r_2$.
+  Solve $\cos\theta_1 = \cos\theta_2$ and $\sin\theta_1 = \sin\theta_2$
+  to get $\theta_1 = \theta_2 + 2m\pi$ for all $m \in \mathbb{Z}$.
+  Here $m$ must be zero since $\theta_1, \theta_2 \in (0,2\pi)$.
+  Therefore, $(r_1,\theta_1) = (r_2,\theta_2)$.
 
 \item[(3)]
+  $T(\mathrm{int}(E)) = D_0 = \mathrm{int}(D) - L$ (by (1)(2)).
+
+\item[(4)]
   \emph{Show that $J_T(r,\theta) = r$.}
   \[
     J_T(r,\theta)
@@ -1158,6 +1174,158 @@ proceed as in Example 10.4.)} \\
     = r.
   \]
 
+\item[(5)]
+  \emph{If $f \in \mathscr{C}(D)$, show that}
+  \[
+    \int_{D} f(x,y)dx \: dy
+  \]
+  is well-defined.
+  Similar to Example 10.4.
+  \begin{enumerate}
+  \item[(a)]
+    Extend $f$ to a function on $I^2 = [-a,a]^2$
+    by setting $f(x,y) = 0$ off $D$, and define
+    \[
+      \int_{D} f = \int_{I^2} f.
+    \]
+    Since $f$ may be discontinuous on $I^2$,
+    the existence of the integral $\int_{I^2} f$.
+    We also wish to show that this integral is independent of
+    the order in which the $2$ integrations are carried out.
+
+  \item[(b)]
+    To do this, suppose $0 < \delta < 1$, put
+    \begin{equation*}
+      \varphi_{\delta}(t) =
+      \begin{cases}
+        1 & \text{ if $t \leq 1 - \delta$}, \\
+        \frac{1-t}{\delta} & \text{ if $1 - \delta \leq t \leq 1$}, \\
+        0 & \text{ if $t \geq 1$},
+      \end{cases}
+    \end{equation*}
+    and define
+    \[
+      F_{\delta}(x,y) = \varphi_{\delta}\left(\frac{\sqrt{x^2+y^2}}{a}\right)f(x,y).
+    \]
+    Then $F_{\delta} \in \mathscr{C}(I^2)$ (or $\mathscr{C}(\mathbb{R}^2)$).
+
+  \item[(c)]
+    For each $x \in [-a,a]$, the set of all $y$ such that $F_{\delta}(x,y) \neq f(x,y)$
+    is contained a union of two segment whose length does not exceed
+    \[
+      a\sqrt{1^2 - (1-\delta)^2}
+      = a\sqrt{2\delta - \delta^2}
+      < a\sqrt{2\delta}.
+    \]
+    Since $0 \leq \varphi_{\delta} \leq 1$, it follows that
+    \[
+      \abs{
+        \int_{-a}^{a} F_{\delta}(x,y) dy - \int_{-a}^{a} f(x,y) dy
+      }
+      \leq 2a \sqrt{2\delta}\norm{f}
+    \]
+    where
+    $\norm{f} = \max_{(x,y) \in I^2}|f(x,y)|$.
+    So the sequence of continuous function
+    \[
+      \left\{ \int_{-a}^{a} F_{\delta}(x,y) dy \right\}
+      \to
+      \int_{-a}^{a} f(x,y) dy
+      := g(x)
+    \]
+    uniformly as $\delta \to 0$.
+    ($\delta = \frac{1}{n}$ for example.)
+    So $g(x) \in \mathscr{C}([-a,a])$,
+    and the further integrations present no problem, that is,
+    $\int_{I^2} f$ is existed.
+
+  \item[(d)]
+    Moreover,
+    \[
+      \abs{ \int_{I^2} F_{\delta}(x,y) dxdy - \int_{I^2} f(x,y) dxdy }
+      \leq 4a^2 \sqrt{2\delta} \norm{f}
+    \]
+    It is true, regardless of the order in which the $2$ single integrations
+    are carried out.
+    Since $F_{\delta} \in \mathscr{C}(I^2)$,
+    $\int F_{\delta}$ is unaffected by any change in this order.
+    Hence the inequality shows that the same is true of $\int f$.
+  \end{enumerate}
+
+\item[(6)]
+  \emph{Show that}
+  \[
+    \int_{D} f(x,y)dx \: dy
+    = \int_{0}^{a} \int_{0}^{2\pi} f(T(r,\theta))r dr \: d\theta.
+  \]
+  \begin{enumerate}
+  \item[(a)]
+    Note that $T$ is a one-to-one $\mathscr{C}'$-mapping of an open set $D_0$
+    such that $J_T(r,\theta) = r \neq 0$ for all $(r,\theta) \in \mathrm{int}(E)$.
+    To apply Theorem 10.9, we will leverage Example 10.4 again.
+
+  \item[(b)]
+    Given any $\min\left\{ \frac{a}{89}, \frac{\pi}{64} \right \} > \delta > 0$.
+    Define
+    \[
+      E_{\delta}
+      =
+      [\delta,a-\delta] \times [\delta,2\pi-\delta] \subseteq \textrm{int}(E)
+    \]
+    and $D_{\delta} = T(E_{\delta})$.
+    Similar to Example 10.4,
+    let $\varphi_{\delta}$ be a continuous function on $\mathbb{R}^2$
+    such that $\varphi_{\delta}(x,y) = 1$ on $D_{\delta}$
+    and $\varphi_{\delta}(x,y) = 0$ off $D_{\frac{\delta}{2}}$.
+    Consider $f_{\delta}(x,y) = \varphi_{\delta}(x,y)f(x,y)$ on $\mathbb{R}^2$.
+    By construction, $f_{\delta}$ is a continuous function on $\mathbb{R}^2$
+    whose support is compact and lies in $D_{\frac{\delta}{2}} \subseteq D_0$.
+    Hence, by Theorem 10.9
+    \[
+      \int_{\mathbb{R}^2} f_{\delta}
+      = \int_{D_{\frac{\delta}{2}}} f_{\delta}
+      = \int_{\frac{\delta}{2}}^{a-\frac{\delta}{2}}
+        \int_{\frac{\delta}{2}}^{2\pi-\frac{\delta}{2}}
+        f(T(r,\theta)) r dr d\theta.
+    \]
+
+  \item[(c)]
+    Since $f \in \mathscr{C}(D)$ and Exercise 6.7,
+    \[
+      \lim_{\delta \to 0} \int_{\frac{\delta}{2}}^{a-\frac{\delta}{2}}
+        \int_{\frac{\delta}{2}}^{2\pi-\frac{\delta}{2}}
+        f(T(r,\theta)) r dr d\theta
+      = \int_{0}^{a}
+        \int_{0}^{2\pi}
+        f(T(r,\theta)) r dr d\theta.
+    \]
+    Therefore, it suffices to show that
+    \[
+      \lim_{\delta \to 0} \int_{\mathbb{R}^2} f_{\delta} = \int_{\mathbb{R}^2} f.
+    \]
+
+  \item[(d)]
+    Note that $\int_{\mathbb{R}^2} f = \int_{D} f$ (by (5))
+    and $\int_{\mathbb{R}^2} f_{\delta} = \int_{D_{\frac{\delta}{2}}} f_{\delta}
+    = \int_{D} f_{\delta}$ (by (b)).
+    So
+    \[
+      \abs{ \int_{\mathbb{R}^2} f - \int_{\mathbb{R}^2} f_{\delta} }
+      = \abs{ \int_{D} f - \int_{D} f_{\delta} }.
+    \]
+    To estimate the difference between $\int_{D} f$ and $\int_{D} f_{\delta}$,
+    we notice that $f$ and $f_{\delta}$ are coincide on $D_{\delta}$ by construction.
+    Given any $(x,y) \in D - D_{\delta}$.
+    Fix $y$, the set of all $x$ such that $f(x,y) \neq f_{\delta}(x,y)$
+    is contained a union of two segment whose length does not exceed
+    $\sqrt{a^2 - (a-\delta)^2 \cos^2\delta}$.
+    Similarly as in (5), we have
+    \[
+      \abs{ \int_{D} f - \int_{D} f_{\delta} }
+      \leq 4a \sqrt{a^2 - (a-\delta)^2 \cos^2\delta} \norm{f}.
+    \]
+    Hence, $\lim \int_{D} f_{\delta} = \int_{D} f$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
