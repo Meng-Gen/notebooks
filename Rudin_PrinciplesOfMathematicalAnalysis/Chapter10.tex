@@ -35,6 +35,7 @@
 % https://www2.math.upenn.edu/~ryrogers/HW7-solutions.pdf
 % https://www.math.ucla.edu/~tao/preprints/forms.pdf
 % https://en.wikipedia.org/wiki/N-sphere
+% https://web.stanford.edu/~aaronlan/assets/fundamental-group.pdf
 
 
 
@@ -5067,7 +5068,18 @@ Hence $(D_i f)(\mathbf{x}) = a_i(\mathbf{x})$.} \\
   \]
   or $\omega$ is exact in $E$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+\emph{Note:}
+\begin{enumerate}
+\item[(1)]
+  The first de Rham cohomology $H^{1}_{\mathrm{dR}}(E, \mathbb{R}) = 0$ if $E$ is convex.
+
+\item[(2)]
+  $H^{1}_{\mathrm{dR}}(E, \mathbb{R}) = 0$ if $E$ is simply connected.
+  (The converse is not true.) \\\\
+\end{enumerate}
+
 
 
 
@@ -5171,7 +5183,7 @@ Apply Stokes' theorem and Exercise 10.25.)} \\
   for every closed curve $\gamma$ in $E$, of class $\mathscr{C}'$.
 
 \item[(2)]
-  Intuitively, every closed continuously differentiable curve in $\mathbb{R}^3 - \{\mathbf{0}\}$
+  Suppose that every closed continuously differentiable curve in $\mathbb{R}^3 - \{\mathbf{0}\}$
   is the boundary of a $2$-surface in $\mathbb{R}^3 - \{\mathbf{0}\}$.
   So there is some $2$-surface $\Psi$ such that $\partial \Psi = \gamma$.
   The Stokes' theorem (Theorem 10.33) implies that
@@ -5182,12 +5194,28 @@ Apply Stokes' theorem and Exercise 10.25.)} \\
     = \int_{\Psi} 0
     = 0.
   \]
+
+\item[(3)]
+  By algebraic topology theory,
+  $\pi_1(E, x) = 0$ for any $x \in E$. That is, $E$ is simply connected.
+  Given any closed curve $\gamma: [0,1] \to E$,
+  we take $c \in (0,1)$ such that
+  $\gamma(c) \neq \gamma(a) = \gamma(b)$.
+  (If such $c$ does not exist, $\gamma$ is a trivial curve
+  and thus $\int_{\gamma} \omega = 0$ holds trivially.)
+  Consider two curves $\gamma_1:[0,1] \to E$ and $\gamma_2:[0,1] \to E$ defined by
+  \begin{align*}
+    \gamma_1(x) &= \gamma(cx), \\
+    \gamma_2(x) &= \gamma((c-1)x+1).
+  \end{align*}
+  Thus $\gamma_1(0) = \gamma_2(0)$ and $\gamma_1(1) = \gamma_2(1)$.
+  Since $E$ is simply connected, there is a homotopy $H(x,t): E \times [0,1] \to E$
+  of $\gamma_1$ and $\gamma_2$ such that
+  $H(x,0) = \gamma_1(x)$ and $H(x,1) = \gamma_2(x)$.
+  $H$ defines a $2$-surface $\Psi$ such that
+  $\partial \Psi = \gamma_1 - \gamma_2 = \gamma$.
 \end{enumerate}
 $\Box$ \\\\
-
-
-
-% Seifert surface
 
 
 
@@ -5405,13 +5433,66 @@ and prove that the resulting function $F$ is of class $\mathscr{C}'$.
 since $\alpha$ can then be taken to be a constant.
 Refer to Theorem 9.42.)} \\
 
-
-
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Suppose $E$ is a convex open set in $\mathbb{R}^n$,
+  $p \in \mathbb{Z}$, $1 < p \leq n$.
+  Write
+  \[
+    \mathbf{x} = (
+      \underbrace{x_1, \ldots, x_{p-1}}_{= \mathbf{x}'},
+      x_p,
+      \underbrace{x_{p+1}, \ldots, x_n}_{= \mathbf{x}''}) \in E.
+  \]
+  Let $V$ be the set of all $(\mathbf{x}', x_p) \in \mathbb{R}^p$
+  such that $(\mathbf{x}', x_p, \mathbf{x}'') \in E$ for some $\mathbf{x}''$.
+  Let $U$ be the set of all $\mathbf{x}' \in \mathbb{R}^{p-1}$ such that
+  $(\mathbf{x}',x_p) \in V$ for some $x_p$.
+  Show that there is a function $\alpha \in \mathscr{C}'(U)$
+  such that $(\mathbf{x}', \alpha(\mathbf{x}'))$ in V for every $\mathbf{x}' \in U$;
+  in other words, the graph of $\alpha$ lies in $V$.}
 
 \item[(2)]
+  \emph{Show that (1) holds if $E$ is an open cell.}
+  Say
+  $E = (a_1,b_1) \times \cdots \times (a_n,b_n)$.
+  Thus, $V = (a_1,b_1) \times \cdots \times (a_p,b_p)$
+  and $U = (a_1,b_1) \times \cdots \times (a_{p-1},b_{p-1})$.
+  Define a function $\alpha \in \mathscr{C}'(U)$
+  by $\alpha(\mathbf{x}') = c_p$ for some $c_p \in (a_p,b_p)$.
+  Hence,
+  \[
+    \{ (\mathbf{x}', \alpha(\mathbf{x}')) : \mathbf{x}' \in U \}
+    = (a_1,b_1) \times \cdots \times (a_p,b_p) \times \{ c_p \}
+    \subseteq V.
+  \]
+
+\item[(3)]
+  \emph{Show that (1) holds if $E$ is an open ball.}
+  Say
+  $E = B(\mathbf{a};r) \subseteq \mathbb{R}^n$ for some
+  \[
+    \mathbf{a} = (
+      \underbrace{a_1, \ldots, a_{p-1}}_{= \mathbf{a}'},
+      a_p,
+      \underbrace{a_{p+1}, \ldots, a_n}_{= \mathbf{a}''}) \in \mathbb{R}^n
+  \]
+  and $r > 0$.
+  Thus, $V = B((\mathbf{a}',a_p);r) \subseteq \mathbb{R}^p$
+  and $U = B(\mathbf{a}';r) \subseteq \mathbb{R}^{p-1}$.
+  Define a function $\alpha \in \mathscr{C}'(U)$
+  by $\alpha(\mathbf{x}') = a_p$.
+  Hence,
+  \[
+    \{ (\mathbf{x}', \alpha(\mathbf{x}')) : \mathbf{x}' \in U \}
+    = (a_1,b_1) \times \cdots \times (a_p,b_p) \times \{ c_p \}
+    \subseteq V.
+  \]
+
+\item[(4)]
+  \emph{Show that (1) holds if $E$ is a convex open set in $\mathbb{R}^n$.}
+
 
 \end{enumerate}
 $\Box$ \\\\
