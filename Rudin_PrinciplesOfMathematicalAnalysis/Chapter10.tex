@@ -1281,13 +1281,14 @@ Define $E = [0,a] \times [0,2\pi]$.
     By construction, $f_{\delta}$ is a continuous function on $\mathbb{R}^2$
     whose support is compact and lies in $D_{\frac{\delta}{2}} \subseteq D_0$.
     Hence, by Theorem 10.9
-    \[
-      \int_{\mathbb{R}^2} f_{\delta}
-      = \int_{D_{\frac{\delta}{2}}} f_{\delta}
-      = \int_{\frac{\delta}{2}}^{a-\frac{\delta}{2}}
+    \begin{align*}
+      \int_{\mathbb{R}^2} f_{\delta}(x,y) dx dy
+      &= \int_{D_{\frac{\delta}{2}}} f_{\delta}(x,y) dx dy \\
+      &= \int_{E_{\frac{\delta}{2}}} f_{\delta}(T(r,\theta)) \abs{J_T(r,\theta)} dr d\theta \\
+      &= \int_{\frac{\delta}{2}}^{a-\frac{\delta}{2}}
         \int_{\frac{\delta}{2}}^{2\pi-\frac{\delta}{2}}
         f(T(r,\theta)) r dr d\theta.
-    \]
+    \end{align*}
 
   \item[(c)]
     Since $f \in \mathscr{C}(D)$ and Exercise 6.7,
@@ -1526,8 +1527,187 @@ Provide this extension.)} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Write
+  \begin{align*}
+    S &= \{ (s,t) \in \mathbb{R}^2 : 0 < s < \infty, 0 < t < 1 \} \\
+    Q &= \{ (u,v) \in \mathbb{R}^2 : u > 0, v > 0 \}.
+  \end{align*}
 
+\item[(2)]
+  \emph{Show that $T$ maps $S$ onto $Q$.}
+  Given any $(u,v) \in Q$.
+  It is equivalent to solve $(s,t)$ from
+  \begin{align*}
+    u &= s-st \\
+    v &= st
+  \end{align*}
+  in terms of $(u,v)$.
+  It is trivial since $s = (s-st)+st = u+v \in (0,\infty)$
+  and $t = \frac{v}{s} = \frac{v}{u+v} \in (0,1)$.
+  Hence, $T: (u+v,\frac{v}{u+v}) \mapsto (u,v)$ is onto.
+
+\item[(3)]
+  \emph{Show that $T$ is one-to-one.}
+  Suppose $(s_1,t_1), (s_2,t_2) \in S$
+  and $T(s_1,t_1) = T(s_2,t_2) = (u,v) \in Q$.
+  Then
+  \begin{align*}
+    u &= s_1 - s_1 t_1 = s_2 - s_2 t_2, \\
+    v &= s_1 t_1 = s_2 t_2.
+  \end{align*}
+  Note that $s_1 = s_2 = u + v > 0$.
+  As $u+v \neq 0$, $t_1 = \frac{v}{s_1} = \frac{v}{s_2} = t_2$.
+  Therefore, $(s_1,t_1) = (s_2,t_2)$.
+
+\item[(4)]
+  \emph{Show that $J_T(s,t) = s$.}
+  \[
+    J_T(s,t)
+    =
+    \det
+    \begin{bmatrix}
+      1-t & -s \\
+      t & s
+    \end{bmatrix}
+    = s.
+  \]
+
+\item[(5)]
+  Let $f(u,v) = u^{x-1} e^{-u} v^{y-1} e^{-v}$ be defined on $Q$.
+  Note that
+  \begin{align*}
+    \int_{Q} f(u,v) du dv
+    &= \int_{0}^{\infty} \int_{0}^{\infty} u^{x-1} e^{-u} v^{y-1} e^{-v} du dv \\
+    &= \left\{ \int_{0}^{\infty} u^{x-1} e^{-u} du \right\}
+      \left\{ \int_{0}^{\infty} v^{y-1} e^{-v} dv \right\} \\
+    &= \Gamma(x) \Gamma(y)
+  \end{align*}
+  and
+  \begin{align*}
+    \int_{S} f(T(s,t))s ds dt
+    &= \int_{0}^{\infty} \int_{0}^{1} s^{x+y-1} e^{-s} t^{y-1}(1-t)^{x-1} ds dt \\
+    &= \left\{ \int_{0}^{\infty} s^{x+y-1} e^{-s} ds \right\}
+      \left\{ \int_{0}^{1} t^{y-1}(1-t)^{x-1} dt \right\} \\
+    &= \Gamma(x+y)
+      \left\{ \int_{0}^{1} t^{x-1} (1-t)^{y-1} dt \right\}.
+  \end{align*}
+  Now we assume that $\int_{Q} f(u,v) du dv = \int_{S} f(T(s,t))s ds dt$ holds, then
+  \[
+    \Gamma(x) \Gamma(y)
+    =
+    \Gamma(x+y)
+    \left\{ \int_{0}^{1} t^{x-1} (1-t)^{y-1} dt \right\}
+  \]
+  or
+  \[
+    \int_{0}^{1} t^{x-1} (1-t)^{y-1} dt = \frac{\Gamma(x) \Gamma(y)}{\Gamma(x+y)}.
+  \]
+
+\item[(6)]
+  \emph{Given $f \in \mathscr{C}(Q)$.
+  Suppose both $\int_{Q} f(u,v) du dv$ and $\int_{S} f(T(s,t))s ds dt$ converge
+  as improper integrals in the sense of Exercises 6.7 and 6.8.
+  Show that}
+  \[
+    \int_{Q} f(u,v) du dv = \int_{S} f(T(s,t))s ds dt
+  \]
+  \begin{enumerate}
+  \item[(a)]
+    Given $a > 64$ and $1 > \delta > 0$.
+    Define
+    \begin{align*}
+      Q_{a,\delta} &= [\delta, a-\delta]^2 \subseteq Q \\
+      S_{a,\delta} &= [2\delta, 2a-2\delta] \times
+        \left[ \frac{\delta}{2a-\delta}, 1-\frac{\delta}{2a-\delta} \right] \subseteq S.
+    \end{align*}
+    So $T(S_{a,\delta}) = Q_{a,\delta}$.
+  
+  \item[(b)]
+    Similar to (6) in the proof of Exercise 10.9,
+    there is a continuous function $\varphi_{a,\delta}$ on $\mathbb{R}^2$
+    such that $\varphi_{a,\delta}(x,y) = 1$ on $Q_{a,\delta}$
+    and $\varphi_{a,\delta}(x,y) = 0$ off $Q_{a,\frac{\delta}{2}}$.
+    Consider $f_{a,\delta}(x,y) = \varphi_{a,\delta}(x,y)f(x,y)$ on $\mathbb{R}^2$.
+    By construction, $f_{a,\delta}$ is a continuous function on $\mathbb{R}^2$
+    whose support is compact and lies in $Q_{a,\frac{\delta}{2}} \subseteq Q$.
+    Hence, by Theorem 10.9
+    \begin{align*}
+      \int_{\mathbb{R}^2} f_{a,\delta}(u,v) du dv
+      &= \int_{Q_{a,\frac{\delta}{2}}} f_{a,\delta}(u,v) du dv \\
+      &= \int_{S_{a,\frac{\delta}{2}}} f_{a,\delta}(T(s,t)) \abs{J_T(s,t)} ds dt \\
+      &= \int_{S_{a,\frac{\delta}{2}}} f_{a,\delta}(T(s,t)) s ds dt \\
+      &= \int_{\mathbb{R}^2} f_{a,\delta}(T(s,t)) s ds dt.
+    \end{align*}
+
+  \item[(c)]
+    Given any $\varepsilon > 0$.
+    Since $\int_{Q} f(u,v) du dv$ converges,
+    there exists a real number $a > 0$ such that
+    \[
+      \abs{ \int_{[0,a]^2} f(u,v) du dv - \int_{Q} f(u,v) du dv }
+      \leq \frac{\varepsilon}{89}.
+    \]
+    Write
+    \begin{align*}
+      \abs{ \int_{\mathbb{R}^2} f_{a,\delta} \: du dv - \int_{\mathbb{R}^2} f \: du dv }
+      =& \: \abs{ \int_{Q} f_{a,\delta} \: du dv - \int_{Q} f \: du dv } \\
+      \leq& \:
+        \abs{ \int_{Q} f_{a,\delta} \: du dv - \int_{[0,a]^2} f \: du dv } \\
+        &+ \abs{ \int_{[0,a]^2} f \: du dv - \int_{Q} f \: du dv }.
+    \end{align*}
+    So
+    \[
+      \abs{ \int_{Q} f_{a,\delta} \: du dv - \int_{[0,a]^2} f \: du dv }
+      \leq
+      \int_{[0,a]^2} \abs{f_{a,\delta} - f} \: du dv.
+    \]
+    Notice that $f$ and $f_{a,\delta}$ are coincide on $Q_{a,\delta}$ by construction.
+    A simple calculation shows that
+    \[
+      \int_{[0,a]^2} \abs{f_{a,\delta} - f} \: du dv
+      \leq
+      2a \delta \norm{f}.
+    \]
+    Choose $\delta
+    = \min \left\{ \frac{1}{2}, \frac{\varepsilon}{64 \cdot 2a(\norm{f} + 1)} \right\} > 0$
+    so that
+    \[
+      \abs{ \int_{Q} f_{a,\delta} \: du dv - \int_{[0,a]^2} f \: du dv }
+      \leq
+      \frac{\varepsilon}{64}.
+    \]
+    Hence,
+    \[
+      \abs{ \int_{\mathbb{R}^2} f_{a,\delta} \: du dv - \int_{\mathbb{R}^2} f \: du dv }
+      \leq \frac{\varepsilon}{89} + \frac{\varepsilon}{64}
+      < \varepsilon.
+    \]
+    Therefore,
+    \[
+      \lim_{\substack{a \to \infty \\ \delta \to 0}}
+        \int_{\mathbb{R}^2} f_{a,\delta} \: du dv
+      = \int_{\mathbb{R}^2} f \: du dv.
+    \]
+
+  \item[(d)]
+    Similar to (c),
+    \[
+      \lim_{\substack{a \to \infty \\ \delta \to 0}}
+        \int_{S_{a,\frac{\delta}{2}}} f_{a,\delta}(T(s,t)) s \: ds dt
+      = \int_{\mathbb{R}^2} f(T(s,t)) s \: ds dt.
+    \]
+    Hence
+    \begin{align*}
+      \int_{Q} f(u,v) \: du dv
+      &= \int_{\mathbb{R}^2} f(u,v) \: du dv \\
+      &= \lim_{\substack{a \to \infty \\ \delta \to 0}}
+        \int_{\mathbb{R}^2} f_{a,\delta}(u,v) \: du dv \\
+      &= \lim_{\substack{a \to \infty \\ \delta \to 0}}
+        \int_{\mathbb{R}^2} f_{a,\delta}(T(s,t)) s \: ds dt \\
+      &= \int_{\mathbb{R}^2} f(T(s,t)) s \: ds dt \\
+      &= \int_{S} f(T(s,t)) s \: ds dt.
+    \end{align*}
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
