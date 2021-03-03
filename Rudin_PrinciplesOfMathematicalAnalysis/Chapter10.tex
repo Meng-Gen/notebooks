@@ -1338,8 +1338,8 @@ $\Box$ \\\\
 \textbf{Exercise 10.10.}
 \emph{Let $a \to \infty$ in Exercise 10.9 and prove that
 \[
-  \int_{\mathbb{R}^2} f(x,y) dx \: dy
-  = \int_{0}^{\infty} \int_{0}^{2\pi} f(T(r,\theta))r dr \: d\theta,
+  \int_{\mathbb{R}^2} f(x,y) dx dy
+  = \int_{0}^{\infty} \int_{0}^{2\pi} f(T(r,\theta))r dr d\theta,
 \]
 for continuous functions $f$ that decrease sufficiently rapidly
 as $|x|+|y| \to \infty$.
@@ -1358,8 +1358,136 @@ to derive formula}
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Define
+  \begin{align*}
+    D_a &= \{ (x,y) \in \mathbb{R}^2 : x^2+y^2 \leq a^2 \}, \\
+    I_a &= \{ (x,y) \in \mathbb{R}^2 : |x| \leq a, |y| \leq a \},
+  \end{align*}
+  for any $a > 0$.
+  Similar to Definition 10.1,
+  define
+  \[
+    \int_{\mathbb{R}^2} f(x,y) dx dy
+    = \lim_{a \to \infty} \int_{I_a} f(x,y) dx dy.
+  \]
+  Besides, since $f \in \mathscr{C}(\mathbb{R}^2)$, we have
+  \begin{align*}
+    \int_{0}^{\infty} \int_{0}^{2\pi} f(T(r,\theta))r dr d\theta
+    &= \lim_{a \to \infty} \int_{0}^{a} \int_{0}^{2\pi} f(T(r,\theta))r dr d\theta \\
+    &= \lim_{a \to \infty} \int_{D_a} f(x,y) dx dy
+  \end{align*}
+  by the definition in Exercise 6.8 and Exercise 10.9.
+  So it suffices to show that
+  both $\lim_{a \to \infty} \int_{I_a} f(x,y) dx dy$
+  and $\lim_{a \to \infty} \int_{D_a} f(x,y) dx dy$ exist and they are equal
+  if $f$ decreases sufficiently rapidly as $|x|+|y| \to \infty$.
 
+\item[(2)]
+  Say that $f$ decreases sufficiently rapidly as $|x|+|y| \to \infty$
+  if there is a real number $M > 0$ such that
+  \[
+    |f(x,y)| \leq \alpha (x^2+y^2)^{-1-\beta}
+  \]
+  for some $\alpha > 0$ and $\beta > 0$
+  whenever $|x|+|y| \geq M$.
+  Similar to Theorem 3.29, we can give other weaker hypotheses:
+  \[
+    |f(x,y)|
+    \leq
+    \alpha (x^2+y^2)^{-1} \log(x^2+y^2)^{-1-\beta}
+  \]
+  or
+  \[
+    |f(x,y)|
+    \leq
+    \alpha (x^2+y^2)^{-1} \log(x^2+y^2)^{-1} \log\log(x^2+y^2)^{-1-\beta}
+  \]
+  and so on.
+
+\item[(3)]
+  Write
+  \begin{align*}
+    & \: \int_{0}^{a} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta \\
+    =& \:
+      \int_{0}^{M} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta
+      + \int_{M}^{a} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta.
+  \end{align*}
+  Note that
+  \[
+    \int_{0}^{M} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta < +\infty
+  \]
+  since $f \in \mathscr{C}(\mathbb{R}^2)$.
+  Besides,
+  \begin{align*}
+    \int_{M}^{a} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta
+    \leq& \:
+    \int_{M}^{a} \int_{0}^{2\pi} \alpha (x^2+y^2)^{-1-\beta} r dr d\theta \\
+    =& \:
+    \int_{M}^{a} \int_{0}^{2\pi} \alpha r^{-1-2\beta} dr d\theta \\
+    =& \:
+    \pi \alpha \beta^{-1} (M^{-2\beta} - a^{-2\beta})
+  \end{align*}
+  is finite as $a \to \infty$.
+  Hence, $\int_{0}^{\infty} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta$
+  converges absolutely,
+  or $\lim_{a \to \infty} \int_{D_a} f(x,y) dx dy$ exists.
+
+\item[(4)]
+  Note that
+  \[
+    \int_{D_a} |f(x,y)| dx dy
+    \leq \int_{I_a} |f(x,y)| dx dy
+    \leq \int_{D_{\sqrt{2}a}} |f(x,y)| dx dy.
+  \]
+  Let $a \to \infty$,
+  we have
+  \[
+    \lim_{a \to \infty} \int_{I_a} |f(x,y)| dx dy
+    = \lim_{a \to \infty} \int_{D_a} |f(x,y)| dx dy
+  \]
+  also exists.
+
+\item[(5)]
+  \emph{Show that $\int_{-\infty}^{\infty} e^{-s^2} ds = \sqrt{\pi}$.}
+  Take $f(x,y) = \exp(-x^2-y^2) \in \mathscr{C}(\mathbb{R}^2)$.
+  So
+  \[
+    \lim_{x^2+y^2 \to \infty} |f(x,y)|(x^2+y^2)^2
+    = \lim_{x^2+y^2 \to \infty} e^{-(x^2+y^2)} (x^2+y^2)^2
+    = 0
+  \]
+  by Theorem 8.6(f).
+  Note that
+  \begin{align*}
+    \int_{0}^{\infty} \int_{0}^{2\pi} f(T(r,\theta))r dr d\theta
+    &= \int_{0}^{\infty} \int_{0}^{2\pi} e^{-r^2} r dr d\theta \\
+    &= 2 \pi \int_{0}^{\infty} e^{-r^2} r dr \\
+    &= \pi \left[-e^{-r^2}\right]_{r=0}^{r=\infty} \\
+    &= \pi
+  \end{align*}
+  and
+  \begin{align*}
+    \int_{\mathbb{R}^2} f(x,y) dx dy
+    &=
+    \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}
+      e^{-x^2-y^2} dx dy \\
+    &=
+    \left\{ \int_{-\infty}^{\infty} e^{-x^2} dx \right\}
+    \left\{ \int_{-\infty}^{\infty} e^{-y^2} dy \right\} \\
+    &=
+    \left\{ \int_{-\infty}^{\infty} e^{-x^2} dx \right\}^2.
+  \end{align*}
+  Hence,
+  \begin{align*}
+    & \:
+    \int_{\mathbb{R}^2} f(x,y) dx dy
+    = \int_{0}^{\infty} \int_{0}^{2\pi} f(T(r,\theta))r dr d\theta \\
+    \Longrightarrow& \:
+    \left\{ \int_{-\infty}^{\infty} e^{-x^2} dx \right\}^2 = \pi \\
+    \Longrightarrow& \:
+    \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}.
+  \end{align*}
+  (Here $\int_{-\infty}^{\infty} e^{-x^2} dx$ is always nonnegative.)
 \end{enumerate}
 $\Box$ \\\\
 
