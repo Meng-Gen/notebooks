@@ -36,6 +36,7 @@
 % https://www.math.ucla.edu/~tao/preprints/forms.pdf
 % https://en.wikipedia.org/wiki/N-sphere
 % https://web.stanford.edu/~aaronlan/assets/fundamental-group.pdf
+% http://staff.ustc.edu.cn/~wangzuoq/Courses/18F-Manifolds/Notes/Lec04.pdf
 
 
 
@@ -5486,14 +5487,73 @@ Refer to Theorem 9.42.)} \\
   Hence,
   \[
     \{ (\mathbf{x}', \alpha(\mathbf{x}')) : \mathbf{x}' \in U \}
-    = (a_1,b_1) \times \cdots \times (a_p,b_p) \times \{ c_p \}
+    = (a_1,b_1) \times \cdots \times (a_p,b_p) \times \{ a_p \}
     \subseteq V.
   \]
 
 \item[(4)]
-  \emph{Show that (1) holds if $E$ is a convex open set in $\mathbb{R}^n$.}
+  \emph{(Partitions of unity.)
+  Suppose $E$ is a subset of $\mathbb{R}^n$,
+  and $\{U_{\beta}\}$ is a countable open covering of $E$.
+  Then there exist functions $\psi_{\beta} \in \mathscr{C}(\mathbb{R}^n)$ such that}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{$0 \leq \psi_{\beta} \leq 1$ for every $\beta$;}
 
+  \item[(b)]
+    \emph{each $\psi_{\beta}$ has its support in some $U_{\beta}$;}
 
+  \item[(c)]
+    \emph{each $\mathbf{x} \in E$ has an open neighborhood which intersects
+    $\mathrm{supp}(\psi_{\beta})$ for only finitely many $\beta$, and}
+
+  \item[(d)]
+    \emph{$\sum_{\beta} \psi_{\beta}(\mathbf{x}) = 1$ for every $\mathbf{x} \in E$.}
+  \end{enumerate}
+  To prove this,
+  we apply the similar argument in Theorem 10.8 and note that $E$ is paracompact.
+
+\item[(6)]
+  \emph{Show that (1) holds for arbitrary convex open set $E$ in $\mathbb{R}^n$.}
+  \begin{enumerate}
+  \item[(a)]
+    Let $\{E_{\beta}\}$ is a countable open covering of $E$ in the sense of Exercises 2.22 and 2.23.
+    (So that each $E_{\beta} = B(\mathbf{a}_{\beta};r_{\beta}) \subseteq E$.)
+    Based on $\{E_{\beta}\}$,
+    we can construct an open covering $\{U_{\beta}\}$ of $U$
+    such that $U_{\beta} = B(\mathbf{a}_{\beta}';r_{\beta})$
+    where $\mathbf{a}_{\beta} = (\mathbf{a}_{\beta}', a_{{\beta},p}, \mathbf{a}_{\beta}'')$
+    as in Theorem 10.38.
+
+  \item[(b)]
+    Construct a partition of unity $\psi_{\beta} \in \mathscr{C}(U)$ of $U$ by (4).
+    For any $\mathbf{x} \in U$,
+    there is an open neighborhood $B(\mathbf{x})$ of $\mathbf{x}$ which intersects
+    $\mathrm{supp}(\psi_{\beta})$ for only finitely many $\beta$
+    and $\sum_{\beta} \psi_{\beta}(\mathbf{x}) = 1$ is a finite sum.
+
+  \item[(c)]
+    Define
+    \[
+      \alpha(\mathbf{x}) = \sum_{\beta} a_{\beta,p} \psi_{\beta}(\mathbf{x}).
+    \]
+    (See (a) for the definition of $a_{\beta,p}$.)
+    $\alpha$ is well-defined and $\alpha \in \mathscr{C}(U)$ (by (b)).
+    Write
+    \[
+      (\mathbf{x}, \alpha(\mathbf{x}))
+      = \sum_{\beta} \psi_{\beta}(\mathbf{x})(\mathbf{x}, a_{\beta}).
+    \]
+    Note that
+    $(\mathbf{x}, a_{\beta}) \in B((\mathbf{a}_{\beta}', a_{{\beta},p});r_{\beta}) \subseteq V$.
+    Also, $V$ is convex since $E$ is convex.
+    Therefore, $(\mathbf{x}, \alpha(\mathbf{x})) \in V$.
+  \end{enumerate}
+
+\item[(7)]
+  \emph{Show that $F \in \mathscr{C}'$.}
+  Since the partial derivatives $(D_j F)(\mathbf{x})$ exist and are continuous on $E$,
+  $F \in \mathscr{C}'$ by Theorem 9.21.
 \end{enumerate}
 $\Box$ \\\\
 
