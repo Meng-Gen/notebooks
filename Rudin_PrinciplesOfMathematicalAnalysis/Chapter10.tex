@@ -45,6 +45,11 @@
 
 
 
+% https://math.stackexchange.com/questions/315374/baby-rudin-chapter-10-problem-1-independence-of-order-in-multiple-integrals
+% https://math.stackexchange.com/questions/3023357/show-minimum-distance-to-a-convex-set-is-a-convex-function
+% https://mathoverflow.net/questions/291308/convexity-of-distance-to-boundary-function
+
+
 \textbf{Exercise 10.1.}
 \emph{Let $H$ be a compact convex set in $\mathbb{R}^k$, with nonempty interior.
 Let $f \in \mathscr{C}(H)$, put $f(\mathbf{x}) = 0$ in the complement of $H$,
@@ -56,11 +61,330 @@ as was done in Example 10.4.)} \\
 
 
 
-\emph{Proof.}
+\emph{Proof (Example 10.4).}
 \begin{enumerate}
 \item[(1)]
-\item[(2)]
+  Since $H$ is compact, $H$ is closed and bounded (Theorem 2.41).
+  So there is a $k$-cell
+  \[
+    I^k = (a_1,b_1) \times \cdots \times (a_k,b_k) \subseteq \mathbb{R}^k
+  \]
+  such that $I^k \supseteq H$.
+  Extend $f$ to a function on $I^k$ be setting $f(\mathbf{x}) = 0$ off $H$, and define
+  \[
+    \int_{H} f = \int_{I^k} f.
+  \]
+  Since $f$ may be discontinuous on $I^k$, the existence of the integral $\int_{I^k} f$
+  needs proof.
 
+\item[(2)]
+  Define a function $\rho(\mathbf{x}): \mathbb{R}^k \to \mathbb{R}^1$ by
+  \begin{equation*}
+    \rho(\mathbf{x}) =
+      \begin{cases}
+        \rho_{\mathrm{bdd}(H)}(\mathbf{x})
+        = \inf_{\mathbf{z} \in \mathrm{bdd}(H)} \abs{ \mathbf{x} - \mathbf{z} }
+          & \text{ if $\mathbf{x} \in H$}, \\
+        0
+          & \text{ if $\mathbf{x} \not\in H$}.
+      \end{cases}
+  \end{equation*}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $\rho(\mathbf{x})$ is well-defined, that is,
+    $\mathrm{bdd}(H) \neq \varnothing$.}
+    (Reductio ad absurdum)
+    If $\mathrm{bdd}(H) = \varnothing$, then for every $\mathbf{x} \in H$,
+    there is an open neighborhood contained in $H$, that is, $H$ is open.
+    So $H$ is closed and open, or $H = \varnothing$ or $H = \mathbb{R}^k$,
+    contrary to $\mathrm{int}(H) \neq \varnothing$ (assumption) and the boundedness of $H$.
+
+  \item[(b)]
+    By the similar argument in Exercise 4.20(b),
+    $\rho(\mathbf{x})$ is uniformly continuous on $\mathbb{R}^k$.
+  \end{enumerate}
+
+\item[(3)]
+  Also, define a function $\varphi_{\delta}(t): \mathbb{R}^1 \to \mathbb{R}^1$
+  for some $\delta \in (0,1)$ by
+  \begin{equation*}
+    \varphi_{\delta}(t) =
+      \begin{cases}
+        1
+          & \text{ if $t \geq \delta$}, \\
+        \frac{t}{\delta}
+          & \text{ if $\delta \geq t \geq 0$}, \\
+        0
+          & \text{ if $t = 0$}.
+      \end{cases}
+  \end{equation*}
+
+\item[(4)]
+  Finally define
+  \[
+    F_{\delta}(\mathbf{x}) = \varphi_{\delta}(\rho(\mathbf{x}))f(\mathbf{x})
+    \qquad
+    (\mathbf{x} \in I^k).
+  \]
+  We prove that $F_{\delta}$ is continuous on $I^k$.
+  \begin{enumerate}
+  \item[(a)]
+    By construction, $F_{\delta}$ is continuous on $\mathrm{int}(H) \bigcup \mathrm{int}(I^k-H)$.
+    So it suffices to show that $F_{\delta}$ is continuous on
+    \[
+      I^k - \left(\mathrm{int}(H) \bigcup \mathrm{int}(I^k-H)\right) = \mathrm{bdd}(H).
+    \]
+
+  \item[(b)]
+    Given $\mathbf{x}_0 \in \mathrm{bdd}(H)$.
+    Since $\varphi_{\delta}$ and $\rho$ are continuous,
+    $\varphi_{\delta} \circ \rho$ is continuous (Theorem 4.7).
+    Besides, since $f$ is continuous on a compact set $H$ and $f = 0$ off $H$,
+    $f$ is bounded on $I^k$ (Theorem 4.14).
+    Note that $\varphi_{\delta}(\rho(\mathbf{x}_0)) = 0$.
+    Therefore,
+    \[
+      \lim_{\mathbf{x} \to \mathbf{x}_0} F_{\delta}(\mathbf{x})
+      = \lim_{\mathbf{x} \to \mathbf{x}_0} \varphi_{\delta}(\rho(\mathbf{x}))f(\mathbf{x})
+      = 0
+      = F_{\delta}(\mathbf{x}_0).
+    \]
+  \end{enumerate}
+
+\item[(5)]
+  Summary:
+  \begin{enumerate}
+  \item[(a)]
+    $f$ is bounded on $I^k$.
+
+  \item[(b)]
+    $F_{\delta} = f$ off $H$ for all $\delta$.
+
+  \item[(c)]
+    As $\delta \to 0$,
+    $F_{\delta}$ converges to $f$ on $\mathrm{int}(H)$ and
+    converges uniformly on every compact subset $K \subseteq \mathrm{int}(H)$.
+  \end{enumerate}
+
+\item[(6)]
+  Given an integer $1 \leq m \leq k$.
+  Write $\mathbf{x} = (\mathbf{x}',x_m,\mathbf{x}'')$ where
+  $\mathbf{x}' = (x_1,\ldots,x_{m-1})$ and $\mathbf{x}'' = (x_{m+1},\ldots,x_k)$
+  in the sense of Theorem 10.38.
+  (When $m = 1$, $\mathbf{x}'$ is absent; when $m = k$, $\mathbf{x}''$ is absent.)
+  Let $H_{m}$ be the projection of $H$ on $\mathbb{R}^{m}$ in the sense of Theorem 10.38,
+  say
+  \[
+    H_{m} = \{ (\mathbf{x}',x_m) : (\mathbf{x}',x_m,\mathbf{x}'') \in H
+    \text{ for some } \mathbf{x}'' \}.
+  \]
+  Moreover, we apply the same definition for the projection $I^{m}$ of $I^{k}$
+  In particular, $I^{m} = (a_1,b_1) \times \cdots \times (a_m,b_m) \subseteq \mathbb{R}^m$.
+  Note that $H_{m}$ is convex and the interior of a convex set is convex.
+  \begin{enumerate}
+  \item[(a)]
+    Take $\mathbf{a}, \mathbf{b} \in \mathrm{int}(H_{m})$ and $\lambda \in (0,1)$.
+    Consider $\mathbf{c} = \lambda \mathbf{a} + (1-\lambda) \mathbf{b}$.
+    Since $H_{m}$ is convex, $\mathbf{c} \in H_m$.
+
+  \item[(b)]
+    Also, there are open neighborhoods
+    $B(\mathbf{a};r_{\mathbf{a}}), B(\mathbf{b};r_{\mathbf{b}}) \subseteq H_{m}$.
+    Therefore, $B(\mathbf{c};r_{\mathbf{c}})$
+    with $r_{\mathbf{c}} = \lambda r_{\mathbf{a}} + (1-\lambda) r_{\mathbf{b}})$
+    is an open neighborhood contained in $H_m$.
+
+  \item[(c)]
+    In fact, for any $\mathbf{p}_c \in B(\mathbf{c};r_{\mathbf{c}})$,
+    there exists
+    \begin{align*}
+      \mathbf{p}_a
+      &= \mathbf{a} + \frac{r_{\mathbf{a}}}{r_{\mathbf{c}}}( \mathbf{p}_c - \mathbf{c} )
+        \in B(\mathbf{a};r_{\mathbf{a}}) \subseteq H_m, \\
+      \mathbf{p}_b
+      &= \mathbf{b} + \frac{r_{\mathbf{b}}}{r_{\mathbf{c}}}( \mathbf{p}_c - \mathbf{c} )
+        \in B(\mathbf{b};r_{\mathbf{b}}) \subseteq H_m
+    \end{align*}
+    such that $\mathbf{p}_c = \lambda \mathbf{p}_a + (1-\lambda) \mathbf{p}_b \in H_m$
+    by the convexity of $H_m$.
+  \end{enumerate}
+
+\item[(7)]
+  \emph{Show that (5) also holds for $I^{k-1}$, $H_{k-1}$, $f_{k-1}$ and $F_{k-1}$, that is,}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{$f_{k-1}$ is bounded on $I^{k-1}$.}
+
+  \item[(b)]
+    \emph{$F_{\delta,k-1} = f_{k-1}$ off $H_{k-1}$ for all $\delta$.}
+
+  \item[(c)]
+    As $\delta \to 0$,
+    $F_{\delta,k-1}$ converges to $f_{k-1}$ on $\mathrm{int}(H_{k-1})$ and
+    converges uniformly on every compact subset $K \subseteq \mathrm{int}(H_{k-1})$.
+  \end{enumerate}
+  (a)(b) are trivial.
+  For (c), it suffices to show that for every
+  \[
+    \mathbf{y} = (x_1, \ldots, x_{k-1}) \in \mathrm{int}(H_{k-1}),
+  \]
+  there is an open neighborhood $B(\mathbf{y})$ satisfying
+  $\overline{B(\mathbf{y})} \subseteq \mathrm{int}(H_{k-1})$
+  such that $F_{\delta,k-1}$ converges to $f_{k-1}$ uniformly on $B(\mathbf{y})$.
+
+\item[(8)]
+  Now we prove (7) as follows:
+  \begin{enumerate}
+  \item[(a)]
+    Define
+    \[
+      S_k = \{ x_k : (\mathbf{y}, x_k) \in H \} \subseteq \mathbb{R}^1.
+    \]
+    $S_k$ is an interval since $H$ is convex.
+    Besides, $S_k$ is compact since $H$ is compact.
+    Therefore, $S_k$ is a closed interval of finite length.
+
+  \item[(b)]
+    Define $\mathbf{x} = (\mathbf{y}, x_k)$ and
+    \begin{align*}
+      T_k
+      &=
+      \{ x_k : F_{\delta}(\mathbf{x}) \neq f(\mathbf{x}) \} \\
+      &=
+      \{ x_k : \varphi_{\delta}(\rho(\mathbf{x})) \neq 1
+        \text{ and }
+        f(\mathbf{x}) \neq 0 \} \\
+      &=
+      \{ x_k : 0 \leq \rho(\mathbf{x}) < \delta
+        \text{ and }
+        \mathbf{x} \in H \} \\
+      &=
+      \{ x_k : 0 \leq \rho_{\mathrm{bdd}(H)}(\mathbf{x}) < \delta
+        \text{ and }
+        \mathbf{x} \in H \}
+    \end{align*}
+    as a subset of $S_k$.
+    If $x_k \in T_k$ is an interior point of $S_k$,
+    then clearly $\mathbf{x}$ is an interior point of $H$,
+    or $\rho_{\mathrm{bdd}(H)}(\mathbf{x}) > 0$
+    since $\rho_{\mathrm{bdd}(H)}(\mathbf{x}) = 0$ if and only if
+    $\mathbf{x} \in \mathrm{bdd}(H)$ (Exercise 4.20(a)).
+
+  \item[(c)]
+    Write $S_k = [\alpha_k,\beta_k]$ and
+    consider smaller subsets
+    \begin{align*}
+      S_{k,\varepsilon}
+      &=
+      [\alpha_k+\varepsilon,\beta_k-\varepsilon]
+        \subseteq
+        \mathrm{int}(S_k), \\
+      T_{k,\varepsilon}
+      &=
+      \{ x_k \in S_{k,\varepsilon} : 0 < \rho_{\mathrm{bdd}(H)}(\mathbf{x}) < \delta
+        \text{ and }
+        \mathbf{x} \in H \}
+    \end{align*}
+    for some $\varepsilon > 0$.
+    Define an uniformly continuous $\mu(x_k): S_{k,\varepsilon} \to \mathbb{R}^1$ by
+    \[
+      \mu(x_k)
+      = \rho_{\mathrm{bdd}(H)}(\mathbf{x}).
+    \]
+    Note that $\mu(x_k) > 0$ for all $x_k \in S_{k,\varepsilon}$
+    since $S_{k,\varepsilon} \cap \mathrm{bdd}(H) = \varnothing$
+    by construction.
+
+  \item[(d)]
+    \emph{Show that $\mu(x_k)$ is concave on $S_{k,\varepsilon}$.}
+    Given any $a, b \in S_{k,\varepsilon}$ and $\lambda \in (0,1)$.
+    $\mu(a) = \rho_{\mathrm{bdd}(H)}(\mathbf{a}) > 0$ and
+    $\mu(b) = \rho_{\mathrm{bdd}(H)}(\mathbf{b}) > 0$.
+    ($\mathbf{a} = (\mathbf{y},a)$ and $\mathbf{b} = (\mathbf{y},b)$.)
+    Since $\mathrm{bdd}(H)$ is compact,
+    there exist corresponding $\mathbf{p}_a, \mathbf{p}_b \in \mathrm{bdd}(H)$
+    such that
+    \begin{align*}
+      \mu(a) &= \abs{\mathbf{a} - \mathbf{p}_a} > 0, \\
+      \mu(b) &= \abs{\mathbf{b} - \mathbf{p}_b} > 0.
+    \end{align*}
+    That is,
+    \begin{align*}
+      B(\mathbf{a}; \mu(a)) &\subseteq H, \\
+      B(\mathbf{b}; \mu(b)) &\subseteq H.
+    \end{align*}
+    By (6)(b), we have
+    \[
+      B(\lambda\mathbf{a} + (1-\lambda)\mathbf{b}; \lambda\mu(a) + (1-\lambda)\mu(b))
+      \subseteq H.
+    \]
+    So
+    \begin{align*}
+      \mu(\lambda a + (1-\lambda) b)
+      &= \rho_{\mathrm{bdd}(H)}(\lambda\mathbf{a} + (1-\lambda)\mathbf{b}) \\
+      &\geq \lambda\mu(a) + (1-\lambda)\mu(b)
+    \end{align*}
+    by the definition of $\mathrm{bdd}(H)$.
+    Therefore, $\mu(x_k)$ is concave on $S_{k,\varepsilon}$.
+
+  \item[(e)]
+    By (d),
+    \[
+      \mu(x_k)
+      \geq
+      \underbrace{
+        \min\{ \mu(\alpha_k+\varepsilon), \mu(\beta_k-\varepsilon) \}}_{
+          \text{say } c_{\varepsilon} > 0}
+    \]
+    for all $x_k \in S_{k,\varepsilon}$.
+    Thus in (b) we have
+    \begin{align*}
+      \delta
+      &>
+      \rho_{\mathrm{bdd}(H)}(\mathbf{x}) \\
+      &=
+      \mu(x_k) \\
+      &\geq
+      \underbrace{\frac{c_{\varepsilon}}{\beta_k-\alpha_k+1}}_{
+        \text{say } C_{\varepsilon} > 0}
+      \cdot \min\{ x_k - (\alpha_k+\varepsilon), (\beta_k-\varepsilon) - x_k \},
+    \end{align*}
+    or
+    \[
+      \min\{ x_k - (\alpha_k+\varepsilon), (\beta_k-\varepsilon) - x_k \}
+      < C_{\varepsilon}^{-1} \delta.
+    \]
+
+  \item[(f)]
+    By (b)(e), the length of $T_k$ is
+    \[
+      |T_k| \leq 2(\varepsilon + C_{\varepsilon}^{-1} \delta).
+    \]
+    Thus we have
+    \[
+      |F_{\delta,k-1}(\mathbf{y}) - f_{k-1}(\mathbf{y})|
+      \leq 2(\varepsilon + C_{\varepsilon}^{-1} \delta) \norm{f}
+    \]
+    for any fixed $\mathbf{y} \in \mathrm{int}(H_{k-1})$.
+    Hence, as $\varepsilon \to 0$ and then $\delta \to 0$,
+    we have
+    $F_{\delta,k-1}$ converges to $f_{k-1}$ pointwise on $\mathrm{int}(H_{k-1})$,
+    and
+    uniformly on any open neighborhood $B(\mathbf{y})$ of $\mathbf{y}$
+    satisfying $\overline{B(\mathbf{y})} \subseteq \mathrm{int}(H_{k-1})$.
+  \end{enumerate}
+
+\item[(9)]
+  Continue this process described in (7) from $k-1$ to $1$.
+  Note that $H_1$ is a closed interval of finite length (by (8)(a)).
+  So (5) and Theorem 6.12(d) implies that
+  \[
+    \int_{a_1}^{b_1} F_{\delta,1}(x_1) dx_1 \to \int_{a_1}^{b_1} f(x_1) dx_1
+  \]
+  uniformly.
+  Since $F_{\delta} \in \mathscr{C}(I^k)$, $\int F_{\delta}$ is unaffected by
+  any change in this order.
+  Hence it is also true of $\int_{I^k} f = \int_{H} f$.
 \end{enumerate}
 $\Box$ \\\\
 

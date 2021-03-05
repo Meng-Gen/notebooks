@@ -11,5 +11,5 @@
 - Chapter 7: Sequences and Series of Functions [Finished]
 - Chapter 8: Some Special Functions [Finished]
 - Chapter 9: Functions of Several Variables [Finished]
-- Chapter 10: Integration of Differential Forms [WIP]
+- Chapter 10: Integration of Differential Forms [Finished]
 - Chapter 11: The Lebesuge Theory [Finished]
