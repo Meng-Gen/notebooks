@@ -7,3 +7,4 @@
 *.out
 *.synctex.gz
 *.synctex.gz(busy)
+*.toc
