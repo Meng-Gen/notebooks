@@ -3751,30 +3751,31 @@ $\Box$ \\\\
 
 \subsection*{Exercise 3.4.}
 \addcontentsline{toc}{subsection}{Exercise 3.4.}
-\emph{Find the upper and lower limits of the sequences $\{s_n\}$ defined by
-$$s_1 = 0; s_{2m} = \frac{s_{2m-1}}{2}; s_{2m+1} = \frac{1}{2} + s_{2m}.$$ } \\
+\emph{Find the upper and lower limits of the sequences $\{s_n\}$ defined by}
+\[
+  s_1 = 0;
+  \qquad
+  s_{2m} = \frac{s_{2m-1}}{2};
+  \qquad s_{2m+1} = \frac{1}{2} + s_{2m}.
+\]
 
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
 Write out the first few terms of $\{s_n\}$:
 $$0, 0, \frac{1}{2}, \frac{1}{4}, \frac{3}{4},
 \frac{3}{8}, \frac{7}{8}, \frac{7}{16}, \frac{15}{16}, \ldots$$
 
 It suggests us
 \begin{align*}
-s_{2m+1} &= 1 - \frac{1}{2^m} \:\: (m = 0, 1, 2, \ldots), \\
-s_{2m} &= \frac{1}{2} - \frac{1}{2^m} \:\: (m = 1, 2, 3, \ldots). \\
+  s_{2m+1} &= 1 - \frac{1}{2^m} &\qquad (m = 0, 1, 2, \ldots), \\
+  s_{2m} &= \frac{1}{2} - \frac{1}{2^m} &\qquad (m = 1, 2, 3, \ldots).
 \end{align*}
+It is easy to prove by mathematical induction.
 
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\emph{Show that
-\begin{align*}
-s_{2m+1} &= 1 - \frac{1}{2^m} \:\: (m = 0, 1, 2, \ldots), \\
-s_{2m} &= \frac{1}{2} - \frac{1}{2^m}. \:\: (m = 1, 2, 3, \ldots)
-\end{align*}}
-Apply mathematical induction.
 \item[(2)]
 The upper limit is $1$.
+
 \item[(3)]
 The lower limit is $\frac{1}{2}$.
 \end{enumerate}
