@@ -347,8 +347,11 @@ Prove that $\sup B'(x) = \sup B(x)$ for all $x \in \mathbb{R}$.} \\
 It suffices to show that $\sup B'(r) = \sup B(r) = b^r$ for all $r \in \mathbb{Q}$.
 (The case $x \in \mathbb{R}-\mathbb{Q}$ is nothing to do.)
 Clearly, $\sup B'(r) \leq b^r$.
-If $\alpha = \sup B'(r) < b^r$, then for $\frac{b^r}{\alpha} > 1$ there is
-$n > (b-1)/\left(\frac{b^r}{\alpha} - 1\right)$ such that
+If $\alpha = \sup B'(r) < b^r$, then for $\frac{b^r}{\alpha} > 1$ there is an integer
+\[
+  n > \frac{b-1}{\frac{b^r}{\alpha} - 1}
+\]
+such that
 $$b^{\frac{1}{n}} < \frac{b^r}{\alpha}$$
 (Exercise 1.7(c)).
 So
