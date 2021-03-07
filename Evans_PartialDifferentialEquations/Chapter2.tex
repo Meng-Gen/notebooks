@@ -15,6 +15,143 @@
   \int}
 \def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
 
+\makeatletter
+\newcommand*{\mint}[1]{%
+  % #1: overlay symbol
+  \mint@l{#1}{}%
+}
+\newcommand*{\mint@l}[2]{%
+  % #1: overlay symbol
+  % #2: limits
+  \@ifnextchar\limits{%
+    \mint@l{#1}%
+  }{%
+    \@ifnextchar\nolimits{%
+      \mint@l{#1}%
+    }{%
+      \@ifnextchar\displaylimits{%
+        \mint@l{#1}%
+      }{%
+        \mint@s{#2}{#1}%
+      }%
+    }%
+  }%
+}
+\newcommand*{\mint@s}[2]{%
+  % #1: limits
+  % #2: overlay symbol
+  \@ifnextchar_{%
+    \mint@sub{#1}{#2}%
+  }{%
+    \@ifnextchar^{%
+      \mint@sup{#1}{#2}%
+    }{%
+      \mint@{#1}{#2}{}{}%
+    }%
+  }%
+}
+\def\mint@sub#1#2_#3{%
+  \@ifnextchar^{%
+    \mint@sub@sup{#1}{#2}{#3}%
+  }{%
+    \mint@{#1}{#2}{#3}{}%
+  }%
+}
+\def\mint@sup#1#2^#3{%
+  \@ifnextchar_{%
+    \mint@sup@sub{#1}{#2}{#3}%
+  }{%
+    \mint@{#1}{#2}{}{#3}%
+  }%
+}
+\def\mint@sub@sup#1#2#3^#4{%
+  \mint@{#1}{#2}{#3}{#4}%
+}
+\def\mint@sup@sub#1#2#3_#4{%
+  \mint@{#1}{#2}{#4}{#3}%
+}
+\newcommand*{\mint@}[4]{%
+  % #1: \limits, \nolimits, \displaylimits
+  % #2: overlay symbol: -, =, ...
+  % #3: subscript
+  % #4: superscript
+  \mathop{}%
+  \mkern-\thinmuskip
+  \mathchoice{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \displaystyle\textstyle\scriptstyle
+  }{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \textstyle\scriptstyle\scriptstyle
+  }{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \scriptstyle\scriptscriptstyle\scriptscriptstyle
+  }{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \scriptscriptstyle\scriptscriptstyle\scriptscriptstyle
+  }%
+  \mkern-\thinmuskip
+  \int#1%
+  \ifx\\#3\\\else_{#3}\fi
+  \ifx\\#4\\\else^{#4}\fi
+}
+\newcommand*{\mint@@}[7]{%
+  % #1: limits
+  % #2: overlay symbol
+  % #3: subscript
+  % #4: superscript
+  % #5: math style
+  % #6: math style for overlay symbol
+  % #7: math style for subscript/superscript
+  \begingroup
+    \sbox0{$#5\int\m@th$}%
+    \sbox2{$#5\int_{}\m@th$}%
+    \dimen2=\wd0 %
+    % => \dimen2 = width of \int
+    \let\mint@limits=#1\relax
+    \ifx\mint@limits\relax
+      \sbox4{$#5\int_{\kern1sp}^{\kern1sp}\m@th$}%
+      \ifdim\wd4>\wd2 %
+        \let\mint@limits=\nolimits
+      \else
+        \let\mint@limits=\limits
+      \fi
+    \fi
+    \ifx\mint@limits\displaylimits
+      \ifx#5\displaystyle
+        \let\mint@limits=\limits
+      \fi
+    \fi
+    \ifx\mint@limits\limits
+      \sbox0{$#7#3\m@th$}%
+      \sbox2{$#7#4\m@th$}%
+      \ifdim\wd0>\dimen2 %
+        \dimen2=\wd0 %
+      \fi
+      \ifdim\wd2>\dimen2 %
+        \dimen2=\wd2 %
+      \fi
+    \fi
+    \rlap{%
+      $#5%
+        \vcenter{%
+          \hbox to\dimen2{%
+            \hss
+            $#6{#2}\m@th$%
+            \hss
+          }%
+        }%
+      $%
+    }%
+  \endgroup
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \begin{document}
 
 \textbf{\Large Chapter 2: Four Important Linear PDE} \\\\
@@ -116,31 +253,82 @@ then $\Delta v = 0$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-Let $O = [O_{ij}]$.
-$O$ is orthogonal if $OO^{t} = O^{t}O = I$,
-or
-\[
-  \sum_{i=1}^{n} O_{pi} O_{qi} = \delta_{pq}
-\]
-where $\delta_{pq}$ is the Kronecker delta.
+  Let $O = [O_{ij}]$.
+  $O$ is orthogonal if $OO^{t} = O^{t}O = I$,
+  or
+  \[
+    \sum_{i=1}^{n} O_{pi} O_{qi} = \delta_{pq}
+  \]
+  where $\delta_{pq}$ is the Kronecker delta.
+
 \item[(2)]
-Let $y = Ox$.
-So that
-\begin{align*}
-  D_i v(x)
-  &= \sum_{p=1}^{n} D_p u(y) O_{pi}, \\
-  D_{ij} v(x)
-  &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qj}, \\
-  \Delta v(x)
-  &= \sum_{i=1}^{n} D_{ii} v(x) \\
-  &= \sum_{i=1}^{n} \sum_{q=1}^{n}\sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qi} \\
-  &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} u(y) \left( \sum_{i=1}^{n} O_{pi} O_{qi} \right) \\
-  &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} \delta_{pq} \\
-  &= \sum_{q=1}^{n} D_{qq}u(y) \\
-  &= \Delta u(y).
-\end{align*}
+  Let $y = Ox$.
+  So that
+  \begin{align*}
+    D_i v(x)
+    &= \sum_{p=1}^{n} D_p u(y) O_{pi}, \\
+    D_{ij} v(x)
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qj}, \\
+    \Delta v(x)
+    &= \sum_{i=1}^{n} D_{ii} v(x) \\
+    &= \sum_{i=1}^{n} \sum_{q=1}^{n}\sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qi} \\
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} u(y) \left( \sum_{i=1}^{n} O_{pi} O_{qi} \right) \\
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} \delta_{pq} \\
+    &= \sum_{q=1}^{n} D_{qq}u(y) \\
+    &= \Delta u(y).
+  \end{align*}
+
 \item[(3)]
-As $\Delta u(y) = 0$, $\Delta v(x) = 0$.
+  As $\Delta u(y) = 0$, $\Delta v(x) = 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 2.3.}
+\emph{Modify the proof of the mean value formulas to show for $n \geq 3$ that
+\[
+  u(0)
+  =
+    \mint{-}_{\partial B(0,r)} g dS
+  +
+    \frac{1}{n(n-2)\alpha(n)}
+    \int_{B(0,r)}\left( \frac{1}{|x|^{n-2}} - \frac{1}{r^{n-2}} \right) f dx,
+\]
+provided}
+\begin{equation*}
+  \begin{cases}
+    - \Delta u = f & \text{ in } B^{0}(0,r) \\
+    u          = g & \text{ on } \partial B(0,r).
+  \end{cases}
+\end{equation*} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 2.18.}
+\emph{...} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
 \end{enumerate}
 $\Box$ \\\\
 
