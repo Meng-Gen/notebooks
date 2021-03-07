@@ -36,20 +36,24 @@
 
 
 
-\textbf{Notes on Equation (7).}
-\[
-  |D\Phi(x)| \leq \frac{C}{|x|^{n-1}}, \:\:
-  |D^2\Phi(x)| \leq \frac{C}{|x|^{n}} \:\: (x \neq 0)
-\]
-for some constant $C > 0$. \\
+\textbf{Notes.}
+\begin{enumerate}
+\item[(1)]
+  (Equation (7))
+  \[
+    |D\Phi(x)| \leq \frac{C}{|x|^{n-1}}, \qquad
+    |D^2\Phi(x)| \leq \frac{C}{|x|^{n}} \qquad (x \neq 0)
+  \]
+  for some constant $C > 0$.
+  In fact,
+  \begin{align*}
+  \frac{\partial}{\partial x_i}\Phi(x)
+  &= -\frac{1}{n\alpha(n)} x_i |x|^{-n}, \\
+  \frac{\partial^2}{\partial x_i \partial x_j}\Phi(x)
+  &= \frac{1}{n\alpha(n)} (n x_i x_j - |x|^2 \delta_{ij}) |x|^{-n-2}. \\\\
+  \end{align*}
 
-In fact,
-\begin{align*}
-\frac{\partial}{\partial x_i}\Phi(x)
-&= -\frac{1}{n\alpha(n)} x_i |x|^{-n}, \\
-\frac{\partial^2}{\partial x_i \partial x_j}\Phi(x)
-&= \frac{1}{n\alpha(n)} (n x_i x_j - |x|^2 \delta_{ij}) |x|^{-n-2}. \\\\
-\end{align*}
+\end{enumerate}
 
 
 
@@ -62,8 +66,8 @@ In fact,
 the initial-value problem
 \begin{equation*}
   \begin{cases}
-    u_t + b \cdot Du + cu &= 0 \text{ in } \mathbb{R}^n \times (0,\infty) \\
-    u                     &= g \text{ on } \mathbb{R}^n \times \{ t=0 \}.
+    u_t + b \cdot Du + cu = 0 & \text{ in } \mathbb{R}^n \times (0,\infty) \\
+    u                     = g & \text{ on } \mathbb{R}^n \times \{ t=0 \}.
   \end{cases}
 \end{equation*}
 Here $c \in \mathbb{R}$ and $b \in \mathbb{R}^n$ are constants.} \\
@@ -71,7 +75,7 @@ Here $c \in \mathbb{R}$ and $b \in \mathbb{R}^n$ are constants.} \\
 \emph{Proof (Transport equation).}
 Define
 \[
-  z(s) = u(x+sb,t+s) \:\: (s \in \mathbb{R}).
+  z(s) = u(x+sb,t+s) \qquad (s \in \mathbb{R}).
 \]
 So
 \begin{align*}
@@ -105,7 +109,7 @@ $\Box$ \\\\
 \emph{Prove that Laplace's equation $\Delta u = 0$ is rotation invariant;
 that is, if $O$ is an orthogonal $n \times n$ matrix and we define
 \[
-  v(x) := u(Ox) \:\:(x \in \mathbb{R}^n),
+  v(x) := u(Ox) \qquad (x \in \mathbb{R}^n),
 \]
 then $\Delta v = 0$.} \\
 
