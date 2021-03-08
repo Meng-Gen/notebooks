@@ -27,6 +27,11 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{\large Integers} \\\\
 
 
@@ -38,12 +43,12 @@ There are many proofs of this result. We provide some of them. \\
 
 \emph{Proof (Due to Euclid).}
 If
-$p_1, p_2, ..., p_t$ were all primes, then
+$p_1, p_2, \ldots, p_t$ were all primes, then
 write $$n = p_1 p_2 \cdots p_t + 1$$
 and there were a prime number $p$ dividing $n$.
-$p$ can not be any of $p_i$ for $1 \leq i \leq t$,
-otherwise $p$ would divide the difference $n - p_1 p_2 \cdots p_t = 1$,
-that is, $p \neq p_i$ for $1 \leq i \leq t$,
+$p$ can not be any of $p_i$ for $1 \leq i \leq t$;
+otherwise $p$ would divide the difference $n - p_1 p_2 \cdots p_t = 1$.
+That is, $p \neq p_i$ for $1 \leq i \leq t$,
 which is absurd.
 $\Box$ \\
 
@@ -53,13 +58,13 @@ has infinitely many irreducible polynomials.} \\
 
 \emph{Proof (Due to Euclid).}
 If
-$f_1, f_2, ..., f_t$ were all irreducible polynomials, then
+$f_1, f_2, \ldots, f_t$ were all irreducible polynomials, then
 write $$g = f_1 f_2 \cdots f_t + 1 \in k[x]$$
-and there were a irreducible polynomial $f$ dividing $g$
+and there were an irreducible polynomial $f$ dividing $g$
 (since $\deg g = \deg f_1 + \deg f_2 + \cdots + \deg f_t \geq 1$).
-$f$ can not be any of $c_i f_i$ for $1 \leq i \leq t$ and $0 \neq c_i \in k$,
-otherwise $f$ would divide the difference $g - f_1 f_2 \cdots f_t = 1$,
-that is, $f \neq c_i f_i$ for $1 \leq i \leq t$ and $0 \neq c_i \in k$,
+$f$ can not be any of $c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$;
+otherwise $f$ would divide the difference $g - f_1 f_2 \cdots f_t = 1$.
+That is, $f \neq c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$,
 which is absurd.
 $\Box$ \\
 
@@ -84,11 +89,11 @@ $\Box$ \\
 \item[(1)]
 \emph{$\text{ord}_p n!
 = \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots$.}
-For any $k = 1, 2, ..., n$, we can express $k$ as $k = p^s t$
+For any $k = 1, 2, \ldots, n$, we can express $k$ as $k = p^s t$
 where $s = \text{ord}_p k$ is a non-negative integer and $(t, p) = 1$.
-There are $[\frac{n}{p^a}]$ numbers such that $p^a \mid k$ for $a = 1, 2, ...$.
+There are $[\frac{n}{p^a}]$ numbers such that $p^a \mid k$ for $a = 1, 2, \ldots$.
 Therefore, there are $$\left[\frac{n}{p^a}\right] - \left[\frac{n}{p^{a+1}}\right]$$
-numbers such that $\text{ord}_p k = a$ for $a = 1, 2, ...$. Hence,
+numbers such that $\text{ord}_p k = a$ for $a = 1, 2, \ldots$. Hence,
 \begin{align*}
 \text{ord}_p n!
 &= \left( \left[\frac{n}{p}\right] - \left[\frac{n}{p^2}\right] \right)
@@ -134,7 +139,7 @@ $\Box$ \\
 
 \emph{Proof (Formula for $\phi(n)$).}
 If
-$p_1, p_2, ..., p_t$ were all primes, then let
+$p_1, p_2, \ldots, p_t$ were all primes, then let
 $n = p_1 p_2 \cdots p_t$ and all numbers between $2$ and $n$ are
 NOT relatively prime to $n$.
 Thus, $\phi(n) = 1$ by the definition of $\phi$.
@@ -157,6 +162,11 @@ By the formula for $\phi$,
 which is a contradiction (since $3$ is a prime).
 Hence there are infinitely many primes.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \textbf{Exercise 1.2.}
@@ -228,6 +238,10 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \textbf{Exercise 1.3.}
 \emph{If $2^n - 1$ is a prime, prove that $n$ is prime.
 A prime of the form $2^p - 1$, where $p$ is prime, is called a Mersenne prime.} \\
@@ -256,6 +270,10 @@ Both $a - 1 > 1$ and $\sum_{k=0}^{p-1} a^k > 1$, which is absurd.
 \end{enumerate}
 By (1)(2), $a = 2$ and that $n$ is a prime if $a^n - 1$ is a prime.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -319,7 +337,7 @@ $[P(n) \Rightarrow P(n+1)]$ is true.
 \end{enumerate}
 
 Consider the set
-$$S = \{ n \in \mathbb{N} : P(n) \text{ false} \} \subseteq \mathbb{N}.$$
+$$S = \{ n \in \mathbb{N} : P(n) \text{ is false} \} \subseteq \mathbb{N}.$$
 Want to show
 \emph{$S$ is empty, or the principle of mathematical induction holds.}
 If $S$ were nonempty,

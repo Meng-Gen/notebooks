@@ -28,10 +28,11 @@
 \emph{Let $R$ be a domain.}
 \begin{enumerate}
 \item[(a)]
-\emph{If $F$, $G$ are forms of degree $r$, $s$ respectively in $R[X_1,\ldots,X_n]$,
-show that $FG$ is a form of degree $r+s$.}
+  \emph{If $F$, $G$ are forms of degree $r$, $s$ respectively in $R[X_1,\ldots,X_n]$,
+  show that $FG$ is a form of degree $r+s$.}
+
 \item[(b)]
-\emph{Show that any factor of a form in $R[X_1,\ldots,X_n]$ is also a form. } \\
+  \emph{Show that any factor of a form in $R[X_1,\ldots,X_n]$ is also a form. } \\
 \end{enumerate}
 
 \emph{Proof of (a).}
@@ -81,6 +82,40 @@ $\Box$\\
   The maximality of $r$ and $s$ implies that $\deg(F) = r+s$.
   Therefore, by the maximality of $r+s$,
   $F = G_r H_s$, or $G = G_r$, or $G$ is a form.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.5*.}
+\emph{Let $k$ be any field.
+Show that there are an infinitely number of irreducible monic polynomials in $k[X]$.
+(Hint: Suppose $F_1,\ldots,F_n$ were all of them, and factor $F_1\cdots F_n+1$ into irreducible factors.)} \\
+
+\emph{Proof (Due to Euclid).}
+\begin{enumerate}
+\item[(1)]
+  If
+  $F_1, F_2, \ldots, F_n$ were all irreducible monic polynomials, then
+  write
+  \[
+    G = F_1 F_2 \cdots F_n + 1 \in k[X]
+  \]
+  and there were an irreducible polynomial $F$ dividing $G$
+  since
+  \[
+    \deg G = \deg F_1 + \deg F_2 + \cdots + \deg F_n \geq 1.
+  \]
+
+\item[(2)]
+  $F$ can not be any of $c_i F_i$ for $1 \leq i \leq n$ and $c_i \in k - \{0\}$;
+  otherwise $F$ would divide the difference $G - F_1 F_2 \cdots F_n = 1$.
+  That is, $F \neq c_i F_i$ for $1 \leq i \leq n$ and $c_i \in k - \{0\}$,
+  which is absurd.
 \end{enumerate}
 $\Box$\\\\
 
