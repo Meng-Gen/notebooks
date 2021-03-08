@@ -1,5 +1,5 @@
 # Book
-- Apostol, Mathematical Analysis, 2nd Ed.
+- Apostol, Mathematical Analysis, 2nd edition.
 
 # Exercises
 - Chapter 1: The Real And Complex Number Systems [WIP]

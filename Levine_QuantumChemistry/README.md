@@ -1,5 +1,5 @@
 # Book
-- Ira N. Levine, Quantum Chemistry, 5th Ed.
+- Ira N. Levine, Quantum Chemistry, 5th edition.
 
 # Exercises
 - Chapter 1: The Schrodinger Equation [WIP]

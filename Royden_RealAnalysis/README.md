@@ -1,5 +1,5 @@
 # Book
-- H. L. Royden, Real Analysis, 3rd Ed.
+- H. L. Royden, Real Analysis, 3rd edition.
 
 # Exercises
 - Chapter 1: Set Theory [WIP]

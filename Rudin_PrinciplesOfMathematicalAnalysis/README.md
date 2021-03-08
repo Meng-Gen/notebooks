@@ -1,5 +1,5 @@
 # Book
-- Rudin, Principles of Mathematical Analysis, 3rd Ed.
+- Rudin, Principles of Mathematical Analysis, 3rd edition.
 
 # Exercises
 - Chapter 1: The Real and Complex Number Systems [Finished]
