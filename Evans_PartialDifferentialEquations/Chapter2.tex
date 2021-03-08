@@ -270,7 +270,7 @@ then $\Delta v = 0$.} \\
 \begin{enumerate}
 \item[(1)]
   Let $O = [O_{ij}]$.
-  $O$ is orthogonal if $OO^{t} = O^{t}O = I$,
+  $O$ is orthogonal if $OO^{T} = O^{T}O = I$,
   or
   \[
     \sum_{i=1}^{n} O_{pi} O_{qi} = \delta_{pq}
@@ -361,8 +361,9 @@ $\Box$ \\\\
   \emph{Prove that therefore $\max_{\overline{U}} v = \max_{\partial U} v$.}
 
 \item[(c)]
-  ...
-
+  \emph{Let $\phi: \mathbb{R} \to \mathbb{R}$ be smooth and convex.
+  Assume $u$ is harmonic and $v := \phi(u)$.
+  Prove that $v$ is subharmonic.}
 
 \item[(d)]
   \emph{Prove $v := |Du|^2$ is subharmonic, whenever $u$ is harmonic.} \\
@@ -430,34 +431,76 @@ Similar to the proof of Theorem 4 (Strong maximum principle).
 
 \begin{enumerate}
 \item[(1)]
-  ...
+  Suppose there exists a point $x_0 \in U$ with
+  $v(x_0) = M := \max_{\overline{U}} v$.
+  Then for $0 < r < \mathrm{dist}(x_0,\partial U)$, the mean-value property (in (a)) asserts 
+  \[
+    M = v(x_0) \leq \mint{-}_{B(x_0,r)} v dy \leq M.
+  \]
+  As equality holds only if $v \equiv  M$ within $B(x_0,r)$,
+  we see $v = M$ for all $y \in B(x,r)$.
+  Hence the set $\{ x \in U : v(x) = M \}$ is both open and closed in $U$ (since $v \in C(\overline{U})$),
+  and thus eqauls to one connected component $U_\alpha$ of $U$.
+  By the definition of
+  $\partial U_{\alpha} \subseteq \overline{U_{\alpha}}$
+  and continuity of $v$,
+  $v|_{\partial U_{\alpha}} \equiv M$.
+  As $\partial U_{\alpha} \subseteq \partial U$,
+  the result is established.
 
 \item[(2)]
-  ...
+  If no such point $x_0 \in U$ with $v(x_0) = \max_{\overline{U}} v$,
+  then $\max_{\overline{U}} v = \max_{\partial U} v$ is trivial.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
 
 
 
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
-  ...
+  \begin{align*}
+    \Delta v
+    &= \sum_{i=1}^{n} v_{x_i x_i} \\
+    &= \sum_{i=1}^{n} (\phi'(u) u_{x_i})_{x_i} \\
+    &= \sum_{i=1}^{n} \phi''(u) u_{x_i}^2 + \phi'(u) u_{x_i x_i} \\
+    &= \phi''(u) |Du|^2 + \phi'(u) \Delta u.
+  \end{align*}
 
 \item[(2)]
-  ...
+  As $u$ is harmonic ($\Delta u = 0$) and $\phi$ is convex ($\phi''(u) \geq 0$ by
+  Exercise 5.14 in the textbook:
+  \emph{Rudin, Principles of Mathematical Analysis, 3rd edition}),
+  $\Delta v \geq 0$ (by (1)).
+
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
 
 
 
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
-  ...
+  Since $u$ is smooth,
+  $u$ is harmonic implies that $u_{x_j}$ is harmonic for all $x_j$.
+  In fact,
+  \begin{align*}
+    \Delta (u_{x_j})
+    &= \sum_{i=1}^{n} (u_{x_j})_{x_i x_i} \\
+    &= \sum_{i=1}^{n} u_{x_i x_i x_j}
+      &(\text{Smoothness of $u$}) \\
+    &= \left(\sum_{i=1}^{n} u_{x_i x_i}\right)_{x_j} \\
+    &= \left(\Delta u\right)_{x_j} \\
+    &= 0.
+  \end{align*}
 
 \item[(2)]
-  ...
+  Since $x \mapsto x^2$ is convex and $u_{x_i}$ is harmonic (by (1)),
+  \begin{align*}
+    v := |Du|^2 = \sum_{i=1}^n (u_{x_i})^2
+  \end{align*}
+  is a finite sum of subharmonic functions by (3),
+  which is also subharmonic.
 \end{enumerate}
 $\Box$ \\\\
 
