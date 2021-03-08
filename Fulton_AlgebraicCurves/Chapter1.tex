@@ -7,15 +7,9 @@
 \usepackage{mathrsfs}
 \parindent=0pt
 
-\def\upint{\mathchoice%
-    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
-  \int}
-\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
-
 \begin{document}
+
+
 
 \textbf{\Large Chapter 1: Affine Algebraic Sets} \\\\
 
@@ -30,7 +24,7 @@
 
 
 
-\textbf{Problem 1.1.}
+\textbf{Problem 1.1*.}
 \emph{Let $R$ be a domain.}
 \begin{enumerate}
 \item[(a)]
@@ -41,41 +35,53 @@ show that $FG$ is a form of degree $r+s$.}
 \end{enumerate}
 
 \emph{Proof of (a).}
-Write
-\begin{align*}
-  F &= \sum_{(i)} a_{(i)} X^{(i)}, \\
-  G &= \sum_{(j)} b_{(j)} X^{(j)},
-\end{align*}
-where $\sum_{(i)}$ is the summation over $(i) = (i_1,\ldots,i_n)$ with $i_1+\cdots+i_n = r$
-and $\sum_{(j)}$ is the summation over $(j) = (j_1,\ldots,j_n)$ with $j_1+\cdots+j_n = s$.
-Hence,
-\begin{align*}
-  FG
-  &= \sum_{(i)} \sum_{(j)} a_{(i)}b_{(j)} X^{(i)}X^{(j)} \\
-  &= \sum_{(i),(j)} a_{(i)}b_{(j)} X^{(k)}
-\end{align*}
-where $(k) = (i_1+j_1,\ldots,i_n+j_n)$ with $(i_1+j_1)+\cdots+(i_n+j_n) = r+s$.
-Each $X^{(k)}$ is the form of degree $r+s$ and $a_{(i)}b_{(j)} \in R$.
-Hence $FG$ is a form of degree $r+s$.
+\begin{enumerate}
+\item[(1)]
+  Write
+  \begin{align*}
+    F &= \sum_{(i)} a_{(i)} X^{(i)}, \\
+    G &= \sum_{(j)} b_{(j)} X^{(j)},
+  \end{align*}
+  where $\sum_{(i)}$ is the summation over $(i) = (i_1,\ldots,i_n)$ with $i_1+\cdots+i_n = r$
+  and $\sum_{(j)}$ is the summation over $(j) = (j_1,\ldots,j_n)$ with $j_1+\cdots+j_n = s$.
+
+\item[(2)]
+  Hence,
+  \begin{align*}
+    FG
+    &= \sum_{(i)} \sum_{(j)} a_{(i)}b_{(j)} X^{(i)}X^{(j)} \\
+    &= \sum_{(i),(j)} a_{(i)}b_{(j)} X^{(k)}
+  \end{align*}
+  where $(k) = (i_1+j_1,\ldots,i_n+j_n)$ with $(i_1+j_1)+\cdots+(i_n+j_n) = r+s$.
+  Each $X^{(k)}$ is the form of degree $r+s$ and $a_{(i)}b_{(j)} \in R$.
+  Hence $FG$ is a form of degree $r+s$.
+\end{enumerate}
 $\Box$\\
 
+
+
 \emph{Proof of (b).}
-Given any form $F \in R[X_1,\ldots,X_n]$, and write $F = GH$.
-\emph{It suffices to show that $G$ (or $H$) is a form as well.}
-Write
-\begin{align*}
-  G &= G_0+\cdots+G_r, \\
-  H &= H_0+\cdots+H_s
-\end{align*}
-where $G_r \neq 0$ and $H_s \neq 0$.
-So
-\[
-  F = GH = G_0H_0 + \cdots + G_r H_s.
-\]
-Since $R$ is a domain, $R[X_1,\ldots,X_n]$ is a domain and thus $G_r H_s \neq 0$.
-The maximality of $r$ and $s$ implies that $\deg(F) = r+s$.
-Therefore, by the maximality of $r+s$,
-$F = G_r H_s$, or $G = G_r$, or $G$ is a form.
+\begin{enumerate}
+\item[(1)]
+  Given any form $F \in R[X_1,\ldots,X_n]$, and write $F = GH$.
+  \emph{It suffices to show that $G$ (or $H$) is a form as well.}
+
+\item[(2)]
+  Write
+  \begin{align*}
+    G &= G_0+\cdots+G_r, \\
+    H &= H_0+\cdots+H_s
+  \end{align*}
+  where $G_r \neq 0$ and $H_s \neq 0$.
+  So
+  \[
+    F = GH = G_0H_0 + \cdots + G_r H_s.
+  \]
+  Since $R$ is a domain, $R[X_1,\ldots,X_n]$ is a domain and thus $G_r H_s \neq 0$.
+  The maximality of $r$ and $s$ implies that $\deg(F) = r+s$.
+  Therefore, by the maximality of $r+s$,
+  $F = G_r H_s$, or $G = G_r$, or $G$ is a form.
+\end{enumerate}
 $\Box$\\\\
 
 
