@@ -188,8 +188,23 @@
   \frac{\partial}{\partial x_i}\Phi(x)
   &= -\frac{1}{n\alpha(n)} x_i |x|^{-n}, \\
   \frac{\partial^2}{\partial x_i \partial x_j}\Phi(x)
-  &= \frac{1}{n\alpha(n)} (n x_i x_j - |x|^2 \delta_{ij}) |x|^{-n-2}. \\\\
+  &= \frac{1}{n\alpha(n)} (n x_i x_j - |x|^2 \delta_{ij}) |x|^{-n-2}.
   \end{align*}
+
+\item[(2)]
+  (Equation (12))
+  The constant $C$ is rescaled.
+  It is just a constant.
+
+\item[(3)]
+  (Equation (13))
+  Take $U \mapsto B(0,\varepsilon)$, $u(y) \mapsto \Phi(y)$ and $v(y) \mapsto f(x-y)$
+  in the integration by parts (Green's first identity):
+  \[
+    \int_{U} Dv \cdot Du \: dx
+    = -\int_{U} u \Delta v \: dx
+      + \int_{\partial U} \frac{\partial v}{\partial \nu} u \: dS.
+  \]
 
 \end{enumerate}
 
@@ -327,11 +342,114 @@ $\Box$ \\\\
 
 
 \textbf{Problem 2.4.}
-\emph{...} \\
+\emph{We say $v \in C^2(\overline{U})$ is \textbf{subharmonic} if
+\[
+  - \Delta v \leq 0
+  \qquad
+  \text{in $U$}.
+\]}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove for subharmonic $v$ that}
+  \[
+    v(x) \leq \mint{-}_{B(x,r)} v dy
+    \qquad
+    \text{for all $B(x,r) \subseteq U$}.
+  \]
+
+\item[(b)]
+  ...
+
+\item[(c)]
+  ...
+
+
+\item[(d)]
+  \emph{Prove $v := |Du|^2$ is subharmonic, whenever $u$ is harmonic.} \\
+\end{enumerate}
 
 
 
-\emph{Proof.}
+\emph{Proof of (a).}
+It is exactly the same as the proof of Theorem 2 (Mean-value theorem for Laplace's equation).
+\begin{enumerate}
+\item[(1)]
+  Set
+  \[
+    \phi(r)
+    := \mint{-}_{\partial B(x,r)} v(y) dS(y)
+    = \mint{-}_{\partial B(0,1)} v(x+rz) dS(z)
+  \]
+  ($r > 0$).
+  Then
+  \begin{align*}
+    \phi'(r)
+    &= \mint{-}_{\partial B(0,1)} Dv(\underbrace{x+rz}_{= y}) \cdot z dS(z) \\
+    &= \mint{-}_{\partial B(x,y)} Dv(y) \cdot
+      \underbrace{\frac{y - x}{r}}_{= \nu} dS(y) \\
+    &= \mint{-}_{\partial B(x,y)} \frac{\partial v}{\partial \nu} dS(y) \\
+    &= \frac{r}{n} \mint{-}_{B(x,y)} \Delta u(y) dy
+      &(\text{Green's first identity}) \\
+    &\geq 0
+      &(\text{By assumption})
+  \end{align*}
+  or $\phi(r)$ is increasing.
+
+\item[(2)]
+  Note that
+  \[
+    \lim_{t \to 0} \phi(t)
+    = \lim_{t \to 0} \mint{-}_{\partial B(x,t)} v(y) dS(y)
+    = v(x).
+  \]
+  So that
+  \[
+    v(x) = \lim_{t \to 0} \phi(t) \leq \phi(r) = \mint{-}_{\partial B(x,r)} v(y) dS(y).
+  \]
+
+\item[(3)]
+  Hence, for all $B(x,r) \subseteq U$
+  we have
+  \begin{align*}
+    \mint{-}_{B(x,r)} v dy
+    &= \frac{1}{\alpha(n) r^n} \int_{B(x,r)} v dy \\
+    &= \frac{1}{\alpha(n) r^n} \int_{0}^{r} \int_{\partial B(x,\rho)} v(y) dS(y) d\rho
+      &(\text{Polar coordinates}) \\
+    &\geq \frac{1}{\alpha(n) r^n} \int_{0}^{r} n\alpha(n) \rho^{n-1} v(x) d\rho
+      &((2)) \\
+    &= v(x) \frac{1}{r^n} \underbrace{\int_{0}^{r} n \rho^{n-1} d\rho}_{= r^n} \\
+    &= v(x).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  ...
+
+\item[(2)]
+  ...
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  ...
+
+\item[(2)]
+  ...
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
   ...
