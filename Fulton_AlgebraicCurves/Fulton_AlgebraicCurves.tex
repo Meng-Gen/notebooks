@@ -178,4 +178,91 @@ $\Box$\\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 1.8.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.8.*}
+\emph{Show that the algebraic subsets of $\mathbb{A}^1(k)$ are just the finite subsets, together
+with $\mathbb{A}^1(k)$ itself.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $k[X]$ is a PID if $k$ is a field.}
+  \begin{enumerate}
+  \item[(a)]
+    Let $I$ be an ideal of $k[X]$.
+
+  \item[(b)]
+    If $I = \{0\}$ then $I = (0)$ and $I$ is principal.
+
+  \item[(c)]
+    If $I \neq \{0\}$, then take $F$ to be a polynomial of minimal degree in $I$.
+    It suffices to show that $I = (F)$.
+    Clearly, $(F) \subseteq I$ since $I$ is an ideal.
+    Conversely, for any $G \in I$,
+    \[
+      G = FQ + R
+    \]
+    for some $Q, R \in k[X]$ with $R = 0$ or $\deg R < \deg F$.
+    Now as
+    \[
+      R = G - FQ \in I,
+    \]
+    $R = 0$ (otherwise contrary to the minimality of $F$),
+    we have $G \in (F)$ for all $G \in I$.
+  \end{enumerate}
+
+\item[(2)]
+  Let $X$ be an algebraic subset of $\mathbb{A}^1(k)$,
+  say $X = V(I)$ for some ideal $I$ of $k[X]$.
+  Since $k[X]$ is a PID, $I = (F)$ for some $F \in k[X]$.
+  \begin{enumerate}
+  \item[(a)]
+    If $F = 0$, then $I = (0)$ and $X = V(0) = \mathbb{A}^1(k)$.
+
+  \item[(b)]
+    If $F \neq 0$, then $F(X) = 0$ has finitely many roots in $k$,
+    say $P_1, \ldots, P_m \in k$.
+    Hence,
+    \[
+      X = V(I) = V(F) = \{ F(P) = 0 : P \in k \}
+      = \{ P_1, \ldots, P_m \}
+    \]
+    is a finite subsets of $X$.
+  \end{enumerate}
+  By (a)(b), the result is established.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Notes.}
+\begin{enumerate}
+\item[(1)]
+  By the Hilbert basis theorem, $k[X]$ is Noetherian as $k$ is Noetherian.
+  Hence, for any algebraic subset $X = V(I)$ of $\mathbb{A}^1(k)$,
+  we can write $I = (F_1, \cdots, F_m)$.
+  Note that
+  \[
+    V(I) = V(F_1) \cap \cdots \cap V(F_m).
+  \]
+  Now apply the same argument to get the same conclusion.
+
+\item[(2)]
+  Suppose $k = \overline{k}$.
+  $\mathbb{A}^1(k)$ is irreducible, because its only proper closed subsets are finite,
+  yet it is infinite
+  (because $k$ is algebraically closed, hence infinite).
+
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \end{document}
