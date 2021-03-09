@@ -27685,13 +27685,14 @@ to derive formula}
   \[
     |f(x,y)|
     \leq
-    \alpha (x^2+y^2)^{-1} (\log(x^2+y^2))^{-1-\beta}
+    \alpha (x^2+y^2)^{-1} \left(\log(x^2+y^2)\right)^{-1-\beta}
   \]
   or
   \[
     |f(x,y)|
     \leq
-    \alpha (x^2+y^2)^{-1} (\log(x^2+y^2))^{-1} (\log\log(x^2+y^2))^{-1-\beta}
+    \alpha (x^2+y^2)^{-1} \left(\log(x^2+y^2)\right)^{-1}
+      \left(\log\log(x^2+y^2)\right)^{-1-\beta}
   \]
   and so on.
 
@@ -30084,6 +30085,49 @@ $\Box$ \\
   by Theorems 10.22 and 10.23.
   That is, $\zeta$ is exact in $U = \mathbb{R}^3 - L$.
   (Or $\zeta$ is locally exact in $\mathbb{R}^3 - \{ \mathbf{0} \}$.)
+\end{enumerate}
+$\Box$ \\
+
+
+
+\textbf{Supplement.}
+\emph{Prove that Laplace's equation $\Delta u = 0$ is rotation invariant;
+that is, if $O$ is an orthogonal $n \times n$ matrix and we define
+\[
+  v(x) := u(Ox) \qquad (x \in \mathbb{R}^n),
+\]
+then $\Delta v = 0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $O = [O_{ij}]$.
+  $O$ is orthogonal if $OO^{T} = O^{T}O = I$,
+  or
+  \[
+    \sum_{i=1}^{n} O_{pi} O_{qi} = \delta_{pq}
+  \]
+  where $\delta_{pq}$ is the Kronecker delta.
+
+\item[(2)]
+  Let $y = Ox$.
+  So that
+  \begin{align*}
+    D_i v(x)
+    &= \sum_{p=1}^{n} D_p u(y) O_{pi}, \\
+    D_{ij} v(x)
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qj}, \\
+    \Delta v(x)
+    &= \sum_{i=1}^{n} D_{ii} v(x) \\
+    &= \sum_{i=1}^{n} \sum_{q=1}^{n}\sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qi} \\
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} u(y) \left( \sum_{i=1}^{n} O_{pi} O_{qi} \right) \\
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} \delta_{pq} \\
+    &= \sum_{q=1}^{n} D_{qq}u(y) \\
+    &= \Delta u(y).
+  \end{align*}
+
+\item[(3)]
+  As $\Delta u(y) = 0$, $\Delta v(x) = 0$.
 \end{enumerate}
 $\Box$ \\\\
 
