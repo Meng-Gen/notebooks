@@ -24,7 +24,7 @@
 
 
 
-\textbf{Problem 1.1*.}
+\textbf{Problem 1.1.*}
 \emph{Let $R$ be a domain.}
 \begin{enumerate}
 \item[(a)]
@@ -91,7 +91,7 @@ $\Box$\\\\
 
 
 
-\textbf{Problem 1.5*.}
+\textbf{Problem 1.5.*}
 \emph{Let $k$ be any field.
 Show that there are an infinitely number of irreducible monic polynomials in $k[X]$.
 (Hint: Suppose $F_1,\ldots,F_n$ were all of them, and factor $F_1\cdots F_n+1$ into irreducible factors.)} \\
@@ -101,11 +101,11 @@ Show that there are an infinitely number of irreducible monic polynomials in $k[
 \item[(1)]
   If
   $F_1, F_2, \ldots, F_n$ were all irreducible monic polynomials, then
-  write
+  we consider
   \[
-    G = F_1 F_2 \cdots F_n + 1 \in k[X]
+    G = F_1 F_2 \cdots F_n + 1 \in k[X].
   \]
-  and there were an irreducible monic polynomial $F$ dividing $G$
+  So there is an irreducible monic polynomial $F$ dividing $G$
   since
   \[
     \deg G = \deg F_1 + \deg F_2 + \cdots + \deg F_n \geq 1.
@@ -115,6 +115,35 @@ Show that there are an infinitely number of irreducible monic polynomials in $k[
   $F$ can not be any of $F_i$ for all $i$;
   otherwise $F$ would divide the difference $G - F_1 F_2 \cdots F_n = 1$.
   That is, $F \neq F_i$ for all $i$, contrary to the assumption.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 1.6.*}
+\emph{Show that any algebraically closed field is infinite.
+(Hint: The irreducible monic polynomials are $X - a$, $a \in k$.)} \\
+
+\emph{Proof (Due to Euclid).}
+\begin{enumerate}
+\item[(1)]
+  Let $k$ be an algebraically closed field.
+  If $a_1, \ldots, a_n$ were all elements in $k$, then
+  we consider a monic polynomials
+  \[
+    F(X) = (X - a_1) \cdots (X - a_n) + 1 \in k[X].
+  \]
+
+\item[(2)]
+  Since $k$ is algebraically closed,
+  there is an element $a \in k$ such that $F(a) = 0$.
+  By assumption, $a = a_i$ for some $1 \leq i \leq n$,
+  and thus $F(a) = F(a_i) = 1$, contrary to the fact that
+  a field is a commutative ring where $0 \neq 1$ and all nonzero elements are invertible.
 \end{enumerate}
 $\Box$\\\\
 
