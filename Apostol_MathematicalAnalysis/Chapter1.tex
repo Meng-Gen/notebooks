@@ -44,8 +44,8 @@ There are many proofs of this result. We provide some of them. \\
 \emph{Proof (Due to Euclid).}
 If
 $p_1, p_2, \ldots, p_t$ were all primes, then
-write $$n = p_1 p_2 \cdots p_t + 1$$
-and there were a prime number $p$ dividing $n$.
+we consider $$n = p_1 p_2 \cdots p_t + 1.$$
+Thus there is a prime number $p$ dividing $n$.
 $p$ can not be any of $p_i$ for $1 \leq i \leq t$;
 otherwise $p$ would divide the difference $n - p_1 p_2 \cdots p_t = 1$.
 That is, $p \neq p_i$ for $1 \leq i \leq t$,
@@ -53,20 +53,37 @@ contrary to the assumption.
 $\Box$ \\
 
 \textbf{Supplement (Due to Euclid).}
-\emph{Show that $k[x]$, with $k$ a field,
-has infinitely many irreducible polynomials.} \\
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $k[x]$, with $k$ a field,
+  has infinitely many irreducible polynomials.}
+  If
+  $f_1, f_2, \ldots, f_t$ were all irreducible polynomials, then
+  we consider $$g = f_1 f_2 \cdots f_t + 1 \in k[x].$$
+  So there is an irreducible polynomial $f$ dividing $g$
+  (since $\deg g = \deg f_1 + \deg f_2 + \cdots + \deg f_t \geq 1$).
+  $f$ can not be any of $c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$;
+  otherwise $f$ would divide the difference $g - f_1 f_2 \cdots f_t = 1$.
+  That is, $f \neq c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$,
+  contrary to the assumption.
 
-\emph{Proof (Due to Euclid).}
-If
-$f_1, f_2, \ldots, f_t$ were all irreducible polynomials, then
-write $$g = f_1 f_2 \cdots f_t + 1 \in k[x]$$
-and there were an irreducible polynomial $f$ dividing $g$
-(since $\deg g = \deg f_1 + \deg f_2 + \cdots + \deg f_t \geq 1$).
-$f$ can not be any of $c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$;
-otherwise $f$ would divide the difference $g - f_1 f_2 \cdots f_t = 1$.
-That is, $f \neq c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$,
-contrary to the assumption.
+\item[(2)]
+  \emph{Show that any algebraically closed field is infinite.}
+  Let $k$ be an algebraically closed field.
+  If $a_1, \ldots, a_n$ were all elements in $k$, then
+  we consider a monic polynomials
+  \[
+    F(X) = (X - a_1) \cdots (X - a_n) + 1 \in k[X].
+  \]
+  Since $k$ is algebraically closed,
+  there is an element $a \in k$ such that $F(a) = 0$.
+  By assumption, $a = a_i$ for some $1 \leq i \leq n$,
+  and thus $F(a) = F(a_i) = 1$, contrary to the fact that
+  a field is a commutative ring where $0 \neq 1$ and all nonzero elements are invertible.
+\end{enumerate}
 $\Box$ \\
+
+
 
 \emph{Proof (Unique factorization theorem).}
 Given $N$.
