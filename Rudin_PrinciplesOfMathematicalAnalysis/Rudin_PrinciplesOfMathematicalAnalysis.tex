@@ -3721,22 +3721,24 @@ $$s = \frac{1}{3}
   \begin{enumerate}
   \item[(a)]
   \emph{Show that $s_2 > s_1$.}
-  In fact,
-  $$s_2 = \sqrt{2+\sqrt{s_1}} = \sqrt{2+\sqrt{\sqrt{2}}} < \sqrt{2} = s_1.$$
-  \item[(a)]
-  \emph{Show that $s_{n+1} > s_{n}$ if $s_{n} > s_{n-1}$.}
-  $$s_{n+1} = \sqrt{2+\sqrt{s_{n}}} > \sqrt{2+\sqrt{s_{n-1}}} = s_n.$$
+    In fact,
+    $$s_2 = \sqrt{2+\sqrt{s_1}} = \sqrt{2+\sqrt{\sqrt{2}}} < \sqrt{2} = s_1.$$
+
+  \item[(b)]
+    \emph{Show that $s_{n+1} > s_{n}$ if $s_{n} > s_{n-1}$.}
+    $$s_{n+1} = \sqrt{2+\sqrt{s_{n}}} > \sqrt{2+\sqrt{s_{n-1}}} = s_n.$$
   \end{enumerate}
 By mathematical induction, $\{s_n\}$ is (strictly) increasing.
 \item[(2)]
 \emph{Show that $\{s_n\}$ is bounded (by mathematical induction).}
   \begin{enumerate}
   \item[(a)]
-  \emph{Show that $s_1 \leq 2$.}
-  $\sqrt{2} \leq 2$.
-  \item[(a)]
-  \emph{Show that $s_{n+1} \leq 2$ if $s_{n} \leq 2$.}
-  $$s_{n+1} = \sqrt{2+\sqrt{s_{n}}} \leq \sqrt{2+\sqrt{2}} < 2.$$
+    \emph{Show that $s_1 \leq 2$.}
+    $\sqrt{2} \leq 2$.
+
+  \item[(b)]
+    \emph{Show that $s_{n+1} \leq 2$ if $s_{n} \leq 2$.}
+    $$s_{n+1} = \sqrt{2+\sqrt{s_{n}}} \leq \sqrt{2+\sqrt{2}} < 2.$$
   \end{enumerate}
 By mathematical induction, $\{s_n\}$ is bounded by $2$.
 \end{enumerate}
