@@ -45,11 +45,11 @@
 \emph{Let $R$ be a domain.}
 \begin{enumerate}
 \item[(a)]
-  \emph{If $F$, $G$ are forms of degree $r$, $s$ respectively in $R[X_1,\ldots,X_n]$,
-  show that $FG$ is a form of degree $r+s$.}
+  \emph{If $f$, $g$ are forms of degree $r$, $s$ respectively in $R[x_1,\ldots,x_n]$,
+  show that $fg$ is a form of degree $r+s$.}
 
 \item[(b)]
-  \emph{Show that any factor of a form in $R[X_1,\ldots,X_n]$ is also a form. } \\
+  \emph{Show that any factor of a form in $R[x_1,\ldots,x_n]$ is also a form. } \\
 \end{enumerate}
 
 \emph{Proof of (a).}
@@ -57,8 +57,8 @@
 \item[(1)]
   Write
   \begin{align*}
-    F &= \sum_{(i)} a_{(i)} X^{(i)}, \\
-    G &= \sum_{(j)} b_{(j)} X^{(j)},
+    f &= \sum_{(i)} a_{(i)} x^{(i)}, \\
+    g &= \sum_{(j)} b_{(j)} x^{(j)},
   \end{align*}
   where $\sum_{(i)}$ is the summation over $(i) = (i_1,\ldots,i_n)$ with $i_1+\cdots+i_n = r$
   and $\sum_{(j)}$ is the summation over $(j) = (j_1,\ldots,j_n)$ with $j_1+\cdots+j_n = s$.
@@ -66,13 +66,13 @@
 \item[(2)]
   Hence,
   \begin{align*}
-    FG
-    &= \sum_{(i)} \sum_{(j)} a_{(i)}b_{(j)} X^{(i)}X^{(j)} \\
-    &= \sum_{(i),(j)} a_{(i)}b_{(j)} X^{(k)}
+    fg
+    &= \sum_{(i)} \sum_{(j)} a_{(i)}b_{(j)} x^{(i)}x^{(j)} \\
+    &= \sum_{(i),(j)} a_{(i)}b_{(j)} x^{(k)}
   \end{align*}
   where $(k) = (i_1+j_1,\ldots,i_n+j_n)$ with $(i_1+j_1)+\cdots+(i_n+j_n) = r+s$.
-  Each $X^{(k)}$ is the form of degree $r+s$ and $a_{(i)}b_{(j)} \in R$.
-  Hence $FG$ is a form of degree $r+s$.
+  Each $x^{(k)}$ is the form of degree $r+s$ and $a_{(i)}b_{(j)} \in R$.
+  Hence $fg$ is a form of degree $r+s$.
 \end{enumerate}
 $\Box$\\
 
@@ -81,24 +81,26 @@ $\Box$\\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  Given any form $F \in R[X_1,\ldots,X_n]$, and write $F = GH$.
-  \emph{It suffices to show that $G$ (or $H$) is a form as well.}
+  Given any form $f \in R[x_1,\ldots,x_n]$, and write $f = gh$.
+  \emph{It suffices to show that $g$ is a form as well.}
+  (So does $h$.)
 
 \item[(2)]
   Write
-  \begin{align*}
-    G &= G_0+\cdots+G_r, \\
-    H &= H_0+\cdots+H_s
-  \end{align*}
-  where $G_r \neq 0$ and $H_s \neq 0$.
+  \[
+    g = g_0+\cdots+g_r,
+    \qquad
+    h = h_0+\cdots+h_s
+  \]
+  where $g_r \neq 0$ and $h_s \neq 0$.
   So
   \[
-    F = GH = G_0H_0 + \cdots + G_r H_s.
+    f = gh = g_0h_0 + \cdots + g_r h_s.
   \]
-  Since $R$ is a domain, $R[X_1,\ldots,X_n]$ is a domain and thus $G_r H_s \neq 0$.
-  The maximality of $r$ and $s$ implies that $\deg(F) = r+s$.
+  Since $R$ is a domain, $R[x_1,\ldots,x_n]$ is a domain and thus $g_r h_s \neq 0$.
+  The maximality of $r$ and $s$ implies that $\deg f = r+s$.
   Therefore, by the maximality of $r+s$,
-  $F = G_r H_s$, or $G = G_r$, or $G$ is a form.
+  $f = g_r h_s$, or $g = g_r$, or $g$ is a form.
 \end{enumerate}
 $\Box$\\\\
 
@@ -111,28 +113,30 @@ $\Box$\\\\
 \subsubsection*{Problem 1.5.*}
 \addcontentsline{toc}{subsubsection}{Problem 1.5.*}
 \emph{Let $k$ be any field.
-Show that there are an infinitely number of irreducible monic polynomials in $k[X]$.
-(Hint: Suppose $F_1,\ldots,F_n$ were all of them, and factor $F_1\cdots F_n+1$ into irreducible factors.)} \\
+Show that there are an infinitely number of irreducible monic polynomials in $k[x]$.
+(Hint: Suppose $f_1,\ldots,f_n$ were all of them, and factor $f_1\cdots f_n+1$ into irreducible factors.)} \\
 
 \emph{Proof (Due to Euclid).}
 \begin{enumerate}
 \item[(1)]
   If
-  $F_1, F_2, \ldots, F_n$ were all irreducible monic polynomials, then
+  $f_1, \ldots, f_n$ were all irreducible monic polynomials, then
   we consider
   \[
-    G = F_1 F_2 \cdots F_n + 1 \in k[X].
+    g = f_1 \cdots f_n + 1 \in k[x].
   \]
-  So there is an irreducible monic polynomial $F$ dividing $G$
+  So there is an irreducible monic polynomial $f = f_i$ dividing $g$ for some $i$
   since
   \[
-    \deg G = \deg F_1 + \deg F_2 + \cdots + \deg F_n \geq 1.
+    \deg g = \deg f_1 + \cdots + \deg f_n \geq 1.
   \]
 
 \item[(2)]
-  $F$ can not be any of $F_i$ for all $i$;
-  otherwise $F$ would divide the difference $G - F_1 F_2 \cdots F_n = 1$.
-  That is, $F \neq F_i$ for all $i$, contrary to the assumption.
+  However, $f$ would divide the difference
+  \[
+    g - f_1 \cdots f_{i-1} f_i f_{i+1} \cdots f_n = 1,
+  \]
+  contrary to $\deg f_i \geq 1$.
 \end{enumerate}
 $\Box$\\\\
 
@@ -145,7 +149,7 @@ $\Box$\\\\
 \subsubsection*{Problem 1.6.*}
 \addcontentsline{toc}{subsubsection}{Problem 1.6.*}
 \emph{Show that any algebraically closed field is infinite.
-(Hint: The irreducible monic polynomials are $X - a$, $a \in k$.)} \\
+(Hint: The irreducible monic polynomials are $x - a$, $a \in k$.)} \\
 
 \emph{Proof (Due to Euclid).}
 \begin{enumerate}
@@ -154,14 +158,14 @@ $\Box$\\\\
   If $a_1, \ldots, a_n$ were all elements in $k$, then
   we consider a monic polynomials
   \[
-    F(X) = (X - a_1) \cdots (X - a_n) + 1 \in k[X].
+    f(x) = (x - a_1) \cdots (x - a_n) + 1 \in k[x].
   \]
 
 \item[(2)]
   Since $k$ is algebraically closed,
-  there is an element $a \in k$ such that $F(a) = 0$.
+  there is an element $a \in k$ such that $f(a) = 0$.
   By assumption, $a = a_i$ for some $1 \leq i \leq n$,
-  and thus $F(a) = F(a_i) = 1$, contrary to the fact that
+  and thus $f(a) = f(a_i) = 1$, contrary to the fact that
   a field is a commutative ring where $0 \neq 1$ and all nonzero elements are invertible.
 \end{enumerate}
 $\Box$\\\\
@@ -190,46 +194,46 @@ with $\mathbb{A}^1(k)$ itself.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  \emph{Show that $k[X]$ is a PID if $k$ is a field.}
+  \emph{Show that $k[x]$ is a PID if $k$ is a field.}
   \begin{enumerate}
   \item[(a)]
-    Let $I$ be an ideal of $k[X]$.
+    Let $I$ be an ideal of $k[x]$.
 
   \item[(b)]
     If $I = \{0\}$ then $I = (0)$ and $I$ is principal.
 
   \item[(c)]
-    If $I \neq \{0\}$, then take $F$ to be a polynomial of minimal degree in $I$.
-    It suffices to show that $I = (F)$.
-    Clearly, $(F) \subseteq I$ since $I$ is an ideal.
-    Conversely, for any $G \in I$,
+    If $I \neq \{0\}$, then take $f$ to be a polynomial of minimal degree in $I$.
+    It suffices to show that $I = (f)$.
+    Clearly, $(f) \subseteq I$ since $I$ is an ideal.
+    Conversely, for any $g \in I$,
     \[
-      G = FQ + R
+      g(x) = f(x)h(x) + r(x)
     \]
-    for some $Q, R \in k[X]$ with $R = 0$ or $\deg R < \deg F$.
+    for some $h, r \in k[x]$ with $r = 0$ or $\deg r < \deg f$.
     Now as
     \[
-      R = G - FQ \in I,
+      r = g - fh \in I,
     \]
-    $R = 0$ (otherwise contrary to the minimality of $F$),
-    we have $G \in (F)$ for all $G \in I$.
+    $r = 0$ (otherwise contrary to the minimality of $f$),
+    we have $g = fh \in (f)$ for all $g \in I$.
   \end{enumerate}
 
 \item[(2)]
   Let $X$ be an algebraic subset of $\mathbb{A}^1(k)$,
-  say $X = V(I)$ for some ideal $I$ of $k[X]$.
-  Since $k[X]$ is a PID, $I = (F)$ for some $F \in k[X]$.
+  say $X = V(I)$ for some ideal $I$ of $k[x]$.
+  Since $k[x]$ is a PID, $I = (f)$ for some $f \in k[x]$.
   \begin{enumerate}
   \item[(a)]
-    If $F = 0$, then $I = (0)$ and $X = V(0) = \mathbb{A}^1(k)$.
+    If $f = 0$, then $I = (0)$ and $X = V(0) = \mathbb{A}^1(k)$.
 
   \item[(b)]
-    If $F \neq 0$, then $F(X) = 0$ has finitely many roots in $k$,
-    say $P_1, \ldots, P_m \in k$.
+    If $f \neq 0$, then $f(x) = 0$ has finitely many roots in $k$,
+    say $a_1, \ldots, a_m \in k$.
     Hence,
     \[
-      X = V(I) = V(F) = \{ F(P) = 0 : P \in k \}
-      = \{ P_1, \ldots, P_m \}
+      X = V(I) = V(f) = \{ f(a) = 0 : a \in k \}
+      = \{ a_1, \ldots, a_m \}
     \]
     is a finite subsets of $X$.
   \end{enumerate}
@@ -242,12 +246,12 @@ $\Box$\\
 \emph{Notes.}
 \begin{enumerate}
 \item[(1)]
-  By the Hilbert basis theorem, $k[X]$ is Noetherian as $k$ is Noetherian.
+  By the Hilbert basis theorem, $k[x]$ is Noetherian as $k$ is Noetherian.
   Hence, for any algebraic subset $X = V(I)$ of $\mathbb{A}^1(k)$,
-  we can write $I = (F_1, \cdots, F_m)$.
+  we can write $I = (f_1, \cdots, f_m)$.
   Note that
   \[
-    V(I) = V(F_1) \cap \cdots \cap V(F_m).
+    V(I) = V(f_1) \cap \cdots \cap V(f_m).
   \]
   Now apply the same argument to get the same conclusion.
 
@@ -255,8 +259,7 @@ $\Box$\\
   Suppose $k = \overline{k}$.
   $\mathbb{A}^1(k)$ is irreducible, because its only proper closed subsets are finite,
   yet it is infinite
-  (because $k$ is algebraically closed, hence infinite).
-
+  (because $k$ is algebraically closed, hence infinite). \\
 \end{enumerate}
 
 
