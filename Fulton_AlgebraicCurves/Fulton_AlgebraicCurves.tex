@@ -188,8 +188,8 @@ $\Box$\\\\
 
 \subsubsection*{Problem 1.8.*}
 \addcontentsline{toc}{subsubsection}{Problem 1.8.*}
-\emph{Show that the algebraic subsets of $\mathbb{A}^1(k)$ are just the finite subsets, together
-with $\mathbb{A}^1(k)$ itself.} \\
+\emph{Show that the algebraic subsets of $\mathbf{A}^1(k)$ are just the finite subsets, together
+with $\mathbf{A}^1(k)$ itself.} \\
 
 \emph{Proof.}
 \begin{enumerate}
@@ -220,22 +220,22 @@ with $\mathbb{A}^1(k)$ itself.} \\
   \end{enumerate}
 
 \item[(2)]
-  Let $X$ be an algebraic subset of $\mathbb{A}^1(k)$,
-  say $X = V(I)$ for some ideal $I$ of $k[x]$.
+  Let $Y$ be an algebraic subset of $\mathbf{A}^1(k)$,
+  say $Y = V(I)$ for some ideal $I$ of $k[x]$.
   Since $k[x]$ is a PID, $I = (f)$ for some $f \in k[x]$.
   \begin{enumerate}
   \item[(a)]
-    If $f = 0$, then $I = (0)$ and $X = V(0) = \mathbb{A}^1(k)$.
+    If $f = 0$, then $I = (0)$ and $Y = V(0) = \mathbf{A}^1(k)$.
 
   \item[(b)]
     If $f \neq 0$, then $f(x) = 0$ has finitely many roots in $k$,
     say $a_1, \ldots, a_m \in k$.
     Hence,
     \[
-      X = V(I) = V(f) = \{ f(a) = 0 : a \in k \}
+      Y = V(I) = V(f) = \{ f(a) = 0 : a \in k \}
       = \{ a_1, \ldots, a_m \}
     \]
-    is a finite subsets of $X$.
+    is a finite subsets of $\mathbf{A}^1(k)$.
   \end{enumerate}
   By (a)(b), the result is established.
 \end{enumerate}
@@ -247,17 +247,17 @@ $\Box$\\
 \begin{enumerate}
 \item[(1)]
   By the Hilbert basis theorem, $k[x]$ is Noetherian as $k$ is Noetherian.
-  Hence, for any algebraic subset $X = V(I)$ of $\mathbb{A}^1(k)$,
+  Hence, for any algebraic subset $Y = V(I)$ of $\mathbf{A}^1(k)$,
   we can write $I = (f_1, \cdots, f_m)$.
   Note that
   \[
-    V(I) = V(f_1) \cap \cdots \cap V(f_m).
+    Y = V(I) = V(f_1) \cap \cdots \cap V(f_m).
   \]
   Now apply the same argument to get the same conclusion.
 
 \item[(2)]
   Suppose $k = \overline{k}$.
-  $\mathbb{A}^1(k)$ is irreducible, because its only proper closed subsets are finite,
+  $\mathbf{A}^1(k)$ is irreducible, because its only proper closed subsets are finite,
   yet it is infinite
   (because $k$ is algebraically closed, hence infinite). \\
 \end{enumerate}
@@ -265,7 +265,102 @@ $\Box$\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 1.11.}
+\addcontentsline{toc}{subsubsection}{Problem 1.11.}
+\emph{Show that the following are algebraic sets:}
+\begin{enumerate}
+\item[(a)]
+  $\{ (t,t^2,t^3) \in \mathbf{A}^{3}(k) : t \in k \}$;
+
+\item[(b)]
+  $\{ (\cos(t),\sin(t)) \in \mathbf{A}^{2}(\mathbb{R}) : t \in \mathbb{R} \}$;
+
+\item[(c)]
+  \emph{the set of points in $\mathbf{A}^{2}(\mathbb{R})$
+  whose polar coordinates $(r,\theta)$ satisfy the equation $r = \sin(\theta)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  The twisted cubic curve
+  \[
+    Y = \{ (t,t^2,t^3) \in \mathbf{A}^3(k) : t \in k \}
+    =
+    V(x^2-y) \bigcap V(x^3-z)
+  \]
+  is algebraic.
+  We say that $Y$ is given by the parametric representation $x=t$, $y=t^2$, $z=t^3$.
+
+\item[(2)]
+  $Y$ is an affine variety of dimension $1$.
+
+\item[(3)]
+  The generators for the ideal $I(Y)$ are $x^2-y$ and $x^3-z$.
+
+\item[(4)]
+  The affine coordinate ring $A(Y)$ is isomorphic to a polynomial ring in one variable over $k$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+The circle
+\[
+  \{(\cos(t),\sin(t)) \in \mathbf{A}^2(\mathbb{R}) : t \in \mathbb{R} \} = V(x^2-y^2-1)
+\]
+is algebraic.
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+The circle
+\[
+  \{ (r,\theta) : r = \sin(\theta) \} = V(x^2+y^2-y)
+\]
+is algebraic again.
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter TODO \\}
+\addcontentsline{toc}{section}{Chapter TODO}
+
+
+
+\subsection*{Section TODO \\}
+\addcontentsline{toc}{subsection}{Section TODO}
+
+
+
+\subsubsection*{Problem TODO}
+\addcontentsline{toc}{subsubsection}{Problem TODO}
+\emph{TODO} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  TODO
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 \end{document}
