@@ -579,20 +579,27 @@ is a ring homomorphism whose kernel is $I(V)$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Define a map $\alpha: k[x_1,\ldots,x_n] \to \mathscr{F}(V,k)$
-  by $\alpha: f \mapsto f|_V$.
+  Define a map $\alpha: k[x_1,\ldots,x_n] \to \mathscr{F}(V,k)$.
+  Every polynomial $f \in k[x_1,\ldots,x_n]$ defines a function
+  from $V$ to $k$ by
+  \[
+    \alpha(f)(a_1,\ldots,a_n) = f(a_1,\ldots,a_n)
+  \]
+  for all $(a_1,\ldots,a_n) \in V$.
 
 \item[(2)]
-  Clearly $\alpha$ is a ring homomorphism.
+  $\alpha$ is a ring homomorphism by construction in (1).
 
 \item[(3)]
   \emph{Show that $\mathrm{ker}(\alpha) = I(V)$.}
   In fact,
   given any $f \in k[x_1,\ldots,x_n]$, we have
-  $\alpha(f) = 0$
+  $\alpha(f) = 0$ (sending all $a \in V$ to $0 \in k$)
   if and only if $f(a) = 0$ for all $a \in V$
   if and only if $f \in I(V)$.
-  Hence, $\mathscr{F}(V,k) \cong k[x_1,\ldots,x_n]/I(V) = \Gamma(V)$
+
+\item[(4)]
+  Write $\mathscr{F}(V,k) \cong k[x_1,\ldots,x_n]/I(V) = \Gamma(V)$
   as a ring isomorphism.
 \end{enumerate}
 $\Box$\\\\
