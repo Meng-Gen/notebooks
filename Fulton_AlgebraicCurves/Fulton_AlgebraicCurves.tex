@@ -417,6 +417,69 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 1.18.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.18.*}
+\emph{Let $I$ be an ideal in a ring $R$.
+If $a^n \in I$, $b^m \in I$, show that $(a+b)^{n+m} \in I$.
+Show that $\mathrm{Rad}(I)$ is an ideal, in fact a radical ideal.
+Show that any prime ideal is radical.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $(a+b)^{n+m} \in I$ if $a^n \in I$, $b^m \in I$.}
+  By the binomial theorem,
+  \[
+    (a+b)^{n+m}=\sum_{i=0}^{n+m} a^i b^{n+m-i}.
+  \]
+  For each term $a^i b^{n+m-i}$, either $i \geq n$ holds or $n+m-i \geq m$ holds,
+  and thus $a^i b^{n+m-i} \in I$ (since $a^n \in I$, $b^m \in I$ and $I$ is an ideal).
+  Hence, the result is established.
+
+\item[(2)]
+  \emph{Show that $\mathrm{Rad}(I)$ is an ideal.}
+  \begin{enumerate}
+  \item[(a)]
+    $0 \in \mathrm{Rad}(I)$ since $0 = 0^{1} \in I$ for any ideal in $R$.
+
+  \item[(b)]
+    $(a+b)^{n+m} \in I$ if $a^n \in I$, $b^m \in I$ by (1).
+
+  \item[(c)]
+    $(-a)^{2n} = (a^n)^2 \in I$ if $a^n \in I$ (since $I$ is an ideal).
+
+  \item[(d)]
+    $(ra)^n = r^n a^n \in I$ if $a^n \in I$ and $r \in R$ (since $I$ is an ideal and $R$ is commutative).
+  \end{enumerate}
+
+\item[(3)]
+  \emph{Show that $\mathrm{Rad}(\mathrm{Rad}(I)) = \mathrm{Rad}(I)$.}
+  It suffices to show $\mathrm{Rad}(\mathrm{Rad}(I)) \subseteq \mathrm{Rad}(I)$.
+  Given any $a \in \mathrm{Rad}(\mathrm{Rad}(I))$.
+  By definition $a^n \in \mathrm{Rad}(I)$ for some positive integer $n$.
+  Again by definition $(a^n)^m = a^{nm} \in I$ for some positive integer $m$.
+  As $nm$ is a postive integer, $a \in \mathrm{Rad}(I)$.
+
+\item[(4)]
+  \emph{Show that every prime ideal $\mathfrak{p}$ is radical.}
+  Given any $a \in \mathrm{Rad}(\mathfrak{p})$, that is,
+  $a^n \in \mathfrak{p}$ for some positive integer.
+  Write $a^n = a a^{n-1}$ if $n > 1$.
+  By the primality of $\mathfrak{p}$, $a \in \mathfrak{p}$ or $a^{n-1} \in \mathfrak{p}$.
+  If $a \in \mathfrak{p}$, we are done.
+  If $a^{n-1} \in \mathfrak{p}$,
+  we continue this descending argument until the power of $a$ is equal to $1$.
+  Hence $\mathfrak{p}$ is radical.
+\end{enumerate}
+$\Box$
+\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem PLACEHOLDER}
 \addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
 \emph{PLACEHOLDER} \\
