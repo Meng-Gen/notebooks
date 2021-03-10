@@ -331,6 +331,58 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 1.15.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.15.*}
+\emph{Let $V \subseteq \mathbf{A}^n(k)$, $W \subseteq \mathbf{A}^m(k)$ be algebraic sets.
+Show that
+\[
+  V \times W
+  = \{(a_1,\ldots,a_n,b_1,\ldots,b_m) : (a_1,\ldots,a_n) \in V, (b_1,\ldots,b_m) \in W \}
+\]
+is an algebraic set in $\mathbf{A}^{n+m}(k)$.
+It is called the \textbf{product} of $V$ and $W$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \begin{align*}
+    V &= V(S_V) = \{ a \in \mathbf{A}^n(k) : f(a) = 0 \: \forall f \in S_V \} \\
+    W &= V(S_W) = \{ b \in \mathbf{A}^m(k) : g(b) = 0 \: \forall g \in S_W \},
+  \end{align*}
+  where $S_V \subseteq k[x_1,\ldots,x_n]$ and $S_W \subseteq k[y_1,\ldots,y_m]$.
+  It suffices to show that
+  \[
+    V \times W = V(S),
+  \]
+  where
+  $S \subseteq k[x_1,\ldots,x_n,y_1,\ldots,y_m]$ is the union of $S_V$ and $S_W$.
+
+\item[(2)]
+  Here we can regard $S_V$ as a subset of
+  $k[x_1,\ldots,x_n,y_1,\ldots,y_m]$
+  since
+  \[
+    k[x_1,\ldots,x_n]
+    \hookrightarrow (k[y_1,\ldots,y_m])[x_1,\ldots,x_n]
+    = k[x_1,\ldots,x_n,y_1,\ldots,y_m].
+  \]
+  (Similar treatment to $S_W$.)
+
+\item[(3)]
+  By construction, $V \times W \subseteq V(S)$.
+  Conversely, given any $(a,b) \in V(S)$, we have $h(a,b) = 0$ for all $h \in S = S_V \cup S_W$ (by (2)).
+  By construction, $f(a) = 0$ for all $f \in S_V$ since $f$ only involve $x_1,\ldots,x_n$.
+  Hence, $a \in V$. Similarly, $b \in W$. Therefore, $(a,b) \in V \times W$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
