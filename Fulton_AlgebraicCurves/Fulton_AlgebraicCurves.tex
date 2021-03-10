@@ -471,8 +471,7 @@ Show that any prime ideal is radical.} \\
   we continue this descending argument until the power of $a$ is equal to $1$.
   Hence $\mathfrak{p}$ is radical.
 \end{enumerate}
-$\Box$
-\\\\
+$\Box$\\\\
 
 
 
@@ -568,6 +567,39 @@ $\Box$
 
 \subsection*{2.1. Coordinate Rings \\}
 \addcontentsline{toc}{subsection}{2.1. Coordinate Rings}
+
+
+
+\subsubsection*{Problem 2.1.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.1.*}
+\emph{Show that the map which associates to each
+$f \in k[x_1,\ldots,x_n]$ a polynomial function in $\mathscr{F}(V,k)$
+is a ring homomorphism whose kernel is $I(V)$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Define a map $\alpha: k[x_1,\ldots,x_n] \to \mathscr{F}(V,k)$
+  by $\alpha: f \mapsto f|_V$.
+
+\item[(2)]
+  Clearly $\alpha$ is a ring homomorphism.
+
+\item[(3)]
+  \emph{Show that $\mathrm{ker}(\alpha) = I(V)$.}
+  In fact,
+  given any $f \in k[x_1,\ldots,x_n]$, we have
+  $\alpha(f) = 0$
+  if and only if $f(a) = 0$ for all $a \in V$
+  if and only if $f \in I(V)$.
+  Hence, $\mathscr{F}(V,k) \cong k[x_1,\ldots,x_n]/I(V) = \Gamma(V)$
+  as a ring isomorphism.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
