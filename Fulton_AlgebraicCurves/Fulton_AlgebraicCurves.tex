@@ -374,8 +374,8 @@ It is called the \textbf{product} of $V$ and $W$.} \\
 \item[(1)]
   Write
   \begin{align*}
-    V &= V(S_V) = \{ a \in \mathbf{A}^n(k) : f(a) = 0 \: \forall f \in S_V \} \\
-    W &= V(S_W) = \{ b \in \mathbf{A}^m(k) : g(b) = 0 \: \forall g \in S_W \},
+    V &= V(S_V) = \{ P \in \mathbf{A}^n(k) : f(P) = 0 \: \forall f \in S_V \} \\
+    W &= V(S_W) = \{ Q \in \mathbf{A}^m(k) : g(Q) = 0 \: \forall g \in S_W \},
   \end{align*}
   where $S_V \subseteq k[x_1,\ldots,x_n]$ and $S_W \subseteq k[y_1,\ldots,y_m]$.
   It suffices to show that
@@ -399,9 +399,10 @@ It is called the \textbf{product} of $V$ and $W$.} \\
 
 \item[(3)]
   By construction, $V \times W \subseteq V(S)$.
-  Conversely, given any $(a,b) \in V(S)$, we have $h(a,b) = 0$ for all $h \in S = S_V \cup S_W$ (by (2)).
-  By construction, $f(a) = 0$ for all $f \in S_V$ since $f$ only involve $x_1,\ldots,x_n$.
-  Hence, $a \in V$. Similarly, $b \in W$. Therefore, $(a,b) \in V \times W$.
+  Conversely, given any $(P,Q) \in V(S) \subseteq \mathbf{A}^{n+m}(k)$,
+  we have $h(P,Q) = 0$ for all $h \in S = S_V \cup S_W$ (by (2)).
+  By construction, $f(P) = 0$ for all $f \in S_V$ since $f$ only involve $x_1,\ldots,x_n$.
+  Hence, $P \in V$. Similarly, $Q \in W$. Therefore, $(P,Q) \in V \times W$.
 \end{enumerate}
 $\Box$\\\\
 
