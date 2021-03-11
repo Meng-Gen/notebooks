@@ -110,6 +110,128 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 1.2.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.2.*}
+\emph{Let $R$ be a UFD,
+$K$ the quotient field of $R$.
+Show that every element $z$ of $K$ may be written $z = a/b$,
+where $a, b \in R$ have no common factors;
+this representative is unique up to units of $R$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that every element $z$ of $K$ may be written $z=a/b$,
+  where $a$, $b\in R$ have no common factors.}
+  Given any $z = a/b \in K$ where $a, b\in R$.
+  Write
+  \begin{align*}
+    a &= p_1 \cdots p_n, \\
+    b &= q_1 \cdots q_m
+  \end{align*}
+  where all $p_1, \ldots, p_n, q_1, \ldots, q_m$ are irreducible in $R$.
+  (It is possible since $R$ is a UFD.)
+  For each $i$, suppose $p_i \mid q_j$ for some $i, j$.
+  Write $q_j = p_i u$ for some $u \in R$.
+  By the irreducibility of $p_i$ and $q_j$, $u$ is a unit.
+  So
+  \[
+    z
+    = \frac{a}{b}
+    = \frac{p_1 \cdots \widehat{p_i} \cdots p_n}{q_1 \cdots \widehat{q_j} \cdots q_m}
+    = \frac{p_1 \cdots \widehat{p_i} \cdots p_n}{u q_1 \cdots \widehat{q_j} \cdots q_m}.
+  \]
+  Continue this method we can write $z = \frac{a'}{b'}$ where $a'$ and $b'$ have no common factors.
+
+\item[(2)]
+  Write $z = a/b = a'/b'$ where
+  \begin{enumerate}
+  \item[(a)]
+    $a, b, a', b' \in R$,
+
+  \item[(b)]
+    $a$ and $b$ have no common factors,
+
+  \item[(c)]
+    $a'$ and $b'$ have no common factors.
+  \end{enumerate}
+  Write
+  \begin{align*}
+    a &= p_1 \cdots p_n, \\
+    b &= q_1 \cdots q_m, \\
+    a' &= p'_1 \cdots p'_{n'}, \\
+    b' &= q'_1 \cdots q'_{m'}
+  \end{align*}
+  where all $p_i, q_j, p'_{i'}, q'_{j'}$ are irreducible in $R$.
+  As $z = a/b = a'/b'$, $ab' = a'b$ or
+  \[
+    p_1 \cdots p_n q'_1 \cdots q'_{m'}
+    = p'_1 \cdots p'_{n'} q_1 \cdots q_m.
+  \]
+
+\item[(3)]
+  For $i = 1$, $p_1 = u_1 p'_{i'}$ for some unit $u_1 \in R$
+  since $a$ and $b$ have no common factors and all $p_1, q_j, p'_{i'}$ are irreducible.
+  Hence
+  \[
+    u_1 \widehat{p_1} p_2 \cdots p_n q'_1 \cdots q'_{m'}
+    = p'_1 \cdots \widehat{p'_{i'}} \cdots p'_{n'} q_1 \cdots q_m.
+  \]
+  Continue this method,
+  we have $n \leq n'$ and all $p_1, \ldots, p_n$ are canceled.
+
+\item[(4)]
+  Conversely, we can apply the argument in (3) to $i' = 1, \ldots n'$ to conclude that $n' \leq n$.
+  Therefore, $n = n'$ and
+  \[
+    \underbrace{u_1 \cdots u_n}_{\text{a unit in $R$}} q'_1 \cdots q'_{m'} = q_1 \cdots q_m.
+  \]
+  Hence, $b = ub'$ where $u = u_1 \cdots u_n$ is a unit in $R$.
+  Similarly, $a = va'$ where $v$ is a unit in $R$.
+  So the representative of $z \in K$ is unique up to units of $R$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  PLACEHOLDER
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  PLACEHOLDER
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 1.5.*}
 \addcontentsline{toc}{subsubsection}{Problem 1.5.*}
 \emph{Let $k$ be any field.
@@ -128,8 +250,9 @@ Show that there are an infinitely number of irreducible monic polynomials in $k[
   So there is an irreducible monic polynomial $f = f_i$ dividing $g$ for some $i$
   since
   \[
-    \deg g = \deg f_1 + \cdots + \deg f_n \geq 1.
+    \deg g = \deg f_1 + \cdots + \deg f_n \geq 1
   \]
+  and $k[x]$ is a UFD.
 
 \item[(2)]
   However, $f$ would divide the difference
