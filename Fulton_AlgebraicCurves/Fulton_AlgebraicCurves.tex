@@ -704,6 +704,53 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.51.}
+\addcontentsline{toc}{subsubsection}{Problem 2.51}
+\emph{Let
+\[
+  0 \longrightarrow V_1 \longrightarrow \cdots \longrightarrow V_n \longrightarrow 0
+\]
+be an exact sequence of finite-dimensional vector spaces.
+Show that $\sum (-1)^i \dim(V_i) = 0$.} \\
+
+\emph{Proof (Proposition 7 in this section).}
+\begin{enumerate}
+\item[(1)]
+  For $i = 0,\ldots,n$,
+  by the rank-nullity theorem for a linear transformation
+  $\varphi_{i}: V_{i} \to V_{i+1}$, we have
+  \[
+    \dim V_{i} = \dim \mathrm{im}(\varphi_{i}) + \dim \mathrm{ker}(\varphi_{i}).
+  \]
+  (Here $V_0 = V_{n+1} := 0$ by convention.)
+
+\item[(2)]
+  By the exactness of the sequence, we have
+  \begin{enumerate}
+  \item[(a)]
+    $\mathrm{im}(\varphi_{i}) = \mathrm{ker}(\varphi_{i+1})$ for $i = 0,\ldots, n-1$.
+    In particular, $\mathrm{ker}(\varphi_{1}) = \mathrm{im}(\varphi_{0}) = 0$.
+
+  \item[(b)]
+    $\mathrm{ker}(\varphi_{n}) = V_n$.
+  \end{enumerate}
+  Hence,
+  \begin{align*}
+    \sum_{i=1}^{n-1} (-1)^i \dim(V_i)
+    &= \sum_{i=1}^{n-1} (-1)^i \dim \mathrm{im}(\varphi_{i})
+      + \sum_{i=1}^{n-1} (-1)^i \dim \mathrm{ker}(\varphi_{i}) \\
+    &= \sum_{i=1}^{n-1} (-1)^i \dim \mathrm{ker}(\varphi_{i+1})
+      + \sum_{i=1}^{n-1} (-1)^i \dim \mathrm{ker}(\varphi_{i}) \\
+    &= (-1)^{n-1} \dim \underbrace{\mathrm{ker}(\varphi_{n})}_{=V_n}
+      + (-1)^1 \dim \underbrace{\mathrm{ker}(\varphi_{1})}_{= 0} \\
+    &= -(-1)^n \dim V_n,
+  \end{align*}
+  or $\sum (-1)^i \dim(V_i) = 0$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -738,6 +785,7 @@ $\Box$\\\\
 \item[(1)]
   PLACEHOLDER
 \end{enumerate}
+$\Box$\\\\
 
 
 
@@ -784,6 +832,7 @@ $\Box$\\\\
 \item[(1)]
   PLACEHOLDER
 \end{enumerate}
+$\Box$\\\\
 
 
 
@@ -839,6 +888,7 @@ $\Box$\\\\
 \item[(1)]
   PLACEHOLDER
 \end{enumerate}
+$\Box$\\\\
 
 
 
@@ -941,6 +991,7 @@ $\Box$\\\\
 \item[(1)]
   PLACEHOLDER
 \end{enumerate}
+$\Box$\\\\
 
 
 
@@ -1006,6 +1057,7 @@ $\Box$\\\\
 \item[(1)]
   PLACEHOLDER
 \end{enumerate}
+$\Box$\\\\
 
 
 
