@@ -784,28 +784,27 @@ $\Box$\\\\
   \emph{Show that $(I_1 + I_2) J \subseteq I_1 J + I_2 J$.}
   Given any
   \[
-    \alpha = (a_{1} + a_{2}) b \in (I_1 + I_2) J
+    (x_{1} + x_{2}) y \in (I_1 + I_2) J
   \]
-  where $a_{i} \in I_i$ and $b \in J$.
-  It suffices to show that $\alpha \in I_1 J + I_2 J$ (by (1)).
+  where $x_{i} \in I_i$ and $y \in J$.
+  It suffices to show that $(x_{1} + x_{2}) y \in I_1 J + I_2 J$ (by (1)).
   In fact,
   \[
-    \alpha = (a_{1} + a_{2}) b = a_{1} b + a_{2} b \in I_1 J + I_2 J.
+    (x_{1} + x_{2}) y = x_{1} y + x_{2} y \in I_1 J + I_2 J.
   \]
 
 \item[(3)]
   \emph{Show that $(I_1 + I_2) J \supseteq I_1 J + I_2 J$.}
   Given any
   \[
-    \alpha = a_{1} b_{1} + a_{2} b_{2} \in I_1 J + I_2 J
+    x_{1} y_{1} + x_{2} y_{2} \in I_1 J + I_2 J
   \]
-  where $a_{i} \in I_i$ and $b_{i} \in J$.
-  It suffices to show that $\alpha \in (I_1 + I_2) J$ (by (1)).
+  where $x_{i} \in I_i$ and $y_{i} \in J$.
+  It suffices to show that $x_{1} y_{1} + x_{2} y_{2} \in (I_1 + I_2) J$ (by (1)).
   In fact,
   \[
-    \alpha
-    = a_{1} b_{1} + a_{2} b_{2}
-    = (a_{1}+\underbrace{0}_{\in I_2}) b_{1} + (\underbrace{0}_{\in I_1}+a_{2}) b_{2}
+    x_{1} y_{1} + x_{2} y_{2}
+    = (x_{1}+\underbrace{0}_{\in I_2}) y_{1} + (\underbrace{0}_{\in I_1}+x_{2}) y_{2}
     \in (I_1 + I_2) J
   \]
   since $(I_1 + I_2) J$ is an ideal.
@@ -823,28 +822,28 @@ $\Box$\\
   \emph{Show that $(I_1 \cdots I_N)^n \subseteq I_1^n \cdots I_N^n$.}
   Given any
   \[
-    \alpha = \alpha_1 \cdots \alpha_n
+    x = x_1 \cdots x_n
   \]
-  where $\alpha_i \in I_1 \cdots I_N$.
-  It suffices to show that $\alpha \in I_1^n \cdots I_N^n$ (by (1)).
-  For each $\alpha_i \in I_1 \cdots I_N$, write
+  where $x_i \in I_1 \cdots I_N$.
+  It suffices to show that $x \in I_1^n \cdots I_N^n$ (by (1)).
+  For each $x_i \in I_1 \cdots I_N$, write
   \[
-    \alpha_i = \sum_{j(i)} \alpha_{j(i),1} \cdots \alpha_{j(i),N}
+    x_i = \sum_{j(i)} x_{j(i),1} \cdots x_{j(i),N}
   \]
-  where $\alpha_{j(i),k} \in I_k$ for $1 \leq k \leq N$.
+  where $x_{j(i),k} \in I_k$ for $1 \leq k \leq N$.
   Hence
   \begin{align*}
-    \alpha
-    &= \alpha_1 \cdots \alpha_n \\
-    &= \left(\sum_{j(1)} \alpha_{j(1),1} \cdots \alpha_{j(1),N}\right)
+    x
+    &= x_1 \cdots x_n \\
+    &= \left(\sum_{j(1)} x_{j(1),1} \cdots x_{j(1),N}\right)
       \cdots
-      \left(\sum_{j(n)} \alpha_{j(n),1} \cdots \alpha_{j(n),N}\right) \\
-    &= \sum_{j(1),\ldots,j(n)} (\alpha_{j(1),1} \cdots \alpha_{j(1),N})
-      \cdots (\alpha_{j(n),1} \cdots \alpha_{j(n),N}) \\
+      \left(\sum_{j(n)} x_{j(n),1} \cdots x_{j(n),N}\right) \\
+    &= \sum_{j(1),\ldots,j(n)} (x_{j(1),1} \cdots x_{j(1),N})
+      \cdots (x_{j(n),1} \cdots x_{j(n),N}) \\
     &= \sum_{j(1),\ldots,j(n)}
-      (\underbrace{\alpha_{j(1),1} \cdots \alpha_{j(n),1}}_{\in I_1^n})
+      (\underbrace{x_{j(1),1} \cdots x_{j(n),1}}_{\in I_1^n})
       \cdots
-      (\underbrace{\alpha_{j(1),N} \cdots \alpha_{j(n),N}}_{\in I_N^n}) \\
+      (\underbrace{x_{j(1),N} \cdots x_{j(n),N}}_{\in I_N^n}) \\
     &\in I_1^n \cdots I_N^n.
   \end{align*}
 
@@ -852,36 +851,170 @@ $\Box$\\
   \emph{Show that $(I_1 \cdots I_N)^n \supseteq I_1^n \cdots I_N^n$.}
   Given any
   \[
-    \alpha = \alpha_1 \cdots \alpha_N \in I_1^n \cdots I_N^n
+    x = x_1 \cdots x_N \in I_1^n \cdots I_N^n
   \]
-  where $\alpha_i \in I_i^n$ ($1 \leq i \leq N$).
+  where $x_i \in I_i^n$ ($1 \leq i \leq N$).
   It suffices to show that
-  $\alpha \in (I_1 \cdots I_N)^n$ (by (1)).
-  For each $\alpha_i \in I_i^n$, write
+  $x \in (I_1 \cdots I_N)^n$ (by (1)).
+  For each $x_i \in I_i^n$, write
   \[
-    \alpha_i = \sum_{j(i)} \alpha_{j(i),1} \cdots \alpha_{j(i),n}
+    x_i = \sum_{j(i)} x_{j(i),1} \cdots x_{j(i),n}
   \]
-  where $\alpha_{j(i),k} \in I_i$ for $1 \leq k \leq n$.
+  where $x_{j(i),k} \in I_i$ for $1 \leq k \leq n$.
   Hence
   \begin{align*}
-    \alpha
-    &= \alpha_1 \cdots \alpha_N \\
-    &= \left(\sum_{j(1)} \alpha_{j(1),1} \cdots \alpha_{j(1),n}\right)
+    x
+    &= x_1 \cdots x_N \\
+    &= \left(\sum_{j(1)} x_{j(1),1} \cdots x_{j(1),n}\right)
       \cdots
-      \left(\sum_{j(N)} \alpha_{j(N),1} \cdots \alpha_{j(N),n}\right) \\
-    &= \sum_{j(1),\ldots,j(N)} (\alpha_{j(1),1} \cdots \alpha_{j(1),n})
-      \cdots (\alpha_{j(N),1} \cdots \alpha_{j(N),n}) \\
+      \left(\sum_{j(N)} x_{j(N),1} \cdots x_{j(N),n}\right) \\
+    &= \sum_{j(1),\ldots,j(N)} (x_{j(1),1} \cdots x_{j(1),n})
+      \cdots (x_{j(N),1} \cdots x_{j(N),n}) \\
     &= \sum_{j(1),\ldots,j(N)}
-      (\underbrace{\alpha_{j(1),1} \cdots \alpha_{j(N),1}}_{\in I_1 \cdots I_N})
+      (\underbrace{x_{j(1),1} \cdots x_{j(N),1}}_{\in I_1 \cdots I_N})
       \cdots
-      (\underbrace{\alpha_{j(1),n} \cdots \alpha_{j(N),n}}_{\in I_1 \cdots I_N}) \\
+      (\underbrace{x_{j(1),n} \cdots x_{j(N),n}}_{\in I_1 \cdots I_N}) \\
     &\in (I_1 \cdots I_N)^n.
   \end{align*}
-
-
-
 \end{enumerate}
-$\Box$\\
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.41.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.41.*}
+\emph{Let $I$, $J$ be ideals in $R$.
+Suppose $I$ is finitely generated and $I \subseteq \mathrm{rad}(J)$.
+Show that $I^n \subseteq J$ for some $n$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $I$ be generated by $x_1,\ldots,x_m \in I$.
+  As $I \subseteq \mathrm{rad}(J)$, there are integers $n_i > 0$
+  such that $x_i^{n_i} \in J$.
+
+\item[(2)]
+  Let $N = n_1 + \cdots + n_m$.
+  Given any $x = \sum_{i=1}^{m} r_i x_i \in I$,
+  so
+  \begin{align*}
+    x^N
+    &= \left( \sum_{i=1}^{m} r_i x_i \right)^{N} \\
+    &= \sum_{k_1 + \cdots + k_m = N} {N \choose k_1,\ldots,k_m}
+      r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m}.
+  \end{align*}
+
+\item[(3)]
+  Note that for each term there is some $j$ such that $k_j \geq n_j$.
+  Hence,
+  \begin{align*}
+    & \: x_j^{k_j} = x_j^{k_j-n_j} x_j^{n_j} \in J
+      &\text{($J$ is an ideal)} \\
+    \Longrightarrow& \:
+    r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m} \in J \text{ for each term }
+      &\text{($J$ is an ideal)} \\
+    \Longrightarrow& \:
+    x^N \in J.
+      &\text{($J$ is an ideal)} \\
+    \Longrightarrow& \:
+      I^N \subseteq J.
+  \end{align*}
+\end{enumerate}
+$\Box$\\\\
+
+
+
+\textbf{Supplement.}
+\emph{(Exercise 1.13 in the textbook:
+Eisenbud, Commutative Algebra with a View Toward Algebraic Geometry.)}
+\emph{Suppose that $I$ is an ideal in a commutative ring.
+Show that if $\mathrm{rad}(I)$ is finitely generated,
+then for some integer $N$ we have $(\mathrm{rad}(I))^N \subseteq I$.
+Conclude that in a Noetherian ring the ideals $I$ and $J$ have the same radical
+iff there is some integer $N$ such that $I^N \subseteq J$ and $J^N \subseteq I$.
+Use the Nullstellensatz to deduce that if $I, J \subseteq S = k[x_1,\ldots,x_n]$
+are ideals and $k$ is algebraically closed,
+then $Z(I) = Z(J)$ iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+  \item[(1)]
+  \emph{Show that if $\mathrm{rad}(I)$ is finitely generated,
+  then for some integer $N$ we have $(\mathrm{rad}(I))^N \subseteq I$.}
+  Say $x_1, \ldots, x_m \in \mathrm{rad}(I)$ generate $\mathrm{rad}(I)$.
+  \begin{enumerate}
+    \item[(a)]
+    For each $i$, there exists an integer $n_i > 0$ such that $x_i^{n_i} \in I$
+    (since $\mathrm{rad}(I)$ is radical).
+    \item[(b)]
+    Let $N = n_1 + \cdots + n_m$.
+    Given any $x = \sum_{i=1}^{m} r_i x_i \in \mathrm{rad}(I)$,
+    so
+    \begin{align*}
+      x^N
+      &= \left( \sum_{i=1}^{m} r_i x_i \right)^{N} \\
+      &= \sum_{k_1 + \cdots + k_m = N} {N \choose k_1,\ldots,k_m}
+        r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m}.
+    \end{align*}
+    \item[(c)]
+    Note that for each term there is some $j$ such that $k_j \geq n_j$.
+    Hence,
+    \begin{align*}
+      & \: x_j^{k_j} = x_j^{k_j-n_j} x_j^{n_j} \in I
+        &\text{($I$ is an ideal)} \\
+      \Longrightarrow& \:
+      r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m} \in I \text{ for each term }
+        &\text{($I$ is an ideal)} \\
+      \Longrightarrow& \:
+      x^N \in I.
+        &\text{($I$ is an ideal)} \\
+      \Longrightarrow& \:
+        (\mathrm{rad}(I))^N \subseteq I.
+    \end{align*}
+  \end{enumerate}
+  \item[(2)]
+  \emph{Show that in a Noetherian ring the ideals $I$ and $J$ have the same radical
+  iff there is some integer $N$ such that $I^N \subseteq J$ and $J^N \subseteq I$.}
+  \begin{enumerate}
+    \item[(a)]
+    $(\Longrightarrow)$
+    Since in a Noetherian ring every ideal is finitely generated,
+    $\mathrm{rad}(I)$ and $\mathrm{rad}(J)$ are finitely generated.
+    By (1), there is a common integer $N$ such that
+    \[
+      (\mathrm{rad}(I))^N \subseteq I \:\: \text{ and } \:\:
+      (\mathrm{rad}(J))^N \subseteq J.
+    \]
+    Note that $I^N \subseteq (\mathrm{rad}(I))^N$ and $J^N \subseteq (\mathrm{rad}(J))^N$.
+    Since $\mathrm{rad}(I)$ = $\mathrm{rad}(J)$ by assumption,
+    \begin{align*}
+      I^N &\subseteq (\mathrm{rad}(I))^N = (\mathrm{rad}(J))^N \subseteq J, \\
+      J^N &\subseteq (\mathrm{rad}(J))^N = (\mathrm{rad}(I))^N \subseteq I.
+    \end{align*}
+    \item[(b)]
+    $(\Longleftarrow)$
+    It suffices to show that $\mathrm{rad}(I) \subseteq \mathrm{rad}(J)$.
+    $\mathrm{rad}(J) \subseteq \mathrm{rad}(I)$ is similar.
+    Given any $x \in \mathrm{rad}(I)$, there is an integer $M > 0$ such that
+    $x^M \in I$.
+    Hence $x^{MN} \in I^N \subseteq J$, or $x \in \mathrm{rad}(J)$.
+  \end{enumerate}
+  \item[(3)]
+  \emph{Show that if $I, J \subseteq S = k[x_1,\ldots,x_n]$
+  are ideals and $k$ is algebraically closed,
+  then $Z(I) = Z(J)$ iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.}
+  Note that $S$ is Noetherian and we can apply part (2).
+  By the Nullstellensatz, $Z(I) = Z(J)$ iff $\mathrm{rad}(I) = \mathrm{rad}(J)$
+  iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.
+\end{enumerate}
+$\Box$ \\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
