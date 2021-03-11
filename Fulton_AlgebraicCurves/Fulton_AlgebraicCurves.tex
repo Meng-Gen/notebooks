@@ -254,16 +254,61 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.4.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.4.*}
+\emph{Let $k$ be an infinite field,
+$f \in k[x_1,\ldots,x_n]$.
+Suppose $f(a_1,\ldots,a_n) = 0$ for all $a_1, \ldots, a_n \in k$.
+Show that $f = 0$.
+(Hint: Write
+\[
+  f = \sum f_i x_n^{i},
+  \qquad
+  f_i \in k[x_1,\ldots,x_{n-1}].
+\]
+Use induction on $n$,
+and the fact that $f(a_1, \ldots, a_{n-1}, x_n)$
+has only a finite number of roots if any $f_i(a_1, \ldots, a_{n-1}) \neq 0$.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Induction on $n$.
+  The case $n = 1$.
+  (Reductio ad absurdum)
+  If there were a nonzero $f \in k[x_1]$ such that $f(a) = 0$ for all $a \in k$.
+  Note that $f$ has at most $\deg f < \infty$ roots,
+  contrary to the infinity of $k$.
+
+\item[(2)]
+  Assume that the conclusion holds for $n - 1$, then for any $f \in k[x_1,\ldots,x_n]$
+  we can write
+  \[
+    f = \sum f_i x_n^{i},
+    \qquad
+    f_i \in k[x_1,\ldots,x_{n-1}]
+  \]
+  as $f \in (k[x_1,\ldots,x_{n-1}])[x_n]$.
+  Suppose $f(a_1,\ldots,a_n) = 0$ for all $a_1, \ldots, a_n \in k$.
+  For fixed $a_1, \ldots, a_{n-1}$,
+  the polynomial $f(a_1, \ldots, a_{n-1}, x_n) \in k[x_n]$ has all distinct roots in
+  an infinite field $k$.
+  By (1), $f(a_1, \ldots, a_{n-1}, x_n) = 0 \in k[x_n]$,
+  or each $f_i(a_1, \ldots, a_{n-1}) = 0$.
+  As all $a_1, \ldots, a_{n-1}$ run over $k$,
+  we can apply the induction hypothesis
+  each $f_i(x_1, \ldots, x_{n-1}) = 0 \in k[x_1,\ldots,x_{n-1}]$.
+  Hence, $f = 0 \in k[x_1,\ldots,x_{n}]$.
 \end{enumerate}
-$\Box$\\\\
+$\Box$\\
+
+
+
+\emph{Note.}
+If $k$ is a finite field of order $q = p^k$,
+then the polynomial $f(x) = x^q - x$ has $q$ distinct roots in $k$. \\\\
 
 
 
@@ -335,16 +380,28 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  PLACEHOLDER
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \subsection*{1.2. Affine Space and Algebraic Sets \\}
 \addcontentsline{toc}{subsection}{1.2. Affine Space and Algebraic Sets}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
