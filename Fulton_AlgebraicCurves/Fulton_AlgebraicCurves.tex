@@ -421,7 +421,7 @@ $\Box$\\\\
 \addcontentsline{toc}{subsubsection}{Problem 1.18.*}
 \emph{Let $I$ be an ideal in a ring $R$.
 If $a^n \in I$, $b^m \in I$, show that $(a+b)^{n+m} \in I$.
-Show that $\mathrm{Rad}(I)$ is an ideal, in fact a radical ideal.
+Show that $\mathrm{rad}(I)$ is an ideal, in fact a radical ideal.
 Show that any prime ideal is radical.} \\
 
 \emph{Proof.}
@@ -437,10 +437,10 @@ Show that any prime ideal is radical.} \\
   Hence, the result is established.
 
 \item[(2)]
-  \emph{Show that $\mathrm{Rad}(I)$ is an ideal.}
+  \emph{Show that $\mathrm{rad}(I)$ is an ideal.}
   \begin{enumerate}
   \item[(a)]
-    $0 \in \mathrm{Rad}(I)$ since $0 = 0^{1} \in I$ for any ideal in $R$.
+    $0 \in \mathrm{rad}(I)$ since $0 = 0^{1} \in I$ for any ideal in $R$.
 
   \item[(b)]
     $(a+b)^{n+m} \in I$ if $a^n \in I$, $b^m \in I$ by (1).
@@ -453,16 +453,16 @@ Show that any prime ideal is radical.} \\
   \end{enumerate}
 
 \item[(3)]
-  \emph{Show that $\mathrm{Rad}(\mathrm{Rad}(I)) = \mathrm{Rad}(I)$.}
-  It suffices to show $\mathrm{Rad}(\mathrm{Rad}(I)) \subseteq \mathrm{Rad}(I)$.
-  Given any $a \in \mathrm{Rad}(\mathrm{Rad}(I))$.
-  By definition $a^n \in \mathrm{Rad}(I)$ for some positive integer $n$.
+  \emph{Show that $\mathrm{rad}(\mathrm{rad}(I)) = \mathrm{rad}(I)$.}
+  It suffices to show $\mathrm{rad}(\mathrm{rad}(I)) \subseteq \mathrm{rad}(I)$.
+  Given any $a \in \mathrm{rad}(\mathrm{rad}(I))$.
+  By definition $a^n \in \mathrm{rad}(I)$ for some positive integer $n$.
   Again by definition $(a^n)^m = a^{nm} \in I$ for some positive integer $m$.
-  As $nm$ is a postive integer, $a \in \mathrm{Rad}(I)$.
+  As $nm$ is a postive integer, $a \in \mathrm{rad}(I)$.
 
 \item[(4)]
   \emph{Show that every prime ideal $\mathfrak{p}$ is radical.}
-  Given any $a \in \mathrm{Rad}(\mathfrak{p})$, that is,
+  Given any $a \in \mathrm{rad}(\mathfrak{p})$, that is,
   $a^n \in \mathfrak{p}$ for some positive integer.
   Write $a^n = a a^{n-1}$ if $n > 1$.
   By the primality of $\mathfrak{p}$, $a \in \mathfrak{p}$ or $a^{n-1} \in \mathfrak{p}$.
@@ -537,6 +537,32 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 1.41.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.41.*}
+\emph{If $S$ is module-finite over $R$, then $S$ is ring-finite over $R$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $S = \sum R s_i$ for some $s_1, \ldots, s_n \in S$
+  since $S$ is module-finite over $R$.
+
+\item[(2)]
+  Let $I$ be the minimal subset of $\{ s_1, \ldots, s_n \}$ which also spans $S$,
+  say $\{ t_1, \ldots, t_m \}$ with $m \leq n$.
+  Clearly we can write
+  \[
+    S = R[t_1, \ldots, t_m],
+  \]
+  that is, $S$ is ring-finite over $R$.
+
+\item[(3)]
+  The converse is not true (Problem 1.42).
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -600,7 +626,7 @@ is a ring homomorphism whose kernel is $I(V)$.} \\
   if and only if $f \in I(V)$.
 
 \item[(4)]
-  Hence $k[x_1,\ldots,x_n]/I(V) = \Gamma(V) \to \mathscr{F}(V,k)$
+  Hence $k[x_1,\ldots,x_n]/I(V) = \Gamma(V) \hookrightarrow \mathscr{F}(V,k)$
   is an injective homomorphism.
 \end{enumerate}
 $\Box$\\\\
