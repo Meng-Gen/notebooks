@@ -567,6 +567,34 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 1.42.}
+\addcontentsline{toc}{subsubsection}{Problem 1.42.}
+\emph{Show that $S = R[x]$ (the ring of polynomials in one variable)
+is ring-finite over $R$, but not module-finite.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $S = R[x]$ is ring-finite over $R$ by definition (as $x \in S$).
+
+\item[(2)]
+  (Reductio ad absurdum)
+  If $S = \sum R s_i$ for some $s_1, \ldots, s_n \in S$ were module-finite over $R$.
+  Any element $s \in \sum R s_i$ is of degree
+  \[
+    \deg s \leq \max_{1 \leq i \leq n} \deg s_i := m.
+  \]
+  So that $x^{m+1} \in S = R[x]$ but not in $\sum R s_i$,
+  which is absurd.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsection*{1.9. Integral Elements \\}
 \addcontentsline{toc}{subsection}{1.9. Integral Elements}
 
