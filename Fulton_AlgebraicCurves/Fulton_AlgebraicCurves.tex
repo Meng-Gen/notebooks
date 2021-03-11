@@ -595,6 +595,28 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 1.43.* (WIP)}
+\addcontentsline{toc}{subsubsection}{Problem 1.43.* (WIP)}
+\emph{If $L$ is ring-finite over $K$ ($K$, $L$ fields)
+then $L$ is a finitely generated field extension of $K$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $L = K[v_1, \cdots, v_n]$ for some $v_i \in L$.
+  To show $L = K[v_1, \cdots, v_n] = K(v_1, \cdots, v_n)$,
+  it suffices to show that all $v_i$ are algebraic over $L$.
+
+\item[(2)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsection*{1.9. Integral Elements \\}
 \addcontentsline{toc}{subsection}{1.9. Integral Elements}
 
@@ -740,6 +762,127 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.39.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.39.*}
+\emph{Prove the following relations among ideals $I_i$, $J$ in a ring $R$:} \\
+\begin{enumerate}
+\item[(a)]
+  $(I_1 + I_2) J = I_1 J + I_2 J$.
+
+\item[(b)]
+  $(I_1 \cdots I_N)^n = I_1^n \cdots I_N^n$. \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Note that $(I_1 + I_2) J$ and $I_1 J + I_2 J$ are ideals.
+
+\item[(2)]
+  \emph{Show that $(I_1 + I_2) J \subseteq I_1 J + I_2 J$.}
+  Given any
+  \[
+    \alpha = (a_{1} + a_{2}) b \in (I_1 + I_2) J
+  \]
+  where $a_{i} \in I_i$ and $b \in J$.
+  It suffices to show that $\alpha \in I_1 J + I_2 J$ (by (1)).
+  In fact,
+  \[
+    \alpha = (a_{1} + a_{2}) b = a_{1} b + a_{2} b \in I_1 J + I_2 J.
+  \]
+
+\item[(3)]
+  \emph{Show that $(I_1 + I_2) J \supseteq I_1 J + I_2 J$.}
+  Given any
+  \[
+    \alpha = a_{1} b_{1} + a_{2} b_{2} \in I_1 J + I_2 J
+  \]
+  where $a_{i} \in I_i$ and $b_{i} \in J$.
+  It suffices to show that $\alpha \in (I_1 + I_2) J$ (by (1)).
+  In fact,
+  \[
+    \alpha
+    = a_{1} b_{1} + a_{2} b_{2}
+    = (a_{1}+\underbrace{0}_{\in I_2}) b_{1} + (\underbrace{0}_{\in I_1}+a_{2}) b_{2}
+    \in (I_1 + I_2) J
+  \]
+  since $(I_1 + I_2) J$ is an ideal.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Note that $(I_1 \cdots I_N)^n$ and $I_1^n \cdots I_N^n$ are ideals.
+
+\item[(2)]
+  \emph{Show that $(I_1 \cdots I_N)^n \subseteq I_1^n \cdots I_N^n$.}
+  Given any
+  \[
+    \alpha = \alpha_1 \cdots \alpha_n
+  \]
+  where $\alpha_i \in I_1 \cdots I_N$.
+  It suffices to show that $\alpha \in I_1^n \cdots I_N^n$ (by (1)).
+  For each $\alpha_i \in I_1 \cdots I_N$, write
+  \[
+    \alpha_i = \sum_{j(i)} \alpha_{j(i),1} \cdots \alpha_{j(i),N}
+  \]
+  where $\alpha_{j(i),k} \in I_k$ for $1 \leq k \leq N$.
+  Hence
+  \begin{align*}
+    \alpha
+    &= \alpha_1 \cdots \alpha_n \\
+    &= \left(\sum_{j(1)} \alpha_{j(1),1} \cdots \alpha_{j(1),N}\right)
+      \cdots
+      \left(\sum_{j(n)} \alpha_{j(n),1} \cdots \alpha_{j(n),N}\right) \\
+    &= \sum_{j(1),\ldots,j(n)} (\alpha_{j(1),1} \cdots \alpha_{j(1),N})
+      \cdots (\alpha_{j(n),1} \cdots \alpha_{j(n),N}) \\
+    &= \sum_{j(1),\ldots,j(n)}
+      (\underbrace{\alpha_{j(1),1} \cdots \alpha_{j(n),1}}_{\in I_1^n})
+      \cdots
+      (\underbrace{\alpha_{j(1),N} \cdots \alpha_{j(n),N}}_{\in I_N^n}) \\
+    &\in I_1^n \cdots I_N^n.
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that $(I_1 \cdots I_N)^n \supseteq I_1^n \cdots I_N^n$.}
+  Given any
+  \[
+    \alpha = \alpha_1 \cdots \alpha_N \in I_1^n \cdots I_N^n
+  \]
+  where $\alpha_i \in I_i^n$ ($1 \leq i \leq N$).
+  It suffices to show that
+  $\alpha \in (I_1 \cdots I_N)^n$ (by (1)).
+  For each $\alpha_i \in I_i^n$, write
+  \[
+    \alpha_i = \sum_{j(i)} \alpha_{j(i),1} \cdots \alpha_{j(i),n}
+  \]
+  where $\alpha_{j(i),k} \in I_i$ for $1 \leq k \leq n$.
+  Hence
+  \begin{align*}
+    \alpha
+    &= \alpha_1 \cdots \alpha_N \\
+    &= \left(\sum_{j(1)} \alpha_{j(1),1} \cdots \alpha_{j(1),n}\right)
+      \cdots
+      \left(\sum_{j(N)} \alpha_{j(N),1} \cdots \alpha_{j(N),n}\right) \\
+    &= \sum_{j(1),\ldots,j(N)} (\alpha_{j(1),1} \cdots \alpha_{j(1),n})
+      \cdots (\alpha_{j(N),1} \cdots \alpha_{j(N),n}) \\
+    &= \sum_{j(1),\ldots,j(N)}
+      (\underbrace{\alpha_{j(1),1} \cdots \alpha_{j(N),1}}_{\in I_1 \cdots I_N})
+      \cdots
+      (\underbrace{\alpha_{j(1),n} \cdots \alpha_{j(N),n}}_{\in I_1 \cdots I_N}) \\
+    &\in (I_1 \cdots I_N)^n.
+  \end{align*}
+
+
+
+\end{enumerate}
+$\Box$\\
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -759,7 +902,7 @@ $\Box$\\\\
 
 
 \subsubsection*{Problem 2.51.}
-\addcontentsline{toc}{subsubsection}{Problem 2.51}
+\addcontentsline{toc}{subsubsection}{Problem 2.51.}
 \emph{Let
 \[
   0 \longrightarrow V_1 \longrightarrow \cdots \longrightarrow V_n \longrightarrow 0
