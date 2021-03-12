@@ -383,15 +383,130 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.7.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.7.*}
+\emph{Let $k$ be a field, $f \in k[x_1, \ldots, x_n]$, $a_1, \ldots, a_n \in k$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that}
+  \[
+    f = \sum \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n-a_n)^{i_n},
+    \qquad
+    \lambda_{(i)} \in k.
+  \]
 
-\emph{Proof.}
+\item[(b)]
+  \emph{If $f(a_1, \ldots, a_n) = 0$,
+  show that $f = \sum_{i=1}^n (x_i-a_i) g_i$ for some (not unique) $g_i$ in $k[x_1, \ldots, x_n]$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Regard $k[x_1, \ldots, x_n]$ as $(k[x_1, \ldots, x_{n-1}])[x_n]$.
+  Since $(k[x_1, \ldots, x_{n-1}])[x_n]$ is a Euclidean domain with a function
+  \[
+    f \in (k[x_1, \ldots, x_{n-1}])[x_n] \mapsto \deg_{x_n} f \in \mathbb{Z}_{\geq 0}
+  \]
+  satisfying the division-with-remainder property.
+
+\item[(2)]
+  Apply the division algorithm for $f$ and nonzero $x_n-a_n$
+  to produce a quotient $q$ and remainder $r$ with
+  $f = (x_n-a_n) q + r$ and either $r = 0$ or $\deg_{x_n}(r) < \deg_{x_n} (x_n-a_n) = 1$.
+  That is, $r \in k[x_1, \ldots, x_{n-1}]$ is a constant in $(k[x_1, \ldots, x_{n-1}])[x_n]$.
+  Continue this process to get that $f$ is of the form
+  \[
+    f = \sum_{i_n} f_{i_n} (x_n - a_n)^{i_n}
+  \]
+  where $f_{i_n} \in k[x_1, \ldots, x_{n-1}]$.
+
+\item[(3)]
+  Use the same argument in (2) for each $f_{i_n} \in k[x_1, \ldots, x_{n-1}]$, we have
+  \begin{align*}
+    f_{i_n}
+    &= \sum_{i_{n-1}} \underbrace{f_{i_n,i_{n-1}}}_{\in k[x_1, \ldots, x_{n-2}]}
+      (x_{n-1} - a_{n-1})^{i_{n-1}} \\
+    f_{i_n,i_{n-1}}
+    &=
+    \sum_{i_{n-2}} \underbrace{f_{i_n,i_{n-1},i_{n-2}}}_{\in k[x_1, \ldots, x_{n-3}]}
+      (x_{n-2} - a_{n-2})^{i_{n-2}}, \\
+    & \cdots \\
+    f_{i_n,\ldots,i_{2}}
+    &= \sum_{i_1} \underbrace{f_{i_n,\ldots,i_1}}_{\in k} (x_1 - a_1)^{i_1}.
+  \end{align*}
+  Note that $f_{i_n,\ldots,i_1} \in k$, we can write
+  \[
+    f = \sum \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n-a_n)^{i_n},
+    \qquad
+    \lambda_{(i)} \in k.
+  \]
+  by replacing all $f_{i_n,\ldots,i_k}$ by $f_{i_n,\ldots,i_{k-1}}$
+  for $k = n, n-1, \ldots, 2$.
+
+\item[(4)]
+  Or use the induction on $n$.
 \end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    f = \sum \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n-a_n)^{i_n},
+    \qquad
+    \lambda_{(i)} \in k
+  \]
+  by (a).
+
+\item[(2)]
+  As $f(a_1, \cdots, a_n) = 0$,
+  $\lambda_{(i)} = 0$ if all $i_1, \ldots, i_n$ are zero, that it,
+  there is no nonzero constant term in the representation of $f$.
+  Hence, for each term
+  \[
+    f_{(i)} : = \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n-a_n)^{i_n}
+  \]
+  with $\lambda_{(i)} \neq 0$,
+  there exists one $i_k > 0$ for some $1 \leq k \leq n$.
+  So we can write
+  \[
+    f_{(i)}
+    =
+    (x_k-a_k)
+      \underbrace{
+        (\lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_k-a_k)^{i_k-1} \cdots (x_n-a_n)^{i_n})}_{
+          := g_{(i)} \in k[x_1,\ldots,x_n]}.
+  \]
+  Note that the expression of $f_{(i)}$ is not unique since
+  there may exist more than one $i_k > 0$ as $1 \leq k \leq n$.
+
+\item[(3)]
+  Now we iterate each nonzero term in $f$, apply the factorization in (2),
+  and then group by each $x_k-a_k$.
+  Therefore, we can write
+  \[
+    f = \sum_{i=1}^{n}(x_i-a_i)g_i
+  \]
+  for some $g_1 \in k[x_1, \ldots, x_n]$.
+
+\item[(4)]
+  The expression of $f$ is not unique.
+  For example, take $f(x,y) = x^2 + 2xy + y^2 \in k[x,y]$.
+  As $f(0,0) = 0$, we can write
+  \begin{align*}
+    f(x,y)
+    &= x \cdot \underbrace{(x+2y)}_{g_1} + y \cdot \underbrace{y}_{g_2}, \text{ or } \\
+    &= x \cdot \underbrace{(x+y)}_{g_1} + y \cdot \underbrace{(x+y)}_{g_2}, \text{ or } \\
+    &= x \cdot \underbrace{x}_{g_1} + y \cdot \underbrace{(2x+y)}_{g_2}.
+  \end{align*}
+\end{enumerate}
+$\Box$\\\\
 
 
 
@@ -429,7 +544,7 @@ with $\mathbf{A}^1(k)$ itself.} \\
     \[
       g(x) = f(x)h(x) + r(x)
     \]
-    for some $h, r \in k[x]$ with $r = 0$ or $\deg r < \deg f$.
+    for some $h, r \in k[x]$ with $r = 0$ or $\deg r < \deg f$ (as $k[x]$ is a Euclidean domain).
     Now as
     \[
       r = g - fh \in I,
