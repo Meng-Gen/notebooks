@@ -949,12 +949,79 @@ The cycloid is not algebraic (as (a)).} \\\\
 
 \subsubsection*{Problem 1.14.*}
 \addcontentsline{toc}{subsubsection}{Problem 1.14.*}
-\emph{PLACEHOLDER} \\
+\emph{Let $f$ be a nonconstant polynomial in $k[x_1, \ldots, x_n]$,
+$k$ algebraically closed.
+Show that $\mathbf{A}^{n}(k) - V(f)$ is infinite if $n \geq 1$,
+and $V(f)$ is infinite if $n \geq 2$.
+Conclude that the complement of any proper algebraic set is infinite.
+(Hint: See Problem 1.4.)} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  \emph{Show that $\mathbf{A}^{n}(k) - V(f)$ is infinite if $n \geq 1$.}
+  Since $f$ is a nonconstant polynomial in $k[x_1, \ldots, x_n]$,
+  we may assume that $\deg_{x_n}(f) > 0$.
+  Hence
+  \[
+    x_n \mapsto f(1,\ldots,1,x_n)
+  \]
+  is a nonconstant polynomial of degree $\deg_{x_n}(f) > 0$ in $k[x_n]$.
+  So $f$ has finitely many roots in $k$, say $\xi_1, \ldots, \xi_m$ ($m \geq 0$).
+  Hence,
+  \[
+    (1,\ldots,1,x_n) \neq 0
+  \]
+  whenever $x_n \neq \xi_m$.
+  Such subset in $\mathbf{A}^{1}(k)$ is infinite since $k = \overline{k}$ (Problem 1.6).
+  Therefore,
+  \begin{align*}
+    \mathbf{A}^{n}(k) - V(f)
+    &=
+    \{ (a_1,\ldots,a_n) \in \mathbf{A}^{n}(k) : f(a_1,\ldots,a_n) \neq 0 \} \\
+    &\supseteq
+    \{ a_n  \in \mathbf{A}^{1}(k) : f(1,\ldots,1,x_n) \neq 0 \}
+  \end{align*}
+  is infinite.
+
+\item[(2)]
+  \emph{Show that $V(f)$ is infinite if $n \geq 2$.}
+  \begin{enumerate}
+  \item[(a)]
+    Similar to (1).
+    Since $f$ is a nonconstant polynomial in $k[x_1, \ldots, x_n]$,
+    we may assume that $m := \deg_{x_n}(f) > 0$.
+    Write
+    \[
+      f = \sum_{i=0}^{m} f_i(x_1,\ldots,x_{n-1}) x_n^{i}.
+    \]
+    Note that each $f_i$ is well-defined since $n \geq 2$.
+
+  \item[(b)]
+    If $f_n$ is constant in $k[x_1, \ldots, x_{n-1}]$,
+    then $f_n$ is nonzero (since $m > 0$) or $V(f_n) = \varnothing$.
+    If $f_n$ is nonconstant in $k[x_1, \ldots, x_{n-1}]$,
+    then the set $\mathbf{A}^{n-1}(k) - V(f_n)$ is infinite by (1).
+    In any case,
+    \[
+      \mathbf{A}^{n-1}(k) - V(f_n)
+    \]
+    is infinite.
+
+  \item[(c)]
+    For each $P = (a_1,\ldots,a_{n-1}) \in \mathbf{A}^{n-1}(k) - V(f_n)$,
+    \[
+      g_P: x_n \mapsto f(P,x_n) = f(a_1,\ldots,a_{n-1},x_n)
+    \]
+    defines a polynomial in $k[x_n]$ of degree $m > 0$.
+    Since $k = \overline{k}$, $g_P$ has at least one root $Q \in k$.
+    Hence
+    \[
+      V(f) \supseteq
+      \{ (P,Q) \in \mathbf{A}^{n}(k) : P \in \mathbf{A}^{n-1}(k) - V(f_n), g_P(Q) = 0 \}
+    \]
+    is infinite since the set $\mathbf{A}^{n-1}(k) - V(f_n)$ is infinite.
+  \end{enumerate}
 \end{enumerate}
 $\Box$\\\\
 
