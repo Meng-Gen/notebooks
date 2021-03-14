@@ -741,7 +741,7 @@ $f(x,ax +b) \in k[x]$.)} \\
   Note that $L \not\subseteq C$ implies that $(y - (ax + b)) \nmid f$.
   Hence, the polynomial
   \[
-    g: x \mapsto f(x,ax +b) \in k[x]
+    g: x \mapsto f(x,ax + b) \in k[x]
   \]
   is nonzero and $\deg g \leq n$.
   Therefore, the number of roots of $g$ in $k$ is no more than $n$.
@@ -762,16 +762,171 @@ $\Box$\\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 \subsubsection*{Problem 1.13.}
 \addcontentsline{toc}{subsubsection}{Problem 1.13.}
-\emph{PLACEHOLDER} \\
+\emph{Show that each of the following sets is not algebraic:}
+\begin{enumerate}
+\item[(a)]
+  $\{ (x,y) \in \mathbf{A}^{2}(\mathbb{R}) : y = \sin(x) \}$.
 
-\emph{Proof.}
+\item[(b)]
+  \emph{$\{ (z,w) \in \mathbf{A}^{2}(\mathbb{C}) : |z|^2 + |w|^2 = 1 \}$,
+  where $|x+iy|^2 = x^2 + y^2$ for $x, y \in \mathbb{R}$.}
+
+\item[(c)]
+  $\{ (\cos(t), \sin(t), t) \in \mathbf{A}^3(\mathbb{R}) : t \in \mathbb{R} \}$. \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  (Reductio ad absurdum)
+  If
+  \[
+    Y := \{ (x,y) \in \mathbf{A}^{2}(\mathbb{R}) : y = \sin(x) \}
+  \]
+  were algebraic,
+  then there is a subset $S$ of $\mathbb{R}[x,y]$ such that
+  \[
+    Y = V(S) = \bigcap_{f \in S} V(f).
+  \]
+
+\item[(2)]
+  $S \neq \varnothing$ since $Y \neq \mathbf{A}^{2}(\mathbb{R})$.
+  ($(89,64) \in \mathbf{A}^{2}(\mathbb{R})-Y$.)
+
+\item[(3)]
+  Take a fixed line $L = V(y)$ in $\mathbf{A}^{2}(\mathbb{R})$.
+  For each affine curve $f \in S$, we have
+  \[
+    V(f) \cap L
+    \supseteq
+    \bigcap_{f \in S} V(f) \cap L
+    = Y \cap L
+    = \{ (n\pi,0) \in \mathbf{A}^{2}(\mathbb{R}) : n \in \mathbb{Z} \},
+  \]
+  which is infinite.
+  By problem 1.12, $y \mid f$.
+  As $f$ runs over $S$, $Y \subseteq V(y) = L$,
+  contradicts that $\left(0,\frac{\pi}{2}\right) \in L-Y$.
 \end{enumerate}
 $\Box$\\\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Similar to (a).
+  (Reductio ad absurdum)
+  If
+  \[
+    Y := \{ (x,y) \in \mathbf{A}^{2}(\mathbb{C}) : |x|^2 + |y|^2 = 1 \}
+  \]
+  were algebraic,
+  then there is a subset $S$ of $\mathbb{C}[x,y]$ such that
+  \[
+    Y = V(S) = \bigcap_{f \in S} V(f).
+  \]
+
+\item[(2)]
+  $S \neq \varnothing$ since $Y \neq \mathbf{A}^{2}(\mathbb{C})$.
+  ($(89,64) \in \mathbf{A}^{2}(\mathbb{C})-Y$.)
+
+\item[(3)]
+  Take a fixed line $L = V(x)$ in $\mathbf{A}^{2}(\mathbb{C})$.
+  For each affine curve $f \in S$, we have
+  \[
+    V(f) \cap L
+    \supseteq
+    \bigcap_{f \in S} V(f) \cap L
+    = Y \cap L
+    = \{ (0,y) \in \mathbf{A}^{2}(\mathbb{C}) : |y| = 1 \},
+  \]
+  which is infinite (since $Y$ contains a unit circle in the complex plane).
+  By problem 1.12, $x \mid f$.
+  As $f$ runs over $S$, $Y \subseteq V(x) = L$,
+  contradicts that the origin $(0,0) \in L-Y$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Similar to (a) and (b).
+
+\item[(2)]
+  \emph{Suppose $C$ is an affine plane curve,
+  and $L$ is a line in $\mathbb{A}^3(k)$,
+  $L \not\subseteq C$.
+  Suppose $C = V(f)$, $f \in k[x,y,z]$ a polynomial of degree $n$.
+  Show that $L \cap C$ is a finite set of no more than $n$ points.}
+  The proof is similar to Problem 1.12.
+  \begin{enumerate}
+  \item[(a)]
+    Say $L = V(y - (ax + b), z - (cx + d))$ be a line in $\mathbb{A}^3(k)$.
+
+  \item[(b)]
+    Note that $L \not\subseteq C$ implies that
+    $(y - (ax + b)) \nmid f$ and $(z - (cx + d)) \nmid f$.
+    Hence, the polynomial
+    \[
+      g: x \mapsto f(x,ax + b, cx + d) \in k[x]
+    \]
+    is nonzero and $\deg g \leq n$.
+    Therefore, the number of roots of $g$ in $k$ is no more than $n$.
+
+  \item[(c)]
+    Hence,
+    \begin{align*}
+      L \cap C
+      &= V(y - (ax + b), z - (cx + d)) \cap V(f) \\
+      &= \{ (x,y) \in \mathbb{A}^2(k) : y = ax + b, z = cx + d \text{ and } f(x,y) = 0 \} \\
+      &= \{ (x,y) \in \mathbb{A}^2(k) : f(x, ax + b, cx + d) = 0 \}
+    \end{align*}
+    is finite of no more than $n$ points.
+  \end{enumerate}
+
+\item[(3)]
+  (Reductio ad absurdum)
+  If
+  \[
+    Y := \{ (\cos(t), \sin(t), t) \in \mathbf{A}^3(\mathbb{R}) : t \in \mathbb{R} \}
+  \]
+  were algebraic,
+  then there is a subset $S$ of $\mathbb{R}[x,y,z]$ such that
+  \[
+    Y = V(S) = \bigcap_{f \in S} V(f).
+  \]
+
+\item[(4)]
+  $S \neq \varnothing$ since $Y \neq \mathbf{A}^{3}(\mathbb{R})$.
+  ($(1989,6,4) \in \mathbf{A}^{3}(\mathbb{R})-Y$.)
+
+\item[(5)]
+  Take a fixed line $L = V(x-1,y)$ in $\mathbf{A}^{3}(\mathbb{R})$.
+  For each affine curve $f \in S$, we have
+  \[
+    V(f) \cap L
+    \supseteq
+    \bigcap_{f \in S} V(f) \cap L
+    = Y \cap L
+    = \{ (1,0,2n\pi) \in \mathbf{A}^{3}(\mathbb{R}) : n \in \mathbb{Z} \},
+  \]
+  which is infinite.
+  By (2), $(x-1) \mid f$ and $y \mid f$.
+  As $f$ runs over $S$, $Y \subseteq V(x-1,y) = L$,
+  contradicts that $(1,0,\pi) \in L-Y$.
+\end{enumerate}
+$\Box$\\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
