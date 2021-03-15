@@ -1173,14 +1173,89 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.17.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.17.*}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $V$ be an algebraic set in $\mathbf{A}^n(k)$,
+  $P \in\mathbf{A}^n(k)$ a point not in $V$.
+  Show that there is a polynomial $f \in k[x_1,\ldots,x_n]$ such that $f(Q) = 0$
+  for all $Q \in V$, but $f(P) = 1$. (Hint: $I(V) \neq I(V \cup \{P\})$.)}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Let $P_1, \ldots, P_r$ be distinct points in $\mathbf{A}^n(k)$,
+  not in an algebraic set $V$.
+  Show that there are polynomials $f_1, \ldots, f_r \in I(V)$
+  such that $f_i(P_j) = 0$ if $i \neq j,$ and $f_i(P_i) = 1$.
+  (Hint: Apply (a) to the union of $V$ and all but one point.)}
+
+\item[(c)]
+  \emph{With $P_1, \ldots, P_r$ and $V$ as in (b),
+  and $a_{ij} \in k$ for $1 \leq i,j \leq r$,
+  show that there are $g_i \in I(V)$ with $g_i(P_j) = a_{ij}$ for all $i$ and $j$.
+  (Hint: Consider $\sum_{j} a_{ij} f_j$.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Since $I(V) \supsetneq I(V \cup \{P\})$ (by Problem 1.16),
+  there is a polynomial $f \in k[x_1,\ldots,x_n]$ such that $f(Q) = 0$ for all $Q \in V$, but $f(P) \neq 0$.
+
+\item[(2)]
+  Since $k$ is a field, $(f(P))^{-1} \in k$.
+  Consider the polynomial $(f(P))^{-1} f \in k[x_1,\ldots,x_n]$.
+  It is well-defined.
+  Also, $((f(P))^{-1} f)(Q) = (f(P))^{-1}f(Q) = 0$ for all $Q \in V$,
+  but $(f(P))^{-1} f)(P) = (f(P))^{-1} f(P) = 1$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  For $1 \leq i \leq$,
+  define
+  \begin{align*}
+    W &= V \cup \{ P_1, \ldots, P_r \} \\
+    W_i &= V \cup \{ P_1, \ldots, \widehat{P_i}, \ldots, P_r \}.
+  \end{align*}
+  Here $W = W_i \cup \{P_i\} \neq W_i$.
+
+\item[(2)]
+  By (a), there is a polynomial $f_i \in k[x_1,\ldots,x_n]$ such that $f_i(Q) = 0$
+  for all $Q \in W_i$, but $f_i(P_i) = 1$.
+  Here $f_i \in I(V)$ and $f_i(P_j) = \delta_{ij}$
+  where $\delta_{ij}$ is the Kronecker delta.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  For each $1 \leq i \leq$,
+  define
+  \[
+    g_i = \sum_{j} a_{ij} f_j \in k[x_1,\ldots,x_n].
+  \]
+
+\item[(2)]
+  $g_i \in I(V)$ since $g_i$ is a linear combination of $f_j$ and $I(V)$ is an ideal.
+
+\item[(3)]
+  Also,
+  \[
+    g_i(P_j)
+    = \sum_{j'} a_{ij'} f_{j'}(P_j)
+    = \sum_{j'} a_{ij'} \delta_{j'j}
+    = a_{ij}.
+  \]
 \end{enumerate}
 $\Box$\\\\
 
