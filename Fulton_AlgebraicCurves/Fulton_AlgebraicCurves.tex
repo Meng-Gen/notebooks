@@ -1041,6 +1041,8 @@ $\Box$\\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 \subsubsection*{Problem 1.15.*}
 \addcontentsline{toc}{subsubsection}{Problem 1.15.*}
 \emph{Let $V \subseteq \mathbf{A}^n(k)$, $W \subseteq \mathbf{A}^m(k)$ be algebraic sets.
@@ -1098,6 +1100,93 @@ $\Box$\\\\
 
 \subsection*{1.3. The Ideal of a Set of Points \\}
 \addcontentsline{toc}{subsection}{1.3. The Ideal of a Set of Points}
+
+
+
+\subsubsection*{Problem 1.16.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.16.*}
+\emph{Let $V, W$ be algebraic sets in $\mathbf{A}^n(k)$.
+Show that $V = W$ if and only if $I(V) = I(W)$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  (Proof of Equation (6) in this section.)
+  \emph{Show that if $X \subseteq Y$, then $I(X) \supseteq I(Y)$.}
+  If $f \in I(Y)$ then $f(P) = 0$ for all $P \in Y$.
+  So $f(P) = 0$ for all $P \in X \subseteq Y$ or $f \in I(X)$.
+
+\item[(2)]
+  (Proof of Equation (8) in this section.)
+  \emph{$I(V(S)) \supseteq S$ for any set $S$ of polynomials;
+  $V(I(X)) \supseteq X$ for any set $X$ of points.}
+  \begin{enumerate}
+  \item[(a)]
+    If $f \in S$ then $f$ vanishes on $V(S)$,
+    hence $f \in IV(S)$.
+
+  \item[(b)]
+    If $P \in X$ then every polynomial in $I(X)$ vanishes at $P$,
+    so $P$ belongs to the zero set of $I(X)$.
+  \end{enumerate}
+
+\item[(3)]
+  (Proof of Equation (9) in this section.)
+  \emph{$V(I(V(S))) = V(S)$ for any set $S$ of polynomials,
+  and $I(V(I(X))) = I(X)$ for any set $X$ of points.
+  So if $V$ is an algebraic set, $V = V(I(V))$,
+  and if $I$ is the ideal of an algebraic set, $I = I(V(I))$.}
+  \begin{enumerate}
+  \item[(a)]
+    In each case, it suffices to show that the left side is a subset of the right side.
+    (by Equations (6)(8) in this section).
+
+  \item[(b)]
+    If $P \in V(S)$ then $f(P) = 0$ for all $f \in I(V(S))$, so $P \in V(I(V(S)))$.
+
+  \item[(c)]
+    If $f \in I(X)$ then $f(P) = 0$ for all $P \in V(I(X))$.
+    Thus $f$ vanishes on $V(I(X))$, so $f \in I(V(I(X)))$.
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Show that $V = W$ if and only if $I(V) = I(W)$.}
+  \begin{enumerate}
+  \item[(a)]
+    By Equation (6) in this section, $I(V) \supseteq I(W)$ if $V \subseteq W$
+    and $I(V) \subseteq I(W)$ if $V \supseteq W$.
+    Thus, $I(V) = I(W)$ if $V = W$.
+
+  \item[(b)]
+    Conversely,
+    $I(V) = I(W)$ implies that $V(I(V)) = V(I(W))$
+    by Equation (3) in the previous section and similar argument in (a).
+    By Equation (9) in this section, $V(I(V)) = V$ and $V(I(W)) = W$.
+    Thus, $V = W$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  PLACEHOLDER
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
