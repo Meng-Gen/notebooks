@@ -1341,16 +1341,45 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.20.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.20.*}
+\emph{Show that for any ideal $I$ in $k[x_1,\ldots,x_n]$,
+$V(I) = V(\mathrm{rad}(I))$, and $\mathrm{rad}(I) \subseteq I(V(I))$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  \emph{Show that $V(I) = V(\mathrm{rad}(I))$.}
+  Since $I \subseteq \mathrm{rad}(I)$,
+  it suffices to show that $V(I) \subseteq V(\mathrm{rad}(I))$.
+  Given any $P \in V(I)$.
+  For any $f \in \mathrm{rad}(I)$, $f^n \in I$ for some positive integer $n > 0$.
+  Note that
+  \[
+    0 = (f^n)(P) = f(P)^n
+  \]
+  since $f^n \in I$ and $P \in V(I)$.
+  As $k$ is a domain, $f(P)^n = 0$ implies $f(P) = 0$. So $P \in V(\mathrm{rad}(I))$.
+
+\item[(2)]
+  By Equations (6) and (8) in this section,
+  \[
+    I(V(I)) = I(V(\mathrm{rad}(I))) \supseteq \mathrm{rad}(I).
+  \]
 \end{enumerate}
-$\Box$\\\\
+$\Box$\\
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  By the Hilbert's Nullstellensatz, $I(V(I)) = \mathrm{rad}(I)$ if $k = \overline{k}$.
+
+\item[(2)]
+  Take $I = (x^2+1)$ as an ideal in $\mathbb{R}[x]$.
+  Note that $I(V(I))= I(\varnothing) = (1)$ and $\mathrm{rad}(I) = I = (x^2+1)$.
+  So the equality in $\mathrm{rad}(I) \subsetneq I(V(I))$ might not hold
+  if $k \neq \overline{k}$. \\\\
+\end{enumerate}
 
 
 
