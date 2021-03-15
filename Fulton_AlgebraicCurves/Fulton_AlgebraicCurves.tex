@@ -1358,14 +1358,64 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.21.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.21.*}
+\emph{Show that
+$I=(x_1-a_1, \ldots, x_n-a_n) \subseteq k[x_1,\ldots,x_n]$ is a maximal ideal,
+and that the natural homomorphism from $k$ to $k[x_1,\ldots,x_n]/I$ is an isomorphism.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  \emph{Show that $I$ is a maximal ideal.}
+  Suppose that $J$ is an ideal such that $J \supsetneq I$.
+  Take any $f \in J - I$.
+  By Problem 1.7(a),
+  \[
+    f = \sum \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n - a_n)^{i_n}.
+  \]
+  As $f \not\in I$, there is a nonzero constant term in $f$, say $\lambda \in k - \{0\}$.
+  Note that $f - \lambda \in I \subsetneq J$.
+  Hence,
+  \[
+    \lambda = f - (f - \lambda) \in J
+  \]
+  since $J$ is an ideal.
+  As $\lambda \neq 0$, $J = k[x_1,\ldots,x_n]$ is not a proper ideal containing $I$.
+
+\item[(2)]
+  Let $\varphi: k \to k[x_1,\ldots,x_n]/I$ be the natural homomorphism.
+  (That is, $\varphi: \lambda \to \lambda + I \in k[x_1,\ldots,x_n]/I$.)
+
+\item[(3)]
+  \emph{Show that $\varphi$ is surjective.}
+  Given any $f + I \in k[x_1,\ldots,x_n]/I$.
+  By Problem 1.7(a),
+  \[
+    f = \sum \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n - a_n)^{i_n}.
+  \]
+  So
+  \begin{align*}
+    f + I
+    &= \sum \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n - a_n)^{i_n} + I \\
+    &= \left(f(a_1,\ldots,a_n)
+      + \sum_{\text{nonconstant}} \lambda_{(i)} (x_1-a_1)^{i_1} \cdots (x_n - a_n)^{i_n} \right) + I \\
+    &= f(a_1,\ldots,a_n) + I.
+  \end{align*}
+  (Here the summation over all nonconstant terms is in $I$.)
+  Hence
+  \[
+    \varphi: f(a_1,\ldots,a_n) \in k \mapsto f + I.
+  \]
+
+\item[(4)]
+  \emph{Show that $\varphi$ is injective.}
+  $\ker(\varphi) = \{ \lambda \in k : \lambda \in I \} = k \cap I = \{0\}$
+  since $I$ is a proper ideal.
+
+\item[(5)]
+  By (2)(3)(4), $\varphi: k \to k[x_1,\ldots,x_n]/(x_1-a_1,\ldots,x_n-a_n)$
+  is an isomorphism.
 \end{enumerate}
 $\Box$\\\\
 
