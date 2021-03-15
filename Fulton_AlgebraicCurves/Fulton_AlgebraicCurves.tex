@@ -1324,14 +1324,29 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.19}
+\addcontentsline{toc}{subsubsection}{Problem 1.19}
+\emph{Show that $I = (x^2+1) \subseteq \mathbb{R}[x]$ is a radical (even a prime) ideal,
+but $I$ is not the ideal of any set in $\mathbf{A}^1(\mathbb{R})$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  \emph{Show that $I = (x^2+1)$ is a prime ideal in $\mathbb{R}[x]$.}
+  Given any $fg \in I$.
+  It suffices to show that $f \in I$ or $g \in I$.
+  By definition of $I$,
+  there is a polynomial $h \in \mathbb{R}[x]$ such that $fg = (x^2+1)h$.
+  So $(x^2+1) \mid f$ or $(x^2+1) \mid g$
+  since $x^2+1$ is irreducible in a unique factorization domain $\mathbb{R}[x]$.
+  Therefore, $f \in I$ or $g \in I$.
+
+\item[(2)]
+  \emph{Show that $I$ is not the ideal of any set in $\mathbf{A}^1(\mathbb{R})$.}
+  Since $x^2+1$ has no roots in $\mathbb{R}$,
+  $I$ cannot be the ideal of any nonempty set in $\mathbf{A}^1(\mathbb{R})$.
+  Besides,
+  $I(\varnothing) = (1) \neq (x^2+1)$.
 \end{enumerate}
 $\Box$\\\\
 
@@ -1378,7 +1393,8 @@ $\Box$\\
   Take $I = (x^2+1)$ as an ideal in $\mathbb{R}[x]$.
   Note that $I(V(I))= I(\varnothing) = (1)$ and $\mathrm{rad}(I) = I = (x^2+1)$.
   So the equality in $\mathrm{rad}(I) \subsetneq I(V(I))$ might not hold
-  if $k \neq \overline{k}$. \\\\
+  if $k \neq \overline{k}$.
+  (See Problem 1.19.) \\\\
 \end{enumerate}
 
 
