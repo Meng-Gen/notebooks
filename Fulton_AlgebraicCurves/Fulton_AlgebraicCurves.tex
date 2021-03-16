@@ -2009,14 +2009,62 @@ $\Box$\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.30.}
+\addcontentsline{toc}{subsubsection}{Problem 1.30.}
+\emph{Let $k = \mathbb{R}$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $I(V(x^2+y^2+1))=(1)$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Show that every algebraic subset of $\mathbf{A}^2(\mathbb{R})$ is equal to $V(f)$
+  for some $f \in \mathbb{R}[x,y]$.}
+\end{enumerate}
+\emph{This indicates why we usually require that $k$ be algebraically closed.} \\
+
+
+
+\emph{Proof of (a).}
+$I(V(x^2+y^2+1)) = I(\varnothing) = (1)$
+since $x^2+y^2+1 \geq 1$ is never zero for any $x, y \in \mathbb{R}$.
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Given any algebraic subset $V$ of $\mathbf{A}^2(\mathbb{R})$.
+  $V = V(1)$ if $V = \varnothing$.
+  $V = V(0)$ if $V = \mathbf{A}^2(\mathbb{R})$.
+  Now suppose $V$ is a nonempty proper algebraic subset $V$ of $\mathbf{A}^2(\mathbb{R})$.
+  Write $V = V_1 \cup \cdots \cup V_m$,
+  where each $V_i$ is irreducible.
+  Here $V_i \neq \varnothing$ and $V_i \neq \mathbf{A}^2(\mathbb{R})$ for all $i$.
+
+\item[(2)]
+  As $k = \mathbb{R}$ is infinite,
+  Corollary 2 to Proposition 2 implies that each $V_i$ is either a point
+  or an irreducible plane curves $V(f_i)$,
+  where $f_i$ is an irreducible polynomial and $V(f_i)$ is infinite.
+
+\item[(3)]
+  If $V_i = \{ (a,b) \}$ is a point, then define
+  \[
+    f_i(x,y) = (x-a)^2 + (x-b)^2.
+  \]
+  By the property of $\mathbb{R}$, $V_i = V(f_i)$.
+
+\item[(4)]
+  Define $f = f_1 \cdots f_m \in \mathbb{R}[x,y]$.
+  Hence,
+  \begin{align*}
+    V
+    &= V_1 \cup \cdots \cup V_m \\
+    &= V(f_1) \cup \cdots \cup V(f_m) \\
+    &= V(f_1 \cdots f_m) \\
+    &= V(f).
+  \end{align*}
 \end{enumerate}
 $\Box$\\\\
 
