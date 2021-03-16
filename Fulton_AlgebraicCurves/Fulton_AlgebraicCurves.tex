@@ -1797,6 +1797,9 @@ $\Box$\\\\
   As $\mathbb{C}[y]/(y) \cong \mathbb{C}$ is a field or a domain,
   $(y)$ is maximal or prime.
   Hence, $y - x^2$ is irreducible.
+
+\item[(4)]
+  Or use Corollary 1 to Proposition 2 in the next section.
 \end{enumerate}
 $\Box$\\
 
@@ -1898,14 +1901,31 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.27.}
+\addcontentsline{toc}{subsubsection}{Problem 1.27.}
+\emph{Let $V, W$ be algebraic sets in $\mathbf{A}^n(k)$ with $V \subseteq W$.
+Show that each irreducible component of $V$ is contained in some irreducible component of $W$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Write two decompositions of $V, W$ into irreducible components as
+  \begin{align*}
+    V &= V_1 \cup \cdots \cup V_r, \\
+    W &= W_1 \cup \cdots \cup W_s, \\
+  \end{align*}
+
+\item[(2)]
+  For each irreducible component $V_i$ of $V$,
+  consider $V_i \cap W$:
+  \[
+    V_i \cap W = (V_i \cap W_1) \cup \cdots \cup (V_i \cap W_s).
+  \]
+  By the irreducibility of $V_i$,
+  there is only one $j$ such that $V_i \cap W_j = V_i$
+  and other intersections are empty.
+  Therefore, each irreducible component $V_i$ is contained in
+  some irreducible component $W_j$ of $W$.
 \end{enumerate}
 $\Box$\\\\
 
