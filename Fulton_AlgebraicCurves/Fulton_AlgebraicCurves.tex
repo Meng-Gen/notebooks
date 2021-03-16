@@ -1324,8 +1324,8 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem 1.19}
-\addcontentsline{toc}{subsubsection}{Problem 1.19}
+\subsubsection*{Problem 1.19.}
+\addcontentsline{toc}{subsubsection}{Problem 1.19.}
 \emph{Show that $I = (x^2+1) \subseteq \mathbb{R}[x]$ is a radical (even a prime) ideal,
 but $I$ is not the ideal of any set in $\mathbf{A}^1(\mathbb{R})$.} \\
 
@@ -1695,8 +1695,8 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem 1.23}
-\addcontentsline{toc}{subsubsection}{Problem 1.23}
+\subsubsection*{Problem 1.23.}
+\addcontentsline{toc}{subsubsection}{Problem 1.23.}
 \emph{Give an example of a collection of ideals $\mathscr{S}$ ideals in a Noetherian ring
 such that no maximal member of $\mathscr{S}$ is a maximal ideal.} \\
 
@@ -1756,14 +1756,71 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.25.}
+\addcontentsline{toc}{subsubsection}{Problem 1.25.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $V(y - x^2) \subseteq \mathbf{A}^2(\mathbb{C})$ is irreducible,
+  in fact, $I(V(y - x^2))=(y - x^2)$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Decompose $V(y^4 - x^2, y^4 - x^2 y^2 + xy^2 - x^3) \subseteq \mathbf{A}^2(\mathbb{C})$
+  into irreducible components.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Let $I = (y - x^2)$ be an ideal of $\mathbb{C}[x,y]$.
+  Since $\mathbb{C}$ is algebraically closed,
+  \[
+    I(V(I)) = \mathrm{rad}(I)
+  \]
+  by the Hilbert's Nullstellensatz.
+  It suffices to show that $I$ is prime,
+  or to show that $y - x^2$ is prime.
+  Since $\mathbb{C}[x,y]$ is a UFD, it suffices to show that $y - x^2$ is irreducible.
+
+\item[(2)]
+  \emph{Show that $y - x^2$ is irreducible in $\mathbb{C}[x,y]$.}
+  Write
+  \[
+    y - x^2 \in (\mathbb{C}[y])[x].
+  \]
+  Note that $\mathbb{C}[y]$ is a UFD and $y$ is the constant term.
+  If we can show that $y$ is prime in $\mathbb{C}[y]$, then by the Eisenstein's criterion
+  then we can say $y - x^2$ is irreducible over $\mathbb{C}[y]$.
+
+\item[(3)]
+  As $\mathbb{C}[y]/(y) \cong \mathbb{C}$ is a field or a domain,
+  $(y)$ is maximal or prime.
+  Hence, $y - x^2$ is irreducible.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \begin{align*}
+    Y
+    :=& \: V(y^4 - x^2, y^4 - x^2 y^2 + xy^2 - x^3) \\
+    =& \: V((y^2 - x)(y^2 + x), (y^2 - x^2)(y^2 + x)) \\
+    =& \: V(y^2 + x) \cup V(y^2 - x, y^2 - x^2) \\
+    =& \: V(y^2 + x) \cup V(y^2 - x, x(x - 1)) \\
+    =& \: V(y^2 + x) \cup V(x, y) \cup V(y + 1, x - 1) \cup V(y - 1, x - 1).
+  \end{align*}
+
+\item[(2)]
+  Here $V(y^2 + x)$ is irreducible as (a).
+  Besides,
+  $V(x, y)$, $V(y + 1, x - 1)$ and $V(y - 1, x - 1)$ are irreducible
+  since all corresponding ideals are maximal
+  (by the Hilbert's Nullstellensatz and Problem 1.21).
 \end{enumerate}
 $\Box$\\\\
 
@@ -1773,14 +1830,65 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.26.}
+\addcontentsline{toc}{subsubsection}{Problem 1.26.}
+\emph{Show that $f = y^2 + x^2(x-1)^2 \in \mathbb{R}[x,y]$ is an irreducible polynomial,
+but $V(f)$ is reducible.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  \emph{Show that $f$ is an irreducible polynomial.}
+  \begin{enumerate}
+  \item[(a)]
+    Suppose
+    \[
+      f = (f_2(x) y^2 + f_1(x) y + f_0(x)) \cdot g(x)
+    \]
+    for some $f_i(x), g(x) \in \mathbb{R}[x]$.
+    So
+    \[
+      f_2(x)g(x) = 1,
+      \qquad
+      f_1(x)g(x) = 0,
+      \qquad
+      f_0(x)g(x) = x^2(x-1)^2.
+    \]
+    Hence,
+    \[
+      f_2(x) y^2 + f_1(x) y + f_0(x) = uf,
+      \qquad
+      g(x) = u^{-1},
+    \]
+    where $u$ is a unit in $\mathbb{R}$.
+
+  \item[(b)]
+    Suppose
+    \[
+      f = (f_1(x) y + f_0(x)) \cdot (g_1(x) y + g_0(x))
+    \]
+    for some $f_i(x), g_j(x) \in \mathbb{R}[x]$.
+    So
+    \begin{align*}
+      f_1(x)g_1(x) &= 1, \\
+      f_1(x)g_0(x) + f_0(x)g_1(x) &= 0, \\
+      f_0(x)g_0(x) &= x^2(x-1)^2.
+    \end{align*}
+    So $f_1(x) = u$, $g_1(x) = u^{-1}$ for some unit $u \in \mathbb{R}$.
+    Hence,
+    \[
+      u^2 g_0(x)^2 = -x^2(x-1)^2,
+    \]
+    which is absurd since $\mathbb{R}$ is not algebraically closed.
+
+  \item[(c)]
+    By (a)(b), $f$ is irreducible in $\mathbb{R}[x,y]$.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that $V(f)$ is reducible.}
+  $V(f) = \{ (0,0), (1,0) \} = V(x,y) \cup V(x-1,y)$.
+  Here $V(x,y)$ and $V(x-1,y)$ are all proper algebraic sets in $V(f)$.
 \end{enumerate}
 $\Box$\\\\
 
