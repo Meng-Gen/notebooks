@@ -720,7 +720,7 @@ $\Box$\\\\
 \subsubsection*{Problem 1.12.}
 \addcontentsline{toc}{subsubsection}{Problem 1.12.}
 \emph{Suppose $C$ is an affine plane curve,
-and $L$ is a line in $\mathbb{A}^2(k)$,
+and $L$ is a line in $\mathbf{A}^2(k)$,
 $L \not\subseteq C$.
 Suppose $C = V(f)$, $f \in k[x,y]$ a polynomial of degree $n$.
 Show that $L \cap C$ is a finite set of no more than $n$ points.
@@ -730,7 +730,7 @@ $f(x,ax +b) \in k[x]$.)} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Say $L = V(y - (ax + b))$ be a line in $\mathbb{A}^2(k)$.
+  Say $L = V(y - (ax + b))$ be a line in $\mathbf{A}^2(k)$.
   (The case $L = V(x - (ay + b))$ is similar.)
 
 \item[(2)]
@@ -747,8 +747,8 @@ $f(x,ax +b) \in k[x]$.)} \\
   \begin{align*}
     L \cap C
     &= V(y - (ax + b)) \cap V(f) \\
-    &= \{ (x,y) \in \mathbb{A}^2(k) : y = ax + b \text{ and } f(x,y) = 0 \} \\
-    &= \{ (x,y) \in \mathbb{A}^2(k) : f(x,ax + b) = 0 \}
+    &= \{ (x,y) \in \mathbf{A}^2(k) : y = ax + b \text{ and } f(x,y) = 0 \} \\
+    &= \{ (x,y) \in \mathbf{A}^2(k) : f(x,ax + b) = 0 \}
   \end{align*}
   is finite of no more than $n$ points.
 \end{enumerate}
@@ -859,14 +859,14 @@ $\Box$\\
 
 \item[(2)]
   \emph{Suppose $C$ is an affine plane curve,
-  and $L$ is a line in $\mathbb{A}^3(k)$,
+  and $L$ is a line in $\mathbf{A}^3(k)$,
   $L \not\subseteq C$.
   Suppose $C = V(f)$, $f \in k[x,y,z]$ a polynomial of degree $n$.
   Show that $L \cap C$ is a finite set of no more than $n$ points.}
   The proof is similar to Problem 1.12.
   \begin{enumerate}
   \item[(a)]
-    Say $L = V(y - (ax + b), z - (cx + d))$ be a line in $\mathbb{A}^3(k)$.
+    Say $L = V(y - (ax + b), z - (cx + d))$ be a line in $\mathbf{A}^3(k)$.
 
   \item[(b)]
     Note that $L \not\subseteq C$ implies that
@@ -883,8 +883,8 @@ $\Box$\\
     \begin{align*}
       L \cap C
       &= V(y - (ax + b), z - (cx + d)) \cap V(f) \\
-      &= \{ (x,y) \in \mathbb{A}^2(k) : y = ax + b, z = cx + d \text{ and } f(x,y) = 0 \} \\
-      &= \{ (x,y) \in \mathbb{A}^2(k) : f(x, ax + b, cx + d) = 0 \}
+      &= \{ (x,y) \in \mathbf{A}^2(k) : y = ax + b, z = cx + d \text{ and } f(x,y) = 0 \} \\
+      &= \{ (x,y) \in \mathbf{A}^2(k) : f(x, ax + b, cx + d) = 0 \}
     \end{align*}
     is finite of no more than $n$ points.
   \end{enumerate}
@@ -1791,7 +1791,7 @@ $\Box$\\\\
   \]
   Note that $\mathbb{C}[y]$ is a UFD and $y$ is the constant term.
   If we can show that $y$ is prime in $\mathbb{C}[y]$, then by the Eisenstein's criterion
-  then we can say $y - x^2$ is irreducible over $\mathbb{C}[y]$.
+  we can say $y - x^2$ is irreducible in $(\mathbb{C}[y])[x]$.
 
 \item[(3)]
   As $\mathbb{C}[y]/(y) \cong \mathbb{C}$ is a field or a domain,
@@ -1799,7 +1799,7 @@ $\Box$\\\\
   Hence, $y - x^2$ is irreducible.
 
 \item[(4)]
-  Or use Corollary 1 to Proposition 2 in the next section.
+  Or apply Corollary 1 to Proposition 2 in the next section to (2)(3).
 \end{enumerate}
 $\Box$\\
 
@@ -2074,14 +2074,114 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.31.}
+\addcontentsline{toc}{subsubsection}{Problem 1.31}
+\begin{enumerate}
+\item[(a)]
+  \emph{Find the irreducible components of $V(y^2-xy-x^2y+x^3)$ in $\mathbf{A}^2(\mathbb{R})$,
+  and also in $\mathbf{A}^2(\mathbb{C})$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Do the same for $V(y^2 - x(x^2-1))$, and for $V(x^3+x-x^2y-y)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Note that
+  \begin{align*}
+    V(y^2-xy-x^2y+x^3)
+    &= V((y-x^2)(y - x)) \\
+    &= V(y-x^2) \cup V(y - x).
+  \end{align*}
+
+\item[(2)]
+  Note that $y-x^2$ and $y-x$ are irreducible in $\mathbb{C}[x,y]$
+  and thus also in $\mathbb{R}[x,y]$
+  by the similar argument in Problem 1.25(a).
+  Also, $V(y-x^2)$ and $V(y - x)$ are infinite in $\mathbf{A}^2(\mathbb{R})$
+  and thus also in $\mathbf{A}^2(\mathbb{C})$.
+
+\item[(3)]
+  Therefore,
+  $V(y-x^2)$ and $V(y - x)$ are the irreducible components of $V(y^2-xy-x^2y+x^3)$
+  in $\mathbf{A}^2(\mathbb{R})$ and also in $\mathbf{A}^2(\mathbb{C})$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Outline of (b).}
+\begin{enumerate}
+\item[(1)]
+  The elliptic curve $V(y^2 - x(x+1)(x-1))$ is irreducible over $\mathbf{A}^2(\mathbb{R})$.
+
+\item[(2)]
+  The elliptic curve $V(y^2 - x(x+1)(x-1))$ is irreducible over $\mathbf{A}^2(\mathbb{C})$.
+
+\item[(3)]
+  The irreducible component of $V(x^3+x-x^2y-y)$ over $\mathbf{A}^2(\mathbb{R})$ is $V(x - y)$.
+
+\item[(4)]
+  The irreducible components of $V(x^3+x-x^2y-y)$ over $\mathbf{A}^2(\mathbb{C})$ are
+  $V(x + i)$, $V(x - i)$ and $V(x - y)$. \\
+\end{enumerate}
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Similar to Problem 1.25.
+  To show $y^2 - x(x+1)(x-1)$ is irreducible in $\mathbb{C}[x,y]$,
+  we write
+  \[
+    y^2 - x(x+1)(x-1) \in (\mathbb{C}[x])[y].
+  \]
+  Note that $\mathbb{C}[x]$ is a UFD and $-x(x+1)(x-1)$ is the constant term.
+  As $\mathbb{C}[x]/(x) \cong \mathbb{C}$ is a domain, $(x)$ is prime.
+  Clearly, $x \mid x(x+1)(x-1)$ but $x^2 \nmid x(x+1)(x-1)$.
+  By the Eisenstein's criterion,
+  we can say $y^2 - x(x+1)(x-1)$ is irreducible over $(\mathbb{C}[x])[y]$.
+
+\item[(2)]
+  Moreover, $V(y^2 - x(x+1)(x-1))$ is infinite over $\mathbf{A}^2(\mathbb{R})$
+  and thus also over $\mathbf{A}^2(\mathbb{C})$.
+  ($y = f(x) = \sqrt{x(x+1)(x-1)}$ is continuous and strictly increasing on $[1,\infty)$
+  in the sense of calculus.
+  As the measure of $[1,\infty)$ is $\infty$, the set $V(y^2 - x(x+1)(x-1))$ is infinite
+  over $\mathbf{A}^2(\mathbb{R})$.)
+
+\item[(3)]
+  By Corollary 1 to Proposition 2,
+  $V(y^2 - x(x^2-1))$ itself is irreducible over $\mathbf{A}^2(\mathbb{R})$
+  or $\mathbf{A}^2(\mathbb{C})$.
+
+\item[(4)]
+  Consider $V(x^3+x-x^2y-y) \subseteq \mathbf{A}^2(\mathbb{R})$.
+  \begin{align*}
+    V(x^3+x-x^2y-y)
+    &= V((x^2 + 1)(x - y)) \\
+    &= V(x^2 + 1) \cup V(x - y) \\
+    &= \varnothing \cup V(x - y) \\
+    &= V(x - y).
+  \end{align*}
+  Here we use that fact that
+  $x^2 + 1 = 0$ has no real solution $x \in \mathbb{R}$.
+  Similar to (a), $V(x - y)$ is the only irreducible component of $V(x^3+x-x^2y-y)$
+  in $\mathbf{A}^2(\mathbb{R})$.
+
+\item[(5)]
+  Consider $V(x^3+x-x^2y-y) \subseteq \mathbf{A}^2(\mathbb{C})$.
+  \begin{align*}
+    V(x^3+x-x^2y-y)
+    &= V((x + i)(x - i)(x - y)) \\
+    &= V(x + i) \cup V(x - i) \cup V(x - y).
+  \end{align*}
+  Similar to (a), $V(x \pm i)$ and $V(x - y)$ are the irreducible components of $V(x^3+x-x^2y-y)$
+  in $\mathbf{A}^2(\mathbb{C})$.
 \end{enumerate}
 $\Box$\\\\
 
