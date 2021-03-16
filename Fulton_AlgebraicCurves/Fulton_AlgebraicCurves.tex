@@ -1503,7 +1503,73 @@ $\Box$\\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  \emph{Show that for every ideal $J'$ of $R/I$,
+  $\pi^{-1}(J') = J$ is an ideal of $R$ containing $I$.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $J$ contains $I$.}
+    Note that $\pi^{-1}(0) = I \subseteq \pi^{-1}(J') = J$.
+    So $J$ contains $I$. In particular, $J \neq \varnothing$ since $I \neq \varnothing$.
+
+  \item[(b)]
+    \emph{Show that $J$ is a additive subgroup of $R$.}
+    It suffices to show that
+    $a - b \in J$
+    for any $a \in J$ and $b \in J$.
+    Actually,
+    \[
+      \pi(a - b) = \pi(a) - \pi(b) \in J'
+    \]
+    implies $a - b \in \pi^{-1}(J') = J$.
+
+  \item[(c)]
+    \emph{Show that for every $r \in R$ and every $a \in J$,
+    the product $ra \in J$.}
+    In fact,
+    \[
+      \pi(ra) = \pi(r) \pi(a) \in J'
+    \]
+    implies $ra \in \pi^{-1}(J') = J$.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that for every ideal $J$ of $R$ containing $I$,
+  $\pi(J) = J'$ is an ideal of $R/I$.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $J'$ is nonempty.}
+    Note that $\pi(a) = 0 \in \pi(I) \subseteq \pi(J) = J'$ for any $a \in I$.
+    So $J'$ is nonempty since $J$ is nonempty.
+
+  \item[(b)]
+    \emph{Show that $J'$ is a additive subgroup of $R/I$.}
+    It suffices to show that
+    $\pi(a) - \pi(b) \in J'$ for any $\pi(a) \in J'$, $\pi(b) \in J'$, $a \in J$ and $b \in J$.
+    It is trivial since
+    \[
+      \pi(a) - \pi(b) = \pi(a - b) \in \pi(J) = J',
+    \]
+    $\pi$ is a ring homomorphism and $J$ is an ideal.
+
+  \item[(c)]
+    \emph{Show that for every $\pi(r) \in R/I$ ($r \in R$) and every $\pi(a) \in J'$ ($a \in J$),
+    the product $\pi(r)\pi(a) \in J'$.}
+    It is trivial since
+    \[
+      \pi(r)\pi(a) = \pi(ra) \in \pi(J) = J',
+    \]
+    $\pi$ is a ring homomorphism and $J$ is an ideal.
+  \end{enumerate}
+
+\item[(3)]
+  By (1)(2), we setup the correspondence between
+  \[
+    \{ \text{ideals of $R/I$} \}
+    \longleftrightarrow
+    \{ \text{ideals of $R$ that contain $I$} \}.
+  \]
+  Note that this correspondence preserves the subset relation,
+  and thus this correspondence is one-to-one.
 \end{enumerate}
 $\Box$\\
 
@@ -1512,9 +1578,79 @@ $\Box$\\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  \emph{Show that $J'$ is radical if $J$ is radical.}
+  It suffices to show that $(a + I)^n = a^n + I \in J'$ implies that $a + I \in J'$.
+  Note that
+  \[
+    (a + I)^n = a^n + I \in J'
+  \]
+  implies that $a^n \in J$ or $a \in J$ since $J$ is radical.
+  Hence $a + I \in J/I = J'$.
+
+\item[(2)]
+  \emph{Show that $J$ is radical if $J'$ is radical.}
+  It suffices to show that $a^n \in J$ implies that $a \in J$.
+  Note that
+  \[
+    \pi(a^n) = \pi(a)^n \in J'
+  \]
+  implies that $\pi(a) \in J'$ since $J'$ is radical.
+  $a \in \pi^{-1}(J') = J$.
+
+\item[(3)]
+  \emph{Show that $J'$ is prime if $J$ is prime.}
+  It suffices to show that
+  $(a + I)(b + I) = ab + I \in J'$ implies that $a + I \in J'$ or $b + I \in J'$.
+  Note that
+  \[
+    (a + I)(b + I) = ab + I \in J'
+  \]
+  implies that $ab \in J$. So $a \in J$ or $b \in J$ by the primality of $J$.
+  Hence $a + I \in J'$ or $b + I \in J'$.
+
+\item[(4)]
+  \emph{Show that $J$ is prime if $J'$ is prime.}
+  It suffices to show that $ab \in J$ implies that $a \in J$ or $b \in J$.
+  Note that
+  \[
+    \pi(ab) = \pi(a)\pi(b) \in J'
+  \]
+  implies that $\pi(a) \in J'$ or $\pi(b) \in J'$ by the primality of $J'$.
+  So $a \in \pi^{-1}(J') = J$ or $b \in \pi^{-1}(J') = J$.
+
+\item[(5)]
+  \emph{Show that $J'$ is maximal if $J$ is maximal.}
+  Suppose $\mathfrak{m}$ is an ideal containing $J'$.
+  By (a), $\pi^{-1}(\mathfrak{m})$ is an ideal containing $J$.
+  So $\pi^{-1}(\mathfrak{m}) = J$ or $\pi^{-1}(\mathfrak{m}) = R$ by the maximality of $J$.
+  Hence, $\mathfrak{m} = \pi(J) = J'$ or $\mathfrak{m} = \pi(R) = R/I$.
+
+\item[(6)]
+  \emph{Show that $J$ is maximal if $J'$ is maximal.}
+  Suppose $\mathfrak{m}$ is an ideal containing $J$.
+  By (a), $\pi(\mathfrak{m})$ is an ideal containing $J'$.
+  So $\pi(\mathfrak{m}) = J'$ or $\pi(\mathfrak{m}) = R/I$ by the maximality of $J'$.
+  Hence, $\mathfrak{m} = \pi^{-1}(J') = J$ or $\mathfrak{m} = \pi^{-1}(R/I) = R$.
 \end{enumerate}
 $\Box$\\
+
+
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \[
+    R/J \cong (R/I)/(J/I)
+  \]
+  if $J$ is an ideal of $R$ such that $I \subseteq J$.
+
+\item[(2)]
+  Hence, $J$ is prime iff $R/J \cong (R/I)/(J/I)$ is a domain iff $J/I$ is prime.
+
+\item[(3)]
+  Also, $J$ is maximal iff $R/J \cong (R/I)/(J/I)$ is a field iff $J/I$ is maximal. \\
+\end{enumerate}
 
 
 
