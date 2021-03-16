@@ -1695,14 +1695,58 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.23}
+\addcontentsline{toc}{subsubsection}{Problem 1.23}
+\emph{Give an example of a collection of ideals $\mathscr{S}$ ideals in a Noetherian ring
+such that no maximal member of $\mathscr{S}$ is a maximal ideal.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Let $R$ be any Noetherian ring.
+  Let $\mathscr{S}$ be any collection of ideals containing $R$ itself.
+  Then the only maximal member of $\mathscr{S}$ is $R$, which is not a maximal ideal.
+
+\item[(2)]
+  Or let $R$ be any Noetherian ring and $R$ is not a field.
+  ($R = k[x_1,\ldots,k_n]$ where $k$ is a field for example.)
+  Let $\mathscr{S} = \{ (0) \}$.
+  Then the only maximal member of $\mathscr{S}$ is $(0)$, which is not maximal
+  since $R$ is not a field.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 1.24.}
+\addcontentsline{toc}{subsubsection}{Problem 1.24.}
+\emph{Show that every proper ideal in a Noetherian ring is contained in a maximal ideal.
+(Hint: If $I$ is the ideal, apply the lemma to $\{\text{proper ideals that contain $I$}\}$.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Say $I$ be any proper ideal in a Noetherian ring.
+  Let
+  \[
+    \mathscr{S} = \{\text{proper ideals that contain $I$}\}.
+  \]
+  Apply the lemma to $\mathscr{S}$ to get that
+  $\mathscr{S}$ has a maximal member $\mathfrak{m} \in \mathscr{S}$.
+
+\item[(2)]
+  \emph{Show that $\mathfrak{m}$ is maximal.}
+  Since $\mathfrak{m} \in \mathscr{S}$, $\mathfrak{m}$ is a proper ideal in $R$.
+  Suppose $\mathfrak{m}' \supseteq \mathfrak{m}$
+  is a proper ideal containing $\mathfrak{m}$.
+  As $\mathfrak{m}$ contains $I$,
+  $\mathfrak{m}'$ also contains $I$ or $\mathfrak{m}' \in \mathscr{S}$.
+  By the maximality of $\mathfrak{m}$, $\mathfrak{m}' \subseteq \mathfrak{m}$.
+  So $\mathfrak{m}' = \mathfrak{m}$.
 \end{enumerate}
 $\Box$\\\\
 
@@ -1780,33 +1824,35 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.29.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.29.*}
+\emph{Show that $\mathbf{A}^n(k)$ is irreducible if $k$ is infinite.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  (Reductio ad absurdum)
+  If $\mathbf{A}^n(k)$ were reducible,
+  then $\mathbf{A}^n(k) = V_1 \cup V_2$ where $V_1, V_2$ are algebraic sets in $\mathbf{A}^n(k)$,
+  $V_1$ and $V_2$ are nonempty and proper in $\mathbf{A}^n(k)$.
+
+\item[(2)]
+  Take $P_i \in V_i$ for $i = 1, 2$.
+  By Problem 1.17,
+  there are two polynomials $f_1, f_2 \in k[x_1,\ldots,x_n]$
+  such that $f_i(Q) = 0$ for all $Q \in V_i$ and $f_1(P_2) = f_2(P_1) = 1$.
+
+\item[(3)]
+  By construction,
+  $(f_1 f_2)(a_1,\ldots,a_n) = 0$ for any $a_1,\ldots,a_n \in k$.
+  As $k$ is infinite, $f_1 f_2 = 0$ by Problem 1.4.
+  Since $k[x_1,\ldots,x_n]$ is a domain, $f_1 = 0$ or $f_2 = 0$,
+  contrary to $f_1(P_2) = f_2(P_1) \neq 0$.
 \end{enumerate}
-$\Box$\\\\
+$\Box$\\
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-  PLACEHOLDER
-\end{enumerate}
-$\Box$\\\\
+\emph{Note.}
+  $\mathbf{A}^n(k)$ is reducible if $k$ is finite. \\\\
 
 
 
