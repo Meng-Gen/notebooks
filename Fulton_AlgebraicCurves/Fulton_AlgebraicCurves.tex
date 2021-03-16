@@ -1807,14 +1807,29 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.28.}
+\addcontentsline{toc}{subsubsection}{Problem 1.28.}
+\emph{If $V = V_1 \cup \cdots \cup V_r$ is the decomposition
+of an algebraic set into irreducible components,
+show that $V_i \not\subseteq \bigcup_{j \neq i} V_j$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  (Reductio ad absurdum)
+  If
+  \[
+    V_i \subseteq \bigcup_{j \neq i} V_j
+  \]
+  for some $i$, then
+  \[
+    V = V_1 \cup \cdots \cup \widehat{V_i} \cup \cdots \cup V_r
+  \]
+  is another decomposition of an algebraic set into irreducible components.
+
+\item[(2)]
+  By Theorem 2 in this section, the number of irreducible components is unique determined,
+  contrary to the assumption and (1).
 \end{enumerate}
 $\Box$\\\\
 
