@@ -2265,14 +2265,120 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.33.}
+\addcontentsline{toc}{subsubsection}{Problem 1.33.}
 
-\emph{Proof.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Decompose $V(x^2+y^2-1, x^2-z^2-1) \subseteq \mathbf{A}^3(\mathbb{C})$
+  into irreducible components.}
+
+\item[(b)]
+  \emph{Let $V = \{(t,t^2,t^3) \in \mathbf{A}^3(\mathbb{C}) : t \in \mathbb{C} \}$.
+  Find $I(V)$, and show that $V$ is irreducible.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Write
+  \begin{align*}
+    &\: V(x^2+y^2-1, x^2-z^2-1) \\
+    =&\: V(x^2+y^2-1, y^2+z^2) \\
+    =&\: V(x^2+y^2-1, (y + iz)(y - iz)) \\
+    =&\: V(x^2+y^2-1, y + iz) \cup V(x^2+y^2-1, y - iz).
+  \end{align*}
+  By the Hilbert's Nullstellensatz,
+  it suffices to show that $(x^2+y^2-1, y + iz)$ and $(x^2+y^2-1, y - iz)$ are prime.
+
+\item[(2)]
+  \emph{Show that $I = (x^2+y^2-1, y + iz)$ is prime in $\mathbb{C}[x,y,z]$.}
+  Note that
+  \[
+    \mathbb{C}[x,y,z]/I \cong \mathbb{C}[x,y]/(x^2+y^2-1)
+  \]
+  is a ring isomorphism defined by
+  \[
+    f(x,y,z) + I \mapsto f(x,y,-iy) + (x^2+y^2-1).
+  \]
+  (Use the similar argument in (b) to prove it is indeed an isomorphism.)
+  So it suffices to show that
+  \[
+    x^2+y^2-1 \in \mathbb{C}[x,y]
+  \]
+  is irreducible.
+  (Thus, $\mathbb{C}[x,y]/(x^2+y^2-1) \cong \mathbb{C}[x,y,z]/I$ is a domain, or $I$ is prime.)
+  We can use the similar argument in Problem 1.31 (b) to show
+  $x^2+y^2-1 = y^2 + (x+1)(x-1)$ is irreducible
+  as showing the irreducibility of $y^2 - x(x+1)(x-1)$.
+
+\item[(3)]
+  Similarly, $I = (x^2+y^2-1, y - iz)$ is prime.
+  Therefore,
+  the irreducible components of $V(x^2+y^2-1, x^2-z^2-1)$
+  are $V(x^2+y^2-1, y + iz)$ and $V(x^2+y^2-1, y - iz)$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    V = \{ (t,t^2,t^3) \in \mathbf{A}^3(\mathbb{C}) : t \in \mathbb{C} \}
+    =
+    V(x^2-y, x^3-z).
+  \]
+  Let $I = (x^2-y, x^3-z)$ in $\mathbb{C}[x,y,z]$.
+  By the Hilbert's Nullstellensatz,
+  $I(V) = \mathrm{rad}(I)$.
+  So it suffices to show that $I = (x^2-y, x^3-z)$ is prime
+  (and thus $V$ is irreducible).
+
+\item[(2)]
+  \emph{Show that
+  \[
+    \mathbb{C}[x,y,z]/I \cong \mathbb{C}[t]
+  \]
+  is a domain, and thus $I = (x^2-y, x^3-z)$ is a prime ideal.}
+  \begin{enumerate}
+  \item[(a)]
+    Define a ring homomorphism $\alpha: \mathbb{C}[x,y,z]/I \to \mathbb{C}[t]$
+    by
+    \[
+      \alpha: f(x,y,z) + I \mapsto f(t,t^2,t^3).
+    \]
+    $\alpha$ is well-defined since $\alpha((x^2-y)+I) = 0$ and $\alpha((x^3-z)+I) = 0$.
+
+  \item[(b)]
+    \emph{Show that $\alpha$ is surjective.}
+    \[
+      \alpha: g(x) + I \in \mathbb{C}[x,y,z]/I \mapsto g(t) \in \mathbb{C}[t]
+    \]
+    for any $g(t)$.
+
+  \item[(c)]
+    \emph{Show that $\alpha$ is injective.}
+    Suppose $\alpha(f(x,y,z) + I) = 0$.
+    Write
+    \begin{align*}
+      f(x,y,z) + I
+      &= \sum_{(i)} \lambda_{(i)} x^{i_1} (y-x^2)^{i_2} (z-x^3)^{i_3} + I \\
+      &= \sum_{i} \lambda_{i} x^{i} + I.
+    \end{align*}
+    So
+    \[
+      0
+      = \alpha(f(x,y,z)+I)
+      = \alpha\left(\sum_{i} \lambda_{i} x^{i}+I\right)
+      = \sum_{i} \lambda_{i} t^{i}.
+    \]
+    Hence, $\ker(\alpha) = I$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$\\\\
 
