@@ -2075,7 +2075,7 @@ $\Box$\\\\
 
 
 \subsubsection*{Problem 1.31.}
-\addcontentsline{toc}{subsubsection}{Problem 1.31}
+\addcontentsline{toc}{subsubsection}{Problem 1.31.}
 \begin{enumerate}
 \item[(a)]
   \emph{Find the irreducible components of $V(y^2-xy-x^2y+x^3)$ in $\mathbf{A}^2(\mathbb{R})$,
@@ -2388,15 +2388,61 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.34.}
+\addcontentsline{toc}{subsubsection}{Problem 1.34.}
+\emph{Let $R$ be a UFD.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that a monic polynomial of degree two or three in $R[x]$ is irreducible
+  if and only if it has no root in $R$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{$x^2-a \in R[x]$ is irreducible if and only if $a$ is not a square in $R$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  It is equivalent to show that
+  a monic polynomial of degree two or three in $R[x]$ is reducible
+  if and only if it has one root in $R$.
+
+\item[(2)]
+  Suppose $f$ is reducible of degree $2$ or $3$.
+  Then there exist nonconstant monic polynomials $g, h \in R[x]$ such that $f = gh$.
+  By
+  \[
+    \deg(g) + \deg(h) = \deg(f) = 2 \text{ or } 3,
+  \]
+  we may assume that $\deg(g) = 1$. (Otherwise $g$ or $h$ will be a constant polynomial.)
+  Say $g(x) = x - a$ where $a \in R$.
+  Now
+  \[
+    f(a) = g(a)h(a) = 0
+  \]
+  implies that $a \in R$ is a root of $f$.
+
+\item[(3)]
+  Conversely, if $a \in R$ is a root of $f$, then
+  apply the same argument in Problem 1.7 we can write
+  \[
+    f = (x - a)g
+  \]
+  for some $g \in R[x]$.
+  Here $\deg(g) \geq 1$ since $\deg(f) = 1 + \deg(g) \geq 2$.
+  Therefore, $f$ is reducible.
 \end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+  By (a),
+  $x^2-a \in R[x]$ is reducible $\Longleftrightarrow$
+  $x^2-a$ has one root $\alpha \in R$ $\Longleftrightarrow$
+  $a = \alpha^2$ is a square in $R$ for some $\alpha \in R$.
 $\Box$\\\\
 
 
