@@ -2451,16 +2451,37 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.35.}
+\addcontentsline{toc}{subsubsection}{Problem 1.35.}
+\emph{Show that $V(y^2-x(x-1)(x-\lambda)) \subseteq \mathbf{A}^2(k)$
+is an irreducible curve for any algebraically closed field $k$,
+and any $\lambda \in k$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  By the Hilbert's Nullstellensatz, it suffices to show that
+  \[
+    I = (y^2-x(x-1)(x-\lambda))
+  \]
+  is a prime ideal in $k[x,y]$, or show that
+  \[
+    y^2-x(x-1)(x-\lambda)
+  \]
+  is irreducible (since $k[x,y]$ is a UFD).
+
+\item[(2)]
+  By Problem 1.34(b),
+  $y^2-x(x-1)(x-\lambda) \in (\mathbb{C}[x])[y]$ is irreducible
+  if $x(x-1)(x-\lambda)$ is not a square in $\mathbb{C}[x]$.
+  Note that every square in $\mathbb{C}[x]$ is of even degree.
+  So $x(x-1)(x-\lambda)$ cannot be a square in $\mathbb{C}[x]$
+  since $\deg(x(x-1)(x-\lambda)) = 3$ is odd.
 \end{enumerate}
-$\Box$\\\\
+$\Box$\\
+
+\emph{Note.}
+  $V(y^2-x(x-1)(x-\lambda))$ is the elliptic curve as Problem 1.31. \\\\
 
 
 
