@@ -2197,14 +2197,65 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.32.}
+\addcontentsline{toc}{subsubsection}{Problem 1.32.}
+\emph{Show that both theorems and all of the corollaries are false
+if $k$ is not algebraically closed.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Weak Nullstellensatz:
+  $I = (x^2+1)$ is a proper ideal in $\mathbb{R}[x]$ but $V(I) = \varnothing$.
+
+\item[(2)]
+  Hilbert's Nullstellensatz:
+  Let $I = (y^2 + x^2(x-1)^2)$ be an ideal in $\mathbb{R}[x,y]$.
+  Hence,
+  \begin{align*}
+    I(V(I))
+    &= I(\{ (0,0), (1,0) \})
+      &(\text{Problem 1.26.}) \\
+    &= (x(x-1),y) \\
+    &\neq I \\
+    &= \mathrm{rad}(I).
+  \end{align*}
+  The last equality holds since $f$ is irreducible in a UFD $\mathbb{R}[x,y]$
+  and thus $I$ is a prime ideal.
+
+\item[(3)]
+  Corollary 1: Same example in the case Hilbert's Nullstellensatz.
+  If $I = (y^2 + x^2(x-1)^2)$ is a radical ideal in $\mathbb{R}[x,y]$.
+  Then $I(V(I)) \neq I$.
+
+\item[(4)]
+  Corollary 2: Same example in the case Hilbert's Nullstellensatz.
+  If $I = (y^2 + x^2(x-1)^2)$ is a prime ideal in $\mathbb{R}[x,y]$,
+  then
+  \[
+    V(I) = \{ (0,0), (1,0) \} = V(x,y) \cup V(x-1,y)
+  \]
+  is reducible.
+  Next, consider a prime ideal $J = (x^2+y^2)$ in $\mathbb{R}[x,y]$.
+  (Use the same argument in Problem 1.26 to get the irreducibility of $x^2+y^2$.)
+  $V(J) = \{ (0,0) \}$ is a point but $J$ is not a maximal ideal
+  (since $J \subsetneq (x^2+y^2,x) \subsetneq (1)$).
+
+\item[(5)]
+  Corollary 3: Same example in Corollary 2.
+
+\item[(6)]
+  Corollary 4:
+  Let $I = (x^2 + y^2)$ be an ideal in $\mathbb{R}[x,y]$.
+  Then $V(I) = \{ (0,0) \}$ is a finite set.
+  But $\mathbb{R}[x,y]/(x^2 + y^2)$ is an infinite dimensional vector space over $\mathbb{R}$.
+  In fact, the monomials
+  \[
+    \{ \overline{x^m}, \overline{x^m y} : m = 0, 1, 2, \ldots \}
+  \]
+  is a basis for $\mathbb{R}[x,y]/(x^2 + y^2)$.
 \end{enumerate}
 $\Box$\\\\
 
