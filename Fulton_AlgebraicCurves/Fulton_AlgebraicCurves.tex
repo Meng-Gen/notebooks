@@ -2626,14 +2626,96 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.40.}
+\addcontentsline{toc}{subsubsection}{Problem 1.40.}
+\emph{Let $I = (x^2-y^3, y^2-z^3) \subseteq k[x,y,z]$.
+Define $\alpha: k[x,y,z] \to k[t]$ by
+$\alpha(x) = t^9$, $\alpha(y) = t^6$, $\alpha(z) = t^4$.}
 
-\emph{Proof.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that every element of $k[x,y,z]/I$ is the residue of an element
+  $a + xb + yc + xyd$, for some $a, b, c, d \in k[z]$.}
+
+\item[(b)]
+  \emph{If $f = a + xb + yc + xyd$, $a, b, c, d \in k[z]$ and $\alpha(f) = 0$,
+  compare like powers of $t$ to conclude that $f = 0$.}
+
+\item[(c)]
+  \emph{Show that $\ker(\alpha) = I$, so $I$ is prime,
+  $V(I)$ is irreducible, and $I(V(I)) = I$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Take any element $\overline{f} \in k[x,y,z]/I$ where $f \in k[x,y,z]$.
+  Regard $f \in (k[y,z])[x]$,
+  By the division-with-remainder property of $(k[y,z])[x]$,
+  \[
+    f = (x^2 - y^3)q + r
+  \]
+  where $q, r \in (k[y,z])[x]$ and $r = 0$ or $\deg_{x}(r) < 2$.
+  In any case,
+  $r = x r_1 + r_0$ for some $r_1, r_0 \in k[y,z]$.
+
+\item[(2)]
+  Apply the same argument to (1),
+  we have
+  \begin{align*}
+    r_0 &= (y^2 - z^3)q_0 + y c + a \\
+    r_1 &= (y^2 - z^3)q_1 + y d + b
+  \end{align*}
+  where $q_0, q_1 \in k[y,z]$ and $a, b, c, d \in k[z]$.
+
+\item[(3)]
+  By $\overline{r_0} = \overline{y c} + \overline{a}$
+  and $\overline{r_1} = \overline{y d} + \overline{b}$,
+  \begin{align*}
+    \overline{f}
+    &= \overline{r} \\
+    &= \overline{x} \overline{r_1} + \overline{r_0} \\
+    &= \overline{x} (\overline{y d} + \overline{b}) + (\overline{y c} + \overline{a}) \\
+    &= \overline{a} + \overline{b} \cdot \overline{x}
+      + \overline{c} \cdot \overline{y} + \overline{d} \cdot \overline{xy}.
+  \end{align*}
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+  As $0 = \alpha(f) = a + ct^6 + bt^9 + dt^{15} \in k[t]$,
+  $a = b = c = d = 0 \in k$.
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  $I \subseteq \ker(\alpha)$ is trivial.
+
+\item[(2)]
+  \emph{Show that $\ker(\alpha) \subseteq I$.}
+  Take any $f \in \ker(\alpha)$, or $\alpha(f) = 0$.
+  By (a), $f = r + f_1$ where $f_1 \in I$ and $r = a + bx + cy + dxy \in k[x,y,z]$
+  for some $a, b, c, d \in k[z]$.
+  Note that $\alpha$ is a ring homomorphism.
+  Therefore,
+  \[
+    0 = \alpha(f) = \alpha(r + f_1) = \alpha(r) + \alpha(g) = \alpha(r).
+  \]
+  By (b), $r = 0 \in k[x,y,z]$ and thus $f = f_1 \in I$.
+
+\item[(3)]
+  Therefore,
+  \[
+    \alpha: k[x,y,z]/(x^2-y^3, y^2-z^3) \hookrightarrow k[t]
+  \]
+  is injective.
 \end{enumerate}
 $\Box$\\\\
 
