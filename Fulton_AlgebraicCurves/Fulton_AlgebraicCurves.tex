@@ -610,8 +610,8 @@ $\Box$\\
 
 \item[(2)]
   Note that $V(x_1-a_1,\ldots,x_n-a_n) = \{ (a_1,\ldots,a_n) \} \subseteq \mathbf{A}^{n}(k)$
-  (property (5) in this section)
-  and any finite union of algebraic sets is algebraic (property (4) in this section).
+  (Property (5) in \S 1.2)
+  and any finite union of algebraic sets is algebraic (Property (4) in \S 1.2).
   Thus, every subset of $\mathbf{A}^{n}(k)$ is algebraic (by (1)).
 \end{enumerate}
 $\Box$\\\\
@@ -1107,13 +1107,13 @@ Show that $V = W$ if and only if $I(V) = I(W)$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  (Proof of Equation (6) in this section.)
+  (Proof of Property (6) in \S 1.3.)
   \emph{Show that if $X \subseteq Y$, then $I(X) \supseteq I(Y)$.}
   If $f \in I(Y)$ then $f(P) = 0$ for all $P \in Y$.
   So $f(P) = 0$ for all $P \in X \subseteq Y$ or $f \in I(X)$.
 
 \item[(2)]
-  (Proof of Equation (8) in this section.)
+  (Proof of Property (8) in \S 1.3.)
   \emph{$I(V(S)) \supseteq S$ for any set $S$ of polynomials;
   $V(I(X)) \supseteq X$ for any set $X$ of points.}
   \begin{enumerate}
@@ -1127,7 +1127,7 @@ Show that $V = W$ if and only if $I(V) = I(W)$.} \\
   \end{enumerate}
 
 \item[(3)]
-  (Proof of Equation (9) in this section.)
+  (Proof of Property (9) in \S 1.3.)
   \emph{$V(I(V(S))) = V(S)$ for any set $S$ of polynomials,
   and $I(V(I(X))) = I(X)$ for any set $X$ of points.
   So if $V$ is an algebraic set, $V = V(I(V))$,
@@ -1135,7 +1135,7 @@ Show that $V = W$ if and only if $I(V) = I(W)$.} \\
   \begin{enumerate}
   \item[(a)]
     In each case, it suffices to show that the left side is a subset of the right side.
-    (by Equations (6)(8) in this section).
+    (by Properties (6)(8) in \S 1.3).
 
   \item[(b)]
     If $P \in V(S)$ then $f(P) = 0$ for all $f \in I(V(S))$, so $P \in V(I(V(S)))$.
@@ -1149,15 +1149,15 @@ Show that $V = W$ if and only if $I(V) = I(W)$.} \\
   \emph{Show that $V = W$ if and only if $I(V) = I(W)$.}
   \begin{enumerate}
   \item[(a)]
-    By Equation (6) in this section, $I(V) \supseteq I(W)$ if $V \subseteq W$
+    By Property (6) in \S 1.3, $I(V) \supseteq I(W)$ if $V \subseteq W$
     and $I(V) \subseteq I(W)$ if $V \supseteq W$.
     Thus, $I(V) = I(W)$ if $V = W$.
 
   \item[(b)]
     Conversely,
     $I(V) = I(W)$ implies that $V(I(V)) = V(I(W))$
-    by Equation (3) in the previous section and similar argument in (a).
-    By Equation (9) in this section, $V(I(V)) = V$ and $V(I(W)) = W$.
+    by Property (3) in \S 1.2 and similar argument in (a).
+    By Property (9) in \S 1.3, $V(I(V)) = V$ and $V(I(W)) = W$.
     Thus, $V = W$.
   \end{enumerate}
 \end{enumerate}
@@ -1377,7 +1377,7 @@ $V(I) = V(\mathrm{rad}(I))$, and $\mathrm{rad}(I) \subseteq I(V(I))$.} \\
   As $k$ is a domain, $f(P)^n = 0$ implies $f(P) = 0$. So $P \in V(\mathrm{rad}(I))$.
 
 \item[(2)]
-  By Equations (6) and (8) in this section,
+  By Properties (6)(8) in \S 1.3,
   \[
     I(V(I)) = I(V(\mathrm{rad}(I))) \supseteq \mathrm{rad}(I).
   \]
@@ -1956,7 +1956,7 @@ show that $V_i \not\subseteq \bigcup_{j \neq i} V_j$.} \\
   is another decomposition of an algebraic set into irreducible components.
 
 \item[(2)]
-  By Theorem 2 in this section, the number of irreducible components is unique determined,
+  By Theorem 2 in \S 1.5, the number of irreducible components is unique determined,
   contrary to the assumption and (1).
 \end{enumerate}
 $\Box$\\\\
@@ -2609,14 +2609,82 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.39.}
+\addcontentsline{toc}{subsubsection}{Problem 1.39.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $R$ be a UFD, and let $\mathfrak{p} = (t)$ be a principal proper prime ideal.
+  Show that there is no prime ideal $\mathfrak{q}$
+  such that $0 \subsetneq \mathfrak{q} \subsetneq \mathfrak{p}$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Let $V = V(f)$ be irreducible hypersurface in $\mathbf{A}^n$.
+  Show that there is no irreducible algebraic set $W$ such that
+  $V \subsetneq W \subsetneq \mathbf{A}^n$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  (Reductio ad absurdum)
+  Suppose that $\mathfrak{q}$ were a prime ideal in $R$ such that
+  $0 \subsetneq \mathfrak{q} \subsetneq \mathfrak{p}$.
+
+\item[(2)]
+  \emph{Show that there is an irreducible element in $\mathfrak{q}$.}
+  Given any $q \in \mathfrak{q}$. Since $\mathfrak{q}$ is proper,
+  we can write
+  \[
+    q = q_1 \cdots q_n
+  \]
+  as a product of irreducible elements in a UFD.
+  Since $\mathfrak{q}$ is prime, there is one irreducible element $q_i \in \mathfrak{q}$.
+
+\item[(3)]
+  Now $q_i \in \mathfrak{q} \subseteq \mathfrak{p} = (t)$.
+  So $q_i = ut$ for some $u \in R$.
+  By the irreducibility of $q_i$, $u$ is a unit or $t$ is a unit.
+  If $u$ is a unit, then
+  \[
+    (t) = (q_i) \subseteq \mathfrak{q} \subseteq \mathfrak{p} = (t).
+  \]
+  So $\mathfrak{q} = \mathfrak{p}$, which is absurd.
+  If $t$ is a unit, then $\mathfrak{p} = (1)$, contrary to the primality of $\mathfrak{p}$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  We might assume that $k = \overline{k}$.
+  By Corollary 3 to the Hilbert's Nullstellensatz and the irreducibility of $V(f)$,
+  there are an irreducible polynomial $g \in k[x_1,\ldots,x_n]$ and an integer $m > 0$
+  such that
+  \[
+    f = g^m,
+  \]
+  and
+  \[
+    I(V(f)) = (g).
+  \]
+
+\item[(2)]
+  (Reductio ad absurdum)
+  Suppose that there were an irreducible algebraic set $W$ such that
+  $V \subsetneq W \subsetneq \mathbf{A}^n$.
+  Then by Corollary 3 to the Hilbert's Nullstellensatz again,
+  \[
+    (g) = I(V(f)) \supsetneq I(W) \supsetneq (1) \in k[x_1,\ldots,x_n].
+  \]
+  Here $(g) = I(V(f))$ and $I(W)$ are all prime.
+
+\item[(3)]
+  Note that $(g)$ is a principal proper prime ideal in a UFD $k[x_1,\ldots,x_n]$.
+  By (a), such ideal $I(W)$ cannot be prime, which is absurd.
 \end{enumerate}
 $\Box$\\\\
 
@@ -3420,7 +3488,7 @@ $\Box$ \\\\
 be an exact sequence of finite-dimensional vector spaces.
 Show that $\sum (-1)^i \dim(V_i) = 0$.} \\
 
-\emph{Proof (Proposition 7 in this section).}
+\emph{Proof (Proposition 7 in \S 2.10).}
 \begin{enumerate}
 \item[(1)]
   For $i = 0,\ldots,n$,
