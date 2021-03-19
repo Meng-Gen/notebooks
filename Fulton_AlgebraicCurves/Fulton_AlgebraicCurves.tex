@@ -3377,14 +3377,87 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.51.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.51.*}
+\emph{Let $K$ be a field, $f \in K[x]$ an irreducible monic polynomial of degree $n > 0$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $L = K[x]/(f)$ is a field,
+  and if $\overline{x}$ is the residue of $x$ in $L$, then $f(\overline{x}) = 0$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Suppose $L'$ is a field extension of $K$, $y \in L'$ such that $f(y) = 0$.
+  Show that the homomorphism from $K[x]$ to $L'$
+  that takes $x$ to $y$ induces an isomorphism of $L$ with $K(y)$.}
+
+\item[(c)]
+  \emph{With $L'$, $y$ as in (b), suppose $g \in K[x]$ and $g(y) = 0$.
+  Show that $f$ divides $g$.}
+
+\item[(d)]
+  \emph{Show that $f = (x - \overline{x})f_1$, $f_1 \in L[x]$.}
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  $(f)$ is a prime ideal in a UFD $K[x]$ since $f$ is irreducible.
+  Note that $K[x]$ is also a PID, $(f)$ is maximal (Problem 1.3).
+  Hence $L = K[x]/(f)$ is a field.
+
+\item[(2)]
+  $f(\overline{x}) = f(x) + (f(x)) = (f(x)) = \overline{0}$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let $\alpha: K[x] \to L'$ be a homomorphism 
+  defined by
+  \[
+    \alpha\left(\sum a_i x^i\right) = \sum a_i y^i
+  \]
+  where $a_i \in K$.
+  $\mathrm{im}(\alpha) = K(y)$ clearly.
+
+\item[(2)]
+  Note that $\mathrm{ker}(\alpha)$ is an ideal containing $(f)$ since $\alpha(f) = 0$.
+  $\mathrm{ker}(\alpha)$ is proper since $\alpha(1) = 1 \neq 0$.
+  By the maximality of $(f)$, $\mathrm{ker}(\alpha) = (f)$.
+
+\item[(3)]
+  Hence, $\alpha$ induces an isomorphism of $L$ with $K(y)$:
+  \[
+    L = K[x]/(f) \cong K(y) \hookrightarrow L'.
+  \]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+By (b), $g \in \mathrm{ker}(\alpha) = (f)$. So $f \mid g$.
+$\Box$\\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  By (a), $\overline{x} \in L$ is a root of $f \in L[x]$ (by embedding $K[x]$ in $L[x]$).
+
+\item[(2)]
+  Since $L$ is a field, by Problem 1.7(b)
+  we have
+  \[
+    f = (x - \overline{x})f_1
+  \]
+  for some $f_1 \in L[x]$.
 \end{enumerate}
 $\Box$\\\\
 
