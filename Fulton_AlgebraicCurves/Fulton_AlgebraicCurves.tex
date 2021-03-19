@@ -3106,6 +3106,13 @@ Then $R[a_1, \ldots, a_n, z]$ is module-finite over $R$.)} \\
 
 \item[(2)]
   \emph{Show that $R[a_1, \ldots, a_n]$ is module-finite over $R$ if all $a_i \in S$.}
+  Note that
+  \begin{align*}
+    & \text{$a_1$ is integral over $R$}, \\
+    & \text{$a_2$ is integral over $R[a_1] \supseteq R$}, \\
+    & \ldots \\
+    & \text{$a_n$ is integral over $R[a_1,\ldots,a_{n-1}]$}.
+  \end{align*}
   By Proposition 3,
   \begin{align*}
     & \text{$R[a_1]$ is module-finite over $R$}, \\
@@ -3132,14 +3139,32 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.47.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.47.*}
+\emph{Suppose (a domain) $S$ is ring-finite over $R$.
+Show that $S$ is module-finite over $R$ if and only if $S$ is integral over $R$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Write $S = R[v_1,\ldots,v_m]$ for some $v_i \in S$.
+
+\item[(2)]
+  Suppose that $S$ is integral over $R$.
+  Then all $v_i$ are integral over $R$.
+  Use the same argument in Problem 1.46, we have
+  \[
+    S = R[v_1, \ldots, v_n]
+  \]
+  is module-finite over $R$.
+
+\item[(3)]
+  Conversely, suppose that $S$ is module-finite over $R$.
+  Take any $v \in S$.
+  Write $v = \sum_{i} r_i v_i \in S$ since $S$ is module-finite over $R$.
+  Note that $S = R[v_1,\ldots,v_m]$ is a subring of $S$ itself containing $R[v]$
+  which is module-finite over $R$.
+  By Proposition 3, $v$ is integral over $R$.
 \end{enumerate}
 $\Box$\\\\
 
