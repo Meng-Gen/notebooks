@@ -2962,6 +2962,28 @@ $\Box$\\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $T \subseteq \sum R v_i w_j$.}
+  Given any $t \in T = \sum S w_j$.
+  There are some $s_j \in S$ such that $t = \sum_{j} s_j w_j$.
+  As $s_j \in S = \sum R v_i$, there are some $r_{ij} \in R$ such that $s_j = \sum_{i} r_{ij} v_i$.
+  Hence,
+  \[
+    t
+    = \sum_{j} s_j w_j
+    = \sum_{j} \left(\sum_{i} r_{ij} v_i\right) w_j
+    = \sum_{i,j} r_{ij} v_i w_j
+    \in \sum R v_i w_j.
+  \]
+
+\item[(2)]
+  \emph{Show that $T \supseteq \sum R v_i w_j$.}
+  Take any $\sum r_{ij} v_i w_j \in \sum R v_i w_j$.
+  \[
+    \sum r_{ij} v_i w_j
+    = \sum_{j} \left(\sum_{i} r_{ij} v_i\right) w_j
+    \in \sum_{j} S w_j = T.
+  \]
+
 \end{enumerate}
 $\Box$\\
 
@@ -2970,6 +2992,19 @@ $\Box$\\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Note that $R[x_1,\cdots,x_m]$ is canonically isomorphic to $R[x_1,\cdots,x_{m-1}][x_m]$.
+  Hence $R[x_1,\cdots,x_m]$ is isomorphic to $R[x_1][x_2] \cdots [x_m]$.
+
+\item[(2)]
+  Hence,
+  \begin{align*}
+    T
+    &= S[w_1,\ldots,w_m] \\
+    &= R[v_1,\ldots,v_n][w_1,\ldots,w_m] \\
+    &= R[v_1,\ldots,v_n][w_1] \cdots [w_m] \\
+    &= R[v_1] \cdots [v_n][w_1] \cdots [w_m] \\
+    &= R[v_1,\ldots,v_n,w_1,\ldots,w_m].
+  \end{align*}
 \end{enumerate}
 $\Box$\\
 
@@ -2978,6 +3013,44 @@ $\Box$\\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  By (b),
+  $R(v_1,\ldots,v_n)$ is canonically isomorphic to $R(v_1,\ldots,v_{n-1})(v_n)$.
+  Hence $R(v_1,\ldots,v_n)$ is isomorphic to $R(v_1) \cdots (v_n)$.
+  To see this, note that $R[x_1,\cdots,x_m] \cong R[x_1,\cdots,x_{m-1}][x_m]$
+  implies that
+  \[
+    R(x_1,\cdots,x_m)
+    \cong R[x_1,\cdots,x_{m-1}](x_m)
+    \hookrightarrow R(x_1,\cdots,x_{m-1})(x_m).
+  \]
+  Conversely,
+  for any $a/b \in R(x_1,\cdots,x_{m-1})(x_m)$
+  where
+  \begin{align*}
+    a &= \sum_{i} a_i x_m^{i} \in R(x_1,\cdots,x_{m-1})[x_m], \\
+    b &= \sum_{j} b_j x_m^{j} \in R(x_1,\cdots,x_{m-1})[x_m]
+  \end{align*}
+  and $b \neq 0$, there is a nonzero polynomial $c \in R[x_1,\cdots,x_{m-1}]$
+  such that all $c a_i$ and $c b_j$ are in $R[x_1,\cdots,x_{m-1}]$.
+  Hence,
+  \begin{align*}
+    \frac{a}{b}
+    &= \frac{\sum_{i} a_i x_m^{i}}{\sum_{j} b_j x_m^{j}} \\
+    &= \frac{c\sum_{i} a_i x_m^{i}}{c\sum_{j} b_j x_m^{j}} \\
+    &= \frac{\sum_{i} ca_i x_m^{i}}{\sum_{j} cb_j x_m^{j}} \\
+    &\in R[x_1,\cdots,x_{m-1}](x_m).
+  \end{align*}
+
+\item[(2)]
+  Hence,
+  \begin{align*}
+    T
+    &= S(w_1,\ldots,w_m) \\
+    &= R(v_1,\ldots,v_n)(w_1,\ldots,w_m) \\
+    &= R(v_1,\ldots,v_n)(w_1) \cdots (w_m) \\
+    &= R(v_1) \cdots (v_n)(w_1) \cdots (w_m) \\
+    &= R(v_1,\ldots,v_n,w_1,\ldots,w_m).
+  \end{align*}
 \end{enumerate}
 $\Box$\\\\
 
