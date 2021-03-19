@@ -2890,8 +2890,8 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem 1.43.* (WIP)}
-\addcontentsline{toc}{subsubsection}{Problem 1.43.* (WIP)}
+\subsubsection*{Problem 1.43.* (TODO)}
+\addcontentsline{toc}{subsubsection}{Problem 1.43.* (TODO)}
 \emph{If $L$ is ring-finite over $K$ ($K$, $L$ fields)
 then $L$ is a finitely generated field extension of $K$.} \\
 
@@ -2952,14 +2952,42 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.46.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.46.*}
+\emph{Let $R$ be a subring of $S$, $S$ a subring of (a domain) $T$.
+If $S$ is integral over $R$, and $T$ is integral over $S$,
+show that $T$ is integral over $R$.
+(Hint: Let $z \in T$, so we have
+$z^n + a_1 z^{n-1} + \cdots + a_n = 0$, $a_i \in S$.
+Then $R[a_1, \ldots, a_n, z]$ is module-finite over $R$.)} \\
 
-\emph{Proof.}
+\emph{Proof (Hint).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Let $z \in T$, so we have
+  $z^n + a_1 z^{n-1} + \cdots + a_n = 0$, $a_i \in S$.
+  Therefore, $z$ is integral over $R[a_1, \ldots, a_n]$,
+  or $R[a_1, \ldots, a_n, z]$ is module-finite over $R[a_1, \ldots, a_n]$.
+
+\item[(2)]
+  \emph{Show that $R[a_1, \ldots, a_n]$ is module-finite over $R$ if all $a_i \in S$.}
+  By Proposition 3,
+  \begin{align*}
+    & \text{$R[a_1]$ is module-finite over $R$}, \\
+    & \text{$R[a_1][a_2]$ is module-finite over $R[a_1]$}, \\
+    & \ldots \\
+    & \text{$R[a_1,\ldots,a_{n-1}][a_n]$ is module-finite over $R[a_1,\ldots,a_{n-1}]$}.
+  \end{align*}
+  Also note that $R[a_1,\ldots,a_i] = R[a_1,\ldots,a_{i-1}][a_i]$ if $i > 1$.
+  By the transitive relation of the module-finiteness (Problem 1.45),
+  $R[a_1, \ldots, a_n]$ is module-finite over $R$.
+
+\item[(3)]
+  Again by the transitive relation of the module-finiteness (Problem 1.45),
+  $R[a_1, \ldots, a_n, z]$ is module-finite over $R$.
+  Hence, $R[a_1, \ldots, a_n, z]$ is a subring of $T$ containing $R[z]$
+  which is module-finite over $R$.
+  By Proposition 3, $z$ is integral over $R$.
 \end{enumerate}
 $\Box$\\\\
 
