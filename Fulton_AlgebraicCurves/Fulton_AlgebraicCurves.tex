@@ -2839,22 +2839,31 @@ $\Box$\\\\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  $S = \sum R s_i$ for some $s_1, \ldots, s_n \in S$
+  Write $S = \sum R s_i$ for some $s_1, \ldots, s_n \in S$
   since $S$ is module-finite over $R$.
 
 \item[(2)]
-  Let $I$ be the minimal subset of $\{ s_1, \ldots, s_n \}$ which also spans $S$,
-  say $\{ t_1, \ldots, t_m \}$ with $m \leq n$.
-  Clearly we can write
+  \emph{Show that $\sum R s_i = R[s_1,\ldots,s_n]$.}
+  $\sum R s_i \subseteq R[s_1,\ldots,s_n]$ is trivial.
+  Conversely, take any $v \in R[s_1,\ldots,s_n]$.
+  Write
   \[
-    S = R[t_1, \ldots, t_m],
+    v = \sum_{(j)} \overbrace{
+      \underbrace{a_{(j)}}_{\in R}
+      \underbrace{s_1^{j_1} \cdots s_n^{j_n}}_{\in S = \sum R s_i}}^{\in \sum R s_i}
   \]
-  that is, $S$ is ring-finite over $R$.
-
-\item[(3)]
-  The converse is not true (Problem 1.42).
+  Here each term $a_{(i)} s_1^{i_1} \cdots s_n^{i_n}$ is in $\sum R s_i$.
+  As $\sum R s_i$ is an $R$-module,
+  \[
+    v = \sum_{(i)} a_{(i)} s_1^{i_1} \cdots s_n^{i_n} \in \sum R s_i.
+  \]
 \end{enumerate}
-$\Box$\\\\
+$\Box$\\
+
+
+
+\emph{Note.}
+  The converse is not true (by Problem 1.42). \\\\
 
 
 
@@ -2931,14 +2940,44 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.45.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.45.*}
+\emph{Let $R$ be a subring of $S$, $S$ a subring of $T$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $S = \sum R v_i$, $T = \sum S w_j$, show that $T = \sum R v_i w_j$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{If $S = R[v_1,\ldots,v_n]$, $T = S[w_1,\ldots,w_m]$,
+  show that $T = R[v_1,\ldots,v_n,w_1,\ldots,w_m]$.}
+
+\item[(c)]
+  \emph{If $R$, $S$, $T$ are fields, and $S = R(v_1,\ldots,v_n)$, $T = S(w_1,\ldots,w_m)$,
+  show that $T = R(v_1,\ldots,v_n,w_1,\ldots,w_m)$.}
+\end{enumerate}
+\emph{So each of the three finiteness conditions is a transitive relation.} \\
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
 \end{enumerate}
 $\Box$\\\\
 
