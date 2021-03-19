@@ -3217,7 +3217,7 @@ $\Box$\\
 
 \item[(2)]
   By Problem 1.41, $L$ is ring-finite over $k$.
-  By Problem 1.47, $L$ is integral over $k$. In particular, $L$ is algebraic over $k$.
+  By Problem 1.47, $L$ is integral or algebraic over $k$ (since $k$ is a field).
   By (a), $L = k$.
 \end{enumerate}
 $\Box$\\\\
@@ -3252,8 +3252,8 @@ $\Box$\\\\
 
 \item[(2)]
   Now we take any nonzero element $z \in L = K(x)$ which is integral over $K[x]$.
-  So $z^n + a_1 z^{n-1} + \cdots + a_n = 0$ for some $a_1, \ldots, a_n \in K[x]$.
-  Here not all $a_i$ are zero since $z \neq 0$.
+  So $z^n + a_1 z^{n-1} + \cdots + a_n = 0$ for some $a_1, \ldots, a_n \in K[x]$
+  and $a_n \neq 0$ (since $z \neq 0$).
 
 \item[(3)]
   Write $z = f/g$, $f, g$ relatively prime in $K[x]$.
@@ -3261,7 +3261,7 @@ $\Box$\\\\
   \[
     f^n + a_1 f^{n-1}g + \cdots + a_n g^n = 0 \in K[x].
   \]
-  Since not all $a_i$ are zero, $g \mid f^n$ or $g \mid f$ or $g = 1 \in K$.
+  Since $a_n \neq 0$, $g \mid f^n$ or $g \mid f$ or $g = 1 \in K$.
   Therefore, $z = f \in K[x]$.
 \end{enumerate}
 $\Box$\\
@@ -3293,12 +3293,19 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\subsubsection*{Problem 1.50.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.50.*}
+\emph{Let $K$ be a subfield of a field $L$.}
 \begin{enumerate}
 \item[(a)]
+  \emph{Show that the set of elements of $L$ that are
+  algebraic over $K$ is a subfield of $L$ containing $K$.
+  (Hint: If $v^n + a_1 v^{n-1} + \cdots + a_n = 0$, and $a_n \neq 0$,
+  then $v(v^{n-1} + \cdots + a_{n-1}) = -a_n$.)}
+
 \item[(b)]
-  
+  \emph{Suppose $L$ is module-finite over $K$, and $K \subseteq R \subseteq L$, $R$ a subring of $L$.
+  Show that $R$ is a field.} \\
 \end{enumerate}
 
 
@@ -3306,7 +3313,27 @@ $\Box$\\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  
+  Let $R$ be the set of elements of $L$ that are algebraic over $K$.
+  By Corollary to Proposition 3, $R$ is a subring of $L$ containing $K$.
+  (Note that $K$ is a field.)
+  So it suffices to show that $v^{-1} \in R$ if $v \in R - \{0\}$.
+
+\item[(2)]
+  Since $v$ is algebraic over $K$,
+  we can write
+  \[
+    v^n + a_1 v^{n-1} + \cdots + a_n = 0
+  \]
+  for some $a_1, \ldots, a_n \in K$ and $a_n \neq 0$.
+  So
+  \[
+    \left(v^{-1}\right)^n
+      + \underbrace{\frac{a_{n-1}}{a_n}}_{\in K} \left(v^{-1}\right)^{n-1}
+      + \cdots
+      + \underbrace{\frac{a_1}{a_n}}_{\in K} \left(v^{-1}\right)
+      + \underbrace{\frac{1}{a_n}}_{\in K} = 0,
+  \]
+  or $v^{-1}$ is integral over $K$. Hence, $v^{-1} \in R$.
 \end{enumerate}
 $\Box$\\
 
@@ -3315,9 +3342,29 @@ $\Box$\\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  
+  By Problem 1.47, $L$ is algebraic over $K$.
+  Hence, $R$ is algebraic over $K$.
+
+\item[(2)]
+  To show that $R$ is a field,
+  it suffices to show that $v^{-1} \in R$ if $v \in R - \{0\}$.
+  Since $v$ is algebraic over $K$,
+  we can write
+  \[
+    v^n + a_1 v^{n-1} + \cdots + a_n = 0
+  \]
+  for some $a_1, \ldots, a_n \in K$ and $a_n \neq 0$.
+  So
+  \[
+    v \left(- \underbrace{\frac{1}{a_n}}_{\in K \subseteq R} \underbrace{v^{n-1}}_{\in R}
+      - \cdots
+      - \underbrace{\frac{a_{n-1}}{a_n}}_{\in K \subseteq R} \right) = 1.
+  \]
+  Here $v^{-1} = \left(- \frac{1}{a_n} v^{n-1} - \cdots - \frac{a_{n-1}}{a_n} \right)$
+  is the inverse of $v$ in $R$ (since $R$ is a ring containing $K$).
 \end{enumerate}
 $\Box$\\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
