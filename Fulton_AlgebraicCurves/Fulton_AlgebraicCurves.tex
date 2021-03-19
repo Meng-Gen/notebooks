@@ -2923,14 +2923,35 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.44.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.44.*}
+\emph{Show that $L = K(x)$ (the field of rational functions in one variable)
+is a finitely generated field extension of $K$, but $L$ is not ring-finite over $K$.
+(Hint: If $L$ were ring-finite over $K$,
+a common denominator of ring generators would be an element $b \in K[x]$ such that
+for all $z \in L$, $b^n z \in K[x]$ for some $n$;
+but let $z = 1/c$, where $c$ doesn't divide $b$ (Problem 1.5).)} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  (Reductio ad absurdum)
+  Suppose that $L$ were ring-finite over $K$.
+  Write $L = K[v_1,\ldots,v_m]$
+  where $v_1,\ldots,v_m \in L = K(x)$.
+  Let $b \in K[x]$ be a common denominator of ring generators $v_1, \ldots, v_m$.
+  (So that all $bv_i \in K[x]$.)
+  Therefore, for any $z \in L = K[v_1,\ldots,v_m]$, there is an integer $n > 0$
+  such that $b^n z \in K[x]$.
+
+\item[(2)]
+  Consider $z = 1/c \in K(x)$, where $c \in K[x]$ doesn't divide $b$.
+  The existence of $c$ is guaranteed by Problem 1.5.
+  Hence, for any integer $n > 0$
+  \[
+    b^n z = b^n/c
+  \]
+  is never in $K[x]$ by the construction of $c$, which is absurd.
 \end{enumerate}
 $\Box$\\\\
 
