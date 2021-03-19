@@ -3174,14 +3174,116 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.48.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.48.*}
+\emph{Let $L$ be a field, $k$ an algebraically closed subfield of $L$.}
 
-\emph{Proof.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that any element of $L$ that is algebraic over $k$ is already in $k$.}
+
+\item[(b)]
+  \emph{An algebraically closed field has no module-finite field extensions except itself.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Let $\alpha \in L$ be algebraic over $k$.
+  Then there is a nonzero polynomial $f(x) \in k[x]$ with $f(\alpha) = 0$.
+  Note that $\deg f \geq 1$.
+
+\item[(2)]
+  Since $k$ is algebraically closed,
+  every polynomial is a product of first degree polynomials, say
+  \[
+    f(x) = c(x - \alpha_1) \cdots (x - \alpha_m)
+  \]
+  where $c \in k-\{0\}$ and $\alpha_1, \ldots, \alpha_m \in k$.
+  As $f(\alpha) = 0$, $\alpha = \alpha_i \in k$ for some $1 \leq i \leq m$.
+  Hence, $\alpha \in L$ is algebraic over $k$ implies that $\alpha \in k$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Suppose that $L$ is module-finite field extensions of
+  an algebraically closed field $k$.
+
+\item[(2)]
+  By Problem 1.41, $L$ is ring-finite over $k$.
+  By Problem 1.47, $L$ is integral over $k$. In particular, $L$ is algebraic over $k$.
+  By (a), $L = k$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 1.49.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.49.*}
+\emph{Let $K$ be a field, $L = K(x)$ the field of rational functions in one variable over $K$.} \\
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that any element of $L$ that is integral over $K[x]$ is already in $K[x]$.
+  (Hint: If $z^n + a_1 z^{n-1} + \cdots + a_n = 0$, write $z = f/g$,
+  $f, g$ relatively prime. Then $f^n + a_1 f^{n-1}g + \cdots + a_n g^n = 0$,
+  So $g$ divides $f$.)}
+
+\item[(b)]
+  \emph{Show that there is no nonzero element $f \in K[x]$ such that for
+  every $z \in L$, $f^n z$ is integral over $K[x]$ for some $n > 0$. (Hint: See Problem 1.44.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Note that $0$ is integral over $K[x]$ and $0 \in K[x]$ trivially.
+
+\item[(2)]
+  Now we take any nonzero element $z \in L = K(x)$ which is integral over $K[x]$.
+  So $z^n + a_1 z^{n-1} + \cdots + a_n = 0$ for some $a_1, \ldots, a_n \in K[x]$.
+  Here not all $a_i$ are zero since $z \neq 0$.
+
+\item[(3)]
+  Write $z = f/g$, $f, g$ relatively prime in $K[x]$.
+  Then
+  \[
+    f^n + a_1 f^{n-1}g + \cdots + a_n g^n = 0 \in K[x].
+  \]
+  Since not all $a_i$ are zero, $g \mid f^n$ or $g \mid f$ or $g = 1 \in K$.
+  Therefore, $z = f \in K[x]$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  (Reductio ad absurdum)
+  Suppose there were a nonzero element $f \in K[x]$ such that for
+  every $z \in L$, $f^n z$ is integral over $K[x]$ for some $n > 0$.
+
+\item[(2)]
+  Let $z = 1/g \in K(x)$, where $g$ is an irreducible polynomial not dividing $f$.
+  The existence of $g$ is guaranteed by Problem 1.5.
+
+\item[(3)]
+  By the hypothesis in (1), there is an integer $n > 0$ such that
+  $f^n z$ is integral over $K[x]$.
+  By (a), $f^n z = f^n/g$ is also in $K[x]$. So $g \mid f^n$ or $g \mid f$,
+  which is absurd.
 \end{enumerate}
 $\Box$\\\\
 
@@ -3193,32 +3295,29 @@ $\Box$\\\\
 
 \subsubsection*{Problem PLACEHOLDER}
 \addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\begin{enumerate}
+\item[(a)]
+\item[(b)]
+  
+\end{enumerate}
 
-\emph{Proof.}
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  
 \end{enumerate}
-$\Box$\\\\
+$\Box$\\
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
+\emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  
 \end{enumerate}
 $\Box$\\\\
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
