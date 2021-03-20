@@ -3854,13 +3854,65 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.5.}
+\addcontentsline{toc}{subsubsection}{Problem 2.5.}
+\emph{Let $f$ be an irreducible polynomial in $k[x,y]$,
+and suppose $f$ is monic in $y$:
+$f = y^n + a_1(x) y^{n-1} + \cdots + a_n(x)$, with $n > 0$.
+Let $V = V(f) \subseteq \mathbf{A}^2$.
+Show that the natural homomorphism from $k[x]$ to $\Gamma(V) = k[x,y]/(f)$ is one-to-one,
+so that $k[x]$ may be regarded as a subring of $\Gamma(V)$;
+show that the residues $\overline{1}, \overline{y}, \ldots, \overline{y}^{n-1}$
+generate $\Gamma(V)$ over $k[x]$ as a module.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  $\Gamma(V) = k[x,y]/(f)$ is well-defined since $f$ is irreducible.
+  Define a ring homomorphism $\alpha: k[x] \to \Gamma(V) = k[x,y]/(f)$
+  by
+  \[
+    \alpha: g(x) \mapsto g(x) + (f(x,y)).
+  \]
+
+\item[(2)]
+  \emph{Show that $\alpha$ is one-to-one.}
+  If there were a nonzero polynomial $g \in k[x]$ such that $\alpha(g) = 0$,
+  then $g = fh$ for some nonzero polynomial $h \in k[x,y]$.
+  Hence
+  \[
+    0 = \deg_y(g) = \deg_y(f) + \deg_y(h) \geq n > 0,
+  \]
+  which is absurd. Therefore, $\alpha$ is one-to-one.
+  Hence $k[x]$ may be regarded as a subring of $\Gamma(V)$,
+  and thus the multiplication in $\Gamma(V)$
+  makes $\Gamma(V)$ a $k[x]$-module.
+
+\item[(3)]
+  Given any $g(x,y) + (f(x,y)) \in k[x,y]/(f)$ where $g \in k[x,y] = (k[x])[y]$.
+  By the division-with-remainder property of $(k[x])[y]$,
+  \[
+    g = fq + r
+  \]
+  for some $q, r \in (k[x])[y]$ and
+  \[
+    r = r_1(x) y^{n-1} + \cdots + r_n(x)
+  \]
+  where $r_1, \ldots, r_n \in k[x]$.
+  Hence
+  \begin{align*}
+    g + (f)
+    &= fq + r + (f) \\
+    &= r + (f) \\
+    &= r_1(x) y^{n-1} + \cdots + r_n(x) + (f) \\
+    &= \underbrace{r_1(x)}_{\in k[x]} \overline{y}^{n-1} + \cdots
+      + \underbrace{r_n(x)}_{\in k[x]} \overline{1},
+  \end{align*}
+  which means that
+  the residues $\overline{1}, \overline{y}, \ldots, \overline{y}^{n-1}$
+   generate $\Gamma(V)$ over $k[x]$ as a module.
 \end{enumerate}
 $\Box$\\\\
 
