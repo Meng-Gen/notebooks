@@ -3467,14 +3467,35 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.52.* (Splitting fields)}
+\addcontentsline{toc}{subsubsection}{Problem 1.52.* (Splitting fields)}
+\emph{Let $K$ be a field, $f \in K[x]$.
+Show that there is a field $L$ containing $K$ such that
+$f = \prod_{i=1}^{n} (x - x_i) \in L[x]$.
+(Hint: Use Problem 1.51(d) and induction on the degree.)
+$L$ is called a \textbf{splitting field} of $F$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Let $p(x) \in K[x]$ be an irreducible factor of $f(x) \in K[x]$,
+  and let $L'$ be the field $K[x]/(p(x))$ (by Problem 1.51(a)).
+
+\item[(2)]
+  Then we might regard $K$ as a subfield of $L'$
+  by sending $a \in K$ to $\overline{a} = a + (p(x)) \in L'$.
+
+\item[(3)]
+  By Problem 1.51(a), $\overline{x}$ is a root of $p \in L'$;
+  therefore is a root of $f$.
+
+\item[(4)]
+  Induction on $n$. By (1)(2)(3), there is a field $L' \supseteq K$
+  such that $L'$ contains a root $\overline{x}$ of $f(x)$,
+  say $f(x) = (x - \overline{x}) f_1(x)$ over $L'[x]$ (by Problem 1.51(d)).
+  By induction, there is a field $L \supseteq L'$ such that
+  $f_1$ splits over $L$.
+  Hence, $f$ splits over $L$.
 \end{enumerate}
 $\Box$\\\\
 
