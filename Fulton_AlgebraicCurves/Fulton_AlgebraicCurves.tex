@@ -3552,14 +3552,91 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.54.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.54.*}
+\emph{Let $R$ be a domain with quotient field $K$,
+and let $L$ be a finite algebraic extension of $K$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{For any $v \in L$, show that there is a nonzero $a \in R$ such that
+  $av$ is integral over $R$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Show that there is a basis $v_1, \ldots, v_n$ for $L$ over $K$ (as a vector space)
+  such that each $v_i$ is integral over $R$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Take any $v \in L$, which is algebraic over $K$.
+  Write
+  \[
+    v^n + a_1 v^{n-1} + \cdots + a_n = 0
+  \]
+  for some $a_1, \ldots, a_n \in K$ and $a_n \neq 0$.
+  Since $K$ is the quotient field of $R$,
+  there is a common denominator $a \in R$ of $a_1, \ldots, a_n$.
+  Here $a \neq 0$ and $aa_i \in R$ for all $1 \leq i \leq n$.
+
+\item[(2)]
+  Hence,
+  \begin{align*}
+    & \: a^n v^n + a^n a_1 v^{n-1} + \cdots + a^n a_n = 0 \\
+    \Longleftrightarrow & \:
+    (av)^n
+      + \underbrace{(aa_1)}_{\in R} (av)^{n-1}
+      + \underbrace{a(aa_2)}_{\in R} (av)^{n-2}
+      + \cdots
+      + \underbrace{a^{n-1}(aa_n)}_{\in R} = 0.
+  \end{align*}
+  $av$ is integral over $R$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Since $L$ be a finite algebraic extension of $K$,
+  there exists a basis
+  \[
+    \{ w_1, \ldots, w_n \}
+  \]
+  for $L$ over $K$ (as a vector space).
+
+\item[(2)]
+  For each $w_i \in L$, there is a nonzero $a_i \in R$ such that
+  $a_i w_i$ is integral over $R$ (by (a)).
+  So it suffices to show that
+  \[
+    \{ a_1 w_1, \ldots, a_n w_n \}
+  \]
+  is also a basis for $L$ over $K$.
+
+\item[(3)]
+  Suppose
+  \[
+    0 = \sum_{i} \alpha_i (a_i w_i) = \sum_{i} (\alpha_i a_i) w_i
+  \]
+  for some $\alpha_1, \ldots, \alpha_n \in K$.
+  Since $\{ w_1, \ldots, w_n \}$ is a basis,
+  $\alpha_i a_i = 0$ for all $i$, or $\alpha_i = 0$ for all $i$ (since all $a_i \neq 0$).
+  Hence $\{ a_1 w_1, \ldots, a_n w_n \}$ is linearly independent.
+
+\item[(4)]
+  Also,
+  for any $w \in L$, we can write
+  \begin{align*}
+    w
+    &= \underbrace{\beta_1}_{\in K} w_1 + \cdots + \underbrace{\beta_n}_{\in K} w_n \\
+    &= \underbrace{\frac{\beta_1}{a_1}}_{\in K} (a_1 w_1) + \cdots
+      + \underbrace{\frac{\beta_n}{a_n}}_{\in K} (a_n w_n)
+  \end{align*}
+  as a linear combination of $\{ a_1 w_1, \ldots, a_n w_n \}$ over $K$.
 \end{enumerate}
 $\Box$\\\\
 
