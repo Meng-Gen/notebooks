@@ -3395,7 +3395,7 @@ $\Box$\\\\
   Show that $f$ divides $g$.}
 
 \item[(d)]
-  \emph{Show that $f = (x - \overline{x})f_1$, $f_1 \in L[x]$.}
+  \emph{Show that $f = (x - \overline{x})f_1$, $f_1 \in L[x]$.} \\
 \end{enumerate}
 
 
@@ -3505,14 +3505,44 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 1.53.*}
+\addcontentsline{toc}{subsubsection}{Problem 1.53.*}
+\emph{Suppose $K$ is a field of characteristic zero,
+$f$ an irreducible monic polynomial in $K[x]$ of degree $n > 0$.
+Let $L$ be a splitting field of $f$,
+so $f = \prod_{i=1}^{n} (x - x_i)$, $x_i \in L$.
+Show that the $x_i$ are distinct.
+(Hint: Apply Problem 1.51(c) to $g = f_x$;
+if $(x - \overline{x})^2$ divides $f$, then $g(\overline{x}) = 0$.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
+  Since $f \in K[x]$ is irreducible over $K$,
+  $\gcd(f, f_x)$ is $1$ or $f$.
+  As $\mathrm{char}(K) = 0$, $\deg(f_x) = \deg(f) - 1$.
+  So $f$ does not divide $f_x$ or $\gcd(f, f_x) = 1$.
+  Hence, there are polynomials $g, h \in K[x]$ such that
+  \[
+    1 = f g + f_x h.
+  \]
+  This equation is also true in $L[x]$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    f &= \prod_{i=1}^{n} (x - x_i) \in L[x], \\
+    f_x &= \sum_{i=1}^{n} (x - x_1) \cdots \widehat{(x - x_i)} \cdots (x - x_n) \in L[x].
+  \end{align*}
+  If $\overline{x}$ were a multiple root of $f$,
+  then $f(\overline{x}) = f_x(\overline{x}) = 0$.
+  By (1),
+  \[
+    1 = f(\overline{x}) g(\overline{x}) + f_x(\overline{x}) h(\overline{x}) = 0,
+  \]
+  which is absurd.
 \end{enumerate}
 $\Box$\\\\
 
