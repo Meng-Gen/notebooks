@@ -3689,8 +3689,162 @@ is a ring homomorphism whose kernel is $I(V)$.} \\
   if and only if $f \in I(V)$.
 
 \item[(4)]
-  Hence $k[x_1,\ldots,x_n]/I(V) = \Gamma(V) \hookrightarrow \mathscr{F}(V,k)$
-  is an injective homomorphism.
+  Hence,
+  \[
+    k[x_1,\ldots,x_n]/I(V) = \Gamma(V)
+    \cong
+    \{ \text{polynomial functions in $\mathscr{F}(V,k)$} \}
+  \]
+  as a ring isomorphism.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.2.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.2.*}
+\emph{Let $V \subseteq \mathbf{A}^n$ be a variety.
+A \textbf{subvariety} of $V$ is a variety $W \subseteq \mathbf{A}^n$ that is contained in $V$.
+Show that there is a natural one-to-one correspondence between
+algebraic subsets (resp. subvarieties, resp. points) of $V$
+and radical ideals (resp. prime ideals, resp. maximal ideals) of $\Gamma(V)$.
+(See Problems 1.22, 1.38.)} \\
+
+
+
+\emph{Proof.}
+Repeat Problem 1.38
+by replacing $k[x_1,\ldots,x_n]/I$ by $\Gamma(V)$.
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.3.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.3.*}
+\emph{Let $W$ be a subvariety of a variety $V$,
+and let $I_V(W)$ be the ideal of $\Gamma(V)$ corresponding to $W$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that every polynomial function on $V$ restricts to a polynomial function on $W$.}
+
+\item[(b)]
+  \emph{Show that the map from $\Gamma(V)$ to $\Gamma(W)$ defined in part (a)
+  is a surjective homomorphism with kernel $I_V(W)$,
+  so that $\Gamma(W)$ is isomorphic to $\Gamma(V)/I_V(W)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Given any polynomial function $f \in \mathscr{F}(V,k)$ on $V$.
+  There is a polynomial $g \in k[x_1,\ldots,x_n]$
+  such that $f(P) = g(P)$ for all $P \in V \supseteq W$; thus $f(P) = g(P)$ for all $P \in W$,
+  or $f|_W$ is a polynomial function on $W$.
+
+\item[(2)]
+  The map $\alpha: \{ \text{polynomial functions in $\mathscr{F}(V,k)$} \}
+  \to \{ \text{polynomial functions in $\mathscr{F}(W,k)$} \}$ in (1) is defined by
+  \[
+    \alpha(f) = f|_{W}.
+  \]
+  It is a ring homomorphism.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Identify $\Gamma(V)$ (resp. $\Gamma(W)$) with
+  the set of all polynomial functions in $\mathscr{F}(V,k)$
+  (resp. in $\mathscr{F}(W,k)$) by Problem 2.1.
+  The map
+  \[
+    \alpha: \Gamma(V) \to \Gamma(W)
+  \]
+  is defined by
+  \[
+    \alpha(f + I(V)) = f + I(W).
+  \]
+  It is well-defined by (a).
+
+\item[(2)]
+  \emph{Show that $\alpha$ is surjective.}
+  For any $f + I(W) \in \Gamma(W)$, take $f + I(V) \in \Gamma(V)$
+  and then $\alpha(f + I(V)) = f + I(W)$.
+  (The choice of $f + I(V)$ depends on the representation of $f + I(W)$
+  and thus might not be unique.)
+
+\item[(3)]
+  \emph{Show that $\ker(\alpha) = I_V(W)$, and thus $\Gamma(W) \cong \Gamma(V)/I_V(W)$.}
+  Since $\alpha$ is a surjective homomorphism,
+  \begin{align*}
+    \ker(\alpha)
+    &= \Gamma(V)/\Gamma(W) \\
+    &= (k[x_1,\ldots,x_n]/I(V))/(k[x_1,\ldots,x_n]/I(W)) \\
+    &= I(W)/I(V) \\
+    &= I_V(W).
+  \end{align*}
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.4.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.4.*}
+\emph{Let $V \subseteq \mathbf{A}^n$ be a nonempty variety.
+Show that the following are equivalent:}
+\begin{enumerate}
+\item[(i)]
+  \emph{$V$ is a point.}
+\item[(ii)]
+  \emph{$\Gamma(V) = k$.}
+\item[(iii)]
+  \emph{$\dim_k \Gamma(V) < \infty$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  (i) $\Longrightarrow$ (ii).
+  By Corollary 2 to the Hilbert's Nullstellensatz in \S 1.7,
+  $V = \{ (a_1,\ldots,a_n) \}$ corresponds to the maximal ideal
+  \[
+    I(V) = (x_1 - a_1, \ldots, x_n - a_n)
+  \]
+  in $k[x_1,\ldots,x_n]$.
+  Hence,
+  \[
+    \Gamma(V) = k[x_1,\ldots,x_n]/(x_1 - a_1, \ldots, x_n - a_n) \cong k
+  \]
+  (by Problem 1.24).
+
+\item[(2)]
+  (ii) $\Longrightarrow$ (iii).
+  $\dim_k(\Gamma(V)) = \dim_k(k) = 1 < \infty$.
+
+\item[(3)]
+  (iii) $\Longrightarrow$ (i).
+  By Corollary 4 to the Hilbert's Nullstellensatz in \S 1.7,
+  $V$ is a finite set of points in $\mathbf{A}^n$.
+  Since $V$ is a nonempty variety, $V$ is exactly a point.
 \end{enumerate}
 $\Box$\\\\
 
@@ -3707,8 +3861,8 @@ $\Box$\\\\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  PLACEHOLDER
 \end{enumerate}
+$\Box$\\\\
 
 
 
@@ -3718,6 +3872,22 @@ $\Box$\\\\
 
 \subsection*{2.2. Polynomial Maps \\}
 \addcontentsline{toc}{subsection}{2.2. Polynomial Maps}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
 
 
 
