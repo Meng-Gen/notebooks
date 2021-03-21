@@ -4064,13 +4064,69 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.8.}
+\addcontentsline{toc}{subsubsection}{Problem 2.8.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\{ (t,t^2,t^3) \in \mathbf{A}^3(k) : t \in k \}$ is an affine variety.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Show that $V(xz-y^2, yz - x^3, z^2-x^2y) \subseteq \mathbf{A}^3(\mathbb{C})$ is a variety.
+  (Hint: $y^3-x^4$, $z^3-x^5$, $z^4-y^5 \in I(V)$.
+  Find a polynomial map from $\mathbf{A}^1(\mathbb{C})$ onto $V$.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  Let $Y := \{ (t,t^2,t^3) \in \mathbf{A}^3(k) : t \in k \}$ be the twisted cubic curve.
+  By Problem 2.7, it suffices to show that
+  there is a polynomial map from $\mathbf{A}^1(k)$ onto $Y$.
+  Here we use the fact that $\mathbf{A}^1(k)$ is irreducible as $k = \overline{k}$ is infinite
+  (by Problem 1.29).
+
+\item[(2)]
+  Define a mapping $\varphi$ from $\mathbf{A}^1(k)$ to $Y$ by sending $t \in k$ to $(t,t^2,t^3) \in Y$.
+  $\varphi$ is a polynomial map. Also, $\varphi$ is surjective.
+\end{enumerate}
+$\Box$\\
+
+\emph{Note.}
+  Also see Problems 1.11 and 1.33 (for the case $k = \mathbb{C}$). \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  We prove for any algebraically closed field $k$.
+
+\item[(2)]
+  Write
+  \begin{align*}
+    V &= V(xz-y^2, yz - x^3, z^2-x^2y), \\
+    Y &= \{ (t^3,t^4,t^5) \in \mathbf{A}^3(k) : t \in k \}.
+  \end{align*}
+  We want to show that $Y = V$. $Y \subseteq V$ is trivial.
+  Now given any $(x,y,z) \in V$.
+  If $x = 0$, then $y = z = 0$. So $(x,y,z) = (0,0,0) \in Y$.
+  If $x \neq 0$, define
+  \[
+    t = \frac{y}{x} \in k.
+  \]
+  Hence,
+  \begin{align*}
+    t^3 &= \frac{y^3}{x^3} = \frac{y(xz)}{x^3} = \frac{yz}{x^2} = \frac{x^3}{x^2} = x, \\
+    t^4 &= tx = y, \\
+    t^5 &= ty = \frac{y^2}{x} = \frac{xz}{x} = z.
+  \end{align*}
+
+\item[(3)]
+  Same as (a).
+  Define a mapping $\varphi$ from $\mathbf{A}^1(k)$ to $Y = V$
+  by sending $t \in k$ to $(t^3,t^4,t^5) \in Y = V$.
 \end{enumerate}
 $\Box$\\\\
 
