@@ -4001,13 +4001,60 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.7.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.7.*}
+\emph{If $\varphi: V \to W$ is a polynomial map,
+and $X$ is an algebraic subset of $W$,
+show that $\varphi^{-1}(X)$ is an algebraic subset of $V$.
+If $\varphi^{-1}(X)$ is irreducible,
+and $X$ is contained in the image of $\varphi$, show that $X$ is irreducible.
+This gives a useful test for irreducibility.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\varphi^{-1}(X) = V(\widetilde{\varphi}(I(X)))$ is algebraic.}
+  \begin{align*}
+    P \in \varphi^{-1}(X)
+    &\Longleftrightarrow
+    \varphi(P) \in X \\
+    &\Longleftrightarrow
+    f(\varphi(P)) = 0 \: \forall f \in I(X) \\
+    &\Longleftrightarrow
+    \widetilde{\varphi}(f)(P) = 0 \: \forall f \in I(X) \\
+    &\Longleftrightarrow
+    g(P) = 0 \: \forall g \in \widetilde{\varphi}(I(X)) \\
+    &\Longleftrightarrow
+    P \in V(\widetilde{\varphi}(I(X))).
+  \end{align*}
+  Also note that $\widetilde{\varphi}(I(X))$ is an ideal in $k[x_1,\ldots,x_n]$
+  since $\varphi$ is a polynomial map.
+
+\item[(2)]
+  \emph{If $\varphi^{-1}(X)$ is irreducible,
+  and $X$ is contained in the image of $\varphi$, show that $X$ is irreducible.}
+  (Reductio ad absurdum)
+  Suppose that $X$ were reducible or $I(X)$ were not prime.
+  So that there exist two polynomials $f_1, f_2 \not\in I(X)$ but $f_1 f_2 \in I(X)$.
+  By definition of $I(X)$, there exist two points $P_1, P_2 \in X$
+  such that $f_i(P_i) \neq 0$ for $i = 1, 2$.
+
+\item[(3)]
+  Since $X$ is contained in the image of $\varphi$,
+  there are two corresponding points $Q_1, Q_2 \in \varphi^{-1}(X)$ such that
+  $\varphi(Q_i) = P_i$.
+  So $\widetilde{\varphi}(f_i)(Q_i) = f_i(P_i) \neq 0$,
+  or $\widetilde{\varphi}(f_i) \not\in I(\varphi^{-1}(X))$.
+  However
+  \[
+    \widetilde{\varphi}(f_1)\widetilde{\varphi}(f_2)
+    = \widetilde{\varphi}(f_1 f_2)
+    \in I(\varphi^{-1}(X))
+  \]
+  since $f_1 f_2 \in I(X)$,
+  contrary to the primality of $I(\varphi^{-1}(X))$.
 \end{enumerate}
 $\Box$\\\\
 
