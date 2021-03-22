@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
+\usepackage{mathtools}
 \parindent=0pt
 
 
@@ -3919,15 +3920,12 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \subsection*{2.2. Polynomial Maps \\}
 \addcontentsline{toc}{subsection}{2.2. Polynomial Maps}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -4244,6 +4242,7 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -4252,6 +4251,7 @@ $\Box$\\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -4262,6 +4262,7 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -4271,6 +4272,7 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -4279,6 +4281,7 @@ $\Box$\\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -4290,19 +4293,19 @@ $\Box$\\\\
 
 \subsubsection*{Problem 2.37.}
 \addcontentsline{toc}{subsubsection}{Problem 2.37.}
-\emph{What are the additive and multiplicative identities in $\prod R_i$?
-Is the map from $R_i$ to $\prod R_i$ taking $a_i$ to $(0,\ldots,a_i,\ldots,0)$ a ring homomorphism?} \\
+\emph{What are the additive and multiplicative identities in $\bigtimes R_i$?
+Is the map from $R_i$ to $\bigtimes R_i$ taking $a_i$ to $(0,\ldots,a_i,\ldots,0)$ a ring homomorphism?} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  $(0, \ldots, 0)$ is the additive identity in $\prod R_i$.
+  $(0, \ldots, 0)$ is the additive identity in $\bigtimes R_i$.
 
 \item[(2)]
-  $(1, \ldots, 1)$ is the multiplicative identity in $\prod R_i$.
+  $(1, \ldots, 1)$ is the multiplicative identity in $\bigtimes R_i$.
 
 \item[(3)]
-  The map $\alpha: R_i \to \prod R_i$ taking $a_i$ to $(0,\ldots,a_i,\ldots,0)$
+  The map $\alpha: R_i \to \bigtimes R_i$ taking $a_i$ to $(0,\ldots,a_i,\ldots,0)$
   is not a ring homomorphism if $i > 1$
   since
   \[
@@ -4322,13 +4325,13 @@ $\Box$\\\\
 \addcontentsline{toc}{subsubsection}{Problem 2.38.*}
 \emph{Show that if $k \subseteq R_i$,
 and each $R_i$ is finite-dimensional over $k$, then
-$\dim\left(\prod R_i\right) = \sum \dim(R_i)$.} \\
+$\dim\left(\bigtimes R_i\right) = \sum \dim(R_i)$.} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
   In the terminology of linear algebra,
-  $\prod R_i$ is the direct sum $\bigoplus R_i$ of $R_i$.
+  $\bigtimes R_i$ is the direct sum $\bigoplus R_i$ of $R_i$.
 
 \item[(2)]
   Hence,
@@ -4340,6 +4343,7 @@ $\Box$\\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -4462,6 +4466,118 @@ $\Box$\\
       \cdots
       (\underbrace{x_{j(1),n} \cdots x_{j(N),n}}_{\in I_1 \cdots I_N}) \\
     &\in (I_1 \cdots I_N)^n.
+  \end{align*}
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.40.* (Chinese remainder theorem)}
+\addcontentsline{toc}{subsubsection}{Problem 2.40.* (Chinese remainder theorem)}
+\begin{enumerate}
+\item[(a)]
+  \emph{Suppose $I, J$ are comaximal ideals in $R$.
+  Show that $I + J^2 = R$. Show that $I^m$ and $J^n$ are comaximal for all $m, n$.}
+
+\item[(b)]
+  \emph{Suppose $I_1, \ldots, I_N$ are ideals in $R$,
+  and $I_i$ and $J_i = \cap_{j \neq i} I_j$ are comaximal for all $i$.
+  Show that
+  \[
+    I_1^{n} \cap \cdots \cap I_N^{n}
+    = (I_1 \cdots I_N)^{n}
+    = (I_1 \cap \cdots \cap I_N)^{n}
+  \]
+  for all $n$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  It suffices to show that $I^m + J^n = R$.
+
+\item[(2)]
+  Since $I^m + J^n \subseteq R$ is always true,
+  it suffices to show that $I^m + J^n \supseteq R$.
+  In fact,
+  \begin{align*}
+    R
+    &= R^{m+n-1}
+      &(1 \in R) \\
+    &= (I+J)^{m+n-1}
+      &(\text{$I, J$ are comaximal}) \\
+    &= \sum_{i=0}^{m+n-1} I^i J^{m+n-1-i}
+      &(\text{Problem 2.39}) \\
+    &\subseteq I^m + J^n
+  \end{align*}
+  for all positive integers $m, n$.
+  (If $m = 0$ or $n = 0$, then nothing to prove.)
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $I_i$ and $I_j$ are comaximal if $i \neq j$.}
+  Note that
+  \[
+    R = I_i + J_i \subseteq I_i + I_j \subseteq R
+  \]
+  if $i \neq j$.
+
+\item[(2)]
+  \emph{If $I_i$ is comaximal to $I_j$ and $I_{j'}$.
+  Show that $I_i$ is also comaximal to $I_j I_{j'}$.}
+  \begin{align*}
+    R
+    &= (I_i + I_j)(I_i + I_{j'}) \\
+    &= I_i(I_i + I_j + I_{j'}) + I_j I_{j'}
+      &(\text{Problem 2.39(a)}) \\
+    &\subseteq I_i + I_j I_{j'} \subseteq R.
+  \end{align*}
+
+\item[(3)]
+  By (2), it is easy to get that $I_i$ and $\prod_{j \neq i} I_j$
+  are comaximal by induction on the number of $I_j$ for $j \neq i$.
+
+\item[(4)]
+  \emph{Show that $I_1 \cdots I_N = I_1 \cap \cdots \cap I_N$.}
+  Induction on $N$.
+  \begin{align*}
+    I_1 \cap \cdots \cap I_N
+    &= I_1 \cap (I_2 \cap \cdots \cap I_N) \\
+    &= I_1 \cap (I_2 \cdots I_N)
+      &(\text{Induction hypothesis}) \\
+    &= I_1 \cdot (I_2 \cdots I_N)
+      &(\text{(3)}) \\
+    &= I_1 \cdots I_N.
+  \end{align*}
+
+\item[(5)]
+  Note that $I_i^n$ and $I_j^n$ are comaximal if $i \neq j$ by (a).
+  We can apply the same argument in (2)(3)(4) to show that
+  \[
+    I_1^{n} \cdots I_N^{n} = I_1^{n} \cap \cdots \cap I_N^{n}.
+  \]
+
+\item[(6)]
+  Therefore,
+  \begin{align*}
+    (I_1 \cap \cdots \cap I_N)^{n}
+    &= (I_1 \cdots I_N)^{n}
+      &((4)) \\
+    &= I_1^{n} \cdots I_N^{n}
+      &(\text{Problem 2.39(b)}) \\
+    &= I_1^{n} \cap \cdots \cap I_N^{n}
+      &((5)).
   \end{align*}
 \end{enumerate}
 $\Box$\\\\
@@ -4607,6 +4723,87 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem PLACEHOLDER}
+\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
+\emph{PLACEHOLDER} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsection*{2.9. Ideals with a Finite Number of Zeros \\}
 \addcontentsline{toc}{subsection}{2.9. Ideals with a Finite Number of Zeros}
 
@@ -4653,6 +4850,7 @@ $\Box$\\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -4842,6 +5040,7 @@ $\Box$\\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
