@@ -4560,6 +4560,47 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 2.47.}
+\addcontentsline{toc}{subsubsection}{Problem 2.47.}
+\emph{Suppose $R$ is a ring containing $k$, and $R$ is finite dimensional over $k$.
+Show that $R$ is isomorphic to a direct product of local rings.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $\{ v_1, \ldots, v_n \}$ be a basis for $R$ over $k$ (as a vector space).
+  Define a $k$-module homomorphism $\alpha: k[x_1,\ldots,x_n] \to R$
+  by $\alpha(x_i) = v_i$.
+  Clearly, $\alpha$ is surjective and thus
+  \[
+    R \cong k[x_1,\ldots,x_n]/\ker(\alpha)
+  \]
+  as a $k$-module isomorphism.
+  Note that $\ker(\alpha)$ is an ideal of $k[x_1,\ldots,x_n]$.
+
+\item[(2)]
+  Write $I := \ker(\alpha)$.
+  Hence,
+  \[
+    \dim_k(k[x_1,\ldots,x_n]/I) = \dim_k(R) < \infty.
+  \]
+  By Corollary 4 to the Hilbert's Nullstellensatz in \S 1.7,
+  $V(I)$ is finite.
+
+\item[(3)]
+  Write $V(I) = \{ P_1, \ldots, P_N \}$ and $\mathcal{O}_i = \mathcal{O}_{P_i}(\mathbf{A}^n)$.
+  By Proposition 6,
+  \[
+    R \cong k[x_1,\ldots,x_n]/I \cong \prod_{i=1}^{N} \mathcal{O}_i/I\mathcal{O}_i,
+  \]
+  which is isomorphic to a direct product of local rings.
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
