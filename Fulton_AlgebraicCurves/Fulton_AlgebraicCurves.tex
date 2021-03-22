@@ -4271,6 +4271,39 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.23*}
+\addcontentsline{toc}{subsubsection}{Problem 2.23*}
+\emph{Show that the order function on $K$ is independent of the choice of uniformizing parameter.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that a uniformizing parameter is unique up to a unit.}
+  Suppose $t$ and $t'$ are two uniformizing parameters
+  for a discrete valuation ring $R$ with the quotient field $K$.
+  Since $R$ is a DVR, the maximal ideal is
+  \[
+    \mathfrak{m} = (t) = (s).
+  \]
+  As $s \in (t)$, there is an element $a \in R$ such that $s = at$.
+  As $s$ is irreducible (by the maximality of $\mathfrak{m}$),
+  $a$ is a unit or $t$ is a unit (which is impossible).
+  Hence $s = at$ for some unit $a \in R$.
+
+\item[(2)]
+  For any $z \in K$, write
+  \[
+    z = ut^n = v{s}^{m}
+  \]
+  for some units $u, v$ and integers $n \geq m$. (The case $n \leq m$ is similar.)
+  Replace $s = at$ to get $u t^n = v a^m t^m$.
+  So $t^{n - m} = u^{-1}v a^m$ is a unit.
+  Hence, $m = n$, or the order function on $K$ is independent of the choice of uniformizing parameter.
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
