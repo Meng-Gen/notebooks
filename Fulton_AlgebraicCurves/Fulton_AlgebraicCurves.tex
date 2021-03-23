@@ -4304,6 +4304,161 @@ $\Box$\\\\
 
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.28.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.28.*}
+\emph{An order function on a field $K$ is a function $\varphi$
+from $K$ onto $\mathbb{Z} \cup \{ \infty \}$, satisfying:}
+\begin{enumerate}
+\item[(i)]
+  \emph{$\varphi(a) = \infty$ if and only if $a = 0$.}
+
+\item[(ii)]
+  \emph{$\varphi(ab) = \varphi(a) + \varphi(b)$.}
+
+\item[(iii)]
+  \emph{$\varphi(a + b) \geq \min(\varphi(a), \varphi(b))$.}
+\end{enumerate}
+\emph{Show that $R = \{z \in K : \varphi(z) \geq 0 \}$ is a DVR
+with maximal ideal $\mathfrak{m} = \{ z \in K : \varphi(z) > 0 \}$, and quotient field $K$.
+Conversely, show that if $R$ is a DVR with quotient field $K$,
+then the function $\mathrm{ord}: K \to \mathbb{Z} \cup \{ \infty \}$ is an order function on $K$.
+Giving a DVR with quotient field $K$ is equivalent to defining an order function on $K$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\varphi(1) = 0$.}
+  Note that $\varphi(1) = \varphi(1 \cdot 1) = \varphi(1) + \varphi(1)$ by (ii).
+  By Property (i) of $\varphi$,
+  we cancel $\varphi(1) \in \mathbb{Z}$ on the both side to get $\varphi(1) = 0$.
+
+\item[(2)]
+  \emph{Show that $\varphi(-z) = \varphi(z)$ for all $z \in K$,
+  and $\varphi(z^{-1}) = -\varphi(z)$ for all $z \in K - \{0\}$.}
+  Note that $\varphi(-1) = 0$
+  since $0 = \varphi(1) = \varphi((-1) \cdot (-1)) = \varphi(-1) + \varphi(-1)$ (by (1)).
+  Therefore,
+  \[
+    \varphi(-z) = \varphi((-1) \cdot z) = \varphi(-1) + \varphi(z) = \varphi(z).
+  \]
+  Besides,
+  \[
+    0 = \varphi(1) = \varphi(z z^{-1}) = \varphi(z) + \varphi(z^{-1})
+  \]
+  if $z \neq 0$. So $\varphi(z^{-1}) = -\varphi(z)$ if $z \neq 0$.
+
+\item[(3)]
+  \emph{Show that $R = \{z \in K : \varphi(z) \geq 0 \}$ is a ring.}
+  \begin{enumerate}
+  \item[(a)]
+    $R \neq \varnothing$ since $1 \in R$.
+
+  \item[(b)]
+    If $a, b \in R$, then
+    \[
+      \varphi(a-b)
+      \geq \min(\varphi(a), \varphi(-b))
+      = \min(\varphi(a), \varphi(b))
+      \geq 0
+    \]
+    (by (2)), or $a - b \in R$.
+
+  \item[(c)]
+    If $a, b \in R$, then $\varphi(ab) = \varphi(a) + \varphi(b) \geq 0$.
+  \end{enumerate}
+  By the subring test, $R$ is a subring of $K$.
+
+\item[(4)]
+  \emph{Show that $\{ z \in K - \{0\}: \varphi(z) = 0 \}$ is the set of all units in $R$.}
+  Given any $z \in K - \{0\}$, we have
+  \[
+    0 = \varphi(z) + \varphi(z^{-1})
+  \]
+  (by (2)).
+  Hence $z$ is a unit in $R$ iff
+  $z, z^{-1} \in R$ iff $\varphi(z) = \varphi(z^{-1}) = 0$.
+
+\item[(5)]
+  \emph{Show that $\mathfrak{m} = \{ z \in K : \varphi(z) > 0 \}$ is a maximal ideal of $R$.}
+  \begin{enumerate}
+  \item[(a)]
+    If $a, b \in \mathfrak{m}$, then $\varphi(a+b) \geq \min(\varphi(a), \varphi(b)) > 0$.
+
+  \item[(b)]
+    If $a \in \mathfrak{m}$ and $r \in R$,
+    then $\varphi(ra) = \varphi(r) + \varphi(a) \geq \varphi(a) > 0$.
+
+  \item[(c)]
+    By (a)(b), $\mathfrak{m}$ is an ideal of $R$.
+
+  \item[(d)]
+    Note that each proper ideal in $R$ does not have any unit, that is,
+    such proper ideal is contained in $\{ z \in K : \varphi(z) > 0 \} = \mathfrak{m}$ exactly (by (4)).
+    Therefore, $\mathfrak{m}$ is maximal.
+    (Such maximal ideal $\mathfrak{m}$ is unique and thus $R$ is a local ring.)
+  \end{enumerate}
+
+\item[(6)]
+  \emph{Show that $R$ is a DVR.}
+  It suffices to show that there is an irreducible element $t \in R$
+  such that every nonzero $z \in R$ may be written uniquely in the form $z = ut^n$,
+  $u$ a unit in $R$, $n$ a nonnegative integer.
+  Since $\varphi$ is surjective, there is an element $t \in R$
+  such that $\varphi(t) = 1$.
+  Note that $t \neq 0$ and irreducible (by using Property (ii) of $\varphi$).
+  Hence for any nonzero $z \in R$ with $n := \varphi(z) \in \mathbb{Z}$ and $n \geq 0$,
+  the order of $z t^{-n} \in K$ is
+  \[
+    \varphi(z t^{-n}) = \varphi(z) - n \varphi(t) = n - n \cdot 1 = 0
+  \]
+  (by (2)).
+  That is, $z t^{-n} = u$ is a unit in $R$ (by (4)).
+  Hence $z = ut^n$ for some unit $u \in R$
+  and nonnegative integer $n$.
+  Note that $n$ is uniquely determined by $\varphi(z)$.
+  By Proposition 4, $R$ is a DVR.
+
+\item[(7)]
+  \emph{Show that the quotient field of $R$ is $K$.}
+  Since $R$ is a DVR, the quotient field of $R$ is contained in $K$.
+  Conversely, given any $z \in K$.
+  If $\varphi(z) \geq 0$, then $z \in R \subseteq K$.
+  If $\varphi(z) < 0$, then $\varphi(z^{-1}) = -\varphi(z) > 0$ or $z^{-1} \in R$.
+  Hence $z = 1/z^{-1} \in K$ is in the quotient field of $R$.
+
+\item[(8)]
+  \emph{Show that giving a DVR with quotient field $K$
+  is equivalent to defining an order function on $K$.}
+  It suffices to show that $\mathrm{ord}(\cdot)$ on $K$ defines an order function $\varphi$ on $K$.
+  By Problem 2.29,
+  it suffices to show that
+  \[
+    \mathrm{ord}(a + b) \geq \min(\mathrm{ord}(a), \mathrm{ord}(b))
+  \]
+  if $\mathrm{ord}(a) = \mathrm{ord}(b) := n$.
+  Write $a = ut^n, b = vt^n$ where $u, v$ are units in $R$.
+  Hence,
+  \begin{align*}
+    \mathrm{ord}(a + b)
+    &= \mathrm{ord}(ut^n + vt^n) \\
+    &= \mathrm{ord}((u+v)t^n) \\
+    &= \mathrm{ord}(u+v) + n \\
+    &\geq n
+      &(u+v \in R) \\
+    &= \min(\mathrm{ord}(a), \mathrm{ord}(b)).
+  \end{align*}
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
