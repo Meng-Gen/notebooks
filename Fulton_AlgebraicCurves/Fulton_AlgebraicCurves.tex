@@ -4305,6 +4305,84 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.29.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.29.*}
+\emph{Let $R$ be a DVR with quotient field $K$, $\mathrm{ord}$ the order function on $K$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $\mathrm{ord}(a) < \mathrm{ord}(b)$,
+  show that $\mathrm{ord}(a + b) = \mathrm{ord}(a)$.}
+\item[(b)]
+  \emph{If $a_1, \ldots, a_n \in K$, and for some $i$,
+  $\mathrm{ord}(a_i) < \mathrm{ord}(a_j)$ (all $j \neq i$),
+  then $a_1 + \cdots + a_n \neq 0$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Let $t$ be a uniformizing parameter for $R$.
+  Given any $a, b \in K$.
+  Write $a = ut^n, b = vt^m$ where $u, v$ are units in $R$ and $n, m$ are integers.
+
+\item[(2)]
+  Since $\mathrm{ord}(a) < \mathrm{ord}(b)$, $n < m$.
+  Hence,
+  \[
+    a + b = (u + vt^{m-n}) t^n.
+  \]
+  To show that $\mathrm{ord}(a + b) = \mathrm{ord}(a) = n$,
+  it suffices to show that $u + vt^{m-n}$ is a unit in $R$.
+
+\item[(3)]
+  (Reductio ad absurdum)
+  Suppose that $u + vt^{m-n}$ were not a unit.
+  Since $R$ is local, the maximal ideal $(t)$ contains all nonunit elements in $R$.
+  Hence, $u + vt^{m-n} \in (t)$. As $m - n > 0$, $vt^{m-n} \in (t)$
+  and thus a unit $u \in (t)$, contrary to the maximality of $(t)$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $\mathrm{ord}(a_1) < \mathrm{ord}(a_j)$ (all $j \neq 1$).
+  In particular, $\mathrm{ord}(a_1) < \infty$.
+
+\item[(2)]
+  Similar to (a).
+  Let $t$ be a uniformizing parameter for $R$.
+  Write $a_i = u_i t^{m_i}$ where $u_i$ are units in $R$ and $m_i$ are integers.
+  ($i = 1, \ldots, n$.)
+  Since $\mathrm{ord}(a_1) < \mathrm{ord}(a_j)$ (all $j \neq 1$), $m_1 < m_j$.
+  Hence,
+  \[
+    a_1 + \cdots + a_n
+    = (u_1
+      + \underbrace{u_2 t^{m_2 - m_1} + \cdots + u_n t^{m_n - m_1}}_{\in (t)}) t^{m_1}.
+  \]
+  So $u_1 + u_2 t^{m_2 - m_1} + \cdots + u_n t^{m_n - m_1}$ is a unit in $R$.
+
+\item[(3)]
+  By (1)(2),
+  \[
+    \mathrm{ord}(a_1 + \cdots + a_n) = \mathrm{ord}(a_1) < \infty,
+  \]
+  or $a_1 + \cdots + a_n \neq 0$
+  (since $\mathrm{ord}$ is the order function on $K$).
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
