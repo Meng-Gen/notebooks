@@ -4309,6 +4309,60 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.26*}
+\addcontentsline{toc}{subsubsection}{Problem 2.26*}
+\emph{Let $R$ be a DVR with quotient field $K$; let $\mathfrak{m}$ be the maximal ideal of $R$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that if $z \in K$, $z \not\in R$, then $z^{-1} \in \mathfrak{m}$.}
+
+\item[(b)]
+  \emph{Suppose $R \subseteq S \subseteq K$, and $S$ is also a DVR.
+  Suppose the maximal ideal of $S$ contains $\mathfrak{m}$.
+  Show that $S = R$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Suppose $t$ is one uniformizing parameter for $R$.
+  If $z \in K - R$,
+  then we can write $z = ut^{-n}$ for some unit $u \in R$ and $n \in \mathbb{Z}^{+}$.
+
+\item[(2)]
+  Hence,
+  \[
+    z^{-1} = u^{-1} t^n.
+  \]
+  Since $u^{-1}$ is a unit in $R$ and $n > 0$, $z^{-1} \in \mathfrak{m}$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  (Reductio ad absurdum)
+  Suppose $z \in S - R \subseteq K - R$.
+  By (a), $z^{-1} \in \mathfrak{m}$.
+  So $z^{-1}$ is in the maximal ideal $\mathfrak{m}'$ of $S$ containing $\mathfrak{m}$.
+
+\item[(2)]
+  As $\mathfrak{m}'$ is an ideal,
+  $1 = z \cdot z^{-1} \in \mathfrak{m}'$, which is absurd.
+  Therefore, $S = R$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 2.28.*}
 \addcontentsline{toc}{subsubsection}{Problem 2.28.*}
 \emph{An order function on a field $K$ is a function $\varphi$
