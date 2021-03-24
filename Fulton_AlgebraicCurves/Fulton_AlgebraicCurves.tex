@@ -4154,13 +4154,61 @@ $\Box$\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.9.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.9.*}
+\emph{Let $\varphi: V \to W$ be a polynomial map of affine varieties,
+$V' \subseteq V$, $W' \subseteq W$ subvarieties.
+Suppose $\varphi(V') \subseteq W'$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\widetilde{\varphi} (I_W(W')) \subseteq I_V(V')$ (see Problems 2.3).}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Show that the restriction of $\varphi$ gives a polynomial map from $V'$ to $W'$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  It suffices to show that $f \in I_V(V')$
+  for any $f = \widetilde{\varphi}(g) \in \widetilde{\varphi} (I_W(W'))$
+  for some $g \in I_W(W')$.
+
+\item[(2)]
+  To show $f \in I_V(V')$, it suffices to show that $f(P) = 0$ for all $P \in \varphi(V')$.
+  In fact,
+  \[
+    f(P) = \widetilde{\varphi}(g)(P) = g(\varphi(P)) = 0
+  \]
+  since $\varphi(V') \subseteq W'$ and $g \in I_W(W')$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Similar to Problem 2.3.
+
+\item[(2)]
+  Since $\varphi$ is a polynomial map,
+  there are polynomials $t_1,\ldots,t_m \in k[x_1,\ldots,x_n]$
+  such that
+  \[
+    \varphi(P) = (t_1(P),\ldots,t_m(P)) \in W
+  \]
+  for all $P \in V$.
+  So that $\varphi|_{V'}: V' \to \varphi(V') \subseteq W'$ is also a polynomial map
+  which is equipped with the same polynomials $t_1,\ldots,t_m$
+  such that
+  \[
+    \varphi(P) = (t_1(P),\ldots,t_m(P)) \in W' \subseteq W
+  \]
+  for all $P \in V' \subseteq V$.
+  (Note that both $V'$ and $W'$ are affine varieties.)
 \end{enumerate}
 $\Box$\\\\
 
