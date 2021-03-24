@@ -1477,8 +1477,8 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem 1.22.*}
-\addcontentsline{toc}{subsubsection}{Problem 1.22.*}
+\subsubsection*{Problem 1.22.* (Correspondence theorem for rings)}
+\addcontentsline{toc}{subsubsection}{Problem 1.22.* (Correspondence theorem for rings)}
 \emph{Let $I$ be an ideal in a ring $R$, $\pi: R \to R/I$ the natural homomorphism.}
 \begin{enumerate}
 \item[(a)]
@@ -4271,8 +4271,8 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem 2.23*}
-\addcontentsline{toc}{subsubsection}{Problem 2.23*}
+\subsubsection*{Problem 2.23.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.23.*}
 \emph{Show that the order function on $K$ is independent of the choice of uniformizing parameter.} \\
 
 \emph{Proof.}
@@ -4304,13 +4304,12 @@ $\Box$\\\\
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-\subsubsection*{Problem 2.26*}
-\addcontentsline{toc}{subsubsection}{Problem 2.26*}
+\subsubsection*{Problem 2.26.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.26.*}
 \emph{Let $R$ be a DVR with quotient field $K$; let $\mathfrak{m}$ be the maximal ideal of $R$.}
 \begin{enumerate}
 \item[(a)]
@@ -4626,12 +4625,13 @@ Is the map from $R_i$ to $\bigtimes R_i$ taking $a_i$ to $(0,\ldots,a_i,\ldots,0
 
 \item[(3)]
   The map $\alpha: R_i \to \bigtimes R_i$ taking $a_i$ to $(0,\ldots,a_i,\ldots,0)$
-  is not a ring homomorphism if $i > 1$
+  is not a ring homomorphism
   since
   \[
     \alpha(1) = (0,\ldots,1,\ldots,0) \neq (1, \ldots, 1),
   \]
-  or $\alpha$ is not multiplicative identity preserving.
+  or $\alpha$ is not multiplicative identity preserving
+  (if $R_j$ is not the zero ring for some $j \neq i$).
 \end{enumerate}
 $\Box$\\\\
 
@@ -5043,13 +5043,85 @@ $\Box$ \\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.42.* (Isomorphism theorems for rings)}
+\addcontentsline{toc}{subsubsection}{Problem 2.42.* (Isomorphism theorems for rings)}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $I \subseteq J$ be ideals in a ring $R$.
+  Show that there is a natural ring homomorphism from $R/I$ onto $R/J$.}
 
-\emph{Proof.}
+\item[(b)]
+  \emph{Let $I$ be an ideal in a ring $R$, $R$ a subring of a ring $S$.
+  Show that there is a natural ring homomorphism from $R/I$ to $S/IS$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  Define a map $\alpha: R/I \to R/J$ by $\alpha(r + I) = r + J$.
+
+\item[(2)]
+  \emph{Show that $\alpha$ is well-defined.}
+  If $a+I = b+I$,
+  then $a-b \in I \subseteq J$ or $a+J = b+J$.
+  Hence, $\alpha(a+I) = a+J = b+J = \alpha(b+I)$.
+
+\item[(3)]
+  \emph{Show that $\alpha$ is a surjective homomorphism.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{$\alpha$ is addition preserving.}
+    \begin{align*}
+      \alpha((a+I) + (b+I))
+      &= \alpha(a+b + I) \\
+      &= a+b + J \\
+      &= (a+J) + (b+J) \\
+      &= \alpha(a+I) + \alpha(b+I).
+    \end{align*}
+
+  \item[(b)]
+    \emph{$\alpha$ is multiplication preserving.}
+    \begin{align*}
+      \alpha((a+I)(b+I))
+      &= \alpha(ab + I) \\
+      &= ab + J \\
+      &= (a+J)(b+J) \\
+      &= \alpha(a+I)\alpha(b+I).
+    \end{align*}
+
+  \item[(c)]
+    \emph{$\alpha$ is multiplicative identity preserving.}
+    $\alpha(1+I) = 1+J$.
+
+  \item[(d)]
+    $\alpha$ is surjective since for any $a+J \in R/J$
+    there is an element $a+I \in R/I$ such that $\alpha(a+I) = a+J$.
+  \end{enumerate}
+
+\item[(4)]
+  Note that $\ker(\alpha) = J/I$. So $(R/I)/(J/I) \cong R/J$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  $I$ is not necessary an ideal of $S$; $IS$ an ideal of $S$ (and thus $S/IS$ is well-defined).
+
+\item[(2)]
+  Define a map $\alpha: R/I \to S/IS$ by $\alpha(r + I) = r + IS$.
+  Note that $I \subseteq IS$ as a subset in $S$.
+  Apply the same argument in (a),
+  $\alpha$ is well-defined
+  and $\alpha$ is a surjective homomorphism.
+
+\item[(3)]
+    Note that $\ker(\alpha) = (R \cap SI)/I$.
+    So $(R/I)/((R \cap SI)/I) \cong S/IS$.
 \end{enumerate}
 $\Box$\\\\
 
