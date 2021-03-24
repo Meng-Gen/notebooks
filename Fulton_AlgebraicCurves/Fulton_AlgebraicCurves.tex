@@ -5163,13 +5163,40 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.45.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.45.*}
+\emph{Show that ideals $I, J \subseteq k[x_1,\ldots,x_n]$ ($k$ algebraically closed) are comaximal
+if and only if $V(I) \cap V(J) = \varnothing$.} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $V(I) \cap V(J) = V(I + J)$.}
+  \begin{align*}
+    P \in V(I) \cap V(J)
+    &\Longleftrightarrow
+    f(P) = 0 \: \forall f \in I \text{ and } g(P) = 0 \: \forall g \in J \\
+    &\Longleftrightarrow
+    f(P) = 0 \: \forall f \in I + J \\
+    &\Longleftrightarrow
+    P \in V(I + J).
+  \end{align*}
+
+\item[(2)]
+  Hence,
+  \begin{align*}
+    \varnothing = V(I) \cap V(J)
+    &\Longleftrightarrow
+    \varnothing = V(I + J)
+      &((1)) \\
+    &\Longleftrightarrow
+    I + J = k[x_1,\ldots,x_n]
+      &(\text{Weak Nullstellensatz}) \\
+    &\Longleftrightarrow
+    \text{$I$ and $J$ are comaximal}.
+  \end{align*}
 \end{enumerate}
 $\Box$\\\\
 
