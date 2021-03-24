@@ -4245,13 +4245,89 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.11.}
+\addcontentsline{toc}{subsubsection}{Problem 2.11.}
+\emph{Let $f \in \Gamma(V)$, $V$ a variety $\subseteq \mathbf{A}^n$.
+Define
+\begin{align*}
+  G(f) &= \{ (a_1,\ldots,a_n,a_{n+1}) \in \mathbf{A}^{n+1} \\
+  &\qquad : (a_1,\ldots,a_n) \in V \text{ and } a_{n+1} = f (a_1,\ldots,a_n) \},
+\end{align*}
+the \textbf{graph} of $f$.
+Show that $G(f)$ is an affine variety,
+and that the map $(a_1,\ldots,a_n) \mapsto (a_1,\ldots,a_n,f(a_1,\ldots,a_n))$
+defines an isomorphism of $V$ with $G(f)$. (Projection gives the inverse.)} \\
+
+
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Define $I = I(V)$ as an ideal in $k[x_1,\ldots,x_n]$.
+  Note that
+  \[
+    G(f) = V\underbrace{(I, x_{n+1} - f)}_{:= J}.
+  \]
+  Here we can view $I$ as an ideal of $k[x_1,\ldots,x_n,x_{n+1}]$.
+
+\item[(2)]
+  To show that $G(f)$ is an affine variety, it suffices to show that
+  \[
+    I(G(f)) = I(V(J)) = \mathrm{rad}(J)
+  \]
+  is prime (by Proposition 1 in \S 1.5 and the Hilbert's Nullstellensatz in \S 1.7).
+  Suppose $gh \in I(G(f)) = \mathrm{rad}(J)$. Write
+  \begin{align*}
+    g
+    &= \sum_{i} g_i x_{n+1}^i
+    = \sum_{i} g_i (\underbrace{(x_{n+1} - f)}_{\in J} + f)^i, \\
+    h
+    &= \sum_{j} h_j x_{n+1}^j
+    = \sum_{j} h_j (\underbrace{(x_{n+1} - f)}_{\in J} + f)^j
+  \end{align*}
+  where $g_i, h_j \in k[x_1,\ldots,x_n]$.
+
+\item[(3)]
+  Hence
+  \begin{align*}
+    \mathrm{rad}(J)
+    &= gh + \mathrm{rad}(J)
+      &(gh \in \mathrm{rad}(J)) \\
+    &= (g + \mathrm{rad}(J))(h + \mathrm{rad}(J)) \\
+    &= \left( \sum_{i} g_i f^i + \mathrm{rad}(J) \right)
+      \left( \sum_{j} h_j f^j + \mathrm{rad}(J) \right)
+      &(x_{n+1} - f \in J) \\
+    &= \left( \sum_{i} g_i f^i \right)
+      \left( \sum_{j} h_j f^j \right) + \mathrm{rad}(J)
+  \end{align*}
+  or
+  \[
+    \underbrace{\left( \sum_{i} g_i f^i \right)^N
+      \left( \sum_{j} h_j f^j \right)^N}_{\in k[x_1,\ldots,x_n]}
+    \in J = (I, x_{n+1} - f)
+  \]
+  for some positive integer $N$.
+  So that $\left( \sum_{i} g_i f^i \right)^N \left( \sum_{j} h_j f^j \right)^N \in I$.
+
+\item[(4)]
+  Since $I = I(V)$ is a prime ideal,
+  we might get $\sum_{i} g_i f^i \in I \subseteq \mathrm{rad}(J)$.
+  (The case $\sum_{j} h_j f^j$ is similar.)
+  Hence $\mathrm{rad}(J) = I(G(f))$ is a prime ideal, or $G(f)$ is irreducible.
+
+\item[(5)]
+  As $G(f)$ is an affine variety,
+  the map $\alpha: V \to G(f)$ defined by
+  \[
+    \alpha: (a_1,\ldots,a_n) \mapsto (a_1,\ldots,a_n,f(a_1,\ldots,a_n))
+  \]
+  is a polynomial map. (Here $t_1 = x_1, \ldots, t_n = x_n$ and $t_{n+1} = f$.)
+
+\item[(6)]
+  By Problem 2.10, the projection map $\mathrm{pr}$ is a polynomial map.
+  Also note that $\mathrm{pr} \circ \alpha = 1_{V}$
+  and $\alpha \circ \mathrm{pr} = 1_{G(f)}$.
+  Therefore, $V \cong G(f)$ as an affine variety isomorphism.
 \end{enumerate}
 $\Box$\\\\
 
