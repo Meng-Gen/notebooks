@@ -5410,13 +5410,34 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
+\subsubsection*{Problem 2.46.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.46.*}
+\emph{Let $I = (x,y) \subseteq k[x,y]$.
+Show that}
+\[
+  \dim_{k}(k[x,y]/I^n) = 1 + 2 + \cdots + n = \frac{n(n+1)}{2}.
+\]
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  The set
+  \[
+    \mathscr{B} = \{ x^i y^j + I^n : i, j \in \mathbb{Z}, i, j \geq 0, i + j < n \}
+  \]
+  generates $k[x,y]/I^n$ as a $k$-vector space.
+  Besides, each nonzero element in $I^n$ has the degree $\geq n$,
+  and thus $\mathscr{B}$ is an independent set.
+  Therefore, $\mathscr{B}$ is a basis for $k[x,y]/I^n$.
+
+\item[(2)]
+  Hence,
+  \[
+    \dim_{k}(k[x,y]/I^n)
+    = |\mathscr{B}|
+    = 1 + 2 + \cdots + n
+    = \frac{n(n+1)}{2}.
+  \]
 \end{enumerate}
 $\Box$\\\\
 
