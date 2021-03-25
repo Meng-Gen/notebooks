@@ -4334,38 +4334,6 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -4425,6 +4393,118 @@ $\Box$\\\\
   Hence, $m = n$, or the order function on $K$ is independent of the choice of uniformizing parameter.
 \end{enumerate}
 $\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.24.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.24.*}
+\emph{Let $V = \mathbf{A}^{1}$, $\Gamma(V) = k[x]$, $K = k(V) = k(x)$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{For each $a \in k = V$, show that $\mathcal{O}_{a}(V)$ is a DVR
+  with uniformizing parameter $t = x - a$.}
+
+\item[(b)]
+  \emph{Show that $\mathcal{O}_{\infty} = \{ f/g \in k(x) : \deg(g) \geq \deg(f) \}$
+  is also a DVR, with uniformizing parameter $t = 1/x$.} \\\\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  By Proposition 7 in \S 2.4,
+  $\mathcal{O}_{a}(V)$ is a (Noetherian) local domain.
+  It suffices to show that $t = x - a$ is an irreducible element in $\mathcal{O}_{a}(V)$
+  such that every nonzero $z \in \mathcal{O}_{a}(V)$ might be written uniquely
+  in the form $z = ut^n$, $u$ a unit in $\mathcal{O}_{a}(V)$, $n$ a nonnegative integer
+  (by Proposition 4).
+
+\item[(2)]
+  Write $z = f/g \in \mathcal{O}_{a}(V)$ where $g(a) \neq 0$.
+  By Problem 1.7,
+  \[
+    f = \sum_{i=0}^{\deg(f)} \lambda_i (x-a)^{i}.
+  \]
+  Let $n$ be the smallest integer such that $\lambda_n \neq 0$.
+  (Such $n$ is existed since $z$ or $f$ is nonzero.)
+  Hence, $f = f_1 (x-a)^n$
+  where $f_1 = \sum_{i=n}^{\deg(f)} \lambda_i (x-a)^{i-n} \neq 0$ and $f_1(a) = \lambda_n \neq 0$.
+  So
+  \[
+    z = f/g = (f_1/g) (x-a)^n.
+  \]
+  Here $f_1/g$ is a unit in $\mathcal{O}_{a}(V)$.
+  Besides, it is easy to show that $n$ is unique by the similar argument in Problem 2.23.
+  Hence, $\mathcal{O}_{a}(V)$ is a DVR with uniformizing parameter $t = x - a$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathcal{O}_{\infty}$ is a subring of $k(x)$.}
+  Clearly, $1 = 1/1 \in \mathcal{O}_{\infty}$.
+  Also, given any $f = a/b, g = c/d \in \mathcal{O}_{\infty}$.
+  So
+  \begin{align*}
+    f - g &= a/b - c/d = \frac{ad - bc}{bd} \in \mathcal{O}_{\infty} \\
+    fg &= a/b \cdot c/d = \frac{ac}{bd} \in \mathcal{O}_{\infty}
+  \end{align*}
+  since
+  \begin{align*}
+    \deg(ad - bc)
+    &\leq \max(\deg(ad), \deg(bc)) \\
+    &\leq \max(\deg(a)+\deg(d), \deg(b)+\deg(c)) \\
+    &\leq \max(\deg(b)+\deg(d), \deg(b)+\deg(d)) \\
+    &\leq \deg(b) + \deg(d) \\
+    &\leq \deg(bd)
+  \end{align*}
+  and
+  \[
+    \deg(ac) = \deg(a) + \deg(c) \leq \deg(b) + \deg(d) = \deg(bd).
+  \]
+  (Here we define $\deg(0) = -\infty$ by convention.)
+  By the subring test, $\mathcal{O}_{\infty}$ is a subring of $k(x)$.
+
+\item[(2)]
+  \emph{Show that $\mathcal{O}_{\infty}$ is a DVR.}
+  Clearly $\mathcal{O}_{\infty}$ is not a field
+  since $1/x \in \mathcal{O}_{\infty}$ but $x = x/1 \not\in \mathcal{O}_{\infty}$.
+  Let $t = 1/x$ be an irreducible element of $\mathcal{O}_{\infty}$.
+  ($\deg(x) = 1$ implies the irreducibility of $t$.)
+  Now for any nonzero $f/g \in \mathcal{O}_{\infty}$, write
+  \[
+    f/g = ((f x^n)/g) (1/x^n) = ((f x^n)/g) t^n
+  \]
+  where $n := \deg(g) - \deg(f) \geq 0$.
+  Note that $\deg(fx^n) = \deg(f) + n = \deg(g)$.
+  So $(f x^n)/g$ is a unit since the inverse $g/(f x^n)$ is also in $\mathcal{O}_{\infty}$.
+  Besides, $n$ is unique by comparing the degree of polynomials.
+  Hence, $\mathcal{O}_{\infty}$ is a DVR.
+\end{enumerate}
+$\Box$\\
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  The quotient field of $\mathcal{O}_{\infty}$ is $K = k(V) = k(x)$.
+
+\item[(2)]
+  The set of units in $\mathcal{O}_{\infty}(V)$ is
+  $\{ f/g \in k(x) : \deg(g) = \deg(f) \}$.
+
+\item[(3)]
+  The maximal ideal of $\mathcal{O}_{\infty}(V)$ is
+  $\{ f/g \in k(x) : \deg(g) > \deg(f) \}$. \\\\
+\end{enumerate}
 
 
 
@@ -4504,7 +4584,16 @@ is a DVR with quotient field $\mathbb{Q}$.} \\
   As $r \not\in \mathbb{Z}_p$, $p \mid b$ and $p \nmid a$.
   Therefore, $1/r = b/a \in \mathbb{Z}_p$, or $r$ is in the quotient field of $\mathbb{Z}_p$.
 \end{enumerate}
-$\Box$\\\\
+$\Box$\\
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  $p\mathbb{Z}_p$ is the maximal ideal of $\mathbb{Z}_p$.
+
+\item[(2)]
+  The residue field $\mathbb{Z}_p/p\mathbb{Z}_p \cong \mathbb{Z}/p\mathbb{Z}$. \\\\
+\end{enumerate}
 
 
 
@@ -5335,38 +5424,6 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 \subsubsection*{Problem 2.45.*}
 \addcontentsline{toc}{subsubsection}{Problem 2.45.*}
 \emph{Show that ideals $I, J \subseteq k[x_1,\ldots,x_n]$ ($k$ algebraically closed) are comaximal
@@ -5573,38 +5630,6 @@ $\Box$\\\\
 
 
 
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 \subsubsection*{Problem 2.51.}
 \addcontentsline{toc}{subsubsection}{Problem 2.51.}
 \emph{Let
@@ -5647,38 +5672,6 @@ Show that $\sum (-1)^i \dim(V_i) = 0$.} \\
     &= -(-1)^n \dim V_n,
   \end{align*}
   or $\sum (-1)^i \dim(V_i) = 0$.
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
-$\Box$\\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection*{Problem PLACEHOLDER}
-\addcontentsline{toc}{subsubsection}{Problem PLACEHOLDER}
-\emph{PLACEHOLDER} \\
-
-\emph{Proof.}
-\begin{enumerate}
-\item[(1)]
 \end{enumerate}
 $\Box$\\\\
 
