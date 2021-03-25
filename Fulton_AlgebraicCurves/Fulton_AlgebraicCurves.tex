@@ -4432,6 +4432,86 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.25. ($p$-adic integers)}
+\addcontentsline{toc}{subsubsection}{Problem 2.25. ($p$-adic integers)}
+\emph{Let $p \in \mathbb{Z}$ be a prime number.
+Show that
+\[
+  \{ r \in \mathbb{Q} : \text{$r = a/b$, $a,b \in \mathbb{Z}$, $p$ doesn't divide $b$} \}
+\]
+is a DVR with quotient field $\mathbb{Q}$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let
+  \[
+    \mathbb{Z}_p
+    = \{ r \in \mathbb{Q} : r = a/b, \: a,b \in \mathbb{Z}, \: p \nmid b \}
+  \]
+  be the set of all $p$-adic integers.
+
+\item[(2)]
+  \emph{Show that $\mathbb{Z}_p$ is a subring of $\mathbb{Q}$.}
+  Clearly, $1 = 1/1 \in \mathbb{Z}_p$ (since $p \nmid 1$).
+  Also, given any $r = a/b, s = c/d \in \mathbb{Z}_p$.
+  So
+  \begin{align*}
+    r - s &= a/b - c/d = \frac{ad - bc}{bd} \in \mathbb{Z}_p \\
+    rs &= a/b \cdot c/d = \frac{ac}{bd} \in \mathbb{Z}_p
+  \end{align*}
+  since $p \nmid b$, $p \nmid d$ and $p$ is a prime number.
+  By the subring test, $\mathbb{Z}_p$ is a subring of $\mathbb{Q}$.
+
+\item[(3)]
+  Note that $\mathbb{Z}_p \subseteq \mathbb{Q}$ is a domain
+  and $\mathbb{Z}_p$ is not a field (since $p = p/1 \in \mathbb{Z}_p$
+  but $p^{-1} = 1/p \not\in \mathbb{Z}_p$).
+
+\item[(4)]
+  Let $t = p$ be an irreducible element in $\mathbb{Z}_p$.
+  For the irreducibility of $t = p$, we write $p = a/b \cdot c/d = \frac{ac}{bd}$
+  where $p \nmid b$, $p \nmid d$. So $pbd = ac$ or
+  \[
+    1 = \mathrm{ord}_p(ac) = \mathrm{ord}_p(a) + \mathrm{ord}_p(c).
+  \]
+  Here $\mathrm{ord}_p: \mathbb{Z} \to \mathbb{Z}_{\geq 0}$
+  is defined by $\mathrm{ord}_p(a) = n$ where
+  $n$ is the largest number such that $p^n$ divides $a$,
+  that is, $p^n \mid a$ and $p^{n+1} \nmid a$.
+  So $(\mathrm{ord}_p(a), \mathrm{ord}_p(c)) = (0,1)$ or $(1,0)$.
+  Hence, $a/b$ or $c/d$ is a unit in $\mathbb{Z}_p$, or $p$ is irreducible in $\mathbb{Z}_p$.
+
+\item[(5)]
+  For any nonzero $r = a/b \in \mathbb{Z}_p$, $a \neq 0$ can be written as
+  $a = p^n c$ for some nonnegative integer $n$ and $c \in \mathbb{Z}^{+}$ uniquely.
+  Hence
+  \[
+    r = a/b = (c/b) p^n = (c/b) t^n,
+  \]
+  where $c/b$ is a unit and $n$ is a nonnegative integer.
+  Note that $n$ is unique by the similar argument in (4).
+  By Proposition 4, $\mathbb{Z}_p$ is a DVR.
+
+\item[(6)]
+  \emph{Show that the quotient field of $\mathbb{Z}_p$ is $\mathbb{Q}$.}
+  It suffices to show that $r$ is in the quotient field of $\mathbb{Z}_p$
+  if $r \in \mathbb{Q} - \mathbb{Z}_p$.
+  Note that $r \neq 0$.
+  Write $r = a/b$ with $\gcd(a,b) = 1$.
+  As $r \not\in \mathbb{Z}_p$, $p \mid b$ and $p \nmid a$.
+  Therefore, $1/r = b/a \in \mathbb{Z}_p$, or $r$ is in the quotient field of $\mathbb{Z}_p$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 2.26.*}
 \addcontentsline{toc}{subsubsection}{Problem 2.26.*}
 \emph{Let $R$ be a DVR with quotient field $K$; let $\mathfrak{m}$ be the maximal ideal of $R$.}
