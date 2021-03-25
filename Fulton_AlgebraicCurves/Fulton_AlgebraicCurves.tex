@@ -4884,6 +4884,108 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.30.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.30.*}
+\emph{Let $R$ be a DVR with maximal ideal $\mathfrak{m}$, and quotient field $K$,
+and suppose a field $k$ is a subring of $R$,
+and that the composition $k \to R \to R/\mathfrak{m}$ is an isomorphism of $k$ with $R/\mathfrak{m}$
+(as for example in Problem 2.24).
+Verify the following assertions:}
+\begin{enumerate}
+\item[(a)]
+  \emph{For any $z \in R$, there is a unique $\lambda \in k$ such that
+  $z - \lambda \in \mathfrak{m}$.}
+
+\item[(b)]
+  \emph{Let $t$ be a uniformizing parameter for $R$, $z \in R$.
+  Then for any $n \geq 0$
+  there are unique $\lambda_0,\lambda_1,\ldots,\lambda_n \in k$ and $z_n \in R$ such that
+  \[
+    z = \lambda_0 + \lambda_1 t + \lambda_2 t^2 + \cdots + \lambda_n t^n + z_n t^{n+1}.
+  \]
+  (Hint: For uniqueness use Problem 2.29; for existence use (a) and induction.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \[
+    k \xrightarrow{i} R \xrightarrow{\pi} R/\mathfrak{m}
+  \]
+  is an isomorphism.
+
+\item[(2)]
+  For $z + \mathfrak{m} \in R/\mathfrak{m}$,
+  there exists the unique $\lambda \in k$ such that
+  \[
+    z + \mathfrak{m}
+    = \pi(i(\lambda))
+    = \pi(\lambda)
+    = \lambda + \mathfrak{m}.
+  \]
+  So $z - \lambda \in \mathfrak{m}$ for one unique $\lambda \in k$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \[
+    \mathfrak{m} = \{ z \in K : \mathrm{ord}(z) > 0 \}.
+  \]
+  By (a),
+  \[
+    z = \lambda_0 + \underbrace{t z_0}_{\in \mathfrak{m}}
+  \]
+  for one unique $\lambda_0 \in k$ and $z_0 \in R$.
+  Continue this process or by induction, we have the expression
+  \[
+    z = \lambda_0 + \lambda_1 t + \lambda_2 t^2 + \cdots + \lambda_n t^n + z_n t^{n+1}.
+  \]
+
+\item[(2)]
+  For the uniqueness,
+  suppose
+  \begin{align*}
+    0 = \lambda_0 + \lambda_1 t + \lambda_2 t^2 + \cdots + \lambda_n t^n + z_n t^{n+1}.
+  \end{align*}
+  Note that
+  \begin{equation*}
+    \mathrm{ord}(\lambda_i t^i) =
+    \begin{cases}
+      \infty
+        &(\lambda_i = 0) \\
+      i
+        &(\lambda_i \neq 0)
+    \end{cases}
+  \end{equation*}
+  since every nonzero element in $k$ is a unit in $k \subseteq R$.
+  Also, $\mathrm{ord}(z_n t^{n+1}) = \infty$ if $z_n = 0$;
+  $\mathrm{ord}(z_n t^{n+1}) \geq n+1$ if $z_n \neq 0$.
+
+\item[(3)]
+  Suppose $i_0$ is the smallest integer such that $\lambda_{i_0} \neq 0$,
+  then $\mathrm{ord}(\lambda_{i_0} t^{i_0}) = i_0 < \mathrm{ord}(\lambda_{j} t^{j})$
+  if $i_0 \neq j$ and $\mathrm{ord}(\lambda_{i_0} t^{i_0}) = i_0 < n+1 \leq \mathrm{ord}(z_n t^{n+1})$.
+  By Problem 2.29(b), such $i_0$ does not exist.
+  Hence all $\lambda_i = 0$.
+  So as $R$ is a domain, $z_n$ is also equal to $0$.
+  Therefore, the uniqueness is established.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
