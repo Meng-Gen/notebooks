@@ -4487,7 +4487,7 @@ $\Box$\\
   where $n := \deg(g) - \deg(f) \geq 0$.
   Note that $\deg(fx^n) = \deg(f) + n = \deg(g)$.
   So $(f x^n)/g$ is a unit since the inverse $g/(f x^n)$ is also in $\mathcal{O}_{\infty}$.
-  Besides, $n$ is unique by comparing the degree of polynomials.
+  Besides, it is easy to show that $n$ is unique by the similar argument in Problem 2.23.
   Hence, $\mathcal{O}_{\infty}$ is a DVR.
 \end{enumerate}
 $\Box$\\
@@ -4572,7 +4572,7 @@ is a DVR with quotient field $\mathbb{Q}$.} \\
     r = a/b = (c/b) p^n = (c/b) t^n,
   \]
   where $c/b$ is a unit and $n$ is a nonnegative integer.
-  Note that $n$ is unique by the similar argument in (4).
+  Besides, it is easy to show that $n$ is unique by the similar argument in Problem 2.23.
   By Proposition 4, $\mathbb{Z}_p$ is a DVR.
 
 \item[(6)]
@@ -4980,6 +4980,103 @@ $\Box$\\
   Hence all $\lambda_i = 0$.
   So as $R$ is a domain, $z_n$ is also equal to $0$.
   Therefore, the uniqueness is established.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.31.}
+\addcontentsline{toc}{subsubsection}{Problem 2.31.}
+\emph{Let $k$ be a field.
+The ring of \textbf{formal power series} over $k$,
+written $k[[x]]$,
+is defined to be
+\[
+  \left\{ \sum_{i=0}^{\infty} a_i x^i : a_i \in k \right\}.
+\]
+(As with polynomials,
+a rigorous definition is best given in terms of sequences
+$(a_0,a_1,\ldots)$ of elements in $k$;
+here we allow an infinite number of nonzero terms.)
+Define the sum by
+\[
+  \sum a_i x^i + \sum b_i x^i = \sum (a_i + b_i) x^i,
+\]
+and the (Cauchy) product by
+\[
+  \left( \sum a_i x^i \right)\left( \sum b_i x^i \right) = \sum c_i x^i,
+\]
+where $c_i = \sum_{j+k=i} a_j b_k$.
+Show that $k[[x]]$ is a ring containing $k[x]$ as a subring.
+Show that $k[[x]]$ is a DVR with uniformizing parameter $x$.
+Its quotient field is denoted $k((x))$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Two formal power series $\sum a_i x^i$ and $\sum b_i x^i$ in $k[[x]]$
+  are considered equal if $a_i = b_i$ for all integers $i \geq 0$.
+
+\item[(2)]
+  The zero element in $k[[x]]$ is $0 = \sum_{i=0}^{\infty} 0 x^i$, and the multiplicative identity is
+  \[
+    1 = 1 + 0 x + \cdots + 0 x^n + \cdots.
+  \]
+  Hence, $k[[x]]$ is a ring (by a tedious argument).
+  Moreover, $k[[x]]$ is a domain (again by a tedious argument).
+
+\item[(3)]
+  \emph{Show that $k[[x]] \supseteq k[x]$.}
+  In fact, for any $f = \sum_{i=0}^{n} a_i x^i \in k[x]$, we can write
+  \[
+    f = a_0 + a_1 x + \cdots + a_n x^n + 0 x^{n+1} + \cdots \in k[[x]].
+  \]
+
+\item[(4)]
+  \emph{Show that $f = \sum_{i=0}^{\infty} a_i x^i$ is a unit in $k[[x]]$
+  if and only if $a_0 \neq 0$.}
+  Suppose $g = \sum_{i=0}^{\infty} b_i x^i \in k[[x]]$ such that $fg = 1$.
+  Then
+  \begin{align*}
+    1 &= a_0 b_0, \\
+    0 &= \sum_{j=0}^{k} a_j b_{k-j}.
+  \end{align*}
+  So $f$ is not a unit in $k[[x]]$ if $a_0 = 0$.
+  Now if $a_0 \neq 0$ then $b_0 := a_0^{-1} \in k$.
+  Then by observing that
+  \begin{align*}
+    0 = \sum_{j=0}^{k} a_j b_{k-j}
+    &\Longleftrightarrow
+    a_0 b_k = -\sum_{j=1}^{k} a_j b_{k-j} \\
+    &\Longleftrightarrow
+    b_k = -b_0 \sum_{j=1}^{k} a_j b_{k-j},
+  \end{align*}
+  we can solve $b_1, b_2, \ldots$ by induction, and $(b_0, b_1, \ldots)$ gives
+  the existence of $g \in k[[x]]$.
+
+\item[(5)]
+  By (4), $k[[x]]$ is not a field since $x \in k[[x]]$ but $x^{-1} \not\in k[[x]]$.
+  Let $t = x$ be an irreducible element in $k[[x]]$.
+  ($\deg(x) = 1$ implies the irreducibility of $t$.)
+  Hence every nonzero $f \in k[[x]]$ can be written uniquely in
+  the form
+  \[
+    f = u x^n
+  \]
+  where $n$ is the smallest integer such that $a_{n} \neq 0$.
+  By (4),
+  \[
+    u = a_n + a_{n+1} x + \cdots
+  \]
+  is a unit in $k[[x]]$ as $a_n \neq 0$.
+  Besides, it is easy to show that $n$ is unique by the similar argument in Problem 2.23.
+  Therefore, $k[[x]]$ is a DVR with uniformizing parameter $x$.
 \end{enumerate}
 $\Box$\\\\
 
