@@ -5152,6 +5152,41 @@ $\Box$\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.34.}
+\addcontentsline{toc}{subsubsection}{Problem 2.34.}
+\emph{Suppose $f, g \in k[x_1,\ldots,x_n]$ are forms of degree $r$, $r + 1$ respectively,
+with no common factors ($k$ a field). Show that $f+g$ is irreducible.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Suppose $f + g = rs \in k[x_1,\ldots,x_n]$.
+  Proposition 5 implies that
+  \[
+    (f + g)^{*} = (rs)^{*}
+    \Longrightarrow
+    x_{n+1} f + g = r^{*} s^{*}.
+  \]
+  Note that $\deg_{x_{n+1}}(x_{n+1} f + g) = 1$.
+  So $\deg_{x_{n+1}}(r^{*}) = 0$ or $\deg_{x_{n+1}}(s^{*}) = 0$.
+  Might assume $\deg_{x_{n+1}}(r^{*}) = 0$. (The case $\deg_{x_{n+1}}(s^{*}) = 0$ is similar.)
+
+\item[(2)]
+  Since $\deg_{x_{n+1}}(r^{*}) = 0$, $r^{*} \mid f$ and $r^{*} \mid g$.
+  Note that $\deg_{x_{n+1}}(r^{*}) = 0$ implies that $r^{*} = r$ is a form in $k[x_1,\ldots,x_n]$.
+  Hence $r$ is a common factor of $f$ and $g$, or $r$ is a constant in $k[x_1,\ldots,x_n]$.
+  So $f+g$ is irreducible.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
