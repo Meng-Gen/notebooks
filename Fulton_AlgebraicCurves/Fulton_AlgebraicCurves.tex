@@ -4655,6 +4655,110 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.27.}
+\addcontentsline{toc}{subsubsection}{Problem 2.27.}
+\emph{Show that the DVR's of Problem 2.24 are
+the only DVR's with quotient field $k(x)$ that contain $k$.
+Show that those of Problem 2.25 are the only DVR's with quotient field $\mathbb{Q}$.} \\
+
+
+
+\emph{Proof (Problem 2.26).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathcal{O}_{a}(V)$ and $\mathcal{O}_{\infty}$
+  are the only DVR's with quotient field $k(x)$ that contain $k$.}
+  \begin{enumerate}
+  \item[(a)]
+    Let $k \subseteq R \subsetneq k(x)$ be a DVR with quotient field $k(x)$,
+    $\mathfrak{m}$ be the unique maximal ideal of $R$.
+    $\mathfrak{m} \neq (0)$ and the set of units in $R$ is $R - \mathfrak{m}$.
+
+  \item[(b)]
+    There are two possible cases: $x \in R$ or $x \not\in R$.
+
+  \item[(c)]
+    Suppose $x \in R$. So $R$ contains $k[x]$ as a subring.
+    Consider the subset
+    \[
+      S := \{ x - a \in k[x] : a \in k \} \cap \mathfrak{m}
+      \subseteq \mathfrak{m}.
+    \]
+    Suppose there were two distinct elements $x - a, x - b \in S$.
+    Then $1 \in \mathfrak{m}$, contrary to the maximality of $\mathfrak{m}$.
+    Suppose $S = \varnothing$, then every $x - a$ is a unit in $R$.
+    Since $k = \overline{k}$, $R = k(x)$ is a field, which is absurd.
+    Hence, there is only one $x - a \in \mathfrak{m}$ for one unique $a \in k$
+    and other $x - b$ with $b \neq a$ is a unit in $R$.
+    Thus, $R \supseteq \mathcal{O}_{a}(V)$
+    and $\mathfrak{m}$ contains $(x - a)\mathcal{O}_{a}(V)$,
+    which is the maximal ideal of $\mathcal{O}_{a}(V)$.
+    By Problem 2.26, $R = \mathcal{O}_{a}(V)$.
+
+  \item[(d)]
+    If $x \not\in R$, then $x - a \not\in R$ whenever $a \in k \subseteq R$.
+    Hence $(x-a)^{-1} \in \mathfrak{m}$ whenever $a \in k$ by Problem 2.26(a).
+    Next, given any $f/g \in \mathcal{O}_{\infty}$, by $k = \overline{k}$ we have
+    \[
+      f/g = \underbrace{u}_{\in k}
+        \underbrace{\frac{x-\alpha_1}{x-\beta_1}}_{\in R} \cdots
+        \underbrace{\frac{x-\alpha_n}{x-\beta_n}}_{\in R}
+        \underbrace{\frac{1}{x-\beta_{n+1}}}_{\in \mathfrak{m}} \cdots
+        \underbrace{\frac{1}{x-\beta_{m}}}_{\in \mathfrak{m}},
+    \]
+    where $n := \deg(f)$, $m := \deg(g)$ and $n \leq m$.
+    Here
+    \[
+      \frac{x-\alpha_i}{x-\beta_i}
+      = \underbrace{1}_{\in k}
+        + \underbrace{\frac{\beta_i-\alpha_i}{x-\beta_i}}_{\in \mathfrak{m} \subseteq R} \in R.
+    \]
+    Therefore, $R \supseteq \mathcal{O}_{\infty}$ and $\mathfrak{m}$
+    contains the maximal ideal $x^{-1} \mathcal{O}_{\infty}$ of $\mathcal{O}_{\infty}$.
+    By Problem 2.26, $R = \mathcal{O}_{\infty}$.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that $\mathbb{Z}_p$ are the only DVR's with quotient field $\mathbb{Q}$.}
+  \begin{enumerate}
+  \item[(a)]
+    Let $R \subsetneq \mathbb{Q}$ be a DVR with quotient field $\mathbb{Q}$,
+    $\mathfrak{m}$ be the unique maximal ideal of $R$.
+    $\mathfrak{m} \neq (0)$ and the set of units in $R$ is $R - \mathfrak{m}$.
+
+  \item[(b)]
+    Note that $R \subseteq \mathbb{Q}$ contains $\mathbb{Z}$ as a subring.
+    Consider the subset
+    \[
+      S := \{ p \in \mathbb{Z} : \text{$p$ is a prime number} \} \cap \mathfrak{m}
+      \subseteq \mathfrak{m}.
+    \]
+
+  \item[(c)]
+    Suppose there were two distinct prime integers $p, q \in S$.
+    By the B\'ezout's identity, there exist integers $a$ and $b$ such that $pa + qb = 1$.
+    $1 \in \mathfrak{m}$, contrary to the maximality of $\mathfrak{m}$.
+
+  \item[(d)]
+    Suppose no prime integer were in $S$, then every prime integer is a unit in $R$.
+    By the fundamental theorem of arithmetic, $R = \mathbb{Q}$ is a field, which is absurd.
+
+  \item[(e)]
+    By (c)(d), $p \in \mathfrak{m}$ for one unique prime $p \in \mathbb{Z}$.
+    Thus, $R \supseteq \mathbb{Z}_p$ by the definition of $\mathbb{Z}_p$
+    and $\mathfrak{m}$ contains $p\mathbb{Z}_p$,
+    which is the maximal ideal of $\mathbb{Z}_p$.
+    By Problem 2.26, $R = \mathbb{Z}_p$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 2.28.*}
 \addcontentsline{toc}{subsubsection}{Problem 2.28.*}
 \emph{An order function on a field $K$ is a function $\varphi$
