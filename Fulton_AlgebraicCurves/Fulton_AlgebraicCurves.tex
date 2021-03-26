@@ -5187,6 +5187,162 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.35.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.35.*}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that there are $d + 1$ monomials of degree $d$ in $R[x,y]$,
+  and $1 + 2 + \cdots + (d+1) = \frac{(d+1)(d+2)}{2}$ monomials of degree $d$ in $R[x,y,z]$.}
+
+\item[(b)]
+  \emph{Let $V(d,n) = \{\text{forms of degree $d$ in $k[x_1,\ldots,x_n]$} \}$, $k$ a field.
+  Show that $V(d,n)$ is a vector space over $k$,
+  and that the monomials of degree $d$ form a basis.
+  So $\dim V(d,1) = 1$; $\dim V(d,2) = d+1$; $\dim V(d,3) = \frac{(d+1)(d+2)}{2}$.}
+
+\item[(c)]
+  \emph{Let $\ell_1, \ell_2, \ldots$ and $m_1, m_2, \ldots$
+  be sequences of nonzero linear forms in $k[x,y]$,
+  and assume no $\ell_i = \lambda m_j$, $\lambda \in k$.
+  Let $A_{ij} = \ell_1 \ell_2 \cdots \ell_i m_1 m_2 \cdots m_j$, $i, j \geq 0$ ($A_{00} = 1$).
+  Show that $\{ A_{ij} : i+j=d \}$ forms a basis for $V(d,2)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  All monomials of degree $d$ in $R[x,y]$ are
+  \[
+    x^d, x^{d-1} y, \cdots, x y^{d-1}, y^d,
+  \]
+  or of the form $x^i y^j$ with $i, j \geq 0$ and $i + j = d$.
+  So there are $d + 1$ monomials of degree $d$ in $R[x,y]$.
+
+\item[(2)]
+  Similar to (1), all monomials of degree $d$ in $R[x,y]$ are
+  of the form $x^i y^j z^k$ with $i, j, k \geq 0$ and $i + j + k = d$.
+  By the \href{https://en.wikipedia.org/wiki/Stars_and_bars_%28combinatorics%29}
+  {stars and bars (combinatorics)} method,
+  there are
+  \[
+    {d+3-1 \choose 3-1} = \frac{(d+2)(d+1)}{2}
+  \]
+  monomials of degree $d$ in $R[x,y,z]$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  To show $V(d,n)$ is a vector space,
+  it suffices to show that $V(d,n)$ is a subspace of $k[x_1,\ldots,x_n]$
+  since $k[x_1,\ldots,x_n]$ is a vector space over $k$.
+
+\item[(2)]
+  Note that $0 \in V(d,n)$ is nonempty.
+  For any $f, g \in V(d,n)$ and $a, b \in k$, we have $af + bg \in V(d,n)$.
+  Hence $V(d,n)$ is subspace.
+
+\item[(3)]
+  Let
+  \[
+    \mathscr{B}
+    = \{ x_1^{i_1} \cdots x_n^{i_n}
+      : i_1, \ldots, i_n \geq 0, i_1 + \cdots + i_n = d \}.
+  \]
+  $\mathscr{B}$ is an independent set, and $\mathscr{B}$ generates $V(d,n)$.
+  So $\mathscr{B}$ is a basis for $V(d,n)$.
+
+\item[(4)]
+  Similar to (a),
+  \[
+    \dim_k V(d,n) = |\mathscr{B}| = {d+n-1 \choose n-1}
+  \]
+  by the \href{https://en.wikipedia.org/wiki/Stars_and_bars_%28combinatorics%29}
+  {stars and bars (combinatorics)} method.
+  In particular,
+  $\dim V(d,1) = 1$; $\dim V(d,2) = d+1$; $\dim V(d,3) = \frac{(d+1)(d+2)}{2}$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathscr{B}' := \{ A_{ij} : i+j=d \}$ is an independent set.}
+  (Reductio ad absurdum)
+  Suppose that there were a nontrivial linear combination of $A_{ij}$ such that
+  \[
+    \sum_{i+j=d} c_{ij} A_{ij} = 0.
+  \]
+
+\item[(2)]
+  Let $p$ be the smallest index $i$ such that $c_{ij} \neq 0$.
+  Write $q := d - p$.
+  So
+  \begin{align*}
+    & \: c_{pq} A_{pq}
+    = -\sum_{\substack{i+j=d \\ i \neq p, j \neq q}} c_{ij} A_{ij}
+    = -\sum_{\substack{i+j=d \\ i > p, j < q}} c_{ij} A_{ij} \\
+    \Longleftrightarrow& \:
+    A_{pq} = -\sum_{\substack{i+j=d \\ i > p, j < q}} \frac{c_{ij}}{c_{pq}} A_{ij} \\
+    \Longleftrightarrow& \:
+    \ell_1 \cdots \ell_p m_1 \cdots m_q
+      = -\sum_{\substack{i+j=d \\ i > p, j < q}} \frac{c_{ij}}{c_{pq}}
+        \ell_1 \cdots \ell_p \ell_{p+1} \cdots \ell_i m_1 \cdots m_j \\
+    \Longleftrightarrow& \:
+    m_1 \cdots m_q
+      = - \ell_{p+1} \sum_{\substack{i+j=d \\ i > p, j < q}} \frac{c_{ij}}{c_{pq}}
+        \underbrace{\ell_{p+2} \cdots \ell_i}_{:= 1 \text{ if } i = p+1} m_1 \cdots m_j \\
+    \Longleftrightarrow& \:
+    \ell_{p+1} \mid m_1 \cdots m_q.
+  \end{align*}
+
+  Since all $\ell_i, m_j$ are linear forms,
+  $\ell_{p+1} \mid m_j$ for some $1 \leq j \leq q$,
+  which is absurd since no $\ell_i = \lambda m_j$, $\lambda \in k$.
+  Therefore, $\mathscr{B}'$ is an independent set.
+
+\item[(3)]
+  Since
+  \[
+    |\mathscr{B}'| = d+1 = \dim_{k} V(d,2),
+  \]
+  $\mathscr{B}'$ is also a basis for $V(d,2)$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.36.}
+\addcontentsline{toc}{subsubsection}{Problem 2.36.}
+\emph{With the above notation, show that
+\[
+  \dim V(d,n) = {d+n-1 \choose n-1},
+\]
+the binomial coefficient.} \\
+
+
+
+\emph{Proof.}
+See the proof of Problem 2.35(b).
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
