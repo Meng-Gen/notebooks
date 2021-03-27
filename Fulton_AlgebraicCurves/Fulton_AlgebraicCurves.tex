@@ -5187,6 +5187,228 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.32.}
+\addcontentsline{toc}{subsubsection}{Problem 2.32.}
+\emph{Let $R$ be a DVR satisfying the conditions of Problem 2.30.
+Any $z \in R$ then determines a power series $\sum \lambda_i x^i$,
+if $\lambda_0, \lambda_1, \ldots$ are determined as in Problem 2.30(b).}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that the map $z \to \sum \lambda_i x^i$
+  is a one-to-one ring homomorphism of $R$ into $k[[x]]$.
+  We often write $z = \sum \lambda_i t^i$,
+  and call this the \textbf{power series expansion} of $z$ in terms of $t$.}
+
+\item[(b)]
+  \emph{Show that the homomorphism extends to a homomorphism of $K$ into $k((x))$,
+  and that the order function on $k((x))$ restricts to that on $K$.}
+
+\item[(c)]
+  \emph{Let $a = 0$ in Problem 2.24, $t = x$.
+  Find the power series expansion of $z = (1-x)^{-1}$ and of
+  $(1-x)(1+x^2)^{-1}$ in terms of $t$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Define the map $\alpha: R \to k[[x]]$ by
+  \[
+    \alpha: z \mapsto \sum_{i=0}^{\infty} \lambda_i x^i
+  \]
+  where $\lambda_i$ are determined as in Problem 2.30(b).
+
+\item[(2)]
+  \emph{Show that $\alpha$ is well-defined and one-to-one.}
+  Write
+  \[
+    \alpha(z)
+    = \sum_{i=0}^{\infty} \lambda_i x^i
+    = \sum_{i=0}^{\infty} \lambda'_i x^i.
+  \]
+  If there were $\lambda_n \neq \lambda'_n$ for some $n$,
+  then Problem 2.30(b) implies that two expressions of $z$
+  \begin{align*}
+    z
+    &= \lambda_0 + \lambda_1 t + \cdots + \lambda_n t^n + z_n t^{n+1} \\
+    &= \lambda'_0 + \lambda'_1 t + \cdots + \lambda'_n t^n + z'_n t^{n+1}
+  \end{align*}
+  are the same. That is, $\lambda_n = \lambda'_n$, which is absurd.
+  Hence, $\alpha$ is well-defined.
+  Also,
+  $0 = 0 + 0 t + 0 t^2 + \cdots + 0 t^n + 0 t^{n+1}$
+  implies that $\alpha$ is one-to-one.
+
+\item[(3)]
+  \emph{Show that $\alpha$ is addition preserving.}
+  Given $a, b \in R$. By Problem 2.30(b),
+  \[
+    a+b
+    = \lambda_0 + \lambda_1 t + \cdots + \lambda_n t^n + c_n t^{n+1}
+  \]
+  and
+  \begin{align*}
+    a
+    &= \mu_0 + \mu_1 t + \cdots + \mu_n t^n + a_n t^{n+1} \\
+    b
+    &= \nu_0 + \nu_1 t + \cdots + \nu_n t^n + b_n t^{n+1}
+  \end{align*}
+  for any integer $n \geq 0$.
+  So
+  \[
+    a+b
+    = \underbrace{(\mu_0+\nu_0)}_{\in k}
+      + \underbrace{(\mu_1+\nu_1)}_{\in k} t + \cdots
+      + \underbrace{(\mu_n+\nu_n)}_{\in k} t^n
+      + \underbrace{(a_n+b_n)}_{\in R} t^{n+1}.
+  \]
+  Since the expression of $a+b$ is unique (by Problem 2.30(b)),
+  \[
+    \lambda_i = \mu_i + \nu_i
+  \]
+  for all $i = 0, 1, \ldots, n$.
+  Since $n$ is arbitrary, $\lambda_i = \mu_i + \nu_i$ is true for all nonnegative integers.
+  Hence, $\alpha(a+b) = \alpha(a) + \alpha(b)$.
+
+\item[(4)]
+  \emph{Show that $\alpha$ is multiplication preserving.}
+  Given $a, b \in R$. By Problem 2.30(b),
+  \[
+    ab
+    = \lambda_0 + \lambda_1 t + \cdots + \lambda_n t^n + c_n t^{n+1}
+  \]
+  and
+  \begin{align*}
+    a
+    &= \mu_0 + \mu_1 t + \cdots + \mu_n t^n + a_n t^{n+1} \\
+    b
+    &= \nu_0 + \nu_1 t + \cdots + \nu_n t^n + b_n t^{n+1}
+  \end{align*}
+  for any integer $n \geq 0$.
+  So
+  \begin{align*}
+    ab
+    =& \: \underbrace{(\mu_0 \nu_0)}_{\in k}
+      + \underbrace{(\mu_1 \nu_0 + \mu_0 \nu_1)}_{\in k} t + \cdots \\
+      &+ \underbrace{(\mu_n \nu_0 + \mu_{n-1}\nu_1 + \cdots + \mu_1\nu_{n-1} + \mu_0\nu_n)}_{\in k} t^n \\
+      &+ \underbrace{(\text{other terms})}_{\in R} t^{n+1}.
+  \end{align*}
+  Since the expression of $a+b$ is unique (by Problem 2.30(b)),
+  \[
+    \lambda_i = \sum_{j+k=i} \mu_j \nu_k
+  \]
+  for all $i = 0, 1, \ldots, n$.
+  Since $n$ is arbitrary, $\lambda_i = \sum_{j+k=i} \mu_j + \nu_k$ is true for all nonnegative integers.
+  Hence, $\alpha(ab) = \alpha(a)\alpha(b)$.
+
+\item[(5)]
+  \emph{Show that $\alpha$ is multiplicative identity preserving.}
+  Note that
+  \[
+    1
+    = \underbrace{1}_{\in k}
+      + \underbrace{0}_{\in k} t + \cdots
+      + \underbrace{0}_{\in k} t^n
+      + \underbrace{0}_{\in k} t^{n+1}
+  \]
+  for every nonnegative integer $n$.
+  Hence $\alpha: 1 \mapsto 1 \in k[[x]]$.
+
+\item[(6)]
+  By (3)(4)(5), $\alpha$ is a ring homomorphism.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Define the mapping $\beta$ from $K$ to $k((x))$
+  by
+  \[
+    \beta: a/b \mapsto \alpha(a)/\alpha(b)
+  \]
+  where $a, b \in R$ and $b \neq 0$.
+
+\item[(2)]
+  $\beta$ is well-defined since:
+  \begin{enumerate}
+  \item[(a)]
+    $\alpha(b) \neq 0$ if $b \neq 0$ by the injectivity of $\alpha$.
+
+  \item[(b)]
+    The value of $\beta(a/b)$ is independent of the choice of $a/b \in K$
+    since $\alpha$ is a ring homomorphism.
+  \end{enumerate}
+
+\item[(3)]
+  Also, $\beta$ is a ring homomorphism since $\alpha$ is a ring homomorphism.
+
+\item[(4)]
+  To show that the order function on $k((x))$ restricts to that on $K$,
+  it suffices to show that
+  \[
+    \mathrm{ord}_{R}(z) = \mathrm{ord}_{k[[x]]}(\alpha(z)).
+  \]
+  In fact,
+  \begin{align*}
+    m := \mathrm{ord}_{R}(z)
+    &\Longleftrightarrow
+    z = \lambda_m t^m + \cdots + \lambda_n t^n + z_n t^{n+1} \text{ with } \lambda_m \neq 0 \\
+    &\Longleftrightarrow
+    \alpha(z) = \lambda_m x^m + \cdots \text{ with } \lambda_m \neq 0 \\
+    &\Longleftrightarrow
+    \mathrm{ord}_{k[[x]]}(\alpha(z)) = m.
+  \end{align*}
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  In calculus we have
+  \[
+    (1-x)^{-1} = 1 + x + x^2 + \cdots = \sum_{i=0}^{\infty} x^i
+  \]
+  for $|x| < 1$.
+  In the ring of formal power series $k[[x]]$, $1-x$ is a unit
+  (by (4) in the proof of Problem 2.31) and satisfies
+  \[
+    (1-x)\left( \sum_{i=0}^{\infty} x^i \right) = 1 \in k[[x]].
+  \]
+  Hence, the power expansion of $(1-x)^{-1}$ is
+  \[
+    (1-x)^{-1} = \sum_{i=0}^{\infty} x^i \in k((x)).
+  \]
+
+\item[(2)]
+  Note that $1+x^2$ is a unit in $k[[x]]$ and satisfies
+  \[
+    (1+x^2)\left( \sum_{i=0}^{\infty} (-1)^i x^{2i} \right)
+    = 1 \in k[[x]].
+  \]
+  Hence, the power expansion of $(1-x)(1+x^2)^{-1}$ is
+  \begin{align*}
+    (1 - x)\left( \sum_{i=0}^{\infty} (-1)^i x^{2i} \right)
+    &= \left( \sum_{i=0}^{\infty} (-1)^i x^{2i} \right)
+      - x\left( \sum_{i=0}^{\infty} (-1)^i x^{2i} \right) \\
+    &= \sum_{i=0}^{\infty} (-1)^i x^{2i} + \sum_{i=0}^{\infty} (-1)^{i+1} x^{2i+1} \\
+    &= \sum_{i=0}^{\infty} (-1)^i x^{i} \in k[[x]].
+  \end{align*}
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
