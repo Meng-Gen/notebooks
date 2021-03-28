@@ -4334,6 +4334,111 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.12.}
+\addcontentsline{toc}{subsubsection}{Problem 2.12.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $\varphi: \mathbf{A}^{1} \to V = V(y^2-x^3) \subseteq \mathbf{A}^{2}$
+  be defined by $\varphi(t) = (t^2, t^3)$.
+  Show that although $\varphi$ is a one-to-one, onto polynomial map,
+  $\varphi$ is not an isomorphism.
+  (Hint: $\widetilde{\varphi}(\Gamma(V)) = k[t^2,t^3] \subsetneq k[t] = \Gamma(\mathbf{A}^{1})$.)}
+
+\item[(b)]
+  \emph{Let $\varphi: \mathbf{A}^{1} \to V = V(y^2 - x^2(x+1))$
+  be defined by $\varphi(t) = (t^2-1, t(t^2-1))$.
+  Show that $\varphi$ is one-to-one and onto, except that $\varphi(\pm 1) = (0, 0)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Similar to Problem 2.8(a), $\varphi$ is a polynomial map.
+
+\item[(2)]
+  Similar to Problem 2.8(a) again,
+  \[
+    V = V(y^2-x^3) = \{ (t^2,t^3) \in \mathbf{A}^2(k) : t \in k \}.
+  \]
+  Hence the map $\varphi: t \mapsto (t^2, t^3)$ is surjective.
+
+\item[(3)]
+  \emph{Show that $\varphi$ is injective.}
+  Suppose $(t^2, t^3) = (s^2, s^3)$ for some $t, s \in k$.
+  If $t = 0$, then $s = 0$.
+  If $t \neq 0$, then $t = \frac{t^3}{t^2} = \frac{s^3}{s^2} = s$.
+  In any case, $t = s$ whenever $(t^2, t^3) = (s^2, s^3)$.
+
+\item[(4)]
+  \emph{Show that $\varphi$ is not an isomorphism.}
+  It suffices to show that $\widetilde{\varphi}(\Gamma(V)) \subsetneq \Gamma(\mathbf{A}^{1})$
+  by Proposition 1.
+  For any $f \in \Gamma(V)$,
+  \[
+    \widetilde{\varphi}(f)(t) = (f \circ \varphi)(t) = f(t^2,t^3) \in k[t^2,t^3].
+  \]
+  (Clearly, $k[t^2,t^3] \subseteq \widetilde{\varphi}(\Gamma(V))$.)
+  Hence,
+  \[
+    \widetilde{\varphi}(\Gamma(V)) \subseteq k[t^2,t^3] \subsetneq k[t] = \Gamma(\mathbf{A}^{1}).
+  \]
+  (Here note that $t \not\in k[t^2,t^3]$ but $t \in k[t]$.)
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Write
+  \[
+    Y = \{ (t^2-1, t(t^2-1)) \in \mathbf{A}^2(k) : t \in k \}.
+  \]
+  Show that $Y = V$.}
+  Similar to Problem 2.8(a).
+  It suffices to show that $(x,y) \in Y$ for any $(x,y) \in V$.
+  If $x = 0$, then $y = 0$ or $(x,y) = (0,0) \in Y$ whenever $t = \pm 1$.
+  (In fact, $(0,0) = (t^2-1, t(t^2-1))$ iff $t^2-1 = 0$ iff $t = \pm 1$ in any field.)
+  If $x \neq 0$, define
+  \[
+    t = \frac{y}{x} \in k.
+  \]
+  So $y = tx$ and thus
+  \[
+    0 = y^2 - x^2(x+1) = t^2 x^2 - x^2(x+1) = x^2(t^2 - (x+1)).
+  \]
+  Since $x \neq 0$ and $k$ is a field, we have
+  \[
+    t^2 - (x+1) = 0
+    \Longleftrightarrow x = t^2 - 1.
+  \]
+  Hence, $y = tx = t(t^2 - 1)$ and therefore $(x,y) \in Y$.
+
+\item[(2)]
+  By (1), $\varphi$ is surjective and $\varphi(\pm 1) = (0,0)$.
+
+\item[(3)]
+  \emph{Show that $\varphi$ is injective except that $\varphi(\pm 1) = (0, 0)$.}
+  Given $t, s \in k$.
+  It suffices to show that $t = s$
+  whenever $(t^2-1, t(t^2-1)) = (s^2-1, s(s^2-1)) \neq (0,0)$.
+  In fact, by assumption we have $t^2-1 = s^2-1 \neq 0$ by assumption.
+  Therefore,
+  \[
+    t = \frac{t(t^2-1)}{t^2-1} = \frac{s(s^2-1)}{s^2-1} = s.
+  \]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
