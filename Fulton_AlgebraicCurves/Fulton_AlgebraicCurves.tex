@@ -4536,6 +4536,138 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.14.* (Linear subvariety)}
+\addcontentsline{toc}{subsubsection}{Problem 2.14.* (Linear subvariety)}
+\emph{A set $V \subseteq \mathbf{A}^n(k)$
+is called a \textbf{linear subvariety} of $\mathbf{A}^n(k)$ if
+$V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.}
+
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that if $t$ is an affine change of coordinates on $\mathbf{A}^n(k)$,
+  then $V^{t}$ is also a linear subvariety of $\mathbf{A}^n(k)$.}
+
+\item[(b)]
+  \emph{If $V \neq \varnothing$,
+  show that there is an affine change of coordinates $t$ of $\mathbf{A}^n$
+  such that $V^t = V(x_{m+1},\ldots,x_n)$.
+  (Hint: use induction on $r$.)
+  So $V$ is a variety.}
+
+\item[(c)]
+  \emph{Show that the $m$ that appears in part (b) is independent of the choice of $t$.
+  It is called the dimension of $V$.
+  Then $V$ is then isomorphic (as a variety) to $\mathbf{A}^m(k)$.
+  (Hint: Suppose there were an affine change of coordinates $t$ such that
+  $V(x_{m+1},\ldots,x_n)^{t} = V(x_{s+1},\ldots,x_n)$, $m < s$;
+  show that $t_{m+1},\ldots,t_n$ would be dependent.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Say $t = (t_1,\ldots,t_n)$ is an affine change of coordinates,
+  and $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.
+
+\item[(2)]
+  \emph{Show that $V$ is a variety.}
+  Might assume that $V \neq \varnothing$.
+  So it suffices to show that $I(V)$ is a prime ideal or $k[x_1,\ldots,x_n]/I(V)$ is a domain.
+
+\item[(3)]
+  By the Gaussian elimination, we can write the system of linear equations
+  \begin{equation*}
+    \begin{cases}
+      f_1 = 0 \\
+      \cdots \\
+      f_r = 0
+    \end{cases}
+  \end{equation*}
+  in the row echelon form
+  \begin{equation*}
+    \begin{cases}
+      g_1 := a_{1,c(1)} x_{c(1)} + \cdots + a_n x_n = 0 \\
+      \cdots \\
+      g_m := a_{m,c(m)} x_{c(m)} + \cdots + a_n x_n = 0 \\
+      g_{m+1} := 0 \\
+      \cdots \\
+      g_r := 0
+    \end{cases}
+  \end{equation*}
+  where $a_{i,c(i)} \neq 0$ for $1 \leq i \leq m$ and
+  $c(1) < c(2) < \cdots < c(m)$ for some $m \leq n$.
+  (Note that each $g_{i}$ cannot be a nonzero constant as $V \neq \varnothing$.)
+
+\item[(4)]
+  Might assume that $c(i) = i$ and $a_{i,c(i)} = 1$ for convenience.
+  Note that $V(f_1,\ldots,f_r) = V(g_1,\ldots,g_r)$ by linear algebra.
+  Now given any $f + I(V) \in k[x_1,\ldots,x_n]/I(V)$,
+  we replace $x_{1}$ by the relation $g_1 = 0$ to get
+  \begin{align*}
+    f + I(V)
+    =& \: f(- a_{1,2} x_{2} - \cdots - a_n x_n, x_2, \cdots, x_n) + I(V) \\
+    :=& \: f_1 + I(V)
+  \end{align*}
+  where $f_1 \in k[x_2,\ldots,x_n]$.
+  Continue this process to get
+  \begin{align*}
+    f + I(V) &= f_1 + I(V) \text{ for some } f_1 \in k[x_2,\ldots,x_n]. \\
+    f_1 + I(V) &= f_2 + I(V) \text{ for some } f_2 \in k[x_3,\ldots,x_n]. \\
+    & \cdots \\
+    f_{m-1} + I(V) &= f_m + I(V) \text{ for some } f_m \in k[x_{m+1},\ldots,x_n].
+  \end{align*}
+  Hence, a routine shows that there is a ring isomorphism 
+  \[
+    \alpha: k[x_1,\ldots,x_n]/I(V) \to k[x_{m+1},\ldots,x_n].
+  \]
+  Note that $k[x_{m+1},\ldots,x_n]$ is a domain.
+  Therefore, the statement in (2) is proved.
+
+\item[(5)]
+  By (2), $I(V) = (f_1, \ldots, f_r) = (g_1, \ldots, g_m)$.
+  So
+  \[
+    I(V)^{t} = (f_1^{t}, \ldots, f_r^{t}) = (g_1^{t}, \ldots, g_m^{t})
+  \]
+  where each $f_i^{t}$ or $g_j^{t}$ is also a linear polynomial.
+  Thus
+  \[
+    V^{t} = V(I(V)^{t}) = V(f_1^{t}, \ldots, f_r^{t}) = V(g_1^{t}, \ldots, g_m^{t})
+  \]
+  is also a linear subvariety of $\mathbf{A}^n(k)$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+
+
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
