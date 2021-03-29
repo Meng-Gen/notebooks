@@ -4585,29 +4585,28 @@ $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.}
       f_r = 0
     \end{cases}
   \end{equation*}
-  in the row echelon form
+  in the reduced row echelon form
   \begin{equation*}
     \begin{cases}
-      g_1 := a_{1,c(1)} x_{c(1)} + \cdots + a_n x_n = 0 \\
+      g_1 := x_{c(1)} + a_{1,c(1)+1} x_{c(1)+1} + \cdots + a_{1,n} x_n - b_1 \\
       \cdots \\
-      g_m := a_{m,c(m)} x_{c(m)} + \cdots + a_n x_n = 0 \\
+      g_m := x_{c(m)} + a_{m,c(m)+1} x_{c(m)+1} \cdots + a_{m,n} x_n - b_m \\
       g_{m+1} := 0 \\
       \cdots \\
       g_r := 0
     \end{cases}
   \end{equation*}
-  where $a_{i,c(i)} \neq 0$ for $1 \leq i \leq m$ and
-  $c(1) < c(2) < \cdots < c(m)$ for some $m \leq n$.
+  where $c(1) < c(2) < \cdots < c(m)$ for some $m \leq n$.
   (Note that each $g_{i}$ cannot be a nonzero constant as $V \neq \varnothing$.)
 
 \item[(4)]
-  Might assume that $c(i) = i$ and $a_{i,c(i)} = 1$ for convenience.
+  Might assume that $c(i) = i$ for convenience.
   Note that $V(f_1,\ldots,f_r) = V(g_1,\ldots,g_r)$ by linear algebra.
   Now given any $f + I(V) \in k[x_1,\ldots,x_n]/I(V)$,
-  we replace $x_{1}$ by the relation $g_1 = 0$ to get
+  we replace $x_{1}$ by the relation $g_1 = b_1$ to get
   \begin{align*}
     f + I(V)
-    =& \: f(- a_{1,2} x_{2} - \cdots - a_n x_n, x_2, \cdots, x_n) + I(V) \\
+    =& \: f(- a_{1,2} x_{2} - \cdots - a_{1,n} x_n - b_1, x_2, \cdots, x_n) + I(V) \\
     :=& \: f_1 + I(V)
   \end{align*}
   where $f_1 \in k[x_2,\ldots,x_n]$.
