@@ -4572,69 +4572,81 @@ $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.}
   and $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.
 
 \item[(2)]
-  \emph{Show that $V$ is a variety.}
-  Might assume that $V \neq \varnothing$.
-  So it suffices to show that $I(V)$ is a prime ideal or $k[x_1,\ldots,x_n]/I(V)$ is a domain.
+  $V(f_1, \ldots, f_r)$ is the set of all solutions of the system of linear equations:
+  \begin{align*}
+    f_1 &= a_{11} x_1 + \cdots + a_{1n} x_n - b_1 = 0, \\
+    &\cdots \\
+    f_r &= a_{r1} x_1 + \cdots + a_{rn} x_n - b_r = 0.
+  \end{align*}
+  Write $Ax = b$ where
+  \[
+    A =
+    \underbrace{\begin{pmatrix}
+    a_{11} & \cdots & a_{1n} \\
+    \vdots & \ddots & \vdots \\
+    a_{r1} & \cdots & a_{rn}
+    \end{pmatrix}}_{\in \mathsf{M}_{r \times n}(k)},
+    \qquad
+    x =
+    \underbrace{\begin{pmatrix}
+    x_1 \\
+    \vdots \\
+    x_{n}
+    \end{pmatrix}}_{\in \mathsf{M}_{n \times 1}(k)},
+    \qquad
+    b =
+    \underbrace{\begin{pmatrix}
+    b_1 \\
+    \vdots \\
+    b_{r}
+    \end{pmatrix}}_{\in \mathsf{M}_{r \times 1}(k)}.
+  \]
 
 \item[(3)]
-  By the Gaussian elimination, we can write the system of linear equations
-  \begin{equation*}
-    \begin{cases}
-      f_1 = 0 \\
-      \cdots \\
-      f_r = 0
-    \end{cases}
-  \end{equation*}
-  in the reduced row echelon form
-  \begin{equation*}
-    \begin{cases}
-      g_1 := x_{c(1)} + a_{1,c(1)+1} x_{c(1)+1} + \cdots + a_{1,n} x_n - b_1 \\
-      \cdots \\
-      g_m := x_{c(m)} + a_{m,c(m)+1} x_{c(m)+1} \cdots + a_{m,n} x_n - b_m \\
-      g_{m+1} := 0 \\
-      \cdots \\
-      g_r := 0
-    \end{cases}
-  \end{equation*}
-  where $c(1) < c(2) < \cdots < c(m)$ for some $m \leq n$.
-  (Note that each $g_{i}$ cannot be a nonzero constant as $V \neq \varnothing$.)
+  Linear algebra says that Gaussian elimination transforms $(A|b)$ into its
+  reduced row echelon form $(A'|b')$.
 
 \item[(4)]
-  Might assume that $c(i) = i$ for convenience.
-  Note that $V(f_1,\ldots,f_r) = V(g_1,\ldots,g_r)$ by linear algebra.
+  If $V(f_1, \ldots, f_r) = \varnothing$, nothing to do.
+  If $V(f_1, \ldots, f_r) \neq \varnothing$, then
+  \[
+    V(f_1, \ldots, f_r) = V(g_1, \ldots, g_m)
+  \]
+  where $m = \mathrm{rank}(A)$ is the number of nonzero rows in $A'$ ($m \leq r, n$)
+  and $g_i = a'_{i1} x_1 + \cdots + a'_{in} x_n - b'_i$ for $1 \leq i \leq m$.
+  ($a'_{ij}$ is the entry of the matrix $A'$.)
+
+\item[(5)]
   Now given any $f + I(V) \in k[x_1,\ldots,x_n]/I(V)$,
-  we replace $x_{1}$ by the relation $g_1 = b_1$ to get
-  \begin{align*}
+  we replace the leading term $x_{i_1}$ of $g_1$ by $x_{i_1} - g_1$ to get
+  \[
     f + I(V)
-    =& \: f(- a_{1,2} x_{2} - \cdots - a_{1,n} x_n - b_1, x_2, \cdots, x_n) + I(V) \\
-    :=& \: f_1 + I(V)
-  \end{align*}
-  where $f_1 \in k[x_2,\ldots,x_n]$.
-  Continue this process to get
+    = \: f(x_1, \cdots,
+      \underbrace{x_{i_1} - g_1}_{\text{$i_1$th position}}, \cdots, x_n) + I(V)
+    := \: f_1 + I(V)
+  \]
+  where $f_1 \in k[x_1,\ldots,\widehat{x_{i_1}}\ldots,x_n]$.
+  Continue this process to replace each leading term $x_{i_j}$ of $g_j$ by $x_{i_j} - g_j$ to get
+  one by one to get
   \begin{align*}
-    f + I(V) &= f_1 + I(V) \text{ for some } f_1 \in k[x_2,\ldots,x_n]. \\
-    f_1 + I(V) &= f_2 + I(V) \text{ for some } f_2 \in k[x_3,\ldots,x_n]. \\
+    f + I(V) &= f_1 + I(V)
+      \text{ where } f_1 \in k[x_1,\ldots,\widehat{x_{i_1}}\ldots,x_n]. \\
     & \cdots \\
-    f_{m-1} + I(V) &= f_m + I(V) \text{ for some } f_m \in k[x_{m+1},\ldots,x_n].
+    f_{m-1} + I(V) &= f_m + I(V)
+      \text{ where } f_m \in k[x_1,\ldots,\widehat{x_{i_1}},\ldots,\widehat{x_{i_m}}\ldots,x_n].
   \end{align*}
   Hence, a routine shows that there is a ring isomorphism 
   \[
-    \alpha: k[x_1,\ldots,x_n]/I(V) \to k[x_{m+1},\ldots,x_n].
+    \alpha: k[x_1,\ldots,x_n]/I(V) \to
+    \underbrace{k[x_1,\ldots,\widehat{x_{i_1}},\ldots,\widehat{x_{i_m}}\ldots,x_n]}_{\text{a domain}}
   \]
-  Note that $k[x_{m+1},\ldots,x_n]$ is a domain.
-  Therefore, the statement in (2) is proved.
+  sending $f$ to $f_m$.
+  Therefore, $V$ is a variety.
 
 \item[(5)]
-  By (2), $I(V) = (f_1, \ldots, f_r) = (g_1, \ldots, g_m)$.
-  So
-  \[
-    I(V)^{t} = (f_1^{t}, \ldots, f_r^{t}) = (g_1^{t}, \ldots, g_m^{t})
-  \]
-  where each $f_i^{t}$ or $g_j^{t}$ is also a linear polynomial.
-  Thus
-  \[
-    V^{t} = V(I(V)^{t}) = V(f_1^{t}, \ldots, f_r^{t}) = V(g_1^{t}, \ldots, g_m^{t})
-  \]
+  As $I(V) = (f_1, \ldots, f_r)$,
+  $I(V)^{t} = (f_1^{t}, \ldots, f_r^{t})$ where each $f_i^{t}$ is linear.
+  Thus $V^{t} = V(I(V)^{t}) = V(f_1^{t}, \ldots, f_r^{t})$
   is also a linear subvariety of $\mathbf{A}^n(k)$.
 \end{enumerate}
 $\Box$\\
@@ -4644,8 +4656,23 @@ $\Box$\\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Extend $\{ Q'_1, \ldots, Q'_{r_m} \}$ to a basis for $\mathbf{A}^n(k)$:
+  \[
+    Q = \underbrace{\begin{pmatrix}
+    Q_1 & \cdots & Q_n
+    \end{pmatrix}}_{\in \mathsf{M}_{n \times n}(k)}
+  \]
+  where
+  \begin{equation*}
+  Q_i =
+    \begin{cases}
+      Q'_j & \text{ if $x_i = x'_j$ is a variable variable} \\
+      0 & \text{ if $x_i$ is a basis variable}.
+    \end{cases}
+  \end{equation*}
+  So $P = Qx + P_0$ for any $P \in V(f_1, \ldots, f_r)$.
 
-
+\item[(2)]
 \end{enumerate}
 $\Box$\\
 
