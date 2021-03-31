@@ -4713,6 +4713,7 @@ $\Box$\\
   Linear algebra says that
   the rank of any matrix is the maximal number of its linearly independent rows,
   which is uniquely determined.
+  Therefore, $\dim(V) = n - \mathrm{rank}(A|b) = n - \mathrm{rank}(A'|b')$ is uniquely determined.
 
 \item[(2)]
   $V$ is then isomorphic to $\mathbf{A}^m(k)$ as a variety.
@@ -4722,6 +4723,144 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.15.* (Line)}
+\addcontentsline{toc}{subsubsection}{Problem 2.15.* (Line)}
+\emph{Let $P = (a_1, \ldots, a_n)$, $Q = (b_1, \ldots, b_n)$ be distinct points of $\mathbf{A}^{n}$.
+The \textbf{line} through $P$ and $Q$ is defined to be
+$\{ ( a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n) ) : t \in k \}$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that if $L$ is the line through $P$ and $Q$, and $t$ is an affine change of coordinates,
+  then $t(L)$ is the line through $t(P)$ and $t(Q)$.}
+
+\item[(b)]
+  \emph{Show that a line is a linear subvariety of dimension $1$,
+  and that a linear subvariety of dimension $1$ is the line through any two of its points.}
+
+\item[(c)]
+  \emph{Show that, in $\mathbf{A}^{2}$, a line is the same thing as a hyperplane.}
+
+\item[(d)]
+  \emph{Let $P, P' \in \mathbf{A}^{2}$, $L_1$, $L_2$ two distinct lines through $P$,
+  $L'_1$, $L'_2$ distinct lines through $P'$.
+  Show that there is an affine change of coordinates $t$ of $\mathbf{A}^{2}$
+  such that $t(P) = P'$ and $t(L_i) = L'_i$, $i = 1, 2$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Write $t = (t_1,\ldots,t_n)$ as
+  \[
+    t_i = \sum_{j} c_{ij} x_j + c_{i0}.
+  \]
+  Take any point $\alpha_{s} = ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) \in L$ for some $s \in k$.
+  (In particular, $P_0 = P$ and $P_1 = Q$.)
+
+\item[(2)]
+  As
+  \begin{align*}
+    t_i(P_{s})
+    =& \: \sum_{j} c_{ij}(a_j + s(b_j-a_j)) + c_{i0} \\
+    =& \: \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \\
+      & \: + s \left[ \left( \sum_{j} c_{ij} b_j + c_{i0} \right)
+        - \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \right] \\
+    =& t_i(P) + s(t_i(Q) - t_i(P)),
+  \end{align*}
+  we have
+  \begin{align*}
+    t(L) =& \: \{ (t_1(P) + s(t_1(Q) - t_1(P)), \ldots, \\
+      & \: \qquad t_n(P) + s(t_n(Q) - t_n(P))) : s \in k\}.
+  \end{align*}
+  Moreover, $t(P) \in t(L)$ as $s = 0$ and $t(Q) \in t(L)$ as $s = 1$.
+  Therefore, $t(L)$ is the line through $t(P)$ and $t(Q)$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Note that $a_j \neq b_j$ for some $1 \leq j \leq n$ since $P \neq Q$.
+  Write
+  \[
+    L = V\left( x_i = a_i + \frac{x_j-a_j}{b_j-a_j}(b_i - a_i) \right)
+  \]
+  for $1 \leq i \leq n$ and $i \neq j$.
+  By Problem 2.14, $L$ is a linear subvariety.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    n - \dim(L)
+    &= \text{the rank of the corresponding augmented matrix $(A'|b')$} \\
+    &= \text{the maximal number of the linearly independent rows of $(A'|b')$} \\
+    &= n - 1,
+  \end{align*}
+  which is uniquely determined.
+  Therefore, $\dim(V) = 1$.
+
+\item[(3)]
+  Conversely, $\dim(V) = 1$ implies that $\mathrm{rank}(A'|b') = n - 1$.
+  So all leading terms are all $x_i$ except only one $x_j$ for some $j$.
+  Hence $V$ is of the form
+  \[
+    V
+    = (x_i + a_{ij} x_j = b_i)
+  \]
+  for $1 \leq i \leq n$ and $i \neq j$.
+  So
+  \begin{align*}
+    V
+    &= \{ (b_1 - a_{1j}s, \ldots,
+      \underbrace{s}_{\text{$j$th position}}, \ldots, b_n - a_{nj}s) : s \in k \} \\
+    &= \{ (b_1 + s((b_1-a_{1j}) - b_1), \ldots,
+      \underbrace{0 + s(1 - 0)}_{\text{$j$th position}}, \ldots, \\
+      & \: \qquad (b_n + s((b_n-a_{nj}) - b_n) : s \in k \}
+  \end{align*}
+  is a line passing
+  \begin{align*}
+    P &= (b_1, \ldots, 0, \ldots, b_n) \\
+    Q &= (b_1-a_{1j}, \ldots, 1, \ldots, b_n-a_{nj})
+  \end{align*}
+  with $P \neq Q$ (since they are different in the $j$th position).
+  (Here we can change $P$ and $Q$ to any two different points on $V$.)
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  A line $L \subseteq \mathbf{A}^{2}$ is $V(x+ay=b)$ or $V(x+ay=b)$ by (b).
+  In any case, $L$ is a hyperplane in $\mathbf{A}^{2}$.
+
+\item[(2)]
+  Conversely, given any hyperplane $V = V(ax + by = c) \subseteq \mathbf{A}^{2}$
+  where $a$ and $b$ are not all zero.
+  Might assume that $a \neq 0$. (The case $b \neq 0$ is similar.)
+  So
+  \[
+    V = \left\{ \left(\frac{c}{a} - \frac{b}{a}s, s\right) : s \in k \right\}
+  \]
+  is a line passing $\left(\frac{c}{a}, 0\right)$ and $\left(\frac{c-b}{a}, 1\right)$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
 
 
 
