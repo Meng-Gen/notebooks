@@ -4578,7 +4578,7 @@ $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.}
     &\cdots \\
     f_r &= a_{r1} x_1 + \cdots + a_{rn} x_n - b_r = 0.
   \end{align*}
-  Write $Ax = b$ where
+  Write $Ax = b$ and $V = V(Ax = b)$ where
   \[
     A =
     \underbrace{\begin{pmatrix}
@@ -4605,6 +4605,7 @@ $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.}
 \item[(3)]
   Linear algebra says that Gaussian elimination transforms $(A|b)$ into its
   reduced row echelon form $(A'|b')$.
+  Therefore, $V(Ax = b) = V(A'x = b')$.
 
 \item[(4)]
   If $V(f_1, \ldots, f_r) = \varnothing$, nothing to do.
@@ -4656,23 +4657,51 @@ $\Box$\\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  Extend $\{ Q'_1, \ldots, Q'_{r_m} \}$ to a basis for $\mathbf{A}^n(k)$:
+  Suppose $A \in \mathsf{M}_{r \times n}(k)$ is of rank $n - m$.
+  Linear algebra says that there exist invertible matrices
+  $B \in \mathsf{M}_{r \times r}(k)$ and $C \in \mathsf{M}_{n \times n}(k)$
+  such that $D = BAC$, where
   \[
-    Q = \underbrace{\begin{pmatrix}
-    Q_1 & \cdots & Q_n
-    \end{pmatrix}}_{\in \mathsf{M}_{n \times n}(k)}
+    D = BAC =
+    \underbrace{\begin{pmatrix}
+    O_1 & O_2 \\
+    O_3 & I_{n-m}
+    \end{pmatrix}}_{\in \mathsf{M}_{r \times n}(k)}
   \]
-  where
-  \begin{equation*}
-  Q_i =
-    \begin{cases}
-      Q'_j & \text{ if $x_i = x'_j$ is a variable variable} \\
-      0 & \text{ if $x_i$ is a basis variable}.
-    \end{cases}
-  \end{equation*}
-  So $P = Qx + P_0$ for any $P \in V(f_1, \ldots, f_r)$.
+  in which $I_{n-m} \in \mathsf{M}_{(n-m) \times (n-m)}(k)$ is the identity matrix
+  and $O_1$, $O_2$, and $O_3$ are zero matrices.
 
 \item[(2)]
+  Let $t'$ be the linear map corresponding to the matrix $C$.
+  So
+  \begin{align*}
+    V^{t'}
+    &= V(Ax = b)^{t'} \\
+    &= V(ACx = b) \\
+    &= V(BACx = Bb)
+      &(\text{$B$: invertible}) \\
+    &= V(Dx = Bb) \\
+    &= V(-\beta_1, \cdots, -\beta_m, x_{m+1} - \beta_{m+1}, \cdots, x_n - \beta_n)
+      &(V \neq \varnothing) \\
+    &= V(x_{m+1} - \beta_{m+1}, \cdots, x_n - \beta_n)
+  \end{align*}
+  where $Bb =
+  \underbrace{\begin{pmatrix}
+    \beta_1 \\
+    \vdots \\
+    \beta_n
+  \end{pmatrix}}_{\in \mathsf{M}_{n \times 1}(k)}$.
+
+\item[(3)]
+  Let $t''$ be the translation corresponding to the matrix $Bb$.
+  Let $t = t'' \circ t'$ be the desired affine change of coordinates.
+  Therefore,
+  \begin{align*}
+    V^{t}
+    &= (V^{t'})^{t''} \\
+    &= V(x_{m+1} - \beta_{m+1}, \cdots, x_n - \beta_n)^{t''} \\
+    &= V(x_{m+1}, \cdots, x_n).
+  \end{align*}
 \end{enumerate}
 $\Box$\\
 
@@ -4681,6 +4710,12 @@ $\Box$\\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  Linear algebra says that
+  the rank of any matrix is the maximal number of its linearly independent rows,
+  which is uniquely determined.
+
+\item[(2)]
+  $V$ is then isomorphic to $\mathbf{A}^m(k)$ as a variety.
 \end{enumerate}
 $\Box$\\\\
 
