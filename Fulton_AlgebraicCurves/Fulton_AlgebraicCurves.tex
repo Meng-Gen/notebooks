@@ -4970,6 +4970,7 @@ such that $\gamma(0) = P$, $\gamma(1) = Q$.}
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  Regard $\mathbb{C}$ as $\mathbb{R}^2$.
   Given any $P, Q \in \mathbb{C} - S$.
   Write $S := \{ P_1, \ldots, P_m \} \subseteq \mathbb{C}$.
 
@@ -4982,8 +4983,26 @@ such that $\gamma(0) = P$, $\gamma(1) = Q$.}
   is a collection of finitely many lines.
 
 \item[(3)]
-  Consider a unit sphere $S^1$ centered at $P$
+  Consider a unit sphere $\mathbb{S}^1(P)$ centered at $P$.
+  \[
+    \left( \bigcup_{L_i \in \mathscr{C}} L_i \right) \bigcap \mathbb{S}^1(P)
+  \]
+  is again a finite set (of order $\leq 2m$).
+  Since $\mathbb{S}^1$ is infinite,
+  we can always take a line $L$ passing $P$ and some point in $\mathbb{S}^1(P)$
+  where $L \cap S = \varnothing$.
 
+\item[(4)]
+  Similarly, we take a line $L'$ passing $Q$ and some point in $\mathbb{S}^1(Q)$
+  where $L' \cap S = \varnothing$ and $L' \cap L \neq \varnothing$.
+  (There are only two points in $\mathbb{S}^1(Q)$ such that $L' \cap L = \varnothing$.
+  Note that $\mathbb{S}^1$ is infinite.)
+
+\item[(5)]
+  Take any point $A \in L' \cap L$.
+  So there is a path from $P$ to $A$ (on a segment containted in $L$)
+  and then to $Q$ (on a segment containted in $L'$).
+  Therefore, $\mathbb{C} - S$ is path-connected.
 \end{enumerate}
 $\Box$\\
 
