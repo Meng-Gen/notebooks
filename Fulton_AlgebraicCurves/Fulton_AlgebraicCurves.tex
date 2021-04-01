@@ -4843,14 +4843,14 @@ $\Box$\\
   In any case, $L$ is a hyperplane in $\mathbf{A}^{2}$.
 
 \item[(2)]
-  Conversely, given any hyperplane $V = V(ax + by = c) \subseteq \mathbf{A}^{2}$
+  Conversely, given any hyperplane $V = V(ax + by + c = 0) \subseteq \mathbf{A}^{2}$
   where $a$ and $b$ are not all zero.
   Might assume that $a \neq 0$. (The case $b \neq 0$ is similar.)
   So
   \[
-    V = \left\{ \left(\frac{c}{a} - \frac{b}{a}s, s\right) : s \in k \right\}
+    V = \left\{ \left(-\frac{c}{a}-\frac{b}{a}s, s\right) : s \in k \right\}
   \]
-  is a line passing $\left(\frac{c}{a}, 0\right)$ and $\left(\frac{c-b}{a}, 1\right)$.
+  is a line passing $\left(-\frac{c}{a}, 0\right)$ and $\left(-\frac{c+b}{a}, 1\right)$.
 \end{enumerate}
 $\Box$\\
 
@@ -4859,6 +4859,87 @@ $\Box$\\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
+  It suffices to show that there is a bijective affine change of coordinates $t$ of $\mathbf{A}^{2}$
+  such that $t(P) = (0,0)$, $t(L_1) = V(x = 0)$ and $t(L_2) = V(y = 0)$.
+  Write $P = (p_1, p_2)$ and $L_i = a_i x + b_i y + c_i$ for $i = 1, 2$.
+
+\item[(2)]
+  Let $t'' = (t''_1, t''_2)$ be a translation defined by
+  \[
+    \begin{pmatrix}
+      t''_1 \\
+      t''_2
+    \end{pmatrix}
+    = \begin{pmatrix}
+        x - p_1 \\
+        y - p_2
+      \end{pmatrix}.
+  \]
+  So ${L_1}^{t''} = a_1 x + b_1 y$ and ${L_2}^{t''} = a_2 x + b_2 y$.
+  Let
+  \[
+    A = \begin{pmatrix}
+      a_1 & b_1 \\
+      a_2 & b_2
+    \end{pmatrix}
+  \]
+  and $t' = (t'_1, t'_2)$ be a linear map defined by
+  \[
+    \begin{pmatrix}
+      t'_1 \\
+      t'_2
+    \end{pmatrix}
+    = \frac{1}{\det(A)}
+      \begin{pmatrix}
+        b_2 & -b_1 \\
+        -a_2 & a_1
+      \end{pmatrix}
+      \begin{pmatrix}
+        x \\
+        y
+      \end{pmatrix}.
+  \]
+  ($t'$ is well-defined since $L_1$ and $L_2$ are distinct lines and thus $\det(A) \neq 0$.)
+  Write $t = (t_1, t_2) = t' \circ t''$.
+  So
+  \[
+    \begin{pmatrix}
+      t_1 \\
+      t_2
+    \end{pmatrix}
+    = \frac{1}{\det(A)}
+      \begin{pmatrix}
+        b_2 & -b_1 \\
+        -a_2 & a_1
+      \end{pmatrix}
+      \begin{pmatrix}
+        x - p_1 \\
+        y - p_2
+      \end{pmatrix}
+  \]
+  and
+  \begin{align*}
+    L_1^{t} = ({L_1}^{t''})^{t'} = x \\
+    L_2^{t} = ({L_2}^{t''})^{t'} = y.
+  \end{align*}
+
+\item[(3)]
+  Conversely, define an affine change of coordinates $s = (s_1, s_2)$ of $\mathbf{A}^{2}$
+  by
+  \[
+    \begin{pmatrix}
+      s_1 \\
+      s_2
+    \end{pmatrix}
+    = \begin{pmatrix}
+      a_1 x + b_1 y + c_1 \\
+      a_2 x + b_2 y + c_2
+    \end{pmatrix}
+  \]
+  so that $x^{s} = L_1$ and $y^{s} = L_2$.
+
+\item[(4)]
+  By (2)(3), the statement in (1) is established.
 \end{enumerate}
 $\Box$\\\\
 
