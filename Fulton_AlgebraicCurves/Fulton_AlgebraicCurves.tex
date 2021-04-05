@@ -4962,7 +4962,10 @@ such that $\gamma(0) = P$, $\gamma(1) = Q$.}
   \emph{Show that $\mathbb{C} - S$ is path-connected for any finite set $S$.}
 
 \item[(b)]
-  \emph{} \\
+  \emph{Let $V$ be an algebraic set in $\mathbf{A}^n(\mathbb{C})$.
+  Show that $\mathbf{A}^n(\mathbb{C}) - V$ is path-connected.
+  (Hint: If $P, Q \in \mathbf{A}^n(\mathbb{C}) - V$, let $L$ be the line through $P$ and $Q$.
+  Then $L \cap V$ is finite, and $L$ is isomorphic to $\mathbf{A}^1(\mathbb{C})$.)} \\
 \end{enumerate}
 
 
@@ -4970,9 +4973,9 @@ such that $\gamma(0) = P$, $\gamma(1) = Q$.}
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  Regard $\mathbb{C}$ as $\mathbb{R}^2$.
-  Given any $P, Q \in \mathbb{C} - S$.
-  Write $S := \{ P_1, \ldots, P_m \} \subseteq \mathbb{C}$.
+  Regard $\mathbb{C}^n$ as $\mathbb{R}^{2n}$.
+  Given any $P, Q \in \mathbb{C}^n - S$.
+  Write $S := \{ P_1, \ldots, P_m \} \subseteq \mathbb{C}^n$.
 
 \item[(2)]
   Let $L_{P_i}$ (resp. $L'_{P_i}$) be a line passing $P$ (resp. $Q$) and $P_i$
@@ -4983,26 +4986,26 @@ such that $\gamma(0) = P$, $\gamma(1) = Q$.}
   is a collection of finitely many lines.
 
 \item[(3)]
-  Consider a unit sphere $\mathbb{S}^1(P)$ centered at $P$.
+  Consider a unit sphere $\mathbb{S}^{2n-1}(P)$ centered at $P$.
   \[
-    \left( \bigcup_{L_i \in \mathscr{C}} L_i \right) \bigcap \mathbb{S}^1(P)
+    \left( \bigcup_{L_i \in \mathscr{C}} L_i \right) \bigcap \mathbb{S}^{2n-1}(P)
   \]
-  is again a finite set (of order $\leq 2m$).
-  Since $\mathbb{S}^1$ is infinite,
-  we can always take a line $L$ passing $P$ and some point in $\mathbb{S}^1(P)$
+  is again a finite set (of order $\leq 2|S| = 2m$).
+  Since $\mathbb{S}^{2n-1}$ is infinite,
+  we can always take a line $L$ passing $P$ and some point in $\mathbb{S}^{2n-1}(P)$
   where $L \cap S = \varnothing$.
 
 \item[(4)]
-  Similarly, we take a line $L'$ passing $Q$ and some point in $\mathbb{S}^1(Q)$
+  Similarly, we take a line $L'$ passing $Q$ and some point in $\mathbb{S}^{2n-1}(Q)$
   where $L' \cap S = \varnothing$ and $L' \cap L \neq \varnothing$.
-  (There are only two points in $\mathbb{S}^1(Q)$ such that $L' \cap L = \varnothing$.
-  Note that $\mathbb{S}^1$ is infinite.)
+  (There are only two points in $\mathbb{S}^{2n-1}(Q)$ such that $L' \cap L = \varnothing$.
+  Note that $\mathbb{S}^{2n-1}$ is infinite.)
 
 \item[(5)]
   Take any point $A \in L' \cap L$.
   So there is a path from $P$ to $A$ (on a segment containted in $L$)
   and then to $Q$ (on a segment containted in $L'$).
-  Therefore, $\mathbb{C} - S$ is path-connected.
+  Therefore, $\mathbb{C}^n - S$ is path-connected.
 \end{enumerate}
 $\Box$\\
 
@@ -5011,6 +5014,37 @@ $\Box$\\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Given any $P, Q \in \mathbf{A}^n(\mathbb{C}) - V$.
+  Let $L$ be the line through $P$ and $Q$.
+  To show $\mathbf{A}^n(\mathbb{C}) - V$ is path-connected,
+  it suffices to show that
+  \[
+    L - V = L - (V \cap L)
+  \]
+  is path-connected.
+
+\item[(2)]
+  Similar to Problem 1.12, we have $V \cap L$ is finite.
+  In fact, write $V = (f_1, \ldots, f_r)$ and
+  $L = \{ ( a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n) ) : t \in k \}$
+  where $P = (a_1, \ldots, a_n)$ and $Q = (b_1, \ldots, b_n)$.
+  Then
+  \begin{align*}
+    V \cap L
+    &= \bigcap_{i} (V(f_i) \cap L) \\
+    &= \bigcap_{i} \{ f_i(a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n)) = 0 : t \in k \} \\
+    &= \bigcap_{i} \text{ finite set } \\
+    &= \text{finite set}.
+  \end{align*}
+  Here $f_i(a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n))$ is a nonzero polynomial
+  since $P, Q \not\in V(f_i)$.
+
+\item[(3)]
+  Note that the path-connectedness is a topological invariant under homeomorphisms.
+  Since any line is homeomorphic to $\mathbb{C}^1$,
+  $L - V$ is homeomorphic to $\mathbb{C}^1 - S$ for some finite set $S$
+  (by (2)).
+  By (a), $L - V$ is path-connected and so is $\mathbf{A}^n(\mathbb{C}) - V$.
 \end{enumerate}
 $\Box$\\\\
 
