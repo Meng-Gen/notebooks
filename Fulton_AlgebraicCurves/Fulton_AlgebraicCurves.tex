@@ -5060,6 +5060,67 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.17.}
+\addcontentsline{toc}{subsubsection}{Problem 2.17.}
+\emph{Let $V = V(y^2 - x^2(x+1)) \subseteq \mathbf{A}^{2}$,
+and $\overline{x}, \overline{y}$ the residues of $x, y$ in $\Gamma(V)$;
+let $z = \overline{y}/\overline{x} \in k(V)$.
+Find the pole sets of $z$ and of $z^2$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that the pole set of $z$ is $\{(0,0)\}$.}
+  \begin{enumerate}
+  \item[(a)]
+    Since $V$ is irreducible by Problem 2.12(b), $V$ is a variety.
+    Note that the pole set of $z$ is
+    \[
+      \bigcap_{z = \overline{f}/\overline{g}} V(\overline{g}).
+    \]
+
+  \item[(b)]
+    By (a), $\{ (0,0) \}$ contains the the pole set of $z$.
+    (As the denominator $x = 0$, we solve the equation $y^2 - x^2(x+1) = 0$ to get $y = 0$.)
+
+  \item[(c)]
+    (Reductio ad absurdum)
+    If $(0,0)$ were not a pole, then there were $\overline{f}, \overline{g} \in \Gamma(V)$
+    such that $z = \overline{y}/\overline{x} = \overline{f}/\overline{g}$ where $\overline{g}(0,0) \neq 0$.
+    So
+    \begin{align*}
+      & \: z = \overline{y}/\overline{x} = \overline{f}/\overline{g} \\
+      \Longrightarrow & \:
+      \overline{xf} = \overline{yg} \\
+      \Longrightarrow & \:
+      xf - yg \in (y^2 - x^2(x+1)) \\
+      \Longrightarrow & \:
+      xf - yg = h(y^2 - x^2(x+1)) \text{ for some $h$} \\
+      \Longrightarrow & \:
+      y(g + hy) = x(f + hx(x+1)) \in (x) \\
+      \Longrightarrow & \:
+      g + hy \in (x) \\
+     \Longrightarrow & \:
+      g(0,0) = 0,
+    \end{align*}
+    which is absurd.
+  \end{enumerate}
+
+\item[(2)]
+\emph{Show that the pole set of $z^2$ is empty.}
+  Note that
+  $z^2 = \overline{y^2}/\overline{x^2} = \overline{x+1}$.
+  So the pole set of $z^2$ is
+  \[
+    \bigcap_{z^2 = \overline{f}/\overline{g}} V(\overline{g}) = \varnothing.
+  \]
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
