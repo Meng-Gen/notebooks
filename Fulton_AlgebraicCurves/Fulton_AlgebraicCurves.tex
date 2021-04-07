@@ -5185,6 +5185,140 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.19.}
+\addcontentsline{toc}{subsubsection}{Problem 2.19.}
+\emph{Let $f$ be a rational function on a variety $V$.
+Let
+\[
+  U = \{ P \in V : \text{$f$ is defined at $P$} \}.
+\]
+Then $f$ defines a function from $U$ to $k$.
+Show that this function determines $f$ uniquely.
+So a rational function may be considered as a type of function,
+but only on the complement of an algebraic subset of $V$, not on $V$ itself.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write $f = a/b \in k(V)$ with $b(P) \neq 0$.
+  Define $f: U \to k$ by $f: P \mapsto f(P) = a(P)/b(P)$.
+
+\item[(2)]
+  \emph{Show that this function is well-defined.}
+  Given any $P \in U$.
+  Suppose that $f = a/b = c/d$ with $b(P) \neq 0$ and $d(P) \neq 0$.
+  So, $ad = bc \in \Gamma(V)$ implies that $a(P) d(P) = b(P) c(P)$.
+  So, $a(P)/b(P) = c(P)/d(P)$ (since $b(P) \neq 0$ and $d(P) \neq 0$).
+  Therefore, $f: U \to k$ is well-defined.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.20. (Quadric surface)}
+\addcontentsline{toc}{subsubsection}{Problem 2.20. (Quadric surface)}
+\emph{Let
+\[
+  V = V(xw-yz) \subseteq \mathbf{A}^{4}(k),
+\]
+and
+\[
+  \Gamma(V) = k[x,y,z,w]/(xw-yz).
+\]
+Let $\overline{x},\overline{y},\overline{z},\overline{w}$ be the residues of $x, y, z, w$ in $\Gamma(V)$.
+Then
+\[
+  \overline{x}/\overline{y} = \overline{z}/\overline{w} = f \in k(V)
+\]
+is defined at
+$P = (x,y,z,w) \in V$ if $y \neq 0$ or $w \neq 0$.
+Show that it is impossible to write $f = a/b$,
+where $a,b \in \Gamma(V)$, and $b(P) \neq 0$ for every $P$ where $f$ is defined.
+Show that the pole set of $f$ is exactly $\{ (x,y,z,w) : y = 0 \text{ and } w = 0 \}$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+   Note that the pole set of $f$ is
+  \[
+    \bigcap_{f = \overline{a}/\overline{b}} V(\overline{b})
+    \subseteq \{ (x,y,z,w) \in \mathbf{A}^{4}(k) : y = w = 0 \}.
+  \]
+
+\item[(2)]
+  \emph{Show that $f$ is not defined at the origin $O = (0,0,0,0)$.}
+  (Reductio ad absurdum)
+  Suppose $f = \overline{x}/\overline{y} = \overline{a}/\overline{b}$
+  with $\overline{b}(O) \neq 0$.
+  So $\overline{bx} - \overline{ay} = 0$, or
+  \[
+    bx - ay = g(xw - yz)
+  \]
+  for some $g \in k[x,y,z,w]$.
+  Take $1$-forms on the both sides to get
+  \[
+    b(O) x - a(O) y = 0 \in k[x,y,z,w],
+  \]
+  or $a(O) = b(O) = 0$, which is absurd.
+
+\item[(3)]
+  \emph{Show that it is impossible to write $f = \overline{a}/\overline{b}$,
+  where $\overline{a},\overline{b} \in \Gamma(V)$,
+  and $\overline{b}(P) \neq 0$ for every $P$ where $f$ is defined.}
+  (Reductio ad absurdum)
+  Consider the polynomial
+  \[
+    \beta(y,w) := b(0,y,0,w) \in k[y,w].
+  \]
+  $\beta$ is not a constant polynomial since $V(\beta) = \{ (0,0) \}$ by (1)(2).
+  By Problem 1.14, $V(\beta) = \{ (0,0) \}$ is infinite, which is absurd.
+
+\item[(4)]
+  \emph{Show that the pole set of $f$ is exactly $\{ (x,y,z,w) : y = 0 \text{ and } w = 0 \}$.}
+  (Reductio ad absurdum)
+  Given any $P = (x_0,0,z_0,0) \in \{ (x,y,z,w) : y = 0 \text{ and } w = 0 \}$.
+  Suppose $f = \overline{x}/\overline{y} = \overline{a}/\overline{b}$
+  where $\overline{b}(P) \neq 0$.
+  Similar to (2),
+  \[
+    bx - ay = g(xw - yz)
+  \]
+  for some $g \in k[x,y,z,w]$.
+  So
+  \[
+    b(P) x_0 = b(P) x_0 - a(P) \cdot 0 = g(P) (x_0 \cdot 0 - 0 \cdot z_0) = 0.
+  \]
+  As $b(P) \neq 0$, $x_0 = 0$.
+  Similarly, $z_0 = 0$ by noting that $bz - aw = h(xw - yz)$ for some $h \in k[x,y,z,w]$.
+  Hence $P = (0,0,0,0)$, contrary to (2).
+\end{enumerate}
+$\Box$\\
+
+\emph{Note.}
+  It is equal to the Segre embedding of $\mathbf{P}^1 \times \mathbf{P}^1$
+  in $\mathbf{P}^3$, for suitable choice of coordinates. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
