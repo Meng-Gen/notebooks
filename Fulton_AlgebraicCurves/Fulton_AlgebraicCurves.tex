@@ -5314,6 +5314,51 @@ $\Box$\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 2.21.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.21.*}
+\emph{Let $\varphi: V \to W$ be a polynomial map of affine varieties,
+$\widetilde{\varphi}: \Gamma(W) \to \Gamma(V)$ the induced map on coordinate rings.
+Suppose $P \in V$, $\varphi(P) = Q$.
+Show that $\widetilde{\varphi}$ extends uniquely to a ring homomorphism
+(also written $\widetilde{\varphi}$) from $\mathscr{O}_Q(W)$ to $\mathscr{O}_P(V)$.
+(Note that $\widetilde{\varphi}$ may not extend to all of $k(W)$.)
+Show that $\widetilde{\varphi}(\mathfrak{m}_Q(W)) \subseteq \mathfrak{m}_P(V)$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Define $\widetilde{\varphi}: \mathscr{O}_Q(W) \to \mathscr{O}_P(V)$ by
+  \[
+    \widetilde{\varphi}: a/b
+    \mapsto \widetilde{\varphi}(a)/\widetilde{\varphi}(b).
+  \]
+  It is well-defined since $b(Q) \neq 0$ implies that
+  \[
+    \widetilde{\varphi}(b)(P) = b(\varphi(P)) = b(Q) \neq 0.
+  \]
+
+\item[(2)]
+  Note that $\widetilde{\varphi}$ may not extend to all of $k(W)$
+  since $\widetilde{\varphi}: k(W) \to k(V)$
+  might not be well-defined if $\widetilde{\varphi}(b) = 0$ for all $b \in \Gamma(W)$.
+
+\item[(3)]
+  \emph{Show that $\widetilde{\varphi}(\mathfrak{m}_Q(W)) \subseteq \mathfrak{m}_P(V)$}.
+  Take any $a/b \in \mathfrak{m}_Q(W)$ with $a(Q) = 0$ and $b(Q) \neq 0$.
+  As
+  \[
+    \widetilde{\varphi}(a)(P) = a(\varphi(P)) = a(Q) = 0,
+  \]
+  we have
+  $\widetilde{\varphi}(a/b) \in \mathfrak{m}_P(V)$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
