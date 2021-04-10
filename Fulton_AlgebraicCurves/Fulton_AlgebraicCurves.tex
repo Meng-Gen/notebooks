@@ -7730,6 +7730,103 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 2.50.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.50.*}
+\emph{Let $R$ be a DVR satisfying the conditions of Problem 2.30.
+Then $\mathfrak{m}^{n}/\mathfrak{m}^{n+1}$ is an $R$-module, and so also a $k$-module,
+since $k \subseteq R$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\dim_k(\mathfrak{m}^{n}/\mathfrak{m}^{n+1}) = 1$
+  for all $n \geq 0$.}
+
+\item[(b)]
+  \emph{Show that $\dim_k(R/\mathfrak{m}^{n}) = n$ for all $n > 0$.}
+
+\item[(c)]
+  \emph{Let $z \in R$.
+  Show that $\mathrm{ord}(z) = n$ if $(z) = \mathfrak{m}^{n}$,
+  and hence that $\mathrm{ord}(z) = \dim_k(R/(z))$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  By Problem 2.49(e),
+  \[
+    0
+    \to \mathfrak{m}^{n}/\mathfrak{m}^{n+1}
+    \to R/\mathfrak{m}^{n+1}
+    \to R/\mathfrak{m}^{n}
+    \to 0
+  \]
+  is exact.
+
+\item[(2)]
+  By the rank-nullity theorem (Proposition 3),
+  \begin{align*}
+    \dim_k(\mathfrak{m}^{n}/\mathfrak{m}^{n+1})
+    &= \dim_k(R/\mathfrak{m}^{n+1}) - \dim_k(R/\mathfrak{m}^{n}) \\
+    &= (n+1) - n
+      &((b)) \\
+    &= 1.
+  \end{align*}
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let $t$ be a uniformizing parameter for $R$, $z \in R$.
+  By Problem 2.30(b), there are unique $\lambda_0, \ldots, \lambda_{n-1} \in k$
+  and $z_{n-1} \in R$ such that
+  \[
+    z = \lambda_0 + \lambda_1 t + \cdots + \lambda_{n-1} t^{n-1} + z_{n-1} t^{n}.
+  \]
+  Hence we can define a map $\alpha: R/\mathfrak{m}^{n} \to k^n$
+  by
+  \[
+    \alpha: z + \mathfrak{m}^{n} \mapsto (\lambda_0, \ldots, \lambda_{n-1}).
+  \]
+
+\item[(2)]
+  $\alpha$ is well-defined by the uniqueness of the expression of $z$ in Problem 2.30(b).
+  $\alpha$ is a $k$-module homomorphism and $\alpha$ is surjective (since $k \subseteq R$).
+  $\alpha$ is injective by the uniqueness of the expression of $z$ in Problem 2.30(b).
+
+\item[(3)]
+  Hence, $R/\mathfrak{m}^{n} \cong k^n$ or $\dim_k(R/\mathfrak{m}^{n}) = n$ for $n > 0$.
+  (It is also true for $n = 0$ since $\dim_k(\{0\}) = 0$.)
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Note that $\mathfrak{m}^{n} = (t^n)$ as $\mathfrak{m} = (t)$
+  where $t$ is a uniformizing parameter for $R$.
+
+\item[(2)]
+  Since $(z) = (t^n) = \mathfrak{m}^{n}$, $\mathrm{ord}(z) = n$ by Problem 2.28.
+  (Here $\mathrm{ord}(z) \geq n$ by $z \in (t^n)$
+  and $n \geq \mathrm{ord}(z)$ by $t^n \in (z)$.)
+
+\item[(3)]
+  Hence,
+  \[
+    \mathrm{ord}(z) = n = \dim_k(R/\mathfrak{m}^{n}) = \dim_k(R/(z))
+  \]
+  by (b).
+\end{enumerate}
+$\Box$\\\\
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -7833,6 +7930,138 @@ $\Box$\\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\subsubsection*{Problem 2.53.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.53.*}
+\emph{Let $V$ be a vector space, $W$ a subspace,
+$T : V \to V$ a one-to-one linear map such that $T(W) \subseteq W$,
+and assume $V/W$ and $W/T(W)$ are finite-dimensional.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $T$ induces an isomorphism of $V/W$ with $T(V)/T(W)$.}
+
+\item[(b)]
+  \emph{Construct an isomorphism between $T(V)/(W \cap T(V))$ and $(W+T(V))/W$,
+  and an isomorphism between $W/(W \cap T(V))$ and $(W+T(V))/T(V)$.}
+
+\item[(c)]
+  \emph{Use Problem 2.49(c) to show that
+  $\dim V/(W+T(V)) = \dim (W \cap T(V))/T(W)$.}
+
+\item[(d)]
+  \emph{Conclude finally that $\dim V/T(V) = \dim W/T(W)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Define a map $\overline{T}: V/W \to T(V)/T(W)$ by
+  \[
+    \overline{T}: v + W \mapsto T(v) + T(W).
+  \]
+
+\item[(2)]
+  \emph{Show that $\overline{T}$ is well-defined}.
+  Suppose $u + W = v + W \in V/W$.
+  So $u - v \in W$.
+  So $T(u - v) = T(u) - T(v) \in T(W)$ (since $T$ is a linear map).
+  Hence, $T(u) + T(W) = T(v) + T(W)$.
+
+\item[(3)]
+  $\overline{T}$ is a linear map since $T$ is a linear map.
+
+\item[(4)]
+  $\overline{T}$ is surjective by construction.
+  Also, $\overline{T}$ is injective since $T$ is injective.
+  Therefore, $\overline{T}: V/W \xrightarrow{\sim} T(V)/T(W)$ is isomorphic.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Put $N = T(V)$ and $P = W$ in Problem 2.52 to get
+  \[
+    T(V)/(W \cap T(V)) \cong (W+T(V))/W.
+  \]
+
+\item[(2)]
+  Put $N = W$ and $P = T(V)$ in Problem 2.52 to get
+  \[
+    W/(W \cap T(V)) \cong (W+T(V))/T(V).
+  \]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Note that $W \subseteq W+T(V) \subseteq V$ as vector spaces
+  and $V/W$ is finite-dimensional.
+  By Problem 2.49(c),
+  \[
+    \dim V/W = \dim V/(W+T(V)) + \dim (W+T(V))/W.
+  \]
+
+\item[(2)]
+  Similarly,
+  $T(V) \subseteq W \cap T(V) \subseteq T(W)$ as vector spaces
+  and $T(V)/T(W)$ is finite-dimensional
+  (since $V/T(W)$ is finite-dimensional and $T(V)/T(W)$ is a subspace of $V/T(W)$).
+  Again by Problem 2.49(c),
+  \[
+    \dim T(V)/T(W) = \dim T(V)/(W \cap T(V)) + \dim (W \cap T(V))/T(W).
+  \]
+
+\item[(3)]
+  By (a),
+  \[
+    \dim V/W = \dim T(V)/T(W).
+  \]
+  By (b),
+  \[
+    \dim (W+T(V))/W = \dim T(V)/(W \cap T(V)).
+  \]
+  Hence, the result is established by (1)(2).
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  Note that $V/T(V)$ is finite-dimensional.
+  By Problem 2.49(c),
+  \[
+    \dim V/T(V) = \dim V/(W+T(V)) + \dim (W+T(V))/T(V).
+  \]
+
+\item[(2)]
+  Similarly,
+  \[
+    \dim W/T(W) = \dim W/(W \cap T(V)) + \dim (W \cap T(V))/T(W).
+  \]
+
+\item[(3)]
+  By (b),
+  \[
+    \dim (W+T(V))/T(V) = \dim W/(W \cap T(V)).
+  \]
+  By (c),
+  \[
+    \dim V/(W+T(V)) = \dim (W \cap T(V))/T(W).
+  \]
+  Hence, the result is established by (1)(2).
+\end{enumerate}
+$\Box$\\\\
 
 
 
