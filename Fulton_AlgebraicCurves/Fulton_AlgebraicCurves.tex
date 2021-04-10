@@ -7548,6 +7548,7 @@ $\Box$\\\\
   such that $\overline{\varphi} \circ \pi = \varphi$.}
 
 \item[(b)]
+  (Isomorphism theorems for modules)
   \emph{If $N$ and $P$ are submodules of a module $M$, with $P \subseteq N$,
   then there are natural homomorphisms from $M/P$ onto $M/N$ and from $N/P$ into $M/P$.
   Show that the resulting sequence
@@ -7778,6 +7779,60 @@ Show that $\sum (-1)^i \dim(V_i) = 0$.} \\
   or $\sum (-1)^i \dim(V_i) = 0$.
 \end{enumerate}
 $\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.52.* (Isomorphism theorems for modules)}
+\addcontentsline{toc}{subsubsection}{Problem 2.52.* (Isomorphism theorems for modules)}
+\emph{Let $N, P$ be submodules of a module $M$.
+Show that the subgroup
+\[
+  N + P = \{ n + p : n \in N, p \in P \}
+\]
+is a submodule of $M$.
+Show that there is a natural $R$-module isomorphism of $N/(N \cap P)$ onto $(N+P)/P$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $N+P$ is a submodule of $M$.}
+  Given any $n_1+p_1, n_2+p_2 \in N+P$,
+  \[
+    (n_1+p_1) + (n_2+p_2)
+    = \underbrace{n_1+n_2}_{\in N} + \underbrace{p_1+p_2}_{\in P} \in N+P.
+  \]
+  Given any $n+p \in N+P$ and $r \in R$,
+  \[
+    r(n+p) = \underbrace{rn}_{\in N} + \underbrace{rp}_{\in P} \in N+P.
+  \]
+  Here we use the fact that $N$ and $P$ are modules.
+
+\item[(2)]
+  Define a module homomorphism $\varphi: N \to M/P$ by
+  \[
+    \varphi: m \mapsto m + P.
+  \]
+  $\ker(\varphi) = N \cap P$ and
+  $\textrm{im}(\varphi) = \{ m + P : m \in N \} = (N+P)/P$.
+  By Problem 2.48,
+  $\varphi$ induces a natural $R$-module isomorphism of
+  $N/\ker(\varphi) = N/(N \cap P)$ onto $\textrm{im}(\varphi) = (N+P)/P$
+  (which is sending $m + (N \cap P)$ to $m + P$).
+
+
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
