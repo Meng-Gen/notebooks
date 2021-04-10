@@ -7313,7 +7313,7 @@ is isomorphic to $\mathscr{O}_P(V)$.} \\
 
 \item[(3)]
   $\varphi$ is surjective since
-  $\mathscr{O}_P(\mathbf{A}^{n}) \xhookrightarrow{} \mathscr{O}_P(V)$
+  $\mathscr{O}_P(\mathbf{A}^{n}) \hookrightarrow \mathscr{O}_P(V)$
   and $\varphi(J \mathscr{O}_P(\mathbf{A}^{n})) = J' \mathscr{O}_P(V)$.
   $\varphi$ is injective since $\varphi(J \mathscr{O}_P(\mathbf{A}^{n})) = J' \mathscr{O}_P(V)$.
   Hence $\varphi: \mathscr{O}_P(\mathbf{A}^{n})/J \to \mathscr{O}_P(\mathbf{A}^{n})$
@@ -7529,6 +7529,204 @@ is exact.} \\
   Also, it is trivial that $\mathrm{im}(i) = \ker(\varphi)$.
 \end{enumerate}
 $\Box$\\\\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.49.*}
+\addcontentsline{toc}{subsubsection}{Problem 2.49.*}
+\begin{enumerate}
+\item[(a)]
+  (Factor theorem for modules)
+  \emph{Let $N$ be a submodule of $M$, $\pi: M \to M/N$ the natural homomorphism.
+  Suppose $\varphi: M \to M'$ is a homomorphism of $R$-modules, and $\varphi(N) = 0$.
+  Show that there is a unique homomorphism $\overline{\varphi}: M/N \to M'$
+  such that $\overline{\varphi} \circ \pi = \varphi$.}
+
+\item[(b)]
+  \emph{If $N$ and $P$ are submodules of a module $M$, with $P \subseteq N$,
+  then there are natural homomorphisms from $M/P$ onto $M/N$ and from $N/P$ into $M/P$.
+  Show that the resulting sequence
+  \[
+    0 \to N/P \to M/P \to M/N \to 0
+  \]
+  is exact.}
+
+\item[(c)]
+  \emph{Let $U \subseteq W \subseteq V$ be vector spaces,
+  with $V/U$ finite-dimensional.
+  Then $\dim V/U = \dim V/W + \dim W/U$.}
+
+\item[(d)]
+  \emph{If $J \subseteq I$ are ideals in a ring $R$,
+  there is a natural exact sequence of $R$-modules:}
+  \[
+    0 \to I/J \to R/J \to R/I \to 0.
+  \]
+
+\item[(e)]
+  \emph{If $\mathscr{O}$ is a local ring with maximal ideal $\mathfrak{m}$,
+  there is a natural exact sequence of $\mathscr{O}$-modules}
+  \[
+    0
+    \to \mathfrak{m}^{n}/\mathfrak{m}^{n+1}
+    \to \mathscr{O}/\mathfrak{m}^{n+1}
+    \to \mathscr{O}/\mathfrak{m}^{n}
+    \to
+    0.
+  \] \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Define $\overline{\varphi}: M/N \to M'$ by
+  \[
+    \overline{\varphi}(m + N) = \varphi(m).
+  \]
+  $\overline{\varphi}$ is well-defined since
+  $m + N = n + N$ implies that $m - n \in N \subseteq \ker(\varphi)$.
+
+\item[(2)]
+  $\overline{\varphi}$ is a homomorphism of $R$-modules
+  since $\varphi$ is a homomorphism of $R$-modules.
+
+\item[(3)]
+  $\overline{\varphi} \circ \pi = \varphi$ by construction.
+
+\item[(4)]
+  Suppose there is a homomorphism $\psi: M/N \to M'$
+  such that $\psi \circ \pi = \varphi$.
+  For any $m + N \in M/N$, we have
+  \[
+    \overline{\varphi}(m + N)
+    = \varphi(m)
+    = (\psi \circ \pi)(m)
+    = \psi(\pi(m))
+    = \psi(m + N).
+  \]
+  That is, $\psi = \overline{\varphi}$.
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Define $\pi: M/P \twoheadrightarrow M/N$ by
+  \[
+    \pi: \underbrace{m + P}_{\in M/P} \mapsto \underbrace{m + N}_{\in M/N}.
+  \]
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $\pi$ is well-defined.}
+    If $m + P = n + P \in M/P$, then $m - n \in P \subseteq N$ or $m + N = n + N \in M/N$.
+
+  \item[(b)]
+    $\pi$ is a module homomorphism since $M/N$ is a module.
+
+  \item[(c)]
+    $\pi$ is surjective by construction.
+  \end{enumerate}
+
+\item[(2)]
+  Define $i: N/P \hookrightarrow M/P$ by
+  \[
+    i: \underbrace{m + P}_{\in N/P} \mapsto \underbrace{m + P}_{\in M/P}.
+  \]
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $i$ is well-defined.}
+    If $m + P = n + P \in N/P$, then $m, n \in N \subseteq M$ and $m - n \in P$.
+    So $m + P = n + P \in M/P$.
+
+  \item[(b)]
+    $i$ is a module homomorphism since $M/P$ is a module.
+
+  \item[(c)]
+    $i$ is injective by construction.
+  \end{enumerate}
+
+\item[(3)]
+  To show that $0 \to N/P \to M/P \to M/N \to 0$ is exact,
+  it suffices to show that
+  $\ker(\pi) = \mathrm{im}(i) = N/P$ (by the injectivity of $i$).
+  It is trivial since
+  \[
+    m + P \in \ker(\pi)
+    \Longleftrightarrow m \in N
+    \Longleftrightarrow m + P \in N/P.
+  \]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  By (b),
+  \[
+    0 \to W/U \to V/U \xrightarrow{\varphi} V/W \to 0
+  \]
+  is exact.
+
+\item[(2)]
+  By the rank-nullity theorem for a linear transformation,
+  \[
+    \dim V/U
+    = \dim \mathrm{im}(\varphi) + \dim \mathrm{ker}(\varphi)
+    = \dim V/W + \dim W/U.
+  \]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  Regard $R$ as a $R$-module and $I, J$ as submodules of a $R$-module $R$.
+
+\item[(2)]
+  As $J \subseteq I$, by (b) we have
+  \[
+    0 \to I/J \to R/J \to R/I \to 0.
+  \]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+  Note that $\mathfrak{m}^{n+1} \subseteq \mathfrak{m}^{n}$ are ideals in a local ring $\mathscr{O}$.
+
+\item[(2)]
+  By (d), there is a natural exact sequence of $\mathscr{O}$-modules:
+  \[
+    0
+    \to \mathfrak{m}^{n}/\mathfrak{m}^{n+1}
+    \to \mathscr{O}/\mathfrak{m}^{n+1}
+    \to \mathscr{O}/\mathfrak{m}^{n}
+    \to
+    0.
+  \]
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
