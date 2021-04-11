@@ -8359,14 +8359,96 @@ $\Box$\\\\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  $\{ (x, 0, 0) : x \in k \}$ does not belong to $U_2$ and $U_3$.
+  The point $(1,0,0)$ does not belong to $U_2$ and $U_3$.
 
 \item[(2)]
-  $\{ (0, y, 0) : y \in k \}$ does not belong to $U_3$ and $U_1$.
+  The point $(0,1,0)$ does not belong to $U_3$ and $U_1$.
 
 \item[(3)]
-  $\{ (0, 0, z) : z \in k \}$ does not belong to $U_1$ and $U_2$.
+  The point $(0,0,1)$ does not belong to $U_1$ and $U_2$.
 \end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 4.2.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.2.*}
+\emph{Let $f \in k[x_1,\ldots,x_{n+1}]$ ($k$ infinite).
+Write $f = \sum f_i$, $f_i$ a form of degree $i$.
+Let $P \in \mathbf{P}^{n}(k)$, and suppose $f(x_1,\ldots,x_{n+1}) = 0$
+for every choice of homogeneous coordinates $(x_1,\ldots,x_{n+1})$ for $P$.
+Show that each $f_i(x_1,\ldots,x_{n+1}) = 0$ for all homogeneous coordinates for $P$.
+(Hint: consider
+\[
+  g(\lambda) = f(\lambda x_1, \ldots, \lambda x_{n+1}) = \sum \lambda^i f_i(x_1,\ldots,x_{n+1})
+\]
+for fixed $(x_1,\ldots,x_{n+1})$.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Consider
+  \[
+    g(\lambda)
+    = f(\lambda x_1, \ldots, \lambda x_{n+1})
+    = \sum \lambda^i f_i(x_1,\ldots,x_{n+1})
+  \]
+  for fixed $(x_1,\ldots,x_{n+1})$.
+  $g(\lambda)$ is a polynomial in $k[\lambda]$.
+
+\item[(2)]
+  Since $g(\lambda) = f(\lambda x_1, \ldots, \lambda x_{n+1}) = 0$ for all $\lambda \in k - \{ 0 \}$,
+  $g(\lambda) = 0$ has infinitely many solutions in $k$.
+  Similar to Problem 1.4, $g = 0 \in k[\lambda]$,
+  that is,
+  each $f_i(x_1,\ldots,x_{n+1}) = 0$ for all homogeneous coordinates for $P$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 4.3.}
+\addcontentsline{toc}{subsubsection}{Problem 4.3.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that the definitions of this section carry over without change to the
+  case where $k$ is an arbitrary field.}
+
+\item[(b)]
+  \emph{If $k_0$ is a subfield of $k$, show that $\mathbf{P}^{n}(k_0)$
+  may be identified with a subset of $\mathbf{P}^{n}(k)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+Note that a field is a commutative ring where $0 \neq 1$ and all nonzero elements are invertible.
+Hence the definitions in this section are well-defined for any field $k$.
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+Note that $0 \in k_0$ and $0 \in k$.
+So any point $P \in \mathbf{P}^{n}(k_0)$ is also in $\mathbf{P}^{n}(k)$
+since $P \neq (0, \ldots, 0)$
+and
+\[
+  \{ (\lambda x_1, \ldots, \lambda x_{n+1}) : \lambda \in k_0 \}
+  \subseteq
+  \{ (\lambda x_1, \ldots, \lambda x_{n+1}) : \lambda \in k \}
+\]
+as a subset.
 $\Box$\\\\
 
 
