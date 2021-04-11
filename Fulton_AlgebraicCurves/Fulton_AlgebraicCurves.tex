@@ -8227,6 +8227,91 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 3.1.}
+\addcontentsline{toc}{subsubsection}{Problem 3.1.}
+\emph{Prove that in the above examples $P = (0,0)$
+is the only multiple point on the curves
+$c = y^2 - x^3$,
+$d = y^2 - x^3 - x^2$,
+$e = (x^2+y^2)^2 + 3x^2y - y^3$, and
+$f = (x^2+y^2)^3 - 4x^2y^2$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    \frac{\partial c}{\partial x} &= -3x^2 = 0 \\
+    \frac{\partial c}{\partial y} &= 2y = 0
+  \end{align*}
+  implies that $(x,y) = (0,0)$ is the only multiple point on $c$.
+
+\item[(2)]
+  \begin{align*}
+    \frac{\partial d}{\partial x} &= -3x^2 - 2x = 0 \\
+    \frac{\partial d}{\partial y} &= 2y = 0
+  \end{align*}
+  implies that $(x,y) = (0,0) \in d$ is the only multiple point on $d$.
+  (Note that $(x,y) = \left( -\frac{2}{3},0 \right) \not\in d$.)
+
+\item[(3)]
+  \begin{align*}
+    \frac{\partial e}{\partial x} &= 4x(x^2+y^2) + 6xy = 0 \\
+    \frac{\partial e}{\partial y} &= 4y(x^2+y^2) + 3x^2 - 3y^2 = 0
+  \end{align*}
+  implies that $x = 0$ or $4(x^2+y^2) + 6y = 0$.
+  \begin{enumerate}
+  \item[(a)]
+    $x = 0$ implies that $(x,y) = (0,0)$ or $(0,1)$.
+    Note that $(0,1)$ is a simple point (since $\frac{\partial e}{\partial y}(0,1) = 1$).
+  \item[(b)]
+    $4(x^2+y^2) + 6y = 0$ implies that $x^2+y^2 = -\frac{3y}{2}$ and thus
+    \begin{align*}
+      0
+      &= 4y(x^2+y^2) + 3x^2 - 3y^2 \\
+      &= 4y\left( -\frac{3y}{2} \right) + 3x^2 - 3y^2 \\
+      &= 3(x^2 - 3y^2).
+    \end{align*}
+    $(x,y) \in e$ implies that
+    \begin{align*}
+      0
+      &= (x^2+y^2)^2 + 3x^2y - y^3 \\
+      &= (3y^2+y^2)^2 + 3(3y^2)y - y^3 \\
+      &= 8y^3(2y+1).
+    \end{align*}
+    So $(x,y) = (0,0)$ or $\left( \pm\frac{\sqrt{3}}{2}, -\frac{1}{2} \right)$.
+    Note that $\frac{\partial e}{\partial x}\left( \pm\frac{\sqrt{3}}{2}, -\frac{1}{2} \right) \neq 0$.
+  \end{enumerate}
+  Therefore, $(x,y) = (0,0)$ is the only multiple point on $e$.
+
+\item[(4)]
+  \begin{align*}
+    \frac{\partial f}{\partial x} &= 6x(x^2+y^2)^2 - 8xy^2 = x(6(x^2+y^2)^2 - 8y^2) = 0 \\
+    \frac{\partial f}{\partial y} &= 6y(x^2+y^2)^2 - 8x^2y = y(6(x^2+y^2)^2 - 8x^2) = 0
+  \end{align*}
+  implies that $(x,y) = (0,0)$
+  or $6(x^2+y^2)^2 = 8x^2 = 8y^2$.
+  $6(x^2+y^2)^2 = 8x^2 = 8y^2$ implies that $x^2 = y^2$.
+  So $(x,y) \in f$ implies that $x^2 = y^2 = \frac{1}{2}$,
+  contrary that $6 = 6(x^2+y^2)^2 \neq 8x^2 = 4$.
+  Therefore, $(x,y) = (0,0)$ is the only multiple point on $f$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
