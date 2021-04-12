@@ -8506,6 +8506,35 @@ $\Box$\\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 4.5.}
+\addcontentsline{toc}{subsubsection}{Problem 4.5.}
+\emph{If $I$ is a homogeneous ideal, show that $\mathrm{rad}(I)$ is also homogeneous.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Given any $f = \sum_{i=0}^{r} f_i \in \mathrm{rad}(I)$, $f_i$ a form of degree $i$.
+  It suffices to show that each $f_i \in \mathrm{rad}(I)$.
+  Note that $f^{m} \in I$ for some $m > 0$.
+
+\item[(2)]
+  The highest homogeneous component ${f_r}^m$ of $f^{m}$ is also in $I$
+  since $I$ is homogeneous.
+  Hence, $f_r \in \mathrm{rad}(I)$.
+  Again note that $f - f_r \in \mathrm{rad}(I)$ and $\deg(f - f_r) < r$.
+  Continue this process (or by induction), and we have
+  $f_{r-1}, \ldots, f_0 \in \mathrm{rad}(I)$.
+\end{enumerate}
+$\Box$\\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
