@@ -8463,6 +8463,48 @@ $\Box$\\\\
 
 
 
+\subsubsection*{Problem 4.4.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.4.*}
+\emph{Let $I$ be a homogeneous ideal in $k[x_1,\ldots,x_{n+1}]$.
+Show that $I$ is prime if and only if the following condition is satisfied:
+for any forms $f, g \in k[x_1,\ldots,x_{n+1}]$,
+if $fg \in I$, then $f \in I$ or $g \in I$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$) Trivial.
+
+\item[(2)]
+  ($\Longleftarrow$) Suppose that $f, g \in k[x_1,\ldots,x_{n+1}]$ and $fg \in I$.
+  Write $f = \sum_{i=0}^{r} f_i$ (resp. $g = \sum_{j=0}^{s} g_j$),
+  $f_i$ a form of degree $i$ (resp. $g_j$ a form of degree $j$).
+  Induction on the $\deg(fg) = r + s$.
+
+\item[(3)]
+  When $r + s = 0$, nothing to do.
+
+\item[(4)]
+  Assume that the result is true for smaller values of $r + s$.
+  Then the highest homogeneous component $f_r g_s$ of $fg$ is also in $I$
+  since $I$ is homogeneous.
+  By assumption, $f_r \in I$ or $g_s \in I$, and might say that $f_r \in I$.
+  Therefore,
+  \[
+    (f - f_r)g \in I.
+  \]
+  By the induction hypothesis, $f - f_r \in I$ or $g \in I$.
+  Hence, $f = (f - f_r) + f_r \in I$ or $g \in I$.
+
+\item[(5)]
+  Therefore, (3)(4) implies that $I$ is prime.
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
