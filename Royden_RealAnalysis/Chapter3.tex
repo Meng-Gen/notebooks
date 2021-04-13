@@ -12,6 +12,10 @@
 
 
 
+% https://issuu.com/inttegrattor/docs/real_analysis_-_h.l._royden_-_solutions
+
+
+
 \textbf{\Large Chapter 3: Lebesgue Measure} \\\\
 
 
@@ -132,7 +136,7 @@ This measure is called the \textbf{counting measure}.} \\
   \emph{Show that $n$ is a countably additive set function.}
   Note that $n$ is defined on any subset of real numbers
   since the finiteness is defined on any subset of real numbers.
-  Suppose $\{ E_m \}$ is a sequence of disjoint sets of real numbers.
+  Suppose $\langle E_m \rangle$ is a sequence of disjoint sets of real numbers.
   We need to show that $n\left( \bigcup E_m \right) = \sum n E_m$.
 
 \item[(2)]
@@ -531,7 +535,7 @@ $\Box$ \\\\
 \textbf{Problem 3.12.}
 \emph{Let $\langle E_n \rangle$ be a sequence of disjoint measurable sets and $A$ any set.
 Then
-$m^{*}\left( A \cap \bigcup_{i=1}^{\infty}E_i \right)
+$m^{*}\left( A \bigcap \bigcup_{i=1}^{\infty}E_i \right)
 = \sum_{i=1}^{\infty} m^{*}(A \cap E_i)$.} \\
 
 
@@ -539,7 +543,7 @@ $m^{*}\left( A \cap \bigcup_{i=1}^{\infty}E_i \right)
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  $A \cap \bigcup_{i=1}^{\infty}E_i
+  $A \bigcap \bigcup_{i=1}^{\infty}E_i
   = \bigcup_{i=1}^{\infty}(A \cap E_i)$ (Problem 1.14).
 
 \item[(2)]
@@ -575,6 +579,87 @@ By (2)(3),
 $m^{*}\left( A \cap \bigcup_{i=1}^{\infty}E_i \right)
 = \sum_{i=1}^{\infty} m^{*}(A \cap E_i)$.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 3.13.}
+\emph{Prove Proposition 15: Let $E$ be a given set.
+The the following five statements are equivalent:}
+\begin{enumerate}
+\item[(i)]
+  \emph{$E$ is measurable.}
+
+\item[(ii)]
+  \emph{Given $\varepsilon > 0$, there is an open set $O \supseteq E$ with
+  $m^{*}(O - E) < \varepsilon$.}
+
+\item[(iii)]
+  \emph{Given $\varepsilon > 0$, there is an open set $F \subseteq E$ with
+  $m^{*}(E - F) < \varepsilon$.}
+
+\item[(iv)]
+  \emph{There is an $G$ in $G_{\delta}$ with $G \supseteq E$, $m^{*}(G - E) = 0$.}
+
+\item[(v)]
+  \emph{There is an $F$ in $F_{\sigma}$ with $F \subseteq E$, $m^{*}(E - F) = 0$.}
+\end{enumerate}
+\emph{If $m^{*}E$ is finite, the above statements are equivalent to:}
+\begin{enumerate}
+\item[(vi)]
+  \emph{Given $\varepsilon > 0$, there is a finite union $U$ of open intervals
+  such that}
+  \[
+    m^{*}(U \Delta E) < \varepsilon.
+  \]
+\end{enumerate}
+(Hints:
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that for $m^{*}E < \infty$,
+  (i) $\Rightarrow$ (ii) $\Leftrightarrow$ (vi) (cf. Proposition 5).}
+
+\item[(b)]
+  \emph{Use (a) to show that for arbitrary sets $E$,
+  (i) $\Rightarrow$ (ii) $\Rightarrow$ (vi) $\Rightarrow$ (i).}
+
+\item[(c)]
+  \emph{Use (b) to show that (i) $\Rightarrow$ (iii).)} \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that for $m^{*}E < \infty$, (i) $\Rightarrow$ (ii).}
+  Given $\varepsilon > 0$,
+  there is a countable collections $\{ I_n \}$ of open intervals that cover $E$
+  such that
+  \[
+    \sum \ell(I_n) < m^{*}E + \varepsilon = mE + \varepsilon
+  \]
+  by the definition of the outer measure and measurable sets.
+  Take $O = \bigcup I_n$ be an open set which contains $E$.
+  Hence,
+  \begin{align*}
+    m^{*}(O - E)
+    &= m(O - E)
+      &(\text{$O$, $E$: measurable}) \\
+    &= mO - mE \\
+    &= m\left( \bigcup I_n \right) - mE \\
+    &\leq \sum \ell(I_n) - mE \\
+    &< \varepsilon.
+  \end{align*}
+
+\item[(2)]
+
+\end{enumerate}
+$\Box$\\
+
 
 
 
