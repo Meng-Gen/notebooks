@@ -8245,7 +8245,10 @@ $f = (x^2+y^2)^3 - 4x^2y^2$.} \\
     \frac{\partial c}{\partial x} &= -3x^2 = 0 \\
     \frac{\partial c}{\partial y} &= 2y = 0
   \end{align*}
-  implies that $(x,y) = (0,0)$ is the only multiple point on $c$.
+  implies that $(x,y) = (0,0)$.
+  Note that
+  $c(0,0) = \frac{\partial f}{\partial c}(0,0) = \frac{\partial c}{\partial y}(0,0) = 0$.
+  So $(x,y) = (0,0)$ is the only multiple point on $c$.
 
 \item[(2)]
   \begin{align*}
@@ -8341,6 +8344,8 @@ that is contained in $\mathbf{A}^{2}(\mathbb{R}) \subseteq \mathbf{A}^{2}(\mathb
     6(x+y)^2 &= 0 \\
     -4(x - y) &= 0
   \end{align*}
+  Note that
+  $f(0,0) = \frac{\partial f}{\partial x}(0,0) = \frac{\partial f}{\partial y}(0,0) = 0$.
   Hence, $(x,y) = (0,0)$ is the only multiple point on $f$.
 
 \item[(2)]
@@ -8363,7 +8368,10 @@ $\Box$\\
     \frac{\partial f}{\partial x} &= 4x^3 - 2xy^2 = 0 \\
     \frac{\partial f}{\partial y} &= 4y^3 - 2x^2y = 0
   \end{align*}
-  implies that $(x,y) = (0,0)$ is the only multiple point on $f$.
+  implies that $(x,y) = (0,0)$.
+  Note that
+  $f(0,0) = \frac{\partial f}{\partial x}(0,0) = \frac{\partial f}{\partial y}(0,0) = 0$.
+  Hence, $(x,y) = (0,0)$ is the only multiple point on $f$.
 
 \item[(2)]
   The tangent lines at $(x,y) = (0,0)$ is the linear factors of
@@ -8382,7 +8390,37 @@ $\Box$\\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
-\end{enumerate}
+  Let $f = x^3 + y^3 - 3x^2 - 3y^2 + 3xy + 1 \in k[x,y]$.
+  So
+  \begin{align*}
+    \frac{\partial f}{\partial x} &= 3(x^2 - 2x + y) = 0 \\
+    \frac{\partial f}{\partial y} &= 3(y^2 - 2y + x) = 0
+  \end{align*}
+  implies that $(x-y)(x+y-3) = 0$.
+
+\item[(2)]
+  The case $x-y = 0$. Take $x = y$ in $3x^2 - 6x + 3y = 0$ to get
+  $(x,y) = (1,1), (0,0)$.
+  $(x,y) = (1,1)$ is a multiple point on $f$ since
+  $f(1,1) = \frac{\partial f}{\partial x}(1,1) = \frac{\partial f}{\partial y}(1,1) = 0$.
+  $(x,y) = (0,0)$ is impossible since $f(0,0) = 1 \neq 0$.
+
+\item[(3)]
+  The case $x+y-3 = 0$. Take $x = -y + 3$ in $f$ to get $1 = 0$, which is absurd.
+
+\item[(4)]
+  By (2)(3), the only multiple point on $f$ is $(x,y) = (1,1)$.
+
+\item[(5)]
+  Let $t(x,y) = (x+1,y+1)$.
+  Then
+  \[
+    f^{t} = f(x+1,y+1) = x^3 + y^3 + 3xy.
+  \]
+  The tangent lines at $(x,y) = (1,1)$ is the linear factors of
+  $x^3 + y^3 + 3xy$.
+  Hence, there are two distinct simple tangent lines $x$ and $y$ at $(x,y) = (1,1)$.
+  \end{enumerate}
 $\Box$\\
 
 
@@ -8390,7 +8428,41 @@ $\Box$\\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
-\end{enumerate}
+  Let $f = y^2 + (x^2 - 5)(4x^4 - 20x^2 + 25) \in k[x,y]$.
+  So
+  \begin{align*}
+    \frac{\partial f}{\partial x} &= 2x(2x^2-5)(6x^2-25) = 0 \\
+    \frac{\partial f}{\partial y} &= 2y = 0
+  \end{align*}
+  implies that there are only two multiple points
+  \[
+    (x,y) = \left( \pm\sqrt{\frac{5}{2}}, 0 \right)
+  \]
+  on $f$.
+
+\item[(2)]
+  Let $t(x,y) = \left( x + \sqrt{\frac{5}{2}}, y \right)$.
+  Then
+  \begin{align*}
+    f^{t}
+    &= f\left( x + \sqrt{\frac{5}{2}}, y \right) \\
+    &= 4 x^6 + 12\sqrt{10} x^5 + 110 x^4 + 20\sqrt{10} x^3 - 100 x^2 + y^2.
+  \end{align*}
+  The tangent lines at $(x,y) = \left( \sqrt{\frac{5}{2}}, 0 \right)$ is the linear factors of
+  $-100 x^2 + y^2 = -(10x+y)(10x-y)$.
+  Hence, there are two distinct simple tangent lines
+  \[
+    10x \pm y
+  \]
+  at $(x,y) = \left( \sqrt{\frac{5}{2}}, 0 \right)$.
+
+\item[(3)]
+  Similarly, there are also two distinct simple tangent lines
+  \[
+    10x \pm y
+  \]
+  at $(x,y) = \left( -\sqrt{\frac{5}{2}}, 0 \right)$.
+  \end{enumerate}
 $\Box$\\\\
 
 
