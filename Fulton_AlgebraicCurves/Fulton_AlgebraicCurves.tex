@@ -8500,6 +8500,62 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 3.4.}
+\addcontentsline{toc}{subsubsection}{Problem 3.4.}
+\emph{Let $P$ be a double point on a curve $f$.
+Show that $P$ is a node if and only if}
+\[
+  \frac{\partial^2 f}{\partial x \partial y}(P)^2
+  \neq
+  \frac{\partial^2 f}{\partial x^2}(P)
+  \cdot
+  \frac{\partial^2 f}{\partial y^2}(P).
+\]
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $P = (0,0)$ is a double point on $f$.
+  Write
+  \[
+    f = f_2 + f_3 + \cdots + f_n \in k[x,y]
+  \]
+  and
+  \[
+    f_2 = ax^2 + bxy + cy^2 \in k[x,y].
+  \]
+
+\item[(2)]
+  $P$ is a node if and only if the discriminant
+  \[
+    b^2 - 4ac \neq 0.
+  \]
+  Note that
+  \begin{align*}
+    \frac{\partial^2 f}{\partial x \partial y}(P)
+    &= b, \\
+    \frac{\partial^2 f}{\partial x^2}(P)
+    &= 2a, \\
+    \frac{\partial^2 f}{\partial y^2}(P)
+    &= 2c.
+  \end{align*}
+  Hence,
+  $P$ is a node if and only if
+  \[
+    b^2 - 4ac
+    = b^2 - (2a)(2c)
+    = \frac{\partial^2 f}{\partial x \partial y}(P)^2
+      - \frac{\partial^2 f}{\partial x^2}(P) \cdot \frac{\partial^2 f}{\partial y^2}(P)
+    \neq 0.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
