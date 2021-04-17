@@ -8487,8 +8487,9 @@ show that $f$ consists of $n$ lines through $P$ (not necessarily distinct).} \\
 \item[(2)]
   Write
   \[
-    f = f_m + f_{m+1} + \cdots + f_n.
+    f = f_m + f_{m+1} + \cdots + f_n
   \]
+  where $f_i$ is a form in $k[x,y]$.
   Since $m$ is the multiplicity of $f$ at $P$, $m = n$.
   Hence, $f$ is a form in two variables of degree $n$,
   or $f$ consists of $n$ lines through $P$.
@@ -8523,6 +8524,7 @@ Show that $P$ is a node if and only if}
   \[
     f = f_2 + f_3 + \cdots + f_n \in k[x,y]
   \]
+  (where $f_i$ is a form in $k[x,y]$),
   and
   \[
     f_2 = ax^2 + bxy + cy^2 \in k[x,y].
@@ -8551,6 +8553,67 @@ Show that $P$ is a node if and only if}
       - \frac{\partial^2 f}{\partial x^2}(P) \cdot \frac{\partial^2 f}{\partial y^2}(P)
     \neq 0.
   \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.5.}
+\addcontentsline{toc}{subsubsection}{Problem 3.5.}
+\emph{($\mathrm{char}(k) = 0$)
+Show that $m_P(f)$ is the smallest integer $m$ such that
+for some $i + j = m$,
+\[
+  \frac{\partial^{m} f}{\partial x^i \partial y^j}(P) \neq 0.
+\]
+Find an explicit description for the leading form for $f$ at $P$ in
+terms of these derivatives.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $P = (0,0)$.
+  Write $f = f_0 + f_1 + \cdots + f_n$ where $f_i$ is a form in $k[x,y]$.
+  Consider any form $f_m$ of $f$.
+  Write
+  \[
+    f_m = c_{m} x^m + c_{m-1} x^{m-1} y + \cdots + c_{0} y^m
+  \]
+  where $c_i \in k$ and not all $c_i$ are zero.
+
+\item[(2)]
+  Similar to Problem 3.4,
+  $\frac{\partial^{m} f}{\partial x^i \partial y^j}(P) = c_i i!j!$.
+  Here $i+j = m$.
+  Hence,
+  \[
+    c_i
+    = \frac{1}{i!j!} \frac{\partial^{m} f}{\partial x^i \partial y^j}(P)
+    = \frac{1}{m!} {m \choose i} \frac{\partial^{m} f}{\partial x^i \partial y^j}(P)
+  \]
+  and thus
+  \[
+    f_m
+    = \frac{1}{m!} \sum_{i = 0}^{m}
+    {m \choose i} \frac{\partial^{m} f}{\partial x^i \partial y^j}(P) x^i y^j.
+  \]
+
+\item[(3)]
+  Suppose $m$ is the smallest integer such that
+  for some $i + j = m$,
+  \[
+    \frac{\partial^{m} f}{\partial x^i \partial y^j}(P) \neq 0.
+  \]
+  Then $f_0 = f_1 = \cdots = f_{m-1} = 0$ and $f_m \neq 0$ in $k[x,y]$ by (2).
+  Therefore, $m = m_P(f)$.
+  The explicit description for the leading form $f_m$ for $f$ at $P$
+  is already stated in (2).
 \end{enumerate}
 $\Box$ \\\\
 
