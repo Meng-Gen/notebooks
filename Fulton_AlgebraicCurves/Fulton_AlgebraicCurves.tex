@@ -8654,6 +8654,105 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 3.7.}
+\addcontentsline{toc}{subsubsection}{Problem 3.7.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that the real part of the curve $e$ of the examples is
+  the set of points in $\mathbf{A}^2(\mathbb{R})$ whose
+  polar coordinates $(r,\theta)$ satisfy the equation $r = -\sin(3\theta)$.
+  Find the polar equation for the curve $f$.}
+
+\item[(b)]
+  \emph{If $n$ is an odd integer $\geq 1$,
+  show that the equation $r = \sin(n\theta)$ defines
+  the real part of a curve of degree $n+1$ with an ordinary $n$-tuple point at $(0,0)$.
+  (Use the fact that $\sin(n\theta) = \mathrm{im}(e^{in\theta})$ to get the equation;
+  note that rotation by $\frac{\pi}{n}$ is a linear transformation that takes the curve into itself.)}
+
+\item[(c)]
+  \emph{Analyze the singularities that arise by looking at
+  $r^2 = \sin^2(n\theta)$, $n$ even.}
+
+\item[(d)]
+  \emph{Show that the curves constructed in (b) and (c) are all irreducible in $\mathbf{A}^2(\mathbb{C})$. 
+  (Hint: Make the polynomials homogeneous with respect to a variable $z$, and use \S 2.1.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  De Moivre's theorem implies that
+  \begin{align*}
+    \cos(n\theta)+i \sin(n\theta)
+    =& \: (\cos\theta + i\sin\theta)^n \\
+    =& \: \sum_{k=0}^{n} {n \choose k} (\cos\theta)^{n-k} i^{k} (\sin\theta)^{k} \\
+    =& \: \sum_{k=0}^{\lfloor \frac{n}{2} \rfloor}
+      (-1)^k {n \choose 2k} (\cos\theta)^{n-2k} (\sin\theta)^{2k} \\
+      &+ i \sum_{k=0}^{\lfloor \frac{n-1}{2} \rfloor}
+      (-1)^k {n \choose 2k} (\cos\theta)^{n-2k-1} (\sin\theta)^{2k+1}.
+  \end{align*}
+  Hence,
+  \[
+    \sin(n\theta)
+    = \sum_{k=0}^{\lfloor \frac{n-1}{2} \rfloor}
+      (-1)^k {n \choose 2k} (\cos\theta)^{n-2k-1} (\sin\theta)^{2k+1}.
+  \]
+  In particular,
+  \[
+    \sin(3\theta)
+    = 3 \cos^{2}\theta \sin\theta - \sin^{3}\theta.
+  \]
+
+\item[(2)]
+  $r = -\sin(3\theta)$ implies that
+  \begin{align*}
+    r^4
+    &= r^3(-\sin(3\theta)) \\
+    &= r^3 (-3 \cos^{2}\theta \sin\theta + \sin^{3}\theta) \\
+    &= -3 (r\cos\theta)^2 (r\sin\theta) + (r\sin\theta)^3.
+  \end{align*}
+  Hence, $r = -\sin(3\theta)$ implies that
+  \[
+    (x^2+y^2)^2 = -3x^2 y + y^3
+  \]
+  in $\mathbf{A}^2(\mathbb{R})$.
+
+\item[(3)]
+  As $f(x,y) = (x^2+y^2)^3 - 4x^2y^2$,
+  $f(r\cos\theta,r\sin\theta) = 0$ implies that
+  \[
+    r^6
+    = 4r^4 \cos^2\theta\sin^2\theta
+    = r^4 \sin^2 2\theta
+  \]
+  or
+  \[
+    r^2 = \sin^2 2\theta.
+  \]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$\\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
