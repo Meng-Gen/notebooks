@@ -8914,6 +8914,51 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.10.}
+\addcontentsline{toc}{subsubsection}{Problem 3.10.}
+\emph{Show that an irreducible plane curve has only a finite number of multiple points.
+Is this true for hypersurfaces?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $f \in k[x,y]$ be an irreducible plane curve.
+  Let
+  \[
+    V
+    = V\left( f, \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)
+  \]
+  be the set of the singularity points of $f$.
+  Moreover, $V$ is an algebraic set.
+
+\item[(2)]
+  Since $f$ is irreducible and $\deg\left( \frac{\partial f}{\partial x} \right) = \deg f - 1$,
+  $f$ and $\frac{\partial f}{\partial x}$ have no common factors.
+  By Proposition 2 in \S 1.6,
+  $V\left( f, \frac{\partial f}{\partial x} \right)$ is a finite set.
+  Hence,
+  $V \subseteq V\left( f, \frac{\partial f}{\partial x} \right)$ is finite
+  as a subset of a finite set.
+
+\item[(3)]
+  The conclusion is not true for hypersurfaces when $n \geq 3$.
+  Consider $f = x_2^2 - x_1^3 \in k[x_1,\ldots,x_n]$.
+  The set of the singularity points of $f$ is
+  \[
+    \{ (0,0,a_3,\ldots,a_n) : a_3,\ldots,a_n \in k \},
+  \]
+  which is infinite as $k$ is infinite.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
