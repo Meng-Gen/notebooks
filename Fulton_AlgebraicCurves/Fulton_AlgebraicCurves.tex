@@ -8917,6 +8917,116 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.9.}
+\addcontentsline{toc}{subsubsection}{Problem 3.9.}
+\emph{Let $f \in k[x_1,\ldots,x_n]$ define a hypersurface $V(f) \subseteq \mathbf{A}^{n}$.
+Let $P \in \mathbf{A}^{n}$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Define the multiplicity $m_P(f)$ of $f$ at $P$.}
+
+\item[(b)]
+  \emph{If $m_P(f) = 1$, define the tangent hyperplane to $f$ at $P$.}
+
+\item[(c)]
+  \emph{Examine $f = x^2 + y^2 - z^2$, $P = (0,0,0)$.
+  Is it possible to define tangent hyperplanes at multiple points?} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Let $P = (0,\ldots,0)$.
+  Write $f = f_m + f_{m+1} + \cdots + f_n$,
+  where $f_i$ is a form in $k[x_1,\ldots,x_n]$ of degree $i$, $f_m \neq 0$.
+  We define $m$ to be the multiplicity of $f$ at $P = (0,\ldots,0)$, write $m = m_P(f)$.
+
+\item[(2)]
+  To extend these definitions to a point $P = (a_1,\ldots,a_n) \neq (0,\ldots,0)$,
+  let $t$ be the translation that takes $(0,\ldots,0)$ to $P$, i.e.,
+  \[
+    t(x_1,\ldots,x_n) = (x_1+a_1,\ldots,x_n+a_n).
+  \]
+  Then
+  \[
+    f^{t} = f(x_1+a_1,\ldots,x_n+a_n).
+  \]
+  Define $m_P(f)$ to be $m_{(0,\ldots,0)}(f^t)$, i.e., write
+  $f^t = g_m + g_{m+1} + \cdots$, $g_i$ forms, $g_m \neq 0$,
+  and let $m = m_P(f)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let $P = (0,\ldots,0)$.
+  Write $f = f_m + f_{m+1} + \cdots + f_n$,
+  where $f_i$ is a form in $k[x_1,\ldots,x_n]$ of degree $i$, $f_m \neq 0$.
+  If $m = 1$, then $f_m = f_1$ is a hyperplane.
+  Hence, we can define the tangent hyperplane to $f$ at $P$ to be $f_1$.
+
+\item[(2)]
+  Similar to (a),
+  the tangent hyperplane to $f$ at $P = (a_1,\ldots,a_n) \neq (0,\ldots,0)$ is $g_1$
+  where
+  \[
+    f^t = g_1 + g_2 + \cdots
+  \]
+  and $t(x_1,\ldots,x_n) = (x_1+a_1,\ldots,x_n+a_n)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  No.
+
+\item[(2)]
+  \emph{Show that $x^2 + y^2 - z^2$ is irreducible over $k$.}
+  (Reductio ad absurdum)
+  Suppose $x^2 + y^2 - z^2$ were reducible.
+  By Problem 1.1, we can write
+  \[
+    x^2 + y^2 - z^2 = (a_1 x + a_2 y + a_3 z)(b_1 x + b_2 y + b_3 z)
+  \]
+  for some $a_i, b_i \in k$ ($i = 1, 2, 3$).
+  Expanding out the right hand side and comparing coefficients to get
+  \begin{align*}
+    & a_1 b_1 = a_2 b_2 = -a_3 b_3 = 1 \\
+    & a_1 b_2 + a_2 b_1 = a_2 b_3 + a_3 b_2 = a_3 b_1 + a_1 b_3 = 0.
+  \end{align*}
+  So $a_i, b_i \neq 0$ for all $i$ and
+  \[
+    b_1
+    = \frac{-a_1}{a_3} b_3
+    = \frac{-a_1}{a_3} \cdot \frac{-a_3}{a_2} b_2
+    = \frac{-a_1}{a_3} \cdot \frac{-a_3}{a_2} \cdot \frac{-a_2}{a_1} b_1 = -b_1.
+  \]
+  Hence, $b_1 = 0$, which is absurd.
+
+\item[(3)]
+  Since $x^2 + y^2 - z^2$ is irreducible over any field $k$ with $\mathrm{char}(k) = 0$,
+  it is impossible to define tangent hyperplanes at $(0,0,0)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 3.10.}
 \addcontentsline{toc}{subsubsection}{Problem 3.10.}
 \emph{Show that an irreducible plane curve has only a finite number of multiple points.
