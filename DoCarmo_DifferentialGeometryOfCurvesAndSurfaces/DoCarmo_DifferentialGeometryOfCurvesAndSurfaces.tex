@@ -247,8 +247,8 @@ $\Box$ \\\\
 
 
 
-\subsubsection*{Exercise 1-3.2.}
-\addcontentsline{toc}{subsubsection}{Exercise 1-3.2.}
+\subsubsection*{Exercise 1-3.2. (Cycloid)}
+\addcontentsline{toc}{subsubsection}{Exercise 1-3.2. (Cycloid)}
 \emph{A circular disk of radius $1$ in the plane $xy$ rolls without slipping
 along the $x$ axis.
 The figure described by a point of the circumference of of the disk is
@@ -305,8 +305,77 @@ The cycloid is not an algebraic curve. \\\\
 
 
 
-\subsubsection*{Exercise 1-3.4.}
-\addcontentsline{toc}{subsubsection}{Exercise 1-3.4.}
+\subsubsection*{Exercise 1-3.3. (Cissoid of Diocles)}
+\addcontentsline{toc}{subsubsection}{Exercise 1-3.3. (Cissoid of Diocles)}
+\emph{Let $0A = 2a$ be the diameter of a circle $\mathbb{S}^1$ and
+$0Y$ and $AV$ be the tangents to $\mathbb{S}^1$ at $0$ and $A$, respectively.
+A half-line $r$ is drawn from $0$ which
+meets the circle $\mathbb{S}^1$ at $C$ and the line $AV$ at $B$.
+On $0B$ mark off the segment $0p = CB$.
+If we rotate $r$ about $0$, the point $p$ will describe a curve called
+the \textbf{cissoid of Diocles}.
+By taking $0A$ as the $x$ axis and $0Y$ as the $y$ axis, prove that} \\
+\begin{enumerate}
+\item[(a)]
+  \emph{The tract of
+  \[
+    \alpha(t) = \left( \frac{2at^2}{1+t^2}, \frac{2at^3}{1+t^2} \right),
+    \qquad
+    t \in \mathbb{R},
+  \]
+  is the cissoid of Diocles ($t = \tan\theta$;
+  see Figure 1-8 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces)}
+
+\item[(b)]
+  \emph{}
+
+\item[(c)]
+  \emph{} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  The polar equations of the circle $\mathbb{S}^1$ and the half-line $r$ is
+  \begin{align*}
+    r &= 2a\cos\theta, \\
+    r &= 2a\sec\theta,
+  \end{align*}
+  respectively.
+
+\item[(2)]
+  By construction, the polar equation of the cissoid is
+  \[
+    r
+    = 2a\sec\theta - 2a\cos\theta
+    = 2a\frac{\sin^2\theta}{\cos\theta}
+    = 2a\sin\theta \tan\theta.
+  \]
+
+\item[(3)]
+  Put $t = \tan\theta$, we have
+  \begin{align*}
+    x &= r \cos\theta = 2a \sin^2 \theta = \frac{2at^2}{1+t^2}, \\
+    y &= r \sin\theta = tx = \frac{2at^3}{1+t^2}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\textbf{Supplement.}
+The cissoid is an algebraic curve $= V((x^2+y^2)x = 2ay^2)$. \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1-3.4. (Tractrix)}
+\addcontentsline{toc}{subsubsection}{Exercise 1-3.4. (Tractrix)}
 \emph{Let $\alpha: (0, \pi) \to \mathbb{R}^2$ be given by
 $$\alpha(t) = \left(\sin t, \cos t + \log\tan\frac{t}{2}\right),$$
 where $t$ is the angle that the $y$ axis makes with the vector $\alpha(t)$.
@@ -426,28 +495,28 @@ Given $\varepsilon > 0$.
   \]
   Hence,
   \begin{align*}
-    &\int_{t_{i-1}}^{t_i} |\alpha'(t)| dt \\
-    \geq& |\alpha'(t_i)| \Delta t_i
+    & \: \int_{t_{i-1}}^{t_i} |\alpha'(t)| dt \\
+    \geq& \: |\alpha'(t_i)| \Delta t_i
       - \frac{\varepsilon}{2(b-a)} \Delta t_i \\
-    =& \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t)+\alpha'(t_i)-\alpha'(t)] dt }
+    =& \: \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t)+\alpha'(t_i)-\alpha'(t)] dt }
       - \frac{\varepsilon}{2(b-a)} \Delta t_i \\
-    \geq& \abs{ \int_{t_{i-1}}^{t_i} \alpha'(t) dt }
+    \geq& \: \abs{ \int_{t_{i-1}}^{t_i} \alpha'(t) dt }
       - \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t_i)-\alpha'(t)] dt }
       - \frac{\varepsilon}{2(b-a)} \Delta t_i \\
-    \geq& \abs{ \alpha(t_i) - \alpha(t_{i-1}) }
+    \geq& \: \abs{ \alpha(t_i) - \alpha(t_{i-1}) }
       - \frac{\varepsilon}{b-a} \Delta t_i
   \end{align*}
   and
   \begin{align*}
-    &\int_{t_{i-1}}^{t_i} |\alpha'(t)| dt \\
-    \leq& |\alpha'(t_i)| \Delta t_i
+    & \: \int_{t_{i-1}}^{t_i} |\alpha'(t)| dt \\
+    \leq& \: |\alpha'(t_i)| \Delta t_i
       + \frac{\varepsilon}{2(b-a)} \Delta t_i \\
-    =& \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t)+\alpha'(t_i)-\alpha'(t)] dt }
+    =& \: \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t)+\alpha'(t_i)-\alpha'(t)] dt }
       + \frac{\varepsilon}{2(b-a)} \Delta t_i \\
-    \leq& \abs{ \int_{t_{i-1}}^{t_i} \alpha'(t) dt }
+    \leq& \: \abs{ \int_{t_{i-1}}^{t_i} \alpha'(t) dt }
       + \abs{ \int_{t_{i-1}}^{t_i} [\alpha'(t_i)-\alpha'(t)] dt }
       + \frac{\varepsilon}{2(b-a)} \Delta t_i \\
-    \leq& \abs{ \alpha(t_i) - \alpha(t_{i-1}) }
+    \leq& \: \abs{ \alpha(t_i) - \alpha(t_{i-1}) }
       + \frac{\varepsilon}{b-a} \Delta t_i.
   \end{align*}
 
@@ -759,7 +828,11 @@ $\Box$ \\\\
 \emph{Let $u(t) = (u_1(t), u_2(t), u_3(t))$ and $v(t) = (v_1(t), v_2(t), v_3(t))$
 be differentiable maps from the interval $(a,b)$ into $\mathbb{R}^3$.
 If the derivatives $u'(t)$ and $v'(t)$ satisfy the conditions
-$$u'(t) = au(t) + bv(t), v'(t) = cu(t) - av(t),$$
+\[
+  u'(t) = au(t) + bv(t),
+  \qquad
+  v'(t) = cu(t) - av(t),
+\]
 where $a$, $b$, and $c$ are constants, show that
 $u(t) \wedge v(t)$ is a constant vector.} \\
 
