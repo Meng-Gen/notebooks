@@ -324,10 +324,10 @@ By taking $0A$ as the $x$ axis and $0Y$ as the $y$ axis, prove that} \\
     t \in \mathbb{R},
   \]
   is the cissoid of Diocles ($t = \tan\theta$;
-  see Figure 1-8 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces)}
+  see Figure 1-8 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces).}
 
 \item[(b)]
-  \emph{}
+  \emph{The origin $(0,0)$ is a singular point of the cissoid.}
 
 \item[(c)]
   \emph{} \\
@@ -360,13 +360,26 @@ By taking $0A$ as the $x$ axis and $0Y$ as the $y$ axis, prove that} \\
     x &= r \cos\theta = 2a \sin^2 \theta = \frac{2at^2}{1+t^2}, \\
     y &= r \sin\theta = tx = \frac{2at^3}{1+t^2}.
   \end{align*}
+  So
+  \[
+    \alpha(t) = (x,y) = \left( \frac{2at^2}{1+t^2}, \frac{2at^3}{1+t^2} \right).
+  \]
 \end{enumerate}
 $\Box$ \\
 
-
-
 \textbf{Supplement.}
 The cissoid is an algebraic curve $= V((x^2+y^2)x = 2ay^2)$. \\
+
+
+
+\emph{Proof of (b).}
+Note that $\alpha(0) = (0,0)$ and
+\[
+  \alpha'(t) = \left( \frac{4at}{(t^2+1)^2}, \frac{2at^2(t^2+3)}{(t^2+1)^2} \right).
+\]
+Hence $\alpha'(0) = (0,0)$. That is, $(0,0)$ is a singular point of the cissoid.
+(In fact, the origin is the unique singular point of the cissoid.)
+$\Box$ \\
 
 
 
