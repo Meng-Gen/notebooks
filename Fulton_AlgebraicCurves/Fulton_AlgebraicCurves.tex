@@ -9073,6 +9073,83 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.11. (Tangent space)}
+\addcontentsline{toc}{subsubsection}{Problem 3.11. (Tangent space)}
+\emph{Let $V \subseteq \mathbf{A}^{n}$ be an affine variety, $P \in V$.
+The \textbf{tangent space} $T_P(V)$ is defined to be
+\[
+  \left\{
+    (v_1, \ldots, v_n) \in \mathbf{A}^{n} :
+    \sum_i \frac{\partial g}{\partial x_i}(P) v_i = 0 \:\: \forall g \in I(V)
+  \right\}.
+\]
+If $V = V(f)$ is a hypersurface, $f$ irreducible, show that
+\[
+  T_P(V)
+  =
+  \left\{
+    (v_1, \ldots, v_n) \in \mathbf{A}^{n} :
+    \sum_i \frac{\partial f}{\partial x_i}(P) v_i = 0
+  \right\}.
+\]
+How does the dimension of $T_P(V)$ relate to the multiplicity of $f$ at $P$?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  By the Hilbert's Nullstellensatz,
+  the irreducibility of $f$ implies that $I(V) = I(V(f)) = (f)$.
+
+\item[(2)]
+  Let
+  \[
+    W
+    =
+    \left\{
+      (v_1, \ldots, v_n) \in \mathbf{A}^{n} :
+      \sum_i \frac{\partial f}{\partial x_i}(P) v_i = 0
+    \right\}.
+  \]
+  $W \supseteq T_P(V)$ is true since $f \in I(V) = (f)$.
+
+\item[(3)]
+  \emph{Show that $W \subseteq T_P(V)$.}
+  Given any $(v_1, \ldots, v_n) \in W$.
+  Now for any $g \in I(V) = (f)$, there exists a $h \in k[x_1,\ldots,x_n]$ such that $g = fh$.
+  Hence,
+  \begin{align*}
+    \sum_i \frac{\partial g}{\partial x_i}(P) v_i
+    &= \sum_i \frac{\partial (fh)}{\partial x_i}(P) v_i \\
+    &= \sum_i \left(
+        \frac{\partial (f)}{\partial x_i}(P) h(P)
+        + \underbrace{f(P)}_{= 0} \frac{\partial h}{\partial x_i}(P)
+      \right)
+      v_i \\
+    &= h(P) \underbrace{\sum_i \frac{\partial f}{\partial x_i}(P) v_i}_{= 0} \\
+    &= 0
+  \end{align*}
+  implies that $(v_1, \ldots, v_n) \in T_P(V)$.
+
+\item[(4)]
+  By definition of $T_P(V)$,
+  \begin{equation*}
+    \dim_k(T_P(V)) =
+    \begin{cases}
+      n - 1 & \text{if $m_P(f) = 1$} \\
+      n & \text{if $m_P(f) > 1$}. \\
+    \end{cases}
+  \end{equation*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
