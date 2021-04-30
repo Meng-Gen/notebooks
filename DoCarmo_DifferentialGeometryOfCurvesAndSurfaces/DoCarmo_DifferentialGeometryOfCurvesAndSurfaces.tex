@@ -314,7 +314,7 @@ meets the circle $\mathbb{S}^1$ at $C$ and the line $AV$ at $B$.
 On $0B$ mark off the segment $0p = CB$.
 If we rotate $r$ about $0$, the point $p$ will describe a curve called
 the \textbf{cissoid of Diocles}.
-By taking $0A$ as the $x$ axis and $0Y$ as the $y$ axis, prove that} \\
+By taking $0A$ as the $x$ axis and $0Y$ as the $y$ axis, prove that}
 \begin{enumerate}
 \item[(a)]
   \emph{The tract of
@@ -330,7 +330,10 @@ By taking $0A$ as the $x$ axis and $0Y$ as the $y$ axis, prove that} \\
   \emph{The origin $(0,0)$ is a singular point of the cissoid.}
 
 \item[(c)]
-  \emph{} \\
+  \emph{As $t \to \infty$, $\alpha(t)$ approaches the line $x = 2a$,
+  and $\alpha'(t) \to (0,2a)$.
+  Thus, as $t \to \infty$, the curve and its tangent approach the line $x = 2a$;
+  we say that $x = 2a$ is an \textbf{asymptote} to the cissoid.} \\
 \end{enumerate}
 
 
@@ -380,6 +383,32 @@ Note that $\alpha(0) = (0,0)$ and
 Hence $\alpha'(0) = (0,0)$. That is, $(0,0)$ is a singular point of the cissoid.
 (In fact, the origin is the unique singular point of the cissoid.)
 $\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \begin{align*}
+    \lim_{t \to \pm \infty} \frac{2at^2}{1+t^2} &= 2a, \\
+    \lim_{t \to \pm \infty} \frac{2at^3}{1+t^2} &= \pm \infty.
+  \end{align*}
+  Hence, $\alpha(t)$ approaches the line $x = 2a$ as $t \to \pm \infty$.
+
+\item[(2)]
+  Similarly,
+  \begin{align*}
+    \lim_{t \to \pm \infty} \frac{4at}{(t^2+1)^2} &= 0, \\
+    \lim_{t \to \pm \infty} \frac{2at^2(t^2+3)}{(t^2+1)^2} &= 2a.
+  \end{align*}
+  Therefore, $\alpha'(t) \to (0,2a)$ as $t \to \pm \infty$.
+
+\item[(3)]
+  By (1)(2), the curve and its tangent approach the line $x = 2a$ as $t \to \pm \infty$,
+  or $x = 2a$ is an asymptote to the cissoid.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
