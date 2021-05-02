@@ -391,16 +391,24 @@ $\Box$ \\
 \item[(1)]
   Note that
   \begin{align*}
-    \lim_{t \to \pm \infty} \frac{2at^2}{1+t^2} &= 2a, \\
-    \lim_{t \to \pm \infty} \frac{2at^3}{1+t^2} &= \pm \infty.
+    \lim_{t \to \pm \infty} x(t)
+    &= \lim_{t \to \pm \infty} \frac{2at^2}{1+t^2}
+    = 2a, \\
+    \lim_{t \to \pm \infty} y(t)
+    &= \lim_{t \to \pm \infty} \frac{2at^3}{1+t^2}
+    = \pm \infty.
   \end{align*}
   Hence, $\alpha(t)$ approaches the line $x = 2a$ as $t \to \pm \infty$.
 
 \item[(2)]
   Similarly,
   \begin{align*}
-    \lim_{t \to \pm \infty} \frac{4at}{(t^2+1)^2} &= 0, \\
-    \lim_{t \to \pm \infty} \frac{2at^2(t^2+3)}{(t^2+1)^2} &= 2a.
+    \lim_{t \to \pm \infty} x'(t)
+    &= \lim_{t \to \pm \infty} \frac{4at}{(t^2+1)^2}
+    = 0, \\
+    \lim_{t \to \pm \infty} y'(t)
+    &= \lim_{t \to \pm \infty} \frac{2at^2(t^2+3)}{(t^2+1)^2}
+    = 2a.
   \end{align*}
   Therefore, $\alpha'(t) \to (0,2a)$ as $t \to \pm \infty$.
 
@@ -474,6 +482,102 @@ So the length of the segment is
   &= \sqrt{(\sin t)^2+ (\cos t)^2} \\
   &= 1.
 \end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1-3.5. (Folium of Descartes)}
+\addcontentsline{toc}{subsubsection}{Exercise 1-3.5. (Folium of Descartes)}
+\emph{Let $\alpha: (-1, +\infty) \to \mathbb{R}^2$ be given by
+\[
+  \alpha(t) = \left( \frac{3at}{1+t^3}, \frac{3at^2}{1+t^3} \right).
+\]
+Prove that:}
+\begin{enumerate}
+\item[(a)]
+  \emph{For $t = 0$, $\alpha$ is tangent to the $x$ axis.}
+
+\item[(b)]
+  \emph{As $t \to +\infty$, $\alpha(t) \to (0,0)$ and $\alpha'(t) = (0,0)$.}
+
+\item[(c)]
+  \emph{Take the curve the the opposite orientation.
+  Now, as $t \to -1$, the curve and its tangent approach the line $x+y+a=0$.}
+\end{enumerate}
+\emph{The figure obtained by completing the trace of $\alpha$ in such a way that
+it becomes symmetric relative the the line $y = x$ is called the
+\textbf{folium of Descartes}
+(See Figure 1-10 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces).} \\
+
+
+
+\emph{Proof of (a).}
+  Note that
+  \[
+    \alpha'(t) = \left( \frac{3a(1-2t^3)}{(1+t^3)^2}, \frac{3at(2-t^3)}{(1+t^3)^2} \right).
+  \]
+  Hence, $\alpha'(0) = (3a, 0)$, or $\alpha$ is tangent to the $x$ axis when $t = 0$.
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    \lim_{t \to +\infty} \alpha(t)
+    &= \lim_{t \to +\infty} \left( \frac{3at}{1+t^3}, \frac{3at^2}{1+t^3} \right) \\
+    &= \left( \lim_{t \to +\infty} \frac{3at}{1+t^3},
+      \lim_{t \to +\infty} \frac{3at^2}{1+t^3} \right) \\
+    &= (0, 0).
+  \end{align*}
+\item[(2)]
+  \begin{align*}
+    \lim_{t \to +\infty} \alpha'(t)
+    &= \lim_{t \to +\infty} \left( \frac{3a(1-2t^3)}{(1+t^3)^2}, \frac{3at(2-t^3)}{(1+t^3)^2} \right) \\
+    &= \left( \lim_{t \to +\infty} \frac{3a(1-2t^3)}{(1+t^3)^2},
+      \lim_{t \to +\infty} \frac{3at(2-t^3)}{(1+t^3)^2} \right) \\
+    &= (0, 0).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \begin{align*}
+    \lim_{t \to -1^{+}} \alpha(t)
+    &= \lim_{t \to -1^{+}} \left( \frac{3at}{1+t^3}, \frac{3at^2}{1+t^3} \right) \\
+    &= \left( \lim_{t \to -1^{+}} \frac{3at}{1+t^3},
+      \lim_{t \to -1^{+}} \frac{3at^2}{1+t^3} \right) \\
+    &= (-\infty, +\infty)
+  \end{align*}
+  and
+  \begin{align*}
+    \lim_{t \to -1^{+}} (x(t) + y(t))
+    &= \lim_{t \to -1^{+}} \left( \frac{3at}{1+t^3} + \frac{3at^2}{1+t^3} \right) \\
+    &= \lim_{t \to -1^{+}} \frac{3at}{1-t+t^2} \\
+    &= -a.
+  \end{align*}
+  Therefore, as $t \to -1$, the curve approaches the line $x+y+a=0$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    \lim_{t \to -1^{+}} \frac{y'(t)}{x'(t)}
+    &= \lim_{t \to -1^{+}} \frac{\frac{3a(1-2t^3)}{(1+t^3)^2}}{\frac{3at(2-t^3)}{(1+t^3)^2}} \\
+    &= \lim_{t \to -1^{+}} \frac{1-2t^3}{t(2-t^3)} \\
+    &= -1.
+  \end{align*}
+  Hence, as $t \to -1$, its tangent also approaches the line $x+y+a=0$.
+\end{enumerate}
 $\Box$ \\\\
 
 
