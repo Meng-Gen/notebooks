@@ -633,6 +633,24 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Note that
+  \[
+    \alpha'(t)
+    = ( ae^{bt} (\underbrace{b\cos t - \sin t}_{\text{bounded}}),
+      ae^{bt} (\underbrace{b\sin t + \cos t}_{\text{bounded}}) ).
+  \]
+  As $t \to +\infty$, $\alpha'(t) \to (0,0)$.
+
+\item[(2)]
+  As
+  \begin{align*}
+    \int_{t_0}^{+\infty} |\alpha'(t)| dt
+    &= \int_{t_0}^{+\infty} ae^{bt} \sqrt{b^2 + 1} dt \\
+    &= \left[ \frac{a}{b} e^{bt} \sqrt{b^2 + 1} \right]_{t = t_0}^{t = +\infty} \\
+    &= - \frac{a}{b} e^{bt_0} \sqrt{b^2 + 1} \\
+    &< +\infty,
+  \end{align*}
+  $\alpha$ has finite arc length in $[t_0,\infty)$.
 \end{enumerate}
 $\Box$ \\\\
 
