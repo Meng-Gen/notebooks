@@ -586,6 +586,62 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1-3.6. (Logarithmic spiral)}
+\addcontentsline{toc}{subsubsection}{Exercise 1-3.6. (Logarithmic spiral)}
+\emph{Let $\alpha(t) = (ae^{bt} \cos t, ae^{bt} \sin t)$, $t \in \mathbb{R}$,
+$a$ and $b$ constants, $a > 0$, $b < 0$, be a parametrized curve.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that as $t \to +\infty$, $\alpha(t)$ approaches the origin $0$,
+  spiraling around it (because of this, the trace of $\alpha$ is called the \textbf{logarithmic spiral};
+  See Figure 1-11 in Mantredo P. do Carmo, Differential Geometry of Curves and Surfaces).}
+
+\item[(b)]
+  \emph{Show that $\alpha'(t) \to (0,0)$ as $t \to +\infty$ and that
+  \[
+    \lim_{t \to + \infty} \int_{t_0}^{t} |\alpha'(t)| dt
+  \]
+  is finite; that is, $\alpha$ has finite arc length in $[t_0,\infty)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \[
+    \lim_{t \to +\infty} x(t)
+    = \lim_{t \to +\infty} \frac{\overbrace{a \cos t}^{\text{bounded}}}
+      {\underbrace{e^{-bt}}_{\to +\infty}}
+    = 0
+  \]
+  and $\lim_{t \to +\infty} y(t) = 0$ (by the similar argument).
+  Hence $\alpha(t)$ approaches the origin $0$ as $t \to +\infty$.
+
+\item[(2)]
+  $\alpha(t) = (ae^{bt} \cos t, ae^{bt} \sin t)$
+  is moving in counter-clockwise on a circle path and
+  sweeping out a length $ae^{bt}$ as $t$ is moving from $t_0$ to $+\infty$.
+  Note that $t \mapsto ae^{bt}$ is decreasing strictly (as $t$ is moving from $t_0$ to $+\infty$).
+  Hence $\alpha$ spiraling around the origin.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1-3.8.}
 \addcontentsline{toc}{subsubsection}{Exercise 1-3.8.}
 \emph{Let $\alpha: I \to \mathbb{R}^3$ be a differentiable curve and
