@@ -1682,14 +1682,14 @@ $$A_{n} = \left( \frac{1}{n}, \infty \right) \subseteq \mathbb{R}^1$$
 for any $n \in \mathbb{Z}^+$.
 Then
 \begin{align*}
-\bigcup^{\infty}_{n=1} A_n = (0, \infty)
-&\Longrightarrow
-\overline{\bigcup^{\infty}_{n=1} A_n} = \overline{(0, \infty)} = [0, \infty), \\
-\overline{A_n} = \left[ \frac{1}{n}, \infty \right)
-&\Longrightarrow
-\bigcup^{\infty}_{n=1} \overline{A_n}
-= \bigcup^{\infty}_{n=1} \left[ \frac{1}{n}, \infty \right)
-= (0, \infty).
+  \bigcup^{\infty}_{n=1} A_n = (0, \infty)
+  &\Longrightarrow
+  \overline{\bigcup^{\infty}_{n=1} A_n} = \overline{(0, \infty)} = [0, \infty), \\
+  \overline{A_n} = \left[ \frac{1}{n}, \infty \right)
+  &\Longrightarrow
+  \bigcup^{\infty}_{n=1} \overline{A_n}
+  = \bigcup^{\infty}_{n=1} \left[ \frac{1}{n}, \infty \right)
+  = (0, \infty).
 \end{align*}
 $\Box$ \\\\
 
@@ -3338,8 +3338,7 @@ $\Box$
 
 \subsection*{Exercise 2.27.}
 \addcontentsline{toc}{subsection}{Exercise 2.27.}
-\emph{
-Define a point $p$ in a metric space $X$ to be a {\it condensation
+\emph{Define a point $p$ in a metric space $X$ to be a {\it condensation
 point} of a set $E \subseteq X$ if every neighborhood of $p$ contains
 uncountably many points of $E$.} \\
 
@@ -3367,15 +3366,15 @@ Let $W$ be the union of those $V_n$ for which $E \cap V_n$ is at most countable.
   $(P \subseteq \widetilde{W})$
   Given any $x \in P$.
   \begin{align*}
-  x \in P
-  \Longrightarrow&
-  \text{$x$ is a condensation points of $E$} \\
-  \Longrightarrow&
-  \text{$\forall \: V_n \ni x, \exists B(x) \subseteq V_n$ such that
-    $E \cap B(x)$ is uncountable} \\
-  \Longrightarrow&
-  \text{$E \cap V_n$ is uncountable} \\
-  \Longrightarrow&
+    x \in P
+    \Longrightarrow& \:
+    \text{$x$ is a condensation points of $E$} \\
+    \Longrightarrow& \:
+    \text{$\forall \: V_n \ni x, \exists B(x) \subseteq V_n$ such that
+      $E \cap B(x)$ is uncountable} \\
+    \Longrightarrow& \:
+    \text{$E \cap V_n$ is uncountable} \\
+    \Longrightarrow& \:
   x \not\in W.
   \end{align*}
   \item[(b)]
@@ -3383,22 +3382,22 @@ Let $W$ be the union of those $V_n$ for which $E \cap V_n$ is at most countable.
   Given any $x \in \widetilde{W}$.
   Let $P(V_n)$ be the proposition that $E \cap V_n$ is at most countable.
   \begin{align*}
-  x \in \widetilde{W}
-  \Longrightarrow&
-  x \not\in W = \bigcup_{P(V_n)} V_n \\
-  \Longrightarrow&
-  \text{$x \not\in V_n$ for which $E \cap V_n$ is at most countable} \\
-  \Longrightarrow&
-  \text{$\forall$ $B(x)$ of $x$, $x \in V_m \subseteq B(x)$ for some $V_m$}
-    &\text{($\{V_n\}$: base of $X$)} \\
-  \Longrightarrow&
-  \text{$E \cap V_m$ is uncountable} \\
-  \Longrightarrow&
-  \text{$E \cap B(x) \supseteq E \cap V_m$ is uncountable} \\
-  \Longrightarrow&
-  \text{$x$ is a condensation point of $E$} \\
-  \Longrightarrow&
-  x \in P.
+    x \in \widetilde{W}
+    \Longrightarrow& \:
+    x \not\in W = \bigcup_{P(V_n)} V_n \\
+    \Longrightarrow& \:
+    \text{$x \not\in V_n$ for which $E \cap V_n$ is at most countable} \\
+    \Longrightarrow& \:
+    \text{$\forall$ $B(x)$ of $x$, $x \in V_m \subseteq B(x)$ for some $V_m$}
+      &\text{($\{V_n\}$: base of $X$)} \\
+    \Longrightarrow& \:
+    \text{$E \cap V_m$ is uncountable} \\
+    \Longrightarrow& \:
+    \text{$E \cap B(x) \supseteq E \cap V_m$ is uncountable} \\
+    \Longrightarrow& \:
+    \text{$x$ is a condensation point of $E$} \\
+    \Longrightarrow& \:
+    x \in P.
   \end{align*}
   \end{enumerate}
 \item[(3)]
@@ -3411,10 +3410,12 @@ $P$ is the complement of an open subset $W$.
   \item[(a)]
   If there were an isolated point $x \in P$, then
   there exists an open neighborhood $B(x)$ of $x$ such that $B(x) \cap P = \{x\}$.
+
   \item[(b)]
   Since $x$ is a condensation point of $E$,
   there are uncountably many points of $E$ in $B(x)$,
   and such points $y$ are not a condensation points of $E$ except $y = x$.
+
   \item[(c)]
   Given any point $y \in E \cap B(x)$ with $y \neq x$.
   Since $y$ is not a condensation point,
@@ -3423,12 +3424,13 @@ $P$ is the complement of an open subset $W$.
   for each $B(y)$ there exists $V_{n(y)}$ such that $y \in V_{n(y)} \subseteq B(y)$.
   Hence $$V_{n(y)} \cap E \subseteq B(y) \cap E$$
   is at most countable.
+
   \item[(d)]
   Hence,
   \begin{align*}
-  E \cap B(x) - \{x\}
-  &\subseteq \bigcup_{y \in E \cap B(x) - \{x\}} V_{n(y)}  \\
-  &= \bigcup_{n(y)} V_{n(y)}
+    E \cap B(x) - \{x\}
+    &\subseteq \bigcup_{y \in E \cap B(x) - \{x\}} V_{n(y)}  \\
+    &= \bigcup_{n(y)} V_{n(y)}
   \end{align*}
   is a countable union of at most countable sets,
   which is countable.
@@ -3442,7 +3444,6 @@ $$E \cap \widetilde{P}
 = \bigcup_{P(V_n)}(E \cap V_n)$$
 is at most countable.
 \end{enumerate}
-
 $\Box$ \\\\
 
 
@@ -6551,9 +6552,9 @@ By the boundedness of $E$, there is $M > 0$ such that $\abs{x} < M$ for all $x \
 \item[(3)]
 For such $\delta > 0$, we construct a covering of $E \subseteq \mathbb{R}$.
 Construct a special collection $\mathscr{C}$ of intervals
-$$I_{a} =
-  \left[ \frac{\delta}{2}a, \frac{\delta}{2}(a+1) \right]
-$$
+\[
+  I_{a} = \left[ \frac{\delta}{2}a, \frac{\delta}{2}(a+1) \right]
+\]
 where $a \in \mathbb{Z}$ satisfying
 $$\abs{a} < \frac{2M}{\delta} + 1.$$
 By construction, $\mathscr{C}$ is a finite covering of $E$.
@@ -6617,8 +6618,10 @@ $\overline{E}$ is compact
 (Heine-Borel theorem).
 That is, there is a finite subcollection $\mathscr{C}'$ of $\mathscr{C}$
 also covers $\overline{E}$, say
-$$\mathscr{C}'
-= \left\{B(a_1;\delta)), B(a_2;\delta), \ldots, B(a_m;\delta) \right\}.$$
+\[
+  \mathscr{C}'
+  = \left\{B(a_1;\delta)), B(a_2;\delta), \ldots, B(a_m;\delta) \right\}.
+\]
 
 \item[(4)]
 Given any $x \in E \subseteq \overline{E}$,
@@ -17148,7 +17151,7 @@ $\Box$ \\
 
 \textbf{Theorem 7.24 over $\mathbb{R}^k$.}
 \emph{If $K$ is a compact metric space,
-if $\mathbf{f}_n \in \mathscr{C}(K)$ for $n=1,2,3,\ldots$,
+if $\mathbf{f}_n \in \mathcal{C}(K)$ for $n=1,2,3,\ldots$,
 and if $\{\mathbf{f}_n\}$ converges uniformly on $K$,
 then $\{\mathbf{f}_n\}$ is equicontinuous on $K$.} \\
 
@@ -17204,7 +17207,7 @@ $\Box$ \\
     \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
   \]
   be the corresponding mappings of $K$ into $\mathbb{R}^k$.
-  Each $f_{n(j)} \in \mathscr{C}(K)$ too.
+  Each $f_{n(j)} \in \mathcal{C}(K)$ too.
 
 \item[(2)]
   $\{\mathbf{f}_n\}$ converges uniformly on $K$
@@ -17236,7 +17239,7 @@ $\Box$ \\
 
 
 \textbf{Theorem 7.25 over $\mathbb{R}^k$ (Arzel\`{a}-Ascoli theorem).}
-\emph{If $K$ is compact, if $\mathbf{f}_n \in \mathscr{C}(K)$ for $n = 1,2,3,\ldots$,
+\emph{If $K$ is compact, if $\mathbf{f}_n \in \mathcal{C}(K)$ for $n = 1,2,3,\ldots$,
 and if $\{\mathbf{f}_n\}$ is pointwise bounded and equicontinuous on $K$, then}
 \begin{enumerate}
 \item[(a)]
@@ -17254,7 +17257,7 @@ and if $\{\mathbf{f}_n\}$ is pointwise bounded and equicontinuous on $K$, then}
     \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
   \]
   be the corresponding mappings of $K$ into $\mathbb{R}^k$.
-  Each $f_{n(j)} \in \mathscr{C}(K)$ too.
+  Each $f_{n(j)} \in \mathcal{C}(K)$ too.
 
 \item[(2)]
   $\{\mathbf{f}_n\}$ is pointwise bounded on $K$
@@ -17291,7 +17294,7 @@ $\Box$ \\
     \mathbf{f}_n = \left(f_{n(1)}, \ldots, f_{n(k)}\right)
   \]
   be the corresponding mappings of $K$ into $\mathbb{R}^k$.
-  Each $f_{n(j)} \in \mathscr{C}(K)$ too.
+  Each $f_{n(j)} \in \mathcal{C}(K)$ too.
 
 \item[(2)]
   $\{\mathbf{f}_n\}$ is pointwise bounded on $K$
@@ -17412,7 +17415,7 @@ $\Box$ \\\\
 \subsection*{Exercise 7.19.}
 \addcontentsline{toc}{subsection}{Exercise 7.19.}
 \emph{Let $K$ be a compact metric space,
-let $S$ be a subset of $\mathscr{C}(K)$.
+let $S$ be a subset of $\mathcal{C}(K)$.
 Prove that $S$ is compact (with respect to the metric defined in Section 7.14)
 if and only if
 $S$ is uniformly closed, pointwise bounded, and equicontinuous.
@@ -17430,7 +17433,7 @@ hence has no subsequence that converges uniformly on $K$.)} \\
     By Exercise 2.26, it suffices to
     \emph{show that every infinite subset $E$ of $S$ has a limit point.}
     From such infinite subset $E$ we can take
-    $f_n \in E \subseteq S \subseteq \mathscr{C}(K)$ for $n = 1,2,3,\ldots$.
+    $f_n \in E \subseteq S \subseteq \mathcal{C}(K)$ for $n = 1,2,3,\ldots$.
     Consider the sequence $\{f_n\}$.
 
   \item[(b)]
@@ -17463,7 +17466,7 @@ hence has no subsequence that converges uniformly on $K$.)} \\
   \[
     \mathscr{C} = \{ G_n \}_{n=1,2,3,\ldots}
   \]
-  is an open covering of $S$ since each $f \in S \subseteq \mathscr{C}(K)$ is bounded.
+  is an open covering of $S$ since each $f \in S \subseteq \mathcal{C}(K)$ is bounded.
   Since $S$ is compact, there exists a finite subcovering $\mathscr{C}'$ of $\mathscr{C}$,
   say
   \[
@@ -17852,7 +17855,7 @@ Assign to each $p \in X$ the function $f_p$ defined by
   (x \in X).
 \]
 Prove that $\abs{ f_p(x) } \leq d(a,p)$ for all $x \in X$,
-and that therefore, $f_p \in \mathscr{C}(X)$.
+and that therefore, $f_p \in \mathcal{C}(X)$.
 Prove that
 \[
   \norm{ f_p - f_q } = d(p,q)
@@ -17860,8 +17863,8 @@ Prove that
 for all $p,q \in X$.
 If $\Phi(p) = f_p$ it follows that $\Phi$ is an \textbf{isometry}
 (a distance-preserving mapping)
-of $X$ onto $\Phi(X) \subseteq \mathscr{C}(X)$.
-Let $Y$ be the closure of $\Phi(X)$ in $\mathscr{C}(X)$.
+of $X$ onto $\Phi(X) \subseteq \mathcal{C}(X)$.
+Let $Y$ be the closure of $\Phi(X)$ in $\mathcal{C}(X)$.
 Show that $Y$ is complete.
 Conclusion: $X$ is isometric to a dense subset of a complete metric space $Y$.
 (Exercise 3.24 contains a different proof of this.)} \\
@@ -17879,7 +17882,7 @@ Conclusion: $X$ is isometric to a dense subset of a complete metric space $Y$.
   Thus $\abs{ f_p(x) } \leq d(a,p)$ for any $x \in X$.
 
 \item[(2)]
-  \emph{Show that $f_p \in \mathscr{C}(X)$, i.e, $f_p$ is continuous on $X$.}
+  \emph{Show that $f_p \in \mathcal{C}(X)$, i.e, $f_p$ is continuous on $X$.}
   Given any $\varepsilon > 0$, there exists a $\delta = \frac{\varepsilon}{2}$ such that
   \begin{align*}
     \abs{ f_p(x) - f_p(y) }
@@ -17929,7 +17932,7 @@ Conclusion: $X$ is isometric to a dense subset of a complete metric space $Y$.
   By Theorem 3.11 and Definition 3.12,
   every closed subset of a complete metric space is complete.
   Note that $Y$ is a closed subset (by construction)
-  of a complete metric space $\mathscr{C}(X)$ (Theorem 7.15).
+  of a complete metric space $\mathcal{C}(X)$ (Theorem 7.15).
   Therefore $Y$ is complete.
 \end{enumerate}
 $\Box$ \\\\
@@ -23333,7 +23336,7 @@ $\Box$ \\\\
   with $\gamma(t) = (0,0)$ and $\gamma'(t) \neq (0,0)$ for any $t \in \mathbb{R}^1$.
   Put $g(t) = f(\gamma(t))$ and prove that
   $g$ is differentiable for every $t \in \mathbb{R}^1$.
-  If $\gamma \in \mathscr{C}'$, prove that $g \in \mathscr{C}'$.}
+  If $\gamma \in \mathcal{C}'$, prove that $g \in \mathcal{C}'$.}
 
 \item[(d)]
   \emph{In spite of this, prove that $f$ is not differentiable at $(0,0)$.} \\
@@ -23531,8 +23534,8 @@ By (2)(3), $g'(t)$ exists and
 \end{equation*}
 
 \item[(5)]
-  Now suppose $\gamma \in \mathscr{C}'$.
-  To show $g' \in \mathscr{C}'$, it suffices to show that
+  Now suppose $\gamma \in \mathcal{C}'$.
+  To show $g' \in \mathcal{C}'$, it suffices to show that
   \[
     \lim_{x \to t} g'(x) = g'(t)
   \]
@@ -24424,7 +24427,7 @@ $\Box$ \\
 \emph{Proof (The implicit function theorem).}
 \begin{enumerate}
 \item[(1)]
-  Define $\mathbf{f}$ be a $\mathscr{C}'$-mapping
+  Define $\mathbf{f}$ be a $\mathcal{C}'$-mapping
   of $\mathbb{R}^{3+1}$ into $\mathbb{R}^3$ by
   \[
     \mathbf{f}(x,y,z,u)
@@ -24503,7 +24506,7 @@ and interpret the theorem (as well as its proof) graphically.} \\
 
 
 \textbf{Implicit function theorem (for $n=m=1$).}
-  Let $f(x,y)$ be a $\mathscr{C}'$-mapping of
+  Let $f(x,y)$ be a $\mathcal{C}'$-mapping of
   an open set $E \subseteq \mathbb{R}^2$ into $\mathbb{R}$,
   such that $f(a,b) = 0$ for some point $(a,b) \in E$.
   Assume that
@@ -24520,7 +24523,7 @@ and interpret the theorem (as well as its proof) graphically.} \\
       f(x,y) = 0.
     \]
     If this $x$ is defined to be $g(y)$,
-    then $g$ is a $\mathscr{C}'$-mapping of $W$ into $\mathbb{R}^1$,
+    then $g$ is a $\mathcal{C}'$-mapping of $W$ into $\mathbb{R}^1$,
     $g(b) = a$,
     \[
       f(g(y),y) = 0
@@ -24545,7 +24548,7 @@ define the graph of $f$ by the set
 
 \item[(2)]
 Consider the graph $S$.
-As $D_1 f(a,b) \neq 0$ and $f(x,y) \in \mathscr{C}'$,
+As $D_1 f(a,b) \neq 0$ and $f(x,y) \in \mathcal{C}'$,
 there are an open neighborhood $U \subseteq E$ of $(a,b)$
 and an open neighborhood $W$ of $b$
 such that $x \mapsto f(x,y)$ is strictly monotonic whenever $y \in W$.
@@ -24857,7 +24860,7 @@ Find $(D_1 g)(1,-1)$ and $(D_2 g)(1,-1)$.} \\
   \end{align*}
   $A_x = (1)$ and $A_y = (0,1)$.
   By the implicit function theorem (Theorem 9.28),
-  there exists a $\mathscr{C}'$ function
+  there exists a $\mathcal{C}'$ function
   in some open neighborhood of $(1,-1)$ such that $g(1,-1) = 0$
   and $f(g(y_1,y_2),y_1,y_2) = 0$.
 
@@ -25574,12 +25577,12 @@ $\Box$ \\\\
 \subsection*{Exercise 9.29 (Symmetry of second derivatives).}
 \addcontentsline{toc}{subsection}{Exercise 9.29 (Symmetry of second derivatives).}
 \emph{Let $E$ be an open set in $\mathbb{R}^n$.
-The classes $\mathscr{C}'(E)$ and $\mathscr{C}''(E)$ are defined in the text.
-By induction, $\mathscr{C}^{(k)}(E)$ can be defined as follows,
+The classes $\mathcal{C}'(E)$ and $\mathcal{C}''(E)$ are defined in the text.
+By induction, $\mathcal{C}^{(k)}(E)$ can be defined as follows,
 for all positive integer $k$:
-To say that $f \in \mathscr{C}^{(k)}(E)$
-means that the partial derivatives $D_1 f, \ldots D_n f$ belongs to $\mathscr{C}^{(k-1)}(E)$.
-Assume $f \in \mathscr{C}^{(k)}(E)$, and show (by repeated application of Theorem 9.41)
+To say that $f \in \mathcal{C}^{(k)}(E)$
+means that the partial derivatives $D_1 f, \ldots D_n f$ belongs to $\mathcal{C}^{(k-1)}(E)$.
+Assume $f \in \mathcal{C}^{(k)}(E)$, and show (by repeated application of Theorem 9.41)
 that the $k$th-order derivative
 \[
   D_{i_1 i_2 \cdots i_k} f = D_{i_1} D_{i_2} \cdots D_{i_k} f
@@ -25589,7 +25592,7 @@ For instance, if $n \geq 3$, then
 \[
   D_{1213} f = D_{3112} f
 \]
-for every $f \in \mathscr{C}^{(4)}(E)$.} \\
+for every $f \in \mathcal{C}^{(4)}(E)$.} \\
 
 
 
@@ -25598,8 +25601,8 @@ for every $f \in \mathscr{C}^{(4)}(E)$.} \\
 \item[(1)]
   \emph{Show that the $k$th-order derivative is unchanged if
   any two adjacent subscripts $i_{h}$ and $i_{h+1}$ are exchanged.}
-  Since $D_{i_{h+2}} \cdots D_{i_{k}} f \in \mathscr{C}^{(k-h-1)}(E)
-  \subseteq \mathscr{C}^{2}(E)$,
+  Since $D_{i_{h+2}} \cdots D_{i_{k}} f \in \mathcal{C}^{(k-h-1)}(E)
+  \subseteq \mathcal{C}^{2}(E)$,
   \[
     D_{i_{h+1} i_{h} i_{h+2} \cdots i_k} f
     = D_{i_{h} i_{h+1} i_{h+2} \cdots i_k} f.
@@ -25632,7 +25635,7 @@ $\Box$ \\\\
 
 \subsection*{Exercise 9.30.}
 \addcontentsline{toc}{subsection}{Exercise 9.30.}
-\emph{Let $f \in \mathscr{C}^{(m)}(E)$, where $E$ is an open subset of $\mathbb{R}^n$.
+\emph{Let $f \in \mathcal{C}^{(m)}(E)$, where $E$ is an open subset of $\mathbb{R}^n$.
 Fix $\mathbf{a} \in E$,
 and suppose $\mathbf{x} \in \mathbb{R}^n$ is so close to $\mathbf{0}$ that the points
 \[
@@ -25809,7 +25812,7 @@ $\Box$ \\
   for some $t \in (0,1)$.
 
 \item[(2)]
-  Since $f \in \mathscr{C}^{(m)}(E)$,
+  Since $f \in \mathcal{C}^{(m)}(E)$,
   $f$ is continuous on a compact subset
   \[
     K = \{ \mathbf{y} : |\mathbf{a} - \mathbf{y}| \leq |\mathbf{x}| \}
@@ -25884,7 +25887,7 @@ $\Box$ \\\\
 
 \subsection*{Exercise 9.31.}
 \addcontentsline{toc}{subsection}{Exercise 9.31.}
-\emph{Suppose $f \in \mathscr{C}^{(3)}$ in some neighborhood of a point
+\emph{Suppose $f \in \mathcal{C}^{(3)}$ in some neighborhood of a point
 $\mathbf{a} \in \mathbb{R}^2$,
 the gradient of $f$ is $\mathbf{0}$ at $\mathbf{a}$,
 but not all second-order derivatives of $f$ are $0$ at $\mathbf{a}$.
@@ -26020,7 +26023,7 @@ Show that $P$ is a node (i.e., $f$ has two distinct tangents at $P$) if and only
 \subsection*{Exercise 10.1.}
 \addcontentsline{toc}{subsection}{Exercise 10.1.}
 \emph{Let $H$ be a compact convex set in $\mathbb{R}^k$, with nonempty interior.
-Let $f \in \mathscr{C}(H)$, put $f(\mathbf{x}) = 0$ in the complement of $H$,
+Let $f \in \mathcal{C}(H)$, put $f(\mathbf{x}) = 0$ in the complement of $H$,
 and define $\int_{H} f$ as in Definition 10.3.
 Prove that $\int_{H} f$ is independent of the order in which the $k$ integrations are carried out.
 (Hint: Approximate $f$ by functions that are continuous on $\mathbb{R}^k$
@@ -26350,7 +26353,7 @@ as was done in Example 10.4.)} \\
     \int_{a_1}^{b_1} F_{\delta,1}(x_1) dx_1 \to \int_{a_1}^{b_1} f(x_1) dx_1
   \]
   uniformly.
-  Since $F_{\delta} \in \mathscr{C}(I^k)$, $\int F_{\delta}$ is unaffected by
+  Since $F_{\delta} \in \mathcal{C}(I^k)$, $\int F_{\delta}$ is unaffected by
   any change in this order.
   Hence it is also true of $\int_{I^k} f = \int_{H} f$.
 \end{enumerate}
@@ -26364,7 +26367,7 @@ $\Box$ \\\\
 
 \subsection*{Exercise 10.2.}
 \addcontentsline{toc}{subsection}{Exercise 10.2.}
-\emph{For $i=1,2,3,\ldots$, let $\varphi_i \in \mathscr{C}(\mathbb{R}^1)$ have support
+\emph{For $i=1,2,3,\ldots$, let $\varphi_i \in \mathcal{C}(\mathbb{R}^1)$ have support
 in $(2^{-i},2^{1-i})$, such that $\int \varphi_i = 1$.
 Put
 \[
@@ -26560,7 +26563,7 @@ $\Box$ \\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  Suppose $\mathbf{F}$ is a $\mathscr{C}'$-mapping of an open set $E \subseteq \mathbb{R}^n$
+  Suppose $\mathbf{F}$ is a $\mathcal{C}'$-mapping of an open set $E \subseteq \mathbb{R}^n$
   into $\mathbb{R}^n$, $\mathbf{0} \in E$, $\mathbf{F}(\mathbf{0}) = \mathbf{0}$,
   and $\mathbf{F}'(\mathbf{0})$ is invertible.
 
@@ -26576,7 +26579,7 @@ $\Box$ \\\\
   \[
     \mathbf{F}_1(\mathbf{x}) = \sum_{i=1}^{n} \alpha_i(\mathbf{x}) \mathbf{e}_i,
   \]
-  where $\alpha_1, \ldots, \alpha_n$ are real $\mathscr{C}'$-functions in $V_1$.
+  where $\alpha_1, \ldots, \alpha_n$ are real $\mathcal{C}'$-functions in $V_1$.
   Hence
   \[
     \mathbf{F}'_1(\mathbf{0})\mathbf{e}_1
@@ -26590,7 +26593,7 @@ $\Box$ \\\\
     \qquad
     (\mathbf{x} \in V_1).
   \]
-  Then $\mathbf{G}_1 \in \mathscr{C}'(V_1)$, $\mathbf{G}_1$ is primitive,
+  Then $\mathbf{G}_1 \in \mathcal{C}'(V_1)$, $\mathbf{G}_1$ is primitive,
   and $\mathbf{G}'_1(\mathbf{0}) = \mathbf{I}$ is invertible.
 
 \item[(4)]
@@ -26601,14 +26604,14 @@ $\Box$ \\\\
   the inverse function theorem shows that there is an open set $U_{m}$,
   with $\mathbf{0} \in U_{m} \subseteq V_{m}$, such that
   $\mathbf{G}_m$ is an injective mapping of $U_{m}$ onto a neighborhood $V_{m+1}$ of $\mathbf{0}$,
-  in which $\mathbf{G}_m^{-1} \in \mathscr{C}'(V_{m+1})$.
+  in which $\mathbf{G}_m^{-1} \in \mathcal{C}'(V_{m+1})$.
   Define $\mathbf{F}_{m+1}$ by
   \[
     \mathbf{F}_{m+1}(\mathbf{y}) = \mathbf{F}_{m} \circ \mathbf{G}_m^{-1}(\mathbf{y})
     \qquad
     (\mathbf{y} \in V_{m+1}).
   \]
-  Then $\mathbf{F}_{m+1} \in \mathscr{C}'(V_{m+1})$, $\mathbf{F}_m(\mathbf{0}) = \mathbf{0}$,
+  Then $\mathbf{F}_{m+1} \in \mathcal{C}'(V_{m+1})$, $\mathbf{F}_m(\mathbf{0}) = \mathbf{0}$,
   and $\mathbf{F}'_{m+1}(\mathbf{0}) = \mathbf{I}$ is invertible by the chain rule
   and the inverse function theorem.
   So
@@ -26617,7 +26620,7 @@ $\Box$ \\\\
     = P_m \mathbf{x}
       + \sum_{i=m+1}^{n} \alpha_i(\mathbf{x}) \mathbf{e}_i,
   \]
-  where $\alpha_1, \ldots, \alpha_n$ are real $\mathscr{C}'$-functions in $V_{m+1}$.
+  where $\alpha_1, \ldots, \alpha_n$ are real $\mathcal{C}'$-functions in $V_{m+1}$.
   Hence
   \[
     \mathbf{F}'_{m+1}(\mathbf{0})\mathbf{e}_{m+1}
@@ -26632,7 +26635,7 @@ $\Box$ \\\\
     \qquad
     (\mathbf{x} \in V_{m+1}).
   \]
-  Then $\mathbf{G}_{m+1} \in \mathscr{C}'(V_{m+1})$, $\mathbf{G}_{m+1}$ is primitive,
+  Then $\mathbf{G}_{m+1} \in \mathcal{C}'(V_{m+1})$, $\mathbf{G}_{m+1}$ is primitive,
   and $\mathbf{G}'_{m+1}(\mathbf{0}) = \mathbf{I}$ is invertible.
   Our induction hypothesis holds therefore with $m+1$ in place of $m$.
 
@@ -26886,7 +26889,7 @@ by functions of the type constructed in Exercise 4.22.)} \\
   \emph{(Partitions of unity.)
   Suppose $K$ is a compact subset of a metric space $X$,
   and $\{V_{\alpha}\}$ is an open cover of $K$.
-  Then there exist functions $\psi_1, \ldots, \psi_s \in \mathscr{C}(X)$ such that}
+  Then there exist functions $\psi_1, \ldots, \psi_s \in \mathcal{C}(X)$ such that}
   \begin{enumerate}
   \item[(a)]
     \emph{$0 \leq \psi_i \leq 1$ for $1 \leq i \leq s$.}
@@ -26900,7 +26903,7 @@ by functions of the type constructed in Exercise 4.22.)} \\
 
 \item[(2)]
   It is trivial that some $V_{\alpha} = X$
-  by taking $s = 1$ and $\psi_1(x) = 1 \in \mathscr{C}(X)$.
+  by taking $s = 1$ and $\psi_1(x) = 1 \in \mathcal{C}(X)$.
   Now we assume that all $V_{\alpha} \subsetneq X$.
 
 \item[(3)]
@@ -26942,16 +26945,16 @@ by functions of the type constructed in Exercise 4.22.)} \\
   \[
     \varphi_i(x)
     = \frac{\rho_{\overline{B(x_i)}}(x)}{\rho_{\overline{B(x_i)}}(x) + \rho_{X-W(x_i)}(x)}
-    \in \mathscr{C}(X)
+    \in \mathcal{C}(X)
   \]
   such that $\varphi_i(x) = 1$ on $\overline{B(x_i)}$,
   $\varphi_i(x) = 0$ outside $W(x_i)$, and $0 \leq \varphi_i(x) \leq 1$ on $X$
   for $1 \leq i \leq s$.
 
 \item[(5)]
-  Define $\psi_{1} = \varphi_{1} \in \mathscr{C}(X)$ and
+  Define $\psi_{1} = \varphi_{1} \in \mathcal{C}(X)$ and
   \[
-    \psi_{i+1} = (1-\varphi_{1}) \cdots (1-\varphi_{i})\varphi_{i+1} \in \mathscr{C}(X)
+    \psi_{i+1} = (1-\varphi_{1}) \cdots (1-\varphi_{i})\varphi_{i+1} \in \mathcal{C}(X)
   \]
   for $1 \leq i \leq s-1$.
   Properties (a) and (b) in (1) are clear.
@@ -26984,7 +26987,7 @@ the functions $\psi_i$ can be made differentiable, and even infinitely different
 \begin{enumerate}
 \item[(1)]
   It is trivial that some $V_{\alpha} = \mathbb{R}^n$
-  by taking $s = 1$ and $\psi_1(\mathbf{x}) = 1 \in \mathscr{C}^{\infty}(\mathbb{R}^n)$.
+  by taking $s = 1$ and $\psi_1(\mathbf{x}) = 1 \in \mathcal{C}^{\infty}(\mathbb{R}^n)$.
   Now we assume that all $V_{\alpha} \subsetneq \mathbb{R}^n$.
 
 \item[(2)]
@@ -27024,7 +27027,7 @@ the functions $\psi_i$ can be made differentiable, and even infinitely different
       0 & (y \leq 0).
     \end{cases}
   \end{equation*}
-  $f(y) \in \mathscr{C}^{\infty}(\mathbb{R}^1)$
+  $f(y) \in \mathcal{C}^{\infty}(\mathbb{R}^1)$
   by applying the similar argument in Exercise 8.1.
 
 \item[(4)]
@@ -27036,7 +27039,7 @@ the functions $\psi_i$ can be made differentiable, and even infinitely different
     = \frac{f(y_j)}{f(y_j)+f\left(\frac{r}{64\sqrt{n}}-\frac{r}{89\sqrt{n}}-y_j\right)}
   \]
   for $1 \leq j \leq n$.
-  $g_{x_j}$ is well-defined and $g_{x_j} \in \mathscr{C}^{\infty}(\mathbb{R}^1)$.
+  $g_{x_j}$ is well-defined and $g_{x_j} \in \mathcal{C}^{\infty}(\mathbb{R}^1)$.
   So
   \begin{equation*}
     g_{x_j}(y_j) =
@@ -27056,7 +27059,7 @@ the functions $\psi_i$ can be made differentiable, and even infinitely different
       g_{x_j}\left(x_j+\frac{r}{64\sqrt{n}}-y_j\right)
   \]
   for $1 \leq j \leq n$.
-  $h_{x_j} \in \mathscr{C}^{\infty}(\mathbb{R}^1)$.
+  $h_{x_j} \in \mathcal{C}^{\infty}(\mathbb{R}^1)$.
   So
   \begin{equation*}
     h_{x_j}(y_j) =
@@ -27079,7 +27082,7 @@ the functions $\psi_i$ can be made differentiable, and even infinitely different
     = \prod_{j=1}^{n} h_{x_j}(y_j)
   \]
   where $\mathbf{y} = (y_1,\ldots,y_n) \in \mathbb{R}^n$.
-  Hence, $\mathbf{h}_{\mathbf{x}} \in \mathscr{C}^{\infty}(\mathbb{R}^n)$ (Theorem 9.21).
+  Hence, $\mathbf{h}_{\mathbf{x}} \in \mathcal{C}^{\infty}(\mathbb{R}^n)$ (Theorem 9.21).
   Also, $\mathbf{h}_{\mathbf{x}}(\mathbf{y}) = 1$ on $\overline{B(\mathbf{x})}$,
   $\mathbf{h}_{\mathbf{x}}(\mathbf{y}) = 0$ outside $W(\mathbf{x})$,
   and $0 \leq \mathbf{h}_{\mathbf{x}}(\mathbf{y}) \leq 1$.
@@ -27094,7 +27097,7 @@ the functions $\psi_i$ can be made differentiable, and even infinitely different
   \[
     \varphi_i(\mathbf{x})
     = \mathbf{h}_{\mathbf{x}_i}(\mathbf{x})
-    \in \mathscr{C}^{\infty}(\mathbb{R}^n)
+    \in \mathcal{C}^{\infty}(\mathbb{R}^n)
   \]
   for $1 \leq i \leq s$.
 
@@ -27393,7 +27396,7 @@ by the equations
 Show that $T$ maps this rectangle onto the closed disc $D$ with center at $(0,0)$ and radius $a$,
 that $T$ is one-to-one in the interior of the rectangle,
 and that $J_T(r,\theta) = r$.
-If $f \in \mathscr{C}(D)$, prove the formula for integration in polar coordinates:}
+If $f \in \mathcal{C}(D)$, prove the formula for integration in polar coordinates:}
 \[
   \int_{D} f(x,y)dx \: dy
   = \int_{0}^{a} \int_{0}^{2\pi} f(T(r,\theta))r dr \: d\theta.
@@ -27477,7 +27480,7 @@ Define $E = [0,a] \times [0,2\pi]$.
   \]
 
 \item[(5)]
-  \emph{If $f \in \mathscr{C}(D)$, show that}
+  \emph{If $f \in \mathcal{C}(D)$, show that}
   \[
     \int_{D} f(x,y)dx \: dy
   \]
@@ -27509,7 +27512,7 @@ Define $E = [0,a] \times [0,2\pi]$.
     \[
       F_{\delta}(x,y) = \varphi_{\delta}\left(\frac{\sqrt{x^2+y^2}}{a}\right)f(x,y).
     \]
-    Then $F_{\delta} \in \mathscr{C}(I^2)$ (or $\mathscr{C}(\mathbb{R}^2)$).
+    Then $F_{\delta} \in \mathcal{C}(I^2)$ (or $\mathcal{C}(\mathbb{R}^2)$).
 
   \item[(c)]
     For each $x \in [-a,a]$, the set of all $y$ such that $F_{\delta}(x,y) \neq f(x,y)$
@@ -27537,7 +27540,7 @@ Define $E = [0,a] \times [0,2\pi]$.
     \]
     uniformly as $\delta \to 0$.
     ($\delta = \frac{1}{n}$ for example.)
-    So $g(x) \in \mathscr{C}([-a,a])$,
+    So $g(x) \in \mathcal{C}([-a,a])$,
     and the further integrations present no problem, that is,
     $\int_{I^2} f$ is existed.
 
@@ -27549,7 +27552,7 @@ Define $E = [0,a] \times [0,2\pi]$.
     \]
     It is true, regardless of the order in which the $2$ single integrations
     are carried out.
-    Since $F_{\delta} \in \mathscr{C}(I^2)$,
+    Since $F_{\delta} \in \mathcal{C}(I^2)$,
     $\int F_{\delta}$ is unaffected by any change in this order.
     Hence the inequality shows that the same is true of $\int f$.
   \end{enumerate}
@@ -27562,7 +27565,7 @@ Define $E = [0,a] \times [0,2\pi]$.
   \]
   \begin{enumerate}
   \item[(a)]
-    Note that $T$ is a one-to-one $\mathscr{C}'$-mapping of an open set $D_0$
+    Note that $T$ is a one-to-one $\mathcal{C}'$-mapping of an open set $D_0$
     such that $J_T(r,\theta) = r \neq 0$ for all $(r,\theta) \in \mathrm{int}(E)$.
     To apply Theorem 10.9, we will leverage Example 10.4 again.
 
@@ -27593,7 +27596,7 @@ Define $E = [0,a] \times [0,2\pi]$.
     \end{align*}
 
   \item[(c)]
-    Since $f \in \mathscr{C}(D)$ and Exercise 6.7,
+    Since $f \in \mathcal{C}(D)$ and Exercise 6.7,
     \[
       \lim_{\delta \to 0} \int_{\frac{\delta}{2}}^{a-\frac{\delta}{2}}
         \int_{\frac{\delta}{2}}^{2\pi-\frac{\delta}{2}}
@@ -27674,7 +27677,7 @@ to derive formula}
     \int_{\mathbb{R}^2} f(x,y) dx dy
     = \lim_{a \to \infty} \int_{I_a} f(x,y) dx dy.
   \]
-  Besides, since $f \in \mathscr{C}(\mathbb{R}^2)$, we have
+  Besides, since $f \in \mathcal{C}(\mathbb{R}^2)$, we have
   \begin{align*}
     \int_{0}^{\infty} \int_{0}^{2\pi} f(T(r,\theta))r dr d\theta
     &= \lim_{a \to \infty} \int_{0}^{a} \int_{0}^{2\pi} f(T(r,\theta))r dr d\theta \\
@@ -27721,7 +27724,7 @@ to derive formula}
   \[
     \int_{0}^{M} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta < +\infty
   \]
-  since $f \in \mathscr{C}(\mathbb{R}^2)$.
+  since $f \in \mathcal{C}(\mathbb{R}^2)$.
   Besides,
   \begin{align*}
     \int_{M}^{a} \int_{0}^{2\pi} \abs{f(T(r,\theta))} r dr d\theta
@@ -27754,7 +27757,7 @@ to derive formula}
 
 \item[(5)]
   \emph{Show that $\int_{-\infty}^{\infty} e^{-s^2} ds = \sqrt{\pi}$.}
-  Take $f(x,y) = \exp(-x^2-y^2) \in \mathscr{C}(\mathbb{R}^2)$.
+  Take $f(x,y) = \exp(-x^2-y^2) \in \mathcal{C}(\mathbb{R}^2)$.
   So
   \[
     \lim_{x^2+y^2 \to \infty} |f(x,y)|(x^2+y^2)^2
@@ -27909,7 +27912,7 @@ Provide this extension.)} \\
   \]
 
 \item[(6)]
-  \emph{Given $f \in \mathscr{C}(Q)$.
+  \emph{Given $f \in \mathcal{C}(Q)$.
   Suppose both $\int_{Q} f(u,v) du dv$ and $\int_{S} f(T(s,t))s ds dt$ converge
   as improper integrals in the sense of Exercises 6.7 and 6.8.
   Show that}
@@ -29109,13 +29112,13 @@ is valid, and show that it generalizes the formula for integration by parts.
   \emph{If}
   \begin{enumerate}
   \item[(a)]
-    \emph{$\Phi$ is a $k$-chain of class $\mathscr{C}''$ in an open set $V \subseteq \mathbb{R}^m$,}
+    \emph{$\Phi$ is a $k$-chain of class $\mathcal{C}''$ in an open set $V \subseteq \mathbb{R}^m$,}
 
   \item[(b)]
-    \emph{$\omega$ is a $(k-1)$-form of class $\mathscr{C}'$ in $V$,}
+    \emph{$\omega$ is a $(k-1)$-form of class $\mathcal{C}'$ in $V$,}
 
   \item[(c)]
-    \emph{$f$ is a $0$-form of class $\mathscr{C}'$ in $V$,}
+    \emph{$f$ is a $0$-form of class $\mathcal{C}'$ in $V$,}
   \end{enumerate}
   \emph{then}
   \[
@@ -29146,12 +29149,12 @@ is valid, and show that it generalizes the formula for integration by parts.
   \[
     \Phi(\alpha) = a + \alpha (b - a).
   \]
-  $\Phi$ is a $1$-simplex of class $\mathscr{C}''$ in an open set $V \supseteq [a,b]$.
+  $\Phi$ is a $1$-simplex of class $\mathcal{C}''$ in an open set $V \supseteq [a,b]$.
   Also,
   \[
     \partial\Phi = [b] - [a].
   \]
-  Let $\omega = g$ be a $0$-form of class $\mathscr{C}'(V)$.
+  Let $\omega = g$ be a $0$-form of class $\mathcal{C}'(V)$.
 
 \item[(5)]
   Note that
@@ -29199,7 +29202,7 @@ in $\mathbb{R}^2-\{\mathbf{0}\}$.}
 
 \item[(b)]
   \emph{Let $\gamma(t) = (r \cos t, r \sin t)$, for some $r > 0$,
-  and let $\Gamma$ be a $\mathscr{C}''$-curve in $\mathbb{R}^2 - \{\mathbf{0}\}$,
+  and let $\Gamma$ be a $\mathcal{C}''$-curve in $\mathbb{R}^2 - \{\mathbf{0}\}$,
   with parameter interval $[0,2\pi]$,
   with $\Gamma(0) = \Gamma(2\pi)$,
   such that the intervals $[\gamma(t),\Gamma(t)]$ do not contain $\mathbf{0}$
@@ -29248,7 +29251,7 @@ in $\mathbb{R}^2-\{\mathbf{0}\}$.}
   \emph{Show that (b) can be derived from (d).}
 
 \item[(f)]
-  \emph{If $\Gamma$ is any closed $\mathscr{C}'$-curve in $\mathbb{R}^2 - \{ \mathbf{0} \}$,
+  \emph{If $\Gamma$ is any closed $\mathcal{C}'$-curve in $\mathbb{R}^2 - \{ \mathbf{0} \}$,
   prove that
   \[
     \frac{1}{2\pi} \int_{\Gamma} \eta = \mathrm{Ind}(\Gamma).
@@ -29567,7 +29570,7 @@ with parameter domain $D$, given by
   as a special case.}
 
 \item[(c)]
-  \emph{Suppose $g, h_1, h_2, h_3$, are $\mathscr{C}''$-functions on $[0,1]$, $g > 0$.
+  \emph{Suppose $g, h_1, h_2, h_3$, are $\mathcal{C}''$-functions on $[0,1]$, $g > 0$.
   Let $(x,y,z) = \Phi(s,t)$ define a $2$-surface $\Phi$,
   with parameter domain $I^2$, by
   \[
@@ -29588,7 +29591,7 @@ with parameter domain $D$, given by
 
 \item[(d)]
   \emph{Let $E$ be a closed rectangle in $D$, with edges parallel to those of $D$.
-  Suppose $f \in \mathscr{C}''(D)$, $f > 0$.
+  Suppose $f \in \mathcal{C}''(D)$, $f > 0$.
   Let $\Omega$ be the $2$-surface with parameter domain $E$,
   defined by
   \[
@@ -30530,8 +30533,8 @@ $\Box$ \\
 
 \item[(iii)]
   One generalization of Exercise 10.22(c).
-  \emph{Suppose $g \in \mathscr{C}''([0,1])$,
-  $\mathbf{h} = (h_1, \ldots, h_{n}) \in \mathscr{C}''([0,1]^{n-2})$, and $g > 0$.
+  \emph{Suppose $g \in \mathcal{C}''([0,1])$,
+  $\mathbf{h} = (h_1, \ldots, h_{n}) \in \mathcal{C}''([0,1]^{n-2})$, and $g > 0$.
   Write
   $\mathbf{x} = (x_1,\ldots,x_n)$ and $\mathbf{s} = (s_1,\ldots,s_{n-2})$.
   Let
@@ -30552,7 +30555,7 @@ $\Box$ \\
   One generalization of Exercise 10.21(b) and 10.22(d).
   \emph{Let $E$ be a closed cell in $D$,
   with edges parallel to those of $D$.
-  Suppose $f \in \mathscr{C}''(D)$, $f > 0$.
+  Suppose $f \in \mathcal{C}''(D)$, $f > 0$.
   Let $\Omega$ be the $(n-1)$-surface with parameter domain $E$,
   defined by
   \[
@@ -31309,7 +31312,7 @@ $\Box$ \\\\
 
 \subsection*{Exercise 10.24.}
 \addcontentsline{toc}{subsection}{Exercise 10.24.}
-\emph{Let $\omega = \sum a_i(\mathbf{x}) dx_i$ be a $1$-form of class $\mathscr{C}''$
+\emph{Let $\omega = \sum a_i(\mathbf{x}) dx_i$ be a $1$-form of class $\mathcal{C}''$
 in a convex open set $E \subseteq \mathbb{R}^n$.
 Assume $d\omega = 0$ and prove that $\omega$ is exact in $E$,
 by completing the following outline:} \\
@@ -31416,7 +31419,7 @@ Hence $(D_i f)(\mathbf{x}) = a_i(\mathbf{x})$.} \\
     &= \lim_{h \to 0}
       \int_{0}^{1} a_j(\mathbf{x} + th \mathbf{e}_j) dt \\
     &= \int_{0}^{1} a_j(\mathbf{x}) dt
-      &(a_j \in \mathscr{C}'') \\
+      &(a_j \in \mathcal{C}'') \\
     &= a_j(\mathbf{x}).
   \end{align*}
   Thus,
@@ -31457,7 +31460,7 @@ such that
 \[
   \int_{\gamma} \omega = 0
 \]
-for every closed curve $\gamma$ in $E$, of class $\mathscr{C}'$.
+for every closed curve $\gamma$ in $E$, of class $\mathcal{C}'$.
 Prove that $\omega$ is exact in $E$,
 by imitating part of the argument sketched in Exercise 10.24.} \\
 
@@ -31469,7 +31472,7 @@ by imitating part of the argument sketched in Exercise 10.24.} \\
   \emph{Assume that $E$ is a \textbf{connected} open subset of $\mathbb{R}^n$.
   Show that $\omega$ is exact in $E$
   if $\int_{\gamma} \omega = 0$
-  for every closed curve $\gamma$ in $E$, of class $\mathscr{C}'$.}
+  for every closed curve $\gamma$ in $E$, of class $\mathcal{C}'$.}
 
 \item[(2)]
   Fix $\mathbf{p} \in E$.
@@ -31528,7 +31531,7 @@ $\Box$ \\\\
 \subsection*{Exercise 10.26.}
 \addcontentsline{toc}{subsection}{Exercise 10.26.}
 \emph{Assume $\omega$ is a $1$-form in $\mathbb{R}^3 - \{\mathbf{0}\}$,
-of class $\mathscr{C}'$ and $d\omega = 0$.
+of class $\mathcal{C}'$ and $d\omega = 0$.
 Prove that $\omega$ is exact in $\mathbb{R}^3 - \{\mathbf{0}\}$.
 (Hint: Every closed continuously differentiable curve in $\mathbb{R}^3 - \{\mathbf{0}\}$
 is the boundary of a $2$-surface in $\mathbb{R}^3 - \{\mathbf{0}\}$.
@@ -31545,7 +31548,7 @@ Apply Stokes' theorem and Exercise 10.25.)} \\
   \[
     \int_{\gamma} \omega = 0
   \]
-  for every closed curve $\gamma$ in $E$, of class $\mathscr{C}'$.
+  for every closed curve $\gamma$ in $E$, of class $\mathcal{C}'$.
 
 \item[(2)]
   Suppose that every closed continuously differentiable curve in $\mathbb{R}^3 - \{\mathbf{0}\}$
@@ -31592,7 +31595,7 @@ $\Box$ \\\\
 \addcontentsline{toc}{subsection}{Exercise 10.27.}
 \emph{Let $E$ be an open $3$-cell in $\mathbb{R}^3$,
 with edges parallel to the coordinate axes.
-Suppose $(a,b,c) \in E$, $f_i \in \mathscr{C}'(E)$ for $i=1,2,3$,
+Suppose $(a,b,c) \in E$, $f_i \in \mathcal{C}'(E)$ for $i=1,2,3$,
 \[
   \omega
   = f_1 dy \wedge dz + f_2 dz \wedge dx + f_3 dx \wedge dy,
@@ -31660,9 +31663,9 @@ that occurs in part (e) of Exercise 10.22.} \\
     =& \: D_1 \left( -\int_{c}^{z} f_1(x,y,s) ds \right) \\
       &- D_2 \left( \int_{c}^{z} f_2(x,y,s) ds - \int_{b}^{y} f_3(x,t,c)dt \right) \\
     =& - \int_{c}^{z} D_1 f_1(x,y,s) ds
-      &(f_1 \in \mathscr{C}') \\
+      &(f_1 \in \mathcal{C}') \\
       &- \int_{c}^{z} D_2 f_2(x,y,s) ds + f_3(x,y,c)
-        &(\text{$f_2 \in \mathscr{C}'$, Theorem 6.20}) \\
+        &(\text{$f_2 \in \mathcal{C}'$, Theorem 6.20}) \\
     =& \int_{c}^{z} D_3 f_3(x,y,s) ds + f_3(x,y,c)
       &((1)) \\
     =& f_3(x,y,z)
@@ -31796,7 +31799,7 @@ $\Box$ \\\\
 \addcontentsline{toc}{subsection}{Exercise 10.29.}
 \emph{Prove the existence of a function $\alpha$
 with the properties needed in the proof of Theorem 10.38,
-and prove that the resulting function $F$ is of class $\mathscr{C}'$.
+and prove that the resulting function $F$ is of class $\mathcal{C}'$.
 (Both assertions become trivial if $E$ is an open cell or an open ball,
 since $\alpha$ can then be taken to be a constant.
 Refer to Theorem 9.42.)} \\
@@ -31817,7 +31820,7 @@ Refer to Theorem 9.42.)} \\
   such that $(\mathbf{x}', x_p, \mathbf{x}'') \in E$ for some $\mathbf{x}''$.
   Let $U$ be the set of all $\mathbf{x}' \in \mathbb{R}^{p-1}$ such that
   $(\mathbf{x}',x_p) \in V$ for some $x_p$.
-  Show that there is a function $\alpha \in \mathscr{C}'(U)$
+  Show that there is a function $\alpha \in \mathcal{C}'(U)$
   such that $(\mathbf{x}', \alpha(\mathbf{x}'))$ in V for every $\mathbf{x}' \in U$;
   in other words, the graph of $\alpha$ lies in $V$.}
 
@@ -31827,7 +31830,7 @@ Refer to Theorem 9.42.)} \\
   $E = (a_1,b_1) \times \cdots \times (a_n,b_n)$.
   Thus, $V = (a_1,b_1) \times \cdots \times (a_p,b_p)$
   and $U = (a_1,b_1) \times \cdots \times (a_{p-1},b_{p-1})$.
-  Define a function $\alpha \in \mathscr{C}'(U)$
+  Define a function $\alpha \in \mathcal{C}'(U)$
   by $\alpha(\mathbf{x}') = c_p$ for some $c_p \in (a_p,b_p)$.
   Hence,
   \[
@@ -31849,7 +31852,7 @@ Refer to Theorem 9.42.)} \\
   and $r > 0$.
   Thus, $V = B((\mathbf{a}',a_p);r) \subseteq \mathbb{R}^p$
   and $U = B(\mathbf{a}';r) \subseteq \mathbb{R}^{p-1}$.
-  Define a function $\alpha \in \mathscr{C}'(U)$
+  Define a function $\alpha \in \mathcal{C}'(U)$
   by $\alpha(\mathbf{x}') = a_p$.
   Hence,
   \[
@@ -31862,7 +31865,7 @@ Refer to Theorem 9.42.)} \\
   \emph{(Partitions of unity.)
   Suppose $E$ is a subset of $\mathbb{R}^n$,
   and $\{U_{\beta}\}$ is a countable open covering of $E$.
-  Then there exist functions $\psi_{\beta} \in \mathscr{C}(\mathbb{R}^n)$ such that}
+  Then there exist functions $\psi_{\beta} \in \mathcal{C}(\mathbb{R}^n)$ such that}
   \begin{enumerate}
   \item[(a)]
     \emph{$0 \leq \psi_{\beta} \leq 1$ for every $\beta$;}
@@ -31893,7 +31896,7 @@ Refer to Theorem 9.42.)} \\
     as in Theorem 10.38.
 
   \item[(b)]
-    Construct a partition of unity $\psi_{\beta} \in \mathscr{C}(U)$ of $U$ by (4).
+    Construct a partition of unity $\psi_{\beta} \in \mathcal{C}(U)$ of $U$ by (4).
     For any $\mathbf{x} \in U$,
     there is an open neighborhood $B(\mathbf{x})$ of $\mathbf{x}$ which intersects
     $\mathrm{supp}(\psi_{\beta})$ for only finitely many $\beta$
@@ -31905,7 +31908,7 @@ Refer to Theorem 9.42.)} \\
       \alpha(\mathbf{x}) = \sum_{\beta} a_{\beta,p} \psi_{\beta}(\mathbf{x}).
     \]
     (See (a) for the definition of $a_{\beta,p}$.)
-    $\alpha$ is well-defined and $\alpha \in \mathscr{C}(U)$ (by (b)).
+    $\alpha$ is well-defined and $\alpha \in \mathcal{C}(U)$ (by (b)).
     Write
     \[
       (\mathbf{x}, \alpha(\mathbf{x}))
@@ -31918,9 +31921,9 @@ Refer to Theorem 9.42.)} \\
   \end{enumerate}
 
 \item[(7)]
-  \emph{Show that $F \in \mathscr{C}'$.}
+  \emph{Show that $F \in \mathcal{C}'$.}
   Since the partial derivatives $(D_j F)(\mathbf{x})$ exist and are continuous on $E$,
-  $F \in \mathscr{C}'$ by Theorem 9.21.
+  $F \in \mathcal{C}'$ by Theorem 9.21.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -32030,7 +32033,7 @@ $\Box$ \\\\
 \subsection*{Exercise 10.31.}
 \addcontentsline{toc}{subsection}{Exercise 10.31.}
 \emph{Let $E \subseteq \mathbb{R}^3$ be open,
-suppose $g \in \mathscr{C}''(E)$, $h \in \mathscr{C}''(E)$,
+suppose $g \in \mathcal{C}''(E)$, $h \in \mathcal{C}''(E)$,
 and consider the vector field}
 \[
     \mathbf{F} = g \nabla h
@@ -32176,10 +32179,10 @@ Assume $\nabla^2 h = 0$.
     = 0
   \]
   (since $h = 0$ on $\partial\Omega$).
-  Since $h \in \mathscr{C}'(\Omega)$, Exercise 6.2 implies that
+  Since $h \in \mathcal{C}'(\Omega)$, Exercise 6.2 implies that
   $|\nabla h|^2 = 0$ on $\Omega$.
   So $D_1 h = D_2 h = D_3 h = 0$ on $\Omega$.
-  Since $h \in \mathscr{C}'(\Omega)$, Theorem 9.21 implies that
+  Since $h \in \mathcal{C}'(\Omega)$, Theorem 9.21 implies that
   $h = 0$ on $\Omega$, or
   $h$ is locally constant in $\Omega$ (Exercise 9.9).
   Note that $h = 0$ globally on $\partial \Omega$,
@@ -32194,7 +32197,7 @@ $\Box$ \\
 \item[(1)]
   \emph{(The divergence theorem in $\mathbb{R}^2$.)
   If $\mathbf{F} = F_1 \mathbf{e}_1 + F_2 \mathbf{e}_2$ is a vector field of class
-  $\mathscr{C}'$ in an open set $E \subseteq \mathbb{R}^2$,
+  $\mathcal{C}'$ in an open set $E \subseteq \mathbb{R}^2$,
   and if $\Omega$ is a closed subset of $E$ with positively oriented boundary $\partial\Omega$
   then}
   \[
