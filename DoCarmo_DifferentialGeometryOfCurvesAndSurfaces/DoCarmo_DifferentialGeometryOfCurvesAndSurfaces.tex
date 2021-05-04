@@ -748,14 +748,19 @@ $\Box$ \\
   \end{align*}
 
 \item[(2)]
-  Note that $\alpha \in \mathcal{C}^{1}$.
-  So
+  By the mean value theorem,
+  \[
+    \frac{x(t_0+h)-x(t_0+k)}{h-k} = x'(t_0 + \xi)
+  \]
+  for some $\xi$ between $h$ and $k$.
+  Since $\alpha \in \mathcal{C}^{1}$, $x(t) \in \mathcal{C}^{1}$.
+  Hence
   \begin{align*}
     \lim_{h,k \to 0} \frac{x(t_0+h)-x(t_0+k)}{h-k}
     &=
-    \lim_{h \to 0} \left( \lim_{k \to 0} \frac{x(t_0+h)-x(t_0+k)}{h-k} \right) \\
+    \lim_{h,k \to 0} x'(t_0 + \xi) \\
     &=
-    \lim_{h \to 0} \frac{x(t_0+h)-x(t_0)}{h} \\
+    \lim_{\xi \to 0} x'(t_0 + \xi) \\
     &= x'(t_0).
   \end{align*}
   Similarly, we have $\lim_{h,k \to 0} \frac{y(t_0+h)-y(t_0+k)}{h-k} = y'(t_0)$ and
