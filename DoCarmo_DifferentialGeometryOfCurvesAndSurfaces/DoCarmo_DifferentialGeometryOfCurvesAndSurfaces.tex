@@ -1564,6 +1564,52 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1-4.12.}
+\addcontentsline{toc}{subsubsection}{Exercise 1-4.12.}
+\emph{Given the vectors $v \neq 0$ and $w$,
+show that there exists a vector $u$ such that $u \wedge v = w$
+if and only if $v$ is perpendicular to $w$.
+Is this vector $u$ uniquely determined?
+If not, what is the most general solution?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Suppose that there exists a vector $u$ such that $u \wedge v = w$.
+  So
+  \[
+    v \cdot w = w \cdot v = (u \wedge v) \cdot v = 0
+  \]
+  or $v$ is perpendicular to $w$.
+
+\item[(2)]
+  Suppose that $v$ is perpendicular to $w$.
+  Linear algebra says that there exists a vector $u$
+  such that $\{ \widetilde{u}, v, w \}$ is a basis of $\mathbb{R}^3$.
+  Note that $\widetilde{u} \wedge v$ is parallel to $w$, say
+  $\widetilde{u} \wedge v = c w$ for some nonzero constant $c \in \mathbb{R}$.
+  Take $u = c^{-1} \widetilde{u}$ and thus
+  \[
+    u \wedge v = c^{-1} \widetilde{u} \wedge v = c^{-1} cw = w.
+  \]
+  (Note that $\{ u, v, w \}$ is also a basis of $\mathbb{R}^3$.)
+
+\item[(3)]
+  Such vector $u$ is not uniquely determined.
+  Let $L$ be a line passing the point $u = (u_1, u_2, u_3)$ and parallel to the vector $v$.
+  By the definition of vector product,
+  for any point $p = (p_1, p_2, p_3) \in L$ we have $p \wedge v = w$ as a vector.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1-4.13.}
 \addcontentsline{toc}{subsubsection}{Exercise 1-4.13.}
 \emph{Let $u(t) = (u_1(t), u_2(t), u_3(t))$ and $v(t) = (v_1(t), v_2(t), v_3(t))$
@@ -1590,6 +1636,24 @@ Since
   &= (0, 0, 0),
 \end{align*}
 $u(t) \wedge v(t)$ is a constant vector.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1-4.14.}
+\addcontentsline{toc}{subsubsection}{Exercise 1-4.14.}
+\emph{Find all unit vectors...} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
 $\Box$ \\\\
 
 
