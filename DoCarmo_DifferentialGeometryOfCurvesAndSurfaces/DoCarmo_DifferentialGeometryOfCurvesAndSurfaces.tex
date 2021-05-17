@@ -1646,13 +1646,35 @@ $\Box$ \\\\
 
 \subsubsection*{Exercise 1-4.14.}
 \addcontentsline{toc}{subsubsection}{Exercise 1-4.14.}
-\emph{Find all unit vectors...} \\
+\emph{Find all unit vectors which are perpendicular to the vector $(2,2,1)$ and
+parallel to the plane determined by the points
+$(0,0,0)$, $(1,-2,1)$, $(-1,1,1)$.} \\
 
 
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Let $E$ be the plane determined by the points
+  $p_0 = (0,0,0)$, $p_1 = (1,-2,1)$, $p_2 (-1,1,1)$.
+  The normal vector of $E$ is
+  \[
+    (p_1 - p_0) \wedge (p_2 - p_0)
+    = (1,-2,1) \wedge (-1,1,1)
+    = (-3,-2,-1).
+  \]
+
+\item[(2)]
+  All unit vectors which are perpendicular to $(2,2,1)$ and parallel to $E$
+  are all unit vectors which are perpendicular to $(2,2,1)$ and $(-3,-2,-1)$.
+  Note that
+  \[
+    (2,2,1) \wedge (-3,-2,-1) = (0,-1,2).
+  \]
+  Hence, the desired unit vectors are
+  \[
+    \pm \left( 0,-\frac{1}{\sqrt{5}},\frac{2}{\sqrt{5}} \right).
+  \]
 \end{enumerate}
 $\Box$ \\\\
 
