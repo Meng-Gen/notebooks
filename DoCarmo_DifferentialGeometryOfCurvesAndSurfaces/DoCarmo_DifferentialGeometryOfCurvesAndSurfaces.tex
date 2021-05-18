@@ -1681,11 +1681,155 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \subsection*{1-5. The Local Theory of Curves Parametrized by Arc Length \\}
 \addcontentsline{toc}{subsection}{1-5. The Local Theory of Curves Parametrized by Arc Length}
+
+
+
+\emph{Unless explicity stated, $\alpha: I \to \mathbb{R}^3$ is a curve parametrized by arc length $s$,
+with curvature $\kappa(s) \neq 0$, for all $s \in I$.} \\
+
+
+\subsubsection*{Exercise 1-5.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 1-5.1.}
+\emph{Given the parametrized curve (helix)
+\[
+  \alpha(s) = \left( a \cos\frac{s}{c}, a \sin\frac{s}{c}, b \frac{s}{c} \right),
+  \qquad s \in \mathbb{R},
+\]
+where $c^2 = a^2 + b^2$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that the parameter $s$ is the arc length.}
+
+\item[(b)]
+  \emph{Determine the curvature and the torsion of $\alpha$.}
+
+\item[(c)]
+  \emph{Determine the osculating plane of $\alpha$.}
+
+\item[(d)]
+  \emph{Show that the lines containing $n(s)$ and passing through $\alpha(s)$
+  meet the $z$ axis under a constant angle equal to $\frac{\pi}{2}$.}
+
+\item[(e)]
+  \emph{Show that the tangent lines to $\alpha$ make a constant angle with the $z$ axis.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  Since
+  \[
+    \alpha'(s)
+    = \left( -\frac{a}{c} \sin\frac{s}{c}, \frac{a}{c} \cos\frac{s}{c}, \frac{b}{c} \right)
+  \]
+  or $\abs{ \alpha'(s) } = 1$,
+  \[
+    s(t)
+    = \int_{0}^{t} \abs{ \alpha'(u) } du
+    = \int_{0}^{t} du
+    = t
+  \]
+  is indeed the arc length.
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \[
+    \alpha''(s)
+    = \left( -\frac{a}{c^2} \cos\frac{s}{c}, -\frac{a}{c^2} \sin\frac{s}{c}, 0 \right).
+  \]
+  So the curvature of $\alpha$ is
+  \[
+    \kappa(s)
+    = \abs{ \alpha''(s) }
+    = \frac{\abs{a}}{c^2}.
+  \]
+
+\item[(2)]
+  Note that
+  \[
+    n(s)
+    = \frac{1}{\kappa(s)} \alpha''(s)
+    = -\mathrm{sgn}(a) \left( \cos\frac{s}{c}, \sin\frac{s}{c}, 0 \right).
+  \]
+  Hence,
+  \begin{align*}
+    & \: b(s)
+    = t(s) \wedge n(s)
+    = \mathrm{sgn}(a)
+      \left( \frac{b}{c} \sin\frac{s}{c}, \frac{b}{c} \cos\frac{s}{c}, \frac{a}{c} \right) \\
+    \Longrightarrow& \:
+    b'(s)
+    = \mathrm{sgn}(a)
+      \left( \frac{b}{c^2} \cos\frac{s}{c}, -\frac{b}{c^2} \sin\frac{s}{c}, 0 \right) \\
+    \Longrightarrow& \:
+    \tau(s) = \abs{ b'(s) } = \frac{\abs{b}}{c^2}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+  Since the binormal vector $b(s)$ is normal to the osculating plane,
+  the osculating plane is
+  \[
+    \left( \frac{b}{c} \sin\frac{s}{c} \right) x
+      + \left( \frac{b}{c} \cos\frac{s}{c} \right) y
+      + \left( \frac{a}{c} \right) z
+    = \frac{ab}{c} \sin\frac{2s}{c} + \frac{ab}{c^2} s
+  \]
+  for $s \in I$.
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  The line $L$ containing $n(s)$ and passing through $\alpha(s)$ is
+  \begin{align*}
+    x &= a \cos\frac{s}{c} + \cos\frac{s}{c} t, \\
+    y &= a \sin\frac{s}{c} + \sin\frac{s}{c} t, \\
+    z &= b \frac{s}{c},
+  \end{align*}
+  for all $t \in \mathbb{R}$.
+  Hence $L$ meets the $z$ axis at $t = -a$.
+
+\item[(2)]
+  The directional vector of $L$ (resp. the $z$ axis) is
+  $\left( \cos\frac{s}{c}, \sin\frac{s}{c}, 0 \right)$ (resp. $(0,0,1)$).
+  Since the inner product
+  \[
+    \left( \cos\frac{s}{c}, \sin\frac{s}{c}, 0 \right)
+    \cdot (0,0,1) = 0,
+  \]
+  $L$ meets the $z$ axis under a constant angle $= \frac{\pi}{2}$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+  Note that the directional vector of the tangent line (resp. the $z$ axis) is
+  $t(s)$ (resp. $(0,0,1)$).
+  Since the inner product of $t(s)$ and $(0,0,1)$ is a constant $\frac{b}{c}$,
+  the conclusion holds.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
