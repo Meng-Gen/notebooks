@@ -8918,6 +8918,115 @@ $\Box$ \\\\
 
 
 % https://math.stackexchange.com/questions/161731/multiplicity-under-polynomial-maps
+\subsubsection*{Problem 3.8.}
+\addcontentsline{toc}{subsubsection}{Problem 3.8.}
+\emph{Let $t: \mathbf{A}^2 \to \mathbf{A}^2$ be a polynomial map, $t(Q) = P$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $m_Q(f^t) \geq m_P(f)$.}
+
+\item[(b)]
+  \emph{Let $t = (t_1, t_2)$, and define
+  \[
+    J_Qt = \left( \frac{\partial t_i}{\partial x_j}(Q) \right)
+  \]
+  to be the \textbf{Jacobian matrix} of $t$ at $Q$.
+  Show that $m_Q(f^t) = m_P(f)$ if $J_Qt$ is invertible.}
+
+\item[(c)]
+  \emph{Show that the converse of (b) is false:
+  let $t = (x^2, y)$, $f = y - x^2$, $P = Q = (0, 0)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $P = Q = (0, 0)$.
+  Write $t = (t_1, t_2)$ and thus $(0,0) = t(0,0) = (t_1(0,0), t_2(0,0))$.
+  So there is no nonzero constant term in $t_i$ ($i = 1, 2$).
+
+\item[(2)]
+  Might assume that $f \neq 0$ (since there is nothing to prove when $f = 0$).
+  Write $f = f_m + f_{m+1} + \cdots + f_n$ where $f_i$ is a form in $k[x,y]$
+  and $f_m \neq 0$.
+  So,
+  \[
+    f(t_1(x,y),t_2(x,y))
+    = f_m(t_1(x,y),t_2(x,y)) + \cdots + f_n(t_1(x,y),t_2(x,y))
+  \]
+  has the multiplicity $= \infty$ or $\geq m = m_P(f)$.
+  In any case, $m_Q(f^t) \geq m_P(f)$.
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $P = Q = (0, 0)$.
+  Since $J_Qt$ is invertible,
+  \begin{align*}
+    \begin{bmatrix}
+      \frac{\partial t_1}{\partial x}(Q) & \frac{\partial t_1}{\partial y}(Q)
+    \end{bmatrix}
+    &\neq 0, \\
+    \begin{bmatrix}
+      \frac{\partial t_2}{\partial x}(Q) & \frac{\partial t_2}{\partial y}(Q)
+    \end{bmatrix}
+    &\neq 0
+  \end{align*}
+  (as vectors).
+  Hence $t_1$ (resp. $t_2$) has the multiplicity $= 1$.
+
+\item[(2)]
+  Define
+  \[
+    s = (s_1, s_2): \mathbf{A}^2 \to \mathbf{A}^2
+  \] be a polynomial map such that $s_i$ is the linear term of $t_i$.
+  Note that $J_Q{s} = J_Q{t}$ is invertible and $m_Q(f^s) = m_Q(f^t)$ for any $f$.
+
+\item[(3)]
+  \emph{Show that $m_Q(f^s) = m_Q(f^t)$ for any $f \in k[x,y]$.}
+  Might assume that $f \neq 0$ (since there is nothing to prove when $f = 0$).
+  Write $f = f_m + f_{m+1} + \cdots + f_n$ where $f_i$ is a form in $k[x,y]$
+  and $f_m \neq 0$.
+  Since
+  \[
+    m_{Q}(f_i^t) = m_{Q}(f_i^s) = i \textrm{ or } \infty,
+  \]
+  $m_Q(f^s) = m_Q(f^t)$.
+
+\item[(4)]
+  Since $J_Q{s}$ is invertible,
+  $s^{-1}$ is also a polynomial map with an invertible Jacobian matrix $J_Q{s^{-1}}$.
+  By (a),
+  \[
+    m_Q(f^s) \geq m_P(f) = m_P((f^s)^{s^{-1}}) = m_Q(f^s)
+  \]
+  or $m_Q(f^s) = m_P(f)$.
+  Therefore, $m_Q(f^t) = m_Q(f^s) = m_P(f)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+  $m_P(f) = 1$ and $m_Q(f^t) = 1$ since $f^t = y - x^4$.
+  However,
+  \[
+    J_Q{t}
+    =
+    \begin{bmatrix}
+      0 & 0 \\
+      0 & 1
+    \end{bmatrix}
+  \]
+  is not invertible.
+$\Box$ \\\\
 
 
 
