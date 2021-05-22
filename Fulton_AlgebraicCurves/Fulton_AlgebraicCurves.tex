@@ -9267,6 +9267,90 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 3.12. (Flex)}
+\addcontentsline{toc}{subsubsection}{Problem 3.12. (Flex)}
+\emph{A simple point $P$ on a curve $f$ is called a \textbf{flex} if $\mathrm{ord}^{f}_P(L) \geq 3$,
+where $L$ is the tangent to $f$ at $P$.
+The flex is called \textbf{ordinary} if $\mathrm{ord}_P(L) = 3$,
+a \textbf{higher} flex otherwise.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $f = y - x^n$.
+  For which $n$ does $f$ have a flex at $P = (0, 0)$, and what kind of flex?}
+
+\item[(b)]
+  \emph{Suppose $P = (0, 0)$, $L = y$ is the tangent line,
+  $f = y + a x^2 + \cdots$.
+  Show that $P$ is a flex on $f$ if and only if $a = 0$.
+  Give a simple criterion for calculating $\mathrm{ord}^{f}_P(y)$,
+  and therefore for determining if $P$ is a higher flex.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  When $n = 0$ or $1$, the tangent line $L$ to $f$ at any point is $L = f$ itself.
+  So
+  \[
+    \mathrm{ord}^{f}_P(L)
+    = \mathrm{ord}^{f}_P(f)
+    = \mathrm{ord}^{f}_P(0)
+    = \infty.
+  \]
+  $P$ is a higher flex.
+
+\item[(2)]
+  When $n > 1$, the tangent line $L$ to $f$ at $P = (0,0)$ is $L = y$.
+  So
+  \[
+    \mathrm{ord}^{f}_P(L)
+    = \mathrm{ord}^{f}_P(y)
+    = \mathrm{ord}^{f}_P(x^n)
+    = n.
+  \]
+  Here $x$ is a uniformizing parameter for $\mathscr{O}_P(f)$
+  since the line $x$ is not tangent to $f$ (Theorem 1).
+  Hence, $P$ is a flex if $n \geq 3$,
+  $P$ is an ordinary flex if $n = 3$, and
+  $P$ is a higher flex if $n > 3$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Since $y$ is the tangent line, $\mathrm{ord}^{f}_P(y) \geq 2$.
+  By Problem 2.29(a),
+  \[
+    \mathrm{ord}^{f}_P(y)
+    = \mathrm{ord}^{f}_P(ax^2 + \cdots)
+    = 2
+  \]
+  if and only if $a \neq 0$.
+  Hence, $P$ is flex iff $\mathrm{ord}^{f}_P(y) \geq 3$ iff $a = 0$.
+
+\item[(2)]
+  In general,
+  \[
+    \mathrm{ord}^{f}_P(y)
+    = \mathrm{ord}^{f}_P(ax^2 + \cdots)
+    = m_P(ax^2 + \cdots)
+    = m_P(f - y).
+  \]
+  Hence, $P$ is a higher flex if $f - y$ has no nonzero form of degree $3$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 3.13.*}
 \addcontentsline{toc}{subsubsection}{Problem 3.13.*}
 \emph{With the notation of Theorem 2, and $\mathfrak{m} = \mathfrak{m}_P(f)$,
