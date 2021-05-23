@@ -6,6 +6,7 @@
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
+\usepackage{physics}
 \parindent=0pt
 
 
@@ -9414,6 +9415,99 @@ otherwise $\dim_k(\mathfrak{m}/\mathfrak{m}^2) = 2$.} \\
   \end{equation*}
   Therefore,
   $P$ is a simple iff $m = 1$ iff $\dim_k(\mathfrak{m}/\mathfrak{m}^2) = 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.15.}
+\addcontentsline{toc}{subsubsection}{Problem 3.15.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $\mathscr{O} = \mathscr{O}_P(\mathbf{A}^2)$ for some $P \in \mathbf{A}^2$,
+  $\mathfrak{m} = \mathfrak{m}_P(\mathbf{A}^2)$.
+  Calculate $\chi(n) = \dim_k(\mathscr{O}/\mathfrak{m}^n)$.}
+
+\item[(b)]
+  \emph{Let $\mathscr{O} = \mathscr{O}_P(\mathbf{A}^r(k))$.
+  Show that $\chi(n)$ is a polynomial of degree $r$ in $n$,
+  with leading coefficient $\frac{1}{r!}$ (see Problem 2.36).} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  Might assume that $P = (0,0)$.
+  By Problem 2.46, the Hilbert-Samuel polynomial is
+  \[
+    \chi(n)
+    = \dim_k(\mathscr{O}/\mathfrak{m}^n)
+    = \dim_k(k[x,y]/(x,y)^n)
+    = \frac{n(n+1)}{2}.
+  \]
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $P = (0, \ldots, 0)$.
+  Similar to (a),
+  \[
+    \chi(n)
+    = \dim_k(\mathscr{O}/\mathfrak{m}^n)
+    = \dim_k(k[x_1,\ldots,x_r]/(x_1,\ldots,x_r)^n).
+  \]
+
+\item[(2)]
+  Since
+  \[
+    \mathscr{B}
+    = \{ x_1^{i_1} x_2^{i_2} \cdots x_r^{i_r} : i_1 + \cdots + i_r < n \}
+  \]
+  is a basis for $k[x_1,\ldots,x_r]/(x_1,\ldots,x_r)^n$,
+  \[
+    \dim_k(k[x_1,\ldots,x_r]/(x_1,\ldots,x_r)^n) = \abs{ \mathscr{B} }.
+  \]
+
+\item[(3)]
+  By the \href{https://en.wikipedia.org/wiki/Stars_and_bars_%28combinatorics%29}
+  {stars and bars (combinatorics)} method (as Problem 2.35(b)),
+  \begin{align*}
+    \abs{ \mathscr{B} }
+    =& \: \abs{ \{ (i_1, \ldots i_r) : i_1 + \cdots + i_r \leq n \} } \\
+      & \: - \abs{ \{ (i_1, \ldots i_r) : i_1 + \cdots + i_r = n \} } \\
+    =& \: \abs{ \{ (i_1, \ldots i_r, j) : i_1 + \cdots + i_r + j = n \} } \\
+      & \: - \abs{ \{ (i_1, \ldots i_r) : i_1 + \cdots + i_r = n \} } \\
+    =& \: { n+r \choose r } - { n+r-1 \choose r-1 } \\
+    =& \: { n+r-1 \choose r } \\
+    =& \: \frac{1}{r!} (n+r-1)(n+r-2) \cdots (n+1)(n).
+  \end{align*}
+  So
+  \[
+    \chi(n)
+    = \frac{1}{r!} (n+r-1)(n+r-2) \cdots (n+1)(n)
+  \]
+  is a polynomial of degree $r$ in $n$, with leading coefficient $\frac{1}{r!}$.
+
+\item[(4)]
+  By Problem 2.36, we can also deduce that
+  \begin{align*}
+    \dim_k(k[x_1,\ldots,x_r]/(x_1,\ldots,x_r)^n)
+    &= \sum_{i=0}^{n-1} \dim_k V(i,r) \\
+    &= \sum_{i=0}^{n-1} { i+r-1 \choose r-1 } \\
+    &= { n+r-1 \choose r }
+  \end{align*}
+  by the Pascal's identity.
 \end{enumerate}
 $\Box$ \\\\
 
