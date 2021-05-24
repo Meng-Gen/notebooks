@@ -9424,6 +9424,64 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 3.14.}
+\addcontentsline{toc}{subsubsection}{Problem 3.14.}
+\emph{Let $V = V(x^2-y^3, y^2-z^3) \subseteq \mathbf{A}^3$,
+$P = (0, 0, 0)$, $\mathfrak{m} = \mathfrak{m}_P(V)$.
+Find $\dim_k(\mathfrak{m}/\mathfrak{m}^2)$. (See Problem 1.40.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $\mathfrak{m} = (x, y, z)$.
+
+\item[(2)]
+  Write $\mathscr{O} = \mathscr{O}_P(V)$.
+  By Problem 1.40(a),
+  every element of $\mathscr{O}$ is of the form
+  \[
+    a + xb + yc + xyd
+  \]
+  for some $a, b, c, d \in k[z]$.
+
+\item[(3)]
+  By (1)(2),
+  $\{ \overline{1} \}$ (resp. $\{ \overline{1}, \overline{z}, \overline{y}, \overline{z} \}$)
+  is a basis for $\mathscr{O}/\mathfrak{m}$ (resp. $\mathscr{O}/\mathfrak{m}^2$).
+  Hence, $\dim_k(\mathscr{O}/\mathfrak{m}) = 1$ (resp. $\dim_k(\mathscr{O}/\mathfrak{m}^2) = 4$).
+  Therefore,
+  \[
+    \dim_k(\mathfrak{m}/\mathfrak{m}^2)
+    = \dim_k(\mathscr{O}/\mathfrak{m}^2) - \dim_k(\mathscr{O}/\mathfrak{m})
+    = 3.
+  \]
+
+\item[(4)]
+  By Theorem I.5.1 in \emph{Robin Hartshorne, Algebraic Geometry},
+  \[
+    3
+    = \dim_k(\mathfrak{m}/\mathfrak{m}^2) + \mathrm{rank} J
+    = \dim_k(\mathfrak{m}/\mathfrak{m}^2).
+  \]
+  Here the Jacobian matrix of $V$ at $P$
+  \[
+    J
+    = \left[ \frac{\partial f_i}{\partial x_j}(P) \right]
+    =
+    \begin{bmatrix}
+      2x & -3y^2 & 0 \\
+      0 & 2y & -3z^2
+    \end{bmatrix}_{P=(0,0,0)}
+    = 0
+  \]
+  has rank zero.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
