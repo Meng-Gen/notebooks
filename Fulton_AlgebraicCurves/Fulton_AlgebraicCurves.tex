@@ -9754,6 +9754,49 @@ $\Box$ \\\\
       & \textrm{(Property (5))}
   \end{align*}
 
+\item[(4)]
+  \emph{Show that $I(P, a \cap f) = 6$.}
+  Similar to (3).
+  \begin{align*}
+    & \: I(P, a \cap f) \\
+    =& \: I(P,
+      a \cap \underbrace{(f + (x^4+3x^2y^2+3y^4+x^2y+3y^3-3y^2)a)}_{\textrm{(Property (7))}}) \\
+    =& \: I(P, a \cap y^3(y^3+3y^2+3y-3)) \\
+    =& \: \overbrace{3 \underbrace{I(P, a \cap y)}_{= 2 \textrm{ (by (3))}}
+      + \underbrace{I(P, a \cap (y^3+3y^2+3y-3))}_{
+        = 0 \textrm{ (Property (2))}}}^{\textrm{(Property (6)})} \\
+    =& \: 6.
+  \end{align*}
+
+\item[(5)]
+  \emph{Show that $I(P, b \cap f) = 6$.}
+  Similar to (3).
+  Let
+  \[
+    g(x,y) = -x^6 -3x^5-x^3y^2 -x^4-3x^2y^2-y^4 +3x^3+xy^2 + 3x^2.
+  \]
+  So,
+  \begin{align*}
+    & \: I(P, b \cap f) \\
+    =& \: I(P,
+      b \cap \underbrace{(f + gb)}_{\textrm{(Property (7))}}) \\
+    =& \: I(P, b \cap x^3(x^6+3x^5-5x^3-4x^2+3x+3)) \\
+    =& \: \overbrace{3 \underbrace{I(P, b \cap x)}_{= 2}
+      + \underbrace{I(P, b \cap (x^6+3x^5-5x^3-4x^2+3x+3))}_{
+        = 0 \textrm{ (Property (2))}}}^{\textrm{(Property (6)})} \\
+    =& \: 6.
+  \end{align*}
+  Here
+  \[
+    I(P, b \cap x) = I(P, (b + (x^2-1)x) \cap x)= I(P, y^2 \cap x) = 2.
+  \]
+
+\item[(6)]
+  \emph{Show that $I(P, c \cap e) = ?$.}
+
+\item[(7)]
+  \emph{Show that $I(P, c \cap f) = ?$.}
+
 \end{enumerate}
 $\Box$ \\\\
 
