@@ -9458,8 +9458,9 @@ Find $\dim_k(\mathfrak{m}/\mathfrak{m}^2)$. (See Problem 1.40.)} \\
   \[
     \dim_k(\mathfrak{m}/\mathfrak{m}^2)
     = \dim_k(\mathscr{O}/\mathfrak{m}^2) - \dim_k(\mathscr{O}/\mathfrak{m})
-    = 3.
+    = 3
   \]
+  by Proposition 7 in \S 2.10.
 
 \item[(4)]
   By Theorem I.5.1 in \emph{Robin Hartshorne, Algebraic Geometry},
@@ -9569,6 +9570,99 @@ $\Box$ \\
     &= { n+r-1 \choose r }
   \end{align*}
   by the Pascal's identity.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.16.}
+\addcontentsline{toc}{subsubsection}{Problem 3.16.}
+\emph{Let $f \in k[x_1,\ldots,x_r]$ define a hypersurface in $\mathbf{A}^r$.
+Write $f = f_m + f_{m+1} + \cdots$,
+and let $m = m_P(f)$ where $P = (0, \ldots, 0)$.
+Suppose $f$ is irreducible,
+and let $\mathscr{O} = \mathscr{O}_P(V(f))$,
+$\mathfrak{m}$ its maximal ideal.
+Show that $\chi(n) = \dim_k(\mathscr{O}/\mathfrak{m}^n)$ is a polynomial of degree $r-1$
+for sufficiently large $n$,
+and that the leading coefficient of $\chi$ is $\frac{m_P(f)}{(r-1)!}$.
+Can you find a definition for the multiplicity of a local ring
+that makes sense in all the cases you know?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of Theorem 2.
+  By Problem 2.43,
+  \[
+    \mathfrak{m}^n = I^n \mathscr{O}
+  \]
+  where $I = (x_1, \ldots, x_r) \subseteq k[x_1,\ldots,x_r]$.
+  Since $V(I^n) = \{P\}$,
+  \[
+    k[x_1,\ldots,x_r]/(I^n,f)
+    \cong
+    \mathscr{O}_P(\mathbf{A}^r)/(I^n,f)\mathscr{O}_P(\mathbf{A}^r)
+    \cong
+    \mathscr{O}/I^n \mathscr{O}
+    \cong
+    \mathscr{O}/\mathfrak{m}^n
+  \]
+  (Corollary 2 to Proposition 6 in \S 2.9 and Problem 2.44).
+
+\item[(2)]
+  So we are reduced to calculating the dimension of $k[x_1,\ldots,x_r]/(I^n,f)$.
+  As $n \geq m = m_P(f)$,
+  there is a natural ring homomorphism
+  \[
+    \varphi: k[x_1,\ldots,x_r]/I^n \to k[x_1,\ldots,x_r]/(I^n,f)
+  \]
+  and a $k$-linear map
+  \[
+    \psi: k[x_1,\ldots,x_r]/I^{n-m} \to k[x_1,\ldots,x_r]/I^n
+  \]
+  defined by $\overline{g} \mapsto \overline{fg}$.
+  It is easy to verify that the sequence
+  \[
+    0
+    \to k[x_1,\ldots,x_r]/I^{n-m}
+    \xrightarrow{\psi} k[x_1,\ldots,x_r]/I^{n}
+    \xrightarrow{\varphi} k[x_1,\ldots,x_r]/(I^{n},f)
+    \to 0
+  \]
+  is exact.
+
+\item[(3)]
+  By Problem 3.15,
+  \begin{align*}
+    & \: \dim_k(k[x_1,\ldots,x_r]/(I^{n},f)) \\
+    =& \:
+    {n+r-1 \choose r} - {n-m+r-1 \choose r} \\
+    =& \:
+    \frac{1}{r!} \left( (n+r-1) \cdots n - (n-m+r-1) \cdots (n-m) \right) \\
+    =& \:
+    \frac{1}{r!} \left( n^{r-1}(rm) + \cdots \right) \\
+    =& \:
+    \frac{m}{(r-1)!} n^{r-1} + \cdots.
+  \end{align*}
+  Therefore, $\chi(n) = \dim_k(\mathscr{O}/\mathfrak{m}^n)$ is a polynomial of degree $r-1$
+  for $n \geq m$,
+  and that the leading coefficient of $\chi$ is $\frac{m_P(f)}{(r-1)!}$.
+
+\item[(4)]
+  It is reasonable to define the multiplicity of a Noetherian local ring $\mathscr{O}$ by
+  \[
+    (d!) \cdot (\textrm{leading coefficient of } \chi(n))
+  \]
+  for sufficiently large $n$,
+  where $d$ is the dimension (or Krull dimension) of $\mathscr{O}$.
+  (Note that the dimension of a hypersurface in $\mathbf{A}^r$ is $r-1$.)
 \end{enumerate}
 $\Box$ \\\\
 
