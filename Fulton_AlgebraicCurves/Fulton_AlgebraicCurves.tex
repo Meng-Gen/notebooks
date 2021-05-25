@@ -9757,10 +9757,15 @@ $\Box$ \\\\
 \item[(4)]
   \emph{Show that $I(P, a \cap f) = 6$.}
   Similar to (3).
+  Let
+  \[
+    q_4 = x^4+3x^2y^2+3y^4+x^2y+3y^3-3y^2.
+  \]
+  So
   \begin{align*}
-    & \: I(P, a \cap f) \\
+    I(P, a \cap f)
     =& \: I(P,
-      a \cap \underbrace{(f + (x^4+3x^2y^2+3y^4+x^2y+3y^3-3y^2)a)}_{\textrm{(Property (7))}}) \\
+      a \cap \underbrace{(f + q_4 a)}_{\textrm{(Property (7))}}) \\
     =& \: I(P, a \cap y^3(y^3+3y^2+3y-3)) \\
     =& \: \overbrace{3 \underbrace{I(P, a \cap y)}_{= 2 \textrm{ (by (3))}}
       + \underbrace{I(P, a \cap (y^3+3y^2+3y-3))}_{
@@ -9773,13 +9778,13 @@ $\Box$ \\\\
   Similar to (3).
   Let
   \[
-    g(x,y) = -x^6 -3x^5-x^3y^2 -x^4-3x^2y^2-y^4 +3x^3+xy^2 + 3x^2.
+    q_5 = -x^6 -3x^5-x^3y^2 -x^4-3x^2y^2-y^4 +3x^3+xy^2 + 3x^2.
   \]
-  So,
+  So
   \begin{align*}
     & \: I(P, b \cap f) \\
     =& \: I(P,
-      b \cap \underbrace{(f + gb)}_{\textrm{(Property (7))}}) \\
+      b \cap \underbrace{(f + q_5 b)}_{\textrm{(Property (7))}}) \\
     =& \: I(P, b \cap x^3(x^6+3x^5-5x^3-4x^2+3x+3)) \\
     =& \: \overbrace{3 \underbrace{I(P, b \cap x)}_{= 2}
       + \underbrace{I(P, b \cap (x^6+3x^5-5x^3-4x^2+3x+3))}_{
@@ -9792,11 +9797,47 @@ $\Box$ \\\\
   \]
 
 \item[(6)]
-  \emph{Show that $I(P, c \cap e) = ?$.}
+  \emph{Show that $I(P, c \cap e) = 7$.}
+  Similar to (3).
+  \begin{align*}
+    I(P, c \cap e)
+    &= I(P, c \cap \underbrace{(e + (-x^3-2x^2-y^2+y)c)}_{\textrm{(Property (7))}}) \\
+    &= I(P, c \cap x^2(x^4 + 2x^3 + x^2 - xy + 3y)) \\
+    &= \overbrace{2 \underbrace{I(P, c \cap x)}_{= 2 \textrm{ (Property (5))}}
+      + I(P, c \cap (\underbrace{x^4 + 2x^3 + x^2 - xy + 3y}_{:= h_6}))}^{\textrm{(Property (6)})} \\
+    &= 4 + I(P, c \cap h_6).
+  \end{align*}
+  Here
+  \begin{align*}
+    & \: I(P, c \cap h_6) \\
+    =& \: I(P, (3c) \cap h_6) \\
+    =& \: I(P, (3c - y h_6) \cap h_6) \\
+    =& \: I(P, (-x^4y - 2x^3y \underbrace{-3x^3-x^2y+xy^2})
+      \cap (x^4 + 2x^3 + x^2 - xy + \underbrace{3y})) \\
+    =& \: 3 \cdot 1 \\
+    =& \: 3
+  \end{align*}
+  by Properties (5) and (7).
+  Therefore, $I(P, c \cap e) = 4 + 3 = 7$.
 
 \item[(7)]
-  \emph{Show that $I(P, c \cap f) = ?$.}
-
+  \emph{Show that $I(P, c \cap f) = 10$.}
+  Similar to (5).
+  Let
+  \[
+    q_7 = -x^6 -3x^5-x^3y^2 -3x^4-3x^2y^2-y^4 + 4x^2.
+  \]
+  So
+  \begin{align*}
+    & \: I(P, c \cap f) \\
+    =& \: I(P,
+      c \cap \underbrace{(f + q_7 c)}_{\textrm{(Property (7))}}) \\
+    =& \: I(P, c \cap x^5(x^4+3x^3+3x^2+x-4) \\
+    =& \: \overbrace{5 \underbrace{I(P, c \cap x)}_{= 2}
+      + \underbrace{I(P, c \cap (x^4+3x^3+3x^2+x-4))}_{
+        = 0 \textrm{ (Property (2))}}}^{\textrm{(Property (6)})} \\
+    =& \: 10.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
