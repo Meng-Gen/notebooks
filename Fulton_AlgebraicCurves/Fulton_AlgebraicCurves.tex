@@ -9847,6 +9847,103 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 3.18.*}
+\addcontentsline{toc}{subsubsection}{Problem 3.18.*}
+\emph{Give a proof of Property (8) that uses only Properties (1)-(7).} \\
+
+
+
+Recall Properties (1)-(8):
+\begin{enumerate}
+\item[(1)]
+  $I(P, f \cap g)$ is a nonnegative integer for any $f$, $g$,
+  and $P$ such that $f$ and $g$ intersect properly at $P$.
+  $I(P, f \cap g) = \infty$ if $f$ and $g$ do not intersect properly at $P$.
+
+\item[(2)]
+  $I(P, f \cap g) = 0$ if and only if $P \not\in f \cap g$.
+  $I(P, f \cap g)$ depends only on the components of $f$ and $g$ that pass through $P$.
+
+\item[(3)]
+  If $t$ is an affine change of coordinates on $\mathbf{A}^2$,
+  and $t(Q) = P$, then
+  \[
+    I(P, f \cap g) = I(Q, f^t \cap g^t).
+  \]
+
+\item[(4)]
+  $I(P, f \cap g) = I(P, g \cap f)$.
+
+\item[(5)]
+  $I(P, f \cap g) \geq m_P(f) m_P(g)$,
+  with equality occurring if and only if $f$ and $g$ have not tangent lines in common at $P$.
+
+\item[(6)]
+  If $f = \prod f_i^{r_i}$, and $g = \prod g_j^{s_j}$, then
+  \[
+    I(P, f \cap g) = \sum_{i, j} r_i s_j I(P, f_i \cap g_j).
+  \]
+
+\item[(7)]
+  $I(P, f \cap g) = I(P, f \cap (g+af))$ for any $a \in k[x,y]$.
+
+\item[(8)]
+  If $P$ is a simple point on $f$, then $I(P, f \cap g) = \textrm{ord}_P^{f}(g)$. \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $f$ is irreducible.
+  There is nothing to prove if $\textrm{ord}_P^{f}(g) = \infty$.
+  Might assume that $n = \textrm{ord}_P^{f}(g) < \infty$.
+
+\item[(2)]
+  Similar to the proof of Theorem 1 in \S 3.2,
+  Property (3) implies that we might assume that $P = (0,0)$,
+  that $y$ is the tangent line,
+  and that $x$ is one line through $P$ which is not tangent to $f$ at $P$.
+  Here $x$ is a uniformizing parameter for $\mathscr{O}_P(f)$ (Theorem 1 in \S 3.2).
+
+\item[(3)]
+  By definition,
+  \[
+    g = ux^n
+  \]
+  for some unit in $\mathscr{O}_P(f)$.
+  Write $u = \frac{a}{b}$ where $a, b \in k[x,y]$, $a(P) \neq 0$ and $b(P) \neq 0$.
+  Hence,
+  \[
+    bg = ax^n + cf
+  \]
+  in $k[x,y]$ for some $c \in k[x,y]$.
+
+\item[(4)]
+  Therefore,
+  \begin{align*}
+    I(P, f \cap g)
+    &= I(P, f \cap bg) - I(P, f \cap b)
+      &(\text{Property (6)}) \\
+    &= I(P, f \cap bg) - 0
+      &(\text{Property (2)}) \\
+    &= I(P, f \cap (ax^n + cf))
+      &(\text{Step (3)}) \\
+    &= I(P, f \cap ax^n)
+      &(\text{Property (7)}) \\
+    &= I(P, f \cap a) + n I(P, f \cap x)
+      &(\text{Property (6)}) \\
+    &= 0 + n I(P, f \cap x)
+      &(\text{Property (2)}) \\
+    &= n.
+      &(\text{Property (5)})
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
