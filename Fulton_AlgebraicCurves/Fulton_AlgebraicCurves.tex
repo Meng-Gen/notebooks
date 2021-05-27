@@ -7917,10 +7917,10 @@ Show that there is a natural $R$-module isomorphism of $N/(N \cap P)$ onto $(N+P
     \varphi: m \mapsto m + P.
   \]
   $\ker(\varphi) = N \cap P$ and
-  $\textrm{im}(\varphi) = \{ m + P : m \in N \} = (N+P)/P$.
+  $\mathrm{im}(\varphi) = \{ m + P : m \in N \} = (N+P)/P$.
   By Problem 2.48,
   $\varphi$ induces a natural $R$-module isomorphism of
-  $N/\ker(\varphi) = N/(N \cap P)$ onto $\textrm{im}(\varphi) = (N+P)/P$
+  $N/\ker(\varphi) = N/(N \cap P)$ onto $\mathrm{im}(\varphi) = (N+P)/P$
   (which is sending $m + (N \cap P)$ to $m + P$).
 
 
@@ -9888,7 +9888,7 @@ Recall Properties (1)-(8):
   $I(P, f \cap g) = I(P, f \cap (g+af))$ for any $a \in k[x,y]$.
 
 \item[(8)]
-  If $P$ is a simple point on $f$, then $I(P, f \cap g) = \textrm{ord}_P^{f}(g)$. \\
+  If $P$ is a simple point on $f$, then $I(P, f \cap g) = \mathrm{ord}_P^{f}(g)$. \\
 \end{enumerate}
 
 
@@ -9897,8 +9897,8 @@ Recall Properties (1)-(8):
 \begin{enumerate}
 \item[(1)]
   Might assume that $f$ is irreducible.
-  There is nothing to prove if $\textrm{ord}_P^{f}(g) = \infty$.
-  Might assume that $n = \textrm{ord}_P^{f}(g) < \infty$.
+  There is nothing to prove if $\mathrm{ord}_P^{f}(g) = \infty$.
+  Might assume that $n = \mathrm{ord}_P^{f}(g) < \infty$.
 
 \item[(2)]
   Similar to the proof of Theorem 1 in \S 3.2,
@@ -9970,6 +9970,146 @@ $I(P, f \cap L) > m_P(f)$.} \\
       \text{$L$ is tangent to a curve $f$ at $P$}.
       &\text{(By (1))}
   \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.22.}
+\addcontentsline{toc}{subsubsection}{Problem 3.22.}
+\emph{Suppose $P$ is a double point on a curve $f$,
+and suppose $f$ has only one tangent $L$ at $P$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $I(P, f \cap L) \geq 3$.
+  The curve $f$ is said to have an (ordinary) cusp at $P$ if $I(P, f \cap L) = 3$.}
+
+\item[(b)]
+  \emph{Suppose $P = (0,0)$, and $L = y$.
+  Show that $P$ is a cusp if and only if
+  $\frac{\partial^3 f}{\partial x^3}(P) \neq 0$. Give some examples.}
+
+\item[(c)]
+  \emph{Show that if $P$ is a cusp on $f$,
+  then $f$ has only one component passing through $P$.} \\
+\end{enumerate}
+
+
+
+Might assume that $\mathrm{char}(k) = 0$. \\
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  By Property (5),
+  \[
+    I(P, f \cap L) \geq m_P(f) m_P(L) = 2 \cdot 1 = 2.
+  \]
+  Here $m_P(f) = 2$ since $P$ is a double point on a curve $f$.
+
+\item[(2)]
+  The equality does not hold since $f$ has one tangent $L$ (Property (5)).
+  Therefore, $I(P, f \cap L) \geq 3$ since $I(P, f \cap L)$ is an integer (Property (1)).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  By assumption,
+  \[
+    f = y^2 + f_3 + f_4 + \cdots
+  \]
+  where $f_i$ is a form in $k[x,y]$.
+
+\item[(2)]
+  Hence, $P$ is a cusp of $f$
+  if and only if
+  \begin{align*}
+    3
+    &= I(P, f \cap y) \\
+    &= I(P, (y^2 + f_3 + f_4 + \cdots) \cap y) \\
+    &= I(P, (f_3 + f_4 + \cdots) \cap y) \\
+    &\geq m_P(f_3 + f_4 + \cdots) m_P(y) \\
+    &\geq 3.
+  \end{align*}
+  Here the equality is occuring if and only if
+  $y$ is not a tangent line of $f_3 + f_4 + \cdots$ (Property (5)).
+
+\item[(3)]
+  Note that
+  \[
+    \text{$y$ is not a tangent line of $f_3 + f_4 + \cdots$}
+    \Longleftrightarrow
+    y \nmid f_3
+    \Longleftrightarrow
+    \frac{\partial^3 f}{\partial x^3}(P) \neq 0
+  \]
+  (Problem 3.5).
+
+\item[(4)]
+  Examples: $y^2 = x^3$, $y^2 = -x^2 y^2 + x^3$ and so on.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Might assume $P = (0,0)$ and $L = y$ by Property (3).
+  (Reductio ad absurdum)
+  Suppose that there were two components $g, h$ of $f$ passing through $P$.
+  ($g(P) = h(P) = 0$.)
+  Might assume that $f = gh$.
+
+\item[(2)]
+  As $P$ is a cusp,
+  \[
+    3
+    = I(P, f \cap L)
+    = I(P, gh \cap L)
+    = I(P, g \cap L) + I(P, h \cap L).
+  \]
+  By (1) and Property (1),
+  $I(P, g \cap L) \geq 1$ and $I(P, h \cap L) \geq 1$.
+  Hence, we might assume that $I(P, g \cap L) = 1$.
+
+\item[(3)]
+  Write $g = g_1 + g_2 + \cdots$ where $g_i$ is a form in $k[x,y]$.
+  (There is no $g_0$ term since $g(0,0) = 0$.)
+  Property (5) implies that $g_1 \neq 0$ is not a multiple of $L = y$.
+
+\item[(4)]
+  Write
+  \[
+    f = y^2 + f_3 + f_4 + \cdots
+  \]
+  where $f_i$ is a form in $k[x,y]$.
+  Also write $h = h_1 + h_2 + \cdots$ where $h_i$ is a form in $k[x,y]$.
+  $f = gh$ implies that
+  \begin{align*}
+    y^2 + f_3 + f_4 + \cdots
+    &= (g_1 + g_2 + \cdots)(h_1 + h_2 + \cdots) \\
+    &= (g_1 h_1) + (g_1 h_2 + g_2 h_1) + \cdots.
+  \end{align*}
+  So $y^2 = g_1 h_1$, which is absurd since $g_1 \neq 0$ is not a multiple of $y$.
 \end{enumerate}
 $\Box$ \\\\
 
