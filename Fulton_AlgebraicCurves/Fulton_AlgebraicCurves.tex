@@ -10089,14 +10089,14 @@ $\Box$ \\
 
 \item[(3)]
   Note that
-  \[
-    \text{$y$ is not a tangent line of $f_3 + f_4 + \cdots$}
-    \Longleftrightarrow
-    y \nmid f_3
-    \Longleftrightarrow
-    \frac{\partial^3 f}{\partial x^3}(P) \neq 0
-  \]
-  (Problem 3.5).
+  \begin{align*}
+    & \: \text{$y$ is not a tangent line of $f_3 + f_4 + \cdots$} \\
+    \Longleftrightarrow & \:
+    y \nmid f_3 \\
+    \Longleftrightarrow & \:
+    \frac{\partial^3 f}{\partial x^3}(P) \neq 0.
+      &(\text{Problem 3.5})
+  \end{align*}
 
 \item[(4)]
   Examples: $y^2 = x^3$, $y^2 = -x^2 y^2 + x^3$ and so on.
@@ -10109,43 +10109,75 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
   Might assume $P = (0,0)$ and $L = y$ by Property (3).
-  (Reductio ad absurdum)
-  Suppose that there were two components $g, h$ of $f$ passing through $P$.
-  ($g(P) = h(P) = 0$.)
-  Might assume that $f = gh$.
 
 \item[(2)]
-  As $P$ is a cusp,
-  \[
-    3
-    = I(P, f \cap L)
-    = I(P, gh \cap L)
-    = I(P, g \cap L) + I(P, h \cap L).
-  \]
-  By (1) and Property (1),
-  $I(P, g \cap L) \geq 1$ and $I(P, h \cap L) \geq 1$.
-  Hence, we might assume that $I(P, g \cap L) = 1$.
-
-\item[(3)]
-  Write $g = g_1 + g_2 + \cdots$ where $g_i$ is a form in $k[x,y]$.
-  (There is no $g_0$ term since $g(0,0) = 0$.)
-  Property (5) implies that $g_1 \neq 0$ is not a multiple of $L = y$.
-
-\item[(4)]
+  Given $f = gh$.
   Write
-  \[
-    f = y^2 + f_3 + f_4 + \cdots
-  \]
-  where $f_i$ is a form in $k[x,y]$.
-  Also write $h = h_1 + h_2 + \cdots$ where $h_i$ is a form in $k[x,y]$.
-  $f = gh$ implies that
+  \begin{align*}
+    f &= y^2 + f_3 + f_4 + \cdots \\
+    g &= g_r + g_{r+1} + \cdots \\
+    h &= h_s + h_{s+1} + \cdots
+  \end{align*}
+  where $f_{\alpha}, g_{\beta}, h_{\gamma}$ is a form in $k[x,y]$.
+  So $f = gh$ implies that
   \begin{align*}
     y^2 + f_3 + f_4 + \cdots
-    &= (g_1 + g_2 + \cdots)(h_1 + h_2 + \cdots) \\
-    &= (g_1 h_1) + (g_1 h_2 + g_2 h_1) + \cdots.
+    &= (g_r + g_{r+1} + \cdots)(h_s + h_{s+1} + \cdots) \\
+    &= (g_r h_s) + (g_r h_{s+1} + g_{r+1} h_{s}) + \cdots.
   \end{align*}
-  So $y^2 = g_1 h_1$, which is absurd since $g_1 \neq 0$ is not a multiple of $y$.
+  Hence $y^2 = g_r h_s$. In particular, $2 = r+s$.
+
+\item[(3)]
+  If $y \mid g_r$ and $y \mid h_s$, then
+  \begin{align*}
+    I(P, g \cap L) > m_P(g) m_P(L) = r \Longrightarrow& I(P, g \cap L) \geq r+1 \\
+    I(P, h \cap L) > m_P(h) m_P(L) = s \Longrightarrow& I(P, g \cap L) \geq s+1.
+  \end{align*}
+  So,
+  \begin{align*}
+    3
+    &= I(P, f \cap L) \\
+    &= I(P, g \cap L) + I(P, h \cap L) \\
+    &\geq (r+1) + (s+1) \\
+    &= 4,
+  \end{align*}
+  which is absurd.
+  So we might assume that $g_r = 1$ and $h_s = y^2$.
+  $f = gh$ implies that $g = 1 + g_1 + \cdots$ is not passing through $P$.
+  Hence the conclusion is established.
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.23. (Hypercusp)}
+\addcontentsline{toc}{subsubsection}{Problem 3.23. (Hypercusp)}
+\emph{A point $P$ on a curve $f$ is called a \textbf{hypercusp} if $m_P(f) > 1$,
+$f$ has only one tangent line $L$ at $P$,
+and $I(P, L \cap f) = m_P(f) + 1$.
+Generalize the results of the preceding problem to this case.} \\
+
+
+
+\emph{Generalization.}
+\begin{enumerate}
+\item[(a)]
+  \emph{$I(P, f \cap L) \geq m_P(f) + 1$.}
+
+\item[(b)]
+  \emph{Suppose $P = (0,0)$, $L = y$ and $m = m_P(f)$.
+  Then $P$ is a hypercusp if and only if
+  $\frac{\partial^{m+1} f}{\partial x^{m+1}}(P) \neq 0$. Give some examples.}
+
+\item[(c)]
+  \emph{If $P$ is a hypercusp on $f$,
+  then $f$ has only one component passing through $P$.}
+\end{enumerate}
+The proof is almost the same as Problem 3.22 by replacing $2$ by $m_P(f)$.
 $\Box$ \\\\
 
 
