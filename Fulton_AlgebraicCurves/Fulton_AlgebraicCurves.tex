@@ -10018,6 +10018,79 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 3.21.}
+\addcontentsline{toc}{subsubsection}{Problem 3.21.}
+\emph{Let $f$ be an affine plane curve.
+Let $L$ be a line that is not a component of $f$.
+Suppose $L = \{(a+tb, c+td) : t \in k \}$.
+Define $g(t) = f(a+tb, c+td)$.
+Factor $g(t) = \prod (t - \lambda_i)^{e_i}$, $\lambda_i$ distinct.
+Show that there is a natural one-to-one correspondence between
+the $\lambda_i$ and the points $P_i \in L \cap f$.
+Show that under this correspondence, $I(P_i, L \cap f) = e_i$.
+In particular, $\sum I(P, L \cap f) \leq \deg(f)$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that there is a natural one-to-one correspondence between
+  the $\lambda_i$ and the points $P_i \in L \cap f$.}
+  \begin{align*}
+    P_i \in L \cap f
+    &\Longleftrightarrow
+    P_i \in L \text{ and } P \in f \\
+    &\Longleftrightarrow
+    \exists \lambda \in k \text{ such that }
+    0 = f(P_i) = f(a+\lambda b, c+\lambda d) = g(\lambda) \\
+    &\Longleftrightarrow
+    \text{$\lambda \in k$ is a root of $g(t) = \prod (t - \lambda_i)^{e_i}$} \\
+    &\Longleftrightarrow
+    \lambda = \lambda_i \in k \text{ for some } i.    
+  \end{align*}
+
+\item[(2)]
+  \emph{Show that $I(P_i, L \cap f) = e_i$.}
+  By Property (3),
+  we may suppose $P_i = (0,0)$ and $L = y$.
+  Write
+  \[
+    f(x,y) = f_0(x) + f_1(x)y + f_2(x)y^2 + \cdots \in (k[x])[y]
+  \]
+  where $f_j \in k[x]$.
+  Note that $f_0(x) = f(x,0) = g(x)$.
+  So
+  \begin{align*}
+    I(P_i, L \cap f)
+    &= I(P_i, y \cap (f_0(x) + f_1(x)y + \cdots)) \\
+    &= I(P_i, y \cap f_0(x))
+      &(\text{Property (7)}) \\
+    &= I(P_i, y \cap g(x)) \\
+    &= I\left( P_i, y \cap \prod (x - \lambda_i)^{e_i} \right) \\
+    &= \sum_j e_j I(P_j, y \cap (x - \lambda_j))
+      &(\text{Property (6)}) \\
+    &= e_i I(P_i, y \cap x)
+      &(\text{Property (2)}) \\
+    &= e_i.
+      &(\text{Property (5)})
+  \end{align*}
+  Here $\lambda_i = 0$ by the correspondence of (1).
+
+\item[(3)]
+  In particular,
+  \[
+    \sum_i I(P_i, L \cap f)
+    = \sum e_i
+    = \deg(g(x))
+    = \deg(f(x,0))
+    \leq \deg(f(x,y)).
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
