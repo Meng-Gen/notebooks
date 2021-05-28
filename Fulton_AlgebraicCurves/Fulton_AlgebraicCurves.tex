@@ -4731,7 +4731,7 @@ $\Box$ \\\\
 \addcontentsline{toc}{subsubsection}{Problem 2.15.* (Line)}
 \emph{Let $P = (a_1, \ldots, a_n)$, $Q = (b_1, \ldots, b_n)$ be distinct points of $\mathbf{A}^{n}$.
 The \textbf{line} through $P$ and $Q$ is defined to be
-$\{ ( a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n) ) : t \in k \}$.}
+$\{ ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) : s \in k \}$.}
 \begin{enumerate}
 \item[(a)]
   \emph{Show that if $L$ is the line through $P$ and $Q$, and $t$ is an affine change of coordinates,
@@ -4760,14 +4760,14 @@ $\{ ( a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n) ) : t \in k \}$.}
   \[
     t_i = \sum_{j} c_{ij} x_j + c_{i0}.
   \]
-  Take any point $\alpha_{s} = ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) \in L$
+  Take any point $P_{s} = ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) \in L$
   for some $s \in k$.
-  (In particular, $\alpha_0 = P$ and $\alpha_1 = Q$.)
+  (In particular, $P_0 = P$ and $P_1 = Q$.)
 
 \item[(2)]
   As
   \begin{align*}
-    t_i(\alpha_{s})
+    t_i(P_{s})
     =& \: \sum_{j} c_{ij}(a_j + s(b_j-a_j)) + c_{i0} \\
     =& \: \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \\
       & \: + s \left[ \left( \sum_{j} c_{ij} b_j + c_{i0} \right)
@@ -4789,12 +4789,16 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  Note that $a_j \neq b_j$ for some $1 \leq j \leq n$ since $P \neq Q$.
+  Note that $a_{\alpha} \neq b_{\alpha}$ for some $1 \leq \alpha \leq n$ since $P \neq Q$.
   Write
   \[
-    L = V\left( x_i = a_i + \frac{x_j-a_j}{b_j-a_j}(b_i - a_i) \right)
+    L
+    =
+    V\left( x_i = a_i + \frac{x_{\alpha}-a_{\alpha}}{b_{\alpha}-a_{\alpha}}(b_i - a_i)
+      : 1 \leq i \leq n \right).
   \]
-  for $1 \leq i \leq n$ and $i \neq j$.
+  (Here we solve $s = \frac{x_{\alpha}-a_{\alpha}}{b_{\alpha}-a_{\alpha}}$
+  and then replace $s$ in the equation $x_i = a_i + t(b_i - b_i)$.)
   By Problem 2.14, $L$ is a linear subvariety.
 
 \item[(2)]
@@ -10717,18 +10721,15 @@ Prove the projective analogue of Problem 2.15.}
     t_i = \sum_{j} c_{ij} x_j.
   \]
   Given any point
-  \[
-    \alpha_{\lambda,\mu}
-    =
-    [ \lambda a_1 + \mu b_1 : \cdots : \lambda a_{n+1} + \mu b_{n+1} ] \in L
-  \]
+  $P_{\lambda,\mu}
+  = [ \lambda a_1 + \mu b_1 : \cdots : \lambda a_{n+1} + \mu b_{n+1} ] \in L$
   for some not all zeros $\lambda, \mu \in k$.
-  (In particular, $\alpha_{1,0} = P$ and $\alpha_{0,1} = Q$.)
+  (In particular, $P_{1,0} = P$ and $P_{0,1} = Q$.)
 
 \item[(2)]
   As
   \begin{align*}
-    t_i(\alpha_{\lambda,\mu})
+    t_i(P_{\lambda,\mu})
     =& \: \sum_{j} c_{ij}(\lambda a_j + \mu b_j) \\
     =& \: \lambda \sum_{j} c_{ij}a_j + \mu \sum_{j} c_{ij}b_j \\
     =& \: \lambda t_i(P) + \mu t_i(Q),
@@ -10751,13 +10752,29 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  Note that $a_j \neq b_j$ for some $1 \leq j \leq n$ since $P \neq Q$.
-  Write
+  Since $P \neq Q \in \mathbf{P}^n$, there exist $1 \leq \alpha, \beta \leq n$
+  such that
   \[
-    L = V\left( x_i = a_i + \frac{x_j-a_j}{b_j-a_j}(b_i - a_i) \right)
+    \begin{vmatrix}
+      a_\alpha & b_\alpha \\
+      a_\beta & b_\beta
+    \end{vmatrix}
+    = a_\alpha b_\beta - b_\alpha a_\beta
+    \neq 0.
   \]
-  for $1 \leq i \leq n$ and $i \neq j$.
-  By Problem 2.14, $L$ is a linear subvariety.
+  So we can solve $\lambda$ and $\mu$ in terms of $x_\alpha$ and $x_\beta$ by Cramer's rule,
+  say $\lambda = \frac{x_\alpha b_\beta - b_\alpha x_\beta}{a_\alpha b_\beta - b_\alpha a_\beta}$
+  and $\mu = \frac{a_\alpha x_\beta - x_\alpha a_\beta}{a_\alpha b_\beta - b_\alpha a_\beta}$.
+  So we may write
+  \[
+    L
+    =
+    V\left(
+      x_i = \frac{x_\alpha b_\beta - b_\alpha x_\beta}{a_\alpha b_\beta - b_\alpha a_\beta} a_i
+        + \frac{a_\alpha x_\beta - x_\alpha a_\beta}{a_\alpha b_\beta - b_\alpha a_\beta} b_i
+      : 1 \leq i \leq n \right).
+  \]
+  So $L$ is a linear subvariety in the sense of Problem 4.11.
 
 \item[(2)]
   Note that
