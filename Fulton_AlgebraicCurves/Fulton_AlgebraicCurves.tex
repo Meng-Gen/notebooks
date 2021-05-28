@@ -10625,6 +10625,62 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 4.15.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.15.*}
+\emph{Show that any two distinct lines in $\mathbf{P}^2$ intersect in one point.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let
+  \begin{align*}
+    L_1 &: a_1 x + b_1 y + c_1 z = 0 \\
+    L_2 &: a_2 x + b_2 y + c_2 z = 0
+  \end{align*}
+  be two distinct lines in $\mathbf{P}^2$.
+
+\item[(2)]
+  Let
+  \[
+    A
+    =
+    \begin{bmatrix}
+      a_1 & b_1 & c_1 \\
+      a_2 & b_2 & c_2
+    \end{bmatrix}.
+  \]
+  Since $L_1$ and $L_2$ are distinct, $\rank(A) = 2$.
+  Rank-nullity theorem shows that
+  \[
+    \dim_k \ker(A) = 3 - \rank(A) = 1.
+  \]
+
+\item[(3)]
+  Might take a basis $\{ (x_0, y_0, z_0) \}$ for $\ker(A)$.
+  Here $(x_0, y_0, z_0) \neq 0$ and
+  any other nonzero solutions of $L_1 \cap L_2$ is of the form
+  $(\lambda x_0, \lambda y_0, \lambda z_0)$ ($\lambda \neq 0$).
+  Therefore,
+  \[
+    L_1 \cap L_2 = \{ [x_0:y_0:z_0] \} \in \mathbf{P}^2.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
