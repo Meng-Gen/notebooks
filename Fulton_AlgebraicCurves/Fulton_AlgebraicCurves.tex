@@ -10627,6 +10627,50 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 4.12.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.12.*}
+\emph{Let $H_1, \ldots, H_m$ be hyperplanes in $\mathbf{P}^n$, $m \leq n$.
+Show that} \\
+\[
+  H_1 \cap H_2 \cap \cdots \cap H_m \neq \varnothing.
+\]
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let
+  \[
+    H_i: a(i)_1 x_1 + \cdots + a(i)_{n+1} x_{n+1} = 0
+  \]
+  for $i = 1, 2, \ldots, m$.
+
+\item[(2)]
+  View (1) as the system of linear equations.
+  Let the coefficient matrix $A$ be
+  \[
+    A
+    =
+    \begin{bmatrix}
+      a(1)_1 & a(1)_2 & \cdots & a(1)_{n+1} \\
+      a(2)_1 & a(2)_2 & \cdots & a(2)_{n+1} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a(m)_1 & a(m)_2 & \cdots & a(m)_{n+1}
+    \end{bmatrix}.
+  \]
+  Note that $\rank(A) \leq \min\{ m, n+1 \} = m$.
+  The rank-nullity theorem shows that
+  \[
+    \dim_k \ker(A) = (n+1) - \rank(A) \geq (n+1)-m \geq 1.
+  \]
+  Hence, there is a nonzero solution of $\bigcap_{i=1}^{m} H_i$,
+  or $\bigcap_{i=1}^{m} H_i \neq \varnothing \in \mathbf{P}^n$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -10651,7 +10695,8 @@ $\Box$ \\\\
   be two distinct lines in $\mathbf{P}^2$.
 
 \item[(2)]
-  Let
+  View (1) as the system of linear equations.
+  Let the coefficient matrix $A$ be
   \[
     A
     =
@@ -10661,7 +10706,7 @@ $\Box$ \\\\
     \end{bmatrix}.
   \]
   Since $L_1$ and $L_2$ are distinct, $\rank(A) = 2$.
-  Rank-nullity theorem shows that
+  The rank-nullity theorem shows that
   \[
     \dim_k \ker(A) = 3 - \rank(A) = 1.
   \]
