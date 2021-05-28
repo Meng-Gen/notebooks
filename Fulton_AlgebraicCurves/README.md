@@ -5,5 +5,5 @@
 # Exercises
 - Chapter 1: Affine Algebraic Sets [Finished]
 - Chapter 2: Affine Varieties [Finished]
-- Chapter 3: Local Properties of Plane Curves [WIP]
+- Chapter 3: Local Properties of Plane Curves [Finished]
 - Chapter 4: Projective Varieties [WIP]
