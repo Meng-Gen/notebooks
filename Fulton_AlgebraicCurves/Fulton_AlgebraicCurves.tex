@@ -4760,13 +4760,14 @@ $\{ ( a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n) ) : t \in k \}$.}
   \[
     t_i = \sum_{j} c_{ij} x_j + c_{i0}.
   \]
-  Take any point $\alpha_{s} = ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) \in L$ for some $s \in k$.
-  (In particular, $P_0 = P$ and $P_1 = Q$.)
+  Take any point $\alpha_{s} = ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) \in L$
+  for some $s \in k$.
+  (In particular, $\alpha_0 = P$ and $\alpha_1 = Q$.)
 
 \item[(2)]
   As
   \begin{align*}
-    t_i(P_{s})
+    t_i(\alpha_{s})
     =& \: \sum_{j} c_{ij}(a_j + s(b_j-a_j)) + c_{i0} \\
     =& \: \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \\
       & \: + s \left[ \left( \sum_{j} c_{ij} b_j + c_{i0} \right)
@@ -4775,8 +4776,8 @@ $\{ ( a_1 + t(b_1-a_1), \ldots, a_n + t(b_n-a_n) ) : t \in k \}$.}
   \end{align*}
   we have
   \begin{align*}
-    t(L) =& \: \{ (t_1(P) + s(t_1(Q) - t_1(P)), \ldots, \\
-      & \: \qquad t_n(P) + s(t_n(Q) - t_n(P))) : s \in k\}.
+    t(L) =& \: \{ (t_1(P) + s(t_1(Q) - t_1(P)), \ldots, t_n(P) + s(t_n(Q) - t_n(P))) \\
+      & \: \qquad : s \in k\}.
   \end{align*}
   Moreover, $t(P) \in t(L)$ as $s = 0$ and $t(Q) \in t(L)$ as $s = 1$.
   Therefore, $t(L)$ is the line through $t(P)$ and $t(Q)$.
@@ -10711,29 +10712,36 @@ Prove the projective analogue of Problem 2.15.}
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  Write $t = (t_1,\ldots,t_n)$ as
+  Write $t = (t_1, \ldots, t_{n+1})$ as
   \[
-    t_i = \sum_{j} c_{ij} x_j + c_{i0}.
+    t_i = \sum_{j} c_{ij} x_j.
   \]
-  Take any point $\alpha_{s} = ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) \in L$ for some $s \in k$.
-  (In particular, $P_0 = P$ and $P_1 = Q$.)
+  Given any point
+  \[
+    \alpha_{\lambda,\mu}
+    =
+    [ \lambda a_1 + \mu b_1 : \cdots : \lambda a_{n+1} + \mu b_{n+1} ] \in L
+  \]
+  for some not all zeros $\lambda, \mu \in k$.
+  (In particular, $\alpha_{1,0} = P$ and $\alpha_{0,1} = Q$.)
 
 \item[(2)]
   As
   \begin{align*}
-    t_i(P_{s})
-    =& \: \sum_{j} c_{ij}(a_j + s(b_j-a_j)) + c_{i0} \\
-    =& \: \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \\
-      & \: + s \left[ \left( \sum_{j} c_{ij} b_j + c_{i0} \right)
-        - \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \right] \\
-    =& t_i(P) + s(t_i(Q) - t_i(P)),
+    t_i(\alpha_{\lambda,\mu})
+    =& \: \sum_{j} c_{ij}(\lambda a_j + \mu b_j) \\
+    =& \: \lambda \sum_{j} c_{ij}a_j + \mu \sum_{j} c_{ij}b_j \\
+    =& \: \lambda t_i(P) + \mu t_i(Q),
   \end{align*}
   we have
   \begin{align*}
-    t(L) =& \: \{ (t_1(P) + s(t_1(Q) - t_1(P)), \ldots, \\
-      & \: \qquad t_n(P) + s(t_n(Q) - t_n(P))) : s \in k\}.
+    t(L) = &\: \{ [ \lambda t_1(P) + \mu t_1(Q) : \cdots :
+        \lambda t_{n+1}(P) + \mu t_{n+1}(Q) ] \\
+      & \qquad : \lambda, \mu \in k, \lambda \neq 0 \text{ or } \mu \neq 0 \}.
   \end{align*}
-  Moreover, $t(P) \in t(L)$ as $s = 0$ and $t(Q) \in t(L)$ as $s = 1$.
+  Moreover, $t(P) \in t(L)$ as $(\lambda,\mu) = (1,0)$,
+  $t(Q) \in t(L)$ as $(\lambda,\mu) = (0,1)$,
+  and $t(P) \neq t(Q)$ (since $P \neq Q$ and $t$ is a projective change of coordinates.)
   Therefore, $t(L)$ is the line through $t(P)$ and $t(Q)$.
 \end{enumerate}
 $\Box$ \\
