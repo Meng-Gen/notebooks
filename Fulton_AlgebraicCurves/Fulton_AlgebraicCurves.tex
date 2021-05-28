@@ -10678,6 +10678,103 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 4.14.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.14.*}
+\emph{Let $P_1, P_2, P_3$ (resp. $Q_1, Q_2, Q_3$) be three points in $\mathbf{P}^2$
+not lying on a line.
+Show that there is a projective change of coordinates
+$t: \mathbf{P}^2 \to \mathbf{P}^2$ such that $t(P_i) = Q_i$, $i = 1, 2, 3$.
+Extend this to $n+1$ points in $\mathbf{P}^{n}$, not lying on a hyperplane.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \begin{align*}
+    P_i &= [a_{i1} : a_{i2} : a_{i3}] \in \mathbf{P}^2(k) \\
+    Q_i &= [b_{i1} : b_{i2} : b_{i3}] \in \mathbf{P}^2(k)
+  \end{align*}
+  for $i = 1, 2, 3$.
+
+\item[(2)]
+  Define
+  \begin{align*}
+    A
+    &=
+    \begin{bmatrix}
+      P_1 & P_2 & P_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      a_{11} & a_{21} & a_{31} \\
+      a_{12} & a_{22} & a_{32} \\
+      a_{13} & a_{23} & a_{33}
+    \end{bmatrix} \\
+    B
+    &=
+    \begin{bmatrix}
+      Q_1 & Q_2 & Q_3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      b_{11} & b_{21} & b_{31} \\
+      b_{12} & b_{22} & b_{32} \\
+      b_{13} & b_{23} & b_{33}
+    \end{bmatrix}.
+  \end{align*}
+  Note that
+  $A$ (resp. $B$) is depending on the representations of $P_i$ (resp. $Q_i$)
+  up to a nonzero constant in $k$.
+
+\item[(3)]
+  Here $A$ is invertible since $P_1, P_2, P_3$ are not lying on a line.
+  Define $t: \mathbf{P}^2 \to \mathbf{P}^2$ by sending $P = [x:y:z] \in \mathbf{P}^2$
+  to
+  \[
+    t(P)
+    = BA^{-1}P
+    =
+    \begin{bmatrix}
+      b_{11} & b_{21} & b_{31} \\
+      b_{12} & b_{22} & b_{32} \\
+      b_{13} & b_{23} & b_{33}
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_{11} & a_{21} & a_{31} \\
+      a_{12} & a_{22} & a_{32} \\
+      a_{13} & a_{23} & a_{33}
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+      x \\
+      y \\
+      z
+    \end{bmatrix}.
+  \]
+  Note that the matrix $BA^{-1} \in \mathrm{GL}_3(k)$
+  depends on the representations of $P_i$ (resp. $Q_i$)
+  up to a nonzero constant in $k$.
+  Hence, $t$ is a well-defined map from $\mathbf{P}^2$ to $\mathbf{P}^2$.
+  Besides, $t$ is a projective change of coordinates mapping $P_i$ to $Q_i$
+  ($i = 1, 2, 3$).
+
+\item[(4)]
+  \emph{Generalization:
+  Let $P_i$ (resp. $Q_i$) be $n+1$ points in $\mathbf{P}^n$ ($i = 1, \ldots, n+1$)
+  not lying on a hyperplane.
+  Then there is a projective change of coordinates
+  $t: \mathbf{P}^n \to \mathbf{P}^n$ such that $t(P_i) = Q_i$ ($i = 1, \ldots, n+1$).}
+  The proof is the same except replacing $2$ by $n$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 4.15.*}
 \addcontentsline{toc}{subsubsection}{Problem 4.15.*}
 \emph{Show that any two distinct lines in $\mathbf{P}^2$ intersect in one point.} \\
