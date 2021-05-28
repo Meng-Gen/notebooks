@@ -10246,6 +10246,183 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.24.*}
+\addcontentsline{toc}{subsubsection}{Problem 3.24.*}
+\emph{The object of this problem is
+to find a property of the local ring $\mathscr{O}_P(f)$ that
+determines whether or not $P$ is an ordinary multiple point on $f$.
+Let $f$ be an irreducible plane curve, $P = (0, 0)$, $\mathfrak{m} = \mathfrak{m}_P(f) > 1$.
+Let $m = m_P(f)$.
+For $g \in k[x,y]$ or $\in \Gamma(f)$,
+denote its residue in $\mathfrak{m}/\mathfrak{m}^2$ by $\overline{g}$.}
+
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that the map from $V = \{ \text{forms of degree $1$ in $k[x,y]$} \}$ to
+  $\mathfrak{m}/\mathfrak{m}^2$ taking $ax+by$ to $\overline{ax+by}$
+  is an isomorphism of vector spaces (see Problem 3.13). }
+
+\item[(b)]
+  \emph{Suppose $P$ is an ordinary multiple point, with tangents $L_1, \ldots, L_m$.
+  Show that $I(P, f \cap L_i) > m$ and
+  $\overline{L_i} \neq \lambda \overline{L_j}$ for all $i \neq j$, and all $\lambda \in k$.}
+
+\item[(c)]
+  \emph{Suppose there are $g_1, \ldots, g_m \in k[x,y]$
+  such that $I(P, f \cap g_i) > m$ and
+  $\overline{g_i} \neq \lambda \overline{g_j}$ for all $i \neq j$, and all $\lambda \in k$.
+  Show that $P$ is an ordinary multiple point on $f$.
+  (Hint: Write $g_i = L_i + \text{higher terms} \in k[x,y]$.
+  $\overline{L_i} = \overline{g_i} \neq 0$,
+  and $L_i$ is the tangent to $g_i$,
+  so $L_i$ is tangent to $f$ by Property (5) of intersection numbers.
+  Thus $f$ has $m$ tangents at $P$.)}
+
+\item[(d)]
+  \emph{Show that $P$ is an ordinary multiple point on $f$ if and only if
+  there are $g_1, \ldots, g_m \in \mathfrak{m}$ such that
+  $\overline{g_i} \neq \lambda \overline{g_j}$ for all $i \neq j$, $\lambda \in k$,
+  and} \\ 
+  \[
+    \dim_k \mathscr{O}_P(f)/(g_i) > m.
+  \]
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  $\mathscr{B} = \{ x, y \}$ is a basis for $V$ as a $k$-vector space.
+
+\item[(2)]
+  $\mathscr{B}' = \{ \overline{x}, \overline{y} \}$ is a basis for $\mathfrak{m}/\mathfrak{m}^2$.
+  as a $k$-vector space.
+
+\item[(3)]
+  By (1)(2), we can define a canonical isomorphism
+  \[
+    \alpha: V \to \mathfrak{m}/\mathfrak{m}^2
+  \]
+  by sending $\mathscr{B}$ to $\mathscr{B}'$, that is,
+  $\alpha(x) = \overline{x}$ and $\alpha(y) = \overline{y}$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    f = \prod_{i=1}^{m} L_i + \text{higher terms}.
+  \]
+  Problem 3.19 says that $I(P, f \cap L_i) > m_P(f) = m$.
+
+\item[(2)]
+  Since $P$ is an ordinary multiple point on $f$,
+  $L_i$ and $L_j$ are linearly independent in $V$ in the sense of (a).
+  Hence, $\alpha(L_i) = \overline{L_i}$ and $\alpha(L_j) = \overline{L_j}$
+  are linearly independent in $\mathfrak{m}/\mathfrak{m}^2$
+  (since $\alpha$ is an isomorphism).
+  The conclusion holds.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Write $g_i = L_i + \text{higher terms} \in k[x,y]$.
+  Here $g_i$ has no constant term since $P \in g_i$ by the defintion of intersection numbers.
+
+\item[(2)]
+  Pick $\lambda = 0 \in k$ and $j \neq i$.
+  ($m > 1$ implies the existence of $j$.)
+  So
+  \[
+    \alpha(L_i) = \overline{L_i} = \overline{g_i} \neq \lambda \overline{g_j} = 0
+  \]
+  or $L_i \neq 0$ (since $\alpha$ is an isomorphism).
+
+\item[(3)]
+  Hence, $L_i$ is the tangent to $g_i$.
+  So Property (5) implies that
+  \[
+    I(P, f \cap g_i)
+    \geq m_P(f) m_P(g_i)
+    = m.
+  \]
+  Note that $L_i$ is the only tangent line of $g_i$.
+  By Property (5),
+  the assumption $I(P, f \cap g_i) > m$ implies that $L_i$ is tangent to $f$.
+
+\item[(4)]
+  Note that
+  $\overline{g_i} \neq \lambda \overline{g_j}$ for all $i \neq j$, and all $\lambda \in k$.
+  So $\overline{L_i} \neq \lambda \overline{L_j}$ for all $i \neq j$, and all $\lambda \in k$.
+  Since $\alpha$ is an isomorphism, all $L_i$ are linearly independent
+  and thus $f$ has $m$ tangents $L_1, \ldots, L_m$ at $P$.
+  Therefore, $P$ is an ordinary multiple point.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \[
+    \dim_k \mathscr{O}_P(f)/(g_i)
+    = \dim_k \mathscr{O}_P(\mathbf{A}^2)/(f, g_i)
+    = I(P, f \cap g_i)
+  \]
+  (by Problem 2.44).
+
+\item[(2)]
+  ($\Longrightarrow$)
+  Suppose that $P$ is an ordinary multiple point, with tangents $L_1, \ldots, L_m$.
+  By (b),
+  \[
+    \dim_k \mathscr{O}_P(f)/(L_i) = I(P, f \cap L_i) > m
+  \]
+  and
+  $\overline{L_i} \neq \lambda \overline{L_j}$ for all $i \neq j$, and all $\lambda \in k$.
+  Take
+  \[
+    g_i = L_i + I(f) \in \Gamma(f) \subseteq \mathscr{O}_P(f).
+  \]
+  Since $g_i \in \mathfrak{m}$ (by $L_i(P) = 0$) and $\overline{g_i} = \overline{L_i}$,
+  the conclusion is proved.
+
+\item[(3)]
+  ($\Longleftarrow$)
+  Suppose that there are $g_1, \ldots, g_m \in \mathfrak{m}$ such that
+  $\overline{g_i} \neq \lambda \overline{g_j}$,
+  and $\dim_k \mathscr{O}_P(f)/(g_i) > m$.
+  For each $i = 1, \ldots, m$,
+  we take $g'_i + I(f) = g_i \in \mathfrak{m}$ for some $g'_i \in k[x,y]$.
+  Although $g'_i$ is not uniquely determined by $g_i$,
+  $\overline{g'_i} = \overline{g_i}$ and thus $\overline{g'_i} \neq \lambda \overline{g'_j}$.
+  By (1),
+  \[
+    \dim_k \mathscr{O}_P(f)/(g_i)
+    = \dim_k \mathscr{O}_P(f)/(g_i')
+    = I(P, f \cap g_i') > m
+  \]
+  Hence, by (c) $f$ has $m$ tangents at $P$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
