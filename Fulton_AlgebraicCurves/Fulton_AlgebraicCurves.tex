@@ -10674,6 +10674,232 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 4.13.* (Line)}
+\addcontentsline{toc}{subsubsection}{Problem 4.13.* (Line)}
+\emph{Let $P = [a_1 : \cdots : a_{n+1}]$, $Q = [b_1 : \cdots : b_{n+1}]$
+be distinct points of $\mathbf{P}^n$.
+The \textbf{line} $L$ through $P$ and $Q$ is defined by
+\[
+  L = \{ [ \lambda a_1 + \mu b_1 : \cdots : \lambda a_{n+1} + \mu b_{n+1} ] :
+    \lambda, \mu \in k, \lambda \neq 0 \text{ or } \mu \neq 0 \}.
+\]
+Prove the projective analogue of Problem 2.15.}
+
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that if $L$ is the line through $P$ and $Q$,
+  and $t$ is a projective change of coordinates,
+  then $t(L)$ is the line through $t(P)$ and $t(Q)$.}
+
+\item[(b)]
+  \emph{Show that a line is a linear subvariety of dimension $1$,
+  and that a linear subvariety of dimension $1$ is the line through any two of its points.}
+
+\item[(c)]
+  \emph{Show that, in $\mathbf{P}^{2}$, a line is the same thing as a hyperplane.}
+
+\item[(d)]
+  \emph{Let $P, P' \in \mathbf{P}^{2}$, $L_1$, $L_2$ two distinct lines through $P$,
+  $L'_1$, $L'_2$ distinct lines through $P'$.
+  Show that there is a projective change of coordinates $t$ of $\mathbf{P}^{2}$
+  such that $t(P) = P'$ and $t(L_i) = L'_i$, $i = 1, 2$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Write $t = (t_1,\ldots,t_n)$ as
+  \[
+    t_i = \sum_{j} c_{ij} x_j + c_{i0}.
+  \]
+  Take any point $\alpha_{s} = ( a_1 + s(b_1-a_1), \ldots, a_n + s(b_n-a_n) ) \in L$ for some $s \in k$.
+  (In particular, $P_0 = P$ and $P_1 = Q$.)
+
+\item[(2)]
+  As
+  \begin{align*}
+    t_i(P_{s})
+    =& \: \sum_{j} c_{ij}(a_j + s(b_j-a_j)) + c_{i0} \\
+    =& \: \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \\
+      & \: + s \left[ \left( \sum_{j} c_{ij} b_j + c_{i0} \right)
+        - \left( \sum_{j} c_{ij} a_j + c_{i0} \right) \right] \\
+    =& t_i(P) + s(t_i(Q) - t_i(P)),
+  \end{align*}
+  we have
+  \begin{align*}
+    t(L) =& \: \{ (t_1(P) + s(t_1(Q) - t_1(P)), \ldots, \\
+      & \: \qquad t_n(P) + s(t_n(Q) - t_n(P))) : s \in k\}.
+  \end{align*}
+  Moreover, $t(P) \in t(L)$ as $s = 0$ and $t(Q) \in t(L)$ as $s = 1$.
+  Therefore, $t(L)$ is the line through $t(P)$ and $t(Q)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Note that $a_j \neq b_j$ for some $1 \leq j \leq n$ since $P \neq Q$.
+  Write
+  \[
+    L = V\left( x_i = a_i + \frac{x_j-a_j}{b_j-a_j}(b_i - a_i) \right)
+  \]
+  for $1 \leq i \leq n$ and $i \neq j$.
+  By Problem 2.14, $L$ is a linear subvariety.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    n - \dim(L)
+    &= \text{the rank of the corresponding augmented matrix $(A'|b')$} \\
+    &= \text{the maximal number of the linearly independent rows of $(A'|b')$} \\
+    &= n - 1,
+  \end{align*}
+  which is uniquely determined.
+  Therefore, $\dim(V) = 1$.
+
+\item[(3)]
+  Conversely, $\dim(V) = 1$ implies that $\mathrm{rank}(A'|b') = n - 1$.
+  So all leading terms are all $x_i$ except only one $x_j$ for some $j$.
+  Hence $V$ is of the form
+  \[
+    V
+    = (x_i + a_{ij} x_j = b_i)
+  \]
+  for $1 \leq i \leq n$ and $i \neq j$.
+  So
+  \begin{align*}
+    V
+    &= \{ (b_1 - a_{1j}s, \ldots,
+      \underbrace{s}_{\text{$j$th position}}, \ldots, b_n - a_{nj}s) : s \in k \} \\
+    &= \{ (b_1 + s((b_1-a_{1j}) - b_1), \ldots,
+      \underbrace{0 + s(1 - 0)}_{\text{$j$th position}}, \ldots, \\
+      & \: \qquad (b_n + s((b_n-a_{nj}) - b_n) : s \in k \}
+  \end{align*}
+  is a line passing
+  \begin{align*}
+    P &= (b_1, \ldots, 0, \ldots, b_n) \\
+    Q &= (b_1-a_{1j}, \ldots, 1, \ldots, b_n-a_{nj})
+  \end{align*}
+  with $P \neq Q$ (since they are different in the $j$th position).
+  (Here we can change $P$ and $Q$ to any two different points on $V$.)
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  A line $L \subseteq \mathbf{A}^{2}$ is $V(x+ay=b)$ or $V(x+ay=b)$ by (b).
+  In any case, $L$ is a hyperplane in $\mathbf{A}^{2}$.
+
+\item[(2)]
+  Conversely, given any hyperplane $V = V(ax + by + c = 0) \subseteq \mathbf{A}^{2}$
+  where $a$ and $b$ are not all zero.
+  Might assume that $a \neq 0$. (The case $b \neq 0$ is similar.)
+  So
+  \[
+    V = \left\{ \left(-\frac{c}{a}-\frac{b}{a}s, s\right) : s \in k \right\}
+  \]
+  is a line passing $\left(-\frac{c}{a}, 0\right)$ and $\left(-\frac{c+b}{a}, 1\right)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  It suffices to show that there is a bijective affine change of coordinates $t$ of $\mathbf{A}^{2}$
+  such that $t(P) = (0,0)$, $t(L_1) = V(x = 0)$ and $t(L_2) = V(y = 0)$.
+  Write $P = (p_1, p_2)$ and $L_i = a_i x + b_i y + c_i$ for $i = 1, 2$.
+
+\item[(2)]
+  Let $t'' = (t''_1, t''_2)$ be a translation defined by
+  \[
+    \begin{pmatrix}
+      t''_1 \\
+      t''_2
+    \end{pmatrix}
+    = \begin{pmatrix}
+        x - p_1 \\
+        y - p_2
+      \end{pmatrix}.
+  \]
+  So ${L_1}^{t''} = a_1 x + b_1 y$ and ${L_2}^{t''} = a_2 x + b_2 y$.
+  Let
+  \[
+    A = \begin{pmatrix}
+      a_1 & b_1 \\
+      a_2 & b_2
+    \end{pmatrix}
+  \]
+  and $t' = (t'_1, t'_2)$ be a linear map defined by
+  \[
+    \begin{pmatrix}
+      t'_1 \\
+      t'_2
+    \end{pmatrix}
+    = \frac{1}{\det(A)}
+      \begin{pmatrix}
+        b_2 & -b_1 \\
+        -a_2 & a_1
+      \end{pmatrix}
+      \begin{pmatrix}
+        x \\
+        y
+      \end{pmatrix}.
+  \]
+  ($t'$ is well-defined since $L_1$ and $L_2$ are distinct lines and thus $\det(A) \neq 0$.)
+  Write $t = (t_1, t_2) = t' \circ t''$.
+  So
+  \[
+    \begin{pmatrix}
+      t_1 \\
+      t_2
+    \end{pmatrix}
+    = \frac{1}{\det(A)}
+      \begin{pmatrix}
+        b_2 & -b_1 \\
+        -a_2 & a_1
+      \end{pmatrix}
+      \begin{pmatrix}
+        x - p_1 \\
+        y - p_2
+      \end{pmatrix}
+  \]
+  and
+  \begin{align*}
+    L_1^{t} = ({L_1}^{t''})^{t'} = x \\
+    L_2^{t} = ({L_2}^{t''})^{t'} = y.
+  \end{align*}
+
+\item[(3)]
+  Conversely, define an affine change of coordinates $s = (s_1, s_2)$ of $\mathbf{A}^{2}$
+  by
+  \[
+    \begin{pmatrix}
+      s_1 \\
+      s_2
+    \end{pmatrix}
+    = \begin{pmatrix}
+      a_1 x + b_1 y + c_1 \\
+      a_2 x + b_2 y + c_2
+    \end{pmatrix}
+  \]
+  so that $x^{s} = L_1$ and $y^{s} = L_2$.
+
+\item[(4)]
+  By (2)(3), the statement in (1) is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
