@@ -10830,19 +10830,32 @@ $\Box$ \\
 
 \emph{Proof of (c).}
 \begin{enumerate}
-\item[(X)]
-  A line $L \subseteq \mathbf{A}^{2}$ is $V(x+ay=b)$ or $V(x+ay=b)$ by (b).
-  In any case, $L$ is a hyperplane in $\mathbf{A}^{2}$.
+\item[(a)]
+  By part (b), a line $L \subseteq \mathbf{P}^{2}$ is
+  \[
+    V((b_2 a_3 - a_2 b_3) x + (b_3 a_1 - b_1 a_3) y + (b_1 a_2 - b_2 a_1) z = 0),
+  \]
+  which is also a plane in $\mathbf{P}^{2}$.
 
-\item[(X)]
-  Conversely, given any hyperplane $V = V(ax + by + c = 0) \subseteq \mathbf{A}^{2}$
-  where $a$ and $b$ are not all zero.
-  Might assume that $a \neq 0$. (The case $b \neq 0$ is similar.)
+\item[(b)]
+  Conversely, given any plane
+  \[
+    V = V(ax + by + cz = 0) \subseteq \mathbf{P}^{2}
+  \]
+  where $a, b, c$ are not all zero.
+  Might assume that $a \neq 0$. (Other cases are similar.)
   So
   \[
-    V = \left\{ \left(-\frac{c}{a}-\frac{b}{a}s, s\right) : s \in k \right\}
+    V
+    =
+    \left\{
+      \left[ -\frac{b}{a}\lambda-\frac{c}{a}\mu : \lambda : \mu \right] \in \mathbf{P}^{2}
+      : \lambda, \mu \in k, \lambda \neq 0 \text{ or } \mu \neq 0
+    \right\}
   \]
-  is a line passing $\left(-\frac{c}{a}, 0\right)$ and $\left(-\frac{c+b}{a}, 1\right)$.
+  is a line passing
+  $P = \left[ -\frac{b}{a} : 1 : 0 \right] \in \mathbf{P}^{2}$ and
+  $Q = \left[ -\frac{c}{a} : 0 : 1 \right] \in \mathbf{P}^{2}$.
 \end{enumerate}
 $\Box$ \\
 
