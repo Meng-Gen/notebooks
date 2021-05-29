@@ -4573,6 +4573,8 @@ $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.}
   and $V = V(f_1,\ldots,f_r)$ for some polynomials $f_i$ of degree $1$.
 
 \item[(2)]
+  \emph{Show that $V$ is a variety and thus $I(V) = (f_1, \ldots, f_r)$
+  by the Hilbert's Nullstellensatz.}
   $V(f_1, \ldots, f_r)$ is the set of all solutions of the system of linear equations:
   \begin{align*}
     f_1 &= a_{11} x_1 + \cdots + a_{1n} x_n - b_1 = 0, \\
@@ -10633,6 +10635,163 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 4.11.* (Linear subvariety)}
+\addcontentsline{toc}{subsubsection}{Problem 4.11.* (Linear subvariety)}
+\emph{A set $V \subseteq \mathbf{P}^{n}(k)$
+is called a \textbf{linear subvariety} of $\mathbf{P}^{n}(k)$ if
+$V = V(h_1, \cdots, h_r)$, where each $h_i$ is a form of degree $1$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that if $t$ is a projective change of coordinates,
+  then $V^{t} = t^{-1}(V)$ is also a linear subvariety.}
+
+\item[(b)]
+  \emph{Show that there is a projective change of coordinates $t$ of $\mathbf{P}^{n}$ such that
+  $V^t = V(x_{m+2}, \cdots, x_{n+1})$, so $V$ is a variety.}
+
+\item[(c)]
+  \emph{Show that the $m$ that appears in part (b) is independent of the choice of $t$.
+  It is called the dimension of $V$ ($m = -1$ if $V = \varnothing$).} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Say $t = (t_1,\ldots,t_{n+1})$ is a projective change of coordinates,
+  and $V = V(h_1, \cdots, h_r)$, where each $h_i$ is a form of degree $1$.
+
+\item[(2)]
+  \emph{Show that $V$ is a variety and thus $I(V) = (h_1, \ldots, h_r)$
+  by the projective Nullstellensatz.}
+  $V$ is the set of all non-trivial solutions of the system of linear equations:
+  \begin{align*}
+    h_1 &= a_{1,1} x_1 + \cdots + a_{1,n+1} x_{n+1} = 0, \\
+    &\cdots \\
+    h_r &= a_{r,1} x_1 + \cdots + a_{r,n+1} x_{n+1} = 0.
+  \end{align*}
+  (Here we identify $[x_1 : \cdots : x_{n+1}] \in \mathbf{P}^{n}$.)
+  Write $Ax = 0$ and thus $V = V(Ax = 0)$, where
+  \[
+    A =
+    \underbrace{\begin{pmatrix}
+    a_{1,1} & \cdots & a_{1,n+1} \\
+    \vdots & \ddots & \vdots \\
+    a_{r,1} & \cdots & a_{r,n+1}
+    \end{pmatrix}}_{\in \mathsf{M}_{r \times (n+1)}(k)},
+    \qquad
+    x =
+    \underbrace{\begin{pmatrix}
+    x_1 \\
+    \vdots \\
+    x_{n+1}
+    \end{pmatrix}}_{\in \mathsf{M}_{(n+1) \times 1}(k)}.
+  \]
+
+\item[(3)]
+  The Gaussian elimination in linear algebra says that
+  $(A|0)$ has the same solutions as its reduced row echelon form $(A'|0)$,
+  that is, $V(Ax = 0) = V(A'x = 0)$.
+
+\item[(4)]
+  If $V(h_1, \ldots, h_r) = \varnothing$, nothing to do.
+  If $V(h_1, \ldots, h_r) \neq \varnothing$, then
+  \[
+    V(h_1, \ldots, h_r) = V(g_1, \ldots, g_{m+1})
+  \]
+  where $m+1 = \mathrm{rank}(A)$ is the number of nonzero rows in $A'$ ($m+1 \leq r, n+1$)
+  and $g_i = a'_{i,1} x_1 + \cdots + a'_{i,n+1} x_{n+1}$ for $1 \leq i \leq m+1$.
+  ($a'_{i,j}$ is the entry of the matrix $A'$.)
+
+\item[(5)]
+  Now given any $f + I(V) \in k[x_1,\ldots,x_{n+1}]/I(V)$,
+  we replace the leading term $x_{i_1}$ of $g_1$ by $x_{i_1} - g_1$ to get
+  \[
+    f + I(V)
+    = \: f(x_1, \cdots,
+      \underbrace{x_{i_1} - g_1}_{\text{$i_1$th position}}, \cdots, x_{n+1}) + I(V)
+    := \: f_1 + I(V)
+  \]
+  where $f_1 \in k[x_1,\ldots,\widehat{x_{i_1}}\ldots,x_{n+1}]$.
+  Continue this process to replace each leading term $x_{i_j}$ of $g_j$ by $x_{i_j} - g_j$ to get
+  one by one to get
+  \begin{align*}
+    f + I(V) &= f_1 + I(V),
+      f_1 \in k[x_1,\ldots,\widehat{x_{i_1}}\ldots,x_{n+1}]. \\
+    & \cdots \\
+    f_{m} + I(V) &= f_{m+1} + I(V),
+      f_{m+1} \in k[x_1,\ldots,\widehat{x_{i_1}},\ldots,\widehat{x_{i_{m+1}}}\ldots,x_{n+1}].
+  \end{align*}
+  Hence, a routine shows that there is a ring isomorphism
+  \[
+    \alpha: k[x_1,\ldots,x_{n+1}]/I(V) \to
+    \underbrace{
+      k[x_1,\ldots,\widehat{x_{i_1}},\ldots,\widehat{x_{i_{m+1}}}\ldots,x_{n+1}]
+    }_{\text{a domain}}
+  \]
+  sending $f$ to $f_{m+1}$.
+  Therefore, $V$ is a variety.
+
+\item[(6)]
+  As $I(V) = (h_1, \ldots, h_r)$,
+  $I(V)^{t} = (h_1^{t}, \ldots, h_r^{t})$ where each $h_i^{t}$ is a form of degree $1$.
+  Thus $V^{t} = V(I(V)^{t}) = V(h_1^{t}, \ldots, h_r^{t})$
+  is also a linear subvariety of $\mathbf{P}^n(k)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Suppose $A \in \mathsf{M}_{r \times (n+1)}(k)$ is of rank $(n+1) - (m+1) = n-m$.
+  Linear algebra says that there exist invertible matrices
+  $B \in \mathsf{M}_{r \times r}(k)$ and $C \in \mathsf{M}_{(n+1) \times (n+1)}(k)$
+  such that $D = BAC$, where
+  \[
+    D = BAC =
+    \underbrace{\begin{pmatrix}
+    O_1 & O_2 \\
+    O_3 & I_{n-m}
+    \end{pmatrix}}_{\in \mathsf{M}_{r \times (n+1)}(k)}
+  \]
+  in which $I_{n-m} \in \mathsf{M}_{(n-m) \times (n-m)}(k)$ is the identity matrix
+  and $O_1$, $O_2$, and $O_3$ are zero matrices.
+
+\item[(2)]
+  Let $t'$ be the linear map corresponding to the matrix $C$.
+  So
+  \begin{align*}
+    V^{t'}
+    &= V(Ax = 0)^{t'} \\
+    &= V(ACx = 0) \\
+    &= V(BACx = 0)
+      &(\text{$B$: invertible}) \\
+    &= V(Dx = 0) \\
+    &= V(0, \cdots, 0, x_{m+2}, \cdots, x_{n+1})
+      &(V \neq \varnothing) \\
+    &= V(x_{m+2}, \cdots, x_{n+1}).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+  Linear algebra says that
+  the rank of any matrix is the maximal number of its linearly independent rows,
+  which is uniquely determined.
+  Therefore, $m = \mathrm{rank}(A) - 1$ is uniquely determined.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 4.12.*}
 \addcontentsline{toc}{subsubsection}{Problem 4.12.*}
 \emph{Let $H_1, \ldots, H_m$ be hyperplanes in $\mathbf{P}^n$, $m \leq n$.
@@ -10759,32 +10918,31 @@ $\Box$ \\
   ($i = 1, \ldots, n+1$)
   where $\lambda, \mu \in k, \lambda \neq 0 \text{ or } \mu \neq 0$.
   Since $P \neq Q \in \mathbf{P}^n$, there exist $1 \leq \alpha, \beta \leq n$
-  such that
-  \[
-    \begin{vmatrix}
-      a_\alpha & b_\alpha \\
-      a_\beta & b_\beta
-    \end{vmatrix}
-    = a_\alpha b_\beta - b_\alpha a_\beta
-    \neq 0.
-  \]
+  such that $a_\alpha b_\beta - a_\beta b_\alpha \neq 0$.
   So we can solve $\lambda$ and $\mu$ in terms of $x_\alpha$ and $x_\beta$ by Cramer's rule,
   say
   \[
-    \lambda = \frac{x_\alpha b_\beta - b_\alpha x_\beta}{a_\alpha b_\beta - b_\alpha a_\beta},
+    \lambda = \frac{x_\alpha b_\beta - x_\beta b_\alpha}{a_\alpha b_\beta - a_\beta b_\alpha},
     \qquad
-    \mu = \frac{a_\alpha x_\beta - x_\alpha a_\beta}{a_\alpha b_\beta - b_\alpha a_\beta}.
+    \mu = \frac{a_\alpha x_\beta - a_\beta x_\alpha}{a_\alpha b_\beta - a_\beta b_\alpha}.
   \]
 
 \item[(2)]
   Define
-  \[
+  \begin{align*}
     V
-    = V\left(
-      x_i = \frac{x_\alpha b_\beta - b_\alpha x_\beta}{a_\alpha b_\beta - b_\alpha a_\beta} a_i
-        + \frac{a_\alpha x_\beta - x_\alpha a_\beta}{a_\alpha b_\beta - b_\alpha a_\beta} b_i
-      : 1 \leq i \leq n+1 \right).
-  \]
+    &= V\left(
+      x_i = \frac{x_\alpha b_\beta - x_\beta b_\alpha}{a_\alpha b_\beta - a_\beta b_\alpha} a_i
+        + \frac{a_\alpha x_\beta - a_\beta x_\alpha}{a_\alpha b_\beta - a_\beta b_\alpha} b_i
+      : 1 \leq i \leq n+1 \right) \\
+    &= V\left(
+        \begin{vmatrix}
+          x_i      & a_i      & b_i      \\
+          x_\alpha & a_\alpha & b_\alpha \\
+          x_\beta  & a_\beta  & b_\beta
+        \end{vmatrix} = 0 : 1 \leq i \leq n+1
+      \right).
+  \end{align*}
   By construction, $L = V$ is a linear subvariety in $\mathbf{P}^n$. (See Problem 4.11.)
 
 \item[(X)]
@@ -10832,9 +10990,16 @@ $\Box$ \\
 \begin{enumerate}
 \item[(a)]
   By part (b), a line $L \subseteq \mathbf{P}^{2}$ is
-  \[
-    V((b_2 a_3 - a_2 b_3) x + (b_3 a_1 - b_1 a_3) y + (b_1 a_2 - b_2 a_1) z = 0),
-  \]
+  \begin{align*}
+    & \: V((a_2 b_3 - b_2 a_3) x + (a_3 b_1 - a_1 b_3) y + (a_1 b_2 - a_2 b_1) z = 0) \\
+    = & \: V\left(
+      \begin{vmatrix}
+        x & a_1 & b_1 \\
+        y & a_2 & b_2 \\
+        z & a_3 & b_3
+      \end{vmatrix} = 0
+    \right),
+  \end{align*}
   which is also a plane in $\mathbf{P}^{2}$.
 
 \item[(b)]
@@ -11028,7 +11193,7 @@ Extend this to $n+1$ points in $\mathbf{P}^{n}$, not lying on a hyperplane.} \\
       z
     \end{bmatrix}.
   \]
-  Note that the matrix $BA^{-1} \in \mathrm{GL}_3(k)$
+  Note that the matrix $BA^{-1} \in \mathsf{GL}_3(k)$
   depends on the representations of $P_i$ (resp. $Q_i$)
   up to a nonzero constant in $k$.
   Hence, $t$ is a well-defined map from $\mathbf{P}^2$ to $\mathbf{P}^2$.
