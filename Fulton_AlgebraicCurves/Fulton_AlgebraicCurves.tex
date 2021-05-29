@@ -10781,7 +10781,7 @@ $\Box$ \\
 \emph{Proof of (c).}
   Linear algebra says that
   the rank of any matrix is uniquely determined.
-  Therefore, $m = \mathrm{rank}(A) - 1$ is uniquely determined.
+  Therefore, $m = n - \mathrm{rank}(A)$ is uniquely determined.
 $\Box$ \\\\
 
 
@@ -10943,42 +10943,43 @@ $\Box$ \\
   \end{align*}
   By construction, $L = V$ is a linear subvariety in $\mathbf{P}^n$. (See Problem 4.11.)
 
-\item[(X)]
-  Note that
-  \begin{align*}
-    n - \dim(L)
-    &= \text{the rank of the corresponding augmented matrix $(A'|b')$} \\
-    &= \text{the maximal number of the linearly independent rows of $(A'|b')$} \\
-    &= n - 1,
-  \end{align*}
-  which is uniquely determined.
-  Therefore, $\dim(V) = 1$.
+\item[(3)]
+  Might assume that $\alpha = n$ and $\beta = n+1$.
+  View
+  \[
+    \begin{vmatrix}
+      x_i      & a_i      & b_i      \\
+      x_\alpha & a_\alpha & b_\alpha \\
+      x_\beta  & a_\beta  & b_\beta
+    \end{vmatrix} = 0, i = 1, \ldots, n+1
+  \]
+  as the system of linear equations.
+  Write $A$ as the corresponding coefficient matrix.
+  $A$ is a reduced row echelon form of rank $(n+1)-2 = n-1$
+  So $\dim(V) = n - \mathrm{rank}(A) = n - (n-1) = 1$.
 
-\item[(X)]
-  Conversely, $\dim(V) = 1$ implies that $\mathrm{rank}(A'|b') = n - 1$.
-  So all leading terms are all $x_i$ except only one $x_j$ for some $j$.
+\item[(4)]
+  Conversely, $\dim(V) = 1$ implies that $\mathrm{rank}(A'|0) = n - 1$.
+  So all leading terms are all $x_i$ except two $x_\alpha, x_\beta$ for some $\alpha \neq \beta$,
+  might say $\alpha = n$ and $\beta = n+1$.
   Hence $V$ is of the form
   \[
     V
-    = (x_i + a_{ij} x_j = b_i)
+    = (x_i + a_{i} x_n + b_{i} x_{n+1} = 0)
   \]
-  for $1 \leq i \leq n$ and $i \neq j$.
+  for $1 \leq i \leq n-1$.
   So
   \begin{align*}
     V
-    &= \{ (b_1 - a_{1j}s, \ldots,
-      \underbrace{s}_{\text{$j$th position}}, \ldots, b_n - a_{nj}s) : s \in k \} \\
-    &= \{ (b_1 + s((b_1-a_{1j}) - b_1), \ldots,
-      \underbrace{0 + s(1 - 0)}_{\text{$j$th position}}, \ldots, \\
-      & \: \qquad (b_n + s((b_n-a_{nj}) - b_n) : s \in k \}
+    = & \: \{ [-a_1 \lambda - b_1 \mu : \ldots : -a_{n-1} \lambda - b_{n-1} \mu :
+      \lambda : \mu ] : \\
+      & \qquad \lambda, \mu \in k, \lambda \neq 0 \text{ or } \mu \neq 0 \}
   \end{align*}
-  is a line passing
+  is a line passing two different points
   \begin{align*}
-    P &= (b_1, \ldots, 0, \ldots, b_n) \\
-    Q &= (b_1-a_{1j}, \ldots, 1, \ldots, b_n-a_{nj})
+    P &= [ -a_1 : \ldots : -a_{n-1} : 1 : 0 ] \\
+    Q &= [ -b_1 : \ldots : -b_{n-1} : 0 : 1 ].
   \end{align*}
-  with $P \neq Q$ (since they are different in the $j$th position).
-  (Here we can change $P$ and $Q$ to any two different points on $V$.)
 \end{enumerate}
 $\Box$ \\
 
