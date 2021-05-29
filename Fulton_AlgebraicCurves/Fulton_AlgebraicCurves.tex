@@ -11027,88 +11027,23 @@ $\Box$ \\
 
 \emph{Proof of (d).}
 \begin{enumerate}
-\item[(X)]
-  It suffices to show that there is a bijective affine change of coordinates $t$ of $\mathbf{A}^{2}$
-  such that $t(P) = (0,0)$, $t(L_1) = V(x = 0)$ and $t(L_2) = V(y = 0)$.
-  Write $P = (p_1, p_2)$ and $L_i = a_i x + b_i y + c_i$ for $i = 1, 2$.
+\item[(1)]
+  Take one point $P_i \in L_i$ (resp. $P'_i \in L'_i$) other than $P$ (resp. $P'$) for $i = 1, 2$.
+  It is possible since every line is passing two distinct points.
 
-\item[(X)]
-  Let $t'' = (t''_1, t''_2)$ be a translation defined by
-  \[
-    \begin{pmatrix}
-      t''_1 \\
-      t''_2
-    \end{pmatrix}
-    = \begin{pmatrix}
-        x - p_1 \\
-        y - p_2
-      \end{pmatrix}.
-  \]
-  So ${L_1}^{t''} = a_1 x + b_1 y$ and ${L_2}^{t''} = a_2 x + b_2 y$.
-  Let
-  \[
-    A = \begin{pmatrix}
-      a_1 & b_1 \\
-      a_2 & b_2
-    \end{pmatrix}
-  \]
-  and $t' = (t'_1, t'_2)$ be a linear map defined by
-  \[
-    \begin{pmatrix}
-      t'_1 \\
-      t'_2
-    \end{pmatrix}
-    = \frac{1}{\det(A)}
-      \begin{pmatrix}
-        b_2 & -b_1 \\
-        -a_2 & a_1
-      \end{pmatrix}
-      \begin{pmatrix}
-        x \\
-        y
-      \end{pmatrix}.
-  \]
-  ($t'$ is well-defined since $L_1$ and $L_2$ are distinct lines and thus $\det(A) \neq 0$.)
-  Write $t = (t_1, t_2) = t' \circ t''$.
-  So
-  \[
-    \begin{pmatrix}
-      t_1 \\
-      t_2
-    \end{pmatrix}
-    = \frac{1}{\det(A)}
-      \begin{pmatrix}
-        b_2 & -b_1 \\
-        -a_2 & a_1
-      \end{pmatrix}
-      \begin{pmatrix}
-        x - p_1 \\
-        y - p_2
-      \end{pmatrix}
-  \]
-  and
-  \begin{align*}
-    L_1^{t} = ({L_1}^{t''})^{t'} = x \\
-    L_2^{t} = ({L_2}^{t''})^{t'} = y.
-  \end{align*}
+\item[(2)]
+  By Problem 4.15, $P_1 \not\in L_2$ (resp. $P'_1 \not\in L'_2$) and
+  $P_2 \not\in L_1$ (resp. $P'_2 \not\in L'_1$).
 
-\item[(X)]
-  Conversely, define an affine change of coordinates $s = (s_1, s_2)$ of $\mathbf{A}^{2}$
-  by
-  \[
-    \begin{pmatrix}
-      s_1 \\
-      s_2
-    \end{pmatrix}
-    = \begin{pmatrix}
-      a_1 x + b_1 y + c_1 \\
-      a_2 x + b_2 y + c_2
-    \end{pmatrix}
-  \]
-  so that $x^{s} = L_1$ and $y^{s} = L_2$.
+\item[(3)]
+  By Problem 4.14,
+  there is a unique projective change of coordinates $t: \mathbf{P}^2 \to \mathbf{P}^2$
+  such that $t(P) = P'$, $t(P_1) = P'_1$ and $t(P_2) = P'_2$.
 
 \item[(4)]
-  By (2)(3), the statement in (1) is established.
+  Hence, the line $t(L_i)$ (by part (a)) and the line $L'_i$ are both passing $P'$ and $P'_i$
+  for $i = 1, 2$.
+  Since $P' \neq P'_i$ by construction, Problem 4.15 implies that $t(L_i) = L'_i$.
 \end{enumerate}
 $\Box$ \\\\
 
