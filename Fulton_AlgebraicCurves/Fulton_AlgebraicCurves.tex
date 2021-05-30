@@ -11104,7 +11104,8 @@ Extend this to $n+1$ points in $\mathbf{P}^{n}$, not lying on a hyperplane.} \\
   up to a nonzero constant in $k$.
 
 \item[(3)]
-  Here $A$ is invertible since $P_1, P_2, P_3$ are not lying on a line.
+  Here $A$ (resp. $B$) is invertible since
+  $P_1, P_2, P_3$ (resp. $Q_1, Q_2, Q_3$) are not lying on a line.
   Define $t: \mathbf{P}^2 \to \mathbf{P}^2$ by sending $P = [x:y:z] \in \mathbf{P}^2$
   to
   \[
@@ -11192,6 +11193,113 @@ $\Box$ \\\\
   \[
     L_1 \cap L_2 = \{ [x_0:y_0:z_0] \} \in \mathbf{P}^2.
   \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 4.16.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.16.*}
+\emph{Let $L_1, L_2, L_3$ (resp. $M_1, M_2, M_3$) be lines in $\mathbf{P}^{2}(k)$ that
+do not all pass through a point.
+Show that there is a projective change of coordinates: $t: \mathbf{P}^{2} \to \mathbf{P}^{2}$
+such that $t(L_i) = M_i$.
+(Hint: Let $P_{ij} = L_i \cap L_j$, $Q_{ij} = M_i \cap M_j$, $i \neq j$,
+and apply Problem 4.14.)
+Extend this to $n+1$ hyperplanes in $\mathbf{P}^{n}$,
+not passing through a point.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $P_{ij} = L_i \cap L_j$ (resp. $Q_{ij} = M_i \cap M_j$), $i \neq j$.
+  $P_{ij}$ (resp. $Q_{ij}$) is uniquely determined by
+  $L_i$ and $L_j$ (resp. $M_i$ and $M_j$) (Problem 4.15).
+  Also, $P_{ij} \neq P_{i'j'}$ (resp. $Q_{ij} \neq Q_{i'j'}$)
+  if $\{ i,j \} \neq \{ i',j' \}$ (as sets) by assumption.
+
+\item[(2)]
+  Problem 4.14 shows that
+  there is a projective change of coordinates $t: \mathbf{P}^{2} \to \mathbf{P}^{2}$
+  such that $t(P_{ij}) = Q_{ij}$, $i \neq j$.
+  Similar to the argument in Problem 4.13(d), we conclude that $t(L_i)$ = $M_i$.
+
+\item[(3)]
+  \emph{Show that we can extend this to $n+1$ hyperplanes in $\mathbf{P}^{n}$,
+  not passing through a point.}
+  We cannot apply Steps (1)(2) to the generalized case $\mathbf{P}^{n}$.
+  Instead, we can apply the proof of Problem 4.14.
+
+\item[(4)]
+  Let $E_i$ (resp. $F_i$) ($i=1,\ldots,n+1$) be $(n+1)$ hyperplanes in $\mathbf{P}^{n}$
+  that do not passing through a point.
+  Write
+  \begin{align*}
+    E_i &: a_{i,1} x_1 + \cdots + a_{i,n+1} = 0 \in \mathbf{P}^n(k) \\
+    F_i &: b_{i,1} x_1 + \cdots + b_{i,n+1} = 0 \in \mathbf{P}^n(k)
+  \end{align*}
+  for $i = 1, \ldots, n+1$.
+
+\item[(5)]
+  View $E_i$ (resp. $F_i$) as the system of linear equations.
+  Let the coefficient matrix $A$ (resp. $B$) be
+    \begin{align*}
+    A
+    &=
+    \begin{bmatrix}
+      a_{1,1}   & \cdots & a_{n+1,1} \\
+      \vdots    & \ddots & \vdots \\
+      a_{1,n+1} & \cdots & a_{n+1,n+1}
+    \end{bmatrix} \\
+    B
+    &=
+    \begin{bmatrix}
+      b_{1,1}   & \cdots & b_{n+1,1} \\
+      \vdots    & \ddots & \vdots \\
+      b_{1,n+1} & \cdots & b_{n+1,n+1}
+    \end{bmatrix}.
+  \end{align*}
+  Note that
+  $A$ (resp. $B$) is depending on the representations of $E_i$ (resp. $F_i$)
+  up to a nonzero constant in $k$.
+
+\item[(6)]
+  Here $A$ (resp. $B$) is invertible since $E_i$ (resp. $F_i$) are not passing through a point.
+  Define $t: \mathbf{P}^{n} \to \mathbf{P}^{n}$ by sending
+  $P = [x_1 : \cdots : x_{n+1}] \in \mathbf{P}^{n}$
+  to
+  \begin{align*}
+    t(P)
+    &= BA^{-1}P \\
+    &=
+    \begin{bmatrix}
+      b_{1,1}   & \cdots & b_{n+1,1} \\
+      \vdots    & \ddots & \vdots \\
+      b_{1,n+1} & \cdots & b_{n+1,n+1}
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_{1,1}   & \cdots & a_{n+1,1} \\
+      \vdots    & \ddots & \vdots \\
+      a_{1,n+1} & \cdots & a_{n+1,n+1}
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+      x_1 \\
+      \vdots \\
+      x_{n+1}
+    \end{bmatrix}.
+  \end{align*}
+  Note that the matrix $BA^{-1} \in \mathsf{GL}_{n+1}(k)$
+  depends on the representations of $E_i$ (resp. $F_i$)
+  up to a nonzero constant in $k$.
+  Hence, $t$ is a well-defined map from $\mathbf{P}^{n}$ to $\mathbf{P}^{n}$.
+  Besides, $t$ is a projective change of coordinates mapping $E_i$ to $F_i$
+  ($i = 1, \ldots, n+1$).
 \end{enumerate}
 $\Box$ \\\\
 
