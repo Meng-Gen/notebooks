@@ -11365,6 +11365,92 @@ not passing through a point.} \\
   Besides, $t$ is a projective change of coordinates mapping $E_i$ to $F_i$
   ($i = 1, \ldots, n+1$).
 \end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+  It is the duality of Problem 4.14.
+  See Problem 4.18 for more details. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 4.18. (Duality)}
+\addcontentsline{toc}{subsubsection}{Problem 4.18. (Duality)}
+\emph{Let $H = V\left( \sum a_i x_i \right)$ be a hyperplane in $\mathbf{P}^n$.
+Note that $(a_1, \ldots, a_{n+1})$ is determined by $H$ up to a constant.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that assigning $[a_1 : \cdots : a_{n+1}] \in \mathbf{P}^n$ to $H$
+  sets up a natural one-to-one correspondence between
+  $\{ \text{hyperplanes in $\mathbf{P}^n$} \}$ and $\mathbf{P}^n$.
+  If $P \in \mathbf{P}^n$,
+  let $P^{*}$ be the corresponding hyperplane;
+  if $H$ is a hyperplane, $H^{*}$ denotes the corresponding point.}
+
+\item[(b)]
+  \emph{Show that $P^{**} = P$, $H^{**} = H$.
+  Show that $P \in H$ if and only if $H^{*} \in P^{*}$.}
+\end{enumerate}
+\emph{This is the well-known \textbf{duality} of the projective space.} \\
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Define $\alpha: \{ \text{hyperplanes} \} \to \mathbf{P}^n$
+  (resp. $\beta: \mathbf{P}^n \to \{ \text{hyperplanes} \}$) by
+  \begin{align*}
+    \alpha &: V\left( \sum a_i x_i \right) \mapsto [a_1 : \cdots : a_{n+1}], \\
+    \beta &: [a_1 : \cdots : a_{n+1}] \mapsto V\left( \sum a_i x_i \right).
+  \end{align*}
+
+\item[(2)]
+  As $H = V\left( \sum a_i x_i \right)$ is a hyperplane,
+  the corresponding
+  \[
+    \alpha(H) = [a_1 : \cdots : a_{n+1}] \in \mathbf{P}^n
+  \]
+  and thus $\alpha$ is well-defined.
+  Similarly, $\beta$ is well-defined.
+
+\item[(3)]
+  Note that both $\alpha \circ \beta$ and $\beta \circ \alpha$ are identity maps.
+  $\alpha$ (resp. $\beta$) is an isomorphism, that is,
+  there is a natural one-to-one correspondence between
+  \[
+    \{ \text{hyperplanes in $\mathbf{P}^n$} \} \longleftrightarrow \mathbf{P}^n.
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  We've showed that $P^{**} = P$, $H^{**} = H$ in (a).
+  It is suffices to show that $P \in H$ iff $H^{*} \in P^{*}$.
+
+\item[(2)]
+  Write $H = V\left( \sum a_i x_i \right) \subseteq \mathbf{P}^n$ and
+  $P = [b_1 : \cdots : b_{n+1}] \in \mathbf{P}^n$.
+  Hence,
+  \begin{align*}
+    P \in H
+    &\Longleftrightarrow
+      a_1 b_1 + \cdots + a_{n+1} b_{n+1} = 0 \\
+    &\Longleftrightarrow
+      b_1 a_1 + \cdots + b_{n+1} a_{n+1} = 0 \\
+    &\Longleftrightarrow
+      H^{*} \in P^{*}.    
+  \end{align*}
+\end{enumerate}
 $\Box$ \\\\
 
 
