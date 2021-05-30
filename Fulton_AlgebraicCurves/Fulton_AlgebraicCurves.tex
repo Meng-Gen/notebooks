@@ -11379,6 +11379,50 @@ $\Box$ \\
 
 
 
+\subsubsection*{Problem 4.17.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.17.*}
+\emph{Let $z$ be a rational function on a projective variety $V$.
+Show that the pole set of $z$ is an algebraic subset of $V$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of Proposition 2 in \S 2.4.
+  For $g \in k[x_1, \ldots, x_{n+1}]$,
+  denote the residue of $g$ in $\Gamma_h(V)$ by $\overline{g}$.
+
+\item[(2)]
+  Let
+  \[
+    J_z = \{ g \in k[x_1, \ldots, x_{n+1}] : \overline{g}z \in \Gamma_h(V) \}.
+  \]
+  $J_z$ is an ideal in $k[x_1, \ldots, x_{n+1}]$ containing $I(V)$,
+  and the points of $V(J_z)$ are exactly those points where $z$ is not defined
+  if $J_z$ is homogeneous.
+
+\item[(3)]
+  \emph{Show that $J_z$ is homogeneous by the homogeneous property of $I(V)$.}
+  Given any $g = g_r + g_{r+1} + \cdots \in J_z$,
+  where $g_i$ is a form of $k[x_1, \ldots, x_{n+1}]$.
+  Write $z = a/b$ for some form $a, b \in \Gamma_h(V)$ of the same degree.
+  So $\overline{g}z = g a/b \in \Gamma_h(V)$.
+  So there is $f = f_s + f_{s+1} + \cdots \in k[x_1, \ldots, x_{n+1}]$
+  (where $f_i$ is a form of $k[x_1, \ldots, x_{n+1}]$)
+  such that $ga - fb \in I(V)$.
+  Since $I(V)$ is homogeneous, each form $g_i a - f_i b$ is in $I(V)$.
+  So $\overline{g_i} z = \overline{f_i} \in \Gamma_h(V)$ for each $i$
+  (since $\Gamma_h(V)$ is homogeneous), that is, $g_i \in J_z$ for each $i$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 4.18. (Duality)}
 \addcontentsline{toc}{subsubsection}{Problem 4.18. (Duality)}
 \emph{Let $H = V\left( \sum a_i x_i \right)$ be a hyperplane in $\mathbf{P}^n$.
