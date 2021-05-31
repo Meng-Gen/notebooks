@@ -10698,6 +10698,42 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 4.9.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.9.*}
+\emph{Let $I$ be a homogeneous ideal in $k[x_1, \ldots, x_{n+1}]$,
+and
+\[
+  \Gamma = k[x_1, \ldots, x_{n+1}]/I.
+\]
+Show that the forms of degree $d$ in $\Gamma$ form a finite-dimensional vector space over $k$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write $R = k[x_1, \ldots, x_{n+1}]$.
+  For $R$ (resp. $\Gamma$),
+  define $R_d$ (resp. $\Gamma_d$) to be the corresponding homogeneous component of degree $d$.
+  Consider a natural homomorphism
+  \[
+    \alpha: R_d \to R_d/I \cong \Gamma_d
+  \]
+  by $\alpha(h) = \overline{h}$ for any form $h$ of degree $d$.
+
+\item[(2)]
+  $\Gamma_d$ can be regarded as a subspace of $R_d$ since $\alpha$ is surjective.
+  Since $R_d$ is finite-dimensional with $\dim(R_d) = {d+n-1 \choose n-1}$,
+  $\Gamma_d$ is finite-dimensional by linear algebra.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 4.10.}
 \addcontentsline{toc}{subsubsection}{Problem 4.10.}
 \emph{Let $R = k[x,y,z]$, $f \in R$ an irreducible form of degree $n$,
