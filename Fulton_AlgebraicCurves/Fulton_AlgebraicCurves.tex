@@ -10698,6 +10698,100 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 4.10.}
+\addcontentsline{toc}{subsubsection}{Problem 4.10.}
+\emph{Let $R = k[x,y,z]$, $f \in R$ an irreducible form of degree $n$,
+$V = V(f) \subseteq \mathbf{P}^2$, and $\Gamma = \Gamma_h(V)$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Construct an exact sequence
+  \[
+    0
+    \to R
+    \xrightarrow{\psi} R
+    \xrightarrow{\varphi} \Gamma
+    \to 0
+  \]
+  where $\psi$ is multiplication by $f$.}
+
+\item[(b)]
+  \emph{Show that
+  \[
+    \dim_k\{ \text{forms of degree $d$ in $\Gamma$} \} = dn - \frac{n(n-3)}{2}
+  \]
+  if $d > n$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  $\psi$ is defined by $\psi(g) = fg$ and
+  $\varphi$ is naturally defined by $\varphi(h) = \overline{h}$.
+  $\psi$ and $\varphi$ are well-defined and homomorphisms of vector space.
+
+\item[(2)]
+  $\mathrm{im}(\psi) = \ker(\varphi) = (f) = I(f)$
+  (since $f$ is irreducible).
+  $\psi$ is injective since $R = k[x,y,z]$ is a domain.
+  $\varphi$ is surjective trivially.
+  Hence, the sequence of vector spaces over $k$ is exact.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  The exact sequence
+  \[
+    0
+    \to R
+    \xrightarrow{\psi} R
+    \xrightarrow{\varphi} \Gamma
+    \to 0
+  \]
+  induces the exact sequence
+  \[
+    0
+    \to R_{d-n}
+    \xrightarrow{\psi} R_{d}
+    \xrightarrow{\varphi} \Gamma_{d}
+    \to 0,
+  \]
+  where $d$ (resp. $d-n$) denotes
+  the corresponding homogeneous component of degree $d$ (resp. $d-n$).
+
+\item[(2)]
+  By Problem 2.36,
+  \[
+    \dim_k(R_{d-n}) = {d-n+2 \choose 2},
+    \qquad
+    \dim_k(R_d) = {d+2 \choose 2}.
+  \]
+
+\item[(3)]
+  $R_{d-n}$ and $R_d$ are finite-dimensional.
+  Hence, $\Gamma_d$ is also finite-dimensional
+  (by regarding $\Gamma_d$ as a subspace of $R_d$).
+  Proposition 7 in \S 2.9 shows that
+  \begin{align*}
+    \dim_k(\Gamma_d)
+    &= \dim_k(R_d) - \dim_k(R_{d-n}) \\
+    &= {d+2 \choose 2} - {d-n+2 \choose 2} \\
+    &= dn - \frac{n^2}{2} + \frac{3n}{2}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 4.11.* (Linear subvariety)}
 \addcontentsline{toc}{subsubsection}{Problem 4.11.* (Linear subvariety)}
 \emph{A set $V \subseteq \mathbf{P}^{n}(k)$
