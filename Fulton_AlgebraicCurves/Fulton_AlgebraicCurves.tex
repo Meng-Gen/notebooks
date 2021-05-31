@@ -10758,17 +10758,17 @@ Show that the forms of degree $d$ in $\Gamma$ form a finite-dimensional vector s
 \item[(1)]
   Write $R = k[x_1, \ldots, x_{n+1}]$.
   For $R$ (resp. $\Gamma$),
-  define $R_d$ (resp. $\Gamma_d$) to be the corresponding homogeneous component of degree $d$.
+  define $R_{(d)}$ (resp. $\Gamma_{(d)}$) to be the corresponding homogeneous component of degree $d$.
   Consider a natural homomorphism
   \[
-    \alpha: R_d \to R_d/I \cong \Gamma_d
+    \alpha: R_{(d)} \to R_{(d)}/I \cong \Gamma_{(d)}
   \]
   by $\alpha(h) = \overline{h}$ for any form $h$ of degree $d$.
 
 \item[(2)]
-  $\Gamma_d$ can be regarded as a subspace of $R_d$ since $\alpha$ is surjective.
-  Since $R_d$ is finite-dimensional with $\dim(R_d) = {d+n-1 \choose n-1}$,
-  $\Gamma_d$ is finite-dimensional by linear algebra.
+  $\Gamma_{(d)}$ can be regarded as a subspace of $R_{(d)}$ since $\alpha$ is surjective.
+  Since $R_{(d)}$ is finite-dimensional with $\dim R_{(d)} = {d+n-1 \choose n-1}$,
+  $\Gamma_{(d)}$ is finite-dimensional by linear algebra.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -10836,30 +10836,29 @@ $\Box$ \\
   induces the exact sequence
   \[
     0
-    \to R_{d-n}
-    \xrightarrow{\psi} R_{d}
-    \xrightarrow{\varphi} \Gamma_{d}
+    \to R_{(d-n)}
+    \xrightarrow{\psi} R_{(d)}
+    \xrightarrow{\varphi} \Gamma_{(d)}
     \to 0,
   \]
-  where $d$ (resp. $d-n$) denotes
+  where $*_{(d)}$ (resp. $*_{(d-n)}$) denotes
   the corresponding homogeneous component of degree $d$ (resp. $d-n$).
 
 \item[(2)]
   By Problem 2.36,
   \[
-    \dim_k(R_{d-n}) = {d-n+2 \choose 2},
+    \dim_k R_{(d-n)} = {d-n+2 \choose 2},
     \qquad
-    \dim_k(R_d) = {d+2 \choose 2}.
+    \dim_k R_{(d)} = {d+2 \choose 2}.
   \]
 
 \item[(3)]
-  $R_{d-n}$ and $R_d$ are finite-dimensional.
-  Hence, $\Gamma_d$ is also finite-dimensional
-  (by regarding $\Gamma_d$ as a subspace of $R_d$).
+  Since $R_{(d)}$ is finite-dimensional, $\Gamma_{(d)}$ is also finite-dimensional
+  (by regarding $\Gamma_{(d)}$ as a subspace of $R_{(d)}$).
   Proposition 7 in \S 2.9 shows that
   \begin{align*}
-    \dim_k(\Gamma_d)
-    &= \dim_k(R_d) - \dim_k(R_{d-n}) \\
+    \dim_k \Gamma_{(d)}
+    &= \dim_k R_{(d)} - \dim_k R_{(d-n)} \\
     &= {d+2 \choose 2} - {d-n+2 \choose 2} \\
     &= dn - \frac{n^2}{2} + \frac{3n}{2}.
   \end{align*}
