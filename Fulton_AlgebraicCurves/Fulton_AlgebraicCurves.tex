@@ -10736,6 +10736,48 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 4.8.}
+\addcontentsline{toc}{subsubsection}{Problem 4.8.}
+\emph{Let $V = \mathbf{P}^{1}$, $\Gamma_h(V) = k[x,y]$.
+Let $t = x/y \in k(V)$, and show that $k(V) = k(t)$.
+Show that there is a natural one-to-one correspondence between the points of $\mathbf{P}^{1}$
+and the DVR’s with quotient field $k(V)$ that contain $k$ (see Problem 2.27);
+which DVR corresponds to the point at infinity?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $k(V) = k(t)$.}
+  Given any $f/g \in k(V)$ where $f, g \in \Gamma_h(V)$ are of the same degree.
+  Then
+  \[
+    f(x,y)/g(x,y) = f(t,1)/g(t,1) \in k(t).
+  \]
+  Conversely, given any $f/g \in k(t)$,
+  \[
+    \frac{f(t)}{g(t)} = \frac{f(x/y)}{g(x/y)} = \frac{y^d f(x/y)}{y^d g(x/y)} \in k(V)
+  \]
+  where $d = \max\{ \deg(f), \deg(g) \}$.
+
+\item[(2)]
+  Note that $k = \overline{k}$.
+  By Problem 2.27,
+  the DVR's with quotient field $k(V) = k(t)$ are
+  \[
+    \text{$\mathscr{O}_a(\mathbf{A}^1)$ where $a \in \mathbf{A}^1 = k$ and
+    $\mathscr{O}_{\infty}(\mathbf{A}^1)$},
+  \]
+  which correspond to
+  \[
+    \mathbf{P}^1(k) = \{ [a:1] : a \in k \} \cup \{ [1:0] \}.
+  \]
+  In particular, the DVR $\mathscr{O}_{\infty}(\mathbf{A}^1)$ corresponds
+  to the point at infinity ($= [1:0]$).
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
