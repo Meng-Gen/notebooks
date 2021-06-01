@@ -11757,6 +11757,56 @@ $\Box$ \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\subsubsection*{Problem 4.20.}
+\addcontentsline{toc}{subsubsection}{Problem 4.20.}
+\emph{Let $V = V(y-x^2, z-x^3) \subseteq \mathbf{A}^{3}$. Prove:}
+\begin{enumerate}
+\item[(a)]
+  \emph{$I(V) = (y-x^2, z-x^3)$.}
+
+\item[(b)]
+  \emph{$zw-xy \in I(V)^{*} \subseteq k[x,y,z,w]$,
+  but $zw-xy \not\in I((y-x^2)^{*}, (z-x^3)^{*})$.
+  So if $I(V) = (f_1, \ldots, f_r)$,
+  it does not follow that $I(V)^{*} = (f_1^{*}, \ldots, f_r^{*})$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  By Problems 1.11 and 2.8, $V$ is an affine variety.
+  Thus $I(V) = (y-x^2, z-x^3)$ is a prime ideal.
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Since $z - xy = (z-x^3) - x(y-x^2) \in I(V)$,
+  $zw - xy = (z - xy)^{*} \in I(V)^{*}$.
+
+\item[(2)]
+  Suppose $zw - xy \in I((y-x^2)^{*}, (z-x^3)^{*}) = I(yw-x^2, zw^2-x^3)$.
+  Write $zw - xy = f \cdot (yw-x^2) + g \cdot (zw^2-x^3)$ for some $f,g \in k[x,y,z,w]$.
+  Then $\deg_{x}(zw - xy) = 1$
+  but $\deg_{x}(f \cdot (yw-x^2) + g \cdot (zw^2-x^3))$ cannot be 1, which is absurd.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
