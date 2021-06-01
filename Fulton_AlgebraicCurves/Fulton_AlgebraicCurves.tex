@@ -8976,13 +8976,13 @@ $\Box$ \\
   Might assume that $P = Q = (0, 0)$.
   Since $J_Qt$ is invertible,
   \begin{align*}
-    \begin{bmatrix}
+    \begin{pmatrix}
       \frac{\partial t_1}{\partial x}(Q) & \frac{\partial t_1}{\partial y}(Q)
-    \end{bmatrix}
+    \end{pmatrix}
     &\neq 0, \\
-    \begin{bmatrix}
+    \begin{pmatrix}
       \frac{\partial t_2}{\partial x}(Q) & \frac{\partial t_2}{\partial y}(Q)
-    \end{bmatrix}
+    \end{pmatrix}
     &\neq 0
   \end{align*}
   (as vectors).
@@ -9026,10 +9026,10 @@ $\Box$ \\
   \[
     J_Q{t}
     =
-    \begin{bmatrix}
+    \begin{pmatrix}
       0 & 0 \\
       0 & 1
-    \end{bmatrix}
+    \end{pmatrix}
   \]
   is not invertible.
 $\Box$ \\\\
@@ -9480,10 +9480,10 @@ Find $\dim_k(\mathfrak{m}/\mathfrak{m}^2)$. (See Problem 1.40.)} \\
     J
     = \left[ \frac{\partial f_i}{\partial x_j}(P) \right]
     =
-    \begin{bmatrix}
+    \begin{pmatrix}
       2x & -3y^2 & 0 \\
       0 & 2y & -3z^2
-    \end{bmatrix}_{P=(0,0,0)}
+    \end{pmatrix}_{P=(0,0,0)}
     = 0
   \]
   has rank zero.
@@ -11093,12 +11093,12 @@ Show that} \\
   \[
     A
     =
-    \begin{bmatrix}
+    \begin{pmatrix}
       a_{1,1} & a_{1,2} & \cdots & a_{1,n+1} \\
       a_{2,1} & a_{2,2} & \cdots & a_{2,n+1} \\
       \vdots & \vdots & \ddots & \vdots \\
       a_{m,1} & a_{m,2} & \cdots & a_{m,n+1}
-    \end{bmatrix}.
+    \end{pmatrix}.
   \]
   Note that $\rank(A) \leq \min\{ m, n+1 \} = m$.
   The rank-nullity theorem shows that
@@ -11357,26 +11357,26 @@ Extend this to $n+1$ points in $\mathbf{P}^{n}$, not lying on a hyperplane.} \\
   \begin{align*}
     A
     &=
-    \begin{bmatrix}
+    \begin{pmatrix}
       P_1 & P_2 & P_3
-    \end{bmatrix}
+    \end{pmatrix}
     =
-    \begin{bmatrix}
+    \begin{pmatrix}
       a_{11} & a_{21} & a_{31} \\
       a_{12} & a_{22} & a_{32} \\
       a_{13} & a_{23} & a_{33}
-    \end{bmatrix} \\
+    \end{pmatrix} \\
     B
     &=
-    \begin{bmatrix}
+    \begin{pmatrix}
       Q_1 & Q_2 & Q_3
-    \end{bmatrix}
+    \end{pmatrix}
     =
-    \begin{bmatrix}
+    \begin{pmatrix}
       b_{11} & b_{21} & b_{31} \\
       b_{12} & b_{22} & b_{32} \\
       b_{13} & b_{23} & b_{33}
-    \end{bmatrix}.
+    \end{pmatrix}.
   \end{align*}
   Note that
   $A$ (resp. $B$) is depending on the representations of $P_i$ (resp. $Q_i$)
@@ -11391,21 +11391,21 @@ Extend this to $n+1$ points in $\mathbf{P}^{n}$, not lying on a hyperplane.} \\
     t(P)
     = BA^{-1}P
     =
-    \begin{bmatrix}
+    \begin{pmatrix}
       b_{11} & b_{21} & b_{31} \\
       b_{12} & b_{22} & b_{32} \\
       b_{13} & b_{23} & b_{33}
-    \end{bmatrix}
-    \begin{bmatrix}
+    \end{pmatrix}
+    \begin{pmatrix}
       a_{11} & a_{21} & a_{31} \\
       a_{12} & a_{22} & a_{32} \\
       a_{13} & a_{23} & a_{33}
-    \end{bmatrix}^{-1}
-    \begin{bmatrix}
+    \end{pmatrix}^{-1}
+    \begin{pmatrix}
       x \\
       y \\
       z
-    \end{bmatrix}.
+    \end{pmatrix}.
   \]
   Note that the matrix $BA^{-1} \in \mathsf{GL}_3(k)$
   depends on the representations of $P_i$ (resp. $Q_i$)
@@ -11452,10 +11452,10 @@ $\Box$ \\\\
   \[
     A
     =
-    \begin{bmatrix}
+    \begin{pmatrix}
       a_1 & b_1 & c_1 \\
       a_2 & b_2 & c_2
-    \end{bmatrix}.
+    \end{pmatrix}.
   \]
   Since $L_1$ and $L_2$ are distinct, $\rank(A) = 2$.
   The rank-nullity theorem shows that
@@ -11531,18 +11531,18 @@ not passing through a point.} \\
     \begin{align*}
     A
     &=
-    \begin{bmatrix}
+    \begin{pmatrix}
       a_{1,1}   & \cdots & a_{n+1,1} \\
       \vdots    & \ddots & \vdots \\
       a_{1,n+1} & \cdots & a_{n+1,n+1}
-    \end{bmatrix} \\
+    \end{pmatrix} \\
     B
     &=
-    \begin{bmatrix}
+    \begin{pmatrix}
       b_{1,1}   & \cdots & b_{n+1,1} \\
       \vdots    & \ddots & \vdots \\
       b_{1,n+1} & \cdots & b_{n+1,n+1}
-    \end{bmatrix}.
+    \end{pmatrix}.
   \end{align*}
   Note that
   $A$ (resp. $B$) is depending on the representations of $E_i$ (resp. $F_i$)
@@ -11557,21 +11557,21 @@ not passing through a point.} \\
     t(P)
     &= BA^{-1}P \\
     &=
-    \begin{bmatrix}
+    \begin{pmatrix}
       b_{1,1}   & \cdots & b_{n+1,1} \\
       \vdots    & \ddots & \vdots \\
       b_{1,n+1} & \cdots & b_{n+1,n+1}
-    \end{bmatrix}
-    \begin{bmatrix}
+    \end{pmatrix}
+    \begin{pmatrix}
       a_{1,1}   & \cdots & a_{n+1,1} \\
       \vdots    & \ddots & \vdots \\
       a_{1,n+1} & \cdots & a_{n+1,n+1}
-    \end{bmatrix}^{-1}
-    \begin{bmatrix}
+    \end{pmatrix}^{-1}
+    \begin{pmatrix}
       x_1 \\
       \vdots \\
       x_{n+1}
-    \end{bmatrix}.
+    \end{pmatrix}.
   \end{align*}
   Note that the matrix $BA^{-1} \in \mathsf{GL}_{n+1}(k)$
   depends on the representations of $E_i$ (resp. $F_i$)
@@ -11723,6 +11723,39 @@ $\Box$ \\\\
 \addcontentsline{toc}{subsection}{4.3. Affine and Projective Varieties}
 
 
+
+\subsubsection*{Problem 4.19.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.19.*}
+\emph{If $I = (f)$ is the ideal of an affine hypersurface,
+show that $I^{*} = (f^{*})$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Note that $I^{*}$ is the ideal in $k[x_1,\ldots,x_{n+1}]$
+  generated by $\{ g^{*} : g \in I = (f) \}$.
+  In particular, $f^{*} \in I^{*}$. Thus $(f^{*}) \subseteq I^{*}$.
+
+\item[(2)]
+  Conversely,
+  given any $g = \sum a_i (h_i f)^{*} \in I^{*}$,
+  where $a_i, h_i \in k[x_1,\ldots,x_{n+1}]$.
+  Thus,
+  \[
+    g
+    = \sum_i a_i (h_i f)^{*}
+    = \sum_i a_i h_i^{*} f^{*}
+    = \left( \sum_i a_i h_i^{*} \right) f^{*} \in (f^{*})
+  \]
+  (by Proposition 5 in \S 2.6).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
