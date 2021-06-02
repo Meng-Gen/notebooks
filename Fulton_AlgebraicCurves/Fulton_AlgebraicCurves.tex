@@ -11961,6 +11961,41 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 6.1.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.1.*}
+\emph{Let $Z \subseteq Y \subseteq X$, $X$ a topological space.
+Give $Y$ the induced topology.
+Show that the topology induced by $Y$ on $Z$ is the same as that induced by $X$ on $Z$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Take any open set $U$ in $Z$ whose topology is induced by $Y$.
+  $U = Z \cap B$ for some open subset $B$ in $Y$.
+  Since $Y$ is induced by $X$.
+  $A = Y \cap A$ for some open subset $A$ in $X$.
+  Hence,
+  \[
+    U = Z \cap B = Z \cap (Y \cap A) = Z \cap A,
+  \]
+  that is, $U$ is also an open set in $Z$ whose topology is induced by $X$.
+
+\item[(2)]
+  Conversely, take any open set $U$ in $Z$ whose topology is induced by $X$.
+  $U = Z \cap A$ for some open subset $A$ in $X$.
+  Hence
+  \[
+    U = Z \cap A = Z \cap (Y \cap A),
+  \]
+  where $Y \cap A$ is an open set in $Y$ whose topology is induced by $X$.
+  So $U$ is also an open set in $Z$ whose topology is induced by $Y$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
