@@ -9964,7 +9964,7 @@ $I(P, f \cap L) > m_P(f)$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Note that $m_P(L) = 1$ and the only tangent line of $L$ is itself. 
+  Note that $m_P(L) = 1$ and the only tangent line of $L$ is itself.
 
 \item[(2)]
   By Property (5),
@@ -10053,7 +10053,7 @@ In particular, $\sum I(P, L \cap f) \leq \deg(f)$.} \\
     &\Longleftrightarrow
     \text{$\lambda \in k$ is a root of $g(t) = \prod (t - \lambda_i)^{e_i}$} \\
     &\Longleftrightarrow
-    \lambda = \lambda_i \in k \text{ for some } i.    
+    \lambda = \lambda_i \in k \text{ for some } i.
   \end{align*}
 
 \item[(2)]
@@ -10291,7 +10291,7 @@ denote its residue in $\mathfrak{m}/\mathfrak{m}^2$ by $\overline{g}$.}
   \emph{Show that $P$ is an ordinary multiple point on $f$ if and only if
   there are $g_1, \ldots, g_m \in \mathfrak{m}$ such that
   $\overline{g_i} \neq \lambda \overline{g_j}$ for all $i \neq j$, $\lambda \in k$,
-  and} \\ 
+  and} \\
   \[
     \dim_k \mathscr{O}_P(f)/(g_i) > m.
   \]
@@ -11190,7 +11190,7 @@ $\Box$ \\
 \item[(1)]
   First, write $L$ as the system of equations
   \[
-    x_i = \lambda a_i + \mu b_i 
+    x_i = \lambda a_i + \mu b_i
   \]
   ($i = 1, \ldots, n+1$)
   where $\lambda, \mu \in k, \lambda \neq 0 \text{ or } \mu \neq 0$.
@@ -11707,7 +11707,7 @@ $\Box$ \\
     &\Longleftrightarrow
       b_1 a_1 + \cdots + b_{n+1} a_{n+1} = 0 \\
     &\Longleftrightarrow
-      H^{*} \in P^{*}.    
+      H^{*} \in P^{*}.
   \end{align*}
 \end{enumerate}
 $\Box$ \\\\
@@ -11945,6 +11945,79 @@ $\Box$ \\\\
 
 \subsection*{5.1. Definitions \\}
 \addcontentsline{toc}{subsection}{5.1. Definitions}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.7.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.7.*}
+\emph{Show that two plane curves with no common components intersect in
+a finite number of points.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Proposition 2 in \S 1.6.
+  Let $f$ and $g$ be forms in $k[x,y,z]$ with no common components.
+  In particular, $f \neq 0$ and $g \neq 0$.
+
+\item[(2)]
+  \emph{Show that the conclusion is true for a line $g$.}
+  Let
+  $\alpha: \mathbf{P}^1 \to \mathbf{P}^2$ be the map
+  \[
+    \alpha([\lambda : \mu]) = [\lambda a_1 + \mu b_1 : \lambda a_2 + \mu b_2 : \lambda a_3 + \mu b_3]
+  \]
+  and $g = \mathrm{im}(\alpha)$ be a line.
+  Note that the points of $V(f, g)$ correspond to the zero of
+  \[
+    \widetilde{f}(\lambda, \mu)
+    = f(\lambda a_1 + \mu b_1, \lambda a_2 + \mu b_2, \lambda a_3 + \mu b_3)
+    = 0.
+  \]
+  in $\mathbf{P}^1$.
+  $\widetilde{f}$ is a form in $k[\lambda,\mu]$ of degree $m := \deg(f)$
+  since $f$ and $g$ have no common components.
+  Hence, $\widetilde{f}$ has exactly $m$ zeros in $\mathbf{P}^1$ (with multiplicity).
+  $V(f,g)$ has exactly $m$ zeros (with multiplicity).
+
+\item[(3)]
+  \emph{Show that the conclusion is true for any $f, g$.}
+  Note that $f$ and $g$ have no common factors in $k(x,y)[z]$.
+  Since $k(x,y)[z]$ is a PID, $(f,g) = (1) \in k(x,y)[z]$.
+  So $\alpha f + \beta g = 1$ for some $\alpha, \beta \in k(x,y)[z]$.
+  Clearing denominators from $\alpha, \beta$ gives us
+  \[
+    af + bg = d
+  \]
+  where $d$ is a non-zero polynomial in $k[x,y]$,
+  $a = d\alpha \in k[x,y,z]$ and $b = d\beta \in k[x,y,z]$.
+  Taking suitable homogeneous parts of $a$, $b$ and $d$,
+  we might assume $a$, $b$ and $d$ are all homogeneous.
+
+\item[(4)]
+  By Corollary to Proposition 5 in \S 2.6,
+  $d$ is a product of linear polynomials, say $d = L_1 \cdots L_r$.
+  A common zero of $f$ and $g$ is also a zero of $d$,
+  and therefore it is a zero of $L_j$ for some $j$.
+  So it suffices to show that $V = (f,g) = V(f,g,L_j)$ is finite for each $j$.
+
+\item[(5)]
+  (Reductio ad absurdum)
+  If not, there were one $j$ such that both $V(f,L_j)$ and $V(g,L_j)$ were infinite.
+  By (2), $L_j \mid f$ and $L_j \mid g$.
+  $f$ and $g$ have one common factor, which is absurd.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
