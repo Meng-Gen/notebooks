@@ -12018,6 +12018,32 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Let $S$ be any finite set of points in $\mathbf{P}^2(k)$.
+  Write $S = (S \cap H_{\infty}) \cap (S - H_{\infty})$.
+
+\item[(2)]
+  $S \cap H_{\infty}$ is a finite subset of
+  $H_{\infty} = \mathbf{P}^{1}(k) \supseteq \mathbf{A}^{1}(k) = k$.
+  Since $k = \overline{k}$ is infinite (Problem 1.6),
+  there is one point $[\beta:1:0] \in H_{\infty} - S$.
+  Here $\beta \in k$ is uniquely determined.
+
+\item[(3)]
+  $S - H_{\infty}$ is finite too.
+  Write
+  $S - H_{\infty} = \{ [ \lambda_1 : \mu_1 : 1 ], \ldots, [ \lambda_r : \mu_r : 1 ] \}$.
+  Here $\lambda_i$ and $\mu_i$ are all uniquely determined ($i = 1, \ldots, r$).
+  Take any $\gamma \in k$ such that
+  $\gamma \not\in\{ \lambda_1 - \beta\mu_1, \ldots,  \lambda_r - \beta\mu_r \}$.
+  (It is possible since $k$ is infinite.)
+
+\item[(4)]
+  Let
+  \[
+    L = V(x - \beta y - \gamma z)
+  \]
+  be a line in $\mathbf{P}^{2}$.
+  By construction, $L \cap S = \varnothing$.
 \end{enumerate}
 $\Box$ \\\\
 
