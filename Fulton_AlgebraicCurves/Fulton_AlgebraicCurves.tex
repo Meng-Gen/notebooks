@@ -11917,7 +11917,110 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 4.24.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.24.*}
+\emph{Let $P = [0 : 1 : 0] \in \mathbf{P}^{2}(k)$.
+Show that the lines through $P$ consist of the following:}
+\begin{enumerate}
+\item[(a)]
+  \emph{The vertical lines
+  $L_{\lambda} = V(x-\lambda z) = \{ [\lambda:t:1] : t \in k \} \cup \{ P \}$.}
+
+\item[(b)]
+  \emph{The line at infinity $L_{\infty} = V(z)
+  = \{ [x:y:0] : x,y \in k, x \neq 0 \text{ or } y \neq 0 \}$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $L$ be one line passing through $P$ and $Q = [b_1 : b_2 : b_3] \neq P$.
+  Thus,
+  \begin{align*}
+    L
+    &= \{ [ \mu b_1 : \lambda + \mu b_2 : \mu b_3 ] :
+        \lambda, \mu \in k, \lambda \neq 0 \text{ or } \mu \neq 0 \} \\
+    &= \{ [ \mu b_1 : \lambda + \mu b_2 : \mu b_3 ] :
+        \lambda, \mu \in k, \mu \neq 0 \} \cup \{ P \} \\
+    &= \{ [ b_1 : t + b_2 : b_3 ] : t \in k \} \cup \{ P \}
+      &(t := \lambda/\mu)
+  \end{align*}
+  Consider two cases: $b_3 \neq 0$ and $b_3 = 0$.
+
+\item[(2)]
+  $b_3 \neq 0$.
+  So
+  \begin{align*}
+    L
+    &= \{ [ b_1 : t + b_2 : b_3 ] : t \in k \} \cup \{ P \} \\
+    &= \left\{
+        \left[ \frac{b_1}{b_3} : \frac{t}{b_3} + \frac{b_2}{b_3} : 1 \right] : t \in k
+      \right\} \cup \{ P \} \\
+    &= \{ [ \lambda : t : 1 ] : t \in k \} \cup \{ P \}
+      &\left( \frac{b_1}{b_3} \mapsto \lambda,  \frac{t+b_2}{b_3} \mapsto t \right) \\
+    &= L_{\lambda}.
+  \end{align*}
+
+\item[(3)]
+  $b_3 = 0$.
+  So
+  \begin{align*}
+    L
+    &= \{ [ b_1 : t + b_2 : 0 ] : t \in k \} \cup \{ P \} \\
+    &= \{ [ x : y : 0 ] : y \in k \} \cup \{ P \}
+      &(b_1 \mapsto x, t + b_2 \mapsto y) \\
+    &= \{ [ x : y : 0 ] : y \in k, x \neq 0 \} \cup \{ P \} \\
+    &= \{ [ x : y : 0 ] : y \in k, x \neq 0 \text{ or } y \neq 0 \} \\
+    &= L_{\infty}.
+  \end{align*}
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 4.25.*}
+\addcontentsline{toc}{subsubsection}{Problem 4.25.*}
+\emph{Let $P = [x : y : z] \in \mathbf{P}^{2}$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\{ (a,b,c) \in \mathbf{A}^{3} : ax + by + cz = 0 \}$
+  is a hyperplane in $\mathbf{A}^{3}$.}
+
+\item[(b)]
+  \emph{Show that for any finite set of points in $\mathbf{P}^{2}$,
+  there is a line not passing through any of them.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Let $V = \{ (a,b,c) \in \mathbf{A}^{3} : ax + by + cz = 0 \}$.
+
+\item[(2)]
+  $V$ is well-defined and the form $ax + by + cz$ is of degree one
+  since not all $a, b, c$ are zero.
+  Hence $V$ is a hyperplane (plane) in $\mathbf{A}^{3}$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11968,6 +12071,7 @@ a finite number of points.} \\
 
 \item[(2)]
   \emph{Show that the conclusion is true for a line $g$.}
+  Similar to Problem 1.12.
   Let
   $\alpha: \mathbf{P}^1 \to \mathbf{P}^2$ be the map
   \[
