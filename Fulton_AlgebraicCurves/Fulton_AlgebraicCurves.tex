@@ -11622,7 +11622,7 @@ Show that the pole set of $z$ is an algebraic subset of $V$.} \\
   Given any $g = g_r + g_{r+1} + \cdots \in J_z$,
   where $g_i$ is a form of $k[x_1, \ldots, x_{n+1}]$.
   Write $z = a/b$ for some form $a, b \in \Gamma_h(V)$ of the same degree.
-  So $\overline{g}z = g a/b \in \Gamma_h(V)$.
+  So $\overline{g}z = \overline{g} a/b \in \Gamma_h(V)$.
   So there is $f = f_s + f_{s+1} + \cdots \in k[x_1, \ldots, x_{n+1}]$
   (where $f_i$ is a form of $k[x_1, \ldots, x_{n+1}]$)
   such that $ga - fb \in I(V)$.
@@ -12202,6 +12202,31 @@ an algebraic subset.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Similar to Problem 4.17.
+  Let $V$ be a variety in one multispace
+  $\mathbf{P}^{n_1} \times \cdots \times \mathbf{P}^{n_r} \times \mathbf{A}^{m}$.
+  Let $z$ be a rational function on $V$.
+
+\item[(2)]
+  Let
+  \[
+    J_z = \{ g \in k[\mathbf{x}_1, \ldots, \mathbf{x}_{r}, \mathbf{y}]
+      : \overline{g}z \in \Gamma(V) \},
+  \]
+  where
+  $\mathbf{x}_i = [x_{i1} : \ldots : x_{i,n_i+1}] \in \mathbf{P}^{n_i}$ for $1 \leq i \leq r$,
+  $\mathbf{y} = (y_1, \ldots, y_m) \in \mathbf{A}^{m}$,
+  and $\overline{g}$ is the residue of $g$ in the multi-homogeneous coordinate ring $\Gamma(V)$.
+
+\item[(3)]
+  $J_z$ is an ideal in $k[\mathbf{x}_1, \ldots, \mathbf{x}_{r}, \mathbf{y}]$
+  containing the multi-homogeneous ideal $I(V)$,
+  and the points of $V(J_z)$ are exactly those points where $z$ is not defined
+  if $J_z$ is multi-homogeneous.
+
+\item[(4)]
+  \emph{Show that $J_z$ is multi-homogeneous by the multi-homogeneous property of $I(V)$.}
+  Induction on $r$ and then apply the proof of Problem 4.17.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -12223,6 +12248,7 @@ by the formula:
 $S([x_0 : \ldots : x_n], [y_0 : \ldots : y_m]) = [x_0 y_0 : x_0 y_1 : \ldots : x_n y_m]$.
 $S$ is called the \textbf{Segre embedding} of $\mathbf{P}^{n} \times \mathbf{P}^{m}$
 in $\mathbf{P}^{n+m+nm}$.}
+
 \begin{enumerate}
 \item[(a)]
   \emph{Show that $S$ is a well-defined, one-to-one mapping.}
