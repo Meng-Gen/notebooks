@@ -12296,6 +12296,25 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\mathrm{im}(S) = V$ is algebraic.}
+  $\mathrm{im}(S) \subseteq V$ by the construction of $S$.
+  Conversely, take
+  $P = [a_{ij}]_{\substack{i = 0,\ldots,n \\ j = 0,\ldots,m}} \in V \subseteq \mathbf{P}^{N}$.
+  So there is one entry $a_{k\ell} \neq 0$.
+  So
+  \begin{align*}
+    P
+    &= [a_{ij}]_{\substack{i = 0,\ldots,n \\ j = 0,\ldots,m}} \\
+    &= [a_{ij}a_{k\ell}]_{\substack{i = 0,\ldots,n \\ j = 0,\ldots,m}} \\
+    &= [a_{i\ell}a_{kj}]_{\substack{i = 0,\ldots,n \\ j = 0,\ldots,m}} \\
+    &= S([a_{i\ell}]_{i = 0,\ldots,n}, [a_{kj}]_{j = 0,\ldots,m})
+  \end{align*}
+  is in $\mathrm{im}(S)$.
+
+\item[(2)]
+  In the proof of (1),
+  we have $S(U_i \times U_j) = V \cap U_{ij}$ where $U_{ij} = \{ [t] : t_{ij} \neq 0 \}$
+  (by setting $(k,\ell) \to (i,j)$).
 \end{enumerate}
 $\Box$ \\
 
