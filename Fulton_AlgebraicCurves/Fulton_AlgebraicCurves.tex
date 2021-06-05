@@ -12246,7 +12246,7 @@ $\Box$ \\
   $\mathbf{y} = (y_1, \ldots, y_{m}) \in \mathbf{A}^{m}$.
 
 \item[(2)]
-  By Proposition 5 in \S 2.6, there is a correspondence between
+  Applying the same argument in (a), we have that there is a correspondence between
   \[
     \{ \text{nonempty affine varieties in $\mathbf{A}^{n_1 + \cdots + n_r + m}$} \}
   \]
@@ -12258,6 +12258,30 @@ $\Box$ \\
       \text{ that intersect }
       U_{n_1+1} \times \cdots \times U_{n_r+1} \times \mathbf{A}^{m} \}.
   \end{align*}
+
+\item[(3)]
+  Let $V$ be a nonempty affine varieties in $\mathbf{A}^{n_1 + \cdots + n_r + m}$.
+  Let $V^{*} \subseteq \mathbf{P}^{n_1} \times \cdots \times \mathbf{P}^{n_r} \times \mathbf{A}^{m}$
+  be the multiprojective closure of $V$
+  intersecting $U_{n_1+1} \times \cdots \times U_{n_r+1} \times \mathbf{A}^{m}$.
+
+\item[(4)]
+  If $\overline{f} \in \Gamma(V^{*})$ is a multi-form,
+  we may define $\overline{f}_{*}$ as follows:
+  take a multi-form $f \in k[\mathbf{x}_1,\ldots,\mathbf{x}_r,\mathbf{y}]$
+  such whose $I(V^{*})$-residue in $\overline{f}$,
+  and let $\overline{f}_{*}$ to be $I(V)$-residue of $f_{*}$
+  (one checks that this is independent of the choice of $f$).
+
+\item[(5)]
+  Define a natural isomorphism $\alpha: k(V^{*}) \to k(V)$ by
+  $\alpha(f/g) = f_{*}/g_{*}$,
+  where $f, g$ are multi-forms of the same multi-degree on $V^{*}$.
+
+\item[(6)]
+  If $P \in V$, we may consider $P \in V^{*}$
+  (by means of $\varphi_{n_1+1,\ldots,n_r+1}$) and then
+  $\alpha$ induces an isomorphism of $\mathscr{O}_{P}(V^{*})$ with $\mathscr{O}_{P}(V)$.
 \end{enumerate}
 $\Box$ \\\\
 
