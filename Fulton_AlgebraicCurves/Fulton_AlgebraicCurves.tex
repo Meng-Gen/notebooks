@@ -12119,7 +12119,7 @@ $\Box$ \\\\
       [y_1 : \ldots : y_{j-1} : 1 : y_{j} : \ldots : y_{m}].
   \end{align*}
   Actually, we can write
-  $\varphi_{i,j}(x, y) = \varphi_i(x) \times \varphi_j(y)$
+  $\varphi_{i,j}(x, y) = (\varphi_i(x), \varphi_j(y))$
   for $x = (x_1, \ldots, x_{n}) \in \mathbf{A}^{n}$ and
   $y = (y_1, \ldots, y_{m}) \in \mathbf{A}^{m}$.
 
@@ -12231,6 +12231,33 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Define maps
+  $\varphi_{i_1,\ldots,i_r}:
+    \mathbf{A}^{n_1} \times \cdots \times \mathbf{A}^{n_r} \times \mathbf{A}^{m}
+    \to U_{i_1} \times \cdots \times U_{i_r} \times \mathbf{A}^{m}$
+  by
+  \[
+    \varphi_{i_1,\ldots,i_r}:
+    (\mathbf{x}_1, \ldots, \mathbf{x}_r, \mathbf{y})
+    \mapsto
+    (\varphi_{i_1}(\mathbf{x}_1), \cdots, \varphi_{i_r}(\mathbf{x}_r), \mathbf{y}),
+  \]
+  where $\mathbf{x}_i = (x_{i,1}, \ldots, x_{i,n_i}) \in \mathbf{A}^{n_i}$ and
+  $\mathbf{y} = (y_1, \ldots, y_{m}) \in \mathbf{A}^{m}$.
+
+\item[(2)]
+  By Proposition 5 in \S 2.6, there is a correspondence between
+  \[
+    \{ \text{nonempty affine varieties in $\mathbf{A}^{n_1 + \cdots + n_r + m}$} \}
+  \]
+  and
+  \begin{align*}
+    & \{ \text{varieties in }
+      \mathbf{P}^{n_1} \times \cdots \times \mathbf{P}^{n_r} \times \mathbf{A}^{m} \\
+    & \qquad
+      \text{ that intersect }
+      U_{n_1+1} \times \cdots \times U_{n_r+1} \times \mathbf{A}^{m} \}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
