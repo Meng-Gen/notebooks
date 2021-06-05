@@ -12143,7 +12143,7 @@ $\Box$ \\\\
 \item[(3)]
   \emph{If $V \subseteq \mathbf{A}^{n+m}$,
   $\varphi_{n+1,m+1}(V) = V^{*} \cap (U_{n+1} \times U_{m+1})$
-  and $(V^{*})^{*}= V$.}
+  and $(V^{*})_{*}= V$.}
 
 \item[(4)]
   \emph{If $V \subseteq W \subseteq \mathbf{A}^{n+m}$,
@@ -12380,6 +12380,23 @@ $\Box$ \\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
+  Write $V = V_1 \cup V_2$ where $V_1, V_2$ are algebraic sets in $\mathbf{P}^{N}$.
+  By (b)(c),
+  \[
+    \mathbf{P}^{n} \times \mathbf{P}^{m}
+    = S^{-1}(V)
+    = S^{-1}(V_1) \cup S^{-1}(V_2).
+  \]
+
+\item[(2)]
+  Since $\mathbf{P}^{n} \times \mathbf{P}^{m}$ is irreducible (Problem 4.26),
+  we might assume that $\mathbf{P}^{n} \times \mathbf{P}^{m} = S^{-1}(V_1)$.
+  Note that $S(S^{-1}(W)) = W$ holds for any set $W \subseteq V$.
+  Hence
+  \[
+    V_1 = S(S^{-1}(V_1)) = S(\mathbf{P}^{n} \times \mathbf{P}^{m}) = V,
+  \]
+  that is, $V$ is irreducible.
 \end{enumerate}
 $\Box$ \\\\
 
