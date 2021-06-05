@@ -12314,6 +12314,37 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  $S^{-1}(W) = \{ P \in \mathbf{P}^{n} \times \mathbf{P}^{m} : S(P) \in W \}$
+  is the inverse image of $W$ under $S$.
+  Write
+  \[
+    W = V(h_1, \ldots, h_r)
+  \]
+  where each $h_i \in k[t_{00}, \ldots, t_{nm}]$ is a form of degree $d_i$.
+
+\item[(2)]
+  Define the pullback $\widetilde{h_i} \in k[x_0, \ldots, x_n, y_0, \ldots, y_m]$ as
+  \[
+    \widetilde{h_i}(x_0, \ldots, x_n, y_0, \ldots, y_m)
+    = h_i(x_0 y_0, \ldots, x_n y_m)
+  \]
+  for each $i$.
+  Clearly, $\widetilde{h_i}$ is a biform of bidegree $(d_i,d_i)$.
+
+\item[(3)]
+  As
+  \begin{align*}
+  P \in S^{-1}(W)
+  &\Longleftrightarrow
+    S(P) \in W \\
+  &\Longleftrightarrow
+    h_i(S(P)) = 0 \: \forall \: h_i \\
+  &\Longleftrightarrow
+    \widetilde{h_i}(P) = 0 \: \forall \: \widetilde{h_i} \\
+  &\Longleftrightarrow
+    P \in V(\widetilde{h_1}, \ldots, \widetilde{h_r}),
+  \end{align*}
+  $S^{-1}(W) = V(\widetilde{h_1}, \ldots, \widetilde{h_r})$ is algebraic.
 \end{enumerate}
 $\Box$ \\
 
