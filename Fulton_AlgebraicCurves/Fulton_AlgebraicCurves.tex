@@ -12519,6 +12519,79 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 5.1.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.1.*}
+\emph{Let $f$ be a projective plane curve.
+Show that a point $P$ is a multiple point of $f$ if and only if
+$f(P)
+= \frac{\partial f}{\partial x}(P)
+= \frac{\partial f}{\partial y}(P)
+= \frac{\partial f}{\partial z}(P) = 0$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $P$ be a point in $f$.
+  Might assume $P \in U_3$.
+  By dehomogenizing $f$ with respect to $z$, $m_P(f) = m_P(f_{*})$.
+  Since $f$ is a form,
+  $f(P) = f_{*}(P)$,
+  $\frac{\partial f}{\partial x}(P) = \frac{\partial f_{*}}{\partial x}(P)$ and
+  $\frac{\partial f}{\partial y}(P) = \frac{\partial f_{*}}{\partial y}(P)$.
+  Thus,
+  \begin{align*}
+    m_P(f) = m_P(f_{*}) > 1
+    \Longleftrightarrow&
+    f_{*}(P)
+    = \frac{\partial f_{*}}{\partial x}(P)
+    = \frac{\partial f_{*}}{\partial y}(P)
+    = 0 \\
+    \Longleftrightarrow&
+    f(P)
+    = \frac{\partial f}{\partial x}(P)
+    = \frac{\partial f}{\partial y}(P)
+    = 0.
+  \end{align*}
+
+\item[(2)]
+  Hence,
+  if $P$ is also in $U_1$ (resp. $U_2$),
+  we can apply the same argument in (1) to get
+  $P$ is a multiple point of $f$ if and only if
+  $f(P)
+  = \frac{\partial f}{\partial y}(P)
+  = \frac{\partial f}{\partial z}(P) = 0$
+  (resp.
+  $f(P)
+  = \frac{\partial f}{\partial x}(P)
+  = \frac{\partial f}{\partial z}(P) = 0$).
+  Therefore, the conclusion holds in this case.
+
+\item[(3)]
+  If $P = [0:0:1] \in f$, $\frac{\partial f}{\partial z}(P) = 0$ holds automatically.
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
