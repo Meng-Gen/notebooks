@@ -12632,10 +12632,31 @@ $\Box$ \\
   = \frac{\partial f}{\partial y}(P)
   = \frac{\partial f}{\partial z}(P) = 0$,
   we have
-  \[
-    P = ...
-  \]
+  \begin{align*}
+    P &= [0:0:1] \text{ if } \lambda = 0 \\ 
+    P &= [1:0:1] \text{ if } \lambda = 1 
+  \end{align*}
+  are all multiple points of $f$.
 
+\item[(3)]
+  Suppose $P = [0:0:1]$ with $\lambda = 0$.
+  Then
+  \[
+    m_P(f) = m_P(f_{*}) = m_{(0,0)}(y^2 - x^2(x-1)) = 2.
+  \]
+  $y$ is the tangent to $f$ at $P$ of the multiplicity $= 2$.
+
+\item[(4)]
+  Similarly, suppose $P = [1:0:1]$ with $\lambda = 1$.
+  Then
+  \begin{align*}
+    m_P(f)
+    &= m_P(f_{*}) \\
+    &= m_{(1,0)}(y^2 - x(x-1)^2) \\
+    &= m_{(0,0)}(y^2 - x^2(x+1)) \\
+    &= 2.
+  \end{align*}
+  $y$ is the tangent to $f$ at $P$ of the multiplicity $= 2$.
 \end{enumerate}
 $\Box$ \\
 
