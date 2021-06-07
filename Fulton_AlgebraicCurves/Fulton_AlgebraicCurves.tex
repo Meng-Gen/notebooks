@@ -12536,32 +12536,26 @@ $f(P)
   Let $P$ be a point in $f$.
   Might assume $P \in U_3$.
   By dehomogenizing $f$ with respect to $z$, $m_P(f) = m_P(f_{*})$.
-  Since $f$ is a form,
-  $f(P) = f_{*}(P)$,
-  $\frac{\partial f}{\partial x}(P) = \frac{\partial f_{*}}{\partial x}(P)$ and
-  $\frac{\partial f}{\partial y}(P) = \frac{\partial f_{*}}{\partial y}(P)$.
   Thus,
   \begin{align*}
-    m_P(f) = m_P(f_{*}) > 1
-    \Longleftrightarrow&
+    & \: m_P(f) = m_P(f_{*}) > 1 \\
+    \Longleftrightarrow & \:
     f_{*}(P)
     = \frac{\partial f_{*}}{\partial x}(P)
     = \frac{\partial f_{*}}{\partial y}(P)
     = 0 \\
-    \Longleftrightarrow&
+    \Longleftrightarrow & \:
     f(P)
     = \frac{\partial f}{\partial x}(P)
     = \frac{\partial f}{\partial y}(P)
     = 0.
+      &(\text{$f$ is a form})
   \end{align*}
 
 \item[(2)]
-  Any three of 
-  $\frac{\partial f}{\partial x}(P) = 0$,
-  $\frac{\partial f}{\partial y}(P) = 0$,
-  $\frac{\partial f}{\partial z}(P) = 0$ and
-  $f(P) = 0$ implies that the fourth equation holds by Euler's Theorem in \S 1.1.
-  Hence $\frac{\partial f}{\partial z}(P) = 0$ if $m_P(f) > 1$.
+  By Euler's Theorem in \S 1.1,
+  $f(P) = \frac{\partial f}{\partial x}(P) = \frac{\partial f}{\partial y}(P) = 0$
+  implies that $\frac{\partial f}{\partial z}(P) = 0$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -12635,6 +12629,7 @@ $\Box$ \\
     m_P(f) = m_P(f_{*}) = m_{(0,0)}(y^2 - x^2(x-1)) = 2.
   \]
   $y$ is the tangent to $f$ at $P$ of the multiplicity $= 2$.
+  (The projective closure of $y$ is $y$.)
 
 \item[(4)]
   Similarly, suppose $P = [1:0:1]$ with $\lambda = 1$.
@@ -12664,6 +12659,52 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.4.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.4.*}
+\emph{Let $P$ be a simple point on $f$.
+Show that the tangent line to $f$ at $P$ has the equation
+$\frac{\partial f}{\partial x}(P) x +
+\frac{\partial f}{\partial y}(P) y +
+\frac{\partial f}{\partial z}(P) z = 0$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Problem 5.1.
+  Might assume $P = [x_0:y_0:1] \in U_3$.
+  By dehomogenizing $f$ with respect to $z$,
+  the tangent line to $f_{*}$ at $P$ is
+  \begin{align*}
+    L: 0
+    &=
+    \frac{\partial f}{\partial x}(P) (x-x_0) + \frac{\partial f}{\partial x}(P) (y-y_0) \\
+    &=
+    \frac{\partial f}{\partial x}(P) x + \frac{\partial f}{\partial x}(P) y
+      - \left( \frac{\partial f}{\partial x}(P) x_0 + \frac{\partial f}{\partial x}(P) y_0 \right) \\
+    &=
+    \frac{\partial f}{\partial x}(P) x + \frac{\partial f}{\partial x}(P) y
+      + \frac{\partial f}{\partial z}(P).
+  \end{align*}
+  (The last equation is due to Euler's Theorem in \S 1.1.)
+
+\item[(2)]
+  Hence,
+  the projective closure of $L$, say
+  \[
+    L^{*}: 0 =
+    \frac{\partial f}{\partial x}(P) x
+      + \frac{\partial f}{\partial x}(P) y
+      + \frac{\partial f}{\partial z}(P) z,
+  \]
+  is the tangent line to $f$ at $P$.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
