@@ -12530,14 +12530,6 @@ $f(P)
 
 
 
-\emph{Note.}
-$\frac{\partial f}{\partial x}(P)
-= \frac{\partial f}{\partial y}(P)
-= \frac{\partial f}{\partial z}(P) = 0$ implies that $f(P) = 0$ automatically
-by Euler's Theorem in \S 1.1. \\
-
-
-
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
@@ -12564,22 +12556,12 @@ by Euler's Theorem in \S 1.1. \\
   \end{align*}
 
 \item[(2)]
-  Hence,
-  if $P$ is also in $U_1$ (resp. $U_2$),
-  we can apply the same argument in (1) to get
-  $P$ is a multiple point of $f$ if and only if
-  $f(P)
-  = \frac{\partial f}{\partial y}(P)
-  = \frac{\partial f}{\partial z}(P) = 0$
-  (resp.
-  $f(P)
-  = \frac{\partial f}{\partial x}(P)
-  = \frac{\partial f}{\partial z}(P) = 0$).
-  Therefore, the conclusion holds in this case.
-
-\item[(3)]
-  If $P = [0:0:1] \in f$, $\frac{\partial f}{\partial z}(P) = 0$ holds automatically.
-
+  Any three of 
+  $\frac{\partial f}{\partial x}(P) = 0$,
+  $\frac{\partial f}{\partial y}(P) = 0$,
+  $\frac{\partial f}{\partial z}(P) = 0$ and
+  $f(P) = 0$ implies that the fourth equation holds by Euler's Theorem in \S 1.1.
+  Hence $\frac{\partial f}{\partial z}(P) = 0$ if $m_P(f) > 1$.
 \end{enumerate}
 $\Box$ \\\\
 
