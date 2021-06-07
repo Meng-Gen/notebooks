@@ -12837,6 +12837,49 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.6.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.6.*}
+\emph{For any $f$, $P \in f$,
+show that $m_{P}\left( \frac{\partial f}{\partial x} \right) \geq m_{P}(f)-1$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  If $P = [1:0:0]$, by dehomogenizing $f$ with respect to $x$
+  we get
+  \[
+    m_{P}\left( \frac{\partial f}{\partial x} \right)
+    = m_{P}\left( \frac{\partial f_{*}}{\partial x} \right)
+    = m_{P}(0)
+    = \infty.
+  \]
+  The result is established.
+
+\item[(2)]
+  Might assume $P \in U_3$.
+  By dehomogenizing $f$ with respect to $z$, it suffices to show that
+  \[
+    m_{P}\left( \frac{\partial f_{*}}{\partial x} \right) \geq m_{P}(f_{*})-1.
+  \]
+
+\item[(3)]
+  Write $m = m_{P}(f_{*})$ and $f_{*} = g_m + g_{m+1} + \cdots \in k[x,y]$
+  where $g_{i} \neq 0$ is a form of degree $m$.
+  Note that
+  \[
+    \frac{\partial f_{*}}{\partial x}
+    = \frac{\partial g_m}{\partial x} + \frac{\partial g_{m+1}}{\partial x} + \cdots.
+  \]
+  So that
+  $m_{P}\left( \frac{\partial f_{*}}{\partial x} \right) \geq m-1 = m_{P}(f_{*})-1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
