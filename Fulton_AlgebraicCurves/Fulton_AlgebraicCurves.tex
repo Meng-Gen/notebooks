@@ -12726,6 +12726,22 @@ $\Box$ \\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
+  Let $f = x^n + y^n + z^n$.
+  It suffices to show that $f_{*} = x^n + y^n + 1$ is irreducible.
+  Write
+  \[
+    f_{*} = x^n + (y^n + 1) \in (k[y])[x].
+  \]
+  Note that $k[y]$ is a UFD and $y^n + 1$ is separable.
+  Thus by the Eisenstein's criterion, $f_{*}$ irreducible in $(k[y])[x] = k[x,y]$.
+
+\item[(2)]
+  By solving the system of equations
+  $f(P)
+  = \frac{\partial f}{\partial x}(P)
+  = \frac{\partial f}{\partial y}(P)
+  = \frac{\partial f}{\partial z}(P) = 0$,
+  there are no multiple points on $f$ for $n \geq 1$.
 \end{enumerate}
 $\Box$ \\\\
 
