@@ -9156,8 +9156,7 @@ Is this true for hypersurfaces?} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Let $f \in k[x,y]$ be an irreducible plane curve.
-  Let
+  Let $f \in k[x,y]$ be an irreducible plane curve, and
   \[
     V
     = V\left( f, \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right)
@@ -9166,6 +9165,10 @@ Is this true for hypersurfaces?} \\
   Moreover, $V$ is an algebraic set.
 
 \item[(2)]
+  Suppose $\frac{\partial f}{\partial x} \neq 0$
+  (since not all $\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$ are zero).
+  It is nothing to do if $\frac{\partial f}{\partial x}$ is a nonzero constant.
+  Suppose $\deg(\frac{\partial f}{\partial x}) \geq 1$.
   Since $f$ is irreducible and $\deg\left( \frac{\partial f}{\partial x} \right) = \deg f - 1$,
   $f$ and $\frac{\partial f}{\partial x}$ have no common factors.
   By Proposition 2 in \S 1.6,
@@ -12785,6 +12788,84 @@ $\Box$ \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\subsubsection*{Problem 5.8.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.8.*}
+\emph{Let $f$ be an irreducible curve.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that
+  $\frac{\partial f}{\partial x}$,
+  $\frac{\partial f}{\partial y}$,
+  or $\frac{\partial f}{\partial z} \neq 0$.}
+
+\item[(b)]
+  \emph{Show that $f$ has only a finite number of multiple points.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  If $\frac{\partial f}{\partial x}$,
+  $\frac{\partial f}{\partial y}$,
+  and $\frac{\partial f}{\partial z}$ are all zero,
+  $f$ is a constant, which is not a projective plane curve.
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let
+  \[
+    V
+    = V\left(
+      f,
+      \frac{\partial f}{\partial x},
+      \frac{\partial f}{\partial y},
+      \frac{\partial f}{\partial z}
+    \right)
+  \]
+  be the set of the multiple points of $f$ (Problem 5.1).
+  Moreover, $V$ is an algebraic set.
+
+\item[(2)]
+  Suppose $\frac{\partial f}{\partial x} \neq 0$
+  (since not all $\frac{\partial f}{\partial x}$,
+  $\frac{\partial f}{\partial y}$ and
+  $\frac{\partial f}{\partial z}$ are zero).
+  It is nothing to do if $\frac{\partial f}{\partial x}$ is a nonzero constant.
+  Suppose $\deg(\frac{\partial f}{\partial x}) \geq 1$.
+  Since $f$ is irreducible and $\deg\left( \frac{\partial f}{\partial x} \right) = \deg f - 1$,
+  $f$ and $\frac{\partial f}{\partial x}$ have no common factors.
+  By Problem 5.7,
+  $V\left( f, \frac{\partial f}{\partial x} \right)$ is a finite set.
+  Hence,
+  $V$ is finite
+  as a subset of a finite set $V\left( f, \frac{\partial f}{\partial x} \right)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
