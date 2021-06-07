@@ -12750,6 +12750,79 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+% http://people.math.sfu.ca/~kyeats/teaching/math818soln2.pdf
+
+\subsubsection*{Problem 5.3.}
+\addcontentsline{toc}{subsubsection}{Problem 5.3.}
+\emph{Find all points of intersection of the following pairs of curves,
+and the intersection numbers at these points:}
+\begin{enumerate}
+\item[(a)]
+  \emph{$y^2z - x(x-2z)(x+z)$ and $y^2 + x^2 - 2xz$.}
+
+\item[(b)]
+  \emph{} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Say $f = y^2z - x(x-2z)(x+z)$ and $g = y^2 + x^2 - 2xz$.
+  By $f - zg = 0$, $x(x-2z)(x+2z) = 0$.
+  So the intersection points in $\mathbf{P}^{2}$ are
+  \[
+    [0:0:1], [2:0:1], [-2,\pm\sqrt{-8}:1].
+  \]
+
+\item[(2)]
+  Suppose $P = [0:0:1]$.
+  We dehomogenize $f$ and $g$ w.r.t. $z$ to get 
+  \begin{align*}
+    I(P, f \cap g)
+    &= I((0,0), f_{*} \cap g_{*}) \\
+    &= I((0,0), (-x(x-2)(x+1) + y^2) \cap (y^2 + x^2 - 2x)) \\
+    &= 2.
+  \end{align*}
+
+\item[(3)]
+  Suppose $P = [2:0:1]$.
+  We dehomogenize $f$ and $g$ w.r.t. $z$ to get 
+  \begin{align*}
+    I(P, f \cap g)
+    &= I((2,0), f_{*} \cap g_{*}) \\
+    &= I((2,0), (-x(x-2)(x+1) + y^2) \cap (y^2 + x^2 - 2x)) \\
+    &= I((0,0), (-x(x+2)(x+3) + y^2) \cap (y^2 + x^2 + 2x)) \\
+    &= 2.
+  \end{align*}
+
+\item[(4)]
+  Suppose $P = [-2,\pm\sqrt{-8}:1]$.
+  We dehomogenize $f$ and $g$ w.r.t. $z$ to get 
+  \begin{align*}
+    I(P, f \cap g)
+    &= I((-2,\pm\sqrt{-8}), f_{*} \cap g_{*}) \\
+    &= I((-2,\pm\sqrt{-8}), (-x(x-2)(x+1) + y^2) \cap (y^2 + x^2 - 2x)) \\
+    &= I((0,0), (-x^3 + 7x^2 + y^2 - 14x \pm 2\sqrt{-8}y) \cap \\
+    & \qquad\qquad\qquad\qquad\qquad\qquad (y^2 + x^2 - 6x \pm 2\sqrt{-8}y)) \\
+    &= 1.
+  \end{align*}
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
