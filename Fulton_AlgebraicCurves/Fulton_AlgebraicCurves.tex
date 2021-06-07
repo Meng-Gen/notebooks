@@ -13001,7 +13001,7 @@ $\Box$ \\
   $\frac{\partial f}{\partial y}$ and
   $\frac{\partial f}{\partial z}$ are zero).
   It is nothing to do if $\frac{\partial f}{\partial x}$ is a nonzero constant.
-  Suppose $\deg(\frac{\partial f}{\partial x}) \geq 1$.
+  Suppose $\deg\left( \frac{\partial f}{\partial x} \right) \geq 1$.
   Since $f$ is irreducible and $\deg\left( \frac{\partial f}{\partial x} \right) = \deg f - 1$,
   $f$ and $\frac{\partial f}{\partial x}$ have no common factors.
   By Problem 5.7,
@@ -13047,8 +13047,51 @@ $\Box$ \\\\
 
 
 
-\subsection*{5.3. B\'ezout's Theorem  \\}
+\subsection*{5.3. B\'ezout's Theorem \\}
 \addcontentsline{toc}{subsection}{5.3. B\'ezout's Theorem}
+
+
+
+% http://people.math.sfu.ca/~kyeats/teaching/math818soln2.pdf
+
+\subsubsection*{Problem 5.22.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.22.*}
+\emph{Let $f$ be an irreducible curve of degree $n$.
+Assume $\frac{\partial f}{\partial x} \neq 0$.
+Apply Corollary 1 to $f$ and $\frac{\partial f}{\partial x}$, 
+and conclude that $\sum m_P(f)(m_P(f)-1) \leq n(n-1)$.
+In particular, $f$ has at most $\frac{n(n-1)}{2}$ multiple points.
+(See Problems 5.6, 5.8.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  There is nothing to do for $n = 1$.
+  Might assume that $n > 1$.
+
+\item[(2)]
+  Since $f$ and $\frac{\partial f}{\partial x}$ have no common component (Problem 5.8),
+  Corollary 1 to B\'ezout's Theorem gives us
+  \[
+    \sum m_P(f) m_P\left( \frac{\partial f}{\partial x} \right)
+    \leq \deg(f) \deg\left( \frac{\partial f}{\partial x} \right)
+    \leq n(n-1).
+  \]
+  By Problem 5.6, the conclusion is established.
+
+\item[(3)]
+  Then
+  \begin{align*}
+    n(n-1)
+    &\geq \sum_{P} m_P(f)(m_P(f)-1) \\
+    &\geq \sum_{m_P(f) > 1} 2(2-1) \\
+    &\geq \sum_{m_P(f) > 1} 2 \\
+    &= 2 \cdot (\text{number of multiple points}).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
 
 
 
