@@ -12800,8 +12800,8 @@ and the intersection numbers at these points:}
   We dehomogenize $f$ and $g$ w.r.t. $z$ to get
   \begin{align*}
     I(P, f \cap g)
-    &= I((2,0), f_{*} \cap g_{*}) \\
-    &= I((2,0), (-x(x-2)(x+1) + y^2) \cap (y^2 + x^2 - 2x)) \\
+    &= I(P, f_{*} \cap g_{*}) \\
+    &= I(P, (-x(x-2)(x+1) + y^2) \cap (y^2 + x^2 - 2x)) \\
     &= I((0,0), (-x(x+2)(x+3) + y^2) \cap (y^2 + x^2 + 2x)) \\
     &= 2.
   \end{align*}
@@ -12811,10 +12811,11 @@ and the intersection numbers at these points:}
   We dehomogenize $f$ and $g$ w.r.t. $z$ to get
   \begin{align*}
     I(P, f \cap g)
-    &= I((-2,\pm\sqrt{-8}), f_{*} \cap g_{*}) \\
-    &= I((-2,\pm\sqrt{-8}), (-x(x-2)(x+1) + y^2) \cap (y^2 + x^2 - 2x)) \\
+    &= I(P, f_{*} \cap g_{*}) \\
+    &= I(P, (-x(x-2)(x+1) + y^2) \cap (y^2 + x^2 - 2x)) \\
     &= I((0,0), (-x^3 + 7x^2 + y^2 - 14x \pm 2\sqrt{-8}y) \cap \\
-    & \qquad\qquad\qquad\qquad\qquad\qquad (y^2 + x^2 - 6x \pm 2\sqrt{-8}y)) \\
+      & \qquad\qquad\qquad
+      (y^2 + x^2 - 6x \pm 2\sqrt{-8}y)) \\
     &= 1.
   \end{align*}
   (Or by B\'ezout's Theorem,
@@ -12851,9 +12852,9 @@ $\Box$ \\
   We dehomogenize $f$ and $g$ w.r.t. $x$ to get
   \begin{align*}
     I(P, f \cap g)
-    &= I((-1,0), f_{*} \cap g_{*}) \\
-    &= I((-1,0), (f_{*} - g_{*}) \cap g_{*}) \\
-    &= I((-1,0), (y+1)^2z \cap (1+y^3 - 2yz)) \\
+    &= I(P, f_{*} \cap g_{*}) \\
+    &= I(P, (f_{*} - g_{*}) \cap g_{*}) \\
+    &= I(P, (y+1)^2z \cap (1+y^3 - 2yz)) \\
     &= I((0,0), y^2z \cap (y^3 - 3y^2-2yz + 3y+2z)) \\
     &= 3.
   \end{align*}
@@ -12863,7 +12864,7 @@ $\Box$ \\
   Similar to (3), we dehomogenize $f$ and $g$ w.r.t. $x$ to get
   \begin{align*}
     I(P, f \cap g)
-    &= I((\omega,0), (y+1)^2z \cap (1+y^3 - 2yz)) \\
+    &= I(P, (y+1)^2z \cap (1+y^3 - 2yz)) \\
     &= I((0,0), (y^2z + 2(1+\omega)yz + (1+\omega)^2z) \cap \\
       & \qquad\qquad\qquad
       (y^3 + 3\omega y^2 - 2yz + 3\omega^2 y - 2\omega z)) \\
@@ -12877,15 +12878,15 @@ $\Box$ \\
   Suppose $P = [1:1-\omega:0]$.
   We dehomogenize $f$ and $g$ w.r.t. $x$ to get
   \begin{align*}
-    I(P, f \cap g)
-    &= I((1-\omega,0), (y+1)^2z \cap (1+y^3 - 2yz)) \\
-    &= I((0,0), (y^2z + 2(2-\omega)yz + (2-\omega)^2z) \cap \\
+    & \: I(P, f \cap g) \\
+    =& \: I(P, (y+1)^2z \cap (1+y^3 - 2yz)) \\
+    =& \: I((0,0), (y^2z + 2(2-\omega)yz + (2-\omega)^2z) \cap \\
       & \qquad\qquad\qquad
       (y^3 + 3(1-\omega)y^2 - 2yz + 3(1-\omega)^2 y - 2(1-\omega)z)) \\
-    &= I((0,0), (y^2z + 2(2-\omega)yz + 3(1-\omega)z) \cap \\
+    =& \: I((0,0), (y^2z + 2(2-\omega)yz + 3(1-\omega)z) \cap \\
       & \qquad\qquad\qquad
       (y^3 + 3(1-\omega)y^2 - 2yz - 3\omega y - 2(1-\omega)z)) \\
-    &= 1.
+    =& \: 1.
   \end{align*}
 \end{enumerate}
 $\Box$ \\
@@ -12907,8 +12908,54 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
   Say $f = (x^2+y^2)^2 + 3x^2yz - y^3z$ and $g = (x^2+y^2)^3 - 4x^2y^2z^2$.
+  If $z = 0$, the intersection points in $\mathbf{P}^{2} - U_3$ are
+  \[
+    [1:\pm\sqrt{-1}:0].
+  \]
+  If $z \neq 0$, the intersection points in $U_3 \cong \mathbf{A}^2$ are
+  the solutions of $f_{*} = (x^2+y^2)^2 + 3x^2y - y^3$ and $g_{*} = (x^2+y^2)^3 - 4x^2y^2$:
+  \[
+    [0:0:1],
+    \left[ \pm\frac{\sqrt{5+2\sqrt{5}}}{4} : \frac{-\sqrt{5}}{4} : 1 \right],
+    \left[ \pm\frac{\sqrt{5-2\sqrt{5}}}{4} : \frac{\sqrt{5}}{4} : 1 \right].
+  \]
+  (To find these solutions, we might solve
+  $f_{*}(r\cos\theta,r\sin\theta) = g_{*}(r\cos\theta,r\sin\theta) = 0$ over $k = \mathbb{C}$.
+  As $r = 0$, nothing to do.
+  As $r > 0$, we get $\theta = \frac{m\pi}{5}$ for all integers $m$.)
+  Note that there are only 7 different intersection points (B\'ezout's Theorem).
 
 \item[(2)]
+  Suppose $P = [1:\sqrt{-1}:0]$.
+  We dehomogenize $f$ and $g$ w.r.t. $x$ to get
+  \begin{align*}
+    & \: I(P, f \cap g) \\
+    =& \: I(P, f_{*} \cap g_{*}) \\
+    =& \: I(P, ((1+y^2)^2 + 3yz - y^3z) \cap ((1+y^2)^3 - 4y^2z^2)) \\
+    =& \: I(P, ((1+y^2)^2 + 3yz - y^3z) \cap (yz(y^4 - 2y^2 - 4yz - 3)) \\
+    =& \: I(P, ((1+y^2)^2 + 3yz - y^3z) \cap y) \\
+      & \: + I(P, ((1+y^2)^2 + 3yz - y^3z) \cap z) \\
+      & \: + I(P, ((1+y^2)^2 + 3yz - y^3z) \cap (y^4 - 2y^2 - 4yz - 3)) \\
+    =& \: 2I(P, (1+y^2) \cap z) \\
+      & \: + I(P, ((1+y^2)^2 + 3yz - y^3z) \cap (y^4 - 2y^2 - 4yz - 3)) \\
+    =& 3.
+  \end{align*}
+  Here
+  \[
+    I(P, (1+y^2) \cap z) = I((0,0), (y^2 + 2\sqrt{-1}y) \cap z) = 1
+  \]
+  and
+  \begin{align*}
+    & \: I(P, ((1+y^2)^2 + 3yz - y^3z) \cap (y^4 - 2y^2 - 4yz - 3)) \\
+    =& \: I((0,0),
+      (y^4-y^3z + 4\sqrt{-1}y^3-3\sqrt{-1}y^2z - 4y^2 + 6yz + 4\sqrt{-1} z)\cap \\
+      & \qquad\qquad\qquad
+      (y^4 + 4\sqrt{-1}y^3 - 8y^2-4yz -8\sqrt{-1}y-4\sqrt{-1}z)) \\
+    =& \: 1.
+  \end{align*}
+  Similarly, $I(P, f \cap g) = 3$ if $P = [1:-\sqrt{-1}:0]$.
+
+\item[(3)]
   Suppose $P = [0:0:1]$.
   We dehomogenize $f$ and $g$ w.r.t. $z$ to get
   \begin{align*}
@@ -12918,6 +12965,40 @@ $\Box$ \\
     &= 14
   \end{align*}
   (Example in \S 3.3).
+
+\item[(4)]
+  Suppose $P = \left[ \frac{\sqrt{5+2\sqrt{5}}}{4} : \frac{-\sqrt{5}}{4} : 1 \right]$.
+  We dehomogenize $f$ and $g$ w.r.t. $z$ to get
+  \begin{align*}
+    & \: I(P, f \cap g) \\
+    =& \: I(P, f_{*} \cap g_{*}) \\
+    =& \: I(P, ((x^2+y^2)^2 + 3x^2y - y^3) \cap ((x^2+y^2)^3 - 4x^2y^2)) \\
+    =& \: I(P, ((x^2+y^2)^2 + 3x^2y - y^3) \cap y(-3x^4-2x^2y^2+y^4 - 4x^2y)) \\
+    =& \: 4 I(P, x \cap y) \\
+      &+ I(P, ((x^2+y^2)^2 + 3x^2y - y^3) \cap (-3x^4-2x^2y^2+y^4 - 4x^2y)) \\
+    =& \: 1.
+  \end{align*}
+  Here
+  \[
+    I(P, x \cap y)
+    = I\left( (0,0), 
+      \left( x+\frac{\sqrt{5+2\sqrt{5}}}{4} \right)
+      \bigcap \left( y + \frac{-\sqrt{5}}{4} \right) \right)
+    = 0
+  \]
+  and
+  \begin{align*}
+    & \: I(P, ((x^2+y^2)^2 + 3x^2y - y^3) \cap (-3x^4-2x^2y^2+y^4 - 4x^2y)) \\
+    =& \: I\left( (0,0), \left(
+        \frac{(5+2\sqrt{5})\sqrt{5+2\sqrt{5}}}{8}x-\frac{5+2\sqrt{5}}{8}y + \text{higher terms}
+      \right) \bigcap \right.\\
+      & \qquad\qquad\qquad
+      \left. \left(
+        \frac{(-10+\sqrt{5})\sqrt{5+2\sqrt{5}}}{8}x-\frac{5+4\sqrt{5}}{8}y + \text{higher terms}
+      \right) \right) \\
+    =& \: 1.
+  \end{align*}
+  Similarly, $I(P, f \cap g) = 1$ for rest three cases.
 \end{enumerate}
 $\Box$ \\\\
 
