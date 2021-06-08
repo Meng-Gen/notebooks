@@ -13246,7 +13246,9 @@ a finite number of points.} \\
   $\widetilde{f}$ is a form in $k[\lambda,\mu]$ of degree $m := \deg(f)$
   since $f$ and $g$ have no common components.
   Hence, $\widetilde{f}$ has exactly $m$ zeros in $\mathbf{P}^1$ (with multiplicity).
-  $V(f,g)$ has exactly $m$ zeros (with multiplicity).
+  $V(f,g)$ has exactly $m$ zeros (with multiplicity). \\
+
+  \emph{Note.} It is the same as Problem 5.12(b).
 
 \item[(3)]
   \emph{Show that the conclusion is true for any $f, g$.}
@@ -13353,6 +13355,98 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.12.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.12.*}
+\begin{enumerate}
+\item[(a)]
+  \emph{Assume $P = [0:1:0] \not\in f$, $f$ a curve of degree $n$.
+  Show that}
+  \[
+    \sum_{P} I(P, f \cap x) = n.
+  \]
+
+\item[(b)]
+  \emph{Show that if $f$ is a curve of degree $n$,
+  $L$ a line not contained in $f$, then}
+  \[
+    \sum_{P} I(P, f \cap L) = n.
+  \]
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Similar to Problem 5.7.
+  The intersection points of $f$ and $x$ are the solutions of
+  \[
+    f(0,y,z) = 0.
+  \]
+  Write
+  \[
+    f(0,y,z) = c y^n + \cdots
+  \]
+  as a form in $k[y,z]$ of degree $n$.
+
+\item[(2)]
+  Note that $c \neq 0$ since $P = [0:1:0] \not\in f$.
+  By Corollary to Proposition 5 in \S 2.6,
+  \[
+    f(0,y,z) = c \prod_{i}(y - \alpha_i z)^{r_i}
+  \]
+  where $\alpha_i \in k$ and $\sum r_i = n$.
+  So all intersection points are $P_i = [0:\alpha_i:1]$
+  with multiplicity $r_i$.
+
+\item[(3)]
+  Hence,
+  \begin{align*}
+    & \: \sum_{P} I(P, f \cap x) \\
+    =& \: \sum_{i} I(P_i, f \cap x) \\
+    =& \: \sum_{i} I(P_i, f(0,y,z) \cap x)
+      &(\text{Property (7) in \S 3.3}) \\
+    =& \: \sum_{i} \sum_{j} r_j I(P_i, (y - \alpha_j z) \cap x)
+      &(\text{Property (6) in \S 3.3}) \\
+    =& \: \sum_{i} \sum_{j} r_j I((0,\alpha_i), (y - \alpha_j) \cap x)
+      &(\text{Dehomogenize w.r.t. $z$}) \\
+    =& \: \sum_{i} \sum_{j} r_j I((0,0), (y + \alpha_i - \alpha_j) \cap x) \\
+    =& \: \sum_{i} \sum_{j} r_j \delta_{ij} \\
+    =& \: \sum_{i} r_i \\
+    =& \: n.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Take any point $Q_1 \not\in f \cup L$
+  (since $\mathbf{P}^2$ is irreducible).
+  Suppose $L$ is a line passing $Q_2$ and $Q_3$, $Q_2 \neq Q_3$.
+
+\item[(2)]
+  By Problem 4.14,
+  there is a projective change of coordinates $t: \mathbf{P}^2 \to \mathbf{P}^2$
+  such that $t(Q_1) = [0:1:0]$ and $t(L) = x$.
+  In particular, $t(Q_1) = [0:1:0] \not\in f^{t}$ (by the construction in (1)).
+
+\item[(3)]
+  Hence,
+  \[
+    \sum_{P} I(P, f \cap L)
+    = \sum_{P} I(P, f^{t} \cap L^{t})
+    = \sum_{P} I(P, f^{t} \cap x)
+    = n.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
