@@ -12897,8 +12897,83 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
   Say $f = y^5 - x(y^2-xz)^2$ and $g = y^4 + y^3z - x^2z^2$.
+  If $y = 0$, the intersection points in $\mathbf{P}^{2} - U_2$ are
+  \[
+    [0:0:1], [1:0:0].
+  \]
+  If $y \neq 0$, the intersection points in $2_3 \cong \mathbf{A}^2$ are
+  the solutions of $f_{*} = 1 - x(1-xz)^2$ and $g_{*} = 1 + z - x^2z^2$:
+  \[
+    \left[ \frac{1}{2}:1:2 \pm 2\sqrt{2} \right].
+  \]
+  Note that there are only 4 different intersection points (B\'ezout's Theorem).
 
+\item[(2)]
+  Suppose $P = [0:0:1]$.
+  We dehomogenize $f$ and $g$ w.r.t. $z$ to get
+  \begin{align*}
+    & \:I(P, f \cap g) \\
+    =& \: I((0,0), f_{*} \cap g_{*}) \\
+    =& \: I((0,0), (y^5 - x(y^2-x)^2) \cap (y^4 + y^3 - x^2)) \\
+    =& \: I((0,0), ((y^5 - x(y^2-x)^2) - x(y^4 + y^3 - x^2)) \cap (y^4 + y^3 - x^2)) \\
+    =& \: I((0,0), y^2(y^2-x)(2x-y) \cap (y^4 + y^3 - x^2)) \\
+    =& \: I((0,0), y^2 \cap (y^4 + y^3 - x^2)) \\
+      & + I((0,0), (y^2-x) \cap (y^4 + y^3 - x^2)) \\
+      & + I((0,0), (2x-y) \cap (y^4 + y^3 - x^2)) \\
+    =& \: 4 + I((0,0), (y^2-x) \cap (y^4 + y^3 - x^2)) + 2 \\
+    =& \: 9.
+  \end{align*}
+  Here
+  \begin{align*}
+    & \: I((0,0), (y^2-x) \cap (y^4 + y^3 - x^2)) \\
+    =& \: I((0,0), (y^2-x) \cap ((y^4 + y^3 - x^2) - x(y^2-x))) \\
+    =& \: I((0,0), (y^2-x) \cap (y^4 -xy^2+y^3)) \\
+    =& \: 3.
+  \end{align*}
 
+\item[(3)]
+  Suppose $P = [1:0:0]$.
+  We dehomogenize $f$ and $g$ w.r.t. $x$ to get
+  \begin{align*}
+    & \:I(P, f \cap g) \\
+    =& \: I((0,0), f_{*} \cap g_{*}) \\
+    =& \: I((0,0), (y^5 - (y^2-z)^2) \cap (y^4 + y^3z - z^2)) \\
+    =& \: I((0,0), ((y^5 - (y^2-z)^2) - (y^4 + y^3z - z^2)) \cap (y^4 + y^3z - z^2)) \\
+    =& \: I((0,0), y^2(y^2-z)(y-2) \cap (y^4 + y^3z - z^2)) \\
+    =& \: I((0,0), y^2 \cap (y^4 + y^3z - z^2)) \\
+      & + I((0,0), (y^2-z) \cap (y^4 + y^3z - z^2)) \\
+      & + I((0,0), (y-2) \cap (y^4 + y^3z - z^2)) \\
+    =& \: 4 + I((0,0), (y^2-z) \cap (y^4 + y^3z - z^2)) + 0 \\
+    =& \: 4 + 5 + 0 \\
+    =& \: 9.
+  \end{align*}
+  Here
+  \begin{align*}
+    & \: I((0,0), (y^2-z) \cap (y^4 + y^3z - z^2)) \\
+    =& \: I((0,0), (y^2-z) \cap ((y^4 + y^3z - z^2)-z(y^2-z))) \\
+    =& \: I((0,0), (y^2-z) \cap y^2(y^2 +yz - z)) \\
+    =& \: I((0,0), (y^2-z) \cap y^2) + I((0,0), (y^2-z) \cap (y^2 + yz - z)) \\
+    =& \: 2 + I((0,0), (y^2-z) \cap yz) \\
+    =& \: 2 + I((0,0), (y^2-z) \cap y) + I((0,0), (y^2-z) \cap z) \\
+    =& \: 2 + 1 + I((0,0), y^2 \cap z) \\
+    =& \: 2 + 1 + 2 \\
+    =& \: 5.
+  \end{align*}
+
+\item[(4)]
+  Suppose $P = \left[ \frac{1}{2}:1:2+2\sqrt{2} \right]$.
+  We dehomogenize $f$ and $g$ w.r.t. $y$ to get
+  \begin{align*}
+    & \:I(P, f \cap g) \\
+    =& \: I(P, f_{*} \cap g_{*}) \\
+    =& \: I(P, (1 - x(1-xz)^2) \cap (1 + z - x^2z^2)) \\
+    =& \: I\left( (0,0),
+      \left( -(6+2\sqrt{2})x-\sqrt{2}/2 \cdot z + \text{higher terms} \right) \bigcap \right.\\
+      & \qquad\qquad\qquad
+      \left. ( -(12+8\sqrt{2})x-\sqrt{2} z + \text{higher terms}) \right) \\
+    =& \: 1.
+  \end{align*}
+  Similarly, $I(P, f \cap g) = 1$ as $P = \left[ \frac{1}{2}:1:2-2\sqrt{2} \right]$.
 \end{enumerate}
 $\Box$ \\
 
