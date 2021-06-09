@@ -13587,7 +13587,7 @@ It has no other singularities.} \\
   \end{enumerate}
 
 \item[(6)]
-  Given any irreducible cubic $f$.
+  Given any irreducible cubic $f$ with a cusp.
   Apply the proof of Problem 5.9(b),
   $f$ is projectively equivalent to an irreducible cubic $g$
   such that $P = [0:0:1]$ is a cusp on $g$ and $y = 0$ is the tangent line to $g$ at $P$.
@@ -13603,6 +13603,80 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.11. (Cubic with a node)}
+\addcontentsline{toc}{subsubsection}{Problem 5.11. (Cubic with a node)}
+\emph{Up to projective equivalence,
+there is only one irreducible cubic with a node: $xyz = x^3+y^3$.
+It has no other singularities.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Let $f$ be an irreducible cubic, $P = [0:0:1]$ a node on $f$,
+  $x=0$, $y=0$ the tangent lines to $f$ at $P$.
+  Show that $f = ax^3 + by^3 - cxyz - dx^2 y - e xy^2$, $a \neq 0$, $b \neq 0$, $c \neq 0$.}
+  \begin{enumerate}
+  \item[(a)]
+    Given any cubic
+    \begin{align*}
+      f
+      =& \: ax^3 + by^3 - cxyz - dx^2 y - e xy^2 \\
+        & + \alpha_1 z^3 + \alpha_2 x^2 z + \alpha_3 y^2 z + \alpha_4 z^2 x + \alpha_5 z^2 y.
+    \end{align*}
+
+  \item[(b)]
+    $\alpha_1 = 0$ since $P \in f$.
+
+  \item[(c)]
+    We dehomogenize $f$ w.r.t. $z$ to get
+    \[
+      f_{*}
+      = \: ax^3 + by^3 - cxy - dx^2 y - e xy^2
+        + \alpha_2 x^2 + \alpha_3 y^2 + \alpha_4 x + \alpha_5 y.
+    \]
+    Since $(0,0)$ is a double point, $\alpha_4 = \alpha_5 = 0$.
+    Since $f_{*}$ have only two tangents $x, y$ on $(0,0)$,
+    $- cxy + \alpha_2 x^2 + \alpha_3 y^2$
+    implies that $c \neq 0$ and $\alpha_2 = \alpha_3 = 0$.
+
+  \item[(d)]
+    Now $f = ax^3 + by^3 - cxyz - dx^2 y - e xy^2$ with $c \neq 0$.
+    If $a = 0$ or $b = 0$, $f$ is reducible, which is absurd.
+    So $a \neq 0$ and $b \neq 0$.
+  \end{enumerate}
+
+\item[(2)]
+  Hence,
+  \[
+    f
+    \sim (x^3 + y^3 - xyz - dx^2 y - e xy^2)
+    \sim (x^3 + y^3 - xyz)
+  \]
+  by
+  $(x,y,z) \mapsto
+  \left( \frac{1}{\sqrt[3]{a}}x, \frac{1}{\sqrt[3]{b}}y, \frac{\sqrt[3]{ab}}{c}z \right)$
+  and
+  $(x,y,z) \mapsto (x, y, z - dx - ey)$.
+
+\item[(3)]
+  Given any irreducible cubic $f$ with a node.
+  Apply the proof of Problem 5.9(b),
+  $f$ is projectively equivalent to an irreducible cubic $g$
+  such that $P = [0:0:1]$ is a node on $g$ and $x, y$ are the tangent lines to $g$ at $P$.
+  By (2),
+  \[
+    f \sim g \sim (x^3 + y^3 - xyz).
+  \]
+  Similar to Problem 5.9(b),
+  $x^3 + y^3 - xyz$ has no other singularities except one point $P = [0:0:1]$.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
