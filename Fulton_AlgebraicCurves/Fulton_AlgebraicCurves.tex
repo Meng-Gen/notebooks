@@ -13376,6 +13376,7 @@ $\Box$ \\\\
     f = ayz - bx^2 - cxz - dz^2
       + \alpha y^2 + \beta xy.
   \]
+
 \item[(2)]
   $\alpha = 0$ since $P \in f$.
 
@@ -13397,7 +13398,7 @@ $\Box$ \\\\
     f
     =& \: ayz - bx^2 - cxz - dz^2 \\
     =& \: (\sqrt{a}y)(\sqrt{a}z)
-      - (\sqrt{b}x)(\sqrt{b}x)
+      - (\sqrt{b}x)^2
       - \frac{c}{\sqrt{ab}} (\sqrt{b}x)(\sqrt{a}z)
       - \frac{d}{a} (\sqrt{a}z)^2.
   \end{align*}
@@ -13462,6 +13463,143 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.10. (Cubic with a cusp)}
+\addcontentsline{toc}{subsubsection}{Problem 5.10. (Cubic with a cusp)}
+\emph{Let $f$ be an irreducible cubic, $P = [0:0:1]$ a cusp on $f$,
+$y = 0$ the tangent line to $f$ at $P$.
+Show that $f = ay^2z - bx^3 - cx^2y - dxy^2 - ey^3$.
+Find projective changes of coordinates}
+\begin{enumerate}
+\item[(i)]
+  \emph{to make $a = b = 1$;}
+
+\item[(ii)]
+  \emph{to make $c = 0$ (change $x$ to $x-\frac{c}{3}y$);}
+
+\item[(iii)]
+  \emph{to make $d = e = 0$ ($z$ to $z+dx+ey$).}
+\end{enumerate}
+\emph{Up to projective equivalence,
+there is only one irreducible cubic with a cusp: $y^2z = x^3$.
+It has no other singularities.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Given any cubic
+  \begin{align*}
+    f
+    =& \: ay^2z - bx^3 - cx^2y - dxy^2 - ey^3 \\
+      & + \alpha_1 z^3 + \alpha_2 x^2 z + \alpha_3 z^2 x + \alpha_4 z^2 y + \alpha_5 xyz.
+  \end{align*}
+
+\item[(2)]
+  $\alpha_1 = 0$ since $P \in f$.
+
+\item[(3)]
+  \emph{Show that $b \neq 0$ and $\alpha_2 = \alpha_3 = 0$.}
+  Since $P = [0:0:1]$ is a cusp on $f$ and $y = 0$ is the tangent line to $f$ at $P$,
+  $I(f \cap y) = 3$.
+  So
+  \begin{align*}
+    3
+    &= I(P, f \cap y) \\
+    &= I(P, (-bx^3 + \alpha_2 x^2 z + \alpha_3 z^2 x) \cap y) \\
+    &= I(P, (-bx^3 + \alpha_2 x^2 + \alpha_3 x) \cap y)
+      &(\text{Dehomogenize w.r.t. $z$})
+  \end{align*}
+  if and only if $b \neq 0$ and $\alpha_2 = \alpha_3 = 0$.
+
+\item[(4)]
+  \emph{Show that $a \neq 0$ and $\alpha_4 = \alpha_5 = 0$.}
+  We dehomogenize $f$ w.r.t. $z$ to get
+  \[
+    f_{*}
+    = -bx^3-cx^2y-dxy^2-ey^3 + ay^2 + \alpha_5 xy + \alpha_4 y.
+  \]
+  Since $(0,0)$ is a double point, $\alpha_4 = 0$.
+  Since $f_{*}$ has only one tangent $y$ on $(0,0)$,
+  \[
+    ay^2 + \alpha_5 xy = y(ay + \alpha_5x)
+  \]
+  implies that $a \neq 0$ and $\alpha_5 = 0$.
+
+\item[(5)]
+  Therefore, $f = ay^2z - bx^3 - cx^2y - dxy^2 - ey^3$ with $a \neq 0$ and $b \neq 0$.
+  Similar to Problem 5.9,
+  \begin{enumerate}
+  \item[(i)]
+    Write
+    \begin{align*}
+      f
+      =& \: ay^2z - bx^3 - cx^2y - dxy^2 - ey^3 \\
+      =& \: (\sqrt[3]{a}y)^2(\sqrt[3]{a}z)
+        - (\sqrt[3]{b}x)^3
+        - \frac{c}{\sqrt[3]{ab^2}} (\sqrt[3]{b}x)^2(\sqrt[3]{a}y) \\
+        &
+        - \frac{d}{\sqrt[3]{a^2 b}} (\sqrt[3]{b}x)(\sqrt[3]{a}y)^2
+        - \frac{e}{a} (\sqrt[3]{a}y)^3.
+    \end{align*}
+    Apply a projective change of coordinates
+    $t_1 = \left( \frac{x}{\sqrt[3]{b}}, \frac{y}{\sqrt[3]{a}}, \frac{z}{\sqrt[3]{a}} \right)$
+    to $f$:
+    \[
+      f^{t_1} = y^2z - x^3 - c_1 x^2y - d_1 xy^2 - e_1 y^3,
+    \]
+    where $c_1 = \frac{c}{\sqrt[3]{ab^2}}$ and
+    $d_1 = \frac{d}{\sqrt[3]{a^2 b}}$ and
+    $e_1 = \frac{e}{a}$.
+
+  \item[(ii)]
+    Write
+    \begin{align*}
+      f^{t_1}
+      =& \: y^2z - x^3 - c_1 x^2y - d_1 xy^2 - e_1 y^3 \\
+      =& \: y^2z - \left( x+\frac{c_1}{3}y \right)^3
+        - \left( d_1-\frac{c_1^2}{3} \right) \left( x+\frac{c_1}{3}y \right)y^2 \\
+        & \: - \left( e_1-\frac{c_1d_1}{3}+\frac{2c_1^3}{27} \right) y^3.
+    \end{align*}
+    Apply a projective change of coordinates
+    $t_2 = \left( x-\frac{c_1}{3}y, y, z \right)$ to $f^{t_1}$:
+    \[
+      (f^{t_1})^{t_2} = y^2z - x^3 - d_2 xy^2 - e_2 y^3
+    \]
+    where $d_2 = d_1-\frac{c_1^2}{3}$ and $e_2 = e_1-\frac{c_1d_1}{3}+\frac{2c_1^3}{27}$.
+    (Compare to Cardano's formula.)
+
+  \item[(iii)]
+    Write
+    \begin{align*}
+      (f^{t_1})^{t_2}
+      &= y^2z - x^3 - d_2 xy^2 - e_2 y^3 \\
+      &= y^2(z - d_2 x - e_2 y) - x^3.
+    \end{align*}
+    Apply a projective change of coordinates
+    $t_3 = \left( x, y, z + d_2 x + e_2 y \right)$ to $(f^{t_1})^{t_2}$:
+    \[
+      ((f^{t_1})^{t_2})^{t_3} = y^2z - x^3.
+    \]
+  \end{enumerate}
+
+\item[(6)]
+  Given any irreducible cubic $f$.
+  Apply the proof of Problem 5.9(b),
+  $f$ is projectively equivalent to an irreducible cubic $g$
+  such that $P = [0:0:1]$ is a cusp on $g$ and $y = 0$ is the tangent line to $g$ at $P$.
+  By (5),
+  \[
+    f \sim g \sim (y^2 z-x^3).
+  \]
+  Similar to Problem 5.9(b),
+  $y^2z - x^3$ has no other singularities except one point $P = [0:0:1]$.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
