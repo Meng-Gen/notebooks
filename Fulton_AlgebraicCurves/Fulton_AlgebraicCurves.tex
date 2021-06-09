@@ -13348,6 +13348,119 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.9. (Conic)}
+\addcontentsline{toc}{subsubsection}{Problem 5.9. (Conic)}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $f$ be an irreducible conic, $P = [0:1:0]$ a simple point on $f$,
+  and $z=0$ the tangent line to $f$ at $P$.
+  Show that $f = ayz - bx^2 - cxz - dz^2$, $a, b \neq 0$.
+  Find a projective change of coordinates $t$ so that $f^{t} = yz - x^2 - c'xz - d'z^2$.
+  Find $t'$ so that $(f^{t})^{t'} = yz - x^2$.
+  ($t' = (x, y+c'x+d'z, z)$.) }
+
+\item[(b)]
+  \emph{Show that, up to projective equivalence,
+  there is only one irreducible conic: $yz = x^2$.
+  Any irreducible conic is nonsingular.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Given any conic
+  \[
+    f = ayz - bx^2 - cxz - dz^2
+      + \alpha y^2 + \beta xy.
+  \]
+\item[(2)]
+  $\alpha = 0$ since $P \in f$.
+
+\item[(3)]
+  \emph{Show that $a \neq 0$ and $\beta = 0$.}
+  We dehomogenize $f$ w.r.t. $y$ to get
+  $f_{*} = -bx^2 -cxz-dz^2 + az + \beta x$.
+  Thus, the tangent line of $f_{*}$ at $(0,0)$ is $az + \beta x$.
+  So $a \neq 0$ and $\beta = 0$ since $z$ is the tangent line to $f$ at $P$.
+
+\item[(4)]
+  \emph{Show that $b \neq 0$.}
+  If $b = 0$,
+  $f = ayz - cxz - dz^2 = z(ay - cx - dz)$ is reducible, which is absurd.
+
+\item[(5)]
+  Write
+  \begin{align*}
+    f
+    =& \: ayz - bx^2 - cxz - dz^2 \\
+    =& \: (\sqrt{a}y)(\sqrt{a}z)
+      - (\sqrt{b}x)(\sqrt{b}x)
+      - \frac{c}{\sqrt{ab}} (\sqrt{b}x)(\sqrt{a}z)
+      - \frac{d}{a} (\sqrt{a}z)^2.
+  \end{align*}
+  Apply a projective change of coordinates
+  $t = \left( \frac{x}{\sqrt{b}}, \frac{y}{\sqrt{a}}, \frac{z}{\sqrt{a}} \right)$ to $f$:
+  \[
+    f^{t} = yz - x^2 - c'xz - d'z^2,
+  \]
+  where $c' = \frac{c}{\sqrt{ab}}$ and $d' = \frac{d}{a}$.
+
+\item[(6)]
+  Write
+  \[
+    f^{t}
+    = yz - x^2 - c'xz - d'z^2
+    = (y - c'x - d'z)z - x^2.
+  \]
+  Apply a projective change of coordinates $t' = (x, y+c'x+d'z, z)$ to $f^{t}$:
+  \[
+    (f^{t})^{t'} = yz - x^2.
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Take one simple point $P_1 \in f$ and the corresponding tangent line $L$.
+  (It is possible since Problem 5.8 and $|f| = \infty$.)
+  Take $P_2 \in L - f$ and $P_3 \in f - L$.
+  (It is possible since Problem 5.7 or 5.12 and both $|f|$ and $|L|$ are $\infty$.)
+
+\item[(2)]
+  Let $Q_1 = [0:1:0]$, $Q_2 = [1:0:0]$, $Q_3 = [0:0:1]$.
+  Since $P_1, P_2, P_3$ (resp. $Q_1, Q_2, Q_3$) are not lying on a common line,
+  there is a unique projective change of coordinates $t$ such that $t(P_i) = Q_i$
+  ($i=1,2,3$) by Problem 4.14.
+
+\item[(3)]
+  Hence, $f$ is projectively equivalent to an irreducible conic $g$
+  such that $P = [0:1:0]$ is a simple point on $g$ and
+  $z=0$ is the tangent line to $g$ at $P$.
+  By (a),
+  \[
+    f \sim g \sim (yz-x^2).
+  \]
+
+\item[(4)]
+  Nonsingularity is preserved under projectively equivalence.
+  Might assume that $f = yz-x^2$.
+  $\frac{\partial f}{\partial x}(P)
+  = \frac{\partial f}{\partial y}(P)
+  = \frac{\partial f}{\partial z}(P)
+  = 0$ implies that $P = [0:0:0]$, which is not in $\mathbf{P}^{2}$.
+  Hence $f$ is nonsingular (Problem 5.1).
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
