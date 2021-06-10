@@ -13909,6 +13909,47 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.16.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.16.*}
+\emph{Let $f$ be an irreducible curve in $\mathbf{P}^2$.
+Suppose $I(P, f \cap z) = 1$, and $P \neq [1:0:0]$.
+Show that $\frac{\partial f}{\partial x}(P) \neq 0$.
+(Hint: If not, use Euler's Theorem to show that $\frac{\partial f}{\partial y}(P) = 0$;
+but $z$ is not tangent to $f$ at $P$.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Might write $P = [\alpha:1:0] \in \mathbf{P}^2$
+  since $z(P) = 0$ (by $I(P, f \cap z) > 0$) and $P \neq [1:0:0]$.
+
+\item[(2)]
+  Since $I(P, f \cap z) = 1$, $m_P(f) = 1$ and $z$ is not tangent to $f$ at $P$.
+  Thus, $P$ is a simple point of $f$.
+  By Problem 5.4, the tangent line $L$ to $f$ at $P$ is
+  \[
+    \frac{\partial f}{\partial x}(P) x +
+    \frac{\partial f}{\partial y}(P) y +
+    \frac{\partial f}{\partial z}(P) z = 0.
+  \]
+  In particular, $P = [\alpha:1:0] \in L$, that is,
+  \[
+    \frac{\partial f}{\partial x}(P) \alpha +
+    \frac{\partial f}{\partial y}(P) = 0.
+  \]
+
+\item[(3)]
+  (Reductio ad absurdum)
+  If $\frac{\partial f}{\partial x}(P) = 0$, $\frac{\partial f}{\partial y}(P) = 0$ by (2).
+  Hence, the tangent line $L = z$, which is absurd.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
