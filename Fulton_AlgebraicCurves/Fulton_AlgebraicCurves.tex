@@ -13868,6 +13868,44 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.15.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.15.*}
+\emph{Let $C$ be an irreducible projective plane curve,
+$P_1,\ldots,P_n$ simple points on $C$, $m_1,\ldots,m_n$ integers.
+Show that there is a $z \in k(C)$ with $\mathrm{ord}_{P_i}(z) = m_i$ for $i = 1,\ldots,n$.
+(Hint: Take lines $L_i$ as in Problem 5.14 for $P_i$,
+and a line $L_0$ not through any $P_j$,
+and let $z = \prod L_i^{m_i} L_0^{-\sum m_i}$.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Take lines $L_i$ not tangent to $C$ at $P_i$ as in Problem 5.14 for $P_i$.
+  Since $\mathbf{P}^2 = V(0) \supsetneq V(C)$, we can pick a point $P$ outside $C$.
+  Take one line $L_0$ through $P$ but not through any $P_j$ as in Problem 5.14.
+
+\item[(2)]
+  Define $z = \prod L_i^{m_i} / L_0^{\sum m_i} \in k(C)$ since
+  $\prod L_i^{m_i}$ and $L_0^{\sum m_i}$ are in $\Gamma(C)$
+  of the same degree $\sum m_i$.
+  Note that $L_0(P_j) \neq 0$ for any $P_j$.
+  So $\mathrm{ord}_{P_i}(z)$ is well-defined.
+  Moreover,
+  \[
+    \mathrm{ord}_{P_i}(z)
+    = \sum_j m_j \mathrm{ord}_{P_i}(L_j) - \left( \sum m_j \right) \mathrm{ord}_{P_i}(L_0)
+    = m_i
+  \]
+  since $L_j$ ($j \neq i$) and $L_0$ are units in $k(C)$ and
+  $L_i \ni P_i$ is not tangent to $C$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
