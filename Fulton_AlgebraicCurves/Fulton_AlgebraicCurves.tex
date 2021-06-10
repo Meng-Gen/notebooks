@@ -13777,6 +13777,64 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.13.}
+\addcontentsline{toc}{subsubsection}{Problem 5.13.}
+\emph{Prove that an irreducible cubic is either nonsingular or
+has at most one double point (a node or a cusp).
+(Hint: Use Problem 5.12, where L is a line through two
+multiple points; or use Problems 5.10 and 5.11.)} \\
+
+
+
+\emph{Proof (Problem 5.12).}
+\begin{enumerate}
+\item[(1)]
+  (Reductio ad absurdum)
+  Suppose there were a line $L$ passing through two multiple points $P, Q$
+  of an irreducible cubic $f$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    \sum I(P, f \cap L)
+    &\geq I(P, f \cap L) + I(Q, f \cap L) \\
+    &\geq m_{P}(f) m_{P}(L) + m_{Q}(f) m_{Q}(L) \\
+    &\geq 2 \cdot 1 + 2 \cdot 1 \\
+    &= 4.
+  \end{align*}
+  By Problem 5.12, $\sum I(P, f \cap L) = 3$, a contradiction.
+  Hence $f$ has at most one multiple point.
+  In particular, $f$ has at most one double point.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Problems 5.10 and 5.11).}
+\begin{enumerate}
+\item[(1)]
+  Suppose one irreducible cubic $f$ has one multiple point $P$.
+  It suffices to show that $P$ is a cusp or a node,
+  or it suffices to show that $P$ is a double point.
+
+\item[(2)]
+  Up to projective equivalence, might assume that $P = [0:0:1]$.
+  If $m_P(f) = m_P(f_{*}) = 3$, then $f_{*}$ is a form in $k[x,y]$ of degree $3$.
+  Thus $f$ is in $k[x,y] \xhookrightarrow{} k[x,y,z]$, which is reducible.
+  Hence $P$ is a double point.
+  By Problems 5.10 and 5.11, $f$ has no other singularities.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
