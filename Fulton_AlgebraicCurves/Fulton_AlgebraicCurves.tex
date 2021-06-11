@@ -13970,6 +13970,50 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% http://math.ucsd.edu/~doprea/145s08/145sol6.pdf
+
+\subsubsection*{Problem 5.21.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.21.*}
+\emph{Show that every nonsingular projective plane curve is irreducible.
+Is this true for affine curves?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $f$ be a nonsingular projective plane curve.
+  (Reductio ad absurdum)
+  Suppose $f = gh$ were reducible.
+  Then $g$ and $h$ intersects in $\mathbf{P}^2$ (B\'ezout's Theorem).
+
+\item[(2)]
+  \emph{Show that each intersection point $P$ is a singularity of $f$.}
+  Note that $g(P) = h(P) = 0$ and the chain rule for derivatives.
+  Thus,
+  \[
+    \frac{\partial f}{\partial x_i}(P)
+    = g(P) \frac{\partial h}{\partial x_i}(P) + \frac{\partial g}{\partial x_i}(P) h(P) = 0
+  \]
+  for $i = 1,2,3$.
+  $P$ is a singularity of $f$ (Problem 5.1).
+
+\item[(3)]
+  \emph{Show that it is not true for affine curves.}
+  $V(x^2 - x) \subseteq \mathbf{A}^2$ is nonsingular but not irreducible.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 % http://people.math.sfu.ca/~kyeats/teaching/math818soln2.pdf
 
 \subsubsection*{Problem 5.22.*}
