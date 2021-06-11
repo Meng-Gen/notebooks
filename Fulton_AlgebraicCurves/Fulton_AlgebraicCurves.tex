@@ -14033,6 +14033,71 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.19.}
+\addcontentsline{toc}{subsubsection}{Problem 5.19.}
+\emph{Consider the nine points
+$[0:0:1]$, $[0:1:1]$, $[1:0:1]$, $[1:1:1]$, $[0:2:1]$,
+$[2:0:1]$, $[1:2:1]$, $[2:1:1]$, and $[2:2:1] \in \mathbf{P}^2$ (Sketch).
+Show that there are an infinite number of cubics passing through these points.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $C: a_1 x^3 + a_2 y^3 + a_3 z^3
+    + a_4 x^2y + a_5 x^2z + a_6 y^2 x + a_7 y^2 z + a_8 z^2 x + a_9 z^2 y + a_{10} xyz$
+    be the cubic passing these five points.
+  That is,
+  \[
+    \underbrace{\begin{pmatrix}
+      0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+      0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 0 \\
+      1 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+      1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+      0 & 8 & 1 & 0 & 0 & 0 & 4 & 0 & 2 & 0 \\
+      8 & 0 & 1 & 0 & 4 & 0 & 0 & 2 & 0 & 0 \\
+      1 & 8 & 1 & 2 & 1 & 4 & 4 & 1 & 2 & 2 \\
+      8 & 1 & 1 & 4 & 4 & 2 & 1 & 2 & 1 & 2 \\
+      8 & 8 & 1 & 8 & 4 & 8 & 4 & 2 & 2 & 4
+    \end{pmatrix}}_{\text{say } A \in \mathsf{M}_{9 \times 10}(k)}
+    \underbrace{\begin{pmatrix}
+      a_1 \\
+      \vdots \\
+      a_{10} \\
+    \end{pmatrix}}_{\in \mathbf{P}^9(k)}
+    = 0.
+  \]
+
+\item[(2)]
+  The row echelon form $A'$ of $A$ is
+  \[
+    A'
+    =
+    \begin{pmatrix}
+      1 & 0 & 0 & 0 & 0 & 0 & 0 & \frac{-1}{2} &            0 & 0 \\
+      0 & 1 & 0 & 0 & 0 & 0 & 0 &            0 & \frac{-1}{2} & 0 \\
+      0 & 0 & 1 & 0 & 0 & 0 & 0 &            0 &            0 & 0 \\
+      0 & 0 & 0 & 1 & 0 & 0 & 0 &            0 &            0 & 0 \\
+      0 & 0 & 0 & 0 & 1 & 0 & 0 &  \frac{3}{2} &            0 & 0 \\
+      0 & 0 & 0 & 0 & 0 & 1 & 0 &            0 &            0 & 0 \\
+      0 & 0 & 0 & 0 & 0 & 0 & 1 &            0 &  \frac{3}{2} & 0 \\
+      0 & 0 & 0 & 0 & 0 & 0 & 0 &            0 &            0 & 1 \\
+      0 & 0 & 0 & 0 & 0 & 0 & 0 &            0 &            0 & 0
+    \end{pmatrix} \in \mathsf{M}_{9 \times 10}(k).
+  \]
+  $\rank(A') = 8 < 9$ and thus
+  there are an infinite number of cubics passing through these points, say
+  \[
+    C: \lambda x(x-z)(x-2z) + \mu y(y-z)(y-2z),
+  \]
+  where $[\lambda:\mu] \in \mathbf{P}^2(k)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
