@@ -13970,6 +13970,65 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 5.20.}
+\addcontentsline{toc}{subsubsection}{Problem 5.20.}
+\emph{Check your answers of Problem 5.3 with B\'ezout's Theorem} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $f = y^2z - x(x-2z)(x+z)$ and $g = y^2 + x^2 - 2xz$.
+  \begin{align*}
+    I([0:0:1], f \cap g) &= 2, \\
+    I([2:0:1], f \cap g) &= 2, \\
+    I([-2,\sqrt{-8}:1], f \cap g) &= 1, \\
+    I([-2,-\sqrt{-8}:1], f \cap g) &= 1.
+  \end{align*}
+  Hence, $\sum_P I(P, f \cap g) = 2 + 2 + 1 + 1 = 6 = \deg(f) \deg(g)$.
+
+\item[(2)]
+  $f = (x^2+y^2)z + x^3 + y^3$ and $g = x^3 + y^3 - 2xyz$.
+  \begin{align*}
+    I([0:0:1], f \cap g) &= 4, \\
+    I([1:-1:0], f \cap g) &= 3, \\
+    I([1:\sqrt[3]{-1}:0], f \cap g) &= 1, \\
+    I([1:1-\sqrt[3]{-1}:0], f \cap g) &= 1.
+  \end{align*}
+  Hence, $\sum_P I(P, f \cap g) = 4 + 3 + 1 + 1 = 9 = \deg(f) \deg(g)$.
+
+\item[(3)]
+  $f = y^5 - x(y^2-xz)^2$ and $g = y^4 + y^3z - x^2z^2$.
+  \begin{align*}
+    I([0:0:1], f \cap g) &= 9, \\
+    I([1:0:0], f \cap g) &= 9, \\
+    I\left(\left[ \frac{1}{2}:1:2+2\sqrt{2} \right], f \cap g\right) &= 1, \\
+    I\left(\left[ \frac{1}{2}:1:2-2\sqrt{2} \right], f \cap g\right) &= 1.
+  \end{align*}
+  Hence, $\sum_P I(P, f \cap g) = 9 + 9 + 1 + 1 = 20 = \deg(f) \deg(g)$.
+
+\item[(4)]
+  $f = (x^2+y^2)^2 + 3x^2yz - y^3z$ and $g = (x^2+y^2)^3 - 4x^2y^2z^2$.
+  \begin{align*}
+    I([1:\sqrt{-1}:0], f \cap g) &= 3, \\
+    I([1:-\sqrt{-1}:0], f \cap g) &= 3, \\
+    I([0:0:1], f \cap g) &= 14, \\
+    I\left(\left[ \frac{\sqrt{5+2\sqrt{5}}}{4} : \frac{-\sqrt{5}}{4} : 1 \right],
+      f \cap g\right) &= 1, \\
+    I\left(\left[ -\frac{\sqrt{5+2\sqrt{5}}}{4} : \frac{-\sqrt{5}}{4} : 1 \right],
+      f \cap g\right) &= 1, \\
+    I\left(\left[ \frac{\sqrt{5-2\sqrt{5}}}{4} : \frac{\sqrt{5}}{4} : 1 \right],
+      f \cap g\right) &= 1, \\
+    I\left(\left[ -\frac{\sqrt{5-2\sqrt{5}}}{4} : \frac{\sqrt{5}}{4} : 1 \right],
+      f \cap g\right) &= 1.
+  \end{align*}
+  Hence, $\sum_P I(P, f \cap g) = 3 + 3 + 14 + 1 + 1 + 1 + 1 = 24 = \deg(f) \deg(g)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
