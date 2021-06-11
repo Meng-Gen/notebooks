@@ -13961,6 +13961,79 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.18.}
+\addcontentsline{toc}{subsubsection}{Problem 5.18.}
+\emph{Show that there is only one conic passing through the five points
+$[0:0:1]$, $[0:1:0]$, $[1:0:0]$, $[1:1:1]$, and $[1:2:3]$;
+show that it is nonsingular.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $C: ax^2+bxy+cxz+dy^2+eyz+fz^2$ be the conic passing these five points.
+  That is,
+  \[
+    \underbrace{\begin{pmatrix}
+      0 & 0 & 0 & 0 & 0 & 1 \\
+      0 & 0 & 0 & 1 & 0 & 0 \\
+      1 & 0 & 0 & 0 & 0 & 0 \\
+      1 & 1 & 1 & 1 & 1 & 1 \\
+      1 & 2 & 3 & 4 & 6 & 9
+    \end{pmatrix}}_{\text{say } A \in \mathsf{M}_{5 \times 6}(k)}
+    \underbrace{\begin{pmatrix}
+      a \\
+      b \\
+      c \\
+      d \\
+      e \\
+      f
+    \end{pmatrix}}_{\in \mathbf{P}^5(k)}
+    = 0.
+  \]
+
+\item[(2)]
+  The row echelon form $A'$ of $A$ is
+  \[
+    A'
+    =
+    \begin{pmatrix}
+      1 & 0 & 0 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 & -3 & 0 \\
+      0 & 0 & 1 & 0 & 4 & 0 \\
+      0 & 0 & 0 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 0 & 1
+    \end{pmatrix} \in \mathsf{M}_{5 \times 6}(k).
+  \]
+  $\rank(A') = 5$ and thus there is a unique solution in $\mathbf{P}^5$,
+  say $[0:3:-4:0:1:0] \in \mathbf{P}^5$.
+  Hence,
+  \[
+    C: 3xy - 4xz + yz = 0
+  \]
+  is only one conic passing through these five points.
+
+\item[(3)]
+  By solving the system of equations
+  $C(P)
+  = \frac{\partial C}{\partial x}(P)
+  = \frac{\partial C}{\partial y}(P)
+  = \frac{\partial C}{\partial z}(P) = 0$,
+  $P = [0:0:0]$, which is absurd.
+  Hence $C$ is nonsingular.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
