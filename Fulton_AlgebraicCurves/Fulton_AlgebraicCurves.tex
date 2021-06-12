@@ -14356,8 +14356,22 @@ $\Box$ \\\\
 
 
 \emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
   It is a special case of (b) since $f$ itself is a polynomial map from
   $V$ to $\mathbf{A}^{1}$.
+
+\item[(2)]
+  Or show that $f^{-1}$ of a closed set is closed directly.
+  A closed set in $\mathbf{A}^{1}$ is $\mathbf{A}^{1}$ itself or a finite set of points.
+  $f^{-1}(\mathbf{A}^{1}) = V$ is closed.
+  So it suffices to show that
+  \[
+    f^{-1}(\lambda) = \{ P \in V : f(P) = \lambda \}
+  \]
+  is closed for any $\lambda \in k$.
+  Note that $f^{-1}(\lambda) = V \cap V(f - \lambda = 0)$ is closed.
+\end{enumerate}
 $\Box$ \\
 
 
