@@ -14362,10 +14362,7 @@ $\Box$ \\\\
   $V$ to $\mathbf{A}^{1}$.
 
 \item[(2)]
-  Or show that $f^{-1}$ of a closed set is closed directly.
-  A closed set in $\mathbf{A}^{1}$ is $\mathbf{A}^{1}$ itself or a finite set of points.
-  $f^{-1}(\mathbf{A}^{1}) = V$ is closed.
-  So it suffices to show that
+  By Problem 6.6, it suffices to show that
   \[
     f^{-1}(\lambda) = \{ P \in V : f(P) = \lambda \}
   \]
@@ -14385,6 +14382,59 @@ $\Box$ \\
 \item[(2)]
   Problem 2.7 shows that $\varphi^{-1}(X)$ is closed for every closed subset $X$ of $W$.
   Hence, $\varphi$ is continuous.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 6.6.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.6.*}
+\emph{Let $X$ be a topological space, $f: X \to \mathbf{A}^{n}$ a mapping.
+Then $f$ is continuous if and only if for each hypersurface $V = V(f)$ of $\mathbf{A}^{n}$,
+$f^{-1}(V)$ is closed in $X$.
+A mapping $f: X \to k = \mathbf{A}^{1}$ is continuous if and only if
+$f^{-1}(\lambda)$ is closed for any $\lambda \in k$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  We give a stronger version of the statement.
+  \emph{Show that $f$ is continuous iff
+  $f^{-1}(V)$ is closed for each irreducible hypersurface $V = V(f) \subseteq \mathbf{A}^{n}$.}
+  One way is nothing to do.
+
+\item[(2)]
+  Conversely,
+  note that $f^{-1}(\mathbf{A}^{n}) = X$ and $f^{-1}(\varnothing) = \varnothing$ are closed.
+  Now given any proper closed set $V$ in $\mathbf{A}^{n}$,
+  $V$ is of the form
+  \[
+    V = V(f_1, \ldots, f_r) = V(f_1) \cap \cdots \cap V(f_r),
+  \]
+  where each $f_i$ is irreducible polynomial.
+  Hence,
+  \[
+    f^{-1}(V) = f^{-1}(V(f_1)) \cap \cdots \cap f^{-1}(V(f_r))
+  \]
+  is a union of closed sets in a topological space $X$, which is closed again.
+
+\item[(3)]
+  $f$ is continuous iff
+  $f^{-1}(V)$ is closed for each irreducible hypersurface $V = V(f) \subseteq \mathbf{A}^{1}$
+  (by (1)).
+  Note that the irreducible hypersurface $f$ in $\mathbf{A}^{1}$ is
+  $f = x - \lambda$ for some $\lambda \in k$.
+  So $f$ is continuous iff
+  \[
+    f^{-1}(V) = f^{-1}(x - \lambda) = f^{-1}(\lambda)
+  \]
+  is closed for each $\lambda \in k$.
 \end{enumerate}
 $\Box$ \\\\
 
