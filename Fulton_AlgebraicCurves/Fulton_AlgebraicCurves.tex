@@ -14341,6 +14341,77 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 6.2.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.2.*}
+\emph{}
+\begin{enumerate}
+\item[(a)]
+  \emph{}
+
+\item[(b)]
+  \emph{Suppose similarly $Y = \bigcup_{\alpha \in \mathscr{A}} V_{\alpha}$,
+  $V_{\alpha}$ open in $Y$,
+  and suppose $f: X \to Y$ is a mapping such that $f(U_{\alpha}) \subseteq V_{\alpha}$.
+  Show that $f$ is continuous if and only if
+  the restriction of $f$ to each $U_{\alpha}$ is a continuous mapping
+  from $U_{\alpha}$ to $V_{\alpha}$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  $(\Longrightarrow)$
+  Suppose $f$ is continuous.
+  It suffices to show that
+  $(f|_{U_{\alpha}})^{-1}(W)$ is closed in $U_{\alpha}$ for every closed set $W$ in $V_{\alpha}$.
+  Write $W = W_{\alpha} \cap V_{\alpha}$ where $W_{\alpha}$ is closed in $Y$.
+  Note that
+  \begin{align*}
+    (f|_{U_{\alpha}})^{-1}(W)
+    &= f^{-1}(W) \cap U_{\alpha} \\
+    &= f^{-1}(W_{\alpha} \cap V_{\alpha}) \cap U_{\alpha} \\
+    &= f^{-1}(W_{\alpha}) \cap f^{-1}(V_{\alpha}) \cap U_{\alpha} \\
+    &= f^{-1}(W_{\alpha}) \cap U_{\alpha}.
+      &(f^{-1}(V_{\alpha}) \supseteq U_{\alpha})
+  \end{align*}
+  Since $f^{-1}(W_{\alpha})$ is closed in $X$,
+  $(f|_{U_{\alpha}})^{-1}(W)$ is closed in $U_{\alpha}$.
+
+\item[(2)]
+  $(\Longleftarrow)$
+  Conversely, suppose $f|_{U_{\alpha}}$ is a continuous mapping from $U_{\alpha}$ to $V_{\alpha}$.
+  It suffices to show that
+  $f^{-1}(W)$ is closed for every closed set $W$ in $Y$.
+  Note that $W \cap V_{\alpha}$ is closed in each $V_{\alpha}$.
+  By the continunity of $f|_{U_{\alpha}}$,
+  \begin{align*}
+    (f|_{U_{\alpha}})^{-1}(W \cap V_{\alpha})
+    &= f^{-1}(W \cap V_{\alpha}) \cap U_{\alpha} \\
+    &= f^{-1}(W) \cap f^{-1}(V_{\alpha}) \cap U_{\alpha} \\
+    &= f^{-1}(W) \cap U_{\alpha}
+  \end{align*}
+  is closed in $U_{\alpha}$.
+  Since $\alpha$ is arbitrary and $X = \bigcup_{\alpha \in \mathscr{A}} U_{\alpha}$,
+  $f^{-1}(W)$ is closed in $X$ by (a).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 6.3.*}
 \addcontentsline{toc}{subsubsection}{Problem 6.3.*}
 \begin{enumerate}
