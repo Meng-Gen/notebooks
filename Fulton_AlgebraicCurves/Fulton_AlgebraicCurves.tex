@@ -14346,7 +14346,10 @@ $\Box$ \\\\
 \emph{}
 \begin{enumerate}
 \item[(a)]
-  \emph{}
+  \emph{Let $X$ be a topological space, $X = \bigcup_{\alpha \in \mathscr{A}} U_{\alpha}$,
+  $U_{\alpha}$ open in $X$.
+  Show that a subset $W$ of $X$ is closed if and only if
+  each $W \cap U_{\alpha}$ is closed (in the induced topology) in $U_{\alpha}$.}
 
 \item[(b)]
   \emph{Suppose similarly $Y = \bigcup_{\alpha \in \mathscr{A}} V_{\alpha}$,
@@ -14362,6 +14365,31 @@ $\Box$ \\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that a subset $E$ of $X$ is open if and only if
+  each $E \cap U_{\alpha}$ is open (in the induced topology) in $U_{\alpha}$.}
+  One way is nothing to do.
+  Conversely,
+  \[
+    E
+    = E \cap X
+    = E \cap \left( \bigcup_{\alpha \in \mathscr{A}} U_{\alpha} \right)
+    = \bigcup_{\alpha \in \mathscr{A}} (E \cap U_{\alpha})
+  \]
+  is a union of open sets, which is open again.
+
+\item[(2)]
+  Let $E = X - W$ be an open set in $X$.
+  Note that
+  \[
+    E \cap U_{\alpha}
+    = (X - W) \cap U_{\alpha}
+    = X \cap U_{\alpha} - W \cap U_{\alpha}
+    = U_{\alpha} - W \cap U_{\alpha}.
+  \]
+  Hence the conclusion holds.
+
+\item[(3)]
+  It motivates the local study of topologies.
 \end{enumerate}
 $\Box$ \\
 
@@ -14401,7 +14429,8 @@ $\Box$ \\
     &= f^{-1}(W) \cap U_{\alpha}
   \end{align*}
   is closed in $U_{\alpha}$.
-  Since $\alpha$ is arbitrary and $X = \bigcup_{\alpha \in \mathscr{A}} U_{\alpha}$,
+  Since $\alpha \in \mathscr{A}$ is arbitrary and
+  $X = \bigcup_{\alpha \in \mathscr{A}} U_{\alpha}$,
   $f^{-1}(W)$ is closed in $X$ by (a).
 \end{enumerate}
 $\Box$ \\\\
