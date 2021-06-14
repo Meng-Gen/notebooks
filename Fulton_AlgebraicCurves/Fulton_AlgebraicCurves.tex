@@ -14491,6 +14491,132 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 6.4.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.4.*}
+\emph{Let $U_i \subseteq \mathbf{P}^{n}$, $\varphi_i: \mathbf{A}^{n} \to U_i$ as in Chapter 4.
+Give $U_i$ the topology induced from $\mathbf{P}^{n}$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\varphi_i$ is a homeomorphism.}
+
+\item[(b)]
+  \emph{Show that a set $W \subseteq \mathbf{P}^{n}$ is closed if and only if
+  each $\varphi_i^{-1}(W)$ is closed in $\mathbf{A}^{n}$, $i = 1,\ldots,n+1$.}
+
+\item[(c)]
+  \emph{Show that if $V \subseteq \mathbf{A}^{n}$ is an affine variety,
+  then the projective closure $V^{*}$ of $V$ is the closure of
+ $\varphi_{n+1}(V)$ in $\mathbf{P}^{n}$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Note that $\varphi_i$ is one-to-one and onto.
+  It suffices to show that $\varphi_i$ and $\varphi_i^{-1}$ are continuous.
+
+\item[(2)]
+  \emph{Show that $\varphi_i$ is continuous.}
+  Suppose $W \subseteq \mathbf{P}^{n}$ is closed in $U_i$.
+  Let $\overline{W}$ be its closure in $\mathbf{P}^{n}$.
+  $\overline{W} = V(I)$ for some homogeneous ideal $I$ in $k[x_1,\ldots,x_{n+1}]$.
+  Thus $\varphi_i^{-1}(W) = V(I_{*})$ (w.r.t. $x_i$) is closed.
+
+\item[(3)]
+  \emph{Show that $\varphi_i^{-1}$ is continuous.}
+  Suppose $V \subseteq \mathbf{A}^{n}$ is closed.
+  Proposition 3 in \S 4.3 gives us $\varphi_{i}(V) = V^{*} \cap U_i$ is closed in $U_i$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  \begin{align*}
+    & \: \text{$W \subseteq \mathbf{P}^{n}$ is closed} \\
+    \Longleftrightarrow & \:
+    \text{$W$ is closed in $U_i$ for each $i$}
+      &(\text{Problem 6.2.}) \\
+    \Longleftrightarrow & \:
+    \text{$\varphi_i^{-1}(W)$ is closed in $\mathbf{A}^{n}$ for each $i$}.
+      &(\text{$\varphi_i$ is a homeomorphism})
+  \end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+  By Proposition 3 in \S 4.3,
+  the projective closure $V^{*}$ of $V$ is the smallest algebraic set in $\mathbf{P}^{n}$
+  containing $V = \varphi_{n+1}(V)$.
+  That is the same as the definition of the closure of $V$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 6.5.}
+\addcontentsline{toc}{subsubsection}{Problem 6.5.}
+\emph{Any infinite subset of an irreducible plane curve $V$ is dense in $V$.
+Any one-to-one mapping from one irreducible plane curve onto another is a homeomorphism.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that any infinite subset of an irreducible plane curve $V$ is dense in $V$.}
+  It is not true if $V$ is reducible.
+  \begin{enumerate}
+  \item[(a)]
+    Let $W$ be the closure of an infinite subset of a plane curve $V$.
+    $W \subseteq V$.
+
+  \item[(b)]
+    By Corollary 2 to Proposition 2 in \S 1.6 or Problem 4.23,
+    $W$ is a finite union of points and irreducible plane curves.
+    By Proposition 2 in \S 1.6 or Problem 5.7,
+    each of these plane curves intersects $V$ in finite number of points, or is equal to $V$.
+
+  \item[(c)]
+    Since $W$ is infinite, $W = V$.
+    That is, any infinite subset of an irreducible plane curve is dense in $V$.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that any one-to-one mapping from one irreducible plane curve onto another
+  is a homeomorphism.}
+  \begin{enumerate}
+  \item[(a)]
+    Let $\varphi: f \to g$ be a bijective mapping.
+    It suffices to show that $\varphi$ is continuous.
+
+  \item[(b)]
+    The closed sets in $V(g)$ are $V(g)$ itself and points
+    (by the same argument in (1)).
+    $\varphi^{-1}(V(g)) = V(f)$ is closed.
+    Given any point $Q \in V(g)$,
+    $\varphi^{-1}(Q) = P$ is closed for some point $P \in V(f)$ since $\varphi$ is bijective.
+    So, $\varphi$ is continuous.
+
+  \item[(c)]
+    Similarly, $\varphi^{-1}$ is continuous too.
+    Hence, $\varphi$ is homeomorphic.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 6.6.*}
 \addcontentsline{toc}{subsubsection}{Problem 6.6.*}
 \emph{Let $X$ be a topological space, $f: X \to \mathbf{A}^{n}$ a mapping.
