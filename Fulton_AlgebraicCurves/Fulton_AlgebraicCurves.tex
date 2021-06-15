@@ -14737,6 +14737,58 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 6.8.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.8.*}
+\emph{Let $U$ be an open subset of a variety $V$, $z \in k(V)$.
+Suppose $z \in \mathscr{O}_P(V)$ for all $P \in U$.
+Show that $U_z = \{ P \in U : z(P) \neq 0 \}$ is open,
+and that the mapping from $U$ to $k = \mathbf{A}^{1}$ defined by $P \mapsto z(P)$ is continuous.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $U_z$ is open.}
+  By Problem 6.1, it suffices to show that $U_z$ is open in $U$,
+  or show that
+  \[
+    W_z := U - U_z = \{ P \in U : z(P) = 0 \}
+  \]
+  is closed in $U$.
+
+\item[(2)]
+  Write $z = f/g$ where $f, g \in \Gamma(V)$, $g(P) \neq 0$ for all $P \in V$.
+  $z(P) = 0$ if and only if $f(P) = 0$ on $V$.
+  Hence,
+  \[
+    W_z
+    = \{ P \in U : f(P) = 0 \}
+    = U \cap \{ P \in V : f(P) = 0 \}
+  \]
+  is closed in $U$ (Problem 6.7(a)).
+
+\item[(3)]
+  \emph{Show that the mapping $\varphi: U \to k = \mathbf{A}^{1}$ defined by
+  $\varphi: P \mapsto z(P)$ is continuous.}
+  By Problem 6.6,
+  it suffices to show that $\varphi^{-1}(\lambda)$ is closed in $U$ for any $\lambda \in k$.
+
+\item[(4)]
+  Note that $z - \lambda \in \mathscr{O}_P(V)$ for all $P \in V$.
+  Hence,
+  \[
+    \varphi^{-1}(\lambda)
+    = \{ P \in U : z(P) = \lambda \}
+    = \{ P \in U : (z-\lambda)(P) = 0 \}
+    = W_{z-\lambda}
+  \]
+  is closed in $U$ by (2).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
