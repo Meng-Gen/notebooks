@@ -14667,6 +14667,77 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 6.7.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.7.*}
+\emph{Let $V$ be an affine variety, $f \in \Gamma(V)$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $V(f) = \{ P \in V : f(P) = 0 \}$ is a closed subset of $V$,
+  and $V(f) \neq V$ unless $f = 0$.}
+
+\item[(b)]
+  \emph{Suppose $U$ is a dense subset of $V$ and $f(P) = 0$ for all $P \in U$.
+  Then $f = 0$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Write $f = \widetilde{f} + I(V) \in \Gamma(V)$ for some $\widetilde{f} \in k[x_1,\ldots,x_n]$.
+  Note that $f(P) = \widetilde{f}(P)$ is well-defined for any $P \in V$.
+  Thus,
+  \begin{align*}
+    V(f)
+    &= \{ P \in V : f(P) = 0 \} \\
+    &= \{ P \in V : \widetilde{f}(P) = 0 \} \\
+    &= V \cap \{ P \in \mathbf{A}^{n} : \widetilde{f}(P) = 0 \} \\
+    &= V \cap V(\widetilde{f})
+  \end{align*}
+  is closed in $V$.
+
+\item[(2)]
+  Also,
+  \begin{align*}
+    V(f) = V
+    &\Longleftrightarrow
+    V \cap V(\widetilde{f}) = V \\
+    &\Longleftrightarrow
+    V(\widetilde{f}) \supseteq V \\
+    &\Longleftrightarrow
+    \widetilde{f} \in I(V) \\
+    &\Longleftrightarrow
+    f = 0 \in \Gamma(V).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Since $V(f) \supseteq U$ (by assumption) and $V(f)$ is closed (by (a)),
+  $V(f) \supseteq \overline{U}$ by the definition of the closure of $U$.
+
+\item[(2)]
+  Since $U$ is dense in $V$, $\overline{U} = V$.
+  Thus $V \supseteq V(f) \supseteq \overline{U} = V$ or $V(f) = V$.
+  By (a), $f = 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
