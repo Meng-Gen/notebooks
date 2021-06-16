@@ -14887,6 +14887,76 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+% https://www.uio.no/studier/emner/matnat/math/MAT4210/v18/mat4210notes2.pdf
+
+\subsubsection*{Problem 6.11. (Noetherian topological space)}
+\addcontentsline{toc}{subsubsection}{Problem 6.11. (Noetherian topological space)}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that every family of closed subsets of a variety has a minimal member.}
+
+\item[(b)]
+  \emph{Show that if a variety is a union of a collection of open subsets,
+  it is a union of a finite number of theses subsets.
+  (All varieties are \textbf{quasi-compact}.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of Proposition 1 in \S 6.2,
+  we may assume that $X$ is an affine variety in $\mathbf{A}^{N}$.
+
+\item[(2)]
+  By Problem 1.38, there is a natural one-to-one correspondence
+  between closed subsets of $X$ and radical ideals in $k[x_1,\ldots,x_N]/I(X)$.
+
+\item[(3)]
+  Note that $I(X)$ is finitely generated (by the Hilbert basis theorem in \S 1.4).
+  By Problem 1.22, $k[x_1,\ldots,x_N]/I(X)$ is Noetherian.
+  Hence, Lemma in \S 1.5 shows that
+  every family of closed subsets of $X$ has a minimal member.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let $\{ U_{\alpha} \}$ be an open covering of $X$.
+  Let $\Sigma$ be the family of closed sets being finite intersections of
+  complements of members of $\{ U_{\alpha} \}$, say
+  \[
+    \bigcap_{\text{finite }\alpha} (X - U_{\alpha})
+    = X - \bigcup_{\text{finite }\alpha} U_{\alpha}.
+  \]
+  By (a), $\Sigma$ has a minimal member $S$.
+  Now it suffices to show that $S = \varnothing$.
+
+\item[(2)]
+  By the minimality of $S$,
+  $S \cap (X - U_{\alpha}) = S$ for all $\alpha$.
+  So $S \subseteq X - U_{\alpha}$, or $X - S \supseteq U_{\alpha}$ for all $\alpha$.
+  Hence,
+  \[
+    X
+    \supseteq X - S
+    \supseteq \bigcup_{\text{all } \alpha} U_{\alpha}
+    \supseteq X.
+  \]
+
+\item[(3)]
+  Besides, we can show that $X$ is a Noetherian topological space
+  if every open subset of X is quasi-compact.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
