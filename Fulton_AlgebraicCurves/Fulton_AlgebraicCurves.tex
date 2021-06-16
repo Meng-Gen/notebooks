@@ -13056,7 +13056,7 @@ $\Box$ \\
   Here
   \[
     I(P, x \cap y)
-    = I\left( (0,0), 
+    = I\left( (0,0),
       \left( x+\frac{\sqrt{5+2\sqrt{5}}}{4} \right)
       \bigcap \left( y + \frac{-\sqrt{5}}{4} \right) \right)
     = 0
@@ -14958,6 +14958,40 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 6.12.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.12.*}
+\emph{Let $X$ be a variety, $z \in k(X)$.
+Show that the pole set of $z$ is closed.
+If $z \in \mathscr{O}_P(X)$, there is a neighborhood $U$ of $z$ such that $z \in \Gamma(U)$;
+so $\mathscr{O}_P(X)$ is the union of all $\Gamma(U)$,
+where $U$ runs through all neighborhoods of $P$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of Proposition 1 in \S 6.2,
+  we may assume that $X$ is an affine variety in $\mathbf{A}^{N}$.
+
+\item[(2)]
+  Proposition 2 in \S 2.4 shows that
+  the pole set $V(J_z) \subseteq X$ of $z$ is algebraic or closed.
+
+\item[(3)]
+  Given $z \in \mathscr{O}_P(X)$ ($P \not\in V(J_z)$),
+  there is an open neighborhood $U := X - V(J_z)$ of $z$ such that $z \in \Gamma(U)$.
+  So
+  \[
+    \mathscr{O}_P(X) = \bigcup_{U} \Gamma(U)
+  \]
+  where $U$ runs through all neighborhoods of $P$.
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
