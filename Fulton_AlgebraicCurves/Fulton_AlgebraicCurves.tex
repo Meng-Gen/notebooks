@@ -14814,7 +14814,7 @@ Show that $\Gamma(X) = \Gamma(\mathbf{A}^{2}) = k[x,y]$.} \\
   So $f = 0$ (nothing to do) or $g(P) \neq 0$ for all $P \in X = \mathbf{A}^{2} - \{(0,0)\}$.
 
 \item[(2)]
-  As $V(g)$ is contained in a finite set $\{(0,0)\}$, $g$ is a non-zero constant.
+  As $V(g)$ is contained in a finite set $\{(0,0)\}$, $g$ is a nonzero constant.
   Therefore, $z \in k[x,y] = \Gamma(\mathbf{A}^{2})$ (Problem 1.4).
 \end{enumerate}
 $\Box$ \\\\
@@ -15052,6 +15052,53 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Define a ring homomorphism $\varphi: R \hookrightarrow R[x] \to S := R[x]/(xf-1)$
+  by
+  \[
+    \varphi: r \mapsto r \mapsto \overline{r} = r + (xf-1).
+  \]
+
+\item[(2)]
+  Note that $\varphi(f) = \overline{f}$ is a unit in $S$
+  since $\overline{x}\overline{f} = \overline{1}$ in $S$.
+  By (a), $\varphi$ extends uniquely to a ring homomorphism from $R[1/f]$ to $S$.
+  In particular, $\varphi(1/f) = \varphi(f)^{-1} = \overline{x}$.
+
+\item[(3)]
+  \emph{Show that $\varphi$ is surjective.}
+  Note that $\varphi(r) = \overline{r}$ for any $r \in R$
+  and $\varphi(1/f) = \overline{x}$.
+  So, $\varphi$ is surjective since $\varphi$ is a ring homomorphism.
+
+\item[(4)]
+  \emph{Show that $\varphi$ is injective.}
+  Suppose $\varphi(r/f^n) = 0$ for some $r/f^n \in R[1/f]$.
+  Write
+  \[
+    rx^n = (xf - 1)g(x)
+  \]
+  for some $g(x) \in R[x]$.
+  It suffices to show that $g(x) = 0$.
+  Consider two possible cases of $n$.
+
+\item[(5)]
+  The case $n \leq 0$.
+  $r = x^{-n}(xf - 1)g(x) \in R[x]$.
+  $g(x) = 0$ by comparing the degree of two polynomials.
+
+\item[(6)]
+  The case $n > 0$.
+  (Reductio ad absurdum)
+  If $g(x) \neq 0$, then $r \neq 0$ and $\deg(g) = n-1$.
+  Take $x = 0$ in $rx^n = (xf - 1)g(x)$ to get $g(0) = 0$.
+  So $g = x g_1$ for some $g_1 \in R[x]$ if $n > 1$.
+  Hence,
+  \[
+    rx^{n-1} = (xf - 1)g_1(x)
+  \]
+  where $\deg g_1 = n-2$ if $n > 1$.
+  Continue this process to get $g(x) = cx^{n-1} \in R[x]$ for some nonzero $c \in R$.
+  So $rx = cfx - c$, which is absurd.
 \end{enumerate}
 $\Box$ \\\\
 
