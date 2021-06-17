@@ -15073,21 +15073,13 @@ $\Box$ \\
 \item[(4)]
   \emph{Show that $\varphi$ is injective.}
   Suppose $\varphi(r/f^n) = 0$ for some $r/f^n \in R[1/f]$.
+  May assume that $n > 0$.
   Write
   \[
     rx^n = (xf - 1)g(x)
   \]
   for some $g(x) \in R[x]$.
   It suffices to show that $g(x) = 0$.
-  Consider two possible cases of $n$.
-
-\item[(5)]
-  The case $n \leq 0$.
-  $r = x^{-n}(xf - 1)g(x) \in R[x]$.
-  $g(x) = 0$ by comparing the degree of two polynomials.
-
-\item[(6)]
-  The case $n > 0$.
   (Reductio ad absurdum)
   If $g(x) \neq 0$, then $r \neq 0$ and $\deg(g) = n-1$.
   Take $x = 0$ in $rx^n = (xf - 1)g(x)$ to get $g(0) = 0$.
