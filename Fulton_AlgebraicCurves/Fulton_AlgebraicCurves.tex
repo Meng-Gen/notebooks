@@ -15102,6 +15102,65 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 6.15.*}
+\addcontentsline{toc}{subsubsection}{Problem 6.15.*}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $Y$ is an open or closed subvariety of $X$,
+  the inclusion $i: Y \to X$ is a morphism.}
+
+\item[(b)]
+  \emph{The composition of morphisms is a morphism.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  The inclusion map is continuous in any topological space.
+  ($i^{-1}(U) = U \cap Y$ is open in $Y$ for every open set $U$ of $X$.)
+
+\item[(2)]
+  For every open set $U$ of $X$,
+  if $f \in \Gamma(U, \mathscr{O}_X)$,
+  then $\widetilde{i}(f)$ is a rational function defined on $U \cap Y = i^{-1}(U)$.
+  Thus, $\widetilde{i}(f) = f \circ i \in \Gamma(i^{-1}(U), \mathscr{O}_Y)$.
+  (The ring $\Gamma(i^{-1}(U), \mathscr{O}_Y)$ is well-defined since $Y$ is a variety.)
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Given two morphisms $X \xrightarrow{\varphi} Y \xrightarrow{\psi} Z$.
+  The composition continuous functions $\psi \circ \varphi$ is continuous
+  in any topological space.
+
+\item[(2)]
+  For every open set $U$ of $Z$,
+  if $f \in \Gamma(U, \mathscr{O}_Z)$,
+  then $\widetilde{\psi}(f) = f \circ \psi \in \Gamma(\psi^{-1}(U), \mathscr{O}_Y)$.
+  Note that $\psi^{-1}(U)$ is open since $\psi$ is continuous.
+  So
+  \[
+    \widetilde{\varphi}(\widetilde{\psi}(f))
+    = f \circ \psi \circ \varphi
+    \in \Gamma(\varphi^{-1}(\psi^{-1}(U)), \mathscr{O}_X).
+  \]
+  Problem 2.6 gives that
+  $\widetilde{\varphi} \circ \widetilde{\psi} = \widetilde{\psi \circ \varphi}$.
+  Besides, $\varphi^{-1} \circ \psi^{-1} = (\psi \circ \varphi)^{-1}$.
+  Therefore, $\widetilde{\psi \circ \varphi}$ pulls rational functions back
+  to rational functions on every open set.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
