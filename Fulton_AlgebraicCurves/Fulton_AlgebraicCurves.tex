@@ -7,6 +7,7 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools}
 \usepackage{physics}
+\usepackage{tikz-cd}
 \parindent=0pt
 
 
@@ -15112,7 +15113,9 @@ and suppose $f(U_\alpha) \subseteq V_\alpha$ for all $\alpha$.}
   each restriction $f_\alpha: U_\alpha \to V_\alpha$ of $f$ is a morphism.}
 
 \item[(b)]
-  \emph{} \\
+  \emph{If each $U_\alpha$, $V_\alpha$ is affine,
+  $f$ is a morphism if and only if
+  each $\widetilde{f}(\Gamma(V_\alpha)) \subseteq \Gamma(U_\alpha)$.} \\
 \end{enumerate}
 
 
@@ -15125,6 +15128,55 @@ and suppose $f(U_\alpha) \subseteq V_\alpha$ for all $\alpha$.}
   each restriction $f_\alpha: U_\alpha \to V_\alpha$ of $f$ is continuous.
 
 \item[(2)]
+  Suppose $f: X \to Y$ is a morphism.
+  The diagram
+  \begin{center}
+    \begin{tikzcd}
+      X \arrow[r, "f"]
+        & Y \\
+      U_\alpha \arrow[r, "f_\alpha"] \arrow[u, hook, "i_X"]
+        & V_\alpha \arrow[u, hook, "i_Y"]
+    \end{tikzcd}
+  \end{center}
+  is commutative.
+  By Problem 6.15(a), two inclusion maps $i_X$ and $i_Y$ are morphisms.
+  By Problem 6.15(b), $f \circ i_X$ is a morphism.
+  So it suffices to show that $f_\alpha$ is a morphism if
+  $i_Y \circ f_\alpha$ is a morphism.
+
+\item[(3)]
+  Given a rational function $g \in \Gamma(V, \mathscr{O}_{V_\alpha})$
+  on an open set $V$ of $V_\alpha$.
+  So $g \circ i_Y$ is a rational function in $\Gamma(V, \mathscr{O}_{Y})$
+  on an open set $V$ of $Y$ (Problem 6.1).
+  Therefore, given any $y \in V$ we have
+  \begin{align*}
+    (\widetilde{f_\alpha}(g))(y)
+    &= (g \circ f_\alpha)(y) \\
+    &= g(f_\alpha(y)) \\
+    &= g(i_Y(f_\alpha(y))) \\
+    &= (\widetilde{i_Y \circ f_\alpha}(g))(y).
+  \end{align*}
+  Hence $\widetilde{f_\alpha}$ pulls back $g$ to a rational function
+  $\widetilde{f_\alpha}(g)$ on $U_\alpha$.
+
+\item[(4)]
+  Suppose $f_\alpha: U_\alpha \to V_\alpha$ of $f$ is a morphism for all $\alpha$.
+  Given a rational function $g \in \Gamma(V, \mathscr{O}_Y)$ on an open set $V$ of $Y$.
+  $g$ is a rational function in $\Gamma(V \cap V_\alpha, \mathscr{O}_{V_\alpha})$
+  on an open set $V \cap V_\alpha$ of $V_\alpha \subseteq Y$ for all $\alpha$.
+  Therefore,
+  \[
+    \widetilde{f_\alpha}(g)
+    = g \circ f_\alpha
+    \in \Gamma(f_\alpha^{-1}(V \cap V_\alpha), \mathscr{O}_{U_\alpha})
+    = \Gamma(f_\alpha^{-1}(V), \mathscr{O}_{U_\alpha})
+  \]
+  for all $\alpha$.
+  So each restriction $g \circ f_\alpha = (g \circ f)|_{U_\alpha}$
+  is a rational function on $U_\alpha$.
+  Hence, $\widetilde{f}(g) = g \circ f$ is a rational function on
+  $X = \bigcup_{\alpha} U_\alpha$.
 \end{enumerate}
 $\Box$ \\
 
@@ -15133,6 +15185,13 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Part (a) and Proposition 2 show that
+  $f$ is a morphism if and only if
+  each $\widetilde{f_\alpha}(\Gamma(V_\alpha)) \subseteq \Gamma(U_\alpha)$.
+
+\item[(2)]
+  Since $f$ and $f_\alpha$ are the same on $U_\alpha$,
+  $\widetilde{f_\alpha} = \widetilde{f}$ on $\Gamma(V_\alpha)$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -15220,6 +15279,24 @@ $\Box$ \\\\
 
 \subsection*{6.5. Algebraic Function Fields and Dimension of Varieties \\}
 \addcontentsline{toc}{subsection}{6.5. Algebraic Function Fields and Dimension of Varieties}
+
+
+
+% https://sites.math.washington.edu/~greenber/MATH404-PrimElem.pdf
+
+\subsubsection*{Problem 6.31.* (Theorem of the Primitive Element)}
+\addcontentsline{toc}{subsubsection}{Problem 6.31.* (Theorem of the Primitive Element)}
+\emph{Let $K$ be a field of a characteristic zero,
+$L$ a finite (algebraic) extension of $K$.
+Then there is a $z \in L$ such that $L = K(z)$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
