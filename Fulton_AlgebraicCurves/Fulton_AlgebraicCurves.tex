@@ -15284,19 +15284,79 @@ $\Box$ \\\\
 
 
 
-% https://sites.math.washington.edu/~greenber/MATH404-PrimElem.pdf
-
 \subsubsection*{Problem 6.31.* (Theorem of the Primitive Element)}
 \addcontentsline{toc}{subsubsection}{Problem 6.31.* (Theorem of the Primitive Element)}
 \emph{Let $K$ be a field of a characteristic zero,
 $L$ a finite (algebraic) extension of $K$.
 Then there is a $z \in L$ such that $L = K(z)$.} \\
 
+\emph{Outline of Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Suppose $L = K(x,y)$.
+  Let $f$ and $g$ be monic irreducible polynomials in $K[t]$ such that $f(x) = 0$, $g(y) = 0$.
+  Let $L'$ be a field in which
+  $f = \prod_{i=1}^{n} (t - x_i)$,
+  $g = \prod_{j=1}^{m} (t - y_j)$,
+  $x = x_1$, $y = y_1$, $L' \supseteq L$ (see Problems 1.52, 1.53).}
+
+\item[(2)]
+  \emph{Choose $\lambda \neq 0$ in $K$ so that
+  $\lambda x + y \neq \lambda x_i + y_j$ for all $i \neq 1, j \neq 1$.
+  Let $z = \lambda x + y$, $K' = K(z)$.
+  Set $h(t) = g(z - \lambda t) \in K'[t]$.
+  Then $h(x) = 0$, $h(x_i) \neq 0$ if $i \neq 1$.
+  Therefore $(h,f) = (t-x) \in K'[t]$.
+  Then $x \in K'$, so $y \in K'$, so $L = K'$.}
+
+\item[(3)]
+  \emph{If $L = K(x_1,\ldots,x_n)$, use induction on $n$ to find
+  $\lambda_1,\ldots,\lambda_n \in K$ such that
+  $L = K(\sum \lambda_i x_i)$.} \\
+\end{enumerate}
+
 
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Suppose $L = K(x,y)$.
+  Let $f$ and $g$ be monic irreducible polynomials in $K[t]$ such that $f(x) = 0$, $g(y) = 0$.
+  Let $L'$ be a splitting field of $L$ in which
+  $f = \prod_{i=1}^{n} (t - x_i)$,
+  $g = \prod_{j=1}^{m} (t - y_j)$,
+  $x = x_1$, $y = y_1$, $L' \supseteq L$ (Problems 1.52).
+  Note that the $x_i$ (resp. $y_j$) are distinct by the irreducibility of $f$ (resp. $g$)
+  (Problem 1.53).
+
+\item[(2)]
+  Choose $\lambda \neq 0$ in $K$ so that
+  $\lambda x + y \neq \lambda x_i + y_j$ for all $i \neq 1, j \neq 1$.
+  (Note that $\mathbb{Q} \hookrightarrow K$ since $\mathrm{char}(K) = 0$.
+  Hence, such one $\lambda$ exists since $K$ contains an infinite set $\mathbb{Q}$.)
+  Let $z = \lambda x + y$ and $K' = K(z)$.
+
+\item[(3)]
+  \emph{Show that $L = K'$.}
+  $K' = K(z) \subseteq L$ since $z \in L$.
+  Conversely, it suffices to show that $x \in K'$.
+  Define $h(t) = g(z - \lambda t) \in K'[t]$.
+  Then $h(x) = 0$ and $h(x_i) \neq 0$ if $i \neq 1$ by the construction of $\lambda$.
+  Therefore $(h,f) = (t-x) \in K'[t]$.
+  Then $x \in K'$, so $y \in K'$, so $L = K'$.
+
+\item[(4)]
+  If $L = K(x_1,\ldots,x_n)$ is a finite (algebraic) extension of $K$,
+  use induction on $n$ to find $\lambda_1,\ldots,\lambda_n \in K$ such that
+  \begin{align*}
+    L
+    &= K(x_1,\ldots,x_{n-1})(x_n) \\
+    &= K(\lambda_1 x_1 + \cdots + \lambda_{n-1} x_{n-1})(x_n)
+      &(\text{Induction hypothesis}) \\
+    &= K(\lambda_1 x_1 + \cdots + \lambda_n x_n)
+      &(\text{Base step})
+  \end{align*}
+  where $\lambda_1 := 1$.
 \end{enumerate}
 $\Box$ \\\\
 
