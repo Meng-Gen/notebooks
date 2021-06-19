@@ -15187,7 +15187,7 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-  Part (a) and Proposition 2 show that
+  Part (a) and Proposition 2 in \S 6.2 show that
   $f$ is a morphism if and only if
   each $\widetilde{f_\alpha}(\Gamma(V_\alpha)) \subseteq \Gamma(U_\alpha)$.
 
@@ -15256,6 +15256,62 @@ $\Box$ \\
   Besides, $\varphi^{-1} \circ \psi^{-1} = (\psi \circ \varphi)^{-1}$.
   Therefore, $\widetilde{\psi \circ \varphi}$ pulls back rational functions
   to rational functions on every open set.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 6.17.}
+\addcontentsline{toc}{subsubsection}{Problem 6.17.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\mathbf{A}^{2} - \{(0,0)\}$ is not an affine variety (see Problem 6.9).}
+
+\item[(b)]
+  \emph{The union of two open affine subvarieties of a variety may not be affine.} \\
+\end{enumerate}
+
+Note that $\mathbf{A}^{1} - \{0\}$ is an affine variety which is isomorphic to
+$V(1-xy) \subseteq \mathbf{A}^2$. \\
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  (Reductio ad absurdum)
+  Suppose $X := \mathbf{A}^{2} - \{(0,0)\}$ were an affine variety.
+  By Problem 6.15(a), the inclusion map $i: X \hookrightarrow \mathbf{A}^{2}$
+  is a morphism.
+  By Proposition 2 in \S 6.2,
+  $\widetilde{i}: \Gamma(\mathbf{A}^{2}) \hookrightarrow \Gamma(X)$
+  is a ring homomorphism.
+
+\item[(2)]
+  Problems 6.9 shows that $\Gamma(\mathbf{A}^{2}) = \Gamma(X) = k[x,y]$.
+  Hence $\widetilde{i}$ is an isomorphism, so $i$ is an isomorphism.
+  However, $i$ is not surjective on the point $(0,0)$,
+  which is absurd.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Write $\mathbf{A}^{2} - \{(0,0)\}
+  = (\mathbf{A}^{2} - V(x)) \bigcup (\mathbf{A}^{2} - V(y))$.
+  It suffices to show that $\mathbf{A}^{2} - V(x)$ is an affine variety.
+
+\item[(2)]
+  Note that $\mathbf{A}^{2} - V(x)$ is isomorphic to a closed subvariety
+  $V(1-xz)$ of $\mathbf{A}^3$.
 \end{enumerate}
 $\Box$ \\\\
 
