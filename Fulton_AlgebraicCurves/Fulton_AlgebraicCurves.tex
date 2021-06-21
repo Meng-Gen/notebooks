@@ -15515,39 +15515,58 @@ By methods entirely analogous to those for bases of vector spaces, one can prove
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  Let $S = \{ t_1,\ldots,t_n \} \subseteq K$.
-  It is suffices to \emph{show that the following statements are equivalent:}
+  \emph{Let $S = \{ s_1,\ldots,s_n \} \subseteq K$.
+  Show that the following statements are equivalent:}
   \begin{enumerate}
   \item[(i)]
     \emph{$S$ is algebraically independent over $k$.}
 
   \item[(ii)]
-    \emph{For each $i$, $t_i$ is transcendental over $k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$.}
+    \emph{For each $i$, $s_i$ is transcendental over $k(s_1,\ldots,s_{i-1},s_{i+1},\ldots,s_n)$.}
+
+  \item[(iii)]
+    \emph{For each $i$, $s_i$ is transcendental over $k(s_1,\ldots,s_{i-1})$.}
   \end{enumerate}
   (Lemma 19.7 in the textbook: \emph{Patrick Morandi, Field and Galois Theory.})
+  The result is established if we can show that (i) $\Longleftrightarrow$ (ii).
 
 \item[(2)]
   ((i) $\Longrightarrow$ (ii))
-  Suppose there are $a_j \in k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$ such that
+  Suppose there are $a_j \in k(s_1,\ldots,s_{i-1},s_{i+1},\ldots,s_n)$ such that
   \[
-    t_i^{m} + \cdots + a_1 t_i + a_0 = 0.
+    s_i^{m} + \cdots + a_1 s_i + a_0 = 0.
   \]
-  Clearing denominators, might assume $a_j = g_j(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)
-  \in k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$.
+  Clearing denominators, might assume $a_j \in k[s_1,\ldots,s_{i-1},s_{i+1},\ldots,s_n]$.
   ($a_m = 1$.)
   Then
   \[
     f
-    = \sum_j g_j(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)t_i^j
-    \in k[t_1,\ldots,t_n]
+    = \sum_j a_j(s_1,\ldots,s_{i-1},s_{i+1},\ldots,s_n)s_i^j
+    \in k[s_1,\ldots,s_n]
   \]
-  has a root $(t_1,\ldots,t_n) \in \mathbf{A}^{n}(k)$.
+  has a root $(s_1,\ldots,s_n) \in \mathbf{A}^{n}(k)$.
   Since $S$ is algebraically independent over $k$, $f = 0$.
   So $a_j = 0$.
-  So $t_i$ is transcendental over $k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$.
+  So $s_i$ is transcendental over $k(s_1,\ldots,s_{i-1},s_{i+1},\ldots,s_n)$.
 
 \item[(3)]
-  ((ii) $\Longrightarrow$ (i))
+  ((ii) $\Longrightarrow$ (iii))
+  Clearly.
+
+\item[(4)]
+  ((iii) $\Longrightarrow$ (i))
+  Suppose $S$ were not algebraically independent over $k$.
+  Choose $m$ minimal such that there exists a nonzero
+  $f \in k[x_1,\ldots,x_m]$ having a root $(s_1,\ldots,s_m) \in \mathbf{A}^{n}$.
+  Write $f = \sum_j a_j x_m^j$ where $a_j \in k[x_1,\ldots,x_{m-1}]$.
+  So
+  \[
+    \sum_j a_j(s_1,\ldots,s_{m-1}) s_m^j = 0.
+  \]
+  Since $s_m$ is not algebraic over $k(s_1,\ldots,s_{i-1})$ by assumption,
+  all $a_j(s_1,\ldots,s_{m-1}) = 0$ in $k$.
+  By the minimality of $m$, all $a_j = 0$ in $k[x_1,\ldots,x_{m-1}]$.
+  So $f = 0$, which is absurd.
 \end{enumerate}
 $\Box$ \\
 
@@ -15556,6 +15575,48 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that any algebraically independent set may be completed to a transcendence basis.}
+  Let $A$ be any algebraically independent subset of $K$.
+  We claim we can find a transcendence basis $\mathscr{B}$ such that
+  $A \subseteq \mathscr{B} \subseteq K$.
+
+\item[(2)]
+  (Zorn's lemma)
+  Let
+  \[
+    \Sigma = \{ S \text{ is algebraically independent} : A \subseteq S \subseteq K \}.
+  \]
+  Order $\Sigma$ by inclusion.
+  $\Sigma$ is non empty since $A \in \Sigma$.
+  To apply Zorn's lemma we must show that every chain in $\Sigma$ has an upper bound in $\Sigma$.
+
+\item[(3)]
+  Let $(S_\alpha)$ be a chain in $\Sigma$,
+  so that for each pair of indices $\alpha, \beta$
+  we have either $S_\alpha \subseteq S_\beta$, or $S_\beta \subseteq S_\alpha$.
+  Let $B = \bigcup_\alpha S_\alpha$.
+  Clearly, $B \in \Sigma$ since $A \subseteq B \subseteq K$ and
+  polynomials only involve finitely many variables.
+  By Zorn's lemma, $\Sigma$ has a maximal element $\mathscr{B}$.
+
+\item[(4)]
+  \emph{Show that $K$ is algebraic over $k(\mathscr{B})$.}
+  (Reductio ad absurdum)
+  Suppose there were an element $s \in K$ transcendental over $k(\mathscr{B})$.
+  Then $\mathscr{B} \cup \{ s \}$ is algebraically independent,
+  which contradicts the maximality of $\mathscr{B}$.
+
+\item[(5)]
+  \emph{Show that any set $A = \{ x_1,\ldots,x_n \}$ such that
+  $K$ is algebraic over $k(x_1,\ldots,x_n)$ contains a transcendence basis.}
+  If $A$ is algebraically independent, nothing to do.
+  If $A$ is algebraically dependent,
+  then there is some $x_i$ such that
+  $x_i$ algebraic over $k(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_n)$.
+  So $K$ is algebraic over $k(x_1,\ldots,x_{i-1},x_{i+1},\ldots,x_n)$.
+  Continue this process, we can find a minimal subset $\mathscr{B}$ of $A$
+  such that $K$ is algebraic over $k(x_1,\ldots,x_r)$ (with suitable relabeling).
+  Here $\mathscr{B} \subseteq A$ is a transcendence basis.
 \end{enumerate}
 $\Box$ \\
 
