@@ -15484,6 +15484,96 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 6.33. (Transcendence degree)}
+\addcontentsline{toc}{subsubsection}{Problem 6.33. (Transcendence degree)}
+\emph{The notion of transcendence degree is analogous to
+the idea of the dimension of a vector space.
+If $k \subseteq K$, we say that $x_1,\ldots,x_n \in K$ are \textbf{algebraically independent} if
+there is no nonzero polynomial $f \in k[x_1,\ldots,x_n]$ such that $f(x_1,\ldots,x_n) = 0$.
+By methods entirely analogous to those for bases of vector spaces, one can prove:}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $x_1,\ldots,x_n \in K$, $K$ a finitely generated extension of $k$.
+  Then $x_1,\ldots,x_n$ is a minimal set such that
+  $K$ is algebraic over $k(x_1,\ldots,x_n)$ if and only if
+  $x_1,\ldots,x_n$ is a maximal set of algebraically independent elements of $K$.
+  Such $\{ x_1,\ldots,x_n \}$ is called a \textbf{transcendence basis} of $K$ over $k$.}
+
+\item[(b)]
+  \emph{Any algebraically independent set may be completed to a transcendence basis.
+  Any set $\{ x_1,\ldots,x_n \}$ such that
+  $K$ is algebraic over $k(x_1,\ldots,x_n)$ contains a transcendence basis.}
+
+\item[(c)]
+  \emph{$\mathrm{tr.} \deg_k K$ is
+  the number of elements in any transcendence basis of $K$ over $k$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Let $S = \{ t_1,\ldots,t_n \} \subseteq K$.
+  It is suffices to \emph{show that the following statements are equivalent:}
+  \begin{enumerate}
+  \item[(i)]
+    \emph{$S$ is algebraically independent over $k$.}
+
+  \item[(ii)]
+    \emph{For each $i$, $t_i$ is transcendental over $k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$.}
+  \end{enumerate}
+  (Lemma 19.7 in the textbook: \emph{Patrick Morandi, Field and Galois Theory.})
+
+\item[(2)]
+  ((i) $\Longrightarrow$ (ii))
+  Suppose there are $a_j \in k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$ such that
+  \[
+    t_i^{m} + \cdots + a_1 t_i + a_0 = 0.
+  \]
+  Clearing denominators, might assume $a_j = g_j(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)
+  \in k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$.
+  ($a_m = 1$.)
+  Then
+  \[
+    f
+    = \sum_j g_j(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)t_i^j
+    \in k[t_1,\ldots,t_n]
+  \]
+  has a root $(t_1,\ldots,t_n) \in \mathbf{A}^{n}(k)$.
+  Since $S$ is algebraically independent over $k$, $f = 0$.
+  So $a_j = 0$.
+  So $t_i$ is transcendental over $k(t_1,\ldots,t_{i-1},t_{i+1},\ldots,t_n)$.
+
+\item[(3)]
+  ((ii) $\Longrightarrow$ (i))
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Let $K$ be a field extension of $k$.
+  If $S$ and $T$ are transcendence bases for $K/k$,
+  then $|S| = |T|$.}
+  (Theorem 19.15 in the textbook: \emph{Patrick Morandi, Field and Galois Theory.})
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
