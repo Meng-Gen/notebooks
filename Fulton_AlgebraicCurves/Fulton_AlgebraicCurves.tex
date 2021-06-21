@@ -15625,11 +15625,60 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  It suffices to show that $\mathrm{tr.} \deg_k K$ is well-defined.
   \emph{Let $K$ be a field extension of $k$.
   If $S$ and $T$ are transcendence bases for $K/k$,
   then $|S| = |T|$.}
   (Theorem 19.15 in the textbook: \emph{Patrick Morandi, Field and Galois Theory.})
 
+\item[(2)]
+  Suppose $S = \{s_1,\ldots,s_n\}$ is finite.
+  In the proof of (b), $K/k(S-\{s_1\})$ is not algebraic.
+  Since $K/k(T)$ is algebraic, some $t \in T$, say $t_1 \in T$ (by relabeling),
+  must be transcendental over $k(S-\{s_1\})$.
+  By the proof of (a),
+  \[
+    S_1 := \{ t_1,s_2,\ldots,s_n \}
+  \]
+  is algebraically independent.
+  Note that $s_1$ is algebraic over $k(S_1)$,
+  or else $\{ t_1,s_1,\ldots,s_n \}$ is algebraically independent,
+  contrary to the assumption of $S$.
+  Therefore, $K/k(S_1)$ is algebraic.
+
+\item[(3)]
+  Continue this process to replace each element in $S$ to get
+  $S_n = \{ t_1, \ldots, t_n \} \subseteq T$.
+  So $|S| \leq |T|$. Similarly, $|T| \leq |S|$.
+  Therefore, $|S| = |T|$ if $S$ is finite.
+
+\item[(4)]
+  Suppose $S$ (and thus $T$) are infinite.
+  Since $t$ is algebraic over $k(S)$ for each $t \in T$,
+  there is a corresponding finite subset $S_t \subseteq S$ such that
+  $t$ is algebraic over $k(S_t)$.
+
+\item[(5)]
+  Let
+  \[
+    S' = \bigcup_{t \in T} S_t.
+  \]
+  Then each $t \in T$ is algebraic over $k(S')$.
+  Since $K/k(T)$ is algebraic, $K/k(S')$ is algebraic.
+  Thus $S' = S$ since $S' \subseteq S$ and $S$ is a transcendental basis for $K/k$.
+
+\item[(6)]
+  Hence,
+  \[
+    |S|
+    = |S'|
+    = \abs{\bigcup_{t \in T} S_t}
+    \leq |T \times \mathbb{N}|
+    = |T|,
+  \]
+  where the last equality holds since $|T| = \infty$.
+  Similarly, $|T| \leq |S|$.
+  Therefore, $|S| = |T|$ if $S$ is infinite.
 \end{enumerate}
 $\Box$ \\\\
 
