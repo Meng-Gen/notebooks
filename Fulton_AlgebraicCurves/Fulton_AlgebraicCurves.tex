@@ -14329,9 +14329,9 @@ This gives an explicit method for calculating in the group.} \\
   So
   \begin{align*}
     & \:
-    (\lambda x+\mu)^2 = x^3 + ax^2 + bx + c \\
+    (\lambda x+\mu)^2 = x^3 + ax^2 + \text{lower terms} \\
     \Longleftrightarrow & \:
-    x^3 + (a - \lambda^2) x^2 + (b - 2\lambda\mu) x + (c - \mu^2) = 0 \\
+    x^3 + (a - \lambda^2) x^2 + \text{lower terms} = 0 \\
     \Longleftrightarrow & \:
     x_1 + x_2 + x_3' = \lambda^2 - a
       & (\text{Vieta's formulas}) \\
@@ -14339,10 +14339,36 @@ This gives an explicit method for calculating in the group.} \\
     \alpha = \lambda^2 - a - x_1 - x_2, \beta = \lambda \alpha + \mu.
   \end{align*}
   Here $P_3' = [\alpha:\beta:1]$ is the third point on $L_1 \cap C$.
-  ($L_1.C = P_1 + P_2 + P_3'$.)
+  ($L_1 \bullet C = P_1 + P_2 + P_3'$.)
 
 \item[(2)]
-  Let the line $L_2$ passing throught $P_3'$ and $O$.
+  Suppose $P_1 = P_2$ and $y_1 \neq 0$.
+  Write $C = y^2z - x^3 - ax^2z - bxz^2 - cz^3$.
+  By Problem 5.4, the tangent line $L_1$ at $P_1 = P_2$ is
+  \[
+    L_1: y = \lambda x + \frac{bx_1+2c}{2y_1} z.
+  \]
+  (Note that $\lambda = \frac{3x_1^2+2ax_1+b}{2y_1}$ and $P_1 \in C$.)
+  In particular, $O \not\in L_1$.
+  By dehomogenizing $C$ and replacing $y$ by $\lambda x + \frac{bx_1+2c}{2y_1}$,
+  we have
+  \begin{align*}
+    & \:
+    \left(\lambda x + \frac{bx_1+2c}{2y_1}\right)^2 = x^3 + ax^2 + \text{lower terms} \\
+    \Longleftrightarrow & \:
+    x^3 + (a - \lambda^2) x^2 + \text{lower terms} = 0 \\
+    \Longleftrightarrow & \:
+    x_1 + x_2 + x_3' = \lambda^2 - a
+      & (\text{Vieta's formulas}) \\
+    \Longleftrightarrow & \:
+    \alpha = \lambda^2 - a - x_1 - x_2, \beta = \lambda \alpha + \mu.
+  \end{align*}
+  Here $\mu = y_1-\lambda x_1$ and $P_3' = [\alpha:\beta:1]$ is the third point on $L_1 \cap C$.
+  ($L_1 \bullet C = P_1 + P_2 + P_3'$.)
+
+\item[(3)]
+  In any case of (1) or (2),
+  we let the line $L_2$ passing throught $P_3'$ and $O$.
   $L_2 = x - \alpha z$.
   So
   \begin{align*}
@@ -14354,10 +14380,7 @@ This gives an explicit method for calculating in the group.} \\
     P_3 = [\alpha:-\beta:1] = [\lambda^2 - a - x_1 - x_2:-\lambda x_3 - \mu:1].
   \end{align*}
   Here $P_3$ is the third point on $L_2 \cap C$.
-  ($L_2.C = P_3' + O + P_3$.)
-
-\item[(3)]
-  Suppose $P_1 = P_2$ and $y_1 \neq 0$.
+  ($L_2 \bullet C = P_3' + O + P_3$.)
 \end{enumerate}
 $\Box$ \\\\
 
