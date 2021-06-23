@@ -15563,6 +15563,36 @@ $\Box$ \\
 \emph{Proof of (e).}
 \begin{enumerate}
 \item[(1)]
+  Similar to Problem 5.10,
+  we might assume that $C = y^2z - x^3 - ax^2z - bxz^2 - cz^3$ and $O = [0:1:0] \in C$.
+  $C$ is an affine variety in $\mathbf{P}^2$.
+
+\item[(2)]
+  By Proposition 4 in \S 5.6,
+  $C$ is an abelian group with the addition $\oplus$.
+  Now we can use Problem 5.38 to compute $P \oplus Q$ for any $P, Q \in C$.
+
+\item[(3)]
+  Define the addition $\varphi$ as in Problem 5.38.
+  Let 
+  \begin{align*}
+    U_1 &= \{ x_1 \neq x_2 \}, \\
+    U_2 &= \{ x_1 = x_2, y_1 \neq 0 \}, \\
+    U_3 &= \{ x_1 = x_2, y_1 = 0, z_1 \neq 0 \}
+  \end{align*}
+  be an open covering of $C \times C$ (Proposition 7 in \S 6.4).
+  It suffices to show that $\varphi$ is a morphism on each $U_\alpha$ ($\alpha = 1, 2, 3$)
+  (Problem 6.14).
+  Since $\varphi$ is a polynomial map on each $U_\alpha$,
+  $\varphi$ is continuous on each $U_\alpha$.
+  Also, $\varphi$ pulls back rational functions to a rational functions on each $U_\alpha$.
+  Hence $\varphi$ is a morphism.
+
+\item[(4)]
+  Define the inverse $\psi$ as $\psi(O) = O$ and $\psi([x:y:1]) = [x:-y:1]$ (Problem 5.38).
+  $\psi$ is continuous
+  and pulls back rational functions to a rational functions.
+  So $\psi$ is a morphism.
 \end{enumerate}
 $\Box$ \\\\
 
