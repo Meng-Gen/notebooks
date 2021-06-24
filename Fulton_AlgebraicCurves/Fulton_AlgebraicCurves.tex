@@ -14387,6 +14387,64 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.39.}
+\addcontentsline{toc}{subsubsection}{Problem 5.39.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $C = y^2z-x^3-4xz^2$, $O = P_0 = [0:1:0]$, $P_1 = [2:4:1]$,
+  $P_2 = [0:0:1]$ and $P_3 = [2:-4:1]$.
+  Show that $G = \{ P_0, P_1, P_2, P_3 \}$ form a subgroup of $C$ that is cyclic of order $4$.}
+
+\item[(b)]
+  \emph{Let $C = y^2z - x^3 + 43xz^2 - 166z^3$. 
+  Let $O = [0:1:0]$, $P = [3:8:1]$.
+  Show that $P$ is an element of order $7$ in $C$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  A direct calculation shows that
+  \[
+    P_i \oplus P_j = P_{i+j}
+  \]
+  for all $i, j \in \mathbb{Z}/4\mathbb{Z}$ (Problem 5.38).
+  Hence $G$ is a subgroup of $C$.
+
+\item[(2)]
+  Note that
+  $G \xrightarrow{\sim} \mathbb{Z}/4\mathbb{Z}$ (by $P_i \mapsto i$)
+  is an isomorphism.
+  So $G$ is a cyclic group of order $4$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  A direct calculation shows that $2P = P \oplus P = [-5:-16:1]$,
+  $4P = 2P \oplus 2P = [11:32:1]$, and
+  $8P = 4P \oplus 4P = [3:8:1] = P$
+  (Problem 5.38).
+
+\item[(2)]
+  Since $8P = P$, $7P = O$.
+  The order of $P$ is $1$ or $7$ (since $7$ is a prime integer).
+  Note that $P \neq O$.
+  Therefore, $P$ is of order $7$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
