@@ -15481,6 +15481,74 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 6.18.}
+\addcontentsline{toc}{subsubsection}{Problem 6.18.}
+\emph{Show that the natural map $\pi$
+from $\mathbf{A}^{n+1} - \{(0,\ldots,0)\}$ to $\mathbf{P}^n$ is a morphism of varieties,
+and that a subset $U$ of $\mathbf{P}^n$ is open if and only if $\pi^{-1}(U)$ is open.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\pi$ is the morphism by Problem 6.14.}
+  Write 
+  \[
+    X := \mathbf{A}^{n+1} - \{(0,\ldots,0)\} = \bigcup_{i=1}^{n+1} U_i
+  \]
+  where $U_i = \{ (a_1,\ldots,a_{n+1}) \in X : a_i \neq 0 \}$
+  are open subvarieties in $X$.
+  Similarly, write 
+  \[
+    Y := \mathbf{P}^{n} = \bigcup_{i=1}^{n+1} V_i
+  \]
+  where $V_i = \{ [a_1:\ldots:a_{n+1}] \in Y : a_i \neq 0 \}$
+  are open subvarieties.
+  Hence $\pi(U_i) = V_i$ for all $i$.
+
+\item[(2)]
+  Now it suffices to show $\pi|_{U_i}: U_i \to V_i$ is a morphism for all $i$ (Problem 6.14).
+  Given any closed subset $V(f) \cap V_i$ of $V_i$, where $f \in k[x_1,\ldots,x_{n+1}]$.
+  $(\pi|_{U_i})^{-1}(V(f) \cap V_i) = V(f) \cap U_i$ is also closed in $U_i$.
+  Hence $\pi|_{U_i}$ is continuous.
+  Also, $\pi|_{U_i}$ pulls back rational functions to a rational functions.
+
+\item[(3)]
+  \emph{Show that $U \subseteq \mathbf{P}^n$ is open if and only if $\pi^{-1}(U)$ is open.}
+  $\pi^{-1}(U)$ is open if $U$ is open since $\pi$ is continuous.
+  It suffices to show that $\pi(E)$ is open if $E$ is open in $X$.
+
+\item[(4)]
+  Let $\widetilde{E}$ be the union of all the lines through the origin that meet $E$,
+  that is, $\widetilde{E} = \pi^{-1}(\pi(E))$.
+  Note that
+  \[
+    \widetilde{E} = \bigcup_{a \in k-\{0\}} (aE)
+  \]
+  is open in $X$ since each $aE$ is open in $X$.
+  (Write $E = X - V(f_1, \ldots, f_r)$.
+  Then $aE = X - V(g_1, \ldots, g_r)$,
+  where
+  \[
+    g_i(x_1,\ldots,x_{n+1})
+    := f_i(a^{-1} x_1, \ldots, a^{-1}x_{n+1})
+    \in k[x_1,\ldots,x_{n+1}]
+  \]
+  for each $i$.)
+  By the continuity of $\pi$,
+  $\pi(E)$ is open since $\widetilde{E} = \pi^{-1}(\pi(E))$ is open.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
