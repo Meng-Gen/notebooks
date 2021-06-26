@@ -12819,7 +12819,7 @@ and the intersection numbers at these points:}
       (y^2 + x^2 - 6x \pm 2\sqrt{-8}y)) \\
     &= 1.
   \end{align*}
-  (Or by B\'ezout's Theorem,
+  (Or by B\'ezout's theorem,
   each intersection point has the intersection number $1$ in this case.)
 \end{enumerate}
 $\Box$ \\
@@ -12907,7 +12907,7 @@ $\Box$ \\
   \[
     \left[ \frac{1}{2}:1:2 \pm 2\sqrt{2} \right].
   \]
-  Note that there are only 4 different intersection points (B\'ezout's Theorem).
+  Note that there are only 4 different intersection points (B\'ezout's theorem).
 
 \item[(2)]
   Suppose $P = [0:0:1]$.
@@ -12999,7 +12999,7 @@ $\Box$ \\
   $f_{*}(r\cos\theta,r\sin\theta) = g_{*}(r\cos\theta,r\sin\theta) = 0$ over $k = \mathbb{C}$.
   As $r = 0$, nothing to do.
   As $r > 0$, we get $\theta = \frac{m\pi}{5}$ for all integers $m$.)
-  Note that there are only 7 different intersection points (B\'ezout's Theorem).
+  Note that there are only 7 different intersection points (B\'ezout's theorem).
 
 \item[(2)]
   Suppose $P = [1:\sqrt{-1}:0]$.
@@ -14111,7 +14111,7 @@ $\Box$ \\\\
 
 \subsubsection*{Problem 5.20.}
 \addcontentsline{toc}{subsubsection}{Problem 5.20.}
-\emph{Check your answers of Problem 5.3 with B\'ezout's Theorem} \\
+\emph{Check your answers of Problem 5.3 with B\'ezout's theorem} \\
 
 
 
@@ -14187,7 +14187,7 @@ Is this true for affine curves?} \\
   Let $f$ be a nonsingular projective plane curve.
   (Reductio ad absurdum)
   Suppose $f = gh$ were reducible.
-  Then $g$ and $h$ intersects in $\mathbf{P}^2$ (B\'ezout's Theorem).
+  Then $g$ and $h$ intersects in $\mathbf{P}^2$ (B\'ezout's theorem).
 
 \item[(2)]
   \emph{Show that each intersection point $P$ is a singularity of $f$.}
@@ -14233,7 +14233,7 @@ In particular, $f$ has at most $\frac{n(n-1)}{2}$ multiple points.
 
 \item[(2)]
   Since $f$ and $\frac{\partial f}{\partial x}$ have no common component (Problem 5.8),
-  Corollary 1 to B\'ezout's Theorem gives us
+  Corollary 1 to B\'ezout's theorem gives us
   \[
     \sum m_P(f) m_P\left( \frac{\partial f}{\partial x} \right)
     \leq \deg(f) \deg\left( \frac{\partial f}{\partial x} \right)
@@ -14262,6 +14262,63 @@ $\Box$ \\\\
 
 \subsection*{5.4. Multiple Points \\}
 \addcontentsline{toc}{subsection}{5.4. Multiple Points}
+
+
+
+\subsubsection*{Problem 5.25.}
+\addcontentsline{toc}{subsubsection}{Problem 5.25.}
+\emph{Let $f$ be a projective plane curve of degree $n$ with no multiple components,
+and $c$ simple components.
+Show that
+\[
+  \sum \frac{m_P(m_P-1)}{2}
+  \leq
+  \frac{(n-1)(n-2)}{2} + c - 1
+  \leq
+  \frac{n(n-1)}{2}.
+\]
+(Hint: Let $f = f_1 f_2$; consider separately the points on one $f_i$ or on both.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    f = f_1 \cdots f_c,
+  \]
+  where each $f_i$ is irreducible.
+  By assumption, $f_i$ and $f_j$ have no common factor whenever $i \neq j$.
+  By B\'ezout's theorem, we might consider separately the points
+  on one $f_i$ or on many components.
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    & \: \sum \frac{m_P(m_P-1)}{2} \\
+    \leq & \:
+    \sum_{P \in f_1} \frac{m_P(m_P-1)}{2} + \sum_{P \not\in f_1} \frac{m_P(m_P-1)}{2} \\
+    \leq & \:
+    \underbrace{\frac{(d-1)(d-2)}{2}}_{\text{Theorem 2 in \S 5.4}}
+      + \underbrace{\frac{(n-d-1)(n-d-2)}{2} + (c-1) - 1}_{\text{Mathematical induction}} \\
+    = & \:
+    \frac{(n-1)(n-2)}{2} + c - 1 + \underbrace{1 - d(n-d)}_{\leq 0} \\
+    \leq & \:
+    \frac{(n-1)(n-2)}{2} + c - 1
+  \end{align*}
+  where $d = \deg(f_1) \geq 1$.
+
+\item[(3)]
+  Note that $c \leq n$.
+  So
+  \[
+    \frac{(n-1)(n-2)}{2} + c - 1
+    \leq \frac{(n-1)(n-2)}{2} + n - 1
+    = \frac{n(n-1)}{2}.
+  \]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
