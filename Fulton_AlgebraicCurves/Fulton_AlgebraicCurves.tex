@@ -2,6 +2,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{centernot}
 \usepackage{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{mathrsfs}
@@ -14329,6 +14330,74 @@ $\Box$ \\\\
 
 \subsection*{5.5. Max Noether's Fundamental Theorem \\}
 \addcontentsline{toc}{subsection}{5.5. Max Noether's Fundamental Theorem}
+
+
+
+\subsubsection*{Problem 5.29.}
+\addcontentsline{toc}{subsubsection}{Problem 5.29.}
+\emph{Fix $f$, $g$, and $P$.
+Show that in cases (1) and (2) - but not (3) - of Proposition 1
+the conditions on $h$ are equivalent to Noether's conditions.} \\
+
+Recall Proposition 1 in \S 5.5:
+\begin{enumerate}
+\item[(1)]
+  $f$ and $g$ meet transversally at $P$, and $P \in h$.
+
+\item[(2)]
+  $P$ is a simple point on $f$,
+  and $I(P, h \cap f) \geq I(P, g \cap f)$.
+
+\item[(3)]
+  $f$ and $g$ have distinct tangents at $P$,
+  and $m_P(h) \geq m_P(f) + m_P(g) - 1$. \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  (Noether's condition $\Longrightarrow$ (1) of Proposition 1)
+  Since
+  $h_{*} = af_{*} + bg_{*}$ for some $a, b \in \mathscr{O}_P(\mathbf{P}^2)$,
+  \begin{align*}
+    I(P, h \cap f)
+    &= I(P, h_{*} \cap f_{*}) \\
+    &= I(P, (af_{*} + bg_{*}) \cap f_{*}) \\
+    &= I(P, (bg_{*}) \cap f_{*}) \\
+    &= I(P, b \cap f_{*}) + I(P, g_{*} \cap f_{*}) \\
+    &\geq I(P, g_{*} \cap f_{*}) \\
+    &= 1.
+  \end{align*}
+  Hence $P \in h$.
+
+\item[(2)]
+  (Noether's condition $\Longrightarrow$ (2) of Proposition 1)
+  As $h_{*} \in (f_{*}, g_{*}) \subseteq \mathscr{O}_P(\mathbf{P}^2)$,
+  $(f_{*}, h_{*}) \subseteq (f_{*}, g_{*})$.
+  So
+  \begin{align*}
+    I(P, h \cap f)
+    &= I(P, h_{*} \cap f_{*}) \\
+    &= \dim_k (\mathscr{O}_P(\mathbf{P}^2)/(f_{*}, h_{*})) \\
+    &\geq \dim_k (\mathscr{O}_P(\mathbf{P}^2)/(f_{*}, g_{*})) \\
+    &= I(P, g_{*} \cap f_{*}) \\
+    &= I(P, g \cap f).
+  \end{align*}
+
+\item[(3)]
+  (Noether's condition $\centernot\Longrightarrow$ (3) of Proposition 1)
+  Consider $h = y^2z - x^3$, $f = y^2$, $g = x^3$ and $P = [0:0:1]$.
+  Noether's condition holds for $h_{*}$, $f_{*}$, $g_{*}$ at the point $P = [0:0:1]$,
+  and $f, g$ have distinct tangents at $P$.
+  However,
+  \[
+    \underbrace{m_P(h)}_{= 2}
+    < \underbrace{m_P(f)}_{= 2} + \underbrace{m_P(g)}_{= 3} - 1.
+  \]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
