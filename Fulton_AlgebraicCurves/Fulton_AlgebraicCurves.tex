@@ -14517,6 +14517,45 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.35.}
+\addcontentsline{toc}{subsubsection}{Problem 5.35.}
+\emph{Let $C$ be any irreducible cubic,
+or any cubic without multiple components,
+$C^{\circ}$ the set of simple points of $C, O \in C^{\circ}$.
+Show that the same definition as in the nonsingular case
+makes $C^{\circ}$ into an abelian group.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  It suffices to show that $\varphi(C^{\circ} \times C^{\circ}) \subseteq C^{\circ}$.
+
+\item[(2)]
+  Let $C$ be a any irreducible cubic.
+  Given any $P_1, P_2 \in C^{\circ}$.
+  Then there is a unique line $L$ such that $L \bullet C = P_1 + P_2 + P_3$ for some $P_3 \in C$.
+  (If $P_1 = P_2$, $L$ is the tangent to $C$ at $P$.)
+  So it suffices to show that $P_3 \in C^{\circ}$.
+
+\item[(3)]
+  Might assume $P_3 \neq P_1, P_3 \neq P_2$.
+  B\'ezout's theorem shows that
+  \[
+    \sum_{P} I(P, L \cap C) = 3.
+  \]
+  So $I(P_3, L \cap C) = 1$ whenever $P_1 = P_2$ or $P_1 \neq P_2$.
+  Therefore, $P_3 \in C^{\circ}$ (Property (5) in \S 3.3).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
