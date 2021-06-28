@@ -14414,6 +14414,56 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.33.}
+\addcontentsline{toc}{subsubsection}{Problem 5.33.}
+\emph{Let $C$ be an irreducible cubic,
+$L$ a line such that $L \bullet C = P_1 + P_2 + P_3$, $P_i$ distinct.
+Let $L_i$ be the tangent line to $C$ at $P_i$: $L_i \bullet C = 2P_i + Q_i$ for some $Q_i$.
+Show that $Q_1$, $Q_2$, $Q_3$ lie on a line.
+($L^2$ is a conic!)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of Proposition 2 in \S 5.6.
+  Corollary 2 to B\'ezout's theorem shows that each $P_i$ is simple.
+  So all the points of $L^2 \cap C$ are simple points of $C$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    (L_1 L_2 L_3) \bullet C
+    &= L_1 \bullet C + L_2 \bullet C + L_3 \bullet C \\
+    &= (2P_1 + Q_1) + (2P_2 + Q_2) + (2P_3 + Q_3) \\
+    &= (2P_1 + 2P_2 + 2P_3) + (Q_1 + Q_2 + Q_3)
+  \end{align*}
+  and
+  \[
+    L^2 \bullet C
+    = 2(L \bullet C)
+    = 2(P_1 + P_2 + P_3)
+    = 2P_1 + 2P_2 + 2P_3.
+  \]
+  So $(L_1 L_2 L_3) \bullet C > L^2 \bullet C$.
+
+\item[(3)]
+  By Corollary (2) to max Noether's fundamental theorem,
+  there is a curve $M$ such that $M \bullet C = Q_1 + Q_2 + Q_3$.
+  B\'ezout's theorem shows that $\deg(M) = 1$ or $M$ is a line.
+  Therefore, $M$ is a line passing $Q_1$, $Q_2$, $Q_3$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsubsection*{Problem 5.34.}
 \addcontentsline{toc}{subsubsection}{Problem 5.34.}
@@ -14433,11 +14483,11 @@ $\Box$ \\\\
   \begin{align*}
     & \:
     \text{$P_i$ is a flex in $C$} \\
-    \Longleftrightarrow & \: 
+    \Longleftrightarrow & \:
     I(P_i, L_i \cap C) = \mathrm{ord}_{P_i}^{C}(L_i) \geq 3 \\
-    \Longleftrightarrow & \: 
+    \Longleftrightarrow & \:
     I(P_i, L_i \cap C) = 3 \text{ and } L_i \cap C = \{ P_i \} \\
-    \Longleftrightarrow & \: 
+    \Longleftrightarrow & \:
     L_i \bullet C = 3P_i.
       &(\text{B\'ezout's theorem})
   \end{align*}
@@ -14481,7 +14531,7 @@ Let $P_i = [x_i:y_i:1]$, $i = 1, 2, 3$,
 and suppose $P_1 \oplus P_2 = P_3$.
 Let
 \begin{equation*}
-  \lambda = 
+  \lambda =
   \begin{cases}
     \frac{y_1-y_2}{x_1-x_2} & \text{if $x_1 \neq x_2$} \\
     \frac{3x_1^2+2ax_1+b}{2y_1} & \text{if $P_1 = P_2$ and $y_1 \neq 0$}.
@@ -14584,7 +14634,7 @@ $\Box$ \\\\
   Show that $G = \{ P_0, P_1, P_2, P_3 \}$ form a subgroup of $C$ that is cyclic of order $4$.}
 
 \item[(b)]
-  \emph{Let $C = y^2z - x^3 + 43xz^2 - 166z^3$. 
+  \emph{Let $C = y^2z - x^3 + 43xz^2 - 166z^3$.
   Let $O = [0:1:0]$, $P = [3:8:1]$.
   Show that $P$ is an element of order $7$ in $C$.} \\
 \end{enumerate}
@@ -15678,13 +15728,13 @@ and that a subset $U$ of $\mathbf{P}^n$ is open if and only if $\pi^{-1}(U)$ is 
 \begin{enumerate}
 \item[(1)]
   \emph{Show that $\pi$ is the morphism by Problem 6.14.}
-  Write 
+  Write
   \[
     X := \mathbf{A}^{n+1} - \{(0,\ldots,0)\} = \bigcup_{i=1}^{n+1} U_i
   \]
   where $U_i = \{ (a_1,\ldots,a_{n+1}) \in X : a_i \neq 0 \}$
   are open subvarieties in $X$.
-  Similarly, write 
+  Similarly, write
   \[
     Y := \mathbf{P}^{n} = \bigcup_{i=1}^{n+1} V_i
   \]
@@ -15897,7 +15947,7 @@ $\Box$ \\
 
 \item[(3)]
   Define the addition $\varphi$ as in Problem 5.38.
-  Let 
+  Let
   \begin{align*}
     U_1 &= \{ x_1 \neq x_2 \}, \\
     U_2 &= \{ x_1 = x_2, y_1 \neq 0 \}, \\
