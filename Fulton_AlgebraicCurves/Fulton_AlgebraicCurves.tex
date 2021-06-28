@@ -14411,6 +14411,65 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.34.}
+\addcontentsline{toc}{subsubsection}{Problem 5.34.}
+\emph{Show that a line through two flexes on a cubic passes through a third flex.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $C$ be a nonsingular cubic,
+  $L$ a line such that $L \bullet C = P_1 + P_2 + P_3$.
+
+\item[(2)]
+  \emph{Let $L_i$ be the tangent line to $C$ at $P_i$.
+  Show that $P_i$ is a flex in $C$ if and only if $L_i \bullet C = 3P_i$.}
+  \begin{align*}
+    & \:
+    \text{$P_i$ is a flex in $C$} \\
+    \Longleftrightarrow & \: 
+    I(P_i, L_i \cap C) = \mathrm{ord}_{P_i}^{C}(L_i) \geq 3 \\
+    \Longleftrightarrow & \: 
+    I(P_i, L_i \cap C) = 3 \text{ and } L_i \cap C = \{ P_i \} \\
+    \Longleftrightarrow & \: 
+    L_i \bullet C = 3P_i.
+      &(\text{B\'ezout's theorem})
+  \end{align*}
+
+\item[(3)]
+  Since $L_3$ is the tangent line to $C$ at $P_3$, $I(P_3, L_3 \cap C) > 1$.
+  So $L_3 \bullet C = 2P_3 + P_3'$ for some $P_3' \in C$.
+  Now it suffices to show that $P_3' = P_3$ by (2).
+
+\item[(4)]
+  Suppose $P_1$ and $P_2$ are flexes in $C$.
+  Consider $C' = L^3$ and $C'' = L_1 L_2 L_3$.
+  So
+  \begin{align*}
+    C' \bullet C &= 3(L \bullet C) = 3(P_1 + P_2 + P_3) = 3P_1 + 3P_2 + 3P_3 \\
+    C'' \bullet C &= L_1 \bullet C + L_2 \bullet C + L_3 \bullet C = 3P_1 + 3P_2 + 2P_3 + P_3'.
+  \end{align*}
+  By Proposition 3 in \S 5.6, $P_3 = P_3'$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \subsubsection*{Problem 5.38.}
 \addcontentsline{toc}{subsubsection}{Problem 5.38.}
 \emph{Let $C$ be a nonsingular cubic given by the equation
