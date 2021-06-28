@@ -14474,11 +14474,12 @@ $\Box$ \\\\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Let $C$ be a nonsingular cubic,
+  Let $C$ be a cubic,
   $L$ a line such that $L \bullet C = P_1 + P_2 + P_3$.
 
 \item[(2)]
-  \emph{Let $L_i$ be the tangent line to $C$ at $P_i$.
+  \emph{Let $P_i$ be a simple point in $C$,
+  $L_i$ the tangent line to $C$ at $P_i$.
   Show that $P_i$ is a flex in $C$ if and only if $L_i \bullet C = 3P_i$.}
   \begin{align*}
     & \:
@@ -14493,12 +14494,14 @@ $\Box$ \\\\
   \end{align*}
 
 \item[(3)]
-  Since $L_3$ is the tangent line to $C$ at $P_3$, $I(P_3, L_3 \cap C) > 1$.
+  Suppose $P_1$ and $P_2$ are flexes in $C$.
+  $I(P_3, L_3 \cap C) > 1$ since $L_3$ is one tangent line to $C$ at $P_3$.
   So $L_3 \bullet C = 2P_3 + P_3'$ for some $P_3' \in C$.
-  Now it suffices to show that $P_3' = P_3$ by (2).
+  Now it suffices to show that $P_3' = P_3$.
+  ($P_3$ is simple since $P_1$ and $P_2$ are simple points by Corollary 2 to B\'ezout's theorem.
+  So $P_3$ is a flex if $L_3 \bullet C = 3P_3$ by (2).)
 
 \item[(4)]
-  Suppose $P_1$ and $P_2$ are flexes in $C$.
   Consider $C' = L^3$ and $C'' = L_1 L_2 L_3$.
   So
   \begin{align*}
@@ -14515,6 +14518,119 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.37.}
+\addcontentsline{toc}{subsubsection}{Problem 5.37.}
+\emph{In Proposition 4, suppose $O$ is a flex on $C$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that the flexes form a subgroup of $C$; as an abelian group,
+  this subgroup is isomorphic to $\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}$.}
+
+\item[(b)]
+  \emph{}
+
+\item[(c)]
+  \emph{}
+
+\item[(d)]
+  \emph{}
+
+\item[(e)]
+  \emph{}
+
+\item[(f)]
+  \emph{} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Let $G$ be the set of all flexes of $C$.
+  Show that $G$ is a subgroup of $C$.}
+  $G \neq \varnothing$ since $O \in G$.
+  Given any two flexes $P, Q \in C$, we have
+  \begin{align*}
+    -P &= \varphi(O,P) \in G \\
+    P \oplus Q &= \varphi(O,\varphi(P,Q)) \in G
+  \end{align*}
+  by using Problem 5.34 three times.
+  Thus $G$ is a subgroup of $C$.
+
+\item[(2)]
+  \emph{Show that $P \oplus P \oplus P = O$ for all flexes of $C$.}
+  Let $L$ be the tangent line to $C$ at $P$.
+  By the part (2) in the proof of Problem 5.34,
+  $P$ is a flex in $C$ if and only if $L \bullet C = 3P$.
+  Hence $\varphi(P,P) = P$,
+  \[
+    P \oplus P
+    = \varphi(O,\varphi(P,P))
+    = \varphi(O,P)
+    = -P.
+  \]
+
+\item[(3)]
+  Note that $|G| = 9$ since a nonsingular cubic $C$ has $9$ nine ordinary flexes
+  (Corollary (2) to Problem 5.23).
+  So $G$ is an abelian group of order $9$ ((1)).
+  So $G \cong \mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}$
+  (the fundamental theorem of finite abelian groups and (2)).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (f).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
