@@ -14465,6 +14465,9 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+% https://www.overleaf.com/project/5e499f6f580a4b000104779a
+
 \subsubsection*{Problem 5.34.}
 \addcontentsline{toc}{subsubsection}{Problem 5.34.}
 \emph{Show that a line through two flexes on a cubic passes through a third flex.} \\
@@ -14559,6 +14562,9 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+% https://www.overleaf.com/project/5e499f6f580a4b000104779a
+% Part 6 is not completed since the auther does not show the existence of Q.
 
 \subsubsection*{Problem 5.37.}
 \addcontentsline{toc}{subsubsection}{Problem 5.37.}
@@ -14692,6 +14698,29 @@ $\Box$ \\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
+  Problem 5.4 shows that the tangent line $L$ to $C$ at $P := [a:b:c] \in C$ is
+  \[
+    L = \frac{\partial C}{\partial x}(P) x +
+    \frac{\partial C}{\partial y}(P) y +
+    \frac{\partial C}{\partial z}(P) z.
+  \]
+  Might assume $P \neq O$.
+  By (c), $O \in L$ and thus $\frac{\partial C}{\partial y}(P) = 2bc = 0$.
+  $b = 0$ or $c = 0$.
+
+\item[(2)]
+  The case $b = 0$. $P \in C$ implies that $a(a-c)(a-\lambda c) = 0$.
+  So $P = [0:0:1], [1:0:1], [\lambda:0:1]$.
+  It is easy to verify that $P \oplus P = O$ and $P \neq O$.
+
+\item[(3)]
+  The case $c = 0$. $P = [0:1:0] = O$.
+
+\item[(4)]
+  By (2)(3), the points of order two (including $O$) are
+  \[
+    [0:0:1], [1:0:1], [\lambda:0:1], [0:1:0].
+  \]
 \end{enumerate}
 $\Box$ \\
 
@@ -14700,6 +14729,26 @@ $\Box$ \\
 \emph{Proof of (e).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Let $H$ be the set of all points $P \in C$ with $P \oplus P = O$.
+  Show that $H$ is a subgroup of $C$.}
+  $H \neq \varnothing$ since $O \in H$.
+  Given any two $P, Q \in H$, we have
+  \begin{align*}
+    (-P) \oplus (-P)
+    &= P \oplus P = O, \\
+    (P \oplus Q) \oplus (P \oplus Q)
+    &= (P \oplus P) \oplus (Q \oplus Q) = O \oplus O = O.
+  \end{align*}
+  So $H$ is a subgroup of $C$.
+
+\item[(2)]
+  Note that the nonsingularity is preserved under projectively equivalence.
+  By Problems 5.21, 5.24, 5.10 and 5.11,
+  it suffices to assume that $C = y^2z - x(x-z)(x-\lambda z)$.
+
+\item[(3)]
+  By (d) and the fundamental theorem of finite abelian groups,
+  $H \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$.
 \end{enumerate}
 $\Box$ \\
 
@@ -14708,6 +14757,41 @@ $\Box$ \\
 \emph{Proof of (f).}
 \begin{enumerate}
 \item[(1)]
+  To find lines through $P$ are tangent to $C$ at some point $Q \in C$,
+  it suffices to find $Q \in C$ satisfying $\varphi(Q,Q) = P$.
+  Construct an abelian group $(C,P,\oplus)$ on $C$.
+
+\item[(2)]
+  The case $P \in C$ is a flex.
+  (c)(e) implies that
+  there are 4 lines through $P$ are tangent to $C$ at some point $Q \in C$.
+  Since $\varphi(P,P) = P$,
+  there are 3 lines through $P$ are tangent to $C$ at some point $Q \neq P$.
+
+\item[(3)]
+  The case $P \in C$ is not a flex.
+  Construct another abelian group $(C,P',\oplus')$ on $C$
+  where $P' \in C$ is any flex.
+  (The existence of $P'$ is guaranteed by (a).)
+  By Problem 5.36, the map
+  \[
+    \alpha: (C,P,\oplus) \to (C,P',\oplus')
+  \]
+  defined by $\alpha(Q) = \varphi(\varphi(P,P'),Q)$ is an isomorphism.
+  Here $\alpha^{-1}(Q') = \varphi(\varphi(P,P'),Q')$.
+
+\item[(4)]
+  By (2), there are 4 points $Q_i' \in C$ ($i=1,2,3,4$) such that
+  \[
+    Q_i' \oplus' Q_i' = P'.
+  \]
+  Take $\alpha^{-1}$ on the both sides to get
+  \[
+    Q_i \oplus Q_i = P,
+  \]
+  where $Q_i := \alpha^{-1}(Q_i')$.
+  Note that each $Q_i \neq P$ since $P$ is not a flex.
+  Therefore, there are 4 lines through $P$ are tangent to $C$ at some point $Q \in C$.
 \end{enumerate}
 $\Box$ \\\\
 
