@@ -14569,19 +14569,26 @@ $\Box$ \\\\
   this subgroup is isomorphic to $\mathbb{Z}/3\mathbb{Z} \times \mathbb{Z}/3\mathbb{Z}$.}
 
 \item[(b)]
-  \emph{}
+  \emph{Show that the flexes are exactly the elements of order three in the group.
+  (i.e., exactly those elements $P$ such that $P \oplus P \oplus P = O$).}
 
 \item[(c)]
-  \emph{}
+  \emph{Show that a point $P$ is of order two in the group if and only if
+  the tangent to $C$ at $P$ passes through $O$.}
 
 \item[(d)]
-  \emph{}
+  \emph{Let $C = y^2z - x(x-z)(x-\lambda z)$,
+  $\lambda \neq 0, 1$, $O = [0:1:0]$.
+  Find the points of order two.}
 
 \item[(e)]
-  \emph{}
+  \emph{Show that the points of order two on a nonsingular cubic form
+  a group isomorphic to $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$.}
 
 \item[(f)]
-  \emph{} \\
+  \emph{Let $C$ be a nonsingular cubic, $P \in C$.
+  How many lines through $P$ are tangent to $C$ at some point $Q \neq P$?
+  (The answer depends on whether $P$ is a flex.)} \\
 \end{enumerate}
 
 
@@ -14627,14 +14634,31 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-\end{enumerate}
-$\Box$ \\
+  Let $L$ be one line such that $L \bullet C = P_1 + P_2 + P_3$.
+  Then $L$ is uniquely determined by $P_1$ and $P_2$.
+  (If $P_1 \neq P_2$, nothing to do.
+  If $P_1 = P_2$, the tangent line is unique since $P_1 = P_2$ is simple.)
 
-
-
-\emph{Proof of (b).}
-\begin{enumerate}
-\item[(1)]
+\item[(2)]
+  Might assume $P \neq O$. ($O$ is of order $1$.)
+  So
+  \begin{align*}
+    & \: P \oplus P \oplus P = O \\
+    \Longleftrightarrow & \:
+    P \oplus P = -P \\
+    \Longleftrightarrow & \:
+    \varphi(O, \varphi(P,P)) = \varphi(O,P) \\
+    \Longleftrightarrow & \:
+    \varphi(O, \varphi(O,P)) = \varphi(P,P)
+      &((1)) \\
+    \Longleftrightarrow & \:
+    P = \varphi(P,P) \\
+    \Longleftrightarrow & \:
+    L \bullet C = 3P \text{ where $L$ is the tangent line to $C$ at $P$} \\
+    \Longleftrightarrow & \:
+    \text{$P$ is a flex in $C$}.
+      &(\text{Problem 5.34})
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
@@ -14643,6 +14667,23 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  $P \neq O$ since $O$ is of order $1$.
+
+\item[(2)]
+  So
+  \begin{align*}
+    & \: P \oplus P = O \\
+    \Longleftrightarrow & \:
+    \varphi(O, \varphi(P,P)) = O \\
+    \Longleftrightarrow & \:
+    \varphi(O, O) = \varphi(P,P)
+      &(\text{(b)(1)}) \\
+    \Longleftrightarrow & \:
+    O = \varphi(P,P)
+      &(\text{$O$: flex}) \\
+    \Longleftrightarrow & \:
+    \text{The tangent line to $C$ at $P$ passing through $O$}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
