@@ -7083,73 +7083,75 @@ then $Z(I) = Z(J)$ iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.} \\
 \emph{Proof.}
 \begin{enumerate}
   \item[(1)]
-  \emph{Show that if $\mathrm{rad}(I)$ is finitely generated,
-  then for some integer $N$ we have $(\mathrm{rad}(I))^N \subseteq I$.}
-  Say $x_1, \ldots, x_m \in \mathrm{rad}(I)$ generate $\mathrm{rad}(I)$.
-  \begin{enumerate}
-    \item[(a)]
-    For each $i$, there exists an integer $n_i > 0$ such that $x_i^{n_i} \in I$
-    (since $\mathrm{rad}(I)$ is radical).
-    \item[(b)]
-    Let $N = n_1 + \cdots + n_m$.
-    Given any $x = \sum_{i=1}^{m} r_i x_i \in \mathrm{rad}(I)$,
-    so
-    \begin{align*}
-      x^N
-      &= \left( \sum_{i=1}^{m} r_i x_i \right)^{N} \\
-      &= \sum_{k_1 + \cdots + k_m = N} {N \choose k_1,\ldots,k_m}
-        r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m}.
-    \end{align*}
-    \item[(c)]
-    Note that for each term there is some $j$ such that $k_j \geq n_j$.
-    Hence,
-    \begin{align*}
-      & \: x_j^{k_j} = x_j^{k_j-n_j} x_j^{n_j} \in I
-        &\text{($I$ is an ideal)} \\
-      \Longrightarrow& \:
-      r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m} \in I \text{ for each term }
-        &\text{($I$ is an ideal)} \\
-      \Longrightarrow& \:
-      x^N \in I.
-        &\text{($I$ is an ideal)} \\
-      \Longrightarrow& \:
-        (\mathrm{rad}(I))^N \subseteq I.
-    \end{align*}
-  \end{enumerate}
+    \emph{Show that if $\mathrm{rad}(I)$ is finitely generated,
+    then for some integer $N$ we have $(\mathrm{rad}(I))^N \subseteq I$.}
+    Say $x_1, \ldots, x_m \in \mathrm{rad}(I)$ generate $\mathrm{rad}(I)$.
+    \begin{enumerate}
+      \item[(a)]
+      For each $i$, there exists an integer $n_i > 0$ such that $x_i^{n_i} \in I$
+      (since $\mathrm{rad}(I)$ is radical).
+      \item[(b)]
+      Let $N = n_1 + \cdots + n_m$.
+      Given any $x = \sum_{i=1}^{m} r_i x_i \in \mathrm{rad}(I)$,
+      so
+      \begin{align*}
+        x^N
+        &= \left( \sum_{i=1}^{m} r_i x_i \right)^{N} \\
+        &= \sum_{k_1 + \cdots + k_m = N} {N \choose k_1,\ldots,k_m}
+          r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m}.
+      \end{align*}
+      \item[(c)]
+      Note that for each term there is some $j$ such that $k_j \geq n_j$.
+      Hence,
+      \begin{align*}
+        & \: x_j^{k_j} = x_j^{k_j-n_j} x_j^{n_j} \in I
+          &\text{($I$ is an ideal)} \\
+        \Longrightarrow& \:
+        r_1^{k_1} x_1^{k_1} \cdots r_m^{k_m} x_m^{k_m} \in I \text{ for each term }
+          &\text{($I$ is an ideal)} \\
+        \Longrightarrow& \:
+        x^N \in I.
+          &\text{($I$ is an ideal)} \\
+        \Longrightarrow& \:
+          (\mathrm{rad}(I))^N \subseteq I.
+      \end{align*}
+    \end{enumerate}
+
   \item[(2)]
-  \emph{Show that in a Noetherian ring the ideals $I$ and $J$ have the same radical
-  iff there is some integer $N$ such that $I^N \subseteq J$ and $J^N \subseteq I$.}
-  \begin{enumerate}
-    \item[(a)]
-    $(\Longrightarrow)$
-    Since in a Noetherian ring every ideal is finitely generated,
-    $\mathrm{rad}(I)$ and $\mathrm{rad}(J)$ are finitely generated.
-    By (1), there is a common integer $N$ such that
-    \[
-      (\mathrm{rad}(I))^N \subseteq I \:\: \text{ and } \:\:
-      (\mathrm{rad}(J))^N \subseteq J.
-    \]
-    Note that $I^N \subseteq (\mathrm{rad}(I))^N$ and $J^N \subseteq (\mathrm{rad}(J))^N$.
-    Since $\mathrm{rad}(I)$ = $\mathrm{rad}(J)$ by assumption,
-    \begin{align*}
-      I^N &\subseteq (\mathrm{rad}(I))^N = (\mathrm{rad}(J))^N \subseteq J, \\
-      J^N &\subseteq (\mathrm{rad}(J))^N = (\mathrm{rad}(I))^N \subseteq I.
-    \end{align*}
-    \item[(b)]
-    $(\Longleftarrow)$
-    It suffices to show that $\mathrm{rad}(I) \subseteq \mathrm{rad}(J)$.
-    $\mathrm{rad}(J) \subseteq \mathrm{rad}(I)$ is similar.
-    Given any $x \in \mathrm{rad}(I)$, there is an integer $M > 0$ such that
-    $x^M \in I$.
-    Hence $x^{MN} \in I^N \subseteq J$, or $x \in \mathrm{rad}(J)$.
-  \end{enumerate}
+    \emph{Show that in a Noetherian ring the ideals $I$ and $J$ have the same radical
+    iff there is some integer $N$ such that $I^N \subseteq J$ and $J^N \subseteq I$.}
+    \begin{enumerate}
+      \item[(a)]
+      $(\Longrightarrow)$
+      Since in a Noetherian ring every ideal is finitely generated,
+      $\mathrm{rad}(I)$ and $\mathrm{rad}(J)$ are finitely generated.
+      By (1), there is a common integer $N$ such that
+      \[
+        (\mathrm{rad}(I))^N \subseteq I \:\: \text{ and } \:\:
+        (\mathrm{rad}(J))^N \subseteq J.
+      \]
+      Note that $I^N \subseteq (\mathrm{rad}(I))^N$ and $J^N \subseteq (\mathrm{rad}(J))^N$.
+      Since $\mathrm{rad}(I)$ = $\mathrm{rad}(J)$ by assumption,
+      \begin{align*}
+        I^N &\subseteq (\mathrm{rad}(I))^N = (\mathrm{rad}(J))^N \subseteq J, \\
+        J^N &\subseteq (\mathrm{rad}(J))^N = (\mathrm{rad}(I))^N \subseteq I.
+      \end{align*}
+      \item[(b)]
+      $(\Longleftarrow)$
+      It suffices to show that $\mathrm{rad}(I) \subseteq \mathrm{rad}(J)$.
+      $\mathrm{rad}(J) \subseteq \mathrm{rad}(I)$ is similar.
+      Given any $x \in \mathrm{rad}(I)$, there is an integer $M > 0$ such that
+      $x^M \in I$.
+      Hence $x^{MN} \in I^N \subseteq J$, or $x \in \mathrm{rad}(J)$.
+    \end{enumerate}
+
   \item[(3)]
-  \emph{Show that if $I, J \subseteq S = k[x_1,\ldots,x_n]$
-  are ideals and $k$ is algebraically closed,
-  then $Z(I) = Z(J)$ iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.}
-  Note that $S$ is Noetherian and we can apply part (2).
-  By the Nullstellensatz, $Z(I) = Z(J)$ iff $\mathrm{rad}(I) = \mathrm{rad}(J)$
-  iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.
+    \emph{Show that if $I, J \subseteq S = k[x_1,\ldots,x_n]$
+    are ideals and $k$ is algebraically closed,
+    then $Z(I) = Z(J)$ iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.}
+    Note that $S$ is Noetherian and we can apply step (2).
+    By the Nullstellensatz, $Z(I) = Z(J)$ iff $\mathrm{rad}(I) = \mathrm{rad}(J)$
+    iff $I^N \subseteq J$ and $J^N \subseteq I$ for some $N$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -11517,7 +11519,7 @@ not passing through a point.} \\
 \item[(3)]
   \emph{Show that we can extend this to $n+1$ hyperplanes in $\mathbf{P}^{n}$,
   not passing through a point.}
-  We cannot apply Steps (1)(2) to the generalized case $\mathbf{P}^{n}$.
+  We cannot apply steps (1)(2) to the generalized case $\mathbf{P}^{n}$.
   Instead, we can apply the proof of Problem 4.14.
 
 \item[(4)]
@@ -14559,6 +14561,64 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.36.}
+\addcontentsline{toc}{subsubsection}{Problem 5.36.}
+\emph{Let $C$ be an irreducible cubic, $O$ a simple point on $C$
+giving rise to the addition $\oplus$ on the set $C^{\circ}$ of simple points.
+Suppose another $O'$ gives rise to an addition $\oplus'$.
+Define $\alpha: (C,O,\oplus) \rightarrow (C,O',\oplus')$
+by $\alpha(P) = \varphi(\varphi(O,O'),P)$.
+Show that $\alpha$ is a group isomorphism.
+So the structure of the group is independent of the choice of $O$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\alpha$ is a group homomorphism, that is,
+  $\alpha(P \oplus Q) = \alpha(P) \oplus' \alpha(Q)$ for all $P, Q \in C^{\circ}$.}
+  The definition is well-defined (Problem 5.35).
+
+\item[(2)]
+  Similar to Proposition 4 in \S 5.6.
+  Let
+  \begin{align*}
+    L_1 \bullet C &= P + Q + R', \\
+    M_1 \bullet C &= R' + O + R,
+      & (R = P \oplus Q) \\
+    L_2 \bullet C &= O + O' + O'' \\
+    L_3 \bullet C &= R + O'' + T.
+      & (T = \alpha(P \oplus Q))
+  \end{align*}
+  Let
+  \begin{align*}
+    M_2 \bullet C &= P + O'' + P'
+      & (P' = \alpha(P)) \\
+    M_3 \bullet C &= Q + O'' + Q'
+      & (Q' = \alpha(Q)) \\
+    L_4 \bullet C &= P' + Q' + S \\
+    M_4 \bullet C &= S + O' + T'.
+      & (T' = \alpha(P) \oplus' \alpha(Q))
+  \end{align*}
+  Let $f = L_1 L_2 L_3 L_4$, $f' = M_1 M_2 M_3 M_4$.
+  Apply Problem 5.42 on $C^{\circ}$ to get
+  $T = T'$ or $\alpha(P \oplus Q) = \alpha(P) \oplus' \alpha(Q)$.
+
+\item[(3)]
+  Define $\beta: (C,O',\oplus') \rightarrow (C,O,\oplus)$
+  by $\beta(P) = \varphi(\varphi(O',O),P)$.
+  $\beta$ is a group homomorphism too.
+  By step (1) in the proof of Problem 5.37(b),
+  $\alpha \circ \beta = 1_{(C,O',\oplus')}$
+  and $\beta \circ \alpha = 1_{(C,O,\oplus)}$.
+  Hence $\alpha$ is a group isomorphism.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -14616,7 +14676,7 @@ $\Box$ \\\\
 \item[(2)]
   \emph{Show that $P \oplus P \oplus P = O$ for all flexes of $C$.}
   Let $L$ be the tangent line to $C$ at $P$.
-  By the part (2) in the proof of Problem 5.34,
+  By step (2) in the proof of Problem 5.34,
   $P$ is a flex in $C$ if and only if $L \bullet C = 3P$.
   Hence $\varphi(P,P) = P$,
   \[
