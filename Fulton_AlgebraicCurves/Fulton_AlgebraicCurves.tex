@@ -14961,6 +14961,52 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.42.}
+\addcontentsline{toc}{subsubsection}{Problem 5.42.}
+\emph{Let $C$ be a nonsingular cubic, $f$, $f'$ curves of degree $m$ such that
+$f \bullet C = \sum_{i=1}^{3m} P_i$,
+$f' \bullet C = \sum_{i=1}^{3m-1} P_i + Q$.
+Show that $P_{3m} = Q$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Proposition 3 in \S 5.6.
+
+\item[(2)]
+  Let $L$ be a line through $P_{3m}$ that doesn't pass through $Q$;
+  $L \bullet C = P_{3m} + R + S$.
+  Then
+  \begin{align*}
+    (L f') \bullet C
+    &= L \bullet C + f' \bullet C \\
+    &= (P_{3m} + R + S) + \left( \sum_{i=1}^{3m-1} P_i + Q \right) \\
+    &= \sum_{i=1}^{3m} P_i + Q + R + S \\
+    &= f \bullet C + Q + R + S,
+  \end{align*}
+  so there is a line $L'$ such that $L' \bullet C = Q + R + S$
+  (max Noether's fundamental theorem).
+  But then $L' = L$ and so $P_{3m} = Q$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
