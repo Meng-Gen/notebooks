@@ -14326,6 +14326,77 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.28. (Terrible point)}
+\addcontentsline{toc}{subsubsection}{Problem 5.28. (Terrible point)}
+\emph{($\mathrm{char}(k) = p > 0$)
+$f = x^{p+1} - y^pz$, $P = [0:1:0]$.
+Find $L \cap f$ for all lines $L$ passing through $P$.
+Show that every line that is tangent to $f$ at a simple point passes through $P$!} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  The case $\mathrm{char}(k) = p > 0$ for Problem 4.24 shows that
+  $L = L_\lambda = V(x-\lambda z)$ for any $\lambda \in k$ or $L = L_\infty = V(z)$.
+  Note that $L_0 \cap f = \{ P \}$ and $L_\infty \cap f = \{ P \}$.
+  It suffices to consider the case $L_\lambda \cap f$ for $\lambda \neq 0$.
+
+\item[(2)]
+  So
+  \begin{align*}
+    0
+    &= x^{p+1} - y^pz \\
+    &= x^{p+1} - y^p(\lambda^{-1} x)
+      &(x-\lambda z = 0) \\
+    &= x(x^p - \lambda^{-1} y^p) \\
+    &= x\left( x^p - \left( \lambda^{-\frac{1}{p}} y \right)^p \right)
+      &(k = \overline{k}) \\
+    &= x\left( x - \lambda^{-\frac{1}{p}} y \right)^p.
+      &(\mathrm{char}(k) = p > 0)
+  \end{align*}
+  Here $\lambda^{-\frac{1}{p}}$ is the unique $p^{\text{th}}$ root of $\lambda^{-1}$
+  (since $\mathrm{char}(k) = p$).
+  Hence
+  \[
+    L_\lambda \cap f
+    = \left\{ P, [ \lambda^{-\frac{1}{p}} : 1 : \lambda^{-\frac{p+1}{p}} ] \right\}.
+  \]
+
+\item[(3)]
+  \emph{Show that every line that is tangent to $f$ at a simple point passes through $P$.}
+  Let $L$ be the tangent line to $f$ at a simple point $Q = [a:b:c]$
+  passing through $P$.
+  Problem 5.4 shows that
+  \begin{align*}
+    L
+    &=
+    \frac{\partial f}{\partial x}(Q) x +
+    \frac{\partial f}{\partial y}(Q) y +
+    \frac{\partial f}{\partial z}(Q) z \\
+    &=
+    \frac{\partial f}{\partial x}(Q) x +
+    \frac{\partial f}{\partial z}(Q) z.
+  \end{align*}
+  Here $\frac{\partial f}{\partial y} = -py^{p-1} = 0 \in k[x,y,z]$
+  since $\mathrm{char}(k) = p > 0$.
+  So $P = [0:1:0] \in L$ for any tangent line to $f$ at a simple point of $f$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
