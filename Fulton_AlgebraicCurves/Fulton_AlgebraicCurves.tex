@@ -14259,6 +14259,201 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% https://dspace.library.uu.nl/bitstream/handle/1874/327646/Scriptie_Bsc_Lois_van_der_Meijden.pdf?sequence=2&isAllowed=y
+
+\subsubsection*{Problem 5.23.}
+\addcontentsline{toc}{subsubsection}{Problem 5.23.}
+\emph{A problem about flexes (see Problem 3.12):
+Let $f$ be a projective plane curve of degree $n$, and assume $f$ contains no lines.} \\
+
+\emph{Let $D_i f = \frac{\partial f}{\partial x_i}$ and
+$D_{ij} f = \frac{\partial^2 f}{\partial x_i x_j}$,
+forms of degree $n-1$ and $n-2$ respectively.
+Form a $3 \times 3$ matrix with the entry in the $(i,j)$th place being
+$D_{ij} f$ ($i,j = 1,2,3$).
+Let $H$ be the determinant of this matrix, a form of degree $3(n-2)$.
+This $H$ is called the \textbf{Hessian} of $f$.
+Problems 5.22 and 6.47 show that $H \neq 0$, for $f$ irreducible.
+The following theorem shows the relationship between flexes and the Hessian.} \\
+
+\emph{\textbf{Theorem}. ($\mathrm{char}(k) = 0$)}
+\begin{enumerate}
+\item[(1)]
+  \emph{$P \in H \cap f$ if and only if
+  $P$ is either a flex or a multiple point of $f$.}
+
+\item[(2)]
+  \emph{$I(P, H \cap f) = 1$ if and only if $P$ is an ordinary flex.} \\
+\end{enumerate}
+
+\emph{Outline of proof.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $t$ be a projective change of coordinates.
+  Then the Hessian of $f^t$ is $\det(t)^2(H^t)$. 
+  So we can assume $P = [0:0:1]$;
+  write $f_{*}(x,y) = f(x,y,1)$ and $H_{*}(x,y) = H(x,y,1)$.}
+
+\item[(b)]
+  \emph{$(n-1) D_{j} f = \sum_{i} x_i D_{ij} f$. (Use Euler's Theorem.)}
+
+\item[(c)]
+  \emph{$I(P, f_{*} \cap H_{*}) = I(P, f_{*} \cap g)$ where
+  \[
+    g = (D_2 f_{*})^2 (D_{11} f_{*})
+      + (D_1 f_{*})^2 (D_{22} f_{*})
+      - 2 (D_1 f_{*})(D_2 f_{*})(D_{12} f_{*}).
+  \]
+  (Hint: Perform row and column operations on the matrix for $H_{*}$.
+  Add $x$ times the first row plus $y$ times the second row to the third row,
+  then apply part (b).
+  Do the same with the columns.
+  Then calculate the determinant.)}
+
+\item[(d)]
+  \emph{If $P$ is a multiple point on $f$, then $I(P,f_{*} \cap g) > 1$.}
+
+\item[(e)]
+  \emph{Suppose $P$ is a simple point, $y = 0$ is the tangent line to $f$ at $P$,
+  so
+  \[
+    f_{*} = y + ax^2 + bxy + cy^2 + dx^3 + ex^2y + \cdots.
+  \]
+  Then $P$ is a flex if and only if $a = 0$,
+  and $P$ is an ordinary flex if and only if $a = 0$ and $d \neq 0$.
+  A short calculation shows that
+  \[
+    g = 2a + 6dx + (8ac-2b^2+2e)y + \text{higher terms},
+  \]
+  which concludes the proof.} \\
+\end{enumerate}
+
+\emph{\textbf{Corollary}.}
+\begin{enumerate}
+\item[(1)]
+  \emph{A nonsingular curve of degree $> 2$ always has a flex.}
+
+\item[(2)]
+  \emph{A nonsingular cubic has nine flexes, all ordinary.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Write $t = (t_1, t_2, t_3)$ where $t_1,t_2,t_3 \in k[x,y,z]$.
+
+\item[(2)]
+  By the chain rule for differentiation,
+  \[
+    \frac{\partial f^t}{\partial x_j}
+    = \sum_{\beta=1}^{3}
+      \frac{\partial f^t}{\partial t_{\beta}} \frac{\partial t_{\beta}}{\partial x_j}
+  \]
+  and thus
+  \begin{align*}
+    \frac{\partial^2 f^t}{\partial x_i \partial x_j}
+    &=
+    \frac{\partial}{\partial x_i}\left( \frac{\partial f^t}{\partial x_j} \right) \\
+    &=
+    \frac{\partial}{\partial x_i}\left( \sum_{\beta=1}^{3}
+      \frac{\partial f^t}{\partial t_{\beta}} \frac{\partial t_{\beta}}{\partial x_j} \right) \\
+    &=
+    \sum_{\beta=1}^{3}
+    \frac{\partial}{\partial x_i}\left( 
+      \frac{\partial f^t}{\partial t_{\beta}} \right) \cdot \frac{\partial t_{\beta}}{\partial x_j} 
+    + \frac{\partial f^t}{\partial t_{\beta}} \cdot
+      \underbrace{\frac{\partial^2 t_{\beta}}{\partial x_i \partial x_j}}_{= 0} \\
+    &=
+    \sum_{\beta=1}^{3}
+    \sum_{\alpha=1}^{3} \frac{\partial t_\alpha}{\partial x_i}
+      \left( \frac{\partial f^t}{\partial t_{\alpha} \partial t_{\beta}} \right) \cdot
+      \frac{\partial t_{\beta}}{\partial x_j} \\
+    &=
+    \sum_{\alpha=1}^{3}
+    \sum_{\beta=1}^{3} \frac{\partial t_\alpha}{\partial x_i}
+      \left( \frac{\partial f^t}{\partial t_{\alpha} \partial t_{\beta}} \right)
+      \frac{\partial t_{\beta}}{\partial x_j} .
+  \end{align*}
+
+\item[(3)]
+  Hence, the Hessian of $f^t$ is
+  \begin{align*}
+    H(f^t)
+    &=
+    \det\left( \left( \frac{\partial^2 f^t}{\partial x_i \partial x_j} \right)_{i,j} \right) \\
+    &=
+    \det\left( \left( \sum_{\alpha=1}^{3}
+      \sum_{\beta=1}^{3} \frac{\partial t_\alpha}{\partial x_i}
+      \left( \frac{\partial f^t}{\partial t_{\alpha} \partial t_{\beta}} \right)
+      \frac{\partial t_{\beta}}{\partial x_j} \right)_{i,j} \right) \\
+    &=
+    \det\left(
+      \left( \frac{\partial t_\alpha}{\partial x_i} \right)^{T}_{\alpha,i}
+      \left( \frac{\partial f^t}{\partial t_{\alpha} \partial t_{\beta}} \right)_{\alpha,\beta}
+      \left( \frac{\partial t_{\beta}}{\partial x_j} \right)_{\beta,j}
+    \right) \\
+    &=
+    \det\left(
+      \left( \frac{\partial t_\alpha}{\partial x_i} \right)^{T}_{\alpha,i}
+    \right)
+    \det\left(
+      \left( \frac{\partial f^t}{\partial t_{\alpha} \partial t_{\beta}} \right)_{\alpha,\beta}
+    \right)
+    \det\left(
+       \left( \frac{\partial t_{\beta}}{\partial x_j} \right)_{\beta,j}
+    \right) \\
+    &= \det(t^T) \cdot H(f)^t \cdot \det(t) \\
+    &= \det(t)^2 H(f)^t.
+  \end{align*}
+
+\item[(4)]
+  Note that $t$ is invertible.
+  So we can assume $P = [0:0:1]$;
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  Since $D_{j} f$ is a form of degree $n - 1$,
+  the result is established by Euler's theorem in \S 1.1.
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
