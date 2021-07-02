@@ -14264,6 +14264,8 @@ $\Box$ \\\\
 
 % https://dspace.library.uu.nl/bitstream/handle/1874/327646/Scriptie_Bsc_Lois_van_der_Meijden.pdf?sequence=2&isAllowed=y
 
+% Summary: https://tylerzhu.com/assets/handouts/cubicflexpoints.pdf
+
 \subsubsection*{Problem 5.23.}
 \addcontentsline{toc}{subsubsection}{Problem 5.23.}
 \emph{A problem about flexes (see Problem 3.12):
@@ -14686,6 +14688,146 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.24.}
+\addcontentsline{toc}{subsubsection}{Problem 5.24.}
+\emph{($\mathrm{char}(k) = 0$)}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $P := [0:1:0]$ be a flex on an irreducible cubic $f$,
+  $z = 0$ the tangent line to $f$ at $[0:1:0]$.
+  Show that $f = zy^2 + byz^2 + cyxz + \text{terms in $x$, $z$}$.
+  Find a projective change of coordinates
+  (using $y \mapsto y - \frac{b}{2}z - \frac{c}{2}x$) to get
+  $f$ to the form $zy^2 = \text{cubic in $x$, $z$}$.}
+
+\item[(b)]
+  \emph{Show that any irreducible cubic is projectively equivalent to one of the following:
+  $y^2 z = x^3$, $y^2 z = x^2(x+z)$, or $y^2 z = x(x-z)(x-\lambda z)$,
+  $\lambda \in k$, $λ \neq 0,1$. (See Problems 5.10, 5.11.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  As $z = 0$ is the tangent line to $f$ at $[0:1:0]$,
+  we can write
+  \[
+    f(x,1,z)
+    = z + ax^2 + bz^2 + cxz
+      - \alpha_0 x^3 - \alpha_1 x^2 z - \alpha_2 xz^2 - \alpha_3 z^3.
+  \]
+  By assumption,
+  \[
+    I(P, f \cap z)
+    = I(P, (ax^2 - \alpha_0 x^3) \cap z)
+    \geq 3
+  \]
+  implies that $a = 0$.
+  Also, $\alpha_0 \neq 0$ since $f$ is irreducible.
+  Hence,
+  \[
+    f(x,y,z)
+    = zy^2 + byz^2 + cyxz
+      - \underbrace{\alpha_0}_{\neq 0} x^3 - \alpha_1 x^2 z - \alpha_2 xz^2 - \alpha_3 z^3.
+  \]
+
+\item[(2)]
+  So
+  \begin{align*}
+    f
+    \sim & \:
+    y^2 z
+      - \underbrace{\alpha_0}_{:= \beta_0} x^3
+      - \underbrace{\left(\alpha_1 - \frac{c^2}{4}\right)}_{:= \beta_1} x^2 z
+      - \underbrace{\left(\alpha_2 - \frac{bc}{2}\right)}_{:= \beta_2} xz^2
+      - \underbrace{\left(\alpha_3 - \frac{b^2}{4}\right)}_{:= \beta_3} z^3 \\
+    = & \:
+    y^2 z - \beta_0 x^3 - \beta_1 x^2 z - \beta_2 xz^2 - \beta_3 z^3
+  \end{align*}
+  by $y \mapsto y - \frac{b}{2}z - \frac{c}{2}x$.
+  Hence $f$ is of the form $zy^2 = \text{cubic in $x$, $z$}$
+  (up to projective equivalence).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Since $\beta_0 \neq 0$ and $k = \overline{k}$,
+  by $x \mapsto \beta_0^{-\frac{1}{3}} x$ we might write
+  \[
+    f
+    \sim
+    y^2 z - x^3 - \beta_1 x^2 z - \beta_2 xz^2 - \beta_3 z^3.
+  \]
+
+\item[(2)]
+  Since $k = \overline{k}$,
+  \[
+    x^3 + \beta_1 x^2 z + \beta_2 xz^2 + \beta_3 z^3
+    = (x - \gamma_1 z)(x - \gamma_2 z)(x - \gamma_3 z)
+  \]
+  for some $\gamma_1, \gamma_2, \gamma_3 \in k$.
+  Consider the cases about $\gamma_1, \gamma_2, \gamma_3$.
+
+\item[(3)]
+  The case $\gamma_1 = \gamma_2 = \gamma_3$.
+  \begin{align*}
+    f
+    &\sim
+    y^2 z - (x - \gamma_1 z)(x - \gamma_2 z)(x - \gamma_3 z) \\
+    &\sim
+    y^2 z - x^3.
+      &(x \mapsto x + \gamma_1 z)
+  \end{align*}
+
+\item[(4)]
+  The case $\gamma_1 = \gamma_2 \neq \gamma_3$.
+  \begin{align*}
+    f
+    &\sim
+    y^2 z - (x - \gamma_1 z)(x - \gamma_2 z)(x - \gamma_3 z) \\
+    &\sim
+    y^2 z - x^2(x + (\gamma_1 - \gamma_3) z)
+      &(x \mapsto x + \gamma_1 z) \\
+    &\sim
+    (\gamma_1 - \gamma_3)^{-1} y^2 z - x^2(x+z)
+      &(z \mapsto (\gamma_1 - \gamma_3)^{-1} z) \\
+    &\sim
+    y^2 z - x^2(x+z).
+      &(y \mapsto (\gamma_1 - \gamma_3)^{\frac{1}{2}} y)
+  \end{align*}
+
+\item[(5)]
+  The case all $\gamma_1, \gamma_2, \gamma_3$ are different.
+  \begin{align*}
+    f
+    &\sim
+    y^2 z - (x - \gamma_1 z)(x - \gamma_2 z)(x - \gamma_3 z) \\
+    &\sim
+    y^2 z - x(x - (\gamma_2 - \gamma_1) z)(x - (\gamma_3 - \gamma_1) z)
+      &(x \mapsto x + \gamma_1 z) \\
+    &\sim
+    (\gamma_2 - \gamma_1)^{-1} y^2 z
+      - x^2(x-z)\left( x - \frac{\gamma_3 - \gamma_1}{\gamma_2 - \gamma_1} z \right)
+      &(z \mapsto (\gamma_2 - \gamma_1)^{-1} z) \\
+    &\sim
+    y^2 z - x^2(x-z)\left( x - \frac{\gamma_3 - \gamma_1}{\gamma_2 - \gamma_1} z \right)
+      &(y \mapsto (\gamma_2 - \gamma_1)^{\frac{1}{2}} y) \\
+    &\sim
+    y^2 z - x^2(x-z)\left( x - \lambda z \right).
+      &\left( \lambda := \frac{\gamma_3 - \gamma_1}{\gamma_2 - \gamma_1}, \lambda \neq 0, 1 \right) 
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
