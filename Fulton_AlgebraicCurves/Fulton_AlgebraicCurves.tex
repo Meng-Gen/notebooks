@@ -14429,6 +14429,69 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  Note that
+  \begin{align*}
+    & \:
+    z^2 H \\
+    =& \:
+    z^2
+    \begin{vmatrix}
+      D_{11}f & D_{12}f & D_{13}f \\
+      D_{21}f & D_{22}f & D_{23}f \\
+      D_{31}f & D_{32}f & D_{33}f
+    \end{vmatrix} \\
+    =& \:
+    z
+    \begin{vmatrix}
+      D_{11}f & D_{12}f & D_{13}f \\
+      D_{21}f & D_{22}f & D_{23}f \\
+      x D_{11}f + y D_{21}f + z D_{31}f &
+        x D_{12}f + y D_{22}f + z D_{32}f &
+        x D_{13}f + y D_{23}f + z D_{33}f
+    \end{vmatrix} \\
+    =& \:
+    z
+    \begin{vmatrix}
+      D_{11}f & D_{12}f & D_{13}f \\
+      D_{21}f & D_{22}f & D_{23}f \\
+      (n-1) D_{1}f & (n-1) D_{2}f & (n-1) D_{3}f
+    \end{vmatrix} \\
+    =& \:
+    \begin{vmatrix}
+      D_{11}f & D_{12}f & x D_{11}f + y D_{12}f + z D_{13}f \\
+      D_{21}f & D_{22}f & x D_{21}f + y D_{22}f + z D_{23}f \\
+      (n-1) D_{1}f & (n-1) D_{2}f &
+        (n-1) x D_{1}f + (n-1) y D_{2}f + (n-1) z D_{3}f
+    \end{vmatrix} \\
+    =& \:
+    \begin{vmatrix}
+      D_{11}f & D_{12}f & (n-1) D_{1}f \\
+      D_{21}f & D_{22}f & (n-1) D_{2}f \\
+      (n-1) D_{1}f & (n-1) D_{2}f & n(n-1) f
+    \end{vmatrix} \\
+    =& \:
+    (n-1)^2 (D_{1}f)(D_{21}f D_{2}f - D_{22}f D_{1}f) \\
+    & - (n-1)^2 (D_{2}f)(D_{11}f D_{2}f - D_{12}f D_{1}f) \\
+    & + n(n-1)f (D_{11}f D_{22}f - D_{12}f D_{21}f) \\
+    =& \:
+    (n-1)^2 (-(D_{1}f)^2 D_{22}f - (D_{2}f)^2 D_{11}f + 2(D_{1}f)(D_{2}f)(D_{12}f)) \\
+    & + n(n-1)f (D_{11}f D_{22}f - D_{12}f D_{21}f).
+  \end{align*}
+
+\item[(2)]
+  Dehomogenize $z^2 H$ w.r.t. $z$:
+  \[
+    H_*
+    =
+    -(n-1)^2 g + n(n-1)f_{*} [ (D_{11}f_{*})(D_{22}f_{*}) - (D_{12}f_{*})^2 ].
+  \]
+  Hence if $n > 1$, then
+  \[
+    I(P, f_{*} \cap H_{*})
+    = I(P, f_{*} \cap (-(n-1)^2 g))
+    = I(P, f_{*} \cap g).
+  \]
+  (If $n \leq 1$, then $I(P, f_{*} \cap H_{*}) = I(P, f_{*} \cap g) = \infty$.)
 \end{enumerate}
 $\Box$ \\
 
@@ -14437,6 +14500,22 @@ $\Box$ \\
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
+  Since $I(P,f_{*} \cap g) \geq m_P(f_{*}) m_P(g) \geq 2 m_P(g)$,
+  it suffices to show that $m_P(g) > 0$ or $P \in g$.
+
+\item[(2)]
+  Problem 5.1 shows that
+  \begin{align*}
+    g(P)
+    =& \:
+      (D_{1}f_{*}(P))^2 D_{22}f_{*}(P) \\
+      &+ (D_{2}f_{*}(P))^2 D_{11}f_{*}(P) \\
+      &- 2(D_{1}f_{*}(P))(D_{2}f_{*}(P))(D_{12}f_{*}(P)) \\
+    =& \:
+      0^2 \cdot D_{22}f_{*}(P) + 0^2 \cdot D_{11}f_{*}(P) - 2 \cdot 0 \cdot 0 \cdot D_{12}f_{*}(P) \\
+    =& \:
+      0.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
@@ -14445,6 +14524,162 @@ $\Box$ \\
 \emph{Proof of (e).}
 \begin{enumerate}
 \item[(1)]
+  Suppose $P$ is a simple point of $f$, $y = 0$ is the tangent line to $f$ at $P$.
+  Write
+  \[
+    f_{*} = y + ax^2 + bxy + cy^2 + dx^3 + ex^2y + \cdots.
+  \]
+  Then $P$ is a flex if and only if $a = 0$,
+  and $P$ is an ordinary flex if and only if $a = 0$ and $d \neq 0$ (Problem 3.12).
+
+\item[(2)]
+  A short calculation shows that
+  \begin{align*}
+    g
+    &= (D_2 f_{*})^2 (D_{11} f_{*})
+      + (D_1 f_{*})^2 (D_{22} f_{*})
+      - 2(D_1 f_{*})(D_2 f_{*})(D_{12} f_{*}) \\
+    &= [2a + (6d+4ab)x + (8ac+2e)y] + 0 - 2[2abx+b^2y] + \text{higher terms} \\
+    &= 2a + 6dx + (8ac-2b^2+2e)y + \text{higher terms}.
+  \end{align*}
+
+\item[(3)]
+  Hence,
+  \begin{align*}
+    & \: P \in f_{*} \cap g \\
+    \Longleftrightarrow & \:
+    I(P, f_{*} \cap g) \geq 1 \\
+    \Longleftrightarrow & \:
+    I(P, (y + \cdots) \cap (2a + 6dx + (8ac-2b^2+2e)y + \cdots)) \geq 1 \\
+    \Longleftrightarrow & \:
+    a = 0 \\
+    \Longleftrightarrow & \:
+    \text{$P$ is a flex}
+  \end{align*}
+  if $P$ is a simple point of $f$.
+
+\item[(4)]
+  Also note that
+  \begin{align*}
+    & \:
+    I(P, f_{*} \cap g) = 1 \\
+    \Longleftrightarrow & \:
+    I(P, (y + \cdots) \cap (2a + 6dx + (8ac-2b^2+2e)y + \cdots)) = 1 \\
+    \Longleftrightarrow & \:
+    a = 0 \text{ and } d \neq 0 \\
+    \Longleftrightarrow & \:
+    \text{$P$ is an ordinary flex}
+  \end{align*}
+  if $P$ is a simple point of $f$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of Theorem (1).}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$)
+  Suppose $P \in H \cap f$ and $P$ is not a multiple point of $f$.
+  So $P$ is a simple point of $f$.
+  Note that
+  \[
+    I(P, H \cap f)
+    = I(P, H_{*} \cap f_{*})
+    = I(P, g \cap f_{*})
+    \geq 1.
+  \]
+  So $P$ is a flex by part (e).
+
+\item[(2)]
+  ($\Longleftarrow$)
+  If $P$ is a flex of $f$, then part (e) shows that
+  \[
+    I(P, H \cap f)
+    = I(P, H_{*} \cap f_{*})
+    = I(P, g \cap f_{*})
+    \geq 1.
+  \]
+  If $P$ is a multiple point of $f$, then part (d) shows that
+  \[
+    I(P, H \cap f)
+    = I(P, H_{*} \cap f_{*}) \geq 2.
+  \]
+  In any case, $P \in H \cap f$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of Theorem (2).}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$)
+  By the proof of Theorem (1), $P$ is a simple point of $f$.
+  Therefore, the conclusion is established by part (e).
+
+\item[(2)]
+  ($\Longleftarrow$)
+  Part (e).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of Corollary (1).}
+\begin{enumerate}
+\item[(1)]
+  Let $f$ be a nonsingular curve of degree $> 2$.
+  So $\deg(H) = 3(n-2) > 0$.
+  $H \cap f \neq \varnothing$ (B\'ezout's theorem).
+
+\item[(2)]
+  Since $f$ is nonsingular, every point in $H \cap f$ is a simple point.
+  So every point in $H \cap f$ is a flex (Theorem (1)).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of Corollary (2).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that every flex of a nonsingular cubic $f$ is ordinary.}
+  Given any flex $P \in f$ and the corresponding tangent line $L$ to $f$ at $P$. 
+  By definition,
+  \[
+    \mathrm{ord}_P^{f}(L)
+    = I(P, f \cap L) \geq 3.
+  \]
+  B\'ezout's theorem or Problem 5.12 shows that
+  \[
+    \sum_{P} I(P, f \cap L) = I(P, f \cap L) = 3.
+  \]
+  That is, $\mathrm{ord}_P^{f}(L) = 3$ or $P$ is an ordinary flex.
+
+\item[(2)]
+  Since $f$ is nonsingular, we have
+  \begin{align*}
+    H \cap f
+    &=
+    \{ \text{all flexes of $f$} \}
+      &(\text{Theorem (1)}) \\
+    &=
+    \{ \text{all ordinary flexes of $f$} \}
+      &(\text{(1)}) \\
+    &=
+    \{ P \in f : I(P, H \cap f) = 1 \}.
+      &(\text{Theorem (2)})
+  \end{align*}
+
+\item[(3)]
+  Hence
+  \[
+    \sum_{P} I(P, H \cap f) = \deg(H) \deg(f) = 3 \cdot 3 = 9
+  \]
+  (B\'ezout's theorem) shows that
+  there are exactly 9 (ordinary) flexes of $f$.
+  (Also see Problem 5.37.)
 \end{enumerate}
 $\Box$ \\\\
 
