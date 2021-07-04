@@ -13964,6 +13964,64 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 5.17.}
+\addcontentsline{toc}{subsubsection}{Problem 5.17.}
+\emph{Let $P_1, P_2, P_3, P_4$ are distinct points in $\mathbf{P}^2$.
+Let $V$ be the linear system of conics passing through these points.
+Show that $\dim(V) = 2$ if $P_1, P_2, P_3, P_4$ lie on a line,
+and $\dim(V) = 1$ otherwise.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $V_i = V(2;P_1, \ldots, P_i)$. (So $V = V_4$.)
+  By Theorem 1 in \S 5.2, we have
+  \begin{align*}
+    \dim V_4
+    &\geq
+    \frac{2(2+3)}{2} - \sum_{i=1}^{4} \frac{1(1+1)}{2} = 1, \\
+    \dim V_3
+    &=
+    \frac{2(2+3)}{2} - \sum_{i=1}^{3} \frac{1(1+1)}{2} = 2.
+  \end{align*}
+  Also note that $V_4 \subseteq V_3$.
+  Hence
+  \[
+    \dim V_4 = 1 \text{ or } 2.
+  \]
+  Therefore, it suffices to show that
+  $P_1, P_2, P_3, P_4$ lie on a line if and only if
+  \[
+    V_4 = V_3.
+  \]
+
+\item[(2)]
+  The case $P_1, P_2, P_3, P_4$ lie on a line $L$.
+  Take any conic $C \in V_3$.
+  By B\'ezout's theorem or Problem 5.12, $L \mid C$.
+  Hence $P_4 \in L \subseteq C$ and thus $C \in V_4$.
+
+\item[(3)]
+  The case $P_1, P_2, P_3, P_4$ are not collinear.
+  \begin{enumerate}
+  \item[(a)]
+    Suppose there are some three points, say $P_1, P_2, P_3$, are in a line $L$.
+    Since $P_4 \not\in L$ by assumption,
+    the conic $L^2$ is in $V_3$ but not in $V_4$.
+
+  \item[(b)]
+    Suppose there are no three points lying on a line.
+    Let $L_{ij}$ be the line passing through $P_i$ and $P_j$.
+    Then the conic $L_{12} L_{13} \in V_3$ but not in $V_4$.
+  \end{enumerate}
+  By (a)(b), $V_4 \subsetneq V_3$ if $P_1, P_2, P_3, P_4$ are not collinear.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
