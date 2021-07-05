@@ -14958,6 +14958,100 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.26.*}
+\addcontentsline{toc}{subsubsection}{Problem 5.26.*}
+\emph{($\mathrm{char}(k) = 0$)
+Let $f$ be an irreducible curve of degree $n$ in $\mathbf{P}^{2}$.
+Suppose $P \in \mathbf{P}^{2}$, with $m_P(f) = r \geq 0$.
+Then for all but a finite number of lines $L$ through $P$,
+$L$ intersects $f$ in $n-r$ distinct points other than $P$.
+We outline a proof:}
+
+\begin{enumerate}
+\item[(a)]
+  \emph{We may assume $P = [0:1:0]$.
+  If $L_{\lambda} = \{[\lambda:t:1] : t \in k \} \cup \{P\}$,
+  we need only consider the $L_{\lambda}$.
+  Then $f = a_r(x,z)y^{n-r} + \cdots + a_n(x,z)$, $a_r \neq 0$. (See Problems 4.24, 5.5).}
+
+\item[(b)]
+  \emph{Let $g_{\lambda}(t) = f(\lambda,t,1)$.
+  It is enough to show that for all but a finite number of $\lambda$,
+  $g_{\lambda}$ has $n-r$ distinct points.}
+
+\item[(c)]
+  \emph{Show that $g_{\lambda}$ has $n-r$ distinct roots if $a_r(\lambda, 1) \neq 0$,
+  and $f \cap \frac{\partial f}{\partial y} \cap L_{\lambda} = \{P\}$ (see Problem 1.53).} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Might assume $P = [0:1:0]$ (up to projective equivalence).
+
+\item[(2)]
+  By Problem 4.24,
+  we might consider the lines $L_{\lambda} = \{[\lambda:t:1] : t \in k \} \cup \{P\}$
+  except finitely one line $L_{\infty}$.
+
+\item[(3)]
+  Write $f = a_r(x,z)y^{n-r} + \cdots + a_n(x,z)$, $a_r \neq 0$ (Problem 5.5).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  Let $g_{\lambda}(t) = f(\lambda,t,1) = a_r(\lambda,1)t^{n-r} + \cdots + a_n(\lambda,1)$.
+  It suffices to show that all but a finite number of $\lambda$,
+  $g_{\lambda}(t)$ has $n-r$ distinct roots in $k$.
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  There are finitely number of $\lambda \in k$ such that $a_r(\lambda, 1) = 0$
+  since $k$ is a field.
+
+\item[(2)]
+  $g_{\lambda}(t)$ is irreducible over $(k[\lambda])[t]$
+  since $f$ is irreducible.
+  Hence
+  $a_r(\lambda, 1) \neq 0$ and $\mathrm{char}(k) = 0$ implies that
+  $g_{\lambda}(t)$ has $n-r$ distinct roots in $k$ (Problem 1.53).
+
+\item[(3)]
+  By (1)(2), the result is established.
+
+\item[(4)]
+  \emph{Show that $f \cap \frac{\partial f}{\partial y} \cap L_{\lambda} = \{P\}$
+  (for all but finitely number of $\lambda$).}
+  Since $f \cap L_{\lambda} = \{P\}$,
+  it suffices to show that $P \in \frac{\partial f}{\partial y}$.
+  \begin{enumerate}
+  \item[(a)]
+    It is nothing to do if $P$ is a multiple point of $f$ (Problem 5.1).
+
+  \item[(b)]
+    If $P$ is a simple point of $f$,
+    then the tangent line to $f$ at $P$ is
+    $L = \frac{\partial f}{\partial x}(P) x +
+    \frac{\partial f}{\partial y}(P) y +
+    \frac{\partial f}{\partial z}(P) z$
+    (Problem 5.4).
+    Since $P \in L$, $ \frac{\partial f}{\partial y}(P) = 0$.
+  \end{enumerate}
+  In any case, $\frac{\partial f}{\partial y}(P) = 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
