@@ -15068,6 +15068,34 @@ provided it has no multiple components.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Write $f = f_1 \cdots f_s$ where each $f_i$ is irreducible and
+  $f_i, f_j$ have no common factor whenever $i \neq j$.
+
+\item[(2)]
+  Apply Problem 5.26 to each $f_i$ to get that
+  for all but a finite number of lines $L_i$ through $P$,
+  $L_i$ intersects $f_i$ in $n_i-r_i$ distinct points other than $P$,
+  where $n_i = \deg(f_i)$ and $r_i = m_P(f_i)$.
+  Collect these lines as $\mathscr{L}_i$.
+
+\item[(3)]
+  Since $f_i \cap f_j$ is finite whenever $i \neq j$ (Problem 5.7),
+  there are finitely number of lines through $P$
+  also passing through $f_i \cap f_j$ for any $i \neq j$.
+  Collect these lines as $\mathscr{L}'$.
+
+\item[(4)]
+  Hence any line from
+  \[
+    (\mathscr{L}_1 \cup \cdots \cup \mathscr{L}_s) - \mathscr{L}'
+  \]
+  passes through $P$
+  and intersects $f$ in
+  \[
+    \sum (n_i-r_i) = \sum n_i - \sum r_i = n-r
+  \]
+  distinct points other than $P$ (by part (2) and our construction).
+  The result is established.
 \end{enumerate}
 $\Box$ \\\\
 
