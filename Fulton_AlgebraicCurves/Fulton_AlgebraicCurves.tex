@@ -15955,6 +15955,75 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.41.}
+\addcontentsline{toc}{subsubsection}{Problem 5.41.}
+\emph{Let $C$ be a nonsingular cubic, $O$ a flex on $C$.
+Let $P_1, \ldots, P_{3m} \in C$.
+Show that $P_1 \oplus \cdots \oplus P_{3m} = O$ if and only if
+there is a curve $f$ of degree $m$ such that $f \bullet C = \sum_{i=1}^{3m} P_i$.
+(Hint: Use induction on $m$.
+Let $L \bullet C = P_1 + P_2 + Q$,
+$L' \bullet C = P_3 + P_4 + R$,
+$L'' \bullet C = Q + R + S$,
+and apply induction to $S, P_5, \ldots, P_{3m}$;
+use Noether's theorem.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Induction on $m$.
+
+\item[(2)]
+  Base case.
+  \begin{align*}
+    P_1 \oplus P_2 \oplus P_3 = O
+    &\Longleftrightarrow
+    \text{$P_1, P_2, P_3$ are collinear} \\
+    &\Longleftrightarrow
+    \text{$\exists$ a line $L$ such that $L \bullet C = P_1 + P_2 + P_3$}.
+  \end{align*}
+
+\item[(3)]
+  Inductive step.
+  Let
+  $L \bullet C = P_1 + P_2 + Q$,
+  $L' \bullet C = P_3 + P_4 + R$,
+  $L'' \bullet C = Q + R + S$.
+  By (2),
+  $O = P_1 \oplus P_2 \oplus Q = P_3 \oplus P_4 \oplus R = Q \oplus R \oplus S$.
+  Hence
+  \[
+    S = P_1 \oplus P_2 \oplus P_3 \oplus P_4.
+  \]
+  Hence
+  \begin{align*}
+    & \:
+    P_1 \oplus \cdots \oplus P_{3m} = O \\
+    \Longleftrightarrow & \:
+    S \oplus P_5 \oplus P_6 \cdots \oplus P_{3m} = O \\
+    \Longleftrightarrow & \:
+    \text{$\exists$ $f'$ of degree $m-1$ such that $f' \bullet C = S + \sum_{i=5}^{3m} P_i$} \\
+    \Longrightarrow & \:
+    (LL'f') \bullet C > L'' \bullet C \\
+    \Longrightarrow & \:
+    \text{$\exists$ $f$ of degree $m$ such that $f \bullet C = \sum_{i=1}^{3m} P_i$} \\
+    \Longrightarrow & \:
+    (L'' f) \bullet C > (L L') \bullet C \\
+    \Longrightarrow & \:
+    \text{$\exists$ $f'$ of degree $m-1$ such that $f' \bullet C = S + \sum_{i=5}^{3m} P_i$}.
+  \end{align*}
+
+\item[(4)]
+  Since both the base case and the inductive step have been proved as true,
+  by mathematical induction the statement holds for any $m$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
