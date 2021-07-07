@@ -13244,9 +13244,10 @@ a finite number of points.} \\
   \[
     \widetilde{f}(\lambda, \mu)
     = f(\lambda a_1 + \mu b_1, \lambda a_2 + \mu b_2, \lambda a_3 + \mu b_3)
-    = 0.
+    = 0
+    \text{ in }
+    \mathbf{P}^1.
   \]
-  in $\mathbf{P}^1$.
   $\widetilde{f}$ is a form in $k[\lambda,\mu]$ of degree $m := \deg(f)$
   since $f$ and $g$ have no common components.
   Hence, $\widetilde{f}$ has exactly $m$ zeros in $\mathbf{P}^1$ (with multiplicity).
@@ -15950,6 +15951,97 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.40. (Rational points)}
+\addcontentsline{toc}{subsubsection}{Problem 5.40. (Rational points)}
+\emph{Let $k_0$ be a subfield of $k$.
+If $V$ is an affine variety, $V \subseteq \mathbf{A}^{n}(k)$,
+a point $P = (a_1,\ldots,a_n) \in V$ is \textbf{rational} over $k_0$, if each $a_i \in k_0$.
+If $V \subseteq \mathbf{P}^{n}(k)$ is projective,
+a point $P \in V$ is rational over $k_0$ if
+for some homogeneous coordinates $(a_1,\ldots,a_{n+1})$ for $P$, each $a_i \in k_0$.} \\
+
+\emph{A curve $f$ of degree $d$ is said to be emphrational over $k_0$ if
+the corresponding point in $\mathbf{P}^{\frac{d(d+3)}{2}}$ is rational over $k_0$.} \\
+
+\emph{Suppose a nonsingular cubic $C$ is rational over $k_0$.
+Let $C(k_0)$ be the set of points of $C$ that are rational over $k_0$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $P, Q \in C(k_0)$, show that $\varphi(P,Q)$ is in $C(k_0)$.}
+
+\item[(b)]
+  \emph{If $O \in C(k_0)$,
+  show that $C(k_0)$ forms a subgroup of $C$.}
+\end{enumerate}
+
+\emph{(If $k_0 = \mathbb{Q}$, $k = \mathbb{C}$,
+this has important applications to number theory.)} \\
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  If $P \neq Q$,
+  then the line $L$ passing through $P = [a_1:a_2:a_3]$ and $Q = [b_1:b_2:b_3]$ is
+  \[
+    L: \{ [\lambda a_1 + \mu b_1 : \lambda a_2 + \mu b_2 : \lambda a_3 + \mu b_3]
+      : [\lambda : \mu] \in \mathbf{P}^2(k)
+    \}.
+  \]
+  Hence
+  \[
+    C \cap L
+    = C(\lambda a_1 + \mu b_1, \lambda a_2 + \mu b_2, \lambda a_3 + \mu b_3)
+    := \widetilde{C}(\lambda, \mu).
+  \]
+
+\item[(2)]
+  Note that $\deg(\widetilde{C}) = 3$ since $C \neq 0$ is nonsingular
+  (and thus is irreducible by Problem 5.21).
+  By Problem 5.7 or B\'ezout's theorem,
+  $\widetilde{C}$ has exactly $3$ zeros in $\mathbf{P}^1(k)$.
+
+\item[(3)]
+  Note that $\widetilde{C} \in k_0[\lambda, \mu]$
+  since $C \in k_0[x,y,z]$ and $P, Q \in \mathbf{P}^2(k_0)$.
+  Since $P, Q \in \mathbf{P}^2(k_0)$,
+  we apply Vieta's formulas on $\widetilde{C}$ to get
+  the third point $\varphi(P,Q) \in \mathbf{P}^2(k_0)$ too.
+
+\item[(4)]
+  If $P = Q$,
+  then the line $L$ tangent to $C$ at $P$ is
+  $\frac{\partial C}{\partial x}(P) x +
+  \frac{\partial C}{\partial y}(P) y +
+  \frac{\partial C}{\partial z}(P) z = 0$
+  (Problem 5.4).
+  Define
+  \begin{equation*}
+    [b_1:b_2:b_3] =
+      \begin{cases}
+        [a_1:a_2:a_3+1]
+          & \text{ if } \frac{\partial C}{\partial z}(P) = 0 \\
+        \left[ a_1+\frac{\partial C}{\partial y}(P):a_2-\frac{\partial C}{\partial x}(P):a_3 \right]
+          & \text{ otherwise}.
+      \end{cases}
+  \end{equation*}
+  Note that $L \in k_0[x,y,z]$ and $[b_1:b_2:b_3] \in \mathbf{P}^2(k_0)$.
+  Hence $L$ has the same form as (1).
+  The rest proof is the same as (2)(3).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  Since $O \in C(k_0)$ and $\varphi(C(k_0) \times C(k_0)) \subseteq C(k_0)$,
+  $C(k_0)$ is a subgroup of $C$ (as Problem 5.35).
+$\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
