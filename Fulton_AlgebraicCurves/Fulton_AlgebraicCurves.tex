@@ -15246,6 +15246,57 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 5.30.}
+\addcontentsline{toc}{subsubsection}{Problem 5.30.}
+\emph{Let $f$ be an irreducible projective plane curve.
+Suppose $z \in k(f)$ is defined at every $P \in f$.
+Show that $z \in k$.
+(Hint: Write $z = \frac{h}{g}$, and use max Noether's fundamental theorem).}
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write $z = \frac{h}{g}$ where $h, g$ are forms of the same degree in
+  $k[x,y,z]$ and $g(P) \neq 0$ for any $P \in V(f)$.
+  Given any $P \in \mathbf{P}^2$ and consider two cases about $g(P)$.
+
+\item[(2)]
+  If $g(P) \neq 0$, then
+  $h - zg = 0
+  \in \mathscr{O}_P(f) = \mathscr{O}_P(\mathbf{P}^2)/(f)\mathscr{O}_P(\mathbf{P}^2)$.
+  So
+  \[
+    h = \alpha f + zg \in \mathscr{O}_P(\mathbf{P}^2)
+  \]
+  for some $\alpha \in \mathscr{O}_P(\mathbf{P}^2)$.
+
+\item[(3)]
+  If $g(P) = 0$, then $f(P) \neq 0$ and thus $f$ is a unit in $\mathscr{O}_P(\mathbf{P}^2)$.
+  Hence $h_{*} \in \mathscr{O}_P(\mathbf{P}^2) = (f_{*},g_{*})$ is always true.
+
+\item[(4)]
+  By (2)(3), Noether's conditions are satisfied at $P \in \mathbf{P}^2$.
+  Hence there is an equation $h = af + bg$
+  with $a, b$ forms of degree $\deg(h) - \deg(f)$, $\deg(h) - \deg(g)$
+  (Max Noether's fundamental theorem in \S 5.5).
+  Note that $b \in k$ since $\deg(b) = \deg(h) - \deg(g) = 0$.
+  Therefore,
+  \[
+    z
+    = h/g
+    = \underbrace{(a/g) f}_{\text{$= 0$ in $k(f)$}} + b
+    = b \in k.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
