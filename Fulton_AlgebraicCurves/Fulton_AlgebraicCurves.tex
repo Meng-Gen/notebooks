@@ -16156,6 +16156,84 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 5.43. (Sextatic point)}
+\addcontentsline{toc}{subsubsection}{Problem 5.43. (Sextatic point)}
+\emph{For which points $P$ on a nonsingular cubic $C$
+does there exist a nonsingular conic that intersects $C$ only at $P$?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{We say $P$ a sextatic point of $C$
+  if there is a nonsingular conic $K$ that intersects $C$ six times at $P$.
+  Suppose $O$ is a flex on $C$.
+  Show that the followings are equivalent:}
+  \begin{enumerate}
+  \item[(i)]
+    \emph{$P$ is a sextatic point of $C$.}
+
+  \item[(ii)]
+    \emph{$6P = O$ and $3P \neq O$.}
+
+  \item[(iii)]
+    \emph{The tangent at $P$ contains a flex of $C$ not equal to $P$.}
+
+  \item[(iv)]
+    \emph{$P$ has order $2$ or $6$.}
+  \end{enumerate}
+
+\item[(2)]
+  (ii) $\Longleftrightarrow$ (iii) $\Longleftrightarrow$ (iv) is followed by Problem 5.37.
+  To prove (i) $\Longleftrightarrow$ (ii),
+  it suffices to show that
+  \begin{enumerate}
+  \item[($*$)]
+    \emph{$6P = O$ $\Longleftrightarrow$
+    there is a conic $K$ that intersects $C$ six times at $P$,
+    which is followed by Problem 5.41.}
+
+  \item[($**$)]
+    \emph{$3P = 0$ $\Longleftrightarrow$ $K$ is reducible.}
+  \end{enumerate}
+
+\item[(3)]
+  Note that
+  \begin{align*}
+    & \:
+    K = L_1 L_2 \text{ for some lines $L_1, L_2$} \\
+    \Longrightarrow & \:
+    C \bullet K = C \bullet (L_1 L_2) = C \bullet L_1 + C \bullet L_2 = 6P \\
+    \Longrightarrow & \:
+    C \bullet L_1 = C \bullet L_2 = 3P \\
+    \Longrightarrow & \:    
+    3P = O.
+    &(\text{Problem 5.41})
+  \end{align*}
+  and
+  \begin{align*}
+    & \:
+    3P = O \\
+    \Longrightarrow & \:
+    C \bullet L = 3P \text{ for some line $L$}
+    &(\text{Problem 5.41}) \\
+    \Longrightarrow & \:
+    C \bullet K = C \bullet L^2 = 6P \\
+    \Longrightarrow & \:    
+    K = L^2 \text{ is reducible (up to a nonzero constant)}.
+  \end{align*}
+  Therefore, the statement ($**$) is established (and thus part (a) holds).
+
+\item[(4)]
+  There are $27$ sextatic points of $C$ by Problem 5.37(a)(c)(e) and (iii).
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
