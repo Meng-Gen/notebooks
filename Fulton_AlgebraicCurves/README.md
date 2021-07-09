@@ -7,7 +7,7 @@
 - Chapter 2: Affine Varieties [Finished]
 - Chapter 3: Local Properties of Plane Curves [Finished]
 - Chapter 4: Projective Varieties [Finished]
-- Chapter 5: Projective Plane Curves [WIP]
+- Chapter 5: Projective Plane Curves [Finished]
 - Chapter 6: Varieties, Morphisms, and Rational Maps [WIP]
 - Chapter 7: Resolution of Singularities [TODO]
 - Chapter 8: Riemann-Roch Theorem [TODO]
