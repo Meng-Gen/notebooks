@@ -17491,6 +17491,12 @@ $\Box$ \\\\
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
+  Given $\varphi \in \Gamma(Y)$ such that $\widetilde{f}(\varphi) = \varphi \circ f = 0$.
+
+\item[(2)]
+  So $\varphi = 0$ on $f(X)$.
+  Since $f(X)$ is dense in $Y$, $\varphi = 0$ on $Y$ by Problem 6.7(b).
+  Hence $\widetilde{f}$ is injective.
 \end{enumerate}
 $\Box$ \\
 
@@ -17499,6 +17505,47 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  \emph{If $X$ and $Y$ are affine,
+  show that $f(X)$ is dense in $Y$ if and only if
+  $\widetilde{f}: \Gamma(Y) \to \Gamma(X)$ is one-to-one.}
+  One direction is followed by (a).
+
+\item[(2)]
+  If $f(X)$ is not dense in $Y \subseteq \mathbf{A}^{N}$,
+  then there is one open set $O = \bigcup_{i=1}^{r} V_{\varphi_i}$
+  such that
+  \[
+    O \cap Y = \bigcup (V_{\varphi_i} \cap Y) \neq \varnothing
+  \]
+  and
+  \[
+    O \cap f(X) = \bigcup (V_{\varphi_i} \cap f(X)) = \varnothing.
+  \]
+  (Note that $Y$ is affine.)
+  Hence $V_{\varphi_i} \cap Y \neq \varnothing$ for some $i = i_0$
+  and $V_{\varphi_i} \cap f(X) = \varnothing$ for all $i$.
+  Take $\varphi = \varphi_{i_0}$.
+  So there is $\varphi \in \Gamma(Y)$ such that $\widetilde{f}(\varphi) = 0$ and $\varphi \neq 0$.
+  So $\widetilde{f}$ is not injective.
+  Hence part (1) is established.
+
+\item[(3)]
+  \emph{If $Y$ is not affine,
+  then $\widetilde{f}: \Gamma(Y) \to \Gamma(X)$ is one-to-one
+  $\not\Longrightarrow$ $f(X)$ is dense in $Y$.}
+  Let $f: \mathbf{P}^{1} \to \mathbf{P}^{2}$ be a morphism as in Problem 6.25.
+  Hence the image of $f$ is not dense in $\mathbf{P}^{2}$
+  (since $f(\mathbf{P}^{1}) \cap \{ z \neq 0 \} = \varnothing$).
+
+\item[(4)]
+  Note that $\Gamma(\mathbf{P}^{n}(k)) = k$ for any projective $n$-space over $k$
+  (since $k = \overline{k}$.)
+  Therefore, the $k$-homomorphism
+  \[
+    \widetilde{f}: \underbrace{\Gamma(\mathbf{P}^{2})}_{= k}
+    \to \underbrace{\Gamma(\mathbf{P}^{1})}_{= k}
+  \]
+  is an isomorphism (and thus $\widetilde{f}$ is injective).
 \end{enumerate}
 $\Box$ \\\\
 
