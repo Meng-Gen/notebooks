@@ -1,2 +1,2 @@
 # Book
-Neukirch, Jürgen, Algebraic Number Theory.
+Jürgen Neukirch, Algebraic Number Theory.
