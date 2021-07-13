@@ -18394,8 +18394,7 @@ $\Box$ \\\\
 \item[(c)]
   \emph{Let $P_0$ be a fixed point on $C$,
   thus defining an addition $\oplus$ on $C$ (\S 5.6).
-  Show that $P \oplus Q = R$ if and only
-  if $P+Q = R+P_0$.
+  Show that $P \oplus Q = R$ if and only if $P+Q \equiv R+P_0$.
   Use this to give another proof of Proposition 4 of \S 5.6.} \\
 \end{enumerate}
 
@@ -18454,7 +18453,7 @@ $\Box$ \\
     P+Q \equiv R+S \\
     \Longleftrightarrow& \:
     \varphi(P,Q) \equiv \varphi(R,S)
-      &(\text{Proposition 2(1)}) \\
+      &(\text{Proposition 2(4)}) \\
     \Longleftrightarrow& \:
     \varphi(P,Q) = \varphi(R,S)
       &((a)) \\
@@ -18470,6 +18469,41 @@ $\Box$ \\
 \emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
+  By taking $S = P_0$ in (b),
+  we have $P \oplus Q = R \Longleftrightarrow P+Q \equiv R+P_0$.
+
+\item[(2)]
+  $P+Q \equiv R+P_0$ implies that $R \in C$.
+  That is, $\oplus$ defines an addition on $C$.
+  $P \oplus Q = Q \oplus P$ since $P+Q = Q+P \equiv R+P_0$.
+  $P_0$ is the identity since $P+P_0 \equiv P+P_0$ is always true for any $P \in C$.
+  Hence the rest is to prove the associativity.
+
+\item[(3)]
+  Suppose $P, Q, R \in C$.
+  Hence
+  \begin{align*}
+    & \:
+    (\underbrace{P \oplus Q}_{:= S}) \oplus R := T \\
+    \Longleftrightarrow& \:
+    S + R \equiv T + P_0 \text{ and } P + Q \equiv S + P_0 \\
+    \Longrightarrow& \:
+    P + Q + R \equiv T + 2P_0
+      &(\text{Proposition 2(4)})
+  \end{align*}
+  and
+  \begin{align*}
+    & \:
+    P \oplus (\underbrace{Q \oplus R}_{:= S'}) := T' \\
+    \Longleftrightarrow& \:
+    P + S' \equiv T' + P_0 \text{ and } Q + R \equiv S' + P_0 \\
+    \Longrightarrow& \:
+    P + Q + R \equiv T' + 2P_0.
+      &(\text{Proposition 2(4)})
+  \end{align*}
+  Proposition 2(1) in \S 8.1 implies that $T + 2P_0 \equiv T' + 2P_0$.
+  Hence $T \equiv T'$ (Proposition 2(4)).
+  Therefore $T = T'$ by (a).
 \end{enumerate}
 $\Box$ \\\\
 
