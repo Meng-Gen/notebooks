@@ -18377,6 +18377,104 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 8.3.}
+\addcontentsline{toc}{subsubsection}{Problem 8.3.}
+\emph{Let $C = X$ be a nonsingular cubic.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $P, Q \in C$. Show that $P \equiv Q$ if and only if $P = Q$.
+  (Hint: Lines are adjoints of degree $1$.)}
+
+\item[(b)]
+  \emph{Let $P, Q, R, S \in C$.
+  Show that $P+Q \equiv R+S$ if and only if
+  the line through $P$ and $Q$ intersects the line through $R$ and $S$ in a point on $C$
+  (if $P = Q$ use the tangent line).}
+
+\item[(c)]
+  \emph{Let $P_0$ be a fixed point on $C$,
+  thus defining an addition $\oplus$ on $C$ (\S 5.6).
+  Show that $P \oplus Q = R$ if and only
+  if $P+Q = R+P_0$.
+  Use this to give another proof of Proposition 4 of \S 5.6.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  One direction is trivial by taking $z \in k - \{0\}$ in the definition of linearly equivalence.
+  For the opposite direction, we need the residue theorem in \S 8.1.
+
+\item[(2)]
+  Take $E = 0$ (since $C$ is nonsingular), $D = P$, $D' = Q$,
+  and $G = L$ be any line passing throught $D$, that is,
+  \[
+    \mathrm{div}(L) = P + E + A = P + A
+  \]
+  for some effective divisor $A$.
+  The existence of $A$ is guaranteed by B\'ezout theorem.
+  Note that we can write $A = P' + P''$ where $P'$ and $P''$ are points in $C$.
+
+\item[(3)]
+  By residue theorem in \S 8.1,
+  there is an adjoint $L'$ of degree $1$ such that
+  \[
+    \mathrm{div}(L') = Q + E + A = Q + A.
+  \]
+  Therefore,
+  \[
+    P = \varphi(P', P'') = Q.
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let $L$ (resp. $L'$) be a line passing through $P, Q$ (resp. $R, S$).
+  So
+  \begin{align*}
+    \mathrm{div}(L) &= P + Q + \varphi(P,Q) \\
+    \mathrm{div}(L') &= R + S + \varphi(R,S).
+  \end{align*}
+  Hence
+  \[
+    P + Q + \varphi(P,Q) \equiv R + S + \varphi(R,S)
+  \]
+  (by Proposition 2(5) in \S 8.1).
+
+\item[(2)]
+  Therefore,
+  \begin{align*}
+    & \:
+    P+Q \equiv R+S \\
+    \Longleftrightarrow& \:
+    \varphi(P,Q) \equiv \varphi(R,S)
+      &(\text{Proposition 2(1)}) \\
+    \Longleftrightarrow& \:
+    \varphi(P,Q) = \varphi(R,S)
+      &((a)) \\
+    \Longleftrightarrow& \:
+    \text{the line through $P$ and $Q$ intersects} \\
+      & \quad \text{the line through $R$ and $S$ in a point on $C$.}
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
