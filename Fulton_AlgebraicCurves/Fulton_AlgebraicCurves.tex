@@ -18283,7 +18283,98 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 8.2.}
+\addcontentsline{toc}{subsubsection}{Problem 8.2.}
+\emph{Let $X = C = V(y^2z - x(x-z)(x-\lambda z)) \subseteq \mathbf{P}^{2}$,
+$\lambda \in k$, $\lambda \neq 0, 1$.
+Let $\overline{x} = \frac{x}{z}$, $\overline{y} = \frac{y}{z} \in K$;
+$K = k(\overline{x}, \overline{y})$.
+Calculate $\mathrm{div}(\overline{x})$ and $\mathrm{div}(\overline{y})$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Note that $V(x) \cap C = \{ [0:1:0], [0:0:1] \}$ and $V(z) \cap C = \{ [0:1:0] \}$.
+  Hence
+  \begin{align*}
+    \mathrm{div}\left( \frac{x}{z} \right)
+    =& \: \mathrm{ord}_{[0:1:0]}(x)[0:1:0] + \mathrm{ord}_{[0:0:1]}(x)[0:0:1] \\
+      & - \mathrm{ord}_{[0:1:0]}(z)[0:1:0].
+  \end{align*}
+
+\item[(2)]
+  Since
+  \begin{align*}
+    \mathrm{ord}_{[0:1:0]}(x)
+    &= I((0,0), x \cap C_{*}) \\
+    &= I((0,0), x \cap (z - x(x-z)(x-\lambda z))) \\
+    &= I((0,0), x \cap z) \\
+    &= 1, \\
+    \mathrm{ord}_{[0:0:1]}(x)
+    &= I((0,0), x \cap C_{*}) \\
+    &= I((0,0), x \cap (y^2 - x(x-1)(x-\lambda))) \\
+    &= I((0,0), x \cap y^2) \\
+    &= 2, \\
+    \mathrm{ord}_{[0:1:0]}(z)
+    &= I((0,0), z \cap C_{*}) \\
+    &= I((0,0), z \cap (z - x(x-z)(x-\lambda z))) \\
+    &= I((0,0), z \cap x^3) \\
+    &= 3,
+  \end{align*}
+  we have
+  \begin{align*}
+    \mathrm{div}\left( \frac{x}{z} \right)
+    &= [0:1:0] + 2 [0:0:1] - 3[0:1:0] \\
+    &= 2 [0:0:1] - 2[0:1:0].
+  \end{align*}
+
+\item[(3)]
+  Note that $V(y) \cap C = \{ [0:0:1], [1:0:1], [\lambda:0:1] \}$.
+  Hence
+  \begin{align*}
+    \mathrm{div}\left( \frac{y}{z} \right)
+    =& \: \mathrm{ord}_{[0:0:1]}(y)[0:0:1] + \mathrm{ord}_{[1:0:1]}(y)[1:0:1] \\
+      & + \mathrm{ord}_{[\lambda:0:1]}(y)[\lambda:0:1] - \mathrm{ord}_{[0:1:0]}(z)[0:1:0].
+  \end{align*}
+
+\item[(4)]
+  Since
+  \begin{align*}
+    \mathrm{ord}_{[0:0:1]}(y)
+    &= I((0,0), y \cap C_{*}) \\
+    &= I((0,0), y \cap (y^2 - x(x-1)(x-\lambda))) \\
+    &= I((0,0), y \cap x(x-1)(x-\lambda)) \\
+    &= 1, \\
+    \mathrm{ord}_{[1:0:1]}(y)
+    &= I((1,0), y \cap C_{*}) \\
+    &= I((1,0), y \cap x(x-1)(x-\lambda)) \\
+    &= I((0,0), y \cap x(x+1)(x+1-\lambda)) \\
+    &= 1, \\
+    \mathrm{ord}_{[\lambda:0:1]}(y)
+    &= I((\lambda,0), y \cap C_{*}) \\
+    &= I((\lambda,0), y \cap x(x-1)(x-\lambda)) \\
+    &= I((0,0), y \cap x(x-1+\lambda)(x+\lambda)) \\
+    &= 1,
+  \end{align*}
+  we have
+  \[
+    \mathrm{div}\left( \frac{y}{z} \right)
+    = [0:0:1] + [1:0:1] + [\lambda:0:1] - 3[0:1:0].
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% https://www.mathematik.uni-kl.de/~gathmann/class/curves-2018/curves-2018-c7.pdf
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
