@@ -18181,6 +18181,111 @@ $\Box$ \\\\
 
 
 
+% http://math.uchicago.edu/~may/REU2016/REUPapers/Wynter.pdf
+
+\subsubsection*{Problem 8.1.}
+\addcontentsline{toc}{subsubsection}{Problem 8.1.}
+\emph{Let $X = C = \mathbf{P}^{1}$, $k(X) = k(t)$,
+where $t = \frac{x_1}{x_2}$, $x_1$, $x_2$ homogeneous coordinates on $\mathbf{P}^{1}$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Calculate $\mathrm{div}(t)$.}
+
+\item[(b)]
+  \emph{Calculate $\mathrm{div}\left(\frac{f}{g}\right)$, $f$, $g$ in $k[t]$.}
+
+\item[(c)]
+  \emph{Prove Proposition 1 in \S 8.1 directly in this case.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  By definition,
+  \[
+    \mathrm{div}(t)
+    = \mathrm{ord}_{[0:1]}(x_1) \cdot [0:1] - \mathrm{ord}_{[1:0]}(x_2) \cdot [1:0]
+    = [0:1] - [1:0].
+  \]
+
+\item[(2)]
+  Note that $\deg(\mathrm{div}(t)) = 1 - 1 = 0$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    f = \prod_i (t - \lambda_i)^{\alpha_i}
+    \text{ and }
+    g = \prod_i (t - \lambda_i)^{\beta_i}
+  \]
+  where $\lambda_i \in k$ and $\alpha_i, \beta_i$ are nonnegative integers
+  (since $k = \overline{k}$).
+
+\item[(2)]
+  Hence
+  \begin{equation*}
+    \mathrm{ord}_{[\lambda:1]}\left(\frac{f}{g}\right)
+    =
+    \begin{cases}
+      \alpha_i - \beta_i & \text{if $\lambda_i = \lambda$} \\
+      0 & \text{otherwise}
+    \end{cases}
+  \end{equation*}
+
+\item[(3)]
+  It remains to find $\mathrm{ord}_{[1:0]}\left(\frac{f}{g}\right)$.
+  Write
+  \begin{align*}
+    \frac{f}{g}
+    &= \prod_i (t - \lambda_i)^{\alpha_i - \beta_i} \\
+    &= \prod_i \left(\frac{x_1}{x_2} - \lambda_i\right)^{\alpha_i - \beta_i} \\
+    &= \left(\frac{x_2}{x_1}\right)^{-\sum_{i}(\alpha_i - \beta_i)}
+      \prod_i \left(1 - \lambda_i \frac{x_2}{x_1}\right)^{\alpha_i - \beta_i}.
+  \end{align*}
+  So
+  \[
+    \mathrm{ord}_{[1:0]}\left(\frac{f}{g}\right)
+    = -\sum_{i}(\alpha_i - \beta_i).
+  \]
+
+\item[(4)]
+  \[
+    \mathrm{div}\left(\frac{f}{g}\right)
+    = \sum_{i} (\alpha_i - \beta_i) \cdot [\lambda_i:1]
+      - \left( \sum_{i}(\alpha_i - \beta_i) \right) \cdot [1:0].
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+  It suffices to show that
+  $\deg\left(\mathrm{div}\left(\frac{f}{g}\right)\right) = 0$.
+  In fact,
+  \[
+    \deg\left(\mathrm{div}\left(\frac{f}{g}\right)\right)
+    = \sum_{i} (\alpha_i - \beta_i) - \left( \sum_{i}(\alpha_i - \beta_i) \right)
+    = 0.
+  \]
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
