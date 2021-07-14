@@ -18557,6 +18557,79 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+% https://math.stackexchange.com/questions/1749701/show-that-d-is-not-linearly-equivalent-to-any-other-effective-divisor
+
+
+
+\subsubsection*{Problem 8.5.}
+\addcontentsline{toc}{subsubsection}{Problem 8.5.}
+\emph{Let $C$ be a nonsingular quartic, $P_1, P_2, P_3 \in C$.
+Let $D = P_1 + P_2 + P_3$.
+Let $L$ and $L'$ be lines such that
+$L \bullet C = P_1 + P_2 + P_4 + P_5$, $L' \bullet C = P_1 + P_3 + P_6 + P_7$.
+Suppose these seven points are distinct.
+Show that $D$ is not linearly equivalent to any other effective divisor.
+(Hint: Apply the residue theorem to the conic $LL'$.)
+Investigate in a similar way other divisors of small degree on quartics with
+various types of multiple points.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Suppose $D'$ is linearly equivalent to $D$.
+  Let $G = LL'$ be a conic.
+  Note that
+  \[
+    \mathrm{div}(G) = D + P_1 + P_4 + P_5 + P_6 + P_7.
+  \]
+  By the residue theorem,
+  there is an adjoint $G'$ of degree $2$ such that
+  \[
+    \mathrm{div}(G') = D' + P_1 + P_4 + P_5 + P_6 + P_7.
+  \]
+  In particular,
+  $G \cap G' \supseteq \{ P_1, P_4, P_5, P_6, P_7 \}$.
+
+\item[(2)]
+  (Reductio ad absurdum)
+  If $G, G'$ were distinct,
+  then by B\'ezout's theorem we might write
+  \[
+    G = L \cup L', \qquad G' = L \cup L''
+  \]
+  for some distinct line $L'' \neq L'$.
+  (The case $G' = L' \cup L''$ with $L'' \neq L$ is similar.)
+
+\item[(3)]
+  So
+  \[
+    G \cap G' = L \cup (\underbrace{L' \cap L''}_{\{ \text{single point} \}}).
+  \]
+  Hence there are four points on $L$,
+  contrary to the fact that
+  any four points of $\{ P_1, P_4, P_5, P_6, P_7 \}$ are not collinear.
+  (If so, then all five points are on the same line $L$ and thus $L \mid C$,
+  contrary to the irreducibility of $C$.)
+  Therefore $G = G'$.
+  So $\mathrm{div}(G) = \mathrm{div}(G')$ or $D = D'$.
+
+\item[(4)]
+  \emph{Let $C$ be a nonsingular quartic, $P_1, P_2 \in C$.
+  Let $D = P_1 + P_2$.
+  Let $L$ and $L'$ be lines such that
+  $L \bullet C = P_1 + P_3 + P_4 + P_5$, $L' \bullet C = P_2 + P_6 + 2P_7$.
+  Suppose these $7$ points are distinct.
+  Then $D$ is not linearly equivalent to any other effective divisor.}
+  The proof is similar to (1)(2)(3).
+  (Omit to discuss the rest case $\deg(D) = 1$.)
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
