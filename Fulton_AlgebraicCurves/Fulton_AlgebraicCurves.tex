@@ -18510,6 +18510,54 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 8.4.}
+\addcontentsline{toc}{subsubsection}{Problem 8.4.}
+\emph{Let $C$ be a cubic with a node.
+Show that for any two simple points $P,Q$ on $C$, $P \equiv Q$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $E$ be the node of $C$.
+  Consider a line $L$ passing through $P$ and $E$.
+  So
+  \[
+    \mathrm{div}(L) = P + E + \varphi(P,E).
+  \]
+  Since $P$ is simple, $\varphi(P,E) = E$ (Problems 5.35, 5.11).
+  So
+  \[
+    \mathrm{div}(L) = P + 2E.
+  \]
+
+\item[(2)]
+  Similarly, if $L'$ is a line passing through $Q$ and $E$, then
+  \[
+    \mathrm{div}(L') = Q + 2E.
+  \]
+
+\item[(3)]
+  Hence
+  $\mathrm{div}(L') + P + 2E = \mathrm{div}(L) + Q + 2E$ or
+  $\mathrm{div}(L') + P = \mathrm{div}(L) + Q$ (Proposition 2(4) in \S 8.1).
+  Therefore $P \equiv Q$ (Proposition 2(5) in \S 8.1).
+
+\item[(4)]
+  Note that the conclusion also holds for an irreducible cubic with a cusp.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
