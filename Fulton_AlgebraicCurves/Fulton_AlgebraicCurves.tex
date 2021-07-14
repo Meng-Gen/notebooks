@@ -18558,6 +18558,113 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 8.6. (Divisor class group)}
+\addcontentsline{toc}{subsubsection}{Problem 8.6. (Divisor class group)}
+\emph{Let $D(X)$ be the group of divisors on $X$,
+$D_0(X)$ the subgroup consisting of divisors of degree zero,
+and $P(X)$ the subgroup of $D_0(X)$ consisting of divisors of rational functions.
+Let $C_0(X) = D_0(X)/P(X)$ be the quotient group.
+It is the divisor class group on $X$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $X = \mathbf{P}^{1}$, then $C_0(X) = 0$.}
+
+\item[(b)]
+  \emph{Let $X = C$ be a nonsingular cubic.
+  Pick $P_0 \in C$, defining $\oplus$ on $C$.
+  Show that the map from $C$ to $C_0(X)$ that
+  sends $P$ to the residue class of the divisor $P-P_0$
+  is an isomorphism from $(C,\oplus)$ onto $C_0(X)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Given a divisor
+  \[
+    D = \sum_{P \in X} n_P P \in D_0(X)
+  \]
+  where $n_P \in \mathbb{Z}$ and $\sum_P n_P = 0$.
+
+\item[(2)]
+  Note that $\sum_P n_P = 0$.
+  We can define a rational function $z \in k(X)$ by
+  \[
+    z
+    = \prod_{P = [a_P:b_P] \in X} (b_P x - a_P y)^{n_P}.
+  \]
+  Hence $\mathrm{div}(z) = D \in P(X)$.
+  Therefore $C_0(X) = D_0(X)/P(X) = 0$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Define $\alpha: (C,\oplus) \to C_0(X)$ by $P \mapsto [P-P_0]$.
+
+\item[(2)]
+  \emph{Show that $\alpha$ is a group homomorphism.}
+  If $P \oplus Q = R$, then
+  \begin{align*}
+    & \:
+    P \oplus Q = R \\
+    \Longleftrightarrow& \:
+    [P + Q] = [R + P_0]
+      &(\text{Problem 8.3(c)}) \\
+    \Longleftrightarrow& \:
+    [P - P_0] + [Q - P_0] = [R - P_0]
+      &(\text{Proposition 2}) \\
+    \Longleftrightarrow& \:
+    \alpha(P) + \alpha(Q) = \alpha(R) = \alpha(P \oplus Q).
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that $\alpha$ is injective.}
+  \begin{align*}
+    \alpha(P) = 0
+    \Longleftrightarrow& \:
+    [P - P_0] = 0 \\
+    \Longleftrightarrow& \:
+    [P] = [P_0]
+      &(\text{Proposition 2}) \\
+    \Longleftrightarrow& \:
+    P = P_0.
+      &(\text{Problem 8.3(a)})
+  \end{align*}
+
+\item[(4)]
+  \emph{Show that $\alpha$ is surjective.}
+  Given $[D] \in C_0(X)$ and we want to find a point $P \in C$ such that $\alpha(P) = [D]$.
+  Write
+  \[
+    D = (P_1 + \cdots + P_r) - (Q_1 + \cdots + Q_r)
+  \]
+  for some $P_i, Q_i \in C$.
+  So
+  \begin{align*}
+    [D]
+    &= [P_1 - P_0] + \cdots + [P_r - P_0] - [Q_1 - P_0] - \cdots - [Q_r - P_0] \\
+    &= \alpha(P_1) + \cdots + \alpha(P_r) - \alpha(Q_1) - \cdots - \alpha(Q_r) \\
+    &= \alpha(P_1) + \cdots + \alpha(P_r) + \alpha(Q_1') + \cdots + \alpha(Q_r') \\
+    &= \alpha(P_1 \oplus \cdots \oplus P_r \oplus Q_1' \oplus \cdots \oplus Q_r').
+  \end{align*}
+  where $Q_i'$ is the inverse of $Q_i$ in $(C,\oplus)$.
+  Hence there is a point $P := P_1 \oplus \cdots \oplus P_r \oplus Q_1' \oplus \cdots \oplus Q_r' \in C$
+  such that $\alpha(P) = [D]$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
