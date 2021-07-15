@@ -1,0 +1,2187 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Solutions to the book: \\\emph{Apostol, Mathematical Analysis, 2nd edition.}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 1: The Real And Complex Number Systems \\}
+\addcontentsline{toc}{section}{Chapter 1: The Real And Complex Number Systems}
+
+
+
+\subsection*{Integers \\}
+\addcontentsline{toc}{subsection}{Integers}
+
+
+
+\subsubsection*{Exercise 1.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.1.}
+\emph{Prove that there is no largest prime. (A proof was known to Euclid.)} \\
+
+There are many proofs of this result. We provide some of them. \\
+
+\emph{Proof (Due to Euclid).}
+If
+$p_1, p_2, \ldots, p_t$ were all primes, then
+we consider $$n = p_1 p_2 \cdots p_t + 1.$$
+Thus there is a prime number $p$ dividing $n$.
+$p$ can not be any of $p_i$ for $1 \leq i \leq t$;
+otherwise $p$ would divide the difference $n - p_1 p_2 \cdots p_t = 1$.
+That is, $p \neq p_i$ for $1 \leq i \leq t$,
+contrary to the assumption.
+$\Box$ \\
+
+
+
+\textbf{Supplement (Due to Euclid).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $k[x]$, with $k$ a field,
+  has infinitely many irreducible polynomials.}
+  If
+  $f_1, f_2, \ldots, f_t$ were all irreducible polynomials, then
+  we consider $$g = f_1 f_2 \cdots f_t + 1 \in k[x].$$
+  So there is an irreducible polynomial $f$ dividing $g$
+  (since $\deg g = \deg f_1 + \deg f_2 + \cdots + \deg f_t \geq 1$).
+  $f$ can not be any of $c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$;
+  otherwise $f$ would divide the difference $g - f_1 f_2 \cdots f_t = 1$.
+  That is, $f \neq c_i f_i$ for $1 \leq i \leq t$ and $c_i \in k - \{0\}$,
+  contrary to the assumption.
+
+\item[(2)]
+  \emph{Show that any algebraically closed field is infinite.}
+  Let $k$ be an algebraically closed field.
+  If $a_1, \ldots, a_n$ were all elements in $k$, then
+  we consider a monic polynomials
+  \[
+    F(X) = (X - a_1) \cdots (X - a_n) + 1 \in k[X].
+  \]
+  Since $k$ is algebraically closed,
+  there is an element $a \in k$ such that $F(a) = 0$.
+  By assumption, $a = a_i$ for some $1 \leq i \leq n$,
+  and thus $F(a) = F(a_i) = 1$, contrary to the fact that
+  a field is a commutative ring where $0 \neq 1$ and all nonzero elements are invertible.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Unique factorization theorem).}
+Given $N$.
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\sum_{n \leq N} \frac{1}{n}
+  \leq \prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}$.} \\
+  By the unique factorization theorem on $n \leq N$,
+  \[
+    \sum_{n \leq N} \frac{1}{n}
+    \leq \prod_{p \leq N} \left( 1 + \frac{1}{p} + \frac{1}{p^2} + \cdots \right)
+    = \prod_{p \leq N} \left( 1 - \frac{1}{p} \right)^{-1}.
+  \]
+
+\item[(2)]
+  By (1) and the fact that $\sum \frac{1}{n}$ diverges,
+  there are infinitely many primes.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Due to Eckford Cohen).}
+\begin{enumerate}
+\item[(1)]
+  \emph{$\text{ord}_p n!
+  = \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots$.}
+  For any $k = 1, 2, \ldots, n$, we can express $k$ as $k = p^s t$
+  where $s = \text{ord}_p k$ is a non-negative integer and $(t, p) = 1$.
+  There are $[\frac{n}{p^a}]$ numbers such that $p^a \mid k$ for $a = 1, 2, \ldots$.
+  Therefore, there are $$\left[\frac{n}{p^a}\right] - \left[\frac{n}{p^{a+1}}\right]$$
+  numbers such that $\text{ord}_p k = a$ for $a = 1, 2, \ldots$. Hence,
+  \begin{align*}
+  \text{ord}_p n!
+    &= \left( \left[\frac{n}{p}\right] - \left[\frac{n}{p^2}\right] \right)
+     + 2 \left( \left[\frac{n}{p^2}\right] - \left[\frac{n}{p^3}\right] \right)
+     + 3 \left( \left[\frac{n}{p^3}\right] - \left[\frac{n}{p^4}\right] \right) + \cdots \\
+    &= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots.
+  \end{align*}
+
+\item[(2)]
+  \emph{$\text{ord}_p n! \leq \frac{n}{p - 1}$ and that
+  $n!^{\frac{1}{n}} \leq \prod_{p|n!}p^{\frac{1}{p - 1}}$.}
+  \begin{align*}
+  \text{ord}_p n!
+  &= \left[\frac{n}{p}\right] + \left[\frac{n}{p^2}\right] + \left[\frac{n}{p^3}\right] + \cdots \\
+  &\leq \frac{n}{p} + \frac{n}{p^2} + \frac{n}{p^3} + \cdots \\
+  &= \frac{\frac{n}{p}}{1 - \frac{1}{p}} \\
+  &= \frac{n}{p - 1}.
+  \end{align*}
+  Thus,
+  \[
+    n!
+    = \prod_{p|n!} p^{\text{ord}_p n!}
+    \leq \prod_{p|n!} p^{\frac{n}{p - 1}}
+    = \left( \prod_{p|n!} p^{\frac{1}{p - 1}} \right)^n,
+  \]
+  or
+  \[
+    n!^{\frac{1}{n}} \leq \prod_{p|n!}p^{\frac{1}{p - 1}}.
+  \]
+
+\item[(3)]
+  \emph{$(n!)^2 \geq n^n$.}
+  Write
+  $(n!)^2 = \prod_{k=1}^n k \prod_{k=1}^n (n + 1 - k) = \prod_{k=1}^n k(n + 1 - k)$,
+  and $n^n = \prod_{k=1}^n n$.
+  It suffices to show that $k(n + 1 - k) \geq n$ for each $1 \leq k \leq n$.
+  Notice that $k(n + 1 - k) - n = (n - k)(k - 1) \geq 0$ for $1 \leq k \leq n$.
+  The inequality holds.
+
+\item[(4)]
+  By (3)(4), $\prod_{p|n!}p^{\frac{1}{p - 1}} \geq \sqrt{n}$.
+  Assume that there are finitely many primes,
+  the value $\prod_{p|n!} p^{\frac{1}{p - 1}}$ is a finite number
+  whenever the value of $n$.
+  However, $\sqrt{n} \rightarrow \infty$ as $n \rightarrow \infty$,
+  which leads to a contradiction.
+  Hence there are infinitely many primes.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Formula for $\phi(n)$).}
+If
+$p_1, p_2, \ldots, p_t$ were all primes, then let
+$n = p_1 p_2 \cdots p_t$ and all numbers between $2$ and $n$ are
+NOT relatively prime to $n$.
+Thus, $\phi(n) = 1$ by the definition of $\phi$.
+By the formula for $\phi$,
+\begin{align*}
+  \phi(n)
+  &= n
+  \left( 1 - \frac{1}{p_1} \right)
+  \left( 1 - \frac{1}{p_2} \right)
+  \cdots
+  \left( 1 - \frac{1}{p_t} \right) \\
+  1
+  &= (p_1 p_2 \cdots p_t)
+  \left( 1 - \frac{1}{p_1} \right)
+  \left( 1 - \frac{1}{p_2} \right)
+  \cdots
+  \left( 1 - \frac{1}{p_t} \right) \\
+  &= (p_1 - 1)(p_2 - 1) \cdots (p_t - 1) > 1,
+\end{align*}
+which is a contradiction (since $3$ is a prime).
+Hence there are infinitely many primes.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2.}
+\emph{If $n$ is a positive integer, prove the algebraic identity
+$$a^n - b^n = (a - b) \sum_{k=0}^{n-1} a^k b^{n-1-k}.$$} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+(a - b) \sum_{k=0}^{n-1} a^k b^{n-1-k}
+&= a \sum_{k=0}^{n-1} a^k b^{n-1-k} - b \sum_{k=0}^{n-1} a^k b^{n-1-k} \\
+&= \sum_{k=0}^{n-1} a^{k+1} b^{n-1-k} - \sum_{k=0}^{n-1} a^k b^{n-k}.
+\end{align*}
+\item[(2)] Arrange summation index:
+\begin{align*}
+\sum_{k=0}^{n-1} a^{k+1} b^{n-1-k}
+&= \sum_{k=1}^{n} a^{k} b^{n-k}
+= a^n + \sum_{k=1}^{n-1} a^{k} b^{n-k}, \\
+\sum_{k=0}^{n-1} a^k b^{n-k}
+&= b^n + \sum_{k=1}^{n-1} a^{k} b^{n-k}.
+\end{align*}
+\item[(3)]
+By (1)(2),
+\begin{align*}
+(a - b) \sum_{k=0}^{n-1} a^k b^{n-1-k}
+&= \left( a^n + \sum_{k=1}^{n-1} a^{k} b^{n-k} \right)
+- \left( b^n + \sum_{k=1}^{n-1} a^{k} b^{n-k} \right) \\
+&= a^n - b^n.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.} Some exercises without proof.
+\begin{enumerate}
+\item[(1)]
+\emph{Let $x$ be a nilpotent element of $A$.
+Show that $1+x$ is a unit of $A$.
+Deduce that the sum of a nilpotent element and a unit is a unit.}
+(Exercise 1.1 in the textbook: \emph{Atiyah and Macdonald,
+Introduction to Commutative Algebra})
+
+\item[(2)]
+\emph{Prove that $1^k + 2^k + \cdots + (p-1)^k \equiv 0 \: (p)$
+if $p - 1 \nmid k$ and $-1 (p)$ if $p - 1 \mid k$.}
+(Exercise 4.11 in the textbook: \emph{Kenneth Ireland and Michael Rosen,
+A Classical Introduction to Modern Number Theory, 2nd edition})
+
+\item[(3)]
+\emph{Use the existence of a primitive root to give another proof
+of Wilson's theorem $(p - 1)! \equiv -1 \: (p)$.}
+(Exercise 4.12 in the textbook: \emph{Kenneth Ireland and Michael Rosen,
+A Classical Introduction to Modern Number Theory, 2nd edition})
+
+\item[(4)]
+\emph{Suppose $n$ and $F$ are integers and $n, F > 0$. Show that
+$$B_n(Fx) = F^{n-1} \sum_{a=0}^{F-1} B_n \left(x + \frac{a}{F} \right).$$
+where $B_n(x)$ are Bernoulli polynomials.}
+(Exercise 15.19 in the textbook: \emph{Kenneth Ireland and Michael Rosen,
+A Classical Introduction to Modern Number Theory, 2nd edition})
+
+\item[(5)]
+Exercise 1.3.
+
+\item[(6)]
+Exercise 1.4.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection*{Exercise 1.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.3.}
+\emph{If $2^n - 1$ is a prime, prove that $n$ is prime.
+A prime of the form $2^p - 1$, where $p$ is prime, is called a Mersenne prime.} \\
+
+It suffices to prove that:
+\emph{If $a^n - 1$ is a prime, show that $a = 2$ and that $n$ is a prime.}
+Primes of the form $2^p - 1$ are called Mersenne primes.
+For example, $2^3 - 1 = 7$ and $2^5 - 1 = 31$.
+It is not known if there are infinitely many Mersenne primes. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$n$ is a prime.}
+Assume $n$ were not prime, say $n = rs$ for some $r, s > 1$.
+By Exercise 1.2,
+$a^{rs} - 1 = (a^s - 1)(\sum_{k=0}^{r-1} a^{sk})$.
+$a^s - 1 = 1$ since $a^s - 1 < a^{rs} - 1$ and $a^{rs} - 1$ is a prime.
+Hence $s=1$ and ($a=2$), which is absurd.
+\item[(2)]
+\emph{$a = 2$.}
+If $a$ is odd, then $a^p - 1 > 2$ is even, which is not a prime.
+If $a > 2$ is even,
+$a^p - 1 = (a - 1)(\sum_{k=0}^{p-1} a^k)$.
+Both $a - 1 > 1$ and $\sum_{k=0}^{p-1} a^k > 1$, which is absurd.
+\end{enumerate}
+By (1)(2), $a = 2$ and that $n$ is a prime if $a^n - 1$ is a prime.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.6.}
+\emph{Prove that every nonempty set of positive integers contains a smallest member.
+This is called the well-ordering principle.} \\
+
+\emph{Proof.}
+Use mathematical induction to establish
+that the well-ordering principle.
+
+\begin{enumerate}
+\item[(1)]
+Given a set $S$ of positive integers,
+let $P(n)$ be the proposition
+`If $m \in S$ for some $m \leq n$, then $S$ has a least element'.
+Want to show $P(n)$ is true for all $n \in \mathbb{N}$.
+\begin{enumerate}
+\item[(a)]
+$P(1)$ is true.
+For $m \in S$ with $m \leq n = 1$,
+or $m = 1$ by the minimality of $1 \in \mathbb{N}$,
+$S$ has a least element $1$ ($m$ itself) in $\mathbb{N}$.
+\item[(b)]
+Suppose $P(n)$ is true.
+If $n+1 \in S$, then there are only two possible cases.
+  \begin{enumerate}
+  \item[(i)]
+  There is a positive integer $m \in S$ less than $n+1$.
+  So $n \geq m \in S$.
+  Since $P(n)$ is true, $S$ has a least element.
+  \item[(ii)]
+  There is no positive integer $m \in S$ less than $n+1$.
+  In this case $n+1$ is the least element in $S$.
+  \end{enumerate}
+  In any cases (i)(ii), $S$ has a least element, or $P(n+1)$ is true.
+\end{enumerate}
+By mathematical induction, $P(n)$ is true for all $n \in \mathbb{N}$.
+\item[(2)]
+\emph{Show that the well-ordering principle holds.}
+Let $T$ be a nonempty subset of $\mathbb{N}$,
+so there exists a positive integer $k \in T$.
+Notice that $P(k)$ is true by (1),
+thus $T$ has a least element since $k \leq k$.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+\emph{Show that the well-ordering principle implies
+the principle of mathematical induction.} \\
+
+\emph{Proof.}
+Suppose that
+\begin{enumerate}
+\item[(1)]
+$P(n)$ be a proposition defined for each $n \in \mathbb{N}$,
+\item[(2)]
+$P(1)$ is true,
+\item[(3)]
+$[P(n) \Rightarrow P(n+1)]$ is true.
+\end{enumerate}
+
+Consider the set
+$$S = \{ n \in \mathbb{N} : P(n) \text{ is false} \} \subseteq \mathbb{N}.$$
+Want to show
+\emph{$S$ is empty, or the principle of mathematical induction holds.}
+If $S$ were nonempty,
+by the well-ordering principle $S$ has a smallest element $m$.
+$m$ cannot be $1$ by (2).
+Say $m > 1$.
+Therefore, $m - 1 \in \mathbb{N}$
+and $P(m-1)$ is true by the minimality of $m$.
+By (3), $P((m-1)+1) = P(m)$ is true, which is absurd.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Rational and irrational numbers \\}
+\addcontentsline{toc}{subsection}{Rational and irrational numbers}
+
+
+
+\subsubsection*{Exercise 1.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.11.}
+\emph{Given any real $x > 0$,
+prove that there is an irrational number between $0$ and $x$.} \\
+
+
+
+\emph{Proof.}
+There are only two possible cases: $x$ is rational, or $x$ is irrational.
+\begin{enumerate}
+\item[(1)]
+\emph{$x$ is rational.}
+Pick $y = \frac{x}{\sqrt{89}} \in (0, x) \subseteq \mathbb{R}$. $y$ is irrational.
+\item[(2)]
+\emph{$x$ is irrational.}
+Pick $y = \frac{x}{\sqrt{64}} \in (0, x) \subseteq \mathbb{R}$. $y$ is irrational.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Exercise 4.12).}
+Pick
+$$y
+= \lim_{m \rightarrow \infty}[\lim_{n \rightarrow \infty} \cos^{2n}(m!\pi x)]
+\cdot \frac{x}{\sqrt{89}}
++
+(1 - \lim_{m \rightarrow \infty}[\lim_{n \rightarrow \infty} \cos^{2n}(m!\pi x)])
+\cdot \frac{x}{\sqrt{64}}.$$
+\begin{enumerate}
+\item[(1)]
+\emph{$x$ is rational.}
+$y = \frac{x}{\sqrt{89}} \in (0, x) \subseteq \mathbb{R}$ is irrational.
+\item[(2)]
+\emph{$x$ is irrational.}
+$y = \frac{x}{\sqrt{64}} \in (0, x) \subseteq \mathbb{R}$ is irrational.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Upper bounds \\}
+\addcontentsline{toc}{subsection}{Upper bounds}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Inequalities \\}
+\addcontentsline{toc}{subsection}{Inequalities}
+
+
+
+\subsubsection*{Exercise 1.23.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.23.}
+\emph{Prove Lagrange's identity for real numbers:
+$$\left( \sum_{k=1}^{n} a_k b_k \right)^2
+= \left( \sum_{k=1}^{n} a_k \right)^2 \left( \sum_{k=1}^{n} b_k \right)^2
+- \sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)^2.$$}
+
+Note that this identity implies the Cauchy-Schwarz inequality. \\
+
+\emph{Proof.}
+Put $(a_k, b_k, A_k, B_k) \mapsto (a_k, b_k, a_k, b_k)$
+in the following generalization (Binet-Cauchy identity).
+$\Box$ \\
+
+\textbf{Generalization (Binet-Cauchy identity).}
+\begin{align*}
+&\sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
+\end{align*}
+
+\emph{Proof.}
+\begin{align*}
+&\sum_{1 \leq k < j \leq n}
+(a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
+= &\sum_{1 \leq k < j \leq n}
+(a_k b_j A_k B_j + a_j b_k A_j B_k)
+- \sum_{1 \leq k < j \leq n}
+(a_k b_j A_j B_k - a_j b_k A_k B_j) \\
+= &\sum_{1 \leq k < j \leq n}
+(a_k A_k b_j B_j + a_j A_j b_k B_k)
+- \sum_{1 \leq k < j \leq n}
+(a_k B_k b_j A_j + a_j B_j b_k A_k) \\
+= &\sum_{1 \leq k \neq j \leq n} a_k A_k b_j B_j
+ - \sum_{1 \leq k \neq j \leq n} a_k B_k b_j A_j \\
+= &\sum_{1 \leq k, j \leq n} a_k A_k b_j B_j
+ - \sum_{1 \leq k, j \leq n} a_k B_k b_j A_j \\
+  & \text{(since $a_k A_k b_j B_j - a_k B_k b_j A_j = 0$ as $k = j$)} \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{j=1}^{n} b_j B_j \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{j=1}^{n} b_j A_j \right) \\
+= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
+- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
+\end{align*}
+$\Box$ \\
+
+\textbf{Supplement ($\mathbb{Z}[i]$).}
+As $n = 2$,
+$(a_1^2 + a_2^2)(b_1^2 + b_2^2)
+= (a_1 b_1 + a_2 b_2)^2 + (a_1 b_2 - a_2 b_1)^2$. \\
+
+Define $N: \mathbb{Z}[i] \rightarrow \mathbb{Z}$ by
+$N(a+bi) = a^2 + b^2$.
+
+\begin{enumerate}
+\item[(1)]
+\emph{Verify that for all $\alpha, \beta \in \mathbb{Z}[i]$,
+$N(\alpha\beta) = N(\alpha)N(\beta)$,
+either by direct computation or using the fact that
+$N(a+bi) = (a+bi)(a-bi)$.
+Conclude that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
+\item[(2)]
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that $\alpha$ is a unit iff $N(\alpha) = 1$.
+Conclude that the only unit are $\pm 1$ and $\pm i$.}
+\item[(3)]
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that if $N(\alpha)$ is a prime in $\mathbb{Z}$ then
+$\alpha$ is irreducible in $\mathbb{Z}[i]$.
+Show that the same conclusion holds
+if $N(\alpha) = p^2$, where $p$ is a prime in $\mathbb{Z}$,
+$p \equiv 3 \pmod{4}$.}
+\item[(4)]
+\emph{Show that $1-i$ is irreducible in $\mathbb{Z}$
+and that $2 = u(1-i)^2$ for some unit $u$.}
+\item[(5)]
+\emph{Show that every nonzero, non-unit Gaussian integer $\alpha$
+is a product of irreducible elements, by induction on $N(\alpha)$.}
+\item[(6)]
+\emph{Use the unique factorization in $\mathbb{Z}[i]$ to prove that
+every prime $p \equiv 1 \pmod{4}$ is a sum of two squares.}
+\item[(7)]
+\emph{Describe all irreducible elements in $\mathbb{Z}[i]$.}
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Complex numbers \\}
+\addcontentsline{toc}{subsection}{Complex numbers}
+
+
+
+\subsubsection*{Exercise 1.48.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.48.}
+\emph{Prove Lagrange's identity for complex numbers:
+$$\abs{ \sum_{k=1}^{n} a_k b_k }^2
+= \sum_{k=1}^{n} \abs{a_k}^2 \sum_{k=1}^{n} \abs{b_k}^2
+- \sum_{1 \leq k < j \leq n}
+\abs{ a_k \overline{b_j} - a_j \overline{b_k} }^2.$$}
+
+\emph{Proof.}
+Put $(a_k, b_k, A_k, B_k) \mapsto (a_k, \overline{b_k}, \overline{a_k}, b_k)$
+in the generalization to Exercise 1.23 (Binet-Cauchy identity) and use
+the identity $|z| = z \overline{z}$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 2: Some Basic Notions of Set Theory \\}
+\addcontentsline{toc}{section}{Chapter 2: Some Basic Notions of Set Theory}
+
+
+
+\subsubsection*{Exercise 2.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.6.}
+\emph{Let $f: S \rightarrow T$ be a function.
+If $A$ and $B$ are arbitrary subsets of $S$, prove that
+$$f(A \cup B) = f(A) \cap f(B) \text{ and }
+f(A \cap B) \subseteq f(A) \cup f(B).$$
+Generalize to arbitrary unions and intersections.} \\
+
+\textbf{Generalization.}
+Let $f: S \rightarrow T$ be a function.
+If $\mathscr{F}$ is an arbitrary collection of sets, then
+$$f\left( \bigcup_{A \in \mathscr{F}} A \right)
+= \bigcap_{A \in \mathscr{F}} f(A) \text{ and }
+f\left( \bigcap_{A \in \mathscr{F}} A \right)
+\subseteq \bigcup_{A \in \mathscr{F}} f(A).$$ \\
+
+\emph{Note.}
+$f(A \cap B)$ might not be equal to $f(A) \cup f(B)$.
+For example, let $f: \mathbb{R} \rightarrow \mathbb{R}$ defined by $f(x) = 0$.
+Then for any nonempty disjoint subsets $A$ and $B$,
+we have $\varnothing = f(A \cap B) \not\supseteq f(A) \cup f(B) = \{0\}$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\begin{align*}
+  \forall \: y \in f\left( \bigcup_{A \in \mathscr{F}} A \right)
+  &\Longleftrightarrow
+  \exists \: x \in \bigcup_{A \in \mathscr{F}} A \text{ such that } f(x) = y \\
+  &\Longleftrightarrow
+  \exists \: x \in A \text{ for some } A \in \mathscr{F} \text{ such that } f(x) = y \\
+  &\Longleftrightarrow
+  \exists \: A \in \mathscr{F} \text{ such that } y \in f(A) \\
+  &\Longleftrightarrow
+  \forall \: y \in \bigcap_{A \in \mathscr{F}} f(A) \\
+\end{align*}
+\item[(2)]
+\begin{align*}
+  \forall \: y \in f\left( \bigcap_{A \in \mathscr{F}} A \right)
+  \Longleftrightarrow&
+  \exists \: x \in \bigcap_{A \in \mathscr{F}} A \text{ such that } f(x) = y \\
+  \Longleftrightarrow&
+  \exists \: x \text{ in all } A \in \mathscr{F} \text{ such that } f(x) = y \\
+  &\text{ ($x$ not depending on $A$) } \\
+  \Longrightarrow&
+  \forall \: A \in \mathscr{F}, \exists \: x \in A \text{ such that } f(x) = y \\
+  &\text{ ($x$ depending on $A$) } \\
+  \Longleftrightarrow&
+  \forall \: A \in \mathscr{F}, y \in f(A) \\
+  \Longleftrightarrow&
+  \forall \: y \in \bigcup_{A \in \mathscr{F}} f(A).
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.7.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.7.}
+\emph{Let $f: S \rightarrow T$ be a function.
+If $Y \subseteq T$,
+we denote by $f^{-1}(Y)$ the largest subset of $S$ which $f$ maps into $Y$.
+That is,
+$$f^{-1}(Y) = \{ x : x \in S \text{ and } f(x) \in Y \}.$$
+The set $f^{-1}(Y)$ is called the inverse image of $Y$ under $f$.
+Prove the following for arbitrary subsets $X$ of $S$ and $Y$ of $T$.}
+\begin{enumerate}
+\item[(a)]
+\emph{$X \subseteq f^{-1}[f(X)]$.}
+\item[(b)]
+\emph{$f[f^{-1}(Y)] \subseteq Y$.}
+\item[(c)]
+\emph{$f^{-1}(Y_1 \cup Y_2) = f^{-1}(Y_1) \cup f^{-1}(Y_2)$.}
+\item[(d)]
+\emph{$f^{-1}(Y_1 \cap Y_2) = f^{-1}(Y_1) \cap f^{-1}(Y_2)$.}
+\item[(e)]
+\emph{$f^{-1}(T - Y) = S - f^{-1}(Y)$.}
+\item[(f)]
+\emph{Generalize (c) and (d) to arbitrary unions and intersections.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+  \forall \: x \in X
+  &\Longrightarrow
+  f(x) \in f(X)
+    & \\
+  &\Longleftrightarrow
+  x \in f^{-1}[f(X)].
+    &\text{(Definition of the inverse image)}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+  \forall \: y \in f[f^{-1}(Y)]
+  &\Longleftrightarrow
+  \exists \: x \in f^{-1}(Y) \text{ such that } y = f(x) \\
+  &\Longleftrightarrow
+  \exists \: x, f(x) \in Y \text{ such that } y = f(x) \\
+  &\Longrightarrow
+  \exists \: x, y = f(x) \in Y.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\emph{For an arbitrary collection $\mathscr{F}$ of subsets $Y$ of $T$,
+show that
+$$f^{-1}\left( \bigcup_{Y \in \mathscr{F}} Y \right)
+= \bigcup_{Y \in \mathscr{F}} f^{-1}(Y).$$}
+\begin{align*}
+  \forall \: x \in f^{-1}\left( \bigcup_{Y \in \mathscr{F}} Y \right)
+  &\Longleftrightarrow
+  f(x) \in \bigcup_{Y \in \mathscr{F}} Y \\
+  &\Longleftrightarrow
+  f(x) \in Y \text{ for some } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in f^{-1}(Y) \text{ for some } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in \bigcup_{Y \in \mathscr{F}} f^{-1}(Y).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (d).}
+Similar to (c).
+\emph{For an arbitrary collection $\mathscr{F}$ of subsets $Y$ of $T$,
+show that
+$$f^{-1}\left( \bigcap_{Y \in \mathscr{F}} Y \right)
+= \bigcap_{Y \in \mathscr{F}} f^{-1}(Y).$$}
+\begin{align*}
+  \forall \: x \in f^{-1}\left( \bigcap_{Y \in \mathscr{F}} Y \right)
+  &\Longleftrightarrow
+  f(x) \in \bigcap_{Y \in \mathscr{F}} Y \\
+  &\Longleftrightarrow
+  f(x) \in Y \text{ for all } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in f^{-1}(Y) \text{ for all } Y \in \mathscr{F} \\
+  &\Longleftrightarrow
+  x \in \bigcap_{Y \in \mathscr{F}} f^{-1}(Y).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (e).}
+\begin{align*}
+  \forall \: x \in f^{-1}(T - Y)
+  &\Longleftrightarrow
+  f(x) \in T - Y \\
+  &\Longleftrightarrow
+  f(x) \not\in Y \\
+  &\Longleftrightarrow
+  x \not\in f^{-1}(Y) \\
+  &\Longleftrightarrow
+  x \in S - f^{-1}(Y).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (f).}
+Proved in (c)(d).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.15.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.15.}
+\emph{A real number is called algebraic
+if it is a root of an algebraic equation $f(x) = 0$,
+where $a_0 + a_1 x + \cdots + a_n x^n = 0$ is a polynomial with integer coefficients.
+Prove that the set of all polynomials with integer coefficients is countable
+and deduce that the set of algebraic numbers is also countable.} \\
+
+Might assume $a_n \neq 0$. \\
+
+For example, all rational numbers are algebraic
+since $p = \frac{\alpha}{\beta}$ (where $\alpha, \beta \in \mathbb{Z}$)
+is a root of $\beta x - \alpha = 0$. \\
+
+Besides, $x = \sqrt{2} + \sqrt{3}$ is algebraic since $x^4 - 10x^2 + 1 = 0$.
+In fact, $x = \pm\sqrt{2} + \pm\sqrt{3}$ are also algebraic since
+$x^4 - 10x^2 + 1 =
+(x - \sqrt{2} - \sqrt{3})(x + \sqrt{2} - \sqrt{3})
+(x - \sqrt{2} + \sqrt{3})(x + \sqrt{2} + \sqrt{3})$. \\
+
+\textbf{Note.} \emph{Countable set} in the sense of Tom M. Apostol
+is equivalent to \emph{at most countable set} in the sense of Walter Rudin. \\
+
+\textbf{Lemma.}
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable implies that
+the set of algebraic numbers is countable.} \\
+
+\emph{Proof of Lemma.}
+By definition, we write the set of algebraic numbers as
+$$S = \bigcup_{f(x) \in \mathbb{Z}[x]} \{ \alpha \in \mathbb{R} : f(\alpha) = 0 \}.$$
+Since each polynomial of degree $n$ has at most $n$ roots,
+$\{ \alpha \in \mathbb{R} : f(\alpha) = 0 \}$ is finite (or countable)
+for each given $f(x) \in \mathbb{Z}[x]$.
+So $S$ is a countable union (by assumption) of countable sets, and hence countable
+by Theorem 2.27.
+$\Box$ \\
+
+Now we show that
+\emph{the set of all polynomials over $\mathbb{Z}$ is countable.} \\
+
+\emph{Proof (Walter Rudin).}
+For every positive integer $N$ there are only finitely many equations with
+$n + |a_0| + |a_1| + \cdots + |a_n| = N.$
+Write
+$$P_N = \{ f(x) \in \mathbb{Z}[x] : n + |a_0| + |a_1| + \cdots + |a_n| = N \}$$
+where $f(x) = a_0 + a_1 x + \cdots + a_n x^n$ with $a_n \neq 0$,
+and
+$$P = \bigcup_{N = 1}^{\infty} P_N.$$
+$P$ is the set of all polynomials over $\mathbb{Z}$. \\
+
+Each $P_N$ is finite (or countable) for given $N$
+(since the equation $n + |a_0| + |a_1| + \cdots + |a_n| = N$
+has finitely many solutions
+$(n, a_0, a_1, ..., a_n) \in \mathbb{Z}^{n+2}$).
+So $P$ is a countable union of countable sets, and hence countable
+by Theorem 2.27.
+$\Box$ \\
+
+\emph{Proof (Theorem 2.18).}
+\begin{enumerate}
+\item[(1)]
+\emph{$\mathbb{Z}^N$ is countable for any integer $N > 0$.}
+Induction on $N$ and apply the same argument of Theorem 2.18.
+\item[(2)]
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable.}
+Let
+$$P_n = \{ f \in \mathbb{Z}[x] : \deg f = n \},$$
+and
+$$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
+
+\emph{Claim: $P_n$ is countable.}
+Define a one-to-one map $\varphi_n: P_n \rightarrow \mathbb{Z}^{n+1}$ by
+$$\varphi_n(a_0 + a_1 x + \cdots + a_n x^n)
+= (a_0, a_1, ..., a_n).$$
+By (1) and Theorem 2.16, $P_n$ is countable.
+Now $P$ is a countable union of countable sets,
+and hence countable by Theorem 2.27.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Unique factorization theorem).}
+\begin{enumerate}
+\item[(1)]
+\emph{The set of prime numbers is countable.}
+Write all primes in the ascending order as $p_1, p_2, ..., p_n, ...$
+where $p_1 = 2, p_2 = 3, ..., p_{10001} = 104743, ...$
+(See \href{https://projecteuler.net/problem=7}{ProjectEuler 7: 10001st prime}.
+Use sieve of Eratosthenes to get $p_{10001}$.)
+\item[(2)]
+\emph{The set of all polynomials over $\mathbb{Z}$ is countable.}
+Let
+$$P_n = \{ f \in \mathbb{Z}[x] : \deg f = n \},$$
+and
+$$P = \bigcup_{n = 1}^{\infty} P_n = \mathbb{Z}[x].$$
+
+\emph{Claim: $P_n$ is countable.}
+Define a map $\varphi_n: P_n \rightarrow \mathbb{Z}^+$ by
+$$\varphi_n(a_0 + a_1 x + \cdots + a_n x^n)
+= p_1^{\psi(a_0)} p_2^{\psi(a_1)} \cdots p_{n+1}^{\psi(a_n)},$$
+where $\psi$ is a one-to-one correspondence from $\mathbb{Z}$ to $\mathbb{Z}^+$.
+By the unique factorization theorem, $\varphi_n$ is one-to-one.
+So $P_n$ is countable by Theorem 2.16.
+Now $P$ is a countable union of countable sets,
+and hence countable by Theorem 2.27.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 3: Elements of Point Set Topology \\}
+\addcontentsline{toc}{section}{Chapter 3: Elements of Point Set Topology}
+
+
+
+\subsection*{Notation.}
+\addcontentsline{toc}{subsection}{Notation.}
+\begin{enumerate}
+\item[(1)]
+  $S^{\circ}$ or $\text{int}(S)$ is the interior of $S$.
+
+\item[(2)]
+  $\overline{S}$ is the closure of $S$.
+
+\item[(3)]
+  $\widetilde{S}$ is the complement of $S$. \\
+\end{enumerate}
+
+
+
+\subsection*{Open and closed sets in $\mathbb{R}^1$ and $\mathbb{R}^2$}
+\addcontentsline{toc}{subsection}{Open and closed sets in $\mathbb{R}^1$ and $\mathbb{R}^2$}
+
+
+
+\subsubsection*{Exercise 3.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.5.}
+\emph{Prove that the only sets in $\mathbb{R}^1$ which are both open and closed
+are the empty set and $\mathbb{R}^1$ itself.
+Is a similar statement true for $\mathbb{R}^2$?} \\
+
+\textbf{Lemma.}
+\emph{A topological space $X$ is connected if the empty set
+and the whole space $X$ are the only subsets of $X$ that are both open and
+closed.} \\
+
+\emph{Proof of Lemma (Compare to Exercise 4.37).}
+Given a subset $U$ of $X$ that is both open and closed.
+Write $V = X-U$.
+Then $U$ and $V$ are both open, $U \cup V = X$ and $U \cap V = \varnothing$.
+Since $X$ is connected, $U = \varnothing$ or $V = \varnothing$.
+So $U = \varnothing$ or $X$.
+$\Box$ \\
+
+\emph{Proof (On $\mathbb{R}^n$).}
+\begin{enumerate}
+\item[(1)]
+\emph{$\mathbb{R}^n$ is path-connected (arcwise connected).}
+Trivial.
+\item[(2)]
+\emph{$\mathbb{R}^n$ is connected.}
+Theorem 4.42.
+\item[(3)]
+By Lemma, the only sets in $\mathbb{R}^n$ which are both open and closed
+are $\varnothing$ and $\mathbb{R}^n$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Compact subsets of a metric space}
+\addcontentsline{toc}{subsection}{Compact subsets of a metric space}
+
+
+
+\emph{Prove each of the following statements concerning an arbitrary metric space
+$(M,d)$ and subsets $S$, $T$ of $M$.} \\
+
+
+
+\subsubsection*{Exercise 3.38.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.38.}
+\emph{Assume $S \subseteq T \subseteq M$.
+Then $S$ is compact in $(M,d)$ if, and only if,
+$S$ is compact in the metric subspace $(T,d)$. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Let $\mathscr{F}$ be an open covering of $S$ in $(T,d)$, say
+$S \subseteq \bigcup_{A \in \mathscr{F}} A$ where $A$ is open in $T$.
+Then $A = B \cap T$ for some open set $B$ in $M$ (Theorem 3.33).
+Let $\mathscr{G}$ be the collection of $B$.
+Then
+$$S \subseteq
+\bigcup_{A \in \mathscr{F}} A
+= \bigcup_{B \in \mathscr{G}} (B \cap T)
+\subseteq \bigcup_{B \in \mathscr{G}} B,$$
+or $\mathscr{G}$ be an open covering of $S$ in $(M,d)$.
+Since $S$ is compact in $(M,d)$,
+$\mathscr{G}$ contains a finite subcovering, say
+$$S \subseteq B_1 \cap \cdots \cap B_p.$$
+So $$S \cap T \subseteq (B_1\cap T) \cap \cdots \cap (B_p \cap T),$$
+or $$S \subseteq A_1 \cap \cdots \cap A_p$$ (since $S \subseteq T$ or $S \cap T = S$).
+So there is a finite subcovering of $\mathscr{F}$ covering $S$,
+or $S$ is compact in $(T,d)$.
+\item[(2)]
+$(\Longleftarrow)$
+Let $\mathscr{G}$ be an open covering of $S$ in $(M,d)$, say
+$S \subseteq \bigcup_{B \in \mathscr{G}} B$ where $B$ is open in $M$.
+Then $A = B \cap T$ is open in $T$.
+Let $\mathscr{F}$ be the collection of $A$.
+Then
+$$S \cap T \subseteq
+\bigcup_{B \in \mathscr{G}} (B \cap T)
+= \bigcup_{A \in \mathscr{F}} A,$$
+or $\mathscr{F}$ be an open covering of $S \cap T = S$ in $(T,d)$.
+Since $S$ is compact in $(T,d)$,
+$\mathscr{F}$ contains a finite subcovering, say
+$$S \subseteq A_1 \cap \cdots \cap A_p.$$
+Clearly, $S \subseteq B_1 \cap \cdots \cap B_p$ since $A = B \cap T \subseteq B$.
+So there is a finite subcovering of $\mathscr{G}$ covering $S$,
+or $S$ is compact in $(M,d)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.39.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.39.}
+\emph{If $S$ is closed and $T$ is compact, then $S \cap T$ is compact.} \\
+
+\emph{Idea.}
+Cover $S \cap T$ be open sets in $M$, throw in the open set $\widetilde{S}$
+and apply the compactness of $T$. \\
+
+\emph{Proof (On topological spaces).}
+Let $\mathscr{F}$ be an open covering of $S \cap T$, say
+$S \cap T \subseteq \bigcup_{A \in \mathscr{F}}A$.
+We will show that a finite number of the sets $A$ cover $S \cap T$.
+Since $S$ is closed its complement $\widetilde{S}$ in $M$ is open,
+so $\mathscr{F} \cup \{ \widetilde{S} \}$ is an open covering of $T$.
+Since $T$ is compact, so this covering contains a finite subcovering
+which we can assume includes $\widetilde{S}$.
+Therefore,
+$$T \subseteq A_1 \cup \cdots \cup A_p \cup \widetilde{S}.$$
+This subcovering also covers $S \cap T$ and, since $\widetilde{S}$ contains no points of $S$,
+we can delete the set $\widetilde{S}$ for the subcovering and still covers $S \cap T$.
+Thus
+$$S \cap T \subseteq A_1 \cup \cdots \cup A_p$$
+so $S \cap T$ is compact.
+$\Box$ \\
+
+\emph{Proof (Theorem 3.39).}
+\begin{align*}
+&\text{$T$ is compact in $(M,d)$} \\
+\Longrightarrow&
+\text{$T$ is compact in $(T,d)$}
+  &\text{(Exercise 3.38)} \\
+\Longrightarrow&
+\text{$S \cap T$ is compact in $(T,d)$}
+  &\text{($S \cap T$: closed in $(T,d)$, Theorem 3.38)} \\
+\Longrightarrow&
+\text{$S \cap T$ is compact in $(M,d)$}.
+  &\text{(Exercise 3.38)}
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.40.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.40.}
+\emph{The intersection of an arbitrary collection of compact subsets of $M$ is compact.} \\
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+A metric space is Hausdorff.
+\item[(2)]
+If $X$ is not Hausdorff then the intersection of two compact subsets may fail to be compact.
+Example:
+  \begin{enumerate}
+  \item[(a)]
+  Let $X = \{ a, b \} \cup \mathbb{N}$,
+  $U = \{ a \} \cup \mathbb{N}$,
+  and $V = \{ b \} \cup \mathbb{N}$.
+  \item[(b)]
+  Endow $X$ with the topology generated by the following basic open sets:
+    \begin{enumerate}
+    \item[(i)]
+    every subset of $\mathbb{N}$ is open;
+    \item[(ii)]
+    the only open sets containing $a$ are $X$ and $U$;
+    \item[(iii)]
+    the only open sets containing $b$ are $X$ and $V$.
+    \end{enumerate}
+  \item[(c)]
+  $U$ and $V$ are both compact subsets but their intersection,
+  which is $\mathbb{N}$, is not compact.
+  \end{enumerate}
+\item[(3)]
+A compact subset of a metric space is closed and bounded.
+The converse may fail (Exercise 3.42).
+Therefore,
+we cannot establish the result of Exercise 3.40
+by only showing
+the intersection of an arbitrary collection of compact subsets is closed and bounded. \\
+\end{enumerate}
+
+\emph{Proof (On Hausdorff spaces or metric spaces).}
+Given an index set $I$.
+Let $K_\alpha$ be compact subsets of $M$ for every $\alpha \in I$.
+Since $M$ is a Hausdorff space (or a metric space),
+each $K_\alpha$ is closed in $M$.
+Hence
+$\bigcap_{\alpha \in I} K_{\alpha}$ is closed in $M$,
+especially in every compact set $K_{\beta}$ for $\beta \in I$.
+Hence
+$$\bigcap_{\alpha \in I} K_{\alpha}
+= \left( \bigcap_{\alpha \in I} K_{\alpha} \right) \bigcap K_{\beta}$$
+is compact by Exercise 3.39.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.41.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.41.}
+\emph{The union of a finite number of compact subsets of $M$ is compact.} \\
+
+\emph{Proof (On topological spaces).}
+Let $K_1, \ldots, K_n$ be compact subsets of $M$.
+Let $\mathscr{F}$ be an open covering of $K_1 \cup \cdots \cup K_n$, say
+$$K_1 \cup \cdots \cup K_n \subseteq \bigcup_{A \in \mathscr{F}}A.$$
+We will show that a finite number of the sets $A$ cover $K_1 \cup \cdots \cup K_n$.
+Clearly $\mathscr{F}$ is an open covering of every $K_i$.
+Since $K_i$ is compact, this covering contains a finite subcovering $\mathscr{F}_i$,
+say
+$$K_i \subseteq A_{1(i)} \cup \cdots \cup A_{p(i)}.$$
+Union all finite subcovering $\mathscr{F}_i$ to get a finite subcovering of
+$K_1 \cup \cdots \cup K_n$, say
+$$K_1 \cup \cdots \cup K_n \subseteq
+\bigcup_{A \in \bigcup_{1 \leq i \leq n} \mathscr{F}_i}A.$$
+$\Box$ \\
+
+\textbf{Supplement (Zariski topology).}
+\emph{Let $A$ be a ring and let $X$ be the set of all prime ideals of $A$.
+For each subset $E$ of $A$,
+let $V(E)$ denote the set of all prime ideals of $A$ which contain $E$.
+The sets $V(E)$ satisfy
+the axioms for closed sets in a topological space.
+The resulting topology is called the Zariski topology.
+The topological space $X$ is called the prime spectrum of $A$,
+and is written $\text{Spec}(A)$.} \\
+
+\emph{For each $f \in A$,
+let $X_f$ denote the complement of $V(f)$ in $X = \text{Spec}(A)$.
+The sets $X_f$ are open.
+Show that they form a basis of open sets for the Zariski topology, and that}
+\begin{enumerate}
+\item[(1)]
+\emph{Each $X_f$ is quasi-compact (compact), that is,
+every open covering of $X$ has a finite subcovering.}
+\item[(2)]
+\emph{An open subset of $X$ is quasi-compact if and only if
+it is a finite union of sets $X_f$.} \\
+\end{enumerate}
+
+By Exercise 3.41, we know that $X$ is quasi-compact if
+$X$ is a finite union of quasi-compact sets $X_f$. \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.42.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.42.}
+\emph{Consider the metric space $\mathbb{Q}$ of rational numbers with
+the Euclidean metric of $\mathbb{R}$.
+Let $S$ consist of all rational numbers in the open interval $(a,b)$,
+where $a$ and $b$ are irrational.
+Then $S$ is a closed and bounded subset of $\mathbb{Q}$ which is not compact.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$S$ is a subset of $\mathbb{Q}$.
+\item[(2)]
+\emph{Show that $S$ is bounded in $\mathbb{Q}$.}
+Since $\mathbb{Q}$ is dense in $\mathbb{R}$,
+there is $p \in \mathbb{Q}$ such that $a < p < b$, or $p \in S$.
+Let $r = \max\{b - p, p - a\} > 0$.
+Therefore, $S \subseteq B(p; r)$ for some $r > 0$ and $p \in S$,
+or $S$ is bounded.
+\item[(3)]
+\emph{Show that $S$ is closed in $\mathbb{Q}$.}
+It suffices to show its complement is open in $\mathbb{Q}$.
+Given any
+$p \in \widetilde{S} = ((-\infty, a] \cup [b, \infty)) \cap \mathbb{Q}$.
+$p \leq a$ or $p \geq b$.
+  \begin{enumerate}
+  \item[(a)]
+  $p \leq a$. $p \neq a$ since $p \in \mathbb{Q}$ and $a$ is irrational.
+  So $p < a$ and thus there exists $q \in \mathbb{Q}$ such that $p < q < a$
+  since $\mathbb{Q}$ is dense in $\mathbb{R}$.
+  Let $r = \max\{a - q, q - p\} > 0$.
+  The ball $B(q; r)$ is contained in $\widetilde{S}$.
+  \item[(b)]
+  $p \geq b$. Similar to (a).
+  \end{enumerate}
+  By (a)(b), $\widetilde{S}$ is open in $\mathbb{Q}$, or $S$ is closed in $\mathbb{Q}$.
+\item[(4)]
+\emph{Show that $S$ is not compact in $\mathbb{Q}$.}
+(Reductio ad absurdum)
+If $(a,b)$ were compact in the metric space $\mathbb{Q}$,
+$(a,b)$ is compact in the metric space $\mathbb{R}$ (Exercise 3.38),
+which is absurd.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Miscellaneous properties of the interior and the boundary}
+\addcontentsline{toc}{subsection}{Miscellaneous properties of the interior and the boundary}
+
+
+
+\emph{If $A$ and $B$ denote arbitrary subsets of a metric space $M$, prove that:} \\
+
+
+
+\subsubsection*{Exercise 3.43.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.43.}
+\emph{$A^{\circ} = M - \overline{M - A}.$} \\
+
+Beautiful writing: $M - A^{\circ} = \overline{M - A}$. \\
+
+\emph{Proof (Brute-force).}
+\begin{align*}
+x \in A^{\circ}
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \subseteq A \\
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \cap (M - A) = \varnothing \\
+\Longleftrightarrow&
+x \not\in \overline{M - A} \\
+\Longleftrightarrow&
+x \in M - \overline{M - A}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof (Exercise 3.44).}
+Put $A \mapsto M-A$ in Exercise 3.44.
+$\Box$ \\
+
+\emph{Proof (On topological spaces).}
+\begin{align*}
+M - A^{\circ}
+&= M - \bigcup_{\text{Open } V \subseteq A} V \\
+&= \bigcap_{\text{Open } V \subseteq A} (M - V) \\
+&= \bigcap_{\text{Closed } W \supseteq M-A} W \\
+&= \overline{M - A}.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.44.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.44.}
+\emph{$(M-A)^{\circ} = M - \overline{A}.$} \\
+
+\emph{Proof (Brute-force).}
+\begin{align*}
+x \in (M-A)^{\circ}
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \subseteq (M - A) \\
+\Longleftrightarrow&
+\exists r > 0 \text{ such that } B(x;r) \cap A = \varnothing \\
+\Longleftrightarrow&
+x \not\in \overline{A} \\
+\Longleftrightarrow&
+x \in M - \overline{A}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof (Exercise 3.43).}
+Put $A \mapsto M-A$ in Exercise 3.43.
+$\Box$ \\
+
+\emph{Proof (On topological spaces).}
+\begin{align*}
+M - \overline{A}
+&= M - \bigcap_{\text{Closed } W \supseteq A} W \\
+&= \bigcup_{\text{Closed } W \supseteq A} (M - W) \\
+&= \bigcup_{\text{Open } V \subseteq M-A} V \\
+&= (M - A)^{\circ}.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.45.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.45.}
+\emph{$(A^{\circ})^{\circ} = A^{\circ}.$} \\
+
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+It suffices to show that $A^{\circ} \subseteq (A^{\circ})^{\circ}$.
+Given any point $x \in A^{\circ}$, there is $r > 0$ such that $B(x;r) \subseteq A$.
+\item[(2)]
+It suffices to show that $B\left(x;\frac{2}{r}\right) \subseteq A^{\circ}$.
+Given any point $y \in B\left(x;\frac{2}{r}\right)$,
+we will show that there is an open ball $B\left(y;\frac{2}{r}\right)$ of $y$
+such that $B\left(y;\frac{2}{r}\right) \subseteq A$.
+\item[(3)]
+Given any point $z \in B\left(y;\frac{2}{r}\right)$, we have
+$$d(z,x) \leq d(z,y) + d(y,x) < \frac{2}{r} + \frac{2}{r} = r,$$
+or $z \in B(x;r) \subseteq A$.
+Therefore, $B\left(y;\frac{2}{r}\right) \subseteq A$,
+or $y \in A^{\circ}$,
+or $B\left(x;\frac{2}{r}\right) \subseteq A^{\circ}$,
+or $x \in (A^{\circ})^{\circ}$,
+or $A^{\circ} \subseteq (A^{\circ})^{\circ}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Openness of $A^{\circ}$).}
+\begin{enumerate}
+\item[(1)]
+$A^{\circ}$ is open.
+\item[(2)]
+Note to Definition 3.6: A set $S$ is open if and only if $S = S^{\circ}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.46.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.46.}
+\begin{enumerate}
+\item[(a)]
+\emph{$\left( \bigcap_{i=1}^{n} A_i \right)^{\circ} = \bigcap_{i=1}^{n} A_i^{\circ}$,
+where each $A_i \subseteq M$. }
+\item[(b)]
+\emph{$\left( \bigcap_{A \in \mathscr{F}} A \right)^{\circ}
+\subseteq \bigcap_{A \in \mathscr{F}} A^{\circ}$,
+if $\mathscr{F}$ is an infinite collection of subsets of $M$. }
+\item[(c)]
+\emph{Give an example where equality does not hold in (b). } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+x \in \bigcap_{i=1}^{n} A_i^{\circ}
+&\Longleftrightarrow
+x \in A_i^{\circ} \: \: \forall 1 \leq i \leq n \\
+&\Longleftrightarrow
+\exists r_i > 0 \text{ such that } B(x;r_i) \subseteq A_i \: \forall 1 \leq i \leq n \\
+&\Longleftrightarrow
+\exists r = \min_{1 \leq i \leq n}\{r_i\} > 0 \text{ such that }
+  B(x;r) \subseteq A_i \: \forall 1 \leq i \leq n \\
+&\Longleftrightarrow
+\exists r > 0 \text{ such that }
+  B(x;r) \subseteq \bigcap_{i=1}^{n} A_i \\
+&\Longleftrightarrow
+x \in \left( \bigcap_{i=1}^{n} A_i \right)^{\circ}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+x \in \left( \bigcap_{A \in \mathscr{F}} A \right)^{\circ}
+&\Longleftrightarrow
+\exists r > 0 \text{ such that }
+  B(x;r) \subseteq \bigcap_{A \in \mathscr{F}} A \\
+&\Longleftrightarrow
+\exists r > 0 \text{ such that } B(x;r) \subseteq A \: \forall A \in \mathscr{F} \\
+&\Longrightarrow
+x \in A^{\circ} \: \forall A \in \mathscr{F} \\
+&\Longleftrightarrow
+x \in \bigcap_{A \in \mathscr{F}} A^{\circ}.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+Let
+\begin{enumerate}
+\item[(1)]
+$M = \mathbb{R}$ with the Euclidean metric of $\mathbb{R}$.
+\item[(2)]
+$A_i = \left( -\frac{89}{i}, \frac{64}{i} \right) \subseteq \mathbb{R}$
+for $i \in \mathbb{Z}^+$.
+\end{enumerate}
+Note that $\bigcap_{i \in \mathbb{Z}^+} A_i = \{ 0 \}$ and $A_i^{\circ} = A_i$.
+So $$\left( \bigcap_{i \in \mathbb{Z}^+} A_i \right)^{\circ} = \varnothing
+\text{ and } \bigcap_{i \in \mathbb{Z}^+} A_i^{\circ} = \{ 0 \}.$$
+The equality does not hold in (b).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.47.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.47.}
+\begin{enumerate}
+\item[(a)]
+\emph{$\bigcup_{A \in \mathscr{F}} A^{\circ}
+\subseteq
+\left( \bigcup_{A \in \mathscr{F}} A \right)^{\circ}$. }
+\item[(b)]
+\emph{Give an example of a finite collection $\mathscr{F}$
+in which equality does not hold in (a). } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+x \in \bigcup_{A \in \mathscr{F}} A^{\circ}
+&\Longleftrightarrow
+x \in A^{\circ} \text{ for some } A \in \mathscr{F} \\
+&\Longrightarrow
+x \in \left( \bigcup_{A \in \mathscr{F}} A \right)^{\circ}
+\text{ since } A \subseteq \bigcup_{A \in \mathscr{F}} A.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+Exercise 3.50.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.48.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.48.}
+\begin{enumerate}
+\item[(a)]
+\emph{$(\partial A)^{\circ} = \varnothing$ if $A$ is open or if $A$ is closed in $M$. }
+\item[(b)]
+\emph{Give an example in which $(\partial A)^{\circ} = M$. } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+$A$ is open.
+\begin{align*}
+(\partial A)^{\circ}
+&= (\overline{A} \cap \overline{M-A})^{\circ}
+  &\text{(Exercise 3.51)} \\
+&= (\overline{A})^{\circ} \cap (\overline{M-A})^{\circ}
+  &\text{(Exercise 3.46(a))} \\
+&= (\overline{A})^{\circ} \cap (M-A)^{\circ}
+  &\text{($A$: open)} \\
+&= (\overline{A})^{\circ} \cap (M - \overline{A})
+  &\text{(Exercise 3.44)} \\
+&\subseteq \overline{A} \cap (M - \overline{A})
+  &(S^{\circ} \subseteq S) \\
+&= \varnothing.
+\end{align*}
+\item[(2)]
+$A$ is closed.
+$\partial A
+= \overline{A} \cap \overline{M-A}
+= \partial (M - A)
+= \varnothing$ (Exercise 3.51).
+Or copy the above argument:
+\begin{align*}
+(\partial A)^{\circ}
+&= (\overline{A} \cap \overline{M-A})^{\circ}
+  &\text{(Exercise 3.51)} \\
+&= (\overline{A})^{\circ} \cap (\overline{M-A})^{\circ}
+  &\text{(Exercise 3.46(a))} \\
+&= A^{\circ} \cap (\overline{M-A})^{\circ}
+  &\text{($A$: closed)} \\
+&= (M - (\overline{M-A})) \cap (\overline{M-A})^{\circ}
+  &\text{(Exercise 3.43)} \\
+&\subseteq (M - (\overline{M-A})) \cap \overline{M-A}
+  &(S^{\circ} \subseteq S) \\
+&= \varnothing.
+\end{align*}
+
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+Similar to Exercise 3.50. Let
+\begin{enumerate}
+\item[(1)]
+$M = \mathbb{R}$ with the Euclidean metric of $\mathbb{R}$.
+\item[(2)]
+$A = \mathbb{Q} \subseteq \mathbb{R}$,
+or $A = \widetilde{\mathbb{Q}} \subseteq \mathbb{R}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.49.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.49.}
+\emph{If $A^{\circ} = B^{\circ} = \varnothing$ and if $A$ is closed in $M$,
+then $(A \cup B)^{\circ} = \varnothing$. } \\
+
+\emph{Proof (Reductio ad absurdum).}
+\begin{enumerate}
+\item[(1)]
+If $x \in (A \cup B)^{\circ}$, then there exists an open ball $B(x) \subseteq A \cup B$.
+\item[(2)]
+Since $x$ is not an interior point of $A$ ($A^{\circ} = \varnothing$),
+the open ball $B(x) \not\subseteq A$, or $B(x) \cap \widetilde{A} \neq \varnothing$.
+\item[(3)]
+Notice that $A$ is closed.
+Hence $\widetilde{A}$ is open and so is $B(x) \cap \widetilde{A}$.
+Since $B(x) \cap \widetilde{A}$ is not empty,
+some $y \in B(x) \cap \widetilde{A}$ and thus
+there is another open ball $B(y) \subseteq B(x) \cap \widetilde{A}$.
+\item[(4)]
+\begin{align*}
+B(y)
+&\subseteq B(x) \cap \widetilde{A} \\
+&\subseteq (A \cup B) \cap \widetilde{A} \\
+&= (A \cap \widetilde{A}) \cup (B \cap \widetilde{A}) \\
+&= \varnothing \cup (B \cap \widetilde{A}) \\
+&= B \cap \widetilde{A} \\
+&\subseteq B.
+\end{align*}
+So that $y$ is an interior point of $B$, contrary to $B^{\circ} = \varnothing$.
+\end{enumerate}
+Therefore, the result is established.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.50.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.50.}
+\emph{Give an example in which $A^{\circ} = B^{\circ} = \varnothing$ but
+$(A \cup B)^{\circ} = M$. } \\
+
+\emph{Proof.}
+Let
+\begin{enumerate}
+\item[(1)]
+$M = \mathbb{R}$ with the Euclidean metric of $\mathbb{R}$.
+\item[(2)]
+$A = \mathbb{Q} \subseteq \mathbb{R}$.
+\item[(3)]
+$B = \widetilde{\mathbb{Q}} \subseteq \mathbb{R}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.51.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.51.}
+\emph{$\partial A = \overline{A} \cap \overline{M-A}$ and
+$\partial A = \partial(M - A)$.} \\
+
+Also, $\partial A = \overline{A} - A^{\circ}$ (Exercise 3.43)
+and $\widetilde{\partial A} = A^{\circ} \cup \widetilde{A}^{\circ}$
+(Exercise 3.43, 3.44). \\
+
+\emph{Proof.}
+Definition 3.40 and Definition 3.19 show $\partial A = \overline{A} \cap \overline{M-A}$.
+Notice that $A = M - (M-A)$, and thus
+$\partial A = \overline{A} \cap \overline{M-A} = \partial(M - A)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.52.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.52.}
+\emph{If $\overline{A} \cap \overline{B} = \varnothing$,
+then $\partial(A \cup B) = \partial A \cup \partial B$.} \\
+
+The proof is all about this relation
+$B(x;r) \cap \widetilde{A} \cap \widetilde{B} \neq \varnothing
+\Longleftrightarrow
+B(x;r) \cap \widetilde{A} \neq \varnothing.$ \\
+
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+$(\subseteq)$
+Given any $x \in \partial(A \cup B)$.
+For any $r > 0$,
+\begin{align*}
+&B(x;r) \cap (A \cup B) \neq \varnothing \text{ and }
+B(x;r) \cap \widetilde{A \cup B} \neq \varnothing \\
+\Longleftrightarrow&
+(B(x;r) \cap A) \cup (B(x;r) \cap B) \neq \varnothing \text{ and }
+B(x;r) \cap \widetilde{A} \cap \widetilde{B} \neq \varnothing \\
+\Longleftrightarrow&
+( B(x;r) \cap A \neq \varnothing
+  \text{ or } B(x;r) \cap B \neq \varnothing )
+\text{ and }
+B(x;r) \cap \widetilde{A} \cap \widetilde{B} \neq \varnothing \\
+\Longrightarrow&
+( B(x;r) \cap A \neq \varnothing
+  \text{ and } B(x;r) \cap \widetilde{A} \neq \varnothing)
+\text{ or } \\
+&( B(x;r) \cap B \neq \varnothing
+  \text{ and } B(x;r) \cap \widetilde{B} \neq \varnothing) \\
+\Longleftrightarrow&
+x \in \partial A \text{ or } x \in \partial B \\
+\Longleftrightarrow&
+x \in \partial A \cup \partial B.
+\end{align*}
+\item[(2)]
+$(\supseteq)$
+Since $\overline{A} \cap \overline{B} = \varnothing$ and Exercise 3.51,
+$\partial A \cap \partial B = \varnothing$
+and $\partial A \cap B^{\circ} = \varnothing$
+and $A^{\circ} \cap \partial B = \varnothing$.
+Given any $x \in \partial A \cup \partial B$.
+There are only two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$x \in \partial A$ and $x \not\in \partial B$.}
+  \begin{align*}
+  x \not\in \partial B
+  \Longleftrightarrow&
+  x \in M - \partial B \\
+  \Longleftrightarrow&
+  x \in M - ( \overline{B} \cap \overline{M-B})
+    &\text{(Exercise 3.51)} \\
+  \Longleftrightarrow&
+  x \in (M - \overline{B}) \cup (M - \overline{M-B}) \\
+  \Longleftrightarrow&
+  x \in (M-B)^{\circ} \cup B^{\circ}
+    &\text{(Exercise 3.43, 3.44)} \\
+  \Longleftrightarrow&
+  x \in (M-B)^{\circ} \text{ or } x \in B^{\circ} \\
+  \Longrightarrow&
+  x \in (M-B)^{\circ}
+    &(\partial A \cap B^{\circ} = \varnothing)
+  \end{align*}
+  $x$ is an interior point of $\widetilde{B}$.
+  Hence there exists $r_0 > 0$ such that $B(x;r_0) \subseteq \widetilde{B}$.
+  Given any $r_0 > r > 0$, we have
+  \begin{align*}
+  x \in \partial A
+  \Longleftrightarrow&
+  B(x;r) \cap A \neq \varnothing
+  \text{ and } B(x;r) \cap \widetilde{A} \neq \varnothing \\
+  \Longrightarrow&
+  B(x;r) \cap (A \cup B) \neq \varnothing \text{ and }\\
+  &B(x;r) \cap \widetilde{A \cup B}
+  = B(x;r) \cap \widetilde{A} \cap \widetilde{B}
+  \neq \varnothing \\
+  \Longleftrightarrow&
+  x \in \partial(A \cup B).
+  \end{align*}
+  \item[(b)]
+  \emph{$x \in \partial B$ and $x \not\in \partial A$.}
+  Similar to (a).
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 4: Limits and Continuity \\}
+\addcontentsline{toc}{section}{Chapter 4: Limits and Continuity}
+
+
+
+\subsection*{Continuity of real-valued functions \\}
+\addcontentsline{toc}{subsection}{Continuity of real-valued functions}
+
+
+
+\subsubsection*{Exercise 4.19.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.19.}
+\emph{Let $f$ be continuous on $[a,b]$ and define $g$ as follows:
+$g(a) = f(a)$ and, for $a < x \leq b$,
+let $g(x)$ be the maximum value of $f$ in the subinterval $[a,x]$.
+Show that $g$ is continuous on $[a,b]$.} \\
+
+Indeed, $g(x) = \max_{a \leq t \leq x} f(t)$ for $x \in [a,b]$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$f$ is continuous on $[a,b]$ at a point $p$ $\Longleftrightarrow$
+Given any $\varepsilon' > 0$, there exists $\delta' > 0$ such that
+$|f(x) - f(p)| < \varepsilon'$ whenever $|x-p| < \delta'$ (and $x \in [a,b]$).
+We left $\varepsilon'$ and $\delta'$ undecided temporarily.
+\item[(2)]
+To estimate $g$ on
+$$[p-\delta', p+\delta'] \cap [a,b],$$
+we need to study the behavior of $f$ on $[a,p+\delta'] \cap [a,b]$
+(by the definition of $g(x)$),
+and then use the continuity of $f$ to establish the desired result.
+\item[(3)]
+Look at where $f$ takes the maximum value over on $[a,p+\delta'] \cap [a,b]$ at.
+There are two possible cases (might overlapped):
+  \begin{enumerate}
+  \item[(a)]
+  \emph{At a point in $[a,p-\delta'] \cap [a,b]$.}
+  In this case $g$ is constant on $[p-\delta', p+\delta'] \cap [a,b]$,
+  or $|g(x) - g(p)| = 0$.
+  \item[(b)]
+  \emph{At a point $q \in (p-\delta',p+\delta'] \cap [a,b]$.}
+  For any $x \in [p-\delta', p+\delta'] \cap [a,b]$,
+    \begin{enumerate}
+    \item[(i)]
+    $f(p) - \varepsilon' < g(x)$ by the maximality of $g$ on $[a,x]$.
+    \item[(ii)]
+    $g(x) \leq f(q) < f(p) + \varepsilon'$
+    since $g$ is an increasing function and
+    $f$ takes the maximum value over on $[a,p+\delta'] \cap [a,b]$ at
+    $q \in (p-\delta',p+\delta'] \cap [a,b]$.
+    \end{enumerate}
+  By (i)(ii),
+  $$f(p) - \varepsilon' < g(x) < f(p) + \varepsilon'$$
+  for  any $x \in [p-\delta', p+\delta'] \cap [a,b]$ (especially $x = p$).
+  Therefore,
+  $$|g(x) - g(p)| < 2 \varepsilon'
+  \text{ whenever } |x-p| < \delta' (\text{and } x \in [a,b]).$$
+
+  \end{enumerate}
+  By (a)(b), we have
+  $|g(x) - g(p)| < 2 \varepsilon'
+  \text{ whenever } |x-p| < \delta' (\text{and } x \in [a,b])$ in any cases.
+\item[(4)]
+Retake $\varepsilon' = \frac{\varepsilon}{2} > 0$ and $\delta = \delta' > 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Continuity in metric spaces \\}
+\addcontentsline{toc}{subsection}{Continuity in metric spaces}
+
+
+
+In Exercise 4.29 through 4.33, we assume that $f: S \rightarrow T$ is a function
+from one metric space $(S, d_S)$ to another $(T, d_T)$. \\
+
+
+
+\subsubsection*{Exercise 4.29.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.29.}
+\emph{Prove that $f$ is continuous on $S$ if and only if
+$$f^{-1}(B^{\circ}) \subseteq (f^{-1}(B))^{\circ}
+\qquad \text{for every subset $B$ of $T$}.$$}
+
+Denote the interior of any set $S$ by $S^{\circ}$. \\
+
+\emph{Proof (On topological spaces).}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+\begin{align*}
+  \forall x \in f^{-1}(B^{\circ})
+  &\Longrightarrow
+  f(x) \in B^{\circ} \\
+  &\Longrightarrow
+  \exists \text{ open neighborhood } V \subseteq B^{\circ} \subseteq B \text{ containing } f(x) \\
+  &\Longrightarrow
+  x \in f^{-1}(V) \subseteq f^{-1}(B) \\
+  &\Longrightarrow
+  f^{-1}(V) \text{ is open in $S$ since $f$ is continuous} \\
+  &\Longrightarrow
+  f^{-1}(V)\text{ is open neighborhood} \subseteq f^{-1}(B) \text{ containing } x \\
+  &\Longrightarrow
+  x \in (f^{-1}(B))^{\circ}.
+\end{align*}
+\item[(2)]
+$(\Longleftarrow)$
+\emph{Given any open subset $V$ of $T$, need to show
+$U = f^{-1}(V)$ is open in $S$.}
+\begin{align*}
+f^{-1}(V)
+&= f^{-1}(V^{\circ})
+  &\text{($V$ is open)} \\
+&\subseteq (f^{-1}(V))^{\circ}
+  &\text{(Assumption)}
+\end{align*}
+So $U \subseteq U^{\circ}$ or $U = U^{\circ}$ is open.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.30.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.30.}
+\emph{Prove that $f$ is continuous on $S$ if and only if
+$$f(\overline{A}) \subseteq \overline{f(A)}
+\qquad \text{for every subset $A$ of $S$}.$$}
+
+Denote the closure of any set $S$ by $\overline{S}$. \\
+
+\emph{Proof (On topological spaces).}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Since $f$ is continuous and $\overline{f(A)}$ is closed,
+$f^{-1}(\overline{f(A)})$ is closed.
+Hence,
+\begin{align*}
+f^{-1}(\overline{f(A)})
+&\supseteq f^{-1}(f(A))
+  & \text{(Monotonicity of $f^{-1}$)} \\
+&\supseteq A,
+  & \text{(Exercise 2.7(a))} \\
+\overline{A}
+&\subseteq f^{-1}(\overline{f(A)}),
+  & \text{(Monotonicity of closure)} \\
+f(\overline{A})
+&\subseteq f(f^{-1}(\overline{f(A)}))
+  & \text{(Monotonicity of $f$)} \\
+&\subseteq \overline{f(A)}.
+  & \text{(Exercise 2.7(b))}
+\end{align*}
+\item[(2)]
+$(\Longleftarrow)$
+\emph{Given any closed subset $D$ of $T$, need to show
+$C = f^{-1}(D)$ is closed in $S$.}
+\begin{align*}
+f(\overline{C})
+&\subseteq \overline{f(C)}
+  &\text{(Assumption)} \\
+&= \overline{f(f^{-1}(D))}
+  &(C = f^{-1}(D))\\
+&\subseteq \overline{D}
+  &\text{(Exercise 2.7(b))} \\
+&= D,
+  &\text{($D$ is closed)} \\
+f^{-1}(f(\overline{C}))
+&\subseteq f^{-1}(D),
+  &\text{(Monotonicity of $f^{-1}$)} \\
+\overline{C} \subseteq f^{-1}(f(\overline{C}))
+&\subseteq f^{-1}(D) = C.
+  &\text{(Exercise 2.7(a))}
+\end{align*}
+So $C \supseteq \overline{C}$ or $C = \overline{C}$ is closed.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\textbf{Supplement (Continuity).}
+\emph{Let $f$ be a map from a topological space on $X$
+to a topological space on $Y$.
+Then, the following statements are equivalent:}
+\begin{enumerate}
+\item[(1)]
+\emph{$f$ is continuous:
+For each $x \in X$ and every neighborhood $V$ of $f(x)$,
+there is a neighborhood $U$ of $x$ such that $f(U) \subseteq V$.}
+\item[(2)]
+\emph{For every open set $O$ in $Y$, the inverse image $f^{-1}(O)$
+is open in $X$.}
+\item[(3)]
+\emph{For every closed set $C$ in $Y$, the inverse image $f^{-1}(C)$
+is closed in $X$.}
+\item[(4)]
+\emph{$f(A)^{\circ} \subseteq f(A^{\circ})$ for every subset $A$ of $X$.}
+\item[(5)]
+\emph{$f^{-1}(B^{\circ}) \subseteq (f^{-1}(B))^{\circ}$ for every subset $B$ of $Y$.}
+\item[(6)]
+\emph{$f(\overline{A}) \subseteq \overline{f(A)}$ for every subset $A$ of $X$.}
+\item[(7)]
+\emph{$\overline{f^{-1}(B)} \subseteq f^{-1}(\overline{B})$ for every subset $B$ of $Y$.} \\\\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.33.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.33.}
+\emph{Give an example of a continuous $f$ and a Cauchy sequence $\{x_n\}$
+in some metric space $S$ for which $\{f(x_n)\}$ is not a Cauchy sequence in $T$.} \\
+
+Compare with Exercise 4.54 to get some hints. \\
+
+\emph{Proof.}
+Let
+$$S
+= \left\{ 1, \frac{1}{2}, \frac{1}{3}, ... \right\}
+= \left\{ \frac{1}{n} : n \in \mathbb{Z}^+ \right\}.$$
+Define $f: S \rightarrow \mathbb{R}$ by $f\left(\frac{1}{n}\right) = (-1)^n$.
+Then $f$ is continuous (but not uniformly continuous).
+The sequence $\{x_n\} = \left\{ \frac{1}{n} \right\}$ in $S$ is a Cauchy sequence,
+but the sequence $\{f(x_n)\} = \{(-1)^n\}$ is not a Cauchy sequence in $\mathbb{R}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Uniform continuity \\}
+\addcontentsline{toc}{subsection}{Uniform continuity}
+
+
+
+\subsubsection*{Exercise 4.50.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.50.}
+\emph{Prove that a function which is uniformly continuous on $S$
+is also continuous on $S$.} \\
+
+\emph{Proof.}
+The proof is straightforward.
+\begin{enumerate}
+\item[(1)]
+Suppose $f: S \rightarrow T$ is uniformly continuous on $S$.
+Given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
+\item[(2)]
+\emph{Show that $f$ is continuous at any point $p$ in $S$.}
+Set $y = p$ in (1).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.51.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.51.}
+\emph{If $f(x) = x^2$ for $x \in \mathbb{R}$,
+prove that $f$ is not uniformly continuous on $\mathbb{R}$}. \\
+
+\emph{Proof.}
+Prove by contradiction.
+\begin{enumerate}
+\item[(1)]
+If $f$ were uniformly continuous on $\mathbb{R}$,
+then for any $\varepsilon > 0$, there is $\delta > 0$ such that
+$|f(x) - f(y)| < \varepsilon$ whenever $|x - y| < \delta$.
+Here we pick $\varepsilon = 1 > 0$.
+\item[(2)]
+So
+$$|f(x) - f(y)| = |x^2 - y^2| = |x+y||x-y| < 1$$
+for any $|x-y| < \delta$.
+In particular, we pick $x = \frac{1}{\delta}$
+and $y = \frac{1}{\delta} + \frac{\delta}{2}$.
+Now $|x-y| = \frac{\delta}{2} < \delta$, and thus $|f(x) - f(y)| = |x+y||x-y| < 1$
+would be true.
+However,
+$$|f(x) - f(y)| = |x+y||x-y|
+= \left(\frac{2}{\delta}+ \frac{\delta}{2}\right)
+\left(\frac{\delta}{2}\right)
+> \frac{2}{\delta} \cdot \frac{\delta}{2} = 1,$$
+contrary to $|f(x) - f(y)| = |x+y||x-y| < 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.52.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.52.}
+\emph{Assume that $f$ is uniformly continuous on a bounded set $S$ in $\mathbb{R}^n$.
+Prove that $f$ must be bounded on $S$.} \\
+
+The conclusion is false if boundedness of $S$ is omitted from the hypothesis.
+For example, $f(x) = x$ on $\mathbb{R}$ is uniformly continuous on $\mathbb{R}$
+but $f(\mathbb{R}) = \mathbb{R}$ is unbounded. \\
+
+\emph{Proof (Brute-force).}
+\begin{enumerate}
+\item[(1)]
+Since $f: S \rightarrow T$ is uniformly continuous,
+given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
+In particular, pick $\varepsilon = 1$.
+\item[(2)]
+By the boundedness of $S$, there is $M > 0$ such that $\norm{x} < M$ for all $x \in S$.
+In particular, each coordinate of $x \in \mathbb{R}^n$ is less than $M$.
+\item[(3)]
+For such $\delta > 0$, we construct a covering of $S \subseteq \mathbb{R}^n$.
+Construct a special collection $\mathscr{C}$ of $n$-cells
+$$I_{\mathbf{a}} =
+  \left[ \frac{\delta}{2\sqrt{n}}a_1, \frac{\delta}{2\sqrt{n}}(a_1+1) \right]
+  \times
+  \cdots
+  \times
+  \left[ \frac{\delta}{2\sqrt{n}}a_n, \frac{\delta}{2\sqrt{n}}(a_n+1) \right]
+$$
+where $\mathbf{a} = (a_1, ..., a_n) \in \mathbb{Z}^n$ satisfying
+$$\abs{a_i} < \frac{2\sqrt{n}M}{\delta} + 1 \:\: (1 \leq i \leq n).$$
+By construction, $\mathscr{C}$ is a finite covering of $S$.
+\item[(4)]
+For every $n$-cell $I_{\mathbf{a}}$ of the collection $\mathscr{C}$,
+pick a point $x_{\mathbf{a}} \in S \bigcap I_{\mathbf{a}}$ if possible.
+This process will terminate eventually since $\mathscr{C}$ is a finite.
+Collect these representative points as $\mathscr{D} = \{ x_{\mathbf{a}} \}$.
+Notice that $\mathscr{D}$ is finite again.
+\item[(5)]
+Now for any point $x \in S$, $x$ lies in some $I_{\mathbf{a}}$
+containing $x_\mathbf{a}$.
+Both $x$ and $x_\mathbf{a}$ are in the same cell and their distance satisfies
+$$\norm{x - x_\mathbf{a}}
+\leq \sqrt{
+\left(\frac{\delta}{2\sqrt{n}}\right)^2 +
+\cdots +
+\left(\frac{\delta}{2\sqrt{n}}\right)^2}
+= \frac{\delta}{2}
+< \delta$$
+and thus by (1)
+$$\norm{f(x) - f(x_\mathbf{a})} < 1,
+\text{ or }
+\norm{f(x)} <  1 + \norm{f(x_\mathbf{a})}.$$
+\item[(6)]
+Let
+$$M = 1 + \max_{x_\mathbf{a} \in \mathscr{D}} \norm{f(x_\mathbf{a})}.$$
+So given any $x \in S$, $\norm{f(x)} < M$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof (Heine-Borel Theorem).}
+Heine-Borel theorem provides the finiteness property to construct
+the boundedness property of $f$.
+\begin{enumerate}
+\item[(1)]
+\emph{Let $S$ be a bounded subset of a metric space $X$.
+Show that the closure of $S$ in $X$ is also bounded in $X$.}
+$S$ is bounded if $S \subseteq B_X(a;r)$ for some $r > 0$ and some $a \in X$.
+(The ball $B_X(a;r)$ is defined to the set of all $x \in X$ such that
+$d_X(x, a) < r$.)
+Take the closure on the both sides,
+$$\overline{S}
+\subseteq \overline{B_X(a;r)}
+= \{ x \in X : d_X(x, a) \leq r \}
+\subseteq B_X(a;2r),$$
+or $\overline{S}$ is bounded.
+\item[(2)]
+Since $f: S \rightarrow T$ is uniformly continuous,
+given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
+In particular, pick $\varepsilon = 1$.
+\item[(3)]
+For such $\delta > 0$, we construct an open covering of $\overline{S} \subseteq \mathbb{R}^n$.
+Pick a collection $\mathscr{C}$ of open balls
+$B(a;\delta) \subseteq \mathbb{R}^n$
+where $a$ runs over all elements of $S$.
+$\mathscr{C}$ covers $\overline{S}$ (by the definition of accumulation points).
+Since $\overline{S} $ is closed and bounded (by applying (1) on the boundedness of $S$),
+$\overline{S}$ is compact
+(Heine-Borel theorem on $\mathbb{R}^n$).
+That is, there is a finite subcollection $\mathscr{C}'$ of $\mathscr{C}$
+also covers $\overline{S}$, say
+$$\mathscr{C}'
+= \left\{B(a_1;\delta)), B(a_2;\delta), ..., B(a_m;\delta) \right\}.$$
+\item[(4)]
+Given any $x \in S \subseteq \overline{S}$,
+there is some $a_i \in S$ $(1 \leq i \leq m)$ such that $x \in B(a_i;\delta)$.
+In such ball, $d_S(x, a_i) < \delta$.
+By (2), $\norm{f(x) - f(a_i)} < 1$,
+or $\norm{f(x)} < 1 + \norm{f(a_i)}$.
+Almost done.
+Notice that $a_i$ depends on $x$,
+and thus we might use finiteness of $\{ a_1, a_2, ..., a_m \}$
+to remove dependence of $a_i$.
+\item[(5)]
+Let
+$$M = 1 + \max_{1 \leq i \leq m}{\norm{f(a_i)}}.$$
+So given any $x \in S$, $\norm{f(x)} < M$.
+\end{enumerate}
+$\Box$ \\
+
+\textbf{Supplement.}
+Exercise about considering the closure.
+(Problem 3.5 in H. L. Royden, Real Analysis, 3rd Edition.)
+\emph{Let $A = \mathbb{Q} \cap [0,1]$,
+and let $\{ I_n\}$ be a finite collection of open intervals covering $A$.
+Then $\sum l(I_n) \geq 1$.} \\
+
+\emph{Proof.}
+\begin{align*}
+1
+= m^{*}[0, 1]
+= m^{*}\overline{A}
+&\leq m^{*}\left( \overline{\bigcup I_n} \right)
+= m^{*}\left( \bigcup \overline{I_n} \right) \\
+&\leq \sum m^{*}(\overline{I_n})
+= \sum l(\overline{I_n})
+= \sum l(I_n).
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.54.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.54.}
+\emph{Assume $f: S \rightarrow T$ is uniformly continuous on $S$,
+where $S$ and $T$ are metric spaces.
+If $\{x_n\}$ is any Cauchy sequence in $S$,
+prove that $\{f(x_n)\}$ is a Cauchy sequence in $T$.
+(Compare with Exercise 4.33.)} \\
+
+Therefore, we need to find a continuous but not uniformly continuous function
+to solve Exercise 4.33:
+\emph{Give an example of a continuous $f$ and a Cauchy sequence $\{x_n\}$
+in some metric space $S$ for which $\{f(x_n)\}$ is not a Cauchy sequence in $T$.} \\
+
+\emph{Proof.}
+The proof is straightforward.
+\begin{enumerate}
+\item[(1)]
+Since $f: S \rightarrow T$ is uniformly continuous on $S$,
+given any $\varepsilon > 0$, there is $\delta > 0$ such that
+$d_T(f(x), f(y)) < \varepsilon$ whenever $d_S(x, y) < \delta$.
+\item[(2)]
+Since $\{x_n\}$ is any Cauchy sequence in $S$,
+especially for such $\delta > 0$ in (1), there is an integer $N$ such that
+$d_S(x_m, x_n) < \delta$ whenever $m \geq N$ and $n \geq N$.
+So as $m \geq N$ and $n \geq N$, we have
+$d_T(f(x_m), f(x_n)) < \varepsilon$ by (1),
+or $\{f(x_n)\}$ itself is a Cauchy sequence in $T$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
