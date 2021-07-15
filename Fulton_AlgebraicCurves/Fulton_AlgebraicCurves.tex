@@ -18913,6 +18913,145 @@ $\Box$ \\\\
 
 
 
+% http://people.math.sfu.ca/~kyeats/teaching/math818soln4.pdf
+
+
+
+\subsubsection*{Problem 8.14.}
+\addcontentsline{toc}{subsubsection}{Problem 8.14.}
+\emph{Calculate the genus of each of the following curves:}
+\begin{enumerate}
+\item[(a)]
+  \emph{$x^2y^2 - z^2(x^2+y^2)$.}
+
+\item[(b)]
+  \emph{$(x^3+y^3)z^2 + x^3y^2 - x^2y^3$.}
+
+\item[(c)]
+  \emph{}
+
+\item[(d)]
+  \emph{$(x^2-z^2)^2 - 2y^3z - 3y^2z^2$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Let $C = x^2y^2 - z^2(x^2+y^2)$.
+  By solving
+  $C(P)
+  = \frac{\partial C}{\partial x}(P)
+  = \frac{\partial C}{\partial y}(P)
+  = \frac{\partial C}{\partial z}(P)
+  = 0$,
+  we have $P = [0:0:1], [0:1:0], [1:0:0]$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    &\:
+    m_{[0:0:1]}(C) \\
+    =&\: m_{(0,0)}(C_{*})
+      &(\text{Dehomogenize $C$ w.r.t. $z$}) \\
+    =&\: m_{(0,0)}(x^2y^2 - (x^2+y^2)) \\
+    =&\: 2.
+  \end{align*}
+  Similarly, $m_{[0:1:0]}(C) = m_{[1:0:0]}(C) = 2$.
+  Proposition 5 in \S 8.3 shows that
+  \[
+    g = \frac{(4-1)(4-2)}{2} - 3 \cdot \frac{2(2-1)}{2} = 0.
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Let $C = (x^3+y^3)z^2 + x^3y^2 - x^2y^3$.
+  By solving
+  $C(P)
+  = \frac{\partial C}{\partial x}(P)
+  = \frac{\partial C}{\partial y}(P)
+  = \frac{\partial C}{\partial z}(P)
+  = 0$,
+  we have $P = [0:0:1], [0:1:0], [1:0:0]$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    &\: m_{[0:0:1]}(C) \\
+    =&\: m_{(0,0)}(C_{*})
+      &(\text{Dehomogenize $C$ w.r.t. $z$}) \\
+    =&\: m_{(0,0)}(x^3+y^3 + x^3y^2 - x^2y^3) \\
+    =&\: 3, \\
+    &\: m_{[0:1:0]}(C) \\
+    =&\: m_{(0,0)}(C_{*})
+      &(\text{Dehomogenize $C$ w.r.t. $y$}) \\
+    =&\: m_{(0,0)}(x^3z^2 + x^3 - x^2 + z^2) \\
+    =&\: 2.
+  \end{align*}
+  Similarly, $m_{[1:0:0]}(C) = 2$.
+  Proposition 5 in \S 8.3 shows that
+  \[
+    g = \frac{(5-1)(5-2)}{2} - \frac{3(3-1)}{2} - 2 \cdot \frac{2(2-1)}{2} = 1.
+  \]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  Let $C = (x^2-z^2)^2 - 2y^3z - 3y^2z^2$.
+  By solving
+  $C(P)
+  = \frac{\partial C}{\partial x}(P)
+  = \frac{\partial C}{\partial y}(P)
+  = \frac{\partial C}{\partial z}(P)
+  = 0$,
+  we have $P = [\pm 1:0:1], [0:-1:1]$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    &\: m_{[\pm 1:0:1]}(C) \\
+    =&\: m_{(\pm 1,0)}(C_{*})
+      &(\text{Dehomogenize $C$ w.r.t. $z$}) \\
+    =&\: m_{(\pm 1,0)}((x^2-1)^2 - 2y^3 - 3y^2) \\
+    =&\: m_{(0,0)}(x^4 \pm 4x^3 - 2y^3 + 4x^2 - 3y^2) \\
+    =&\: 2, \\
+    &\: m_{[0:-1:1]}(C) \\
+    =&\: m_{(0,-1)}(C_{*})
+      &(\text{Dehomogenize $C$ w.r.t. $z$}) \\
+    =&\: m_{(0,-1)}((x^2-1)^2 - 2y^3 - 3y^2) \\
+    =&\: m_{(0,0)}(x^4 - 2y^3 - 2x^2 + 3y^2) \\
+    =&\: 2.
+  \end{align*}
+  Proposition 5 in \S 8.3 shows that
+  \[
+    g = \frac{(4-1)(4-2)}{2} - 3 \cdot \frac{2(2-1)}{2} = 0.
+  \]\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
