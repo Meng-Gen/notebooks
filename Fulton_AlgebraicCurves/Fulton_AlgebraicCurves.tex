@@ -18866,6 +18866,44 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 8.13.*}
+\addcontentsline{toc}{subsubsection}{Problem 8.13.*}
+\emph{Suppose $\ell(D) > 0$, and let $f \neq 0$, $f \in \mathscr{L}(D)$.
+Show that $f \not\in \mathscr{L}(D-P)$ for all but a finite number of $P$.
+So $\ell(D-P) = \ell(D)-1$ for all but a finite number of $P$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  By Problem 8.11, we might assume that $D = \sum_P n_P P$ is effective (with $n_P \geq 0$).
+
+\item[(2)]
+  Let $S = \{ P \in X : f \in \mathscr{L}(D-P) \}$.
+  For each $P \in S$, we have
+  \[
+    \mathrm{ord}_P(f) + n_P - 1 \geq 0.
+  \]
+  Since $D$ is effective, $\mathrm{ord}_P(f) > 0$ for all $P \in S$.
+  Since $\mathrm{ord}_P(f)$ is nonzero for finitely many points, $S$ is finite.
+
+\item[(3)]
+  By Proposition 3,
+  \[
+    \ell(D-P) \leq \ell(D) \leq \ell(D-P) + 1.
+  \]
+  By (2), $\ell(D-P) \neq \ell(D)$ for all but a finite number of $P$.
+  Hence $\ell(D) = \ell(D-P) + 1$ for all but a finite number of $P$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
