@@ -172,6 +172,60 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise I.2.3.}
+\addcontentsline{toc}{subsubsection}{Exercise I.2.3.}
+\emph{In the polynomial ring $A = \mathbb{Q}[x,y]$,
+consider the principal ideal $\mathfrak{p} = (x^2-y^3)$.
+Show that $\mathfrak{p}$ is a prime ideal,
+but $A/\mathfrak{p}$ is not integrally closed.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  It is easy to show that $x^2-y^3$ is irreducible in $A$.
+  Hence $\mathfrak{p} = (x^2-y^3)$ is prime since $A$ is a UFD.
+
+\item[(2)]
+  By substituting $x = t^3$, $y = t^2$,
+  $A/\mathfrak{p} \cong \mathbb{Q}[t^3,t^2]$,
+  with quotient field $\mathbb{Q}(t)$ (by noting $t = \frac{x}{y}$).
+  Note that $\mathbb{Q}[t]$ is a UFD, thus is already integrally closed.
+  So the integral closure will be $\mathbb{Q}[t] \supsetneq \mathbb{Q}[t^3,t^2]$.
+  It suggests that $A/\mathfrak{p}$ might not be integrally closed.
+
+\item[(3)]
+  (Reductio ad absurdum)
+  If not, then the element $\frac{x}{y}$ satisfies a monic equation
+  $t^2 - y = 0 \in (A/\mathfrak{p})[t]$.
+  $\frac{x}{y} \in A/\mathfrak{p}$ or $t \in \mathbb{Q}[t^3,t^2]$, which is absurd.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  Serre's criterion for normality.
+
+\item[(2)]
+  Hence smoothness is the same as normality for affine curves in $\mathbb{Q}[x,y]$.
+  Note that $x^2-y^3$ is an irreducible cubic with a cusp at the origin $(0,0)$.
+
+\item[(3)]
+  There is an affine variety $X \in \mathbb{Q}[x,y,z]$ such that
+  $X$ is normal but not smooth.
+  ($X = V(x^2 + y^2 - z^2)$ for example.) \\\\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise I.2.4.}
 \addcontentsline{toc}{subsubsection}{Exercise I.2.4.}
 \emph{Let $D$ be a squarefree rational integer $\neq 0, 1$ and
