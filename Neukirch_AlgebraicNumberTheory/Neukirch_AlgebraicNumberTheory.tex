@@ -182,8 +182,63 @@ then so is the polynomial ring $A[t]$.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Let $K$ be the quotient field of $A$.
+  \emph{Suppose $A$ is integrally closed in $B$.
+  Show that $A[t]$ is integrally closed in $B[t]$.}
+  Suppose $f \in B[t]$ is integral over $A[t]$.
+  Write
+  \[
+    f^n + g_1 f^{n-1} + \cdots + g_{n-1} f + g_n = 0 
+  \]
+  where $n > 0$ and $g_i \in A[t]$.
+  Hence
+  \begin{align*}
+    &\:
+    f^n + g_1 f^{n-1} + \cdots + g_{n-1} f = -g_n \in A[t] \\
+    \Longrightarrow &\:
+    f(\underbrace{f^{n-1} + g_1 f^{n-1} + \cdots + g_{n-1}}_{:= g}) \in A[t].
+  \end{align*}
+  It is possible to show that $fg \in A[t]$ implies that $f \in A[t]$ and $g \in A[t]$
+  by using the fact that $A$ is integrally closed in $B$.
 
+\item[(2)]
+  \emph{Suppose $f, g$ are monic polynomials in $B[t]$.
+  Show that $fg \in A[t]$ implies that $f \in A[t]$ and $g \in A[t]$.}
+  Write
+  \[
+    f = \prod (t - \xi_i),
+    \qquad
+    g = \prod (t - \eta_j)
+  \]
+  in some splitting field $F$ of $f$ and $g$ containing the quotient field of $B$.
+  Note that each $\xi_i$ and each $\eta_j$ is a root of a monic equation $fg$ in $A[t]$.
+  Since $A$ is integrally closed in $B$, $\xi_i, \eta_j \in A$.
+  Hence $f, g \in A[t]$.
+
+\item[(3)]
+  To apply part (2), we need to remedy leading coefficients of $f$ and $g_n$.
+  Take an integer $m > \max\{\deg(f), \deg(g_1), \ldots, \deg(g_n) \}$.
+  Let $f_0 = t^m + f$ be a monic polynomial in $B[t]$.
+  Hence
+  \begin{align*}
+    &\:
+    (f_0 - t^m)^n + g_1 (f_0 - t^m)^{n-1} + \cdots + g_n = 0 \\
+    \Longrightarrow &\:
+    f_0^n + h_1 f_0^{n-1} + \cdots + h_n = 0
+  \end{align*}
+  where
+  \[
+    h_n = t^{mn} + (-1)^{n-1} g_1 t^{m(n-1)} + \cdots + g_n \in A[t]
+  \]
+  is also monic.
+  So
+  \begin{align*}
+    &\:
+    f_0^n + h_1 f_0^{n-1} + \cdots + h_{n-1} f = -h_n \text{ is monic in } A[t] \\
+    \Longrightarrow &\:
+    f_0(\underbrace{f_0^{n-1} + h_1 f^{n-1} + \cdots + h_{n-1}}_{:= h_0}) \in A[t] \text{ where } \\
+    &\: \text{$f_0$ and $h_0$ both are monic in } B[t].
+  \end{align*}
+  Now we can apply part (2) safely.
 \end{enumerate}
 $\Box$ \\\\
 
