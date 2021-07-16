@@ -172,6 +172,27 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise I.2.2.}
+\addcontentsline{toc}{subsubsection}{Exercise I.2.2.}
+\emph{Show that, if the integral domain $A$ is integrally closed,
+then so is the polynomial ring $A[t]$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $K$ be the quotient field of $A$.
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise I.2.3.}
 \addcontentsline{toc}{subsubsection}{Exercise I.2.3.}
 \emph{In the polynomial ring $A = \mathbb{Q}[x,y]$,
@@ -371,6 +392,52 @@ one find $d_K = (P-N)^2 = (P+N)^2 - 4PN$.)} \\
     &\equiv 0, 1 \pmod 4.
   \end{align*}
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter VII: Zeta Functions and $L$-series \\}
+\addcontentsline{toc}{section}{Chapter VII: Zeta Functions and $L$-series}
+
+
+
+\subsection*{VII.1. The Riemann Zeta Function \\}
+\addcontentsline{toc}{subsection}{VII.1. The Riemann Zeta Function}
+
+
+
+\subsubsection*{Exercise VII.1.4.}
+\addcontentsline{toc}{subsubsection}{Exercise VII.1.4.}
+\emph{For the power sum
+\[
+  s_k(n) = 1^k + 2^k + 3^k + \cdots + n^k
+\]
+one has}
+\[
+  s_k(n) = \frac{1}{k+1} (B_{k+1}(n) - B_{k+1}(0)).
+\] \\
+
+
+
+\emph{Proof.}
+  By Exercise VII.1.3,
+  \[
+    x^k = \frac{1}{k+1} (B_{k+1}(x) - B_{k+1}(x-1)).
+  \]
+  Hence the telescoping sum is
+  \begin{align*}
+     s_k(n)
+     &= \sum_{x=1}^{n} x^k \\
+     &= \sum_{x=1}^{n} \frac{1}{k+1} (B_{k+1}(x) - B_{k+1}(x-1)) \\
+     &= \frac{1}{k+1} (B_{k+1}(n) - B_{k+1}(0)).
+  \end{align*}
 $\Box$ \\\\
 
 
