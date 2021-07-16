@@ -57,71 +57,24 @@
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  \emph{Show that for all $\alpha, \beta \in \mathbb{Z}[i]$,
-  $N(\alpha\beta) = N(\alpha)N(\beta)$,
-  either by direct computation or using the fact that
-  $N(a+bi) = (a+bi)(a-bi)$.
-  Conclude that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
-  then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
-
-\item[(2)]
-  (Direct computation.)
-  Write $\alpha = a+bi, \beta=c+di$ where $a, b, c, d \in \mathbb{Z}$.
-  Thus,
-  \begin{align*}
-    N(\alpha\beta)
-    &= N((a+bi)(c+di)) \\
-    &= N((ac-bd) + (ad+bc)i) \\
-    &= (ac-bd)^2 + (ad+bc)^2 \\
-    &= (a^2 c^2 - 2abcd + b^2 d^2) + (a^2 d^2 + 2abcd + b^2 c^2) \\
-    &= a^2 c^2 + b^2 d^2 + a^2 d^2 + b^2 c^2, \\
-    N(\alpha)N(\beta)
-    &= N(a+bi) N(c+di) \\
-    &= (a^2 + b^2)(c^2 + d^2) \\
-    &= a^2 c^2 + b^2 d^2 + a^2 d^2 + b^2 c^2.
-  \end{align*}
-  Therefore, $N(\alpha\beta) = N(\alpha)N(\beta)$.
-  (Note that we also get the identity
-  $(a^2 + b^2)(c^2 + d^2) = (ac-bd)^2 + (ad+bc)^2$.)
-
-\item[(3)]
-  (Using the fact that $N(a+bi) = (a+bi)(a-bi)$,
-  or $N(\alpha) = \alpha \overline{\alpha}$
-  for any $\alpha \in \mathbb{Z}[i]$.)
-  \begin{align*}
-    N(\alpha\beta)
-    &= \alpha\beta\overline{\alpha\beta} \\
-    &= \alpha\beta\overline{\alpha}\overline{\beta} \\
-    &= \alpha\overline{\alpha}\beta\overline{\beta} \\
-    &= N(\alpha)N(\beta).
-  \end{align*}
-
-\item[(4)]
-  \emph{Show that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
-  then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
-  Write $\gamma = \alpha \beta$ for some $\beta \in \mathbb{Z}[i]$.
-  So $N(\gamma) = N(\alpha) N(\beta) \in \mathbb{Z}$,
-  or $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.
-
-\item[(5)]
   \emph{$(\Longrightarrow)$}
   Since $\alpha$ is a unit, there is $\beta \in \mathbb{Z}[i]$ such that
   $\alpha \beta = 1$.
-  By (1), $N(\alpha \beta) = N(1)$, or $N(\alpha) N(\beta) = 1$.
+  So $N(\alpha \beta) = N(1)$, or $N(\alpha) N(\beta) = 1$.
   Since the image of $N$ is nonnegative integers, $N(\alpha) = 1$.
 
-\item[(6)]
+\item[(2)]
   \emph{$(\Longleftarrow)$}
-  By (1), $N(\alpha) = \alpha \overline{\alpha}$,
+  $N(\alpha) = \alpha \overline{\alpha}$,
   or $1 = \alpha \overline{\alpha}$ since $N(\alpha) = 1$.
   That is, $\overline{\alpha} \in \mathbb{Z}[i]$ is
   the inverse of $\alpha \in \mathbb{Z}[i]$.
   (Or we solve the equation $N(\alpha) = a^2 + b^2 = 1$,
   and show that all four solutions ($\pm 1$ and $\pm i$) are unit.)
 
-\item[(7)]
+\item[(3)]
   Conclusion: a unit $\alpha = a+bi$ of $\mathbb{Z}[i]$
-  is satisfying the equation $N(\alpha) = a^2 + b^2 = 1$ by (5)(6).
+  is satisfying the equation $N(\alpha) = a^2 + b^2 = 1$ by (1)(2).
   That is, the only unit of $\mathbb{Z}[i]$ are $\pm 1$ and $\pm i$.
 \end{enumerate}
 $\Box$ \\\\
