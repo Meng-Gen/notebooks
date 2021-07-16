@@ -26,6 +26,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -35,7 +36,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \newpage
@@ -46,6 +47,7 @@
 
 \subsection*{I.1. The Gaussian Integers \\}
 \addcontentsline{toc}{subsection}{I.1. The Gaussian Integers}
+
 
 
 \subsubsection*{Exercise I.1.1.}
@@ -70,7 +72,7 @@
   That is, $\overline{\alpha} \in \mathbb{Z}[i]$ is
   the inverse of $\alpha \in \mathbb{Z}[i]$.
   (Or we solve the equation $N(\alpha) = a^2 + b^2 = 1$,
-  and show that all four solutions ($\pm 1$ and $\pm i$) are unit.)
+  and show that all four solutions ($\pm 1$ and $\pm i$) are units.)
 
 \item[(3)]
   Conclusion: a unit $\alpha = a+bi$ of $\mathbb{Z}[i]$
@@ -81,6 +83,93 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise I.1.4.}
+\addcontentsline{toc}{subsubsection}{Exercise I.1.4.}
+\emph{Show that the ring $\mathbb{Z}[i]$ cannot be ordered.} \\
+
+
+
+\emph{Proof.}
+  Similar to the fact that $i$ cannot be ordered in $\mathbb{C}$,
+  $i$ cannot be ordered in $\mathbb{Z}[i]$ either.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise I.1.5.}
+\addcontentsline{toc}{subsubsection}{Exercise I.1.5.}
+\emph{Show that the only units of the ring $\mathbb{Z}[\sqrt{-d}] = \mathbb{Z} + \mathbb{Z}\sqrt{-d}$,
+for any rational integer $d > 1$, are $\pm 1$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Define the norm $N$ on $\mathbb{Z}[\sqrt{-d}]$ by
+  \[
+    N(x+y\sqrt{-d}) = (x+y\sqrt{-d})(x-y\sqrt{-d}) = x^2 + y^2 d,
+  \]
+  i.e., by $N(z) = |z|^2$.
+  It is multiplicative.
+
+\item[(2)]
+  Similar to Exercise I.1.1,
+  \begin{align*}
+    \text{$x+y\sqrt{-d} \in \mathbb{Z}[\sqrt{-d}]$ is a unit}
+    &\Longleftrightarrow
+    N(x+y\sqrt{-d}) = x^2 + y^2 d = 1 \\
+    &\Longleftrightarrow
+    x^2 = 1 \text{ and } y = 0 \\
+    &\Longleftrightarrow
+    x = \pm 1 \text{ and } y = 0.
+  \end{align*}
+  Hence the only units of the ring $\mathbb{Z}[\sqrt{-d}]$ are $\pm 1$ ($d > 1$).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{I.2. Integrality \\}
+\addcontentsline{toc}{subsection}{I.1. Integrality}
+
+
+
+\subsubsection*{Exercise I.2.1.}
+\addcontentsline{toc}{subsubsection}{Exercise I.2.1.}
+\emph{Is $\frac{3+2\sqrt{6}}{1-\sqrt{6}}$ an algebraic integer?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $\alpha := \frac{3+2\sqrt{6}}{1-\sqrt{6}} = -3-\sqrt{6}$.
+  Since the set of all algebraic integers is a ring,
+  $\alpha$ is an algebraic integer.
+
+\item[(2)]
+  Or show that $\alpha$ satisfies a monic equation $x^2 + 6x + 3 = 0 \in \mathbb{Z}[x]$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
