@@ -1,0 +1,495 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+\def\upint{\mathchoice%
+    {\mkern13mu\overline{\vphantom{\intop}\mkern7mu}\mkern-20mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+    {\mkern7mu\overline{\vphantom{\intop}\mkern7mu}\mkern-14mu}%
+  \int}
+\def\lowint{\mkern3mu\underline{\vphantom{\intop}\mkern7mu}\mkern-10mu\int}
+
+\makeatletter
+\newcommand*{\mint}[1]{%
+  % #1: overlay symbol
+  \mint@l{#1}{}%
+}
+\newcommand*{\mint@l}[2]{%
+  % #1: overlay symbol
+  % #2: limits
+  \@ifnextchar\limits{%
+    \mint@l{#1}%
+  }{%
+    \@ifnextchar\nolimits{%
+      \mint@l{#1}%
+    }{%
+      \@ifnextchar\displaylimits{%
+        \mint@l{#1}%
+      }{%
+        \mint@s{#2}{#1}%
+      }%
+    }%
+  }%
+}
+\newcommand*{\mint@s}[2]{%
+  % #1: limits
+  % #2: overlay symbol
+  \@ifnextchar_{%
+    \mint@sub{#1}{#2}%
+  }{%
+    \@ifnextchar^{%
+      \mint@sup{#1}{#2}%
+    }{%
+      \mint@{#1}{#2}{}{}%
+    }%
+  }%
+}
+\def\mint@sub#1#2_#3{%
+  \@ifnextchar^{%
+    \mint@sub@sup{#1}{#2}{#3}%
+  }{%
+    \mint@{#1}{#2}{#3}{}%
+  }%
+}
+\def\mint@sup#1#2^#3{%
+  \@ifnextchar_{%
+    \mint@sup@sub{#1}{#2}{#3}%
+  }{%
+    \mint@{#1}{#2}{}{#3}%
+  }%
+}
+\def\mint@sub@sup#1#2#3^#4{%
+  \mint@{#1}{#2}{#3}{#4}%
+}
+\def\mint@sup@sub#1#2#3_#4{%
+  \mint@{#1}{#2}{#4}{#3}%
+}
+\newcommand*{\mint@}[4]{%
+  % #1: \limits, \nolimits, \displaylimits
+  % #2: overlay symbol: -, =, ...
+  % #3: subscript
+  % #4: superscript
+  \mathop{}%
+  \mkern-\thinmuskip
+  \mathchoice{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \displaystyle\textstyle\scriptstyle
+  }{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \textstyle\scriptstyle\scriptstyle
+  }{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \scriptstyle\scriptscriptstyle\scriptscriptstyle
+  }{%
+    \mint@@{#1}{#2}{#3}{#4}%
+        \scriptscriptstyle\scriptscriptstyle\scriptscriptstyle
+  }%
+  \mkern-\thinmuskip
+  \int#1%
+  \ifx\\#3\\\else_{#3}\fi
+  \ifx\\#4\\\else^{#4}\fi
+}
+\newcommand*{\mint@@}[7]{%
+  % #1: limits
+  % #2: overlay symbol
+  % #3: subscript
+  % #4: superscript
+  % #5: math style
+  % #6: math style for overlay symbol
+  % #7: math style for subscript/superscript
+  \begingroup
+    \sbox0{$#5\int\m@th$}%
+    \sbox2{$#5\int_{}\m@th$}%
+    \dimen2=\wd0 %
+    % => \dimen2 = width of \int
+    \let\mint@limits=#1\relax
+    \ifx\mint@limits\relax
+      \sbox4{$#5\int_{\kern1sp}^{\kern1sp}\m@th$}%
+      \ifdim\wd4>\wd2 %
+        \let\mint@limits=\nolimits
+      \else
+        \let\mint@limits=\limits
+      \fi
+    \fi
+    \ifx\mint@limits\displaylimits
+      \ifx#5\displaystyle
+        \let\mint@limits=\limits
+      \fi
+    \fi
+    \ifx\mint@limits\limits
+      \sbox0{$#7#3\m@th$}%
+      \sbox2{$#7#4\m@th$}%
+      \ifdim\wd0>\dimen2 %
+        \dimen2=\wd0 %
+      \fi
+      \ifdim\wd2>\dimen2 %
+        \dimen2=\wd2 %
+      \fi
+    \fi
+    \rlap{%
+      $#5%
+        \vcenter{%
+          \hbox to\dimen2{%
+            \hss
+            $#6{#2}\m@th$%
+            \hss
+          }%
+        }%
+      $%
+    }%
+  \endgroup
+}
+
+
+
+\title{\textbf{Solutions to the book: \\
+\emph{Lawrence C. Evans, Partial Differential Equations}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+% https://math24.files.wordpress.com/2013/02/evans_solutions-ch2.pdf
+% http://math.gmu.edu/~memelian/teaching/Fall11/math678/hw/hw1sol.pdf
+% http://www-users.math.umn.edu/~sands265/writeups/PDE_homework1.pdf
+% http://www-users.math.umn.edu/~sands265/writeups/PDE_homework2.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 2: Four Important Linear PDE \\}
+\addcontentsline{toc}{section}{Chapter 2: Four Important Linear PDE}
+
+
+
+\subsubsection*{Notes.}
+\addcontentsline{toc}{subsubsection}{Notes.}
+\begin{enumerate}
+\item[(1)]
+  (Equation (7) in \S 2.2.2)
+  \[
+    |D\Phi(x)| \leq \frac{C}{|x|^{n-1}}, \qquad
+    |D^2\Phi(x)| \leq \frac{C}{|x|^{n}} \qquad (x \neq 0)
+  \]
+  for some constant $C > 0$.
+  In fact,
+  \begin{align*}
+  \frac{\partial}{\partial x_i}\Phi(x)
+  &= -\frac{1}{n\alpha(n)} x_i |x|^{-n}, \\
+  \frac{\partial^2}{\partial x_i \partial x_j}\Phi(x)
+  &= \frac{1}{n\alpha(n)} (n x_i x_j - |x|^2 \delta_{ij}) |x|^{-n-2}.
+  \end{align*}
+
+\item[(2)]
+  (Equation (12) in \S 2.2.2)
+  The constant $C$ is rescaled.
+  It is just a constant.
+
+\item[(3)]
+  (Equation (13) in \S 2.2.2)
+  Take $U \mapsto B(0,\varepsilon)$, $u(y) \mapsto \Phi(y)$ and $v(y) \mapsto f(x-y)$
+  in the integration by parts (Green's first identity):
+  \[
+    \int_{U} Dv \cdot Du \: dx
+    = -\int_{U} u \Delta v \: dx
+      + \int_{\partial U} \frac{\partial v}{\partial \nu} u \: dS.
+  \] \\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.1.}
+\addcontentsline{toc}{subsubsection}{Problem 2.1.}
+\emph{Write down an explicit formula for a function $u$ solving
+the initial-value problem
+\begin{equation*}
+  \begin{cases}
+    u_t + b \cdot Du + cu = 0 & \text{ in } \mathbb{R}^n \times (0,\infty) \\
+    u                     = g & \text{ on } \mathbb{R}^n \times \{ t=0 \}.
+  \end{cases}
+\end{equation*}
+Here $c \in \mathbb{R}$ and $b \in \mathbb{R}^n$ are constants.} \\
+
+\emph{Proof (Transport equation).}
+Define
+\[
+  z(s) = u(x+sb,t+s) \qquad (s \in \mathbb{R}).
+\]
+So
+\begin{align*}
+  \dot{z}(s)
+  &= Du(x+sb,t+s) \cdot b + u_t(x+sb,t+s) \\
+  &= -cu(x+sb,t+s) \\
+  &= -cz(s).
+\end{align*}
+Solve this ODE to get
+\begin{align*}
+  z(s) = z(0) e^{-cs}
+  &\Longrightarrow
+  u(x+sb,t+s) = u(x,t) e^{-cs} \\
+  &\Longrightarrow
+  u(x-tb,0) = u(x,t) e^{ct}
+    &\text{(Let $s = -t$)} \\
+  &\Longrightarrow
+  g(x-tb) = u(x,t) e^{ct} \\
+  &\Longrightarrow
+  u(x,t) = g(x-tb) e^{-ct}.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 2.2.}
+\addcontentsline{toc}{subsubsection}{Problem 2.2.}
+\emph{Prove that Laplace's equation $\Delta u = 0$ is rotation invariant;
+that is, if $O$ is an orthogonal $n \times n$ matrix and we define
+\[
+  v(x) := u(Ox) \qquad (x \in \mathbb{R}^n),
+\]
+then $\Delta v = 0$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $O = [O_{ij}]$.
+  $O$ is orthogonal if $OO^{T} = O^{T}O = I$,
+  or
+  \[
+    \sum_{i=1}^{n} O_{pi} O_{qi} = \delta_{pq}
+  \]
+  where $\delta_{pq}$ is the Kronecker delta.
+
+\item[(2)]
+  Let $y = Ox$.
+  So that
+  \begin{align*}
+    D_i v(x)
+    &= \sum_{p=1}^{n} D_p u(y) O_{pi}, \\
+    D_{ij} v(x)
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qj}, \\
+    \Delta v(x)
+    &= \sum_{i=1}^{n} D_{ii} v(x) \\
+    &= \sum_{i=1}^{n} \sum_{q=1}^{n}\sum_{p=1}^{n} D_{pq}u(y) O_{pi} O_{qi} \\
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} u(y) \left( \sum_{i=1}^{n} O_{pi} O_{qi} \right) \\
+    &= \sum_{q=1}^{n} \sum_{p=1}^{n} D_{pq} \delta_{pq} \\
+    &= \sum_{q=1}^{n} D_{qq}u(y) \\
+    &= \Delta u(y).
+  \end{align*}
+
+\item[(3)]
+  As $\Delta u(y) = 0$, $\Delta v(x) = 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\textbf{Problem 2.4.}
+\emph{We say $v \in C^2(\overline{U})$ is \textbf{subharmonic} if
+\[
+  - \Delta v \leq 0
+  \qquad
+  \text{in $U$}.
+\]}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove for subharmonic $v$ that}
+  \[
+    v(x) \leq \mint{-}_{B(x,r)} v dy
+    \qquad
+    \text{for all $B(x,r) \subseteq U$}.
+  \]
+
+\item[(b)]
+  \emph{Prove that therefore $\max_{\overline{U}} v = \max_{\partial U} v$.}
+
+\item[(c)]
+  \emph{Let $\phi: \mathbb{R} \to \mathbb{R}$ be smooth and convex.
+  Assume $u$ is harmonic and $v := \phi(u)$.
+  Prove that $v$ is subharmonic.}
+
+\item[(d)]
+  \emph{Prove $v := |Du|^2$ is subharmonic, whenever $u$ is harmonic.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+It is exactly the same as the proof of Theorem 2 (Mean-value theorem for Laplace's equation)
+in \S 2.2.2.
+\begin{enumerate}
+\item[(1)]
+  Set
+  \[
+    \phi(r)
+    := \mint{-}_{\partial B(x,r)} v(y) dS(y)
+    = \mint{-}_{\partial B(0,1)} v(x+rz) dS(z)
+  \]
+  ($r > 0$).
+  Then
+  \begin{align*}
+    \phi'(r)
+    &= \mint{-}_{\partial B(0,1)} Dv(\underbrace{x+rz}_{= y}) \cdot z dS(z) \\
+    &= \mint{-}_{\partial B(x,y)} Dv(y) \cdot
+      \underbrace{\frac{y - x}{r}}_{= \nu} dS(y) \\
+    &= \mint{-}_{\partial B(x,y)} \frac{\partial v}{\partial \nu} dS(y) \\
+    &= \frac{r}{n} \mint{-}_{B(x,y)} \Delta u(y) dy
+      &(\text{Green's first identity}) \\
+    &\geq 0
+      &(\text{By assumption})
+  \end{align*}
+  or $\phi(r)$ is increasing.
+
+\item[(2)]
+  Note that
+  \[
+    \lim_{t \to 0} \phi(t)
+    = \lim_{t \to 0} \mint{-}_{\partial B(x,t)} v(y) dS(y)
+    = v(x).
+  \]
+  So that
+  \[
+    v(x) = \lim_{t \to 0} \phi(t) \leq \phi(r) = \mint{-}_{\partial B(x,r)} v(y) dS(y).
+  \]
+
+\item[(3)]
+  Hence, for all $B(x,r) \subseteq U$
+  we have
+  \begin{align*}
+    \mint{-}_{B(x,r)} v dy
+    &= \frac{1}{\alpha(n) r^n} \int_{B(x,r)} v dy \\
+    &= \frac{1}{\alpha(n) r^n} \int_{0}^{r} \int_{\partial B(x,\rho)} v(y) dS(y) d\rho
+      &(\text{Polar coordinates}) \\
+    &\geq \frac{1}{\alpha(n) r^n} \int_{0}^{r} n\alpha(n) \rho^{n-1} v(x) d\rho
+      &((2)) \\
+    &= v(x) \frac{1}{r^n} \underbrace{\int_{0}^{r} n \rho^{n-1} d\rho}_{= r^n} \\
+    &= v(x).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+Similar to the proof of Theorem 4 (Strong maximum principle) in \S 2.2.2.
+
+\begin{enumerate}
+\item[(1)]
+  Suppose there exists a point $x_0 \in U$ with
+  $v(x_0) = M := \max_{\overline{U}} v$.
+  Then for $0 < r < \mathrm{dist}(x_0,\partial U)$, the mean-value property (in (a)) asserts 
+  \[
+    M = v(x_0) \leq \mint{-}_{B(x_0,r)} v dy \leq M.
+  \]
+  As equality holds only if $v \equiv  M$ within $B(x_0,r)$,
+  we see $v = M$ for all $y \in B(x,r)$.
+  Hence the set $\{ x \in U : v(x) = M \}$ is both open and closed in $U$ (since $v \in C(\overline{U})$),
+  and thus eqauls to one connected component $U_\alpha$ of $U$.
+  By the definition of
+  $\partial U_{\alpha} \subseteq \overline{U_{\alpha}}$
+  and continuity of $v$,
+  $v|_{\partial U_{\alpha}} \equiv M$.
+  As $\partial U_{\alpha} \subseteq \partial U$,
+  the result is established.
+
+\item[(2)]
+  If no such point $x_0 \in U$ with $v(x_0) = \max_{\overline{U}} v$,
+  then $\max_{\overline{U}} v = \max_{\partial U} v$ is trivial.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    \Delta v
+    &= \sum_{i=1}^{n} v_{x_i x_i} \\
+    &= \sum_{i=1}^{n} (\phi'(u) u_{x_i})_{x_i} \\
+    &= \sum_{i=1}^{n} \phi''(u) u_{x_i}^2 + \phi'(u) u_{x_i x_i} \\
+    &= \phi''(u) |Du|^2 + \phi'(u) \Delta u.
+  \end{align*}
+
+\item[(2)]
+  As $u$ is harmonic ($\Delta u = 0$) and $\phi$ is convex ($\phi''(u) \geq 0$ by
+  Exercise 5.14 in the textbook:
+  \emph{Rudin, Principles of Mathematical Analysis, 3rd edition}),
+  $\Delta v \geq 0$ (by (1)).
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  Since $u$ is smooth,
+  $u$ is harmonic implies that $u_{x_j}$ is harmonic for all $x_j$.
+  In fact,
+  \begin{align*}
+    \Delta (u_{x_j})
+    &= \sum_{i=1}^{n} (u_{x_j})_{x_i x_i} \\
+    &= \sum_{i=1}^{n} u_{x_i x_i x_j}
+      &(\text{Smoothness of $u$}) \\
+    &= \left(\sum_{i=1}^{n} u_{x_i x_i}\right)_{x_j} \\
+    &= \left(\Delta u\right)_{x_j} \\
+    &= 0.
+  \end{align*}
+
+\item[(2)]
+  Since $x \mapsto x^2$ is convex and $u_{x_i}$ is harmonic (by (1)),
+  \begin{align*}
+    v := |Du|^2 = \sum_{i=1}^n (u_{x_i})^2
+  \end{align*}
+  is a finite sum of subharmonic functions by (3),
+  which is also subharmonic.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
