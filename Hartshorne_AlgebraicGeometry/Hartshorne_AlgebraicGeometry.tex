@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Solutions to the book: \\ \emph{Robin Hartshorne, Algebraic Geometry}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter I: Varieties \\}
+\addcontentsline{toc}{section}{Chapter I: Varieties}
+
+
+
+\subsubsection*{Problem I.1.6.}
+\addcontentsline{toc}{subsubsection}{Problem I.1.6.}
+\emph{Any nonempty open subset of an irreducible topological space is dense and irreducible.
+If $Y$ is a subset of a topological space $X$, which is irreducible in its induced topology,
+then the closure $\overline{Y}$ is also irreducible.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that any nonempty open subset of an irreducible topological space
+is dense.}
+It suffices to show that $U_1 \cap U_2 \neq \varnothing$ for any
+nonempty open subsets of an irreducible topological space.
+  \begin{align*}
+  & \: \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+  U_1 \cap U_2 \neq \varnothing \\
+  \Longleftrightarrow& \:
+  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+  X - (U_1 \cap U_2) \neq X \\
+  \Longleftrightarrow& \:
+  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+  (X - U_1) \cup (X - U_2) \neq X \\
+  \Longleftrightarrow& \:
+  \forall \text{ proper closed sets } Y_1 \text{ and } Y_2,
+  Y_1 \cup Y_2 \neq X \\
+  \Longleftrightarrow& \:
+  \nexists \text{ proper closed sets } Y_1 \text{ and } Y_2,
+  Y_1 \cup Y_2 = X.
+  \end{align*}
+\item[(2)]
+\emph{Show that any nonempty open subset of an irreducible topological space
+is irreducible.}
+Given any open subset $U$ of an irreducible topological space $X$.
+Write $U \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$.
+  \begin{align*}
+  U \subseteq Y_1 \cup Y_2
+  \Longrightarrow& \:
+  \overline{U} \subseteq \overline{Y_1 \cup Y_2} \\
+  \Longrightarrow& \:
+  X \subseteq Y_1 \cup Y_2
+    &\text{($U$ is dense, $Y_1 \cup Y_2$ is closed)} \\
+  \Longrightarrow& \:
+  Y_1 = X \supseteq U \text{ or } Y_2 = X \supseteq U
+    &\text{($X$ is irreducible)} \\
+  \Longrightarrow& \:
+  \text{$U$ is irreducible.}
+  \end{align*}
+\item[(3)]
+\emph{Show that if $Y$ is a subset of a topological space $X$,
+which is irreducible (in its induced topology),
+then the closure $\overline{Y}$ is also irreducible.}
+(Reductio ad absurdum)
+If $\overline{Y}$ were reducible, there are two closed sets $Y_1$ and $Y_2$
+such that
+$$\overline{Y} \subseteq Y_1 \cup Y_2,
+\overline{Y} \not\subseteq Y_i (i = 1, 2).$$
+  \begin{enumerate}
+  \item[(a)]
+  $Y \subseteq \overline{Y} \subseteq Y_1 \cup Y_2$.
+  \item[(b)]
+  $Y\not\subseteq Y_i (i = 1, 2)$. If not, $Y \subseteq Y_i$ for some $i$.
+  Take closure to get $\overline{Y} \subseteq \overline{Y_i} = Y_i$ (since $Y_i$ is closed),
+  contrary to the assumption.
+  \end{enumerate}
+  By (a)(b), $Y$ is reducible, which is absurd.
+\end{enumerate}
+$\Box$ \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
