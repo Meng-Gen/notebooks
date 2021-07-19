@@ -13,7 +13,7 @@
 
 
 
-\title{\textbf{Solutions to the book: \\\emph{J\"{u}rgen Neukirch, Algebraic Number Theory}}}
+\title{\textbf{Notes on the book: \\\emph{J\"{u}rgen Neukirch, Algebraic Number Theory}}}
 \author{Meng-Gen Tsai \\ plover@gmail.com}
 
 
@@ -627,6 +627,56 @@ if and only if the quotient $\mathbb{R}^n/\Gamma$ is compact.} \\
   \]
   (otherwise $V/V_0$ is unbounded).
   Hence $V_0 = V$ or $\Gamma$ is complete.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise I.4.2.}
+\addcontentsline{toc}{subsubsection}{Exercise I.4.2.}
+\emph{Show that Minkowski's lattice point theorem cannot be improved,
+by giving an example of a centrally symmetric convex set $X \subset V$ such that
+$\mathrm{vol}(X) = 2^n \mathrm{vol}(\Gamma)$
+which does not contain any nonzero point of the lattice $\Gamma$.
+If $X$ is compact, however,
+then the statement $\mathrm{vol}(X) > 2^n \mathrm{vol}(\Gamma)$ does remain true
+in the case of equality.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $V = \mathbb{R}^n$, $\Gamma = \mathbb{Z}^n$ be a complete lattice in $V$, and
+  $X = (-1,1)^n \subseteq \mathbb{R}^n$ be a centrally symmetric convex set in $V$.
+  Hence $\mathrm{vol}(X) = 2^n \mathrm{vol}(\Gamma)$
+  and $X$ does not contain any nonzero point of $\Gamma$.
+
+\item[(2)]
+  Suppose $X$ is compact.
+  Consider $X_\nu = (1+\frac{1}{m})X$ for each $\nu \in \mathbb{Z}_{> 0}$.
+  Thus $X_\nu$ is again a centrally symmetric convex set in $V$
+  and
+  \begin{align*}
+    \mathrm{vol}(X_\nu)
+    &= \left( 1+\frac{1}{\nu} \right) \mathrm{vol}(X) \\
+    &\geq \left( 1+\frac{1}{\nu} \right) 2^n \mathrm{vol}(\Gamma) \\
+    &> 2^n \mathrm{vol}(\Gamma).
+  \end{align*}
+  Minkowski's lattice point theorem shows that
+  there is one nonzero lattice point $\gamma_\nu \in \Gamma$ for $\nu = 1, 2, 3 \ldots$.
+
+\item[(3)]
+  By the compactness of $X_1$,
+  there is a subsequence of $\{ \gamma_\nu \}$ converging to $\gamma \in X_1$.
+  Since $\Gamma$ is discrete (Proposition I.4.2),
+  there are infinitely many $\nu$ such that $\gamma = \gamma_\nu \in X_\nu$.
+  (In particular, $\gamma \neq 0$.)
+  Hence $\gamma \in X$ by the compactness of $X$.
 \end{enumerate}
 $\Box$ \\\\
 
