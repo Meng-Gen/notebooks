@@ -684,6 +684,96 @@ $\Box$ \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{I.5. Minkowski Theory \\}
+\addcontentsline{toc}{subsection}{I.5. Minkowski Theory}
+
+
+
+\subsubsection*{Exercise I.5.2.}
+\addcontentsline{toc}{subsubsection}{Exercise I.5.2.}
+\emph{Show that the convex, centrally symmetric set
+\[
+  X = \left\{ (z_\tau) \in K_{\mathbb{R}} : \sum_{\tau}|z_\tau| < t \right\}
+\]
+has volume $\mathrm{vol}(X) = 2^r \pi^s \frac{t^n}{n!}$.} \\
+
+
+
+\emph{Proof.}
+  It is the same as Lemma III.2.15.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% http://pi.math.cornell.edu/~dmehrle/notes/cornell/18sp/6370notes.pdf
+
+
+
+\subsubsection*{Exercise I.5.3. (Minkowski bound)}
+\addcontentsline{toc}{subsubsection}{Exercise I.5.3. (Minkowski bound)}
+\emph{Show that in every ideal $\mathfrak{a} \neq 0$ of $\mathcal{O}_K$
+there exists an $a \neq 0$ such that
+\[
+  \abs{ N_{K|\mathbb{Q}}(a) } \leq M (\mathcal{O}_K : \mathfrak{a}),
+\]
+where $M = \frac{n!}{n^n} \left( \frac{4}{\pi} \right)^{s} \sqrt{|d_K|}$
+(the so-called \textbf{Minkowski bound}.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let
+  \[
+    X_t = \left\{ (z_\tau) \in K_{\mathbb{R}} : \sum_{\tau}|z_\tau| \leq t \right\}
+  \]
+  be a convex, centrally symmetric set for any $t > 0$.
+  Note that $\mathrm{vol}(X_t) = 2^r \pi^s \frac{t^n}{n!}$ (same as Exercise I.5.2).
+
+\item[(2)]
+  In particular, we take $t > 0$ so that
+  \[
+    \mathrm{vol}(X_t)
+    = 2^r \pi^s \frac{t^n}{n!}
+    = 2^n \mathrm{vol}(\Gamma).
+  \]
+  Thus the hypothesis of Minkowski's lattice point theorem in Exercise I.4.2
+  is satisfied.
+  So there does indeed exist a lattice point $ja \in X_t$, $a \neq 0$, $a \in \mathfrak{a}$;
+  in other words, $\sum_\tau |\tau a| \leq t$.
+
+\item[(3)]
+  Hence
+  \begin{align*}
+    \abs{ N_{K|\mathbb{Q}}(a) }
+    &= \prod_{\tau} |\tau a| \\
+    &\leq \left( \frac{1}{n} \sum_{\tau}|\tau a| \right)^n
+      &(\text{AM-GM inequality}) \\
+    &\leq \frac{t^n}{n^n}
+      &(ja \in X_t) \\
+    &= \frac{1}{n^n} \frac{n!}{2^r \pi^s} 2^n \mathrm{vol}(\Gamma)
+      &(\text{Definition of $t^n$}) \\
+    &= \frac{1}{n^n} \frac{n!}{2^r \pi^s} 2^n \sqrt{|d_K|} (\mathcal{O}_K : \mathfrak{a})
+      &(\text{Proposition I.5.2}) \\
+    &= \underbrace{\frac{n!}{n^n} \left( \frac{4}{\pi} \right)^{s} \sqrt{|d_K|}}_{:= M}
+      (\mathcal{O}_K : \mathfrak{a}).
+      &(n = r + 2s)
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
