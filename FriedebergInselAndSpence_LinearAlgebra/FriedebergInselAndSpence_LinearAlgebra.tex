@@ -1,0 +1,1344 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Solutions to the book: \\
+\emph{Friedeberg, Insel and Spence, Linear Algebra, 3rd edition}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 1: Vector Spaces \\}
+\addcontentsline{toc}{section}{Chapter 1: Vector Spaces}
+
+
+
+\subsection*{Section 1.2: Vector Spaces \\}
+\addcontentsline{toc}{subsection}{Section 1.2: Vector Spaces}
+
+
+
+\subsubsection*{Exercise 1.2.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2.2.}
+\emph{Write the zero vector of $\mathsf{M}_{3 \times 4}(F)$.} \\
+
+
+
+\emph{Proof.}
+$\begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \in \mathsf{M}_{3 \times 4}(F)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.2.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2.3.}
+\emph{If
+$M =
+  \begin{pmatrix}
+  1 & 2 & 3 \\
+  4 & 5 & 6
+  \end{pmatrix}$
+what are $M_{13}, M_{21}, M_{22}$?} \\
+
+\emph{Proof.}
+Since $M_{ij} = 3(i-1) + j$, $M_{13} = 3$, $M_{21} = 4$ and $M_{22} = 5$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.2.22.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2.22.}
+\emph{How many elements are there in the vector space
+$\mathsf{M}_{m \times n}(\mathbb{Z}/2\mathbb{Z})$?} \\
+
+\emph{Proof.}
+$2^{mn}.$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Section 1.6: Bases and Dimension \\}
+\addcontentsline{toc}{subsection}{Section 1.6: Bases and Dimension}
+
+
+
+\subsubsection*{Exercise 1.6.19.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.6.19.}
+\emph{Let $\mathsf{V}$ be a vector space having dimension $n$,
+and let $S$ be a subset of $\mathsf{V}$ that generates $\mathsf{V}$.
+\begin{enumerate}
+\item[(a)]
+Prove that there is a subset of $S$ that is a basis for $\mathsf{V}$.
+(Be careful not to assume that $S$ is finite.)
+\item[(b)]
+Prove that $S$ contains at least $n$ elements.
+\end{enumerate}}
+
+\emph{Proof of (a).}
+Similar to the argument in Theorem 1.9.
+\begin{enumerate}
+\item[(1)]
+If $S = \varnothing$ or $S = \{0\}$, then $\mathsf{V} = \{0\}$
+and $\varnothing$ is a subset of $S$ that is a basis for $\mathsf{V}$.
+\item[(2)]
+Otherwise $S$ contains a nonzero element $u_1$.
+$\{u_1\}$ is a linearly independent set.
+Continue, if possible, choosing elements $u_2, ..., u_k$ in $S$ such that
+$\{u_1, u_2, ..., u_k\}$ is linearly independent.
+By the Replacement Theorem (Theorem 1.10),
+we must eventually reach a stage at which
+$\beta = \{u_1, u_2, ..., u_k\}$ is a linearly independent subset of $S$
+with $k \leq n$.
+\item[(3)]
+$\beta$ generates $S$ by the construction of $\beta$,
+and $S$ generates $\mathsf{V}$.
+Therefore, $\beta$ generates $\mathsf{V}$
+(and thus $k = n$ by the definition of dimension).
+\end{enumerate}
+Therefore,
+there is a subset of $S$ that is a basis for $\mathsf{V}$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+By (a), there is a subset $\beta \subseteq S$ of size $n$
+that is a basis for $\mathsf{V}$.
+So $S$ contains at least $n$ elements of $\beta$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 2: Linear Transformations and Matrices \\}
+\addcontentsline{toc}{section}{Chapter 2: Linear Transformations and Matrices}
+
+
+
+\subsection*{Section 2.4: Invertibility and Isomorphisms \\}
+\addcontentsline{toc}{subsection}{Section 2.4: Invertibility and Isomorphisms}
+
+
+
+\subsubsection*{Exercise 2.4.8.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.4.8.}
+\emph{Let $A$ and $B$ be $n \times n$ matrices such that $AB = I_n$.
+Prove}
+\begin{enumerate}
+\item[(a)]
+\emph{$A$ and $B$ are invertible.}
+\item[(b)]
+\emph{$A = B^{-1}$ (and hence $B = A^{-1}$).
+(We are in effect saying that for square matrices,
+a ``one-sided'' inverse is a ``two-sided'' inverse.)}
+\item[(c)]
+\emph{State and prove analogous results for linear transformations
+defined on finite-dimensional vector spaces.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Regard $\mathsf{V} = \mathsf{M}_{n \times n}(F)$ as a finite-dimensional vector space over $F$.
+Given $X \in \mathsf{M}_{n \times n}(F)$,
+consider the subset $\mathsf{V}_X$ of $\mathsf{V}$ defined by
+$$\mathsf{V}_X = \{ XY : Y \in \mathsf{M}_{n \times n}(F) \}.$$
+\begin{enumerate}
+\item[(1)]
+$\mathsf{V}_0 = 0$.
+\item[(2)]
+$\mathsf{V}_{I_n} = \mathsf{V}$.
+In general,
+$\mathsf{V}_X = \mathsf{V}$ for any invertible matrix $X \in \mathsf{M}_{n \times n}(F)$.
+\item[(3)]
+$\mathsf{V}_X$ is a subspace of $\mathsf{V}$ for any $X \in \mathsf{M}_{n \times n}(F)$.
+\item[(4)]
+There is a descending sequence of subspaces
+$$\mathsf{V}
+  \supseteq \mathsf{V}_X
+  \supseteq \cdots
+  \supseteq \mathsf{V}_{X^k}
+  \supseteq \cdots
+$$
+This sequence must be stationary since $\mathsf{V}$ is finite-dimensional,
+that is,
+$$\mathsf{V}_{X^k} = \mathsf{V}_{X^{k+1}} = \cdots$$ for some $k$.
+(Descending chain condition.)
+In particular, $B^k = B^{k+1}C$ for some $C \in \mathsf{V}$.
+Multiply with $A^k$ on the left to get $I_n = BC$.
+($A^k B^k = A^{k-1}(AB)B^{k-1} = A^{k-1}B^{k-1} = \cdots = I_n$.)
+\item[(4)]
+Since $AB = I_n$ and $BC  = I_n$,
+$A = AI_n = A(BC) = (AB)C = I_nC = C$,
+or $AB = BA = I_n$.
+By definition of invertibility, $A$ and $B$ are invertible.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+By (a), $A = B^{-1}$ and $B = A^{-1}$.
+$\Box$ \\
+
+\emph{Proof of (c).}
+\emph{Let $\mathsf{V}$ be a finite-dimensional vector space,
+and let $\mathsf{S}, \mathsf{T}: \mathsf{V} \to \mathsf{V}$ be linear
+such that $\mathsf{S}\mathsf{T}$ is invertible.
+Show that $\mathsf{S}$ and $\mathsf{T}$ are invertible.}
+Let
+$$\beta = \{ \beta_1, ..., \beta_n \}$$
+be an ordered basis for $\mathsf{V}$ where $n = \dim(\mathsf{V})$.
+Let $A = [\mathsf{S}]_\beta$ and $B = [\mathsf{T}]_\beta$.
+So
+$$AB
+= [\mathsf{S}]_\beta [\mathsf{T}]_\beta
+= [\mathsf{S} \mathsf{T}]_\beta
+= [\mathsf{I}_{\mathsf{V}} ]_\beta = I_n$$ (Theorem 2.11).
+By (a), $A = [\mathsf{S}]_\beta$ and $B = [\mathsf{T}]_\beta$ are invertible,
+or $\mathsf{S}$ and $\mathsf{T}$ are invertible (Theorem 2.18).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Section 2.7: Homogeneous Linear Differential Equations
+with Constant Coefficients \\}
+\addcontentsline{toc}{subsection}{Section 2.7: Homogeneous Linear Differential Equations
+with Constant Coefficients}
+
+
+
+\subsubsection*{Exercise 2.7.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.7.3.}
+\emph{Find a basis for the solution space of each of the following differential
+equations}
+\begin{enumerate}
+\item[(a)]
+$y''+2y'+y = 0$
+\item[(b)]
+$y'''=y'$
+\item[(c)]
+$y^{(4)} - 2y^{(2)} + y = 0$
+\item[(d)]
+$y''+2y'+y = 0$
+\item[(e)]
+$y^{(3)} - y^{(2)} + 3y^{(1)} + 5y = 0$. \\
+\end{enumerate}
+
+Use Theorem 2.35. \\
+
+\emph{Proof of (a).}
+The auxiliary polynomial is $t^2+ty+1 = (t+1)^2$.
+$\{ e^{-t}, te^{-t} \}$ is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (b).}
+The auxiliary polynomial is $t^3-t = t(t-1)(t+1)$.
+$\{ 1, e^{t}, e^{-t} \}$ is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (c).}
+The auxiliary polynomial is $t^4-2t^2+1 = (t-1)^2(t+1)^2$.
+$\{ e^{t}, te^{t}, e^{-t}, te^{-t} \}$ is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (d).}
+Same as (a).
+$\Box$ \\
+
+\emph{Proof of (e).}
+The auxiliary polynomial is $$t^3-t^2+3t+5 = (t+1)(t-1-2i)(t-1+2i).$$
+$\{ e^{-t}, e^{(1+2i)t}, e^{(1-2i)t} \}$,
+or $\{ e^{-t}, e^{t}\cos(2t), e^{t}\sin(2t) \}$
+is a basis for the solution space.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.7.4.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.7.4.}
+\emph{Find a basis for each of the following subspaces of $\mathsf{C}^{\infty}$.}
+\begin{enumerate}
+\item[(a)]
+$\mathsf{N}(\mathsf{D}^2-\mathsf{D}-\mathsf{I})$
+\item[(b)]
+$\mathsf{N}(\mathsf{D}^3-3\mathsf{D}^2+3\mathsf{D}-\mathsf{I})$
+\item[(c)]
+$\mathsf{N}(\mathsf{D}^3-6\mathsf{D}^2-8\mathsf{D})$ \\
+\end{enumerate}
+
+Use Theorem 2.35. \\
+
+\emph{Proof of (a).}
+The auxiliary polynomial is
+$$t^2-t-1 = \left(t-\frac{1+\sqrt{5}}{2}\right)\left(t-\frac{1-\sqrt{5}}{2}\right).$$
+$\left\{ e^{\frac{1+\sqrt{5}}{2}t}, e^{\frac{1-\sqrt{5}}{2}t} \right\}$
+is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (b).}
+The auxiliary polynomial is
+$t^3-3t^2+3t-1 = (t-1)^3.$
+$\{ e^{t}, te^{t}, t^2e^{t} \}$
+is a basis for the solution space.
+$\Box$ \\
+
+\emph{Proof of (c).}
+The auxiliary polynomial is
+$t^3+6t^2+8t = t(t+2)(t+4).$
+$\{ 1, e^{-2t}, e^{-4t} \}$
+is a basis for the solution space.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.7.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.7.5.}
+\emph{Show that $\mathsf{C}^{\infty}$ is a subspace of
+$\mathcal{F}(\mathbb{R}, \mathbb{C})$. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$0 \in \mathcal{F}(\mathbb{R}, \mathbb{C})$ clearly.
+\item[(2)]
+Given any $f, g \in \mathsf{C}^{\infty}$.
+For any nonnegative $k$,
+$\mathsf{D}^k(f+g) = \mathsf{D}^k(f) + \mathsf{D}^k(g)$ holds.
+Thus $f+g \in \mathsf{C}^{\infty}$.
+\item[(3)]
+Given any $f \in \mathcal{F}(\mathbb{R}, \mathbb{C})$, $r \in \mathbb{C}$.
+For any nonnegative $k$,
+$\mathsf{D}^k(cf) = c\mathsf{D}^k(f)$ holds.
+Thus $cf \in \mathsf{C}^{\infty}$.
+\end{enumerate}
+By Theorem 1.3, $\mathsf{C}^{\infty}$ is a subspace.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 4: Determinants \\}
+\addcontentsline{toc}{section}{Chapter 4: Determinants}
+
+
+
+\subsection*{Section 4.1: Determinants of Order $2$ \\}
+\addcontentsline{toc}{subsection}{Section 4.1: Determinants of Order $2$}
+
+
+
+\subsubsection*{Exercise 4.1.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.1.}
+\emph{Label the following statements as being true or false.}
+\begin{enumerate}
+\item[(a)]
+\emph{The function $\det: \mathsf{M}_{2 \times 2}(F) \to F$
+is a linear transformation.}
+\item[(b)]
+\emph{The determinant of a $2 \times 2$ matrix is a linear function of each row
+of the matrix when the other row is held fixed.}
+\item[(c)]
+\emph{If $A \in \mathsf{M}_{2 \times 2}(F)$ and $\det(A) = 0$, then $A$ is invertible.}
+\item[(d)]
+\emph{If $u$ and $v$ are vectors in $\mathbb{R}^2$ emanating from the origin,
+then the area of the parallelogram having $u$ and $v$ as adjacent side is
+$$\det\begin{pmatrix} u \\ v \end{pmatrix}.$$}
+\item[(e)]
+\emph{A coordinate system is right-handed if and only if its orientation equals $1$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+False. Example 4.1.1, or
+take
+$$A =
+\begin{pmatrix}
+1 & 0 \\
+0 & 0
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F) \text{ and }
+B =
+\begin{pmatrix}
+0 & 0 \\
+0 & 1
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F).
+$$
+Then $\det(A+B) = \det(I_2) = 1 \neq 0 = 0 + 0 = \det(A) + \det(B)$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+True. Proposition 4.1.
+$\Box$ \\
+
+\emph{Proof of (c).}
+False. Proposition 4.2.
+$\Box$ \\
+
+\emph{Proof of (d).}
+False. The area should be
+$$O\begin{pmatrix} u \\ v \end{pmatrix}
+\cdot
+\det\begin{pmatrix} u \\ v \end{pmatrix}
+= \abs{\det\begin{pmatrix} u \\ v \end{pmatrix}}.$$
+$\Box$ \\
+
+\emph{Proof of (e).}
+True. See Exercise 4.1.12.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.2.}
+\emph{Compute the determinants of the following elements of
+$\mathsf{M}_{2 \times 2}(\mathbb{R})$.
+\begin{enumerate}
+\item[(a)]
+$\begin{pmatrix}
+6 & -3 \\
+2 & 4
+\end{pmatrix}$ \\
+\item[(b)]
+$\begin{pmatrix}
+-5 & 2 \\
+6 & 1
+\end{pmatrix}$ \\
+\item[(c)]
+$\begin{pmatrix}
+8 & 0 \\
+3 & -1
+\end{pmatrix}$ \\
+\end{enumerate}}
+
+\emph{Proof of (a).}
+$$\det\begin{pmatrix}
+6 & -3 \\
+2 & 4
+\end{pmatrix}
+= 6 \cdot 4 - (-3) \cdot 2 = 24 + 6 = 30.$$
+$\Box$ \\
+
+\emph{Proof of (b).}
+$$\det\begin{pmatrix}
+-5 & 2 \\
+6 & 1
+\end{pmatrix}
+= (-5) \cdot 1 - 2 \cdot 6 = -5 - 12 = -17.$$
+$\Box$ \\
+
+\emph{Proof of (c).}
+$$\det\begin{pmatrix}
+8 & 0 \\
+3 & -1
+\end{pmatrix}
+= 8 \cdot (-1) - 0 \cdot 3 = -8.$$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.3.}
+\emph{Compute the determinants of the following elements of
+$\mathsf{M}_{2 \times 2}(\mathbb{C})$.
+\begin{enumerate}
+\item[(a)]
+$\begin{pmatrix}
+-1+i & 1-4i \\
+3+2i & 2-3i
+\end{pmatrix}$
+\item[(b)]
+$\begin{pmatrix}
+5-2i & 6+4i \\
+-3+i & 7i
+\end{pmatrix}$
+\item[(c)]
+$\begin{pmatrix}
+2i & 3 \\
+4 & 6i
+\end{pmatrix}$ \\
+\end{enumerate}}
+
+\emph{Proof of (a).}
+\begin{align*}
+\det\begin{pmatrix}
+-1+i & 1-4i \\
+3+2i & 2-3i
+\end{pmatrix}
+&= (-1+i) \cdot (2-3i) - (1-4i) \cdot (3+2i) \\
+&= (1+5i) - (11-10i) \\
+&= -10+15i.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+\det\begin{pmatrix}
+5-2i & 6+4i \\
+-3+i & 7i
+\end{pmatrix}
+&= (5-2i) \cdot (7i) - (6+4i) \cdot (-3+i) \\
+&= (14+35i) - (-22-6i) \\
+&= 36+41i.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+$$\det\begin{pmatrix}
+2i & 3 \\
+4 & 6i
+\end{pmatrix}
+= (2i) \cdot (6i) - 3 \cdot 4 = -12 - 12 = -24.$$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.4.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.4.}
+\emph{For each of the following pairs of vectors $u$ and $v$ in $\mathbb{R}^2$,
+compute the area of the parallelogram determined by $u$ and $v$.}
+\begin{enumerate}
+\item[(a)]
+\emph{$u = (3,-2)$ and $v=(2,5)$}
+\item[(b)]
+\emph{$u = (1,3)$ and $v=(-3,1)$}
+\item[(c)]
+\emph{$u = (4,-1)$ and $v=(-6,-2)$}
+\item[(d)]
+\emph{$u = (3,4)$ and $v=(2,-6)$} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+$$\abs{\det\begin{pmatrix} 3 & -2 \\ 2 & 5 \end{pmatrix}}
+= \abs{19} = 19.$$
+$\Box$ \\
+
+\emph{Proof of (b).}
+$$\abs{\det\begin{pmatrix} 1 & 3 \\ -3 & 1 \end{pmatrix}}
+= \abs{10} = 10.$$
+$\Box$ \\
+
+\emph{Proof of (c).}
+$$\abs{\det\begin{pmatrix} 4 & -1 \\ -6 & -2 \end{pmatrix}}
+= \abs{-14} = 14.$$
+$\Box$ \\
+
+\emph{Proof of (d).}
+$$\abs{\det\begin{pmatrix} 3 & 4 \\ 2 & -6 \end{pmatrix}}
+= \abs{-26} = 26.$$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.5.}
+\emph{Prove that if $B$ is the matrix obtained by interchanging the rows
+of a $2 \times 2$ matrix $A$,
+then $\det(B) = -\det(A)$.} \\
+
+\emph{Proof.}
+Write
+$$A =
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F).$$
+Then
+$$B =
+\begin{pmatrix}
+c & d \\
+a & b
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F).$$
+
+Then $\det(B) = cb - ad = -(ad - bc) = -\det(A)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.6.}
+\emph{Prove that if the two columns of $A \in \mathsf{M}_{2 \times 2}(F)$
+are identical, then $\det(A) = 0$.} \\
+
+\emph{Proof.}
+By assumption, write
+$$A =
+\begin{pmatrix}
+a & a \\
+c & c
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F).$$
+Then $\det(A) = ac - ac = 0$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.7.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.7.}
+\emph{Prove that for any $A \in \mathsf{M}_{2 \times 2}(F)$,
+$\det(A^t) = \det(A)$.} \\
+
+\emph{Proof.}
+Write
+$$A =
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F),$$
+then
+$$A^t =
+\begin{pmatrix}
+a & c \\
+b & d
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F).$$
+So $\det(A) = ad - bc = ad - cb = \det(A^t)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.8.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.8.}
+\emph{Prove that if $A \in \mathsf{M}_{2 \times 2}(F)$ is upper triangular,
+then $\det(A)$ equals the product of the diagonal entries of $A$.} \\
+
+\emph{Proof.}
+Write
+$$A =
+\begin{pmatrix}
+a & b \\
+0 & d
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F)$$
+since $A$ is upper triangular.
+Then $\det(A) = ad$, which is equal to the product of the diagonal entries,
+$a$ and $d$, of $A$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.9.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.9.}
+\emph{Prove that for any $A, B \in \mathsf{M}_{2 \times 2}(F)$
+we have $\det(AB) = \det(A) \cdot \det(B)$.} \\
+
+\emph{Proof.}
+Write
+\begin{align*}
+  A =
+  \begin{pmatrix}
+  a & b \\
+  c & d
+  \end{pmatrix} \in \mathsf{M}_{2 \times 2}(F), \\
+  B =
+  \begin{pmatrix}
+  e & f \\
+  g & h
+  \end{pmatrix} \in \mathsf{M}_{2 \times 2}(F).
+\end{align*}
+Then
+$$AB =
+\begin{pmatrix}
+ae + bg & af + bh \\
+ce + dg & cf + dh
+\end{pmatrix} \in \mathsf{M}_{2 \times 2}(F).$$
+A direct calculation shows
+\begin{align*}
+\det(AB)
+&= (ae + bg)(cf + dh) - (af + bh)(ce + dg) \\
+&= (acef + adeh + bcfg + bdgh) - (acef + adfg + bceh + bdgh) \\
+&= adeh + bcfg - adfg - bceh \\
+&= (ad - bc)(eh - fg) \\
+&= \det(A)\det(B).
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.10.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.10.}
+\emph{The \textbf{classical adjoint} of a $2 \times 2$ matrix
+$A \in \mathsf{M}_{2 \times 2}(F)$ is the matrix
+$$C =
+\begin{pmatrix}
+A_{22} & -A_{12} \\
+-A_{21} & A_{11}
+\end{pmatrix}.$$
+Prove
+\begin{enumerate}
+\item[(a)]
+$CA = AC = [\det(A)]I$.
+\item[(b)]
+$\det(C) = \det(A)$.
+\item[(c)]
+The classical adjoint of $A^t$ is $C^t$.
+\item[(d)]
+If $A$ is invertible, then $A^{-1} = [\det(A)]^{-1}C$. \\
+\end{enumerate}}
+
+Note that
+$$A =
+\begin{pmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22}
+\end{pmatrix}.$$ \\
+
+\emph{Proof of (a).}
+\begin{align*}
+  CA
+  &=
+    \begin{pmatrix}
+    A_{22} & -A_{12} \\
+    -A_{21} & A_{11}
+    \end{pmatrix}
+    \begin{pmatrix}
+    A_{11} & A_{12} \\
+    A_{21} & A_{22}
+    \end{pmatrix} \\
+  &=
+    \begin{pmatrix}
+    A_{22}A_{11}-A_{12}A_{21}& A_{22}A_{12}-A_{12}A_{22} \\
+    -A_{21}A_{11}+A_{11}A_{21} & -A_{21}A_{12}+A_{11}A_{22}
+    \end{pmatrix} \\
+  &=
+    \begin{pmatrix}
+    \det(A) & 0 \\
+    0 & \det(A)
+    \end{pmatrix} \\
+  &= [\det(A)]I.
+\end{align*}
+\begin{align*}
+  AC
+  &=
+    \begin{pmatrix}
+    A_{11} & A_{12} \\
+    A_{21} & A_{22}
+    \end{pmatrix}
+    \begin{pmatrix}
+    A_{22} & -A_{12} \\
+    -A_{21} & A_{11}
+    \end{pmatrix} \\
+  &=
+    \begin{pmatrix}
+    A_{11}A_{22}-A_{12}A_{21}& -A_{11}A_{12}+A_{12}A_{11} \\
+    A_{21}A_{22}-A_{22}A_{21} & -A_{21}A_{12}+A_{22}A_{11}
+    \end{pmatrix} \\
+  &=
+    \begin{pmatrix}
+    \det(A) & 0 \\
+    0 & \det(A)
+    \end{pmatrix} \\
+  &= [\det(A)]I.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+\det(C)
+&= A_{22}A_{11} - (-A_{12})(-A_{21}) \\
+&= A_{11}A_{22} - A_{12}A_{21} \\
+&= \det(A).
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+$$A^t =
+\begin{pmatrix}
+A_{11} & A_{21} \\
+A_{12} & A_{22}
+\end{pmatrix}.$$
+The classical adjoint of $A^t$ is
+$$
+\begin{pmatrix}
+A_{22} & -A_{21} \\
+-A_{12} & A_{11}
+\end{pmatrix} = C^t.$$
+$\Box$ \\
+
+\emph{Proof of (d).}
+Proposition 4.2.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.11.}
+\emph{Let $\delta: \mathsf{M}_{2 \times 2}(F) \to F$
+be a function with the following three properties.}
+\begin{enumerate}
+\item[(i)]
+\emph{$\delta$ is a linear function of each row of the matrix when the other row
+is held fixed.}
+\item[(ii)]
+\emph{If the two rows of $A \in \mathsf{M}_{2 \times 2}(F)$ are identical,
+then $\delta(A) = 0$.}
+\item[(iii)]
+\emph{If $I$ is the $2 \times 2$ identity matrix, then $\delta(I) = 1$.}
+\end{enumerate}
+\emph{Prove that $\delta(A) = \det(A)$ for all $A \in \mathsf{M}_{2 \times 2}(F)$.
+(This result is generalized in Section 4.5.)} \\
+
+\emph{Proof.}
+Write
+$$A =
+\begin{pmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22}
+\end{pmatrix}.$$
+
+\begin{enumerate}
+\item[(1)]
+\emph{If $u, v$ are elements of $F^2$ and $k$ is a scalar, then
+$$\delta\begin{pmatrix} u \\ v + ku \end{pmatrix}
+= \delta\begin{pmatrix} u + kv \\ v \end{pmatrix}
+= \delta\begin{pmatrix} u \\ v \end{pmatrix}.$$}
+In fact,
+\begin{align*}
+\delta\begin{pmatrix} u \\ v + ku \end{pmatrix}
+&= \delta\begin{pmatrix} u \\ v \end{pmatrix}
+   + \delta\begin{pmatrix} u \\ ku \end{pmatrix}
+  &\text{(Property (i))} \\
+&= \delta\begin{pmatrix} u \\ v \end{pmatrix}
+   + k \delta\begin{pmatrix} u \\ u \end{pmatrix}
+  &\text{(Property (i))} \\
+&= \delta\begin{pmatrix} u \\ v \end{pmatrix}.
+  &\text{(Property (ii))}
+\end{align*}
+Similarly,
+$\delta\begin{pmatrix} u + kv \\ v \end{pmatrix}
+= \delta\begin{pmatrix} u \\ v \end{pmatrix}$.
+\item[(2)]
+\emph{If $u, v$ are elements of $F^2$, then
+$$\delta\begin{pmatrix} u \\ v  \end{pmatrix}
+= -\delta\begin{pmatrix} v \\ u \end{pmatrix}.$$}
+In fact,
+\begin{align*}
+0
+&= \delta\begin{pmatrix} u+v \\ u+v \end{pmatrix}
+  &\text{(Property (ii))} \\
+&= \delta\begin{pmatrix} u+v \\ u \end{pmatrix}
+   + \delta\begin{pmatrix} u+v \\ v \end{pmatrix}
+  &\text{(Property (i))} \\
+&= \delta\begin{pmatrix} v \\ u \end{pmatrix}
+   + \delta\begin{pmatrix} u \\ v \end{pmatrix}.
+  &\text{((1))}
+\end{align*}
+\item[(3)]
+\emph{If $v$ is an element of $F^2$, then
+$$\delta\begin{pmatrix} 0 \\ v \end{pmatrix} = 0.$$}
+In fact,
+\begin{align*}
+\delta\begin{pmatrix} 0 \\ v \end{pmatrix}
+&= \delta\begin{pmatrix} 0+0 \\ v \end{pmatrix} \\
+&= \delta\begin{pmatrix} 0 \\ v \end{pmatrix}
+   + \delta\begin{pmatrix} 0 \\ v \end{pmatrix}.
+  &\text{(Property (i))}
+\end{align*}
+In particular,
+$\delta\begin{pmatrix} 0 \\ v \end{pmatrix} = 0
+= \det\begin{pmatrix} 0 \\ v \end{pmatrix}$.
+\item[(4)]
+To show $\delta(A) = \det(A)$,
+we consider three possible cases about the first row:
+$A_{11} \neq 0$, $A_{12} \neq 0$, or $A_{11} = A_{12} = 0$.
+The case $A_{11} = A_{12} = 0$ is proved in (3).
+We prove the rest two cases in (5) and (6).
+Write
+$$u = (A_{11}, A_{12}) \text{ and } v = (A_{21}, A_{22}).$$
+\item[(5)]
+\emph{Show that $\delta(A) = \det(A)$ if $A_{11} \neq 0$.}
+So
+\begin{align*}
+\delta(A)
+&= \delta\begin{pmatrix} u \\ v \end{pmatrix} \\
+&= \delta\begin{pmatrix} u \\ v - \frac{A_{21}}{A_{11}} u \end{pmatrix}
+  &\text{((1))} \\
+&= \delta\begin{pmatrix}
+    A_{11} & A_{12} \\
+    0 & A_{22}-\frac{A_{12}A_{21}}{A_{11}}
+  \end{pmatrix} \\
+&= \left( A_{22}-\frac{A_{12}A_{21}}{A_{11}} \right)
+  \delta\begin{pmatrix}
+    A_{11} & A_{12} \\
+    0 & 1
+  \end{pmatrix}
+  &\text{(Property (i))} \\
+&= \left( A_{22}-\frac{A_{12}A_{21}}{A_{11}} \right)
+  \delta\begin{pmatrix}
+    A_{11} & 0 \\
+    0 & 1
+  \end{pmatrix}
+  &\text{((1))} \\
+&= A_{11}\left( A_{22}-\frac{A_{12}A_{21}}{A_{11}} \right)
+  \delta\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}
+  &\text{(Property (i))} \\
+&= \det(A)\delta(I) \\
+&= \det(A).
+  &\text{(Property (iii))}
+\end{align*}
+\item[(6)]
+\emph{Show that $\delta(A) = \det(A)$ if $A_{12} \neq 0$.}
+So
+\begin{align*}
+\delta(A)
+&= \delta\begin{pmatrix} u \\ v \end{pmatrix} \\
+&= \delta\begin{pmatrix} u \\ v - \frac{A_{22}}{A_{12}} u \end{pmatrix}
+  &\text{((1))} \\
+&= \delta\begin{pmatrix}
+    A_{11} & A_{12} \\
+    A_{21}-\frac{A_{22}A_{11}}{A_{12}} & 0
+  \end{pmatrix} \\
+&= \left( A_{21}-\frac{A_{22}A_{11}}{A_{12}} \right)
+  \delta\begin{pmatrix}
+    A_{11} & A_{12} \\
+    1 & 0
+  \end{pmatrix}
+  &\text{(Property (i))} \\
+&= \left( A_{21}-\frac{A_{22}A_{11}}{A_{12}} \right)
+  \delta\begin{pmatrix}
+    0 & A_{12} \\
+    1 & 0
+  \end{pmatrix}
+  &\text{((1))} \\
+&= A_{12}\left( A_{21}-\frac{A_{22}A_{11}}{A_{12}} \right)
+  \delta\begin{pmatrix}
+    0 & 1 \\
+    1 & 0
+  \end{pmatrix}
+  &\text{(Property (i))} \\
+&= -A_{12}\left( A_{21}-\frac{A_{22}A_{11}}{A_{12}} \right)
+  \delta\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}
+  &\text{((2))} \\
+&= \det(A)\delta(I) \\
+&= \det(A).
+  &\text{(Property (iii))}
+\end{align*}
+
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.1.12.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.1.12.}
+\emph{Let $\{ u, v \}$ be an ordered basis for $\mathbb{R}^2$.
+Prove that
+$$O\begin{pmatrix} u \\ v \end{pmatrix} = 1$$
+if and only if $\{ u, v \}$ forms a right-handed coordinate system.
+(Hint: Recall the definition of a rotation given in Example 2.1.2.)} \\
+
+If $\beta = \{ u, v \}$ is an ordered basis for $\mathbb{R}^2$,
+define the orientation of $\beta$ as
+$$O\begin{pmatrix} u \\ v \end{pmatrix}
+= \frac
+{\det\begin{pmatrix} u \\ v \end{pmatrix}}
+{\abs{\det\begin{pmatrix} u \\ v \end{pmatrix}}}.$$ \\
+
+A coordinate system $\{ u, v \}$ is called right-handed if
+$u$ can be rotated in a counterclockwise direction through an angle $\theta$
+$(0 < \theta < \pi)$ to coincide with $v$. \\
+
+\textbf{Example 2.1.2.}
+For any angle $\theta$, define
+$\mathsf{T}_{\theta}: \mathbb{R}^2 \to \mathbb{R}^2$ by
+$$\mathsf{T}_{\theta}(a_1, a_2)
+= (a_1 \cos\theta - a_2\sin\theta, a_1\sin\theta + a_2\cos\theta).$$
+$\mathsf{T}_{\theta}$ is called the rotation by $\theta$.\\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+By Example 2.1.2, for any coordinate system $\{ u, v \}$,
+there is $0 < \theta < 2\pi$ and $\alpha > 0$ such that
+$v = \alpha \mathsf{T}_{\theta}(u)$.
+Write $u = (u_1, u_2) \in \mathbb{R}^2, v = (v_1, v_2) \in \mathbb{R}^2$.
+\item[(2)]
+Calculate $\det\begin{pmatrix} u \\ v \end{pmatrix}$.
+\begin{align*}
+\det\begin{pmatrix} u \\ v \end{pmatrix}
+&= \det\begin{pmatrix} u \\ \alpha \mathsf{T}_{\theta}(u) \end{pmatrix} \\
+&= \alpha \det\begin{pmatrix} u \\ \mathsf{T}_{\theta}(u) \end{pmatrix} \\
+&= \alpha \det\begin{pmatrix}
+  u_1 & u_2 \\
+  u_1\cos\theta-u_2\sin\theta & u_1\sin\theta+u_2\cos\theta \end{pmatrix} \\
+&= \alpha(u_1^2 + u_2^2) \sin\theta.
+\end{align*}
+\item[(3)]
+\begin{align*}
+O\begin{pmatrix} u \\ v \end{pmatrix} = 1
+&\Longleftrightarrow
+\det\begin{pmatrix} u \\ v \end{pmatrix} = \alpha(u_1^2 + u_2^2) \sin\theta > 0 \\
+&\Longleftrightarrow
+\sin\theta > 0 \\
+&\Longleftrightarrow
+0 < \theta < \pi \\
+&\Longleftrightarrow
+\{ u, v \} \text{ is a right-handed coordinate system}.
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Section 4.2: Determinants of Order $n$ \\}
+\addcontentsline{toc}{subsection}{Section 4.2: Determinants of Order $n$}
+
+
+
+\subsubsection*{Exercise 4.2.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.2.2.}
+\emph{Find the value of $k$ that satisfies the following equation.
+$$\det
+  \begin{pmatrix}
+    3a_1 & 3a_2 & 3a_3 \\
+    3b_1 & 3b_2 & 3b_3 \\
+    3c_1 & 3c_2 & 3c_3
+  \end{pmatrix}
+= k\det
+  \begin{pmatrix}
+    a_1 & a_2 & a_3 \\
+    b_1 & b_2 & b_3 \\
+    c_1 & c_2 & c_3
+  \end{pmatrix}$$} \\
+
+\emph{Proof (Exercise 4.2.25).}
+By Exercise 4.2.25,
+$\det(3A) = 3^3 \det(A)$ for any $A \in \mathsf{M}_{3 \times 3}(F)$,
+or $k = 3^3 = 27$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.2.26.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.2.26.}
+\emph{Let $A \in \mathsf{M}_{n \times n}(F)$.
+Under what conditions is $\det(-A) = \det(A)$?} \\
+
+\emph{Proof (Exercise 4.2.25).}
+By Exercise 4.2.25,
+$\det(-A) = (-1)^n \det(A)$ for any $A \in \mathsf{M}_{n \times n}(F)$.
+That is, $n$ is even if and only if $\det(-A) = \det(A)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Section 4.3: Properties of Determinants \\}
+\addcontentsline{toc}{subsection}{Section 4.3: Properties of Determinants}
+
+
+
+\subsubsection*{Exercise 4.3.9.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.3.9.}
+\emph{A matrix $M \in \mathsf{M}_{n \times n}(\mathbb{C})$
+is called nilpotent if,
+for some positive integer $k$, $M^k = O$, where $O$ is the $n \times n$ zero matrix.
+Prove that if $M$ is nilpotent, then $\det(M) = 0$.} \\
+
+\emph{Proof.}
+Given any nilpotent matrix $M \in \mathsf{M}_{n \times n}(\mathbb{C})$
+such that $M^k = O$ for some $k \in \mathbb{Z}^+$.
+\begin{align*}
+M^k = O
+&\Longrightarrow
+\det(M^k) = \det(O) \\
+&\Longleftrightarrow
+\det(M)^k = 0
+  &\text{(Theorem 4.7)} \\
+&\Longleftrightarrow
+\det(M) = 0.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.3.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.3.11.}
+\emph{A matrix $Q \in \mathsf{M}_{n \times n}(\mathbb{R})$
+is called orthogonal if $QQ^t = I$.
+Prove that if $Q$ is orthogonal, then $\det(Q) = \pm 1$.} \\
+
+\emph{Proof.}
+By the orthogonality of $Q$, $QQ^t = I$. So
+\begin{align*}
+QQ^t = I
+&\Longrightarrow
+\det(QQ^t) = \det(I) \\
+&\Longleftrightarrow
+\det(Q)\det(Q^t) = \det(I)
+  &\text{(Theorem 4.7)} \\
+&\Longleftrightarrow
+\det(Q)\det(Q) = \det(I)
+  &\text{(Theorem 4.8)} \\
+&\Longleftrightarrow
+\det(Q)^2 = 1
+  &\text{(Example 4.2.4)} \\
+&\Longleftrightarrow
+\det(Q) = \pm 1.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.3.14.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.3.14.}
+\emph{Prove that if $A, B \in \mathsf{M}_{n \times n}(F)$
+are similar, then $\det(A) = \det(B)$.} \\
+
+\emph{Proof.}
+Since $A, B$ are similar, there exists an invertible matrix $Q$
+such that $B = Q^{-1}AQ$.
+So
+\begin{align*}
+\det(B)
+&= \det(Q^{-1}AQ) \\
+&= \det(Q^{-1})\det(A)\det(Q)
+  &\text{(Theorem 4.7)} \\
+&= \det(Q)\det(Q^{-1})\det(A)
+  &\text{($F$ is field)} \\
+&= \det(Q Q^{-1})\det(A)
+  &\text{(Theorem 4.7)} \\
+&= \det(I)\det(A) \\
+&= 1 \cdot \det(A)
+  &\text{(Example 4.2.4)} \\
+&= \det(A).
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 6: Inner Product Spaces \\}
+\addcontentsline{toc}{section}{Chapter 6: Inner Product Spaces}
+
+
+
+\subsection*{Section 6.1: Inner Products and Norms \\}
+\addcontentsline{toc}{subsection}{Section 6.1: Inner Products and Norms}
+
+
+
+\subsubsection*{Exercise 6.1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 6.1.6.}
+\emph{Complete the proof of Theorem 6.1.} \\
+
+\textbf{Theorem 6.1}
+\emph{Let $\mathsf{V}$ be an inner product space.
+Then for $x, y, z, \in \mathsf{V}$ and $c \in F$
+\begin{enumerate}
+\item[(a)]
+$\langle x, y+z \rangle = \langle x, y \rangle + \langle x, z \rangle$,
+\item[(b)]
+$\langle x, cy \rangle = \overline{c} \langle x, y \rangle$,
+\item[(c)]
+$\langle x, x \rangle = 0$ if and only if $x = 0$,
+\item[(d)]
+if $\langle x, y \rangle = \langle x, z \rangle$ for all $x \in \mathsf{V}$,
+then $y = z$.
+\end{enumerate}}
+
+\emph{Proof of (a).}
+\begin{align*}
+\langle x, y+z \rangle
+&= \overline{\langle y+z, x \rangle} \\
+&= \overline{\langle y, x \rangle + \langle z, x \rangle} \\
+&= \overline{\langle y, x \rangle} + \overline{\langle z, x \rangle} \\
+&= \langle x, y \rangle + \langle x, z \rangle.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+\langle x, cy \rangle
+&= \overline{\langle cy, x \rangle} \\
+&= \overline{c \langle y, x \rangle} \\
+&= \overline{c} \overline{\langle y, x \rangle} \\
+&= \overline{c} \langle x, y \rangle.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+If $x$ were nonzero, by the definition of the inner product,
+$\langle x, x \rangle > 0$, contrary to the assumption.
+Hence $x = 0$.
+\item[(2)]
+$(\Longleftarrow)$
+Since $0 = 0+0$,
+$\langle 0,0 \rangle = \langle 0+0,0 \rangle = \langle 0,0 \rangle + \langle 0,0 \rangle.$
+Thus $\langle 0,0 \rangle = 0$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{align*}
+  \langle x,y \rangle = \langle x,z \rangle \:\: \forall x \in \mathsf{V}
+  &\Longleftrightarrow
+  0 = \langle x,y \rangle - \langle x,z \rangle \:\: \forall x \in \mathsf{V} \\
+  &\Longleftrightarrow
+  0 = \langle x,y-z \rangle \:\: \forall x \in \mathsf{V}
+    &\text{((a))} \\
+  &\Longrightarrow
+  0 = \langle y-z,y-z \rangle
+    &\text{(Take $x=y-z \in \mathsf{V}$)} \\
+  &\Longleftrightarrow
+  y-z = 0
+    &\text{((c))} \\
+  &\Longleftrightarrow
+  y = z.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
