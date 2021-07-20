@@ -1,0 +1,319 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Solutions to the book: \\ \emph{Ira N. Levine, Quantum Chemistry, 5th edition}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 1: The Schr\"odinger Equation \\}
+\addcontentsline{toc}{section}{Chapter 1: The Schr\"odinger Equation}
+
+
+
+\subsubsection*{Problem 1.1.}
+\addcontentsline{toc}{subsubsection}{Problem 1.1.}
+\begin{enumerate}
+\item[(a)]
+\emph{Calculate the energy of one photon of infrared radiation whose wavelength
+is $1064$ nm.}
+\item[(b)]
+\emph{An Nd:YAG laser emits a pulse of $1064$-nm radiation of average power
+$5 \times 10^6 W$ and duration $2 \times 10^{-8}s$.
+Find the number of photons emitted in this pulse. (Recall that $1W = 1J/s$.)}
+\end{enumerate}
+
+\emph{Solution of (a).}
+\begin{align*}
+E_{\text{photon}}
+&= h \nu
+  &\text{(Equation (1.1))} \\
+&= \frac{hc}{\lambda}
+  &\text{(Equation (1.3))} \\
+&= \frac{(6.626 \times 10^{-34}Js)(2.998 \times 10^8 m/s)}{1064 \times 10^{-9} m} \\
+&= 1.867 \times 10^{-19} J.
+\end{align*}
+$\Box$ \\
+
+\emph{Solution of (b).}
+Total energy in one pulse is $E = (5 \times 10^6 W)(2 \times 10^{-8}s) = 0.1J$.
+By (a), the energy of one photon $E_{\text{photon}} = 1.867 \times 10^{-19} J$.
+So the number of photons is
+$$n = \frac{E}{E_{\text{photon}}}
+= \frac{0.1J}{1.867 \times 10^{-19} J}
+= 5 \times 10^{17}.$$
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 3: Operators \\}
+\addcontentsline{toc}{section}{Chapter 3: Operators}
+
+
+
+\subsubsection*{Problem 3.6.}
+\addcontentsline{toc}{subsubsection}{Problem 3.6.}
+\emph{Prove that $\hat{A} + \hat{B} = \hat{B} + \hat{A}$. } \\
+
+Two operators $\hat{A}$ and $\hat{B}$ are said to be equal if
+$\hat{A}f = \hat{B}f$ for all functions $f$. \\
+
+\emph{Proof.}
+$$(\hat{A} + \hat{B})f = \hat{A}f + \hat{B}f
+= \hat{B}f + \hat{A}f = (\hat{B} + \hat{A})f$$
+holds for any function $f$.
+By definition,
+$\hat{A} + \hat{B} = \hat{B} + \hat{A}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.7.}
+\addcontentsline{toc}{subsubsection}{Problem 3.7.}
+\emph{Let $\hat{D} = d/dx$.
+Verify that $(\hat{D}+x)(\hat{D}-x) = \hat{D}^2-x^2-1$. } \\
+
+\emph{Proof.}
+\begin{align*}
+((\hat{D}+x)(\hat{D}-x))f
+&= (\hat{D}+x)((\hat{D}-x)f) \\
+&= (\hat{D}+x)(f'-xf) \\
+&= (f'-xf)' + x(f'-xf) \\
+&= (f''-f-xf') + (xf'-x^2f) \\
+&= f''-f-x^2f \\
+&= (\hat{D}^2-x^2-1)f
+\end{align*}
+holds for any function $f$.
+By definition,
+$(\hat{D}+x)(\hat{D}-x) = \hat{D}^2-x^2-1$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.27.}
+\addcontentsline{toc}{subsubsection}{Problem 3.27.}
+\emph{Evaluate the commutators}
+\begin{enumerate}
+\item[(a)]
+$[\hat{x}, \hat{p}_x]$;
+\item[(b)]
+$[\hat{x}, \hat{p}_x^2]$;
+\item[(c)]
+$[\hat{x}, \hat{p}_y]$;
+\item[(d)]
+$[\hat{x}, \hat{V}(x,y,z)]$;
+\item[(e)]
+\emph{$[\hat{x}, \hat{H}]$, where the Hamiltonian operator is
+$$\hat{H} = -\frac{\hbar}{2m}\left(
+\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+\right) + V(x,y,z);$$}
+\item[(f)]
+$[\hat{x}\hat{y}\hat{z}, \hat{p}_x^2]$. \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{align*}
+[\hat{x}, \hat{p}_x]f
+&= (\hat{x}\hat{p}_x - \hat{p}_x \hat{x})f \\
+&= (\hat{x}\hat{p}_x)f - (\hat{p}_x \hat{x})f \\
+&= (\hat{x})\left( \frac{\hbar}{i}\frac{\partial f}{\partial x} \right)
+  - (\hat{p}_x)(xf) \\
+&= x \frac{\hbar}{i}\frac{\partial f}{\partial x}
+  - \frac{\hbar}{i}\left( f + x \frac{\partial f}{\partial x} \right) \\
+&= - \frac{\hbar}{i} f
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{p}_x] = - \frac{\hbar}{i}$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{align*}
+[\hat{x}, \hat{p}_x^2]f
+&= (\hat{x}\hat{p}_x^2 - \hat{p}_x^2 \hat{x})f \\
+&= (\hat{x}\hat{p}_x^2)f - (\hat{p}_x^2 \hat{x})f \\
+&= (\hat{x} \hat{p}_x)\left( \frac{\hbar}{i}\frac{\partial f}{\partial x} \right)
+  - (\hat{p}_x^2)(xf) \\
+&= (\hat{x})\left( \frac{\hbar}{i}\frac{\hbar}{i} \frac{\partial^2 f}{\partial x^2} \right)
+  - (\hat{p}_x) \frac{\hbar}{i} \left( f + x \frac{\partial f}{\partial x} \right) \\
+&= x \left( \frac{\hbar}{i}\frac{\hbar}{i} \frac{\partial^2 f}{\partial x^2} \right)
+  - \frac{\hbar}{i} \frac{\hbar}{i} \left(
+    \frac{\partial f}{\partial x} + \frac{\partial f}{\partial x}
+  + x \frac{\partial^2 f}{\partial x^2} \right) \\
+&= - \frac{\hbar}{i} \frac{\hbar}{i} \cdot 2 \frac{\partial f}{\partial x} \\
+&= \left( 2 \hbar \frac{\partial}{\partial x} \right) f
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{p}_x^2] = 2 \hbar \frac{\partial}{\partial x}$.
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{align*}
+[\hat{x}, \hat{p}_y]f
+&= (\hat{x}\hat{p}_y - \hat{p}_y \hat{x})f \\
+&= (\hat{x}\hat{p}_y)f - (\hat{p}_y \hat{x})f \\
+&= (\hat{x})\left( \frac{\hbar}{i}\frac{\partial f}{\partial y} \right)
+  - (\hat{p}_y)(xf) \\
+&= x \frac{\hbar}{i}\frac{\partial f}{\partial x}
+  - \frac{\hbar}{i} \cdot x \frac{\partial f}{\partial y} \\
+&= 0
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{p}_y] = 0$.
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{align*}
+[\hat{x}, \hat{V}(x,y,z)]f
+&= (\hat{x}\hat{V}(x,y,z) - \hat{V}(x,y,z) \hat{x})f \\
+&= (\hat{x}\hat{V}(x,y,z))f - (\hat{V}(x,y,z) \hat{x})f \\
+&= \hat{x}(V(x,y,z)f) - \hat{V}(x,y,z)(xf) \\
+&= x V(x,y,z)f - V(x,y,z) xf \\
+&= 0
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{V}(x,y,z)] = 0$.
+$\Box$ \\
+
+\emph{Proof of (e).}
+\begin{enumerate}
+\item[(1)]
+Given any function $f$,
+\begin{align*}
+\frac{\partial^2}{\partial x^2}(fx)
+&= \frac{\partial}{\partial x}\left( x\frac{\partial f}{\partial x} + f \right) \\
+&= \frac{\partial f}{\partial x} + x\frac{\partial^2 f}{\partial x^2}
+  + \frac{\partial f}{\partial x} \\
+&= 2\frac{\partial f}{\partial x} + x\frac{\partial^2 f}{\partial x^2}, \\
+\frac{\partial^2}{\partial y^2}(fx)
+&= x \frac{\partial^2 f}{\partial y^2}, \\
+\frac{\partial^2}{\partial z^2}(fx)
+&= x \frac{\partial^2 f}{\partial z^2}.
+\end{align*}
+\item[(2)]
+\begin{align*}
+(\hat{H}\hat{x})f
+&= (\hat{H})(xf) \\
+&= -\frac{\hbar}{2m}
+    \left(
+      \frac{\partial^2}{\partial x^2}(xf)
+      + \frac{\partial^2}{\partial y^2}(xf)
+      + \frac{\partial^2}{\partial z^2}(xf)
+    \right) + V(x,y,z)xf \\
+&= -\frac{\hbar}{2m}
+    \left(
+      2 \frac{\partial f}{\partial x} + x\frac{\partial^2 f}{\partial x^2}
+      + x \frac{\partial^2 f}{\partial y^2}
+      + x \frac{\partial^2 f}{\partial z^2}
+    \right) + V(x,y,z)xf \\
+&= -\frac{\hbar}{m} \frac{\partial f}{\partial x} + (\hat{x}\hat{H})f
+\end{align*}
+\item[(3)]
+\begin{align*}
+[\hat{x}, \hat{H}]f
+&= (\hat{x}\hat{H} - \hat{H} \hat{x})f \\
+&= (\hat{x}\hat{H})f - (\hat{H}\hat{x})f \\
+&= \frac{\hbar}{m} \frac{\partial f}{\partial x}
+\end{align*}
+holds for any function $f$.
+By definition,
+$[\hat{x}, \hat{H}] = \frac{\hbar}{m} \frac{\partial}{\partial x}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (f).}
+Similar to (b),
+$[\hat{x}\hat{y}\hat{z}, \hat{p}_x^2] = 2 \hbar yz \frac{\partial}{\partial x}$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 3.33.}
+\addcontentsline{toc}{subsubsection}{Problem 3.33.}
+\emph{Prove the multiple-integral identity
+\[
+  \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+    F(x)G(y)H(z)dx dy dz
+  = \int_{-\infty}^{\infty} F(x) dx
+    \int_{-\infty}^{\infty} G(y) dy
+    \int_{-\infty}^{\infty} H(z) dz.
+\]}
+
+\emph{Proof.}
+Write $\int = \int_{-\infty}^{\infty}$.
+\begin{align*}
+  &\int\int\int
+    F(x)G(y)H(z)dx dy dz \\
+  =&
+  \int\int \left( \int F(x)\underbrace{G(y)H(z)}_{\text{constant w.r.t $x$}}dx \right) dy dz \\
+  =&
+  \int\int G(y)H(z) \underbrace{\int F(x)dx}_{\text{constant w.r.t $y$ and $z$}} dy dz \\
+  =&
+  \int F(x)dx \int\int G(y)H(z) dy dz \\
+  =& \int F(x) dx\int G(y) dy\int H(z) dz.
+    &\text{(Similar arguments)}
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
