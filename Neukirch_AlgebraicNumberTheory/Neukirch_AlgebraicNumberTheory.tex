@@ -32,6 +32,7 @@
 
 % Reference:
 % https://faculty.math.illinois.edu/~r-ash/ANT.html
+% http://pi.math.cornell.edu/~dmehrle/notes/cornell/18sp/6370notes.pdf
 
 
 
@@ -771,7 +772,63 @@ where $M = \frac{n!}{n^n} \left( \frac{4}{\pi} \right)^{s} \sqrt{|d_K|}$
 $\Box$ \\\\
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\subsection*{I.6. The Class Number \\}
+\addcontentsline{toc}{subsection}{I.6. The Class Number}
+
+
+
+\subsubsection*{Exercise I.6.3.}
+\addcontentsline{toc}{subsubsection}{Exercise I.6.3.}
+\emph{Show that in every ideal class of an algebraic number field $K$ of degree $n$,
+there exists an integral ideal $\mathfrak{a}_1$ such that
+\[
+  \mathfrak{N}(\mathfrak{a}_1)
+  \leq
+  \frac{n!}{n^n}\left( \frac{4}{\pi} \right)^s \sqrt{|d_K|}
+\]
+(Hint: Use Exercise I.3.5, proceed as in the proof of Theorem I.6.3.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  The hint gives all.
+
+\item[(2)]
+  Take an arbitrary representative $\mathfrak{a}$ of the class in the ideal class group,
+  and a $\gamma \in \mathcal{O}_K$, $\gamma \neq 0$,
+  such that $\mathfrak{b} := \gamma \mathfrak{a}^{-1} \subseteq \mathcal{O}_K$.
+  By Exercise I.3.5, there exists $\alpha \in \mathfrak{b}$, $\alpha \neq 0$,
+  such that
+  \[
+    \abs{ N_{K|\mathbb{Q}}(\alpha) } \cdot \mathfrak{N}(\mathfrak{b})^{-1}
+    = \mathfrak{N}((\alpha) \mathfrak{b}^{-1})
+    = \mathfrak{N}(\alpha \mathfrak{b}^{-1})
+    \leq \frac{n!}{n^n} \left( \frac{4}{\pi} \right)^{s} \sqrt{|d_K|}.
+  \]
+  The ideal
+  \[
+    \mathfrak{a}_1
+    := \alpha \mathfrak{b}^{-1}
+    = \alpha \gamma^{-1} \mathfrak{a}
+    \in [\mathfrak{a}]
+  \]
+  therefore has the required property.
+
+\item[(3)]
+  This exercise also shows that $\mathrm{Cl}_K$ is a finite group.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
