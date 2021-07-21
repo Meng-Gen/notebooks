@@ -39,6 +39,63 @@
 
 
 
+\newpage
+\section*{Chapter 1: The Fundamental Theorem of Arithmetic \\}
+\addcontentsline{toc}{section}{Chapter 1: The Fundamental Theorem of Arithmetic}
+
+
+
+\subsubsection*{Exercise 1.30.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.30.}
+\emph{If $n > 1$ prove that the sum
+\[
+  \sum_{k=1}^{n} \frac{1}{k}
+\]
+is not an integer.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  (Reductio ad absurdum)
+  Suppose
+  \[
+    H := \sum_{k=1}^{n} \frac{1}{k}
+  \]
+  were an integer.
+
+\item[(2)]
+  Let $s$ be the largest integer such that $2^s \leq n$.
+  So the integer number
+  \begin{align*}
+    2^{s-1} H
+    &= \sum_{k=1}^{n} \frac{2^{s-1}}{k} \\
+    &= 2^{s-1} + 2^{s-2} + \frac{2^{s-1}}{3} + 2^{s-3} + \frac{2^{s-1}}{5} + \frac{2^{s-2}}{3}
+      + \cdots + \frac{1}{2} + \cdots.
+  \end{align*}
+  has only one term of even denominators (as $n > 1$)
+  if we write all terms in irreducible fractions.
+  That is,
+  \[
+  	2^{s-1} H = \frac{1}{2} + \frac{c}{d} \in \mathbb{Z}
+  \]
+  where $\frac{c}{d}$ is an irreducible fraction with odd $d$.
+  Hence it suffices to show that $2 \mid d$ to get a contradiction.
+
+\item[(3)]
+  By
+  \[
+  	\frac{1}{2} + \frac{c}{d} = \frac{d + 2c}{2d} \in \mathbb{Z}
+  \]
+  we have $d + 2c = 2dd'$ for some $d' \in \mathbb{Z}$.
+  Note that $2$ is a prime.
+  So $2 \mid (d + 2c)$ or $2 \mid d$, which is absurd.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
