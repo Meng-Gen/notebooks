@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Notes on the book: \\
+\emph{Apostol, Modular Functions and Dirichlet Series in Number Theory, 2nd edition}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 1: Elliptic functions \\}
+\addcontentsline{toc}{section}{Chapter 1: Elliptic functions}
+
+
+
+\subsubsection*{Exercise 1.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.11.}
+\emph{If $k \geq 2$ and $\tau \in H$ prove that the Eisenstein series
+\[
+  G_{2k}(\tau)
+  = \sum_{(m,n) \neq (0,0)} (m+n\tau)^{-2k}
+\]
+has the Fourier expansion
+}
+\[
+  G_{2k}(\tau)
+  =
+  2 \zeta(2k) + \frac{2(2\pi i)^{2k}}{(2k-1)!} \sum_{n=1}^{\infty} \sigma_{2k-1}(n) e^{2\pi i n \tau}.
+\] \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Lemma 1.3 on page 19, we have
+  \[
+    (2k-1)! \sum_{m=-\infty}^{+\infty} \frac{1}{(\tau+m)^{2k}}
+    = (2 \pi i)^{2k} \sum_{r=1}^{\infty} r^{2k-1} e^{2 \pi i r \tau}.
+  \]
+
+\item[(2)]
+  Similar to Theorem 1.18, we have
+  \begin{align*}
+    G_{2k}(\tau)
+    &= \sum_{(m,n) \neq (0,0)} (m+n\tau)^{-2k} \\
+    &= \sum_{\substack{m=-\infty \\ m \neq 0 (n = 0)}}^{+\infty} m^{-2k}
+      + \sum_{n=1}^{\infty} \sum_{m=-\infty}^{+\infty} ((m+n\tau)^{-2k} + (m-n\tau)^{-2k}) \\
+    &= 2 \zeta(2k)
+      + 2 \sum_{n=1}^{\infty} \sum_{m=-\infty}^{+\infty} (m+n\tau)^{-2k} \\
+    &= 2 \zeta(2k)
+      + 2 \sum_{n=1}^{\infty} \frac{(2\pi i)^{2k}}{(2k-1)!}
+        \sum_{r=1}^{\infty} r^{2k-1} e^{2\pi i nr \tau} \\
+    &= 2 \zeta(2k)
+      + \frac{2(2\pi i)^{2k}}{(2k-1)!} \sum_{n=1}^{\infty}
+        \underbrace{\sum_{d|n} d^{2k-1}}_{= \sigma_{2k-1}(n)} e^{2\pi i n \tau}.
+  \end{align*}
+  In the last double sum we collect together those terms for which $nr$ is constant.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
