@@ -275,6 +275,55 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem I.1.11.}
+\addcontentsline{toc}{subsubsection}{Problem I.1.11.}
+\emph{If $K$ is an algebraic extension of $F$ and if $R$ is a subring of $K$ with
+$F \subseteq R \subseteq K$, show that $R$ is a field.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $R$ is a domain since $R$ is contained in a field $K$.
+  To show $R$ is a field, it suffices to show that
+  every nonzero element $\alpha \in R$ has an inverse in $R$.
+
+\item[(2)]
+  Since $\alpha \in R \subseteq K$ is algebraic over $F$,
+  there is a minimal polynomial
+  \[
+    f(x) = b_n x^n + b_{n-1} x^{n-1} + \cdots + b_0
+  \]
+  such that $f(\alpha) = 0$,
+  where each $b_i \in F$ and $b_0 \neq 0$ by the minimality of $f$.
+
+\item[(3)]
+  Note that
+  \begin{align*}
+    & \:
+    f(\alpha) = 0 \\
+    \Longleftrightarrow &\:
+    b_n \alpha^n + b_{n-1} \alpha^{n-1} + \cdots + b_0 = 0 \\
+    \Longleftrightarrow &\:
+    b_n \alpha^n + b_{n-1} \alpha^{n-1} + \cdots + b_1 \alpha = -b_0 \\
+    \Longleftrightarrow &\:
+    \alpha(b_n \alpha^{n-1} + b_{n-1} \alpha^{n-2} + \cdots + b_1) = -b_0 \\
+    \Longleftrightarrow &\:
+    \alpha(\underbrace{(-b_0)^{-1} b_n \alpha^{n-1} + (-b_0)^{-1}b_{n-1} \alpha^{n-2} + \cdots
+      + (-b_0)^{-1}b_1}_{:= \alpha'}) = 1.
+  \end{align*}
+  Hence $\alpha' \in F[\alpha] \subseteq R$.
+  Therefore $\alpha'$ is the inverse of $\alpha$ in $R$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem I.1.12.}
 \addcontentsline{toc}{subsubsection}{Problem I.1.12.}
 \emph{Show that $\mathbb{Q}(\sqrt{2})$ and $\mathbb{Q}(\sqrt{3})$
