@@ -1,0 +1,2611 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Solutions to the book: \\ \emph{Marcus, Number Fields}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+% https://www.math.uci.edu/~ndonalds/math180b/6gaussian.pdf
+% https://www.maths.nottingham.ac.uk/plp/pmzcw/download/fnt_chap5.pdf
+% https://www.math.nagoya-u.ac.jp/~larsh/teaching/F2013_PM/lecture4.pdf
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 1: A Special Case of Fermat's Conjecture \\}
+\addcontentsline{toc}{section}{Chapter 1: A Special Case of Fermat's Conjecture}
+
+
+
+\emph{Exercise 1.1-1.9: Define $N: \mathbb{Z}[i] \rightarrow \mathbb{Z}$ by
+$N(a+bi) = a^2 + b^2$.} \\\\
+
+
+
+\subsubsection*{Exercise 1.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.1.}
+\emph{Verify that for all $\alpha, \beta \in \mathbb{Z}[i]$,
+$N(\alpha\beta) = N(\alpha)N(\beta)$,
+either by direct computation or using the fact that
+$N(a+bi) = (a+bi)(a-bi)$.
+Conclude that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Direct computation.}
+Write $\alpha = a+bi, \beta=c+di$ where $a, b, c, d \in \mathbb{Z}$.
+Thus,
+\begin{align*}
+N(\alpha\beta)
+&= N((a+bi)(c+di)) \\
+&= N((ac-bd) + (ad+bc)i) \\
+&= (ac-bd)^2 + (ad+bc)^2 \\
+&= (a^2 c^2 - 2abcd + b^2 d^2) + (a^2 d^2 + 2abcd + b^2 c^2) \\
+&= a^2 c^2 + b^2 d^2 + a^2 d^2 + b^2 c^2, \\
+N(\alpha)N(\beta)
+&= N(a+bi) N(c+di) \\
+&= (a^2 + b^2)(c^2 + d^2) \\
+&= a^2 c^2 + b^2 d^2 + a^2 d^2 + b^2 c^2.
+\end{align*}
+Therefore, $N(\alpha\beta) = N(\alpha)N(\beta)$.
+(Note that we also get the identity
+$(a^2 + b^2)(c^2 + d^2) = (ac-bd)^2 + (ad+bc)^2$.)
+\item[(2)]
+\emph{Using the fact that $N(a+bi) = (a+bi)(a-bi)$,}
+or $N(\alpha) = \alpha \overline{\alpha}$
+for any $\alpha \in \mathbb{Z}[i]$.
+Thus,
+\begin{align*}
+N(\alpha\beta)
+&= \alpha\beta\overline{\alpha\beta} \\
+&= \alpha\beta\overline{\alpha}\overline{\beta} \\
+&= \alpha\overline{\alpha}\beta\overline{\beta} \\
+&= N(\alpha)N(\beta).
+\end{align*}
+\item[(3)]
+\emph{Show that if $\alpha \mid \gamma$ in $\mathbb{Z}[i]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
+Write $\gamma = \alpha \beta$ for some $\beta \in \mathbb{Z}[i]$.
+So $N(\gamma) = N(\alpha) N(\beta) \in \mathbb{Z}$,
+or $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2.}
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that $\alpha$ is a unit iff $N(\alpha) = 1$.
+Conclude that the only unit are $\pm 1$ and $\pm i$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$(\Longrightarrow)$}
+Since $\alpha$ is a unit, there is $\beta \in \mathbb{Z}[i]$ such that
+$\alpha \beta = 1$.
+By Exercise 1.1, $N(\alpha \beta) = N(1)$, or $N(\alpha) N(\beta) = 1$.
+Since the image of $N$ is nonnegative integers, $N(\alpha) = 1$.
+\item[(2)]
+\emph{$(\Longleftarrow)$}
+By Exercise 1.1, $N(\alpha) = \alpha \overline{\alpha}$,
+or $1 = \alpha \overline{\alpha}$ since $N(\alpha) = 1$.
+That is, $\overline{\alpha} \in \mathbb{Z}[i]$ is
+the inverse of $\alpha \in \mathbb{Z}[i]$.
+(Or by (1), we solve the equation $N(\alpha) = a^2 + b^2 = 1$,
+and show that all four solutions ($\pm 1$ and $\pm i$) are unit.)
+\end{enumerate}
+Conclusion: a unit $\alpha = a+bi$ of $\mathbb{Z}[i]$
+is satisfying the equation $N(\alpha) = a^2 + b^2 = 1$ by (1)(2).
+That is, the only unit of $\mathbb{Z}[i]$ are $\pm 1$ and $\pm i$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.3.}
+\emph{Let $\alpha \in \mathbb{Z}[i]$.
+Show that if $N(\alpha)$ is a prime in $\mathbb{Z}$ then
+$\alpha$ is irreducible in $\mathbb{Z}[i]$.
+Show that the same conclusion holds
+if $N(\alpha) = p^2$, where $p$ is a prime in $\mathbb{Z}$,
+$p \equiv 3 \pmod{4}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that if $N(\alpha)$ is a prime in $\mathbb{Z}$ then
+$\alpha$ is irreducible in $\mathbb{Z}[i]$.}
+Write $\alpha = \beta\gamma$.
+Then $N(\alpha) = N(\beta)N(\gamma)$ is a prime in $\mathbb{Z}$.
+Since each integer prime is irreducible, $N(\beta) = 1$ or $N(\gamma) = 1$.
+So that $\beta$ is unit or $\gamma$ is unit by Exercise 1.2.
+Hence, $\alpha$ is irreducible.
+\item[(2)]
+\emph{Show that $\alpha$ is irreducible in $\mathbb{Z}[i]$
+if $N(\alpha) = p^2$, where $p$ is a prime in $\mathbb{Z}$,
+$p \equiv 3 \pmod{4}$.}
+Assume $\alpha = \beta\gamma$ were not irreducible.
+Similar to (1), $N(\alpha) = N(\beta)N(\gamma) = p^2$.
+Since $\beta$ and $\gamma$ are proper factors of $\alpha$,
+$$N(\beta) = N(\gamma) = p.$$
+Since any square $a^2 \equiv 0, 1 \pmod{4}$,
+any $N(a+bi) = a^2+b^2 \equiv 0, 1, 2 \pmod{4}$.
+Especially, $N(\beta) \equiv 0, 1, 2 \pmod{4}$,
+contrary to $N(\beta) = p \equiv 3 \pmod{4}$
+by the assumption.
+Therefore, $\alpha$ is irreducible in $\mathbb{Z}[i]$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement 1.3.}
+\addcontentsline{toc}{subsubsection}{Supplement 1.3.}
+\begin{enumerate}
+\item[(1)]
+The prime $2$ is reducible in $\mathbb{Z}[i]$ (Exercise 1.4).
+\item[(2)]
+Every prime $p \equiv 1 \pmod{4}$ is reducible in $\mathbb{Z}[i]$ (Exercise 1.8). \\\\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.4.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.4.}
+\emph{Show that $1-i$ is irreducible in $\mathbb{Z}$
+and that $2 = u(1-i)^2$ for some unit $u$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{$1-i$ is irreducible.}
+Since $N(1-i) = 2$ is a prime in $\mathbb{Z}$,
+$1-i$ is irreducible by Problem 1.3.
+\item[(2)]
+$2 = i(1-i)^2$ where $i$ is unit in $\mathbb{Z}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.5.}
+\emph{Notice that
+$(2+i)(2-i) = 5 = (1+2i)(1-2i)$.
+How is this consistent with unique factorization?} \\
+
+\emph{Proof.}
+Since $2+i = i(1-2i)$ and $2-i = (-i)(1+2i)$,
+the factorization is unique up to order and multiplication of primes by units.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.6.}
+\emph{Show that every nonzero, non-unit Gaussian integer $\alpha$
+is a product of irreducible elements, by induction on $N(\alpha)$.} \\
+
+\emph{Proof.}
+Induction on $N(\alpha)$.
+\begin{enumerate}
+\item[(1)]
+\emph{$n = 2$}.
+Given $\alpha \in \mathbb{Z}[i]$ with $N(\alpha) = 2$.
+Since $N(\alpha) = 2$ is a prime in $\mathbb{Z}$,
+$\alpha$ is irreducible (Exercise 1.3).
+\item[(2)]
+\emph{Suppose the result holds for $n \leq k$.}
+Given $\alpha \in \mathbb{Z}[i]$ with $N(\alpha) = k+1$.
+There are only two possible cases.
+\begin{enumerate}
+\item[(a)]
+\emph{$\alpha$ is irreducible.}
+Nothing to do.
+\item[(b)]
+\emph{$\alpha$ is reducible.}
+Write $\alpha = \beta\gamma$ where neither factor is unit.
+Since $N(\alpha) = N(\beta)N(\gamma)$ and neither factor is unit,
+$$2 \leq N(\beta), N(\gamma) \leq k.$$
+By the induction hypothesis, each factor of $\alpha$ ($\beta$ and $\gamma$)
+is a product of irreducible elements.
+So that $\alpha$ again is a product of irreducible elements.
+\end{enumerate}
+In any cases,
+$\alpha$ is a product of irreducible elements.
+\end{enumerate}
+By induction, the result is established.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.7.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.7.}
+\emph{Show that $\mathbb{Z}[i]$ is a principal ideal domain (PID); i.e.,
+every ideal $I$ is principal.
+(As shown in Appendix 1, this implies that $\mathbb{Z}[i]$ is a UFD.)} \\
+
+\emph{Suggestion: Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized,
+and consider the multiplies $\gamma\alpha$, $\gamma \in \mathbb{Z}[i]$;
+show that these are the vertices of an infinite family of squares which
+fill up the complex plane.
+(For example,
+one of the squares has vertices $0$, $\alpha$, $i\alpha$, and $(1+i)\alpha$;
+all others are translates of this one.)
+Obviously $I$ contains all $\gamma\alpha$;
+show by a geometric argument that if $I$ contains anything else then
+minimality of $N(\alpha)$ would be contradicted.} \\
+
+\emph{Proof (without geometric intuition).}
+Define $N$ on $\mathbb{Q}[i]$ by $N(a+bi) = a^2+b^2$ where
+$a+bi \in \mathbb{Q}[i]$ as usual.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathbb{Z}[i]$ is a Euclidean domain.}
+Given $\alpha = a+bi \in \mathbb{Z}[i]$ and
+$\gamma = c+di \in \mathbb{Z}[i]$ with $\gamma \neq 0$.
+It suffices to show there exist $\delta$ and $\rho$ such that the identity
+$\alpha = \gamma\delta + \rho$ holds and
+either $\rho = 0$ or $N(\rho) < N(\gamma)$.
+\begin{enumerate}
+\item[(a)]
+\emph{Pick $\delta \in \mathbb{Z}[i].$
+(Intuition: Pick the `integer part' of $\frac{\alpha}{\gamma}$
+as we did in integer numbers.)}
+Write $\frac{\alpha}{\gamma} = r+si \in \mathbb{Q}[i]$.
+Then we pick $\delta = m+ni \in \mathbb{Z}[i]$ such that
+$|r-m| \leq \frac{1}{2}$ and $|s-n| \leq \frac{1}{2}$.
+Therefore,
+\begin{align*}
+N\left( \frac{\alpha}{\gamma} - \delta \right)
+&= (r-m)^2 + (s-n)^2 \\
+&\leq \frac{1}{4} + \frac{1}{4} \\
+&= \frac{1}{2}.
+\end{align*}
+\item[(b)]
+\emph{Pick $\rho \in \mathbb{Z}[i]$.}
+Clearly we can pick $\rho = \alpha - \gamma\delta \in \mathbb{Z}[i]$.
+Therefore, $\rho = 0$ or
+\begin{align*}
+N(\rho)
+&= N(\alpha - \gamma\delta) \\
+&= N\left( \gamma\left( \frac{\alpha}{\gamma} - \delta \right) \right) \\
+&= N(\gamma) N\left( \frac{\alpha}{\gamma} - \delta \right) \\
+&\leq \frac{1}{2} N(\gamma) \\
+&< N(\gamma).
+\end{align*}
+\end{enumerate}
+\item[(2)]
+\emph{Show that every Euclidean domain $R$ is a PID.}
+Given any ideal $I$ of $R$.
+Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized.
+\begin{enumerate}
+  \item[(a)]
+  $R\alpha \subseteq I$ clearly.
+  \item[(b)]
+  Conversely, for any $\beta \in I$, there are $\delta, \rho \in R$
+  such that $\beta = \alpha \delta + \rho$, where either $\rho = 0$
+  or $N(\rho) < N(\alpha)$.
+  Since $\rho = \beta - \alpha \delta \in I$,
+  we cannot have $N(\rho) < N(\alpha)$ by the minimality of $N(\alpha)$.
+  Therefore, $\rho = 0$ and $\beta = \alpha \delta \in R\alpha$,
+  or $R\alpha \supseteq I$.
+\end{enumerate}
+\end{enumerate}
+By (1)(2),
+$\mathbb{Z}[i]$ is a PID.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.8.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.8.}
+\emph{We will use the unique factorization in $\mathbb{Z}[i]$ to prove that
+every prime $p \equiv 1 \pmod{4}$ is a sum of two squares.
+\begin{enumerate}
+  \item[(a)]
+  Use the fact that the multiplicative group $(\mathbb{Z}/p\mathbb{Z})^{\times}$
+  of integers mod $p$ is cyclic to show that
+  if $p \equiv 1 \pmod{4}$ then $n^2 \equiv -1 \pmod{p}$ for some $n \in \mathbb{Z}$.
+  \item[(b)]
+  Prove that $p$ cannot be irreducible in $\mathbb{Z}[i]$.
+  (Hint: $p \mid n^2+1 = (n+i)(n-i)$.)
+  \item[(c)]
+  Prove that $p$ is a sum of two squares.
+  (Hint: (b) shows that $p = (a+bi)(c+di)$ with neither factor a unit.
+  Take norms.) \\
+\end{enumerate}}
+
+\emph{Proof of (a).}
+Since the multiplicative group $(\mathbb{Z}/p\mathbb{Z})^{\times}$
+of integers mod $p$ is cyclic,
+$(\mathbb{Z}/p\mathbb{Z})^{\times}$ is generated by (a primitive root)
+$g \in \mathbb{Z}/p\mathbb{Z}$.
+$g^{p-1} = 1$,
+or
+$$(g^{\frac{p-1}{2}} - 1)(g^{\frac{p-1}{2}} + 1) = 0$$
+since $p$ is odd.
+Since $\mathbb{Z}/p\mathbb{Z}$ is an integral domain,
+$g^{\frac{p-1}{2}} - 1 = 0$ or $g^{\frac{p-1}{2}} + 1 = 0$.
+$g$ cannot satisfy $g^{\frac{p-1}{2}} - 1 = 0$ since
+$g$ is a generator of $(\mathbb{Z}/p\mathbb{Z})^{\times}$.
+So,
+$$g^{\frac{p-1}{2}} + 1 = 0.$$
+Let $n = g^{\frac{p-1}{4}} \in \mathbb{Z}$ since $p \equiv 1 \pmod{4}$.
+So $n^2+1 = 0 \pmod{p}$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+Since $n^2 + 1 \equiv 0 \pmod{p}$ by (a),
+$p \mid n^2+1 = (n+i)(n-i)$.
+If $p$ were irreducible in $\mathbb{Z}[i]$,
+$p \mid (n+i)$ or $p \mid (n-i)$ by using the unique factorization in $\mathbb{Z}[i]$.
+Hence
+$$\frac{n+i}{p} = \frac{n}{p} + \frac{1}{p}i \not\in \mathbb{Z}[i],
+\frac{n-i}{p} = \frac{n}{p} - \frac{1}{p}i \not\in \mathbb{Z}[i],$$
+contrary to the assumption.
+Therefore, $p$ is reducible in $\mathbb{Z}[i]$.
+$\Box$ \\
+
+\emph{Proof of (c).}
+Since $p$ is reducible in $\mathbb{Z}[i]$ by (b),
+write $p = (a+bi)(c+di)$ with neither factor a unit.
+Take norms,
+$$p^2 = N(p) = N(a+bi)N(c+di).$$
+Since neither factor of $p$ is unit,
+$N(a+bi) = p$,
+or $a^2+b^2 = p$,
+or $p$ is a sum of two squares.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.9.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.9.}
+\emph{Describe all irreducible elements in $\mathbb{Z}[i]$.} \\
+
+\emph{Notice that $\alpha$ is irreducible if and only if $\overline{\alpha}$ is irreducible.}
+(Write $\alpha = \beta\gamma$,
+then $\overline{\alpha} = \overline{\beta}\overline{\gamma}$.
+Besides, $\overline{\overline{\alpha}} = \alpha$.) \\
+
+\emph{Proof.}
+\emph{Show that all irreducible elements in $\mathbb{Z}[i]$ (up to units) are
+\begin{enumerate}
+  \item[(1)]
+  $1+i$.
+  \item[(2)]
+  $\pi = a+bi$ for each integer prime $p \equiv 1 \pmod{4}$
+  with $p = a^2+b^2$.
+  \item[(3)]
+  $p$ for each integer prime $p \equiv 3 \pmod{4}$.
+\end{enumerate}}
+
+Let $\alpha$ be any irreducible element in $\mathbb{Z}[i]$.
+Consider $N(\alpha) = \alpha \overline{\alpha}$.
+$N(\alpha) \neq 1$ since $\alpha$ is not unit.
+By the unique factorization theorem in $\mathbb{Z}$,
+$N(\alpha) \in \mathbb{Z}$ is a product of primes in $\mathbb{Z}$. \\
+
+There are three possible cases.
+\begin{enumerate}
+  \item[(a)]
+  \emph{$2 \mid N(\alpha)$.}
+  Write $(1+i)(1-i) \mid \alpha \overline{\alpha}$ in $\mathbb{Z}[i]$.
+  Notice that $1+i$, $1-i$, $\alpha$ and $\overline{\alpha}$ are all irreducible (Exercise 1.4).
+  By the unique factorization theorem in $\mathbb{Z}[i]$,
+  $\alpha = 1+i$ (up to units).
+  \item[(b)]
+  \emph{$p \mid N(\alpha)$ for some prime $p \equiv 3 \pmod{4}$.}
+  Write $p \mid \alpha \overline{\alpha}$ in $\mathbb{Z}[i]$.
+  Notice that $p$, $\alpha$ and $\overline{\alpha}$ are all irreducible (Exercise 1.3).
+  By the unique factorization theorem in $\mathbb{Z}[i]$,
+  $\alpha = p$ (up to units) or $\overline{\alpha} = p$ (up to units).
+  So in any cases $\alpha = p$ (up to units). (Note that $\overline{p} = p$.)
+  \item[(c)]
+  \emph{$p \mid N(\alpha)$ for some prime $p \equiv 1 \pmod{4}$.}
+  For such $p$, there is an irreducible $\pi \in \mathbb{Z}[i]$
+  satisfying $p = \pi \overline{\pi}$ (Exercise 1.8).
+  Now we write $\pi \overline{\pi} \mid \alpha \overline{\alpha}$ in $\mathbb{Z}[i]$.
+  Notice that $\pi$, $\overline{\pi}$, $\alpha$ and $\overline{\alpha}$ are all irreducible.
+  By the unique factorization theorem in $\mathbb{Z}[i]$,
+  $\alpha = \pi$ or $\alpha = \overline{\pi}$.
+  In any cases, $\alpha=a+bi$ for integer prime $p \equiv 1 \pmod{4}$
+  with $p = a^2+b^2$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{Exercise 1.10 - 1.14: Let
+$\omega
+= e^{\frac{2\pi i}{3}}
+= -\frac{1}{2}+\frac{\sqrt{3}}{2}i$.
+Define $N: \mathbb{Z}[\omega] \to \mathbb{Z}$ by
+$N(a+b\omega) = a^2-ab+b^2$. } \\\\
+
+
+
+\subsubsection*{Exercise 1.10.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.10.}
+\emph{Show that if $a+b\omega$ is written in the form $u+vi$
+where $u$ and $v$ are real, then $N(a+b\omega)=u^2+v^2$.}
+
+\emph{Proof.}
+By $\omega = -\frac{1}{2}+\frac{\sqrt{3}}{2}i$,
+write
+$$a+b\omega
+= \left( a - \frac{1}{2}b \right) + \left( \frac{\sqrt{3}}{2}b \right) i.$$
+Here $u = a - \frac{1}{2}b \in \mathbb{R}$ and
+$v = \frac{\sqrt{3}}{2}b \in \mathbb{R}$.
+Hence $u^2+v^2 = (a - \frac{1}{2}b)^2 + (\frac{\sqrt{3}}{2}b)^2 = a^2 - ab + b^2
+= N(a+b\omega)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.11.}
+\emph{Show that for all $\alpha, \beta \in \mathbb{Z}[\omega]$,
+$N(\alpha\beta) = N(\alpha)N(\beta)$,
+either by direct computation or by using Exercise 1.10.
+Conclude that if $\alpha \mid \gamma$ in $\mathbb{Z}[\omega]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Direct computation.}
+Note that $1+\omega+\omega^2 = 0$ or $\omega^2 = -1-\omega$.
+Write $\alpha = a+b\omega, \beta=c+d\omega$ where $a, b, c, d \in \mathbb{Z}$.
+Thus,
+\begin{align*}
+N(\alpha\beta)
+&= N((a+b\omega)(c+d\omega)) \\
+&= N(ac + (ad+bc)\omega + bd\omega^2) \\
+&= N(ac + (ad+bc)\omega + bd(-1-\omega)) \\
+&= N((ac-bd) + (ad+bc-bd)\omega) \\
+&= (ac-bd)^2 - (ac-bd)(ad+bc-bd) + (ad+bc-bd)^2 \\
+&= (a^2 - ab + b^2)(c^2 - cd + d^2), \\
+N(\alpha)N(\beta)
+&= N(a+b\omega) N(c+d\omega) \\
+&= (a^2 - ab + b^2)(c^2 - cd + d^2).
+\end{align*}
+\item[(2)]
+\emph{Exercise 1.10.}
+The result is established by Exercise 1.10 and Exercise 1.1.
+\item[(3)]
+\emph{Using the fact that $N(a+b\omega) = (a+b\omega)\overline{(a+b\omega)}$.}
+Similar to the argument of Exercise 1.1.
+\item[(4)]
+\emph{Show that if $\alpha \mid \gamma$ in $\mathbb{Z}[\omega]$,
+then $N(\alpha) \mid N(\gamma)$ in $\mathbb{Z}$.}
+Similar to the argument of Exercise 1.1.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.12.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.12.}
+\emph{Let $\alpha \in \mathbb{Z}[\omega]$.
+Show that $\alpha$ is a unit iff $N(\alpha) = 1$,
+and find all units in $\mathbb{Z}[\omega]$.
+(There are six of them.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Since $\alpha$ is a unit, there is $\beta \in \mathbb{Z}[\omega]$ such that
+$\alpha \beta = 1$.
+By Exercise 1.11, $N(\alpha \beta) = N(1)$, or $N(\alpha) N(\beta) = 1$.
+Since the image of $N$ is nonnegative integers, $N(\alpha) = 1$.
+\item[(2)]
+$(\Longleftarrow)$
+By Exercise 1.10, $N(\alpha) = \alpha \overline{\alpha}$,
+or $1 = \alpha \overline{\alpha}$ since $N(\alpha) = 1$.
+That is, $\overline{\alpha} \in \mathbb{Z}[\omega]$ is
+the inverse of $\alpha \in \mathbb{Z}[\omega]$.
+\item[(3)]
+By (1), we solve the equation $N(\alpha) = a^2 - ab + b^2 = 1$,
+or $4 = (2a-b)^2 + 3b^2$.
+There are 2 possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  $2a-b = \pm 1$, $b = \pm 1$.
+  \item[(b)]
+  $2a-b = \pm 2$, $b = \pm 0$.
+  \end{enumerate}
+  Solve these 6 pairs of equations yields the result
+  $\pm 1, \pm \omega, \pm \omega^2$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.13.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.13.}
+\emph{Show that $1-\omega$ is irreducible in $\mathbb{Z}[\omega]$,
+and that $3 = u(1-\omega)^2$ for some unit $u$. } \\
+
+$3$ is not irreducible in $\mathbb{Z}[\omega]$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+$N(1-\omega) = 3$ is an integer prime.
+Similar to the argument in Exercise 1.3,
+$1-\omega$ is irreducible in $\mathbb{Z}[\omega]$.
+\item[(2)]
+Note that $1+\omega+\omega^2=0$.
+So
+$(1-\omega)^2 = 1-2\omega+\omega^2 = 3(-\omega)$, or
+$(-\omega^2)(1-\omega)^2 = 3$.
+By Exercise 1.12, $-\omega^2$ is unit.
+Hence $3 = u(1-\omega)^2$ for some unit $u = -\omega^2$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.14.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.14.}
+\emph{Modify Exercise 1.7 to show that $\mathbb{Z}[\omega]$ is a PID, hence a UFD.
+Here the squares are replaced by parallelograms;
+one of them has vertices $0, \alpha, \omega\alpha, (\omega+1)\alpha$,
+and all others are translates of this one.
+Use Exercise 1.10 for the geometric argument at the end. } \\
+
+Similar to Exercise 1.7. \\
+
+\emph{Proof (without geometric intuition).}
+Define $N$ on $\mathbb{Q}[\omega]$ by $N(a+b\omega) = a^2-ab+b^2$ where
+$a+b\omega \in \mathbb{Q}[\omega]$ as usual.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\mathbb{Z}[\omega]$ is a Euclidean domain.}
+Given $\alpha = a+b\omega \in \mathbb{Z}[\omega]$ and
+$\gamma = c+d\omega \in \mathbb{Z}[\omega]$ with $\gamma \neq 0$.
+It suffices to show there exist $\delta$ and $\rho$ such that the identity
+$\alpha = \gamma\delta + \rho$ holds and
+either $\rho = 0$ or $N(\rho) < N(\gamma)$.
+\begin{enumerate}
+\item[(a)]
+\emph{Pick $\delta \in \mathbb{Z}[\omega].$
+(Intuition: Pick the `integer part' of $\frac{\alpha}{\gamma}$
+as we did in integer numbers.)}
+Write $\frac{\alpha}{\gamma} = r+s\omega \in \mathbb{Q}[\omega]$.
+Then we pick $\delta = m+n\omega \in \mathbb{Z}[\omega]$ such that
+$|r-m| \leq \frac{1}{2}$ and $|s-n| \leq \frac{1}{2}$.
+Therefore,
+\begin{align*}
+N\left( \frac{\alpha}{\gamma} - \delta \right)
+&\leq |r-m|^2 + |r-m||s-n| + |s-n|^2 \\
+&\leq \frac{1}{4} + \frac{1}{4} + \frac{1}{4} \\
+&= \frac{3}{4}.
+\end{align*}
+\item[(b)]
+\emph{Pick $\rho \in \mathbb{Z}[\omega]$.}
+Clearly we can pick $\rho = \alpha - \gamma\delta \in \mathbb{Z}[\omega]$.
+Therefore, $\rho = 0$ or
+\begin{align*}
+N(\rho)
+&= N(\alpha - \gamma\delta) \\
+&= N\left( \gamma\left( \frac{\alpha}{\gamma} - \delta \right) \right) \\
+&= N(\gamma) N\left( \frac{\alpha}{\gamma} - \delta \right) \\
+&\leq \frac{3}{4} N(\gamma) \\
+&< N(\gamma).
+\end{align*}
+\end{enumerate}
+\item[(2)]
+\emph{Show that every Euclidean domain $R$ is a PID.}
+Given any ideal $I$ of $R$.
+Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized.
+\begin{enumerate}
+  \item[(a)]
+  $R\alpha \subseteq I$ clearly.
+  \item[(b)]
+  Conversely, for any $\beta \in I$, there are $\delta, \rho \in R$
+  such that $\beta = \alpha \delta + \rho$, where either $\rho = 0$
+  or $N(\rho) < N(\alpha)$.
+  Since $\rho = \beta - \alpha \delta \in I$,
+  we cannot have $N(\rho) < N(\alpha)$ by the minimality of $N(\alpha)$.
+  Therefore, $\rho = 0$ and $\beta = \alpha \delta \in R\alpha$,
+  or $R\alpha \supseteq I$.
+\end{enumerate}
+\end{enumerate}
+By (1)(2),
+$\mathbb{Z}[\omega]$ is a PID.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.15.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.15.}
+\emph{Here is a proof of Fermat's conjecture for $n = 4$:
+If $x^4 + y^4 = z^4$ has a solution in positive integers,
+then so does $x^4 + y^4 = w^2$.
+Let $x,y,w$ be a solution with smallest possible $w$.
+Then $x^2, y^2, w$ is a primitive Pythagorean triple.
+Assuming (without loss of generality) that $x$ is odd,
+we can write
+$$x^2 = m^2-n^2, y^2 = 2mn, w = m^2+n^2$$
+with $m$ and $n$ are relatively prime positive integers, not both odd. }
+\begin{enumerate}
+\item[(a)]
+\emph{Show that
+$$x=r^2-s^2, n=2rs, m=r^2+s^2$$
+with $r$ and $s$ are relatively prime positive integers, not both odd. }
+\item[(b)]
+\emph{Show that $r,s$ and $m$ are pairwise relatively prime.
+Using $y^2 = 4rsm$, conclude that $r$, $s$ and $m$ are all squares, say
+$a^2$, $b^2$ and $c^2$. }
+\item[(c)]
+\emph{Show that $a^4+b^4=c^2$, and that this contradicts minimality of $w$. } \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Write $x^2+n^2=m^2$ by moving $n^2$ of $x^2 = m^2-n^2$ to the left side.
+Notice that $x$ is odd, and thus
+$x=r^2-s^2, n=2rs, m=r^2+s^2$
+with $r$ and $s$ are relatively prime positive integers, not both odd.
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+It suffices to show that $(r,m) = 1$.
+By assumption, $(r,s)=1$.
+So
+$(r,s) = 1 \Rightarrow (r,s^2) = 1 \Rightarrow (r,r^2+s^2) = 1$
+and note that $m=r^2+s^2$ to get the result.
+\item[(2)]
+$y^2 = 2mn = 2m(2rs) = 4rsm$ by (a).
+Since $r,s$ and $m$ are pairwise relatively prime,
+$r,s$ and $m$ are all squares.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+By (b), $r=a^2$, $s=b^2$, $m=c^2$.
+By (a), $m=r^2+s^2$, or $c^2 = (a^2)^2 + (b^2)^2 = a^4 + b^4$.
+However, $w = m^2+n^2 > m^2 > m = c^2 > c$, contrary to the minimality of $w$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{Exercise 1.16-1.28: Let $p$ be an odd prime,
+$\omega = e^{\frac{2\pi i}{p}}$.} \\\\
+
+
+
+\subsubsection*{Exercise 1.16.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.16.}
+\emph{Show that
+$$(1-\omega)(1-\omega^2) \cdots (1-\omega^{p-1}) = p$$
+by considering equation
+$t^p - 1 = (t-1)(t-\omega)(t-\omega^2) \cdots (t-\omega^{p-1})$.} \\
+
+\emph{Proof.}
+Note that
+$t^p - 1 = (t-1)(t^{p-1} + t^{p-2} + \cdots + t + 1)$.
+Cancel out $t-1$ of Equation (2),
+$$t^{p-1} + t^{p-2} + \cdots + t + 1 = (t-\omega)(t-\omega^2) \cdots (t-\omega^{p-1}).$$
+Put $t = 1$ to get
+$p = (1-\omega)(1-\omega^2) \cdots (1-\omega^{p-1})$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.17.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.17.}
+\emph{Let $x^p + y^p = z^p$.
+Suppose that $\mathbb{Z}[\omega]$ is a UFD and $\pi \mid x + y\omega$,
+and $\pi$ is a prime in $\mathbb{Z}[\omega]$.
+Show that $\pi$ does not divide any of the other factors on the left side of
+$$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = z^p$$
+by showing that if it did, then $\pi$ would divide both $z$ and $yp$
+(Hint: Use Exercise 1.16);
+but $z$ and $yp$ are relatively prime (assuming $p$ divides none of $x, y, z$),
+hence $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$.
+How is this a contradiction? } \\
+
+\emph{Proof.}
+Write $$z = u {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$$ where
+$u$ is unit and $\pi_k$ $(1 \leq k \leq m)$ are distinct primes in $\mathbb{Z}[\omega]$ and
+$e_k \in \mathbb{Z}^+$ $(1 \leq k \leq m)$.
+Since $\mathbb{Z}[\omega]$ is a UFD by assumption,
+the factorization of $z$ is unique up to order and units.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\pi \mid z$.}
+Since $\pi \mid x + y\omega$, $\pi \mid z^p$.
+The factorization of $z^p$ is
+$$z^p = u^p {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+$u^p$ is unit, and $\pi | z^p$ implies that $\pi = \pi_k$ for some $k$,
+that is, $\pi \mid z$.
+\item[(2)]
+\emph{Show that $\pi \mid yp$ if $\pi$ were divide any of
+the other factors on the left side of
+$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = z^p$.}
+Say $\pi \mid x+y\omega^k$ for some $k \neq 1$.
+So that $\pi \mid ((x+y\omega) - (x+y\omega^k))$,
+or $\pi \mid y(\omega - \omega^k)$.
+Since $k \neq 1$, there are two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  $k > 1$. $\pi \mid y\omega(1 - \omega^{k-1})$.
+  By Exercise 1.16, $\pi \mid y\omega p$, or $\pi \mid yp$ since $\omega$ is unit.
+  ($\omega^{p-1}$ is the inverse of $\omega$ since $\omega \cdot \omega^{p-1} = 1$.)
+  \item[(b)]
+  $k = 0$. $\pi \mid y(\omega - 1)$, or $\pi \mid y(1 - \omega)$.
+  By Exercise 1.16, $\pi \mid yp$.
+  \end{enumerate}
+In any case, $\pi \mid yp$.
+\item[(3)]
+Note that $z$ and $yp$ are integers, and they are relatively prime by the assumption
+that $p$ divides none of $x, y, z$.
+Therefore, on $\mathbb{Z}$ we have $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$.
+\item[(4)]
+$zm + ypn = 1$ is also true in $\mathbb{Z}[\omega]$.
+Therefore, by (1)(2) we have $\pi \mid (zm + ypn)$ or $\pi \mid 1$,
+or $\pi$ is unit, contrary to the primality of $\pi$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.18.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.18.}
+\emph{Use Exercise 1.17 to show that if $\mathbb{Z}[\omega]$ is a UFD then
+$x+y\omega = u\alpha^p$, $\alpha \in \mathbb{Z}[\omega]$,
+$u$ a unit in $\mathbb{Z}[\omega]$. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write $z = u {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$ as Exercise 1.17.
+So
+$$z^p = u^p {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+\item[(2)]
+Factorize $x + y\omega = v q_1^{f_1} \cdots q_n^{f_n}$,
+where $v$ is unit and all $q_h$ $(1 \leq h \leq n)$ are distinct primes in $\mathbb{Z}[\omega]$
+and $f_h \in \mathbb{Z}^+$.
+Since $\mathbb{Z}[\omega]$ is a UFD,
+for every $q_h \mid x + y\omega$, there is some $k(h)$ such that $q_h = \pi_{k(h)}$
+and also $q_h^{f_h} = \pi_{k(h)}^{pe_{k(h)}}$ or $f_h = pe_{k(h)}$.
+\item[(3)]
+Hence,
+$$x + y\omega = v \left( \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}} \right)^p,$$
+where $\alpha = \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}} \in \mathbb{Z}[\omega]$
+and $v$ is unit.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.19.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.19.}
+\emph{Dropping the assumption that $\mathbb{Z}[\omega]$ is a UFD but
+using the fact that ideals factor uniquely (up to order) into prime ideals,
+show that the principal ideal $(x+y\omega)$ has no prime ideal factor in common with
+any of the other principal ideals on the left side of the equation
+$$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = (z)^p$$
+in which all factors are interpreted as principal ideals.
+(Hint: Modify the proof of Exercise 1.17 appropriately,
+using the fact that if $A$ is an ideal dividing another ideal $B$,
+then $A \supseteq B$.)} \\
+
+\emph{Proof.}
+Write $$(z) = {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$$ where
+$\pi_k$ $(1 \leq k \leq m)$ are distinct prime ideals of $\mathbb{Z}[\omega]$ and
+$e_k \in \mathbb{Z}^+$ $(1 \leq k \leq m)$.
+By assumption that $\mathbb{Z}[\omega]$ is a Dedekind domain,
+the factorization of $z$ is unique up to order.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\pi \mid (z)$.}
+Since $\pi \mid (x + y\omega)$, $\pi \mid (z)^p$.
+The factorization of $(z)^p$ is
+$$(z)^p = {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+$\pi | (z)^p$ implies that $\pi = \pi_k$ for some $k$,
+that is, $\pi \mid (z)$.
+\item[(2)]
+\emph{Show that $\pi \mid (yp)$ if $\pi$ were divide any of
+the other factors on the left side of
+$(x+y)(x+y\omega)(x+y\omega^2) \cdots (x+y\omega^{p-1}) = (z)^p$.}
+Say $\pi \mid (x+y\omega^k)$ for some $k \neq 1$.
+So that $x+y\omega \in \pi$ and $x+y\omega^k \in \pi$,
+or $y(\omega - \omega^k) \in \pi$.
+Since $k \neq 1$, there are two possible cases.
+  \begin{enumerate}
+  \item[(a)]
+  $k > 1$. $y\omega(1 - \omega^{k-1}) \in \pi$.
+  By Exercise 1.16, $y\omega p \in \pi$, or $yp \in \pi$ since $\omega$ is unit.
+  ($\omega^{p-1}$ is the inverse of $\omega$ since $\omega \cdot \omega^{p-1} = 1$.)
+  \item[(b)]
+  $k = 0$. $y(\omega - 1) \in \pi$, or $y(1 - \omega) \in \pi$.
+  By Exercise 1.16, $yp \in \pi$.
+  \end{enumerate}
+In any case, $yp \in \pi$, or $\pi \mid (yp)$.
+\item[(3)]
+Note that $z$ and $yp$ are integers, and they are relatively prime by the assumption
+that $p$ divides none of $x, y, z$.
+Therefore, on $\mathbb{Z}$ we have $zm + ypn = 1$ for some $m, n \in \mathbb{Z}$.
+\item[(4)]
+$zm + ypn = 1$ is also true in $\mathbb{Z}[\omega]$.
+Therefore, by (1)(2) we have $z \in \pi$ and $yp \in \pi$.
+So $zm + ypn \in \pi$ since $\pi$ is an ideal.
+So $1 \in \pi$ or $\pi = (1)$, contrary to the primality of $\pi$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.20.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.20.}
+\emph{Use Exercise 1.19 to show that
+$(x+y\omega) = I^p$ for some ideal $I$. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write $(z) = {\pi}_1^{e_1} \cdots {\pi}_m^{e_m}$ as Exercise 1.17.
+So
+$$(z)^p = {\pi}_1^{pe_1} \cdots {\pi}_m^{pe_m}.$$
+\item[(2)]
+Factorize $(x + y\omega) = q_1^{f_1} \cdots q_n^{f_n}$,
+where every $q_h$ $(1 \leq h \leq n)$ are distinct prime ideals of $\mathbb{Z}[\omega]$
+and $f_h \in \mathbb{Z}^+$.
+By assumption that $\mathbb{Z}[\omega]$ is a Dedekind domain,
+for every $q_h \mid (x + y\omega)$, there is some $k(h)$ such that $q_h = \pi_{k(h)}$
+and also $q_h^{f_h} = \pi_{k(h)}^{pe_{k(h)}}$ or $f_h = pe_{k(h)}$.
+\item[(3)]
+Hence,
+$$(x + y\omega) = \left( \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}} \right)^p,$$
+where $I = \pi_{k(1)}^{e_{k(1)}} \cdots \pi_{k(n)}^{e_{k(n)}}$
+is an ideal of $\mathbb{Z}[\omega]$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.21.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.21.}
+\emph{Show that every number of $\mathbb{Q}[\omega]$ is uniquely representable in the form
+$$a_0 + a_1\omega + a_2\omega^2 + \cdots + a_{p-2}\omega^{p-2},
+a_i \in \mathbb{Q} \:\: \forall \: i$$
+by show that $\omega$ is a root of the polynomial
+$$f(t) = t^{p-1} + t^{p-2} + \cdots + t + 1$$
+and that $f(t)$ is irreducible over $\mathbb{Q}$.
+(Hint: It is enough to show that $f(t+1)$ is irreducible,
+which can be established by Eisenstein's criterion.
+It helps to notice that $f(t+1) = \frac{(t+1)^p-1}{t}$.) } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Given any number $\alpha \in \mathbb{Q}[\omega]$.
+Show that}
+$$\alpha = a_0 + a_1\omega + a_2\omega^2 + \cdots + a_{p-2}\omega^{p-2},
+a_i \in \mathbb{Q} \:\: \forall \: i.$$
+Since $\omega^p = 1$, we can write
+$$\alpha = a_0' + a_1'\omega + a_2'\omega^2 + \cdots + a_{p-2}'\omega^{p-2} + a_{p-1}'\omega^{p-1},
+a_i \in \mathbb{Q} \:\: \forall \: i.$$
+Note that $\omega^{p-1} + \omega^{p-2} + \cdots + \omega + 1 = 0$,
+and thus we can replace $\omega^{p-1}$
+by $- \omega^{p-2} - \cdots - \omega - 1$.
+\item[(2)]
+\emph{Show that $\omega$ is a root of the polynomial
+$f(t) = t^{p-1} + t^{p-2} + \cdots + t + 1$.}
+$f(\omega) = \omega^{p-1} + \omega^{p-2} + \cdots + \omega + 1 = 0$.
+\item[(3)]
+\emph{Show that $f(t)$ is irreducible over $\mathbb{Q}$.}
+It suffices to show that $f(t+1)$ is irreducible over $\mathbb{Q}$.
+Write $(t-1)f(t) = t^p - 1$. So
+\begin{align*}
+tf(t+1)
+&= (t+1)^p - 1
+  &\text{(Put $t \mapsto t+1$)} \\
+&= \left( \sum_{k=0}^{p}{p \choose k}t^k \right) - 1
+  &\text{(Binomial theorem)} \\
+&= \sum_{k=1}^{p}{p \choose k}t^k, \\
+f(t+1)
+&= \sum_{k=1}^{p}{p \choose k}t^{k-1} \\
+&= t^{p-1} + p t^{p-2} + \cdots + \frac{p(p-1)}{2} t + p.
+\end{align*}
+By Eisenstein's criterion, $f(t+1)$ is irreducible over $\mathbb{Q}$.
+\item[(4)]
+To show the uniqueness, it suffices to show that the relation
+$$0 = a_0 + a_1\omega + a_2\omega^2 + \cdots + a_{p-2}\omega^{p-2}$$
+implies all $a_i = 0$.
+Say $g(t) = a_0 + a_1 t + a_2 t^2 + \cdots + a_{p-2} t^{p-2} \in \mathbb{Q}[t]$.
+Clearly $g(\omega) = 0$. By the minimality of $f(t)$, $g(t)$ is identical zero,
+or all $a_i = 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.22.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.22.}
+\emph{Use Exercise 1.21 to show that if
+$\alpha \in \mathbb{Z}[\omega]$ and $p \mid \alpha$,
+then (writing $\alpha = a_0 + a_1 \omega + \cdots + a_{p-2} \omega^{p-2}$,
+$a_i \in \mathbb{Z}$) all $a_i$ are divisible by $p$. } \\
+
+\emph{Proof.}
+Since $p \mid \alpha$, there is $\beta \in \mathbb{Z}[\omega]$
+such that $\alpha = p\beta$.
+Write
+\begin{align*}
+\alpha &= a_0 + a_1 \omega + \cdots + a_{p-2} \omega^{p-2}, \\
+\beta &= b_0 + b_1 \omega + \cdots + b_{p-2} \omega^{p-2},
+\end{align*}
+where $a_i, b_j \in \mathbb{Z}$.
+By $\alpha = p\beta$ and Exercise 1.21, $a_i = pb_i$ for every $1 \leq i \leq p-2$.
+So all $a_i$ are divisible by $p$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{Define congruence mod $p$ for $\beta, \gamma \in \mathbb{Z}[\omega]$
+as follows:
+$$\beta \equiv \gamma \pmod{p}
+\text{ iff }
+\beta - \gamma = \delta p \text{ for some } \delta \in \mathbb{Z}[\omega].$$
+(Equivalently, this is congruence mod the principal ideal $p\mathbb{Z}[\omega]$.} \\\\
+
+
+
+\subsubsection*{Exercise 1.23.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.23.}
+\emph{Show that if $\beta \equiv \gamma \pmod{p}$,
+then $\overline{\beta} \equiv \overline{\gamma} \pmod{p}$
+where the bar denotes complex conjugation. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\overline{\delta} \in \mathbb{Z}[\omega]$ for any
+$\delta \in \mathbb{Z}[\omega]$. }
+Write $$\delta = a_0 + a_1 \omega + \cdots + a_{p-1} \omega^{p-1}$$
+where $a_0, \ldots, a_{p-1} \in \mathbb{Z}$.
+Take the complex conjugation to get
+\begin{align*}
+\overline{\delta}
+&= \overline{a_0} + \overline{a_1} \cdot \overline{\omega} + \cdots
+  + \overline{a_{p-1}} \cdot \overline{\omega}^{p-1} \\
+&= a_0 + a_1 \overline{\omega} + \cdots + a_{p-1} \overline{\omega}^{p-1}
+  &\text{(Every $a_k \in \mathbb{Z}$)} \\
+&= a_0 + a_1 \omega^{p-1} + \cdots + a_{p-1} \omega \in \mathbb{Z}[\omega].
+  &\text{($\omega^p = 1$)}
+\end{align*}
+\item[(2)]
+\begin{align*}
+&\beta \equiv \gamma \pmod{p} \\
+\Longleftrightarrow&
+\beta - \gamma = \delta p \text{ for some } \delta \in \mathbb{Z}[\omega] \\
+\Longleftrightarrow&
+\overline{\beta} - \overline{\gamma}
+= \overline{\delta} p \text{ for some } \delta \in \mathbb{Z}[\omega]
+  &\text{(Complex conjugation)} \\
+\Longleftrightarrow&
+\overline{\beta} - \overline{\gamma}
+= \delta' p \text{ for some } \delta' \in \mathbb{Z}[\omega]
+  &\text{((1))} \\
+\Longleftrightarrow&
+\overline{\beta} \equiv \overline{\gamma} \pmod{p}
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.24.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.24.}
+\emph{Show that
+$(\beta+\gamma)^p \equiv \beta^p + \gamma^p \pmod{p}$
+and generalize this to sums of arbitrarily many terms by induction. } \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Binomial theorem gives us
+$$
+(\beta+\gamma)^p
+= \sum_{k=0}^{p}{p \choose k}\beta^k\gamma^{p-k}
+= \beta^p+\gamma^p + \sum_{k=1}^{p-1}{p \choose k}\beta^k\gamma^{p-k}.$$
+\item[(2)]
+Note that every binomial coefficient ${p \choose k}$ is divided by $p$ in $\mathbb{Z}$
+for $1 \leq k \leq p-1$.
+Also, every term $\beta^k\gamma^{p-k}$ is in $\mathbb{Z}[\omega]$.
+So $(\beta+\gamma)^p - \beta^p - \gamma^p = \delta p$
+for some $\delta \in \mathbb{Z}[\omega]$.
+Hence the result holds.
+\item[(3)]
+\emph{In general,}
+$$\left( \sum_{k=1}^{n} \alpha_k \right)^p
+\equiv \sum_{k=1}^{n} \alpha_k^p \pmod{p}.$$
+Induction by
+$(\alpha_1+\alpha_2)^p \equiv \alpha_1^p + \alpha_2^p \pmod{p}$
+and
+$\left( \sum_{k=1}^{n+1} \alpha_k \right)^p
+\equiv \left( \sum_{k=1}^{n} \alpha_k \right)^p + \alpha_{n+1}^p
+\equiv \left( \sum_{k=1}^{n} \alpha_k^p \right) + \alpha_{n+1}^p
+\equiv \sum_{k=1}^{n+1} \alpha_k^p \pmod{p}.$
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.25.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.25.}
+\emph{Show that for all $\alpha \in \mathbb{Z}[\omega]$,
+$\alpha^p$ is congruent $\pmod{p}$ to some $a \in \mathbb{Z}$.
+(Hint: Write $\alpha$ in terms of $\omega$ and use Exercise 1.24.) } \\
+
+\emph{Proof (Hint).}
+Write $$\alpha = a_0 + a_1 \omega + \cdots + a_{p-1} \omega^{p-1}$$
+where $a_0, \ldots, a_{p-1} \in \mathbb{Z}$.
+By Exercise 1.24,
+\begin{align*}
+\alpha^p
+&\equiv a_0^p + (a_1 \omega)^p + \cdots + (a_{p-1} \omega^{p-1})^p \\
+&\equiv a_0^p + a_1^p \omega^p + \cdots + a_{p-1}^p (\omega^{p-1})^p \\
+&\equiv a_0^p + a_1^p \omega^p + \cdots + a_{p-1}^p (\omega^p)^{p-1} \\
+&\equiv a_0^p + a_1^p + \cdots + a_{p-1}^p.
+  &\text{($\omega^p = 1$)}
+\end{align*}
+Here $a_0^p + a_1^p + \cdots + a_{p-1}^p \in \mathbb{Z}$,
+and thus $\alpha^p$ is congruent $\pmod{p}$ to some integer.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{Exercise 1.26-1.28: Now assume $p \geq 5$.
+We will show that if $x+y\omega = u\alpha^p \pmod{p}$,
+$\alpha \in \mathbb{Z}[\omega]$,
+$u$ a unit in $\mathbb{Z}[\omega]$,
+$x$ and $y$ integers not divisible by $p$,
+then $x \equiv y \pmod{p}$.
+For this we will need the following result, proved by Kummer,
+on the units of $\mathbb{Z}[\omega]$:} \\
+
+\emph{Lemma: If $u$ is a unit in $\mathbb{Z}[\omega]$ and
+$\overline{u}$ is its complex conjugate, then $u/\overline{u}$
+is a power of $\omega$.
+(For the proof, see Exercise 2.12.)} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.26.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.26.}
+\emph{Show that $x + y\omega \equiv u \alpha^p \pmod{p}$ implies
+$$x + y\omega \equiv (x + y\omega^{-1}) \omega^k \pmod{p}$$
+for some $k \in \mathbb{Z}$.
+(Use the Lemma on units and Exercise 1.23 and 1.25.
+Note that $\overline{\omega} = \omega^{-1}$.) } \\
+
+\emph{Proof (Hint).}
+\begin{align*}
+&x + y\omega \equiv u \alpha^p \pmod{p} \\
+\Longrightarrow&
+x + y\omega \equiv ua \pmod{p} \text{ for some } a \in \mathbb{Z}
+  &\text{(Exercise 1.25)} \\
+\Longrightarrow&
+\overline{x + y\omega} \equiv \overline{u a} \pmod{p}
+  &\text{(Exercise 1.23)} \\
+\Longrightarrow&
+x + y\overline{\omega} \equiv \overline{u} a \pmod{p} \\
+\Longrightarrow&
+x + y \omega^{-1} \equiv \overline{u} a \pmod{p}
+  &\text{($\overline{\omega} = \omega^{-1}$)} \\
+\Longrightarrow&
+x + y \omega^{-1} \equiv u \omega^{-k} a \pmod{p} \text{ for some } k \in \mathbb{Z}
+  &\text{(Lemma)} \\
+\Longrightarrow&
+ua \equiv (x + y \omega^{-1})\omega^{k} \pmod{p} \\
+\Longrightarrow&
+x + y\omega \equiv (x + y \omega^{-1})\omega^{k} \pmod{p}.
+\end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.27.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.27.}
+\emph{Use Exercise 1.22 to show that a contradiction results unless $k \equiv 1 \pmod{p}$.
+(Recall that $p \nmid xy$, $p \geq 5$, and
+$\omega^{p-1} + \omega^{p-2} + \cdots + \omega + 1 = 0$.) } \\
+
+\emph{Proof.}
+Exercise 1.26 shows
+$$x + y\omega \equiv (x + y\omega^{-1}) \omega^k \pmod{p}.$$
+Multiply $\omega$ on the both sides to get
+$x\omega + y\omega^2 \equiv y\omega^{k} + x\omega^{k+1} \pmod{p}$, or
+$$p \mid (x\omega + y\omega^2 - y\omega^{k} - x\omega^{k+1}).$$
+If $k$ were satisfying $k \not\equiv 1 \pmod{p}$, then by Exercise 1.22 and $p \geq 5$
+we have $p \mid x$ or $p \mid y$, contrary to the assumption that
+$x$ and $y$ are integers not divisible by $p$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.28.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.28.}
+\emph{Finally, show $x \equiv y \pmod{p}$.} \\
+
+\emph{Proof.}
+In the argument of Exercise 1.27 we have
+$$p \mid ((x-y)\omega + (y-x)\omega^2)$$
+by replacing $k = 1$.
+By Exercise 1.22 and $p \geq 5$, $x - y$ is divisible by $p$,
+or $x \equiv y \pmod{p}$ as integers.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.29.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.29.}
+\emph{Let $\omega = \exp(\frac{2\pi i}{23})$.
+Verify that the product
+$$(1+\omega^2+\omega^4+\omega^5+\omega^6+\omega^{10}+\omega^{11})
+(1+\omega+\omega^5+\omega^6+\omega^7+\omega^9+\omega^{11})$$
+is divisible by $2$ in $\mathbb{Z}[\omega]$,
+although neither factor is.
+It can be shown (Exercise 3.17) that $2$ is an irreducible element in $\mathbb{Z}[\omega]$;
+it follows that $\mathbb{Z}[\omega]$ cannot be a UFD. } \\
+
+\emph{Proof.}
+Note that $\sum_{k=0}^{22} \omega^k = 0$.
+So
+\begin{align*}
+&(1+\omega^2+\omega^4+\omega^5+\omega^6+\omega^{10}+\omega^{11})
+(1+\omega+\omega^5+\omega^6+\omega^7+\omega^9+\omega^{11}) \\
+=& 2(\omega^5+\omega^6+\omega^7+\omega^9+\omega^{10}+3\omega^{11}
++\omega^{12}+\omega^{13}+\omega^{15}+\omega^{16}+\omega^{17})
+\end{align*}
+is divisible by $2$ in $\mathbb{Z}[\omega]$,
+although neither factor is.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{Exercise 1.30-1.32: $R$ is an integral domain
+(commutative ring with $1$ and no zero divisors).} \\\\
+
+
+
+\subsubsection*{Exercise 1.30.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.30.}
+\emph{Show that two ideals in $R$ are isomorphic as $R$-modules
+iff they are in the same ideal class.} \\
+
+\emph{Proof.}
+Given any two ideals $A, B$ in an commutative integral domain $R$.
+\begin{enumerate}
+\item[(1)]
+$(\Longrightarrow)$
+Let $\varphi: A \to B$ be an $R$-module isomorphism.
+Given any nonzero $\alpha \in A$, we have
+\begin{align*}
+\varphi(\alpha)A
+&= \{ \varphi(\alpha)a : a \in A \} \\
+&= \{ \varphi(\alpha a) : a \in A \}
+  &\text{($\varphi$ is a homomorphism)} \\
+&= \{ \alpha\varphi(a) : a \in A \}
+  &\text{($\varphi$ is a homomorphism)} \\
+&= \{ \alpha b : b \in B \}
+  &\text{($\varphi$ is an isomorphism)} \\
+&= \alpha B.
+\end{align*}
+Notice that $\varphi(\alpha) \neq 0$ since $\alpha \neq 0$ and $\varphi$ is injective.
+Therefore, $A \sim B$.
+\item[(2)]
+$(\Longleftarrow)$
+Given $A \sim B$, there are nonzero $\alpha, \beta \in R$ such that $\alpha A = \beta B$.
+Define a map $\varphi: A \to B$ by $\varphi(a) = b$ if $\alpha a = \beta b$.
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$\varphi$ is well-defined.}
+    \begin{enumerate}
+    \item[(i)]
+    \emph{Existence of $b$.}
+    Since $\alpha a \in \alpha A = \beta B$, there is $b \in B$ such that $\alpha a = \beta b$.
+    \item[(ii)]
+    \emph{Uniqueness of $b$.}
+    If $\alpha a = \beta b_1 = \beta b_2$, $\beta(b_1-b_2) = 0$.
+    Since $R$ is an integral domain and $\beta \neq 0$, $b_1-b_2 = 0$ or $b_1 = b_2$.
+    \end{enumerate}
+  \item[(b)]
+  \emph{$\varphi$ is an $R$-module homomorphism.}
+    \begin{enumerate}
+    \item[(i)]
+    \emph{Show that $\varphi(a_1+a_2) = \varphi(a_1) + \varphi(a_2)$.}
+    Write $\varphi(a_1) = b_1$ and $\varphi(a_2) = b_2$.
+    \begin{align*}
+    &\varphi(a_1) = b_1 \text{ and } \varphi(a_2) = b_2 \\
+    \Longrightarrow&
+    \alpha a_1 = \beta b_1 \text{ and } \alpha a_2 = \beta b_2
+      &\text{(Definition of $\varphi$)} \\
+    \Longrightarrow&
+    \alpha a_1 + \alpha a_2 = \beta b_1 + \beta b_2
+      &\text{(Add together)} \\
+    \Longrightarrow&
+    \alpha (a_1 + a_2) = \beta (b_1 + b_2) \\
+    \Longrightarrow&
+    \varphi(a_1+a_2) = b_1+b_2 = \varphi(a_1) + \varphi(a_2).
+      &\text{(Definition of $\varphi$)}
+    \end{align*}
+    \item[(ii)]
+    \emph{Show that $\varphi(ra) = r\varphi(a)$.}
+    Write $\varphi(a) = b$.
+    \begin{align*}
+    \varphi(a) = b
+    \Longrightarrow&
+    \alpha a = \beta b
+      &\text{(Definition of $\varphi$)} \\
+    \Longrightarrow&
+    r \alpha a = r \beta b
+      &\text{(Multiply $r$)} \\
+    \Longrightarrow&
+    \alpha(ra) = \beta (rb)
+      &\text{($R$ is commutative)} \\
+    \Longrightarrow&
+    \varphi(ra) = rb = r \varphi(a).
+      &\text{(Definition of $\varphi$)}
+    \end{align*}
+    \end{enumerate}
+  \item[(c)]
+  \emph{$\varphi$ is injective.}
+  Given $\varphi(a) = 0$. Then $\alpha a = \beta b = \beta 0 = 0$.
+  Since $R$ is an integral domain and $\alpha \neq 0$, $a = 0$.
+  \item[(d)]
+  \emph{$\varphi$ is surjective.}
+  Given any $b \in B$. $\beta b \in \beta B = \alpha A$.
+  There is $a \in A$ such that $\beta b = \alpha a$.
+  Such $a$ satisfies $\varphi(a) = b$.
+  \end{enumerate}
+  Therefore, $\varphi: A \to B$ is an $R$-module isomorphism.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection*{Exercise 1.31.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.31.}
+\emph{Show that if $A$ is an ideal in $R$ and if $\alpha A$ is principal
+for some nonzero $\alpha \in R$, then $A$ is principal.
+Conclude that the principal ideals form an ideal class.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Write $\alpha A = (b)$ for some $b \in \alpha A$.
+That is, there is $a \in A$ such that
+$$b = \alpha a.$$
+\item[(2)]
+\emph{Show that $A = (a)$ is principal.}
+$(a) \subseteq A$ holds trivially since $a \in A$ and $A$ is an ideal.
+Given any $x \in A$. $\alpha x \in \alpha A = (b)$, and thus
+there is $y \in R$ such that $\alpha x = b y$.
+Replace $b$ by $b = \alpha a$ to get $\alpha x = \alpha a y$ or
+$$\alpha (x - ay) = 0.$$
+Since $\alpha \neq 0$ and $R$ is an integral domain,
+$x - ay = 0$ or $x = ay \in (a)$ or $A \subseteq (a)$.
+Hence $A = (a)$ is principal.
+\item[(3)]
+\emph{Show that the principal ideals form an ideal class.}
+Given any $A = (a) \neq 0$ and $B = (b) \neq 0$,
+we have $bA = aB = (ab)$ for $a, b \in R$ or $A \sim B$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.32.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.32.}
+\emph{Show that the ideal classes in $R$ form a group iff for every ideal $A$
+there is an ideal $B$ such that $AB$ is principal. } \\
+
+\emph{Note.}
+The Picard group of the spectrum of a Dedekind domain is its ideal class group. \\
+
+\emph{Proof.}
+Let $[A]$ be the ideal class representing by a nonzero ideal $A$ of $R$.
+Let
+$$\text{Pic}(R) = \{ [A] : A \text{ is an ideal of } R \}$$
+be the set of all ideal classes.
+Define the operation $\cdot : \text{Pic}(R) \times \text{Pic}(R) \to \text{Pic}(R)$
+by $[A] \cdot [B] \mapsto [AB]$.
+
+\begin{enumerate}
+\item[(1)]
+\emph{(Closure) Show that the operation $[A] \cdot [B] \mapsto [AB]$ is well-defined. }
+Trivial due to the definition of the ideal class.
+Note that $[A] \cdot [B] = [B] \cdot [A]$ by the commutativity of $R$.
+\item[(2)]
+\emph{(Associativity) Show that $([A] \cdot [B]) \cdot [C] = [A] \cdot ([B] \cdot [C])$. }
+Trivial due to the definition of the ideal class.
+\item[(3)]
+\emph{(Identity element) Show that the non-zero principal ideals form the ideal class $[1]$. }
+Exercise 1.30 and note that $(1)$ is principal too.
+\item[(4)]
+\emph{Show that the set $\text{Pic}(R)$ forms an (abelian) group with $[1]$
+as the identity element if and only if every $[A]$ has an inverse in $\text{Pic}(R)$.}
+By (1)(2)(3), the set $\text{Pic}(R)$ forms an (abelian) group iff
+every element has an inverse element. The conclusion is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 2: Number Fields and Number Rings \\}
+\addcontentsline{toc}{section}{Chapter 2: Number Fields and Number Rings}
+
+
+
+\subsubsection*{Exercise 2.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.1.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that every number field of degree $2$ over $\mathbb{Q}$
+is one of the quadratic fields $\mathbb{Q}[\sqrt{m}]$, $m \in \mathbb{Z}$.}
+\item[(b)]
+\emph{Show that the fields $\mathbb{Q}[\sqrt{m}]$, $m$ squarefree,
+are pairwise distinct.
+(Hint: Consider the equation $\sqrt{m} = a+b\sqrt{n}$);
+use this to show that they are in fact pairwise non-isomorphic.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Let $f(x) = ax^2+bx+c$, $a, b, c \in \mathbb{Z}$ ($a \neq 0$)
+and assume $f$ is irreducible over $\mathbb{Q}$.
+Let $\alpha$ be a root of $f(x)$.
+So
+$$\alpha = \frac{-b \pm \sqrt{m}}{2a}$$
+where $m = b^2-4ac \in \mathbb{Z}$.
+Therefore,
+$$\mathbb{Q}[\alpha]
+= \mathbb{Q}\left[ \frac{-b \pm \sqrt{m}}{2a} \right]
+= \mathbb{Q}[\sqrt{m}].$$
+$\Box$ \\
+
+\emph{Proof of (b).}
+\emph{Show that $\mathbb{Q}[\sqrt{m}]$ and $\mathbb{Q}[\sqrt{n}]$
+are not isomorphic as fields if $m$ and $n$ are squarefree and $m \neq n$.}
+Reductio ad absurdum.
+\begin{enumerate}
+\item[(1)]
+If $\varphi: \mathbb{Q}[\sqrt{m}] \to \mathbb{Q}[\sqrt{n}]$ were an isomorphism
+as fields, then $\varphi$ is an identity map on $\mathbb{Q}$, and
+\begin{align*}
+&\varphi(\sqrt{m}) = a + b\sqrt{n} \text{ for some } a, b \in \mathbb{Q} \\
+\Longrightarrow&
+\varphi(\sqrt{m})\varphi(\sqrt{m}) = (a + b\sqrt{n})^2 \\
+\Longrightarrow&
+\varphi(\sqrt{m} \sqrt{m}) = (a + b\sqrt{n})^2 \\
+\Longrightarrow&
+\varphi(m) = a^2 + nb^2 + 2ab\sqrt{n} \\
+\Longrightarrow&
+m = a^2 + nb^2 + 2ab\sqrt{n}.
+\end{align*}
+If $2ab \neq 0$, then $\sqrt{n} = \frac{m-a^2-nb^2}{2ab} \in \mathbb{Q}$,
+contrary to the assumption that $n$ is squarefree.
+Hence $2ab = 0$.
+\item[(2)]
+$a = 0$.
+Write $b = \frac{r}{s} \in \mathbb{Q}$ where $r, s \in \mathbb{Z}$ and $(r, s) = 1$.
+So $$ms^2 = nr^2.$$
+Hence
+\begin{align*}
+b \neq 0
+&\Longrightarrow
+s^2 > 0 \text{ and } r^2 > 0 \\
+&\Longrightarrow
+\text{$m$ and $n$ have the same sign} \\
+&\Longrightarrow
+\text{($\exists$ prime $p \mid m$, $p \nmid n$) or
+($\exists$ prime $q \mid n$, $q \nmid m$) since $m \neq n$}.
+\end{align*}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{There is a prime $p \mid m$ but $p \nmid n$.}
+  \begin{align*}
+  p \mid m
+  &\Longrightarrow
+  \text{Write $m = pm_1$ for some $m_1 \in \mathbb{Z}$} \\
+  &\Longrightarrow
+  (pm_1)s^2 = nr^2
+    &(ms^2 = nr^2) \\
+  &\Longrightarrow
+  p \mid nr^2 \\
+  &\Longrightarrow
+  p \mid r^2
+    &(\text{$p \nmid n$ by assumption}) \\
+  &\Longrightarrow
+  p \mid r
+    &(\text{$p$ is a prime}) \\
+  &\Longrightarrow
+  \text{Write $r = pr_1$ for some $r_1 \in \mathbb{Z}$} \\
+  &\Longrightarrow
+  (pm_1)s^2 = n(pr_1)^2
+    &(ms^2 = nr^2) \\
+  &\Longrightarrow
+  m_1s^2 = npr_1^2 \\
+  &\Longrightarrow
+  p \mid m_1s^2 \\
+  &\Longrightarrow
+  p \mid m_1
+    &(\text{$(r,s)=1$ and $p \mid r$}) \\
+  &\Longrightarrow
+  \text{Write $m_1 = pm_2$ for some $r_2 \in \mathbb{Z}$} \\
+  &\Longrightarrow
+  m = p^2m_2,
+  \end{align*}
+  contrary to the assumption that $m$ is squarefree.
+  \item[(b)]
+  \emph{There is a prime $q \mid n$ but $q \nmid m$.}
+  Similar to (a).
+  \end{enumerate}
+\item[(3)]
+$b = 0$.
+$m = a^2$.
+Write $a = \frac{r}{s} \in \mathbb{Q}$ where $r, s \in \mathbb{Z}$ and $(r, s) = 1$.
+Hence $ms^2 = r^2$.
+Similar to the argument in (2).
+\item[(4)]
+By (2)(3), no such isomorphism $\varphi$, that is,
+$\mathbb{Q}[\sqrt{m}]$ and $\mathbb{Q}[\sqrt{n}]$
+are not isomorphic as fields.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement 2.1. (Isomorphic as vector spaces)}
+\addcontentsline{toc}{subsubsection}{Supplement 2.1. (Isomorphic as vector spaces)}
+
+\textbf{Supplement (Isomorphic as vector spaces).}
+\emph{Show that $\mathbb{Q}[\sqrt{m}]$ and $\mathbb{Q}[\sqrt{n}]$
+are isomorphic as $\mathbb{Q}$-vector spaces.} \\
+
+\emph{Proof.}
+$[\mathbb{Q}[\sqrt{m}]:\mathbb{Q}] = [\mathbb{Q}[\sqrt{n}]:\mathbb{Q}] = 2$.
+There is a natural map $\varphi: \mathbb{Q}[\sqrt{m}] \to \mathbb{Q}[\sqrt{n}]$
+defined by $\varphi(a + b\sqrt{m}) = a + b\sqrt{n}$.
+Clearly $\varphi$ is well-defined, linear, injective and surjective.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.2.}
+\emph{Let $I$ be the ideal generated by $2$ and $1 + \sqrt{-3}$ in the ring
+$\mathbb{Z}[\sqrt{-3}] = \{ a+b\sqrt{-3} : a,b \in \mathbb{Z} \}$.
+Show that $I \neq (2)$ but $I^2 = 2I$.
+Conclude that ideals in $\mathbb{Z}[\sqrt{-3}]$ do not factor uniquely
+into prime ideals.
+Show moreover that $I$ is the unique prime ideal containing $(2)$
+and conclude that $(2)$ is not a product of prime ideals.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $I \neq (2)$.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $I \supseteq (2)$.}
+  $2 \in (2,1+\sqrt{-3}) = I$.
+  \item[(b)]
+  \emph{Show that $I \not\subseteq (2)$.}
+  Consider $1+\sqrt{-3} \in I$.
+  (Reductio ad absurdum)
+  If $1+\sqrt{-3}$ were in $(2)$, then there exists $a+b\sqrt{-3}$ such that
+    $$1+\sqrt{-3} = 2(a+b\sqrt{-3}) = 2a+2b\sqrt{-3}.$$
+  Thus, $a = \frac{1}{2}$ and $b = \frac{1}{2}$, which is absurd.
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $I^2 = 2I$.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $I^2 \supseteq 2I$.}
+  Since $2 \in (2,1+\sqrt{-3}) = I$, $2I \subseteq I^2$.
+  \item[(b)]
+  \emph{Show that $I^2 \subseteq 2I$.}
+  All elements of $I^2$ are generated by
+  $$2 \cdot 2, 2(1+\sqrt{-3}) \text{ and } (1+\sqrt{-3})^2.$$
+  Clearly, $2 \cdot 2, 2(1+\sqrt{-3}) \in 2I$.
+  Besides,
+  $$(1+\sqrt{-3})^2 = -2 + 2\sqrt{-3} = 2(-(2) + (1+\sqrt{-3})) \in 2I.$$
+  Hence $I^2 \subseteq 2I$.
+  \end{enumerate}
+\item[(3)]
+\emph{Show that ideals in $\mathbb{Z}[\sqrt{-3}]$ do not factor uniquely
+into prime ideals.}
+TODO.
+\item[(4)]
+\emph{Show that $I$ is the unique prime ideal containing $(2)$.}
+TODO.
+\item[(5)]
+\emph{Show that $(2)$ is not a product of prime ideals.}
+TODO.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.4.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.4.}
+\emph{Suppose $a_0, \ldots, a_{n-1}$ are algebraic integers and
+$\alpha$ is a complex number satisfying
+$$\alpha^n + a_{n-1} \alpha^{n-1} + \cdots + a_1 \alpha + a_0 = 0.$$
+Show that the ring
+$\mathbb{Z}[a_0, \ldots, a_{n-1}, \alpha]$ has a finitely generated additive group.
+(Hint: Consider the products $a_0^{m_0} a_1^{m_1} \cdots a_{n-1}^{m_{n-1}} \alpha^m$
+and show that only finitely many values of the exponents are needed.)
+Conclude that $\alpha$ is an algebraic integer.} \\
+
+\emph{Proof.}
+Let $V = \mathbb{Z}[a_0, \ldots, a_{n-1}, \alpha]$.
+Let $n_k$ be the degree of the algebraic integer $a_k$ where $0 \leq k \leq n-1$.
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $V$ is finitely generated as an additive subgroup of $\mathbb{C}$.}
+\emph{It suffices to show that $V$ is generated by
+$$a_0^{m_0} a_1^{m_1} \cdots a_{n-1}^{m_{n-1}} \alpha^m$$
+where $0 \leq m_k < n_k$ and $0 \leq m < n$.}
+Given any $x \in V$,
+$x$ is a finite sum of the product
+$a_0^{m_0} a_1^{m_1} \cdots a_{n-1}^{m_{n-1}} \alpha^m$
+with $m_k \geq 0$ and $m \geq 0$. \\
+
+If $m \geq n$,
+replace $\alpha^m$
+by
+\begin{align*}
+\alpha^m
+=& \alpha^{m-n} \alpha^{n} \\
+=& \alpha^{m-n} (-a_{n-1} \alpha^{n-1} - \cdots - a_1 \alpha - a_0) \\
+=& -a_{n-1} \alpha^{m-1} - \cdots - a_1 \alpha^{m-n+1} - a_0 \alpha^{m-n}.
+\end{align*}
+Repeat this process to reduce the degree of $\alpha^m$ less than $n$.
+Therefore, we can write $x$ as a finite sum of the product
+$a_0^{m_0'} a_1^{m_1'} \cdots a_{n-1}^{m_{n-1}'} \alpha^{m'}$
+with $m_k' \geq 0$ and $0 \leq m' < n$. \\
+
+Once the degree of $\alpha^m$ is reduced,
+continue to reduce the degree of each $a_k^{m_k'}$
+without affecting other $a_h$ ($h \neq k$) and $\alpha$.
+Now replace $a_k^{m_k'}$
+by
+$$a_k^{m_k'} = \sum_{i = 0}^{n_k-1} b_{k,i} a_k^{i}$$
+where $b_{k,i} \in \mathbb{Z}$.
+Therefore, we can write $x$ as a finite sum of the product
+$a_0^{m_0''} a_1^{m_1''} \cdots a_{n-1}^{m_{n-1}''} \alpha^{m'}$
+with $0 \leq m_k'' < n_k$ and $0 \leq m' < n$.
+\item[(4)]
+\emph{Show that $\alpha$ is an algebraic integer.}
+Since $\alpha \in V$, $\alpha V \subseteq V$.
+Thus $\alpha$ is an algebraic integer (Theorem 2.2).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.5.}
+\emph{Show that if $f$ is any polynomials over $\mathbb{Z}/p\mathbb{Z}$ ($p$ a prime)
+then $f(x^p) = (f(x))^p$.
+(Suggestion: Use induction on the number of terms.)} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Let $${p \choose k} = \frac{p!}{k!(p-k)!}$$
+be a binomial coefficient.
+If $1 \leq k \leq p-1$, show that $p$ divides ${p \choose k}$.}
+  \begin{enumerate}
+  \item[(a)]
+    If $1 \leq k \leq p-1$, then $p \nmid k!$ and $p \nmid (p-k)!$
+    since $p$ is a prime.
+  \item[(b)]
+    Write $a = \frac{p!}{k!(p-k)!} \in \mathbb{Z}$.
+    Hence,
+    \begin{align*}
+    a = \frac{p!}{k!(p-k)!}
+    &\Longleftrightarrow
+    p! = ak!(p-k)! \\
+    &\Longrightarrow
+    p \mid p! \text{ or } p \mid ak!(p-k)! \\
+    &\Longrightarrow
+    p \mid a \:\:\:\: \text{by (a).}
+    \end{align*}
+    Hence $p$ divides ${p \choose k}$ if $1 \leq k \leq p-1$.
+  \end{enumerate}
+\item[(2)]
+Note that $a^p = a \in \mathbb{Z}/p\mathbb{Z}$ for all $a \in \mathbb{Z}/p\mathbb{Z}$.
+\item[(3)]
+Write
+$$f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 \in \mathbb{Z}/p\mathbb{Z}[x].$$
+Induction on $n$.
+  \begin{enumerate}
+  \item[(a)]
+    $n = 0$. So $f(x) = a_0$, and thus $f(x)^p = a_0^p = a_0$ by (2).
+  \item[(b)]
+    $n = 1$. By $f(x) = a_1 x + a_0$,
+    \begin{align*}
+    f(x)^p
+    &= (a_1 x + a_0)^p \\
+    &= a_1^p x^p
+      + \sum_{k=1}^{p-1} {p \choose k} (a_1 x)^k a_0^{p-k}
+      + a_0^p
+      &\text{(Binomial theorem)} \\
+    &= a_1^p x^p + a_0^p
+      &\text{((1))} \\
+    &= a_1 x^p + a_0
+      &\text{((2))} \\
+    &= f(x^p).
+    \end{align*}
+  \item[(c)]
+  If the statement holds for $n-1$, then
+    \begin{align*}
+    f(x)^p
+    &= (a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0)^p \\
+    &= [a_n x^n + (a_{n-1} x^{n-1} + \cdots + a_1 x + a_0)]^p \\
+    &= (a_n x^n)^p + (a_{n-1} x^{n-1} + \cdots + a_1 x + a_0)^p
+      &\text{(Same as (b))} \\
+    &= a_n (x^p)^n+ (a_{n-1} x^{n-1} + \cdots + a_1 x + a_0)^p
+      &\text{((2))} \\
+    &= a_n (x^p)^n + a_{n-1} (x^p)^{n-1} + \cdots + a_1 x^p + a_0
+      &\text{(Induction hypothesis)} \\
+    &= f(x^p).
+    \end{align*}
+  The inductive step is established.
+  \end{enumerate}
+  By induction, $f(x)^p = f(x^p)$ holds for any $n \geq 0$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.6.}
+\emph{Show that if $f$ and $g$ are polynomials over a field $K$ and
+$f^2 \mid g$ in $K[x]$, then $f \mid g'$.
+(Hint: Write $g = f^2 h$ and differentiate.)} \\
+
+\emph{Proof (Hint).}
+Since $f^2 \mid g$ in $K[x]$, there exists $h \in K[x]$ such $g = f^2 h$.
+Differentiate to get $g' = 2f f' h + f^2 h' = f(2f'h + fh')$,
+or $f \mid g'$ in $K[x]$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.10.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.10.}
+\emph{Complete the proof of Corollary 3 to Theorem 2.3,
+by showing if $m$ is even, $m \mid r$, and $\varphi(r) \leq \varphi(m)$, then $r = m$.} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Since $m$ is even,
+write the unique factorization of $m$ as
+$$m = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_k^{\alpha_k}$$
+where $p_1 = 2$, all $\alpha_i \geq 1$ $(1 \leq i \leq k)$,
+and all $p_i$ $(1 \leq i \leq k)$
+are distinct prime numbers.
+\item[(2)]
+Since $m \mid r$, write $r = mm_1$ for some $m_1 \in \mathbb{Z}$.
+Thus we can write the unique factorization of $r$ as
+$$m = p_1^{\beta_1} p_2^{\beta_2} \cdots p_k^{\beta_k}
+q_1^{\gamma_1} \cdots q_h^{\gamma_h}$$
+where all $\beta_i \geq \alpha_i \geq 1$ $(1 \leq i \leq k)$
+and all $p_i$ $(1 \leq i \leq k)$ and $q_j$ $(1 \leq j \leq h)$
+are distinct prime numbers.
+Here $h$ might be zero if $m_1 = 1$, and all $q_j \mid m_1$ but $q_j \nmid m$.
+\item[(3)]
+Thus,
+\begin{align*}
+\varphi(m)
+&= m
+    \left( 1 - \frac{1}{2} \right)
+    \cdots
+    \left( 1 - \frac{1}{p_k} \right) \\
+\varphi(r)
+&= mm_1
+    \left( 1 - \frac{1}{2} \right)
+    \cdots
+    \left( 1 - \frac{1}{p_k} \right)
+    \left( 1 - \frac{1}{q_1} \right)
+    \cdots
+    \left( 1 - \frac{1}{q_h} \right) \\
+&= \varphi(m) m_1
+    \left( 1 - \frac{1}{q_1} \right)
+    \cdots
+    \left( 1 - \frac{1}{q_h} \right) \\
+&\geq \varphi(m) (q_1 \cdots q_h)
+    \left( 1 - \frac{1}{q_1} \right)
+    \cdots
+    \left( 1 - \frac{1}{q_h} \right) \\
+&\geq \varphi(m)(q_1-1) \cdots (q_h-1).
+\end{align*}
+\item[(4)]
+Since all $q_j \neq 2$ $(1 \leq j \leq h)$,
+$q_j - 1 > 1$.
+Hence by (3) and assumption that $\varphi(r) \leq \varphi(m)$,
+$h = 0$ or $m_1 = 1$ or $r = m$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.11.}
+\begin{enumerate}
+\item[(a)]
+\emph{Suppose all roots of a monic polynomial $f \in \mathbb{Q}[x]$
+has absolute value $1$.
+Show that the coefficient of $x^r$ has absolute value $\leq {n \choose r}$,
+where $n$ is the degree of $f$ and ${n \choose r}$ is the binomial coefficient.}
+\item[(b)]
+\emph{Show that there are only finitely many algebraic integers $\alpha$
+of fixed degree $n$, all of whose conjugates (including $\alpha$) have absolute value $1$.
+(Note: If you don't use Theorem 2.1, your proof is probably wrong.)}
+\item[(c)]
+\emph{Show that $\alpha$ must be a root of $1$.
+(Show that its powers are restricted to a finite set.)} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+Write
+$f(x) = (x-\alpha_1) \cdots (x-\alpha_n)$ where $\alpha_i \in \mathbb{C}$, $|\alpha_i| = 1$
+for $i = 1, 2, \ldots, n$.
+\item[(2)]
+So $$f(x) = x^n - s_1 x^{n-1} + s_2 x^{n-2} + \cdots + (-1)s_n$$
+where
+$$s_r = \sum_{1 \leq j_1 < \cdots < j_r \leq n} \alpha_{j_1} \cdots \alpha_{j_r} \in \mathbb{C}.$$
+Let $c_r = (-1)^r s_{n-r}$ be the coefficient of $x^r$.
+\item[(3)]
+\begin{align*}
+|c_r|
+&= |(-1)^r s_{n-r}| \\
+&= \abs{\sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} \alpha_{j_1} \cdots \alpha_{j_{n-r}}} \\
+&\leq \sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} \abs{\alpha_{j_1} \cdots \alpha_{j_{n-r}}} \\
+&= \sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} |\alpha_{j_1}| \cdots |\alpha_{j_{n-r}}| \\
+&= \sum_{1 \leq j_1 < \cdots < j_{n-r} \leq n} 1 \\
+&= {n \choose n-r} \\
+&= {n \choose r}.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Let $f$ be an irreducible monic polynomial over $\mathbb{Z}$ of degree $n$
+such that $f(\alpha) = 0$.
+So $f$ is irreducible over $\mathbb{Q}$ (Theorem 2.1),
+and thus all the conjugates of $\alpha$ (including $\alpha$) are roots of $f$.
+\item[(2)]
+By (a), all the coefficient of $x^r$ has absolute value $\leq {n \choose r}$.
+Since all the coefficient of $x^r$ are integers,
+there are finitely many irreducible monic polynomials $f \in \mathbb{Z}[x]$
+such that $f(\alpha) = 0$ with $|\alpha| = 1$.
+\item[(3)]
+For each such $f$, there are only finitely many roots.
+Therefore, there are only finitely many such algebraic integers $\alpha$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+If $\alpha_1, \ldots, \alpha_n$
+are the roots of $f$ of degree $n$ over $\mathbb{Q}$,
+then for every $r \in \mathbb{Z}^+$,
+$\alpha_1^r, \ldots, \alpha_n^r$
+are all the roots of some monic polynomial $f_r$ of degree $n$ over $\mathbb{Q}$
+(Fundamental theorem of symmetric polynomials).
+\item[(2)]
+Now we consider the powers of $\alpha$.
+All the powers of $\alpha$ ($\alpha^r$) are algebraic integers (Theorem 2.2), and of
+degree at most $n$.
+(Let $g \in \mathbb{Z}[x]$ be the minimal polynomial of $\alpha^r$ over $\mathbb{Q}$.
+By (1), $f_r(\alpha^r) = 0$, and thus $g \mid f_r$.
+Hence $\deg(g) \leq \deg(f_r) = n$.)
+\item[(3)]
+By (b), the powers of $\alpha$ are restricted to a finite set,
+say $\alpha^r = \alpha^s$ for some $s > r \geq 1$.
+So $\alpha^{s-r} = 1$ with $s-r \geq 1$.
+That is, $\alpha$ is a root of unity.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.12. (Kummer's Lemma)}
+\addcontentsline{toc}{subsubsection}{Exercise 2.12. (Kummer's Lemma)}
+\emph{Now we can prove Kummer's lemma on units in the $p$-th cyclotomic field,
+as stated before Exercise 1.26:
+Let $\omega = e^{\frac{2\pi i}{p}}$, $p$ an odd prime,
+and suppose $u$ is a unit in $\mathbb{Z}[\omega]$.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that $u/\overline{u}$ is a root of $1$.
+(Use Exercise 2.11(c) above and observe that complex conjugation is a member of
+the Galois group of $\mathbb{Z}[\omega]$ over $\mathbb{Q}$.)
+Conclude that $u/\overline{u} = \pm \omega^k$ for some $k$.}
+\item[(b)]
+\emph{Show that the $+$ sign holds: Assuming $u/\overline{u} = -\omega^k$,
+we have $u^p = -\overline{u^p}$;
+show that this implies that $u^p$ is divisible by $p$ in $\mathbb{Z}[\omega]$.
+(Use Exercise 1.23 and 1.25)
+But this is impossible since $u^p$ is a unit.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Write $\alpha = u/\overline{u}$. Then
+\begin{align*}
+|\alpha| = 1
+&\Longrightarrow
+\text{$\alpha$ is a root of unity}
+  &\text{(Exercise 2.11)} \\
+&\Longrightarrow
+\text{$\alpha$ is a $2p$-th root of unity}
+  &\text{(Corollary 3 to Theorem 2.3)} \\
+&\Longrightarrow
+\text{$\alpha = \pm \omega^k$ for some $k \in \mathbb{Z}$}
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (b).}
+(Reductio ad absurdum)
+Assume that $u/\overline{u} = -\omega^k$,
+then
+\begin{align*}
+u/\overline{u} = -\omega^k
+&\Longrightarrow
+(u/\overline{u})^p = (-\omega^k)^p \\
+&\Longrightarrow
+u^p/\overline{u}^p = (-1)^p \omega^{pk} = -1
+  &\text{($p$ is odd)} \\
+&\Longrightarrow
+u^p = -\overline{u}^p = -\overline{u^p}
+\end{align*}
+By Exercise 1.25, $u^p \equiv a \pmod{p}$ for some $a \in \mathbb{Z}$.
+By Exercise 1.23, $\overline{u^p} \equiv \overline{a} \equiv a \pmod{p}$.
+Thus
+\begin{align*}
+u^p = -\overline{u^p}
+&\Longrightarrow
+a \equiv -a \pmod{p} \\
+&\Longrightarrow
+2a \equiv 0 \pmod{p} \\
+&\Longrightarrow
+a \equiv 0 \pmod{p}
+  &\text{($p$ is odd)}
+\end{align*}
+or $u^p \equiv 0 \pmod{p}$, contradicts the assumption that $u$ is a unit.
+Hence $u/\overline{u} = \omega^k$ for some $k$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.13.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.13.}
+\emph{Show that $1$ and $-1$ are the only units in the ring
+$\mathbb{A} \cap \mathbb{Q}[\sqrt{m}]$, $m$ squarefree, $m < 0$,
+$m \neq -1, -3$.
+What if $m = -1$ or $-3$?} \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+Let $K = \mathbb{Q}[\sqrt{m}]$ and $\mathcal{O}_K = \mathbb{A} \cap \mathbb{Q}[\sqrt{m}]$.
+Define a norm $N$ on $K$
+by $$N(a+b\sqrt{m}) = (a+b\sqrt{m})(a-b\sqrt{m}) = a^2 + |m|b^2.$$
+\item[(2)]
+Corollary 2 to Theorem 1:
+\begin{equation*}
+  \mathcal{O}_K =
+    \begin{cases}
+      \{ a+b\sqrt{m} : a,b \in \mathbb{Z} \}
+        & (m \equiv 2,3 \pmod{4}), \\
+      \left\{ \frac{a+b\sqrt{m}}{2} : a,b \in \mathbb{Z}, a \equiv b \pmod{2} \right\}
+        & (m \equiv 1 \pmod{4}).
+    \end{cases}
+\end{equation*}
+Clearly, $N$ maps $\mathcal{O}_K$ to nonnegative integers.
+That is, $u$ is a unit in $\mathcal{O}_K$ if and only if $N(u) = 1$
+(by the fact that $N(u) = u \overline{u}$).
+\item[(3)]
+If $m \equiv 2,3 \pmod{4}$ and $u = a + b\sqrt{m} \in \mathcal{O}_K$ is a unit
+($a, b \in \mathbb{Z}$),
+then $$N(u) = 1 = a^2 + |m|b^2.$$
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$m = -1$ or $|m| = 1$.}
+  $1 = a^2 + b^2$ or $(a,b) = (\pm 1,0), (0, \pm 1)$.
+  Hence all units in $\mathcal{O}_K$ are
+  $$\pm 1, \pm \sqrt{-1}.$$
+  \item[(b)]
+  \emph{$m < -1$ or $|m| > 1$.}
+  $1 = a^2 + |m|b^2$ implies that $b^2 = 0$.
+  Hence all units in $\mathcal{O}_K$ are $\pm 1$.
+  \end{enumerate}
+\item[(4)]
+If $m \equiv 1 \pmod{4}$ and $u = \frac{a + b\sqrt{m}}{2} \in \mathcal{O}_K$ is a unit
+($a, b \in \mathbb{Z}, a \equiv b \pmod{2}$),
+then $N(u) = 1 = (\frac{a}{2})^2 + |m|(\frac{b}{2})^2$ or
+$$4 = a^2 + |m|b^2.$$
+  \begin{enumerate}
+  \item[(a)]
+  \emph{$m = -3$ or $|m| = 3$.}
+  $4 = a^2 + 3b^2$ or $(a,b) = (\pm 2,0), (\pm 1, \pm 1)$.
+  Hence all units in $\mathcal{O}_K$ are
+  $$\pm 1, \frac{\pm 1 \pm \sqrt{-3}}{2}.$$
+  \item[(b)]
+  \emph{$m < -3$ or $|m| > 3$.}
+  $4 = a^2 + |m|b^2$ implies that $b^2 = 0$.
+  Hence all units in $\mathcal{O}_K$ are $\pm 1$.
+  \end{enumerate}
+\item[(5)]
+By (3)(4), all units in $\mathcal{O}_K$ are
+  \begin{equation*}
+    \begin{cases}
+      \pm 1                                & (m \neq -1, -3), \\
+      \pm 1, \pm \sqrt{-1}                 & (m = -1), \\
+      \pm 1, \frac{\pm 1 \pm \sqrt{-3}}{2} & (m = -3).
+    \end{cases}
+  \end{equation*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.14.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.14.}
+\emph{Show that $1+\sqrt{2}$ is a unit in $\mathbb{Z}[\sqrt{2}]$.
+Use the powers of $1+\sqrt{2}$ to generate infinitely many solutions
+to the diophantine equation $a^2 - 2b^2 = \pm 1$.
+(It will be shown in Chapter 5 that all units in $\mathbb{Z}[\sqrt{2}]$
+are of the form $\pm(1+\sqrt{2})^k$, $k \in \mathbb{Z}$.)} \\
+
+Might assume to find nonnegative solutions to the Pell's equation $a^2 - 2b^2 = \pm 1$. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $1+\sqrt{2}$ is a unit in $\mathbb{Z}[\sqrt{2}]$.}
+There is $-1+\sqrt{2} \in \mathbb{Z}[\sqrt{2}]$
+such that $$(1+\sqrt{2})(-1+\sqrt{2}) = 1 \in \mathbb{Z}[\sqrt{2}].$$
+Hence $1+\sqrt{2}$ is a unit.
+\item[(2)]
+\emph{$N(a+b\sqrt{2}) = |a^2 - 2b^2|$ is a norm on $\mathbb{Z}[\sqrt{2}]$.}
+To prove this, use the same argument as Exercise 1.1 and note that
+$$N(a+b\sqrt{2}) = |(a+b\sqrt{2})(a-b\sqrt{2})|.$$
+\item[(3)]
+By (1)(2),
+all $(1+\sqrt{2})^k$ with $k \geq 0$
+are distinct solutions to the diophantine equation $a^2 - 2b^2 = \pm 1$.
+Explicitly, let
+\begin{align*}
+(a_0,b_0) &= (1,0), \\
+(a_1,b_1) &= (1,1), \\
+(a_2,b_2) &= (3,2), \\
+(a_3,b_3) &= (7,5), \\
+&\cdots \\
+(a_k,b_k) &= (a_{k-1}+2b_{k-1},a_{k-1}+b_{k-1}), \\
+&\cdots
+\end{align*}
+Note that all $(a_k,b_k)$ are distinct and satisfying $a_k^2 - 2b_k^2 = \pm 1$.
+Hence we get infinitely many solutions to the Pell's equation $a^2 - 2b^2 = \pm 1$.
+\end{enumerate}
+
+\emph{Note.}
+Suppose that all units in $\mathbb{Z}[\sqrt{2}]$
+are of the form $\pm(1+\sqrt{2})^k$, $k \in \mathbb{Z}$.
+Note that $(1+\sqrt{2})^k = (-1+\sqrt{2})^{-k}$.
+Thus we can find all nonnegative solutions to the Pell's equation $a^2 - 2b^2 = \pm 1$
+are exactly the same as (3).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.15.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.15.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that $\mathbb{Z}[\sqrt{-5}]$ contains no element whose norm is $2$ or $3$.}
+\item[(b)]
+\emph{Verify that $2 \cdot 3 = (1+\sqrt{-5})(1-\sqrt{-5})$ is an example
+of non-unique factorization in the number ring $\mathbb{Z}[\sqrt{-5}]$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+Since $N(a+b\sqrt{-5}) = a^2 + 5b^2 \equiv a^2 \equiv 0,1,4 \pmod{5}$,
+there is no element whose norm is $2$ or $3$.
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $2 \cdot 3 = (1+\sqrt{-5})(1-\sqrt{-5})$.}
+$$2 \cdot 3 = 6 \text{ and } (1+\sqrt{-5})(1-\sqrt{-5}) = 6.$$
+\item[(2)]
+\emph{Show that $2$ is irreducible.}
+Suppose $2 = \alpha\beta$ where $\alpha, \beta \in \mathbb{Z}[\sqrt{-5}]$.
+Take norm to get
+\begin{align*}
+  N(2) = N(\alpha)N(\beta)
+  \Longrightarrow&
+  4 = N(\alpha)N(\beta) \\
+  \Longrightarrow&
+  N(\alpha) = 1 \text{ or } N(\beta) = 1
+    &\text{((1))} \\
+  \Longrightarrow&
+  \text{$\alpha$ is unit or $\beta$ is unit}.
+\end{align*}
+\item[(3)]
+\emph{Show that $3$ is irreducible.}
+Similar to (2).
+\item[(4)]
+\emph{Show that $1 \pm \sqrt{-5}$ is irreducible.}
+Since $N(1 \pm \sqrt{-5}) = 2$ is prime, $1+\sqrt{-5}$ is irreducible.
+\end{enumerate}
+Hence $6$ has a non-unique factorization
+in the number ring $\mathbb{Z}[\sqrt{-5}]$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.28.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.28.}
+\emph{Let $f(x) = x^3+ax+b$, $a$ and $b \in \mathbb{Z}$,
+and assume $f$ is irreducible over $\mathbb{Q}$.
+Let $\alpha$ be a root of $f$.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.}
+\item[(b)]
+\emph{Show that $2a\alpha+3b$ is a root of
+$$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b.$$
+Use this to find $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]} (2a\alpha+3b)$.}
+\item[(c)]
+\emph{Show that $\text{disc}(\alpha) = -(4a^3+27b^2)$.}
+\item[(d)]
+\emph{Suppose $\alpha^3=\alpha+1$.
+Prove that $\{1,\alpha,\alpha^2\}$ is an integral basis for $\mathbb{A}\cap\mathbb{Q}[\alpha]$.
+(See Exercise 2.27(e).)
+Do the same if $\alpha^3+\alpha=1$.} \\
+\end{enumerate}
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $\alpha \neq 0$.}
+If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+So $f(x) = x^3+ax = x(x^2+a)$ is reducible, contrary to the irreducibility of $f$.
+\item[(2)]
+Since $\alpha$ be a root of $f$,
+$f(\alpha) = 0$,
+or $\alpha^3 + a\alpha + b = 0$,
+or $\alpha^3 = -a\alpha-b$.
+\item[(3)]
+\begin{align*}
+f'(x) = 3x^2 + a
+&\Longrightarrow
+f'(\alpha) = 3\alpha^2 + a \\
+&\Longleftrightarrow
+\alpha f'(\alpha) = 3\alpha^3 + a\alpha
+  &(\alpha \neq 0) \\
+&\Longleftrightarrow
+\alpha f'(\alpha) = 3(-a\alpha-b) + a\alpha
+  &(\alpha^3 = -a\alpha-b) \\
+&\Longleftrightarrow
+\alpha f'(\alpha) = -2a\alpha-3b.
+\end{align*}
+So $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+Since $\alpha^3 + a\alpha + b = 0$,
+$$\left( \frac{(2a\alpha+3b)-3b}{2a} \right)^3
+  + a\left( \frac{(2a\alpha+3b)-3b}{2a} \right) + b = 0.$$
+That is, $2a\alpha+3b$ is a root of
+$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
+\item[(2)]
+$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)$ is the product of three roots of
+$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
+Hence,
+\begin{align*}
+N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)
+&= (2a)^3\left[ \left(\frac{-3b}{2a}\right)^3 + a \cdot \frac{-3b}{2a} + b \right] \\
+&= 8a^3\left[ \frac{-27b^3}{8a^3} - \frac{b}{2} \right] \\
+&= -27b^3-4a^3b.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (c).}
+\begin{align*}
+\text{disc}(\alpha)
+&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+  &\text{(Theorem 2.8)} \\
+&= - N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{2a\alpha+3b}{\alpha} \right)
+  &\text{($n=3$ and (a))} \\
+&= \frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)}
+  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+&= \frac{-27b^3-4a^3b}{b}
+  &\text{((b))} \\
+&= -27b^2-4a^3.
+\end{align*}
+$\Box$ \\
+
+\emph{Proof of (d).}
+\begin{enumerate}
+\item[(1)]
+  \begin{enumerate}
+  \item[(a)]
+  $\alpha^3 = \alpha + 1$, or $\alpha^3 - \alpha - 1 = 0$.
+  \item[(b)]
+  $f(x) = x^3 - x - 1$ is irreducible over $\mathbb{Q}$
+  since $f(x)$ is irreducible over $\mathbb{Z}/3\mathbb{Z}$.
+  \item[(c)]
+  $\text{disc}(\alpha) = -23$ (by (c)).
+  \item[(d)]
+  Since $\text{disc}(\alpha)$ is squarefree,
+  the result is established (Exercise 2.27(e)).
+  \end{enumerate}
+\item[(2)]
+  \begin{enumerate}
+  \item[(a)]
+  $\alpha^3 + \alpha = 1$, or $\alpha^3 + \alpha - 1 = 0$.
+  \item[(b)]
+  $f(x) = x^3 + x - 1$ is irreducible over $\mathbb{Q}$
+  since $f(x)$ is irreducible over $\mathbb{Z}/2\mathbb{Z}$.
+  \item[(c)]
+  $\text{disc}(\alpha) = -31$ (by (c)).
+  \item[(d)]
+  Since $\text{disc}(\alpha)$ is squarefree,
+  the result is established (Exercise 2.27(e)).
+ \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.43.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.43.}
+\emph{Let $f(x) = x^5+ax+b$, $a$ and $b \in \mathbb{Z}$,
+and assume $f$ is irreducible over $\mathbb{Q}$.
+Let $\alpha$ be a root of $f$.}
+\begin{enumerate}
+\item[(a)]
+\emph{Show that $\text{disc}(\alpha) = 4^4 a^5 + 5^4 b^4$. (Suggestion: See Exercise 2.28.)}
+\item[(b)]
+\emph{Suppose $\alpha^5=\alpha+1$.
+Prove that $\mathbb{A}\cap\mathbb{Q}[\alpha] = \mathbb{Z}[\alpha]$.
+($x^5 - x - 1$ is irreducible over $\mathbb{Q}$;
+this can be shown by reducing $\pmod{3}$.)}
+\item[(c)]
+\emph{}
+\item[(d)]
+\emph{} \\
+\end{enumerate}
+
+\emph{Proof of (a)(Exercise 2.28).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f'(\alpha) = -\frac{4a\alpha+5b}{\alpha}$.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\alpha \neq 0$.}
+  If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+  So $f(x) = x^5+ax = x(x^4+a)$ is reducible, contrary to the irreducibility of $f$.
+  \item[(b)]
+  Since $\alpha$ be a root of $f$,
+  $f(\alpha) = 0$,
+  or $\alpha^5 + a\alpha + b = 0$,
+  or $\alpha^5 = -a\alpha-b$.
+  \item[(c)]
+  \begin{align*}
+  f'(x) = 5x^4 + a
+  &\Longrightarrow
+  f'(\alpha) = 5\alpha^4 + a \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = 5\alpha^5 + a\alpha
+    &(\alpha \neq 0) \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = 5(-a\alpha-b) + a\alpha
+    &(\alpha^5 = -a\alpha-b) \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = -4a\alpha-5b.
+  \end{align*}
+  So $f'(\alpha) = -\frac{4a\alpha+5b}{\alpha}$.
+  \end{enumerate}
+\item[(2)]
+\emph{Show that $4a\alpha+5b$ is a root of
+$$\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b.$$
+Use this to show that
+$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b) = -4^4a^5b-5^5b^5$.}
+  \begin{enumerate}
+  \item[(a)]
+  Since $\alpha^5 + a\alpha + b = 0$,
+  $$\left( \frac{(4a\alpha+5b)-5b}{4a} \right)^5
+    + a\left( \frac{(4a\alpha+5b)-5b}{4a} \right) + b = 0.$$
+  That is, $4a\alpha+5b$ is a root of
+  $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
+  \item[(b)]
+  $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)$ is the product of $5$ roots of
+  $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
+  Hence,
+  \begin{align*}
+  N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)
+  &= (4a)^5\left[ \left(\frac{-5b}{4a}\right)^5 + a \cdot \frac{-5b}{4a} + b \right] \\
+  &= 4^5a^5\left[ \frac{-5^5b^5}{4^5a^5} - \frac{b}{4} \right] \\
+  &= -5^5b^5-4^4a^5b.
+  \end{align*}
+  \end{enumerate}
+\item[(3)]
+\emph{Show that $\text{disc}(\alpha) = 4^4 a^5 + 5^4 b^4$.}
+\begin{align*}
+\text{disc}(\alpha)
+&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+  &\text{(Theorem 2.8)} \\
+&= N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{4a\alpha+5b}{\alpha} \right)
+  &\text{($n=5$ and (1))} \\
+&= -\frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)}
+  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+&= - \frac{-4^4a^5b-5^5b^5}{b}
+  &\text{((2))} \\
+&= 4^4 a^5 + 5^4 b^4.
+\end{align*}
+\end{enumerate}
+$\Box$ \\
+
+\emph{Proof of (b)(Exercise 2.28).}
+\begin{enumerate}
+\item[(1)]
+$\alpha^5 = \alpha + 1$, or $\alpha^5 - \alpha - 1 = 0$.
+\item[(2)]
+$f(x) = x^5 - x - 1$ is irreducible over $\mathbb{Q}$
+since $f(x)$ is irreducible over $\mathbb{Z}/3\mathbb{Z}$.
+\item[(3)]
+$\text{disc}(\alpha) = 881$ (by (a)).
+\item[(4)]
+Since $\text{disc}(\alpha)$ is squarefree (a prime number),
+the result is established (Exercise 2.27(e)).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.45.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.45.}
+\emph{Obtain a formula for $\text{disc}(\alpha)$ if $\alpha$ is a root of
+an irreducible polynomial $x^n + ax + b$ over $\mathbb{Q}$.
+Do the same for $x^n + ax^{n-1}+b$.} \\
+
+Assume that $n \geq 2$. \\
+
+\emph{Proof of $x^n + ax + b$ (Exercise 2.28).}
+\begin{enumerate}
+\item[(1)]
+\emph{Show that $f'(\alpha) = -\frac{(n-1)a\alpha+nb}{\alpha}$.}
+  \begin{enumerate}
+  \item[(a)]
+  \emph{Show that $\alpha \neq 0$.}
+  If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+  So $f(x) = x^n+ax = x(x^{n-1}+a)$ is reducible, contrary to the irreducibility of $f$.
+  \item[(b)]
+  Since $\alpha$ be a root of $f$,
+  $f(\alpha) = 0$,
+  or $\alpha^n + a\alpha + b = 0$,
+  or $\alpha^n = -a\alpha-b$.
+  \item[(c)]
+  \begin{align*}
+  f'(x) = nx^{n-1} + a
+  &\Longrightarrow
+  f'(\alpha) = n\alpha^{n-1} + a \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = n\alpha^n + a\alpha
+    &(\alpha \neq 0) \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = n(-a\alpha-b) + a\alpha
+    &(\alpha^n = -a\alpha-b) \\
+  &\Longleftrightarrow
+  \alpha f'(\alpha) = -(n-1)a\alpha-nb.
+  \end{align*}
+  So $f'(\alpha) = -\frac{(n-1)a\alpha+nb}{\alpha}$.
+  \end{enumerate}
+\item[(2)]
+\emph{
+Let $\beta = (n-1)a\alpha+nb$.
+Show that $\beta$ is a root of
+$$\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b.$$
+Use this to show that
+$$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta) = -(n-1)^{n-1}a^nb+(-1)^n n^n b^n.$$}
+  \begin{enumerate}
+  \item[(a)]
+  Since $\alpha^n + a\alpha + b = 0$,
+  $$\left( \frac{\beta-nb}{(n-1)a} \right)^n
+    + a\left( \frac{\beta-nb}{(n-1)a} \right) + b = 0.$$
+  That is, $\beta$ is a root of
+  $\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b$.
+  \item[(b)]
+  $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta)$ is the product of $n$ roots of
+  $\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b$.
+  Hence,
+  \begin{align*}
+  N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta)
+  &= ((n-1)a)^n\left[ \left(\frac{-nb}{(n-1)a}\right)^n
+    + a \cdot \frac{-nb}{(n-1)a} + b \right] \\
+  &= (n-1)^n a^n\left[ \frac{(-1)^n n^n b^n}{(n-1)^n a^n} - \frac{b}{n-1} \right] \\
+  &= (-1)^n n^n b^n - (n-1)^{n-1} a^n b.
+  \end{align*}
+  \end{enumerate}
+\item[(3)]
+\emph{Show that $\text{disc}(\alpha) = (-1)^{\frac{(n-1)(n-2)}{2}} (n-1)^{n-1}a^n
+  + (-1)^{\frac{n(n-1)}{2}} n^n b^{n-1}$.}
+\begin{align*}
+\text{disc}(\alpha)
+&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+  &\text{(Theorem 2.8)} \\
+&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}
+  \left( -\frac{(n-1)a\alpha+nb}{\alpha} \right)
+  &\text{((1))} \\
+&= (-1)^{\frac{n(n-1)}{2}}(-1)^n
+  \frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}((n-1)a\alpha+nb)}
+  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+&= (-1)^{\frac{n(n-1)}{2}}(-1)^n \frac{-(n-1)^{n-1}a^nb+(-1)^n n^n b^n}{b}
+  &\text{((2))} \\
+&= (-1)^{\frac{(n-1)(n-2)}{2}} (n-1)^{n-1}a^n
+  + (-1)^{\frac{n(n-1)}{2}} n^n b^{n-1}.
+\end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
