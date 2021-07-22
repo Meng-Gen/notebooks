@@ -884,6 +884,94 @@ $\Box$ \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{I.13. One-dimensional Schemes \\}
+\addcontentsline{toc}{subsection}{I.13. One-dimensional Schemes}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{I.14. Function Fields \\}
+\addcontentsline{toc}{subsection}{I.14. Function Fields}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter II: The Theory of Valuations \\}
+\addcontentsline{toc}{section}{Chapter II: The Theory of Valuations}
+
+
+
+\subsection*{II.1. The $p$-adic Numbers \\}
+\addcontentsline{toc}{subsection}{II.1. The $p$-adic Numbers}
+
+
+
+\subsubsection*{Exercise II.1.2.}
+\addcontentsline{toc}{subsubsection}{Exercise II.1.2.}
+\emph{A $p$-adic integer $a = a_0 + a_1 p + a_2 p^2 + \cdots$
+is a unit in the ring $\mathbb{Z}_p$ if and only if $a_0 \neq 0$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$)
+  If $b = b_0 + b_1 p + b_2 p^2 + \cdots$ is an inverse of $a$,
+  then $ab = 1$ implies that $a_0 b_0 = 1$ so that $a_0$ is a unit in $\mathbb{Z}/p\mathbb{Z}$
+  or $a_0 \neq 0$.
+
+\item[(2)]
+  ($\Longleftarrow$)
+  Our goal is to find
+  \[
+    b = b_0 + b_1 p + b_2 p^2 + \cdots \in \mathbb{Z}_p
+  \]
+  such that the Cauchy product
+  \[
+    ab = c_0 + c_1 p + c_2 p^2 + \cdots
+  \]
+  is equal to $1 \in \mathbb{Z}_p$.
+  Here $c_n = \sum_{\nu = 0}^{n} a_{\nu} b_{n-\nu}$.
+  By the assumption we have that $c_0 = 1$ and $c_1 = c_2 = \cdots = 0$.
+  Hence
+  \begin{align*}
+    b_0 &= a_0^{-1} \\
+    b_1 &= -a_0^{-1} a_1 b_0 \\
+    & \cdots \\
+    b_n &= a_0^{-1} \sum_{\nu = 1}^{n} a_\nu b_{n-\nu} \\
+    & \cdots
+  \end{align*}
+  by induction.
+
+\item[(3)]
+  Also see Exercise 1.5 in the textbook:
+  \emph{Atiyah \& Macdonald, Introduction to Commutative Algebra.}
+  \emph{Let $A$ be a commutative ring with $1$ and $A[[x]]$ be
+  the ring of formal power series $f = \sum_{n=0}^{\infty} a_n x^n$
+  with coefficients in $A$.
+  Then $f$ is a unit in $A[[x]]$ if and only if $a_0$ is a unit in $A$.}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
