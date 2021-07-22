@@ -13,7 +13,7 @@
 
 
 
-\title{\textbf{Solutions to the book: \\ \emph{Robin Hartshorne, Algebraic Geometry}}}
+\title{\textbf{Notes on the book: \\ \emph{Robin Hartshorne, Algebraic Geometry}}}
 \author{Meng-Gen Tsai \\ plover@gmail.com}
 
 
@@ -26,6 +26,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -33,6 +35,8 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -44,8 +48,8 @@
 
 
 
-\subsubsection*{Problem I.1.6.}
-\addcontentsline{toc}{subsubsection}{Problem I.1.6.}
+\subsubsection*{Exercise I.1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise I.1.6.}
 \emph{Any nonempty open subset of an irreducible topological space is dense and irreducible.
 If $Y$ is a subset of a topological space $X$, which is irreducible in its induced topology,
 then the closure $\overline{Y}$ is also irreducible.} \\
@@ -116,6 +120,74 @@ $\Box$ \\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter II: Schemes \\}
+\addcontentsline{toc}{section}{Chapter II: Schemes}
+
+
+
+\subsubsection*{Exercise II.1.1. (Constant presheaf)}
+\addcontentsline{toc}{subsubsection}{Exercise II.1.1. (Constant presheaf)}
+\emph{Let $A$ be an abelian group, and define the \textbf{constant presheaf}
+associated to $A$ on the topological space $X$ to be
+the presheaf $U \mapsto A$ for all $U \neq \varnothing$,
+with restriction maps the identity.
+Show that the constant sheaf $\mathscr{A}$ defined in the text is
+the sheaf associated to this presheaf.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $\mathscr{F}$ be the constant presheaf.
+
+\item[(2)]
+  Let $\theta: \mathscr{F} \to \mathscr{A}$ be a morphism
+  consists of a morphism of abelian groups $\theta(U): \mathscr{F}(U) = A \to \mathscr{A}(U)$
+  for each open set $U \subseteq X$
+  such that $\theta(U)(a) = f_a: x \mapsto a$ for each element $x \in U$. (It is well-defined.)
+
+\item[(3)]
+  Given any sheaf $\mathscr{G}$ and any morphism $\varphi: \mathscr{F} \to \mathscr{G}$,
+  it suffices to find a morphism $\psi: \mathscr{A} \to \mathscr{G}$
+  such that $\varphi = \psi \circ \theta$.
+
+\item[(4)]
+  Given an open set $U \subseteq X$.
+  Suppose $f \in \mathscr{A}(U)$ is a continuous maps of $U$ into $A$.
+  Since $A$ is equipped with the discrete topology, $f$ is locally constant, that is,
+  \[
+    f(V_i) = a_i
+  \]
+  where each $V_i$ is a connected component of $U$.
+  (In particular, $\{V_i\}$ is an open covering of $U$.)
+
+\item[(5)]
+  Now
+  \[
+    s_i := \varphi(V_i)(a_i) \in \mathscr{G}(V_i)
+  \]
+  is defined.
+  Since $\mathscr{G}$ is a sheaf and all $V_i$ are disjoint,
+  there is a $s \in \mathscr{G}(U)$ such that $s|_{V_i} = s_i$ for each $i$.
+  Now we define $\psi(U)$ by
+  \[
+    \psi(U)(f) = s.
+  \]
+  Thus $\psi$ is a morphism and $\varphi = \psi \circ \theta$ by construction.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
