@@ -94,6 +94,63 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.12.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.12.}
+\emph{Refer to Exercise 1.11. If $\tau \in H$ prove that
+\[
+  G_{2k}\left(-\frac{1}{\tau}\right) = \tau^{2k} G_{2k}(\tau)
+\]
+and deduce that
+\begin{align*}
+  G_{2k}\left(\frac{i}{2}\right) &= (-4)^k G_{2k}(2i)
+    &\text{for all $k \geq 2$}, \\
+  G_{2k}(i) &= 0
+    &\text{if $k$ is odd}, \\
+  G_{2k}(e^{\frac{2\pi i}{3}}) &= 0
+    &\text{if $k \not\equiv 0 \pmod{3}$}.
+\end{align*}} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    G_{2k}\left(-\frac{1}{\tau}\right)
+    &= \sum_{(m,n) \neq (0,0)} \left(m - \frac{n}{\tau}\right)^{-2k} \\
+    &= \tau^{2k} \sum_{(m,n) \neq (0,0)} (\tau m - n)^{-2k} \\
+    &= \tau^{2k} G_{2k}(\tau).
+  \end{align*}
+
+\item[(2)]
+  Let $\tau = 2i$.
+  We have $G_{2k}\left(\frac{i}{2}\right) = (-4)^k G_{2k}(2i)$.
+
+\item[(3)]
+  Let $\tau = i$.
+  We have $G_{2k}(i) = (-1)^k G_{2k}(i)$.
+  Hence $G_{2k}(i) = 0$ if $k$ is odd.
+
+\item[(4)]
+  Let $\tau = e^{\frac{\pi i}{3}}$.
+  We have $G_{2k}(e^{\frac{2\pi i}{3}}) = e^{\frac{2k \pi i}{3}} G_{2k}(e^{\frac{\pi i}{3}})$.
+  Since
+  \[
+    e^{\frac{2\pi i}{3}} = -1 + e^{\frac{\pi i}{3}}
+  \]
+  and each Eisenstein series is a periodic function of $\tau$ of period $1$,
+  we have $G_{2k}(e^{\frac{2\pi i}{3}}) = G_{2k}(e^{\frac{\pi i}{3}})$.
+  So $G_{2k}(e^{\frac{2\pi i}{3}}) = e^{\frac{2k \pi i}{3}} G_{2k}(e^{\frac{2\pi i}{3}})$.
+  Therefore $G_{2k}(e^{\frac{2\pi i}{3}}) = 0$ if $k \not\equiv 0 \pmod{3}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
