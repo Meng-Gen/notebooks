@@ -332,6 +332,14 @@ and let
     \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^5}{1+e^{n\pi}}
     = \frac{31}{504}.
   \]}
+
+\item[(c)]
+  \emph{Use Theorem 12.17 in the textbook: T. M. Apostol, Introduction to Analytic Number Theory
+  to prove the more general result}
+  \[
+    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}}
+    = \frac{2^{4k+1}-1}{8k+4}B_{4k+2}.
+  \]
 \end{enumerate}
 
 
@@ -339,86 +347,133 @@ and let
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-  Note that the identity
+  Consider the general case.
+  \emph{Let
+  \[
+    G(x) = \sum_{n=1}^{\infty} \frac{n^{4k+1} x^n}{1-x^n},
+  \]
+  and let
+  \[
+    F(x) = \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1} x^n}{1+x^n}.
+  \]
+  Show that $F(x) = G(x) - (2^{4k+1} + 2)G(x^2) + 2^{4k+2} G(x^4)$.}
+
+\item[(2)]
+  The identity
   \[
     \sum_{n=1}^{\infty} \frac{x^n}{1+x^n}
     = \sum_{n=1}^{\infty} \frac{x^n}{1-x^n}
-      - 2 \sum_{n=1}^{\infty} \frac{x^{2n}}{1-x^{2n}}.
+      - 2 \sum_{n=1}^{\infty} \frac{x^{2n}}{1-x^{2n}}
   \]
-
-\item[(2)]
-  Let $H(x) = \sum_{n=1}^{\infty} \frac{n^5 x^n}{1+x^n}$.
-  Thus $H(x) = G(x) - 2G(x^2)$ by (1).
+  is always true.
+  Hence $H(x) := \sum_{n=1}^{\infty} \frac{n^{4k+1} x^n}{1+x^n} = G(x) - 2G(x^2)$.
 
 \item[(3)]
   Note that
   \begin{align*}
     H(x)
     &=
-    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^5 x^n}{1+x^n}
-    + \sum_{\substack{n=1 \\ (\text{$n$ even})}}^{\infty} \frac{n^5 x^n}{1+x^n} \\
+    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1} x^n}{1+x^n}
+    + \sum_{\substack{n=1 \\ (\text{$n$ even})}}^{\infty} \frac{n^{4k+1} x^n}{1+x^n} \\
     &=
-    F(x) + \sum_{n=1}^{\infty} \frac{(2n)^5 x^{2n}}{1+x^{2n}} \\
+    F(x) + \sum_{n=1}^{\infty} \frac{(2n)^{4k+1} x^{2n}}{1+x^{2n}} \\
     &=
-    F(x) + 32 \sum_{n=1}^{\infty} \frac{n^5 x^{2n}}{1+x^{2n}} \\
+    F(x) + 2^{4k+1} \sum_{n=1}^{\infty} \frac{n^{4k+1} x^{2n}}{1+x^{2n}} \\
     &=
-    F(x) + 32H(x^2).
+    F(x) + 2^{4k+1}H(x^2).
   \end{align*}
-  Hence by (2),
+  Hence
   \begin{align*}
     F(x)
-    &= H(x) - 32H(x^2) \\
-    &= [G(x) - 2G(x^2)] - 32[G(x^2) - 2G(x^4)] \\
-    &= G(x) - 34G(x^2) + 64G(x^4).
+    &= H(x) - 2^{4k+1}H(x^2) \\
+    &= [G(x) - 2G(x^2)] - 2^{4k+1}[G(x^2) - 2G(x^4)] \\
+    &= G(x) - (2^{4k+1} + 2)G(x^2) + 2^{4k+2}G(x^4).
   \end{align*}
 \end{enumerate}
 $\Box$ \\
 
 
 
-\emph{Proof of (b).}
+\emph{Proof of (c).}
 \begin{enumerate}
 \item[(1)]
-  By Exercise 1.14(e), we have
-  \[
-    g_3(\tau)
-    = \frac{8\pi^6}{27} \left\{ 1 - 504 \sum_{k=1}^{\infty} \frac{k^5 q^k}{1-q^k} \right\}
-    = \frac{8\pi^6}{27} ( 1 - 504 G(q) ).
-  \]
-  where $q = x = e^{2\pi i \tau}$.
-  Hence
-  \[
-    g_3(\tau) - 34 g_3(2\tau) + 64 g_3(4\tau)
-    = \frac{8\pi^6}{27} ( 31 - 504 F(q) ).
-  \]
-
-\item[(2)]
-  Take $\tau = \frac{i}{2}$.
+  Let $q = e^{2 \pi i \tau}$.
   So
   \begin{align*}
-    F(q)
-    &= F(e^{-\pi}) = \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^5}{1+e^{n\pi}} \\
-    g_3(\tau)
-    &= g_3\left( \frac{i}{2} \right) = (-4)^3 g_3(2i) = -64 g_3(2i)
-      &(\text{Exercise 1.12}) \\
-    g_3(2\tau)
-    &= g_3(i) = 0
-      &(\text{Exercise 1.12}) \\
-    g_3(4\tau)
-    &= g_3(2i).
+    G_{4k+2}(\tau)
+    &=
+    2 \zeta(4k+2)
+      + \frac{2(2\pi i)^{4k+2}}{(4k+1)!} \sum_{n=1}^{\infty} \sigma_{4k+1}(n) q^n
+      &(\text{Exercise 1.11}) \\
+    &=
+    2 \zeta(4k+2)
+      + \frac{2(2\pi i)^{4k+2}}{(4k+1)!} G(q)
+      &(\text{Exercise 1.14(c)})
   \end{align*}
   Hence
+  \begin{align*}
+    & \:
+    G_{4k+2}(\tau) - (2^{4k+1} + 2) G_{4k+2}(2\tau) + 2^{4k+2} G_{4k+2}(4\tau) \\
+    = &\:
+    (2^{4k+2} - 2) \zeta(4k+2)
+      + \frac{2(2\pi i)^{4k+2}}{(4k+1)!} F(q).
+  \end{align*}
+
+\item[(2)]
+  By taking $\tau = \frac{i}{2}$, we have
+  \begin{align*}
+    F(q)
+    &= F(e^{-\pi})
+    = \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}}, \\
+    G_{4k+2}(\tau)
+    &= G_{4k+2}\left( \frac{i}{2} \right) = (-4)^{2k+1} G_{4k+2}(2i),
+      &(\text{Exercise 1.12}) \\
+    G_{4k+2}(2\tau)
+    &= G_{4k+2}(i) = 0,
+      &(\text{Exercise 1.12}) \\
+    G_{4k+2}(4\tau)
+    &= G_{4k+2}(2i).
+  \end{align*}
+  Hence
+  \begin{align*}
+    & \:
+    G_{4k+2}(\tau) - (2^{4k+1} + 2) G_{4k+2}(2\tau) + 2^{4k+2} G_{4k+2}(4\tau) \\
+    = &\:
+    (-4)^{2k+1} G_{4k+2}(2i) - 0 + 2^{4k+2} G_{4k+2}(2i) \\
+    = &\:
+    - 2^{4k+2} G_{4k+2}(2i) + 2^{4k+2} G_{4k+2}(2i) \\
+    = &\:
+    0
+  \end{align*}
+  implies that
   \[
-    g_3(\tau) - 34 g_3(2\tau) + 64 g_3(4\tau)
-    = -64 g_3(2i) - 0 + 64 g_3(2i)
-    = 0
+    (2^{4k+2} - 2) \zeta(4k+2)
+    + \frac{2(2\pi i)^{4k+2}}{(4k+1)!}
+    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}} = 0.
   \]
-  and thus
+  To get the expression in part (c), note that
   \[
-    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^5}{1+e^{n\pi}}
-    = \frac{31}{504}.
+    \zeta(4k+2)
+    = (-1)^{2k+1+1} \frac{(2\pi)^{4k+2} B_{4k+2}}{2(4k+2)!}
+    = \frac{(2\pi)^{4k+2} B_{4k+2}}{2(4k+2)!}.
+  \]
+  Hence
+  \[
+    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}}
+    = \frac{2^{4k+1}-1}{8k+4}B_{4k+2}.
   \]
 \end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  Take $k = 1$ in part (c), we have
+  \[
+    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^5}{1+e^{n\pi}}
+    = \frac{31}{12} \cdot \frac{1}{42}
+    = \frac{31}{504}.
+  \]
 $\Box$ \\\\
 
 
