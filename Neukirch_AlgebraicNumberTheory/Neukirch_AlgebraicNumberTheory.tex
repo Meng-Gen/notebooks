@@ -33,6 +33,7 @@
 % Reference:
 % https://faculty.math.illinois.edu/~r-ash/ANT.html
 % http://pi.math.cornell.edu/~dmehrle/notes/cornell/18sp/6370notes.pdf
+% http://math_research.uct.ac.za/marques/US/ANThw6sol.pdf
 
 
 
@@ -824,6 +825,58 @@ there exists an integral ideal $\mathfrak{a}_1$ such that
 
 \item[(3)]
   This exercise also shows that $\mathrm{Cl}_K$ is a finite group.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{I.7. Dirichlet's Unit Theorem \\}
+\addcontentsline{toc}{subsection}{I.7. Dirichlet's Unit Theorem}
+
+
+
+% http://rvirk.com/notes/alnum/HW10.pdf
+
+
+
+\subsubsection*{Exercise I.7.3.}
+\addcontentsline{toc}{subsubsection}{Exercise I.7.3.}
+\emph{The Battle of Hastings (October 14, 1066).
+``The men of Harold stood well together, as their wont was, and formed thirteen squares,
+with a like number of men in every square thereof,
+and woe to the hardy Norman who ventured to enter their redoubts;
+for a single blow of a Saxon war hatched would break his lance and cut his coat of mail...
+When Harold threw himself into the fray the Saxons were one mighty square of men,
+shouting the battle-cries `Ut!', `Olicrosee!', `Godemite!'.''
+[Fictitious historical text, following essentially problem no. 129 in:
+H.E. Dundeney, Amusements in Mathematics, 1917 (Dover reprints 1958 and 1970).]
+Question. How many troops does this suggest Harold II had at the battle of Hastings?} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Before Harold joins his men, they are in $13$ squares,
+  each square consisting of an equal number of men.
+  Once Harold joins them, they all together rearrange themselves to form a single square.
+
+\item[(2)]
+  Hence the corresponding equation is
+  \[
+    13x^2 + 1 = y^2
+  \]
+  and the number of troops is $y^2$.
+
+\item[(3)]
+  So $(x,y) = (180,649), (233640, 842401), \ldots$ by WolframAlpha.
+  Note that the world population in 1066 was less than it is today.
+  The number of troops was $13 \cdot 180^2 + 1 = 649^2 = 421201$.
 \end{enumerate}
 $\Box$ \\\\
 
