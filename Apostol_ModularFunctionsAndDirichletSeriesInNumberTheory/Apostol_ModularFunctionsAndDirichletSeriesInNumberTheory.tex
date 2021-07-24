@@ -426,42 +426,53 @@ $\Box$ \\
     & \:
     G_{4k+2}(\tau) - (2^{4k+1} + 2) G_{4k+2}(2\tau) + 2^{4k+2} G_{4k+2}(4\tau) \\
     = &\:
+      \left[ 2 \zeta(4k+2)
+        + \frac{2(2\pi i)^{4k+2}}{(4k+1)!} G(q) \right] \\
+    &\:
+      - (2^{4k+1} + 2) \left[ 2 \zeta(4k+2)
+        + \frac{2(2\pi i)^{4k+2}}{(4k+1)!} G(q^2) \right] \\
+    &\:
+      + 2^{4k+2} \left[ 2 \zeta(4k+2)
+        + \frac{2(2\pi i)^{4k+2}}{(4k+1)!} G(q^4) \right] \\
+    = &\:
+    (1 - (2^{4k+1} + 2) + 2^{4k+2}) \cdot 2\zeta(4k+2) \\
+    &\:
+      + \frac{2(2\pi i)^{4k+2}}{(4k+1)!}
+        [G(q) - (2^{4k+1} + 2)G(q^2) + 2^{4k+2}G(q^4)] \\
+    = &\:
     (2^{4k+2} - 2) \zeta(4k+2)
       + \frac{2(2\pi i)^{4k+2}}{(4k+1)!} F(q).
   \end{align*}
 
 \item[(2)]
   By taking $\tau = \frac{i}{2}$, we have
-  \begin{align*}
+  \[
     F(q)
-    &= F(e^{-\pi})
-    = \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}}, \\
-    G_{4k+2}(\tau)
-    &= G_{4k+2}\left( \frac{i}{2} \right) = (-4)^{2k+1} G_{4k+2}(2i),
-      &(\text{Exercise 1.12}) \\
-    G_{4k+2}(2\tau)
-    &= G_{4k+2}(i) = 0,
-      &(\text{Exercise 1.12}) \\
-    G_{4k+2}(4\tau)
-    &= G_{4k+2}(2i).
-  \end{align*}
-  Hence
+    = F(e^{-\pi})
+    = \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}}
+  \]
+  and
   \begin{align*}
     & \:
     G_{4k+2}(\tau) - (2^{4k+1} + 2) G_{4k+2}(2\tau) + 2^{4k+2} G_{4k+2}(4\tau) \\
     = &\:
-    (-4)^{2k+1} G_{4k+2}(2i) - 0 + 2^{4k+2} G_{4k+2}(2i) \\
+    G_{4k+2}\left( \frac{i}{2} \right)
+      - (2^{4k+1} + 2) G_{4k+2}(i)
+      + 2^{4k+2} G_{4k+2}(2i) \\
     = &\:
-    - 2^{4k+2} G_{4k+2}(2i) + 2^{4k+2} G_{4k+2}(2i) \\
+    (-4)^{2k+1} G_{4k+2}(2i) - (2^{4k+1} + 2) \cdot 0 + 2^{4k+2} G_{4k+2}(2i) \\
     = &\:
-    0
+    0.
   \end{align*}
-  implies
+  (Exercise 1.12).
+  Hence
   \[
-    (2^{4k+2} - 2) \zeta(4k+2)
+    0 = (2^{4k+2} - 2) \zeta(4k+2)
     + \frac{2(2\pi i)^{4k+2}}{(4k+1)!}
-    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}} = 0.
+    \sum_{\substack{n=1 \\ (\text{$n$ odd})}}^{\infty} \frac{n^{4k+1}}{1+e^{n\pi}}.
   \]
+
+\item[(3)]
   Theorem 12.17 in the textbook: \emph{T. M. Apostol, Introduction to Analytic Number Theory}
   shows that
   \[
