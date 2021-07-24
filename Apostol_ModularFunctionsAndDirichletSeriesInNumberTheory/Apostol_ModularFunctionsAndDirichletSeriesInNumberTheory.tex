@@ -45,6 +45,85 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.7.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.7.}
+\emph{The discriminant of the polynomial $f(x) = 4(x-x_1)(x-x_2)(x-x_3)$
+is the product $16 \{(x_2-x_1)(x_3-x_2)(x_3-x_1)\}^2$.
+Prove that the discriminant of $f(x) = 4x^3 - ax - b$ is $a^3 - 27b^2$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Since
+  \[
+    f'(x) = 4(x-x_2)(x-x_3) + 4(x-x_1)(x-x_3) + 4(x-x_1)(x-x_2),
+  \]
+  we have
+  \begin{align*}
+    f'(x_1) &= 4(x_1-x_2)(x_1-x_3), \\
+    f'(x_2) &= 4(x_2-x_1)(x_2-x_3), \\
+    f'(x_3) &= 4(x_3-x_1)(x_3-x_2).
+  \end{align*}
+  Hence
+  \[
+    f'(x_1)f'(x_2)f'(x_3) = -4 \mathrm{disc}(f)
+  \]
+  where $\mathrm{disc}(f)$ be the discriminant of $f(x)$.
+
+\item[(2)]
+  As $f(x) = 4x^3 - ax - b$, we have $f'(x) = 12x^2 - a$.
+  So
+  \[
+    f'(x_1)f'(x_2)f'(x_3) = (12x_1^2 - a)(12x_2^2 - a)(12x_3^2 - a).
+  \]
+  Note that
+  \begin{align*}
+    x_1 x_2 x_3 &= \frac{b}{4}, \\
+    x_1 x_2 + x_2 x_3 + x_3 x_1 &= -\frac{a}{4}, \\
+    x_1 + x_2 + x_3 &= 0,
+  \end{align*}
+  we have
+  \begin{align*}
+    x_1^2 x_2^2 x_3^2
+    &= \frac{b^2}{4^2}, \\
+    x_1^2 x_2^2 + x_2^2 x_3^2 + x_3^2 x_1^2
+    &= (x_1 x_2 + x_2 x_3 + x_3 x_1)^2 - 2 x_1 x_2 x_3(x_1 + x_2 + x_3) \\
+    &= \frac{a^2}{4^2}, \\
+    x_1^2 + x_2^2 + x_3^2
+    &= (x_1 + x_2 + x_3)^2 - 2(x_1 x_2 + x_2 x_3 + x_3 x_1) \\
+    &= \frac{a}{2}.
+  \end{align*}
+
+\item[(3)]
+  Hence
+  \begin{align*}
+    f'(x_1)f'(x_2)f'(x_3)
+    =&\: (12x_1^2 - a)(12x_2^2 - a)(12x_3^2 - a) \\
+    =&\: 12^3 (x_1^2 x_2^2 x_3^2) - 12^2 a(x_1^2 x_2^2 + x_2^2 x_3^2 + x_3^2 x_1^2) \\
+      &\: + 12 a^2(x_1^2 + x_2^2 + x_3^2) - a^3 \\
+    =&\: 12^3 \cdot \frac{b^2}{4^2} - 12^2 a \cdot \frac{a^2}{4^2}
+      + 12 a^2 \cdot \frac{a}{2} - a^3 \\
+    =&\: -4(a^3 - 27b^2).
+  \end{align*}
+  Therefore
+  \[
+    \mathrm{disc}(4x^3 - ax - b) = a^3 - 27b^2.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.11.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.11.}
 \emph{If $k \geq 2$ and $\tau \in H$ prove that the Eisenstein series
