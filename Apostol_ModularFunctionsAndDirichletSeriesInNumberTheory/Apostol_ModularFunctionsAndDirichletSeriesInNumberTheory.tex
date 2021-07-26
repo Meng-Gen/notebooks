@@ -215,6 +215,122 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2.}
+\emph{Let $S(0)$ denote the sum of the zeros of an elliptic function $f$
+in a period parallelogram,
+and let $S(\infty)$ denote the sum of the poles in the same parallelogram.
+Prove that $S(0) - S(\infty)$ is a period of $f$.
+(Hint: Integrate $z \frac{f'(z)}{f(z)}$.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Theorem 1.8,
+  The integral
+  \[
+    \frac{1}{2\pi i} \int_{C} z \frac{f'(z)}{f(z)}
+  \]
+  taken around the boundary $C$ of a cell (no zeros or poles on its boundary)
+  counts the difference between
+  the sum of the zeros and the sum of the poles inside the cell, that is,
+  \[
+    S(0) - S(\infty) = \frac{1}{2\pi i} \int_{C} z \frac{f'(z)}{f(z)}.
+  \]
+  (The proof is similar to the proof of the argument principle.)
+
+\item[(2)]
+  Let $C_1$ be the path from $0$ to $\omega_1$,
+  $C_2$ be the path from $\omega_1$ to $\omega_1 + \omega_2$,
+  $C_3$ be the path from $\omega_1 + \omega_2$ to $\omega_2$,
+  and $C_4$ be the path from $\omega_2$ to $0$.
+  Hence
+  \begin{align*}
+    &\:
+      \frac{1}{2\pi i} \int_{C_1} z \frac{f'(z)}{f(z)}
+      + \frac{1}{2\pi i} \int_{C_3} z \frac{f'(z)}{f(z)} \\
+    =&\:
+      \frac{1}{2\pi i} \int_{C_1} z \frac{f'(z)}{f(z)}
+      + \frac{1}{2\pi i} \int_{-C_1} (z+\omega_2) \frac{f'(z+\omega_2)}{f(z+\omega_2)} \\
+    =&\:
+      \frac{1}{2\pi i} \int_{C_1} z \frac{f'(z)}{f(z)}
+      - \frac{1}{2\pi i} \int_{C_1} (z+\omega_2) \frac{f'(z)}{f(z)} \\
+    =&\:
+      - \omega_2 \frac{1}{2\pi i} \int_{C_1} \frac{f'(z)}{f(z)}
+  \end{align*}
+  and
+  \begin{align*}
+    &\:
+      \frac{1}{2\pi i} \int_{C_2} z \frac{f'(z)}{f(z)}
+      + \frac{1}{2\pi i} \int_{C_4} z \frac{f'(z)}{f(z)} \\
+    =&\:
+      \frac{1}{2\pi i} \int_{-C_4} (z+\omega_1) \frac{f'(z+\omega_1)}{f(z+\omega_1)}
+      + \frac{1}{2\pi i} \int_{C_4} z \frac{f'(z)}{f(z)} \\
+    =&\:
+      - \frac{1}{2\pi i} \int_{C_4} (z+\omega_1) \frac{f'(z)}{f(z)}
+      + \frac{1}{2\pi i} \int_{C_4} z \frac{f'(z)}{f(z)} \\
+    =&\:
+      - \omega_1 \frac{1}{2\pi i} \int_{C_4} \frac{f'(z)}{f(z)}
+  \end{align*}
+  Therefore
+  \[
+     S(0) - S(\infty)
+     = - \omega_1 \frac{1}{2\pi i} \int_{C_4} \frac{f'(z)}{f(z)}
+       - \omega_2 \frac{1}{2\pi i} \int_{C_1} \frac{f'(z)}{f(z)}.
+  \]
+  So it suffices to show that
+  $\frac{1}{2\pi i} \int_{C_1} \frac{f'(z)}{f(z)} \in \mathbb{Z}$.
+  (Other cases are similar.)
+
+\item[(3)]
+  By choosing one branch of $\log$, we have
+  \begin{align*}
+    \frac{1}{2\pi i} \int_{C_1} \frac{f'(z)}{f(z)}
+    &= \frac{1}{2\pi i} \log \frac{f(\omega_1)}{f(0)} \\
+    &= \frac{1}{2\pi i} \log (1)
+      &(f(\omega_1) = f(0)) \\
+    &= \frac{1}{2\pi i} (2\pi i m) \text{ for some $m \in \mathbb{Z}$} \\
+    &= m \in \mathbb{Z}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.5.}
+\emph{Prove that every elliptic function $f$ can be expressed in the form
+\[
+  f(z) = R_1[\wp(z)] + \wp'(z) R_2[\wp(z)]
+\]
+where $R_1$ and $R_2$ are rational functions and $\wp$ has the same set of periods as $f$.} \\
+
+
+
+\emph{Proof.}
+  \begin{align*}
+    f(z)
+    =&\:
+    \underbrace{\frac{f(z)+f(-z)}{2}}_{\text{even}}
+      + \wp'(z) \underbrace{\frac{f(z)-f(-z)}{2 \wp'(z)}}_{\text{even}} \\
+    =&\: R_1[\wp(z)] + \wp'(z) R_2[\wp(z)]
+      \text{ for some rational functions $R_1, R_2$}
+  \end{align*}
+  (by Exercise 1.4).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.7.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.7.}
 \emph{The discriminant of the polynomial $f(x) = 4(x-x_1)(x-x_2)(x-x_3)$
