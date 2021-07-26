@@ -49,6 +49,172 @@
 
 
 
+\subsubsection*{Exercise 1.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.1.}
+\emph{Given two pairs of complex numbers $(\omega_1,\omega_2)$ and $(\omega'_1,\omega'_2)$
+with nonreal ratios $\omega_1/\omega_2$ and $\omega'_1/\omega'_2$.
+Prove that they generate the same set of periods if, and only if,
+there is a $2 \times 2$ matrix
+$\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}$
+with integer entries and determinant $\pm 1$ such that}
+\[
+  \begin{pmatrix}
+    \omega'_2 \\
+    \omega'_1
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  \begin{pmatrix}
+    \omega_2 \\
+    \omega_1
+  \end{pmatrix}.
+\] \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$)
+  Suppose $(\omega_1,\omega_2)$ and $(\omega'_1,\omega'_2)$
+  generate the same set of periods.
+  In particular,
+  there is a $2 \times 2$ matrix
+  $A := \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix} \in \mathsf{M}_{2 \times 2}(\mathbb{Z})$
+  (resp.
+  $A' := \begin{pmatrix}
+    a' & b' \\
+    c' & d'
+  \end{pmatrix} \in \mathsf{M}_{2 \times 2}(\mathbb{Z})$)
+  such that
+  \[
+    \begin{pmatrix}
+      \omega'_2 \\
+      \omega'_1
+    \end{pmatrix}
+    =
+    A
+    \begin{pmatrix}
+      \omega_2 \\
+      \omega_1
+    \end{pmatrix}, \qquad
+    \begin{pmatrix}
+      \omega_2 \\
+      \omega_1
+    \end{pmatrix}
+    =
+    A'
+    \begin{pmatrix}
+      \omega'_2 \\
+      \omega'_1
+    \end{pmatrix}.
+  \]
+  Hence it suffices to show $\det(A) = \pm 1$.
+
+\item[(2)]
+  Note that
+  \[
+    \begin{pmatrix}
+      \omega'_2 \\
+      \omega'_1
+    \end{pmatrix}
+    =
+    A A'
+    \begin{pmatrix}
+      \omega'_2 \\
+      \omega'_1
+    \end{pmatrix}.
+  \]
+  Hence
+  \[
+    A A'
+    =
+    \begin{pmatrix}
+      1 & 0 \\
+      0 & 1
+    \end{pmatrix}.
+  \]
+  Take the determinant on the both sides to get
+  \[
+    \det(A) \det(A') = 1.
+  \]
+  Since $\det(\mathsf{M}_{2 \times 2}(\mathbb{Z})) \subseteq \mathbb{Z}$,
+  $\det(A) = \pm 1$.
+
+\item[(3)]
+  ($\Longleftarrow$)
+  $\Omega(\omega'_1,\omega'_2) \subseteq \Omega(\omega_1,\omega_2)$ is obvious.
+  Note that
+  \[
+    \begin{pmatrix}
+      \omega_2 \\
+      \omega_1
+    \end{pmatrix}
+    =
+    \underbrace{\frac{1}{\det(A)}
+    \begin{pmatrix}
+      d & -b \\
+      -c & a
+    \end{pmatrix}}_{\in \mathsf{M}_{2 \times 2}(\mathbb{Z})}
+    \begin{pmatrix}
+      \omega'_2 \\
+      \omega'_1
+    \end{pmatrix}.
+  \]
+  Thus $\Omega(\omega_1,\omega_2) \subseteq \Omega(\omega'_1,\omega'_2)$.
+  Therefore $\Omega(\omega_1,\omega_2) = \Omega(\omega'_1,\omega'_2)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement 1.1.1.}
+\addcontentsline{toc}{subsubsection}{Supplement 1.1.1.}
+(Exercise I.1.1 in the textbook: \emph{J\"orgen Neukirch, Algebraic Number Theory}.)
+\emph{$\alpha \in \mathbb{Z}[i]$ is a unit if and only if $N(\alpha) = 1$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{$(\Longrightarrow)$}
+  Since $\alpha$ is a unit, there is $\beta \in \mathbb{Z}[i]$ such that
+  $\alpha \beta = 1$.
+  So $N(\alpha \beta) = N(1)$, or $N(\alpha) N(\beta) = 1$.
+  Since the image of $N$ is nonnegative integers, $N(\alpha) = 1$.
+
+\item[(2)]
+  \emph{$(\Longleftarrow)$}
+  $N(\alpha) = \alpha \overline{\alpha}$,
+  or $1 = \alpha \overline{\alpha}$ since $N(\alpha) = 1$.
+  That is, $\overline{\alpha} \in \mathbb{Z}[i]$ is
+  the inverse of $\alpha \in \mathbb{Z}[i]$.
+  (Or we solve the equation $N(\alpha) = a^2 + b^2 = 1$,
+  and show that all four solutions ($\pm 1$ and $\pm i$) are units.)
+
+\item[(3)]
+  Conclusion: a unit $\alpha = a+bi$ of $\mathbb{Z}[i]$
+  is satisfying the equation $N(\alpha) = a^2 + b^2 = 1$ by (1)(2).
+  That is, the only unit of $\mathbb{Z}[i]$ are $\pm 1$ and $\pm i$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.7.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.7.}
 \emph{The discriminant of the polynomial $f(x) = 4(x-x_1)(x-x_2)(x-x_3)$
@@ -137,7 +303,7 @@ has the Fourier expansion
   G_{2k}(\tau)
   =
   2 \zeta(2k) + \frac{2(2\pi i)^{2k}}{(2k-1)!} \sum_{n=1}^{\infty} \sigma_{2k-1}(n) e^{2\pi i n \tau}.
-\]
+\] \\
 
 
 
