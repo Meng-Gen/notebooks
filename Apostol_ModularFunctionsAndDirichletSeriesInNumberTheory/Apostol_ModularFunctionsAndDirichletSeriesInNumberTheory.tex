@@ -422,7 +422,7 @@ Prove that the discriminant of $f(x) = 4x^3 - ax - b$ is $a^3 - 27b^2$.} \\
   \[
     f'(x_1)f'(x_2)f'(x_3) = -4 \mathrm{disc}(f)
   \]
-  where $\mathrm{disc}(f)$ be the discriminant of $f(x)$.
+  where $\mathrm{disc}(f)$ is the discriminant of $f(x)$.
 
 \item[(2)]
   As $f(x) = 4x^3 - ax - b$, we have $f'(x) = 12x^2 - a$.
@@ -463,6 +463,63 @@ Prove that the discriminant of $f(x) = 4x^3 - ax - b$ is $a^3 - 27b^2$.} \\
   \[
     \mathrm{disc}(4x^3 - ax - b) = a^3 - 27b^2.
   \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.8.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.8.}
+\emph{The differential equation for $\wp$ shows that $\wp'(z) = 0$ if
+$z = \frac{\omega_1}{2}, \frac{\omega_2}{2}$ or $\frac{\omega_1+\omega_2}{2}$.
+Show that
+\[
+  \wp''\left( \frac{\omega_1}{2} \right)
+  = 2(e_1-e_2)(e_1-e_3)
+\]
+and obtain corresponding formulas for $\wp''\left( \frac{\omega_2}{2} \right)$ and
+$\wp''\left( \frac{\omega_1+\omega_2}{2} \right)$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Differentiation of the equation
+  \[
+    4 \wp(z)^3 - g_2 \wp(z) - g_3
+    = 4 (\wp(z) - e_1)(\wp(z) - e_2)(\wp(z) - e_3)
+  \]
+  in Theorem 1.14 to get
+  \begin{align*}
+    12 \wp(z)^2 \wp'(z) - g_2 \wp'(z)
+    =&\: 4 \wp'(z) (\wp(z) - e_2)(\wp(z) - e_3) \\
+      &\: + 4 \wp'(z) (\wp(z) - e_1)(\wp(z) - e_3) \\
+      &\: + 4 \wp'(z) (\wp(z) - e_1)(\wp(z) - e_2).
+  \end{align*}
+  Since $\wp''(z) = 6 \wp(z)^2 - \frac{g_2}{2}$,
+  we have
+  \begin{align*}
+    \wp''(z)
+    =&\: 2 (\wp(z) - e_2)(\wp(z) - e_3) \\
+      &\: + 2 (\wp(z) - e_1)(\wp(z) - e_3) \\
+      &\: + 2 (\wp(z) - e_1)(\wp(z) - e_2).
+  \end{align*}
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    \wp''\left( \frac{\omega_1}{2} \right)
+    &= 2(e_1-e_2)(e_1-e_3), \\
+    \wp''\left( \frac{\omega_2}{2} \right)
+    &= 2(e_2-e_1)(e_2-e_3), \\
+    \wp''\left( \frac{\omega_1 + \omega_2}{2} \right)
+    &= 2(e_3-e_1)(e_3-e_2).
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
