@@ -529,6 +529,64 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.10.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.10.}
+\emph{Let $\omega_1$ and $\omega_2$ be complex numbers with nonreal ratio.
+Let $f(z)$ be an entire function and assume there are constants $a$ and $b$ such that
+\[
+  f(z+\omega_1) = af(z), \qquad f(z+\omega_2) = bf(z),
+\]
+for all $z$.
+Prove that $f(z) = A e^{Bz}$, where $A$ and $B$ are constant.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Might assume that $a \neq 0$ and $b \neq 0$
+  (otherwise $f = 0$ on $\mathbb{C}$).
+
+\item[(2)]
+  Define
+  \[
+    g(z) := \frac{f(z)}{e^{Bz}}.
+  \]
+  It suffices to show $g$ is a constant.
+  Note that $g(z)$ is entire (since $f$ and $e^{Bz} \neq 0$ are entire).
+  By Theorem 1.4, it suffices to show $g$ is doubly periodic, that is,
+  to show
+  \[
+    g(z+\omega_1) = g(z) \text{ and } g(z+\omega_2) = g(z)
+  \]
+  for suitable $B$.
+
+\item[(3)]
+  Note that
+  \begin{align*}
+    &\:
+    g(z+\omega_1) = g(z) \text{ and } g(z+\omega_2) = g(z) \\
+    \Longleftrightarrow & \:
+    \frac{a}{e^{B\omega_1}} \cdot g(z) = g(z)
+      \text{ and } \frac{b}{e^{B\omega_2}} \cdot g(z) = g(z) \\
+    \Longleftrightarrow & \:
+    e^{B\omega_1} = a \text{ and } e^{B\omega_2} = b \\
+    \Longleftrightarrow & \:
+    \text{$\exists \: B$ such that $e^{B\omega_1} = a$ and $e^{B\omega_2} = b$}.
+  \end{align*}
+  Take $B$ such that $e^{B(\omega_1 - \omega_2)} = \frac{a}{b}$
+  (since $\frac{a}{b}$ is well-defined, $\omega_1 - \omega_2 \neq 0$,
+  and $z \mapsto \exp(z)$ is a onto map from $\mathbb{C}$ to $\mathbb{C} \smallsetminus \{0\}$).
+  Hence $g$ is doubly periodic.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.11.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.11.}
 \emph{If $k \geq 2$ and $\tau \in H$ prove that the Eisenstein series
