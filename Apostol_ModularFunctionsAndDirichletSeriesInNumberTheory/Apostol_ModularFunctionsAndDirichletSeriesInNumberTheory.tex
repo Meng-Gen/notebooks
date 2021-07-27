@@ -229,7 +229,7 @@ Prove that $S(0) - S(\infty)$ is a period of $f$.
 \begin{enumerate}
 \item[(1)]
   Similar to Theorem 1.8,
-  The integral
+  the integral
   \[
     \frac{1}{2\pi i} \int_{C} z \frac{f'(z)}{f(z)}
   \]
@@ -323,6 +323,72 @@ where $R_1$ and $R_2$ are rational functions and $\wp$ has the same set of perio
       \text{ for some rational functions $R_1, R_2$}
   \end{align*}
   (by Exercise 1.4).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.6.}
+\emph{Let $f$ and $g$ be two elliptic functions with the same set of periods.
+Prove that there exists a polynomial $P(x,y)$, not identically zero, such that
+\[
+  P[f(z),g(z)] = C
+\]
+where $C$ is a constant (depending on $f$ and $g$ but not on $z$).} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  By Exercise 1.5, we have
+  \[
+    f(z) = R_1[\wp(z)] + \wp'(z) R_2[\wp(z)]
+  \]
+  for some rational functions $R_1, R_2$
+  and $\wp$ has the same set of periods as $f$.
+  By cleaning the denominators of $R_1$ and $R_2$,
+  we might assume
+  \[
+    S[\wp(z)] f(z) = R_1[\wp(z)] + \wp'(z) R_2[\wp(z)]
+  \]
+  for some polynomials $R_1, R_2, S$.
+
+\item[(2)]
+  So
+  \begin{align*}
+    &\:
+    \wp'(z) R_2[\wp(z)] = S[\wp(z)] f(z) - R_1[\wp(z)] \\
+    \Longrightarrow &\:
+    \wp'(z)^2 R_2[\wp(z)]^2 = (S[\wp(z)] f(z) - R_1[\wp(z)])^2 \\
+    \Longrightarrow &\:
+    (4 \wp(z)^3 - 60G_4 \wp(z) -  140G_6) R_2[\wp(z)]^2 \\
+    &\: = (S[\wp(z)] f(z) - R_1[\wp(z)])^2.
+      &(\text{Theorem 1.12}) \\
+    \Longrightarrow &\:
+    F(\wp(z), f(z)) = 0
+  \end{align*}
+  for some polynomials $F(x,y) \in \mathbb{C}[x,y]$.
+  Note that $F(x,y)$ is of degree $2$ if we view $F \in (\mathbb{C}[x])[y]$.
+
+\item[(3)]
+  Similarly,
+  \[
+    G(\wp(z), g(z)) = 0
+  \]
+  for some polynomials $G(x,y) \in \mathbb{C}[x,y]$.
+
+\item[(4)]
+  Let $P = \mathrm{Res}_{x}(F, G)$ be
+  the resultant of two polynomials $F$ and $G$ with respect t $x$ to eliminate $\wp(z)$.
+  Note that $P$ is a nonzero polynomial (since $F$ and $G$ are nonzero)
+  and $P[f(z),g(z)] = 0$.
+  So $P$ is our desired polynomial.
+\end{enumerate}
 $\Box$ \\\\
 
 
