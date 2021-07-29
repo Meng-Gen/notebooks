@@ -1534,6 +1534,68 @@ $\Box$ \\\\
 
 
 
+\emph{In these exercise, $\Gamma$ denotes the modular group,
+$S$ and $T$ denote its generators $S(\tau) = -\frac{1}{\tau}$, $T(\tau) = \tau + 1$,
+and $I$ denotes the identity element.} \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.2.}
+\emph{Find the smallest integer $n > 0$ such that $(ST)^n = I$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $n = 3$.
+
+\item[(2)]
+  Write
+  \[
+    ST
+    =
+    \begin{pmatrix}
+      0 & -1 \\
+      1 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 1 \\
+      0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0 & -1 \\
+      1 & 1
+    \end{pmatrix}.
+  \]
+  So
+  \begin{align*}
+    (ST)^2
+    &=
+    \begin{pmatrix}
+      -1 & -1 \\
+      1 & 0
+    \end{pmatrix}, \\
+    (ST)^3
+    &=
+    \begin{pmatrix}
+      -1 & 0 \\
+      0 & -1
+    \end{pmatrix} = I \in \Gamma.
+  \end{align*}
+  Here we identify each matrix with its negative,
+  since both of them represent the same transformation.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
