@@ -34,6 +34,7 @@
 % http://pub.math.leidenuniv.nl/~luijkrmvan/elliptic/2011/ec.pdf
 % http://archive.schools.cimpa.info/archivesecoles/20171023105958/cimpaEC.pdf
 % https://rc476.user.srcf.net/furthercomplexmethods/ellfun.pdf
+% https://warwick.ac.uk/fac/sci/maths/people/staff/david_loeffler/teaching/ma4h9/solutions2.pdf
 
 
 
@@ -1687,6 +1688,55 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.12.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.12.}
+\emph{The quotient group $\Gamma/\Gamma^{(n)}$ is finite.
+That is, there exist a finite number of elements of $\Gamma$,
+say $A_1, \ldots, A_k$,
+such that every $B$ in $\Gamma$ is representable in the form
+\[
+  B = A_i B^{(n)}
+  \text{ where } 1 \leq i \leq k
+  \text{ and } B^{(n)} \in \Gamma^{(n)}.
+\]
+The smallest such $k$ is called the index of $\Gamma^{(n)}$ in $\Gamma$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Consider the exact sequence
+  \[
+    1 \to \Gamma^{(n)} \to SL_2(\mathbb{Z}) \to SL_2(\mathbb{Z}/n\mathbb{Z}) \to 1.
+  \]
+  The surjectivity of the residue class map is proved in Exercise 2.14.
+
+\item[(2)]
+  Hence $\Gamma/\Gamma^{(n)} \cong SL_2(\mathbb{Z}/n\mathbb{Z})$ is a finite group.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.13.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.13.}
+\emph{The index of $\Gamma^{(n)}$ in $\Gamma$ is
+the number of equivalence classes of matrices modulo $n$.} \\
+
+
+
+\emph{Proof.}
+  The index is the number of all cosets of $\Gamma/\Gamma^{(n)} = |SL_2(\mathbb{Z}/n\mathbb{Z})|$
+  (by Exercise 2.12).
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1702,7 +1752,7 @@ there exist integers $\alpha, \beta, \gamma, \delta$ such that
 $\alpha \equiv a$, $\beta \equiv b$, $\gamma \equiv c$ and $\delta \equiv d \pmod{n}$
 with $\alpha\delta - \beta\gamma = 1$.} \\
 
-It is equivalent to show that the natural group homomorphism
+It is equivalent to show that the residue class map
 \[
   SL_2(\mathbb{Z}) \to SL_2(\mathbb{Z}/n\mathbb{Z})
 \]
