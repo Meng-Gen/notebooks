@@ -1597,6 +1597,97 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Congruence subgroups \\}
+\addcontentsline{toc}{subsection}{Congruence subgroups}
+
+
+
+\emph{The modular group $\Gamma$ has many subgroups of special interest in number theory.
+The following exercises deal with a class of subgroups call \textbf{congruence} subgroups.
+Let
+\[
+  A =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix}
+  \text{ and }
+  B =
+  \begin{pmatrix}
+    \alpha & \beta \\
+    \gamma & \delta
+  \end{pmatrix}
+\]
+be two unimodular matrices.
+(In this discussion we do not identify a matrix with its negative.)
+If $n$ is a positive integer write
+\[
+  A \equiv B \pmod{n}
+  \text{ whenever $a \equiv \alpha$, $b \equiv \beta$, $c \equiv \gamma$ and $d \equiv \delta \pmod{n}$.}
+\]
+This defines an equivalence relation with the property that
+\[
+  A_1 \equiv A_2 \pmod{n}
+  \text{ and }
+  B_1 \equiv B_2 \pmod{n}
+\]
+implies
+\[
+  A_1B_1 \equiv A_2B_2 \pmod{n}
+  \text{ and }
+  A_1^{-1} \equiv A_2^{-1} \pmod{n}.
+\]
+Hence
+\[
+  A \equiv B \pmod{n}
+  \text{ if, and only if, }
+  AB^{-1} \equiv I \pmod{n},
+\]
+where $I$ is the identity matrix.
+We denote by $\Gamma^{(n)}$ the set of all matrices in $\Gamma$ congruent modulo $n$ to the identity.
+This is called the \textbf{congruence subgroup of level $n$}.} \\
+
+\emph{Prove each of the following statements:} \\\\
+
+
+
+\subsubsection*{Exercise 2.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.11.}
+\emph{$\Gamma^{(n)}$ is a subgroup of $\Gamma$.
+Moreover, if $B \in \Gamma^{(n)}$ then $A^{-1}BA \in \Gamma^{(n)}$ for every $A$ in $\Gamma$.
+That is, $\Gamma^{(n)}$ is a normal subgroup of $\Gamma$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\Gamma^{(n)}$ is a subgroup of $\Gamma$.}
+  $\Gamma^{(n)} \neq \varnothing$ since $I \in \Gamma^{(n)}$.
+  Suppose $A, B \in \Gamma^{(n)}$, that is, $A \equiv I \pmod{n}$ and $B \equiv I \pmod{n}$.
+  Hence $AB^{-1} \equiv I I^{-1} \equiv I \pmod{n}$ or $AB^{-1} \in \Gamma^{(n)}$.
+
+\item[(2)]
+  \emph{Show that $\Gamma^{(n)}$ is normal in $\Gamma$.}
+  Note that
+  \[
+    A^{-1}BA \equiv A^{-1}IA \equiv A^{-1}A \equiv I \pmod{n}
+  \]
+  for every $B \in \Gamma^{(n)}$ and $A$ in $\Gamma$.
+  Hence $A^{-1}BA \in \Gamma^{(n)}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
