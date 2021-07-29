@@ -1688,6 +1688,135 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{The following exercises determine an explicit formula for the index.} \\\\
+
+
+
+\subsubsection*{Exercise 2.14.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.14.}
+\emph{Given integers $a, b, c, d$ with $ad - bc \equiv 1 \pmod{n}$,
+there exist integers $\alpha, \beta, \gamma, \delta$ such that
+$\alpha \equiv a$, $\beta \equiv b$, $\gamma \equiv c$ and $\delta \equiv d \pmod{n}$
+with $\alpha\delta - \beta\gamma = 1$.} \\
+
+It is equivalent to show that the natural group homomorphism
+\[
+  SL_2(\mathbb{Z}) \to SL_2(\mathbb{Z}/n\mathbb{Z})
+\]
+is surjective. \\
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Might assume $a \neq 0$.
+  Suppose $a = 0$, we can lift
+  \[
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix}
+    \begin{pmatrix}
+      0 & -1 \\
+      1 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      b & -a \\
+      d & -c
+    \end{pmatrix}
+  \]
+  from $SL_2(\mathbb{Z}/n\mathbb{Z})$ to $SL_2(\mathbb{Z})$ (where $b \neq 0$)
+  by the following proof,
+  say
+  \[
+    \begin{pmatrix}
+      \beta & -\alpha \\
+      \delta & -\gamma
+    \end{pmatrix} \in SL_2(\mathbb{Z}).
+  \]
+  Thus
+  \[
+    \begin{pmatrix}
+      \beta & -\alpha \\
+      \delta & -\gamma
+    \end{pmatrix}
+    \begin{pmatrix}
+      0 & 1 \\
+      -1 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      \alpha & \beta \\
+      \gamma & \delta
+    \end{pmatrix}
+  \]
+  is our desired.
+
+\item[(2)]
+  Since $ad - bc \equiv 1 \pmod{n}$,
+  there is an integer $s \in \mathbb{Z}$ such that
+  \[
+    ad - bc + sn = 1.
+  \]
+  Note that $a \neq 0$ and $\gcd(a,b,n) = 1$.
+  Take
+  \[
+    t = \prod_{\substack{p \mid a \\ p \nmid b}} p
+  \]
+  where $p$ is a prime factor of $a$. (We take $t = 1$ if $a = \pm 1$.)
+
+\item[(3)]
+  Hence $(a, b + tn) = 1$ by the construction of $t$ and $\gcd(a,b,n) = 1$.
+  So $1$ is a linear combination of $a$ and $b + tn$.
+  In particular, there exist $u, v \in \mathbb{Z}$ such that
+  \[
+    ua - v(b + tn) = s + tc.
+  \]
+  Define
+  \[
+    \begin{pmatrix}
+      \alpha & \beta \\
+      \gamma & \delta
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      a & b + tn \\
+      c + vn & d + un
+    \end{pmatrix}.
+  \]
+
+\item[(4)]
+  Therefore
+  $\alpha \equiv a$, $\beta \equiv b$, $\gamma \equiv c$ and $\delta \equiv d \pmod{n}$
+  and
+  \begin{align*}
+    \det
+    \begin{pmatrix}
+      \alpha & \beta \\
+      \gamma & \delta
+    \end{pmatrix}
+    &=
+    \det
+    \begin{pmatrix}
+      a & b + tn \\
+      c + vn & d + un
+    \end{pmatrix} \\
+    &=
+    a(d+un) - (b+tn)(c+vn) \\
+    &=
+    \underbrace{(ad - bc + sn)}_{= 1}
+      + \underbrace{(au - (b+tn)v - s - ct)}_{= 0}n \\
+    &= 1.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
