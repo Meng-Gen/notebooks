@@ -1867,6 +1867,82 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.17.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.17.}
+\emph{If $a, b, n$ are integers with $n \geq 1$ and $\gcd(a,b,n) = 1$ the congruence
+\[
+  ax - by \equiv 1 \pmod{n}
+\]
+has exactly $n$ solutions, distinct congruent modulo $n$.
+(A solution is an ordered pair $(x,y)$ of integers.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.20.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.20.}
+\emph{$f(n) = n^3 \sum_{d|n} \frac{\mu(d)}{d^2}$, where $\mu$ is the M\"obius function.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    f(n)
+    &= \abs{ SL_2(\mathbb{Z}/n\mathbb{Z}) } \\
+    &= n \abs{ \{ (a,b) \pmod{n} : \gcd(a,b,n) = 1 \} }
+      &(\text{Exercise 2.17}) \\
+    &= n \sum_{d|n} \mu(d)\left( \frac{n}{d} \right)^2
+      &(\text{Inclusion-exclusion principle}) \\
+    &= n^3 \sum_{d|n} \frac{\mu(d)}{d^2}.
+  \end{align*}
+
+\item[(2)]
+  Since $n \mapsto \frac{1}{n^2}$ is multiplicative,
+  Theorem 2.18 in the textbook: \emph{T. M. Apostol, Introduction to Analytic Number Theory}
+  shows that
+  \[
+    \sum_{d|n} \frac{\mu(d)}{d^2} = \prod_{p|n} \left(1 - \frac{1}{p^2}\right).
+  \]
+  Hence we can also write
+  \[
+    f(n) = n^3 \sum_{d|n} \frac{\mu(d)}{d^2} = n^3 \prod_{p|n} \left(1 - \frac{1}{p^2}\right).
+  \]
+
+\item[(3)]
+  In particular,
+  $f$ is a multiplicative function (Exercise 2.16).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+  See ``\href{https://projecteuler.net/problem=193}{ProjectEuler 193: Squarefree Numbers}''
+  for the same trick.
+  The answer should be
+  \[
+    \sum_{d=1}^{\sqrt{n}} \mu(d) \left\lfloor \frac{n}{d^2} \right\rfloor.
+  \] \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
