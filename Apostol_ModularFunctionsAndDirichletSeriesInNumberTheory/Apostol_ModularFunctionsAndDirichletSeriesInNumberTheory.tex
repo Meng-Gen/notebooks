@@ -1883,29 +1883,39 @@ such that}
 
 
 \emph{Proof.}
-  Write
+\begin{enumerate}
+\item[(1)]
+  Suppose
   \[
     A =
     \begin{pmatrix}
       a & b \\
       c & d
     \end{pmatrix}, \qquad
-    \overline{A} =
+    B =
     \begin{pmatrix}
       \alpha & \beta \\
       \gamma & \delta
-    \end{pmatrix}.
+    \end{pmatrix} \in M_2(\mathbb{Z}/mn\mathbb{Z}).
   \]
-  It suffices to solve $\alpha$ in the system of equations
+
+\item[(2)]
+  First we solve $\alpha$ in the system of equations
   \begin{equation*}
     \begin{cases}
-       \alpha \equiv a \pmod{n}, \\
-       \alpha \equiv 1 \pmod{m}.
+      \alpha \equiv a \pmod{n} \\
+      \alpha \equiv 1 \pmod{m}
     \end{cases}
   \end{equation*}
   Chinese remainder theorem guarantees that $\alpha$ exists.
   Similarly, $\beta$, $\gamma$ and $\delta$ exist.
-  Therefore $\overline{A}$ exists.
+
+\item[(3)]
+  Note that $\det(B) \equiv 1 \pmod{n}$ and $\det(B) \equiv 1 \pmod{m}$.
+  Hence $\det(B) \equiv 1 \pmod{mn}$ by Chinese remainder theorem.
+  That is, $B \in \Gamma^{(mn)}$.
+  By Exercise 2.14, we can lift $B \in \Gamma^{(mn)}$ to some $\overline{A} \in \Gamma$.
+\end{enumerate}
 $\Box$ \\
 
 
