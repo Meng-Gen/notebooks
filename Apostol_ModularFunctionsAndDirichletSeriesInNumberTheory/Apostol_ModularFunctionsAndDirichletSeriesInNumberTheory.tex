@@ -2014,7 +2014,32 @@ has exactly $n$ solutions, distinct congruent modulo $n$.
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  No idea.
+  Write $sa - tb + un = 1$ for some $s, t, u \in \mathbb{Z}$ since $\gcd(a,b,n) = 1$.
+  Hence
+  \begin{align*}
+    ax - by \equiv 1 \pmod{n}
+    &\Longleftrightarrow
+    ax - by \equiv sa - tb + un \pmod{n} \\
+    &\Longleftrightarrow
+    a(x-s) \equiv b(y-b) \pmod{n}.
+  \end{align*}
+  Hence it is equivalent to show that
+  \[
+    ax \equiv by \pmod{n}
+  \]
+  has exactly $n$ solutions (upto modulo $n$).
+
+\item[(2)]
+  Start with a fixed $y$.
+  The linear congruence equation $ax \equiv by \pmod{n}$ is solvable iff
+  $g := \gcd(a,n) \mid (by)$ iff
+  $g \mid y$ (since $\gcd(a,b,n) = \gcd(g,b) = 1$).
+  If so, then $x$ has exactly $g$ solutions (upto modulo $n$).
+
+\item[(3)]
+  Note that there are $\frac{n}{g}$ possible choices of $y$ satisfying $g \mid y$ (upto modulo $n$),
+  that is, $y = \nu g$ for $1 \leq \nu \leq \frac{n}{g}$.
+  So there are exactly $g \cdot \frac{n}{g} = n$ solutions.
 \end{enumerate}
 $\Box$ \\\\
 
