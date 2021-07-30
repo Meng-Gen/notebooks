@@ -132,7 +132,7 @@ $\Box$ \\\\
 \addcontentsline{toc}{subsubsection}{Exercise 2.3.}
 \emph{Prove that}
 \[
-  \frac{n}{\varphi(n)} = \sum_{d|n} \frac{\mu^2(d)}{\varphi(d)}.
+  \frac{n}{\varphi(n)} = \sum_{d|n} \frac{\mu(d)^2}{\varphi(d)}.
 \]
 
 \emph{Proof.}
@@ -154,12 +154,22 @@ $\Box$ \\\\
 
 \item[(3)]
   \begin{align*}
-    \sum_{d|p^a} \frac{\mu^2(d)}{\varphi(d)}
-    &= \frac{\mu^2(1)}{\varphi(1)} + \frac{\mu^2(p)}{\varphi(p)}
-      + \frac{\overbrace{\mu^2(p^2)}^{= 0}}{\varphi(p^2)} + \cdots
-      + \frac{\overbrace{\mu^2(p^a)}^{=0}}{\varphi(p^a)} \\
+    \sum_{d|p^a} \frac{\mu(d)^2}{\varphi(d)}
+    &= \frac{\mu(1)^2}{\varphi(1)} + \frac{\mu(p)^2}{\varphi(p)}
+      + \frac{\overbrace{\mu(p^2)^2}^{= 0}}{\varphi(p^2)} + \cdots
+      + \frac{\overbrace{\mu(p^a)^2}^{=0}}{\varphi(p^a)} \\
     &= 1 + \frac{1}{p-1} + 0 + \cdots + 0 \\
     &= \frac{p}{p-1}.
+  \end{align*}
+
+\item[(4)]
+  Or apply Theorems 2.4 and 2.18 to get
+  \begin{align*}
+    \sum_{d|n} \frac{\mu(d)^2}{\varphi(d)}
+    &= \prod_{p|n} \left(1 - \frac{\mu(p)}{\varphi(p)} \right) \\
+    &= \prod_{p|n} \left(1 - \frac{-1}{p-1} \right) \\
+    &= \prod_{p|n} \frac{p}{p-1} \\
+    &= \frac{n}{\varphi(n)}.
   \end{align*}
 \end{enumerate}
 $\Box$ \\
