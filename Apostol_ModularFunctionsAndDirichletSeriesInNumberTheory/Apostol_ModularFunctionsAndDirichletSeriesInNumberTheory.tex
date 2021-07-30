@@ -1870,6 +1870,29 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.16.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.16.}
+\emph{Let $f(n)$ denote the number of equivalence classes of matrices modulo $n$.
+The $f$ is a multiplicative function.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Exercise 2.20.
+
+\item[(2)]
+  Exercise 2.15.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.17.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.17.}
 \emph{If $a, b, n$ are integers with $n \geq 1$ and $\gcd(a,b,n) = 1$ the congruence
@@ -1884,7 +1907,55 @@ has exactly $n$ solutions, distinct congruent modulo $n$.
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  No idea.
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.18.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.18.}
+\emph{For each prime $p$ the number of solutions,
+distinct modulo $p^r$,
+of all possible congruences of the form
+\[
+  ax - by \equiv 1 \pmod{p^r}, \text{ where } \gcd(a,b,p) = 1
+\]
+is equal to $f(p^r)$.} \\
+
+
+
+\emph{Proof.}
+  Note that $\gcd(a,b,p^r) = \gcd(a,b,p) = 1$.
+  So the number of is exactly the same as $\abs{ SL_2(\mathbb{Z}/p^r\mathbb{Z}) } = f(p^r)$.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.19.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.19.}
+\emph{If $p$ is the number of pairs of integers $(a,b)$, incongruent modulo $p^r$,
+which satisfy the condition $\gcd(a,b,p) = 1$ is $p^{2r-2}(p^2-1)$.} \\
+
+
+
+\emph{Proof.}
+  Same as Exercise 2.20.
+  The number is
+  \[
+    \sum_{d|p^r} \mu(d)\left( \frac{p^r}{d} \right)^2
+    = p^{2r} \sum_{d|p^r} \frac{\mu(d)}{d^2}
+    = p^{2r} \left(1 - \frac{1}{p^2}\right)
+    = p^{2r-2}(p^2 - 1).
+  \]
 $\Box$ \\\\
 
 
