@@ -1907,12 +1907,12 @@ such that}
       \alpha \equiv 1 \pmod{m}
     \end{cases}
   \end{equation*}
-  Chinese remainder theorem guarantees that $\alpha$ exists.
+  The chinese remainder theorem guarantees that $\alpha$ exists.
   Similarly, $\beta$, $\gamma$ and $\delta$ exist.
 
 \item[(3)]
   Note that $\det(B) \equiv 1 \pmod{n}$ and $\det(B) \equiv 1 \pmod{m}$.
-  Hence $\det(B) \equiv 1 \pmod{mn}$ by Chinese remainder theorem.
+  Hence $\det(B) \equiv 1 \pmod{mn}$ by the chinese remainder theorem.
   That is, $B \in \Gamma^{(mn)}$.
   By Exercise 2.14, we can lift $B \in \Gamma^{(mn)}$ to some $\overline{A} \in \Gamma$.
 \end{enumerate}
@@ -1973,10 +1973,24 @@ The $f$ is a multiplicative function.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Exercise 2.20.
+  Exercise 2.20 shows everything.
 
 \item[(2)]
-  Exercise 2.15.
+  Or use the same proof in Exercise 2.15.
+  Suppose $\gcd(m,n) = 1$ and it is equivalent to show $f(mn) = f(m)f(n)$.
+  Define a natural group homomorphism
+  \[
+    \alpha:
+    SL_2(\mathbb{Z}/mn\mathbb{Z})
+    \to
+    SL_2(\mathbb{Z}/m\mathbb{Z}) \times SL_2(\mathbb{Z}/m\mathbb{Z}).
+  \]
+  $\alpha$ is well-defined.
+  So it suffices to show that $\alpha$ is an isomorphism.
+
+\item[(3)]
+  Both the injectivity and the surjectivity are guaranteed the chinese remainder theorem.
+  Hence $\alpha$ is isomorphic.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -2041,6 +2055,8 @@ which satisfy the condition $\gcd(a,b,p) = 1$ is $p^{2r-2}(p^2-1)$.} \\
 
 
 \emph{Proof.}
+\begin{enumerate}
+\item[(1)]
   The number is
   \[
     \sum_{d|p^r} \mu(d)\left( \frac{p^r}{d} \right)^2
@@ -2049,6 +2065,11 @@ which satisfy the condition $\gcd(a,b,p) = 1$ is $p^{2r-2}(p^2-1)$.} \\
     = p^{2r-2}(p^2 - 1)
   \]
   by the definition of the M\"obius function $\mu$.
+
+\item[(2)]
+  In particular,
+  $f(p^r) = p^r \cdot p^{2r-2}(p^2 - 1) = p^{3r-2}(p^2 - 1)$.
+\end{enumerate}
 $\Box$ \\\\
 
 
@@ -2091,6 +2112,12 @@ $\Box$ \\\\
 \item[(3)]
   In particular,
   $f$ is a multiplicative function (Exercise 2.16).
+
+\item[(4)]
+  Or we can use Exercises 2.16 and 2.19 to show
+  \[
+    f(n) = n^3 \prod_{p|n} \left(1 - \frac{1}{p^2}\right) = n^3 \sum_{d|n} \frac{\mu(d)}{d^2}.
+  \]
 \end{enumerate}
 $\Box$ \\
 
