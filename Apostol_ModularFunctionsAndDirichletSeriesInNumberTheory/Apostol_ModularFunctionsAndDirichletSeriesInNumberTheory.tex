@@ -1601,6 +1601,158 @@ $\Box$ \\\\
 
 
 
+\subsection*{Quadratic forms and the modular group \\}
+\addcontentsline{toc}{subsection}{Quadratic forms and the modular group}
+
+
+
+\emph{The following exercises relate quadratic forms and the modular group $\Gamma$.
+We consider quadratic forms $Q(x,y) = ax^2 + bxy + cy^2$ in $x$ and $y$ with real coefficients $a, b, c$.
+The number $d = 4ac - b^2$ is called the \textbf{discriminant} of $Q(x,y)$.} \\\\
+
+
+
+\subsubsection*{Exercise 2.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.6.}
+\emph{If $x$ and $y$ are subjected to unimodular transformation, say
+\[
+  x = \alpha x' + \beta y',
+  \qquad
+  y = \gamma x' + \delta y',
+  \qquad
+  \text{ where }
+  \begin{pmatrix}
+    \alpha & \beta \\
+    \gamma & \delta
+  \end{pmatrix} \in \Gamma,
+  \tag{*}
+\]
+prove that $Q(x,y)$ gets transformed to a quadratic form $Q_1(x',y')$ having the same discriminant.
+Two forms $Q(x,y)$ and $Q_1(x',y')$ so related are called \textbf{equivalent}.
+This equivalence relation separates all forms into equivalence classes.
+The forms in a given class has the same discriminant, and they represent the same integers.
+That is, if $Q(x,y) = n$ for some pair of integers $x$ and $y$,
+then $Q_1(x',y') = n$ for the pair of integers $x'$ and $y'$ givin by (*).} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    Q(x,y)
+    =
+    \begin{pmatrix}
+      x & y
+    \end{pmatrix}
+    \begin{pmatrix}
+      a & \frac{b}{2} \\
+      \frac{b}{2} & c
+    \end{pmatrix}
+    \begin{pmatrix}
+      x \\
+      y
+    \end{pmatrix}.
+  \]
+  Thus the discriminant of $Q(x,y)$ is
+  $4 \det\begin{pmatrix}
+    a & \frac{b}{2} \\
+    \frac{b}{2} & c
+  \end{pmatrix}$.
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    Q_1(x',y')
+    &= Q(\alpha x' + \beta y', \gamma x' + \delta y') \\
+    &=
+    \begin{pmatrix}
+      \alpha x' + \beta y' & \gamma x' + \delta y'
+    \end{pmatrix}
+    \begin{pmatrix}
+      a & \frac{b}{2} \\
+      \frac{b}{2} & c
+    \end{pmatrix}
+    \begin{pmatrix}
+      \alpha x' + \beta y' \\
+      \gamma x' + \delta y'
+    \end{pmatrix} \\
+    &=
+    \begin{pmatrix}
+      x' & y'
+    \end{pmatrix}
+    \begin{pmatrix}
+      \alpha & \gamma \\
+      \beta & \delta
+    \end{pmatrix}
+    \begin{pmatrix}
+      a & \frac{b}{2} \\
+      \frac{b}{2} & c
+    \end{pmatrix}
+    \begin{pmatrix}
+      \alpha & \beta \\
+      \gamma & \delta
+    \end{pmatrix}
+    \begin{pmatrix}
+      x' \\
+      y'
+    \end{pmatrix}.
+  \end{align*}
+  Thus the discriminant of $Q_1(x',y')$ is
+  \begin{align*}
+    & \:
+    4 \det\left(
+    \begin{pmatrix}
+      \alpha & \gamma \\
+      \beta & \delta
+    \end{pmatrix}
+    \begin{pmatrix}
+      a & \frac{b}{2} \\
+      \frac{b}{2} & c
+    \end{pmatrix}
+    \begin{pmatrix}
+      \alpha & \beta \\
+      \gamma & \delta
+    \end{pmatrix}
+    \right) \\
+    = & \:
+    4 \det
+    \begin{pmatrix}
+      \alpha & \gamma \\
+      \beta & \delta
+    \end{pmatrix}
+    \det\begin{pmatrix}
+      a & \frac{b}{2} \\
+      \frac{b}{2} & c
+    \end{pmatrix}
+    \det\begin{pmatrix}
+      \alpha & \beta \\
+      \gamma & \delta
+    \end{pmatrix} \\
+    = & \:
+    4 (\underbrace{\alpha \delta - \beta \gamma}_{= \pm 1})^2
+    \det\begin{pmatrix}
+      a & \frac{b}{2} \\
+      \frac{b}{2} & c
+    \end{pmatrix} \\
+    = & \:
+    4
+    \det\begin{pmatrix}
+      a & \frac{b}{2} \\
+      \frac{b}{2} & c
+    \end{pmatrix},
+  \end{align*}
+  which is the same as the discriminant of $Q(x,y)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsection*{Congruence subgroups \\}
 \addcontentsline{toc}{subsection}{Congruence subgroups}
 
