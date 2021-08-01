@@ -395,14 +395,24 @@ $\Box$ \\\\
   It suffices to show that $\mathfrak{J} \subseteq \mathfrak{N}$.
 
 \item[(2)]
-  Given any $f \in \mathfrak{J}$. By Proposition 1.9,
-  $f \in \mathfrak{J}$ if and only if
-  $1 - fy$ is a unit in $A[x]$ for all $y \in A[x]$.
-  Especially, pick $y = x \in A[x]$ and then $1 - xf$ is a unit in $A[x]$.
-
-\item[(3)]
-  By Exercise 1.2 (i), all coefficients of $f$ are nilpotent.
-  By Exercise 1.2 (ii), $f$ is nilpotent, or $f \in \mathfrak{N}$.
+  \begin{align*}
+    & \:
+    f \in \mathfrak{J} \\
+    \Longleftrightarrow & \:
+    \text{$1 - fy$ is a unit in $A[x]$ for all $y \in A[x]$}
+      &(\text{Proposition 1.9}) \\
+    \Longrightarrow & \:
+    \text{$1 - xf$ is a unit in $A[x]$}
+      &(y = x) \\
+    \Longrightarrow & \:
+    \text{All coefficients of $f$ are nilpotent}
+      &(\text{Exercise 1.2 (i)}) \\
+    \Longrightarrow & \:
+    \text{$f$ is nilpotent}
+      &(\text{Exercise 1.2 (ii)}) \\
+    \Longrightarrow & \:
+    f \in \mathfrak{N}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
