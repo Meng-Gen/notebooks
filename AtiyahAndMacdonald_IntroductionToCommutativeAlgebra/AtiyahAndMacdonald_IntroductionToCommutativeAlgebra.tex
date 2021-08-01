@@ -339,6 +339,49 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.3.}
+\emph{Generalize the results of Exercise 1.2 to a polynomial ring
+$A[x_1, \ldots, x_r]$ in several indeterminates.} \\
+
+
+\emph{Generalization.}
+Let
+\[
+  f = \sum_{(i)} a_{(i)} x^{(i)}\in A[x_1, \ldots, x_r]
+\]
+where $\sum_{(i)}$ is the summation over $(i) = (i_1, \ldots, i_r)$ with $i_1 + \cdots + i_r = n$.
+Then
+\begin{enumerate}
+\item[(i)]
+  $f$ is a unit in $A[x_1, \ldots, x_r]$ if and only if
+  $a_{(0)}$ is a unit in $A$ and all other $a_{(i)}$ are nilpotent.
+
+\item[(ii)]
+  $f$ is nilpotent if and only if all $a_{(i)}$ are nilpotent.
+
+\item[(iii)]
+  $f$ is a zero-divisor if and only if
+  there exists $a \neq 0$ such that $af = 0$.
+
+\item[(iv)]
+  If $f, g \in A[x_1, \ldots, x_r]$, then $fg$ is primitive if and only if
+  $f$ and $g$ are primitive. \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+  Use the mathematical induction to prove (i)(ii)(iii)
+  and apply the exactly the same argument in Exercise 1.2 (iv) to prove (iv).
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.4.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.4.}
 \emph{In the ring $A[x]$, the Jacobson radical is equal to the nilradical.} \\
@@ -1019,8 +1062,8 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement.}
-\addcontentsline{toc}{subsubsection}{Supplement.}
+\subsubsection*{Supplement 1.20.1.}
+\addcontentsline{toc}{subsubsection}{Supplement 1.20.1.}
 \emph{(Exercise I.1.6 in Robin Hartshorne, Algebraic Geometry.)
 Any nonempty open subset of an irreducible topological space is dense and irreducible.
 If $Y$ is a subset of a topological space $X$, which is irreducible in its induced topology,
