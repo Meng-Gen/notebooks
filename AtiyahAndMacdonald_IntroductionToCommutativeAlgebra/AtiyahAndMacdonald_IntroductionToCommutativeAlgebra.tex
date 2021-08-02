@@ -420,6 +420,8 @@ $\Box$ \\\\
 
 
 
+% https://math.stackexchange.com/questions/187952/a-non-nilpotent-formal-power-series-with-nilpotent-coefficients
+
 \subsubsection*{Exercise 1.5.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.5.}
 \emph{Let $A$ be a ring and let $A[[x]]$ be the ring of formal power series
@@ -470,7 +472,35 @@ $\Box$ \\
   The proof is the same as Exercise 1.2 (ii).
 
 \item[(2)]
-  The converse is true if $A$ is Noetherian.
+  The converse is true if $A$ is Noetherian (by Exercise 7.2).
+
+\item[(3)]
+  The converse is not always true.
+  Take
+  \[
+    A = \mathbb{F}_2[t, t^{-2}, t^{-2^2}, \ldots]/(t)
+  \]
+  and
+  \[
+    f(x)
+    = \sum_{n=1}^{\infty} a_n x^n
+    = \sum_{n=1}^{\infty} t^{-2^n} x^n \in A[x].
+  \]
+  Note that $A$ is not Noetherian and all $a_n$ are nilpotent in $A$.
+  To show $f$ is not nilpotent in $A[x]$, it suffices to show that
+  $f^{2^r}$ is not equal to zero for all positive integers $r$.
+
+\item[(4)]
+  Note that $\mathbb{F}_2$ is a field of characteristic $2$.
+  So
+  \[
+    f^{2^r}
+    = \sum_{n=1}^{\infty} a_n^{2^r} x^n
+    = \sum_{n=1}^{\infty} t^{2^{r-n}} x^n
+    = \sum_{n=r+1}^{\infty} t^{2^{r-n}} x^n
+    \neq 0
+  \]
+  for all $r$.
 \end{enumerate}
 $\Box$ \\
 
