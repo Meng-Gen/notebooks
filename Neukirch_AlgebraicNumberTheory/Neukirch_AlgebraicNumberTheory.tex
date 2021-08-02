@@ -1027,6 +1027,43 @@ is a unit in the ring $\mathbb{Z}_p$ if and only if $a_0 \neq 0$.} \\
   with coefficients in $A$.
   Then $f$ is a unit in $A[[x]]$ if and only if $a_0$ is a unit in $A$.
 \end{enumerate}
+$\Box$ \\
+
+
+\subsubsection*{Supplement II.1.2.1.}
+\addcontentsline{toc}{subsubsection}{Supplement II.1.2.1.}
+\emph{(Exercise 1.5 (i) in the textbook: Atiyah \& Macdonald, Introduction to Commutative Algebra.)
+Let $A$ be a ring and let $A[[x]]$ be the ring of formal power series
+$f = \sum_{n=0}^{\infty} a_n x^n$ with coefficients in $A$.
+Show that $f$ is a unit in $A[[x]]$ if and only if $a_0$ is a unit in $A$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$)
+  If $g = \sum_{n=0}^{\infty} b_n x^n$ is an inverse of $f$,
+  then $fg = 1$ implies that $a_0 b_0 = 1$ so that $a_0$ is a unit in $A$.
+
+\item[(2)]
+  ($\Longleftarrow$)
+  Our goal is to find $g = \sum_{n=0}^{\infty} b_n x^n$
+  such that the Cauchy product
+  $fg = \sum_{n=0}^{\infty} c_n x^n$
+  is equal to $1 \in A[x]$.
+  Here $c_n = \sum_{r = 0}^{n} a_{r} b_{n-r}$.
+  By the assumption we have that $c_0 = 1$ and $c_1 = c_2 = \cdots = 0$.
+  Hence
+  \begin{align*}
+    b_0 &= a_0^{-1} \\
+    b_1 &= -a_0^{-1} a_1 b_0 \\
+    & \cdots \\
+    b_n &= a_0^{-1} \sum_{r = 1}^{n} a_r b_{n-r} \\
+    & \cdots
+  \end{align*}
+  by induction.
+\end{enumerate}
 $\Box$ \\\\
 
 
