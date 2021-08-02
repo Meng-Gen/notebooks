@@ -619,6 +619,47 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.6.}
+\emph{A ring $A$ is such that every ideal not contained in the nilradical
+contains a nonzero idempotent (that is, an element $e$ such that $e^2 = e \neq 0$).
+Prove that the nilradical and Jacobson radical of $A$ are equal.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $\mathfrak{N} \subseteq \mathfrak{J}$ clearly.
+
+\item[(2)]
+  Since
+  \begin{align*}
+    a \not\in \mathfrak{N}
+    &\Longrightarrow
+    (a) \not\subseteq \mathfrak{N} \\
+    &\Longrightarrow
+    \text{there exists a nonzero idempotent $e \in (a)$} \\
+    &\Longrightarrow
+    \text{$e = ar$ for some $r \in A$} \\
+    &\Longrightarrow
+    0 = e - e^2 = e(1 - e) = ar(1 - ar) \\
+    &\Longrightarrow
+    \text{$1 - ar$ is a zero-divisor, not a unit} \\
+    &\Longrightarrow
+    a \not\in \mathfrak{J},
+      &(\text{Proposition 1.9})
+  \end{align*}
+  we have $\mathfrak{J} \subseteq \mathfrak{N}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.7.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.7.}
 \emph{Let $A$ be a ring in which every element satisfies
