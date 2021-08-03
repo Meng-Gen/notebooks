@@ -832,6 +832,61 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.11. (Boolean ring)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.11. (Boolean ring)}
+\emph{A ring $A$ is \textbf{Boolean} if $x^2 = x$ for all $x \in A$.
+In a Boolean ring $A$, show that}
+\begin{enumerate}
+\item[(i)]
+  \emph{$2x = 0$ for all $x \in A$;}
+
+\item[(ii)]
+  \emph{every prime ideal $\mathfrak{p}$ is maximal, and $A/\mathfrak{p}$ is a field with two elements;}
+
+\item[(iii)]
+  \emph{every finitely generated ideal in $A$ is principal.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (i).}
+  Note that $2x = x+x = (x+x)^2 = (2x)^2 = 4x^2 = 4x$.
+  So $2x = 0$.
+$\Box$ \\
+
+
+
+\emph{Proof of (ii).}
+  Same as Exercise 1.7 with $n = 2$.
+$\Box$ \\
+
+
+
+\emph{Proof of (iii).}
+\begin{enumerate}
+\item[(1)]
+  By induction, it suffices to show that \emph{if $\mathfrak{a} = (x,y)$ is an ideal in $A$,
+  then $\mathfrak{a} = (z)$ for some $z \in A$.}
+
+\item[(2)]
+  Take $z = x+y+xy$. $(z) \subseteq \mathfrak{a}$ obviously.
+
+\item[(3)]
+  Conversely, note that
+  \[
+    x
+    = x^2
+    = x(z-y-xy)
+    = xz - \overbrace{xy - \underbrace{x^2y}_{=xy}}^{= 2xy = 0}
+    = xz \in (z).
+  \]
+  Also $y \in (z)$ similarly.
+  So $\mathfrak{a} \subseteq (z)$ and thus $\mathfrak{a} = (z)$ is principal.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
