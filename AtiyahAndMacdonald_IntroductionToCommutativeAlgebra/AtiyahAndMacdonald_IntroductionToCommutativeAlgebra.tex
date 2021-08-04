@@ -143,7 +143,7 @@ Prove that}
   Now show by induction that $a_{n-r}g = 0$ $(0 \leq r \leq n)$.)}
 
 \item[(iv)]
-  \emph{$f$ is said to be primitive if $(a_0, a_1, \ldots, a_n) = (1)$.
+  \emph{$f$ is said to be \textbf{primitive} if $(a_0, a_1, \ldots, a_n) = (1)$.
   Prove that if $f, g \in A[x]$, then $fg$ is primitive if and only if
   $f$ and $g$ are primitive.} \\
 \end{enumerate}
@@ -1059,8 +1059,8 @@ Prove that}
 
 \emph{The results show that the sets $V(E)$ satisfy
 the axioms for closed sets in a topological space.
-The resulting topology is called the Zariski topology.
-The topological space $X$ is called the prime spectrum of $A$,
+The resulting topology is called the \textbf{Zariski topology}.
+The topological space $X$ is called the \textbf{prime spectrum} of $A$,
 and is written $\mathrm{Spec}(A)$.} \\
 
 
@@ -1480,16 +1480,16 @@ the nilradical of $A$ is a prime ideal.} \\
 \emph{Proof.}
 Use the notations in Proposition 1.7 and Exercise 1.17.
 \begin{align*}
-  &\text{$\mathrm{Spec}(A)$ is irreducible} \\
-  \Longleftrightarrow&
-  \text{$X_f \cap X_g \neq \varnothing$ for any nonempty $X_f, X_g \in \mathrm{Spec}(A)$} \\
-  \Longleftrightarrow&
-  \text{$X_{fg} \neq \varnothing$ for any nonempty $X_f, X_g \in \mathrm{Spec}(A)$}
+  & \: \text{$\mathrm{Spec}(A)$ is irreducible} \\
+  \Longleftrightarrow& \:
+  \text{$X_f \cap X_g \neq \varnothing$ for nonempty $X_f, X_g \in \mathrm{Spec}(A)$} \\
+  \Longleftrightarrow& \:
+  \text{$X_{fg} \neq \varnothing$ for nonempty $X_f, X_g \in \mathrm{Spec}(A)$}
     &\text{(Exercise 1.17 (i))} \\
-  \Longleftrightarrow&
-  \text{$fg \not\in \mathfrak{N}$ for any $f,g \not\in \mathfrak{N}$}
+  \Longleftrightarrow& \:
+  \text{$fg \not\in \mathfrak{N}$ for $f,g \not\in \mathfrak{N}$}
     &\text{(Exercise 1.17 (ii))} \\
-  \Longleftrightarrow&
+  \Longleftrightarrow& \:
   \text{$\mathfrak{N}$ is prime.}
 \end{align*}
 $\Box$ \\\\
@@ -1515,26 +1515,30 @@ of $Y$ in $X$ is irreducible.}
 \emph{$Y$ is irreducible if and only if
 $Y$ cannot be represented as the union of two proper closed subspaces.}
   \begin{align*}
-  &\forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+  & \:
+  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
   U_1 \cap U_2 \neq \varnothing \\
-  \Longleftrightarrow&
+  \Longleftrightarrow& \:
   \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
   X - (U_1 \cap U_2) \neq X \\
-  \Longleftrightarrow&
+  \Longleftrightarrow& \:
   \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
   (X - U_1) \cup (X - U_2) \neq X \\
-  \Longleftrightarrow&
+  \Longleftrightarrow& \:
   \forall \text{ proper closed sets } Y_1 \text{ and } Y_2,
   Y_1 \cup Y_2 \neq X \\
-  \Longleftrightarrow&
+  \Longleftrightarrow& \:
   \nexists \text{ proper closed sets } Y_1 \text{ and } Y_2,
   Y_1 \cup Y_2 = X.
   \end{align*}
 \item[(2)]
 If $\overline{Y}$ were reducible, there are two closed set $Y_1$ and $Y_2$
 such that
-$$\overline{Y} \subseteq Y_1 \cup Y_2,
-\overline{Y} \not\subseteq Y_i (i = 1, 2).$$
+\[
+  \overline{Y} \subseteq Y_1 \cup Y_2,
+  \qquad
+  \overline{Y} \not\subseteq Y_i (i = 1, 2).
+\]
   \begin{enumerate}
   \item[(a)]
   $Y \subseteq \overline{Y} \subseteq Y_1 \cup Y_2$.
@@ -1545,43 +1549,6 @@ $$\overline{Y} \subseteq Y_1 \cup Y_2,
   \end{enumerate}
   By (a)(b), $Y$ is reducible, which is absurd.
 \end{enumerate}
-$\Box$ \\
-
-
-
-\subsubsection*{Supplement 1.20.1.}
-\addcontentsline{toc}{subsubsection}{Supplement 1.20.1.}
-\emph{(Exercise I.1.6 in the textbook: Robin Hartshorne, Algebraic Geometry.)
-Any nonempty open subset of an irreducible topological space is dense and irreducible.
-If $Y$ is a subset of a topological space $X$, which is irreducible in its induced topology,
-then the closure $\overline{Y}$ is also irreducible.} \\
-
-Here we use the definition of irreducibility given by Hartshorne. \\
-
-\emph{Definition.}
-A nonempty subset $Y$ of a topological space $X$ is irreducible
-if it cannot be expressed as the union $Y = Y_1 \cup Y_2$ of two proper subsets,
-each one of which is closed in $Y$. The empty set is not considered to be irreducible. \\
-
-The proof is the same as Exercise 1.20(i) except
-that any nonempty open subset of an irreducible topological space is irreducible. \\
-
-\emph{Proof (Irreducibility of open subsets).}
-Given any open subset $U$ of an irreducible topological space $X$.
-Write $U \subseteq Y_1 \cup Y_2$ where $Y_1$ and $Y_2$ are closed in $X$.
-  \begin{align*}
-  U \subseteq Y_1 \cup Y_2
-  \Longrightarrow&
-  \overline{U} \subseteq \overline{Y_1 \cup Y_2} \\
-  \Longrightarrow&
-  X \subseteq Y_1 \cup Y_2
-    &\text{($U$ is dense, $Y_1 \cup Y_2$ is closed)} \\
-  \Longrightarrow&
-  Y_1 = X \supseteq U \text{ or } Y_2 = X \supseteq U
-    &\text{($X$ is irreducible)} \\
-  \Longrightarrow&
-  \text{$U$ is irreducible.}
-  \end{align*}
 $\Box$ \\\\
 
 
