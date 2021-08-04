@@ -937,9 +937,35 @@ Then $L$ is a field in which each $f \in \Sigma$ splits completely into linear f
 Let $\overline{K}$ be the set of all elements of $L$ which are algebraic over $K$.
 Then $\overline{K}$ is an algebraic closure of $K$.} \\
 
+
+
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\mathfrak{a} \neq (1)$.}
+  (Reductio ad absurdum)
+  If $\mathfrak{a} = (1)$, then we can write
+  \[
+    1 = \sum_{i=1}^{n} g_i(x) f_i(x_{f_i}) \in A
+  \]
+  where $x = (x_{f_1}, \ldots, x_{f_n}, x_{g_1}, \ldots, x_{g_r})$
+  is a tuple with finitely many indeterminates.
+  It is possible since it is a finite sum.
+
+\item[(2)]
+  Let $L$ be an algebraic extension of $K$ such that
+  each $f_i$ has a root $a_i \in L$ ($i = 1, \ldots, n$).
+
+\item[(3)]
+  Take $x = (a_1, \ldots, a_n, 0, \ldots, 0)$ in the equation $1 = \sum_{i=1}^{n} g_i(x) f_i(x_{f_i})$
+  to get
+  \begin{align*}
+    1
+    &= \sum_{i=1}^{n} g_i(a_1, \ldots, a_n, 0, \ldots, 0) f_i(a_i) \\
+    &= \sum_{i=1}^{n} g_i(a_1, \ldots, a_n, 0, \ldots, 0) \cdot 0 \\
+    &= 0,
+  \end{align*}
+  which is absurd.
 \end{enumerate}
 $\Box$ \\\\
 
