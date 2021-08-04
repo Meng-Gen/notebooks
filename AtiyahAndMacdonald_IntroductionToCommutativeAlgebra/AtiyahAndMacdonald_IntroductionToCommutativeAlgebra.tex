@@ -1505,49 +1505,89 @@ $\Box$ \\\\
 \emph{Let $X$ be a topological space.}
 \begin{enumerate}
 \item[(i)]
-\emph{If $Y$ is an irreducible subspace of $X$, then the closure $\overline{Y}$
-of $Y$ in $X$ is irreducible.}
+  \emph{If $Y$ is an irreducible subspace of $X$, then the closure $\overline{Y}$
+  of $Y$ in $X$ is irreducible.}
+
+\item[(ii)]
+  \emph{Every irreducible subspace of $X$ is contained in a maximal irreducible subspace.} \\
 \end{enumerate}
+
+
 
 \emph{Proof of (i).}
 \begin{enumerate}
 \item[(1)]
-\emph{$Y$ is irreducible if and only if
-$Y$ cannot be represented as the union of two proper closed subspaces.}
-  \begin{align*}
-  & \:
-  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
-  U_1 \cap U_2 \neq \varnothing \\
-  \Longleftrightarrow& \:
-  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
-  X - (U_1 \cap U_2) \neq X \\
-  \Longleftrightarrow& \:
-  \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
-  (X - U_1) \cup (X - U_2) \neq X \\
-  \Longleftrightarrow& \:
-  \forall \text{ proper closed sets } Y_1 \text{ and } Y_2,
-  Y_1 \cup Y_2 \neq X \\
-  \Longleftrightarrow& \:
-  \nexists \text{ proper closed sets } Y_1 \text{ and } Y_2,
-  Y_1 \cup Y_2 = X.
-  \end{align*}
+  \emph{$Y$ is irreducible if and only if
+  $Y$ cannot be represented as the union of two proper closed subspaces.}
+    \begin{align*}
+      & \:
+      \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+      U_1 \cap U_2 \neq \varnothing \\
+      \Longleftrightarrow& \:
+      \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+      X - (U_1 \cap U_2) \neq X \\
+      \Longleftrightarrow& \:
+      \forall \text{ nonempty open sets } U_1 \text{ and } U_2,
+      (X - U_1) \cup (X - U_2) \neq X \\
+      \Longleftrightarrow& \:
+      \forall \text{ proper closed sets } Y_1 \text{ and } Y_2,
+      Y_1 \cup Y_2 \neq X \\
+      \Longleftrightarrow& \:
+      \nexists \text{ proper closed sets } Y_1 \text{ and } Y_2,
+      Y_1 \cup Y_2 = X.
+    \end{align*}
+
 \item[(2)]
-If $\overline{Y}$ were reducible, there are two closed set $Y_1$ and $Y_2$
-such that
-\[
-  \overline{Y} \subseteq Y_1 \cup Y_2,
-  \qquad
-  \overline{Y} \not\subseteq Y_i (i = 1, 2).
-\]
-  \begin{enumerate}
-  \item[(a)]
-  $Y \subseteq \overline{Y} \subseteq Y_1 \cup Y_2$.
-  \item[(b)]
-  $Y\not\subseteq Y_i (i = 1, 2)$. If not, $Y \subseteq Y_i$ for some $i$.
-  Take closure to get $\overline{Y} \subseteq \overline{Y_i} = Y_i$ (since $Y_i$ is closed),
-  contrary to the assumption.
-  \end{enumerate}
-  By (a)(b), $Y$ is reducible, which is absurd.
+  If $\overline{Y}$ were reducible, there are two closed set $Y_1$ and $Y_2$
+  such that
+  \[
+    \overline{Y} \subseteq Y_1 \cup Y_2,
+    \qquad
+    \overline{Y} \not\subseteq Y_i (i = 1, 2).
+  \]
+    \begin{enumerate}
+    \item[(a)]
+      $Y \subseteq \overline{Y} \subseteq Y_1 \cup Y_2$.
+
+    \item[(b)]
+      $Y\not\subseteq Y_i (i = 1, 2)$. If not, $Y \subseteq Y_i$ for some $i$.
+      Take closure to get $\overline{Y} \subseteq \overline{Y_i} = Y_i$ (since $Y_i$ is closed),
+      contrary to the assumption.
+    \end{enumerate}
+    By (a)(b), $Y$ is reducible, which is absurd.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (ii).}
+\begin{enumerate}
+\item[(1)]
+  This is a standard application of Zorn's lemma.
+
+\item[(2)]
+  Suppose $Y$ is an irreducible subspace of $X$.
+  Let $\Sigma$ be the set of all irreducible subspaces of $X$ containing $Y$.
+  Order $\Sigma$ by inclusion.
+  $\Sigma$ is not empty, since $Y \in \Sigma$.
+  To apply Zorn's lemma we must show that every chain in $\Sigma$ has an upper bound in $\Sigma$;
+  let then $(Y_\alpha)$ be a chain in $\Sigma$.
+  Let $Z = \bigcup_{\alpha} Y_\alpha$.
+  $Z \supseteq Y$ clearly.
+
+\item[(3)]
+  \emph{Show that $Z$ is irreducible.}
+  Given two non-empty open sets $U$ and $V$ contained in $Z = \bigcup_{\alpha} Y_\alpha$.
+  Then $U \cap Y_\alpha \neq \varnothing$ and $V \cap Y_\beta \neq \varnothing$ for some $\alpha, \beta$.
+  Since $(Y_\alpha)$ is a chain, we might have
+  $V \cap Y_\alpha \supseteq V \cap Y_\beta \neq \varnothing$ if $\beta \leq \alpha$.
+  (The case $\alpha \leq \beta$ is similar.)
+  So $U \cap V \cap Z \supseteq U \cap V \cap Y_\alpha \neq \varnothing$
+  since $Z$ contains an irreducible subspace $Y_\alpha$ in $X$.
+
+\item[(4)]
+  Hence $Z \in \Sigma$, and $Z$ is an upper bound of the chain $(Y_\alpha)$.
+  Hence by Zorn's lemma $\Sigma$ has a maximal element.
 \end{enumerate}
 $\Box$ \\\\
 
