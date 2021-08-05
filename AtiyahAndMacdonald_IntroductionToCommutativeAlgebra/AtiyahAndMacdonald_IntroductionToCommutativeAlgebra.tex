@@ -1509,7 +1509,12 @@ $\Box$ \\\\
   of $Y$ in $X$ is irreducible.}
 
 \item[(ii)]
-  \emph{Every irreducible subspace of $X$ is contained in a maximal irreducible subspace.} \\
+  \emph{Every irreducible subspace of $X$ is contained in a maximal irreducible subspace.}
+
+\item[(iii)]
+  \emph{The maximal irreducible subspaces of $X$ are closed and cover $X$.
+  They are called the irreducible components of $X$.
+  What are the irreducible components of a Hausdorff space?} \\
 \end{enumerate}
 
 
@@ -1588,6 +1593,26 @@ $\Box$ \\
 \item[(4)]
   Hence $Z \in \Sigma$, and $Z$ is an upper bound of the chain $(Y_\alpha)$.
   Hence by Zorn's lemma $\Sigma$ has a maximal element.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (iii).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that the maximal irreducible subspaces of $X$ are closed.}
+  Suppose $Y$ is a maximal irreducible subspaces of $X$.
+  So $\overline{Y}$ of $Y$ in $X$ is irreducible (by part (i)).
+  The maximality of $Y$ implies that $Y = \overline{Y}$.
+
+\item[(2)]
+  \emph{Show that the maximal irreducible subspaces of $X$ cover $X$.}
+  Note that each element $P \in X$ forms an irreducible subset $\{P\}$ and thus
+  $\{P\}$ is contained in one irreducible component (by (ii)).
+
+\item[(3)]
+  One point subsets are the irreducible components of a Hausdorff space.
 \end{enumerate}
 $\Box$ \\\\
 
