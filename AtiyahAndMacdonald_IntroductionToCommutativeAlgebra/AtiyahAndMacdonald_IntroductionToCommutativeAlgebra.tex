@@ -1834,19 +1834,29 @@ $\Box$ \\
 
 \item[(2)]
   \emph{Show that $\overline{\phi^{*}(V(\mathfrak{b}))} \supseteq V(\mathfrak{b}^{c})$.}
-  Write $\overline{\phi^{*}(V(\mathfrak{b}))} = V(\mathfrak{a})$ for some ideal $\mathfrak{a}$ in $A$
+  Write $\overline{\phi^{*}(V(\mathfrak{b}))} = V(\mathfrak{a})$ for some radical ideal $\mathfrak{a}$ in $A$
   since $\overline{\phi^{*}(V(\mathfrak{b}))}$ is closed.
-  By (ii),
-  \[
+  So
+  \begin{align*}
+    &\:
     V(\mathfrak{a}^e)
     = \phi^{*-1}(V(\mathfrak{a}))
     = \phi^{*-1}(\overline{\phi^{*}(V(\mathfrak{b}))})
-    \supseteq V(\mathfrak{b}).
-  \]
-  So $\mathfrak{a}^e \subseteq \mathfrak{b}$, $\mathfrak{a} \subseteq \mathfrak{b}^c$,
-  and thus $V(\mathfrak{a}) \supseteq V(\mathfrak{b}^c)$.
+    \supseteq V(\mathfrak{b})
+      &(\text{(ii)}) \\
+    \Longrightarrow &\:
+    r(\mathfrak{a}^e) \subseteq r(\mathfrak{b}) \\
+    \Longrightarrow &\:
+    r(\mathfrak{a})^e \subseteq r(\mathfrak{a}^e) \subseteq r(\mathfrak{b}) \\
+    \Longrightarrow &\:
+    \mathfrak{a}^e \subseteq \mathfrak{b} \\
+    \Longrightarrow &\:
+    \mathfrak{a} \subseteq \mathfrak{b}^c \\
+    \Longrightarrow &\:
+    V(\mathfrak{a}) \supseteq V(\mathfrak{b}^c).
+  \end{align*}
 
-\item[(2)]
+\item[(3)]
   \emph{Show that $\overline{\phi^{*}(V(\mathfrak{b}))} \subseteq V(\mathfrak{b}^{c})$.}
   It suffices to show that $\phi^{*}(V(\mathfrak{b})) \subseteq V(\mathfrak{b}^{c})$
   since $V(\mathfrak{b}^{c})$ is closed.
