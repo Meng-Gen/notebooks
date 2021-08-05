@@ -1740,7 +1740,7 @@ Hence $\phi$ induces a mapping $\phi^{*}: Y \to X$. Show that}
 
 \item[(iii)]
   \emph{If $\mathfrak{b}$ is an ideal of B,
-  then $\overline{\phi^{*}(V(\mathfrak{b}))} = V(\mathfrak{a}^{c})$.}
+  then $\overline{\phi^{*}(V(\mathfrak{b}))} = V(\mathfrak{b}^{c})$.}
 
 \item[(iv)]
   \emph{If $\phi$ is surjective,
@@ -1793,6 +1793,35 @@ $\Box$ \\
 \emph{Proof of (ii).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Use the same notation of Proposition 1.17.
+  Show that}
+  \[
+    \mathfrak{b}^c \supseteq \mathfrak{a}
+    \Longleftrightarrow
+    \mathfrak{b} \supseteq \mathfrak{a}^e.
+  \]
+  Suppose $\mathfrak{b}^c \supseteq \mathfrak{a}$, then
+  $\mathfrak{b}^{ce} \supseteq \mathfrak{a}^e$. Proposition 1.17 (i) suggests that
+  $\mathfrak{b} \supseteq \mathfrak{b}^{ce} \supseteq \mathfrak{a}^e$.
+  The converse is similar.
+
+\item[(2)]
+  So
+  \begin{align*}
+    & \:
+    \mathfrak{q} \in \phi^{*-1}(V(\mathfrak{a})) \\
+    \Longleftrightarrow & \:
+    \phi^{*}(\mathfrak{q}) \in V(\mathfrak{a}) = \{ \text{all prime ideals containing $\mathfrak{a}$} \} \\
+    \Longleftrightarrow & \:
+    \phi^{*}(\mathfrak{q}) \supseteq \mathfrak{a} \\
+    \Longleftrightarrow & \:
+    \mathfrak{q}^c \supseteq \mathfrak{a} \\
+    \Longleftrightarrow & \:
+    \mathfrak{q} \supseteq \mathfrak{a}^e
+      &(\text{(1)}) \\
+    \Longleftrightarrow & \:
+    \mathfrak{q} \in V(\mathfrak{a}^e) = \{ \text{all prime ideals containing $\mathfrak{a}^e$} \}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
@@ -1801,6 +1830,32 @@ $\Box$ \\
 \emph{Proof of (iii).}
 \begin{enumerate}
 \item[(1)]
+  Might assume that $\mathfrak{b} = r(\mathfrak{b})$ is radical by Exercise 1.15 (i).
+
+\item[(2)]
+  \emph{Show that $\overline{\phi^{*}(V(\mathfrak{b}))} \supseteq V(\mathfrak{b}^{c})$.}
+  Write $\overline{\phi^{*}(V(\mathfrak{b}))} = V(\mathfrak{a})$ for some ideal $\mathfrak{a}$ in $A$
+  since $\overline{\phi^{*}(V(\mathfrak{b}))}$ is closed.
+  By (ii),
+  \[
+    V(\mathfrak{a}^e)
+    = \phi^{*-1}(V(\mathfrak{a}))
+    = \phi^{*-1}(\overline{\phi^{*}(V(\mathfrak{b}))})
+    \supseteq V(\mathfrak{b}).
+  \]
+  So $\mathfrak{a}^e \subseteq \mathfrak{b}$, $\mathfrak{a} \subseteq \mathfrak{b}^c$,
+  and thus $V(\mathfrak{a}) \supseteq V(\mathfrak{b}^c)$.
+
+\item[(2)]
+  \emph{Show that $\overline{\phi^{*}(V(\mathfrak{b}))} \subseteq V(\mathfrak{b}^{c})$.}
+  It suffices to show that $\phi^{*}(V(\mathfrak{b})) \subseteq V(\mathfrak{b}^{c})$
+  since $V(\mathfrak{b}^{c})$ is closed.
+  Suppose $\mathfrak{p} \in \phi^{*}(V(\mathfrak{b}))$.
+  Then there is $\mathfrak{q} \in V(\mathfrak{b})$ such that
+  \[
+    \mathfrak{p} = \phi^{*}(\mathfrak{q}) = \mathfrak{q}^c \supseteq \mathfrak{b}^c.
+  \]
+  So $\mathfrak{p} \in V(\mathfrak{b}^c)$.
 \end{enumerate}
 $\Box$ \\
 
