@@ -42,6 +42,7 @@
 % http://yyao.gsucreate.org/math831/831-2.pdf
 % http://www.math.ncku.edu.tw/~fjmliou/alg/base.pdf
 % https://ocw.mit.edu/courses/mathematics/18-726-algebraic-geometry-spring-2009/lecture-notes/MIT18_726s09_lec11_more_schemes.pdf
+% https://www.math.arizona.edu/~jtaylor/notes/atiyah_macdonald_solutions.pdf
 
 
 
@@ -1872,9 +1873,11 @@ $\Box$ \\
 
 
 \emph{Proof of (iv).}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
+  Note that $A/\ker\phi \cong B$ since $\phi$ is surjective.
+  The correspondence theorem shows that
+  $\phi^{*}: Y \to V(\ker\phi)$ is bijective.
+  As the continuity of $\phi^{*}$ is given by (i),
+  $\phi^{*}$ is a homeomorphism of $Y$ onto $V(\ker(\phi)) \subseteq X$.
 $\Box$ \\
 
 
@@ -1917,6 +1920,25 @@ $\Box$ \\
 \emph{Proof of (vii).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\phi^{*}$ is bijective.}
+  Note that
+  \begin{align*}
+    X &= \mathrm{Spec}(A) = \{ (0), \mathfrak{p} \} \\
+    Y &= \mathrm{Spec}(B) = \{ A/\mathfrak{p} \times (0), (0) \times K \}
+  \end{align*}
+  and thus
+  \begin{align*}
+    \phi^{*}(A/\mathfrak{p} \times (0)) &= (0) \\
+    \phi^{*}((0) \times K) &= (\mathfrak{p}).
+  \end{align*}
+  Hence $\phi^{*}$ is a bijective.
+
+\item[(2)]
+  \emph{Show that $\phi^{*}$ is not a homeomorphism.}
+  Note that $\overline{\{(0)\}} = X$ (Exercise 1.18 (iii))
+  and $Y$ is equipped with the discrete topology since
+  each prime ideal of $B$ is maximal (Exercise 1.18 (i)).
+  So $\phi^{*}$ cannot be a homeomorphism.
 \end{enumerate}
 $\Box$ \\\\
 
