@@ -1529,25 +1529,38 @@ Show that}
 
 
 \emph{Proof of (i).}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
+  \[
+    \{x\} = \overline{\{x\}}
+    \stackrel{\text{(ii)}}{\Longleftrightarrow}
+    \{x\} = V(\mathfrak{p}_x)
+    \Longleftrightarrow
+    \text{$\mathfrak{p}_x$ is maximal}.
+  \]
 $\Box$ \\
 
 
 
 \emph{Proof of (ii).}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
+  Since $\overline{\{x\}}$ is the intersection of all closed sets containing $x$ and Exercise 1.15 (iii),
+  we have
+  \[
+    \overline{\{x\}}
+    = \bigcap_{\mathfrak{a} \subseteq \mathfrak{p}_x} V(\mathfrak{a})
+    = V\left( \sum_{\mathfrak{a} \subseteq \mathfrak{p}_x} \mathfrak{a} \right) 
+    = V(\mathfrak{p}_x).
+  \]
 $\Box$ \\
 
 
 
 \emph{Proof of (iii).}
-\begin{enumerate}
-\item[(1)]
-\end{enumerate}
+  \[
+    y \in \overline{\{x\}}
+    \stackrel{\text{(ii)}}{\Longleftrightarrow}
+    y \in V(\mathfrak{p}_x)
+    \Longleftrightarrow
+    \mathfrak{p}_y \supseteq \mathfrak{p}_x.
+  \]
 $\Box$ \\
 
 
@@ -1555,6 +1568,13 @@ $\Box$ \\
 \emph{Proof of (iv).}
 \begin{enumerate}
 \item[(1)]
+  Suppose $x$ and $y$ are two points in $X$ such that $y \in \overline{\{x\}}$ and $x \in \overline{\{y\}}$.
+  Note that $x = y$ implies that $X$ is a $T_0$-space.
+  So it suffices to show that $x = y$.
+
+\item[(2)]
+  By (iii), $\mathfrak{p}_y \supseteq \mathfrak{p}_x$ and $\mathfrak{p}_x \supseteq \mathfrak{p}_y$.
+  So $\mathfrak{p}_x = \mathfrak{p}_y$ or $x = y$.
 \end{enumerate}
 $\Box$ \\\\
 
