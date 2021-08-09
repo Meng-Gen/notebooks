@@ -1235,9 +1235,37 @@ $\mathrm{Spec}(\mathbb{Z}[x])$.} \\
   Note that $\mathbb{R}$ is a field.
 
 \item[(3)]
-  \emph{Show that $\mathrm{Spec}(\mathbb{C}[x]) = \{ (0) \} \cup \{ (x - a) : a \in \mathbb{C} \}$.}
+  \emph{Show that $\mathrm{Spec}(\mathbb{C}[x]) = \{ (0) \} \cup \{ (x - z) : z \in \mathbb{C} \}$.}
   Note that $\mathbb{C}[x]$ is a PID and $\mathbb{C}$ is algebraically closed.
-  Hence all non-trivial prime ideals are of the form $(x - a)$ where $a \in \mathbb{C}$.
+  Hence all non-trivial prime ideals are of the form $(x - z)$ where $z \in \mathbb{C}$.
+
+\item[(4)]
+  \emph{Show that}
+  \begin{align*}
+    \mathrm{Spec}(\mathbb{R}[x])
+    & =
+    \{ (0) \} \cup \{ (x - r) : r \in \mathbb{R} \} \cup \\
+    & \qquad
+    \{ (x - z)(x - \overline{z}) : z \in \mathbb{C}, \mathrm{Im}(z) > 0 \}.
+  \end{align*}
+  \begin{enumerate}
+  \item[(a)]
+    Note that $\mathbb{R}[x]$ is a PID and
+    all non-trivial prime ideals are of the form $(f)$ where $f$ is irreducible.
+    Might assume $f$ is monic.
+    By the fundamental theorem of algebra, $f$ has a root $z \in \mathbb{C}$.
+
+  \item[(b)]
+    The case $r := z \in \mathbb{R}$.
+    $x - r$ is a factor of $f$.
+    Hence $f = x - r$.
+
+  \item[(c)]
+    The case $z \in \mathbb{C} \setminus \mathbb{R}$. 
+    Since the conjugate of $f$ is also in $\mathbb{R}[x]$, $\overline{z}$ is also a root of $f$.
+    So $(x - z)(x - \overline{z}) \in \mathbb{R}[x]$ is an irreducible factor of $f$.
+    Hence $f = (x - z)(x - \overline{z})$ by the irreducibility of $f$.
+  \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
