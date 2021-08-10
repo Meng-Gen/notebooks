@@ -2183,6 +2183,99 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.23.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.23.}
+\emph{Let $A$ be a Boolean ring (Exercise 1.11), and let $X = \mathrm{Spec}(A)$.}
+\begin{enumerate}
+\item[(i)]
+  \emph{For each $f \in A$, the set $X_f$ (Exercise 1.17) is both open and closed in $X$.}
+
+\item[(ii)]
+  \emph{Let $f_1, \ldots, f_n \in A$.
+  Show that $X_{f_1} \cup \cdots \cup X_{f_n} = X_f$ for some $f \in A$.}
+
+\item[(iii)]
+  \emph{The sets $X_f$ are the only open subsets of $X$ which are both open and closed.}
+
+\item[(iv)]
+  \emph{$X$ is a compact Hausdorff space.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (i).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $X$ is the disjoint union of subspaces $X_f$ and $X_{1-f}$.}
+  Note that every element in a Boolean ring is an idempotent.
+  Hence
+  \begin{align*}
+    X_f \cap X_{1-f}
+    &= X_{f(1-f)} = X_0 = \varnothing \\
+    X_f \cup X_{1-f}
+    &= X \setminus (V(f) \cap V(1-f))
+    = X \setminus \underbrace{V(f + (1-f))}_{= V(1) = \varnothing}
+    = X. 
+  \end{align*}
+
+\item[(2)]
+  Hence $X_f = X \setminus X_{1-f}$ is both open and closed.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (ii).}
+  Similar to (i),
+  \begin{align*}
+    X_{f_1} \cup \cdots \cup X_{f_n}
+    &= X \setminus (V(f_1) \cap \cdots \cap V(f_n)) \\
+    &= X \setminus V(f_1, \ldots, f_n) \\
+    &= X \setminus V(f) 
+      &(\text{Exercise 1.11 (iii)}) \\
+    &= X_f
+  \end{align*}
+  for some $f \in A$.
+$\Box$ \\
+
+
+
+\emph{Proof of (iii).}
+\begin{enumerate}
+\item[(1)]
+  Suppose $Y$ is both open and closed in $X$.
+
+\item[(2)]
+  Since $Y$ is closed and $X$ is quasi-compact (Exercise 1.17 (vi)), $Y$ is quasi-compact.
+
+\item[(3)]
+  Since $Y$ is open, $Y$ is a finite union of sets $X_{f_i}$ for $i = 1, \ldots, n$ (Exercise 1.17 (vii)).
+  Hence $Y = X_f$ for some $f \in A$ (by (ii)).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (iv).}
+\begin{enumerate}
+\item[(1)]
+  The compactness of $X$ is followed by Exercise 1.17 (v).
+
+\item[(2)]
+  \emph{Show that $X$ is Hausdorff.}
+  Exercise 1.18 shows that $X$ is a $T_0$-space.
+  This means that if $x, y$ are distinct points of $X$,
+  we might assume that there is a neighborhood $U$ of $x$ which does not contain $y$.
+
+\item[(3)]
+  Write $U = X_f$ for some $f \in A$ (by Exercise 1.17 and (ii)).
+  As $x \in X_f$, $y \in X \setminus X_f = X_{1-f}$ and $X_f \cap X_{1-f} = \varnothing$ by (i).
+  Hence $X$ is Hausdorff.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
