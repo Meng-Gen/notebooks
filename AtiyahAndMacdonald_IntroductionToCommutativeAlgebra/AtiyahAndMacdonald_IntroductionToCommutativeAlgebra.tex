@@ -2080,6 +2080,130 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.22.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.22.}
+\emph{Let $A = \prod_{i=1}^{n} A_i$ be a direct product of rings $A_i$.
+Show that $\mathrm{Spec}(A)$ is the disjoint union of open (and closed) subspaces $X_i$,
+where $X_i$ is canonically homeomorphic with $\mathrm{Spec}(A_i)$.} \\
+
+\emph{Conversely, let $A$ be any ring.
+Show that the following statements are equivalent:}
+\begin{enumerate}
+\item[(i)]
+  \emph{$X = \mathrm{Spec}(A)$ is disconnected.}
+\item[(ii)]
+  \emph{$A \cong A_1 \times A_2$ where neither of the rings $A_1$, $A_2$ is the zero ring.}
+\item[(iii)]
+  \emph{$A$ contains an idempotent $\neq 0, 1$
+  In particular, the spectrum of a local ring is always connected (Exercise 1.12).} \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathrm{Spec}(A)$ is the union of closed subspaces $X_i$,
+  where $X_i \cong \mathrm{Spec}(A_i)$.}
+  Let $\phi_i: A \to A_i$ be the projection map.
+  So
+  \[
+    \ker\phi_i
+    = A_1 \times \cdots \times A_{i-1} \times 0 \times A_{i+1} \times \cdots \times A_n.
+  \]
+  So
+  \[
+    \mathrm{Spec}(A)
+    = V(0)
+    = V\left( \bigcap_{i=1}^{n} \ker\phi_i \right)
+    = \bigcup_{i=1}^{n} V(\ker\phi_i)
+  \]
+  where $X_i := V(\ker\phi_i) \cong \mathrm{Spec}(A_i)$ (Exercise 1.21).
+
+\item[(2)]
+  \emph{Show that $V(\ker\phi_i)$ and $V(\ker\phi_j)$ are disjoint if $i \neq j$.}
+  \[
+    V(\ker\phi_i) \cap V(\ker\phi_j)
+    = V(\ker\phi_i + \ker\phi_j)
+    = V(A)
+    = V(1) = \varnothing.
+  \]
+
+\item[(3)]
+  \emph{Show that $V(\ker\phi_i)$ is open.}
+  $\mathrm{Spec}(A) = \bigcup_{j=1}^{n} V(\ker\phi_j)$
+  and $V(\ker\phi_i) \cap V(\ker\phi_j) = \varnothing$ (if $i \neq j$)
+  implies that $\mathrm{Spec}(A) \setminus V(\ker\phi_i) = \bigcup_{j \neq i} V(\ker\phi_j)$ is closed.
+  Thus  $V(\ker\phi_i)$ is open.
+
+\item[(4)]
+  ((ii) $\Longrightarrow$ (i))
+  See (1)(2)(3).
+
+\item[(5)]
+  ((i) $\Longrightarrow$ (iii))
+  Write $X$ as a disjoint union of two nonempty closed sets $V(\mathfrak{a}), V(\mathfrak{b})$
+  where $\mathfrak{a}, \mathfrak{b}$ are radical ideals in $A$ (Exercise 1.15).
+  Since
+  \begin{align*}
+    V(0) = X &= V(\mathfrak{a}) \cup V(\mathfrak{b}) = V(\mathfrak{a} \mathfrak{b}) \\
+    V(1) = \varnothing &= V(\mathfrak{a}) \cap V(\mathfrak{b}) = V(\mathfrak{a} + \mathfrak{b}),
+  \end{align*}
+  there exist $a \in \mathfrak{a}$, $b \in \mathfrak{b}$ such that $a+b = 1$ and $(ab)^n = 0$
+  for one positive integer $n$.
+  So $ab = 0$ since $\mathfrak{a} \mathfrak{b}$ is radical.
+  (Note that $\mathfrak{a} + \mathfrak{b} = 1$ and Exercise 1.13 on page 9.)
+  So
+  \[
+    a^2 = a(1 - b) = a - ab = a
+  \]
+  is an idempotent.
+  Also $a \neq 0, 1$ since $V(\mathfrak{a}), V(\mathfrak{b})$ are proper subsets of $X$.
+
+\item[(6)]
+  ((iii) $\Longrightarrow$ (ii))
+  Take an idempotent $e \neq 0, 1$ in $A$.
+  Two ideals $(e)$ and $(1-e)$ are proper and coprime.
+  So $(e) \cap (1-e) = (e)(1-e) = (0)$ (Proposition 1.10 (i)).
+  Proposition 1.10 (ii) and (iii) imply that the ring homomorphism
+  \[
+    A \to A/(e) \times A/(1-e)
+  \]
+  is an isomorphism.
+  Also $A/(e), A/(1-e) \neq 0$ since $e \neq 0, 1$. 
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
