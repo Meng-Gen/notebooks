@@ -2288,6 +2288,125 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.26. (Maximal spectrum)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.26. (Maximal spectrum)}
+\emph{Let $A$ be a ring.
+The subspace of $\mathrm{Spec}(A)$ consisting of the maximal ideals of $A$,
+with the induced topology,
+is called the \textbf{maximal spectrum} of $A$ and is denoted by $\mathrm{Max}(A)$.
+For arbitrary commutative rings
+it does not have the nice functorial properties of $\mathrm{Spec}(A)$ (see Exercise 1.21),
+because the inverse image of a maximal ideal under a ring homomorphism need not be maximal.} \\
+
+\emph{Let $X$ be a compact Hausdorff space and
+let $C(X)$ denote the ring of all real-valued continuous functions on $X$
+(add and multiply functions by adding and multiplying their values).
+For each $x \in X$, let $\mathfrak{m}_x$ be the set of all $f \in C(X)$ such that $f(x) = 0$.
+The ideal $\mathfrak{m}_x$ is maximal,
+because it is the kernel of the (surjective) homomorphism $C(X) \to \mathbb{R}$ which takes $f$ to $f(x)$.
+If $\widetilde{X}$ denotes $\mathrm{Max}(C(X))$,
+we have therefore defined a mapping $\mu: X \to \widetilde{X}$,
+namely $x \mapsto \mathfrak{m}_x$.} \\
+
+\emph{We shall show that $\mu$ is a homeomorphism of $X$ onto $\widetilde{X}$.}
+\begin{enumerate}
+\item[(i)]
+  \emph{Let $\mathfrak{m}$ be any maximal ideal of $C(X)$,
+  and let $V = V(\mathfrak{m})$ be the set of common zeros of the functions in $\mathfrak{m}$:
+  that is,
+  \[
+    V = \{ x \in X : f(x) = 0 \text{ for all } f \in \mathfrak{m} \}.
+  \]
+  Suppose that $V$ is empty.
+  Then for each $x \in X$ there exists $f_x \in \mathfrak{m}$ such that $f_x(x) \neq 0$.
+  Since $f_x$ is continuous,
+  there is an open neighborhood $U_x$ of $x$ in $X$ on which $f_x$ does not vanish.
+  By compactness a finite number of the neighborhoods, say $U_{x_1}, \ldots, U_{x_n}$, cover $X$.
+  Let
+  \[
+    f = f_{x_1}^2 + \cdots + f_{x_n}^2.
+  \]
+  Then $f$ does not vanish at any point of $X$, hence is a unit in $C(X)$.
+  But this contradicts $f \in \mathfrak{m}$, hence $V$ is not empty.
+  Let $x$ be a point of $V$. Then $\mathfrak{m} \subseteq \mathfrak{m}_x$,
+  hence $\mathfrak{m} = \mathfrak{m}_x$ because $\mathfrak{m}$ is maximal.
+  Hence $\mu$ is surjective.}
+
+\item[(ii)]
+  \emph{By Urysohn's lemma (this is the only non-trivial fact required in the argument)
+  the continuous functions separate the points of $X$.
+  Hence $x \neq y \Longrightarrow \mathfrak{m}_x \neq \mathfrak{m}_y$, and therefore $\mu$ is injective.}
+
+\item[(iii)]
+  \emph{Let $f \in C(X)$; let
+  \[
+    U_f = \{ x \in X : f(x) \neq 0 \}
+  \]
+  and let
+  \[
+    \widetilde{U}_f = \{ \mathfrak{m} \in \widetilde{X} : f \not\in \mathfrak{m} \}.
+  \]
+  Show that $\mu(U_f) = \widetilde{U}_f$.
+  The open sets $U_f$ (resp. $\widetilde{U}_f$)
+  form a basis of the topology of $X$ (resp. $\widetilde{X}$) and therefore $\mu$ is a homeomorphism.
+  Thus $X$ can be reconstructed from the ring of functions $C(X)$.}
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that the inverse image of a maximal ideal under a ring homomorphism need not be maximal.}
+  Let $\phi: \mathbb{Z}[x] \to \mathbb{R}[x]$ be a natural inclusion map.
+  The ideal $\mathfrak{P} = (x)$ in $\mathbb{R}[x]$ is maximal.
+  But $\phi^{-1}(\mathfrak{P}) = (x)$ in $\mathbb{Z}[x]$ is not maximal
+  since $(x) \subsetneq (x,2)$ in $\mathbb{Z}[x]$.
+
+\item[(2)]
+  \emph{Show that $\mu(U_f) = \widetilde{U}_f$.}
+  \begin{align*}
+    x \in U_f
+    \Longleftrightarrow & \:
+    x \in X \text{ such that } f(x) \neq 0 \\
+    \Longleftrightarrow & \:
+    x \in X \text{ such that } f \not\in \mathfrak{m}_x \\
+    \Longleftrightarrow & \:
+    \mathfrak{m}_x \in \widetilde{X} \text{ such that } f \not\in \mathfrak{m}_x \\
+    \Longleftrightarrow & \:
+    \mu(x) = \mathfrak{m}_x \in \widetilde{U}_f.
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that $U_f$ form a basis of the topology of $X$.}
+  Let $U$ be open in $X$.
+  For any $x \in U$, it suffices to find $f \in C(X)$ such that $x \in U_f \subseteq U$.
+  Note that one-point set $\{x\}$ is closed (since $X$ is Hausdorff).
+  By Urysohn's lemma,
+  there is $f \in C(X)$ such that $f = 1$ on $\{x\}$ and $f = 0$ on $X \setminus U$.
+
+\item[(4)]
+  \emph{Show that $\widetilde{U}_f$ form a basis of the topology of $\widetilde{X}$.}
+  Let $\widetilde{U} = \widetilde{W} \cap \widetilde{X}$ be open in $\widetilde{X}$
+  where $\widetilde{W}$ is open in $\mathrm{Spec}(C(X))$ (w.r.t. the induced topology).
+  For any $\mathfrak{m} \in \widetilde{U} = \widetilde{W} \cap \widetilde{X} \subseteq \widetilde{W}$,
+  Exercise 1.17 shows that
+  \[
+    \mathfrak{m} \in \mathrm{Spec}(C(X))_{f} \subseteq \widetilde{W}
+  \]
+  for some $f \in C(X)$.
+  So
+  \[
+    \mathfrak{m} \in
+    \underbrace{\mathrm{Spec}(C(X))_{f} \cap \widetilde{X}}_{= \widetilde{U}_f}
+    \subseteq
+    \underbrace{\widetilde{W} \cap \widetilde{X}}_{= \widetilde{U}}.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
