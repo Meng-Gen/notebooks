@@ -2485,6 +2485,68 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.28.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.28.}
+\emph{Let $f_1, \ldots, f_m$ be elements of $k[t_1, \ldots, t_n]$.
+They determine a \textbf{polynomial mapping} $\phi: k^n \to k^m$:
+if $x \in k^n$, the coordinates of $\phi(x)$ are $f_1(x), \ldots, f_m(x)$.} \\
+
+\emph{Let $X$, $Y$ be affine algebraic varieties in $k^n$, $k^m$ respectively.
+A mapping $\phi: X \to Y$ is said to be \textbf{regular}
+if $\phi$ is the restriction to $X$ of a polynomial mapping from $k^n$ to $k^m$.} \\
+
+\emph{If $\eta$ is a polynomial function on $Y$, then $\eta \circ \phi$ is a polynomial function on $X$.
+Hence $\phi$ induces a $k$-algebra homomorphism $P(Y) \to P(X)$, namely $\eta \mapsto \eta \circ \phi$.
+Show that in this way we obtain a one-to-one correspondence between
+the regular mappings $X \to Y$ and the $k$-algebra homomorphisms $P(Y) \to P(X)$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $P(X) = k[t_1, \ldots, t_n]/I(X)$ and $P(Y) = k[s_1, \ldots, s_m]/I(Y)$.
+  Let $\eta_j$ be the image of $s_j$ in $P(Y)$.
+  Suppose $\phi$ induces a $k$-algebra homomorphism $P(Y) \to P(X)$ by
+  $\widetilde{\phi}: \eta \mapsto \eta \circ \phi$.
+
+\item[(2)]
+  \emph{Show that the correspondence is injective.}
+  Suppose $\widetilde{\alpha} = \widetilde{\beta}$ for some regular mappings
+  $\alpha = (\alpha_1, \ldots, \alpha_m)$ and $\beta = (\beta_1, \ldots, \beta_m)$.
+  Hence
+  \[
+    \alpha_j
+    = \eta_j \circ \alpha
+    = \widetilde{\alpha}(\eta_j)
+    = \widetilde{\beta}(\eta_j)
+    = \eta_j \circ \beta
+    = \beta_j
+  \]
+  for $1 \leq j \leq m$.
+  Hence $\alpha_j = \beta_j$ on $X$ and thus $\alpha = \beta$ on $X$.
+
+\item[(3)]
+  \emph{Show that the correspondence is surjective.}
+  Suppose $\Psi: P(Y) \to P(X)$ is a $k$-algebra homomorphism.
+  Say $\psi_j + I(X) := \Psi(\eta_j) \in P(X)$ for some $\psi_j \in k[t_1, \ldots, t_n]$
+  (where $1 \leq j \leq m$).
+
+\item[(4)]
+  Define $\psi: X \to k^m$ by
+  \[
+    \psi(P) = (\psi_1(P), \ldots, \psi_m(P))
+  \]
+  where $P = (t_1, \ldots, t_n) \in X$.
+  $\psi$ is well-defined (since $\psi$ is independent of the choice of $\psi_j$).
+  To show $\psi$ is regular, it suffices to show that the image of $\psi$ is contained in $Y$.
+  It is guaranteed by $\Psi(0) = 0$.
+  Lastly note that $\widetilde{\psi} = \Psi$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
