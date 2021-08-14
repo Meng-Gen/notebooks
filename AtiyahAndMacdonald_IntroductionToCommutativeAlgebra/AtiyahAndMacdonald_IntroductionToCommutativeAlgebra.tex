@@ -194,7 +194,7 @@ Prove that}
   \begin{enumerate}
   \item[(a)]
     As $r = 0$, $a_n b_m = 0$ by comparing the coefficient of $fg = 1$ at $x^{n+m}$.
-  
+
   \item[(b)]
     For any $r > 0$, comparing the coefficient of $fg = 1$ at $x^{n+m-r}$,
     \[
@@ -275,7 +275,7 @@ $\Box$ \\
   \begin{enumerate}
   \item[(a)]
     As $n = 0$, $f = a_0$. There exists $b_m \neq 0$ such that $b_m f = b_m a_0 = 0$ by (2).
-  
+
   \item[(b)]
     For any zero-divisor $f$ of degree $n$,
     there is a polynomial $g = b_0 + b_1 x + \cdots + b_m x^m$
@@ -1107,7 +1107,7 @@ then $V(E_1) \supseteq V(E_2)$. \\
       $a = \sum \alpha \beta \in \mathfrak{p}$.
       That is, $\mathfrak{p} \supseteq \mathfrak{a}$,
       or $\mathfrak{p} \in V(\mathfrak{a})$.
-    
+
     \item[(b)]
       \emph{$V(E) \supseteq V(\mathfrak{a})$} since $\mathfrak{a} \supseteq E$.
     \end{enumerate}
@@ -1192,7 +1192,7 @@ $\Box$ \\
     $\mathfrak{p} \supseteq \mathfrak{a}$ or $\mathfrak{p} \supseteq \mathfrak{b}$,
     $\mathfrak{p} \in V(\mathfrak{a})$ or $\mathfrak{p} \in V(\mathfrak{b})$,
     $\mathfrak{p} \in V(\mathfrak{a}) \cup V(\mathfrak{b})$.
-  
+
   \item[(b)]
     \emph{Show that $V(\mathfrak{a} \mathfrak{b})
     \supseteq V(\mathfrak{a}) \cup V(\mathfrak{b})$.}
@@ -1267,7 +1267,7 @@ $\mathrm{Spec}(\mathbb{Z}[x])$.} \\
     Hence $f = x - r$.
 
   \item[(c)]
-    The case $z \in \mathbb{C} \setminus \mathbb{R}$. 
+    The case $z \in \mathbb{C} \setminus \mathbb{R}$.
     Since the conjugate of $f$ is also in $\mathbb{R}[x]$, $\overline{z}$ is also a root of $f$.
     So $(x - z)(x - \overline{z}) \in \mathbb{R}[x]$ is an irreducible factor of $f$.
     Hence $f = (x - z)(x - \overline{z})$ by the irreducibility of $f$.
@@ -1643,7 +1643,7 @@ $\Box$ \\
   \[
     \overline{\{x\}}
     = \bigcap_{\mathfrak{a} \subseteq \mathfrak{p}_x} V(\mathfrak{a})
-    = V\left( \sum_{\mathfrak{a} \subseteq \mathfrak{p}_x} \mathfrak{a} \right) 
+    = V\left( \sum_{\mathfrak{a} \subseteq \mathfrak{p}_x} \mathfrak{a} \right)
     = V(\mathfrak{p}_x).
   \]
 $\Box$ \\
@@ -2173,7 +2173,7 @@ Show that the following statements are equivalent:}
     A \to A/(e) \times A/(1-e)
   \]
   is an isomorphism.
-  Also $A/(e), A/(1-e) \neq 0$ since $e \neq 0, 1$. 
+  Also $A/(e), A/(1-e) \neq 0$ since $e \neq 0, 1$.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -2215,7 +2215,7 @@ $\Box$ \\\\
     X_f \cup X_{1-f}
     &= X \setminus (V(f) \cap V(1-f))
     = X \setminus \underbrace{V(f + (1-f))}_{= V(1) = \varnothing}
-    = X. 
+    = X.
   \end{align*}
 
 \item[(2)]
@@ -2231,7 +2231,7 @@ $\Box$ \\
     X_{f_1} \cup \cdots \cup X_{f_n}
     &= X \setminus (V(f_1) \cap \cdots \cap V(f_n)) \\
     &= X \setminus V(f_1, \ldots, f_n) \\
-    &= X \setminus V(f) 
+    &= X \setminus V(f)
       &(\text{Exercise 1.11 (iii)}) \\
     &= X_f
   \end{align*}
@@ -2408,6 +2408,76 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Affine algebraic varieties \\}
+\addcontentsline{toc}{subsection}{Affine algebraic varieties}
+
+
+
+\subsubsection*{Exercise 1.27. (Hilbert's Nullstellensatz)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.27. (Hilbert's Nullstellensatz)}
+\emph{Let $k$ be an algebraically closed field and let
+\[
+  f_{\alpha}(t_1, \ldots, t_n) = 0
+\]
+be a set of polynomial equations in n variables with coefficients in $k$.
+The set $X$ of all points $x = (x_1, \ldots, x_n) \in k^n$ which satisfy these equations is
+an \textbf{affine algebraic variety}.} \\
+
+\emph{Consider the set of all polynomials $g \in k[t_1, \ldots, t_n]$ with the property that
+$g(x) = 0$ for all $x \in X$.
+This set is an ideal $I(X)$ in the polynomial ring,
+and is called the \textbf{ideal of the variety $X$}.
+The quotient ring
+\[
+  P(X) = k[t_1, \ldots, t_n]/I(X)
+\]
+is the ring of polynomial functions on $X$,
+because two polynomials $g$, $h$ define the same polynomial function on $X$ if and only if
+$g - h$ vanishes at every point of $X$, that is, if and only if $g - h \in I(X)$.} \\
+
+\emph{Let $\xi_i$ be the image of $t_i$ in $P(X)$.
+The $\xi_i$ ($1 \leq i \leq n$) are the \textbf{coordinate functions} on $X$:
+if $x \in X$, then $\xi_i(x)$ is the $i$th coordinate of $x$.
+$P(X)$ is generated as a $k$-algebra by the coordinate functions,
+and is called the \textbf{coordinate ring} (or affine algebra) of $X$.} \\
+
+\emph{As in Exercise 1.26,
+for each $x \in X$ let $\mathfrak{m}_x$ be the ideal of all $f \in P(X)$ such that $f(x) = 0$;
+it is a maximal ideal of $P(X)$.
+Hence, if $\widetilde{X} = \mathrm{Max}(P(X))$, we have defined a mapping $\mu: X \to \widetilde{X}$,
+namely $x \mapsto \mathfrak{m}_x$.
+It is easy to show that $\mu$ is injective: if $x \neq y$,
+we must have $x_i \neq y_i$ for some $i$ ($1 \leq i \leq n$),
+and hence $\xi_i - x_i$ is in $\mathfrak{m}_x$ but not in $\mathfrak{m}_y$,
+so that $\mathfrak{m}_x \neq \mathfrak{m}_y$.
+What is less obvious (but still true) is that $\mu$ is surjective.
+This is one form of Hilbert's Nullstellensatz (see Chapter 7).} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mu$ is surjective.}
+  If $\mathfrak{m}$ is a maximal ideal of $P(X)$,
+  then $B := P(X)/\mathfrak{m}$ is a finitely generated $k$-algebra.
+  Note that $B$ is also a field,
+  Corollary 5.24 implies that $B$ is a finite algebraic extension of $k$.
+
+\item[(2)]
+  In fact, $B \cong k$ since $k = \overline{k}$.
+  Let $x_i$ be the image of $\xi_i$ in $k$ for each $i$.
+  So $\xi_i - x_i = 0 \in k \cong B$ or $\xi_i - x_i \in \mathfrak{m}$.
+  So
+  \[
+    \mathfrak{m} \subseteq (\xi_1 - x_1, \ldots, \xi_n - x_n) = \mathfrak{m}_x.
+  \]
+  Hence $\mathfrak{m} = \mathfrak{m}_x$ by the maximality of $\mathfrak{m}$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
