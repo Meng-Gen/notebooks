@@ -2583,6 +2583,46 @@ the lattice of open-and-closed subsets of some compact Hausdorff topological spa
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  Suppose $L$ is a Boolean lattice and $A = A(L)$ is the corresponding Boolean ring (Exercise 1.24).
+  Observe that $X = \mathrm{Spec}(A)$ is a compact Hausdorff space (Exercise 1.23).
+
+\item[(2)]
+  Define a map
+  \[
+    \alpha: L \to \mathcal{P}(X)
+  \]
+  by $\alpha(f) = X_f$
+  where $\mathcal{P}(X)$ is the power set of a set $X$.
+  View $\mathcal{P}(X)$ as a Boolean lattice, ordered by inclusion.
+  
+\item[(3)]
+  The image of $\alpha$ is the collection of all open-and-closed sets in $X$ (Exercise 1.23).
+  Note that $\mathrm{im}(\alpha)$ is a Boolean lattice (Exercises 1.17 and 1.23).
+
+\item[(4)]
+  \emph{Show that $\alpha: L \to \mathrm{im}(\alpha)$ is injective.}
+  Suppose $X_f = X_g$.
+  Exercise 1.17 shows that $r((f)) = r((g))$.
+  In particular, $f \in r((g))$.
+  So $f = g^n$ for some $n \geq 1$.
+  Hence $f = g^n = g^{n-1} = \cdots = g$ since $A$ is a Boolean ring.
+
+\item[(5)]
+  Since
+  \begin{align*}
+    f \leq g
+    \Longleftrightarrow & \:
+    f = fg \\
+    \Longleftrightarrow & \:
+    X_f = X_{fg}
+      &(\text{Injectivity of $\alpha$}) \\
+    \Longleftrightarrow & \:
+    X_f = X_f \cap X_g \\
+    \Longleftrightarrow & \:
+    X_f \subseteq X_g,
+  \end{align*}
+  $\alpha: L \to \mathrm{im}(\alpha)$ preserves the ordering.
+  Hence $\alpha$ is an isomorphism between two Boolean lattices. 
 \end{enumerate}
 $\Box$ \\\\
 
