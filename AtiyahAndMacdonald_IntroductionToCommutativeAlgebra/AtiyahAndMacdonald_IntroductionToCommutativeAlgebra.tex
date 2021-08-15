@@ -2527,7 +2527,42 @@ In this way we obtain a one-to-one correspondence between (isomorphism classes o
 
 \item[(6)]
   (2)-(5) show that $A(L)$ is a commutative ring.
-  Note that (2)(d) implies that $A(L)$ is a Boolean ring.
+  Also $a^2 = a \wedge a = a$ implies that $A(L)$ is a Boolean ring.
+
+\item[(7)]
+  Conversely, starting from a Boolean ring $A$, define an ordering on $A$ as follows:
+  $a \leq b$ means that $a = ab$.
+  The ordering is well-defined (since $A$ is a Boolean ring).
+
+\item[(8)]
+  \emph{Define $a \vee b = a + b + ab$ and $a \wedge b = ab$.
+  Show that $a \vee b$ is the sup and $a \wedge b$ is the inf.}
+  Similar to the proof of Exercise 1.11 (iii),
+  \[
+    a(a \vee b) = a(a + b + ab) = a^2 + ab + a^2b = a + ab + ab = a.
+  \]
+  So $a \leq a \vee b$. Similarly, $b \leq a \vee b$.
+  So $a \vee b$ is an upper bound of $a$ and $b$.
+  To show $a \vee b$ is the least upper bound, it suffices to show that
+  all other $z \geq a, b$ we have $z \geq a \vee b$.
+  In fact,
+  \[
+    (a \vee b)z = (a + b + ab)z = az + bz + abz = a + b + ab = a \vee b.
+  \]
+  Hence $a \vee b$ is the sup.
+  Similarly, $a \wedge b$ is the inf.
+  Therefore we define a lattice $L(A)$ on a Boolean ring $A$.
+
+\item[(9)]
+  \emph{Show that $L(A)$ is a Boolean lattice.}
+  $0 \in A$ is a least element,
+  $1$ is a greatest element,
+  each of $\vee$ and $\wedge$ is distributive over the other,
+  and $a' = 1 - a$ is the unique complement of $a$.
+
+\item[(10)]
+  It is easy to see that $A(L(A)) = A$ and $L(A(L)) = L$ (up to isomorphism).
+  Hence there is a one-to-one correspondence between Boolean rings and Boolean lattices.
 \end{enumerate}
 $\Box$ \\\\
 
