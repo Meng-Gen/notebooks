@@ -2280,7 +2280,276 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.24. (Boolean lattice)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.24. (Boolean lattice)}
+\emph{Let $L$ be a lattice, in which the sup and inf of two elements $a$, $b$ are denoted by
+$a \vee b$ and $a \wedge b$ respectively.
+$L$ is a \textbf{Boolean lattice} (or \textbf{Boolean algebra}) if}
+\begin{enumerate}
+\item[(i)]
+  \emph{$L$ has a least element and a greatest element (denoted by $0$, $1$ respectively);}
+
+\item[(ii)]
+  \emph{Each of $\vee$, $\wedge$ is distributive over the other;}
+
+\item[(iii)]
+  \emph{Each $a \in L$ has a unique ``complement'' $a' \in L$ such that
+  $a \vee a' = 1$ and $a \wedge a' = 0$.}
+\end{enumerate}
+\emph{(For example, the set of all subsets of a set, ordered by inclusion, is a Boolean lattice.)} \\
+
+\emph{Let $L$ be a Boolean lattice.
+Define addition and multiplication in $L$ by the rules
+\[
+  a + b = (a \wedge b') \vee (a' \wedge b),
+  \qquad
+  ab = a \wedge b.
+\]
+Verify that in this way $L$ becomes a Boolean ring, say $A(L)$.} \\
+
+\emph{Conversely, starting from a Boolean ring $A$, define an ordering on $A$ as follows:
+$a \leq b$ means that $a = ab$.
+Show that, with respect to this ordering, $A$ is a Boolean lattice.
+In this way we obtain a one-to-one correspondence between (isomorphism classes of) Boolean rings and
+(isomorphism classes of) Boolean lattices.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Some properties about $\vee$ and $\wedge$:
+  \begin{enumerate}
+  \item[(a)]
+    (Commutativity)
+    \emph{Show that}
+    \[
+      a \vee b = b \vee a,
+      \qquad
+      a \wedge b = b \wedge a.
+    \]
+    Say $z_1 := a \vee b$ and $z_2 := b \vee a$.
+    By the definition of the sup,
+    \begin{align*}
+      &\text{$z_1 \geq a, b$ such that for all other $w_1 \geq a, b$ we have $w_1 \geq z_1$} \\
+      &\text{$z_2 \geq b, a$ such that for all other $w_2 \geq b, a$ we have $w_2 \geq z_2$}.
+    \end{align*}
+    So $z_1 \geq z_2$ and $z_2 \geq z_1$ and thus $z_1 = z_2$.
+    Hence $a \vee b = b \vee a$.
+    Similarly, $a \wedge b = b \wedge a$.
+
+  \item[(b)]
+    (Associativity)
+    \emph{Show that}
+    \begin{align*}
+      & (a \vee b) \vee c = a \vee b \vee c = a \vee (b \vee c), \\
+      & (a \wedge b) \wedge c = a \wedge b \wedge c = a \wedge (b \wedge c).
+    \end{align*}
+    Say $z_1 := (a \wedge b) \wedge c$, $z_2 := a \wedge b \wedge c$, and $z_3 := a \wedge (b \wedge c)$.
+    By the definition of inf,
+    $z_1$ is a unique greatest element such that $z_1 \leq a \wedge b, c$.
+    So $z_1 \leq a, b, c$ or $z_1 \leq z_2$.
+    Besides, $z_2 \leq a, b, c$ implies that $z_2 \leq a, b \wedge c$.
+    So $z_2 \leq z_3$.
+    Hence $z_1 \leq z_2 \leq z_3$.
+    Similarly, $z_3 \leq z_2 \leq z_1$.
+    So $z_1 = z_2 = z_3$.
+    Similarly, $(a \vee b) \vee c = a \vee b \vee c = a \vee (b \vee c)$
+
+  \item[(c)]
+    (De Morgan's laws)
+    \emph{Show that}
+    \[
+      (a \vee b)' = a' \wedge b',
+      \qquad
+      (a \wedge b)' = a' \vee b'.
+    \]
+    Since
+    \begin{align*}
+      (a \vee b) \vee (a' \wedge b')
+      &= (a \vee b \vee a') \wedge (a \vee b \vee b') \\
+      &= (a \vee a' \vee b) \wedge (a \vee b \vee b') \\
+      &= (1 \vee b) \wedge (a \vee 1) \\
+      &= 1 \wedge 1 \\
+      &= 1.
+    \end{align*}
+    and
+    \begin{align*}
+      (a \vee b) \wedge (a' \wedge b')
+      &= (a \wedge a' \wedge b') \vee (b \wedge a' \wedge b') \\
+      &= (a \wedge a' \wedge b') \vee (a' \wedge b \wedge b') \\
+      &= (0 \wedge b') \vee (a' \wedge 0) \\
+      &= 0 \vee 0 \\
+      &= 0,
+    \end{align*}
+    The complement of $a \vee b$ is $a' \wedge b'$.
+    Similarly, $(a \wedge b)' = a' \vee b'$.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that $A(L)$ is an abelian group under addition.}
+  \begin{enumerate}
+  \item[(a)]
+    (Commutativity)
+    \emph{Show that $a + b = b + a$.}
+    By (1)(a),
+    \begin{align*}
+      a + b
+      &= (a \wedge b') \vee (a' \wedge b) \\
+      &= (a' \wedge b) \vee (a \wedge b') \\
+      &= (b \wedge a') \vee (b' \wedge a) \\
+      &= b + a.
+    \end{align*}
+
+  \item[(b)]
+    (Associativity)
+    \emph{Show that $(a + b) + c = a + (b + c)$.}
+    By (1)(a)(b),
+    \begin{align*}
+      & \: (a + b) + c \\
+      =& \: ((a + b) \wedge c') \vee ((a + b)' \wedge c) \\
+      =& \: (((a \wedge b') \vee (a' \wedge b)) \wedge c') \\
+          & \: \vee (((a \wedge b') \vee (a' \wedge b))' \wedge c) \\
+      =& \: (a \wedge b' \wedge c') \vee (a' \wedge b \wedge c') \\
+          & \: \vee ((a' \vee b) \wedge (a \vee b') \wedge c)
+        &(\text{(ii),(1)(c)}) \\
+      =& \: (a \wedge b' \wedge c') \vee (a' \wedge b \wedge c') \\
+          & \: \vee
+          (((a' \wedge a) \vee (a' \wedge b') \vee (b \wedge a) \vee (b \wedge b')) \wedge c)
+        &(\text{(ii)}) \\
+      =& \: (a \wedge b' \wedge c') \vee (a' \wedge b \wedge c') \\
+          & \: \vee ((a' \wedge b') \vee (a \wedge b)) \wedge c)
+        &(\text{(iii),(1)(a)}) \\
+      =& \: (a \wedge b' \wedge c') \vee (a' \wedge b \wedge c') \\
+          & \: \vee (a' \wedge b' \wedge c) \vee (a \wedge b \wedge c)
+        &(\text{(ii)})
+    \end{align*}
+    and
+    \begin{align*}
+      & \: a + (b + c) \\
+      =& \: (b + c) + a 
+        &(\text{(a)}) \\
+      =& \: (c \wedge b' \wedge a') \vee (c' \wedge b \wedge a')
+        \vee (c' \wedge b' \wedge a) \vee (c \wedge b \wedge a) \\
+      =& \: (a' \wedge b' \wedge c) \vee (a' \wedge b \wedge c')
+        \vee (a \wedge b' \wedge c') \vee (a \wedge b \wedge c)
+        &(\text{(1)(a)}) \\
+      =& \: (a \wedge b' \wedge c') \vee (a' \wedge b \wedge c')
+        \vee (a' \wedge b' \wedge c) \vee (a \wedge b \wedge c).
+         &(\text{(1)(a)})
+    \end{align*}
+    Thus $(a + b) + c = a + (b + c)$.
+
+  \item[(c)]
+    (Identity)
+    \emph{Show that $a + 0 = 0 + a = a$.}
+    The complement of $0$ in $L$ is $0' = 1$ and vice versa ((iii)).
+    Hence
+    \begin{align*}
+      a + 0
+      &= (a \wedge 0') \vee (a' \wedge 0) \\
+      &= (a \wedge 1) \vee (a' \wedge 0) \\
+      &= a \vee 0 \\
+      &= a.
+    \end{align*}
+    Note that $A(L)$ is commutative under addition.
+
+  \item[(d)]
+    (Invertibility)
+    \emph{Show that $a + a = 0$, that is, $a$ itself is the additive inverse of $a$.}
+    \[
+      a + a
+      = (a \wedge a') \vee (a' \wedge a)
+      = 0 \vee 0
+      = 0.
+    \]
+  \end{enumerate}
+
+\item[(3)]
+  \emph{Show that $A(L)$ is commutative under multiplication.}
+  It is (1)(a).
+
+\item[(4)]
+  \emph{Show that $A(L)$ is a monoid under multiplication.}
+  \begin{enumerate}
+  \item[(a)]
+    (Associativity)
+    \emph{Show that $(ab)c = a(bc)$.}
+    It is (1)(b).
+
+  \item[(b)]
+    (Identity)
+    \emph{Show that $a1 = 1a = a$.}
+    \[
+      a1 = a \wedge 1 = a,
+      \qquad
+      1a = 1 \wedge a = a.
+    \]
+  \end{enumerate}
+
+\item[(5)]
+  \emph{Show that multiplication is distributive with respect to addition in $A(L)$.}
+  \begin{enumerate}
+  \item[(a)]
+    (Left distributivity)
+    \emph{Show that $a(b+c) = ab + ac$.}
+    Note that
+    \begin{align*}
+      a(b+c)
+      &= a \wedge (b+c) \\
+      &= a \wedge ((b \wedge c') \vee (b' \wedge c)) \\
+      &= (a \wedge b \wedge c') \vee (a \wedge b' \wedge c)
+        &(\text{(ii)})
+    \end{align*}
+    and
+    \begin{align*}
+      ab + ac
+      =& \: (a \wedge b) + (a \wedge c) \\
+      =& \: ((a \wedge b) \wedge (a \wedge c)') \vee ((a \wedge b)' \wedge (a \wedge c)) \\
+      =& \: ((a \wedge b) \wedge (a' \vee c')) \vee ((a' \vee b') \wedge (a \wedge c))
+        &(\text{(1)(c)}) \\
+      =& \: ((a \wedge b \wedge a') \vee (a \wedge b \wedge c')) \\
+          & \: \vee ((a' \wedge a \wedge c) \vee (b' \wedge a \wedge c))
+        &(\text{(ii)}) \\
+      =& \: ((a \wedge a' \wedge b) \vee (a \wedge b \wedge c')) \\
+          & \: \vee ((a' \wedge a \wedge c) \vee (a \wedge b' \wedge c))
+        &(\text{(1)(a)}) \\
+      =& \: 0 \vee (a \wedge b \wedge c') \vee 0 \vee (a \wedge b' \wedge c)
+        &(\text{(iii)}) \\
+      =& \: (a \wedge b \wedge c') \vee (a \wedge b' \wedge c).
+        &(\text{(i)})
+    \end{align*}
+
+  \item[(b)]
+    (Right distributivity)
+    The left distributivity implies the right distributivity by (1)(a).
+  \end{enumerate}
+
+\item[(6)]
+  (2)-(5) show that $A(L)$ is a commutative ring.
+  Note that (2)(d) implies that $A(L)$ is a Boolean ring.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.25. (Stone's theorem)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.25. (Stone's theorem)}
+\emph{From the last two exercises deduce Stone's theorem,
+that every Boolean lattice is isomorphic to
+the lattice of open-and-closed subsets of some compact Hausdorff topological space.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
