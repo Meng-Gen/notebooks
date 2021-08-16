@@ -3270,7 +3270,7 @@ $\Box$ \\\\
 \addcontentsline{toc}{subsubsection}{Exercise 2.4.}
 \emph{Let $M_i$ $(i \in I)$ be any family of $A$-modules,
 and let $M$ be their direct sum.
-Prove that $M$ is flat $\Leftrightarrow$ each $M_i$ is flat.} \\
+Prove that $M$ is flat $\Longleftrightarrow$ each $M_i$ is flat.} \\
 
 
 
@@ -3364,15 +3364,19 @@ Prove that $A[x]$ is a flat $A$-algebra. (Hint: Use Exercise 2.4.)} \\
 \emph{Proof (Hint).}
 \begin{enumerate}
 \item[(1)]
-$A$ is a flat $A$-module by Proposition 2.14(iv).
+  $A$ is a flat $A$-module by Proposition 2.14 (iv).
+
 \item[(2)]
-As an $A$-module,
-$$A[x]
-\cong \bigoplus_{n \in \mathbb{Z}^+} Ax^n
-\cong \bigoplus_{n \in \mathbb{Z}^+} A$$
-(since $Ax^n \cong A$).
+  As an $A$-module,
+  \[
+    A[x]
+    \cong \bigoplus_{n \in \mathbb{Z}^+} Ax^n
+    \cong \bigoplus_{n \in \mathbb{Z}^+} A
+  \]
+  (since $Ax^n \cong A$).
+
 \item[(3)]
-By Exercise 2.4, $A[x] \cong \bigoplus_{n \in \mathbb{Z}^+} A$ is flat.
+  By Exercise 2.4, $A[x] \cong \bigoplus_{n \in \mathbb{Z}^+} A$ is flat.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -3425,22 +3429,30 @@ $\Box$ \\
 Given any exact sequence of $A$-modules
 $0 \to N_1 \to N_2 \to N_3 \to 0$.
 Since $B$ is a flat $A$-algebra ($A$-module),
-$$0 \to N_1 \otimes_{A} B \to N_2 \otimes_{A} B \to N_3 \otimes_{A} B \to 0$$
+\[
+  0 \to N_1 \otimes_{A} B \to N_2 \otimes_{A} B \to N_3 \otimes_{A} B \to 0
+\]
 is exact.
 Since $N$ is a flat $B$-module,
-$$0 \to (N_1 \otimes_{A} B) \otimes_{B} N
-\to (N_2 \otimes_{A} B) \otimes_{B} N
-\to (N_3 \otimes_{A} B) \otimes_{B} N \to 0$$
+\[
+  0 \to (N_1 \otimes_{A} B) \otimes_{B} N
+  \to (N_2 \otimes_{A} B) \otimes_{B} N
+  \to (N_3 \otimes_{A} B) \otimes_{B} N \to 0
+\]
 is exact.
-By ``Exercise 2.15'' on page 27,
-$$0 \to N_1 \otimes_{A} (B \otimes_{B} N)
-\to N_2 \otimes_{A} (B \otimes_{B} N)
-\to N_3 \otimes_{A} (B \otimes_{B} N) \to 0$$
+By Exercise 2.15 on page 27,
+\[
+  0 \to N_1 \otimes_{A} (B \otimes_{B} N)
+  \to N_2 \otimes_{A} (B \otimes_{B} N)
+  \to N_3 \otimes_{A} (B \otimes_{B} N) \to 0
+\]
 is exact.
 By Proposition 2.14 (iv),
-$$0 \to N_1 \otimes_{A} N
-\to N_2 \otimes_{A} N
-\to N_3 \otimes_{A} N \to 0$$
+\[
+  0 \to N_1 \otimes_{A} N
+  \to N_2 \otimes_{A} N
+  \to N_3 \otimes_{A} N \to 0
+\]
 is exact,
 or $N$ is flat.
 $\Box$ \\\\
