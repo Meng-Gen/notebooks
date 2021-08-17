@@ -1541,6 +1541,117 @@ and $I$ denotes the identity element.} \\
 
 
 
+\subsubsection*{Exercise 2.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.1.}
+\emph{Find all elements $A$ of $\Gamma$ which}
+\begin{enumerate}
+\item[(a)]
+  \emph{commute with $S$;}
+
+\item[(b)]
+  \emph{commute with $ST$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  \begin{align*}
+    & \:
+    \text{$A =
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix} \in \Gamma$ satisfying $AS = SA$} \\
+    \Longrightarrow & \:
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix}
+    \begin{pmatrix}
+      0 & -1 \\
+      1 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0 & -1 \\
+      1 & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix} \\
+    \Longrightarrow & \:
+    \begin{pmatrix}
+      b & -a \\
+      d & -c
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -c & -d \\
+      a & b
+    \end{pmatrix} \\
+    \Longrightarrow & \:
+    a = d, b = -c \\
+    \Longrightarrow & \:
+    A = I, S.
+  \end{align*}
+  (Here we identify each matrix with its negative.)
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  \begin{align*}
+    & \:
+    \text{$A =
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix} \in \Gamma$ satisfying $A(ST) = (ST)A$} \\
+    \Longrightarrow & \:
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix}
+    \begin{pmatrix}
+      0 & -1 \\
+      1 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      0 & -1 \\
+      1 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix} \\
+    \Longrightarrow & \:
+    \begin{pmatrix}
+      b & -a+b \\
+      d & -c+d
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      -c & -d \\
+      a+c & b+d
+    \end{pmatrix} \\
+    \Longrightarrow & \:
+    a = -c+d, b = -c \\
+    \Longrightarrow & \:
+    1 = \det(A) = ad - bc = (-c+d)d + c^2 = c^2 - cd + d^2 \\
+    \Longrightarrow & \:
+    4 = (2 c - d)^2 + 3d^2 \\
+    \Longrightarrow & \:
+    (c, d) = (\pm 1, 0), (0, \pm 1), \pm (1 , 1) \\
+    \Longrightarrow & \:
+    A = I, ST, (ST)^2.
+  \end{align*}
+  (Here we identify each matrix with its negative.)
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -1612,36 +1723,27 @@ $\Box$ \\\\
 
 
 \emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-  \emph{Show that $A = I, S \in \Gamma$ fixes $i$.}
-  Say
-  $A =
-  \begin{pmatrix}
-    a & b \\
-    c & d
-  \end{pmatrix} \in \Gamma$ satisfying $Ai = i$.
-  Then $Ai = \frac{ai + b}{ci + d} = i$ implies that
-  $ai + b = ci^2 + di = di - c$ or $b = -c$ and $a = d$.
-  Hence $1 = \det(A) = ad - bc = a^2 + b^2$.
-  Therefore $(a, b) = (\pm 1, 0)$ or $(0, \pm 1)$.
-
-\item[(2)]
-  The case $a = \pm 1$ and $b = 0$.
-  $A = I = \begin{pmatrix}
-    1 & 0 \\
-    0 & 1
-  \end{pmatrix}$
-  (by identifying each matrix with its negative).
-
-\item[(3)]
-  The case $b = \pm 1$ and $a = 0$.
-  $A = S = \begin{pmatrix}
-    0 & -1 \\
-    1 & 0
-  \end{pmatrix}$
-  (by identifying each matrix with its negative).
-\end{enumerate}
+  Same as Exercise 2.1 (a).
+  \begin{align*}
+    & \:
+    \text{$A =
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix} \in \Gamma$ satisfying $Ai = i$} \\
+    \Longrightarrow & \:
+    Ai = \frac{ai + b}{ci + d} = i \\
+    \Longrightarrow & \:
+    ai + b = ci^2 + di = di - c \\
+    \Longrightarrow & \:
+    a = d, b = -c \\
+    \Longrightarrow & \:
+    (a, b) = (\pm 1, 0), (0, \pm 1)
+      &(\det(A) = 1) \\
+    \Longrightarrow & \:
+    A = I, S.
+  \end{align*}
+  (Here we identify each matrix with its negative.)
 $\Box$ \\\\
 
 
@@ -1657,44 +1759,32 @@ $\Box$ \\\\
 
 
 \emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-  \emph{Show that $A = I, S \in \Gamma$ fixes $\rho$.}
-  Say
-  $A =
-  \begin{pmatrix}
-    a & b \\
-    c & d
-  \end{pmatrix} \in \Gamma$ satisfying $A\rho = \rho$.
-  Then $A\rho = \frac{a\rho + b}{c\rho + d} = \rho$ implies that
-  $a\rho + b
-    = c\rho^2 + d\rho
-    = c(-\rho-1) + d\rho
-    = (-c+d)\rho - c$
-  or $a = -c+d$ and $b = -c$.
-
-\item[(2)]
-  So $1 = \det(A) = ad - bc = (-c+d)d + c^2 = c^2 - cd + d^2$,
-  or $1 = \left( c - \frac{d}{2} \right)^2 + \frac{3}{4}d^2$,
-  or $4 = (2 c - d)^2 + 3d^2$.
-  Hence $(c, d) = (\pm 1, 0)$, $(0, \pm 1)$.
-
-\item[(3)]
-  The case $c = \pm 1$ and $d = 0$.
-  $A = S = \begin{pmatrix}
-    0 & -1 \\
-    1 & 0
-  \end{pmatrix}$
-  (by identifying each matrix with its negative).
-
-\item[(4)]
-  The case $c = 0$ and $d = \pm 1$.
-  $A = I = \begin{pmatrix}
-    1 & 0 \\
-    0 & 1
-  \end{pmatrix}$
-  (by identifying each matrix with its negative).
-\end{enumerate}
+  Same as Exercise 2.1 (b).
+  Note that $1 + \rho + \rho^2 = 0$.
+  Hence
+  \begin{align*}
+    & \:
+    \text{$A =
+    \begin{pmatrix}
+      a & b \\
+      c & d
+    \end{pmatrix} \in \Gamma$ satisfying $A\rho = \rho$} \\
+    \Longrightarrow & \:
+    A\rho = \frac{a\rho + b}{c\rho + d} = i \\
+    \Longrightarrow & \:
+    a\rho + b = c\rho^2 + d\rho = c(-\rho-1) + d\rho = (-c+d)\rho - c \\
+    \Longrightarrow & \:
+    a = -c+d, b = -c. \\
+    \Longrightarrow & \:
+    1 = \det(A) = ad - bc = (-c+d)d + c^2 = c^2 - cd + d^2 \\
+    \Longrightarrow & \:
+    4 = (2 c - d)^2 + 3d^2 \\
+    \Longrightarrow & \:
+    (c, d) = (\pm 1, 0), (0, \pm 1), \pm (1 , 1) \\
+    \Longrightarrow & \:
+    A = I, ST, (ST)^2.
+  \end{align*}
+  (Here we identify each matrix with its negative.)
 $\Box$ \\\\
 
 
