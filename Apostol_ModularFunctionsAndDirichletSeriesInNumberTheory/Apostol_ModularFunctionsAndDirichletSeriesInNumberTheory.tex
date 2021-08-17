@@ -1616,22 +1616,84 @@ $\Box$ \\\\
 \item[(1)]
   \emph{Show that $A = I, S \in \Gamma$ fixes $i$.}
   Say
-  \[
-    A =
-    \begin{pmatrix}
-      a & b \\
-      c & d
-    \end{pmatrix} \in \Gamma
-  \]
-  satisfying $Ai = i$.
-  Then $Ai = \frac{ai + b}{ci + d} = i$ implies that $b = -c$ and $a = d$.
-  So $a^2 + b^2 = 1$ by $\det(A) = 1$.
+  $A =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix} \in \Gamma$ satisfying $Ai = i$.
+  Then $Ai = \frac{ai + b}{ci + d} = i$ implies that
+  $ai + b = ci^2 + di = di - c$ or $b = -c$ and $a = d$.
+  Hence $1 = \det(A) = ad - bc = a^2 + b^2$.
+  Therefore $(a, b) = (\pm 1, 0)$ or $(0, \pm 1)$.
 
 \item[(2)]
-  The case $a = \pm 1$ and $b = 0$. $A = I$.
+  The case $a = \pm 1$ and $b = 0$.
+  $A = I = \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}$
+  (by identifying each matrix with its negative).
 
 \item[(3)]
-  The case $b = \pm 1$ and $a = 0$. $A = S$.
+  The case $b = \pm 1$ and $a = 0$.
+  $A = S = \begin{pmatrix}
+    0 & -1 \\
+    1 & 0
+  \end{pmatrix}$
+  (by identifying each matrix with its negative).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.5.}
+\emph{Determine all elements $A$ of $\Gamma$ which leave $\rho = e^{\frac{2\pi i}{3}}$ fixed.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $A = I, S \in \Gamma$ fixes $\rho$.}
+  Say
+  $A =
+  \begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix} \in \Gamma$ satisfying $A\rho = \rho$.
+  Then $A\rho = \frac{a\rho + b}{c\rho + d} = \rho$ implies that
+  $a\rho + b
+    = c\rho^2 + d\rho
+    = c(-\rho-1) + d\rho
+    = (-c+d)\rho - c$
+  or $a = -c+d$ and $b = -c$.
+
+\item[(2)]
+  So $1 = \det(A) = ad - bc = (-c+d)d + c^2 = c^2 - cd + d^2$,
+  or $1 = \left( c - \frac{d}{2} \right)^2 + \frac{3}{4}d^2$,
+  or $4 = (2 c - d)^2 + 3d^2$.
+  Hence $(c, d) = (\pm 1, 0)$, $(0, \pm 1)$.
+
+\item[(3)]
+  The case $c = \pm 1$ and $d = 0$.
+  $A = S = \begin{pmatrix}
+    0 & -1 \\
+    1 & 0
+  \end{pmatrix}$
+  (by identifying each matrix with its negative).
+
+\item[(4)]
+  The case $c = 0$ and $d = \pm 1$.
+  $A = I = \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}$
+  (by identifying each matrix with its negative).
 \end{enumerate}
 $\Box$ \\\\
 
