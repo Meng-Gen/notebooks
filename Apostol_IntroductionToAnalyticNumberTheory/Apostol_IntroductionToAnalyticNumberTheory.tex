@@ -553,6 +553,83 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.9.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.9.}
+\emph{If $x$ is real, $x \geq 1$, let $\varphi(x,n)$ denote
+the number of positive integers $\leq x$ that are relatively prime to $n$.
+[Note that $\varphi(n,n) = \varphi(n)$.]
+Prove that
+\[
+  \varphi(x,n) = \sum_{d|n} \mu(d) \left[ \frac{x}{d} \right],
+  \qquad
+  \sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = [x].
+\]}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\varphi(x,n) = \sum_{d|n} \mu(d) \left[ \frac{x}{d} \right]$.}
+  Similar to the proof of Theorem 2.3.
+  $\varphi(x,n)$ can be written in the form
+  \[
+    \varphi(x,n) = \sum_{1 \leq k \leq x}\left[ \frac{1}{(n,k)} \right],
+  \]
+  where now $k$ runs through all integers $\leq x$.
+  Now we use Theorem 2.1 with $n$ replaced by $(n,k)$ to obtain
+  \[
+    \varphi(x,n)
+    = \sum_{1 \leq k \leq x} \sum_{d|(n,k)} \mu(d)
+    = \sum_{1 \leq k \leq x} \sum_{\substack{d|n \\ d|k}} \mu(d).
+  \]
+  For a fixed divisor $d$ of $n$ we must sum over all those $k$ in the range $1 \leq k \leq x$
+  which are multiples of $d$.
+  If we write $k = qd$ then $1 \leq k \leq x$ if and only if
+  $1 \leq q \leq \left[ \frac{x}{d} \right]$.
+  Hence the last sum for $\varphi(x,n)$ can be written as
+  \[
+    \varphi(x,n)
+    = \sum_{d|n} \sum_{1 \leq q \leq \left[ \frac{x}{d} \right]} \mu(d)
+    = \sum_{d|n} \mu(d) \sum_{1 \leq q \leq \left[ \frac{x}{d} \right]} 1
+    = \sum_{d|n} \mu(d) \left[ \frac{x}{d} \right].
+  \]
+
+\item[(2)]
+  \emph{Show that $\sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = [x]$.}
+  Similar to the proof of Theorem 2.2.
+  Let $S$ denote the set $\{ 1, 2, \ldots, [x] \}$.
+  We distribute the integers of $S$ into disjoint sets as follows.
+  For each divisor $d$ of $n$, let
+  \[
+    A(d) = \{ k : (k,n) = d, 1 \leq k \leq x \}.
+  \]
+  That is, $A(d)$ contains those elements of $S$ which have the gcd $d$ with $n$.
+  The sets $A(d)$ form a disjoint collection whose union is $S$.
+  Therefore if $f(d)$ denotes the number of integers in $A(d)$ we have
+  \[
+    \sum_{d|n} f(d) = [x].
+  \]
+  But $(k,n) = d$ if and only if $\left( \frac{k}{d}, \frac{n}{d} \right) = 1$,
+  and $0 < k \leq x$ if and only if $0 < \frac{k}{d} \leq \frac{x}{d}$.
+  Therefore, if we let $q = \frac{k}{d}$,
+  there is a one-to-one correspondence between the elements in $A(d)$
+  and those integers $q$ satisfying
+  $0 < q \leq \frac{x}{d}$, $\left( q, \frac{n}{d} \right) = 1$.
+  The number of such $q$ is $\varphi\left( \frac{x}{d},\frac{n}{d} \right)$.
+  Hence $f(d) = \varphi\left( \frac{x}{d},\frac{n}{d} \right)$ and thus
+  \[
+    \sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = [x].
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
