@@ -246,6 +246,53 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.2.}
+\emph{For each of the following statements either give a proof or
+exhibit a counter example.}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $(m,n)=1$ then $(\varphi(m),\varphi(n)) = 1$.}
+
+\item[(b)]
+  \emph{If $n$ is composite, then $(n,\varphi(n)) > 1$.}
+
+\item[(c)]
+  \emph{If the same primes divide $m$ and $n$, then $n\varphi(m) = m \varphi(n)$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  It is false since $(5, 13) = 1$ and $(\varphi(5),\varphi(13)) = (4, 12) = 4$.
+$\Box$ \\
+
+
+\emph{Proof of (b).}
+  It is false since $(15, \varphi(15)) = (15, 8) = 1$.
+$\Box$ \\
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  It is true.
+
+\item[(2)]
+  If the same primes divide $m$ and $n$, then
+  \[
+    \frac{\varphi(n)}{n}
+    = \prod_{p|n}\left( 1 - \frac{1}{p} \right)
+    = \prod_{p|m}\left( 1 - \frac{1}{p} \right)
+    = \frac{\varphi(m)}{m}
+  \]
+  (Theorem 2.4).
+  Hence $n\varphi(m) = m \varphi(n)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
