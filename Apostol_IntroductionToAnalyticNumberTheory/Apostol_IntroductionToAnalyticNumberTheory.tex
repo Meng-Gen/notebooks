@@ -486,6 +486,73 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.7.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.7.}
+\emph{Let $\mu(p,d)$ denote the value of the M\"obius function at the gcd of $p$ and $d$.
+Prove that for every prime $p$ we have
+\begin{equation*}
+  \sum_{d|n} \mu(d) \mu(p,d) =
+  \begin{cases}
+    1 & \text{if $n = 1$}, \\
+    2 & \text{if $n = p^a$, $a \geq 1$}, \\
+    0 & \text{otherwise}.
+  \end{cases}
+\end{equation*}
+} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  It suffices to show that $\mu(p,n)$ is multiplicative.
+  If so, then
+  \[
+    h(n) := \sum_{d|n} \mu(d)\mu(p,d)
+  \]
+  is also multiplicative
+  by taking $f(n) := \mu(n)\mu(p,n)$ and $g(n) := 1$ in Theorem 2.14.
+
+\item[(2)]
+  A direct calculation shows that $h(1) = 1$ (or by Theorem 2.12) and
+  \begin{align*}
+    h(p^a) &= \mu(1)\mu(p,1) + \mu(p)\mu(p,p) = 1 \cdot 1 + (-1) \cdot (-1) = 2, \\
+    h(q^b) &= \mu(1)\mu(p,1) + \mu(q)\mu(p,q) = 1 \cdot 1 + (-1) \cdot 1 = 0
+  \end{align*}
+  where $q \neq p$ and $a, b \geq 1$.
+  Hence (1) and Theorem 2.13 show that
+  \begin{equation*}
+    h(n) =
+    \begin{cases}
+      1 & \text{if $n = 1$}, \\
+      2 & \text{if $n = p^a$, $a \geq 1$}, \\
+      0 & \text{otherwise}.
+    \end{cases}
+  \end{equation*}
+
+\item[(3)]
+  \emph{Show that $\mu(p,n)$ is multiplicative.}
+  Suppose $(m,n) = 1$.
+  There are two possible cases: $p \nmid mn$ and $p|mn$.
+  \begin{enumerate}
+  \item[(a)]
+    If $p \neq mn$, then all $\mu(p,mn), \mu(p,m), \mu(p,n)$ are equal to $\mu(1) = 1$.
+
+  \item[(b)]
+    If $p | mn$, then $p|m$ or $p|n$.
+    Note that $(m,n) = 1$ and thus $p$ cannot be a common divisor of $m, n$.
+    Hence $\mu(p,mn) = \mu(p) = -1$ and $\mu(p,m)\mu(p,n) = \mu(p)\mu(1) = -1$.
+  \end{enumerate}
+  In any case $\mu(p,mn) = \mu(p,m)\mu(p,n)$ if $(m,n) = 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
