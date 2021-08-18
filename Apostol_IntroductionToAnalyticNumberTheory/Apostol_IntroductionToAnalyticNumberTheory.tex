@@ -128,6 +128,128 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.1.}
+\emph{Find all integers $n$ such that}
+\begin{enumerate}
+\item[(a)]
+  \emph{$\varphi(n) = \frac{n}{2}$,}
+
+\item[(b)]
+  \emph{$\varphi(n) = \varphi(2n)$,}
+
+\item[(c)]
+  \emph{$\varphi(n) = 12$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  \[
+    \varphi(n) = n \prod_{p|n}\left( 1 - \frac{1}{p} \right) = \frac{n}{2}
+  \]
+  (Theorem 2.4) implies that $n = 2$.
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  $\varphi(n) = \varphi(2n)$ implies that
+  \[
+    n \prod_{p|n}\left( 1 - \frac{1}{p} \right)
+    = 2n \prod_{p|(2n)}\left( 1 - \frac{1}{p} \right).
+  \]
+
+\item[(2)]
+  If $2 | n$, then $n = 2n$ or $n = 0$, which is absurd.
+
+\item[(3)]
+  If $2 \nmid n$, then
+  \[
+    n \prod_{p|n}\left( 1 - \frac{1}{p} \right)
+    = 2n \prod_{p|(2n)}\left( 1 - \frac{1}{p} \right)
+    = \underbrace{2n \left( 1 - \frac{1}{2} \right)}_{= n}
+      \prod_{p|n}\left( 1 - \frac{1}{p} \right)
+  \]
+  is always true.
+  Hence $n$ is odd if $\varphi(n) = \varphi(2n)$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that the solutions of $\varphi(n) = 12$
+  are $n = 13, 26, 21, 28, 42, 36$.}
+  Write $n = p_1^{\alpha_1} \cdots p_r^{\alpha_r}$
+  where $p_1 < p_2 < \ldots$.
+  Then
+  \[
+    12 = \varphi(n) = \prod_{i=1}^{r} p_i^{\alpha_i - 1}(p_i - 1).
+  \]
+  (Theorem 2.5).
+  It implies that $p_i \in \{ 2, 3, 5, 7, 13 \}$ if $\alpha_i > 0$.
+  Consider all possible cases of the greatest prime divisor $p_r$ of $n$ as follows.
+
+\item[(2)]
+  If $p_r = 13$, then $\alpha_r = 1$ since $13 \nmid 12$.
+  So
+  \[
+    12
+    = \varphi(n)
+    = \underbrace{\varphi(13)}_{= 12} \varphi\left(\frac{n}{13}\right)
+  \]
+  or $1 = \varphi\left(\frac{n}{13}\right)$.
+  Hence $\frac{n}{13} = 1, 2$.
+  In this case $n = 13, 26$.
+
+\item[(3)]
+  If $p_r = 7$, then $\alpha_r = 1$ since $7 \nmid 12$.
+  So
+  \[
+    12
+    = \varphi(n)
+    = \underbrace{\varphi(7)}_{= 6} \varphi\left(\frac{n}{7}\right)
+  \]
+  or $2 = \varphi\left(\frac{n}{7}\right)$.
+  Hence $\frac{n}{7} = 3, 4, 6$.
+  In this case $n = 21, 28, 42$.
+
+\item[(5)]
+  If $p_r = 5$, then $\alpha_r = 1$ since $5 \nmid 12$.
+  So $12 = \varphi(5)\varphi\left(\frac{n}{5}\right)$
+  or $3 = \varphi\left(\frac{n}{5}\right)$, which is impossible.
+
+\item[(6)]
+  If $p_r = 3$, then $\alpha_r = 1, 2$.
+  $\alpha_r = 1$ is impossible since $3 | 12$.
+  So
+  \[
+    12
+    = \varphi(n)
+    = \underbrace{\varphi(3^2)}_{= 6}\varphi\left(\frac{n}{3^2}\right)
+  \]
+  or $2 = \varphi\left(\frac{n}{3^2}\right)$.
+  Hence $\frac{n}{3^2} = 4$.
+  (By assumption $\frac{n}{3^2}$ cannot have any prime factor $> 3$.)
+  In this case $n = 36$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.3.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.3.}
 \emph{Prove that}
