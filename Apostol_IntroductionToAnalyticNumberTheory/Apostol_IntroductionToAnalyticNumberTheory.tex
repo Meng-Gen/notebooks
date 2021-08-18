@@ -420,6 +420,72 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.6.}
+\emph{Prove that
+\[
+  \sum_{d^2 | n} \mu(d) = \mu(n)^2
+\]
+and, more generally
+\begin{equation*}
+  \sum_{d^k | n} \mu(d) =
+  \begin{cases}
+    0 & \text{if $m^k | n$ for some $m > 1$}, \\
+    1 & \text{otherwise}.
+  \end{cases}
+\end{equation*}
+The last sum is extended over all positive divisors $d$ of $n$
+whose $k$th power also divide $n$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Write $n = p_1^{\alpha_1} \cdots p_r^{\alpha_r} q_1^{\beta_1} \cdots q_s^{\beta_s}$
+  where $\alpha_i \geq 2$ and $\beta_j = 1$.
+  The proof is similar to Theorem 2.1.
+
+\item[(2)]
+  If $p_1^{\alpha_1} \cdots p_r^{\alpha_r} = 1$,
+  then $\sum_{d^2 | n} \mu(n) = \mu(1) = 1$.
+
+\item[(3)]
+  If $p_1^{\alpha_1} \cdots p_r^{\alpha_r} > 1$,
+  then
+  \begin{align*}
+    \sum_{d^2 | n} \mu(d)
+    = & \: \mu(1) + \mu(p_1) + \cdots \mu(p_r) \\
+      & \: + \mu(p_1 p_2) + \cdots \mu(p_{r-1} p_r) + \cdots + \mu(p_1 \cdots p_r) \\
+    = & \: 1 + {r \choose 1}(-1) + {r \choose 2}(-1)^2 + \cdots + {r \choose r}(-1)^r \\
+    = & \: (1-1)^k \\
+    = & \: 0.
+  \end{align*}
+
+\item[(4)]
+  By (2)(3), $\sum_{d^2 | n} \mu(d) = \mu(n)^2$.
+  Besides, we have
+  \begin{equation*}
+    \sum_{d^k | n} \mu(d) =
+    \begin{cases}
+      0 & \text{if $m^k | n$ for some $m > 1$}, \\
+      1 & \text{otherwise}
+    \end{cases}
+  \end{equation*}
+  by the same argument as (1)(2)(3).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
