@@ -781,4 +781,119 @@ $\Box$ \\\\
 
 
 
+\newpage
+\section*{Chapter 3: Average of arithmetical functions \\}
+\addcontentsline{toc}{section}{Chapter 3: Average of arithmetical functions}
+
+
+
+\subsubsection*{Exercise 3.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.1.}
+\emph{Use Euler's summation formula to deduce the following for $x \geq 2$:}
+\begin{enumerate}
+\item[(a)]
+  \emph{$\sum_{n \leq x} \frac{\log n}{n}
+  = \frac{1}{2} (\log x)^2 + A + O\left( \frac{\log x}{x} \right)$,
+  where $A$ is a constant.}
+
+\item[(b)]
+  \emph{$\sum_{2 \leq n \leq x} \frac{1}{n\log n}
+  = \log\log x + B + O\left( \frac{1}{x\log x} \right)$,
+  where $B$ is a constant.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of Theorem 3.2.
+  We take $f(t) = \frac{\log t}{t}$ in Euler's summation formula to obtain
+  \begin{align*}
+    \sum_{n \leq x} \frac{\log n}{n}
+    = & \: \int_{1}^{x} \frac{\log t}{t} dt
+        + \int_{1}^{x}(t-[t])\frac{1-\log t}{t^2} dt \\
+      & \: + \frac{\log x}{x}([x]-x) - \underbrace{\frac{\log(1)}{1}([1]-1)}_{= 0} \\
+    = & \: \frac{1}{2} (\log x)^2
+        + \int_{1}^{x}(t-[t])\frac{1-\log t}{t^2} dt + O\left( \frac{\log x}{x} \right) \\
+    = & \: \frac{1}{2} (\log x)^2 + \int_{1}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt \\
+      & \: - \int_{x}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt + O\left( \frac{\log x}{x} \right).
+  \end{align*}
+
+\item[(2)]
+  The improper integral $\int_{1}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt$
+  exists since it is dominated by
+  $\int_{1}^{e} \frac{1-\log t}{t^2} dt + \int_{e}^{\infty} \frac{\log t - 1}{t^2} dt = 2e^{-1}$.
+
+\item[(3)]
+  Might assume that $x \geq e$.
+  So
+  \[
+    0
+    \leq -\int_{x}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt
+    \leq \int_{x}^{\infty}\frac{\log t - 1}{t^2} dt
+    = \frac{\log x}{x}.
+  \]
+
+\item[(4)]
+  Therefore
+  \[
+    \sum_{n \leq x} \frac{\log n}{n}
+    = \frac{1}{2} (\log x)^2 + A + O\left( \frac{\log x}{x} \right)
+  \]
+  where $A = \int_{1}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt$ is a constant.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  We take $f(t) = \frac{1}{t\log t}$ in Euler's summation formula to obtain
+  \begin{align*}
+    \sum_{2 \leq n \leq x} \frac{1}{n\log n}
+    = & \: \int_{2}^{x} \frac{1}{t\log t} dt
+        + \int_{2}^{x} -(t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt \\
+      & \: + \frac{1}{x \log x}([x]-x) - \underbrace{\frac{1}{2 \cdot \log(2)}([2]-2)}_{= 0} \\
+    = & \: \log\log x - \log\log2
+        - \int_{2}^{x} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt \\
+      & \: + O\left( \frac{1}{x \log x} \right) \\
+    = & \: \log\log x - \log\log2
+        - \int_{2}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt \\
+      & \: + \int_{x}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt
+        + O\left( \frac{1}{x \log x} \right).
+  \end{align*}
+
+\item[(2)]
+  The improper integral $\int_{2}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt$
+  exists since it is dominated by
+  $\int_{2}^{\infty} \frac{\log t + 1}{t^2 (\log t)^2} dt = \frac{1}{2\log 2} < \infty$.
+
+\item[(3)]
+  \[
+    0
+    \leq \int_{x}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt
+    \leq \int_{x}^{\infty} \frac{\log t + 1}{t^2 (\log t)^2} dt
+    = \frac{1}{x\log x}.
+  \]
+
+\item[(4)]
+  Therefore
+  \[
+    \sum_{2 \leq n \leq x} \frac{1}{n\log n}
+    = \log\log x + B + O\left( \frac{1}{x\log x} \right)
+  \]
+  where $B = \int_{2}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt$ is a constant.
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \end{document}
