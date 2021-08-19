@@ -989,6 +989,78 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.5.}
+\emph{If $x \geq 1$ prove that:}
+\begin{enumerate}
+\item[(a)]
+  \emph{$\sum_{n \leq x} \varphi(n)
+  = \frac{1}{2} \sum_{n \leq x} \mu(n)\left[ \frac{x}{n} \right]^2 + \frac{1}{2}$.}
+
+\item[(b)]
+  \emph{$\sum_{n \leq x} \frac{\varphi(n)}{n}
+  = \sum_{n \leq x} \frac{\mu(n)}{n}\left[ \frac{x}{n} \right]$.}
+\end{enumerate}
+\emph{These formulas, together with those in Exercise 3.4, show that, for $x \geq 2$,
+\[
+  \sum_{n \leq x} \varphi(n)
+  = \frac{1}{2} \frac{x^2}{\zeta(2)} + O(x \log x),
+  \qquad
+  \sum_{n \leq x} \frac{\varphi(n)}{n}
+  = \frac{x}{\zeta(2)} + O(\log x).
+\]} \\
+
+The last two formulas are trivial and we omit the proof. \\
+
+\emph{Proof of (a).}
+  Same as the proof of Theorem 3.7.
+  \begin{align*}
+    \sum_{n \leq x} \varphi(n)
+    &= \sum_{n \leq x} \sum_{d|n} \mu(d) \frac{n}{d} \\
+    &= \sum_{\substack{q, d \\ qd \leq x}} \mu(d) q \\
+    &= \sum_{d \leq x} \mu(d) \sum_{q \leq \frac{x}{d}} q \\
+    &= \sum_{d \leq x}
+        \mu(d) \frac{1}{2} \left[\frac{x}{d}\right]\left(1 + \left[\frac{x}{d}\right]\right) \\
+    &= \frac{1}{2} \sum_{d \leq x} \mu(d)\left[ \frac{x}{d} \right]^2
+        + \frac{1}{2} \sum_{d \leq x} \mu(d)\left[ \frac{x}{d} \right] \\
+    &= \frac{1}{2} \sum_{d \leq x} \mu(d)\left[ \frac{x}{d} \right]^2 + \frac{1}{2}
+      &(\text{Theorem 3.12})
+  \end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    \sum_{n \leq x} \frac{\varphi(n)}{n}
+    &= \sum_{n \leq x} \sum_{d|n} \frac{\mu(d)}{d}
+      &(\text{Theorem 2.3}) \\
+    &= \sum_{n \leq x} \frac{\mu(n)}{n} \left[ \frac{x}{n} \right].
+      &(\text{Theorem 3.11})
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
