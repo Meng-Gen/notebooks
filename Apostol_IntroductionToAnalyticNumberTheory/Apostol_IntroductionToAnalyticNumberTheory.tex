@@ -893,6 +893,102 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.2.}
+\emph{If $x \geq 2$ prove that
+\[
+  \sum_{n \leq x} \frac{d(n)}{n}
+  = \frac{1}{2}(\log x)^2 + 2 C \log x + O(1),
+\]
+where $C$ is Euler's constant.} \\
+
+
+
+\emph{Proof.}
+  Similar to the proof of Theorem 3.3, we have
+  \[
+    \sum_{n \leq x} \frac{d(n)}{n}
+    = \sum_{n \leq x} \frac{1}{n} \sum_{d|n} 1
+    = \sum_{\substack{q,d \\ qd \leq x}} \frac{1}{qd}
+    = \sum_{d \leq x} \frac{1}{d} \sum_{q \leq \frac{x}{d}} \frac{1}{q}.
+  \]
+  Now we use Theorem 3.2(a) to obtain
+  \[
+    \sum_{q \leq \frac{x}{d}} \frac{1}{q}
+    = \log\frac{x}{d} + C + O\left(\frac{d}{x}\right)
+    = \log x - \log d + C + O\left(\frac{d}{x}\right).
+  \]
+  Using this along with Theorem 3.2(a) and Exercise 3.1 we find
+  \begin{align*}
+    \sum_{n \leq x} \frac{d(n)}{n}
+    =& \: \sum_{d \leq x}
+        \frac{1}{d} \left\{ \log x - \log d + C + O\left(\frac{d}{x}\right) \right\} \\
+    =& \: (\log x + C) \sum_{d \leq x} \frac{1}{d}
+        - \sum_{d \leq x} \frac{\log d}{d} + \sum_{d \leq x} O\left(\frac{1}{x}\right) \\
+    =& \: (\log x + C)\left\{ \log x + C + O\left(\frac{1}{x}\right) \right\} \\
+      & - \left\{ \frac{1}{2} (\log x)^2 + A + O\left( \frac{\log x}{x} \right) \right\} + O(1) \\
+    =& \: (\log x)^2 + 2 C \log x - \frac{1}{2} (\log x)^2 + O(1) \\
+    =& \: \frac{1}{2} (\log x)^2 + 2C \log x + O(1).
+  \end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.3.}
+\emph{If $x \geq 2$ and $\alpha > 0$, $\alpha \neq 1$, prove that
+\[
+  \sum_{n \leq x} \frac{d(n)}{n^{\alpha}}
+  = \frac{x^{1-\alpha} \log x}{1 - \alpha} + \zeta(\alpha)^2 + O(x^{1-\alpha}).
+\]}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Exercise 3.2.
+  \[
+    \sum_{n \leq x} \frac{d(n)}{n^{\alpha}}
+    = \sum_{n \leq x} \frac{1}{n^{\alpha}} \sum_{d|n} 1
+    = \sum_{\substack{q,d \\ qd \leq x}} \frac{1}{q^{\alpha}d^{\alpha}}
+    = \sum_{d \leq x} \frac{1}{d^{\alpha}} \sum_{q \leq \frac{x}{d}} \frac{1}{q^{\alpha}}.
+  \]
+  Now we use Theorem 3.2(b) to obtain
+  \[
+    \sum_{q \leq \frac{x}{d}} \frac{1}{q^{\alpha}}
+    = \frac{1}{d^{1-\alpha}} \cdot \frac{x^{1-\alpha}}{1-\alpha} + \zeta(\alpha)
+        + O\left(\frac{d^{\alpha}}{x^{\alpha}}\right).
+  \]
+  Using this along with Theorem 3.2 we find
+  \begin{align*}
+    \sum_{n \leq x} \frac{d(n)}{n^{\alpha}}
+    =& \: \sum_{d \leq x}
+        \frac{1}{d^{\alpha}} \left\{ \frac{1}{d^{1-\alpha}} \cdot \frac{x^{1-\alpha}}{1-\alpha}
+            + \zeta(\alpha)
+            + O\left(\frac{d^{\alpha}}{x^{\alpha}}\right) \right\} \\
+    =& \: \frac{x^{1-\alpha}}{1-\alpha} \sum_{d \leq x} \frac{1}{d}
+        + \zeta(\alpha) \sum_{d \leq x} \frac{1}{d^{\alpha}}
+        + \sum_{d \leq x} O(x^{-\alpha}) \\
+    =& \: \frac{x^{1-\alpha}}{1-\alpha} \left\{ \log x + C + O(x^{-1}) \right\} \\
+      & + \zeta(\alpha)
+          \left\{ \frac{x^{1-\alpha}}{1-\alpha} + \zeta(\alpha) + O(x^{-\alpha}) \right\}
+          + O(x^{1-\alpha}) \\
+    =& \: \frac{x^{1-\alpha} \log x}{1 - \alpha} + \zeta(\alpha)^2 + O(x^{1-\alpha}).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
