@@ -654,6 +654,87 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\emph{In Exercise 2.10, 2.11 and 2.12, $d(n)$ denotes the number of positive divisors of $n$.} \\
+
+
+
+\subsubsection*{Exercise 2.10.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.10.}
+\emph{Prove that $\prod_{t|n} t = n^{\frac{d(n)}{2}}$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  $d(1) = 1$ and
+  \[
+    d(p_1^{\alpha_1} \cdots p_r^{\alpha_r})
+    = (\alpha_1 + 1) \cdots (\alpha_r + 1)
+    = d(p_1^{\alpha_1}) \cdots d(p_r^{\alpha_r}).
+  \]
+  Hence $d(n)$ is multiplicative (Theorem 2.13).
+
+\item[(2)]
+  \emph{Show that $\prod_{t|n} t = n^{\frac{d(n)}{2}}$.}
+  $n = 1$ is trivial.
+  Assume $n = p_1^{\alpha_1} \cdots p_r^{\alpha_r} > 1$.
+  Then $t|n$ if and only if $t = p_1^{x_1} \cdots p_r^{x_r}$
+  with $0 \leq x_i \leq \alpha_i$ ($i = 1, \ldots, r$).
+  So
+  \begin{align*}
+    \prod_{t|n} t
+    &= \prod_{\substack{0 \leq x_1 \leq \alpha_1 \\ \cdots \\ 0 \leq x_r \leq \alpha_r}}
+      p_1^{x_1} \cdots p_r^{x_r} \\
+    &= p_1^{(0 + 1 + \cdots + \alpha_1)(\alpha_2 + 1) \cdots (\alpha_r + 1)}
+      \cdots
+      p_r^{(\alpha_1 + 1) \cdots (\alpha_{r-1} + 1)(0 + 1 + \cdots + \alpha_r)} \\
+    &= p_1^{\frac{\alpha_1(\alpha_1 + 1)}{2} \cdot (\alpha_2 + 1) \cdots (\alpha_r + 1)}
+      \cdots
+      p_r^{(\alpha_1 + 1) \cdots (\alpha_{r-1} + 1) \cdot \frac{\alpha_r(\alpha_r + 1)}{2}} \\
+    &= p_1^{\alpha_1 \frac{d(n)}{2}} \cdots p_r^{\alpha_r \frac{d(n)}{2}} \\
+    &= (p_1^{\alpha_1} \cdots p_r^{\alpha_r})^{\frac{d(n)}{2}} \\
+    &= n^{\frac{d(n)}{2}}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.11.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.11.}
+\emph{Prove that $d(n)$ is odd if, and only if, $n$ is a square.} \\
+
+
+
+\emph{Proof.}
+  $n = 1$ is trivial.
+  Assume $n = p_1^{\alpha_1} \cdots p_r^{\alpha_r} > 1$.
+  Then
+  \begin{align*}
+    & \:
+    \text{$d(n) = (\alpha_1 + 1) \cdots (\alpha_r + 1)$ is odd}
+      &(\text{Exercise 2.10}) \\
+    \Longleftrightarrow & \:
+    \text{$\alpha_1 + 1, \ldots, \alpha_r + 1$ are odd} \\
+    \Longleftrightarrow & \:
+    \text{$\alpha_1, \ldots, \alpha_r$ are even} \\
+    \Longleftrightarrow & \:
+    \text{$n$ is a square}.
+  \end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
