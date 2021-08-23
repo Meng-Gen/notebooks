@@ -726,6 +726,209 @@ Given any $c/d \in F$, want to show there is $a/b \in F$ such that $\sigma'(a/b)
 
 
 
+\subsubsection*{Supplement.}
+\addcontentsline{toc}{subsubsection}{Supplement.}
+\begin{enumerate}
+\item[(1)]
+  Corollary 10.4 (Cohomological Hilbert Theorem 90).
+  Let $K$ be a cyclic Galois extension of $F$.
+  Then $H^{1}(\mathrm{Gal}(K/F), K^{\times}) = 0$.
+
+\item[(2)]
+  \emph{(Exercise 10.24 in the textbook:
+  Rudin, Principles of Mathematical Analysis, 3rd edition.)
+  Let $\omega = \sum a_i(\mathbf{x}) dx_i$ be a $1$-form of class $\mathcal{C}''$
+  in a convex open set $E \subseteq \mathbb{R}^n$.
+  Assume $d\omega = 0$ and prove that $\omega$ is exact in $E$.}
+  Hence the first de Rham cohomology $H^{1}_{\mathrm{dR}}(E) = 0$.
+
+\item[(3)]
+  $H^{1}_{\mathrm{dR}}(E) = 0$ if $E$ is simply connected.
+  (The converse is not true.)
+
+\item[(4)]
+  \emph{(Exercise 10.21 in the textbook:
+  Rudin, Principles of Mathematical Analysis, 3rd edition.)
+  Consider the $1$-form
+  \[
+    \eta = \frac{x dy - y dx}{x^2+y^2}
+  \]
+  in $\mathbb{R}^2-\{\mathbf{0}\}$.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Carry out the computation that leads to
+    \[
+      \int_{\gamma} \eta = 2\pi \neq 0,
+    \]
+    and prove that $d\eta = 0$.}
+
+  \item[(b)]
+    \emph{Let $\gamma(t) = (r \cos t, r \sin t)$, for some $r > 0$,
+    and let $\Gamma$ be a $\mathcal{C}''$-curve in $\mathbb{R}^2 - \{\mathbf{0}\}$,
+    with parameter interval $[0,2\pi]$,
+    with $\Gamma(0) = \Gamma(2\pi)$,
+    such that the intervals $[\gamma(t),\Gamma(t)]$ do not contain $\mathbf{0}$
+    for any $t \in [0,2\pi]$.
+    Prove that
+    \[
+      \int_{\Gamma} \eta = 2\pi.
+    \]}
+
+  \item[(c)]
+    \emph{Take $\Gamma(t) = (a\cos t, b\sin t)$ where $a > 0$, $b > 0$ are fixed.
+    Show that}
+    \[
+      \int_{0}^{2\pi} \frac{ab}{a^2\cos^2 t + b^2 \sin^2 t}dt = 2\pi.
+    \]
+
+  \item[(d)]
+    \emph{Show that
+    \[
+      \eta = d\left( \arctan\frac{y}{x} \right)
+    \]
+    in any convex open set in which $x \neq 0$, and that
+    \[
+      \eta = d\left( -\arctan\frac{x}{y} \right)
+    \]
+    in any convex open set in which $y \neq 0$.
+    Explain why this justifies the notation $\eta = d\theta$,
+    in spite of the fact that $\eta$ is not exact in $\mathbb{R}^2 - \{0\}$.}
+  \end{enumerate}
+
+\item[(5)]
+  \emph{(Exercise 10.22 in the textbook:
+  Rudin, Principles of Mathematical Analysis, 3rd edition.)
+  Define $\zeta$ in $\mathbb{R}^3-\{\mathbf{0}\}$ by
+  \[
+    \zeta = \frac{x dy \wedge dz + y dz \wedge dx + z dx \wedge dy}{r^3}
+  \]
+  where $r = (x^2+y^2+z^2)^{\frac{1}{2}}$,
+  let $D$ be the rectangle given by $0 \leq u \leq \pi$, $0 \leq v \leq 2\pi$,
+  and let $\Sigma$ be the $2$-surface in $\mathbb{R}^3$,
+  with parameter domain $D$, given by
+  \[
+    x = \sin u \cos v,
+    \qquad
+    y = \sin u \sin v,
+    \qquad
+    z = \cos u.
+  \]}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Prove that $d\zeta = 0$ in $\mathbb{R}^3 - \{ \mathbf{0} \}$.}
+
+  \item[(b)]
+    \emph{Let $S$ denote the restriction of $\Sigma$ to a parameter domain $E \subseteq D$.
+    Prove that
+    \[
+      \int_{S} \zeta
+      = \int_{E} \sin u \: du \: dv
+      = A(S),
+    \]
+    where $A$ denotes area, as in Section 10.46.
+    Note that this contains
+    \[
+      \int_{\Sigma} \zeta
+      = \int_{D} \sin u \: du \: dv
+      = 4\pi \neq 0
+    \]
+    as a special case.}
+
+  \item[(c)]
+    \emph{Suppose $g, h_1, h_2, h_3$, are $\mathcal{C}''$-functions on $[0,1]$, $g > 0$.
+    Let $(x,y,z) = \Phi(s,t)$ define a $2$-surface $\Phi$,
+    with parameter domain $I^2$, by
+    \[
+      x = g(t)h_1(s),
+      \qquad
+      y = g(t)h_2(s),
+      \qquad
+      z = g(t)h_3(s).
+    \]
+    Prove that
+    \[
+      \int_{\Phi} \zeta = 0.
+    \]
+    Note the shape of the range of $\Phi$:
+    For fixed $s$, $\Phi(s,t)$ runs over an interval on a line through $\mathbf{0}$.
+    The range of $\Phi$ thus lies in a ``cone'' with vertex at the origin.}
+
+  \item[(d)]
+    \emph{Let $E$ be a closed rectangle in $D$, with edges parallel to those of $D$.
+    Suppose $f \in \mathcal{C}''(D)$, $f > 0$.
+    Let $\Omega$ be the $2$-surface with parameter domain $E$,
+    defined by
+    \[
+      \Omega(u,v) = f(u,v)\Sigma(u,v).
+    \]
+    Define $S$ as in (b) and prove that}
+    \[
+      \int_{\Omega} \zeta = \int_{S} \zeta = A(S).
+    \]
+
+  \item[(e)]
+    \emph{Put $\lambda = -\frac{z}{r}\eta$, where
+    \[
+      \eta = \frac{xdy-ydx}{x^2+y^2}.
+    \]
+    Then $\lambda$ is a $1$-form in the open set $V \subseteq \mathbb{R}^3$ in which $x^2+y^2 > 0$.
+    Show that $\zeta$ is exact in $V$ by showing that}
+    \[
+      \zeta = d\lambda.
+    \]
+
+  \item[(f)]
+    \emph{Is $\zeta$ exact in the complement of every line through the origin?}
+  \end{enumerate}
+
+\item[(6)]
+  \emph{(Exercise 10.23 in the textbook:
+  Rudin, Principles of Mathematical Analysis, 3rd edition.)
+Fix $n$.
+Define $r_k = (x_1^2+\cdots+x_k^2)^{\frac{1}{2}}$ for $1 \leq k \leq n$,
+let $E_k$ be the set of all $\mathbf{x} \in \mathbb{R}^n$ at which $r_k > 0$,
+and let $\omega_k$ be the $(k-1)$-form defined in $E_k$ by
+\[
+  \omega_k
+  = (r_k)^{-k}
+    \sum_{i=1}^{k} (-1)^{i-1} x_i
+    dx_1 \wedge \cdots \wedge \widehat{dx_i} \wedge \cdots \wedge dx_k
+\]
+Note that $\omega_2 = \eta$, $\omega_3 = \zeta$ in the terminology of
+Exercise 10.21 and Exercise 10.22.
+Note also that}
+\[
+  E_1 \subseteq E_2 \subseteq \cdots \subseteq E_n = \mathbb{R}^n.
+\]
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that $d\omega_k = 0$ in $E_k$.}
+
+\item[(b)]
+  \emph{For $k=2,\ldots,n$, prove that $\omega_k$ is exact in $E_{k-1}$,
+  by showing that
+  \[
+    \omega_k = d(f_k\omega_{k-1}) = df_k \wedge \omega_{k-1}
+  \]
+  where $f_k(\mathbf{x}) = (-1)^k g_k\left( \frac{x_k}{r_k} \right)$
+  where}
+  \[
+    g_k(t) = \int_{-1}^{t} (1-s^2)^{\frac{k-3}{2}} ds
+    \qquad
+    (-1 < t < 1).
+  \]
+
+\item[(c)]
+  \emph{Is $\omega_n$ exact in $E_n$?}
+\end{enumerate}
+
+\item[(7)]
+  $H^{n-1}_{\mathrm{dR}}(\mathbb{R}^n-\{\mathbf{0}\}) = \mathbb{R}^1$.
+  (Compare to (5)(6)(7).) \\
+\end{enumerate}
+
+
+
 \subsubsection*{Problem 10.1.}
 \addcontentsline{toc}{subsubsection}{Problem 10.1.}
 \emph{Let $M$ be a $G$-module.
