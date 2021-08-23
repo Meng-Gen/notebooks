@@ -924,7 +924,7 @@ Note also that}
 
 \item[(7)]
   $H^{n-1}_{\mathrm{dR}}(\mathbb{R}^n-\{\mathbf{0}\}) = \mathbb{R}^1$.
-  (Compare to (5)(6)(7).) \\
+  (Compare to (5)(6)(7).) \\\\
 \end{enumerate}
 
 
@@ -1021,8 +1021,134 @@ show that $\delta_{n+1} \circ \delta_n$ is the zero map.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
+  If $n = 0$, then
+  \begin{align*}
+    (\delta_1 \circ \delta_0)(f)(\sigma_1,\sigma_2)
+    = & \:
+    \delta_1 (\delta_0(f))(\sigma_1,\sigma_2) \\
+    = & \:
+    \sigma_1 \delta_0(f)(\sigma_2)
+        - \delta_0(f)(\sigma_1 \sigma_2)
+        + \delta_0(f)(\sigma_1) \\
+    = & \:
+    \sigma_1 (\sigma_2 f - f)
+        - (\sigma_1 \sigma_2 f - f)
+        + (\sigma_1 f - f) \\
+    = & \:
+    0.
+  \end{align*}
+
+\item[(2)]
+  If $n \geq 1$, then we write
+  \begin{align*}
+    & \:
+    (\delta_{n+1} \circ \delta_n)(f)(\sigma_1,\ldots,\sigma_{n+2}) \\
+    = & \:
+    \delta_{n+1} (\delta_n(f))(\sigma_1,\ldots,\sigma_{n+2}) \\
+    = & \:
+    \underbrace{\sigma_1 \delta_n(f)(\sigma_2,\ldots,\sigma_{n+2})}_{\text{Part (3)}} \\
+    & + \sum_{j=1}^{n+1}
+        \underbrace{(-1)^{j}
+        \delta_n(f)(\sigma_1, \ldots, \sigma_j \sigma_{j+1}, \ldots, \sigma_{n+2})}_{
+            \text{Parts (4)(5)(6)}} \\
+    & + \underbrace{(-1)^{n+2} \delta_n(f)(\sigma_1, \ldots, \sigma_{n+1})}_{\text{Part (7)}}.
+  \end{align*}
+
+\item[(3)]
+  The first term is
+  \begin{align*}
+    & \:
+    \sigma_1 \delta_n(f)(\sigma_2,\ldots,\sigma_{n+2}) \\
+    = & \:
+    \sigma_1 \sigma_2 f(\sigma_3, \ldots, \sigma_{n+2}) \\
+    & + \sum_{i=1}^{n} (-1)^{i}
+        \sigma_1 f(\sigma_2, \ldots, \sigma_{i+1} \sigma_{i+2}, \ldots, \sigma_{n+2}) \\
+    & + (-1)^{n+1} \sigma_1 f(\sigma_2, \ldots, \sigma_{n+1}).
+  \end{align*}
+
+\item[(4)]
+  The first term ($j = 1$) in the summation is
+  \begin{align*}
+    & \:
+    (-1)^{1} \delta_n(f)(\sigma_1 \sigma_2, \ldots, \sigma_{n+2}) \\
+    = & \:
+    - \sigma_1\sigma_2 f(\sigma_3, \ldots, \sigma_{n+2}) \\
+    & + f(\sigma_1\sigma_2\sigma_3, \ldots, \sigma_{n+2})
+        - \sum_{i=2}^{n} (-1)^{i}
+        f(\sigma_1\sigma_2, \ldots, \sigma_{i+1} \sigma_{i+2}, \ldots, \sigma_{n+2}) \\
+    & - (-1)^{n+1} f(\sigma_1\sigma_2, \ldots, \sigma_{n+1})
+  \end{align*}
+
+\item[(5)]
+  The $j$th term for $2 \leq j \leq n$ in the summation is
+  \begin{align*}
+    & \:
+    (-1)^j \delta_n(f)(\sigma_1, \ldots, \sigma_j \sigma_{j+1}, \ldots, \sigma_{n+2}) \\
+    = &\:
+    (-1)^j \sigma_1 f(\sigma_2, \ldots, \sigma_j \sigma_{j+1}, \ldots, \sigma_{n+2}) \\
+    & + (-1)^j \sum_{i=1}^{j-2} (-1)^{i}
+        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots,
+            \sigma_j \sigma_{j+1}, \ldots, \sigma_{n+2}) \\
+    & + (-1)^j (-1)^{j-1}
+        f(\sigma_1, \ldots, \sigma_{j-1} \sigma_j \sigma_{j+1}, \ldots, \sigma_{n+2}) \\
+    & + (-1)^j (-1)^{j}
+        f(\sigma_1, \ldots, \sigma_j \sigma_{j+1} \sigma_{j+2}, \ldots, \sigma_{n+2}) \\
+    & + (-1)^j \sum_{i=j+1}^{n} (-1)^{i}
+        f(\sigma_1, \ldots, \sigma_j \sigma_{j+1}, \ldots,
+            \sigma_{i+1} \sigma_{i+2}, \ldots, \sigma_{n+2}) \\
+    & + (-1)^j (-1)^{n+1} f(\sigma_1, \ldots, \sigma_j \sigma_{j+1}, \ldots, \sigma_{n+1}).
+  \end{align*}
+
+\item[(6)]
+  The last term ($j = n+1$) in the summation is
+  \begin{align*}
+    & \:
+    (-1)^{n+1} \delta_n(f)(\sigma_1, \ldots, \sigma_n, \sigma_{n+1}\sigma_{n+2}) \\
+    = & \:
+    (-1)^{n+1} \sigma_1 f(\sigma_2, \ldots, \sigma_{n+1}\sigma_{n+2}) \\
+    & + (-1)^{n+1} \sum_{i=1}^{n-1} (-1)^{i}
+        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1}\sigma_{n+2}) \\
+    & + (-1)^{n+1} (-1)^n f(\sigma_1, \ldots, \sigma_{n}\sigma_{n+1}\sigma_{n+2}) \\
+    & + (-1)^{n+1} (-1)^{n+1} f(\sigma_1, \ldots, \sigma_{n}).
+  \end{align*}
+
+\item[(7)]
+  The last term is
+  \begin{align*}
+    & \:
+    (-1)^{n+2} \delta_n(f)(\sigma_1, \ldots, \sigma_{n+1}) \\
+    = & \:
+    (-1)^{n+2} \sigma_1 f(\sigma_2, \ldots, \sigma_{n+1}) \\
+    & + (-1)^{n+2} \sum_{i=1}^{n} (-1)^{i}
+        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1}) \\
+    & + (-1)^{n+2} (-1)^{n+1} f(\sigma_1, \ldots, \sigma_{n}).
+  \end{align*}
+
+\item[(8)]
+  Hence we have
+  $(\delta_{n+1} \circ \delta_n)(f)(\sigma_1,\ldots,\sigma_{n+2}) = 0$.
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement.}
+\addcontentsline{toc}{subsubsection}{Supplement.}
+\begin{enumerate}
+\item[(1)]
+  \emph{(Theorem 10.20 in the textbook:
+  Rudin, Principles of Mathematical Analysis, 3rd edition.)
+  If $\omega$ is a $k$-form of class $\mathscr{C}''$
+  in some open set $E \subseteq \mathbb{R}^n$, then $d^2 \omega = 0$.}
+
+\item[(2)]
+  \emph{(Exercise 10.16 in the textbook:
+  Rudin, Principles of Mathematical Analysis, 3rd edition.)
+  If $k \geq 2$ and $\sigma = [\mathbf{p}_0,\mathbf{p}_1,\ldots,\mathbf{p}_k]$
+  is an oriented affine $k$-simplex, prove that $\partial^2 \sigma = 0$,
+  directly from the definition of the boundary operator $\partial$.
+  Deduce from this that $\partial^2 \Psi = 0$ for every chain $\Psi$.} \\\\
+\end{enumerate}
 
 
 
