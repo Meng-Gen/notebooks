@@ -929,6 +929,10 @@ Note also that}
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 10.1.}
 \addcontentsline{toc}{subsubsection}{Problem 10.1.}
 \emph{Let $M$ be a $G$-module.
@@ -946,7 +950,7 @@ defined in this section is a homomorphism.} \\
     = & \:
     \sigma_1 f(\sigma_2, \ldots, \sigma_{n+1}) \\
     & + \sum_{i=1}^{n} (-1)^{i}
-        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots \sigma_{n+1}) \\
+        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1}) \\
     & + (-1)^{n+1} f(\sigma_1, \ldots, \sigma_{n})
   \end{align*}
   if $n > 0$.
@@ -977,27 +981,46 @@ defined in this section is a homomorphism.} \\
     = & \:
     \sigma_1 (f + g)(\sigma_2, \ldots, \sigma_{n+1})
     + \sum_{i=1}^{n} (-1)^{i}
-        (f + g)(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots \sigma_{n+1}) \\
+        (f + g)(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1}) \\
     & + (-1)^{n+1} (f + g)(\sigma_1, \ldots, \sigma_{n}) \\
     = & \:
     \sigma_1 f(\sigma_2, \ldots, \sigma_{n+1}) + \sigma_1 g(\sigma_2, \ldots, \sigma_{n+1}) \\
     & + \sum_{i=1}^{n} (-1)^{i}
-        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots \sigma_{n+1}) \\
+        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1}) \\
     & + \sum_{i=1}^{n} (-1)^{i}
-        g(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots \sigma_{n+1}) \\
+        g(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1}) \\
     & + (-1)^{n+1} f(\sigma_1, \ldots, \sigma_{n}) + (-1)^{n+1} g(\sigma_1, \ldots, \sigma_{n}) \\
     = & \:
     \Bigg\{ \sigma_1 f(\sigma_2, \ldots, \sigma_{n+1}) + \sum_{i=1}^{n} (-1)^{i}
-        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots \sigma_{n+1}) \\
+        f(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1}) \\
     & + (-1)^{n+1} f(\sigma_1, \ldots, \sigma_{n}) \Bigg\}
         + \Bigg\{ \sigma_1 g(\sigma_2, \ldots, \sigma_{n+1}) \\
     & + \sum_{i=1}^{n} (-1)^{i}
-        g(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots \sigma_{n+1})
+        g(\sigma_1, \ldots, \sigma_i \sigma_{i+1}, \ldots, \sigma_{n+1})
         + (-1)^{n+1} g(\sigma_1, \ldots, \sigma_{n}) \Bigg\} \\
     = & \:
     \delta_n(f)(\sigma) + \delta_n(g)(\sigma).
   \end{align*}
   (Here note that $C^{n}(G,M)$ is an abelian group).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.2.}
+\addcontentsline{toc}{subsubsection}{Problem 10.2.}
+\emph{With notation as in the previous problem,
+show that $\delta_{n+1} \circ \delta_n$ is the zero map.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
 \end{enumerate}
 $\Box$ \\\\
 
