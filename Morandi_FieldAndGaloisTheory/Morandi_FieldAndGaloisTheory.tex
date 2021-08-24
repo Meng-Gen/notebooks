@@ -1153,6 +1153,50 @@ $\Box$ \\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.3.}
+\addcontentsline{toc}{subsubsection}{Problem 10.3.}
+\emph{Let $M$ be a $G$-module, and let $f \in Z^2(G,M)$.
+Show that $f(1,1) = f(1,\sigma) = \sigma^{-1} f(\sigma, 1)$ for all $\sigma \in G$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $f \in Z^2(G,M)$ if and only if $\delta_2(f) = 0$.
+  So
+  \begin{align*}
+    \delta_2(f)(\sigma_1, \sigma_2, \sigma_3)
+    &= \sigma_1 f(\sigma_2, \sigma_3)
+        - f(\sigma_1\sigma_2,\sigma_3)
+        + f(\sigma_1, \sigma_2\sigma_3)
+        - f(\sigma_1, \sigma_2) \\
+    &= 0.
+  \end{align*}
+  for any $\sigma_1 \sigma_2, \sigma_3 \in G$.
+
+\item[(2)]
+  Take $\sigma_1 = \sigma_2 = 1$ and $\sigma_3 = \sigma$ to get
+  \[
+    f(1,\sigma) - f(1,\sigma) + f(1,\sigma) - f(1,1) = 0.
+  \]
+  So $f(1,1) = f(1,\sigma)$.
+
+\item[(3)]
+  Take $\sigma_1 = \sigma$ and $\sigma_2 = \sigma_3 = \sigma$ to get
+  \[
+    \sigma f(1,1) - f(\sigma,1) + f(\sigma,1) - f(\sigma,1) = 0.
+  \]
+  So $\sigma f(1,1) = f(\sigma,1)$ or $f(1,1) = \sigma^{-1}f(\sigma,1)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
