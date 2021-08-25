@@ -1197,6 +1197,74 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.4.}
+\addcontentsline{toc}{subsubsection}{Problem 10.4.}
+\emph{If $E$ is a group with an abelian normal subgroup $M$,
+and if $G = E/M$,
+show that the action of $G$ on $M$ given by $\sigma m = eme^{-1}$ if
+$eM = \sigma$ is well-defined and makes $M$ into a $G$-module.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $G \times M \to M$ defined by $\sigma m = eme^{-1}$
+  is independent of the choice of the representation of $\sigma = eM$.}
+  Suppose $\sigma = e_1 M = e_2 M$.
+  $e_2 = e_1 m_1$ for some $m_1 \in M$.
+
+\item[(2)]
+  Therefore
+  \[
+    e_2 m e_2^{-1}
+    = (e_1 m_1)m(e_1 m_1)^{-1}
+    = e_1 m_1 m m_1^{-1} e_1^{-1}
+    = e_1 m e_1^{-1}.
+  \]
+  Here $(e_1 m_1)^{-1} = m_1^{-1} e_1^{-1}$ holds in a group $E$
+  and $m_1 m m_1^{-1} = m$ since $M$ is an abelian group.
+
+\item[(3)]
+  \emph{Show that $M$ is a $G$-module where
+  $G \times M \to M$ is defined by $\sigma m = eme^{-1}$.}
+  \begin{enumerate}
+  \item[(a)]
+    \emph{Show that $1m = m$.}
+    $1m = 1m1^{-1} = m$ where $1 = 1M \in G = E/M$.
+    
+  \item[(b)]
+    \emph{Show that $\sigma(\tau m) = (\sigma\tau) m$.}
+    Write $\sigma = e_{\sigma} M$ and $\tau = e_{\tau} M$.
+    Hence $\sigma \tau = e_{\sigma} e_{\tau} M$
+    and
+    \begin{align*}
+      \sigma(\tau m)
+      &= \sigma(e_{\tau} m e_{\tau}^{-1}) \\
+      &= e_{\sigma}(e_{\tau} m e_{\tau}^{-1})e_{\sigma}^{-1} \\
+      &= (e_{\sigma}e_{\tau}) m (e_{\sigma}e_{\tau})^{-1} \\
+      &= (\sigma \tau)m.
+    \end{align*}
+
+  \item[(c)]
+    \emph{Show that $\sigma(m_1 + m_2) = \sigma m_1 + \sigma m_2$.}
+    \begin{align*}
+      \sigma (m_1 + m_2)
+      &= e(m_1 + m_2)e^{-1} \\
+      &= em_1e^{-1} + em_2e^{-1} \\
+      &= \sigma m_1 + \sigma m_2
+    \end{align*}
+    where $\sigma = eM$ for some $e \in E$.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
