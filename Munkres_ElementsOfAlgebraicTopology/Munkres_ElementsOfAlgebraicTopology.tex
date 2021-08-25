@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Notes on the book: \\ \emph{James R. Munkres, Elements of Algebraic Topology}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 1: Homology Groups of a Simplicial Complex \\}
+\addcontentsline{toc}{section}{Chapter 1: Homology Groups of a Simplicial Complex}
+
+
+
+\subsection*{\S 1. Simplices \\}
+\addcontentsline{toc}{subsection}{\S 1. Simplices}
+
+
+
+\subsubsection*{Exercise 1.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.1.}
+\emph{Verify properties (1)-(3) of simplices:}
+\begin{enumerate}
+\item[(1)]
+  \emph{The barycentric coordinates $t_i(x)$ of $x$ with respect to $a_0, \ldots, a_n$
+  are continuous functions of $x$.}
+
+\item[(2)]
+  \emph{}
+
+\item[(3)]
+  \emph{$\sigma$ is compact, convex set in $\mathbb{R}^N$,
+  which equals the intersection of all convex sets in $\mathbb{R}^N$ containing $a_0, \ldots, a_n$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of property (1).}
+\begin{enumerate}
+\item[(1)]
+  Let $\sigma$ be the $n$-simplex spanned by $a_0, \ldots, a_n$.
+  It suffices to show that $t_i(x)$ is linear.
+  Therefore $t_i(x)$ is automatically continuous
+  (Theorem 9.7 in the textbook: \emph{Rudin, Principles of Mathematical Analysis, 3rd edition}).
+
+\item[(2)]
+  Let
+  \[
+    E
+    =
+    \left\{ x = \sum_{i=1}^{n} \widetilde{t_i}(x) a_i : \widetilde{t_i}(x) \in \mathbb{R} \right\}
+    \supseteq \sigma
+  \]
+  be the plane spanned by $a_0, \ldots, a_n$.
+  $\widetilde{t_i}(x)$ is well-defined on $E$ and thus $\widetilde{t_i}|_\sigma = t_i$
+  (since $\{a_0, \ldots, a_n\}$ is geometrically independent in $\mathbb{R}^{N}$).
+  So it suffices to show that $\widetilde{t_i}$ is linear.
+
+\item[(3)]
+  Suppose $x = \sum_{i=1}^{n} \widetilde{t_i}(x) a_i \in E$
+  and $y = \sum_{i=1}^{n} \widetilde{t_i}(y) a_i \in E$.
+  Then
+  \[
+    x + y = \sum_{i=1}^{n} (\widetilde{t_i}(x) + \widetilde{t_i}(y)) a_i.
+  \]
+  Note that the coefficient of $a_i$ is uniquely determined by $x + y$.
+  Thus $\widetilde{t_i}(x+y) = \widetilde{t_i}(x) + \widetilde{t_i}(y)$.
+  Similarly, $\widetilde{t_i}(rx) = r\widetilde{t_i}(x)$ for $r \in \mathbb{R}$.
+  Hence $\widetilde{t_i}$ is linear.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of property (2).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of property (3).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\sigma$ is compact.}
+
+\item[(2)]
+  \emph{Show that $\sigma$ is convex.}
+  Given any
+  $x = \sum_i t_i a_i \in \sigma$ (with $\sum_i t_i = 1$),
+  $y = \sum_i s_i a_i \in \sigma$ (with $\sum_i s_i = 1$) and $0 < \lambda < 1$,
+  it suffices to show that
+  \[
+    \lambda x + (1-\lambda) y \in \sigma.
+  \]
+  In fact,
+  \begin{align*}
+    \lambda x + (1-\lambda) y
+    &= \lambda \sum_i t_i a_i \in \sigma + (1-\lambda) \sum_i s_i a_i \\
+    &= \sum_i (\lambda t_i + (1-\lambda) s_i) a_i,  
+  \end{align*}
+  where each $\lambda t_i + (1-\lambda) s_i \geq 0$
+  and
+  \[
+    \sum_i (\lambda t_i + (1-\lambda) s_i)
+    = \lambda \sum_i t_i + (1-\lambda) \sum_i s_i
+    = \lambda + (1-\lambda)
+    = 1.
+  \]
+  So $\lambda x + (1-\lambda) y \in \sigma$.
+
+\item[(3)]
+  \emph{Let $\mathscr{C}$ be the collection
+  of all convex sets in $\mathbb{R}^N$ containing $a_0, \ldots, a_n$.
+  Show that $\sigma = \bigcap_{E \in \mathscr{C}} E$.}
+  By (2), $\sigma \in \mathscr{C}$ and thus $\sigma \supseteq \bigcap_{E \in \mathscr{C}} E$.
+  Conversely, suppose $E \in \mathscr{C}$.
+  The convexity of $E$ implies that
+  $\sum_i t_i a_i \in E$ whenever $\sum_i t_i = 1$ and  $t_i \geq 0$.
+  Hence $\sigma \subseteq E$ and thus $\sigma \subseteq \bigcap_{E \in \mathscr{C}} E$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
