@@ -1213,7 +1213,7 @@ $eM = \sigma$ is well-defined and makes $M$ into a $G$-module.} \\
 \begin{enumerate}
 \item[(1)]
   \emph{Show that $G \times M \to M$ defined by $\sigma m = eme^{-1}$
-  is independent of the choice of the representation of $\sigma = eM$.}
+  is independent of the choice of the coset representation of $\sigma = eM$.}
   Suppose $\sigma = e_1 M = e_2 M$.
   $e_2 = e_1 m_1$ for some $m_1 \in M$.
 
@@ -1260,6 +1260,49 @@ $eM = \sigma$ is well-defined and makes $M$ into a $G$-module.} \\
     where $\sigma = eM$ for some $e \in E$.
   \end{enumerate}
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.5.}
+\addcontentsline{toc}{subsubsection}{Problem 10.5.}
+\emph{With $E$, $M$, $G$ as in the previous problem,
+if $e_{\sigma}$ is a coset representative of $\sigma$,
+show that the function defined by
+$f(\sigma,\tau) = e_{\sigma}e_{\tau}e_{\sigma\tau}^{-1}$ is a $2$-cocycle.} \\
+
+
+
+\emph{Proof.}
+  It suffices to show that $\delta_2(f)(\sigma, \tau, \upsilon) = 0$
+  for any $\sigma, \tau, \upsilon \in G$.
+  That is,
+  \begin{align*}
+    & \:
+    \delta_2(f)(\sigma, \tau, \upsilon) \\
+    = & \: \sigma f(\tau, \upsilon)
+        f(\sigma \tau, \upsilon)^{-1}
+        f(\sigma, \tau \upsilon)
+        f(\sigma, \tau)^{-1} \\
+    = & \: \sigma f(\tau, \upsilon)
+        f(\sigma, \tau \upsilon)
+        f(\sigma \tau, \upsilon)^{-1}
+        f(\sigma, \tau)^{-1}
+      &(\text{$M$: abelian}) \\
+    = & \: \sigma (e_{\tau}e_{\upsilon}e_{\tau\upsilon}^{-1})
+        (e_{\sigma}e_{\tau\upsilon}e_{\sigma\tau\upsilon}^{-1})
+        (e_{\sigma\tau}e_{\upsilon}e_{\sigma\tau\upsilon}^{-1})^{-1}
+        (e_{\sigma}e_{\tau}e_{\sigma\tau}^{-1})^{-1} \\
+    = & \: (e_{\sigma} e_{\tau}e_{\upsilon}e_{\tau\upsilon}^{-1} e_{\sigma}^{-1})
+        (e_{\sigma}e_{\tau\upsilon}e_{\sigma\tau\upsilon}^{-1})
+        (e_{\sigma\tau\upsilon}e_{\upsilon}^{-1}e_{\sigma\tau}^{-1})
+        (e_{\sigma\tau}e_{\tau}^{-1}e_{\sigma}^{-1}) \\
+    = & \: 1.
+  \end{align*}
 $\Box$ \\\\
 
 
