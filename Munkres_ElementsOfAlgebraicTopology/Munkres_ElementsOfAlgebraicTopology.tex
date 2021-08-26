@@ -62,7 +62,9 @@
   are continuous functions of $x$.}
 
 \item[(2)]
-  \emph{}
+  \emph{$\sigma$ equals the union of all line segments joining $a_0$ to
+  points of the simplex $s$ spanned by $a_1, \ldots, a_n$.
+  Two such line segments intersect only in the point $a_0$.}
 
 \item[(3)]
   \emph{$\sigma$ is compact, convex set in $\mathbb{R}^N$,
@@ -84,7 +86,7 @@
   \[
     E
     =
-    \left\{ x = \sum_{i=1}^{n} \widetilde{t_i}(x) a_i : \widetilde{t_i}(x) \in \mathbb{R} \right\}
+    \left\{ x = \sum_{i=0}^{n} \widetilde{t_i}(x) a_i : \widetilde{t_i}(x) \in \mathbb{R} \right\}
     \supseteq \sigma
   \]
   be the plane spanned by $a_0, \ldots, a_n$.
@@ -93,11 +95,11 @@
   So it suffices to show that $\widetilde{t_i}$ is linear.
 
 \item[(3)]
-  Suppose $x = \sum_{i=1}^{n} \widetilde{t_i}(x) a_i \in E$
-  and $y = \sum_{i=1}^{n} \widetilde{t_i}(y) a_i \in E$.
+  Suppose $x = \sum_{i=0}^{n} \widetilde{t_i}(x) a_i \in E$
+  and $y = \sum_{i=0}^{n} \widetilde{t_i}(y) a_i \in E$.
   Then
   \[
-    x + y = \sum_{i=1}^{n} (\widetilde{t_i}(x) + \widetilde{t_i}(y)) a_i.
+    x + y = \sum_{i=0}^{n} (\widetilde{t_i}(x) + \widetilde{t_i}(y)) a_i.
   \]
   Note that the coefficient of $a_i$ is uniquely determined by $x + y$.
   Thus $\widetilde{t_i}(x+y) = \widetilde{t_i}(x) + \widetilde{t_i}(y)$.
@@ -111,6 +113,48 @@ $\Box$ \\
 \emph{Proof of property (2).}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\sigma$ equals the union of all line segments joining $a_0$ to
+  points of the simplex $s$ spanned by $a_1, \ldots, a_n$.}
+  Nothing to do when $n = 0$.
+  Assume $n \geq 1$.
+  Let $\sigma'$ be the union of all line segments joining $a_0$ to
+  points of the simplex $s$ spanned by $a_1, \ldots, a_n$.
+
+\item[(2)]
+  Write one line segment $L$
+  joining $a_0$ to a point $\sum_{i=1}^{n} t_i a_i \in s$ as
+  \[
+    L
+    =
+    \left\{ t_0 a_0 + (1-t_0) \sum_{i=1}^{n} t_i a_i : 0 \leq t_0 \leq 1 \right\}.
+  \]
+  For each point $x$ of $L$, each coefficient of $a_i$ is $\geq 0$ ($i = 0, \ldots, n$)
+  and the sum of them is $t_0 + (1-t_0) \sum_{i=1}^{n} t_i = t_0 + (1-t_0) = 1$.
+  Hence $L \subseteq \sigma$ and thus $\sigma' \subseteq \sigma$.
+
+\item[(3)]
+  Conversely, given $x = \sum_{i=0}^{n} t_i a_i \in \sigma$.
+  If $t_0 = 1$, then $x$ is in the line segment joining $a_0$ to $a_1$.
+  If $0 \leq t_0 < 1$, then write $x$ as
+  \[
+    x = t_0 a_0 + (1-t_0) \sum_{i=1}^{n} \frac{t_i}{1-t_0} a_i.
+  \]
+  Note that $\sum_{i=1}^{n} \frac{t_i}{1-t_0} a_i \in s$.
+  Hence $x$ is in some line segment joining $a_0$ to points of the simplex $s$.
+  Therefore $\sigma \subseteq \sigma'$.
+
+\item[(4)]
+  \emph{Show that two such line segments intersect only in the point $a_0$.}
+  Suppose $L_1$ (resp. $L_2$) is the line segment joining $a_0$ to $x \in s$ (resp. $y \in s$).
+  If there is one point $z \neq a_0$ on $L_1 \cap L_2$, then
+  \[
+    z
+    = t_0 a_0 + (1-t_0) x
+    = s_0 a_0 + (1-s_0) y
+  \]
+  for some $0 \leq t_0, s_0 < 1$.
+  $t_0 = s_0$ since $z \in \sigma$ is in a simplex.
+  Hence $x = y$ or $L_1 = L_2$.
 \end{enumerate}
 $\Box$ \\
 
@@ -120,6 +164,19 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
   \emph{Show that $\sigma$ is compact.}
+  Let $\Delta$ be the standard simplex defined by
+  \[
+    \Delta
+    =
+    \left\{ (t_0, \ldots, t_n) \in \mathbb{R}^{n+1} : \sum_i t_i = 1, t_i \geq 0 \right\}.
+  \]
+  $\Delta$ is compact in $\mathbb{R}^{n+1}$ since $\Delta$ is closed and bounded.
+  Consider the map $\alpha: \Delta \to \sigma$ defined by
+  \[
+     (t_0, \ldots, t_n) \mapsto \sum_{i=0}^{n} t_i a_i.
+  \]
+  Similar to the proof of property (1), $\alpha$ is continuous.
+  Hence the continuous image of a compact set is compact.
 
 \item[(2)]
   \emph{Show that $\sigma$ is convex.}
