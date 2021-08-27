@@ -1308,6 +1308,41 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.6.}
+\addcontentsline{toc}{subsubsection}{Problem 10.6.}
+\emph{Suppose that $M$ is a $G$-module.
+For each $\sigma \in G$, let $m_{\sigma} \in M$.
+Show that the cochain $f$ defined by
+$f(\sigma,\tau) = m_{\sigma} + \sigma m_{\tau} - m_{\sigma\tau}$ is a coboundary.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  To show $f$ is a $2$-coboundary,
+  it suffices to show that there is a $g \in C^{1}(G,M)$ such that $f = \delta_1(g)$.
+
+\item[(2)]
+  Actually, we can define $g: G \to M$ by $\sigma \mapsto m_{\sigma}$.
+  So
+  \[
+    \delta_1(g)(\sigma,\tau)
+    = \sigma g(\tau) - g(\sigma\tau) + g(\sigma)
+    = \sigma m_{\tau} - m_{\sigma\tau} + m_{\sigma}
+    = f(\sigma,\tau)
+  \]
+  for all $\sigma, \tau \in G$.
+  Hence $f \in B^{2}(G,M)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
