@@ -1343,6 +1343,89 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.7.}
+\addcontentsline{toc}{subsubsection}{Problem 10.7.}
+\emph{If $M$ is a $G$-module and $f \in Z^2(G,M)$,
+show that $E_f = M \times G$ with multiplication defined by
+\[
+  (m,\sigma)(n,\tau) = (m \cdot \sigma n \cdot f(\sigma,\tau), \sigma\tau)
+\]
+makes $E_f$ into a group.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  The multiplication is a binary operation on $E_f$.
+
+\item[(2)]
+  (Associativity)
+  \emph{Show that
+  \[
+    ((m,\sigma)(n,\tau))(k,\upsilon) = (m,\sigma)((n,\tau)(k,\upsilon)).
+  \]
+  for all $(m,\sigma), (n,\tau), (k,\upsilon)$.}
+  Note that
+  \begin{align*}
+    ((m,\sigma)(n,\tau))(k,\upsilon)
+    = & \:
+    (m \cdot \sigma n \cdot f(\sigma,\tau), \sigma\tau)(k,\upsilon) \\
+    = & \:
+    (m \cdot \sigma n \cdot f(\sigma,\tau)
+        \cdot \sigma\tau k \cdot f(\sigma\tau, \upsilon), \sigma\tau\upsilon) \\
+    = & \:
+    (m \cdot \sigma n \cdot \sigma\tau k 
+        \cdot f(\sigma,\tau) \cdot f(\sigma\tau, \upsilon), \sigma\tau\upsilon)
+  \end{align*}
+  and
+  \begin{align*}
+    (m,\sigma)((n,\tau)(k,\upsilon))
+    = & \:
+    (m,\sigma)(n \cdot \tau k \cdot f(\tau,\upsilon), \tau\upsilon) \\
+    = & \:
+    (m \cdot \sigma(n \cdot \tau k \cdot f(\tau,\upsilon))
+        \cdot f(\sigma, \tau\upsilon), \sigma\tau\upsilon) \\
+    = & \:
+    (m \cdot \sigma n \cdot \sigma \tau k
+        \cdot \underbrace{\sigma f(\tau,\upsilon) \cdot f(\sigma, \tau\upsilon)}_{=
+            f(\sigma,\tau) \cdot f(\sigma\tau, \upsilon)},
+        \sigma\tau\upsilon)
+  \end{align*}
+  (since $f \in Z^2(G,M)$).
+
+\item[(3)]
+  (Identity element)
+  \emph{Show that there exists an element
+  \[
+    1 := (f(1,1)^{-1},1) \in E_f
+  \]
+  such that
+  $1 (m,\sigma) = (m,\sigma) 1 = (m,\sigma)$ for every $(m,\sigma) \in E_f$.}
+  It is the same as Problem 10.3.
+
+\item[(4)]
+  (Inverse element)
+  \emph{Show that for each $(m,\sigma) \in E_f$,
+  there exists an element
+  \[
+    (n,\tau)
+    :=
+    \left(\sigma^{-1}\left\{f(\sigma,\sigma^{-1})^{-1} \cdot m^{-1} \cdot f(1,1)^{-1}\right\}, \sigma^{-1} \right)
+    \in E_f
+  \]
+  such that
+  $(m,\sigma)(n,\tau) = (n,\tau)(m,\sigma) = 1$, where $1$ is the identity element in $E_f$.}
+  A direct calculation with the fact that $f \in Z^2(G,M)$ gives all.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
