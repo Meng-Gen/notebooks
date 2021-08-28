@@ -1408,6 +1408,24 @@ makes $E_f$ into a group.} \\
   It is the same as Problem 10.3.
 
 \item[(4)]
+  \emph{Note.}
+  To find the identity element, it suffices to find $(n,\tau)$
+  such that $(m,\sigma)(n,\tau) = (n,\tau)(m,\sigma) = (m,\sigma)$.
+  So
+  \[
+    (m,\sigma)(n,\tau) = (m \cdot \sigma n \cdot f(\sigma,\tau), \sigma\tau) = (m,\sigma)
+  \]
+  implies that $\tau = 1 \in G$ and thus $m \cdot \sigma n \cdot f(\sigma,1) = m$.
+  Hence
+  \[
+    n
+    = \sigma^{-1} f(\sigma,1)^{-1}
+    = (\sigma^{-1} f(\sigma,1))^{-1}
+    = f(1,1)^{-1}
+  \]
+  (in the multiplicative notation).
+
+\item[(5)]
   (Inverse element)
   \emph{Show that for each $(m,\sigma) \in E_f$,
   there exists an element
@@ -1420,6 +1438,7 @@ makes $E_f$ into a group.} \\
   such that
   $(m,\sigma)(n,\tau) = (n,\tau)(m,\sigma) = 1$, where $1$ is the identity element in $E_f$.}
   A direct calculation with the fact that $f \in Z^2(G,M)$ gives all.
+  (To find the inverse element, we might apply the same argument in part (4).)
 \end{enumerate}
 $\Box$ \\\\
 
