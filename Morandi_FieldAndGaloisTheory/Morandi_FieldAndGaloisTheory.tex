@@ -1405,12 +1405,36 @@ makes $E_f$ into a group.} \\
   \]
   such that
   $1 (m,\sigma) = (m,\sigma) 1 = (m,\sigma)$ for every $(m,\sigma) \in E_f$.}
-  It is the same as Problem 10.3.
+  Same as Problem 10.3.
+  Note that
+  \begin{align*}
+    (m,\sigma)(f(1,1)^{-1},1)
+    = & \:
+    (m \cdot \sigma \underbrace{f(1,1)^{-1}}_{= \sigma^{-1} f(\sigma,1)^{-1}}
+        \cdot f(\sigma,1), \sigma) \\
+    = & \:
+    (m \cdot \sigma (\sigma^{-1} f(\sigma,1)^{-1}) \cdot f(\sigma,1), \sigma) \\
+    = & \:
+    (m \cdot (\sigma \sigma^{-1}) f(\sigma,1)^{-1} \cdot f(\sigma,1), \sigma) \\
+    = & \:
+    (m, \sigma)
+  \end{align*}
+  and
+  \begin{align*}
+    (f(1,1)^{-1},1)(m,\sigma)
+    = & \:
+    (f(1,1)^{-1} \cdot m \cdot f(1, \sigma), \sigma) \\
+    = & \:
+    (f(1, \sigma)^{-1} \cdot m \cdot f(1, \sigma), \sigma) \\
+    = & \:
+    (m, \sigma).
+  \end{align*}
+
 
 \item[(4)]
   \emph{Note.}
-  To find the identity element, it suffices to find $(n,\tau)$
-  such that $(m,\sigma)(n,\tau) = (n,\tau)(m,\sigma) = (m,\sigma)$.
+  To find the identity element, we need to find $(n,\tau)$
+  such that $(m,\sigma)(n,\tau) = (m,\sigma)$.
   So
   \[
     (m,\sigma)(n,\tau) = (m \cdot \sigma n \cdot f(\sigma,\tau), \sigma\tau) = (m,\sigma)
@@ -1437,8 +1461,46 @@ makes $E_f$ into a group.} \\
   \]
   such that
   $(m,\sigma)(n,\tau) = (n,\tau)(m,\sigma) = 1$, where $1$ is the identity element in $E_f$.}
-  A direct calculation with the fact that $f \in Z^2(G,M)$ gives all.
   (To find the inverse element, we might apply the same argument in part (4).)
+  A direct calculation with the fact that $f \in Z^2(G,M)$ gives
+  \begin{align*}
+    & \:
+    (m,\sigma)
+    \left(\sigma^{-1}\left\{f(\sigma,\sigma^{-1})^{-1} \cdot m^{-1} \cdot f(1,1)^{-1}\right\}, \sigma^{-1} \right) \\
+    = & \:
+    (m \cdot \sigma\left(\sigma^{-1}\left\{f(\sigma,\sigma^{-1})^{-1} \cdot m^{-1} \cdot f(1,1)^{-1}\right\}\right)
+        \cdot f(\sigma, \sigma^{-1}), 1) \\
+    = & \:
+    (m \cdot f(\sigma,\sigma^{-1})^{-1} \cdot m^{-1} \cdot f(1,1)^{-1}
+        \cdot f(\sigma, \sigma^{-1}), 1) \\
+    = & \:
+    (f(1,1)^{-1}, 1)
+  \end{align*}
+  and
+  \begin{align*}
+    & \:
+    \left(\sigma^{-1}\left\{f(\sigma,\sigma^{-1})^{-1} \cdot m^{-1} \cdot f(1,1)^{-1}\right\}, \sigma^{-1} \right)
+    (m,\sigma) \\
+    = & \:
+    (\sigma^{-1}\left\{f(\sigma,\sigma^{-1})^{-1} \cdot m^{-1} \cdot f(1,1)^{-1}\right\}
+        \cdot \sigma^{-1} m \cdot f(\sigma^{-1}, \sigma), 1) \\
+    = & \:
+    (\sigma^{-1} f(\sigma,\sigma^{-1})^{-1}
+        \cdot f(\sigma^{-1}, \sigma) \cdot \sigma^{-1} f(1,1)^{-1}, 1) \\
+    = & \:
+    (f(1,1)^{-1} \cdot \underbrace{\sigma^{-1} f(1,1) \cdot \sigma^{-1} f(1,1)^{-1}}_{= 1}, 1) \\
+    = & \:
+    (f(1,1)^{-1}, 1).
+  \end{align*}
+  Here we take $(\sigma_1, \sigma_2, \sigma_3) \mapsto (\sigma^{-1}, \sigma, \sigma^{-1})$
+  in part (1) of the proof of Problem 10.3 to get
+  \begin{align*}
+    \sigma^{-1} f(\sigma,\sigma^{-1})^{-1} \cdot f(\sigma^{-1}, \sigma)
+    = & \:
+    f(1,\sigma^{-1})^{-1} \cdot f(\sigma^{-1},1) \\
+    = & \:
+    f(1,1)^{-1} \cdot \sigma^{-1} f(1,1).
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
