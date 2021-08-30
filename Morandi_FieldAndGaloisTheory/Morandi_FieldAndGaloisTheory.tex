@@ -1571,6 +1571,52 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.9.}
+\addcontentsline{toc}{subsubsection}{Problem 10.9.}
+\emph{In the crossed product construction given in this section,
+show that the multiplicative identity is $f(1,1)^{-1}x_{\mathrm{id}}$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    (f(1,1)^{-1}x_{\mathrm{id}}) \sum_{\sigma \in G} a_{\sigma} x_{\sigma}
+    &= \sum_{\sigma \in G} f(1,1)^{-1} \mathrm{id}(a_{\sigma}) f(\mathrm{id}, \sigma)
+        x_{\mathrm{id} \cdot \sigma} \\
+    &= \sum_{\sigma \in G} f(1,1)^{-1} a_{\sigma} f(1, \sigma) x_{\sigma} \\
+    &= \sum_{\sigma \in G} a_{\sigma} x_{\sigma}
+  \end{align*}
+  for all $\sum_{\sigma \in G} a_{\sigma} x_{\sigma} \in A = (K/F,G,f)$.
+
+\item[(2)]
+  \begin{align*}
+    \left( \sum_{\sigma \in G} a_{\sigma} x_{\sigma} \right)(f(1,1)^{-1}x_{\mathrm{id}})
+    &= \sum_{\sigma \in G} a_{\sigma} \sigma(f(1,1)^{-1}) f(\sigma, \mathrm{id})
+        x_{\sigma \cdot \mathrm{id}} \\
+    &= \sum_{\sigma \in G} a_{\sigma} \sigma f(1,1)^{-1} f(\sigma, 1)
+        x_{\sigma} \\
+    &= \sum_{\sigma \in G} a_{\sigma} x_{\sigma}
+  \end{align*}
+  for all $\sum_{\sigma \in G} a_{\sigma} x_{\sigma} \in A = (K/F,G,f)$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
