@@ -1147,7 +1147,13 @@ $\Box$ \\
   If $k \geq 2$ and $\sigma = [\mathbf{p}_0,\mathbf{p}_1,\ldots,\mathbf{p}_k]$
   is an oriented affine $k$-simplex, prove that $\partial^2 \sigma = 0$,
   directly from the definition of the boundary operator $\partial$.
-  Deduce from this that $\partial^2 \Psi = 0$ for every chain $\Psi$.} \\\\
+  Deduce from this that $\partial^2 \Psi = 0$ for every chain $\Psi$.} 
+
+\item[(3)]
+  It is not easy to remember the definition of $\delta_{n}$.
+  See page 112 of the book: \emph{Jean-Pierre Serre, Local Fields}.
+  (Define a covariant cochain to systems of the form
+  $(1, \sigma_1, \sigma_1\sigma_2, \ldots, \sigma_1\sigma_2\cdots\sigma_{n+1})$.) \\\\
 \end{enumerate}
 
 
@@ -1431,24 +1437,6 @@ makes $E_f$ into a group.} \\
   \end{align*}
 
 \item[(4)]
-  \emph{Note.}
-  To find the identity element, we need to find $(n,\tau)$
-  such that $(m,\sigma)(n,\tau) = (m,\sigma)$.
-  So
-  \[
-    (m,\sigma)(n,\tau) = (m \cdot \sigma n \cdot f(\sigma,\tau), \sigma\tau) = (m,\sigma)
-  \]
-  implies that $\tau = 1 \in G$ and thus $m \cdot \sigma n \cdot f(\sigma,1) = m$.
-  Hence
-  \[
-    n
-    = \sigma^{-1} f(\sigma,1)^{-1}
-    = (\sigma^{-1} f(\sigma,1))^{-1}
-    = f(1,1)^{-1}
-  \]
-  (in the multiplicative notation).
-
-\item[(5)]
   (Inverse element)
   \emph{Show that for each $(m,\sigma) \in E_f$,
   there exists an element
@@ -1460,7 +1448,7 @@ makes $E_f$ into a group.} \\
   \]
   such that
   $(m,\sigma)(n,\tau) = (n,\tau)(m,\sigma) = 1$, where $1$ is the identity element in $E_f$.}
-  (To find the inverse element, we might apply the same argument in part (4).)
+  (To find the inverse element, we might apply the same argument in the following note.)
   A direct calculation with the fact that $f \in Z^2(G,M)$ gives
   \begin{align*}
     & \:
@@ -1501,7 +1489,26 @@ makes $E_f$ into a group.} \\
     f(1,1)^{-1} \cdot \sigma^{-1} f(1,1).
   \end{align*}
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\emph{Note.}
+  To find the identity element, we need to find $(n,\tau)$
+  such that $(m,\sigma)(n,\tau) = (m,\sigma)$.
+  So
+  \[
+    (m,\sigma)(n,\tau) = (m \cdot \sigma n \cdot f(\sigma,\tau), \sigma\tau) = (m,\sigma)
+  \]
+  implies that $\tau = 1 \in G$ and thus $m \cdot \sigma n \cdot f(\sigma,1) = m$.
+  Hence
+  \[
+    n
+    = \sigma^{-1} f(\sigma,1)^{-1}
+    = (\sigma^{-1} f(\sigma,1))^{-1}
+    = f(1,1)^{-1}
+  \]
+  (in the multiplicative notation). \\\\
 
 
 
@@ -1520,7 +1527,7 @@ $f, g \in Z^2(G,M)$ are isomorphic if $f$ and $g$ are cohomologous.} \\
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  Say $f \cdot g^{-1} = \delta_1(h)$ for some $h \in B^{1}(G,B)$, i.e.,
+  Say $f \cdot g^{-1} = \delta_1(h) \in B^{2}(G,M)$ for some $h \in C^{1}(G,M)$, i.e.,
   \[
     f(\sigma,\tau) \cdot g^{-1}(\sigma,\tau)
     = \delta_1(h)(\sigma,\tau)
@@ -1566,7 +1573,18 @@ $f, g \in Z^2(G,M)$ are isomorphic if $f$ and $g$ are cohomologous.} \\
     \alpha((m \cdot h(\sigma)^{-1}, \sigma)) = (m, \sigma).
   \]
 \end{enumerate}
-$\Box$ \\\\
+$\Box$ \\
+
+
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  A $2$-cocycle is also called a \textbf{factor set}.
+
+\item[(2)]
+  $H^2(G,M)$ is the set of isomorphism classes of extension of $G$ by $M$. \\\\
+\end{enumerate}
 
 
 
@@ -1615,7 +1633,7 @@ $\Box$ \\\\
 \subsubsection*{Problem 10.10.}
 \addcontentsline{toc}{subsubsection}{Problem 10.10.}
 \emph{A \textbf{normalized cocycle} is a cocycle $f$ that satisfies
-$f(1,\sigma) = \sigma^{-1}f(\sigma,1) = 1$ for all $\sigma \in G$.
+$f(1,\sigma) = f(\sigma,1) = 1$ for all $\sigma \in G$.
 Let $A = (K/F,G,f)$ be a crossed product algebra.
 Show that $x_{\mathrm{id}} = 1$ if and only if $f$ is a normalized cocycle.} \\
 
@@ -1627,6 +1645,8 @@ Show that $x_{\mathrm{id}} = 1$ if and only if $f$ is a normalized cocycle.} \\
     \text{$f$ is a normalized cocycle} \\
     \Longleftrightarrow & \:
     \text{$f(1,\sigma) = \sigma^{-1}f(\sigma,1) = 1$ for all $\sigma \in G$} \\
+    \Longleftrightarrow & \:
+    \text{$f(1,\sigma) = f(\sigma,1) = 1$ for all $\sigma \in G$} \\
     \Longleftrightarrow & \:
     \text{$f(1,1) = 1$}
       &(\text{Problem 10.3}) \\
@@ -1663,6 +1683,49 @@ then the resulting cocycle is a normalized cocycle.} \\
   \]
   Problem 10.10 implies that $f$ is a normalized cocycle.
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 10.12.}
+\addcontentsline{toc}{subsubsection}{Problem 10.12.}
+\emph{Show that any $2$-cocycle is cohomologous to a normalized cocycle.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Problem 10.8, we need to find a normalized cocycle $g$
+  and $h \in C^{1}(G,M)$
+  such that $f \cdot g^{-1} = \delta_1(h)$.
+  So
+  \[
+    f(\sigma,\tau) \cdot g^{-1}(\sigma,\tau)
+    = \delta_1(h)(\sigma,\tau)
+    = \sigma h(\tau) \cdot h(\sigma\tau)^{-1} \cdot h(\sigma).
+  \]
+
+\item[(2)]
+  Let $\tau = 1$ to get
+  \begin{align*}
+    f(\sigma,1)
+    &= \underbrace{g(\sigma,1)}_{= 1} \cdot \sigma h(1)
+        \cdot \underbrace{h(\sigma)^{-1} \cdot h(\sigma)}_{= 1} \\
+    &= \sigma h(1) \\
+    &= h(\sigma).
+  \end{align*}
+  Hence we might define $h(\sigma) := f(\sigma,1)$
+  and $g := f \cdot \delta_1(h)^{-1}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
