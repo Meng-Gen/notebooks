@@ -397,6 +397,163 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.2. (Five lemma)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2. (Five lemma)}
+\emph{Show that, given a commutative diagram}
+\begin{center}
+  \begin{tikzcd}
+    \cdots \arrow[r]
+        & A_1 \arrow[r]\arrow[d, "\varphi_1"]
+        & A_2 \arrow[r]\arrow[d, "\varphi_2"]
+        & A_3 \arrow[r]\arrow[d, "\varphi_3"]
+        & A_4 \arrow[r]\arrow[d, "\varphi_4"]
+        & A_5 \arrow[r]\arrow[d, "\varphi_5"]
+        & \cdots \\
+    \cdots \arrow[r]
+        & B_1 \arrow[r]
+        & B_2 \arrow[r]
+        & B_3 \arrow[r]
+        & B_4 \arrow[r]
+        & B_5 \arrow[r]
+        & \cdots
+  \end{tikzcd}
+\end{center}
+\emph{with exact rows, in which $\varphi_1$, $\varphi_2$, $\varphi_4$, $\varphi_5$ are isomorphisms,
+then $\varphi_3$ is also an isomorphism.
+Can we weaken the hypotheses in a reasonable way?} \\
+
+
+
+One reasonable hypotheses:
+\begin{enumerate}
+\item[(a)]
+  \emph{If $\varphi_1$ is surjective and $\varphi_2, \varphi_4$ is injective,
+  then $\varphi_3$ is injective.}
+
+\item[(b)]
+  \emph{If $\varphi_5$ is injective and $\varphi_2, \varphi_4$ is surjective,
+  then $\varphi_3$ is surjective.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \begin{center}
+    \begin{tikzcd}
+      \cdots \arrow[r]
+          & A_1 \arrow[r, "\alpha_1"]\arrow[d, "\varphi_1"]
+          & A_2 \arrow[r, "\alpha_2"]\arrow[d, "\varphi_2"]
+          & A_3 \arrow[r, "\alpha_3"]\arrow[d, "\varphi_3"]
+          & A_4 \arrow[r, "\alpha_4"]\arrow[d, "\varphi_4"]
+          & A_5 \arrow[r]\arrow[d, "\varphi_5"]
+          & \cdots \\
+      \cdots \arrow[r]
+          & B_1 \arrow[r, "\beta_1"]
+          & B_2 \arrow[r, "\beta_2"]
+          & B_3 \arrow[r, "\beta_3"]
+          & B_4 \arrow[r, "\beta_4"]
+          & B_5 \arrow[r]
+          & \cdots
+    \end{tikzcd}
+  \end{center}
+  Take $a \in \ker(\varphi_3)$ and then we need to show $a = 0$.
+
+\item[(2)]
+  The commutative diagram
+  \begin{center}
+    \begin{tikzcd}
+      A_3 \arrow[r, "\alpha_3"]\arrow[d, "\varphi_3"] & A_4 \arrow[d, tail, "\varphi_4"] \\
+      B_3 \arrow[r, "\beta_3"] & B_4
+    \end{tikzcd}
+  \end{center}
+  implies that $0 = \beta_3 0 = \beta_3 \varphi_3 a = \varphi_4 \alpha_3 a$.
+  The injectivity of $\varphi_4$ implies that $\alpha_3 a = 0$.
+
+\item[(3)]
+  The exact sequence
+  \begin{center}
+    \begin{tikzcd}
+      \cdots \arrow[r]
+          & A_2 \arrow[r, "\alpha_2"]
+          & A_3 \arrow[r, "\alpha_3"]
+          & A_4 \arrow[r]
+          & \cdots
+    \end{tikzcd}
+  \end{center}
+  shows that $a \in \ker(\alpha_3) = \mathrm{im}(\alpha_2)$.
+  So there exists $a_2 \in A_2$ such that $\alpha_2 a_2 = a$.
+
+\item[(4)]
+  The commutative diagram
+  \begin{center}
+    \begin{tikzcd}
+      A_2 \arrow[r, "\alpha_2"]\arrow[d, "\varphi_2"] & A_3 \arrow[d, "\varphi_3"] \\
+      B_2 \arrow[r, "\beta_2"] & B_3
+    \end{tikzcd}
+  \end{center}
+  implies that $0 = \varphi_3 a = \varphi_3 \alpha_2 a_2 = \beta_2 \varphi_2 a_2$.
+
+\item[(5)]
+  The exact sequence
+  \begin{center}
+    \begin{tikzcd}
+      \cdots \arrow[r]
+          & B_1 \arrow[r, "\beta_1"]
+          & B_2 \arrow[r, "\beta_2"]
+          & B_3 \arrow[r]
+          & \cdots
+    \end{tikzcd}
+  \end{center}
+  shows that $\varphi_2 a_2 \in \ker(\beta_2) = \mathrm{im}(\beta_1)$.
+  So there exists $b_1 \in B_1$ such that $\varphi_2 a_2 = \beta_1 b_1$.
+
+\item[(6)]
+  Consider the commutative diagram
+  \begin{center}
+    \begin{tikzcd}
+      A_1 \arrow[r, "\alpha_1"]\arrow[d, two heads, "\varphi_1"] & A_2 \arrow[d, tail, "\varphi_2"] \\
+      B_1 \arrow[r, "\beta_1"] & B_2
+    \end{tikzcd}
+  \end{center}
+  The surjectivity of $\varphi_i$ implies that
+  $\exists \: a_1 \in A_1$ such that $\varphi_1 a_1 = b_1$.
+  Hence the commutative diagram implies that
+  $\varphi_2(\alpha_1 a_1) = \varphi_2\alpha_1 a_1 = \beta_1 \varphi_1 a_1 = \beta_1 b_1 = \varphi_2 a_2$.
+  The injectivity of $\varphi_2$ implies that $\alpha_1 a_1 = a_2$.
+
+\item[(7)]
+  The exact sequence
+  \begin{center}
+    \begin{tikzcd}
+      \cdots \arrow[r]
+          & A_1 \arrow[r, "\alpha_1"]
+          & A_2 \arrow[r, "\alpha_2"]
+          & A_3 \arrow[r]
+          & \cdots
+    \end{tikzcd}
+  \end{center}
+  shows that $a = \alpha_2 a_2 = \alpha_2 \alpha_1 a_1 = 0$.
+  Therefore $\varphi_3$ is injective.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
