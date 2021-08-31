@@ -1,0 +1,406 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{centernot}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz-cd}
+\parindent=0pt
+
+
+
+\title{\textbf{Notes on the book: \\ \emph{P.J. Hilton and U. Stammbach, A Course in Homological Algebra}}}
+\author{Meng-Gen Tsai \\ plover@gmail.com}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Reference:
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter I: Modules \\}
+\addcontentsline{toc}{section}{Chapter I: Modules}
+
+
+
+\subsection*{\S 1. Modules \\}
+\addcontentsline{toc}{subsection}{\S 1. Modules}
+
+
+
+\subsubsection*{Exercise 1.1. (Diagram chasing)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.1. (Diagram chasing)}
+\emph{Complete the proof of Lemma 1.1.
+Show moreover that $\alpha$ is surjective (resp. injective) if
+$\alpha'$, $\alpha''$ are surjective (resp. injective).} \\
+
+
+
+\emph{Lemma 1.1.}
+Let $0 \to A' \to A \to A'' \to 0$ and $0 \to B' \to B \to B'' \to 0$ be two short exact sequences.
+Suppose that in the commutative diagram
+\begin{center}
+  \begin{tikzcd}
+    0 \arrow[r]
+      & A' \arrow[r, "\mu"]\arrow[d, "\alpha'"]
+      & A \arrow[r, "\varepsilon"]\arrow[d, "\alpha"]
+      & A'' \arrow[r]\arrow[d, "\alpha''"]
+      & 0 \\
+    0 \arrow[r] & B' \arrow[r, "\mu'"] & B \arrow[r, "\varepsilon'"] & B'' \arrow[r] & 0
+  \end{tikzcd}
+\end{center}
+any two of the three homomorphisms $\alpha'$, $\alpha$, $\alpha''$ are isomorphisms.
+Then the third is an isomorphism, too. \\
+
+
+
+\emph{Proof (Diagram chasing).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\alpha$ is surjective if $\alpha'$, $\alpha''$ are surjective.}
+  \begin{enumerate}
+  \item[(a)]
+    Take any $b \in B$, it suffices to find $a \in A$ such that $\alpha a = b$.
+
+  \item[(b)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A \arrow[r, two heads, "\varepsilon"]\arrow[d, "\alpha"] & A'' \arrow[d, "\alpha''"] \\
+        B \arrow[r, "\varepsilon'"] & B''
+      \end{tikzcd}
+    \end{center}
+    $\varepsilon' b \in B'$.
+    By the surjectivity of $\alpha''$, $\exists \: a'' \in A''$ such that $\alpha'' a'' = \varepsilon' b$.
+    By the surjectivity of $\varepsilon$, $\exists \: \overline{a} \in A$
+    such that $\varepsilon \overline{a} = a''$.
+    Hence
+    \begin{align*}
+      \varepsilon'(b - \alpha \overline{a})
+      &= \varepsilon' b - \varepsilon' \alpha \overline{a} \\
+      &= \varepsilon' b - \alpha'' \varepsilon \overline{a}
+        &(\text{The diagram commutes}) \\
+      &= \varepsilon' b - \alpha'' a'' \\
+      &= \varepsilon' b - \varepsilon' b \\
+      &= 0.
+    \end{align*}
+
+  \item[(c)]
+    Consider the short exact sequence
+    \begin{center}
+      \begin{tikzcd}
+        0 \arrow[r]
+          & B' \arrow[r, "\mu'"]
+          & B \arrow[r, "\varepsilon'"]
+          & B'' \arrow[r]
+          & 0
+      \end{tikzcd}
+    \end{center}
+    As $\varepsilon'(b - \alpha \overline{a}) = 0$,
+    $\exists \: b' \in B'$ such that $\mu' b' = b - \alpha \overline{a}$.
+
+  \item[(d)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A' \arrow[r, "\mu"]\arrow[d, "\alpha'"] & A \arrow[d, "\alpha"] \\
+        B' \arrow[r, "\mu'"] & B
+      \end{tikzcd}
+    \end{center}
+    By the surjectivity of $\alpha'$,
+    $\exists \: a' \in A'$ such that $\alpha' a' = b'$.
+    Hence
+    \begin{align*}
+      \alpha(\mu a' + \overline{a})
+      &= \alpha\mu a' + \alpha\overline{a} \\
+      &= \mu'\alpha'a' + \alpha\overline{a}
+        &(\text{The diagram commutes}) \\
+      &= \mu'b' + \alpha\overline{a} \\
+      &= (b - \alpha\overline{a}) + \alpha\overline{a} \\
+      &= b.
+    \end{align*}
+    Therefore, there exists $a := \mu a' + \overline{a}$ such that $\alpha a = b$.
+  \end{enumerate}
+
+\item[(2)]
+  \emph{Show that $\alpha$ is injective if $\alpha'$, $\alpha''$ are injective.}
+  \begin{enumerate}
+  \item[(a)]
+    It suffices to show that $\ker\alpha = 0$.
+    Take $a \in \ker\alpha$. ($\alpha(a) = \alpha a = 0$.)
+
+  \item[(b)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A \arrow[r, "\varepsilon"]\arrow[d, "\alpha"] & A'' \arrow[d, "\alpha''"] \\
+        B \arrow[r, "\varepsilon'"] & B''
+      \end{tikzcd}
+    \end{center}
+    we have $0 = \varepsilon'\alpha a = \alpha''\varepsilon a$.
+    By the injectivity of $\alpha''$, $\varepsilon a = 0$.
+
+  \item[(c)]
+    Consider the short exact sequence
+    \begin{center}
+      \begin{tikzcd}
+        0 \arrow[r]
+          & A' \arrow[r, "\mu"]
+          & A \arrow[r, "\varepsilon"]
+          & A'' \arrow[r]
+          & 0
+      \end{tikzcd}
+    \end{center}
+    As $\varepsilon a = 0$, $\exists \: a' \in A'$ such that
+    $\mu a' = a$.
+
+  \item[(d)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A' \arrow[r, "\mu"]\arrow[d, "\alpha'"] & A \arrow[d, "\alpha"] \\
+        B' \arrow[r, tail, "\mu'"] & B
+      \end{tikzcd}
+    \end{center}
+    $0 = \alpha a = \alpha\mu a' = \mu'\alpha' a'$.
+    By the injectivity of $\mu'\alpha'$, $a' = 0$.
+    Therefore, $a = \mu a' = 0$.
+  \end{enumerate}
+
+\item[(3)]
+  \emph{Suppose $\alpha$ is surjective. Show that $\alpha''$ is surjective.}
+  \begin{enumerate}
+  \item[(a)]
+    Take any $b'' \in B''$, it suffices to find $a'' \in A''$ such that $\alpha'' a'' = b''$.
+
+  \item[(b)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A \arrow[r, "\varepsilon"]\arrow[d, "\alpha"] & A'' \arrow[d, "\alpha''"] \\
+        B \arrow[r, two heads, "\varepsilon'"] & B''
+      \end{tikzcd}
+    \end{center}
+    By the surjectivity of $\varepsilon'$,
+    $\exists \: b \in B$ such that $\varepsilon' b = b''$.
+    By the surjectivity of $\alpha$,
+    $\exists \: a \in A$ such that $\alpha a = b$.
+    Take $a'' := \varepsilon a \in A''$.
+    Hence
+    \begin{align*}
+      \alpha'' a''
+      &= \alpha'' \varepsilon a \\
+      &= \varepsilon' \alpha a
+        &(\text{The diagram commutes}) \\
+      &= \varepsilon' b \\
+      &= b''.
+    \end{align*}
+  \end{enumerate}
+
+\item[(4)]
+  \emph{Suppose $\alpha'$ is surjective and $\alpha$ is injective.
+  Show that $\alpha''$ is injective.}
+  \begin{enumerate}
+  \item[(a)]
+    It suffices to show that $\ker\alpha'' = 0$.
+    Take $a'' \in \ker\alpha''$. ($\alpha''(a'') = \alpha'' a'' = 0$.)
+
+  \item[(b)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A \arrow[r, two heads, "\varepsilon"]\arrow[d, "\alpha"] & A'' \arrow[d, "\alpha''"] \\
+        B \arrow[r, "\varepsilon'"] & B''
+      \end{tikzcd}
+    \end{center}
+    By the surjectivity of $\varepsilon$,
+    $\exists \: a \in A$ such that $\varepsilon a = a''$.
+    So
+    \begin{align*}
+      0
+      &= \alpha'' a'' \\
+      &= \alpha'' \varepsilon a \\
+      &= \varepsilon' \alpha a.
+        &(\text{The diagram commutes})
+    \end{align*}
+
+  \item[(c)]
+    Consider the short exact sequence
+    \begin{center}
+      \begin{tikzcd}
+        0 \arrow[r]
+          & B' \arrow[r, "\mu'"]
+          & B \arrow[r, "\varepsilon'"]
+          & B'' \arrow[r]
+          & 0
+      \end{tikzcd}
+    \end{center}
+    As $\varepsilon'(\alpha a) = 0$,
+    $\exists \: b' \in B'$ such that $\mu' b' = \alpha a$.
+
+  \item[(d)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A' \arrow[r, "\mu"]\arrow[d, "\alpha'"] & A \arrow[d, "\alpha"] \\
+        B' \arrow[r, "\mu'"] & B
+      \end{tikzcd}
+    \end{center}
+    By surjectivity of $\alpha'$,
+    $\exists \: a' \in A'$ such that $\alpha' a' = b'$.
+    So
+    \begin{align*}
+      \alpha a
+      &= \mu' b' \\
+      &= \mu' \alpha' a' \\
+      &= \alpha \mu a'.
+        &(\text{The diagram commutes})
+    \end{align*}
+    By the injectivity of $\alpha$, $a = \mu a'$.
+    Hence
+    \[
+      a''
+      = \varepsilon a
+      = \varepsilon\mu a'
+      = 0.
+    \]
+    Therefore $\ker\alpha'' = 0$.
+  \end{enumerate}
+
+\item[(5)]
+  By (3)(4), $\alpha''$ is an isomorphism
+  if both $\alpha'$ and $\alpha$ are isomorphisms.
+
+\item[(6)]
+  \emph{Suppose $\alpha$ is surjective and $\alpha''$ is injective.
+  Show that $\alpha'$ is surjective.}
+  \begin{enumerate}
+  \item[(a)]
+    Take any $b' \in B'$, it suffices to find $a' \in A'$ such that $\alpha' a' = b'$.
+    Let $b := \mu' b' \in B$ and note that $\varepsilon' b = 0$ by the exactness of
+    \[
+      0 \to B' \to B \to B'' \to 0.
+    \]
+
+  \item[(b)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A \arrow[r, "\varepsilon"]\arrow[d, "\alpha"] & A'' \arrow[d, "\alpha''"] \\
+        B \arrow[r, "\varepsilon'"] & B''
+      \end{tikzcd}
+    \end{center}
+    By the surjectivity of $\alpha$,
+    $\exists \: a \in A$ such that $\alpha a = b$.
+    So
+    \begin{align*}
+      0
+      &= \varepsilon' b \\
+      &= \varepsilon' \alpha a \\
+      &= \alpha'' \varepsilon a.
+        &(\text{The diagram commutes})
+    \end{align*}
+    By the injectivity of $\alpha''$, $\varepsilon a = 0$.
+
+  \item[(c)]
+    Consider the short exact sequence
+    \begin{center}
+      \begin{tikzcd}
+        0 \arrow[r]
+          & A' \arrow[r, "\mu"]
+          & A \arrow[r, "\varepsilon"]
+          & A'' \arrow[r]
+          & 0
+      \end{tikzcd}
+    \end{center}
+    As $\varepsilon a = 0$, $\exists \: a' \in A'$ such that $\mu a' = a$.
+
+  \item[(d)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A' \arrow[r, "\mu"]\arrow[d, "\alpha'"] & A \arrow[d, "\alpha"] \\
+        B' \arrow[r, tail, "\mu'"] & B
+      \end{tikzcd}
+    \end{center}
+    Note that
+    \begin{align*}
+      \mu'(\alpha'a')
+      &= \mu' \alpha' a' \\
+      &= \alpha \mu a'
+        &(\text{The diagram commutes})
+      &= \alpha a \\
+      &= b \\
+      &= \mu' b'.
+    \end{align*}
+    By the injectivity of $\mu'$, $b' = \alpha' a'$ for some $a' \in A'$.
+  \end{enumerate}
+
+\item[(7)]
+  \emph{Suppose $\alpha$ is injective.
+  Show that $\alpha'$ is injective.}
+  \begin{enumerate}
+  \item[(a)]
+    It suffices to show that $\ker\alpha' = 0$.
+    Take $a' \in \ker\alpha'$. ($\alpha'(a') = \alpha' a' = 0$.)
+
+  \item[(b)]
+    Consider the commutative diagram
+    \begin{center}
+      \begin{tikzcd}
+        A' \arrow[r, tail, "\mu"]\arrow[d, "\alpha'"] & A \arrow[d, "\alpha"] \\
+        B' \arrow[r, "\mu'"] & B
+      \end{tikzcd}
+    \end{center}
+    Note that
+    \begin{align*}
+      0
+      &= \mu' 0 \\
+      &= \mu'\alpha' a' \\
+      &= \alpha\mu a'.
+        &(\text{The diagram commutes})
+    \end{align*}
+    The injectivity of $\alpha\mu$ shows that $a' = 0$.
+  \end{enumerate}
+
+\item[(8)]
+  By (6)(7), $\alpha'$ is an isomorphism
+  if both $\alpha$ and $\alpha''$ are isomorphisms.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
