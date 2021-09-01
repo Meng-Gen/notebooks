@@ -548,6 +548,104 @@ $\Box$ \\
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
+  Take any $b \in B_3$, it suffices to find $a \in A$ such that $\varphi_3 a = b$.
+
+\item[(2)]
+  Let $b_4 := \beta_3 b \in B_4$.
+  The exact sequence
+  \begin{center}
+    \begin{tikzcd}
+      \cdots \arrow[r]
+          & B_3 \arrow[r, "\beta_3"]
+          & B_4 \arrow[r, "\beta_4"]
+          & B_5 \arrow[r]
+          & \cdots
+    \end{tikzcd}
+  \end{center}
+  shows that $\beta_4 b_4 = \beta_4(\beta_3 b) = 0$.
+
+\item[(3)]
+  Look at the commutative diagram
+  \begin{center}
+    \begin{tikzcd}
+      A_4 \arrow[r, "\alpha_4"]\arrow[d, two heads, "\varphi_4"] & A_5 \arrow[d, tail, "\varphi_5"] \\
+      B_4 \arrow[r, "\beta_4"] & B_5
+    \end{tikzcd}
+  \end{center}
+  By the surjectivity of $\varphi_4$,
+  $\exists \: a_4 \in A_4$ such that $\varphi_4 a_4 = b_4$.
+  So the commutative diagram says that
+  $0 = \beta_4 b_4 = \beta_4 \varphi_4 a_4 = \varphi_5 \alpha_4 a_4$.
+  By the injectivity of $\varphi_5$, $\alpha_4 a_4 = 0$.
+
+\item[(4)]
+  The exact sequence
+  \begin{center}
+    \begin{tikzcd}
+      \cdots \arrow[r]
+          & A_3 \arrow[r, "\alpha_3"]
+          & A_4 \arrow[r, "\alpha_4"]
+          & A_5 \arrow[r]
+          & \cdots
+    \end{tikzcd}
+  \end{center}
+  shows that $a_4 \in \ker(\alpha_4) = \mathrm{im}(\alpha_3)$.
+  So there exists $a_3 \in A_3$ such that $\alpha_3 a_3 = a_4$.
+
+\item[(5)]
+  Let $\overline{b} = b - \varphi_3 a_3 \in B_3$.
+  The commutative diagram
+  \begin{center}
+    \begin{tikzcd}
+      A_3 \arrow[r, "\alpha_3"]\arrow[d, "\varphi_3"] & A_4 \arrow[d, "\varphi_4"] \\
+      B_3 \arrow[r, "\beta_3"] & B_4
+    \end{tikzcd}
+  \end{center}
+  implies that
+  $\beta_3 \overline{b}
+  = \beta_3 b - \beta_3 \varphi_3 a_3
+  = \beta_3 b - \varphi_4 \alpha_3 a_3
+  = \beta_3 b - \varphi_4 a_4
+  = \beta_3 b - b_4
+  = \beta_3 b - \beta_3 b = 0$.
+  So $\overline{b} \in \ker(\beta_3)$.
+
+\item[(6)]
+  The exact sequence
+  \begin{center}
+    \begin{tikzcd}
+      \cdots \arrow[r]
+          & B_2 \arrow[r, "\beta_2"]
+          & B_3 \arrow[r, "\beta_3"]
+          & B_4 \arrow[r]
+          & \cdots
+    \end{tikzcd}
+  \end{center}
+  shows that $\overline{b} \in \ker(\beta_3) = \mathrm{im}(\beta_2)$.
+  Hence $\exists \: b_2 \in B_2$ such that $\overline{b} = \beta_2 b_2$.
+
+\item[(7)]
+  Look at the commutative diagram
+  \begin{center}
+    \begin{tikzcd}
+      A_2 \arrow[r, "\alpha_2"]\arrow[d, two heads, "\varphi_2"] & A_3 \arrow[d, "\varphi_3"] \\
+      B_2 \arrow[r, "\beta_2"] & B_3
+    \end{tikzcd}
+  \end{center}
+  The surjectivity of $\varphi_2$ implies that
+  $\exists \: a_2 \in A_2$ such that $b_2 = \varphi_2 a_2$.
+  Let $a := \alpha_2 a_2 + a_3$.
+  Hence
+  \begin{align*}
+    \varphi_3(a)
+    &= \varphi_3\alpha_2 a_2 + \varphi_3 a_3 \\
+    &= \beta_2\varphi_2 a_2 + \varphi_3 a_3
+      &(\text{The diagram commutes}) \\
+    &= \beta_2 b_2 + \varphi_3 a_3 \\
+    &= \overline{b} + \varphi_3 a_3 \\
+    &= (b - \varphi_3 a_3) + \varphi_3 a_3 \\
+    &= b.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
