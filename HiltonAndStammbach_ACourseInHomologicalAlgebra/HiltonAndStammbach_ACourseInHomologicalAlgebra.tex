@@ -791,6 +791,83 @@ $\Box$ \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{\S 2. The Group of Homomorphisms \\}
+\addcontentsline{toc}{subsection}{\S 2. The Group of Homomorphisms}
+
+
+
+\subsubsection*{Exercise 2.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.1.}
+\emph{Show that in the setting of Theorem 2.1
+$\varepsilon_{*} = \mathrm{Hom}(A,\varepsilon)$ is not, in general, surjective
+even if $\varepsilon$ is.
+(Hint: Take $\Lambda = \mathbb{Z}$, $A = \mathbb{Z}/(n)$, the integers mod $n$,
+and the short exact sequence}
+\begin{tikzcd}
+  \mathbb{Z} \arrow[r, tail, "\mu"]
+    & \mathbb{Z} \arrow[r, two heads, "\varepsilon"]
+    & \mathbb{Z}/(n)
+\end{tikzcd}
+\emph{where $\mu$ is multiplication by $n$.)} \\
+
+
+
+\emph{Theorem 2.1.}
+Let
+\begin{tikzcd}
+  B' \arrow[r, tail, "\mu"]
+    & B \arrow[r, "\varepsilon"]
+    & B''
+\end{tikzcd}
+be an exact sequence of $\Lambda$-modules.
+For every $\Lambda$-module $A$ the induced sequence
+\begin{center}
+  \begin{tikzcd}
+    0 \arrow[r]
+      & \mathrm{Hom}_{\Lambda}(A,B') \arrow[r, "\mu_{*}"]
+      & \mathrm{Hom}_{\Lambda}(A,B) \arrow[r, "\varepsilon_{*}"]
+      & \mathrm{Hom}_{\Lambda}(A,B'')
+  \end{tikzcd}
+\end{center}
+is exact. \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Consider
+  \begin{center}
+    \begin{tikzcd}
+      \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}) \arrow[r, "\varepsilon_{*}"]
+        & \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}/(m)).
+    \end{tikzcd}
+  \end{center}
+  Note that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}/(m))$ is not trivial.
+  So to prove that $\varepsilon_{*}$ is not surjective,
+  it suffices to show that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}) = 0$.
+
+\item[(2)]
+  \emph{Show that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}) = 0$.}
+  Suppose $\alpha \in \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z})$.
+  Given any $a \in \mathbb{Z}/(m)$.
+  So $ma = 0$ by the Lagrange's theorem in group theory.
+  So
+  \[
+    0 = \alpha(0) = \alpha(ma) = m \alpha(a) \in \mathbb{Z}.
+  \]
+  So $\alpha(a) = 0 \in \mathbb{Z}$.
+  Hence $\alpha$ is a zero map.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
