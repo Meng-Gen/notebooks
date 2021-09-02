@@ -742,6 +742,54 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.4.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.4.}
+\emph{Show that the abelian group $A$ admits the structure of a $\mathbb{Z}/(m)$-module
+if and only if $mA = 0$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$)
+  It suffices to show that $ma = 0$ for all $a \in A$.
+  Let $\Lambda = \mathbb{Z}/(m)$.
+  \begin{align*}
+    ma
+    &= \underbrace{a + \cdots + a}_{\text{$m$ times}} \\
+    &= \underbrace{1_\Lambda a + \cdots + 1_\Lambda a}_{\text{$m$ times}}
+      &(\text{Axiom M3}) \\
+    &= (\underbrace{1_\Lambda + \cdots + 1_\Lambda}_{\text{$m$ times}}) a
+      &(\text{Axiom M1}) \\
+    &= 0_\Lambda a
+      &(\mathrm{char}(\Lambda) = m) \\
+    &= 0.
+      &(\text{Axiom M1})
+  \end{align*}
+
+\item[(2)]
+  ($\Longleftarrow$)
+  Write $\overline{\lambda} \in \Lambda := \mathbb{Z}/(m)$ where
+  $\lambda \in \mathbb{Z}$ and
+  $\overline{\lambda}$ is the residue class of $\lambda$ in $\Lambda$.
+  Define $\omega: \Lambda \to \mathrm{End}(A, A)$
+  by
+  \[
+    \omega(\overline{\lambda})(a) = \lambda a
+  \]
+  for all $a \in A$ and $\overline{\lambda} \in \Lambda$.
+  $\omega$ is well-defined since $mA = 0$.
+  Note that all four module axioms hold for $A$ (as a $\Lambda$-module).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
