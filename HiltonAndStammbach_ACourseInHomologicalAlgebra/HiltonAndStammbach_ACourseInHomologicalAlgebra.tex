@@ -716,7 +716,7 @@ $\varepsilon_{*} = \mathrm{Hom}(A,\varepsilon)$ is not, in general, surjective
 even if $\varepsilon$ is.
 (Hint: Take $\Lambda = \mathbb{Z}$, $A = \mathbb{Z}/(n)$, the integers mod $n$,
 and the short exact sequence}
-\begin{tikzcd}
+\begin{tikzcd}[cramped, sep=small]
   \mathbb{Z} \arrow[r, tail, "\mu"]
     & \mathbb{Z} \arrow[r, two heads, "\varepsilon"]
     & \mathbb{Z}/(n)
@@ -727,7 +727,7 @@ and the short exact sequence}
 
 \emph{Theorem 2.1.}
 Let
-\begin{tikzcd}
+\begin{tikzcd}[cramped, sep=small]
   B' \arrow[r, tail, "\mu"]
     & B \arrow[r, "\varepsilon"]
     & B''
@@ -752,22 +752,23 @@ is exact. \\
   Consider
   \begin{center}
     \begin{tikzcd}
-      \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}) \arrow[r, "\varepsilon_{*}"]
-        & \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}/(m)).
+      \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(n),\mathbb{Z}) \arrow[r, "\varepsilon_{*}"]
+        & \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(n),\mathbb{Z}/(n)).
     \end{tikzcd}
   \end{center}
-  Note that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}/(m))$ is not trivial.
+  Note that
+  $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(n),\mathbb{Z}/(n)) \cong \mathbb{Z}/(n)$ is not trivial.
   So to prove that $\varepsilon_{*}$ is not surjective,
-  it suffices to show that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}) = 0$.
+  it suffices to show that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(n),\mathbb{Z}) = 0$.
 
 \item[(2)]
-  \emph{Show that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z}) = 0$.}
-  Suppose $\alpha \in \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(m),\mathbb{Z})$.
-  Given any $a \in \mathbb{Z}/(m)$.
-  So $ma = 0$ by the Lagrange's theorem in group theory.
+  \emph{Show that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(n),\mathbb{Z}) = 0$.}
+  Suppose $\alpha \in \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}/(n),\mathbb{Z})$.
+  Given any $a \in \mathbb{Z}/(n)$.
+  So $na = 0$ by the Lagrange's theorem in group theory.
   So
   \[
-    0 = \alpha(0) = \alpha(ma) = m \alpha(a) \in \mathbb{Z}.
+    0 = \alpha(0) = \alpha(na) = n \alpha(a) \in \mathbb{Z}.
   \]
   So $\alpha(a) = 0 \in \mathbb{Z}$.
   Hence $\alpha$ is a zero map.
@@ -782,13 +783,23 @@ $\Box$ \\\\
 
 \subsubsection*{Exercise 2.2.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.2.}
-\emph{Prove Theorem 2.2.} \\
+\emph{Prove Theorem 2.2.
+Show that $\mu^{*} = \mathrm{Hom}_{\Lambda}(\mu,B)$ is not, in general,
+surjective even if $\mu$ is injective.
+(Hint: Take $\Lambda = \mathbb{Z}$, $B = \mathbb{Z}/(n)$, the integers mod $n$,
+and the short exact sequence}
+\begin{tikzcd}[cramped, sep=small]
+  \mathbb{Z} \arrow[r, tail, "\mu"]
+    & \mathbb{Z} \arrow[r, two heads, "\varepsilon"]
+    & \mathbb{Z}/(n)
+\end{tikzcd}
+\emph{where $\mu$ is multiplication by $n$.)} \\
 
 
 
-\emph{Theorem 2.1.}
+\emph{Theorem 2.2.}
 Let
-\begin{tikzcd}
+\begin{tikzcd}[cramped, sep=small]
   A' \arrow[r, "\mu"]
     & A \arrow[r, two heads, "\varepsilon"]
     & A''
@@ -810,6 +821,87 @@ is exact. \\
 \emph{Proof of Theorem 2.2.}
 \begin{enumerate}
 \item[(1)]
+  \emph{Show that $\varepsilon^{*}$ is injective.}
+  Take $\alpha \in \ker(\varepsilon^{*}) \subseteq \mathrm{Hom}_{\Lambda}(A'',B)$.
+  It suffices to show that $\alpha a'' = 0$ for all $a'' \in A''$.
+  By the surjectivity of $\varepsilon$, there exists $a \in A$ such that $\varepsilon a = a''$.
+  Hence
+  \[
+    \alpha a'' = \alpha \varepsilon a = (\varepsilon^{*}(\alpha))(a) = (0)(a) = 0.
+  \]
+
+\item[(2)]
+  \emph{Show that $\mathrm{im}(\varepsilon^{*}) \subseteq \ker(\mu^{*})$.}
+  A map in $\mathrm{im}(\varepsilon^{*})$ is of the form $\alpha \varepsilon$.
+  Plainly, $\varepsilon\mu\alpha$ is a zero map, since $\varepsilon\mu$ already is.
+
+\item[(3)]
+  \emph{Show that $\ker(\mu^{*}) \subseteq \mathrm{im}(\varepsilon^{*})$.}
+  Consider the diagram
+  \begin{center}
+    \begin{tikzcd}
+      A' \arrow[r, "\mu"]
+          & A \arrow[r, two heads, "\varepsilon"]\arrow[d, "\alpha"]
+          & A'' \arrow[ld, dashrightarrow, "\exists \beta"] \\
+          & B
+          &
+    \end{tikzcd}
+  \end{center}
+  We have to show that if $\mu^{*}\alpha = \alpha\mu$ is the zero map,
+  then $\alpha$ is of the form $\varepsilon^{*}\beta = \beta\varepsilon$ for some $\beta: A'' \to B$.
+  But if $\alpha\mu = 0$, $\ker(\alpha) \supseteq \mathrm{im}(\mu) = \ker(\varepsilon)$.
+  Since $\varepsilon$ is surjective, $\alpha$ gives rise to a (unique) map
+  $\beta: A'' \to B$ such that $\alpha = \beta\varepsilon$.
+  In brief,
+  \begin{enumerate}
+  \item[(a)]
+    Define $\beta$ by $a'' \mapsto \alpha(a)$ where $a \in A$ satisfying $\varepsilon(a) = a''$.
+    The existence of $a$ is guaranteed by the surjectivity of $\varepsilon$.
+
+  \item[(b)]
+    $\beta$ is well-defined since $\ker(\alpha) \supseteq \ker(\varepsilon)$.
+
+  \item[(c)]
+    $\beta$ is a homomorphism since both $\alpha, \varepsilon$ are homomorphisms.
+  \end{enumerate}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mu^{*} = \mathrm{Hom}_{\Lambda}(\mu,B)$ is not, in general,
+  surjective even if $\mu$ is injective.}
+  Consider
+  \begin{center}
+    \begin{tikzcd}
+      \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Z}/(n)) \arrow[r, "\mu^{*}"]
+        & \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}, \mathbb{Z}/(n)).
+    \end{tikzcd}
+  \end{center}
+  It suffices to show that
+  $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}/(n)) \cong \mathbb{Z}/(n)$
+  canonically.
+  If so, the homomorphism $\mu^{*}$ maps each
+  $\alpha \in \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}/(n))$
+  to the zero map in $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}/(n))$,
+  which means $\mu^{*}$ is not surjective.
+
+\item[(2)]
+  \emph{Show that $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}/(n)) \cong \mathbb{Z}/(n)$.}
+  Take $\alpha \in \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}/(n))$.
+  Note that $\mathbb{Z} = (1)$.
+  So $\alpha$ is uniquely determined by $\alpha(1)$.
+  Conversely, each element of $a \in \mathbb{Z}/(n)$ determines
+  a unique homomorphism $\alpha: \mathbb{Z} \to \mathbb{Z}/(n)$ by $\alpha(1) = a$.
+  Hence there is a group isomorphism
+  \[
+    \Phi: \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}/(n)) \to \mathbb{Z}/(n)
+  \]
+  such that $\Phi: \alpha \mapsto \alpha(1)$.
+  (It is easy to verify that $\Phi$ is a group homomorphism.)
 \end{enumerate}
 $\Box$ \\\\
 
