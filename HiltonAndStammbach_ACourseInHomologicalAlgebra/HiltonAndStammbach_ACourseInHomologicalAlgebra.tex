@@ -894,7 +894,7 @@ $\Box$ \\
   Take $\alpha \in \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}/(n))$.
   Note that $\mathbb{Z} = (1)$.
   So $\alpha$ is uniquely determined by $\alpha(1)$.
-  Conversely, each element of $a \in \mathbb{Z}/(n)$ determines
+  Conversely, each element $a \in \mathbb{Z}/(n)$ determines
   a unique homomorphism $\alpha: \mathbb{Z} \to \mathbb{Z}/(n)$ by $\alpha(1) = a$.
   Hence there is a group isomorphism
   \[
@@ -902,6 +902,86 @@ $\Box$ \\
   \]
   such that $\Phi: \alpha \mapsto \alpha(1)$.
   (It is easy to verify that $\Phi$ is a group homomorphism.)
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.6.}
+\emph{Compute
+$\mathrm{Hom}(\mathbb{Z},\mathbb{Z}/(n))$,
+$\mathrm{Hom}(\mathbb{Z}/(m),\mathbb{Z}/(n))$,
+$\mathrm{Hom}(\mathbb{Z}/(m),\mathbb{Z})$,
+$\mathrm{Hom}(\mathbb{Q},\mathbb{Z})$,
+$\mathrm{Hom}(\mathbb{Q},\mathbb{Q})$.
+Here ``$\mathrm{Hom}$'' means ``$\mathrm{Hom}_{\mathbb{Z}}$''
+and $\mathbb{Q}$ is the group of rationals.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathrm{Hom}(\mathbb{Z},\mathbb{Z}/(n)) \cong \mathbb{Z}/(n)$.}
+  Each $\alpha \in \mathrm{Hom}(\mathbb{Z},\mathbb{Z}/(n))$
+  is uniquely determined by $\alpha(1) \in \mathbb{Z}/(n)$.
+  Conversely, each element $a \in \mathbb{Z}/(n)$ determines
+  a unique homomorphism $\alpha: \mathbb{Z} \to \mathbb{Z}/(n)$ by $\alpha(1) = a$.
+  Hence there is a group isomorphism
+  \[
+    \Phi: \mathrm{Hom}(\mathbb{Z},\mathbb{Z}/(n)) \to \mathbb{Z}/(n).
+  \]
+
+\item[(2)]
+  \emph{Show that $\mathrm{Hom}(\mathbb{Z}/(m),\mathbb{Z}/(n)) \cong \mathbb{Z}/(m,n)$.}
+  Define a map
+  \[
+    \Phi: \mathrm{Hom}(\mathbb{Z}/(m),\mathbb{Z}/(n)) \to \mathbb{Z}/(m,n)
+  \]
+  by mapping $\alpha \in \mathrm{Hom}(\mathbb{Z}/(m),\mathbb{Z}/(n))$ to $\overline{\alpha(1)}$
+  where $\overline{\alpha(1)}$ is the residue class of $\alpha(1) \in \mathbb{Z}/(n)$
+  in $\mathbb{Z}/(m,n)$.
+  $\Phi$ is well-defined.
+  $\Phi$ is a group homomorphism.
+  $\Phi$ is surjective and injective.
+
+\item[(3)]
+  \emph{Show that $\mathrm{Hom}(\mathbb{Z}/(m),\mathbb{Z}) = 0$.}
+  See part (2) in the proof of Exercise 2.1.
+
+\item[(4)]
+  \emph{Show that $\mathrm{Hom}(\mathbb{Q},\mathbb{Z}) = 0$.}
+  (Reductio ad absurdum)
+  Suppose there were a non zero map $\alpha: \mathbb{Q} \to \mathbb{Z}$.
+  So $\exists \: a \in \mathbb{Q}$ such that $\alpha(a) = N \neq 0$.
+  Note that
+  \[
+    \alpha(a)
+    = \alpha\left(\underbrace{\frac{a}{n} + \cdots + \frac{a}{n}}_{\text{$n$ times}} \right)
+    = \underbrace{\alpha\left( \frac{a}{n} \right) + \cdots + \alpha\left( \frac{a}{n} \right)}_{
+        \text{$n$ times}}
+    = n \alpha\left( \frac{a}{n} \right)
+  \]
+  for all integers $n$.
+  As $\alpha\left( \frac{a}{n} \right) \in \mathbb{Z}$,
+  $n \mid \alpha(a)$ for all $n \in \mathbb{Z}$, which is absurd.
+
+\item[(5)]
+  \emph{Show that $\mathrm{Hom}(\mathbb{Q},\mathbb{Q}) \cong \mathbb{Q}$.}
+  Note that each $\alpha \in \mathrm{Hom}(\mathbb{Q},\mathbb{Q})$
+  is uniquely determined by $\alpha(1) \in \mathbb{Q}$.
+  ($\alpha(r) = r\alpha(1)$ by the similar argument in (4) and part (2) in the proof of Exercise 2.1.)
+  Conversely, each element $a \in \mathbb{Q}$ determines
+  a unique homomorphism $\alpha: \mathbb{Q} \to \mathbb{Q}$ by $\alpha(1) = a$.
+  Hence there is a group isomorphism
+  \[
+    \Phi: \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Q},\mathbb{Q}) \to \mathbb{Q}.
+  \]
 \end{enumerate}
 $\Box$ \\\\
 
