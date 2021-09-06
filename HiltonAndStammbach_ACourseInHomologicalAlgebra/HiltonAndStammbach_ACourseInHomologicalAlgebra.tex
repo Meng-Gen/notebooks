@@ -1020,6 +1020,50 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.6.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.6.}
+\emph{Show that $\mathbb{Z}/(m) \oplus \mathbb{Z}/(n) = \mathbb{Z}/(mn)$
+if and only if $m$ and $n$ are mutually prime.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  ($\Longrightarrow$)
+  Given any $g := (g_1, g_2) \in \mathbb{Z}/(m) \oplus \mathbb{Z}/(n) \cong \mathbb{Z}/(mn)$.
+  As $m g_1 = 0 \in \mathbb{Z}/(m)$ and $n g_2 = 0 \in \mathbb{Z}/(n)$,
+  \[
+    \mathrm{lcm}(m,n) g
+    = (\mathrm{lcm}(m,n) g_1, \mathrm{lcm}(m,n) g_2)
+    = (0,0).
+  \]
+  So $\mathrm{lcm}(m,n)$ is divisible by the order of $\mathbb{Z}/(mn)$, that is,
+  $mn|\mathrm{lcm}(m,n)$.
+  Hence $\mathrm{gcd}(m,n) = 1$ since $mn = \mathrm{lcm}(m,n) \mathrm{gcd}(m,n)$.
+
+\item[(2)]
+  ($\Longleftarrow$)
+  Define $\alpha: \mathbb{Z} \to \mathbb{Z}/(m) \oplus \mathbb{Z}/(n)$ by
+  \[
+    \alpha: g \mapsto (g + (m), g + (n)).
+  \]
+  $\alpha$ is a group homomorphism.
+  The Chinese remainder theorem and $\mathrm{gcd}(m,n) = 1$ shows that $\alpha$ is surjective.
+  The kernel of $\alpha$ is $(mn)$.
+  Hence $\alpha$ induces a group isomorphism
+  \[
+    \overline{\alpha}: \mathbb{Z}/(mn) \to \mathbb{Z}/(m) \oplus \mathbb{Z}/(n).
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
