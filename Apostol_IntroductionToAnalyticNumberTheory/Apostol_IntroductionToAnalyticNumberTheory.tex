@@ -660,6 +660,64 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.8.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.8.}
+\emph{Prove that
+\[
+  \sum_{d|n} \mu(d) (\log d)^m = 0
+\]
+if $m \geq 1$ and $n$ has more than $m$ distinct prime factors.
+(Hint: Induction.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Induction.
+
+\item[(2)]
+  (Base case)
+  Suppose $m = 1$.
+  Theorem 2.11 implies that
+  \[
+    \sum_{d|n} \mu(d) \log(d) = - \Lambda(n) = 0
+  \]
+  since $n$ has at least $2$ distinct prime factors.
+
+\item[(3)]
+  (Inductive step)
+  Suppose the conclusion holds for $m < m_0$ and $n$ has more than $m$ distinct prime factors.
+  Given $n$ having more than $m_0$ distinct prime factors.
+  Write $n = p^a n'$ where $a > 0$ and $p \nmid n'$.
+  (Here $q$ has more than $m_0 - 1$ distinct prime factors.)
+  So by the induction hypothesis and $\sum_{d|n'} \mu(d) = 0$,
+  we have
+  \begin{align*}
+    &\:
+    \sum_{d|n} \mu(d) (\log d)^{m_0} \\
+    =&\: \sum_{d|n'} \sum_{i = 0}^{a} \mu(p^i d) (\log p^i d)^{m_0} \\
+    =&\: \sum_{d|n'} [ \mu(d) (\log d)^{m_0} + \mu(pd) (\log pd)^{m_0} ] \\
+    =&\: \sum_{d|n'} [ \mu(d) (\log d)^{m_0}
+        + \underbrace{\mu(p)}_{= -1}\mu(d) (\log p + \log d)^{m_0} ] \\
+    =&\: \sum_{d|n'} \mu(d) [ (\log d)^{m_0} - (\log p + \log d)^{m_0} ] \\
+    =&\: \sum_{d|n'} \mu(d) [ - (\log p)^{m_0} - \cdots - m_0 \log p (\log d)^{m_0 - 1} ] \\
+    =&\: - (\log p)^{m_0} \sum_{d|n'} \mu(d) - \cdots
+        - m_0 \log p \sum_{d|n'} \mu(d) (\log d)^{m_0 - 1} \\
+    =&\: 0.
+  \end{align*}
+
+\item[(4)]
+  By (2)(3), the conclusion holds for all $m \geq 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.9.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.9.}
 \emph{If $x$ is real, $x \geq 1$, let $\varphi(x,n)$ denote
