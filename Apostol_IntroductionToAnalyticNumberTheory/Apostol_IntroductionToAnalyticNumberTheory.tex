@@ -86,14 +86,14 @@ $\Box$ \\\\
 
 
 
-\subsubsection*{Exercise 1.16.}
-\addcontentsline{toc}{subsubsection}{Exercise 1.16.}
+\subsubsection*{Exercise 1.16. (Mersenne primes)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.16. (Mersenne primes)}
 \emph{Prove that if $2^n-1$ is prime, then $n$ is prime.} \\
 
 
 
 \emph{Proof.}
-  If $n$ is a composite number,
+  Suppose $n$ is a composite number,
   then we can write $n = ab$ with $a > 1$, $b > 1$.
   Hence
   \[
@@ -103,6 +103,33 @@ $\Box$ \\\\
     = \underbrace{(2^a - 1)}_{> 1}\underbrace{\{(2^a)^{b-1} + \cdots + 1\}}_{> 1}
   \]
   is also a composite number.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.17. (Fermat primes)}
+\addcontentsline{toc}{subsubsection}{Exercise 1.17. (Fermat primes)}
+\emph{Prove that if $2^n+1$ is prime, then $n$ is a power of $2$.} \\
+
+
+
+\emph{Proof.}
+  Write $n = 2^a b$ where $a$ is a nonnegative integer and $b$ is odd.
+  Suppose $n$ is not a power of $2$, then $b > 1$.
+  Hence
+  \[
+    2^n + 1
+    = 2^{2^a b} + 1
+    = \underbrace{(2^{2^a} + 1)}_{> 1}
+        \underbrace{\{2^{2^a(b-1)} - \cdots + 1\}}_{> 1}
+  \]
+  is a composite number.
+  (Note that $1 < 2^{2^a(b-1)} < 2^n + 1$
+  implies that $1 < (2^{2^a(b-1)} - \cdots + 1) < 2^n+1$ too.)
 $\Box$ \\\\
 
 
