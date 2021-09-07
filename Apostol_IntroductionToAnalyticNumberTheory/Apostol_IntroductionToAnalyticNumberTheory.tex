@@ -499,6 +499,34 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.5.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.5.}
+\emph{Define $\nu(1) = 0$,
+and for $n > 1$ let $\nu(n)$ be the number of distinct prime factors of $n$.
+Let $f = \mu * \nu$ and prove that $f(n)$ is either $0$ or $1$.} \\
+
+
+
+\emph{Proof.}
+  It is easy to verify that
+  \begin{equation*}
+    f(n) :=
+    \begin{cases}
+      1 & \text{if $n$ is prime}, \\
+      0 & \text{otherwise}.
+    \end{cases}
+  \end{equation*}
+  satisfies $\sum_{d \mid n} f(d) = \nu(n)$.
+  Hence $f = \mu * \nu$ holds by the M\"obius inversion formula (Theorem 2.9).
+$\Box$ \\
+
+
+
+\emph{Note.}
+We can calculate $f(n)$ for $n = 1, 2, \ldots, 10$ to find the pattern of $f$. \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
