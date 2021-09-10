@@ -1242,6 +1242,53 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 6.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 6.2.}
+\emph{Let $G$ be a finite group of order $n$ with identity element $e$.
+If $a_1, \ldots, a_n$ are $n$ elements of $G$, not necessarily distinct,
+prove that there are integers $p$ and $q$ with
+$1 \leq p \leq q \leq n$ such that $a_p a_{p+1} \cdots a_q = e$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Consider the set
+  \[
+    S
+    = \{ s_k := a_1 \cdots a_k : 1 \leq k \leq n \}.
+  \]
+
+\item[(2)]
+  There is nothing to do when $e \in S$ ($p = 1$).
+
+\item[(3)]
+  Suppose $e \not\in S$.
+  The pigeonhole principle implies that
+  there are exists two distinct elements $s_p, s_q \in S$ such that $s_p = s_q$.
+  Might assume $p < q$.
+  Hence
+  \begin{align*}
+    s_p = s_q
+    \Longleftrightarrow &\:
+    a_1 \cdots a_p = a_1 \cdots a_p a_{p+1} \cdots a_q \\
+    \Longleftrightarrow &\:
+    e = a_{p+1} \cdots a_q = s_p^{-1} s_q
+  \end{align*}
+  for some $1 \leq p < q \leq n$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
