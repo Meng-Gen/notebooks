@@ -1220,16 +1220,16 @@ $\Box$ \\\\
 
 \begin{enumerate}
 \item[(1)]
-  Worth the time and effort to read.
-
-\item[(2)]
   (Proposition VI.1)
   \emph{Let $H$ be a subgroup of a finite abelian group $G$.
   Every character of $H$ extends to a character of $G$.}
 
-\item[(3)]
+\item[(2)]
   (Proposition VI.2)
   \emph{The group $\widehat{G}$ is a finite abelian group of the same order of $G$.}
+
+\item[(3)]
+  Worth the time and effort to read this book.
 \end{enumerate}
 $\Box$ \\\\
 
@@ -1257,6 +1257,32 @@ $\Box$ \\\\
   \emph{Show directly, using Schur's lemma,
   that each irreducible representation of an abelian group,
   finite of not, has degree $1$.}
+  \emph{Proof.}
+  \begin{enumerate}
+  \item[(a)]
+    (Schur's lemma)
+    Let $\rho^1: G \to \mathsf{GL}(V_1)$ and $\rho^2: G \to \mathsf{GL}(V_2)$ be
+    two irreducible representations of $G$,
+    and let $f$ be a linear mapping of $V_1$ into $V_2$ such that
+    $\rho^2_s \circ f = f \circ \rho^1_s$ for all $s \in G$. Then:
+    \begin{enumerate}
+    \item[(i)]
+      If $\rho^1$ and $\rho^2$ are not isomorphic, we have $f = 0$.
+
+    \item[(ii)]
+      If $V_1 = V_2$ and $\rho^1 = \rho^2$, $f$ is a homothety (i.e., a scalar multiple of the identity).
+    \end{enumerate}
+
+  \item[(b)]
+    Let $\rho: G \to \mathsf{GL}(V)$ be an irreducible representations of $G$.
+    Since $G$ is abelian,
+    \[
+      \rho_s \circ \rho_t = \rho_t \circ \rho_s.
+    \]
+    Schur's lemma implies that $\rho_s$ is a homothety for any $s \in G$.
+    Since $\rho$ is irreducible, $\dim V$ cannot be strictly larger than $1$.
+  \end{enumerate}
+  $\Box$ \\
 
 \item[(3)]
   (Proposition 2.7)
