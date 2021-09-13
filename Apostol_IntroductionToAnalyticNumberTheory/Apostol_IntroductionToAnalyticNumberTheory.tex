@@ -1469,6 +1469,36 @@ for $s \to 1$. \\
   for each $\chi \neq \chi_1$.
   Compare to Lemma VI.8 in \emph{Serre, A Course in Arithmetic}:
   If $\chi \neq 1$, $f_{\chi}(s)$ remains bounded when $s \to 1$.
+
+\item[(5)]
+  To prove part (4), consider the sum
+  \[
+    \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}
+  \]
+  and we write the sum as
+  \[
+    \sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n}
+    = \sum_{p \leq x} \frac{\chi(p) \log p}{p}
+        + \underbrace{\sum_{p \leq x} \sum_{1 \leq a \leq \frac{\log x}{\log p}}
+            \frac{\chi(p^a) \log p}{p^a}}_{= O(1)}.
+  \]
+  Hence it suffices to show that $\sum_{n \leq x} \frac{\chi(n) \Lambda(n)}{n} = O(1)$.
+  The proof is elementary and worth reading too.
+  Compare to the proof of Lemma VI.8 in \emph{Serre, A Course in Arithmetic}:
+  we consider the $L$ function
+  \[
+    L(s,\chi)
+    = \sum \frac{\chi(n)}{n^s}
+    = \prod \frac{1}{1 - \frac{\chi(p)}{p^s}}
+  \]
+  for $\mathrm{Re}(s) > 1$.
+  Write
+  \[
+    \underbrace{\log L(s,\chi)}_{= O(1)}
+    = f_{\chi}(s) + \underbrace{\sum_{\substack{p \\ m \geq 2}} \frac{\chi(p)^m}{mp^{ms}}}_{= O(1)}
+  \]
+  to get $f_{\chi}(s) = O(1)$.
+  To prove $\log L(s,\chi) = O(1)$, we need some knowledge about complex analysis.
 \end{enumerate}
 
 
