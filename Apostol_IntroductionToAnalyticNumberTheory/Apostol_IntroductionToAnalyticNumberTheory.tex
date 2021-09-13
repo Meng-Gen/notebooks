@@ -1375,7 +1375,104 @@ $\Box$ \\\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newpage
+\section*{Chapter 7: Dirichlet's Theorem on Primes in Arithmetic Progressions \\}
+\addcontentsline{toc}{section}{Chapter 7: Dirichlet's Theorem on Primes in Arithmetic Progressions}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Note.}
+\addcontentsline{toc}{subsubsection}{Note.}
+
+Let $k > 0$ and $(h,k) = 1$.
+Let $P$ be the set of primes numbers.
+Let $P_h$ be the set of primes numbers such that $p \equiv h \pmod k$.
+\\
+
+
+\emph{Theorem 7.3.}
+\[
+  \sum_{\substack{p \leq x \\ p \in P_h}} \frac{\log p}{p} = \frac{1}{\varphi(k)} \log x + O(1)
+\]
+for all $x > 1$. \\
+
+We deal with the series $\sum p^{-1} \log p$ rather than $\sum p^{-1}$ to simplify the proof.
+Compare to the book \emph{Serre, A Course in Arithmetic} for a classical proof of Dirichlet's Theorem:
+\[
+  \sum_{p \in P_h} \frac{1}{p^s} \sim \frac{1}{\varphi(k)} \log \frac{1}{s-1}.
+\]
+for $s \to 1$. \\
+
+
+
+\emph{Outline of the proof.}
+\begin{enumerate}
+\item[(1)]
+  Theorem 4.10 says that
+  \[
+    \sum_{p \leq x} \frac{\log p}{p}
+    = \log x + O(1).
+  \]
+  Compare to Corollary 2 to Proposition VI.10 in \emph{Serre, A Course in Arithmetic}:
+  When $s \to 1$, one has
+  \[
+    \sum_{p} p^{-s} \sim \log \frac{1}{s-1}.
+  \]
+
+\item[(2)]
+  By the orthogonality relation for Dirichlet characters,
+  \begin{align*}
+    \varphi(k) \sum_{\substack{p \leq x \\ p \in P_h}} \frac{\log p}{p}
+    &= \overline{\chi_1}(h) \sum_{p \leq x} \frac{\chi_1(p) \log p}{p} 
+        + \sum_{r=2}^{\varphi(k)} \overline{\chi_r}(h)\sum_{p \leq x} \frac{\chi_r(p) \log p}{p} \\
+    &= \sum_{\substack{p \leq x \\ p \in P_k}} \frac{\log p}{p}
+        + \sum_{r=2}^{\varphi(k)} \overline{\chi_r}(h)\sum_{p \leq x} \frac{\chi_r(p) \log p}{p}.
+  \end{align*}
+  Hence it suffices to consider $\sum_{\substack{p \leq x \\ p \in P_k}} \frac{\log p}{p}$
+  and $\sum_{p \leq x} \frac{\chi_r(p) \log p}{p}$.
+  Compare to Lemma VI.9 in \emph{Serre, A Course in Arithmetic}:
+  Let
+  \[
+    f_{\chi}(s) = \sum_{p \nmid k} \frac{\chi(p)}{p^s}.
+  \]
+  Then
+  \[
+    \sum_{p \in P_h} \frac{1}{p^s}
+    = \frac{1}{\varphi(k)} \sum_{\chi} \chi(h)^{-1} f_{\chi}(s).
+  \]
+  Again it suffices to consider two cases $\chi = 1$ and $\chi \neq 1$.
+
+\item[(3)]
+  Show that
+  \[
+    \sum_{\substack{p \leq x \\ p \in P_k}} \frac{\log p}{p}
+    = \sum_{p \leq x} \frac{\log p}{p} + O(1).
+  \]
+  Compare to Lemma VI.7 in \emph{Serre, A Course in Arithmetic}:
+  If $\chi = 1$, then for $s \to 1$
+  \[
+    f_{\chi}(s) \sim \log \frac{1}{s - 1}.
+  \]
+
+\item[(4)]
+  Show that
+  \[
+    \sum_{p \leq x} \frac{\chi(p) \log p}{p} = O(1)
+  \]
+  for each $\chi \neq \chi_1$.
+  Compare to Lemma VI.8 in \emph{Serre, A Course in Arithmetic}:
+  If $\chi \neq 1$, $f_{\chi}(s)$ remains bounded when $s \to 1$.
+\end{enumerate}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
