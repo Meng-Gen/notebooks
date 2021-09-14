@@ -1374,6 +1374,58 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 6.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 6.3.}
+\emph{Let $G$ be the set of all $2 \times 2$ matrices
+$\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}$, where $a$, $b$, $c$, $d$ are integers with $ad - bc = 1$.
+Prove that $G$ is a group under matrix multiplcation.
+This group is sometimes called the \textbf{modular group}.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  (Binary operation)
+  Note that $\mathbb{Z}$ is a ring and
+  $\det(st) = \det(s)\det(t) = 1 \cdot 1 = 1$ whenever $s, t \in G$.
+
+\item[(2)]
+  (Associativity)
+  It is followed from the associativity of $\mathsf{M}_2(\mathbb{C}) \supseteq G$.
+
+\item[(3)]
+  (Identity element)
+  $\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}$
+  is the identity element of $G$.
+
+\item[(4)]
+  (Inverse element)
+  The inverse of
+  $\begin{pmatrix}
+    a & b \\
+    c & d
+  \end{pmatrix} \in G$
+  is
+  $\begin{pmatrix}
+    d & -b \\
+    -c & a
+  \end{pmatrix} \in G$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
