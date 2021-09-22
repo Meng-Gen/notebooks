@@ -49,6 +49,43 @@
 
 
 
+In these exercises lower case latin letters $a, b, c, \ldots, x, y, z$ represent integers.
+Prove each of the statement in Exercise 1.1 through 1.6. \\
+
+
+
+\subsubsection*{Exercise 1.1.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.1.}
+\emph{If $(a,b) = 1$ and if $c|a$ and $d|b$, then $(c,d) = 1$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $(a,b) = 1$ if and only if there are $x, y \in \mathbb{Z}$ such that
+  \[
+    ax + by = 1.
+  \]
+  As $c|a$ and $d|b$, there exist $c', d' \in \mathbb{Z}$ such that
+  $cc' = a$ and $dd' = b$.
+
+\item[(2)]
+  Hence
+  \[
+    c\underbrace{(c'x)}_{:= x'} + d\underbrace{(d'y)}_{:= y'} = 1
+  \]
+  for some $x', y' \in \mathbb{Z}$.
+  That is, $(c,d) = 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.11.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.11.}
 \emph{Prove that $n^4 + 4$ is composite if $n > 1$.} \\
