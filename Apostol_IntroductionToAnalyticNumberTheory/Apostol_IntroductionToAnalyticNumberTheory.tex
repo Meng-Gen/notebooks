@@ -60,13 +60,14 @@ Prove each of the statement in Exercise 1.1 through 1.6. \\
 
 
 
-\emph{Proof.}
+\emph{Proof (Theorem 1.2).}
 \begin{enumerate}
 \item[(1)]
   $(a,b) = 1$ if and only if there are $x, y \in \mathbb{Z}$ such that
   \[
-    ax + by = 1.
+    ax + by = 1
   \]
+  (Theorem 1.2).
   As $c|a$ and $d|b$, there exist $c', d' \in \mathbb{Z}$ such that
   $cc' = a$ and $dd' = b$.
 
@@ -77,6 +78,94 @@ Prove each of the statement in Exercise 1.1 through 1.6. \\
   \]
   for some $x', y' \in \mathbb{Z}$.
   That is, $(c,d) = 1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Theorem 1.12).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    a = \prod p_i^{a_i}, \qquad
+    b = \prod p_i^{b_i}.
+  \]
+  Here $\min\{a_i, b_i\} = 0$ since $(a,b) = 1$ (Theorem 1.12).
+
+\item[(2)]
+  As $c|a$ and $d|b$,
+  \[
+    c = \prod p_i^{a_i'}, \qquad
+    d = \prod p_i^{b_i'}
+  \]
+  where $a_i' \leq a_i$ and $b_i' \leq b_i$.
+  As $0 \leq \min\{a_i', b_i'\} \leq \min\{a_i, b_i\} = 0$, $\min\{a_i', b_i'\} = 0$.
+  Hence $(c,d) = \prod p_i^{\min\{a_i', b_i'\}} = 1$ (Theorem 1.12).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 1.2.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.2.}
+\emph{If $(a,b) = (a,c) = 1$, then $(a,bc) = 1$.} \\
+
+
+
+\emph{Proof (Theorem 1.2).}
+\begin{enumerate}
+\item[(1)]
+  $(a,b) = (a,c) = 1$ implies that there are $x, y, z, w \in \mathbb{Z}$ such that
+  \[
+    ax + by = 1, \qquad
+    az + cw = 1
+  \]
+  (Theorem 1.2).
+
+\item[(2)]
+  So
+  \[
+    1
+    = (ax + by)(az + cw)
+    = a\underbrace{(axz + byz + cxw)}_{:= x'} + bc\underbrace{(yw)}_{:= y'}
+  \]
+  for some $x', y' \in \mathbb{Z}$.
+  That is, $(a,bc) = 1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Theorem 1.12).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    a = \prod p_i^{a_i}, \qquad
+    b = \prod p_i^{b_i}, \qquad
+    c = \prod p_i^{c_i}.
+  \]
+  Here $\min\{a_i, b_i\} = \min\{a_i, c_i\} = 0$ since $(a,b) = (a,c) = 1$ (Theorem 1.12).
+  Observe that $bc = \prod p_i^{b_i+c_i}$.
+
+\item[(2)]
+  \emph{Show that for all $i$,
+  $\min\{a_i, b_i+c_i\} = 0$ if $\min\{a_i, b_i\} = \min\{a_i, c_i\} = 0$.}
+  Nothing to do if $a_i = 0$.
+  So if $a_i > 0$, we have
+  \[
+    b_i = c_i = 0
+    \Longrightarrow b_i+c_i = 0
+    \Longrightarrow \min\{a_i, b_i+c_i\} = 0.
+  \]
+
+\item[(3)]
+  Therefore, $(a,bc) = \prod p_i^{\min\{a_i, b_i+c_i\}} = 1$ (Theorem 1.12).
 \end{enumerate}
 $\Box$ \\\\
 
