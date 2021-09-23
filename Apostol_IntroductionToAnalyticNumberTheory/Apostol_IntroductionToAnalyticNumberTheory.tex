@@ -175,6 +175,67 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 1.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 1.3.}
+\emph{If $(a,b) = 1$, then $(a^n,b^k) = 1$ for all $n \geq 1$, $k \geq 1$.} \\
+
+
+
+\emph{Proof (Theorem 1.2).}
+\begin{enumerate}
+\item[(1)]
+  $(a,b) = 1$ implies that there are $x, y \in \mathbb{Z}$ such that
+  \[
+    ax + by = 1
+  \]
+  (Theorem 1.2).
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    1
+    =& \: (ax + by)^{n+k-1} \\
+    =& \: \sum_{i=0}^{n+k-1} {n+k-1 \choose i} (ax)^i (by)^{n+k-1-i} \\
+    =& \: \sum_{i=0}^{n-1} {n+k-1 \choose i} (ax)^i (by)^{n+k-1-i} \\
+        & \: + \sum_{i=n}^{n+k-1} {n+k-1 \choose i} (ax)^i (by)^{n+k-1-i} \\
+    =& \: b^k \underbrace{y^k \sum_{i=0}^{n} {n+k-1 \choose i} (ax)^i (by)^{n-1-i}}_{:= y'} \\
+        & \: + a^n \underbrace{x^n \sum_{i=n}^{n+k-1} {n+k-1 \choose i} (ax)^{i-n} (by)^{n+k-1-i}}_{:= x'}
+  \end{align*}
+  for some $x', y' \in \mathbb{Z}$.
+  That is, $(a^n,b^k) = 1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof (Theorem 1.12).}
+\begin{enumerate}
+\item[(1)]
+  Write
+  \[
+    a = \prod p_i^{a_i}, \qquad
+    b = \prod p_i^{b_i}.
+  \]
+  Here $\min\{a_i, b_i\} = 0$ since $(a,b) = 1$ (Theorem 1.12).
+
+\item[(2)]
+  Observe that
+  \[
+    a^n = \prod p_i^{na_i}, \qquad
+    b^k = \prod p_i^{kb_i}.
+  \]
+  Here $\min\{n a_i, k b_i\} = 0$
+  (since $a_i = 0 \Longrightarrow na_i = 0$ and $b_i = 0 \Longrightarrow kb_i = 0$).
+  Therefore $(a^n,b^k) = 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 1.11.}
 \addcontentsline{toc}{subsubsection}{Exercise 1.11.}
 \emph{Prove that $n^4 + 4$ is composite if $n > 1$.} \\
