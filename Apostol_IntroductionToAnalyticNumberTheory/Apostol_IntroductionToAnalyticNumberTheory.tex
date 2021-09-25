@@ -1102,6 +1102,38 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.18.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.18.}
+\emph{Prove that every number of the form $2^{a-1}(2^a-1)$ is perfect
+if $2^a-1$ is prime.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Since $2^a-1$ is prime, $a \geq 2$.
+  So $2^{a-1} < 2^a - 1$ and thus $(2^{a-1}, 2^a - 1) = 1$.
+
+\item[(2)]
+  Since $\sigma$ is a multiplicative,
+  \begin{align*}
+    \sigma(2^{a-1}(2^a-1))
+    =& \: \sigma(2^{a-1}) \sigma(2^a-1) \\
+    =& \: (1 + 2 + \cdots + 2^{a-1})\{1 + (2^a-1)\} \\
+    =& \: (2^a - 1) \cdot 2^a \\
+    =& \: 2 \cdot 2^{a-1}(2^a-1).
+  \end{align*}
+  That is, $2^{a-1}(2^a-1)$ is perfect.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
