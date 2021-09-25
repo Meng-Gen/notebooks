@@ -1113,22 +1113,19 @@ if $2^a-1$ is prime.} \\
 
 
 \emph{Proof.}
-\begin{enumerate}
-\item[(1)]
-  Since $2^a-1$ is prime, $a \geq 2$.
-  So $2^{a-1} < 2^a - 1$ and thus $(2^{a-1}, 2^a - 1) = 1$.
-
-\item[(2)]
-  Since $\sigma$ is a multiplicative,
+  Write $n := 2^{a-1}(2^a-1)$.
+  Here $(2^{a-1}, 2^a - 1) = 1$ since $2^a - 1$ is always odd and Exercise 1.3.
+  Hence
   \begin{align*}
-    \sigma(2^{a-1}(2^a-1))
-    =& \: \sigma(2^{a-1}) \sigma(2^a-1) \\
-    =& \: (1 + 2 + \cdots + 2^{a-1})\{1 + (2^a-1)\} \\
-    =& \: (2^a - 1) \cdot 2^a \\
-    =& \: 2 \cdot 2^{a-1}(2^a-1).
+    \sigma(n)
+    =& \: \sigma(2^{a-1}) \sigma(2^a-1)
+      &(\text{$\sigma$ is a multiplicative}) \\
+    =& \: (1 + 2 + \cdots + 2^{a-1})\{1 + (2^a-1)\}
+      &(\text{$2^a - 1$ is prime}) \\
+    =& \: (2^a - 1) \cdot \underbrace{2^a}_{= 2^{a-1} \cdot 2} \\
+    =& \: 2n.
   \end{align*}
-  That is, $2^{a-1}(2^a-1)$ is perfect.
-\end{enumerate}
+  Therefore $n$ is perfect.
 $\Box$ \\\\
 
 
