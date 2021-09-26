@@ -1122,10 +1122,57 @@ if $2^a-1$ is prime.} \\
       &(\text{$\sigma$ is a multiplicative}) \\
     =& \: (1 + 2 + \cdots + 2^{a-1})\{1 + (2^a-1)\}
       &(\text{$2^a - 1$ is prime}) \\
-    =& \: (2^a - 1) \cdot \underbrace{2^a}_{= 2^{a-1} \cdot 2} \\
+    =& \: (2^a - 1) \cdot \underbrace{(2^a)}_{= 2^{a-1} \cdot 2} \\
     =& \: 2n.
   \end{align*}
   Therefore $n$ is perfect.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.21.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.21.}
+\emph{Let $f(n) = \lfloor \sqrt{n} \rfloor - \lfloor \sqrt{n-1} \rfloor$.
+Prove that $f$ is multiplicative but not completely multiplicative.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that}
+  \begin{equation*}
+    f(n) =
+    \begin{cases}
+      1 & \text{if $n$ is a square,} \\
+      0 & \text{otherwise}.
+    \end{cases}
+  \end{equation*}
+  \begin{enumerate}
+  \item[(a)]
+    Write $m = \lfloor \sqrt{n} \rfloor$. So $m^2 \leq n < (m+1)^2$.
+
+  \item[(b)]
+    Suppose $n = m^2$ is a square.
+    Since $m \geq 1$ and $(m-1)^2 \leq m^2 - 1 = n - 1 < m^2$,
+    $\lfloor \sqrt{n-1} \rfloor = m - 1$.
+    Therefore $f(n) = 1$.
+
+  \item[(c)]
+    Suppose $n$ is not a square.
+    So $m^2 < n < (m+1)^2$.
+    So $\lfloor \sqrt{n-1} \rfloor = m$ since $m^2 \leq n - 1 < n < (m+1)^2$.
+    Therefore $f(n) = 0$.
+  \end{enumerate}
+
+\item[(2)]
+  It is easy to see that $f$ is multiplicative but not completely multiplicative
+  (since $f(p^2) \neq f(p)^2$ for all prime $p$).
+\end{enumerate}
 $\Box$ \\\\
 
 
