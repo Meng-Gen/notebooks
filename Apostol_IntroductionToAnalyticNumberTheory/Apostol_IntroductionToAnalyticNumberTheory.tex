@@ -608,8 +608,8 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement 2.3.1. (Chinese remainder theorem)}
-\addcontentsline{toc}{subsubsection}{Supplement 2.3.1. (Chinese remainder theorem)}
+\subsubsection*{Supplement (Chinese remainder theorem).}
+\addcontentsline{toc}{subsubsection}{Supplement (Chinese remainder theorem).}
 (Exercise I.3.5 in the textbook: \emph{J\"orgen Neukirch, Algebraic Number Theory}.)
 \emph{The quotient ring $\mathcal{O}/\mathfrak{a}$ of a Dedekind domain by
 an ideal $\mathfrak{a} \neq 0$ is a principal ideal domain.
@@ -1454,6 +1454,184 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{Properties of the greatest-integer function \\}
+\addcontentsline{toc}{subsection}{Properties of the greatest-integer function}
+
+
+
+\emph{Note.}
+We might define
+\begin{align*}
+  \lfloor x \rfloor = &\: \text{the greatest integer less than or equal to $x$}; \\
+  \lceil x \rceil = &\: \text{the least integer greater than or equal to $x$}.
+\end{align*}
+Kenneth E. Iverson introduced this notation, as well as the names ``floor'' and ``ceiling,''
+early in the 1960s [Kenneth E. Iverson, \emph{A Programming Language}. Wiley, 1962. page 12]. \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.17.}
+\addcontentsline{toc}{subsubsection}{3.17}
+\emph{Prove that $\lfloor x \rfloor + \lfloor x+\frac{1}{2} \rfloor = \lfloor 2x \rfloor$
+and more generally,}
+\[
+  \sum_{k=0}^{n-1} \left\lfloor x + \frac{k}{n} \right\rfloor
+  = \lfloor nx \rfloor.
+\]
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that
+  \[
+    m = \sum_{k=0}^{n-1} \left\lfloor \frac{m + k}{n} \right\rfloor
+  \]
+  for $n, m \in \mathbb{Z}$ and $n > 0$.}
+  Note that
+  \[
+    m + k
+    = n \left\lfloor \frac{m + k}{n} \right\rfloor
+        + \underbrace{\{ (m + k) \text{ mod } n \}}_{:= r(m+k)}
+  \]
+  for $k = 0, \ldots, n-1$ where $0 \leq r(m+k) < n$ is an integer.
+  Note that $\{ r(m+k) : k = 0, \ldots, n-1 \}$ is a rearrangement of $\{ 0, \ldots, n-1 \}$.
+  So
+  \begin{align*}
+    &\: \sum_{k=0}^{n-1} (m+k)
+    = \sum_{k=0}^{n-1} n \left\lfloor \frac{m + k}{n} \right\rfloor + \sum_{k=0}^{n-1} r(m+k) \\
+    \Longrightarrow &\:
+    nm + \sum_{k=0}^{n-1} k
+    = n \sum_{k=0}^{n-1} \left\lfloor \frac{m + k}{n} \right\rfloor + \sum_{k=0}^{n-1} k \\
+    \Longrightarrow &\:
+    m = \sum_{k=0}^{n-1} \left\lfloor \frac{m + k}{n} \right\rfloor.
+  \end{align*}
+
+\item[(2)]
+  \emph{Show that $\left\lfloor \frac{m + x}{n} \right\rfloor
+  = \left\lfloor \frac{m + \lfloor x \rfloor}{n} \right\rfloor$
+  if $n, m \in \mathbb{Z}$, $n > 0$ and $x \in \mathbb{R}$.}
+  Similar to (1), we write
+  \[
+    m + \lfloor x \rfloor
+    = n \left\lfloor \frac{m + \lfloor x \rfloor}{n} \right\rfloor + r
+  \]
+  where $0 \leq r < n$ is an integer.
+  So
+  \[
+    m + x
+    = n \left\lfloor \frac{m + \lfloor x \rfloor}{n} \right\rfloor
+    + (r + x - \lfloor x \rfloor).
+  \]
+  Note that $0 \leq r + x - \lfloor x \rfloor < n$.
+  Hence
+  \[
+    \left\lfloor \frac{m + x}{n} \right\rfloor
+    = \left\lfloor \frac{m + \lfloor x \rfloor}{n} \right\rfloor.
+  \]
+
+\item[(3)]
+  Now take $m := \lfloor nx \rfloor$ in (1) and apply (2) to get the desired conclusion.
+\end{enumerate}
+$\Box$ \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Supplement (Related exercises).}
+\addcontentsline{toc}{subsubsection}{Supplement (Related exercises).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\left\lceil \frac{m + x}{n} \right\rceil
+  = \left\lceil \frac{m + \lceil x \rceil}{n} \right\rceil$
+  if $n, m \in \mathbb{Z}$, $n > 0$ and $x \in \mathbb{R}$.}
+
+\item[(2)]
+  \emph{Show that
+  \[
+    m = \sum_{k=0}^{n-1} \left\lceil \frac{m - k}{n} \right\rceil
+  \]
+  for $n, m \in \mathbb{Z}$ and $n > 0$.}
+
+\item[(3)]
+  \emph{Prove that $\lceil x \rceil + \lceil x-\frac{1}{2} \rceil = \lceil 2x \rceil$
+  and more generally,}
+  \[
+    \sum_{k=0}^{n-1} \left\lceil x + \frac{k}{n} \right\rceil
+    = \lceil nx \rceil.
+  \]
+
+\item[(4)]
+  \emph{Show that}
+  \[
+    \sum_{k=0}^{n-1} \left\lfloor \frac{mk + x}{n} \right\rfloor
+    = g \left\lfloor \frac{x}{g} \right\rfloor + \frac{1}{2}(mn - m - n + g)
+  \]
+  if $n, m \in \mathbb{Z}$, $n > 0$, $x \in \mathbb{R}$ and $g = \gcd(m,n)$.
+
+\item[(5)]
+  (Reciprocity law) Hence
+  \[
+    \sum_{k=0}^{n-1} \left\lfloor \frac{mk + x}{n} \right\rfloor
+    = \sum_{k=0}^{m-1} \left\lfloor \frac{nk + x}{m} \right\rfloor
+  \]
+  if $m, n > 0$. \\\\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.20.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.20.}
+\emph{If $n$ is a positive integer prove that
+$\lfloor \sqrt{n} + \sqrt{n+1} \rfloor = \lfloor \sqrt{4n+2} \rfloor$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \begin{align*}
+    &\: (\sqrt{n} + \sqrt{n+1})^2 = 2n+1 + 2 \sqrt{n(n+1)} \\
+    \Longrightarrow &\:
+    4n+1 < (\sqrt{n} + \sqrt{n+1})^2 < 4n+2
+  \end{align*}
+  since
+  \[
+    n = \sqrt{n^2} < \sqrt{n(n+1)} < \sqrt{(n+1)^2} = n+1.
+  \]
+
+\item[(2)]
+  Hence to show $\lfloor \sqrt{n} + \sqrt{n+1} \rfloor = \lfloor \sqrt{4n+2} \rfloor$,
+  it suffices to show that there is no integers in open subsets
+  \[
+    (\sqrt{n} + \sqrt{n+1}, \sqrt{4n+2})
+    \subseteq (\sqrt{4n+1}, \sqrt{4n+2}) 
+    \subseteq \mathbb{R}^1.
+  \]
+  So it suffices to show that there is no squares of $\mathbb{Z}$ in the open subset
+  \[
+    (4n+1, 4n+2) \subseteq \mathbb{R}^1.
+  \]
+  The last statement is trivial.
+  Hence $\lfloor \sqrt{n} + \sqrt{n+1} \rfloor = \lfloor \sqrt{4n+2} \rfloor$.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
