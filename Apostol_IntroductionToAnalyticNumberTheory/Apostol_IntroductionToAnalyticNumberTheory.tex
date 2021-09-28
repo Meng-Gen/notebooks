@@ -608,8 +608,8 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement (Chinese remainder theorem).}
-\addcontentsline{toc}{subsubsection}{Supplement (Chinese remainder theorem).}
+\subsubsection*{Supplement. (Chinese remainder theorem)}
+\addcontentsline{toc}{subsubsection}{Supplement. (Chinese remainder theorem)}
 (Exercise I.3.5 in the textbook: \emph{J\"orgen Neukirch, Algebraic Number Theory}.)
 \emph{The quotient ring $\mathcal{O}/\mathfrak{a}$ of a Dedekind domain by
 an ideal $\mathfrak{a} \neq 0$ is a principal ideal domain.
@@ -1478,7 +1478,7 @@ early in the 1960s [Kenneth E. Iverson, \emph{A Programming Language}. Wiley, 19
 
 
 \subsubsection*{Exercise 3.17.}
-\addcontentsline{toc}{subsubsection}{3.17}
+\addcontentsline{toc}{subsubsection}{Exercise 3.17}
 \emph{Prove that $\lfloor x \rfloor + \lfloor x+\frac{1}{2} \rfloor = \lfloor 2x \rfloor$
 and more generally,}
 \[
@@ -1549,8 +1549,8 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement (Related exercises).}
-\addcontentsline{toc}{subsubsection}{Supplement (Related exercises).}
+\subsubsection*{Supplement. (Related exercises)}
+\addcontentsline{toc}{subsubsection}{Supplement. (Related exercises)}
 Related exercises are quoted from the book:
 Ronald L. Graham, Donald E. Knuth and Oren Patashnik,
 \emph{Concrete Mathematics: A Foundation for Computer Science, 2nd edition}.
@@ -1590,7 +1590,108 @@ Ronald L. Graham, Donald E. Knuth and Oren Patashnik,
     \sum_{k=0}^{n-1} \left\lfloor \frac{mk + x}{n} \right\rfloor
     = \sum_{k=0}^{m-1} \left\lfloor \frac{nk + x}{m} \right\rfloor
   \]
-  if $m, n > 0$. \\\\
+  if $m, n > 0$.
+
+\item[(6)]
+  \emph{Prove that, for all real $x$ and $y$ with $y > 0$}
+  \[
+    \sum_{0 \leq k < y} \left\lfloor x + \frac{k}{y} \right\rfloor
+    = \left\lfloor xy + \lfloor x+1 \rfloor(\lceil y \rceil - y) \right\rfloor.
+  \] \\
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.18. (Replicative function)}
+\addcontentsline{toc}{subsubsection}{Exercise 3.18. (Replicative function)}
+\emph{Let $f(x) = x - \lfloor x \rfloor - \frac{1}{2}$.
+Prove that
+\[
+  \sum_{k=0}^{n-1} f\left( x+\frac{k}{n} \right) = f(nx)
+\]
+and deduce that}
+\[
+  \abs{ \sum_{n=1}^{m} f\left( 2^n x + \frac{1}{2} \right) } \leq 1
+  \qquad
+  \text{for all $m \geq 1$ and all real $x$}.
+\] \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Exercise 3.17 shows that $x \mapsto \lfloor x \rfloor$ is replicative.
+  Besides, $x \mapsto x - \frac{1}{2}$ is also replicative. (It is easy to check.)
+  Hence $f: x \mapsto x - \lfloor x \rfloor - \frac{1}{2}$ is replicative.
+
+\item[(2)]
+  In particular, we have
+  \[
+    f\left( 2^n x \right) + f\left( 2^n x + \frac{1}{2} \right)
+    = f\left( 2^{n+1} x \right).
+  \]
+  Hence
+  \begin{align*}
+    \sum_{n=1}^{m} f\left( 2^n x + \frac{1}{2} \right)
+    =& \:
+    \sum_{n=1}^{m} \left\{f(2^{n+1} x) - f(2^n x) \right\} \\
+    =& \:
+    f(2^{m+1} x) - f(2x) \\
+    =& \:
+    \underbrace{(2^{m+1}x - \lfloor 2^{m+1}x \rfloor)}_{:= r_1}
+        - \underbrace{(2x - \lfloor 2x \rfloor)}_{:= r_2}.
+  \end{align*}
+  Since $0 \leq r_1, r_2 < 1$, $-1 < r_1 - r_2 < 1$.
+  Therefore
+  \[
+    \abs{ \sum_{n=1}^{m} f\left( 2^n x + \frac{1}{2} \right) } < 1.
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+\begin{enumerate}
+\item[(1)]
+  The function $f(x)$ is said to be \textbf{replicative} if it satisfies
+  \[
+    f(nx) = \sum_{k=0}^{n-1} f\left( x+\frac{k}{n} \right).
+  \]
+
+\item[(2)]
+  The function $x \mapsto f(x - \lfloor x \rfloor)$ is replicative if $f$ is replicative.
+
+\item[(3)]
+  It may be interesting to study more general class of functions for which
+  \[
+    \sum_{k=0}^{n-1} f\left( x+\frac{k}{n} \right) = a_n f(nx) + b_n
+  \]
+  (where $a_n, b_n$ do not depend on $x$).
+
+\item[(4)]
+  \emph{Let $B_n$ be the Bernoulli polynomial.
+  Suppose $n$ and $F$ are integers and $n, F > 0$. Show that}
+  \[
+    B_n(Fx) = F^{n-1} \sum_{a=0}^{F-1} B_n \left(x + \frac{a}{F} \right).
+  \]
+
+\item[(5)]
+  Note that
+  \[
+    \frac{1}{\exp(nz) - 1}
+    = \frac{1}{n} \sum_{k=0}^{n-1} \frac{1}{\exp(z + \frac{2 k \pi i}{n}) - 1}.
+  \]
+  Thus
+  \[
+    \cot(z) = \frac{1}{n} \sum_{k=0}^{n-1} \cot\frac{z + k\pi}{n}.
+  \]
+  Now $x \mapsto \cot(\pi x)$ is replicative. \\\\
 \end{enumerate}
 
 
@@ -1658,8 +1759,8 @@ $\Box$ \\\\
 
 
 
-\subsubsection*{Supplement (Serre, A Course in Arithmetic).}
-\addcontentsline{toc}{subsubsection}{Supplement (Serre, A Course in Arithmetic).}
+\subsubsection*{Supplement. (Serre, A Course in Arithmetic)}
+\addcontentsline{toc}{subsubsection}{Supplement. (Serre, A Course in Arithmetic)}
 
 
 
@@ -1684,8 +1785,8 @@ $\Box$ \\\\
 
 
 
-\subsubsection*{Supplement (Serre, Linear Representations of Finite Groups).}
-\addcontentsline{toc}{subsubsection}{Supplement (Serre, Linear Representations of Finite Groups).}
+\subsubsection*{Supplement. (Serre, Linear Representations of Finite Groups)}
+\addcontentsline{toc}{subsubsection}{Supplement. (Serre, Linear Representations of Finite Groups)}
 
 
 
