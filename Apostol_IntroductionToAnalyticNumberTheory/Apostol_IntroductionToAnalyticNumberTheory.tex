@@ -1134,6 +1134,69 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.19.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.19.}
+\emph{Prove that if $n$ is even and perfect then $n = 2^{a-1}(2^a-1)$ for some $a \geq 2$.
+It is not known if any odd perfect numbers exist.
+It is known that there are no odd perfect numbers with less then $7$ prime factors} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Suppose $n$ is even and perfect.
+  We might write $n = 2^{a-1}q$ for some $a \geq 2$ and $2 \nmid q$.
+  As $n$ is perfect, we have
+  \begin{align*}
+    &\:
+    2n = \sigma(n) \\
+    \Longrightarrow &\:
+    \underbrace{2 \cdot 2^{a-1}q}_{= 2^a q}
+    = 2n
+    = \sigma(2^{a-1}q)
+    = \underbrace{\sigma(2^{a-1})}_{= 2^{a}-1} \sigma(q) \\
+    \Longrightarrow &\:
+    2^{a}q = (2^{a} - 1) \sigma(q) \\
+    \Longrightarrow &\:
+    \text{$q = (2^a - 1) q_1$ for some $q_1$ since $(2^a-1, 2^a) = 1$} \\
+    \Longrightarrow &\:
+    2^{a} (2^a - 1) q_1 = (2^{a} - 1) \sigma(q) \\
+    \Longrightarrow &\:
+    2^{a} q_1 = \sigma(q) = \sigma((2^a - 1) q_1).
+  \end{align*}
+
+\item[(2)]
+  If $q_1 > 1$, then
+  \begin{align*}
+    2^{a} q_1
+    &= \sigma(q) \\
+    &= \sigma((2^a - 1) q_1) \\
+    &\geq (2^a - 1) q_1 + (2^a - 1) + q_1 + 1 \\
+    &= 2^{a} q_1 + 2^a,
+  \end{align*}
+  which is absurd.
+  Therefore $q_1 = 1$. So $q = 2^a - 1$ and thus $n = 2^a(2^a-1)$.
+
+\item[(3)]
+  Pace P. Nielsen shows that
+  \begin{enumerate}
+  \item[(a)]
+    An odd perfect number $n$ is shown to have at least $9$ distinct prime factors.
+
+  \item[(b)]
+    Moreover, if $3 \nmid n$ then $n$ must have at least $12$ distinct prime divisors.
+  \end{enumerate}
+  See [Pace P. Nielsen, \emph{Odd perfect numbers have at least nine distinct prime factors}, 2006].
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.21.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.21.}
 \emph{Let $f(n) = \lfloor \sqrt{n} \rfloor - \lfloor \sqrt{n-1} \rfloor$.
