@@ -1837,6 +1837,114 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 4.19. (Logarithmic integral)}
+\addcontentsline{toc}{subsubsection}{Exercise 4.19. (Logarithmic integral)}
+\emph{If $x \geq 2$, let
+\[
+  \mathrm{Li}(x) = \int_{2}^{x} \frac{dt}{\log t}
+\]
+(the \textbf{logarithmic integral} of $x$).}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that
+  \[
+    \mathrm{Li}(x)
+    = \frac{x}{\log x} + \int_{2}^{x} \frac{dt}{\log^{2}t} - \frac{2}{\log 2},
+  \]
+  and that, more generally,
+  \[
+    \mathrm{Li}(x)
+    = \frac{x}{\log x}\left(1 + \sum_{k=1}^{n-1} \frac{k!}{\log^{k}x} \right)
+        + n! \int_{2}^{x} \frac{dt}{\log^{n+1} t} + C_n,
+  \]
+  where $C_n$ is independent of $x$.}
+
+\item[(b)]
+  \emph{If $x \geq 2$ prove that}
+  \[
+    \int_{2}^{x} \frac{dt}{\log^n t} = O\left( \frac{x}{\log^{n} x} \right).
+  \] \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Integration by parts gives
+  \[
+    \mathrm{Li}(x)
+    = \left.\frac{t}{\log t}\right|_{t=2}^{t=x} + \int_{2}^{x} \frac{dt}{\log^{2}t}
+    = \frac{x}{\log x} + \int_{2}^{x} \frac{dt}{\log^{2}t} - \frac{2}{\log 2}.
+  \]
+
+\item[(2)]
+  We use induction to prove the general case.
+  Suppose
+  \[
+    \mathrm{Li}(x)
+    = \frac{x}{\log x}\left(1 + \sum_{k=1}^{n-1} \frac{k!}{\log^{k}x} \right)
+        + n! \int_{2}^{x} \frac{dt}{\log^{n+1} t} + C_n
+  \]
+  holds.
+  Similar to part (1),
+  we apply integration by parts to $\int_{2}^{x} \frac{dt}{\log^{n+1}t}$ to get
+  \begin{align*}
+    \int_{2}^{x} \frac{dt}{\log^{n+1}t}
+    &= \left.\frac{t}{\log^{n+1} t}\right|_{t=2}^{t=x}
+        + (n+1) \int_{2}^{x} \frac{dt}{\log^{n+2}t} \\
+    &= \frac{x}{\log^{n+1} x}
+        + (n+1) \int_{2}^{x} \frac{dt}{\log^{n+2}t} - \frac{2}{\log^{n+1} 2}.
+  \end{align*}
+  Hence
+  \begin{align*}
+    \mathrm{Li}(x)
+    =&\: \frac{x}{\log x}\left(1 + \sum_{k=1}^{n-1} \frac{k!}{\log^{k}x} \right) \\
+        &+ n! \left( \frac{x}{\log^{n+1} x} + (n+1)\int_{2}^{x} \frac{dt}{\log^{n+2}t}
+            - \frac{2}{\log^{n+1} 2} \right) + C_n \\
+    =&\: \frac{x}{\log x}\left(1 + \sum_{k=1}^{n} \frac{k!}{\log^{k}x} \right) 
+        + (n+1)!\int_{2}^{x} \frac{dt}{\log^{n+2}t} \\
+        & + \underbrace{C_n - \frac{2 \cdot n!}{\log^{n+1} 2}}_{:= C_{n+1}}.
+  \end{align*}
+  By induction, the general case holds.
+
+\item[(3)]
+  In fact,
+  \[
+    C_n = - \sum_{k=1}^{n} \frac{2 \cdot (k-1)!}{\log^{k} 2}.
+  \]
+
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of Theorem 4.4.
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    \int_{2}^{x} \frac{dt}{\log^n t}
+    &= \int_{2}^{\sqrt{x}} \frac{dt}{\log^n t} + \int_{\sqrt{x}}^{x} \frac{dt}{\log^n t} \\
+    &\leq \frac{\sqrt{x}}{\log^n 2} + \frac{x - \sqrt{x}}{\log^n \sqrt{x}} \\
+    &\leq \frac{1}{\log^n 2} \cdot \sqrt{x} + 2^n \cdot \frac{x}{\log^n x} \\
+    &= O\left( \frac{x}{\log^{n} x} \right) + O\left( \frac{x}{\log^{n} x} \right)
+      &\left(\text{$\lim_{x \to +\infty} \frac{\sqrt{x}}{\log^{n} x} = +\infty$}\right) \\
+    &= O\left( \frac{x}{\log^{n} x} \right)
+  \end{align*}
+  if $x \geq \sqrt{x}$ or $x \geq 4$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
