@@ -209,6 +209,37 @@ By the formula for $\phi$,
 \end{align*}
 which is a contradiction (since $3$ is a prime).
 Hence there are infinitely many primes.
+$\Box$ \\
+
+
+
+\emph{Proof (Due to F\"urstenberg).}
+\begin{enumerate}
+\item[(1)]
+  Define a topology on $\mathbb{Z}$ by using the arithmetic progressions, say
+  \[
+    S_{a,b} = \{ an+b : n \in \mathbb{Z} \} \subseteq \mathbb{Z}.
+  \]
+  as a basis.
+
+\item[(2)]
+  Given any integer prime $p$.
+  $S_{p,0}$ is closed since
+  \[
+    \mathbb{Z} \setminus S_{p,0} = S_{p,1} \bigcup \cdots \bigcup S_{p,p-1}.
+  \]
+  Now let $S = \bigcup_{\text{$p$: prime}} S_{p,0}$.
+
+\item[(3)]
+  (Reductio ad absurdum)
+  If there were finitely many primes, then $S$ is closed since $S$ is a finite union of closed sets.
+  The unique factorization theorem shows that
+  \[
+    \mathbb{Z} \setminus S = \{ \pm 1 \}
+  \]
+  and thus $\{ \pm 1 \}$ is open, which is absurd
+  (since every open set is infinite).
+\end{enumerate}
 $\Box$ \\\\
 
 
