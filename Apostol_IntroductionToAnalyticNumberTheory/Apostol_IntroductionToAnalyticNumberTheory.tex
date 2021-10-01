@@ -1912,11 +1912,11 @@ $\Box$ \\\\
   By induction, the general case holds.
 
 \item[(3)]
-  In fact,
+  Here
   \[
-    C_n = - \sum_{k=1}^{n} \frac{2 \cdot (k-1)!}{\log^{k} 2}.
+    C_n = - \sum_{k=1}^{n} \frac{2 \cdot (k-1)!}{\log^{k} 2}
   \]
-
+  actually.
 \end{enumerate}
 $\Box$ \\
 
@@ -1926,9 +1926,6 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
   Similar to the proof of Theorem 4.4.
-
-\item[(2)]
-  Hence
   \begin{align*}
     \int_{2}^{x} \frac{dt}{\log^n t}
     &= \int_{2}^{\sqrt{x}} \frac{dt}{\log^n t} + \int_{\sqrt{x}}^{x} \frac{dt}{\log^n t} \\
@@ -1939,6 +1936,9 @@ $\Box$ \\
     &= O\left( \frac{x}{\log^{n} x} \right)
   \end{align*}
   if $x \geq \sqrt{x}$ or $x \geq 4$.
+
+\item[(2)]
+  We can apply L'Hospital's rule to give another proof.
 \end{enumerate}
 $\Box$ \\\\
 
