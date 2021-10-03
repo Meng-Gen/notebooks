@@ -1840,6 +1840,66 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 4.18.}
+\addcontentsline{toc}{subsubsection}{Exercise 4.18.}
+\emph{Prove that the following two relations are equivalent:}
+\begin{enumerate}
+\item[(a)]
+  \[
+    \pi(x) = \frac{x}{\log x} + O\left( \frac{x}{\log^2 x} \right).
+  \]
+
+\item[(b)]
+  \[
+    \vartheta(x) = x + O\left( \frac{x}{\log x} \right).
+  \] \\
+\end{enumerate}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  ((a) $\Longrightarrow$ (b)).
+  \begin{align*}
+    & \: \vartheta(x) \\
+    =& \: \pi(x) \log x - \int_{2}^{x} \frac{\pi(t)}{t} dt
+      &(\text{Theorem 4.3}) \\
+    =& \: x + O\left( \frac{x}{\log x} \right)
+        - \int_{2}^{x} \frac{dt}{\log t}
+        + O\left(\int_{2}^{x} \frac{dt}{\log^2 t} \right) \\
+    =& \: x + O\left( \frac{x}{\log x} \right)
+        + O\left( \frac{x}{\log x} \right)
+        + O\left( \frac{x}{\log^2 x} \right)
+      &(\text{Exercise 4.19(b)}) \\
+    =& \: x + O\left( \frac{x}{\log x} \right).
+  \end{align*}
+
+\item[(2)]
+  ((b) $\Longrightarrow$ (a)).
+  \begin{align*}
+    & \: \pi(x) \\
+    =& \: \frac{\vartheta(x)}{\log x} + \int_{2}^{x} \frac{\vartheta(t)}{t \log^2 t} dt
+      &(\text{Theorem 4.3}) \\
+    =& \: \frac{x}{\log x} + O\left( \frac{x}{\log^2 x} \right)
+        + \int_{2}^{x} \frac{dt}{\log^2 t}
+        + O\left(\int_{2}^{x} \frac{dt}{\log^3 t} \right) \\
+    =& \: \frac{x}{\log x} + O\left( \frac{x}{\log^2 x} \right)
+        + O\left( \frac{x}{\log^2 x} \right)
+        + O\left( \frac{x}{\log^3 x} \right)
+      &(\text{Exercise 4.19(b)}) \\
+    =& \: \frac{x}{\log x} + O\left( \frac{x}{\log^2 x} \right).
+  \end{align*}
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 4.19. (Logarithmic integral)}
 \addcontentsline{toc}{subsubsection}{Exercise 4.19. (Logarithmic integral)}
 \emph{If $x \geq 2$, let
