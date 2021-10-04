@@ -90,6 +90,53 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise I.1.2.}
+\addcontentsline{toc}{subsubsection}{Exercise I.1.2.}
+\emph{Show that, in the ring $\mathbb{Z}[i]$, the relation $\alpha\beta = \varepsilon\gamma^n$,
+for $\alpha,\beta$ relatively prime numbers and $\varepsilon$ a unit,
+implies $\alpha = \varepsilon' \xi^n$ and $\beta = \varepsilon'' \eta^n$,
+with $\varepsilon', \varepsilon''$ units.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  It suffices to prove that the conclusion holds for any unique factorization domain $R$
+  (since $\mathbb{Z}[i]$ is a unique factorization domain).
+
+\item[(2)]
+  Write the unique factorizations of $\alpha$, $\beta$, $\gamma$ as
+  \[
+    \alpha = \varepsilon_1 p_1^{a_1} \cdots p_r^{a_r},
+    \qquad
+    \beta = \varepsilon_2 p_1^{b_1} \cdots p_r^{b_r},
+    \qquad
+    \gamma = \varepsilon_3 p_1^{c_1} \cdots p_r^{c_r},
+  \]
+  where $p_i$ are prime elements in $R$, $p_i \neq p_j$ if $i \neq j$ (up to unit),
+  and $\varepsilon_1, \varepsilon_2, \varepsilon_3$ are units.
+
+\item[(3)]
+  By the relation $\alpha\beta = \varepsilon\gamma^n$, we have
+  \[
+    \varepsilon_1 \varepsilon_2 p_1^{a_1+b_1} \cdots p_r^{a_r+b_r}
+    = \varepsilon \varepsilon_3^n p_1^{n c_1} \cdots p_r^{n c_r} \in R.
+  \]
+  Since $R$ is a unique factorization domain,
+  $a_i + b_i = n c_i$ for each $1 \leq i \leq r$.
+  Since $\alpha,\beta$ are relatively prime, $a_i = 0$ or $b_i = 0$ for each $i$.
+  Hence
+  \[
+    (a_i,b_i) = (0,nc_i) \text{ or } (nc_i,0).
+  \]
+  In any case, $\alpha = \varepsilon_1 \xi^n$ and $\beta = \varepsilon_2 \eta^n$
+  for some $\xi, \eta \in R$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -109,7 +156,9 @@ up to possible permutation of $x$ and $y$, by the formula
   \qquad
   z = u^2+v^2
 \]
-where $u, v \in \mathbb{Z}$, $u > v > 0$, $(u,v) = 1$, $u, v$ not both odd.} \\
+where $u, v \in \mathbb{Z}$, $u > v > 0$, $(u,v) = 1$, $u, v$ not both odd.
+(Hint: Use Exercise I.1.2 to show that necessarily $x+iy = \varepsilon\alpha^2$
+with a unit $\varepsilon$ and with $\alpha = u+iv \in \mathbb{Z}[i]$.)} \\
 
 
 
