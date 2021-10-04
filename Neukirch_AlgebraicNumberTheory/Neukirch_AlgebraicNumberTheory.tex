@@ -278,6 +278,8 @@ for any squarefree rational integer $d > 1$, has infinitely many units.} \\
 
 
 \emph{Proof.}
+The proof is quoted from Proposition 17.5.2 in the book:
+Ireland and Rosen, \emph{A Classical Introduction to Modern Number Theory, 2nd Ed.}
 \begin{enumerate}
 \item[(1)]
   Define the norm of $z = x + \sqrt{d} y \in \mathbb{Z}[\sqrt{d}]$ by
@@ -348,12 +350,79 @@ for any squarefree rational integer $d > 1$, has infinitely many units.} \\
 
 \item[(7)]
   By part (6), we might take a unit $\varepsilon = x + \sqrt{d}y \in \mathbb{Z}[\sqrt{d}]$
-  with $x, y > 0$. Note that $\varepsilon \geq 1 + \sqrt{d} > 1$.
+  with $x, y > 0$.
+  Note that $\varepsilon \geq 1 + \sqrt{d} > 1$ (over the ordered field $\mathbb{R}$).
   Hence there are infinitely many units
   \[
     \varepsilon, \varepsilon^2, \varepsilon^3, \ldots
   \]
   in $\mathbb{Z}[\sqrt{d}]$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+  \emph{Furthermore, show that there is a unit $\varepsilon$ such that every unit has the form
+  $\pm \varepsilon^n$, $n \in \mathbb{Z}$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  By the well-ordering principle,
+  there is a unit $\varepsilon = x_1 + \sqrt{d}y_1 \in \mathbb{Z}[\sqrt{d}]$ such that
+  $x_1, y_1 > 0$ and $(x_1,y_1)$ is the smallest solution of $x^2 - dy^2 = 1$ with $x, y > 0$.
+
+\item[(2)]
+  Now given any unit $\varepsilon' = x + \sqrt{d}y$, $x, y > 0$,
+  it suffices to show that there is a positive integer $n$ such that $\varepsilon' = \varepsilon^n$.
+
+\item[(3)]
+  (Reductio ad absurdum)
+  If not, there were a positive integer $n$ such that $\varepsilon^n < \varepsilon' < \varepsilon^{n+1}$.
+  Hence $1 < \varepsilon^{-n} \varepsilon' < \varepsilon$.
+  Say $\varepsilon^{-n} \varepsilon' := x' + \sqrt{d}y'$.
+  As $\varepsilon^{-n} \varepsilon' > 1 > 0$, the inverse is satisfying $x' - \sqrt{d}y' > 0$.
+  Hence $x' > 0$.
+
+\item[(4)]
+  As the inverse is satisfying $x' - \sqrt{d}y' < 1$, $y' \geq 0$.
+  Note that $y' \neq 0$ (since $\varepsilon > 1$).
+  Hence the existence of $\varepsilon^{-n} \varepsilon'$ contradicts the minimality of $\varepsilon$.
+
+\item[(5)]
+  Now suppose a unit $\varepsilon' = x + \sqrt{d}y$ is of the form $x > 0$, $y < 0$.
+  Then $\varepsilon'^{-1} = x - \sqrt{d}y = \varepsilon^n$ for some positive integer $n$ by (2)(3)(4).
+  Hence $\varepsilon' = \varepsilon^{-n}$ for some positive integer $n$.
+  Other two cases of $\varepsilon' = x + \sqrt{d}y$ are similar.
+  Therefore, every unit has the form $\pm \varepsilon^n$, $n \in \mathbb{Z}$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise I.1.7.}
+\addcontentsline{toc}{subsubsection}{Exercise I.1.7.}
+\emph{Show that the ring $\mathbb{Z}[\sqrt{2}] = \mathbb{Z} + \mathbb{Z}\sqrt{2}$ is euclidean.
+Show furthermore that its units are given by $\pm(1+\sqrt{2})^n$, $n \in \mathbb{Z}$,
+and determine its prime elements.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathbb{Z}[\sqrt{2}]$ is euclidean with respect to the function
+  $\mathbb{Z}[\sqrt{2}] \to \mathbb{N} \cup \{0\}$, $\alpha \mapsto \alpha \overline{\alpha}$.}
+  Similar to the proof of Proposition I.1.2.
+
+\item[(2)]
 \end{enumerate}
 $\Box$ \\\\
 
