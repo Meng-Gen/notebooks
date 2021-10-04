@@ -267,6 +267,99 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise I.1.6.}
+\addcontentsline{toc}{subsubsection}{Exercise I.1.6.}
+\emph{Show that the ring $\mathbb{Z}[\sqrt{d}] = \mathbb{Z} + \mathbb{Z}\sqrt{d}$,
+for any squarefree rational integer $d > 1$, has infinitely many units.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Define the norm of $z = x + \sqrt{d} y \in \mathbb{Z}[\sqrt{d}]$ by
+  $N(z) = z \overline{z}$ or
+  \[
+    N(x + \sqrt{d} y)
+    = \underbrace{(x + \sqrt{d} y)}_{= z} \underbrace{(x - \sqrt{d} y)}_{:= \overline{z}}
+    = x^2 - dy^2.
+  \]
+  Note that a norm is multiplicative.
+  Similar to Exercise I.1.1,
+  $\alpha \in \mathbb{Z}[\sqrt{d}]$ is a unit if and only if $N(\alpha) = 1$.
+
+\item[(2)]
+  To show $\mathbb{Z}[\sqrt{d}]$ has infinitely many units, it suffices to show
+  the equation $x^2 - dy^2 = 1$ has infinitely many $(x,y)$ solutions.
+
+\item[(3)]
+  \emph{If $\xi$ is irrational then there are infinitely many rational numbers
+  $\frac{x}{y}$, $(x,y) = 1$ such that $\abs{\frac{x}{y}-\xi} < \frac{1}{y^2}$.}
+  It is followed by the pigeonhole principle.
+
+\item[(4)]
+  \emph{If $d$ is a positive squarefree integer then there is a constant $M := 2\sqrt{d}+1$
+  such that $\abs{x^2 - dy^2} < M$ has infinitely many solutions over $\mathbb{Z}$.}
+  Write $x^2 - dy^2 = (x + \sqrt{d} y)(x - \sqrt{d} y)$.
+  By part (3), there exist infinitely many pairs of relatively prime integers $(x,y)$, $y > 0$
+  satisfying $\abs{x - \sqrt{d} y} < \frac{1}{y}$.
+  Hence
+  \begin{align*}
+    \abs{x^2 - dy^2}
+    =& \: \abs{x + \sqrt{d} y}\abs{x - \sqrt{d} y} \\
+    \leq & \: \left(\abs{x - \sqrt{d} y} + 2 \sqrt{d}y \right) \abs{x - \sqrt{d} y} \\
+    \leq & \: 2 \sqrt{d} + 1.
+  \end{align*}
+
+\item[(5)]
+  By part (4), there is an integer $m$ such that $x^2 - dy^2 = m$
+  for infinitely many solutions over $\mathbb{Z}$.
+  Here $m \neq 0$.
+  We might assume $x, y > 0$ and $x$ components of solutions are distinct.
+
+\item[(6)]
+  The pigeonhole principle shows that there are two distinct solutions $(x_1,y_1)$, $(x_2,y_2)$
+  with $x_1 \neq x_2$ such that
+  \[
+    x_1 \equiv x_2 \pmod{|m|},
+    \qquad 
+    y_1 \equiv y_2 \pmod{|m|}.
+  \]
+  Let $\alpha = x_1 - \sqrt{d} y_1$, $\beta = x_2 + \sqrt{d} y_2$ and $\gamma = \alpha\beta$.
+  Hence
+  \begin{align*}
+    \gamma
+    &= (x_1 - \sqrt{d} y_1)(x_2 + \sqrt{d} y_2) \\
+    &= \underbrace{(x_1 x_2 - d y_1 y_2)}_{\equiv 0 \pmod{|m|}}
+        + \sqrt{d}\underbrace{(x_1 y_2 - x_2 y_1)}_{\equiv 0 \pmod{|m|}} \\
+    &:= m(u + \sqrt{d} v)
+  \end{align*}
+  for some $u + \sqrt{d} v \in \mathbb{Z}[\sqrt{d}]$.
+  Taking norms of $\gamma = \alpha\beta$ gives $N(\gamma) = N(\alpha)N(\beta)$ or
+  \[
+    m^2 (u + \sqrt{d} v) = m^2.
+  \]
+  Hence $u + \sqrt{d} v = 1$.
+  By construction of $x_1, x_2$, $v \neq 0$.
+  Therefore the equation $x^2 - dy^2 = 1$ has one solution with $x, y > 0$.
+
+\item[(7)]
+  By part (6), we might take a unit $\varepsilon = x + \sqrt{d}y \in \mathbb{Z}[\sqrt{d}]$
+  with $x, y > 0$. Note that $\varepsilon \geq 1 + \sqrt{d} > 1$.
+  Hence there are infinitely many units
+  \[
+    \varepsilon, \varepsilon^2, \varepsilon^3, \ldots
+  \]
+  in $\mathbb{Z}[\sqrt{d}]$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
