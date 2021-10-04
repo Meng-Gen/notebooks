@@ -291,7 +291,7 @@ Ireland and Rosen, \emph{A Classical Introduction to Modern Number Theory, 2nd E
   \]
   Note that a norm is multiplicative.
   Similar to Exercise I.1.1,
-  $\alpha \in \mathbb{Z}[\sqrt{d}]$ is a unit if and only if $N(\alpha) = 1$.
+  $\alpha \in \mathbb{Z}[\sqrt{d}]$ is a unit if and only if $N(\alpha) = \pm 1$.
 
 \item[(2)]
   To show $\mathbb{Z}[\sqrt{d}]$ has infinitely many units, it suffices to show
@@ -373,7 +373,7 @@ $\Box$ \\
 \item[(1)]
   By the well-ordering principle,
   there is a unit $\varepsilon = x_1 + \sqrt{d}y_1 \in \mathbb{Z}[\sqrt{d}]$ such that
-  $x_1, y_1 > 0$ and $(x_1,y_1)$ is the smallest solution of $x^2 - dy^2 = 1$ with $x, y > 0$.
+  $x_1, y_1 > 0$ and $(x_1,y_1)$ is the smallest solution of $x^2 - dy^2 = \pm 1$ with $x, y > 0$.
 
 \item[(2)]
   Now given any unit $\varepsilon' = x + \sqrt{d}y$, $x, y > 0$,
@@ -419,10 +419,85 @@ and determine its prime elements.} \\
 \begin{enumerate}
 \item[(1)]
   \emph{Show that $\mathbb{Z}[\sqrt{2}]$ is euclidean with respect to the function
-  $\mathbb{Z}[\sqrt{2}] \to \mathbb{N} \cup \{0\}$, $\alpha \mapsto \alpha \overline{\alpha}$.}
-  Similar to the proof of Proposition I.1.2.
+  $N: \mathbb{Z}[\sqrt{2}] \to \mathbb{N} \cup \{0\}$, $\alpha \mapsto \alpha \overline{\alpha}$.}
+  For
+  \[
+    \alpha, \beta \neq 0 \in \mathbb{Z}[\sqrt{2}],
+  \]
+  one has to find
+  \[
+    \gamma, \rho \in \mathbb{Z}[\sqrt{2}]
+  \]
+  such that
+  \[
+    \alpha = \gamma\beta + \rho,
+    \qquad
+    N(\rho) < N(\beta).
+  \]
 
 \item[(2)]
+  Extend the norm function $N$ to $\mathbb{Q}[\sqrt{2}]$.
+  Write
+  \[
+    \frac{\alpha}{\beta} = x + \sqrt{2}y \in \mathbb{Q}[\sqrt{2}].
+  \]
+  Take $\gamma = u + \sqrt{2}v \in \mathbb{Z}[\sqrt{2}]$
+  such that $u, v$ are satisfying $\abs{u - x} \leq \frac{1}{2}$, $\abs{v - y} \leq \frac{1}{2}$.
+  Now take $\rho = \alpha - \gamma\beta$.
+
+\item[(3)]
+  Hence,
+  \[
+    N\left(\frac{\alpha}{\beta} - \gamma\right)
+    = (u-x)^2 + 2 (v-y)^2
+    \leq \left(\frac{1}{2}\right)^{2} + 2 \cdot \left(\frac{1}{2}\right)^{2}
+    < 1
+  \]
+  and thus
+  \[
+    N(\rho)
+    = N(\alpha - \gamma\beta)
+    = N(\beta) N\left(\frac{\alpha}{\beta} - \gamma\right)
+    < N(\beta).
+  \]
+
+\item[(4)]
+  \emph{Show that its units are given by $\pm(1+\sqrt{2})^n$, $n \in \mathbb{Z}$.}
+  $\varepsilon = 1 + \sqrt{2} \in \mathbb{Z}[\sqrt{2}]$ is a unit such that
+  $(1,1)$ is the smallest solution of $x^2 - 2y^2 = \pm 1$ with $x, y > 0$.
+  By the note in Exercise I.1.6,
+  all units are given by $\pm(1+\sqrt{2})^n$, $n \in \mathbb{Z}$.
+
+\item[(5)]
+  \emph{For all prime numbers $p \neq 2$, one has
+  $p = a^2 - 2b^2$ ($a, b \in \mathbb{Z}$) if and only if $p \equiv 1, 7 \pmod 8$.}
+  Similar to the proof of Proposition I.1.1,
+  it suffices to show that a prime number $p \equiv 1, 7 \pmod 8$ of $\mathbb{Z}$
+  does not remain a prime element in the ring $\mathbb{Z}[\sqrt{2}]$.
+  (Reductio ad absurdum)
+  Note that the congruence
+  \[
+    2 \equiv x^2 \pmod p
+  \]
+  admits a solution (by the law of quadratic reciprocity).
+  Thus we have $p \mid x^2 - 2 = (x + \sqrt{2})(x - \sqrt{2})$.
+  Hence $\frac{x}{p} \pm \frac{\sqrt{2}}{p} \in \mathbb{Z}[\sqrt{2}]$, which is absurd.
+
+\item[(6)]
+  \emph{The prime element $\pi$ of $\mathbb{Z}[\sqrt{2}]$, up to associated elements,
+  are given as follows.}
+  \begin{enumerate}
+  \item[(i)]
+    $\pi = \sqrt{2}$,
+
+  \item[(ii)]
+    \emph{$\pi = a + \sqrt{2}b$ with $a^2 - 2b^2 = p$, $p \equiv 1, 7 \pmod 8$},
+
+  \item[(iii)]
+    $\pi = p$, $p \equiv 3, 5 \pmod 8$.
+  \end{enumerate}
+  \emph{Here, $p$ denotes a prime number of $\mathbb{Z}$.}
+  The proof is exactly the same as Theorem I.1.4.
 \end{enumerate}
 $\Box$ \\\\
 
