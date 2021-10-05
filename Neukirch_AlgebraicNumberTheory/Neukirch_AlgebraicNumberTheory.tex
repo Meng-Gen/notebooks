@@ -282,11 +282,11 @@ The proof is quoted from Proposition 17.5.2 in the book:
 Ireland and Rosen, \emph{A Classical Introduction to Modern Number Theory, 2nd Ed.}
 \begin{enumerate}
 \item[(1)]
-  Define the norm of $z = x + \sqrt{d} y \in \mathbb{Z}[\sqrt{d}]$ by
+  Define the norm of $z = x + y\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$ by
   $N(z) = z \overline{z}$ or
   \[
-    N(x + \sqrt{d} y)
-    = \underbrace{(x + \sqrt{d} y)}_{= z} \underbrace{(x - \sqrt{d} y)}_{:= \overline{z}}
+    N(x + y\sqrt{d})
+    = \underbrace{(x + y\sqrt{d})}_{= z} \underbrace{(x - y\sqrt{d})}_{:= \overline{z}}
     = x^2 - dy^2.
   \]
   Note that a norm is multiplicative.
@@ -305,14 +305,14 @@ Ireland and Rosen, \emph{A Classical Introduction to Modern Number Theory, 2nd E
 \item[(4)]
   \emph{If $d$ is a positive squarefree integer then there is a constant $M := 2\sqrt{d}+1$
   such that $\abs{x^2 - dy^2} < M$ has infinitely many solutions over $\mathbb{Z}$.}
-  Write $x^2 - dy^2 = (x + \sqrt{d} y)(x - \sqrt{d} y)$.
+  Write $x^2 - dy^2 = (x + y\sqrt{d})(x - y\sqrt{d})$.
   By part (3), there exist infinitely many pairs of relatively prime integers $(x,y)$, $y > 0$
-  satisfying $\abs{x - \sqrt{d} y} < \frac{1}{y}$.
+  satisfying $\abs{x - y\sqrt{d}} < \frac{1}{y}$.
   Hence
   \begin{align*}
     \abs{x^2 - dy^2}
-    =& \: \abs{x + \sqrt{d} y}\abs{x - \sqrt{d} y} \\
-    \leq & \: \left(\abs{x - \sqrt{d} y} + 2 \sqrt{d}y \right) \abs{x - \sqrt{d} y} \\
+    =& \: \abs{x + y\sqrt{d}}\abs{x - y\sqrt{d}} \\
+    \leq & \: \left(\abs{x - y\sqrt{d}} + 2 y\sqrt{d} \right) \abs{x - y\sqrt{d}} \\
     \leq & \: 2 \sqrt{d} + 1.
   \end{align*}
 
@@ -330,26 +330,26 @@ Ireland and Rosen, \emph{A Classical Introduction to Modern Number Theory, 2nd E
     \qquad 
     y_1 \equiv y_2 \pmod{|m|}.
   \]
-  Let $\alpha = x_1 - \sqrt{d} y_1$, $\beta = x_2 + \sqrt{d} y_2$ and $\gamma = \alpha\beta$.
+  Let $\alpha = x_1 - y_1\sqrt{d}$, $\beta = x_2 + y_2\sqrt{d}$ and $\gamma = \alpha\beta$.
   Hence
   \begin{align*}
     \gamma
-    &= (x_1 - \sqrt{d} y_1)(x_2 + \sqrt{d} y_2) \\
+    &= (x_1 - y_1\sqrt{d})(x_2 + y_2\sqrt{d}) \\
     &= \underbrace{(x_1 x_2 - d y_1 y_2)}_{\equiv 0 \pmod{|m|}}
-        + \sqrt{d}\underbrace{(x_1 y_2 - x_2 y_1)}_{\equiv 0 \pmod{|m|}} \\
-    &:= m(u + \sqrt{d} v)
+        + \underbrace{(x_1 y_2 - x_2 y_1)}_{\equiv 0 \pmod{|m|}}\sqrt{d} \\
+    &:= m(u + v\sqrt{d})
   \end{align*}
-  for some $u + \sqrt{d} v \in \mathbb{Z}[\sqrt{d}]$.
+  for some $u + v\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$.
   Taking norms of $\gamma = \alpha\beta$ gives $N(\gamma) = N(\alpha)N(\beta)$ or
   \[
-    m^2 (u + \sqrt{d} v) = m^2.
+    m^2 (u + v\sqrt{d}) = m^2.
   \]
-  Hence $u + \sqrt{d} v = 1$.
+  Hence $u + v\sqrt{d} = 1$.
   By construction of $x_1, x_2$, $v \neq 0$.
   Therefore the equation $x^2 - dy^2 = 1$ has one solution with $x, y > 0$.
 
 \item[(7)]
-  By part (6), we might take a unit $\varepsilon = x + \sqrt{d}y \in \mathbb{Z}[\sqrt{d}]$
+  By part (6), we might take a unit $\varepsilon = x + y\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$
   with $x, y > 0$.
   Note that $\varepsilon \geq 1 + \sqrt{d} > 1$ (over the ordered field $\mathbb{R}$).
   Hence there are infinitely many units
@@ -372,31 +372,31 @@ $\Box$ \\
 \begin{enumerate}
 \item[(1)]
   By the well-ordering principle,
-  there is a unit $\varepsilon = x_1 + \sqrt{d}y_1 \in \mathbb{Z}[\sqrt{d}]$ such that
+  there is a unit $\varepsilon = x_1 + y_1\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$ such that
   $x_1, y_1 > 0$ and $(x_1,y_1)$ is the smallest solution of $x^2 - dy^2 = \pm 1$ with $x, y > 0$.
 
 \item[(2)]
-  Now given any unit $\varepsilon' = x + \sqrt{d}y$, $x, y > 0$,
+  Now given any unit $\varepsilon' = x + y\sqrt{d}$, $x, y > 0$,
   it suffices to show that there is a positive integer $n$ such that $\varepsilon' = \varepsilon^n$.
 
 \item[(3)]
   (Reductio ad absurdum)
   If not, there were a positive integer $n$ such that $\varepsilon^n < \varepsilon' < \varepsilon^{n+1}$.
   Hence $1 < \varepsilon^{-n} \varepsilon' < \varepsilon$.
-  Say $\varepsilon^{-n} \varepsilon' := x' + \sqrt{d}y'$.
-  As $\varepsilon^{-n} \varepsilon' > 1 > 0$, the inverse is satisfying $x' - \sqrt{d}y' > 0$.
+  Say $\varepsilon^{-n} \varepsilon' := x' + y'\sqrt{d}$.
+  As $\varepsilon^{-n} \varepsilon' > 1 > 0$, the inverse is satisfying $x' - y'\sqrt{d} > 0$.
   Hence $x' > 0$.
 
 \item[(4)]
-  As the inverse is satisfying $x' - \sqrt{d}y' < 1$, $y' \geq 0$.
+  As the inverse is satisfying $x' - y'\sqrt{d} < 1$, $y' \geq 0$.
   Note that $y' \neq 0$ (since $\varepsilon > 1$).
   Hence the existence of $\varepsilon^{-n} \varepsilon'$ contradicts the minimality of $\varepsilon$.
 
 \item[(5)]
-  Now suppose a unit $\varepsilon' = x + \sqrt{d}y$ is of the form $x > 0$, $y < 0$.
-  Then $\varepsilon'^{-1} = x - \sqrt{d}y = \varepsilon^n$ for some positive integer $n$ by (2)(3)(4).
+  Now suppose a unit $\varepsilon' = x + y\sqrt{d}$ is of the form $x > 0$, $y < 0$.
+  Then $\varepsilon'^{-1} = x - y\sqrt{d} = \varepsilon^n$ for some positive integer $n$ by (2)(3)(4).
   Hence $\varepsilon' = \varepsilon^{-n}$ for some positive integer $n$.
-  Other two cases of $\varepsilon' = x + \sqrt{d}y$ are similar.
+  Other two cases of $\varepsilon' = x + y\sqrt{d}$ are similar.
   Therefore, every unit has the form $\pm \varepsilon^n$, $n \in \mathbb{Z}$.
 \end{enumerate}
 $\Box$ \\\\
@@ -433,9 +433,9 @@ and determine its prime elements.} \\
   Extend the norm function $N$ to $\mathbb{Q}[\sqrt{2}]$.
   Write
   \[
-    \frac{\alpha}{\beta} = x + \sqrt{2}y \in \mathbb{Q}[\sqrt{2}].
+    \frac{\alpha}{\beta} = x + y\sqrt{2} \in \mathbb{Q}[\sqrt{2}].
   \]
-  Take $\gamma = u + \sqrt{2}v \in \mathbb{Z}[\sqrt{2}]$
+  Take $\gamma = u + v\sqrt{2} \in \mathbb{Z}[\sqrt{2}]$
   such that $u, v$ are satisfying $\abs{u - x} \leq \frac{1}{2}$, $\abs{v - y} \leq \frac{1}{2}$.
   Now take $\rho = \alpha - \gamma\beta$.
 
