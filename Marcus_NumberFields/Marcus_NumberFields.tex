@@ -181,8 +181,8 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement 1.3.}
-\addcontentsline{toc}{subsubsection}{Supplement 1.3.}
+\subsubsection*{Supplement.}
+\addcontentsline{toc}{subsubsection}{Supplement.}
 \begin{enumerate}
 \item[(1)]
 The prime $2$ is reducible in $\mathbb{Z}[i]$ (Exercise 1.4).
@@ -283,7 +283,7 @@ $\Box$ \\\\
 every ideal $I$ is principal.
 (As shown in Appendix 1, this implies that $\mathbb{Z}[i]$ is a UFD.)} \\
 
-\emph{Suggestion: Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized,
+\emph{Suggestion: Take $\alpha \in I \setminus \{0\}$ such that $N(\alpha)$ is minimized,
 and consider the multiplies $\gamma\alpha$, $\gamma \in \mathbb{Z}[i]$;
 show that these are the vertices of an infinite family of squares which
 fill up the complex plane.
@@ -336,7 +336,7 @@ N(\rho)
 \item[(2)]
 \emph{Show that every Euclidean domain $R$ is a PID.}
 Given any ideal $I$ of $R$.
-Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized.
+Take $\alpha \in I \setminus \{0\}$ such that $N(\alpha)$ is minimized.
 \begin{enumerate}
   \item[(a)]
   $R\alpha \subseteq I$ clearly.
@@ -687,7 +687,7 @@ N(\rho)
 \item[(2)]
 \emph{Show that every Euclidean domain $R$ is a PID.}
 Given any ideal $I$ of $R$.
-Take $\alpha \in I-\{0\}$ such that $N(\alpha)$ is minimized.
+Take $\alpha \in I \setminus \{0\}$ such that $N(\alpha)$ is minimized.
 \begin{enumerate}
   \item[(a)]
   $R\alpha \subseteq I$ clearly.
@@ -1634,12 +1634,12 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement 2.1. (Isomorphic as vector spaces)}
-\addcontentsline{toc}{subsubsection}{Supplement 2.1. (Isomorphic as vector spaces)}
-
-\textbf{Supplement (Isomorphic as vector spaces).}
+\subsubsection*{Supplement. (Isomorphic as vector spaces)}
+\addcontentsline{toc}{subsubsection}{Supplement. (Isomorphic as vector spaces)}
 \emph{Show that $\mathbb{Q}[\sqrt{m}]$ and $\mathbb{Q}[\sqrt{n}]$
 are isomorphic as $\mathbb{Q}$-vector spaces.} \\
+
+
 
 \emph{Proof.}
 $[\mathbb{Q}[\sqrt{m}]:\mathbb{Q}] = [\mathbb{Q}[\sqrt{n}]:\mathbb{Q}] = 2$.
@@ -1705,6 +1705,171 @@ TODO.
 \item[(5)]
 \emph{Show that $(2)$ is not a product of prime ideals.}
 TODO.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.3.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.3.}
+\emph{Complete the proof of Corollary 2, Theorem 1.} \\
+
+Corollary 2: Let $m$ be a squarefree integer.
+The set of algebraic integers in the quadratic field $\mathbb{Q}[\sqrt{m}]$ is
+\begin{align*}
+    \{a + b\sqrt{m} : a, b \in \mathbb{Z} \}
+        & \text{ if $m \equiv 2, 3 \pmod 4$,} \\
+    \left\{ \frac{a+b\sqrt{m}}{2} : a, b \in \mathbb{Z}, a \equiv b \pmod 2\right\}
+        & \text{ if $m \equiv 1 \pmod 4$.} \\
+\end{align*}
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $\alpha = r + s\sqrt{m}$, $r, s \in \mathbb{Q}$.
+  If $s \neq 0$, then the monic irreducible polynomial over $\mathbb{Q}$ having $\alpha$ as a root is
+  \[
+    x^2 - 2rx + r^2 - ms^2.
+  \]
+  Thus $\alpha$ is an algebraic integer iff $2r$ and $r^2 - ms^2$ are both integers.
+
+\item[(2)]
+  Hence $4(r^2 - ms^2) = (2r)^2 - m(2s)^2 \in \mathbb{Z}$.
+  $m(2s)^2 \in \mathbb{Z}$ since $2r \in \mathbb{Z}$.
+  Hence $2s \in \mathbb{Z}$ since $m$ is squarefree.
+  Let $a = 2r, b = 2s \in \mathbb{Z}$.
+  Then $a^2 - mb^2 = 4(r^2 - ms^2) \equiv 0 \pmod 4$.
+  Note that a square $\equiv 0, 1 \pmod 4$ and thus we consider the following two cases.
+
+\item[(3)]
+  If $m \equiv 1 \pmod 4$, then
+  \begin{align*}
+    &\:a^2 - mb^2 \equiv a^2 - b^2 \pmod 4 \\
+    \Longrightarrow &\:
+    \text{$a$ and $b$ has the same parity} \\
+    \Longrightarrow &\:
+    \alpha = r + s\sqrt{m} = \frac{a + b\sqrt{m}}{2}, a, b \in \mathbb{Z}, a \equiv b \pmod 2.
+  \end{align*}
+
+\item[(4)]
+  If $m \equiv 2, 3 \pmod 4$, then
+  \begin{align*}
+    &\:a^2 - mb^2 \equiv a^2+2b^2 \text{ or } a^2+b^2 \pmod 4 \\
+    \Longrightarrow &\:
+    \text{both $a$ and $b$ are even} \\
+    \Longrightarrow &\:
+    \text{both $r$ and $s$ are rational integers} \\
+    \Longrightarrow &\:
+    \alpha = r + s\sqrt{m}, r, s \in \mathbb{Z}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\subsubsection*{Supplement.}
+\addcontentsline{toc}{subsubsection}{Supplement.}
+(Exercise I.2.4 in [J\"urgen Neukirch, \emph{Algebraic Number Theory}].)
+\emph{Let $D$ be a squarefree rational integer $\neq 0, 1$ and
+$d$ the discriminant of the quadratic number field $K = \mathbb{Q}(\sqrt{D})$.
+Show that
+\begin{equation*}
+  d = \begin{cases}
+    D  & \text{if $D \equiv 1 \pmod 4$,}\\
+    4D & \text{if $D \equiv 2, 3 \pmod 4$.}
+  \end{cases}
+\end{equation*}
+and that an integral basis of $K$ is given by $\{1, \sqrt{D}\}$ in the second case,
+by $\left\{ 1, \frac{1+\sqrt{D}}{2} \right\}$ in the first case,
+and by $\left\{ 1, \frac{d+\sqrt{d}}{2} \right\}$ in both case.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  The Galois group of $K|\mathbb{Q}$ has two elements, the identity
+  and an automorphism sending $\sqrt{D}$ to $-\sqrt{D}$.
+
+\item[(2)]
+  Note that $\alpha \in \mathcal{O}_K$
+  iff $\mathrm{Tr}_{K|\mathbb{Q}}(\alpha), N_{K|\mathbb{Q}}(\alpha) \in \mathbb{Z}$
+  (by noting that the equation
+  $x^2 - \mathrm{Tr}_{K|\mathbb{Q}}(\alpha) x + N_{K|\mathbb{Q}}(\alpha) = 0$ has
+  a root $x = \alpha$).
+  So given $\alpha = x + y \sqrt{D} \in \mathcal{O}_K$, we have
+  \begin{align*}
+    \mathrm{Tr}_{K|\mathbb{Q}}(\alpha) &= 2x \in \mathbb{Z}, \\
+    N_{K|\mathbb{Q}}(\alpha) &= x^2 - D y^2 \in \mathbb{Z}.
+  \end{align*}
+
+\item[(3)]
+  So $4(x^2 - D y^2) = (2x)^2 - D(2y)^2 \in \mathbb{Z}$.
+  So $D(2y)^2 \in \mathbb{Z}$ since $2x \in \mathbb{Z}$.
+  So $2y \in \mathbb{Z}$ since $D$ is squarefree $\neq 0, 1$.
+  Let $r = 2x, s = 2y$.
+  Then $r^2 - Ds^2 = 4(x^2 - D y^2) \equiv 0 \pmod 4$.
+  Note that a square $\equiv 0, 1 \pmod 4$ and thus we consider the following two cases.
+
+\item[(4)]
+  If $D \equiv 1 \pmod 4$, then
+  \begin{align*}
+    &\:r^2 - Ds^2 \equiv r^2 - s^2 \pmod 4 \\
+    \Longrightarrow &\:
+    \text{$r$ and $s$ has the same parity} \\
+    \Longrightarrow &\:
+    \mathcal{O}_K = \left\{ \frac{r+s\sqrt{D}}{2} : r \equiv s \pmod 2 \right\} \\
+    \Longrightarrow &\:
+    \mathcal{O}_K = \left\{ \frac{r-s}{2} + s \cdot \frac{1+\sqrt{D}}{2}
+      : r \equiv s \pmod 2 \right\} \\
+    \Longrightarrow &\:
+    \mathcal{O}_K = \mathbb{Z} + \mathbb{Z} \frac{1+\sqrt{D}}{2}.
+  \end{align*}
+  So $\left\{ 1, \frac{1+\sqrt{D}}{2} \right\}$ is an integral basis of $K$.
+  Hence
+  \[
+    d
+    =
+    \begin{vmatrix}
+      1 & \frac{1+\sqrt{D}}{2} \\
+      1 & \frac{1-\sqrt{D}}{2}
+    \end{vmatrix}^2
+    = D.
+  \]
+
+\item[(5)]
+  If $D \equiv 2, 3 \pmod 4$, then
+  \begin{align*}
+    &\:r^2 - Ds^2 \equiv r^2+2s^2 \text{ or } r^2+s^2 \pmod 4 \\
+    \Longrightarrow &\:
+    \text{both $r$ and $s$ are even} \\
+    \Longrightarrow &\:
+    \text{both $x$ and $y$ are rational integers} \\
+    \Longrightarrow &\:
+    \mathcal{O}_K = \mathbb{Z} + \mathbb{Z}\sqrt{D}.
+  \end{align*}
+  So $\{ 1, \sqrt{D} \}$ is an integral basis of $K$.
+  Hence
+  \[
+    d
+    =
+    \begin{vmatrix}
+      1 & \sqrt{D} \\
+      1 & -\sqrt{D}
+    \end{vmatrix}^2
+    = 4D.
+  \]
+
+\item[(6)]
+  By (4)(5),
+  $\left\{ 1, \frac{d+\sqrt{d}}{2} \right\}$ is an integral basis of $K$
+  for any case.
 \end{enumerate}
 $\Box$ \\\\
 
