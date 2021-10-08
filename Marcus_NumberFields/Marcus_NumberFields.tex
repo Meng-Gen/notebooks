@@ -1784,7 +1784,7 @@ $\Box$ \\\\
 
 \subsubsection*{Exercise 2.3.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.3.}
-\emph{Complete the proof of Corollary 2, Theorem 1.} \\
+\emph{Complete the proof of Corollary 2, Theorem 2.1.} \\
 
 Corollary 2: Let $m$ be a squarefree integer.
 The set of algebraic integers in the quadratic field $\mathbb{Q}[\sqrt{m}]$ is
@@ -2107,6 +2107,55 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.7.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.7.}
+\emph{Complete the proof of Corollary 2, Theorem 2.3.} \\
+
+
+
+Corollary 2: The galois group of $\mathbb{Q}[\omega]$ over $\mathbb{Q}$ is isomorphic to
+the multiplicative group of integer $\pmod m$
+\[
+  (\mathbb{Z}/m\mathbb{Z})^{*} = \{ k : 1 \leq k \leq m, (k,m) = 1\}.
+\]
+For each $k \in (\mathbb{Z}/m\mathbb{Z})^{*}$,
+the corresponding automorphism in the galois group sends $\omega$ to $\omega^k$
+(and hence $g(\omega) \to g(\omega^k)$ for each $g \in \mathbb{Z}[x]$). \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  An automorphism of $\mathbb{Q}[\omega]$ is uniquely determined by the image of $\omega$,
+  and Theorem 2.3 shows that $\omega$ can be sent to any of the $\omega^k$, $(k,m) = 1$.
+  (Clearly it can't be sent anywhere else.)
+  This established the one-to-one correspondence between the galois group and
+  the multiplicative group of integer $\pmod m$, say
+  \[
+    \alpha: \mathrm{Gal}(\mathbb{Q}[\omega]/\mathbb{Q})
+    \to (\mathbb{Z}/m\mathbb{Z})^{*}.
+  \]
+
+\item[(2)]
+  The composition of automorphisms corresponds to multiplication $\pmod m$ in the natural way.
+  That is, if $\sigma, \tau \in \mathrm{Gal}(\mathbb{Q}[\omega]/\mathbb{Q})$
+  with $\sigma(\omega) = \omega^k$ and $\tau(\omega) = \omega^h$,
+  then
+  \[
+    (\sigma\tau)(\omega) = \sigma(\omega^h) = \omega^{kh}
+    \xrightarrow{\alpha} kh.
+  \]
+  Hence $\alpha$ is a group homomorphism.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.10.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.10.}
 \emph{Complete the proof of Corollary 3 to Theorem 2.3,
@@ -2348,7 +2397,7 @@ Let $K = \mathbb{Q}[\sqrt{m}]$ and $\mathcal{O}_K = \mathbb{A} \cap \mathbb{Q}[\
 Define a norm $N$ on $K$
 by $$N(a+b\sqrt{m}) = (a+b\sqrt{m})(a-b\sqrt{m}) = a^2 + |m|b^2.$$
 \item[(2)]
-Corollary 2 to Theorem 1:
+Corollary 2 to Theorem 2.1:
 \begin{equation*}
   \mathcal{O}_K =
     \begin{cases}
