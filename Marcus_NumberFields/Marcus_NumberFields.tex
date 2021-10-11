@@ -2915,6 +2915,53 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.20.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.20.}
+\emph{Let $f$ be a monic irreducible polynomial over a number field $K$ and
+let $\alpha$ be one of its roots in $\mathbb{C}$.
+Show that $f'(\alpha) = \prod_{\beta \neq \alpha}(\alpha - \beta)$
+with the product taken over all roots $\beta-\alpha$.
+(Hint: Write $f(x) = (x-\alpha)g(x)$.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Note that $f$ has no repeated roots in $\mathbb{C}$ by the irreducibility of $f$.
+  So we can write
+  \[
+    f(x) = (x-\alpha)g(x) = (x-\alpha)\prod_{\beta \neq \alpha}(x - \beta).
+  \]
+
+\item[(2)]
+  So
+  \[
+    f'(x) = g(x) + (x-\alpha)g'(x)
+  \]
+  by the Leibniz rule.
+  Take $x = \alpha$ to get
+  \[
+    f'(\alpha) = g(\alpha) = \prod_{\beta \neq \alpha}(\alpha - \beta).
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.28.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.28.}
 \emph{Let $f(x) = x^3+ax+b$, $a$ and $b \in \mathbb{Z}$,
