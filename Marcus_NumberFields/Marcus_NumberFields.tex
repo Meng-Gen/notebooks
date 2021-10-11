@@ -2793,6 +2793,128 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.19. (Vandermonde determinant)}
+\addcontentsline{toc}{subsubsection}{Exercise 2.19. (Vandermonde determinant)}
+\emph{Let $R$ be a commutative ring and fix elements $a_1, a_2, \ldots \in R$.
+We will prove by induction that the Vandermonde determinant
+\[
+  \begin{vmatrix}
+    1 & a_1 & \cdots & a_1^{n-1} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    1 & a_n & \cdots & a_n^{n-1}
+  \end{vmatrix}
+\]
+is equal to the product $\prod_{1 \leq r < s \leq n}(a_s - a_r)$.
+Assuming that the result holds for some $n$, consider the determinant
+\[
+  \begin{vmatrix}
+    1 & a_1 & \cdots & a_1^{n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    1 & a_n & \cdots & a_n^{n} \\
+    1 & a_{n+1} & \cdots & a_{n+1}^{n}
+  \end{vmatrix}.
+\]
+Show that this is equal to
+\[
+  \begin{vmatrix}
+    1 & a_1 & \cdots & f(a_1) \\
+    \vdots & \vdots & \ddots & \vdots \\
+    1 & a_n & \cdots & f(a_n) \\
+    1 & a_{n+1} & \cdots & f(a_{n+1})
+  \end{vmatrix}
+\]
+for any monic polynomial $f$ over $R$ of degree $n$.
+Then choose $f$ cleverly so that the determinant is easily calculated.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let
+  \[
+    V_n =
+    \begin{pmatrix}
+      1 & a_1 & \cdots & a_1^{n-1} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      1 & a_n & \cdots & a_n^{n-1}
+    \end{pmatrix}
+  \]
+  be the Vandermonde matrix.
+  We will apply the induction to show that $\det(V_n) = \prod_{1 \leq r < s \leq n}(a_s - a_r)$.
+
+\item[(2)]
+  Nothing to do for $n = 1, 2$.
+  Now Assuming that the result holds for some $n$, consider the determinant
+  \[
+    \det(V_{n+1}) = \begin{vmatrix}
+      1 & a_1 & \cdots & a_1^{n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      1 & a_n & \cdots & a_n^{n} \\
+      1 & a_{n+1} & \cdots & a_{n+1}^{n}
+    \end{vmatrix}.
+  \]
+
+\item[(3)]
+  \emph{Show that
+  \[
+    \det(V_{n+1}) = \begin{vmatrix}
+      1 & a_1 & \cdots & f(a_1) \\
+      \vdots & \vdots & \ddots & \vdots \\
+      1 & a_n & \cdots & f(a_n) \\
+      1 & a_{n+1} & \cdots & f(a_{n+1})
+    \end{vmatrix}
+  \]
+  for any monic polynomial $f$ over $R$ of degree $n$.}
+  Note that $\det(V_{n+1})$ is unchanged by adding a multiple of one column of $V_{n+1}$
+  to another column of $V_{n+1}$.
+  In particular, we add a multiple of the $i$-th column of $V_{n+1}$ to
+  the last column of $V_{n+1}$ for $i = 1, 2, \ldots, n$.
+  Then we obtain the equation
+  \[
+    \det(V_{n+1}) = \begin{vmatrix}
+      1 & a_1 & \cdots & f(a_1) \\
+      \vdots & \vdots & \ddots & \vdots \\
+      1 & a_n & \cdots & f(a_n) \\
+      1 & a_{n+1} & \cdots & f(a_{n+1})
+    \end{vmatrix}.
+  \]
+
+\item[(4)]
+  In particular,
+  we take
+  \[
+    f(x) = (x - a_1)(x - a_2) \cdots (x - a_n).
+  \]
+  Therefore
+  \begin{align*}
+    \det(V_{n+1})
+    &= \begin{vmatrix}
+      1 & a_1 & \cdots & 0 \\
+      \vdots & \vdots & \ddots & \vdots \\
+      1 & a_n & \cdots & 0 \\
+      1 & a_{n+1} & \cdots & \prod_{1 \leq r \leq n}(a_{n+1} - a_r)
+    \end{vmatrix} \\
+    &= \prod_{1 \leq r \leq n}(a_{n+1} - a_r)
+    \begin{vmatrix}
+      1 & a_1 & \cdots & a_1^{n-1} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      1 & a_n & \cdots & a_n^{n-1}
+    \end{vmatrix} \\
+    &= \prod_{1 \leq r \leq n}(a_{n+1} - a_r)
+        \prod_{1 \leq r < s \leq n}(a_s - a_r) \\
+    &= \prod_{1 \leq r < s \leq n+1}(a_s - a_r).
+  \end{align*}
+  By induction, the result is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.28.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.28.}
 \emph{Let $f(x) = x^3+ax+b$, $a$ and $b \in \mathbb{Z}$,
