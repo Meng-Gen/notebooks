@@ -2469,6 +2469,8 @@ are of the form $\pm(1+\sqrt{2})^k$, $k \in \mathbb{Z}$.)} \\
 
 Might assume to find nonnegative solutions to the Pell's equation $a^2 - 2b^2 = \pm 1$. \\
 
+
+
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
@@ -2486,13 +2488,13 @@ all $(1+\sqrt{2})^k$ with $k \geq 0$
 are distinct solutions to the diophantine equation $a^2 - 2b^2 = \pm 1$.
 Explicitly, let
 \begin{align*}
-(a_0,b_0) &= (1,0), \\
-(a_1,b_1) &= (1,1), \\
-(a_2,b_2) &= (3,2), \\
-(a_3,b_3) &= (7,5), \\
-&\cdots \\
-(a_k,b_k) &= (a_{k-1}+2b_{k-1},a_{k-1}+b_{k-1}), \\
-&\cdots
+  (a_0,b_0) &= (1,0), \\
+  (a_1,b_1) &= (1,1), \\
+  (a_2,b_2) &= (3,2), \\
+  (a_3,b_3) &= (7,5), \\
+  &\cdots \\
+  (a_k,b_k) &= (a_{k-1}+2b_{k-1},a_{k-1}+b_{k-1}), \\
+  &\cdots
 \end{align*}
 Note that all $(a_k,b_k)$ are distinct and satisfying $a_k^2 - 2b_k^2 = \pm 1$.
 Hence we get infinitely many solutions to the Pell's equation $a^2 - 2b^2 = \pm 1$.
@@ -2504,6 +2506,231 @@ are of the form $\pm(1+\sqrt{2})^k$, $k \in \mathbb{Z}$.
 Note that $(1+\sqrt{2})^k = (-1+\sqrt{2})^{-k}$.
 Thus we can find all nonnegative solutions to the Pell's equation $a^2 - 2b^2 = \pm 1$
 are exactly the same as (3).
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement. (Exercise I.1.6 in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
+\addcontentsline{toc}{subsubsection}{Supplement.
+(Exercise I.1.6 in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
+\emph{Show that the ring $\mathbb{Z}[\sqrt{d}] = \mathbb{Z} + \mathbb{Z}\sqrt{d}$,
+for any squarefree rational integer $d > 1$, has infinitely many units.} \\
+
+
+
+\emph{Proof.}
+The proof is quoted from Proposition 17.5.2 in the book:
+Ireland and Rosen, \emph{A Classical Introduction to Modern Number Theory, 2nd Ed.}
+\begin{enumerate}
+\item[(1)]
+  Define the norm of $z = x + y\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$ by
+  $N(z) = z \overline{z}$ or
+  \[
+    N(x + y\sqrt{d})
+    = \underbrace{(x + y\sqrt{d})}_{= z} \underbrace{(x - y\sqrt{d})}_{:= \overline{z}}
+    = x^2 - dy^2.
+  \]
+  Note that a norm is multiplicative.
+  Similar to Exercise I.1.1,
+  $\alpha \in \mathbb{Z}[\sqrt{d}]$ is a unit if and only if $N(\alpha) = \pm 1$.
+
+\item[(2)]
+  To show $\mathbb{Z}[\sqrt{d}]$ has infinitely many units, it suffices to show
+  the equation $x^2 - dy^2 = 1$ has infinitely many $(x,y)$ solutions.
+
+\item[(3)]
+  \emph{If $\xi$ is irrational then there are infinitely many rational numbers
+  $\frac{x}{y}$, $(x,y) = 1$ such that $\abs{\frac{x}{y}-\xi} < \frac{1}{y^2}$.}
+  It is followed by the pigeonhole principle.
+
+\item[(4)]
+  \emph{If $d$ is a positive squarefree integer then there is a constant $M := 2\sqrt{d}+1$
+  such that $\abs{x^2 - dy^2} < M$ has infinitely many solutions over $\mathbb{Z}$.}
+  Write $x^2 - dy^2 = (x + y\sqrt{d})(x - y\sqrt{d})$.
+  By part (3), there exist infinitely many pairs of relatively prime integers $(x,y)$, $y > 0$
+  satisfying $\abs{x - y\sqrt{d}} < \frac{1}{y}$.
+  Hence
+  \begin{align*}
+    \abs{x^2 - dy^2}
+    =& \: \abs{x + y\sqrt{d}}\abs{x - y\sqrt{d}} \\
+    \leq & \: \left(\abs{x - y\sqrt{d}} + 2 y\sqrt{d} \right) \abs{x - y\sqrt{d}} \\
+    \leq & \: 2 \sqrt{d} + 1.
+  \end{align*}
+
+\item[(5)]
+  By part (4), there is an integer $m$ such that $x^2 - dy^2 = m$
+  for infinitely many solutions over $\mathbb{Z}$.
+  Here $m \neq 0$.
+  We might assume $x, y > 0$ and $x$ components of solutions are distinct.
+
+\item[(6)]
+  The pigeonhole principle shows that there are two distinct solutions $(x_1,y_1)$, $(x_2,y_2)$
+  with $x_1 \neq x_2$ such that
+  \[
+    x_1 \equiv x_2 \pmod{|m|},
+    \qquad 
+    y_1 \equiv y_2 \pmod{|m|}.
+  \]
+  Let $\alpha = x_1 - y_1\sqrt{d}$, $\beta = x_2 + y_2\sqrt{d}$ and $\gamma = \alpha\beta$.
+  Hence
+  \begin{align*}
+    \gamma
+    &= (x_1 - y_1\sqrt{d})(x_2 + y_2\sqrt{d}) \\
+    &= \underbrace{(x_1 x_2 - d y_1 y_2)}_{\equiv 0 \pmod{|m|}}
+        + \underbrace{(x_1 y_2 - x_2 y_1)}_{\equiv 0 \pmod{|m|}}\sqrt{d} \\
+    &:= m(u + v\sqrt{d})
+  \end{align*}
+  for some $u + v\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$.
+  Taking norms of $\gamma = \alpha\beta$ gives $N(\gamma) = N(\alpha)N(\beta)$ or
+  \[
+    m^2 (u + v\sqrt{d}) = m^2.
+  \]
+  Hence $u + v\sqrt{d} = 1$.
+  By construction of $x_1, x_2$, $v \neq 0$.
+  Therefore the equation $x^2 - dy^2 = 1$ has one solution with $x, y > 0$.
+
+\item[(7)]
+  By part (6), we might take a unit $\varepsilon = x + y\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$
+  with $x, y > 0$.
+  Note that $\varepsilon \geq 1 + \sqrt{d} > 1$ (over the ordered field $\mathbb{R}$).
+  Hence there are infinitely many units
+  \[
+    \varepsilon, \varepsilon^2, \varepsilon^3, \ldots
+  \]
+  in $\mathbb{Z}[\sqrt{d}]$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Note.}
+  \emph{Furthermore, show that there is a unit $\varepsilon$ such that every unit has the form
+  $\pm \varepsilon^n$, $n \in \mathbb{Z}$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  By the well-ordering principle,
+  there is a unit $\varepsilon = x_1 + y_1\sqrt{d} \in \mathbb{Z}[\sqrt{d}]$ such that
+  $x_1, y_1 > 0$ and $(x_1,y_1)$ is the smallest solution of $x^2 - dy^2 = \pm 1$ with $x, y > 0$.
+
+\item[(2)]
+  Now given any unit $\varepsilon' = x + y\sqrt{d}$, $x, y > 0$,
+  it suffices to show that there is a positive integer $n$ such that $\varepsilon' = \varepsilon^n$.
+
+\item[(3)]
+  (Reductio ad absurdum)
+  If not, there were a positive integer $n$ such that $\varepsilon^n < \varepsilon' < \varepsilon^{n+1}$.
+  Hence $1 < \varepsilon^{-n} \varepsilon' < \varepsilon$.
+  Say $\varepsilon^{-n} \varepsilon' := x' + y'\sqrt{d}$.
+  As $\varepsilon^{-n} \varepsilon' > 1 > 0$, the inverse is satisfying $x' - y'\sqrt{d} > 0$.
+  Hence $x' > 0$.
+
+\item[(4)]
+  As the inverse is satisfying $x' - y'\sqrt{d} < 1$, $y' \geq 0$.
+  Note that $y' \neq 0$ (since $\varepsilon > 1$).
+  Hence the existence of $\varepsilon^{-n} \varepsilon'$ contradicts the minimality of $\varepsilon$.
+
+\item[(5)]
+  Now suppose a unit $\varepsilon' = x + y\sqrt{d}$ is of the form $x > 0$, $y < 0$.
+  Then $\varepsilon'^{-1} = x - y\sqrt{d} = \varepsilon^n$ for some positive integer $n$ by (2)(3)(4).
+  Hence $\varepsilon' = \varepsilon^{-n}$ for some positive integer $n$.
+  Other two cases of $\varepsilon' = x + y\sqrt{d}$ are similar.
+  Therefore, every unit has the form $\pm \varepsilon^n$, $n \in \mathbb{Z}$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement. (Exercise I.1.7 in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
+\addcontentsline{toc}{subsubsection}{Supplement.
+(Exercise I.1.7 in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
+\emph{Show that the ring $\mathbb{Z}[\sqrt{2}] = \mathbb{Z} + \mathbb{Z}\sqrt{2}$ is euclidean.
+Show furthermore that its units are given by $\pm(1+\sqrt{2})^n$, $n \in \mathbb{Z}$,
+and determine its prime elements.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mathbb{Z}[\sqrt{2}]$ is euclidean with respect to the function
+  $N: \mathbb{Z}[\sqrt{2}] \to \mathbb{N} \cup \{0\}$, $\alpha \mapsto \alpha \overline{\alpha}$.}
+  For $\alpha, \beta \neq 0 \in \mathbb{Z}[\sqrt{2}]$,
+  one has to find $\gamma, \rho \in \mathbb{Z}[\sqrt{2}]$
+  such that
+  \[
+    \alpha = \gamma\beta + \rho,
+    \qquad
+    N(\rho) < N(\beta).
+  \]
+
+\item[(2)]
+  Extend the norm function $N$ to $\mathbb{Q}[\sqrt{2}]$.
+  Write
+  \[
+    \frac{\alpha}{\beta} = x + y\sqrt{2} \in \mathbb{Q}[\sqrt{2}].
+  \]
+  Take $\gamma = u + v\sqrt{2} \in \mathbb{Z}[\sqrt{2}]$
+  such that $u, v$ are satisfying $\abs{u - x} \leq \frac{1}{2}$, $\abs{v - y} \leq \frac{1}{2}$.
+  Now take $\rho = \alpha - \gamma\beta$.
+
+\item[(3)]
+  Hence,
+  \[
+    N\left(\frac{\alpha}{\beta} - \gamma\right)
+    = (u-x)^2 + 2 (v-y)^2
+    \leq \left(\frac{1}{2}\right)^{2} + 2 \cdot \left(\frac{1}{2}\right)^{2}
+    < 1
+  \]
+  and thus
+  \[
+    N(\rho)
+    = N(\alpha - \gamma\beta)
+    = N(\beta) N\left(\frac{\alpha}{\beta} - \gamma\right)
+    < N(\beta).
+  \]
+
+\item[(4)]
+  \emph{Show that its units are given by $\pm(1+\sqrt{2})^n$, $n \in \mathbb{Z}$.}
+  $\varepsilon = 1 + \sqrt{2} \in \mathbb{Z}[\sqrt{2}]$ is a unit such that
+  $(1,1)$ is the smallest solution of $x^2 - 2y^2 = \pm 1$ with $x, y > 0$.
+  By the note in Exercise I.1.6,
+  all units are given by $\pm(1+\sqrt{2})^n$, $n \in \mathbb{Z}$.
+
+\item[(5)]
+  \emph{For all prime numbers $p \neq 2$, one has
+  $p = a^2 - 2b^2$ ($a, b \in \mathbb{Z}$) if and only if $p \equiv 1, 7 \pmod 8$.}
+  Similar to the proof of Proposition I.1.1,
+  it suffices to show that a prime number $p \equiv 1, 7 \pmod 8$ of $\mathbb{Z}$
+  does not remain a prime element in the ring $\mathbb{Z}[\sqrt{2}]$.
+  (Reductio ad absurdum)
+  Note that the congruence
+  \[
+    2 \equiv x^2 \pmod p
+  \]
+  admits a solution (by the law of quadratic reciprocity).
+  Thus we have $p \mid x^2 - 2 = (x + \sqrt{2})(x - \sqrt{2})$.
+  Hence $\frac{x}{p} \pm \frac{\sqrt{2}}{p} \in \mathbb{Z}[\sqrt{2}]$, which is absurd.
+
+\item[(6)]
+  \emph{The prime element $\pi$ of $\mathbb{Z}[\sqrt{2}]$, up to associated elements,
+  are given as follows.}
+  \begin{enumerate}
+  \item[(i)]
+    $\pi = \sqrt{2}$,
+
+  \item[(ii)]
+    \emph{$\pi = a + \sqrt{2}b$ with $a^2 - 2b^2 = p$, $p \equiv 1, 7 \pmod 8$},
+
+  \item[(iii)]
+    $\pi = p$, $p \equiv 3, 5 \pmod 8$.
+  \end{enumerate}
+  \emph{Here, $p$ denotes a prime number of $\mathbb{Z}$.}
+  The proof is exactly the same as Theorem I.1.4.
+\end{enumerate}
 $\Box$ \\\\
 
 
