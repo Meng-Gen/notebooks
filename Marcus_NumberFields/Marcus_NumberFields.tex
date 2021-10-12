@@ -2325,6 +2325,39 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.9.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.9.}
+\emph{With notation as in the proof of Corollary 3, Theorem 2.3,
+show that there exist integers $u$ and $v$ such that
+$e^{\frac{2\pi i}{r}} = \omega^u \theta^v$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Recall $\omega = e^{\frac{2\pi i}{m}}$, $\theta = e^{\frac{2\pi i}{k}}$
+  and $r$ is the least common multiple of $k$ and $m$.
+
+\item[(2)]
+  As $r$ is the least common multiple of $k$ and $m$,
+  there exist coprime integers $a$ and $b$ such that $r = am = bk$.
+  As $(a,b) = 1$, there exist integers $u$ and $v$ such that $au + bv = 1$.
+
+\item[(3)]
+  Hence,
+  \begin{align*}
+    \omega^u \theta^v
+    &= e^{\frac{2\pi i u}{m}} \cdot e^{\frac{2\pi i v}{k}} \\
+    &= e^{\frac{2\pi i au}{r}} \cdot e^{\frac{2\pi i bv}{r}} \\
+    &= e^{\frac{2\pi i (au+bv)}{r}} \\
+    &= e^{\frac{2\pi i}{r}}.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
