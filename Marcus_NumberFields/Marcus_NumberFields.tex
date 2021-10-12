@@ -2176,9 +2176,9 @@ $\Box$ \\\\
   where $d = \mathrm{disc}(\mathcal{O}_{\mathbb{Q}[\sqrt{m}]})$.
   (More generally, Kronecker and Weber proved that every abelian extension of $\mathbb{Q}$
   (normal with abelian Galois group) is contained in a cyclotomic field.
-  See the chapter 4 exercises.
+  See the Chapter 4 exercises.
   Hilbert and others investigated the abelian extensions of an arbitrary number field;
-  their results are known as \textbf{class field theory}, which will be discussed in chapter 8.)} \\
+  their results are known as \textbf{class field theory}, which will be discussed in Chapter 8.)} \\
 \end{enumerate}
 
 
@@ -2592,70 +2592,76 @@ $\Box$ \\\\
 \subsubsection*{Exercise 2.13.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.13.}
 \emph{Show that $1$ and $-1$ are the only units in the ring
-$\mathbb{A} \cap \mathbb{Q}[\sqrt{m}]$, $m$ squarefree, $m < 0$,
+$\mathcal{O}_{\mathbb{Q}[\sqrt{m}]}$, $m$ squarefree, $m < 0$,
 $m \neq -1, -3$.
 What if $m = -1$ or $-3$?} \\
 
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-Let $K = \mathbb{Q}[\sqrt{m}]$ and $\mathcal{O}_K = \mathbb{A} \cap \mathbb{Q}[\sqrt{m}]$.
-Define a norm $N$ on $K$
-by $$N(a+b\sqrt{m}) = (a+b\sqrt{m})(a-b\sqrt{m}) = a^2 + |m|b^2.$$
+  Let $K = \mathbb{Q}[\sqrt{m}]$.
+  Define a norm $N$ on $K$
+  by $$N(a+b\sqrt{m}) = (a+b\sqrt{m})(a-b\sqrt{m}) = a^2 + |m|b^2.$$
+
 \item[(2)]
-Corollary 2 to Theorem 2.1:
-\begin{equation*}
-  \mathcal{O}_K =
-    \begin{cases}
-      \{ a+b\sqrt{m} : a,b \in \mathbb{Z} \}
-        & (m \equiv 2,3 \pmod{4}), \\
-      \left\{ \frac{a+b\sqrt{m}}{2} : a,b \in \mathbb{Z}, a \equiv b \pmod{2} \right\}
-        & (m \equiv 1 \pmod{4}).
-    \end{cases}
-\end{equation*}
-Clearly, $N$ maps $\mathcal{O}_K$ to nonnegative integers.
-That is, $u$ is a unit in $\mathcal{O}_K$ if and only if $N(u) = 1$
-(by the fact that $N(u) = u \overline{u}$).
-\item[(3)]
-If $m \equiv 2,3 \pmod{4}$ and $u = a + b\sqrt{m} \in \mathcal{O}_K$ is a unit
-($a, b \in \mathbb{Z}$),
-then $$N(u) = 1 = a^2 + |m|b^2.$$
-  \begin{enumerate}
-  \item[(a)]
-  \emph{$m = -1$ or $|m| = 1$.}
-  $1 = a^2 + b^2$ or $(a,b) = (\pm 1,0), (0, \pm 1)$.
-  Hence all units in $\mathcal{O}_K$ are
-  $$\pm 1, \pm \sqrt{-1}.$$
-  \item[(b)]
-  \emph{$m < -1$ or $|m| > 1$.}
-  $1 = a^2 + |m|b^2$ implies that $b^2 = 0$.
-  Hence all units in $\mathcal{O}_K$ are $\pm 1$.
-  \end{enumerate}
-\item[(4)]
-If $m \equiv 1 \pmod{4}$ and $u = \frac{a + b\sqrt{m}}{2} \in \mathcal{O}_K$ is a unit
-($a, b \in \mathbb{Z}, a \equiv b \pmod{2}$),
-then $N(u) = 1 = (\frac{a}{2})^2 + |m|(\frac{b}{2})^2$ or
-$$4 = a^2 + |m|b^2.$$
-  \begin{enumerate}
-  \item[(a)]
-  \emph{$m = -3$ or $|m| = 3$.}
-  $4 = a^2 + 3b^2$ or $(a,b) = (\pm 2,0), (\pm 1, \pm 1)$.
-  Hence all units in $\mathcal{O}_K$ are
-  $$\pm 1, \frac{\pm 1 \pm \sqrt{-3}}{2}.$$
-  \item[(b)]
-  \emph{$m < -3$ or $|m| > 3$.}
-  $4 = a^2 + |m|b^2$ implies that $b^2 = 0$.
-  Hence all units in $\mathcal{O}_K$ are $\pm 1$.
-  \end{enumerate}
-\item[(5)]
-By (3)(4), all units in $\mathcal{O}_K$ are
+  Corollary 2 to Theorem 2.1 shows that
   \begin{equation*}
-    \begin{cases}
-      \pm 1                                & (m \neq -1, -3), \\
-      \pm 1, \pm \sqrt{-1}                 & (m = -1), \\
-      \pm 1, \frac{\pm 1 \pm \sqrt{-3}}{2} & (m = -3).
-    \end{cases}
+    \mathcal{O}_K =
+      \begin{cases}
+        \{ a+b\sqrt{m} : a,b \in \mathbb{Z} \}
+          & (m \equiv 2,3 \pmod{4}), \\
+        \left\{ \frac{a+b\sqrt{m}}{2} : a,b \in \mathbb{Z}, a \equiv b \pmod{2} \right\}
+          & (m \equiv 1 \pmod{4}).
+      \end{cases}
   \end{equation*}
+  Clearly, $N$ maps $\mathcal{O}_K$ to nonnegative integers.
+  That is, $u$ is a unit in $\mathcal{O}_K$ if and only if $N(u) = 1$
+  (by the fact that $N(u) = u \overline{u}$).
+
+\item[(3)]
+  If $m \equiv 2,3 \pmod{4}$ and $u = a + b\sqrt{m} \in \mathcal{O}_K$ is a unit
+  ($a, b \in \mathbb{Z}$),
+  then $$N(u) = 1 = a^2 + |m|b^2.$$
+    \begin{enumerate}
+    \item[(a)]
+      \emph{$m = -1$ or $|m| = 1$.}
+      $1 = a^2 + b^2$ or $(a,b) = (\pm 1,0), (0, \pm 1)$.
+      Hence all units in $\mathcal{O}_K$ are
+      $$\pm 1, \pm \sqrt{-1}.$$
+
+    \item[(b)]
+      \emph{$m < -1$ or $|m| > 1$.}
+      $1 = a^2 + |m|b^2$ implies that $b^2 = 0$.
+      Hence all units in $\mathcal{O}_K$ are $\pm 1$.
+    \end{enumerate}
+
+\item[(4)]
+  If $m \equiv 1 \pmod{4}$ and $u = \frac{a + b\sqrt{m}}{2} \in \mathcal{O}_K$ is a unit
+  ($a, b \in \mathbb{Z}, a \equiv b \pmod{2}$),
+  then $N(u) = 1 = (\frac{a}{2})^2 + |m|(\frac{b}{2})^2$ or
+  $$4 = a^2 + |m|b^2.$$
+    \begin{enumerate}
+    \item[(a)]
+      \emph{$m = -3$ or $|m| = 3$.}
+      $4 = a^2 + 3b^2$ or $(a,b) = (\pm 2,0), (\pm 1, \pm 1)$.
+      Hence all units in $\mathcal{O}_K$ are
+      $$\pm 1, \frac{\pm 1 \pm \sqrt{-3}}{2}.$$
+    
+    \item[(b)]
+      \emph{$m < -3$ or $|m| > 3$.}
+      $4 = a^2 + |m|b^2$ implies that $b^2 = 0$.
+      Hence all units in $\mathcal{O}_K$ are $\pm 1$.
+    \end{enumerate}
+
+\item[(5)]
+  By (3)(4), all units in $\mathcal{O}_K$ are
+    \begin{equation*}
+      \begin{cases}
+        \pm 1                                & (m \neq -1, -3), \\
+        \pm 1, \pm \sqrt{-1}                 & (m = -1), \\
+        \pm 1, \frac{\pm 1 \pm \sqrt{-3}}{2} & (m = -3).
+      \end{cases}
+    \end{equation*}
 \end{enumerate}
 $\Box$ \\\\
 
@@ -3175,113 +3181,119 @@ and assume $f$ is irreducible over $\mathbb{Q}$.
 Let $\alpha$ be a root of $f$.}
 \begin{enumerate}
 \item[(a)]
-\emph{Show that $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.}
+  \emph{Show that $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.}
+
 \item[(b)]
-\emph{Show that $2a\alpha+3b$ is a root of
-$$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b.$$
-Use this to find $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]} (2a\alpha+3b)$.}
+  \emph{Show that $2a\alpha+3b$ is a root of
+  $$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b.$$
+  Use this to find $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]} (2a\alpha+3b)$.}
+
 \item[(c)]
-\emph{Show that $\text{disc}(\alpha) = -(4a^3+27b^2)$.}
+  \emph{Show that $\textrm{disc}(\alpha) = -(4a^3+27b^2)$.}
+
 \item[(d)]
-\emph{Suppose $\alpha^3=\alpha+1$.
-Prove that $\{1,\alpha,\alpha^2\}$ is an integral basis for $\mathbb{A}\cap\mathbb{Q}[\alpha]$.
-(See Exercise 2.27(e).)
-Do the same if $\alpha^3+\alpha=1$.} \\
+  \emph{Suppose $\alpha^3=\alpha+1$.
+  Prove that $\{1,\alpha,\alpha^2\}$ is an integral basis for $\mathcal{O}_{\mathbb{Q}[\alpha]}$.
+  (See Exercise 2.27(e).)
+  Do the same if $\alpha^3+\alpha=1$.} \\
 \end{enumerate}
+
+
 
 \emph{Proof of (a).}
 \begin{enumerate}
 \item[(1)]
-\emph{Show that $\alpha \neq 0$.}
-If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
-So $f(x) = x^3+ax = x(x^2+a)$ is reducible, contrary to the irreducibility of $f$.
+  \emph{Show that $\alpha \neq 0$.}
+  If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+  So $f(x) = x^3+ax = x(x^2+a)$ is reducible, contrary to the irreducibility of $f$.
+
 \item[(2)]
-Since $\alpha$ be a root of $f$,
-$f(\alpha) = 0$,
-or $\alpha^3 + a\alpha + b = 0$,
-or $\alpha^3 = -a\alpha-b$.
+  Since $\alpha$ be a root of $f$,
+  $f(\alpha) = 0$,
+  or $\alpha^3 + a\alpha + b = 0$,
+  or $\alpha^3 = -a\alpha-b$.
+
 \item[(3)]
-\begin{align*}
-f'(x) = 3x^2 + a
-&\Longrightarrow
-f'(\alpha) = 3\alpha^2 + a \\
-&\Longleftrightarrow
-\alpha f'(\alpha) = 3\alpha^3 + a\alpha
-  &(\alpha \neq 0) \\
-&\Longleftrightarrow
-\alpha f'(\alpha) = 3(-a\alpha-b) + a\alpha
-  &(\alpha^3 = -a\alpha-b) \\
-&\Longleftrightarrow
-\alpha f'(\alpha) = -2a\alpha-3b.
-\end{align*}
-So $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.
+  \begin{align*}
+    f'(x) = 3x^2 + a
+    &\Longrightarrow
+    f'(\alpha) = 3\alpha^2 + a \\
+    &\Longleftrightarrow
+    \alpha f'(\alpha) = 3\alpha^3 + a\alpha
+      &(\alpha \neq 0) \\
+    &\Longleftrightarrow
+    \alpha f'(\alpha) = 3(-a\alpha-b) + a\alpha
+      &(\alpha^3 = -a\alpha-b) \\
+    &\Longleftrightarrow
+    \alpha f'(\alpha) = -2a\alpha-3b.
+  \end{align*}
+  So $f'(\alpha) = -\frac{2a\alpha+3b}{\alpha}$.
 \end{enumerate}
 $\Box$ \\
+
+
 
 \emph{Proof of (b).}
 \begin{enumerate}
 \item[(1)]
-Since $\alpha^3 + a\alpha + b = 0$,
-$$\left( \frac{(2a\alpha+3b)-3b}{2a} \right)^3
-  + a\left( \frac{(2a\alpha+3b)-3b}{2a} \right) + b = 0.$$
-That is, $2a\alpha+3b$ is a root of
-$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
+  Since $\alpha^3 + a\alpha + b = 0$,
+  \[
+    \left( \frac{(2a\alpha+3b)-3b}{2a} \right)^3
+    + a\left( \frac{(2a\alpha+3b)-3b}{2a} \right) + b = 0.
+  \]
+  That is, $2a\alpha+3b$ is a root of
+  $\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
+
 \item[(2)]
-$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)$ is the product of three roots of
-$\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
-Hence,
-\begin{align*}
-N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)
-&= (2a)^3\left[ \left(\frac{-3b}{2a}\right)^3 + a \cdot \frac{-3b}{2a} + b \right] \\
-&= 8a^3\left[ \frac{-27b^3}{8a^3} - \frac{b}{2} \right] \\
-&= -27b^3-4a^3b.
-\end{align*}
+  $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)$ is the product of three roots of
+  $\left( \frac{x-3b}{2a} \right)^3 + a\left( \frac{x-3b}{2a} \right) + b$.
+  Hence,
+  \begin{align*}
+    N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)
+    &= (2a)^3\left[ \left(\frac{-3b}{2a}\right)^3 + a \cdot \frac{-3b}{2a} + b \right] \\
+    &= 8a^3\left[ \frac{-27b^3}{8a^3} - \frac{b}{2} \right] \\
+    &= -27b^3-4a^3b.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
+
+
 \emph{Proof of (c).}
 \begin{align*}
-\text{disc}(\alpha)
-&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
-  &\text{(Theorem 2.8)} \\
-&= - N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{2a\alpha+3b}{\alpha} \right)
-  &\text{($n=3$ and (a))} \\
-&= \frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)}
-  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
-&= \frac{-27b^3-4a^3b}{b}
-  &\text{((b))} \\
-&= -27b^2-4a^3.
+  \textrm{disc}(\alpha)
+  &= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+    &\text{(Theorem 2.8)} \\
+  &= - N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{2a\alpha+3b}{\alpha} \right)
+    &\text{($n=3$ and (a))} \\
+  &= \frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(2a\alpha+3b)}
+    {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+  &= \frac{-27b^3-4a^3b}{b}
+    &\text{((b))} \\
+  &= -27b^2-4a^3.
 \end{align*}
 $\Box$ \\
+
+
 
 \emph{Proof of (d).}
 \begin{enumerate}
 \item[(1)]
-  \begin{enumerate}
-  \item[(a)]
-  $\alpha^3 = \alpha + 1$, or $\alpha^3 - \alpha - 1 = 0$.
-  \item[(b)]
-  $f(x) = x^3 - x - 1$ is irreducible over $\mathbb{Q}$
+  Write $\alpha^3 = \alpha + 1$ as $\alpha^3 - \alpha - 1 = 0$.
+  Note that $f(x) = x^3 - x - 1$ is irreducible over $\mathbb{Q}$
   since $f(x)$ is irreducible over $\mathbb{Z}/3\mathbb{Z}$.
-  \item[(c)]
-  $\text{disc}(\alpha) = -23$ (by (c)).
-  \item[(d)]
-  Since $\text{disc}(\alpha)$ is squarefree,
+  So $\textrm{disc}(\alpha) = -23$ (by (c)).
+  Since $\textrm{disc}(\alpha)$ is squarefree,
   the result is established (Exercise 2.27(e)).
-  \end{enumerate}
+
 \item[(2)]
-  \begin{enumerate}
-  \item[(a)]
-  $\alpha^3 + \alpha = 1$, or $\alpha^3 + \alpha - 1 = 0$.
-  \item[(b)]
-  $f(x) = x^3 + x - 1$ is irreducible over $\mathbb{Q}$
+  Similar to (1).
+  Write $\alpha^3 + \alpha = 1$ as $\alpha^3 + \alpha - 1 = 0$.
+  Note that $f(x) = x^3 + x - 1$ is irreducible over $\mathbb{Q}$
   since $f(x)$ is irreducible over $\mathbb{Z}/2\mathbb{Z}$.
-  \item[(c)]
-  $\text{disc}(\alpha) = -31$ (by (c)).
-  \item[(d)]
-  Since $\text{disc}(\alpha)$ is squarefree,
+  So $\textrm{disc}(\alpha) = -31$ (by (c)).
+  Since $\textrm{disc}(\alpha)$ is squarefree,
   the result is established (Exercise 2.27(e)).
- \end{enumerate}
 \end{enumerate}
 $\Box$ \\\\
 
@@ -3298,17 +3310,16 @@ and assume $f$ is irreducible over $\mathbb{Q}$.
 Let $\alpha$ be a root of $f$.}
 \begin{enumerate}
 \item[(a)]
-\emph{Show that $\text{disc}(\alpha) = 4^4 a^5 + 5^4 b^4$. (Suggestion: See Exercise 2.28.)}
+  \emph{Show that $\textrm{disc}(\alpha) = 4^4 a^5 + 5^4 b^4$. (Suggestion: See Exercise 2.28.)}
+
 \item[(b)]
-\emph{Suppose $\alpha^5=\alpha+1$.
-Prove that $\mathbb{A}\cap\mathbb{Q}[\alpha] = \mathbb{Z}[\alpha]$.
-($x^5 - x - 1$ is irreducible over $\mathbb{Q}$;
-this can be shown by reducing $\pmod{3}$.)}
-\item[(c)]
-\emph{}
-\item[(d)]
-\emph{} \\
+  \emph{Suppose $\alpha^5=\alpha+1$.
+  Prove that $\mathcal{O}_{\mathbb{Q}[\alpha]} = \mathbb{Z}[\alpha]$.
+  ($x^5 - x - 1$ is irreducible over $\mathbb{Q}$;
+  this can be shown by reducing $\pmod{3}$.)} \\
 \end{enumerate}
+
+
 
 \emph{Proof of (a)(Exercise 2.28).}
 \begin{enumerate}
@@ -3316,83 +3327,86 @@ this can be shown by reducing $\pmod{3}$.)}
 \emph{Show that $f'(\alpha) = -\frac{4a\alpha+5b}{\alpha}$.}
   \begin{enumerate}
   \item[(a)]
-  \emph{Show that $\alpha \neq 0$.}
-  If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
-  So $f(x) = x^5+ax = x(x^4+a)$ is reducible, contrary to the irreducibility of $f$.
+    \emph{Show that $\alpha \neq 0$.}
+    If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+    So $f(x) = x^5+ax = x(x^4+a)$ is reducible, contrary to the irreducibility of $f$.
+
   \item[(b)]
-  Since $\alpha$ be a root of $f$,
-  $f(\alpha) = 0$,
-  or $\alpha^5 + a\alpha + b = 0$,
-  or $\alpha^5 = -a\alpha-b$.
+    Since $\alpha$ be a root of $f$,
+    $f(\alpha) = 0$,
+    or $\alpha^5 + a\alpha + b = 0$,
+    or $\alpha^5 = -a\alpha-b$.
+
   \item[(c)]
-  \begin{align*}
-  f'(x) = 5x^4 + a
-  &\Longrightarrow
-  f'(\alpha) = 5\alpha^4 + a \\
-  &\Longleftrightarrow
-  \alpha f'(\alpha) = 5\alpha^5 + a\alpha
-    &(\alpha \neq 0) \\
-  &\Longleftrightarrow
-  \alpha f'(\alpha) = 5(-a\alpha-b) + a\alpha
-    &(\alpha^5 = -a\alpha-b) \\
-  &\Longleftrightarrow
-  \alpha f'(\alpha) = -4a\alpha-5b.
-  \end{align*}
-  So $f'(\alpha) = -\frac{4a\alpha+5b}{\alpha}$.
+    \begin{align*}
+      f'(x) = 5x^4 + a
+      &\Longrightarrow
+      f'(\alpha) = 5\alpha^4 + a \\
+      &\Longleftrightarrow
+      \alpha f'(\alpha) = 5\alpha^5 + a\alpha
+        &(\alpha \neq 0) \\
+      &\Longleftrightarrow
+      \alpha f'(\alpha) = 5(-a\alpha-b) + a\alpha
+        &(\alpha^5 = -a\alpha-b) \\
+      &\Longleftrightarrow
+      \alpha f'(\alpha) = -4a\alpha-5b.
+    \end{align*}
+    So $f'(\alpha) = -\frac{4a\alpha+5b}{\alpha}$.
   \end{enumerate}
+
 \item[(2)]
-\emph{Show that $4a\alpha+5b$ is a root of
-$$\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b.$$
-Use this to show that
-$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b) = -4^4a^5b-5^5b^5$.}
+  \emph{Show that $4a\alpha+5b$ is a root of
+  $$\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b.$$
+  Use this to show that
+  $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b) = -4^4a^5b-5^5b^5$.}
   \begin{enumerate}
   \item[(a)]
-  Since $\alpha^5 + a\alpha + b = 0$,
-  $$\left( \frac{(4a\alpha+5b)-5b}{4a} \right)^5
-    + a\left( \frac{(4a\alpha+5b)-5b}{4a} \right) + b = 0.$$
-  That is, $4a\alpha+5b$ is a root of
-  $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
+    Since $\alpha^5 + a\alpha + b = 0$,
+    \[
+      \left( \frac{(4a\alpha+5b)-5b}{4a} \right)^5
+      + a\left( \frac{(4a\alpha+5b)-5b}{4a} \right) + b = 0.
+    \]
+    That is, $4a\alpha+5b$ is a root of
+    $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
+
   \item[(b)]
-  $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)$ is the product of $5$ roots of
-  $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
-  Hence,
-  \begin{align*}
-  N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)
-  &= (4a)^5\left[ \left(\frac{-5b}{4a}\right)^5 + a \cdot \frac{-5b}{4a} + b \right] \\
-  &= 4^5a^5\left[ \frac{-5^5b^5}{4^5a^5} - \frac{b}{4} \right] \\
-  &= -5^5b^5-4^4a^5b.
-  \end{align*}
+    $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)$ is the product of $5$ roots of
+    $\left( \frac{x-5b}{4a} \right)^5 + a\left( \frac{x-5b}{4a} \right) + b$.
+    Hence,
+    \begin{align*}
+      N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)
+      &= (4a)^5\left[ \left(\frac{-5b}{4a}\right)^5 + a \cdot \frac{-5b}{4a} + b \right] \\
+      &= 4^5a^5\left[ \frac{-5^5b^5}{4^5a^5} - \frac{b}{4} \right] \\
+      &= -5^5b^5-4^4a^5b.
+    \end{align*}
   \end{enumerate}
+
 \item[(3)]
-\emph{Show that $\text{disc}(\alpha) = 4^4 a^5 + 5^4 b^4$.}
-\begin{align*}
-\text{disc}(\alpha)
-&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
-  &\text{(Theorem 2.8)} \\
-&= N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{4a\alpha+5b}{\alpha} \right)
-  &\text{($n=5$ and (1))} \\
-&= -\frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)}
-  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
-&= - \frac{-4^4a^5b-5^5b^5}{b}
-  &\text{((2))} \\
-&= 4^4 a^5 + 5^4 b^4.
-\end{align*}
+  \emph{Show that $\textrm{disc}(\alpha) = 4^4 a^5 + 5^4 b^4$.}
+  \begin{align*}
+    \textrm{disc}(\alpha)
+    &= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+      &\text{(Theorem 2.8)} \\
+    &= N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}\left( -\frac{4a\alpha+5b}{\alpha} \right)
+      &\text{($n=5$ and (1))} \\
+    &= -\frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(4a\alpha+5b)}
+      {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+    &= - \frac{-4^4a^5b-5^5b^5}{b}
+      &\text{((2))} \\
+    &= 4^4 a^5 + 5^4 b^4.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\
 
+
+
 \emph{Proof of (b)(Exercise 2.28).}
-\begin{enumerate}
-\item[(1)]
-$\alpha^5 = \alpha + 1$, or $\alpha^5 - \alpha - 1 = 0$.
-\item[(2)]
-$f(x) = x^5 - x - 1$ is irreducible over $\mathbb{Q}$
-since $f(x)$ is irreducible over $\mathbb{Z}/3\mathbb{Z}$.
-\item[(3)]
-$\text{disc}(\alpha) = 881$ (by (a)).
-\item[(4)]
-Since $\text{disc}(\alpha)$ is squarefree (a prime number),
-the result is established (Exercise 2.27(e)).
-\end{enumerate}
+  Write $\alpha^5 = \alpha + 1$ as $\alpha^5 - \alpha - 1 = 0$.
+  Note that $f(x) = x^5 - x - 1$ is irreducible over $\mathbb{Q}$
+  since $f(x)$ is irreducible over $\mathbb{Z}/3\mathbb{Z}$.
+  So $\textrm{disc}(\alpha) = 881$ (by (a)).
+  Since $\textrm{disc}(\alpha)$ is squarefree (a prime number),
+  the result is established (Exercise 2.27(e)).
 $\Box$ \\\\
 
 
@@ -3403,86 +3417,98 @@ $\Box$ \\\\
 
 \subsubsection*{Exercise 2.45.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.45.}
-\emph{Obtain a formula for $\text{disc}(\alpha)$ if $\alpha$ is a root of
+\emph{Obtain a formula for $\textrm{disc}(\alpha)$ if $\alpha$ is a root of
 an irreducible polynomial $x^n + ax + b$ over $\mathbb{Q}$.
 Do the same for $x^n + ax^{n-1}+b$.} \\
 
 Assume that $n \geq 2$. \\
 
+
+
 \emph{Proof of $x^n + ax + b$ (Exercise 2.28).}
 \begin{enumerate}
 \item[(1)]
-\emph{Show that $f'(\alpha) = -\frac{(n-1)a\alpha+nb}{\alpha}$.}
+  \emph{Show that $f'(\alpha) = -\frac{(n-1)a\alpha+nb}{\alpha}$.}
   \begin{enumerate}
-  \item[(a)]
-  \emph{Show that $\alpha \neq 0$.}
-  If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
-  So $f(x) = x^n+ax = x(x^{n-1}+a)$ is reducible, contrary to the irreducibility of $f$.
-  \item[(b)]
-  Since $\alpha$ be a root of $f$,
-  $f(\alpha) = 0$,
-  or $\alpha^n + a\alpha + b = 0$,
-  or $\alpha^n = -a\alpha-b$.
-  \item[(c)]
-  \begin{align*}
-  f'(x) = nx^{n-1} + a
-  &\Longrightarrow
-  f'(\alpha) = n\alpha^{n-1} + a \\
-  &\Longleftrightarrow
-  \alpha f'(\alpha) = n\alpha^n + a\alpha
-    &(\alpha \neq 0) \\
-  &\Longleftrightarrow
-  \alpha f'(\alpha) = n(-a\alpha-b) + a\alpha
-    &(\alpha^n = -a\alpha-b) \\
-  &\Longleftrightarrow
-  \alpha f'(\alpha) = -(n-1)a\alpha-nb.
-  \end{align*}
-  So $f'(\alpha) = -\frac{(n-1)a\alpha+nb}{\alpha}$.
+    \item[(a)]
+      \emph{Show that $\alpha \neq 0$.}
+      If $\alpha$ were $0$, then $f(\alpha) = f(0) = b$.
+      So $f(x) = x^n+ax = x(x^{n-1}+a)$ is reducible, contrary to the irreducibility of $f$.
+
+    \item[(b)]
+      Since $\alpha$ be a root of $f$,
+      $f(\alpha) = 0$,
+      or $\alpha^n + a\alpha + b = 0$,
+      or $\alpha^n = -a\alpha-b$.
+
+    \item[(c)]
+      \begin{align*}
+        f'(x) = nx^{n-1} + a
+        &\Longrightarrow
+        f'(\alpha) = n\alpha^{n-1} + a \\
+        &\Longleftrightarrow
+        \alpha f'(\alpha) = n\alpha^n + a\alpha
+          &(\alpha \neq 0) \\
+        &\Longleftrightarrow
+        \alpha f'(\alpha) = n(-a\alpha-b) + a\alpha
+          &(\alpha^n = -a\alpha-b) \\
+        &\Longleftrightarrow
+        \alpha f'(\alpha) = -(n-1)a\alpha-nb.
+        \end{align*}
+      So $f'(\alpha) = -\frac{(n-1)a\alpha+nb}{\alpha}$.
   \end{enumerate}
+
 \item[(2)]
-\emph{
-Let $\beta = (n-1)a\alpha+nb$.
-Show that $\beta$ is a root of
-$$\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b.$$
-Use this to show that
-$$N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta) = -(n-1)^{n-1}a^nb+(-1)^n n^n b^n.$$}
+  \emph{Let $\beta = (n-1)a\alpha+nb$.
+  Show that $\beta$ is a root of
+  \[
+    \left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b.
+  \]
+  Use this to show that}
+  \[
+    N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta) = -(n-1)^{n-1}a^nb+(-1)^n n^n b^n.
+  \]
   \begin{enumerate}
   \item[(a)]
-  Since $\alpha^n + a\alpha + b = 0$,
-  $$\left( \frac{\beta-nb}{(n-1)a} \right)^n
-    + a\left( \frac{\beta-nb}{(n-1)a} \right) + b = 0.$$
-  That is, $\beta$ is a root of
-  $\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b$.
+    Since $\alpha^n + a\alpha + b = 0$,
+    \[
+      \left( \frac{\beta-nb}{(n-1)a} \right)^n
+      + a\left( \frac{\beta-nb}{(n-1)a} \right) + b = 0.
+    \]
+    That is, $\beta$ is a root of
+    $\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b$.
+
   \item[(b)]
-  $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta)$ is the product of $n$ roots of
-  $\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b$.
-  Hence,
-  \begin{align*}
-  N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta)
-  &= ((n-1)a)^n\left[ \left(\frac{-nb}{(n-1)a}\right)^n
-    + a \cdot \frac{-nb}{(n-1)a} + b \right] \\
-  &= (n-1)^n a^n\left[ \frac{(-1)^n n^n b^n}{(n-1)^n a^n} - \frac{b}{n-1} \right] \\
-  &= (-1)^n n^n b^n - (n-1)^{n-1} a^n b.
-  \end{align*}
+    $N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta)$ is the product of $n$ roots of
+    $\left( \frac{x-nb}{(n-1)a} \right)^n + a\left( \frac{x-nb}{(n-1)a} \right) + b$.
+    Hence,
+    \begin{align*}
+      N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\beta)
+      &= ((n-1)a)^n\left[ \left(\frac{-nb}{(n-1)a}\right)^n
+        + a \cdot \frac{-nb}{(n-1)a} + b \right] \\
+      &= (n-1)^n a^n\left[ \frac{(-1)^n n^n b^n}{(n-1)^n a^n} - \frac{b}{n-1} \right] \\
+      &= (-1)^n n^n b^n - (n-1)^{n-1} a^n b.
+    \end{align*}
   \end{enumerate}
+
 \item[(3)]
-\emph{Show that $\text{disc}(\alpha) = (-1)^{\frac{(n-1)(n-2)}{2}} (n-1)^{n-1}a^n
-  + (-1)^{\frac{n(n-1)}{2}} n^n b^{n-1}$.}
-\begin{align*}
-\text{disc}(\alpha)
-&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
-  &\text{(Theorem 2.8)} \\
-&= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}
-  \left( -\frac{(n-1)a\alpha+nb}{\alpha} \right)
-  &\text{((1))} \\
-&= (-1)^{\frac{n(n-1)}{2}}(-1)^n
-  \frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}((n-1)a\alpha+nb)}
-  {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
-&= (-1)^{\frac{n(n-1)}{2}}(-1)^n \frac{-(n-1)^{n-1}a^nb+(-1)^n n^n b^n}{b}
-  &\text{((2))} \\
-&= (-1)^{\frac{(n-1)(n-2)}{2}} (n-1)^{n-1}a^n
-  + (-1)^{\frac{n(n-1)}{2}} n^n b^{n-1}.
-\end{align*}
+  \emph{Show that $\textrm{disc}(\alpha) = (-1)^{\frac{(n-1)(n-2)}{2}} (n-1)^{n-1}a^n
+    + (-1)^{\frac{n(n-1)}{2}} n^n b^{n-1}$.}
+  \begin{align*}
+    \textrm{disc}(\alpha)
+    &= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(f'(\alpha))
+      &\text{(Theorem 2.8)} \\
+    &= (-1)^{\frac{n(n-1)}{2}} N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}
+      \left( -\frac{(n-1)a\alpha+nb}{\alpha} \right)
+      &\text{((1))} \\
+    &= (-1)^{\frac{n(n-1)}{2}}(-1)^n
+      \frac{N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}((n-1)a\alpha+nb)}
+      {N_{\mathbb{Q}}^{\mathbb{Q}[\alpha]}(\alpha)} \\
+    &= (-1)^{\frac{n(n-1)}{2}}(-1)^n \frac{-(n-1)^{n-1}a^nb+(-1)^n n^n b^n}{b}
+      &\text{((2))} \\
+    &= (-1)^{\frac{(n-1)(n-2)}{2}} (n-1)^{n-1}a^n
+      + (-1)^{\frac{n(n-1)}{2}} n^n b^{n-1}.
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
