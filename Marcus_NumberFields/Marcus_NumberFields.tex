@@ -2156,6 +2156,179 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.8.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.8.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Let $\omega = e^{\frac{2\pi i}{p}}$, $p$ an odd prime.
+  Show that $\mathbb{Q}[\omega]$ contains $\sqrt{p}$ if $p \equiv 1 \pmod{4}$,
+  and $\sqrt{-p}$ if $p \equiv 3 \pmod{4}$.
+  (Hint: Recall that we have shown that $\mathrm{disc}(\omega) = \pm p^{p-2}$ with $+$ holding
+  iff $p \equiv 1 \pmod{4}$.)
+  Express $\sqrt{-3}$ and $\sqrt{5}$ as polynomials in the appropriate $\omega$.}
+
+\item[(b)]
+  \emph{Show that the eighth cyclotomic field contains $\sqrt{2}$.}
+
+\item[(c)]
+  \emph{Show that every quadratic field is contained in a cyclotomic field:
+  In fact, $\mathbb{Q}[\sqrt{m}]$ is contained in the $d$-th cyclotomic field,
+  where $d = \mathrm{disc}(\mathcal{O}_{\mathbb{Q}[\sqrt{m}]})$.
+  (More generally, Kronecker and Weber proved that every abelian extension of $\mathbb{Q}$
+  (normal with abelian Galois group) is contained in a cyclotomic field.
+  See the chapter 4 exercises.
+  Hilbert and others investigated the abelian extensions of an arbitrary number field;
+  their results are known as \textbf{class field theory}, which will be discussed in chapter 8.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Recall that we have shown that
+  \[
+    \mathrm{disc}(\omega)
+    = \prod_{1 \leq r < s \leq p}(\omega_r - \omega_s)^2
+    = (-1)^{\frac{p-1}{2}} p^{p-2}
+    = (-1)^{\frac{p-1}{2}} p \cdot p^{p-3}
+  \]
+  where $\omega_1 = \omega, \ldots, \omega_p$ are the conjugates of $\omega$ over $\mathbb{Q}$.
+  Hence
+  \[
+    \prod_{1 \leq r < s \leq p}(\omega_r - \omega_s)
+    = \pm \sqrt{(-1)^{\frac{p-1}{2}} p} \cdot p^{\frac{p-3}{2}}
+   \in \mathbb{Q}[\omega].
+  \]
+  Note that $p^{\frac{p-3}{2}} \in \mathbb{Q}$ as $p \geq 3$ is odd
+  and $\pm$ is unrelated as $\mathbb{Q}[\omega]$ is a field.
+  Therefore
+  \[
+    \sqrt{(-1)^{\frac{p-1}{2}} p} \in \mathbb{Q}[\omega].
+  \]
+
+\item[(2)]
+  \emph{Express $\sqrt{-3}$ as polynomials in the appropriate $\omega$.}
+  Take $\omega = e^{\frac{2\pi i}{3}}$.
+  A direct computing shows that
+  \begin{align*}
+    \prod_{1 \leq r < s \leq 3}(\omega_r - \omega_s)
+    &= \prod_{1 \leq r < s \leq 3}(\omega^r - \omega^s) \\
+    &= (1-\omega)(1-\omega^2)(\omega-\omega^2) \\
+    &= 3(-\omega^2 + \omega) \\
+    &= 3 \sqrt{-3}.
+  \end{align*}
+  Hence $\sqrt{-3} = -\omega^2 + \omega$.
+
+\item[(3)]
+  \emph{Express $\sqrt{5}$ as polynomials in the appropriate $\omega$.}
+  Take $\omega = e^{\frac{2\pi i}{5}}$.
+  A direct computing shows that
+  \begin{align*}
+    \prod_{1 \leq r < s \leq 5}(\omega_r - \omega_s)
+    &= \prod_{1 \leq r < s \leq 5}(\omega^r - \omega^s) \\
+    &= 3(\omega - \omega^2) \\
+    &= -25(\omega^4 - \omega^3 - \omega^2 + \omega) \\
+    &= -25 \sqrt{5}.
+  \end{align*}
+  Hence $\sqrt{5} = \omega^4 - \omega^3 - \omega^2 + \omega$.
+
+\item[(4)]
+  (Another proof)
+  The quadratic Gauss sum shows that
+  \[
+    \sum_{n=0}^{p-1} e^{\frac{2\pi i n^2}{p}} = \sqrt{(-1)^{\frac{p-1}{2}} p}.
+  \]
+  So $\sqrt{-3} = 2\omega_3 + 1$ and $\sqrt{5} = 2\omega^4_5 + 2\omega_5 + 1$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  A root of eighth unity is $\omega = \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} i$.
+
+\item[(2)]
+  Hence
+  \[
+    \omega + \omega^{-1}
+    = \left( \frac{\sqrt{2}}{2} + \frac{\sqrt{-2}}{2} \right)
+        + \left( \frac{\sqrt{2}}{2} - \frac{\sqrt{-2}}{2} \right)
+    = \sqrt{2} \in \mathbb{Q}[\omega].
+  \]
+\end{enumerate} 
+$\Box$ \\
+
+
+
+\emph{Proof of (c).}
+\begin{enumerate}
+\item[(1)]
+  Note that $\mathbb{Q}[\omega_a, \omega_b] = \mathbb{Q}[\omega_{ab}]$ if
+  $a,b \in \mathbb{Z}$ are relatively prime.
+  Might assume that $m$ is squarefree since $\mathbb{Q}[\sqrt{ab^2}] = \mathbb{Q}[\sqrt{a}]$.
+  Consider the following four cases.
+
+\item[(2)]
+  Suppose $m > 0$ and $2 \nmid m$.
+  Write
+  \[
+    m = p_1 \cdots p_r \cdot q_1 \cdots q_s
+  \]
+  as a product of distinct primes where $p_i \equiv 1 \pmod 4$ and $q_j \equiv 3 \pmod 4$.
+  Part (a) shows that
+  \[
+    \sqrt{p_1}, \ldots, \sqrt{p_r}, \sqrt{-q_1}, \cdots, \sqrt{-q_s}
+    \in \mathbb{Q}[\omega_{p_1}, \ldots, \omega_{p_r}, \omega_{q_1}, \ldots, \omega_{q_s}].
+  \]
+  So $\sqrt{(-1)^s m} \in \mathbb{Q}[\omega_{m}]$.
+  If $s$ is even, then $\sqrt{m} \in \mathbb{Q}[\omega_{m}]$ or
+  $\mathbb{Q}[\sqrt{m}] \subseteq \mathbb{Q}[\omega_{m}]$.
+  If $s$ is odd, then $\sqrt{m} \in \mathbb{Q}[\omega_{m}, \omega_{4}] = \mathbb{Q}[\omega_{4m}]$
+  (since $\sqrt{-1} \in \mathbb{Q}[\omega_{4}]$).
+  In any case,
+  $\mathbb{Q}[\sqrt{m}]$ is contained in the $d$-th cyclotomic field,
+  where $d = \mathrm{disc}(\mathcal{O}_{\mathbb{Q}[\sqrt{m}]})$.
+  (See Supplement to Exercise 2.3.)
+
+\item[(3)]
+  Suppose $m < 0$ and $2 \nmid m$.
+  Similar to (2).
+
+\item[(4)]
+  Suppose $m > 0$ and $2 \mid m$.
+  Write
+  \[
+    m = 2 \cdot p_1 \cdots p_r \cdot q_1 \cdots q_s
+  \]
+  as a product of distinct primes where $p_i \equiv 1 \pmod 4$ and $q_j \equiv 3 \pmod 4$.
+  Parts (a)(b) show that
+  \[
+    \sqrt{2}, \sqrt{p_1}, \ldots, \sqrt{p_r}, \sqrt{-q_1}, \cdots, \sqrt{-q_s}
+    \in \mathbb{Q}[\omega_8, \omega_{p_1}, \ldots, \omega_{p_r}, \omega_{q_1}, \ldots, \omega_{q_s}].
+  \]
+  So $\sqrt{(-1)^s m} \in \mathbb{Q}[\omega_{4m}]$.
+  Note that $\sqrt{(-1)^s} \in \mathbb{Q}[\omega_{4}] \subseteq \mathbb{Q}[\omega_{4m}]$.
+  Hence $\sqrt{m} \in \mathbb{Q}[\omega_{4m}]$ is contained in the $d$-th cyclotomic field,
+  where $d = 4m = \mathrm{disc}(\mathcal{O}_{\mathbb{Q}[\sqrt{m}]})$.
+
+\item[(5)]
+  Suppose $m < 0$ and $2 \mid m$. Same as (4).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.10.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.10.}
 \emph{Complete the proof of Corollary 3 to Theorem 2.3,
