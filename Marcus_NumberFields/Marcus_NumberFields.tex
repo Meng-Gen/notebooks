@@ -3000,6 +3000,92 @@ in the number ring $\mathbb{Z}[\sqrt{-5}]$.
 $\Box$ \\\\
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.16.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.16.}
+\emph{Set $\alpha = \sqrt[4]{2}$.
+Use the trace $T = T^{\mathbb{Q}[\alpha]}$ to show that $\sqrt{3} \not\in \mathbb{Q}[\alpha]$.
+(Hint: Write $\sqrt{3} = a + b\alpha + c\alpha^2 + d\alpha^3$ and successively show that
+$a = 0$; $b = 0$ (what is $T\left( \frac{\sqrt{3}}{\alpha} \right)$?); $c = 0$;
+and finally obtain a contradiction.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $K = \mathbb{Q}[\alpha]$.
+  (Reductio ad absurdum)
+  If $\sqrt{3} \in K$, then we can write $\sqrt{3} = a + b\alpha + c\alpha^2 + d\alpha^3$
+  for some integers $a$, $b$, $c$ and $d$.
+
+\item[(2)]
+  Note that $K = \mathbb{Q}[\alpha] = \mathbb{Q}[\sqrt{3}]$ by assumption.
+  Hence
+  \begin{align*}
+    & \: T^{\mathbb{Q}[\sqrt{3}]}(\sqrt{3})
+        = T^{\mathbb{Q}[\alpha]}(a + b\alpha + c\alpha^2 + d\alpha^3) \\
+    \Longrightarrow & \:
+        0 = 4a \\
+    \Longrightarrow & \:
+        a = 0.
+  \end{align*}
+  So $\sqrt{3} = b\alpha + c\alpha^2 + d\alpha^3$.
+
+\item[(3)]
+  $\sqrt{3} = b\alpha + c\alpha^2 + d\alpha^3$ implies that
+  \[
+    \underbrace{\sqrt{3}\alpha^3}_{= \sqrt[4]{72}} = 2b + 2c\alpha + 2d\alpha^2.
+  \]
+  Since $\mathbb{Q}[\sqrt[4]{72}] \subseteq K$
+  and $[\mathbb{Q}[\sqrt[4]{72}]:\mathbb{Q}] = [\mathbb{Q}[\sqrt[4]{2}]:\mathbb{Q}] = 4$,
+  $K = \mathbb{Q}[\sqrt[4]{72}]$.
+  Hence
+  \begin{align*}
+    & \: T^{\mathbb{Q}[\sqrt[4]{72}]}(\sqrt[4]{72})
+        = T^{\mathbb{Q}[\alpha]}(2b + 2c\alpha + 2d\alpha^2) \\
+    \Longrightarrow & \:
+        0 = 8b \\
+    \Longrightarrow & \:
+        b = 0.
+  \end{align*}
+  So $\sqrt{3} = c\alpha^2 + d\alpha^3$.
+
+\item[(4)]
+  Similar to (3).
+  $\sqrt{3} = c\alpha^2 + d\alpha^3$ implies that
+  \[
+    \underbrace{\sqrt{3}\alpha^2}_{= \sqrt{6}} = 2c + 2d\alpha.
+  \]
+  Since $\mathbb{Q}[\sqrt{6}] \subseteq K$
+  and $[\mathbb{Q}[\sqrt{6}]:\mathbb{Q}] = [\mathbb{Q}[\sqrt{3}]:\mathbb{Q}] = 2$,
+  $K = \mathbb{Q}[\sqrt{6}]$.
+  Hence
+  \begin{align*}
+    T^{\mathbb{Q}[\sqrt{6}]}(\sqrt{6})
+        = T^{\mathbb{Q}[\alpha]}(2c + 2d\alpha)
+    \Longrightarrow
+        0 = 8c
+    \Longrightarrow
+        c = 0.
+  \end{align*}
+  So $\sqrt{3} = d\alpha^3$.
+
+\item[(5)]
+  Similar to (3)(4), $d = 0$ and thus $\sqrt{3} = 0$, which is absurd.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
