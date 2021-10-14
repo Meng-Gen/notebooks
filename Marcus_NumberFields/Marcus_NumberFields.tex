@@ -3287,6 +3287,118 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Exercise 2.22. (Stickelberger's criterion)}
+\addcontentsline{toc}{subsubsection}{Exercise 2.22. (Stickelberger's criterion)}
+\emph{Let $K$ be a number field of degree $n$ over $\mathbb{Q}$ and
+fix algebraic integers $\alpha_1, \ldots, \alpha_n \in K$.
+We know that $d = \mathrm{disc}(\alpha_1, \ldots, \alpha_n)$ is in $\mathbb{Z}$;
+we will show that $d \equiv 0 \text{ or } 1 \pmod{4}$.
+Letting $\sigma_1, \ldots, \sigma_n$ denote the embeddings of $K$ in $\mathbb{C}$,
+we know that $d$ is the square of the determinant $\abs{\sigma_i(\alpha_j)}$.
+This determinant is a sum of $n!$ terms,
+one for each permutation of $\{1, \ldots, n \}$.
+Let $P$ denote the sum of the terms corresponding to even permutations,
+and let $N$ denote the sum of the terms (without negative signs) corresponding to odd permutations.
+Thus $d = (P-N)^2 = (P+N)^2 - 4PN$.
+Complete the proof by showing that $P+N$ and $PN$ are in $\mathbb{Z}$.
+(Suggestion: Show that they are algebraic integers and that they are in $\mathbb{Q}$;
+for the latter, extend all $\sigma_i$ to some normal extension $L$ of $\mathbb{Q}$ so that
+they become automorphisms of $L$.)} \\
+
+\emph{In particular we have $\mathrm{disc}(\mathcal{O}_K) \equiv 0 \text{ or } 1 \pmod{4}$.
+This is known as \textbf{Stickelberger's criterion}.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $\sigma_1, \ldots, \sigma_n$ be the embeddings of $K$ in $\mathbb{C}$.
+
+\item[(2)]
+  Note that
+  \begin{align*}
+    \abs{\sigma_i \alpha_j}
+    &= \sum_{\pi \in S_n}
+      \left( \mathrm{sgn}(\pi) \prod_{i=1}^{n} \sigma_i \alpha_{\pi(i)} \right) \\
+    &= \underbrace{\sum_{\pi \in A_n} \prod_{i=1}^{n} \sigma_i \alpha_{\pi(i)}}_{:= P}
+      - \underbrace{\sum_{\pi \in S_n - A_n} \prod_{i=1}^{n} \sigma_i \alpha_{\pi(i)}}_{:= N}
+  \end{align*}
+  where
+  $S_n$ is the symmetric group of degree $n$
+  and $A_n$ is the alternating group of degree $n$.
+
+\item[(3)]
+  Note that $\sigma_i(P+N) = P+N$ and $\sigma_i(PN) = PN$ for all $\sigma_i$.
+  Hence $P+N, PN \in \mathbb{Q}$
+  by extending all $\sigma_i$ to some normal extension $L$ of $\mathbb{Q}$ so that
+  they become automorphisms of $L$.
+  Therefore $P+N, PN \in \mathbb{Q} \cap \mathcal{O}_K = \mathbb{Z}$.
+
+\item[(4)]
+  By (2)(3),
+  \begin{align*}
+    d
+    &= \abs{\sigma_i \omega_j}^2 \\
+    &= (P-N)^2 \\
+    &= (P+N)^2 - 4PN \\
+    &\equiv 0, 1 \pmod 4.
+  \end{align*}
+  In particular, $\mathrm{disc}(\mathcal{O}_K) \equiv 0, 1 \pmod{4}$.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement.}
+\addcontentsline{toc}{subsubsection}{Supplement.}
+(Exercise I.2.7 (Stickelberger's discriminant relation)
+in [J\"urgen Neukirch, \emph{Algebraic Number Theory}].)
+\emph{The discriminant $d_K$ of an algebraic number field $K$ is always
+$\equiv 0 \pmod 4$ or $\equiv 1 \pmod 4$.
+(Hint: The discriminant $\det(\sigma_i \omega_j)$ of an integral basis $\omega_j$
+is a sum of terms, each prefixed by a positive or a negative sign.
+Writing $P$ (resp. $N$) for the sum of the positive (resp. negative) terms,
+one find $d_K = (P-N)^2 = (P+N)^2 - 4PN$.)} \\
+
+
+
+\emph{Proof (Hint).}
+\begin{enumerate}
+\item[(1)]
+  Let $S_n$ be the symmetric group of degree $n$, and
+  $A_n$ be the alternating group of degree $n$.
+  So
+  \begin{align*}
+    \det(\sigma_i \omega_j)
+    &= \sum_{\pi \in S_n}
+      \left( \mathrm{sgn}(\pi) \prod_{i=1}^{n} \sigma_i \omega_{\pi(i)} \right) \\
+    &= \underbrace{\sum_{\pi \in A_n} \prod_{i=1}^{n} \sigma_i \omega_{\pi(i)}}_{:= P}
+      - \underbrace{\sum_{\pi \in S_n - A_n} \prod_{i=1}^{n} \sigma_i \omega_{\pi(i)}}_{:= N}.
+  \end{align*}
+
+\item[(2)]
+  Note that $\sigma_i(P+N) = P+N$ and $\sigma_i(PN) = PN$ for all $\sigma_i$.
+  Hence $P+N, PN \in \mathbb{Q}$
+  by extending all $\sigma_i$ to some normal extension $L$ of $\mathbb{Q}$ so that
+  they become automorphisms of $L$.
+  Therefore $P+N, PN \in \mathbb{Q} \cap \mathcal{O}_K = \mathbb{Z}$.
+
+\item[(3)]
+  By (1)(2),
+  \begin{align*}
+    d_K
+    &= \det(\sigma_i \omega_j)^2 \\
+    &= (P-N)^2 \\
+    &= (P+N)^2 - 4PN \\
+    &\equiv 0, 1 \pmod 4.
+  \end{align*}
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
