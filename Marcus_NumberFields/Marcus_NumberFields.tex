@@ -3402,6 +3402,73 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.25.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.25.}
+\emph{Show that for any algebraic number $\alpha$,
+there exists $m \in \mathbb{Z}$, $m \neq 0$, such that $m\alpha$ is an algebraic integer.
+(Hint: Obtain $f \in \mathbb{Z}[x]$ such that $f(\alpha) = 0$ and
+take $m$ to be a power of the leading coefficient.)
+Use this to show that for every finite set of algebraic numbers $\alpha_i$,
+there exists $m \in \mathbb{Z}$, $m \neq 0$,
+such that all $m\alpha_i \in \mathcal{O}_{\mathbb{Q}}$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  As $\alpha$ is an algebraic number,
+  there is a monic polynomial
+  \[
+    f(x) = x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in \mathbb{Q}[x]
+  \]
+  such that $f(\alpha) = 0$.
+  Eliminating all denominators of $a_{n-1}, \ldots, a_0$, we might assume that
+  \[
+    f(x) = m x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in \mathbb{Z}[x]
+  \]
+  such that $f(\alpha) = 0$ where $m \neq 0$.
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    & \:
+    m^n \alpha^n + m^{n-1} a_{n-1} \alpha^{n-1} + \cdots + m^{n-1} a_0 = 0 \\
+    \Longrightarrow & \:
+    (m\alpha)^n + \underbrace{a_{n-1}}_{\in \mathbb{Z}} (m\alpha)^{n-1}
+        + \underbrace{m a_{n-2}}_{\in \mathbb{Z}} (m\alpha)^{n-2} + \cdots
+        + \underbrace{m^{n-1} a_0}_{\in \mathbb{Z}} = 0.
+  \end{align*}
+  Therefore $m\alpha$ ($m \neq 0$) is an algebraic integer.
+
+\item[(3)]
+  Given finitely many algebraic numbers $\alpha_1, \ldots, \alpha_r$.
+  There exist $m_i \in \mathbb{Z}$, $m_i \neq 0$, such that $m_i \alpha_i \in \mathcal{O}_{\mathbb{Q}}$
+  for all $i = 1, \ldots, r$.
+  Take $m = m_1 \cdots m_r$.
+  Hence all $m\alpha_i$ are algebraic integers again.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
