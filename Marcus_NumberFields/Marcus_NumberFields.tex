@@ -3751,6 +3751,59 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.32.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.32.}
+\emph{Find two fields of degree 3 over $\mathbb{Q}$,
+whose composition has degree $6$.
+(You don't have to look very far.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Let $\omega = e^{\frac{2\pi i}{3}}$.
+  Show that two fields $\mathbb{Q}[\sqrt[3]{2}]$ and $\mathbb{Q}[\omega \sqrt[3]{2}]$
+  have degree $3$ over $\mathbb{Q}$, and whose composition has degree $6$.}
+
+\item[(2)]
+  The element $\sqrt[3]{2}$ (resp. $\omega \sqrt[3]{2}$) is a root of the polynomial
+  $x^3 - 2$ over $\mathbb{Q}$, which is irreducible by the Eisenstein criterion.
+  So
+  \[
+    [\mathbb{Q}[\sqrt[3]{2}]:\mathbb{Q}]
+    = [\mathbb{Q}[\omega \sqrt[3]{2}]:\mathbb{Q}]
+    = 3.
+  \]
+
+\item[(3)]
+  The composite of $\mathbb{Q}[\sqrt[3]{2}]$ and $\mathbb{Q}[\omega \sqrt[3]{2}]$
+  is $\mathbb{Q}[\omega, \sqrt[3]{2}]$,
+  which is generated over $\mathbb{Q}$
+  by the three roots $\sqrt[3]{2}$, $\omega\sqrt[3]{2}$, $\omega^2\sqrt[3]{2}$ of $x^3 - 2$.
+  Note that $\omega$ is a root of $x^2+x+1$ over $\mathbb{Q}$ and
+  $\omega \not\in \mathbb{Q}[\sqrt[3]{2}]$.
+  Hence
+  \[
+    [\mathbb{Q}[\omega, \sqrt[3]{2}]:\mathbb{Q}] = 6.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.43.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.43.}
 \emph{Let $f(x) = x^5+ax+b$, $a$ and $b \in \mathbb{Z}$,
