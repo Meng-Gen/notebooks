@@ -3844,6 +3844,80 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.34.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.34.}
+\emph{Let $\omega = e^{\frac{2\pi i}{m}}$, $m$ a positive integer.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $1 + \omega + \omega^2 + \cdots + \omega^{k-1}$
+  is a unit in $\mathbb{Z}[\omega]$ if $k$ is relatively prime to $m$.
+  (Hint: Its inverse is $\frac{\omega-1}{\omega^k-1}$;
+  show that $\omega = \omega^{hk}$ for some $h \in \mathbb{Z}$.)}
+
+\item[(b)]
+  \emph{Let $m = p^r$, $p$ a prime.
+  Show that $p = u(1-\omega)^n$ where $n = \varphi(p^r)$ and $u$ is a unit in $\mathbb{Z}[\omega]$.
+  (See Lemma 2, Theorem 2.10.)} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Let $\alpha = 1 + \omega + \omega^2 + \cdots + \omega^{k-1} = \frac{\omega^k - 1}{\omega - 1}$.
+  So the inverse of $\alpha$ is $\alpha^{-1} = \frac{\omega-1}{\omega^k-1}$.
+
+\item[(2)]
+  Since $(k,m) = 1$, there exist $x, y \in \mathbb{Z}$ such that $kx + my = 1$.
+  Note that $k(x + Nm) + m(y - Nk) = 1$ for any positive integer $N$.
+  Hence we might assume that $x > 0$.
+  Therefore
+  \[
+    \omega
+    = \omega^{kx + my}
+    = \omega^{kx} \cdot {(\underbrace{\omega^{m}}_{= 1})}^{y}
+    = \omega^{kx}.
+  \]
+  So
+  \[
+    \alpha^{-1}
+    = \frac{\omega-1}{\omega^k-1}
+    = \frac{\omega^{kx}-1}{\omega^k-1}
+    = 1 + \omega^k + \cdots + \omega^{k(x-1)} \in \mathbb{Z}[\omega].
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Suppose $(k,m) = 1$.
+  Part (a) implies that $\frac{\omega^k - 1}{\omega - 1} = u_k$ is a unit in $\mathbb{Z}[\omega]$,
+  or $\omega^k - 1 = u_k (\omega - 1)$.
+
+\item[(2)]
+  As $m = p^r$,
+  Lemma 2 to Theorem 2.10 shows that
+  \[
+    p
+    = \prod_{\substack{1 \leq k \leq m \\ (k,m)=1}} (1 - \omega^k)
+    = \prod_{\substack{1 \leq k \leq m \\ (k,m)=1}} u_k (1 - \omega)
+    = (1 - \omega)^{\varphi(m)} \prod u_k.
+  \]
+  Note that $u := \prod u_k$ is a unit in $\mathbb{Z}[\omega]$.
+  Hence the result is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
