@@ -3800,6 +3800,50 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.33.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.33.}
+\emph{Let $\omega = e^{\frac{2\pi i}{m}}$, $m \geq 3$.
+We know that $N(\omega) = \pm 1$ since $\omega$ is a unit.
+Show that the $+$ sign holds.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Note that
+  \[
+    N(\omega)
+    = \prod_{\substack{1 \leq i \leq m \\ (i,m)=1}} \omega^i
+    = \omega^{\sum_{\substack{1 \leq i \leq m \\ (i,m)=1}} i}
+    = \omega^{m \cdot \frac{\varphi(m)}{2}}
+  \]
+  where $\varphi$ is the Euler's totient function.
+  To show $N(\omega) = 1$,
+  it suffices to show that $\frac{\varphi(m)}{2}$ is an integer
+  or $\varphi(m)$ is even if $m \geq 3$. 
+
+\item[(2)]
+  \emph{Show that $\varphi(m)$ is even if $m \geq 3$.}
+  Write $m = p_1^{a_1} \cdots p_r^{a_r}$
+  where $p_1, \ldots, p_r$ are distinct primes and $a_1, \ldots, a_r \geq 1$.
+  So
+  \[
+    \varphi(m) = \prod_{1 \leq i \leq r} (p_i-1) p_i^{a_i-1}.
+  \]
+  So the conclusion holds if some $p_i$ is odd.
+  If all $p_i$ are even, then $m = 2^a$ for $a \geq 2$.
+  So $\varphi(m) = 2^{a-1}$ is even again for $a \geq 2$.
+  In any case, the result is established.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
