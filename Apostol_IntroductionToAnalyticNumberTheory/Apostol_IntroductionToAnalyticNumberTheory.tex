@@ -1171,6 +1171,46 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.15.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.15.}
+\emph{Let $\varphi_k(n)$ denote the sum of the $k$th powers of
+the numbers $\leq n$ and relatively prime to $n$.
+Note that $\varphi_0(n) = \varphi(n)$.
+Use Exercise 2.14 or some other means to prove that
+\[
+  \sum_{d|n} \frac{\varphi_k(n)}{d^k} = \frac{1^k + \cdots + n^k}{n^k}.
+\]} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $f(x) = x^k$ defined on $[0,1]$.
+  Then
+  \[
+    F(n)
+    = \sum_{1 \leq i \leq n} f\left( \frac{i}{n} \right)
+    = \frac{1^k + \cdots + n^k}{n^k}.
+  \]
+
+\item[(2)]
+  The proof of Exercise 2.14 shows that
+  \[
+    F(n)
+    = (u * F^{*})(n)
+    = \sum_{d|n} \sum_{\substack{1 \leq i \leq d \\ (i,d)=1}} f\left( \frac{i}{d} \right)
+    = \sum_{d|n} \frac{1}{d^k}
+      \underbrace{\sum_{\substack{1 \leq k \leq d \\ (k,d)=1}} i^k}_{= \varphi_k(n)}.
+  \]
+
+\item[(3)]
+  Hence the result is established by (1)(2).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
