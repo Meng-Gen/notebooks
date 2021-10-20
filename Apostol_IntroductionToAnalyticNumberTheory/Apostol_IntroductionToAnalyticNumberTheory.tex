@@ -1105,6 +1105,84 @@ $\Box$ \\\\
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.14.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.14.}
+\emph{Let $f(x)$ be defined for all rational $x$ in $0 \leq x \leq 1$ and let
+\[
+  F(n) = \sum_{1 \leq k \leq n} f\left( \frac{k}{n} \right),
+  \qquad
+  F^{*}(n) = \sum_{\substack{1 \leq k \leq n \\ (k,n)=1}} f\left( \frac{k}{n} \right).  
+\]}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that $F^{*} = \mu * F$, the Dirichlet product of $\mu$ and $F$.}
+
+\item[(b)]
+  \emph{Use (a) or some other means to prove that $\mu(n)$ is the of the primitive $n$th
+  roots of unity:}
+  \[
+    \mu(n) = \sum_{\substack{1 \leq k \leq n \\ (k,n)=1}} e^{\frac{2\pi i k}{n}}.
+  \] \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  As $\mu * u = I$, it suffices to show that $u * F^{*} = F$.
+  Hence
+  \begin{align*}
+    (u * F^{*})(n)
+    &= \sum_{d|n} F^{*}(d) \\
+    &= \sum_{d|n} \sum_{\substack{1 \leq k \leq d \\ (k,d)=1}} f\left( \frac{k}{d} \right) \\
+    &= \sum_{\substack{d|n \\ 1 \leq k \leq d \\ (k,d)=1}} f\left( \frac{k}{d} \right) \\
+    &= \sum_{1 \leq k \leq n} f\left( \frac{k}{n} \right) \\
+    &= F(n).
+  \end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  Let $f(x) = e^{2\pi i x}$ defined on $[0,1]$.
+  Then
+  \[
+    F(n)
+    = \sum_{1 \leq k \leq n} f\left( \frac{k}{n} \right)
+    = \sum_{1 \leq k \leq n} e^{\frac{2\pi i k}{n}}
+    = I(n).
+  \]
+  Hence
+  \[
+    \sum_{\substack{1 \leq k \leq n \\ (k,n)=1}} e^{\frac{2\pi i k}{n}}
+    = F^{*}(n)
+    = (\mu * F)(n)
+    = (\mu * I)(n)
+    = \mu(n).
+  \]
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Exercise 2.18.}
 \addcontentsline{toc}{subsubsection}{Exercise 2.18.}
 \emph{Prove that every number of the form $2^{a-1}(2^a-1)$ is perfect
