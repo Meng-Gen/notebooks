@@ -1171,8 +1171,8 @@ $\Box$ \\\\
 
 
 
-\subsubsection*{Exercise 2.15.}
-\addcontentsline{toc}{subsubsection}{Exercise 2.15.}
+\subsubsection*{Exercise 2.15. ($\varphi_k(n)$ function)}
+\addcontentsline{toc}{subsubsection}{Exercise 2.15. ($\varphi_k(n)$ function)}
 \emph{Let $\varphi_k(n)$ denote the sum of the $k$th powers of
 the numbers $\leq n$ and relatively prime to $n$.
 Note that $\varphi_0(n) = \varphi(n)$.
@@ -1308,6 +1308,85 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.17. (Jordan's totient function)}
+\addcontentsline{toc}{subsubsection}{Exercise 2.17. (Jordan's totient function)}
+\emph{Jordan's totient $J_k$ is a generalization of Euler’s totient defined by}
+\[
+  J_k(n) = n^k \prod_{p|n}(1 - p^{-k}).
+\]
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that
+  \[
+    J_k(n) = \sum_{d|n} \mu(d) \left( \frac{n}{d} \right)^k
+    \qquad
+    \text{and}
+    \qquad
+    n^k = \sum_{d|n} J_k(d).
+  \]}
+\item[(b)]
+  \emph{Determine the Bell series for $J_k$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $J_k(n) = \sum_{d|n} \mu(d) \left( \frac{n}{d} \right)^k$.}
+  Similar to Exercise 2.7.
+  Note that $J_k$ is multiplicative.
+  Theorem 2.14 shows that
+  the Dirichlet product $n \mapsto \sum_{d|n} \mu(d) \left( \frac{n}{d} \right)^k$ is multiplicative.
+  Hence it suffices to show that
+  \[
+    J_k(n) = \sum_{d|n} \mu(d) \left( \frac{n}{d} \right)^k
+  \]
+  for $n = p^a$ where $p$ is prime and $a \geq 1$.
+  It is easy since
+  \begin{align*}
+    p^a \mapsto \sum_{d|p^a} \mu(d) \left( \frac{p^a}{d} \right)^k
+    &= \mu(1) p^{ak} + \mu(p) p^{(a-1)k} \\
+    &= p^{ak} - p^{(a-1)k} \\
+    &= J_k(p^a).
+  \end{align*}
+
+\item[(2)]
+  \emph{Show that $n^k = \sum_{d|n} J_k(d)$.}
+  Note that $\mu * u = I$ by Theorem 2.1.
+  So Theorem 2.9 (M\"obius inversion formula) implies that
+  \[
+    n^k = J_k * u = \sum_{d|n} J_k(d).
+  \]
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Since $J_k(1) = 1$ and $J_k(p^n) = p^{nk} - p^{(n-1)k}$ for $n \geq 1$,
+  we have
+  \begin{align*}
+    (J_k)_p(x)
+    &= \sum_{n=0}^{\infty} J_k(p^n) x^n \\
+    &= 1 + \sum_{n=0}^{\infty} \left(p^{nk} - p^{(n-1)k}\right) x^n \\
+    &= \sum_{n=0}^{\infty} p^{nk} x^n - x \sum_{n=0}^{\infty} p^{nk} x^n \\
+    &= (1-x) \sum_{n=0}^{\infty} p^{nk} x^n \\
+    &= \frac{1-x}{1 - p^k x}.
+  \end{align*}
+
+\item[(2)]
+  Another proof by using Theorem 2.25.
+  Note that $\mu_p(x) = 1 - x$ and $N^k_p(x) = \frac{1}{1 - p^k x}$.
+  Theorem 2.25 implies
+  $(J_k)_p(x) = \mu_p(x) N^k_p(x) = \frac{1-x}{1 - p^k x}$ too.
+\end{enumerate}
+$\Box$ \\\\
 
 
 
