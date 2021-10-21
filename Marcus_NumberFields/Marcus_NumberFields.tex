@@ -1840,10 +1840,10 @@ The set of algebraic integers in the quadratic field $\mathbb{Q}[\sqrt{m}]$ is
 $\Box$ \\\\
 
 
-
-\subsubsection*{Supplement.}
-\addcontentsline{toc}{subsubsection}{Supplement.}
-(Exercise I.2.4 in [J\"urgen Neukirch, \emph{Algebraic Number Theory}].)
+\subsubsection*{Supplement.
+(Exercise I.2.4 in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
+\addcontentsline{toc}{subsubsection}{Supplement.
+(Exercise I.2.4 in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
 \emph{Let $D$ be a squarefree rational integer $\neq 0, 1$ and
 $d$ the discriminant of the quadratic number field $K = \mathbb{Q}(\sqrt{D})$.
 Show that
@@ -3351,10 +3351,11 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement.}
-\addcontentsline{toc}{subsubsection}{Supplement.}
+\subsubsection*{Supplement. (Exercise I.2.7 (Stickelberger's discriminant relation)
+in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
+\addcontentsline{toc}{subsubsection}{Supplement.
 (Exercise I.2.7 (Stickelberger's discriminant relation)
-in [J\"urgen Neukirch, \emph{Algebraic Number Theory}].)
+in J\"urgen Neukirch, \emph{Algebraic Number Theory})}
 \emph{The discriminant $d_K$ of an algebraic number field $K$ is always
 $\equiv 0 \pmod 4$ or $\equiv 1 \pmod 4$.
 (Hint: The discriminant $\det(\sigma_i \omega_j)$ of an integral basis $\omega_j$
@@ -3498,9 +3499,10 @@ $\Box$ \\
 
 
 
-\subsubsection*{Supplement.}
-\addcontentsline{toc}{subsubsection}{Supplement.}
-(Exercise 2.9. in [Atiyah and Macdonald, \emph{Introduction to Commutative Algebra}].)
+\subsubsection*{Supplement.
+(Exercise 2.9. in Atiyah and Macdonald, \emph{Introduction to Commutative Algebra})}
+\addcontentsline{toc}{subsubsection}{Supplement.
+(Exercise 2.9. in Atiyah and Macdonald, \emph{Introduction to Commutative Algebra})}
 \emph{Let $0 \to M' \to M \to M'' \to 0$ be an exact sequence of $A$-modules.
 If $M'$ and $M''$ are finitely generated, then so is $M$.} \\
 
@@ -3835,6 +3837,210 @@ Show that the $+$ sign holds.} \\
   If all $p_i$ are even, then $m = 2^a$ for $a \geq 2$.
   So $\varphi(m) = 2^{a-1}$ is even again for $a \geq 2$.
   In any case, the result is established.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\subsubsection*{Supplement.
+(Exercise 2.14 in Apostol, \emph{Introduction to Analytic Number Theory})}
+\addcontentsline{toc}{subsubsection}{Supplement.
+(Exercise 2.14 in Apostol, \emph{Introduction to Analytic Number Theory})}
+\emph{Let $f(x)$ be defined for all rational $x$ in $0 \leq x \leq 1$ and let
+\[
+  F(n) = \sum_{1 \leq k \leq n} f\left( \frac{k}{n} \right),
+  \qquad
+  F^{*}(n) = \sum_{\substack{1 \leq k \leq n \\ (k,n)=1}} f\left( \frac{k}{n} \right).  
+\]}
+\begin{enumerate}
+\item[(a)]
+  \emph{Prove that $F^{*} = \mu * F$, the Dirichlet product of $\mu$ and $F$.}
+
+\item[(b)]
+  \emph{Use (a) or some other means to prove that $\mu(n)$ is the of the primitive $n$th
+  roots of unity:}
+  \[
+    \mu(n) = \sum_{\substack{1 \leq k \leq n \\ (k,n)=1}} e^{\frac{2\pi i k}{n}}.
+  \] \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  As $\mu * u = I$, it suffices to show that $u * F^{*} = F$.
+  Hence
+  \begin{align*}
+    (u * F^{*})(n)
+    &= \sum_{d|n} F^{*}(d) \\
+    &= \sum_{d|n} \sum_{\substack{1 \leq k \leq d \\ (k,d)=1}} f\left( \frac{k}{d} \right) \\
+    &= \sum_{\substack{d|n \\ 1 \leq k \leq d \\ (k,d)=1}} f\left( \frac{k}{d} \right) \\
+    &= \sum_{1 \leq k \leq n} f\left( \frac{k}{n} \right) \\
+    &= F(n).
+  \end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  Let $f(x) = e^{2\pi i x}$ defined on $[0,1]$.
+  Then
+  \[
+    F(n)
+    = \sum_{1 \leq k \leq n} f\left( \frac{k}{n} \right)
+    = \sum_{1 \leq k \leq n} e^{\frac{2\pi i k}{n}}
+    = I(n).
+  \]
+  Hence
+  \[
+    \sum_{\substack{1 \leq k \leq n \\ (k,n)=1}} e^{\frac{2\pi i k}{n}}
+    = F^{*}(n)
+    = (\mu * F)(n)
+    = (\mu * I)(n)
+    = \mu(n).
+  \]
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Supplement.
+(Exercise 2.15 in Apostol, \emph{Introduction to Analytic Number Theory})}
+\addcontentsline{toc}{subsubsection}{Supplement.
+(Exercise 2.15 in Apostol, \emph{Introduction to Analytic Number Theory})}
+\emph{Let $\varphi_k(n)$ denote the sum of the $k$th powers of
+the numbers $\leq n$ and relatively prime to $n$.
+Note that $\varphi_0(n) = \varphi(n)$.
+Use Exercise 2.14 or some other means to prove that
+\[
+  \sum_{d|n} \frac{\varphi_k(n)}{d^k} = \frac{1^k + \cdots + n^k}{n^k}.
+\]} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Let $f(x) = x^k$ defined on $[0,1]$.
+  Then
+  \[
+    F(n)
+    = \sum_{1 \leq i \leq n} f\left( \frac{i}{n} \right)
+    = \frac{1^k + \cdots + n^k}{n^k}.
+  \]
+
+\item[(2)]
+  The proof of Exercise 2.14 shows that
+  \[
+    F(n)
+    = (u * F^{*})(n)
+    = \sum_{d|n} \sum_{\substack{1 \leq i \leq d \\ (i,d)=1}} f\left( \frac{i}{d} \right)
+    = \sum_{d|n} \frac{1}{d^k}
+      \underbrace{\sum_{\substack{1 \leq i \leq d \\ (i,d)=1}} i^k}_{= \varphi_k(n)}.
+  \]
+
+\item[(3)]
+  Hence the result is established by (1)(2).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Supplement.
+(Exercise 2.16 in Apostol, \emph{Introduction to Analytic Number Theory})}
+\addcontentsline{toc}{subsubsection}{Supplement.
+(Exercise 2.16 in Apostol, \emph{Introduction to Analytic Number Theory})}
+\emph{Invert the formula in Exercise 2.15 to obtain, for $n > 1$,
+\[
+  \varphi_1(n) = \frac{1}{2}n\varphi(n),
+  \qquad\text{ and }
+  \varphi_2(n) = \frac{1}{3}n^2 \varphi(n) + \frac{n}{6} \prod_{p|n}(1-p).
+\]
+Derive a corresponding formula for $\varphi_3(n)$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Exercise 2.15 shows that
+  \[
+    \sum_{d|n} \varphi_k(n) \underbrace{\left(\frac{n}{d}\right)^k}_{:= f\left(\frac{n}{d}\right)}
+        = \underbrace{1^k + \cdots + n^k}_{:= S_k(n)}
+    \Longleftrightarrow
+    \varphi_k * f = S_k.
+  \]
+  Here $f(n) = N(n)^k = n^k$ and $S_k(n) = 1^k + \cdots + n^k$.
+
+\item[(2)]
+  As $f(n)$ is completely multiplicative,
+  Theorem 2.17 implies that $f^{-1}(n) = \mu(n) f(n)$ for all $n \geq 1$.
+  Hence
+  \begin{align*}
+    \varphi_k(n)
+    &= (S_k * f^{-1})(n) \\
+    &= (S_k * (\mu f))(n) \\
+    &= \sum_{d|n} S_k(d) \mu\left(\frac{n}{d}\right)\left(\frac{n}{d}\right)^k.
+  \end{align*}
+
+\item[(3)]
+  \emph{Show that $\varphi_1(n) = \frac{1}{2}n\varphi(n)$.}
+  Note that $S_1(d) = \frac{d(d+1)}{2}$.
+  Hence
+  \begin{align*}
+    \varphi_1(n)
+    &= \sum_{d|n} \frac{d(d+1)}{2} \mu\left(\frac{n}{d}\right) \frac{n}{d} \\
+    &= \frac{n}{2} \sum_{d|n} d \mu\left(\frac{n}{d}\right)
+        + \frac{n}{2} \sum_{d|n} \mu\left(\frac{n}{d}\right) \\
+    &= \frac{n}{2} \varphi(n)
+        + \frac{n}{2} \left\lfloor \frac{1}{n} \right\rfloor
+      &(\text{Theorems 2.1, 2.3})
+  \end{align*}
+  for all $n \geq 1$.
+  So the result is established if $n > 1$.
+
+\item[(4)]
+  \emph{Show that $\varphi_2(n) = \frac{1}{3}n^2 \varphi(n) + \frac{1}{6} n\prod_{p|n}(1-p)$.}
+  Note that $S_2(d) = \frac{d(d+1)(2d+1)}{6}$.
+  Hence Theorem 2.1, 2.3 and 2.18 imply that
+  \begin{align*}
+    \varphi_2(n)
+    &= \sum_{d|n} \frac{d(d+1)(2d+1)}{6} \mu\left(\frac{n}{d}\right) \left(\frac{n}{d}\right)^2 \\
+    &= \frac{n^2}{3} \underbrace{\sum_{d|n} d \mu\left(\frac{n}{d}\right)}_{= \varphi(n)}
+        + \frac{n^2}{2}
+            \underbrace{\sum_{d|n} \mu\left(\frac{n}{d}\right)}_{= \left\lfloor \frac{1}{n} \right\rfloor}
+        + \frac{n}{6}
+            \underbrace{\sum_{d|n} \mu\left(\frac{n}{d}\right)\left(\frac{n}{d}\right)}_{
+                = \prod_{p|n}(1 - p)}
+  \end{align*}
+  for all $n \geq 1$.
+  So the result is established if $n > 1$.
+
+\item[(4)]
+  \emph{Show that}
+  \[
+    \varphi_3(n) = \frac{1}{4}n^3 \varphi(n) + \frac{1}{4} n^2 \prod_{p|n}(1-p).
+  \]
+  Note that $S_3(d) = \frac{d^2(d+1)^2}{4}$.
+  Hence Theorem 2.1, 2.3 and 2.18 imply that
+  \begin{align*}
+    \varphi_3(n)
+    &= \sum_{d|n} \frac{d^2(d+1)^2}{4} \mu\left(\frac{n}{d}\right) \left(\frac{n}{d}\right)^3 \\
+    &= \frac{n^3}{4} \underbrace{\sum_{d|n} d \mu\left(\frac{n}{d}\right)}_{= \varphi(n)}
+        + \frac{n^3}{2}
+            \underbrace{\sum_{d|n} \mu\left(\frac{n}{d}\right)}_{= \left\lfloor \frac{1}{n} \right\rfloor}
+        + \frac{n^2}{4}
+            \underbrace{\sum_{d|n} \mu\left(\frac{n}{d}\right)\left(\frac{n}{d}\right)}_{
+                = \prod_{p|n}(1 - p)}
+  \end{align*}
+  for all $n \geq 1$.
+  So the result is established if $n > 1$.
 \end{enumerate}
 $\Box$ \\\\
 
