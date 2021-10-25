@@ -1105,6 +1105,43 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.13. (Product form of the M\"obius inversion formula)}
+\addcontentsline{toc}{subsubsection}{Exercise 2.13. (Product form of the M\"obius inversion formula)}
+\emph{\textbf{Product form of the M\"obius inversion formula}.
+If $f(n) > 0$ for all $n$ and if $a(n)$ is real, $a(1) \neq 0$,
+prove that
+\[
+  g(n) = \prod_{d|n} f(d)^{a\left(\frac{n}{d}\right)}
+  \qquad
+  \text{ if, and only if, }
+  \qquad
+  f(n) = \prod_{d|n} g(d)^{b\left(\frac{n}{d}\right)}
+\]
+where $b = a^{-1}$, the Dirichlet inverse of $a$.} \\
+
+
+
+\emph{Proof.}
+  As $f(n) > 0$ for all $n$, $a(n)$ is real, and $a(1) \neq 0$,
+  we have
+  \begin{align*}
+    & \:
+    \underbrace{\log g(n)}_{\text{well-defined}}
+    = \sum_{d|n} a\left(\frac{n}{d}\right) \underbrace{\log f(d)}_{\text{well-defined}} \\
+    \Longleftrightarrow & \:
+    \log g = a * \log f \\
+    \Longleftrightarrow & \:
+    \log f = b * \log g \\
+    \Longleftrightarrow & \:
+    \log f(n)
+    = \sum_{d|n} b\left(\frac{n}{d}\right) \log g(d) \\
+    \Longleftrightarrow & \:
+    f(n) = \prod_{d|n} g(d)^{b\left(\frac{n}{d}\right)}.
+  \end{align*}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
