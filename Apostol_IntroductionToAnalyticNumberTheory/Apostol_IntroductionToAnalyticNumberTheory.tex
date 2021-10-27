@@ -1577,7 +1577,7 @@ Prove that $f$ is multiplicative but not completely multiplicative.} \\
   \begin{equation*}
     f(n) =
     \begin{cases}
-      1 & \text{if $n$ is a square,} \\
+      1 & \text{if $n$ is a square}, \\
       0 & \text{otherwise}.
     \end{cases}
   \end{equation*}
@@ -1603,6 +1603,44 @@ Prove that $f$ is multiplicative but not completely multiplicative.} \\
   (since $f(p^2) \neq f(p)^2$ for all prime $p$).
 \end{enumerate}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.23.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.23.}
+\emph{Prove the following statement or exhibit a counter example.
+If $f$ is multiplicative, then $F(n) = \prod_{d|n} f(d)$ is multiplicative.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  False.
+
+\item[(2)]
+  Take a completely multiplicative function $f = N$ defined by $f(n) = n$.
+  Then $F$ is not multiplicative since $pq = F(p) F(q) \neq F(pq) = p^2q^2$
+  for any two distinct primes $p$, $q$.
+
+\item[(3)]
+  Or take a multiplicative function $f = \varphi$.
+  Then $F$ is not multiplicative since $(p-1)(q-1) = F(p) F(q) \neq F(pq) = (p-1)^2(q-1)^2$
+  for any two distinct primes $p$, $q$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
