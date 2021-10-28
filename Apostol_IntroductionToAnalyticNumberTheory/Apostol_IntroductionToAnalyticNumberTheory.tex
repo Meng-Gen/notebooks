@@ -1716,6 +1716,89 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.25.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.25.}
+\emph{Assume $f$ is multiplicative. Prove that:}
+\begin{enumerate}
+\item[(a)]
+  \emph{$f^{-1}(n) = \mu(n)f(n)$ for every squarefree $n$.}
+
+\item[(b)]
+  \emph{$f^{-1}(p^2) = f(p)^2 - f(p^2)$ for every prime $p$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  A direct calculation shows that
+  \begin{align*}
+    ((\mu f) * f)(n)
+    &= \sum_{d|n} \mu(d) f(d) f\left( \frac{n}{d} \right) \\
+    &= \sum_{d|n} \mu(d) f(n) \\
+    &= f(n) \sum_{d|n} \mu(d) \\
+    &= f(n) I(n) \\
+    &= I(n).
+  \end{align*}
+  The second equality holds since $f$ is multiplicative and
+  $\left(d, \frac{n}{d} \right) = 1$ as $n$ is squarefree.
+  The last equality holds since $f(1) = 1$ as $f$ is multiplicative.
+
+\item[(2)]
+  Or we can apply Theorem 2.8 with induction.
+  If $n = 1$, the conclusion holds trivially.
+  Suppose the conclusion holds for every squarefree less than $n$ where $n > 1$.
+  Then Theorem 2.8 implies that
+  \begin{align*}
+    f^{-1}(n)
+    &= \frac{-1}{f(1)} \sum_{\substack{d|n \\ d < n}} f\left(\frac{n}{d}\right) f^{-1}(d) \\
+    &= \frac{-1}{f(1)} \sum_{\substack{d|n \\ d < n}} f\left(\frac{n}{d}\right) \mu(d)f(d)
+      &(\text{Induction hypothesis}) \\
+    &= - \sum_{\substack{d|n \\ d < n}} \mu(d)
+        \underbrace{f\left(\frac{n}{d}\right) f(d)}_{= f(n)} \\
+    &= -f(n) \sum_{\substack{d|n \\ d < n}} \mu(d) \\
+    &= -f(n)(I(n) - \mu(n)) \\
+    &= f(n)\mu(n).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Note that $f(1) = f^{-1}(1) = 1$ since $f$ is multiplicative.
+  Theorem 2.8 shows that
+  \begin{align*}
+    f^{-1}(p^2)
+    &= \frac{-1}{f(1)} \left\{ f(p^2)f^{-1}(1) + f(p)f^{-1}(p) \right\} \\
+    &= - f(p^2) - f(p)f^{-1}(p) \\
+    &= - f(p^2) - f(p) \underbrace{\mu(p)}_{= -1} f(p)
+      &(\text{Part (a)}) \\
+    &= f(p)^2 - f(p^2).
+  \end{align*}
+
+\item[(2)]
+  Note that Theorem 2.8 also shows that
+  \[
+    f^{-1}(p) = - \frac{1}{f(1)} f(p) f^{-1}(1) = -f(p).
+  \]
+  Thus we can prove part (b) without using part (a).
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
