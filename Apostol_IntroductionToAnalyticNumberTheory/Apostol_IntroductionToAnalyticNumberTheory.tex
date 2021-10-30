@@ -1827,6 +1827,59 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.27.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.27.}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $f$ is completely multiplicative,
+  prove that
+  \[
+    f \cdot (g * h) = (f \cdot g) * (f \cdot h)
+  \]
+  for all arithmetical functions $g$ and $h$,
+  where $f \cdot g$ denotes the ordinary product,
+  $(f \cdot g)(n) = f(n)g(n)$.}
+
+\item[(b)]
+  \emph{If $f$ is multiplicative and if the relation in (a) holds for $g = \mu$ and $h = \mu^{-1}$,
+  prove that $f$ is completely multiplicative.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+  \begin{align*}
+    & \: ((f \cdot g) * (f \cdot h))(n) \\
+    =& \: \sum_{d|n} f(d)g(d) f\left(\frac{n}{d}\right)h\left(\frac{n}{d}\right) \\
+    =& \: \sum_{d|n} \underbrace{f(d)f\left(\frac{n}{d}\right)}_{= f(n)}
+        g(d) h\left(\frac{n}{d}\right)
+      & (\text{$f$: completely multiplicative}) \\
+    =& \: f(n) \sum_{d|n} g(d) h\left(\frac{n}{d}\right) \\
+    =& \: (f \cdot (g * h))(n).
+  \end{align*}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  \begin{align*}
+    & \: f \cdot \underbrace{(\mu * \mu^{-1})}_{= I}
+        = (f \cdot \mu) * (f \cdot \underbrace{\mu^{-1}}_{= u}) \\
+    \Longleftrightarrow & \:
+    I = f \cdot I = (f \cdot \mu) * f
+      & (\text{$f$ is multiplicative}) \\
+    \Longleftrightarrow & \:
+    \text{$f$ is completely multiplicative}.
+      & (\text{Theorem 2.17})
+  \end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
