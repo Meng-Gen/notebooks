@@ -1951,6 +1951,63 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 2.30.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.30.}
+\emph{Let $f$ be multiplicative and let $g$ be any arithmetical function.
+Assume that}
+\begin{enumerate}
+\item[(a)]
+  \emph{
+  \[
+    f(p^{n+1}) = f(p)f(p^n) - g(p)f(p^{n-1})
+  \]
+  for all primes $p$ and all $n \geq 1$.}
+\end{enumerate}
+Prove that for each prime $p$ the Bell series for $f$ has the form
+\begin{enumerate}
+\item[(b)]
+  \[
+    f_p(x) = \frac{1}{1 - f(p)x + g(p)x^2}.
+  \]
+\end{enumerate}
+\emph{Conversely, prove that (b) implies (a).} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Given any prime $p$.
+  Note that
+  \begin{align*}
+    & \:
+    f_p(x)(1 - f(p)x + g(p)x^2) \\
+    = & \:
+    \sum_{n=0}^{\infty} f(p^n)x^n
+        - \sum_{n=0}^{\infty} f(p)f(p^n)x^{n+1}
+        + \sum_{n=0}^{\infty} g(p)f(p^n)x^{n+2} \\
+    = & \:
+    \left\{ 1 + f(p)x + \sum_{n=1}^{\infty} f(p^{n+1})x^{n+1} \right\}
+        - \left\{ f(p)x + \sum_{n=1}^{\infty} f(p)f(p^n)x^{n+1} \right\} \\
+    & \:
+        + \sum_{n=1}^{\infty} g(p)f(p^{n-1})x^{n+1} \\
+    = & \:
+    1 + \sum_{n=1}^{\infty}\left\{ f(p^{n+1}) - f(p)f(p^n) + g(p)f(p^{n-1}) \right\} x^{n+1}.
+  \end{align*}
+
+\item[(2)]
+  Hence
+  $f_p(x)(1 - f(p)x + g(p)x^2) = 1$
+  if and only if $f(p^{n+1}) - f(p)f(p^n) + g(p)f(p^{n-1}) = 0$ for all $n \geq 1$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
