@@ -1864,7 +1864,7 @@ $\Box$ \\\\
     =& \: \sum_{d|n} f(d)g(d) f\left(\frac{n}{d}\right)h\left(\frac{n}{d}\right) \\
     =& \: \sum_{d|n} \underbrace{f(d)f\left(\frac{n}{d}\right)}_{= f(n)}
         g(d) h\left(\frac{n}{d}\right)
-      & (\text{$f$: completely multiplicative}) \\
+      & (\text{$f$ is completely multiplicative}) \\
     =& \: f(n) \sum_{d|n} g(d) h\left(\frac{n}{d}\right) \\
     =& \: (f \cdot (g * h))(n).
   \end{align*}
@@ -1884,6 +1884,66 @@ $\Box$ \\
       & (\text{Theorem 2.17})
   \end{align*}
 $\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.28.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.28.}
+\begin{enumerate}
+\item[(a)]
+  \emph{If $f$ is completely multiplicative, prove that
+  \[
+    (f \cdot g)^{-1} = f \cdot g^{-1}
+  \]
+  for every arithmetical function $g$ with $g(1) \neq 0$.}
+
+\item[(b)]
+  \emph{If $f$ is multiplicative and the relation in (a) holds for $g = \mu^{-1}$,
+  prove that $f$ is completely multiplicative.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Note that $g^{-1}$ is existed since $g(1) \neq 0$.
+
+\item[(2)]
+  Exercise 2.27 (a) implies that
+  \begin{align*}
+    & \: f \cdot (g * g^{-1}) = (f \cdot g) * (f \cdot g^{-1}) \\
+    \Longrightarrow & \:
+    f \cdot I = (f \cdot g) * (f \cdot g^{-1}) \\
+    \Longrightarrow & \:
+    I = (f \cdot g) * (f \cdot g^{-1}).
+  \end{align*}
+  Hence the Dirichlet inverse of $f \cdot g$ is $f \cdot g^{-1}$.
+
+\item[(3)]
+  Surely, we can prove it directly as the proof of Exercise 2.27 (a).
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+  It is the same as Exercise 2.27 (b).
+  \[
+    (\overbrace{f \cdot \underbrace{\mu^{-1}}_{= u}}^{=f})^{-1} = f \cdot \mu
+    \Longleftrightarrow
+    \text{$f$ is completely multiplicative}
+  \]
+  by Theorem 2.17.
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
