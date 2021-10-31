@@ -2009,6 +2009,50 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 2.33.}
+\addcontentsline{toc}{subsubsection}{Exercise 2.33.}
+\emph{Prove that Liouville's function is given by the formula}
+\[
+  \lambda(n) = \sum_{d^2|n} \mu\left( \frac{n}{d^2} \right).
+\] \\
+
+
+
+\emph{Proof.}
+  The M\"obius inversion formula (Theorem 2.9) of
+  \begin{equation*}
+    g(n) := \sum_{d|n} \lambda(d) =
+    \begin{cases}
+      1 & \text{if $n$ is a square}, \\
+      0 & \text{otherwise}
+    \end{cases}
+  \end{equation*}
+  (Theorem 2.19) implies that
+  \[
+    \lambda(n)
+    = \sum_{d|n} g(d) \mu\left( \frac{n}{d} \right)
+    = \sum_{d^2|n} \mu\left( \frac{n}{d^2} \right).
+  \]
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
