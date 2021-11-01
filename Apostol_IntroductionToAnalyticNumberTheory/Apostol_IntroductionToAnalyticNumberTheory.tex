@@ -873,9 +873,9 @@ the number of positive integers $\leq x$ that are relatively prime to $n$.
 [Note that $\varphi(n,n) = \varphi(n)$.]
 Prove that
 \[
-  \varphi(x,n) = \sum_{d|n} \mu(d) \left[ \frac{x}{d} \right],
+  \varphi(x,n) = \sum_{d|n} \mu(d) \left\lfloor \frac{x}{d} \right\rfloor,
   \qquad
-  \sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = [x].
+  \sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = \lfloor x \rfloor.
 \]}
 
 
@@ -883,11 +883,11 @@ Prove that
 \emph{Proof.}
 \begin{enumerate}
 \item[(1)]
-  \emph{Show that $\varphi(x,n) = \sum_{d|n} \mu(d) \left[ \frac{x}{d} \right]$.}
+  \emph{Show that $\varphi(x,n) = \sum_{d|n} \mu(d) \left\lfloor \frac{x}{d} \right\rfloor$.}
   Similar to the proof of Theorem 2.3.
   $\varphi(x,n)$ can be written in the form
   \[
-    \varphi(x,n) = \sum_{1 \leq k \leq x}\left[ \frac{1}{(n,k)} \right],
+    \varphi(x,n) = \sum_{1 \leq k \leq x}\left\lfloor \frac{1}{(n,k)} \right\rfloor,
   \]
   where now $k$ runs through all integers $\leq x$.
   Now we use Theorem 2.1 with $n$ replaced by $(n,k)$ to obtain
@@ -899,19 +899,19 @@ Prove that
   For a fixed divisor $d$ of $n$ we must sum over all those $k$ in the range $1 \leq k \leq x$
   which are multiples of $d$.
   If we write $k = qd$ then $1 \leq k \leq x$ if and only if
-  $1 \leq q \leq \left[ \frac{x}{d} \right]$.
+  $1 \leq q \leq \left\lfloor \frac{x}{d} \right\rfloor$.
   Hence the last sum for $\varphi(x,n)$ can be written as
   \[
     \varphi(x,n)
-    = \sum_{d|n} \sum_{1 \leq q \leq \left[ \frac{x}{d} \right]} \mu(d)
-    = \sum_{d|n} \mu(d) \sum_{1 \leq q \leq \left[ \frac{x}{d} \right]} 1
-    = \sum_{d|n} \mu(d) \left[ \frac{x}{d} \right].
+    = \sum_{d|n} \sum_{1 \leq q \leq \left\lfloor \frac{x}{d} \right\rfloor} \mu(d)
+    = \sum_{d|n} \mu(d) \sum_{1 \leq q \leq \left\lfloor \frac{x}{d} \right\rfloor} 1
+    = \sum_{d|n} \mu(d) \left\lfloor \frac{x}{d} \right\rfloor.
   \]
 
 \item[(2)]
-  \emph{Show that $\sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = [x]$.}
+  \emph{Show that $\sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = \lfloor x \rfloor$.}
   Similar to the proof of Theorem 2.2.
-  Let $S$ denote the set $\{ 1, 2, \ldots, [x] \}$.
+  Let $S$ denote the set $\{ 1, 2, \ldots, \lfloor x \rfloor \}$.
   We distribute the integers of $S$ into disjoint sets as follows.
   For each divisor $d$ of $n$, let
   \[
@@ -921,7 +921,7 @@ Prove that
   The sets $A(d)$ form a disjoint collection whose union is $S$.
   Therefore if $f(d)$ denotes the number of integers in $A(d)$ we have
   \[
-    \sum_{d|n} f(d) = [x].
+    \sum_{d|n} f(d) = \lfloor x \rfloor.
   \]
   But $(k,n) = d$ if and only if $\left( \frac{k}{d}, \frac{n}{d} \right) = 1$,
   and $0 < k \leq x$ if and only if $0 < \frac{k}{d} \leq \frac{x}{d}$.
@@ -932,7 +932,7 @@ Prove that
   The number of such $q$ is $\varphi\left( \frac{x}{d},\frac{n}{d} \right)$.
   Hence $f(d) = \varphi\left( \frac{x}{d},\frac{n}{d} \right)$ and thus
   \[
-    \sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = [x].
+    \sum_{d|n} \varphi\left( \frac{x}{d},\frac{n}{d} \right) = \lfloor x \rfloor.
   \]
 \end{enumerate}
 $\Box$ \\\\
@@ -2088,16 +2088,17 @@ $\Box$ \\\\
   \begin{align*}
     \sum_{n \leq x} \frac{\log n}{n}
     = & \: \int_{1}^{x} \frac{\log t}{t} dt
-        + \int_{1}^{x}(t-[t])\frac{1-\log t}{t^2} dt \\
-      & \: + \frac{\log x}{x}([x]-x) - \underbrace{\frac{\log(1)}{1}([1]-1)}_{= 0} \\
+        + \int_{1}^{x}(t-\lfloor t \rfloor)\frac{1-\log t}{t^2} dt \\
+      & \: + \frac{\log x}{x}(\lfloor x \rfloor-x) 
+          - \underbrace{\frac{\log(1)}{1}(\lfloor 1 \rfloor-1)}_{= 0} \\
     = & \: \frac{1}{2} (\log x)^2
-        + \int_{1}^{x}(t-[t])\frac{1-\log t}{t^2} dt + O\left( \frac{\log x}{x} \right) \\
-    = & \: \frac{1}{2} (\log x)^2 + \int_{1}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt \\
-      & \: - \int_{x}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt + O\left( \frac{\log x}{x} \right).
+        + \int_{1}^{x}(t-\lfloor t \rfloor)\frac{1-\log t}{t^2} dt + O\left( \frac{\log x}{x} \right) \\
+    = & \: \frac{1}{2} (\log x)^2 + \int_{1}^{\infty}(t-\lfloor t \rfloor)\frac{1-\log t}{t^2} dt \\
+      & \: - \int_{x}^{\infty}(t-\lfloor t \rfloor)\frac{1-\log t}{t^2} dt + O\left( \frac{\log x}{x} \right).
   \end{align*}
 
 \item[(2)]
-  The improper integral $\int_{1}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt$
+  The improper integral $\int_{1}^{\infty}(t-\lfloor t \rfloor)\frac{1-\log t}{t^2} dt$
   exists since it is dominated by
   $\int_{1}^{e} \frac{1-\log t}{t^2} dt + \int_{e}^{\infty} \frac{\log t - 1}{t^2} dt = 2e^{-1}$.
 
@@ -2106,7 +2107,7 @@ $\Box$ \\\\
   So
   \[
     0
-    \leq -\int_{x}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt
+    \leq -\int_{x}^{\infty}(t-\lfloor t \rfloor)\frac{1-\log t}{t^2} dt
     \leq \int_{x}^{\infty}\frac{\log t - 1}{t^2} dt
     = \frac{\log x}{x}.
   \]
@@ -2117,7 +2118,7 @@ $\Box$ \\\\
     \sum_{n \leq x} \frac{\log n}{n}
     = \frac{1}{2} (\log x)^2 + A + O\left( \frac{\log x}{x} \right)
   \]
-  where $A = \int_{1}^{\infty}(t-[t])\frac{1-\log t}{t^2} dt$ is a constant.
+  where $A = \int_{1}^{\infty}(t-\lfloor t \rfloor)\frac{1-\log t}{t^2} dt$ is a constant.
 \end{enumerate}
 $\Box$ \\
 
@@ -2130,26 +2131,26 @@ $\Box$ \\
   \begin{align*}
     \sum_{2 \leq n \leq x} \frac{1}{n\log n}
     = & \: \int_{2}^{x} \frac{1}{t\log t} dt
-        + \int_{2}^{x} -(t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt \\
-      & \: + \frac{1}{x \log x}([x]-x) - \underbrace{\frac{1}{2 \cdot \log(2)}([2]-2)}_{= 0} \\
+        + \int_{2}^{x} -(t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt \\
+      & \: + \frac{1}{x \log x}(\lfloor x \rfloor-x) - \underbrace{\frac{1}{2 \cdot \log(2)}([2]-2)}_{= 0} \\
     = & \: \log\log x - \log\log2
-        - \int_{2}^{x} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt \\
+        - \int_{2}^{x} (t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt \\
       & \: + O\left( \frac{1}{x \log x} \right) \\
     = & \: \log\log x - \log\log2
-        - \int_{2}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt \\
-      & \: + \int_{x}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt
+        - \int_{2}^{\infty} (t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt \\
+      & \: + \int_{x}^{\infty} (t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt
         + O\left( \frac{1}{x \log x} \right).
   \end{align*}
 
 \item[(2)]
-  The improper integral $\int_{2}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt$
+  The improper integral $\int_{2}^{\infty} (t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt$
   exists since it is dominated by
   $\int_{2}^{\infty} \frac{\log t + 1}{t^2 (\log t)^2} dt = \frac{1}{2\log 2} < \infty$.
 
 \item[(3)]
   \[
     0
-    \leq \int_{x}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt
+    \leq \int_{x}^{\infty} (t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt
     \leq \int_{x}^{\infty} \frac{\log t + 1}{t^2 (\log t)^2} dt
     = \frac{1}{x\log x}.
   \]
@@ -2161,7 +2162,7 @@ $\Box$ \\
     = \log\log x + B + O\left( \frac{1}{x\log x} \right)
   \]
   where
-  $B = - \log\log2 - \int_{2}^{\infty} (t-[t])\frac{\log t + 1}{t^2 (\log t)^2} dt$
+  $B = - \log\log2 - \int_{2}^{\infty} (t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt$
   is a constant.
 \end{enumerate}
 $\Box$ \\\\
@@ -2278,11 +2279,11 @@ $\Box$ \\\\
 \begin{enumerate}
 \item[(a)]
   \emph{$\sum_{n \leq x} \varphi(n)
-  = \frac{1}{2} \sum_{n \leq x} \mu(n)\left[ \frac{x}{n} \right]^2 + \frac{1}{2}$.}
+  = \frac{1}{2} \sum_{n \leq x} \mu(n)\left\lfloor \frac{x}{n} \right\rfloor^2 + \frac{1}{2}$.}
 
 \item[(b)]
   \emph{$\sum_{n \leq x} \frac{\varphi(n)}{n}
-  = \sum_{n \leq x} \frac{\mu(n)}{n}\left[ \frac{x}{n} \right]$.}
+  = \sum_{n \leq x} \frac{\mu(n)}{n}\left\lfloor \frac{x}{n} \right\rfloor$.}
 \end{enumerate}
 \emph{These formulas, together with those in Exercise 3.4, show that, for $x \geq 2$,
 \[
@@ -2303,10 +2304,11 @@ The last two formulas are trivial and we omit the proof. \\
     &= \sum_{\substack{q, d \\ qd \leq x}} \mu(d) q \\
     &= \sum_{d \leq x} \mu(d) \sum_{q \leq \frac{x}{d}} q \\
     &= \sum_{d \leq x}
-        \mu(d) \frac{1}{2} \left[\frac{x}{d}\right]\left(1 + \left[\frac{x}{d}\right]\right) \\
-    &= \frac{1}{2} \sum_{d \leq x} \mu(d)\left[ \frac{x}{d} \right]^2
-        + \frac{1}{2} \sum_{d \leq x} \mu(d)\left[ \frac{x}{d} \right] \\
-    &= \frac{1}{2} \sum_{d \leq x} \mu(d)\left[ \frac{x}{d} \right]^2 + \frac{1}{2}
+        \mu(d) \frac{1}{2} \left\lfloor\frac{x}{d}\right\rfloor
+            \left(1 + \left\lfloor\frac{x}{d}\right\rfloor\right) \\
+    &= \frac{1}{2} \sum_{d \leq x} \mu(d)\left\lfloor\frac{x}{d}\right\rfloor^2
+        + \frac{1}{2} \sum_{d \leq x} \mu(d)\left\lfloor\frac{x}{d}\right\rfloor \\
+    &= \frac{1}{2} \sum_{d \leq x} \mu(d)\left\lfloor\frac{x}{d}\right\rfloor^2 + \frac{1}{2}
       &(\text{Theorem 3.12})
   \end{align*}
 $\Box$ \\
@@ -2320,7 +2322,7 @@ $\Box$ \\
     \sum_{n \leq x} \frac{\varphi(n)}{n}
     &= \sum_{n \leq x} \sum_{d|n} \frac{\mu(d)}{d}
       &(\text{Theorem 2.3}) \\
-    &= \sum_{n \leq x} \frac{\mu(n)}{n} \left[ \frac{x}{n} \right].
+    &= \sum_{n \leq x} \frac{\mu(n)}{n} \left\lfloor\frac{x}{n}\right\rfloor.
       &(\text{Theorem 3.11})
   \end{align*}
 \end{enumerate}
