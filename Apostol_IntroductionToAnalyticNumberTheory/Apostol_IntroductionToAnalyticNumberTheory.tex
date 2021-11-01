@@ -2132,7 +2132,8 @@ $\Box$ \\
     \sum_{2 \leq n \leq x} \frac{1}{n\log n}
     = & \: \int_{2}^{x} \frac{1}{t\log t} dt
         + \int_{2}^{x} -(t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt \\
-      & \: + \frac{1}{x \log x}(\lfloor x \rfloor-x) - \underbrace{\frac{1}{2 \cdot \log(2)}([2]-2)}_{= 0} \\
+      & \: + \frac{1}{x \log x}(\lfloor x \rfloor-x)
+          - \underbrace{\frac{1}{2 \cdot \log(2)}(\lfloor 2 \rfloor - 2)}_{= 0} \\
     = & \: \log\log x - \log\log2
         - \int_{2}^{x} (t-\lfloor t \rfloor)\frac{\log t + 1}{t^2 (\log t)^2} dt \\
       & \: + O\left( \frac{1}{x \log x} \right) \\
