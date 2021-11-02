@@ -2270,6 +2270,127 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 3.4.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.4.}
+\emph{If $x \geq 2$ prove that:}
+\begin{enumerate}
+\item[(a)]
+  \[
+    \sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor^2
+    = \frac{x^2}{\zeta(2)} + O(x \log x).
+  \]
+
+\item[(b)]
+  \[
+    \sum_{n \leq x} \frac{\mu(n)}{n} \left\lfloor \frac{x}{n} \right\rfloor
+    = \frac{x}{\zeta(2)} + O(\log x).
+  \] \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \begin{align*}
+    \sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor^2
+    &= 2 \sum_{n \leq x} \varphi(n) - 1
+      &(\text{Exercise 3.5(a)}) \\
+    &= 2 \left\{ \frac{1}{2 \zeta(2)} x^2 + O(x \log x) \right\} - 1
+      &(\text{Theorem 3.7}) \\
+    &= \frac{x^2}{\zeta(2)} + O(x \log x)
+  \end{align*}
+  (Here $\sum_{n=1}^{\infty} \frac{\mu(n)}{n^2} = \frac{1}{\zeta(2)}$ is
+  followed by Example 1 to Theorem 11.5.)
+  Note that this proof cannot establish the result of Exercise 3.5 since
+  it is a typical circular argument.
+
+\item[(2)]
+  To establish the result of Exercise 3.5 later, we should not use Theorem 3.7.
+  Similar to Theorem 3.13, write
+  \begin{align*}
+    \sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor^2
+    = & \:
+    \sum_{n \leq x} \mu(n) \left( \frac{x}{n} - \left\{\frac{x}{n}\right\} \right)^2 \\
+    = & \:
+    x^2 \sum_{n \leq x} \frac{\mu(n)}{n^2}
+        - 2x \sum_{n \leq x} \frac{\mu(n)}{n}\left\{\frac{x}{n}\right\}
+        + \sum_{n \leq x} \mu(n) \left\{\frac{x}{n}\right\}^2.
+  \end{align*}
+
+\item[(3)]
+  Since $\sum_{n \leq x} \frac{\mu(n)}{n^2} = \frac{1}{\zeta(2)} + O(x^{-1})$ (by page 61),
+  $x^2 \sum_{n \leq x} \frac{\mu(n)}{n^2} = \frac{x^2}{\zeta(2)} + O(x)$.
+
+\item[(4)]
+  Since $\sum_{n \leq x} \frac{\mu(n)}{n}\left\{\frac{x}{n}\right\}$ is bounded by
+  $\sum_{n \leq x} \frac{1}{n} = \log x + C + O(x^{-1}) = O(\log x)$,
+  $x \sum_{n \leq x} \frac{\mu(n)}{n}\left\{\frac{x}{n}\right\} = O(x \log x)$.
+
+\item[(5)]
+  $\sum_{n \leq x} \mu(n) \left\{\frac{x}{n}\right\}^2$ is bounded by
+  $\sum_{n \leq x} 1 = O(x)$.
+
+\item[(6)]
+  (3)(4)(5) imply that
+  \begin{align*}
+    \sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor^2
+    = & \:
+    \frac{x^2}{\zeta(2)} + O(x) + O(x \log x) + O(x) \\
+    = & \:
+    \frac{x^2}{\zeta(2)} + O(x \log x).
+  \end{align*}
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of (a).
+  \begin{align*}
+    \sum_{n \leq x} \frac{\mu(n)}{n} \left\lfloor \frac{x}{n} \right\rfloor
+    = & \:
+    \sum_{n \leq x} \frac{\mu(n)}{n} \left( \frac{x}{n} - \left\{\frac{x}{n}\right\} \right) \\
+    = & \:
+    x \sum_{n \leq x} \frac{\mu(n)}{n^2}
+        - \sum_{n \leq x} \frac{\mu(n)}{n}\left\{\frac{x}{n}\right\} \\
+    = & \:
+    \frac{x}{\zeta(2)} + O(1) + O(\log x) \\
+    = & \:
+    \frac{x}{\zeta(2)} + O(\log x).    
+  \end{align*}
+
+\item[(2)]
+  Or use part (a) to get
+  \begin{align*}
+    \frac{x^2}{\zeta(2)} + O(x \log x)
+    = & \:
+    \sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor^2 \\
+    = & \:
+    \sum_{n \leq x} \mu(n)\left\lfloor \frac{x}{n} \right\rfloor
+        \left( \frac{x}{n} - \left\{\frac{x}{n}\right\} \right) \\
+    = & \:
+    x \sum_{n \leq x} \frac{\mu(n)}{n} \left\lfloor \frac{x}{n} \right\rfloor
+        - \sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor \left\{\frac{x}{n}\right\}.
+  \end{align*}
+  Here
+  $\sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor \left\{\frac{x}{n}\right\}$
+  is bounded by
+  $\sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor = 1$.
+  Hence
+  \[
+    x \sum_{n \leq x} \frac{\mu(n)}{n} \left\lfloor \frac{x}{n} \right\rfloor
+    = \frac{x^2}{\zeta(2)} + O(x \log x)
+    = x \left( \frac{x}{\zeta(2)} + O(\log x) \right).
+  \]
+  The result is established too.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -2297,8 +2418,12 @@ $\Box$ \\\\
 
 The last two formulas are trivial and we omit the proof. \\
 
+
+
 \emph{Proof of (a).}
-  Same as the proof of Theorem 3.7.
+\begin{enumerate}
+\item[(1)]
+  Prove by using the proof of Theorem 3.7.
   \begin{align*}
     \sum_{n \leq x} \varphi(n)
     &= \sum_{n \leq x} \sum_{d|n} \mu(d) \frac{n}{d} \\
@@ -2312,6 +2437,29 @@ The last two formulas are trivial and we omit the proof. \\
     &= \frac{1}{2} \sum_{d \leq x} \mu(d)\left\lfloor\frac{x}{d}\right\rfloor^2 + \frac{1}{2}
       &(\text{Theorem 3.12})
   \end{align*}
+
+\item[(2)]
+  Prove by Theorem 3.10.
+  Similar to Theorem 3.11.
+  If $g(n) = n$ for all $n$ then
+  \[
+    G(x)
+    = \sum_{n \leq x} g(n)
+    = \frac{1}{2}\lfloor x \rfloor^2 + \frac{1}{2}\lfloor x \rfloor
+  \]
+  in the sense of Theorem 3.10.
+  Hence if $g(n) = 2n - 1$ for all $n$ then $G(x) = \lfloor x \rfloor^2$.
+  If $h = \mu * g = \mu * (2N - u) = 2 \varphi - I$ then
+  theorem 3.10 implies that
+  \[
+    \sum_{n \leq x} \mu(n) \left\lfloor \frac{x}{n} \right\rfloor^2
+    = \sum_{n \leq x} h(n)
+    = \sum_{n \leq x} (2 \varphi(n) - I(n))
+    = 2 \sum_{n \leq x} \varphi(n) - 1
+  \]
+  as $x \geq 2$.
+  The result is established.
+\end{enumerate}
 $\Box$ \\
 
 
