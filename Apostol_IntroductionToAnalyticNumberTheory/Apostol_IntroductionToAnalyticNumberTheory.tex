@@ -2710,6 +2710,35 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Exercise 3.8.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.8.}
+\emph{If $\alpha \leq 1$ and $x \geq 2$ prove that}
+\[
+  \sum_{n \leq x} \frac{\varphi(n)}{n^{\alpha}}
+  = \frac{x^{2 - \alpha}}{2 - \alpha}\frac{1}{\zeta(2)}
+      + O(x^{1-\alpha} \log x).
+\] \\
+
+
+
+\emph{Proof.}
+  It is exactly the same as Exercise 3.7 except we use Theorem 3.2(d) to obtain
+  \begin{align*}
+    \sum_{q \leq \frac{x}{d}} \frac{1}{q^{\alpha-1}}
+    &= \sum_{q \leq \frac{x}{d}} q^{1-\alpha} \\
+    &= \frac{\left( \frac{x}{d} \right)^{(1-\alpha) + 1}}{(1-\alpha) + 1}
+        + O\left( \left(\frac{x}{d}\right)^{1-\alpha} \right) \\
+    &= \frac{1}{2 - \alpha} \frac{x^{2 - \alpha}}{d^{2 - \alpha}}
+        + O\left( \frac{x^{1-\alpha}}{d^{1-\alpha}} \right).
+  \end{align*}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
