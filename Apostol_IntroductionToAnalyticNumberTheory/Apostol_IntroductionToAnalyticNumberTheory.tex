@@ -2531,7 +2531,7 @@ where $C$ is Euler's constant and}
         \frac{\mu(d)}{d^2} \left\{ \log x - \log d + C + O\left(\frac{d}{x}\right) \right\} \\
     =& \: (\log x + C) \sum_{d \leq x} \frac{\mu(d)}{d^2}
         - \sum_{d \leq x} \frac{\mu(d) \log d}{d^2}
-        + \sum_{d \leq x} \frac{\mu(d)}{d} O\left(\frac{1}{x}\right).
+        + O\left( \frac{1}{x} \sum_{d \leq x} \frac{\abs{\mu(d)}}{d} \right).
   \end{align*}
 
 \item[(2)]
@@ -2588,10 +2588,10 @@ where $C$ is Euler's constant and}
   \]
 
 \item[(4)]
-  Since $\abs{\sum_{d \leq x} \frac{\mu(d)}{d}} \leq 1$ (Theorem 3.13),
+  Theorem 3.2(a) implies that
   \[
-    \sum_{d \leq x} \frac{\mu(d)}{d} O\left(\frac{1}{x}\right)
-    = O\left(\frac{1}{x}\right).
+    \frac{1}{x} \sum_{d \leq x} \frac{\abs{\mu(d)}}{d}
+    = O\left( \frac{\log x}{x} \right).
   \]
 
 \item[(5)]
@@ -2601,7 +2601,7 @@ where $C$ is Euler's constant and}
     =& \: \frac{\log x}{\zeta(2)} + \frac{C}{\zeta(2)}
         + O\left( \frac{\log x}{x} \right)
         - A + O\left( \frac{\log x}{x} \right)
-        + O\left(\frac{1}{x}\right) \\
+        + O\left( \frac{\log x}{x} \right) \\
     =& \: \frac{\log x}{\zeta(2)} + \frac{C}{\zeta(2)} - A + O\left( \frac{\log x}{x} \right).
   \end{align*}
 \end{enumerate}
