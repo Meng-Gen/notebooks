@@ -2739,6 +2739,127 @@ $\Box$ \\\\
 
 
 
+\newpage
+\subsubsection*{Exercise 3.9.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.9.}
+\emph{In a later chapter we will prove that the infiite product
+$\prod_p (1 - p^{-2})$, extended over all primes,
+converges to the value $\frac{1}{\zeta(2)} = \frac{6}{\pi^2}$.
+Assuming this result, prove that}
+\begin{enumerate}
+\item[(a)]
+  \emph{\[
+    \frac{\sigma(n)}{n}
+    < \frac{n}{\varphi(n)}
+    < \frac{\pi^2}{6} \frac{\sigma(n)}{n}
+  \]
+  if $n \geq 2$.}
+
+\item[(b)]
+  \emph{If $x \geq 2$ prove that}
+  \[
+    \sum_{n \leq x} \frac{n}{\varphi(n)} = O(x).
+  \] \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  Write $n = \prod_p p^\alpha$ with $\alpha \geq 1$
+  uniquely as a product of prime numbers, up to the order of the factors.
+  Note that
+  \[
+    \frac{n}{\varphi(n)}
+    = \prod_p (1 - p^{-1})^{-1}
+    = \prod_p \frac{p}{p-1}
+  \]
+  (Theorem 2.4)
+  and
+  \[
+    \frac{\sigma(n)}{n}
+    = \prod_p p^{-\alpha} \cdot \frac{p^{\alpha+1} - 1}{p-1}
+    = \prod_p \frac{p^{\alpha+1} - 1}{p^{\alpha+1}} \cdot \frac{p}{p-1}.
+  \]
+  (on page 39).
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    & \:
+    \frac{\sigma(n)}{n}
+    < \frac{n}{\varphi(n)}
+    < \frac{\pi^2}{6} \frac{\sigma(n)}{n} \\
+    \Longleftrightarrow & \:
+    \prod_p \frac{p^{\alpha+1} - 1}{p^{\alpha+1}} \cdot \frac{p}{p-1}
+    < \prod_p \frac{p}{p-1}
+    < \frac{\pi^2}{6} \prod_p \frac{p^{\alpha+1} - 1}{p^{\alpha+1}} \cdot \frac{p}{p-1} \\
+    \Longleftrightarrow & \:
+    1
+    < \prod_p \frac{p^{\alpha+1}}{p^{\alpha+1} - 1}
+    < \frac{\pi^2}{6}
+    = \prod_p \frac{p^2}{p^2 - 1}.
+  \end{align*}
+  It is clear that
+  \[
+    1 <  \frac{p^{\alpha+1}}{p^{\alpha+1} - 1} < \frac{p^2}{p^2 - 1}
+  \]
+  since $\alpha \geq 1$.
+  Thus the result holds.
+\end{enumerate}
+$\Box$ \\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  By part (a), it suffices to show that
+  \[
+    \sum_{n \leq x} \frac{\sigma(n)}{n} = O(x).
+  \]
+
+\item[(2)]
+  Similar to the proof Theorem 3.3,
+  \begin{align*}
+    \sum_{n \leq x} \frac{\sigma(n)}{n}
+    =& \:
+    \sum_{\substack{q,d \\ qd \leq x \\}} \frac{q}{qd} \\
+    =& \:
+    \sum_{d \leq x} \sum_{q \leq \frac{x}{d}} \frac{1}{d} \\
+    =& \:
+    \sum_{d \leq x} \frac{1}{d} \left\lfloor \frac{x}{d} \right\rfloor \\
+    =& \:
+    \sum_{d \leq x} \frac{1}{d}
+        \left( \frac{x}{d} - \left\{ \frac{x}{d} \right\} \right) \\
+    =& \:
+    x \sum_{d \leq x} \frac{1}{d^2}
+        - \sum_{d \leq x} \frac{1}{d} \left\{ \frac{x}{d} \right\}.
+  \end{align*}
+
+\item[(3)]
+  Note that Theorem 3.2(b) implies that
+  \[
+    x \sum_{d \leq x} \frac{1}{d^2}
+    = x \left(-x^{-1} + \zeta(2) + O(x^{-2}) \right)
+    = O(x).
+  \]
+  Also $\sum_{d \leq x} \frac{1}{d} \left\{ \frac{x}{d} \right\}$
+  is bounded by $\sum_{d \leq x} \frac{1}{d} = O(\log x)$ (Theorem 3.2(a)).
+  Therefore,
+  \[
+    \sum_{n \leq x} \frac{\sigma(n)}{n} = O(x) + O(\log x) = O(x).
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
