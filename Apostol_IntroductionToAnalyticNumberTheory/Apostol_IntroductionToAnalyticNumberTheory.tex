@@ -2739,7 +2739,6 @@ $\Box$ \\\\
 
 
 
-\newpage
 \subsubsection*{Exercise 3.9.}
 \addcontentsline{toc}{subsubsection}{Exercise 3.9.}
 \emph{In a later chapter we will prove that the infiite product
@@ -2801,12 +2800,9 @@ Assuming this result, prove that}
     < \frac{\pi^2}{6}
     = \prod_p \frac{p^2}{p^2 - 1}.
   \end{align*}
-  It is clear that
-  \[
-    1 <  \frac{p^{\alpha+1}}{p^{\alpha+1} - 1} < \frac{p^2}{p^2 - 1}
-  \]
-  since $\alpha \geq 1$.
-  Thus the result holds.
+  It is clear since
+  $1 <  \frac{p^{\alpha+1}}{p^{\alpha+1} - 1} < \frac{p^2}{p^2 - 1}$
+  if $\alpha \geq 1$.
 \end{enumerate}
 $\Box$ \\
 
@@ -2851,6 +2847,52 @@ $\Box$ \\
   \[
     \sum_{n \leq x} \frac{\sigma(n)}{n} = O(x) + O(\log x) = O(x).
   \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Exercise 3.10.}
+\addcontentsline{toc}{subsubsection}{Exercise 3.10.}
+\emph{If $x \geq 2$ prove that}
+\[
+  \sum_{n \leq x} \frac{1}{\varphi(n)} = O(\log x).
+\] \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Similar to Exercise 3.9, it suffices to show that
+  \[
+    \sum_{n \leq x} \frac{\sigma(n)}{n^2} = O(\log x).
+  \]
+
+\item[(2)]
+  Hence
+  \begin{align*}
+    \sum_{n \leq x} \frac{\sigma(n)}{n^2}
+    =& \:
+    \sum_{\substack{q,d \\ qd \leq x \\}} \frac{d}{q^2d^2} \\
+    =& \:
+    \sum_{d \leq x} \frac{1}{d} \sum_{q \leq \frac{x}{d}} \frac{1}{q^2} \\
+    =& \:
+    \sum_{d \leq x} \frac{1}{d}
+        \left( -\frac{d}{x} + \zeta(2) + O\left( \frac{d^2}{x^2} \right) \right)
+      &(\text{Theorem 3.2(b)}) \\
+    =& \:
+    - x^{-1} \underbrace{\sum_{d \leq x} 1}_{= O(x)}
+        + \zeta(2) \underbrace{\sum_{d \leq x} \frac{1}{d}}_{= O(\log x)}
+        + \underbrace{O\left(\sum_{d \leq x} \frac{d}{x^2} \right)}_{= O(1)}
+      &(\text{Theorem 3.2(a)(d)}) \\
+    =& \:
+    O(\log x).
+  \end{align*}
 \end{enumerate}
 $\Box$ \\\\
 
