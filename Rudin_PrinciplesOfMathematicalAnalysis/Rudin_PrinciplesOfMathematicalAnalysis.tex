@@ -214,6 +214,7 @@ Let $-A$ be the set of all numbers $-x$, where $x \in A$.
 Prove that $$\inf A = -\sup(-A).$$}
 
 \emph{Proof.}
+Note that the set $-A \neq \varnothing$.
 Let $\alpha = \inf A$ and $\beta = \sup(-A)$.
 \begin{enumerate}
 \item[(1)]
@@ -224,10 +225,12 @@ x \geq \alpha \:\: \forall x \in A
 &\Longrightarrow
 -\alpha \text{ is an upper bound of $-A$} \\
 &\Longrightarrow
-\beta \leq -\alpha \\
+\beta \leq -\alpha
+  & (\text{Exercise 1.4}) \\
 &\Longrightarrow
 \alpha \leq -\beta
 \end{align*}
+
 \item[(2)]
 \begin{align*}
 -x \leq \beta \:\: \forall -x \in -A
@@ -237,6 +240,7 @@ x \geq -\beta \:\: \forall x \in A \\
 -\beta \text{ is a lower bound of $A$} \\
 &\Longrightarrow
 \alpha \geq -\beta
+  & (\text{Exercise 1.4}) \\
 \end{align*}
 \end{enumerate}
 By (1)(2), $\alpha = -\beta$, or $\inf A = -\sup(-A)$.
