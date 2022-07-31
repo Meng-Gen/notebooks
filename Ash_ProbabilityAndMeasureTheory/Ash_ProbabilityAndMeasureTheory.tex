@@ -62,30 +62,148 @@
   If $A_n \downarrow A$, then $A_n^{c} \uparrow A^{c}$.
 
 \item[(2)]
-  pass
+  \begin{align*}
+    \bigcup_{i=1}^{n} A_i =
+    & \:
+      A_1
+      \cup (A_1^{c} \cap A_2)
+      \cup (A_1^{c} \cap A_2^{c} \cap A_3) \\
+    & \:
+      \cup \cdots \cup (A_1^{c} \cap \cdots \cap A_{n-1}^{c} \cap A_n).
+  \end{align*}
 
 \item[(3)]
-  pass
+  Furthermore,
+  \[
+    \bigcup_{n=1}^{\infty} A_n
+    = \bigcup_{n=1}^{\infty} \bigg( A_1^{c} \cap \cdots \cap A_{n-1}^{c} \cap A_n \bigg).
+  \]
 
 \item[(4)]
-  pass
+  If the $A_n$ form an increasing sequence, then
+  \[
+    \bigcup_{i=1}^{n} A_i
+    = A_1 \cup (A_2 - A_1) \cup \cdots \cup (A_n - A_{n-1}).
+  \]
 
 \item[(5)]
-  pass
-
+  If the $A_n$ form an increasing sequence, then
+  \[
+    \bigcup_{n=1}^{\infty} A_n
+    = \bigcup_{n=1}^{\infty} (A_n - A_{n-1})
+  \]
+  (take $A_0$ as the empty set). \\
 \end{enumerate}
 
 
 
-\emph{Proof of (1).}
+\emph{Proof of Formula (1).}
 \begin{enumerate}
 \item[(1)]
-  pass
+  Suppose that $A_n \uparrow A$ is an increasing sequence of sets with limit $A$.
+  Then $A_1 \subset A_2 \subset \cdots$ and $\bigcup_{n=1}^{\infty} A_n = A$.
+  So $A_1^{c} \supset A_2^{c} \supset \cdots$ and
+  \[
+    \bigcap_{n} A_n^{c}
+    = \bigg( \bigcup_{n} A_n \bigg)^{c} = A^{c}
+  \]
+  by the De Morgan laws.
+  Hence $A_n \uparrow A$ implies that $A_n^{c} \downarrow A^{c}$.
 
 \item[(2)]
-  pass
-
+  Conversely, suppose that $A_n \downarrow A$ is an decreasing sequence of sets with limit $A$.
+  Then $A_1 \supset A_2 \supset \cdots$ and $\bigcap_{n=1}^{\infty} A_n = A$.
+  So $A_1^{c} \subset A_2^{c} \subset \cdots$ and
+  \[
+    \bigcup_{n} A_n^{c}
+    = \bigg( \bigcap_{n} A_n \bigg)^{c} = A^{c}
+  \]
+  by the De Morgan laws.
+  Hence $A_n \downarrow A$ implies that $A_n^{c} \uparrow A^{c}$.
 \end{enumerate}
+$\Box$ \\\\
+
+
+
+\emph{Proof of Formula (2).}
+\begin{enumerate}
+\item[(1)]
+  Set
+  \[
+    B_i = A_1^{c} \cap \cdots \cap A_{i-1}^{c} \cap A_i
+  \]
+  for $i = 1, \cdots, n$.
+  Observe that $B_1 = A_1$.
+  So it is equivalent to show that
+  \[
+    \bigcup_{i=1}^{n} A_i = \bigcup_{i=1}^{n} B_i.
+  \]
+
+\item[(2)]
+  Since each $B_i$ is a subset of $A_i$,
+  $\bigcup_{i=1}^{n} A_i \supset \bigcup_{i=1}^{n} B_i$.
+
+\item[(3)]
+  Conversely, given any $x \in \bigcup_{i=1}^{n} A_i$.
+  $x \in A_j$ for some $j$.
+  Now take the minimal value of $j$ such that $x \in A_j$.
+  The minimality of $j$ implies that $x \notin A_1, A_2, \cdots, A_{j-1}$.
+  Hence
+  \[
+    x
+    \in A_1^{c} \cap \cdots \cap A_{j-1}^{c} \cap A_j
+    = B_j \subset \bigcup_{i=1}^{n} B_i.
+  \]
+  Therefore, $\bigcup_{i=1}^{n} A_i \subset \bigcup_{i=1}^{n} B_i$.
+
+\item[(4)]
+  By (2)(3), $\bigcup_{i=1}^{n} A_i$ and $\bigcup_{i=1}^{n} B_i$ are equal.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\emph{Proof of Formula (3).}
+  Same as the proof of formula (2)
+  since the minimality of $j$ described in part (3) exists.
+$\Box$ \\\\
+
+
+
+\emph{Proof of Formula (4).}
+\begin{enumerate}
+\item[(1)]
+  As $A_n$ form an increasing sequence,
+  $A_1 \subset A_2 \subset \cdots$ or
+  $A_1^{c} \supset A_2^{c} \supset \cdots$.
+  Hence
+  \[
+    A_1^{c} \cap \cdots \cap A_{i-1}^{c} = A_{i-1}^c.
+  \]
+  Therefore, $B_i$ is reduced to
+  \[
+    B_i
+    = A_1^{c} \cap \cdots \cap A_{i-1}^{c} \cap A_i
+    = A_{i-1}^{c} \cap A_i
+    = A_{i} - A_{i-1}.
+  \]
+
+\item[(2)]
+  Now formula (2) becomes
+  \[
+    \bigcup_{i=1}^{n} A_i
+    = \bigcup_{i=1}^{n} B_i
+    = \bigcup_{i=1}^{n} (A_{i} - A_{i-1}).
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\emph{Proof of Formula (5).}
+  Note that $B_n = A_{n} - A_{n-1}$ in the proof of formula (4).
+  Formula (3) becomes
+  $\bigcup_{n=1}^{\infty} A_n = \bigcup_{n=1}^{\infty} (A_n - A_{n-1})$.
 $\Box$ \\\\
 
 
