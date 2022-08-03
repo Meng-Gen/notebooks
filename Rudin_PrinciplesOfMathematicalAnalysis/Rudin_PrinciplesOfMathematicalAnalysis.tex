@@ -771,19 +771,26 @@ $\Box$ \\\\
 $$\abs{\sum_{j=1}^n a_j \overline{b_j}}^2
 \leq \sum_{j=1}^n |a_j|^2 \sum_{j=1}^n|b_j|^2.$$}
 
-In fact, the Lagrange's identity for complex numbers shows
-$$\abs{ \sum_{k=1}^{n} a_k \overline{b_k} }^2
-= \sum_{k=1}^{n} \abs{a_k}^2 \sum_{k=1}^{n} \abs{b_k}^2
-- \sum_{1 \leq k < j \leq n}
-\abs{ a_k b_j - a_j b_k }^2.$$ \\
+In general, the Lagrange's identity for complex numbers
+\[
+  \abs{ \sum_{k=1}^{n} a_k \overline{b_k} }^2
+  = \sum_{k=1}^{n} \abs{a_k}^2 \sum_{k=1}^{n} \abs{b_k}^2
+  - \sum_{1 \leq k < j \leq n} \abs{ a_k b_j - a_j b_k }^2
+\]
+implies the Schwarz inequality. \\
 
-In general, the Binet-Cauchy identity shows
+Moreover, the Binet-Cauchy identity for complex numbers
 \begin{align*}
-&\sum_{1 \leq k < j \leq n}
-(a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
-= &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
-- \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
-\end{align*} \\
+  &\sum_{1 \leq k < j \leq n}
+  (a_k b_j - a_j b_k)(A_k B_j - A_j B_k) \\
+  = &\left( \sum_{k=1}^{n} a_k A_k \right)\left( \sum_{k=1}^{n} b_k B_k \right)
+  - \left( \sum_{k=1}^{n} a_k B_k \right)\left( \sum_{k=1}^{n} b_k A_k \right).
+\end{align*}
+implies the Lagrange's identity.
+So we prove the Binet-Cauchy identity first, and then prove the Lagrange's identity.
+Finally we can get the Schwarz inequality. \\\\
+
+
 
 \emph{Proof of Binet-Cauchy identity.}
 \begin{align*}
@@ -809,27 +816,24 @@ In general, the Binet-Cauchy identity shows
 \end{align*}
 $\Box$ \\
 
+
+
 \emph{Proof of Lagrange's identity.}
 Put $(a_k, b_k, A_k, B_k) \mapsto (a_k, b_k, \overline{a_k}, \overline{b_k})$
 in the Binet-Cauchy identity.
 $\Box$ \\
 
+
+
 \emph{Proof of Schwarz inequality (Lagrange's identity).}
 Notice the term $$\sum_{1 \leq k < j \leq n} \abs{ a_k b_j - a_j b_k }^2 \geq 0.$$
-$\Box$ \\
-
-Write $\mathbf{a} = (a_1, \ldots, a_n)$ and $\mathbf{b} = (b_1, \ldots, b_n)$
+The equality holds if and only if $a_k b_j = a_j b_k$ for any $1 \leq k < j \leq n$.
+If we write $\mathbf{a} = (a_1, \ldots, a_n)$ and $\mathbf{b} = (b_1, \ldots, b_n)$
 as two vectors in the vector space $\mathbb{C}^n$ over $\mathbb{C}$.
-Back to the exercise now. \\
-
-\emph{Proof (Lagrange's identity).}
-$\sum_{1 \leq k < j \leq n} \abs{ a_k b_j - a_j b_k }^2 = 0$
-$\Longleftrightarrow$
-$a_k b_j = a_j b_k$ for any $1 \leq k < j \leq n$.
-The equality holds in the Schwarz inequality
-$\Longleftrightarrow$
-$\mathbf{a}$ and $\mathbf{b}$ are linearly dependent.
+The equality holds if $\mathbf{a}$ and $\mathbf{b}$ are linearly dependent.
 $\Box$ \\
+
+
 
 \emph{Proof (Theorem 1.35).}
 The equality holds in the Schwarz inequality.
