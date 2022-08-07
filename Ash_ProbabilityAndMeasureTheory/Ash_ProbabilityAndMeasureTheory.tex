@@ -397,7 +397,7 @@ $\Box$ \\\\
     = A.
   \]
 
-\item[(1)]
+\item[(2)]
   If $A_n \downarrow A$, then
   \[
     \limsup_{n} A_n
@@ -412,13 +412,42 @@ $\Box$ \\\\
     = \bigcup_{n=1}^{\infty} A
     = A.
   \]
-
 \end{enumerate}
 $\Box$ \\\\
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 1.1.6.}
+\addcontentsline{toc}{subsubsection}{Problem 1.1.6.}
+\emph{Let $A = (a,b)$ and $B = (c,d)$ be disjoint open intervals of $\mathbb{R}$,
+and let $C_n = A$ if $n$ is odd, $C_n = B$ if $n$ is even.
+Find $\limsup_n C_n$ and $\liminf_n C_n$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \[
+    \limsup_{n} C_n
+    = \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} C_k
+    = \bigcap_{n=1}^{\infty} ( A \cup B )
+    = A \cup B.
+  \]
+
+\item[(2)]
+  \[
+    \liminf_{n} C_n
+    = \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} C_k
+    = \bigcup_{n=1}^{\infty} \varnothing
+    = \varnothing.
+  \]
+\end{enumerate}
+$\Box$ \\\\
 
 
 
