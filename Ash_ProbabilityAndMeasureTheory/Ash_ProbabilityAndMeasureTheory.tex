@@ -464,6 +464,45 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 1.2.5.}
+\addcontentsline{toc}{subsubsection}{Problem 1.2.5.}
+\emph{Let $\mu$ be a nonnegative,
+finitely additive set function on the field $\mathscr{F}$.
+If $A_1, A_2, \ldots$ are disjoint sets in $\mathscr{F}$
+and $\bigcup_{n=1}^{\infty} A_n \in \mathscr{F}$, show that}
+\[
+  \mu \Bigg( \bigcup_{n=1}^{\infty} A_n \Bigg)
+  \geq
+  \sum_{n=1}^{\infty} \mu(A_n).
+\] \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  Note that $\mu$ is a nonnegative, finitely additive set function on $\mathscr{F}$.
+  Hence,
+  \begin{align*}
+    \mu \Bigg( \bigcup_{n=1}^{\infty} A_n \Bigg)
+    \geq
+    & \:
+      \mu \Bigg( \bigcup_{n=1}^{m} A_n \Bigg)
+      & (\text{Theorem 1.2.5}) \\
+    =
+    & \:
+      \sum_{n=1}^{m} \mu(A_n)
+  \end{align*}
+  for every $m$.
+
+\item[(2)]
+  Since $\sum_{n=1}^{m} \mu(A_n)$ is bounded by $\mu \big( \bigcup_{n=1}^{\infty} A_n \big)$
+  and $\mu$ is nonnegative,
+  the result is established as letting $m \to \infty$.
+\end{enumerate}
+$\Box$ \\\\
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
