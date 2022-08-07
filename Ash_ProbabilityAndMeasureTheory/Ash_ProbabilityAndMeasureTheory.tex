@@ -298,6 +298,143 @@ $\Box$ \\\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+\subsubsection*{Problem 1.1.5.}
+\addcontentsline{toc}{subsubsection}{Problem 1.1.5.}
+\emph{Establish formulas (10)-(13).} \\
+
+
+
+\emph{Formulas.}
+\begin{enumerate}
+\item[(10)]
+  \[
+    \Big( \limsup_{n} A_n \Big)^c
+    = \liminf_{n} A_n^c.
+  \]
+
+\item[(11)]
+  \[
+    \Big( \liminf_{n} A_n \Big)^c
+    = \limsup_{n} A_n^c.
+  \]
+
+\item[(12)]
+  \[
+    \liminf_{n} A_n \subset \limsup_{n} A_n.
+  \]
+
+\item[(13)]
+  If $A_n \uparrow A$ or $A_n \downarrow A$,
+  then $\liminf_n A_n = \limsup_n A_n= A$. \\
+\end{enumerate}
+
+
+
+\emph{Proof of Formula (10).}
+  The De Morgan laws shows that
+  \begin{align*}
+    \Big( \limsup_{n} A_n \Big)^c
+    =
+    & \:
+      \Bigg( \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} A_k \Bigg)^c \\
+    =
+    & \:
+      \bigcup_{n=1}^{\infty} \Bigg( \bigcup_{k=n}^{\infty} A_k \Bigg)^c \\
+    =
+    & \:
+      \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k^{c} \\
+    =
+    & \:
+      \limsup_{n} A_n^c.
+  \end{align*}
+$\Box$ \\\\
+
+
+
+\emph{Proof of Formula (11).}
+  Similar to the proof of formula (10).
+  \begin{align*}
+    \Big( \liminf_{n} A_n \Big)^c
+    =
+    & \:
+      \Bigg( \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k \Bigg)^c \\
+    =
+    & \:
+      \bigcap_{n=1}^{\infty} \Bigg( \bigcap_{k=n}^{\infty} A_k \Bigg)^c \\
+    =
+    & \:
+      \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} A_k^{c} \\
+    =
+    & \:
+      \limsup_{n} A_n^c.
+  \end{align*}
+$\Box$ \\\\
+
+
+
+\emph{Proof of Formula (12).}
+  Formulas (7) and (9) give all.
+$\Box$ \\\\
+
+
+
+\emph{Proof of Formula (13).}
+\begin{enumerate}
+\item[(1)]
+  If $A_n \uparrow A$, then
+  \[
+    \limsup_{n} A_n
+    = \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} A_k
+    = \bigcap_{n=1}^{\infty} A
+    = A
+  \]
+  and
+  \[
+    \liminf_{n} A_n
+    = \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k
+    = \bigcup_{n=1}^{\infty} A_n
+    = A.
+  \]
+
+\item[(1)]
+  If $A_n \downarrow A$, then
+  \[
+    \limsup_{n} A_n
+    = \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} A_k
+    = \bigcap_{n=1}^{\infty} A_n
+    = A
+  \]
+  and
+  \[
+    \liminf_{n} A_n
+    = \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k
+    = \bigcup_{n=1}^{\infty} A
+    = A.
+  \]
+
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsection*{1.2. Fields, $\sigma$-Fields, and Measures \\}
+\addcontentsline{toc}{subsection}{1.2. Fields, $\sigma$-Fields, and Measures}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
