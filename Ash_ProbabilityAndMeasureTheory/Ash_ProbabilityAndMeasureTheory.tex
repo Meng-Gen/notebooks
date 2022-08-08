@@ -769,6 +769,65 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 1.2.10.}
+\addcontentsline{toc}{subsubsection}{Problem 1.2.10.}
+\emph{Let $\mu$ be a finite measure on the $\sigma$-field $\mathscr{F}$.
+If $A_n \in \mathscr{F}, n = 1, 2, \ldots$ and $A = \lim_n A_n$ (see Section 1.1),
+show that $\mu(A) = \lim_{n \to \infty} \mu(A_n)$.} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  $A = \lim_n A_n$ if $\liminf_n A_n = \limsup_n A_n = A$.
+  By writing
+  \[
+    A
+    = \liminf_n A_n
+    = \bigcup_{n=1}^{\infty} \bigcap_{k=n}^{\infty} A_k
+    = \bigcup_{n=1}^{\infty} B_n
+  \]
+  with $B_n = \bigcap_{k=n}^{\infty} A_k$, we have $B_n \uparrow A$.
+  Theorem 1.2.7 implies that
+  \[
+    \mu(A)
+    = \lim_{n \to \infty} \mu(B_n)
+    = \lim_{n \to \infty} \mu\bigg( \bigcap_{k=n}^{\infty} A_k \bigg)
+    \leq \lim_{n \to \infty} \mu(A_n).
+  \]
+
+\item[(2)]
+  Similarly, by writing
+  \[
+    A
+    = \limsup_n A_n
+    = \bigcap_{n=1}^{\infty} \bigcup_{k=n}^{\infty} A_k
+    = \bigcap_{n=1}^{\infty} C_n
+  \]
+  with $C_n = \bigcup_{k=n}^{\infty} A_k$, we have $C_n \downarrow A$.
+  Theorem 1.2.7 (with a finite measure $\mu$) implies that
+  \[
+    \mu(A)
+    = \lim_{n \to \infty} \mu(C_n)
+    = \lim_{n \to \infty} \mu\bigg( \bigcup_{k=n}^{\infty} A_k \bigg)
+    \geq \lim_{n \to \infty} \mu(A_n).
+  \]
+
+\item[(3)]
+  Hence
+  \[
+    \mu(A) = \lim_{n \to \infty} \mu(A_n).
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
