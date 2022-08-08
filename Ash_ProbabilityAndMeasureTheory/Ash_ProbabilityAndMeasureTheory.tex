@@ -589,6 +589,95 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 1.2.3.}
+\addcontentsline{toc}{subsubsection}{Problem 1.2.3.}
+\emph{Let $\Omega$ be a countably infinite set,
+and let $\mathscr{F}$ be the field consisting of all finite subsets of $\Omega$
+and their complements.
+If $A$ is finite, set $\mu(A) = 0$, and if $A^{c}$ is finite, set $\mu(A) = 1$.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\mu$ is finitely additive but not countably additive on $\mathscr{F}$.}
+
+\item[(b)]
+  \emph{Show that $\Omega$ is the limit of an increasing sequence of sets $A_n \in \mathscr{F}$
+  with $\mu(A_n) = 0$ for all $n$, but $\mu(\Omega) = 1$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mu$ is finitely additive.}
+  Given a finitely collection of disjoint sets $A_1, A_2, \ldots, A_n$ in $\mathscr{F}$.
+  If each set $A_k$ ($k = 1, 2, \ldots, n$) is finite,
+  then $\bigcup A_k$ is also finite and thus we have
+  \[
+    \mu \Bigg( \bigcup_{k=1}^{n} A_k \Bigg)
+    = 0
+    = \sum_{k=1}^{n} \mu(A_k).
+  \]
+
+\item[(2)]
+  If there is some $A_{k'}$ is infinite, then there is only one such $k'$.
+  (Assume that there were another $k''$ such that $A_{k''}$ is infinite.
+  Since $A_{k'} \cap A_{k''} = \varnothing$, the De Morgan laws shows that
+  \[
+    A_{k'}^{c} \cup A_{k''}^{c} = \Omega.
+  \]
+  That is, a countably infinite set is a union of two finite subsets, which is absurd.)
+  Hence
+  \[
+    \mu \Bigg( \bigcup_{k=1}^{n} A_k \Bigg)
+    = 1
+    = 0 + \cdots + 0 + \underbrace{1}_{\text{$k'$-th}} + 0 + \cdots + 0
+    = \sum_{k=1}^{n} \mu(A_k).
+  \]
+
+\item[(3)]
+  \emph{Show that $\mu$ is not countably additive.}
+  Write
+  \[
+    \Omega = \{ \omega_1, \omega_2, \ldots \}
+  \]
+  (since $\Omega$ is countably infinite) and
+  $A_n = \{ \omega_n \}$ for all $n = 1, 2, \ldots$.
+  Hence $A_1, A_2, \ldots$ is a countably infinitely collection of disjoint sets
+  and $\bigcup_{n=1}^{\infty} A_n = \Omega$.
+  Therefore,
+  \[
+    \mu \Bigg( \bigcup_{n=1}^{\infty} A_n \Bigg)
+    = \mu(\Omega)
+    = 1
+  \]
+  but
+  \[
+    \sum_{n=1}^{\infty} \mu(A_n)
+    = \sum_{n=1}^{\infty} 0
+    = 0.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\emph{Proof of (b).}
+  Write $\Omega = \{ \omega_1, \omega_2, \ldots \}$ and
+  \[
+    A_n = \{ \omega_1, \omega_2, \ldots, \omega_n \} \in \mathscr{F}.
+  \]
+  for all $n = 1, 2, \ldots$.
+  Therefore, $A_n \uparrow \Omega$, $\mu(A_n) = 0$ for all $n$ but $\mu(\Omega) = 1$.
+  (Theorem 1.2.7 implies that $\mu$ cannot be a countably additive.)
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 1.2.5.}
 \addcontentsline{toc}{subsubsection}{Problem 1.2.5.}
 \emph{Let $\mu$ be a nonnegative,
