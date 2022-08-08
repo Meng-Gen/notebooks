@@ -464,6 +464,91 @@ $\Box$ \\\\
 
 
 
+\subsubsection*{Problem 1.2.1.}
+\addcontentsline{toc}{subsubsection}{Problem 1.2.1.}
+\emph{Let $\Omega$ be a countably infinite set,
+and let $\mathscr{F}$ consist of all subsets of $\Omega$.
+Define $\mu(A) = 0$ if $A$ is finite, $\mu(A) = \infty$ if $A$ is infinite.}
+\begin{enumerate}
+\item[(a)]
+  \emph{Show that $\mu$ is finitely additive but not countably additive.}
+
+\item[(b)]
+  \emph{Show that $\Omega$ is the limit of an increasing sequence of sets $A_n$
+  with $\mu(A_n) = 0$ for all $n$, but $\mu(\Omega) = \infty$.} \\
+\end{enumerate}
+
+
+
+\emph{Proof of (a).}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\mu$ is finitely additive.}
+  Given a finitely collection of disjoint sets $A_1, A_2, \ldots, A_n$ in $\mathscr{F}$.
+  If each set $A_k$ ($k = 1, 2, \ldots, n$) is finite,
+  then $\bigcup A_k$ is also finite and thus we have
+  \[
+    \mu \Bigg( \bigcup_{k=1}^{n} A_k \Bigg)
+    = 0
+    = \sum_{k=1}^{n} \mu(A_k).
+  \]
+  If there is some $A_{k'}$ is infinite,
+  then $\bigcup A_k \supset A_{k'}$ is also infinite and thus
+  \[
+    \mu \Bigg( \bigcup_{k=1}^{n} A_k \Bigg)
+    = \infty
+    = \sum_{k=1}^{n} \mu(A_k).
+  \]
+
+\item[(2)]
+  \emph{Show that $\mu$ is not countably additive.}
+  Write
+  \[
+    \Omega = \{ \omega_1, \omega_2, \ldots \}
+  \]
+  (since $\Omega$ is countably infinite) and
+  $A_n = \{ \omega_n \}$ for all $n = 1, 2, \ldots$.
+  Hence $A_1, A_2, \ldots$ is a countably infinitely collection of disjoint sets
+  and $\bigcup_{n=1}^{\infty} A_n = \Omega$.
+  Therefore,
+  \[
+    \mu \Bigg( \bigcup_{n=1}^{\infty} A_n \Bigg)
+    = \mu(\Omega)
+    = \infty
+  \]
+  but
+  \[
+    \sum_{n=1}^{\infty} \mu(A_n)
+    = \sum_{n=1}^{\infty} 0
+    = 0.
+  \]
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+\emph{Proof of (b).}
+\begin{enumerate}
+\item[(1)]
+  Similar to the proof of (a).
+  Write $\Omega = \{ \omega_1, \omega_2, \ldots \}$ and
+  \[
+    A_n = \{ \omega_1, \omega_2, \ldots, \omega_n \}.
+  \]
+  for all $n = 1, 2, \ldots$.
+
+\item[(2)]
+  Therefore, $A_n \uparrow \Omega$, $\mu(A_n) = 0$ for all $n$ but $\mu(\Omega) = \infty$.
+  (Theorem 1.2.7 implies that $\mu$ cannot be a countably additive.)
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsubsection*{Problem 1.2.5.}
 \addcontentsline{toc}{subsubsection}{Problem 1.2.5.}
 \emph{Let $\mu$ be a nonnegative,
@@ -501,6 +586,7 @@ and $\bigcup_{n=1}^{\infty} A_n \in \mathscr{F}$, show that}
   the result is established as letting $m \to \infty$.
 \end{enumerate}
 $\Box$ \\\\
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
