@@ -719,6 +719,57 @@ $\Box$ \\\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\subsubsection*{Problem 1.2.6.}
+\addcontentsline{toc}{subsubsection}{Problem 1.2.6.}
+\emph{Let $f: \Omega \to \Omega'$, and let $\mathscr{C}$ be a class of subsets of $\Omega'$.
+Show that
+\[
+  \sigma(f^{-1}(\mathscr{C})) = f^{-1}(\sigma(\mathscr{C})),
+\]
+where $f^{-1}(\mathscr{C}) = \{ f^{-1}(A) : A \in \mathscr{C} \}$.
+(Use the good sets principle.)} \\
+
+
+
+\emph{Proof.}
+\begin{enumerate}
+\item[(1)]
+  \emph{Show that $\sigma(f^{-1}(\mathscr{C})) \subset f^{-1}(\sigma(\mathscr{C}))$.}
+  Note that $f^{-1}(\sigma(\mathscr{C}))$ is a $\sigma$-field.
+  Hence by $\mathscr{C} \subset \sigma(\mathscr{C})$ we have
+  \[
+   \sigma(f^{-1}(\mathscr{C}))
+   \subset \sigma(f^{-1}(\sigma(\mathscr{C})))
+   = f^{-1}(\sigma(\mathscr{C})). 
+  \]
+
+\item[(2)]
+  \emph{Show that $\sigma(f^{-1}(\mathscr{C})) \supset f^{-1}(\sigma(\mathscr{C}))$.}
+  Let
+  \[
+    \mathscr{S} = \{ A \subset \Omega' : f^{-1}(A) \in \sigma(f^{-1}(\mathscr{C})) \}.
+  \]
+  So $\mathscr{S}$ is a $\sigma$-field containing $\mathscr{C}$
+  (by observing that $f^{-1}\big( \bigcup A_n \big) = \bigcup f^{-1}(A_n)$).
+  Hence $\mathscr{S} \supset \sigma(\mathscr{C})$.
+  Now given any $f^{-1}(A) \in f^{-1}(\sigma(\mathscr{C}))$
+  with $A \in \sigma(\mathscr{C})$.
+  As $\sigma(\mathscr{C}) \subset \mathscr{S}$,
+  $f^{-1}(A) \in \sigma(f^{-1}(\mathscr{C}))$ or
+  $f^{-1}(\sigma(\mathscr{C})) \subset \sigma(f^{-1}(\mathscr{C}))$.
+\end{enumerate}
+$\Box$ \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
