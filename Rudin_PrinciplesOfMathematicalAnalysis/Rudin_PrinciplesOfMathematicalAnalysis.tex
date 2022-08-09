@@ -579,21 +579,28 @@ Does this ordered set have the least-upper-bound property?} \\
     In any case, $x < z$ if $x < y$ and $y < z$.
   \end{enumerate}
   By (a)(b), $\mathbb{C}$ is an ordered set (Definition 1.5).
+
 \item[(2)]
-\emph{Show that has no least-upper-bound property.}
-Assume $\mathbb{C}$ has the least-upper-bound property.
-Consider $$E = \{ 0 \} \subseteq \mathbb{C}.$$
+  \emph{Show that has no least-upper-bound property.}
+  Assume $\mathbb{C}$ has the least-upper-bound property.
+  Consider
+  \[
+    E = \{ a+bi : a, b \in \mathbb{R}, a \leq 0 \} \subseteq \mathbb{C}.
+  \]
   \begin{enumerate}
-  \item[(a)]
-  $E$ is bounded by $0 \in \mathbb{C}$.
-  Thus $E$ has the least upper bound $\alpha = a+bi \in \mathbb{C}$
-  where $a, b \in \mathbb{R}$. Here $a \geq 0$. (In fact $a = 0$.)
-  \item[(b)]
-  Set $\gamma = a+(b-1)i < a+bi = \alpha$. Note that $a \geq 0$ and thus
-  $\gamma$ is an upper bound of $E$, contrary to minimality of $\alpha$.
+    \item[(a)]
+      Suppose $E$ the least upper bound $\beta = u+vi \in \mathbb{C}$
+      where $u, v \in \mathbb{R}$.
+
+    \item[(b)]
+      Note that $u > 0$.
+      (Otherwise $E \in u + (v+1)i > \beta$, or $\beta$ is not an upper bound for $E$.)
+
+    \item[(c)]
+      Observe that $\beta' = \frac{1}{64} u + vi < \beta$
+      is a smaller upper bound of $E$, contrary to minimality of $\beta$.
   \end{enumerate}
-Thus $\mathbb{C}$ has no least-upper-bound property
-although $E$ has the least upper bound ($=0$) in $\mathbb{R}$.
+  Thus $\mathbb{C}$ has no least-upper-bound property.
 \end{enumerate}
 $\Box$ \\\\
 
