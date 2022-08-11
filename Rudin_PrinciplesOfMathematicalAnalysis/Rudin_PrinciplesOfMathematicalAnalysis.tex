@@ -88,7 +88,7 @@ Let $A$ be the set of all positive rational $p$ such that $p^2 < 12$ and
 let $B$ be the set of all positive rational $p$ such that $p^2 > 12$.
 We might show that
 \emph{$A$ contains no largest number and
-$B$ contains no largest number} again. \\
+$B$ contains no smallest number} again. \\
 
 In fact, we can associate with each rational $p > 0$ the number
 $$q = p - \frac{p^2 - 12}{p + 12} = \frac{12p + 12}{p + 12}.$$
@@ -594,7 +594,8 @@ Does this ordered set have the least-upper-bound property?} \\
 
     \item[(b)]
       Here $u > 0$.
-      (Otherwise $E \in u + (v+89)i > \beta$, or $\beta$ is not an upper bound for $E$.)
+      (Otherwise there exists $\gamma = u + (v+89)i \in E$ such that $\gamma > \beta$,
+      contrary to the fact that $\beta$ is an upper bound of $E$.)
 
     \item[(c)]
       Observe that $\beta' = \frac{1}{64} u + vi < \beta$
