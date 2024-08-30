@@ -8,3 +8,4 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.toc
+.DS_Store
